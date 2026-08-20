@@ -49,13 +49,13 @@ superseded_by: null
 
 `check-status.mjs` 只读这一张表。列名不要改。
 
-| id                         | repository                                                        | defaultBranch | localPath                  |
-| -------------------------- | ----------------------------------------------------------------- | ------------- | -------------------------- |
-| world-of-claudecraft       | https://github.com/levy-street/world-of-claudecraft.git           | main          | world-of-claudecraft       |
-| threejs-procedural-dungeon | https://github.com/majidmanzarpour/threejs-procedural-dungeon.git | main          | threejs-procedural-dungeon |
-| spark                      | https://github.com/sparkjsdev/spark.git                           | main          | spark                      |
-| three-quarks               | https://github.com/Alchemist0823/three.quarks.git                 | master        | three-quarks               |
-| ecctrl                     | https://github.com/pmndrs/ecctrl.git                              | main          | ecctrl                     |
+| id | repository | defaultBranch | localPath |
+| --- | --- | --- | --- |
+| world-of-claudecraft | https://github.com/levy-street/world-of-claudecraft.git | main | world-of-claudecraft |
+| threejs-procedural-dungeon | https://github.com/majidmanzarpour/threejs-procedural-dungeon.git | main | threejs-procedural-dungeon |
+| spark | https://github.com/sparkjsdev/spark.git | main | spark |
+| three-quarks | https://github.com/Alchemist0823/three.quarks.git | master | three-quarks |
+| ecctrl | https://github.com/pmndrs/ecctrl.git | main | ecctrl |
 
 ---
 
@@ -63,16 +63,16 @@ superseded_by: null
 
 做 3D / 音频 / 壳之前，先找**当前仓库**这一行。写「不用」就不要去搬。
 
-| 产品             | WOC                                        | dungeon                      | Spark        | quarks                     | ecctrl             |
-| ---------------- | ------------------------------------------ | ---------------------------- | ------------ | -------------------------- | ------------------ |
-| TuringPact       | 用：场地、音频、加载                       | 用：聚会布局算法             | 不用         | 不用                       | 不用               |
-| YaZu             | 用：移动、音频、运行时合同、环境资产       | 用：任务地图、调色思路       | 用：可选远景 | 不用                       | 不用               |
-| Break            | 用：GLB、音频参考、资产模式                | 用：有种子的路线气氛         | 不用         | 用：已装依赖，只做英雄爆发 | 不用               |
-| OwnMySpace       | 用：起步 GLB、地形/加载/清单               | 不用                         | 不用         | 不用                       | 不用               |
-| Non-Heroes       | 用：Wave E 音频、清单模式                  | 不用                         | 不用         | 不用                       | 不用               |
-| Show             | 不用                                       | 不用                         | 不用         | 不用                       | 不用               |
-| PieAIStudio-Site | 不用                                       | 不用                         | 不用         | 不用                       | 不用               |
-| University       | 用：音频解锁、三端壳、移动 HUD、资产流水线 | 用：有种子的关卡地图与可达性 | 不用         | 不用                       | 不用（待试玩证据） |
+| 产品 | WOC | dungeon | Spark | quarks | ecctrl |
+| --- | --- | --- | --- | --- | --- |
+| TuringPact | 用：场地、音频、加载 | 用：聚会布局算法 | 不用 | 不用 | 不用 |
+| YaZu | 用：移动、音频、运行时合同、环境资产 | 用：任务地图、调色思路 | 用：可选远景 | 不用 | 不用 |
+| Break | 用：GLB、音频参考、资产模式 | 用：有种子的路线气氛 | 不用 | 用：已装依赖，只做英雄爆发 | 不用 |
+| OwnMySpace | 用：起步 GLB、地形/加载/清单 | 不用 | 不用 | 不用 | 不用 |
+| Non-Heroes | 用：Wave E 音频、清单模式 | 不用 | 不用 | 不用 | 不用 |
+| Show | 不用 | 不用 | 不用 | 不用 | 不用 |
+| PieAIStudio-Site | 不用 | 不用 | 不用 | 不用 | 不用 |
+| University | 用：音频解锁、三端壳、移动 HUD、资产流水线 | 用：有种子的关卡地图与可达性 | 不用 | 不用 | 不用（待试玩证据） |
 
 真的拷了文件，把出处记在**那个产品已经有的资产清单**里，不要再为启动阅读另写一份账本。
 

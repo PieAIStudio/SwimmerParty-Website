@@ -3,3 +3,10 @@ node_modules
 out
 public
 docs/governance/manifest.json
+docs/governance/MANIFEST.yml
+# PGS-managed rule snapshots. oxfmt pads markdown tables, which changes the
+# content hash and trips `pro-gov portfolio assets-check` with hash-drift.
+# These files are owned upstream — never reformat them locally.
+docs/policy/shared-rules
+# PGS starter governance docs are distributed content, not ours to restyle.
+docs/governance
