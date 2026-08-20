@@ -1,0 +1,361 @@
+@import "tailwindcss";
+@import "@pieai/swimmer-ui-kit/styles.css";
+
+/* ------------------------------------------------------------------ *
+ * SWIMMER PARTY — ACID VOID
+ *
+ * One rule governs the whole site: the STAGE is black, the DATA is
+ * acid. Nothing is warm, nothing is rounded, nothing apologises.
+ *
+ * Raw colour values live here and nowhere else. Components reference
+ * tokens so a future theme swap cascades everywhere.
+ * ------------------------------------------------------------------ */
+
+@theme {
+  /* --- ground --- */
+  --color-void: #000000;
+  --color-black: #050505;
+  --color-carbon: #0b0b0d;
+  --color-graphite: #141418;
+  --color-ash: #26262c;
+  --color-smoke: #6e6e78;
+  --color-bone: #e9e9e4;
+  --color-paper: #ffffff;
+
+  /* --- acid --- */
+  --color-acid: #ccff00;
+  --color-acid-dim: #8aad00;
+  --color-cyan: #00e5ff;
+  --color-cyan-dim: #0090a3;
+  --color-magenta: #ff1e7a;
+  --color-flare: #ff4d00;
+
+  /* --- type --- */
+  --font-display: var(--sp-font-display);
+  --font-mono: var(--sp-font-mono);
+  --font-cjk: var(--sp-font-cjk);
+
+  /* --- motion --- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+:root {
+  color-scheme: dark;
+
+  --sp-rule: color-mix(in srgb, var(--color-cyan) 22%, transparent);
+  --sp-rule-strong: color-mix(in srgb, var(--color-cyan) 45%, transparent);
+  --sp-hairline: color-mix(in srgb, var(--color-bone) 12%, transparent);
+  --sp-glow-acid: 0 0 2.5rem color-mix(in srgb, var(--color-acid) 30%, transparent);
+  --sp-glow-cyan: 0 0 2.5rem color-mix(in srgb, var(--color-cyan) 28%, transparent);
+
+  /* Reading rhythm. Sections are enormous on purpose — the site should
+   * feel like a gallery, not a landing-page template. */
+  --sp-gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --sp-section: clamp(6rem, 14vh, 12rem);
+  --sp-max: 96rem;
+}
+
+/* ------------------------------------------------------------------ *
+ * SwimmerUIKit theme: `acid`
+ *
+ * Satisfies the kit's GAME_UI_THEME_CONTRACT so every kit component
+ * (GameButton, GamePanel, GameTabs, GameBadge, GameDialog…) renders in
+ * SWIMMER PARTY's language instead of the default Clay look.
+ *
+ * The kit's own docs sanction a downstream full theme; this block is a
+ * candidate for upstreaming into SwimmerUIKit as a first-class theme —
+ * see docs/reference/ui-kit-acid-theme.md.
+ * ------------------------------------------------------------------ */
+[data-game-ui-theme="acid"] {
+  color-scheme: dark;
+
+  --game-ui-bg: #050505;
+  --game-ui-playfield-scrim: rgba(0, 0, 0, 0.72);
+  --game-ui-surface: rgba(20, 20, 24, 0.72);
+  --game-ui-surface-raised: rgba(26, 26, 31, 0.94);
+  --game-ui-panel: rgba(11, 11, 13, 0.92);
+  --game-ui-panel-strong: #0b0b0d;
+  --game-ui-panel-deep: #000000;
+  --game-ui-text: #e9e9e4;
+  --game-ui-text-muted: #6e6e78;
+  --game-ui-accent: #ccff00;
+  --game-ui-accent-bright: #e3ff5c;
+  --game-ui-accent-pale: #3d4a00;
+  /* Acid is a light surface — ink on it must be black to clear WCAG. */
+  --game-ui-accent-contrast: #050505;
+  --game-ui-secondary: #00e5ff;
+  --game-ui-secondary-pale: #003c44;
+  --game-ui-success: #00e5a0;
+  --game-ui-success-bright: #5cffcb;
+  --game-ui-danger: #ff1e7a;
+  --game-ui-danger-bright: #ff6aa8;
+  --game-ui-danger-ink: #ff6aa8;
+  --game-ui-accent-ink: #ccff00;
+  --game-ui-warning: #ff4d00;
+  --game-ui-berry: #b56bff;
+  --game-ui-berry-pale: #3a1a5c;
+  --game-ui-focus-ring: rgba(204, 255, 0, 0.85);
+  --game-ui-border-subtle: rgba(233, 233, 228, 0.14);
+  --game-ui-border-strong: rgba(233, 233, 228, 0.34);
+  --game-ui-disabled: rgba(110, 110, 120, 0.5);
+
+  --game-ui-ink-deep: #e9e9e4;
+  --game-ui-border-ink: #26262c;
+  --game-ui-wood: #26262c;
+  --game-ui-ink-title: #ffffff;
+  --game-ui-ink-heading: #e9e9e4;
+  --game-ui-text-on-dark: #e9e9e4;
+
+  --game-ui-glass-night: rgba(5, 5, 5, 0.78);
+  --game-ui-glass-night-soft: rgba(5, 5, 5, 0.6);
+  --game-ui-scrim-strong: rgba(0, 0, 0, 0.8);
+
+  /* Shape: the Clay kit is round and soft. Acid is machined. These four
+   * overrides are what actually turn a game HUD into an industrial
+   * interface — the colour swap alone is not enough. */
+  --game-ui-radius-bead: 0;
+  --game-ui-radius-control: 0;
+  --game-ui-radius-card: 0;
+  --game-ui-radius-panel: 0;
+  --game-ui-radius-modal: 0;
+
+  --game-ui-font-display: var(--sp-font-display);
+  --game-ui-font-body: var(--sp-font-mono);
+  --game-ui-weight-body: 500;
+  --game-ui-weight-strong: 700;
+  --game-ui-weight-title: 900;
+
+  --game-ui-shadow-button: none;
+  --game-ui-shadow-panel: none;
+  --game-ui-shadow-modal: 0 0 0 1px rgba(233, 233, 228, 0.14), 0 2rem 6rem rgba(0, 0, 0, 0.9);
+  --game-ui-shadow-inset: none;
+}
+
+/* ------------------------------------------------------------------ *
+ * Base
+ * ------------------------------------------------------------------ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-void);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-black);
+  color: var(--color-bone);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  font-feature-settings: "ss01", "cv01";
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-acid);
+  color: var(--color-black);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-acid);
+  outline-offset: 3px;
+}
+
+/* Kill the browser default scrollbar look — this site is a black room. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ash);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-acid-dim);
+}
+
+/* ------------------------------------------------------------------ *
+ * Component classes
+ *
+ * These live in `@layer components` on purpose. Tailwind v4 emits
+ * `@layer theme, base, components, utilities`, and UNLAYERED css outranks
+ * anything inside a layer — so an unlayered `.sp-mega { font-size }` would
+ * silently beat every `text-[...]` utility placed on the same element.
+ * Layering them keeps utilities able to override, which is what a caller
+ * expects.
+ * ------------------------------------------------------------------ */
+
+@layer components {
+  /* ------------------------------------------------------------------ *
+   * Type primitives
+   * ------------------------------------------------------------------ */
+
+  .sp-display {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 900;
+    font-stretch: 125%;
+    line-height: 0.82;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  /* The one-word-per-line poster headline. Deliberately allowed to bleed. */
+  .sp-mega {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 900;
+    font-stretch: 125%;
+    font-size: clamp(3.5rem, 13vw, 15rem);
+    line-height: 0.78;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+  }
+
+  .sp-label {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-smoke);
+  }
+
+  .sp-cjk {
+    font-family: var(--font-cjk), var(--font-mono), sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Blueprint layer — the site's signature device.
+   *
+   * A dark-mode technical drawing: hairline rules, corner crosshairs and
+   * measurement ticks drawn in CSS so they stay crisp at any zoom and
+   * remain real text for screen readers.
+   * ------------------------------------------------------------------ */
+
+  .sp-blueprint {
+    position: relative;
+  }
+
+  .sp-blueprint::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, var(--sp-rule) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--sp-rule) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    mask-image: radial-gradient(ellipse at center, #000 20%, transparent 78%);
+    opacity: 0.5;
+  }
+
+  .sp-crosshair {
+    position: relative;
+  }
+
+  .sp-crosshair::before,
+  .sp-crosshair::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border: 1px solid var(--sp-rule-strong);
+    pointer-events: none;
+  }
+
+  .sp-crosshair::before {
+    top: -1px;
+    left: -1px;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .sp-crosshair::after {
+    right: -1px;
+    bottom: -1px;
+    border-left: 0;
+    border-top: 0;
+  }
+
+  /* Film grain. Very low opacity — it should be felt, never seen. */
+  .sp-grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Motion
+ * ------------------------------------------------------------------ */
+
+@keyframes sp-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes sp-blink {
+  0%,
+  62% {
+    opacity: 1;
+  }
+  63%,
+  100% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes sp-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.sp-rise {
+  animation: sp-rise 0.9s var(--ease-out-expo) both;
+}
+
+.sp-blink {
+  animation: sp-blink 1.9s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

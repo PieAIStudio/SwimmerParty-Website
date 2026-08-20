@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "host": "codex",
+  "placement": "registry",
+  "bundleIds": [
+    "base-governance",
+    "frontend-app",
+    "taste-design",
+    "threejs-creative"
+  ],
+  "assetIds": [
+    "npx-skills/3d-web-experience",
+    "npx-skills/agent-browser",
+    "npx-skills/frontend-design",
+    "npx-skills/img2threejs",
+    "npx-skills/impeccable",
+    "npx-skills/make-interfaces-feel-better",
+    "npx-skills/threejs",
+    "npx-skills/threejs-skills",
+    "npx-skills/ui-ux-pro-max",
+    "npx-skills/webgl-3d-object",
+    "pie-rules/ai-in-the-loop",
+    "pie-rules/brand-kit-first",
+    "pie-rules/clean-image-generation-rules",
+    "pie-rules/donors",
+    "pie-skills/experience-capture",
+    "pie-skills/screenwalk",
+    "third-party-skills/brandkit",
+    "third-party-skills/design-taste-frontend",
+    "third-party-skills/design-taste-frontend-v1",
+    "third-party-skills/full-output-enforcement",
+    "third-party-skills/gpt-taste",
+    "third-party-skills/high-end-visual-design",
+    "third-party-skills/image-to-code",
+    "third-party-skills/imagegen-frontend-mobile",
+    "third-party-skills/imagegen-frontend-web",
+    "third-party-skills/industrial-brutalist-ui",
+    "third-party-skills/kling-cli",
+    "third-party-skills/minimalist-ui",
+    "third-party-skills/redesign-existing-projects",
+    "third-party-skills/stitch-design-taste"
+  ]
+}
