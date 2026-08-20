@@ -13,8 +13,8 @@ import fs from "node:fs";
  */
 const OUT = process.argv[2];
 const ONLY = process.argv[3];
-// Matches the dev server in .claude/launch.json.
-const BASE = "http://localhost:3311";
+// Matches the dev server in .claude/launch.json; override for ad-hoc ports.
+const BASE = process.env.SHOTS_BASE ?? "http://localhost:3311";
 
 const SETTLE = `
   document.querySelectorAll('.sp-word').forEach(w => { w.style.opacity='1'; w.style.transform='none'; });

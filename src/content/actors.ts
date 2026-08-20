@@ -52,6 +52,8 @@ export const DEFAULT_LANDMARKS: Landmarks = {
   base: 96,
 };
 
+export type ReferenceView = { id: string; src: string; label: L };
+
 export type Actor = {
   slug: string;
   /** Roster code. Reads as a serial number because that is the point. */
@@ -70,6 +72,15 @@ export type Actor = {
   portrait: string | null;
   /** Per-plate station calibration; omit to use DEFAULT_LANDMARKS. */
   landmarks?: Landmarks;
+  /**
+   * Delivered reference angles beyond the front plate.
+   *
+   * Empty until the angles actually exist as files. Multi-reference is the
+   * only thing that reliably holds one face across generations, so this is
+   * the single most useful thing the open kit can hand over — which is
+   * exactly why it must never be padded with angles we have not made.
+   */
+  views: ReferenceView[];
   spec: SpecRow[];
   /** Longer character note. Kept short — the spec sheet does the talking. */
   note: L;
@@ -124,6 +135,19 @@ export const ACTORS: Actor[] = [
     plate: "/media/actors/hu-qian/plate.webp",
     portrait: "/media/actors/hu-qian/portrait.webp",
     landmarks: { crown: 4, shoulder: 20, waist: 51, knee: 78, base: 97 },
+    views: [
+      { id: "front", src: "/media/actors/hu-qian/plate.webp", label: { en: "FRONT", zh: "正面" } },
+      {
+        id: "three-quarter",
+        src: "/media/actors/hu-qian/view-three-quarter.webp",
+        label: { en: "THREE-QUARTER", zh: "四分之三侧" },
+      },
+      {
+        id: "side",
+        src: "/media/actors/hu-qian/view-side.webp",
+        label: { en: "SIDE", zh: "正侧" },
+      },
+    ],
     spec: [
       row("age", "AGE", "年龄", "EARLY 30s", "30 出头"),
       row("height", "HEIGHT", "身高", "178 CM", "178 CM"),
@@ -184,6 +208,7 @@ export const ACTORS: Actor[] = [
     plate: "/media/actors/qi-man/plate.webp",
     portrait: "/media/actors/qi-man/portrait.webp",
     landmarks: { crown: 5, shoulder: 21, waist: 49, knee: 74, base: 96 },
+    views: [],
     spec: [
       row("age", "AGE", "年龄", "MID 20s", "25 上下"),
       row("height", "HEIGHT", "身高", "165 CM", "165 CM"),
@@ -249,6 +274,7 @@ export const ACTORS: Actor[] = [
     accent: "magenta",
     plate: null,
     portrait: null,
+    views: [],
     spec: [
       row("age", "AGE", "年龄", "LATE 20s — EARLY 30s", "快 30 到 30 出头"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -290,6 +316,7 @@ export const ACTORS: Actor[] = [
     accent: "flare",
     plate: null,
     portrait: null,
+    views: [],
     spec: [
       row("age", "AGE", "年龄", TBD[0], TBD[1]),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -324,6 +351,7 @@ export const ACTORS: Actor[] = [
     accent: "acid",
     plate: null,
     portrait: null,
+    views: [],
     spec: [
       row("age", "AGE", "年龄", "EARLY 40s", "40 出头"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -368,6 +396,7 @@ export const ACTORS: Actor[] = [
     accent: "cyan",
     plate: null,
     portrait: null,
+    views: [],
     spec: [
       row("age", "AGE", "年龄", "LATE 20s", "快 30"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -407,6 +436,7 @@ export const ACTORS: Actor[] = [
     accent: "flare",
     plate: null,
     portrait: null,
+    views: [],
     spec: [
       row("age", "AGE", "年龄", "EARLY 50s", "50 出头"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -451,6 +481,7 @@ export const ACTORS: Actor[] = [
     accent: "magenta",
     plate: null,
     portrait: null,
+    views: [],
     spec: [
       row("age", "AGE", "年龄", "23", "23"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -495,6 +526,7 @@ export const ACTORS: Actor[] = [
     accent: "acid",
     plate: null,
     portrait: null,
+    views: [],
     spec: [
       row("age", "AGE", "年龄", "38", "38"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -539,6 +571,7 @@ export const ACTORS: Actor[] = [
     accent: "cyan",
     plate: null,
     portrait: null,
+    views: [],
     spec: [
       row("age", "AGE", "年龄", "35", "35"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -584,6 +617,7 @@ export const ACTORS: Actor[] = [
     accent: "magenta",
     plate: null,
     portrait: null,
+    views: [],
     spec: [
       row("age", "AGE", "年龄", "26", "26"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -623,6 +657,7 @@ export const ACTORS: Actor[] = [
     accent: "flare",
     plate: null,
     portrait: null,
+    views: [],
     spec: [
       row("age", "AGE", "年龄", "47", "47"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),

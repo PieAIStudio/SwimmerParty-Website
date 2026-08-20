@@ -99,6 +99,11 @@ test("the open kit ships a seed for delivered actors and admits the gap for the 
   await page.goto("/en/kit");
   await expect(page.getByText("SP-01 / CHARACTER SEED")).toBeVisible();
   await expect(page.getByText("NO SEED YET — STILL ON THE WHITE MODEL")).toBeVisible();
+
+  // Reference angles are per-actor. SP-01 has three; SP-02 has only the
+  // front plate and has to say so rather than showing empty frames.
+  await expect(page.locator('img[alt*="SP-01 THREE-QUARTER"]')).toBeVisible();
+  await expect(page.getByText("REFERENCE PLATES — FRONT PLATE ONLY SO FAR")).toBeVisible();
 });
 
 test("unknown actor returns the roster 404, not a crash", async ({ page }) => {

@@ -71,10 +71,10 @@ export const KIT_MANIFEST: KitItem[] = [
     name: { en: "REFERENCE PLATES", zh: "参考图组" },
     format: "WEBP / 2K",
     body: {
-      en: "Front, three-quarter and back on seamless black. Multi-reference is the only thing that actually holds a face across generations; one image is a coin flip.",
-      zh: "正面、四分之三侧、背面，纯黑无缝底。多参考图是真正锁住一张脸的唯一办法，单张图只是碰运气。",
+      en: "Front, three-quarter and side on seamless black. Multi-reference is the only thing that actually holds a face across generations; one image is a coin flip. Delivered per actor — the roster below says exactly who has which angles.",
+      zh: "正面、四分之三侧、正侧，纯黑无缝底。多参考图是真正锁住一张脸的唯一办法，单张图只是碰运气。按演员逐个交付——下面的名单写清楚了谁有哪几个角度。",
     },
-    status: "preparing",
+    status: "live",
   },
   {
     id: "expressions",

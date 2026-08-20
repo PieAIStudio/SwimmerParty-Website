@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { Mega, Display } from "@/components/Mega";
 import { SectionHead } from "@/components/SectionHead";
 import { CopyBlock } from "@/components/CopyBlock";
+import { ReferenceStrip } from "@/components/ReferenceStrip";
 import { Reveal } from "@/motion/Reveal";
 import { VelocityMarquee } from "@/motion/VelocityMarquee";
 import { ACTORS } from "@/content/actors";
@@ -89,7 +90,10 @@ export default async function KitPage({ params }: Props) {
                   {a.code} →
                 </Link>
               </div>
-              <CopyBlock text={a.promptSeed!} label={`${a.code} / CHARACTER SEED`} />
+              <div className="space-y-6">
+                <CopyBlock text={a.promptSeed!} label={`${a.code} / CHARACTER SEED`} />
+                <ReferenceStrip actor={a} />
+              </div>
             </div>
           ))}
 

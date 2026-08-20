@@ -58,7 +58,11 @@ This file is the current project work index. It is not the agents-routing algori
 - **两个新板块。** `/kit` 开放物料包（SP-01 / SP-02 的角色种子提示词现在就能复制，
   未做的明写「筹备中」）；`/pact` 共赢契约（第一部分是拒绝，第二部分是分账，
   未定的百分比明写「以正式合同为准」）。
-- Playwright 从 5 条扩到 12 条，含 locale 纯净度与立场留存断言。
+- **SP-01 参考图组交付。** 可灵 `image_to_image` 多参考图出了四分之三侧与正侧两个
+  角度，脸、发型、服装、比例都稳住了。加上原有正面，SP-01 现在是三视图，
+  `/kit` 与档案页都能取。K-04 因此转 `live`；其余演员在页面上明写「目前只有正面」。
+  踩到的坑：**可灵不接受 `.webp` 上传**，参考图要先转 PNG（`dwebp`）再传。
+- Playwright 从 5 条扩到 12 条，含 locale 纯净度、立场留存与「参考图按人交付」断言。
 
 ## 下一步（按优先级）
 

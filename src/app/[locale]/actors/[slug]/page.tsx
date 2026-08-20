@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { SpecSheet } from "@/components/SpecSheet";
 import { Mega, Display } from "@/components/Mega";
 import { CopyBlock } from "@/components/CopyBlock";
+import { ReferenceStrip } from "@/components/ReferenceStrip";
 import { StageMount } from "@/three/StageMount";
 import { Reveal } from "@/motion/Reveal";
 import { ACCENT_VAR, ACTORS, getActor, STATUS_LABEL } from "@/content/actors";
@@ -138,7 +139,10 @@ export default async function ActorPage({ params }: Params) {
           </div>
 
           {actor.promptSeed ? (
-            <CopyBlock text={actor.promptSeed} label={`${actor.code} / CHARACTER SEED`} />
+            <div className="space-y-6">
+              <CopyBlock text={actor.promptSeed} label={`${actor.code} / CHARACTER SEED`} />
+              <ReferenceStrip actor={actor} />
+            </div>
           ) : (
             <div className="sp-hazard grid min-h-40 place-items-center border border-[var(--sp-hairline)]">
               <p className="sp-label sp-cjk bg-black px-4 py-2 text-[0.5625rem] text-smoke">

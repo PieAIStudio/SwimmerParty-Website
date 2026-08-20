@@ -207,6 +207,11 @@ M = {
     "Only actors whose look is locked have a seed. An actor still on the white model has no face to describe, so that row says so instead of shipping a guess.",
     "只有形象已经定死的演员才有种子。还在白膜阶段的没有脸可以描述，那一行就直说，而不是给你一个猜的。"),
   "seedPending": P("NO SEED YET — STILL ON THE WHITE MODEL", "暂无种子 — 还在白膜阶段"),
+  "platesLabel": P("REFERENCE PLATES", "参考图组"),
+  "platesNone": P("FRONT PLATE ONLY SO FAR", "目前只有正面"),
+  "platesNote": P(
+    "Hand the model every angle at once. One image is a coin flip; three is a face that survives ten films.",
+    "把所有角度一次性喂给模型。单张图是碰运气，三张才是一张能撑过十条片子的脸。"),
   "rulesLabel": P("RULES OF USE", "使用公约"),
   "rulesTitle": P("FIVE LINES, THAT IS ALL", "就五条"),
   "rulesNote": P(
