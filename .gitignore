@@ -11,3 +11,6 @@ dist/
 /blob-report/
 /.playwright/
 next-env.d.ts
+
+# Emitted by `tsc --noEmit`; incremental state, not source.
+tsconfig.tsbuildinfo

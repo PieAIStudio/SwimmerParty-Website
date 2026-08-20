@@ -10,3 +10,5 @@ docs/governance/MANIFEST.yml
 docs/policy/shared-rules
 # PGS starter governance docs are distributed content, not ours to restyle.
 docs/governance
+# Local QA scripts, not part of the shipped bundle.
+tools

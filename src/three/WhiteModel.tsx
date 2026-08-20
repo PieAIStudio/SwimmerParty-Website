@@ -1,71 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import type { Group } from "three";
-
-/**
- * The white model — 白膜.
- *
- * A deliberately un-finished mannequin assembled from primitives. It is a
- * placeholder in the literal sense and a statement in the figurative one:
- * this house builds actors, and this is what one looks like before the
- * surface goes on. When a real rigged .glb exists, it drops in here behind
- * the same props and nothing else on the page changes.
- *
- * Proportions are real metres against a 1.755 m figure, and every segment
- * is capped by a joint sphere so the limbs read as one body rather than a
- * stack of pills. Capsule total length is `len + 2 * r` — the spans in the
- * comments below are what keeps the joints touching.
- */
-
-const HIP_X = 0.088;
-const ARM_X = 0.225;
-
-type Part =
-  | {
-      kind: "capsule";
-      pos: [number, number, number];
-      r: number;
-      len: number;
-      rot?: [number, number, number];
-    }
-  | { kind: "sphere"; pos: [number, number, number]; r: number }
-  | { kind: "box"; pos: [number, number, number]; size: [number, number, number] };
-
-const PARTS: Part[] = [
-  // ---- head / neck ----
-  { kind: "sphere", pos: [0, 1.648, 0], r: 0.113 }, //            1.545 – 1.755
-  { kind: "capsule", pos: [0, 1.5, 0], r: 0.045, len: 0.06 }, // 1.425 – 1.575
-
-  // ---- torso ----
-  { kind: "capsule", pos: [0, 1.24, 0], r: 0.158, len: 0.2 }, // 0.995 – 1.485
-  { kind: "capsule", pos: [0, 0.99, 0], r: 0.132, len: 0.06 }, // 0.840 – 1.140  (pelvis)
-
-  // ---- arms: shoulder → upper → elbow → fore → hand ----
-  { kind: "sphere", pos: [-ARM_X + 0.02, 1.42, 0], r: 0.062 },
-  { kind: "sphere", pos: [ARM_X - 0.02, 1.42, 0], r: 0.062 },
-  { kind: "capsule", pos: [-ARM_X, 1.28, 0], r: 0.05, len: 0.2 },
-  { kind: "capsule", pos: [ARM_X, 1.28, 0], r: 0.05, len: 0.2 },
-  { kind: "sphere", pos: [-ARM_X - 0.012, 1.13, 0], r: 0.052 },
-  { kind: "sphere", pos: [ARM_X + 0.012, 1.13, 0], r: 0.052 },
-  { kind: "capsule", pos: [-ARM_X - 0.02, 0.99, 0], r: 0.044, len: 0.2 },
-  { kind: "capsule", pos: [ARM_X + 0.02, 0.99, 0], r: 0.044, len: 0.2 },
-  { kind: "sphere", pos: [-ARM_X - 0.027, 0.83, 0], r: 0.053 },
-  { kind: "sphere", pos: [ARM_X + 0.027, 0.83, 0], r: 0.053 },
-
-  // ---- legs: hip → thigh → knee → shin → foot ----
-  { kind: "sphere", pos: [-HIP_X, 0.93, 0], r: 0.082 },
-  { kind: "sphere", pos: [HIP_X, 0.93, 0], r: 0.082 },
-  { kind: "capsule", pos: [-HIP_X, 0.711, 0], r: 0.075, len: 0.3 }, // 0.486 – 0.936
-  { kind: "capsule", pos: [HIP_X, 0.711, 0], r: 0.075, len: 0.3 },
-  { kind: "sphere", pos: [-HIP_X, 0.486, 0], r: 0.064 },
-  { kind: "sphere", pos: [HIP_X, 0.486, 0], r: 0.064 },
-  { kind: "capsule", pos: [-HIP_X, 0.278, 0], r: 0.058, len: 0.3 }, // 0.070 – 0.486
-  { kind: "capsule", pos: [HIP_X, 0.278, 0], r: 0.058, len: 0.3 },
-  { kind: "box", pos: [-HIP_X, 0.038, 0.05], size: [0.098, 0.076, 0.235] },
-  { kind: "box", pos: [HIP_X, 0.038, 0.05], size: [0.098, 0.076, 0.235] },
-];
+import { assemblyOrder, PARTS, scatterOf, type Part } from "./parts";
+import { stageSignal } from "./signal";
 
 function Geometry({ part }: { part: Part }) {
   if (part.kind === "sphere") return <sphereGeometry args={[part.r, 28, 24]} />;
@@ -73,12 +12,67 @@ function Geometry({ part }: { part: Part }) {
   return <capsuleGeometry args={[part.r, part.len, 8, 20]} />;
 }
 
-export function WhiteModel({ accent = "#ccff00" }: { accent?: string }) {
-  const group = useRef<Group>(null);
+/** How much of the 0…1 assembly range a single part takes to fly home. */
+const PART_WINDOW = 0.45;
 
-  // Turntable. Slow enough to read as a display plinth, not a spinner.
+export function WhiteModel({
+  accent = "#ccff00",
+  /** Follow the pointer instead of turning at a fixed rate. */
+  interactive = false,
+  /** Assemble from scattered parts when the signal drives it. */
+  assemble = false,
+}: {
+  accent?: string;
+  interactive?: boolean;
+  assemble?: boolean;
+}) {
+  const group = useRef<Group>(null);
+  const parts = useRef<(Group | null)[]>([]);
+  const scatter = useMemo(() => PARTS.map((_, i) => scatterOf(i)), []);
+  const order = useMemo(() => PARTS.map((_, i) => assemblyOrder(i)), []);
+
   useFrame((_, delta) => {
-    if (group.current) group.current.rotation.y += delta * 0.16;
+    const g = group.current;
+    if (!g) return;
+
+    // Yaw. A pointer-driven figure reads as aware of you; a fixed spin
+    // reads as a screensaver. The idle drift stays in so the silhouette
+    // keeps moving when nobody touches the page.
+    if (interactive) {
+      const want = stageSignal.pointerX * 0.85 + stageSignal.scrollSpin;
+      g.rotation.y += (want - g.rotation.y) * Math.min(1, delta * 2.4);
+      const wantX = stageSignal.pointerY * -0.16;
+      g.rotation.x += (wantX - g.rotation.x) * Math.min(1, delta * 2.4);
+    } else {
+      g.rotation.y += delta * 0.16;
+    }
+
+    if (!assemble) return;
+
+    const a = stageSignal.assembly;
+    for (let i = 0; i < PARTS.length; i += 1) {
+      const node = parts.current[i];
+      if (!node) continue;
+
+      // Each part gets its own slice of the range, so the body builds up
+      // from the feet instead of every piece landing on the same frame.
+      const startAt = order[i] * (1 - PART_WINDOW);
+      const raw = (a - startAt) / PART_WINDOW;
+      const t = raw <= 0 ? 0 : raw >= 1 ? 1 : raw;
+      // Ease-out-cubic, inlined: this runs 24 times a frame.
+      const e = 1 - (1 - t) ** 3;
+      const s = scatter[i];
+      const home = PARTS[i].pos;
+
+      node.position.set(
+        home[0] + s.offset[0] * (1 - e),
+        home[1] + s.offset[1] * (1 - e),
+        home[2] + s.offset[2] * (1 - e),
+      );
+      node.rotation.set(s.rot[0] * (1 - e), s.rot[1] * (1 - e), s.rot[2] * (1 - e));
+      const scale = 0.35 + 0.65 * e;
+      node.scale.setScalar(scale);
+    }
   });
 
   return (
@@ -86,6 +80,9 @@ export function WhiteModel({ accent = "#ccff00" }: { accent?: string }) {
       {PARTS.map((part, i) => (
         <group
           key={i}
+          ref={(node) => {
+            parts.current[i] = node;
+          }}
           position={part.pos}
           rotation={"rot" in part && part.rot ? part.rot : [0, 0, 0]}
         >

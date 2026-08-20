@@ -1,0 +1,349 @@
+{
+  "common": {
+    "skipToContent": "Skip to content",
+    "menu": "MENU",
+    "close": "CLOSE",
+    "language": "LANGUAGE",
+    "authored": "AUTHORED",
+    "machine": "MACHINE TRANSLATED",
+    "machineNote": "These open in Google's translation proxy. We publish two languages we can actually proofread, and we say so rather than shipping nine we cannot.",
+    "mainNav": "Main navigation",
+    "loading": "INITIALISING STAGE",
+    "scroll": "SCROLL",
+    "enquire": "ENQUIRE",
+    "copy": "COPY",
+    "copied": "COPIED",
+    "next": "NEXT",
+    "backToRoster": "ROSTER",
+    "draft": "DRAFT — NOT A CONTRACT"
+  },
+  "nav": {
+    "roster": "ROSTER",
+    "works": "WORKS",
+    "kit": "KIT",
+    "studio": "STUDIO",
+    "casting": "CASTING",
+    "pact": "PACT"
+  },
+  "home": {
+    "metaTitle": "Synthetic Talent House",
+    "eyebrow": "SWIMMER PARTY — SYNTHETIC TALENT HOUSE",
+    "heroLines": [
+      "WE DO NOT",
+      "CAST ACTORS.",
+      "WE BUILD THEM."
+    ],
+    "heroBody": "Every one of them carries a serial number, a revision, an expression set and a licensable performance range. Manufactured, not lucky.",
+    "ctaRoster": "VIEW ROSTER",
+    "ctaBook": "BOOK TALENT",
+    "statRoster": "ON ROSTER",
+    "statCastable": "CASTABLE",
+    "statVersions": "VERSIONS BURNED",
+    "statPlates": "PLATES DELIVERED",
+    "statKitLive": "KIT ITEMS LIVE",
+    "marquee": [
+      "ORIGINAL SYNTHETIC TALENT",
+      "FULL CHARACTER SPECIFICATION",
+      "LICENSABLE PERFORMANCE",
+      "BUILT IN-HOUSE",
+      "OPEN KIT — FREE TO REMIX"
+    ],
+    "rosterLabel": "ROSTER",
+    "rosterTitle": "THE PEOPLE WE MADE",
+    "rosterNote": "Everyone here has a number and a revision. The revision is not decoration — it counts how many times this character was torn up and rebuilt. Where there is no delivered plate, we say so.",
+    "rosterMore": "ALL 12 ON THE ROSTER",
+    "methodLabel": "METHOD",
+    "methodTitle": "HOW AN ACTOR GETS BUILT",
+    "methodNote": "This is not 'generate a picture with AI'. It is a production line with rework, reversals and a cull.",
+    "pipeline": [
+      {
+        "step": "01",
+        "title": "CASTING BRIEF",
+        "body": "Decide how this person thinks before deciding what they look like. Build it the other way round and the character dies by the third film."
+      },
+      {
+        "step": "02",
+        "title": "WHITE MODEL",
+        "body": "Build, proportion and range of motion are locked on the white model first. Get this layer wrong and every later revision is rework."
+      },
+      {
+        "step": "03",
+        "title": "SURFACE",
+        "body": "Face, hair, wardrobe, expression set. Multi-reference locks one person down — across ten films he has to be the same face."
+      },
+      {
+        "step": "04",
+        "title": "PERFORMANCE",
+        "body": "Put them in a scene. The ones who hold stay on the roster; the ones who do not go back in. The revision number is how many times that happened."
+      }
+    ],
+    "kitLabel": "OPEN KIT",
+    "kitTitle": "TAKE THEM AND MAKE SOMETHING",
+    "kitNote": "An actor becomes worth something by being used. So we hand you the same character seed we use ourselves — paste it into any model and you get this person, not a lookalike. Free, no permission needed.",
+    "kitCta": "OPEN THE KIT",
+    "pactLabel": "THE PACT",
+    "pactTitle": "NOBODY HAS TO LOSE",
+    "pactNote": "Five things we are willing to say in public about who gets paid. Written down so you can hold us to them.",
+    "pactCta": "READ THE PACT",
+    "stanceLabel": "THE STANCE",
+    "stanceTitle": [
+      "NOT A",
+      "REAL PERSON.",
+      "ON PURPOSE."
+    ],
+    "stanceBody": "Every actor here is animated. CG, drawn, obviously not a person — you can tell in a second, and you are supposed to. Not because photoreal is out of reach. Because we are not going there, and we are not letting anyone take our characters there either.",
+    "stanceCta": "WHY WE REFUSE",
+    "worksLabel": "WORKS",
+    "worksTitle": "IN PRODUCTION",
+    "worksNote": "The first films are still being made. No invented numbers, no invented clients, no invented view counts — one goes live, one goes up.",
+    "worksCta": "SEE THE SLATE",
+    "castingTitle": [
+      "USE OUR",
+      "ACTORS."
+    ],
+    "castingBody": "License a roster actor, commission your own, or co-produce. Three doors, all open. Bring a film, a brand, or just an idea.",
+    "castingCta": "START A CONVERSATION"
+  },
+  "roster": {
+    "metaTitle": "Roster",
+    "metaDescription": "The full SWIMMER PARTY roster of original AI actors — codes, revisions, specifications and casting status.",
+    "eyebrow": "ROSTER",
+    "heroLines": [
+      "THE",
+      "ROSTER."
+    ],
+    "intro": "The code is the identity, the revision is the résumé. {castable} castable now, {building} still on the line — we do not call an unfinished one finished.",
+    "castableLabel": "CASTABLE",
+    "castableTitle": "READY TO WORK",
+    "buildingLabel": "IN DEVELOPMENT",
+    "buildingTitle": "ON THE LINE",
+    "buildingNote": "Character locked, white-model stage. They move to castable the day the plate is delivered."
+  },
+  "actor": {
+    "castable": "CASTABLE",
+    "inDevelopment": "IN DEVELOPMENT",
+    "whiteModelNote": "What you are looking at is this actor's white model. Proportion and range of motion are locked; the face and the wardrobe are not on yet. This is not a failed render — it is a real station on the line.",
+    "availability": "AVAILABILITY",
+    "open": "OPEN FOR CASTING",
+    "notYet": "NOT YET AVAILABLE",
+    "openBody": "Available for licensed performance, brand work and co-production.",
+    "notYetBody": "Opens for booking on delivery. You can lock them in early — talk to us now.",
+    "specification": "SPECIFICATION",
+    "version": "VERSION",
+    "note": "CHARACTER NOTE",
+    "castFor": "CAST FOR",
+    "sheetFront": "FRONT",
+    "noPlate": "NO PLATE DELIVERED",
+    "noPlateBody": "This actor is still at the white-model stage. The plate, expression set and wardrobe replace this frame on delivery.",
+    "noPlateShort": "NO PLATE",
+    "kitLink": "OPEN KIT",
+    "seedEnNote": "The seed is written in English on purpose: image models follow English far more reliably than Chinese, whoever you are. Paste it as it is.",
+    "cgNote": "An animated character, built from nothing. Not modelled on, scanned from or blended with any living person."
+  },
+  "works": {
+    "metaTitle": "Works",
+    "metaDescription": "The SWIMMER PARTY slate: original comedy shorts and series in production.",
+    "eyebrow": "WORKS",
+    "heroLines": [
+      "THE",
+      "SLATE."
+    ],
+    "intro": "This house opened in {year}. Nothing on this slate is invented — one goes live, one goes up; what is in progress says it is in progress.",
+    "slateLabel": "SLATE",
+    "slateTitle": "WHAT WE ARE MAKING",
+    "format": "FORMAT",
+    "cast": "CAST",
+    "outro": "Want one of our actors in your film?",
+    "outroCta": "CASTING"
+  },
+  "kit": {
+    "metaTitle": "Open Kit",
+    "metaDescription": "Free character kits for SWIMMER PARTY's AI actors — the character seed, register notes and reference sheets, handed over so anyone can remix them.",
+    "eyebrow": "OPEN KIT",
+    "heroLines": [
+      "TAKE",
+      "THEM."
+    ],
+    "intro": "A synthetic actor gets valuable the same way a human one does — by being used. So the kit is open. Paste the seed into any image model and you get this person, not a lookalike.",
+    "manifestLabel": "MANIFEST",
+    "manifestTitle": "WHAT IS IN A KIT",
+    "manifestNote": "Status is literal. AVAILABLE means it is on this site right now and you can test it in thirty seconds. Everything else says what it actually is.",
+    "seedsLabel": "SEEDS",
+    "seedsTitle": "COPY A CHARACTER",
+    "seedsNote": "Only actors whose look is locked have a seed. An actor still on the white model has no face to describe, so that row says so instead of shipping a guess.",
+    "seedPending": "NO SEED YET — STILL ON THE WHITE MODEL",
+    "rulesLabel": "RULES OF USE",
+    "rulesTitle": "FIVE LINES, THAT IS ALL",
+    "rulesNote": "Short enough to actually read. Two things you may do freely, three things you must not.",
+    "allowed": "GO AHEAD",
+    "forbidden": "DO NOT",
+    "pactCta": "HOW WE SPLIT THE MONEY"
+  },
+  "pact": {
+    "metaTitle": "The Pact",
+    "metaDescription": "SWIMMER PARTY's public position on who gets paid when a synthetic actor makes money — a draft, published so it can be held to.",
+    "eyebrow": "THE PACT",
+    "heroLines": [
+      "NOBODY",
+      "HAS TO LOSE."
+    ],
+    "intro": "Two things, written down where you can hold us to them: what we refuse to build, and how the money gets split when there finally is some. Both were easier to say now, before anyone is arguing about a number.",
+    "draftNote": "This is a published position, not an executed contract. The settled lines are settled. The percentages are marked open on purpose — we will not print a number we have not honoured yet.",
+    "partOneLabel": "PART ONE",
+    "partOneTitle": "WHAT WE WILL NOT BUILD",
+    "partOneNote": "The first half of this page is a refusal. It comes first because it is the one that costs us money.",
+    "refusalsLabel": "HARD LINES",
+    "whyLabel": "WHY",
+    "partTwoLabel": "PART TWO",
+    "partTwoTitle": "HOW THE MONEY MOVES",
+    "partTwoNote": "The second half is a promise. Work should feed the people who did it. If a character breaks out, that money should not land in one account.",
+    "clausesLabel": "CLAUSES",
+    "clausesTitle": "FIVE THINGS WE WILL SAY IN PUBLIC",
+    "termsLabel": "TERMS",
+    "termsTitle": "WHAT IS SETTLED, WHAT IS NOT",
+    "settled": "SETTLED",
+    "openTerm": "OPEN",
+    "outro": "Made something with one of our actors? Send it. That is the whole process.",
+    "outroCta": "SEND IT OVER"
+  },
+  "studio": {
+    "metaTitle": "Studio",
+    "metaDescription": "How SWIMMER PARTY builds an AI actor: the full line from brief to white model to plate to performance.",
+    "eyebrow": "STUDIO",
+    "heroLines": [
+      "A FACTORY",
+      "FOR PEOPLE."
+    ],
+    "intro": "SWIMMER PARTY is the synthetic talent house of PieAI Studio. We do not take outsourced rendering. We build our own actors and then we lend them out.",
+    "beliefsLabel": "BELIEFS",
+    "beliefsTitle": "FOUR THINGS WE HOLD",
+    "beliefsNote": "These four decide what everyone on the roster looks like, how they talk, and when they get cut.",
+    "beliefs": [
+      {
+        "n": "01",
+        "title": "A FACE IS NOT A CHARACTER",
+        "body": "Plenty of people can generate a good-looking face. Very few can make the same face still be the same person, saying the same kind of thing, in the tenth film. The difference is not the model. It is whether a specification was written down and held to."
+      },
+      {
+        "n": "02",
+        "title": "VERSION NUMBERS ARE HONEST",
+        "body": "We print how many times a character was torn up right on the roster. VERSION 6 OF 10 means the first five were not good enough. Hiding that is what looks guilty."
+      },
+      {
+        "n": "03",
+        "title": "THE WHITE MODEL COMES FIRST",
+        "body": "Proportion, build and range of motion get locked before anyone talks about skin or clothes. Reverse the order and the character is just a poster that moves."
+      },
+      {
+        "n": "04",
+        "title": "COMEDY IS THE HARDEST TEST",
+        "body": "Whether a character holds up is decided in comedy. Tragedy can be papered over with music. If it is not funny, it is not funny."
+      }
+    ],
+    "stackLabel": "STACK",
+    "stackTitle": "BUILT ON OUR OWN RAILS",
+    "stackNote": "This site and every actor on the roster run on PieAI's own toolchain, not on something bolted together.",
+    "stack": [
+      {
+        "name": "SWIMMER UI KIT",
+        "role": "Brand UI",
+        "note": "One source for buttons, panels and tokens"
+      },
+      {
+        "name": "REACT THREE FIBER",
+        "role": "Realtime 3D",
+        "note": "The white-model stage and the roster wall"
+      },
+      {
+        "name": "NEXT.JS",
+        "role": "Content & SEO",
+        "note": "So the roster can actually be found"
+      },
+      {
+        "name": "PGS",
+        "role": "Governance",
+        "note": "Versions, boundaries and delivery discipline"
+      }
+    ],
+    "outroLines": [
+      "WANT ONE",
+      "BUILT?"
+    ],
+    "outroBody": "We take commissions too — an actor built for your brand or your film and nobody else's.",
+    "outroCta": "TALK TO US"
+  },
+  "casting": {
+    "metaTitle": "Casting",
+    "metaDescription": "License a SWIMMER PARTY AI actor for your film, or commission an original one built only for you.",
+    "eyebrow": "CASTING",
+    "heroLines": [
+      "BOOK",
+      "TALENT."
+    ],
+    "intro": "Three routes. Bring nothing but an idea and we will tell you which one you are on.",
+    "routesLabel": "ROUTES",
+    "routesTitle": "THREE WAYS IN",
+    "routes": [
+      {
+        "n": "01",
+        "title": "LICENSE A ROSTER ACTOR",
+        "sub": "Licensed performance",
+        "body": "Use someone already on the roster. Character, expression set and performance range exist today — this is the fast route.",
+        "good": [
+          "Brand films and ads",
+          "Guest appearances in a series",
+          "A recurring social character"
+        ]
+      },
+      {
+        "n": "02",
+        "title": "COMMISSION AN ACTOR",
+        "sub": "Built for you",
+        "body": "We build a new one for you down the whole line: brief, white model, plate, performance sign-off. Delivered with the full specification sheet.",
+        "good": [
+          "A brand-owned spokesperson",
+          "A long-term IP face",
+          "Projects that need exclusivity"
+        ]
+      },
+      {
+        "n": "03",
+        "title": "CO-PRODUCE",
+        "sub": "Joint production",
+        "body": "We bring the actors and the production, you bring the subject, the channel or the money. The film belongs to both of us; the character stays on the roster and keeps working.",
+        "good": [
+          "Series and short drama",
+          "Platform-commissioned content",
+          "Long-term content partnership"
+        ]
+      }
+    ],
+    "goodFor": "GOOD FOR",
+    "contact": "CONTACT",
+    "contactBody": "Tell us: what kind of project, roughly when, and which actor you want (or what kind of actor you want). One sentence is fine — we will ask the rest.",
+    "availableNow": "AVAILABLE NOW",
+    "availableNote": "The ones in development can be discussed too — whoever asks first gets first call on delivery.",
+    "remixNote": "Not a brand, just want to make something? The kit is free and you do not need this page."
+  },
+  "notFound": {
+    "eyebrow": "404 — NO SUCH TALENT",
+    "lines": [
+      "NOT ON",
+      "THE ROSTER."
+    ],
+    "body": "This one is not on the roster. Maybe we have not built them yet.",
+    "cta": "BACK TO ROSTER"
+  },
+  "footer": {
+    "roster": "ROSTER",
+    "index": "INDEX",
+    "contact": "CONTACT",
+    "contactNote": "Casting, licensing and commissioned actors",
+    "status": "STATUS",
+    "statusLine": "{castable} CASTABLE · {building} IN DEVELOPMENT",
+    "statusNote": "The roster updates the day an actor is delivered",
+    "rights": "A PIEAI STUDIO PROJECT",
+    "disclaimer": "ANIMATED CHARACTERS ONLY — NEVER A HUMAN LIKENESS",
+    "stanceLink": "WHY"
+  }
+}
