@@ -28,7 +28,7 @@ export default function ActorsPage() {
 
       <div className="mt-20">
         <SectionHead index="A" label="CASTABLE" labelCn="可出演" title="READY TO WORK" />
-        <div className="mt-10 grid gap-px bg-[var(--sp-hairline)] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-px sm:grid-cols-2 lg:grid-cols-4">
           {castable.map((actor, i) => (
             <ActorCard key={actor.slug} actor={actor} index={i} />
           ))}
@@ -43,7 +43,7 @@ export default function ActorsPage() {
           title="ON THE LINE"
           note="人设已定，白膜阶段。定妆板交付后自动转入可出演。"
         />
-        <div className="mt-10 grid gap-px bg-[var(--sp-hairline)] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-px sm:grid-cols-2 lg:grid-cols-4">
           {building.map((actor, i) => (
             <ActorCard key={actor.slug} actor={actor} index={castable.length + i} />
           ))}

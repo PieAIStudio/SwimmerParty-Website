@@ -135,7 +135,7 @@ export default function HomePage() {
           note="每个人都有编号和版本号。版本号不是装饰——它是这个角色被推翻重做过几次。没有定妆板的，我们就明着说没有。"
         />
 
-        <div className="mt-12 grid gap-px bg-[var(--sp-hairline)] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-px sm:grid-cols-2 lg:grid-cols-4">
           {ACTORS.map((actor, i) => (
             <ActorCard key={actor.slug} actor={actor} index={i} />
           ))}
