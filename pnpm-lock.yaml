@@ -40,11 +40,11 @@ importers:
         specifier: ^3.3.6
         version: 3.3.6(supports-color@7.1.0)
       '@pieai/doc-gov':
-        specifier: 0.9.1
-        version: 0.9.1
+        specifier: 0.9.3
+        version: 0.9.3
       '@pieai/pro-gov':
-        specifier: 0.9.1
-        version: 0.9.1
+        specifier: 0.9.3
+        version: 0.9.3
       '@playwright/test':
         specifier: 1.61.1
         version: 1.61.1
@@ -832,13 +832,13 @@ packages:
     resolution: {integrity: sha512-7FNeNl8NCE7aINx7WXiKQrPYZWC/hvrTsmk6zmxbI7LTXE7hVek/n8AfVgpe2y82zl3w0HvCHN0bVKMBoJcC0w==}
     engines: {node: '>= 10.0.0'}
 
-  '@pieai/doc-gov@0.9.1':
-    resolution: {integrity: sha512-oUPt1xVviw35p895dRut5PAlXzkjlFC5YeIJsarzdf2uvutoZudsO4g2ZnBewY7m+AW/7V3p1yov0eUS/dTLUg==}
+  '@pieai/doc-gov@0.9.3':
+    resolution: {integrity: sha512-+//r/bdH5WjX/lwwSgIBIi3GsD+5HGDf4TrQBSJsusg/Awo2KM63WLmQRFYock356HvtkGIUmjrTiqD+LXxHZg==}
     engines: {node: '>=24 <25'}
     hasBin: true
 
-  '@pieai/pro-gov@0.9.1':
-    resolution: {integrity: sha512-HquFh7IbVl4kojJeKG8b+bs+qY67gY7jsH7dnaYU9qN8EEkp1tOK3arAg4XuC+pWYblbMjh1HZJ3gz/q2gnruQ==}
+  '@pieai/pro-gov@0.9.3':
+    resolution: {integrity: sha512-J6zVvFdy8b2xSQ/tLLCLiYm3Za2Dak1iA7EyfVnL0ajoWl9qlqOb+IQLRdTdRa41po7mY/S0n7TPLAw+S27vkA==}
     engines: {node: '>=24 <25'}
     hasBin: true
 
@@ -1614,6 +1614,7 @@ packages:
   eslint@9.39.5:
     resolution: {integrity: sha512-DgZS62aPLXKlnxILS/AYCoRvHaZeXceIzlXPkkGGzJWSow1aEk0lbTlxUSlyjC8jcaKxAdOnTDz+o1JFSBsyjw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -3454,11 +3455,11 @@ snapshots:
       '@parcel/watcher-win32-arm64': 2.6.0
       '@parcel/watcher-win32-x64': 2.6.0
 
-  '@pieai/doc-gov@0.9.1': {}
+  '@pieai/doc-gov@0.9.3': {}
 
-  '@pieai/pro-gov@0.9.1':
+  '@pieai/pro-gov@0.9.3':
     dependencies:
-      '@pieai/doc-gov': 0.9.1
+      '@pieai/doc-gov': 0.9.3
 
   '@pieai/swimmer-ui-kit@1.3.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
