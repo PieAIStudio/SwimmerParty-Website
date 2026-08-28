@@ -1,7 +1,7 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
 generated_at: 2026-08-25T16:30:12.823Z
-generator_version: doc-gov@0.9.5
+generator_version: doc-gov@0.9.8
 docs_count: 12
 docs:
   - id: GOV-AGENTS-ROUTING-ENGINEERING-RUNTIME-V1-1
@@ -58,7 +58,7 @@ docs:
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-08-22
+    last_reviewed: 2026-08-28
     pinned: true
   - id: POLICY-SHARED-CLEAN-IMAGE-GENERATION
     path: docs/policy/shared-rules/clean-image-generation-rules.md
@@ -72,7 +72,7 @@ docs:
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-08-17
+    last_reviewed: 2026-08-29
     pinned: true
   - id: REF-DOCUMENTATION-MAP
     path: docs/reference/documentation-map.md
