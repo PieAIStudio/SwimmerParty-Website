@@ -1,4 +1,4 @@
-import { getLocale, getTranslations } from "next-intl/server";
+import { getSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
 import { NAV, SECONDARY_NAV, SITE } from "@/lib/site";
 import { ACTORS } from "@/content/actors";
@@ -6,9 +6,9 @@ import { STANCE_LINE } from "@/content/doctrine";
 import type { AppLocale } from "@/i18n/routing";
 
 export async function SiteFooter() {
-  const t = await getTranslations("footer");
-  const tn = await getTranslations("nav");
-  const locale = (await getLocale()) as AppLocale;
+  const t = await getSiteI18n().then((i18n) => i18n.t);
+  const tn = await getSiteI18n().then((i18n) => i18n.t);
+  const locale = (await getSiteLocale()) as AppLocale;
   const castable = ACTORS.filter((a) => a.status === "active").length;
 
   return (
@@ -22,7 +22,7 @@ export async function SiteFooter() {
             href="/pact"
             className="sp-label text-[0.5625rem] text-smoke underline-offset-4 transition-colors hover:text-acid hover:underline"
           >
-            {t("stanceLink")} →
+            {t("footer.stanceLink")} →
           </Link>
         </div>
       </div>
@@ -32,7 +32,7 @@ export async function SiteFooter() {
 
         <div className="mt-12 grid gap-10 border-t border-[var(--sp-hairline)] pt-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="sp-label">{t("roster")}</p>
+            <p className="sp-label">{t("footer.roster")}</p>
             <ul className="mt-4 space-y-2">
               {ACTORS.map((a) => (
                 <li key={a.slug}>
@@ -49,7 +49,7 @@ export async function SiteFooter() {
           </div>
 
           <div>
-            <p className="sp-label">{t("index")}</p>
+            <p className="sp-label">{t("footer.index")}</p>
             <ul className="mt-4 space-y-2">
               {[...NAV, ...SECONDARY_NAV].map((n) => (
                 <li key={n.href}>
@@ -57,7 +57,7 @@ export async function SiteFooter() {
                     href={n.href}
                     className="sp-cjk text-xs text-smoke transition-colors hover:text-acid"
                   >
-                    {tn(n.key)}
+                    {tn(`nav.${n.key}`)}
                   </Link>
                 </li>
               ))}
@@ -65,31 +65,31 @@ export async function SiteFooter() {
           </div>
 
           <div>
-            <p className="sp-label">{t("contact")}</p>
+            <p className="sp-label">{t("footer.contact")}</p>
             <a
               href={`mailto:${SITE.contact}`}
               className="mt-4 block text-xs text-smoke transition-colors hover:text-acid"
             >
               {SITE.contact}
             </a>
-            <p className="sp-cjk mt-2 text-xs text-ash">{t("contactNote")}</p>
+            <p className="sp-cjk mt-2 text-xs text-ash">{t("footer.contactNote")}</p>
           </div>
 
           <div>
-            <p className="sp-label">{t("status")}</p>
+            <p className="sp-label">{t("footer.status")}</p>
             <p className="sp-cjk mt-4 flex items-center gap-2 text-xs text-smoke">
               <span className="sp-blink inline-block h-1.5 w-1.5 bg-acid" aria-hidden />
-              {t("statusLine", { castable, building: ACTORS.length - castable })}
+              {t("footer.statusLine", { castable, building: ACTORS.length - castable })}
             </p>
-            <p className="sp-cjk mt-2 text-xs text-ash">{t("statusNote")}</p>
+            <p className="sp-cjk mt-2 text-xs text-ash">{t("footer.statusNote")}</p>
           </div>
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--sp-hairline)] pt-6">
           <p className="sp-label text-[0.55rem]">
-            © {SITE.founded} {SITE.name} — <span className="sp-cjk">{t("rights")}</span>
+            © {SITE.founded} {SITE.name} — <span className="sp-cjk">{t("footer.rights")}</span>
           </p>
-          <p className="sp-label sp-cjk text-[0.55rem] text-ash">{t("disclaimer")}</p>
+          <p className="sp-label sp-cjk text-[0.55rem] text-ash">{t("footer.disclaimer")}</p>
         </div>
       </div>
     </footer>

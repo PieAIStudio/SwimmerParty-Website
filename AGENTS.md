@@ -43,6 +43,13 @@ When the task creates, edits, moves, deletes, or governs documentation, read
 selected agents routing file, and the policy files that govern the changed
 surface. Keep project AI development policy in `docs/policy/`.
 
+## Credentials And Local Environment
+
+For credentials, login or local environment files, first read
+`<portfolio-root>/.secrets/README.md`, then
+`docs/policy/shared-rules/cloud-platform-access.md`. Use the project's existing
+adapter and recorded central location; do not assume secrets belong in this repository.
+
 <!-- PGS-ROUTER:END -->
 
 ## Three-Stage Delivery
@@ -67,13 +74,19 @@ evidence before rerunning; do not loop whole suites or silently raise budgets.
 Keep existing release/security gates and production runtime monitoring. These
 rules govern engineering validation, not separately authorized creative production.
 
-
 ## Upstream Rule
 
 Do not locally invent doc-gov core changes such as new document statuses,
 frontmatter schema, lifecycle rules, shared agents-routing rules, or external
 shared-rule placement contracts. Propose them in the Project Governance System
 upstream repository first.
+
+## Document Convergence
+
+When creating docs, changing documented truth, or completing a feature/phase,
+read `docs/policy/shared-rules/document-convergence.md` and reconcile the affected
+facts and references. Preserve decision rationale and original evidence; do not
+turn routine development into a whole-repository cleanup.
 
 ## Website Release Entry
 

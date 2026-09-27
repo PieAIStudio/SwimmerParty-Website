@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useSiteLocale } from "@/i18n/client";
 import { SlamText } from "@/motion/SlamText";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -30,7 +30,7 @@ export function Mega({
   as?: "h1" | "h2" | "p" | "div";
   size?: string;
 }) {
-  const locale = useLocale() as AppLocale;
+  const locale = useSiteLocale() as AppLocale;
   const Tag = as;
   const base = locale === "zh" ? "sp-zh-mega" : "sp-ultra";
   const accentAt = accentLine ?? lines.length - 1;
@@ -60,7 +60,7 @@ export function Display({
   className?: string;
   as?: "h2" | "h3" | "p";
 }) {
-  const locale = useLocale() as AppLocale;
+  const locale = useSiteLocale() as AppLocale;
   const base = locale === "zh" ? "sp-zh-display" : "sp-display";
   return <SlamText as={as} text={text} className={`${base} ${className}`} />;
 }

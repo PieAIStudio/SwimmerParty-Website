@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { ActorCard } from "@/components/ActorCard";
 import { SectionHead } from "@/components/SectionHead";
 import { Mega } from "@/components/Mega";
@@ -13,19 +13,19 @@ type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "roster" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  const t = await getSiteI18n(locale).then((i18n) => i18n.t);
+  return { title: t("roster.metaTitle"), description: t("roster.metaDescription") };
 }
 
 export default async function ActorsPage({ params }: Props) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  setSiteLocale(locale);
   const loc = locale as AppLocale;
 
-  const t = await getTranslations("roster");
+  const t = await getSiteI18n().then((i18n) => i18n.t);
   const castable = ACTORS.filter((a) => a.status === "active");
   const building = ACTORS.filter((a) => a.status !== "active");
-  const heroLines = t.raw("heroLines") as string[];
+  const heroLines = [t("roster.heroLines.0"), t("roster.heroLines.1")];
 
   return (
     <div className="pt-14">
@@ -43,7 +43,7 @@ export default async function ActorsPage({ params }: Props) {
           }}
         />
         <div className="relative mx-auto flex h-full max-w-[var(--sp-max)] flex-col justify-end px-[var(--sp-gutter)] pb-10">
-          <p className="sp-label sp-cjk text-[0.625rem]">{t("eyebrow")}</p>
+          <p className="sp-label sp-cjk text-[0.625rem]">{t("roster.eyebrow")}</p>
           <Mega
             lines={heroLines}
             immediate
@@ -55,12 +55,16 @@ export default async function ActorsPage({ params }: Props) {
 
       <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] pt-14 pb-[var(--sp-section)]">
         <p className="sp-cjk max-w-2xl text-sm leading-[1.95] text-smoke">
-          {t("intro", { castable: castable.length, building: building.length })}
+          {t("roster.intro", { castable: castable.length, building: building.length })}
         </p>
         <p className="sp-label mt-4 text-[0.5rem] text-acid">{CG_BADGE[loc]}</p>
 
         <div className="mt-20">
-          <SectionHead index="A" label={t("castableLabel")} title={t("castableTitle")} />
+          <SectionHead
+            index="A"
+            label={t("roster.castableLabel")}
+            title={t("roster.castableTitle")}
+          />
           <Reveal className="mt-10 grid gap-px sm:grid-cols-2 lg:grid-cols-4">
             {castable.map((actor, i) => (
               <div key={actor.slug} className="sp-reveal">
@@ -73,9 +77,9 @@ export default async function ActorsPage({ params }: Props) {
         <div className="mt-24">
           <SectionHead
             index="B"
-            label={t("buildingLabel")}
-            title={t("buildingTitle")}
-            note={t("buildingNote")}
+            label={t("roster.buildingLabel")}
+            title={t("roster.buildingTitle")}
+            note={t("roster.buildingNote")}
           />
           <Reveal className="mt-10 grid gap-px sm:grid-cols-2 lg:grid-cols-4">
             {building.map((actor, i) => (

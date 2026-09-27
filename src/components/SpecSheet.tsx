@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getSiteLocale, getSiteI18n } from "@/i18n/server";
 import { TiltPlate } from "./TiltPlate";
 import { ACCENT_VAR, DEFAULT_LANDMARKS, STATUS_LABEL, type Actor } from "@/content/actors";
 import { CG_BADGE } from "@/content/doctrine";
@@ -32,8 +32,8 @@ const STATIONS = [
 ] as const;
 
 export async function SpecSheet({ actor }: { actor: Actor }) {
-  const t = await getTranslations("actor");
-  const locale = (await getLocale()) as AppLocale;
+  const t = await getSiteI18n().then((i18n) => i18n.t);
+  const locale = (await getSiteLocale()) as AppLocale;
   const accent = ACCENT_VAR[actor.accent];
   const hasPlate = Boolean(actor.plate);
   const marks = actor.landmarks ?? DEFAULT_LANDMARKS;
@@ -46,7 +46,7 @@ export async function SpecSheet({ actor }: { actor: Actor }) {
     <section
       className="grid gap-px border border-[var(--sp-hairline)] bg-[var(--sp-hairline)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]"
       style={{ ["--sp-accent" as string]: accent }}
-      aria-label={`${name} ${t("specification")}`}
+      aria-label={`${name} ${t("actor.specification")}`}
     >
       {/* ---------------- Plate + measured frame ---------------- */}
       <div className="relative bg-void">
@@ -157,10 +157,10 @@ export async function SpecSheet({ actor }: { actor: Actor }) {
           {!hasPlate ? (
             <div className="absolute inset-x-0 bottom-0 z-5 border-t border-[var(--sp-hairline)] bg-[color-mix(in_srgb,var(--color-void)_88%,transparent)] px-6 py-5 backdrop-blur-sm">
               <p className="sp-label sp-cjk text-[0.625rem]" style={{ color: accent }}>
-                {t("noPlate")}
+                {t("actor.noPlate")}
               </p>
               <p className="sp-cjk mt-2 max-w-md text-xs leading-relaxed text-smoke">
-                {t("noPlateBody")}
+                {t("actor.noPlateBody")}
               </p>
             </div>
           ) : null}
@@ -169,7 +169,7 @@ export async function SpecSheet({ actor }: { actor: Actor }) {
         {/* Sheet footer strip */}
         <div className="flex items-center justify-between border-t border-[var(--sp-hairline)] px-4 py-2.5">
           <span className="sp-label sp-cjk text-[0.5rem]">
-            SHEET {actor.code}-A / {t("sheetFront")}
+            SHEET {actor.code}-A / {t("actor.sheetFront")}
           </span>
           <span className="sp-label text-[0.5rem] text-ash">UNITS: CM</span>
         </div>
@@ -183,7 +183,7 @@ export async function SpecSheet({ actor }: { actor: Actor }) {
         <header className="flex items-start justify-between gap-6 border-b border-[var(--sp-hairline)] px-5 py-5">
           <div>
             <p className="sp-label sp-cjk text-[0.5625rem]">
-              {actor.code} — {t("specification")}
+              {actor.code} — {t("actor.specification")}
             </p>
             <p
               className={`${locale === "zh" ? "sp-zh-display" : "sp-display"} mt-2 text-3xl leading-none text-bone`}
@@ -195,7 +195,7 @@ export async function SpecSheet({ actor }: { actor: Actor }) {
             </p>
           </div>
           <div className="shrink-0 text-right">
-            <p className="sp-label sp-cjk text-[0.5rem] text-ash">{t("version")}</p>
+            <p className="sp-label sp-cjk text-[0.5rem] text-ash">{t("actor.version")}</p>
             <p className="sp-display text-xl leading-none" style={{ color: accent }}>
               {actor.version.current} <span className="text-ash">/ {actor.version.total}</span>
             </p>
@@ -219,12 +219,12 @@ export async function SpecSheet({ actor }: { actor: Actor }) {
         </dl>
 
         <div className="border-t border-[var(--sp-hairline)] px-5 py-5">
-          <p className="sp-label sp-cjk text-[0.5625rem]">{t("note")}</p>
+          <p className="sp-label sp-cjk text-[0.5625rem]">{t("actor.note")}</p>
           <p className="sp-cjk mt-3 text-sm leading-[1.85] text-smoke">{actor.note[locale]}</p>
         </div>
 
         <div className="border-t border-[var(--sp-hairline)] px-5 py-5">
-          <p className="sp-label sp-cjk text-[0.5625rem]">{t("castFor")}</p>
+          <p className="sp-label sp-cjk text-[0.5625rem]">{t("actor.castFor")}</p>
           <ul className="mt-3 flex flex-wrap gap-2">
             {actor.castFor[locale].map((c) => (
               <li

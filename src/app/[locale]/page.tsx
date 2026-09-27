@@ -1,4 +1,4 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
 import { ActorCard } from "@/components/ActorCard";
 import { SectionHead } from "@/components/SectionHead";
@@ -17,23 +17,48 @@ import { WORKS, WORK_STATUS_LABEL } from "@/content/works";
 import { SITE } from "@/lib/site";
 import type { AppLocale } from "@/i18n/routing";
 
-type Step = { step: string; title: string; body: string };
-
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  setSiteLocale(locale);
   const loc = locale as AppLocale;
 
-  const t = await getTranslations("home");
-  const tc = await getTranslations("common");
+  const t = await getSiteI18n().then((i18n) => i18n.t);
+  const tc = await getSiteI18n().then((i18n) => i18n.t);
   const castable = ACTORS.filter((a) => a.status === "active");
   const plates = ACTORS.filter((a) => a.plate).length;
   const burned = ACTORS.reduce((n, a) => n + a.version.current, 0);
-  const pipeline = t.raw("pipeline") as Step[];
-  const heroLines = t.raw("heroLines") as string[];
-  const marquee = t.raw("marquee") as string[];
-  const stanceLines = t.raw("stanceTitle") as string[];
-  const castingLines = t.raw("castingTitle") as string[];
+  const pipeline = [
+    {
+      step: t("home.pipeline.0.step"),
+      title: t("home.pipeline.0.title"),
+      body: t("home.pipeline.0.body"),
+    },
+    {
+      step: t("home.pipeline.1.step"),
+      title: t("home.pipeline.1.title"),
+      body: t("home.pipeline.1.body"),
+    },
+    {
+      step: t("home.pipeline.2.step"),
+      title: t("home.pipeline.2.title"),
+      body: t("home.pipeline.2.body"),
+    },
+    {
+      step: t("home.pipeline.3.step"),
+      title: t("home.pipeline.3.title"),
+      body: t("home.pipeline.3.body"),
+    },
+  ];
+  const heroLines = [t("home.heroLines.0"), t("home.heroLines.1"), t("home.heroLines.2")];
+  const marquee = [
+    t("home.marquee.0"),
+    t("home.marquee.1"),
+    t("home.marquee.2"),
+    t("home.marquee.3"),
+    t("home.marquee.4"),
+  ];
+  const stanceLines = [t("home.stanceTitle.0"), t("home.stanceTitle.1"), t("home.stanceTitle.2")];
+  const castingLines = [t("home.castingTitle.0"), t("home.castingTitle.1")];
   const liveKit = KIT_MANIFEST.filter((k) => k.status === "live").length;
 
   return (
@@ -62,7 +87,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               opacity: "calc(1 - var(--p) * 1.5)",
             }}
           >
-            <p className="sp-label sp-cjk text-[0.5625rem]">{t("eyebrow")}</p>
+            <p className="sp-label sp-cjk text-[0.5625rem]">{t("home.eyebrow")}</p>
             <Mega
               lines={heroLines}
               immediate
@@ -70,7 +95,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               size="text-[clamp(2.5rem,10.5vw,9.5rem)]"
             />
             <p className="sp-cjk mt-8 max-w-lg text-[0.8125rem] leading-[1.9] text-smoke">
-              {t("heroBody")}
+              {t("home.heroBody")}
             </p>
           </div>
 
@@ -105,35 +130,35 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/actors"
-                data-cursor={t("ctaRoster")}
+                data-cursor={t("home.ctaRoster")}
                 className="sp-label sp-cjk border border-acid bg-acid px-6 py-3.5 text-[0.6875rem] text-black transition-colors hover:bg-transparent hover:text-acid"
               >
-                {t("ctaRoster")}
+                {t("home.ctaRoster")}
               </Link>
               <Link
                 href="/kit"
                 data-cursor="KIT"
                 className="sp-label sp-cjk border border-[var(--sp-hairline)] px-6 py-3.5 text-[0.6875rem] text-bone transition-colors hover:border-bone"
               >
-                {t("kitCta")}
+                {t("home.kitCta")}
               </Link>
             </div>
 
             <dl className="flex gap-6 sm:gap-8">
               <div>
-                <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("statRoster")}</dt>
+                <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("home.statRoster")}</dt>
                 <dd className="sp-display text-2xl leading-none text-bone sm:text-4xl">
                   {String(ACTORS.length).padStart(2, "0")}
                 </dd>
               </div>
               <div>
-                <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("statCastable")}</dt>
+                <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("home.statCastable")}</dt>
                 <dd className="sp-display text-2xl leading-none text-acid sm:text-4xl">
                   {String(castable.length).padStart(2, "0")}
                 </dd>
               </div>
               <div className="hidden sm:block">
-                <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{tc("scroll")}</dt>
+                <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{tc("common.scroll")}</dt>
                 <dd className="sp-display sp-blink text-4xl leading-none text-ash">↓</dd>
               </div>
             </dl>
@@ -150,13 +175,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)]">
           <SectionHead
             index="01"
-            label={t("rosterLabel")}
-            title={t("rosterTitle")}
-            note={t("rosterNote")}
+            label={t("home.rosterLabel")}
+            title={t("home.rosterTitle")}
+            note={t("home.rosterNote")}
           />
         </div>
 
-        <HorizontalRail className="mt-14 md:mt-0" ariaLabel={t("rosterLabel")}>
+        <HorizontalRail className="mt-14 md:mt-0" ariaLabel={t("home.rosterLabel")}>
           {ACTORS.map((actor, i) => (
             <ActorCard key={actor.slug} actor={actor} index={i} width="rail" />
           ))}
@@ -166,7 +191,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               data-cursor="→"
               className="sp-label sp-cjk px-8 text-center text-[0.6875rem] text-acid"
             >
-              {t("rosterMore")} →
+              {t("home.rosterMore")} →
             </Link>
           </div>
         </HorizontalRail>
@@ -178,7 +203,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         style={{ ["--sp-accent" as string]: "var(--color-acid)" }}
       >
         <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
-          <p className="sp-label sp-cjk text-[0.625rem]">{t("stanceLabel")}</p>
+          <p className="sp-label sp-cjk text-[0.625rem]">{t("home.stanceLabel")}</p>
           <Mega
             as="h2"
             lines={stanceLines}
@@ -188,7 +213,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           />
           <Reveal className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
             <p className="sp-reveal sp-cjk max-w-xl text-base leading-[1.9] text-black/80">
-              {t("stanceBody")}
+              {t("home.stanceBody")}
             </p>
             <ol className="sp-reveal divide-y divide-black/20 border-y border-black/20">
               {REFUSALS.map((r) => (
@@ -203,10 +228,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </Reveal>
           <Link
             href="/pact"
-            data-cursor={t("stanceCta")}
+            data-cursor={t("home.stanceCta")}
             className="sp-label sp-cjk mt-12 inline-block border-2 border-black px-8 py-4 text-[0.6875rem] text-black transition-colors hover:bg-black hover:text-acid"
           >
-            {t("stanceCta")} →
+            {t("home.stanceCta")} →
           </Link>
         </div>
       </section>
@@ -216,13 +241,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="sp-blueprint mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] pt-[var(--sp-section)]">
           <SectionHead
             index="02"
-            label={t("methodLabel")}
-            title={t("methodTitle")}
-            note={t("methodNote")}
+            label={t("home.methodLabel")}
+            title={t("home.methodTitle")}
+            note={t("home.methodNote")}
           />
         </div>
 
-        <StackDeck className="mt-14" ariaLabel={t("methodLabel")}>
+        <StackDeck className="mt-14" ariaLabel={t("home.methodLabel")}>
           {pipeline.map((p) => (
             <div
               key={p.step}
@@ -248,7 +273,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* ======================= OPEN KIT ======================= */}
       <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
-        <SectionHead index="03" label={t("kitLabel")} title={t("kitTitle")} note={t("kitNote")} />
+        <SectionHead
+          index="03"
+          label={t("home.kitLabel")}
+          title={t("home.kitTitle")}
+          note={t("home.kitNote")}
+        />
 
         <Reveal className="mt-14 grid gap-px bg-[var(--sp-hairline)] sm:grid-cols-2 lg:grid-cols-4">
           {KIT_MANIFEST.slice(0, 4).map((k) => (
@@ -264,19 +294,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="mt-10 flex flex-wrap items-center justify-between gap-6 border-t border-[var(--sp-hairline)] pt-8">
           <dl className="flex gap-10">
             <div>
-              <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("statPlates")}</dt>
+              <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("home.statPlates")}</dt>
               <dd className="sp-display text-3xl leading-none text-bone">
                 <Counter value={plates} />
               </dd>
             </div>
             <div>
-              <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("statKitLive")}</dt>
+              <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("home.statKitLive")}</dt>
               <dd className="sp-display text-3xl leading-none text-acid">
                 <Counter value={liveKit} />
               </dd>
             </div>
             <div>
-              <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("statVersions")}</dt>
+              <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("home.statVersions")}</dt>
               <dd className="sp-display text-3xl leading-none text-bone">
                 <Counter value={burned} />
               </dd>
@@ -284,10 +314,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </dl>
           <Link
             href="/kit"
-            data-cursor={t("kitCta")}
+            data-cursor={t("home.kitCta")}
             className="sp-label sp-cjk border border-acid bg-acid px-8 py-4 text-[0.6875rem] text-black transition-colors hover:bg-transparent hover:text-acid"
           >
-            {t("kitCta")} →
+            {t("home.kitCta")} →
           </Link>
         </div>
       </section>
@@ -297,9 +327,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
           <SectionHead
             index="04"
-            label={t("pactLabel")}
-            title={t("pactTitle")}
-            note={t("pactNote")}
+            label={t("home.pactLabel")}
+            title={t("home.pactTitle")}
+            note={t("home.pactNote")}
           />
           <Reveal className="mt-14 divide-y divide-[var(--sp-hairline)] border-y border-[var(--sp-hairline)]">
             {CLAUSES.map((c) => (
@@ -319,10 +349,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </Reveal>
           <Link
             href="/pact"
-            data-cursor={t("pactCta")}
+            data-cursor={t("home.pactCta")}
             className="sp-label sp-cjk mt-10 inline-block border border-[var(--sp-hairline)] px-8 py-4 text-[0.6875rem] text-bone transition-colors hover:border-acid hover:text-acid"
           >
-            {t("pactCta")} →
+            {t("home.pactCta")} →
           </Link>
         </div>
       </section>
@@ -331,9 +361,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
         <SectionHead
           index="05"
-          label={t("worksLabel")}
-          title={t("worksTitle")}
-          note={t("worksNote")}
+          label={t("home.worksLabel")}
+          title={t("home.worksTitle")}
+          note={t("home.worksNote")}
         />
 
         <Reveal className="mt-14 divide-y divide-[var(--sp-hairline)] border-y border-[var(--sp-hairline)]">
@@ -368,10 +398,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
         <Link
           href="/works"
-          data-cursor={t("worksCta")}
+          data-cursor={t("home.worksCta")}
           className="sp-label sp-cjk mt-10 inline-block border border-[var(--sp-hairline)] px-6 py-3.5 text-[0.6875rem] text-bone transition-colors hover:border-acid hover:text-acid"
         >
-          {t("worksCta")} →
+          {t("home.worksCta")} →
         </Link>
       </section>
 
@@ -386,14 +416,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             size="text-[clamp(2.5rem,12vw,11rem)]"
           />
           <p className="sp-cjk mx-auto mt-8 max-w-xl text-sm leading-[1.95] text-smoke">
-            {t("castingBody")}
+            {t("home.castingBody")}
           </p>
           <Link
             href="/casting"
-            data-cursor={t("castingCta")}
+            data-cursor={t("home.castingCta")}
             className="sp-label sp-cjk mt-12 inline-block border border-acid bg-acid px-10 py-4 text-[0.6875rem] text-black transition-colors hover:bg-transparent hover:text-acid"
           >
-            {t("castingCta")} →
+            {t("home.castingCta")} →
           </Link>
         </div>
       </section>

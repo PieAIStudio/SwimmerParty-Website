@@ -12,3 +12,5 @@ docs/policy/shared-rules
 docs/governance
 # Local QA scripts, not part of the shipped bundle.
 tools
+
+src/i18n/message-contracts.ts

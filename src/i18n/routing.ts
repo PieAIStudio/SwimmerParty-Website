@@ -1,5 +1,3 @@
-import { defineRouting } from "next-intl/routing";
-
 /**
  * Two authored locales, and only two.
  *
@@ -9,11 +7,11 @@ import { defineRouting } from "next-intl/routing";
  * proofread. When a locale earns a real translation it moves out of
  * `MACHINE_LOCALES` and into `locales`, and nothing else changes.
  */
-export const routing = defineRouting({
+export const routing = {
   locales: ["zh", "en"],
   defaultLocale: "zh",
   localePrefix: "always",
-});
+} as const;
 
 export type AppLocale = (typeof routing.locales)[number];
 
@@ -67,4 +65,15 @@ export function machineTranslateUrl(siteUrl: string, pathname: string, target: s
     _x_tr_hl: target,
   });
   return `https://${host}.translate.goog${pathname}?${params.toString()}`;
+}
+
+export function hasLocale<T extends string>(locales: readonly T[], value: unknown): value is T {
+  return typeof value === "string" && locales.includes(value as T);
+}
+export function catalogLocale(locale: AppLocale): string {
+  return locale === "zh" ? "zh-CN" : locale;
+}
+export function localePath(href: string, locale: AppLocale): string {
+  if (!href.startsWith("/") || href.startsWith("//")) return href;
+  return `/${locale}${href === "/" ? "" : href}`;
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
 import { Mega, Display } from "@/components/Mega";
 import { SectionHead } from "@/components/SectionHead";
@@ -16,37 +16,38 @@ type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "kit" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  const t = await getSiteI18n(locale).then((i18n) => i18n.t);
+  return { title: t("kit.metaTitle"), description: t("kit.metaDescription") };
 }
 
 export default async function KitPage({ params }: Props) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  setSiteLocale(locale);
   const loc = locale as AppLocale;
 
-  const t = await getTranslations("kit");
-  const ta = await getTranslations("actor");
+  const t = await getSiteI18n().then((i18n) => i18n.t);
   const seeded = ACTORS.filter((a) => a.promptSeed);
   const pending = ACTORS.filter((a) => !a.promptSeed);
-  const heroLines = t.raw("heroLines") as string[];
+  const heroLines = [t("kit.heroLines.0"), t("kit.heroLines.1")];
 
   return (
     <div className="pt-14">
       <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] pt-20">
-        <p className="sp-label sp-cjk text-[0.625rem]">{t("eyebrow")}</p>
+        <p className="sp-label sp-cjk text-[0.625rem]">{t("kit.eyebrow")}</p>
         <Mega
           lines={heroLines}
           immediate
           className="mt-6 text-bone"
           size="text-[clamp(3rem,13vw,11rem)]"
         />
-        <p className="sp-cjk mt-8 max-w-2xl text-base leading-[1.95] text-smoke">{t("intro")}</p>
+        <p className="sp-cjk mt-8 max-w-2xl text-base leading-[1.95] text-smoke">
+          {t("kit.intro")}
+        </p>
       </section>
 
       <div className="mt-16 border-y border-[var(--sp-hairline)]">
         <VelocityMarquee
-          items={[t("eyebrow"), CG_BADGE[loc], t("rulesTitle"), t("seedsTitle")]}
+          items={[t("kit.eyebrow"), CG_BADGE[loc], t("kit.rulesTitle"), t("kit.seedsTitle")]}
           tone="cyan"
           speed={70}
         />
@@ -56,9 +57,9 @@ export default async function KitPage({ params }: Props) {
       <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
         <SectionHead
           index="01"
-          label={t("seedsLabel")}
-          title={t("seedsTitle")}
-          note={t("seedsNote")}
+          label={t("kit.seedsLabel")}
+          title={t("kit.seedsTitle")}
+          note={t("kit.seedsNote")}
         />
 
         <div className="mt-14 space-y-px">
@@ -98,7 +99,7 @@ export default async function KitPage({ params }: Props) {
           ))}
 
           <div className="border border-[var(--sp-hairline)] p-6 lg:p-8">
-            <p className="sp-label sp-cjk text-[0.5625rem] text-ash">{t("seedPending")}</p>
+            <p className="sp-label sp-cjk text-[0.5625rem] text-ash">{t("kit.seedPending")}</p>
             <ul className="mt-5 flex flex-wrap gap-2">
               {pending.map((a) => (
                 <li
@@ -118,9 +119,9 @@ export default async function KitPage({ params }: Props) {
         <div className="sp-blueprint mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
           <SectionHead
             index="02"
-            label={t("manifestLabel")}
-            title={t("manifestTitle")}
-            note={t("manifestNote")}
+            label={t("kit.manifestLabel")}
+            title={t("kit.manifestTitle")}
+            note={t("kit.manifestNote")}
           />
 
           <Reveal className="mt-14 grid gap-px bg-[var(--sp-hairline)] sm:grid-cols-2 lg:grid-cols-4">
@@ -156,9 +157,9 @@ export default async function KitPage({ params }: Props) {
       <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
         <SectionHead
           index="03"
-          label={t("rulesLabel")}
-          title={t("rulesTitle")}
-          note={t("rulesNote")}
+          label={t("kit.rulesLabel")}
+          title={t("kit.rulesTitle")}
+          note={t("kit.rulesNote")}
         />
 
         <Reveal className="mt-14 grid gap-px bg-[var(--sp-hairline)] md:grid-cols-2">
@@ -178,7 +179,7 @@ export default async function KitPage({ params }: Props) {
                   r.allow ? "text-acid" : "text-black/60"
                 }`}
               >
-                {r.allow ? t("allowed") : t("forbidden")}
+                {r.allow ? t("kit.allowed") : t("kit.forbidden")}
               </p>
               <h3
                 className={`sp-cjk mt-5 text-[clamp(1.15rem,3vw,1.75rem)] leading-tight font-bold ${
@@ -199,13 +200,15 @@ export default async function KitPage({ params }: Props) {
         </Reveal>
 
         <div className="mt-14 flex flex-wrap items-center justify-between gap-6 border-t border-[var(--sp-hairline)] pt-10">
-          <p className="sp-cjk max-w-lg text-sm leading-[1.9] text-smoke">{t("manifestNote")}</p>
+          <p className="sp-cjk max-w-lg text-sm leading-[1.9] text-smoke">
+            {t("kit.manifestNote")}
+          </p>
           <Link
             href="/pact"
             data-cursor="→"
             className="sp-label sp-cjk border border-acid bg-acid px-8 py-4 text-[0.6875rem] text-black transition-colors hover:bg-transparent hover:text-acid"
           >
-            {t("pactCta")} →
+            {t("kit.pactCta")} →
           </Link>
         </div>
       </section>

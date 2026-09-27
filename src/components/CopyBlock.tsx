@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useSiteI18n } from "@/i18n/client";
 
 /**
  * A block of text with a copy button.
@@ -14,7 +14,7 @@ import { useTranslations } from "next-intl";
  * has to avoid claiming success.
  */
 export function CopyBlock({ text, label }: { text: string; label: string }) {
-  const t = useTranslations("common");
+  const t = useSiteI18n().t;
   const [done, setDone] = useState(false);
 
   const copy = async () => {
@@ -34,10 +34,10 @@ export function CopyBlock({ text, label }: { text: string; label: string }) {
         <button
           type="button"
           onClick={copy}
-          data-cursor={done ? t("copied") : t("copy")}
+          data-cursor={done ? t("common.copied") : t("common.copy")}
           className="sp-label border border-acid px-3 py-1.5 text-[0.5rem] text-acid transition-colors hover:bg-acid hover:text-black"
         >
-          {done ? t("copied") : t("copy")}
+          {done ? t("common.copied") : t("common.copy")}
         </button>
       </div>
       <p className="max-h-64 overflow-y-auto px-4 py-4 font-mono text-[0.6875rem] leading-[1.85] text-smoke selection:bg-acid selection:text-black">

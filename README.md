@@ -42,13 +42,13 @@ pnpm dev          # http://localhost:3000 → 会跳到 /zh 或 /en
 pnpm verify       # typecheck + lint + format + build + playwright
 ```
 
-改文案改 `tools/gen-messages.py` 再跑一次，**不要手改 `messages/*.json`**——
+改文案改 `tools/gen-messages.py` 再跑一次，**不要手改 `messages/<locale>/messages.json`**——
 那两个文件是从同一份配对源生成的，手改必然让中英漂移。
 
 ## 技术栈
 
 - **Next.js 16**（App Router，全静态预渲染）— 名册必须能被搜到
-- **next-intl v4** — zh / en 两个人工语言；其余语言是明确标注的机器翻译外链
+- **SwimmerI18nKit** — zh / en 两个人工语言；其余语言是明确标注的机器翻译外链
 - **GSAP + ScrollTrigger** — 滚动编排与进场动效
 - **React Three Fiber + three.js** — 白膜展台。单渲染器、ACES、一次 sRGB 编码、DPR 钳制
 - **@pieai/swimmer-ui-kit** — 品牌 UI 库，本站通过 `[data-game-ui-theme='acid']` 主题消费
@@ -57,3 +57,18 @@ pnpm verify       # typecheck + lint + format + build + playwright
 
 设计系统与主题决策见 [`DESIGN.md`](DESIGN.md)。AI 协作入口见
 [`AGENTS.md`](AGENTS.md)。
+
+## 多语言开发
+
+消息运行时统一使用 `@pieai/swimmer-i18n-kit@0.1.2`。`src/i18n/catalog.ts` 绑定本站
+目录；`server.ts` 管 Next 请求上下文，`client.tsx` 管 React Provider，URL 留在本站
+`routing.ts` / `proxy.ts` / `navigation.tsx`。公开路径仍为 `/zh` 和 `/en`，ICU 目录
+使用 BCP 47 名称 `zh-CN`、`en`，各 258 个完整键。
+
+继续只编辑双语源 `tools/gen-messages.py`，运行 `python3 tools/gen-messages.py` 生成
+扁平 ICU JSON；数组排版在组件中用明确的消息键组装，不读无类型的 raw 词典。随后运行
+`pnpm exec swimmer-i18n-check types --out src/i18n/message-contracts.ts` 更新参数类型。
+`pnpm check:i18n` 验证目录、ICU 和生成类型；`pnpm typecheck` 检查调用。
+机器翻译外链仍明确标注，演员内容和商业事实继续由产品内容模块负责。
+
+`e2e/native-i18n.spec.ts` 覆盖 Node 消息格式化、双语 SSR、桌面/移动语言切换和查询参数。

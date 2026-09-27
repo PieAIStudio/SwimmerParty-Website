@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useSiteLocale, useSiteI18n } from "@/i18n/client";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { NAV, SECONDARY_NAV, SITE } from "@/lib/site";
@@ -20,16 +20,20 @@ import type { AppLocale } from "@/i18n/routing";
  * where the same links are set as poster type.
  */
 export function SiteHeader() {
-  const t = useTranslations("nav");
-  const tc = useTranslations("common");
-  const th = useTranslations("home");
-  const locale = useLocale() as AppLocale;
+  const pathname = usePathname();
+  const locale = useSiteLocale();
+  return <SiteHeaderContent key={`${locale}:${pathname}`} />;
+}
+
+function SiteHeaderContent() {
+  const t = useSiteI18n().t;
+  const tc = useSiteI18n().t;
+  const th = useSiteI18n().t;
+  const locale = useSiteLocale() as AppLocale;
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Route changes must close the overlay; otherwise tapping a link leaves
-  // the menu covering the page it just navigated to.
-  useEffect(() => setOpen(false), [pathname]);
+  // The parent key resets menu state on path or locale navigation.
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -51,7 +55,7 @@ export function SiteHeader() {
             <span className="sp-label hidden text-[0.5rem] lg:inline">EST. {SITE.founded}</span>
           </Link>
 
-          <nav className="ml-auto hidden items-center md:flex" aria-label={tc("mainNav")}>
+          <nav className="ml-auto hidden items-center md:flex" aria-label={tc("common.mainNav")}>
             {NAV.map((item) => {
               const current = pathname === item.href || pathname.startsWith(`${item.href}/`);
               return (
@@ -63,7 +67,7 @@ export function SiteHeader() {
                   }`}
                   aria-current={current ? "page" : undefined}
                 >
-                  {t(item.key)}
+                  {t(`nav.${item.key}`)}
                 </Link>
               );
             })}
@@ -78,7 +82,7 @@ export function SiteHeader() {
               href="/casting"
               className="sp-label sp-cjk hidden border border-acid px-4 py-2 text-[0.5625rem] whitespace-nowrap text-acid transition-colors hover:bg-acid hover:text-black lg:inline-block"
             >
-              {th("ctaBook")}
+              {th("home.ctaBook")}
             </Link>
 
             <button
@@ -87,7 +91,7 @@ export function SiteHeader() {
               className="sp-label border border-[var(--sp-hairline)] px-3 py-2 text-[0.5625rem] text-bone transition-colors hover:border-acid hover:text-acid md:hidden"
               aria-expanded={open}
             >
-              {tc("menu")}
+              {tc("common.menu")}
             </button>
           </div>
         </div>
@@ -105,11 +109,11 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="sp-label border border-acid px-3 py-2 text-[0.5625rem] text-acid"
             >
-              {tc("close")}
+              {tc("common.close")}
             </button>
           </div>
 
-          <nav className="flex-1 px-[var(--sp-gutter)] py-8" aria-label={tc("mainNav")}>
+          <nav className="flex-1 px-[var(--sp-gutter)] py-8" aria-label={tc("common.mainNav")}>
             <ul className="divide-y divide-[var(--sp-hairline)]">
               {[...NAV, ...SECONDARY_NAV].map((item, i) => (
                 <li key={item.href}>
@@ -124,7 +128,7 @@ export function SiteHeader() {
                           : "sp-display text-[2.75rem] text-bone group-hover:text-acid"
                       }
                     >
-                      {t(item.key)}
+                      {t(`nav.${item.key}`)}
                     </span>
                   </Link>
                 </li>

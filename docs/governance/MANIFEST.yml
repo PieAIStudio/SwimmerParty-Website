@@ -1,8 +1,8 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-09-27T06:43:22.600Z
-generator_version: doc-gov@0.14.1
-docs_count: 13
+generated_at: 2026-09-27T15:50:53.959Z
+generator_version: doc-gov@0.14.2
+docs_count: 14
 docs:
   - id: GOV-AGENTS-ROUTING-ENGINEERING-RUNTIME-V1-1
     path: docs/governance/agents-routing/engineering-runtime-v1.1.md
@@ -66,6 +66,13 @@ docs:
     status: stable
     canonical: true
     last_reviewed: 2026-09-08
+    pinned: false
+  - id: POLICY-SHARED-CLOUD-PLATFORM-ACCESS
+    path: docs/policy/shared-rules/cloud-platform-access.md
+    type: policy
+    status: stable
+    canonical: true
+    last_reviewed: 2026-09-27
     pinned: false
   - id: POLICY-SHARED-DOCUMENT-CONVERGENCE
     path: docs/policy/shared-rules/document-convergence.md

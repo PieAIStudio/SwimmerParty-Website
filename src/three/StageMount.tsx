@@ -1,15 +1,15 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useTranslations } from "next-intl";
+import { useSiteI18n } from "@/i18n/client";
 import type { StageMode } from "./Stage";
 
 function StagePlaceholder() {
-  const t = useTranslations("common");
+  const t = useSiteI18n().t;
   return (
     <div className="absolute inset-0 grid place-items-center">
       <p className="sp-label text-[0.6rem] text-ash">
-        <span className="sp-blink">▊</span> {t("loading")}
+        <span className="sp-blink">▊</span> {t("common.loading")}
       </p>
     </div>
   );

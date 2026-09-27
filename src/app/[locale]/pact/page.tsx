@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
 import { Mega, Display } from "@/components/Mega";
 import { SectionHead } from "@/components/SectionHead";
@@ -13,33 +13,35 @@ type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "pact" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  const t = await getSiteI18n(locale).then((i18n) => i18n.t);
+  return { title: t("pact.metaTitle"), description: t("pact.metaDescription") };
 }
 
 export default async function PactPage({ params }: Props) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  setSiteLocale(locale);
   const loc = locale as AppLocale;
 
-  const t = await getTranslations("pact");
-  const tc = await getTranslations("common");
-  const tn = await getTranslations("nav");
-  const heroLines = t.raw("heroLines") as string[];
+  const t = await getSiteI18n().then((i18n) => i18n.t);
+  const tc = await getSiteI18n().then((i18n) => i18n.t);
+  const tn = await getSiteI18n().then((i18n) => i18n.t);
+  const heroLines = [t("pact.heroLines.0"), t("pact.heroLines.1")];
 
   return (
     <div className="pt-14">
       <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] pt-20 pb-16">
-        <p className="sp-label sp-cjk text-[0.625rem]">{t("eyebrow")}</p>
+        <p className="sp-label sp-cjk text-[0.625rem]">{t("pact.eyebrow")}</p>
         <Mega
           lines={heroLines}
           immediate
           className="mt-6 text-bone"
           size="text-[clamp(2.75rem,12vw,10rem)]"
         />
-        <p className="sp-cjk mt-8 max-w-2xl text-base leading-[1.95] text-smoke">{t("intro")}</p>
+        <p className="sp-cjk mt-8 max-w-2xl text-base leading-[1.95] text-smoke">
+          {t("pact.intro")}
+        </p>
         <p className="sp-label mt-8 inline-block border border-flare px-3 py-2 text-[0.5rem] text-flare">
-          {PACT_VERSION} · {tc("draft")}
+          {PACT_VERSION} · {tc("common.draft")}
         </p>
       </section>
 
@@ -48,9 +50,9 @@ export default async function PactPage({ params }: Props) {
         <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
           <SectionHead
             index="01"
-            label={t("partOneLabel")}
-            title={t("partOneTitle")}
-            note={t("partOneNote")}
+            label={t("pact.partOneLabel")}
+            title={t("pact.partOneTitle")}
+            note={t("pact.partOneNote")}
             tone="slab"
           />
 
@@ -71,7 +73,7 @@ export default async function PactPage({ params }: Props) {
       {/* ---- the argument, on black, set as long-form prose ---- */}
       <section className="border-b border-[var(--sp-hairline)] bg-black">
         <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
-          <p className="sp-label sp-cjk text-[0.625rem]">{t("whyLabel")}</p>
+          <p className="sp-label sp-cjk text-[0.625rem]">{t("pact.whyLabel")}</p>
 
           <Reveal className="mt-12 max-w-3xl space-y-8">
             {WHY.map((w, i) => (
@@ -98,9 +100,9 @@ export default async function PactPage({ params }: Props) {
       <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
         <SectionHead
           index="02"
-          label={t("partTwoLabel")}
-          title={t("partTwoTitle")}
-          note={t("partTwoNote")}
+          label={t("pact.partTwoLabel")}
+          title={t("pact.partTwoTitle")}
+          note={t("pact.partTwoNote")}
         />
 
         <Reveal className="mt-16 divide-y divide-[var(--sp-hairline)] border-y border-[var(--sp-hairline)]">
@@ -130,9 +132,9 @@ export default async function PactPage({ params }: Props) {
         <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
           <SectionHead
             index="03"
-            label={t("termsLabel")}
-            title={t("termsTitle")}
-            note={t("draftNote")}
+            label={t("pact.termsLabel")}
+            title={t("pact.termsTitle")}
+            note={t("pact.draftNote")}
           />
 
           <dl className="mt-12 divide-y divide-[var(--sp-hairline)] border-y border-[var(--sp-hairline)]">
@@ -148,7 +150,7 @@ export default async function PactPage({ params }: Props) {
                     term.settled ? "text-acid" : "text-flare"
                   }`}
                 >
-                  {term.settled ? t("settled") : t("openTerm")}
+                  {term.settled ? t("pact.settled") : t("pact.openTerm")}
                 </dd>
               </div>
             ))}
@@ -157,20 +159,20 @@ export default async function PactPage({ params }: Props) {
       </section>
 
       <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)] text-center">
-        <p className="sp-cjk mx-auto max-w-xl text-lg leading-[1.9] text-bone">{t("outro")}</p>
+        <p className="sp-cjk mx-auto max-w-xl text-lg leading-[1.9] text-bone">{t("pact.outro")}</p>
         <a
           href={`mailto:${SITE.contact}?subject=${encodeURIComponent("[REMIX] SWIMMER PARTY")}`}
           data-cursor="→"
           className="sp-label sp-cjk mt-10 inline-block border border-acid bg-acid px-10 py-4 text-[0.6875rem] text-black transition-colors hover:bg-transparent hover:text-acid"
         >
-          {t("outroCta")} →
+          {t("pact.outroCta")} →
         </a>
         <p className="mt-6">
           <Link
             href="/kit"
             className="sp-label sp-cjk text-[0.5625rem] text-smoke transition-colors hover:text-acid"
           >
-            ← {tn("kit")}
+            ← {tn("nav.kit")}
           </Link>
         </p>
       </section>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useSiteLocale, useSiteI18n } from "@/i18n/client";
 import { Link, usePathname } from "@/i18n/navigation";
 import {
   LOCALE_LABEL,
@@ -23,8 +23,8 @@ import { SITE } from "@/lib/site";
  * target in this list.
  */
 export function LocaleSwitcher({ variant = "rail" }: { variant?: "rail" | "panel" }) {
-  const t = useTranslations("common");
-  const active = useLocale() as AppLocale;
+  const t = useSiteI18n().t;
+  const active = useSiteLocale() as AppLocale;
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const host = useRef<HTMLDivElement>(null);
@@ -50,7 +50,7 @@ export function LocaleSwitcher({ variant = "rail" }: { variant?: "rail" | "panel
   const list = (
     <div className="border border-[var(--sp-hairline)] bg-void">
       <p className="sp-label border-b border-[var(--sp-hairline)] px-4 py-2 text-[0.5rem] text-acid">
-        {t("authored")}
+        {t("common.authored")}
       </p>
       <ul>
         {routing.locales.map((code) => (
@@ -72,7 +72,7 @@ export function LocaleSwitcher({ variant = "rail" }: { variant?: "rail" | "panel
       </ul>
 
       <p className="sp-label border-y border-[var(--sp-hairline)] px-4 py-2 text-[0.5rem] text-smoke">
-        {t("machine")}
+        {t("common.machine")}
       </p>
       <ul className="grid grid-cols-2">
         {MACHINE_LOCALES.map((m) => (
@@ -90,7 +90,7 @@ export function LocaleSwitcher({ variant = "rail" }: { variant?: "rail" | "panel
         ))}
       </ul>
       <p className="sp-cjk border-t border-[var(--sp-hairline)] px-4 py-3 text-[0.625rem] leading-relaxed text-ash">
-        {t("machineNote")}
+        {t("common.machineNote")}
       </p>
     </div>
   );
@@ -103,7 +103,7 @@ export function LocaleSwitcher({ variant = "rail" }: { variant?: "rail" | "panel
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        aria-label={t("language")}
+        aria-label={t("common.language")}
         className="sp-label flex items-center gap-1.5 px-2 py-2 text-[0.5625rem] text-bone transition-colors hover:text-acid"
       >
         {active.toUpperCase()}

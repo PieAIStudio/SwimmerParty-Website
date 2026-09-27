@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
 import { Mega, Display } from "@/components/Mega";
 import { SectionHead } from "@/components/SectionHead";
@@ -12,17 +12,17 @@ type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "works" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  const t = await getSiteI18n(locale).then((i18n) => i18n.t);
+  return { title: t("works.metaTitle"), description: t("works.metaDescription") };
 }
 
 export default async function WorksPage({ params }: Props) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  setSiteLocale(locale);
   const loc = locale as AppLocale;
 
-  const t = await getTranslations("works");
-  const heroLines = t.raw("heroLines") as string[];
+  const t = await getSiteI18n().then((i18n) => i18n.t);
+  const heroLines = [t("works.heroLines.0"), t("works.heroLines.1")];
   const nameOf = (code: string) => {
     const a = ACTORS.find((x) => x.code === code);
     if (!a) return code;
@@ -31,7 +31,7 @@ export default async function WorksPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] pt-32 pb-[var(--sp-section)]">
-      <p className="sp-label sp-cjk text-[0.625rem]">{t("eyebrow")}</p>
+      <p className="sp-label sp-cjk text-[0.625rem]">{t("works.eyebrow")}</p>
       <Mega
         lines={heroLines}
         immediate
@@ -39,11 +39,11 @@ export default async function WorksPage({ params }: Props) {
         size="text-[clamp(2.75rem,12vw,10rem)]"
       />
       <p className="sp-cjk mt-8 max-w-2xl text-sm leading-[1.95] text-smoke">
-        {t("intro", { year: 2026 })}
+        {t("works.intro", { year: 2026 })}
       </p>
 
       <div className="mt-20">
-        <SectionHead index="01" label={t("slateLabel")} title={t("slateTitle")} />
+        <SectionHead index="01" label={t("works.slateLabel")} title={t("works.slateTitle")} />
 
         <Reveal className="mt-12 divide-y divide-[var(--sp-hairline)] border-y border-[var(--sp-hairline)]">
           {WORKS.map((w) => (
@@ -72,11 +72,11 @@ export default async function WorksPage({ params }: Props) {
 
               <dl className="space-y-4 md:text-right">
                 <div>
-                  <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("format")}</dt>
+                  <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("works.format")}</dt>
                   <dd className="sp-cjk mt-1 text-xs text-smoke">{w.format[loc]}</dd>
                 </div>
                 <div>
-                  <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("cast")}</dt>
+                  <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("works.cast")}</dt>
                   <dd className="sp-cjk mt-1 space-y-0.5 text-xs text-smoke">
                     {w.cast.map((c) => (
                       <span key={c} className="block">
@@ -92,13 +92,13 @@ export default async function WorksPage({ params }: Props) {
       </div>
 
       <div className="mt-20 border border-[var(--sp-hairline)] p-10 text-center">
-        <p className="sp-cjk text-sm leading-[1.95] text-smoke">{t("outro")}</p>
+        <p className="sp-cjk text-sm leading-[1.95] text-smoke">{t("works.outro")}</p>
         <Link
           href="/casting"
           data-cursor="→"
           className="sp-label sp-cjk mt-8 inline-block border border-acid px-8 py-4 text-[0.6875rem] text-acid transition-colors hover:bg-acid hover:text-black"
         >
-          {t("outroCta")} →
+          {t("works.outroCta")} →
         </Link>
       </div>
     </div>

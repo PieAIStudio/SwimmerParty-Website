@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
 import { SpecSheet } from "@/components/SpecSheet";
 import { Mega, Display } from "@/components/Mega";
@@ -38,15 +38,15 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 export default async function ActorPage({ params }: Params) {
   const { slug, locale } = await params;
-  setRequestLocale(locale);
+  setSiteLocale(locale);
   const loc = locale as AppLocale;
 
   const actor = getActor(slug);
   if (!actor) notFound();
 
-  const t = await getTranslations("actor");
-  const tc = await getTranslations("common");
-  const tk = await getTranslations("kit");
+  const t = await getSiteI18n().then((i18n) => i18n.t);
+  const tc = await getSiteI18n().then((i18n) => i18n.t);
+  const tk = await getSiteI18n().then((i18n) => i18n.t);
   const accent = ACCENT_VAR[actor.accent];
   const index = ACTORS.findIndex((a) => a.slug === actor.slug);
   const next = ACTORS[(index + 1) % ACTORS.length];
@@ -71,7 +71,7 @@ export default async function ActorPage({ params }: Params) {
             href="/actors"
             className="sp-label sp-cjk text-[0.5625rem] transition-colors hover:text-acid"
           >
-            ← {tc("backToRoster")}
+            ← {tc("common.backToRoster")}
           </Link>
 
           <p className="sp-label sp-cjk mt-10 text-[0.625rem]" style={{ color: accent }}>
@@ -97,7 +97,7 @@ export default async function ActorPage({ params }: Params) {
             {CG_BADGE[loc]}
           </p>
           <p className="sp-cjk mt-3 max-w-md text-[0.6875rem] leading-relaxed text-ash">
-            {t("cgNote")}
+            {t("actor.cgNote")}
           </p>
 
           {inDev ? (
@@ -105,7 +105,7 @@ export default async function ActorPage({ params }: Params) {
               className="sp-cjk mt-10 max-w-xl border-l-2 pl-5 text-xs leading-[1.95] text-smoke"
               style={{ borderColor: accent }}
             >
-              {t("whiteModelNote")}
+              {t("actor.whiteModelNote")}
             </p>
           ) : null}
         </div>
@@ -120,21 +120,21 @@ export default async function ActorPage({ params }: Params) {
       <section className="border-y border-[var(--sp-hairline)] bg-carbon">
         <div className="mx-auto grid max-w-[var(--sp-max)] gap-10 px-[var(--sp-gutter)] py-16 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
           <div>
-            <p className="sp-label sp-cjk text-[0.5625rem]">{t("kitLink")}</p>
+            <p className="sp-label sp-cjk text-[0.5625rem]">{t("actor.kitLink")}</p>
             <Display
-              text={tk("seedsTitle")}
+              text={tk("kit.seedsTitle")}
               as="h2"
               className="mt-4 text-[clamp(1.5rem,4vw,2.5rem)] text-bone"
             />
             <p className="sp-cjk mt-5 max-w-md text-sm leading-[1.9] text-smoke">
-              {tk("seedsNote")}
+              {tk("kit.seedsNote")}
             </p>
             <Link
               href="/kit"
               className="sp-label sp-cjk mt-8 inline-block border px-6 py-3.5 text-[0.6875rem] transition-colors hover:bg-[var(--sp-accent)] hover:text-black"
               style={{ borderColor: accent, color: accent }}
             >
-              {tk("eyebrow")} →
+              {tk("kit.eyebrow")} →
             </Link>
           </div>
 
@@ -146,7 +146,7 @@ export default async function ActorPage({ params }: Params) {
           ) : (
             <div className="sp-hazard grid min-h-40 place-items-center border border-[var(--sp-hairline)]">
               <p className="sp-label sp-cjk bg-black px-4 py-2 text-[0.5625rem] text-smoke">
-                {tk("seedPending")}
+                {tk("kit.seedPending")}
               </p>
             </div>
           )}
@@ -157,14 +157,14 @@ export default async function ActorPage({ params }: Params) {
       <section className="border-b border-[var(--sp-hairline)]">
         <div className="mx-auto flex max-w-[var(--sp-max)] flex-wrap items-center justify-between gap-8 px-[var(--sp-gutter)] py-16">
           <div>
-            <p className="sp-label sp-cjk text-[0.5625rem]">{t("availability")}</p>
+            <p className="sp-label sp-cjk text-[0.5625rem]">{t("actor.availability")}</p>
             <Display
-              text={actor.status === "active" ? t("open") : t("notYet")}
+              text={actor.status === "active" ? t("actor.open") : t("actor.notYet")}
               as="p"
               className="mt-3 text-3xl text-bone"
             />
             <p className="sp-cjk mt-3 max-w-md text-xs leading-relaxed text-smoke">
-              {actor.status === "active" ? t("openBody") : t("notYetBody")}
+              {actor.status === "active" ? t("actor.openBody") : t("actor.notYetBody")}
             </p>
           </div>
           <Link
@@ -173,7 +173,7 @@ export default async function ActorPage({ params }: Params) {
             className="sp-label sp-cjk border px-8 py-4 text-[0.6875rem] transition-colors hover:bg-[var(--sp-accent)] hover:text-black"
             style={{ borderColor: accent, color: accent }}
           >
-            {tc("enquire")}
+            {tc("common.enquire")}
           </Link>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default async function ActorPage({ params }: Params) {
             className="sp-reveal group block"
           >
             <p className="sp-label sp-cjk text-[0.5625rem]">
-              {tc("next")} — {next.code}
+              {tc("common.next")} — {next.code}
             </p>
             <p
               className={`${loc === "zh" ? "sp-zh-mega" : "sp-ultra"} mt-4 text-[clamp(2rem,9vw,7.5rem)] text-ash transition-colors group-hover:text-bone`}

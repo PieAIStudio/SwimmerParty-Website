@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Generate messages/zh.json and messages/en.json from one paired source.
+"""Generate messages/<locale>/messages.json from one paired source.
 
 Authoring both locales side by side is the only reliable way to keep them
-from drifting apart; a missing key in one file is a build-time crash with
-next-intl, and a silently stale sentence is worse.
+from drifting apart; a missing key is caught by the shared ICU catalog check, and a silently stale sentence is worse.
 """
 import json, io, os
 
@@ -391,11 +390,22 @@ def pluck(node, lang):
         return [pluck(v, lang) for v in node]
     return node
 
+def flatten(node, prefix="", result=None):
+    if result is None:
+        result = {}
+    if isinstance(node, (dict, list)):
+        items = node.items() if isinstance(node, dict) else enumerate(node)
+        for key, value in items:
+            flatten(value, f"{prefix}.{key}" if prefix else str(key), result)
+    else:
+        result[prefix] = node
+    return result
+
 root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "messages")
 os.makedirs(root, exist_ok=True)
-for lang in ("en", "zh"):
-    out = pluck(M, lang)
-    with io.open(os.path.join(root, lang + ".json"), "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
+for lang, code in (("en", "en"), ("zh", "zh-CN")):
+    os.makedirs(os.path.join(root, code), exist_ok=True)
+    with io.open(os.path.join(root, code, "messages.json"), "w", encoding="utf-8") as f:
+        json.dump(flatten(pluck(M, lang)), f, ensure_ascii=False, indent=2)
         f.write("\n")
 print("written")

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
 import { ACCENT_VAR, STATUS_LABEL, type Actor } from "@/content/actors";
 import { CG_BADGE } from "@/content/doctrine";
@@ -25,8 +25,8 @@ export async function ActorCard({
   /** `rail` fixes the card width so a horizontal track can be measured. */
   width?: "auto" | "rail";
 }) {
-  const t = await getTranslations("actor");
-  const locale = (await getLocale()) as AppLocale;
+  const t = await getSiteI18n().then((i18n) => i18n.t);
+  const locale = (await getSiteLocale()) as AppLocale;
   const accent = ACCENT_VAR[actor.accent];
   const ready = actor.status === "active" && actor.portrait;
   const name = locale === "zh" ? actor.nameCn : actor.nameEn;
@@ -74,7 +74,7 @@ export async function ActorCard({
               accent={accent}
             />
             <span className="sp-label sp-cjk absolute inset-x-0 bottom-4 text-center text-[0.5625rem] text-smoke">
-              {t("noPlateShort")}
+              {t("actor.noPlateShort")}
             </span>
           </div>
         )}

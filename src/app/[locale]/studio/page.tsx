@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
 import { Mega, Display } from "@/components/Mega";
 import { SectionHead } from "@/components/SectionHead";
@@ -9,25 +9,65 @@ import { STANCE_LINE } from "@/content/doctrine";
 import type { AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
-type Belief = { n: string; title: string; body: string };
-type Stack = { name: string; role: string; note: string };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "studio" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  const t = await getSiteI18n(locale).then((i18n) => i18n.t);
+  return { title: t("studio.metaTitle"), description: t("studio.metaDescription") };
 }
 
 export default async function StudioPage({ params }: Props) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  setSiteLocale(locale);
   const loc = locale as AppLocale;
 
-  const t = await getTranslations("studio");
-  const heroLines = t.raw("heroLines") as string[];
-  const outroLines = t.raw("outroLines") as string[];
-  const beliefs = t.raw("beliefs") as Belief[];
-  const stack = t.raw("stack") as Stack[];
+  const t = await getSiteI18n().then((i18n) => i18n.t);
+  const heroLines = [t("studio.heroLines.0"), t("studio.heroLines.1")];
+  const outroLines = [t("studio.outroLines.0"), t("studio.outroLines.1")];
+  const beliefs = [
+    {
+      n: t("studio.beliefs.0.n"),
+      title: t("studio.beliefs.0.title"),
+      body: t("studio.beliefs.0.body"),
+    },
+    {
+      n: t("studio.beliefs.1.n"),
+      title: t("studio.beliefs.1.title"),
+      body: t("studio.beliefs.1.body"),
+    },
+    {
+      n: t("studio.beliefs.2.n"),
+      title: t("studio.beliefs.2.title"),
+      body: t("studio.beliefs.2.body"),
+    },
+    {
+      n: t("studio.beliefs.3.n"),
+      title: t("studio.beliefs.3.title"),
+      body: t("studio.beliefs.3.body"),
+    },
+  ];
+  const stack = [
+    {
+      name: t("studio.stack.0.name"),
+      role: t("studio.stack.0.role"),
+      note: t("studio.stack.0.note"),
+    },
+    {
+      name: t("studio.stack.1.name"),
+      role: t("studio.stack.1.role"),
+      note: t("studio.stack.1.note"),
+    },
+    {
+      name: t("studio.stack.2.name"),
+      role: t("studio.stack.2.role"),
+      note: t("studio.stack.2.note"),
+    },
+    {
+      name: t("studio.stack.3.name"),
+      role: t("studio.stack.3.role"),
+      note: t("studio.stack.3.note"),
+    },
+  ];
 
   return (
     <div className="pt-14" style={{ ["--sp-accent" as string]: "var(--color-cyan)" }}>
@@ -43,14 +83,16 @@ export default async function StudioPage({ params }: Props) {
           }}
         />
         <div className="relative mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-28">
-          <p className="sp-label sp-cjk text-[0.625rem]">{t("eyebrow")}</p>
+          <p className="sp-label sp-cjk text-[0.625rem]">{t("studio.eyebrow")}</p>
           <Mega
             lines={heroLines}
             immediate
             className="mt-6 text-bone"
             size="text-[clamp(2.5rem,10vw,8rem)]"
           />
-          <p className="sp-cjk mt-8 max-w-lg text-sm leading-[1.95] text-smoke">{t("intro")}</p>
+          <p className="sp-cjk mt-8 max-w-lg text-sm leading-[1.95] text-smoke">
+            {t("studio.intro")}
+          </p>
           <p className="sp-label mt-8 text-[0.5625rem] text-cyan">{STANCE_LINE[loc]}</p>
         </div>
       </section>
@@ -58,9 +100,9 @@ export default async function StudioPage({ params }: Props) {
       <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
         <SectionHead
           index="01"
-          label={t("beliefsLabel")}
-          title={t("beliefsTitle")}
-          note={t("beliefsNote")}
+          label={t("studio.beliefsLabel")}
+          title={t("studio.beliefsTitle")}
+          note={t("studio.beliefsNote")}
         />
 
         <Reveal className="mt-14 grid gap-px bg-[var(--sp-hairline)] md:grid-cols-2">
@@ -82,9 +124,9 @@ export default async function StudioPage({ params }: Props) {
         <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
           <SectionHead
             index="02"
-            label={t("stackLabel")}
-            title={t("stackTitle")}
-            note={t("stackNote")}
+            label={t("studio.stackLabel")}
+            title={t("studio.stackTitle")}
+            note={t("studio.stackNote")}
           />
           <Reveal className="mt-14 grid gap-px bg-[var(--sp-hairline)] sm:grid-cols-2 lg:grid-cols-4">
             {stack.map((s) => (
@@ -106,14 +148,14 @@ export default async function StudioPage({ params }: Props) {
           size="text-[clamp(2rem,9vw,7.5rem)]"
         />
         <p className="sp-cjk mx-auto mt-8 max-w-xl text-sm leading-[1.95] text-smoke">
-          {t("outroBody")}
+          {t("studio.outroBody")}
         </p>
         <Link
           href="/casting"
           data-cursor="→"
           className="sp-label sp-cjk mt-12 inline-block border border-cyan px-10 py-4 text-[0.6875rem] text-cyan transition-colors hover:bg-cyan hover:text-black"
         >
-          {t("outroCta")} →
+          {t("studio.outroCta")} →
         </Link>
       </section>
     </div>
