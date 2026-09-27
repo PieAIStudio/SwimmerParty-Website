@@ -49,18 +49,18 @@ project-specific AI development habits live.
 
 ## Put Those Elsewhere
 
-| Need                                    | Put it in                                                          |
-| --------------------------------------- | ------------------------------------------------------------------ |
-| AI startup entry                        | `AGENTS.md`                                                        |
-| Agent routing algorithm                 | `docs/governance/agents-routing/`                                  |
-| Governed SSOT rules                     | `docs/governance/ssot-v1.1.md`                                     |
-| Project AI development practices        | `docs/policy/best-practice-for-this-project.md`                    |
-| Current work index                      | `docs/reference/execution/current-work.md`                         |
-| Product or world truth                  | `docs/canon/`                                                      |
-| Durable decisions                       | `docs/adr/`, governed decision records                             |
-| Active implementation work              | `docs/plans/active/`                                               |
-| Completed proof records                 | `docs/plans/completed/`                                            |
-| Reusable project learnings              | `docs/reference/learnings/**` as governed reference documents      |
+| Need | Put it in |
+| --- | --- |
+| AI startup entry | `AGENTS.md` |
+| Agent routing algorithm | `docs/governance/agents-routing/` |
+| Governed SSOT rules | `docs/governance/ssot-v1.1.md` |
+| Project AI development practices | `docs/policy/best-practice-for-this-project.md` |
+| Current work index | `docs/reference/execution/current-work.md` |
+| Product or world truth | `docs/canon/` |
+| Durable decisions | `docs/adr/`, governed decision records |
+| Active implementation work | `docs/plans/active/` |
+| Completed proof records | `docs/plans/completed/` |
+| Reusable project learnings | `docs/reference/learnings/**` as governed reference documents |
 | Product artifacts outside governed docs | Project package, workbench, assets, runtime config, or source tree |
 
 When unsure, ask this question: is this rule about how the document system works,

@@ -1,15 +1,15 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-08-25T16:30:12.823Z
-generator_version: doc-gov@0.9.8
-docs_count: 12
+generated_at: 2026-09-27T06:43:22.600Z
+generator_version: doc-gov@0.14.1
+docs_count: 13
 docs:
   - id: GOV-AGENTS-ROUTING-ENGINEERING-RUNTIME-V1-1
     path: docs/governance/agents-routing/engineering-runtime-v1.1.md
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-08-17
+    last_reviewed: 2026-09-27
     pinned: true
   - id: REF-DOC-GOVERNANCE-BOUNDARY
     path: docs/governance/boundary.md
@@ -23,7 +23,7 @@ docs:
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-06-12
+    last_reviewed: 2026-09-10
     pinned: true
   - id: POLICY-DOC-TYPES
     path: docs/governance/doc-types.md
@@ -37,7 +37,7 @@ docs:
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-07-13
+    last_reviewed: 2026-09-10
     pinned: true
   - id: POLICY-PROJECT-BEST-PRACTICE
     path: docs/policy/best-practice-for-this-project.md
@@ -51,28 +51,35 @@ docs:
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-08-17
+    last_reviewed: 2026-09-08
     pinned: false
   - id: POLICY-SHARED-BRAND-KIT-FIRST
     path: docs/policy/shared-rules/brand-kit-first.md
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-08-28
+    last_reviewed: 2026-09-08
     pinned: true
   - id: POLICY-SHARED-CLEAN-IMAGE-GENERATION
     path: docs/policy/shared-rules/clean-image-generation-rules.md
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-08-17
+    last_reviewed: 2026-09-08
+    pinned: false
+  - id: POLICY-SHARED-DOCUMENT-CONVERGENCE
+    path: docs/policy/shared-rules/document-convergence.md
+    type: policy
+    status: stable
+    canonical: true
+    last_reviewed: 2026-09-10
     pinned: false
   - id: POLICY-SHARED-DONORS
     path: docs/policy/shared-rules/donors.md
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-08-29
+    last_reviewed: 2026-09-08
     pinned: true
   - id: REF-DOCUMENTATION-MAP
     path: docs/reference/documentation-map.md
