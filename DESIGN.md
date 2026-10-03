@@ -1,5 +1,9 @@
 # SWIMMER PARTY — Design System
 
+> 2026-10-03 起本文描述的 ACID VOID 设计即将退役：站点按
+> [ADR](docs/adr/2026-10-03-join-swimmer-family.md) 并入 Swimmer 家族（UIKit 3.0，灰阶，浅色/深色）。
+> 新设计系统见[重构计划第 2 节](docs/plans/active/2026-10-03-swimmer-family-rebuild.md)，重构完成后重写本文。
+
 ## 一条规则
 
 **舞台是黑的，数据是酸的。** 没有暖色，没有圆角，不道歉。

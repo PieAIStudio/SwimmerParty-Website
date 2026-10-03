@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-08-20
-last_reviewed: 2026-08-20
+last_reviewed: 2026-10-03
 domain: meta
 tags:
   - current-work
@@ -21,9 +21,11 @@ This file is the current project work index. It is not the agents-routing algori
 
 ## Current Focus
 
-- Current phase: **视觉极端化与立场落地已交付，进入素材扩产阶段**
-- Current active plan: 无正式 plan
-- Current active spec: 无
+- Current phase: **并入 Swimmer 家族：整站重构与演员资产库（计划就绪，待执行）**
+- Decision: [ADR：并入 Swimmer 家族](../../adr/2026-10-03-join-swimmer-family.md)
+- Current active plan: [整站重构与演员资产库](../../plans/active/2026-10-03-swimmer-family-rebuild.md)
+- Current active spec: [AI 演员资产库](../../specs/active/actor-asset-library.md)
+- 多语言自 `5bacfca` 起已用 SwimmerI18nKit（下文 08-20 记录里的 next-intl 是当时的事实）。
 - Current proof target: `pnpm verify` 全绿 + 线上 Vercel 可访问
 
 ## 已经完成（2026-08-20）
@@ -66,16 +68,18 @@ This file is the current project work index. It is not the agents-routing algori
 
 ## 下一步（按优先级）
 
-| 优先级 | 事项                                                                   |
-| ------ | ---------------------------------------------------------------------- |
-| P0     | SP-01 / SP-02 三视图、表情组、造型组（可灵），填掉 `/kit` 里 K-04–K-06 |
-| P0     | SP-03 戴尔 / SP-04 丁一 形象定稿与定妆板                               |
-| P1     | 新增 SP-05–SP-12 的形象定稿；每交付一个就把 `promptSeed` 补上          |
-| P1     | 角色转台（可灵多角度序列 + 拖拽/滚动驱动），对应 K-07                  |
-| P2     | `/pact` 的分成百分比走完一次真实合同后再落数字                         |
-| P2     | 把 `acid` 主题上游回 SwimmerUIKit，发 1.4.0，本站升级引用              |
-| P2     | 真 `.glb` 角色模型，替换白膜占位                                       |
-| P3     | OG 图、结构化数据                                                      |
+| 优先级 | 事项                                                                                    |
+| ------ | --------------------------------------------------------------------------------------- |
+| P0     | 执行[整站重构计划](../../plans/active/2026-10-03-swimmer-family-rebuild.md)（Codex）    |
+| P0     | 按[母版规范](../../specs/active/actor-asset-library.md)为第一位演员出锚点与 21 张基础包 |
+| P1     | 其余演员按同一规范出图；每交付一个就把 `promptSeed` 补上                                |
+| P1     | 发布前置：UIKit 3.0 / AuthKit 0.8 联合发布、R2 开通、SSO 客户端登记                     |
+| P1     | 角色转台，对应 K-07                                                                     |
+| P2     | `/pact` 的分成百分比走完一次真实合同后再落数字                                          |
+| P3     | OG 图、结构化数据                                                                       |
+
+原 P2「把 `acid` 主题上游回 SwimmerUIKit」已由 ADR 取消；原「可灵出三视图/表情组/造型组」
+由新的母版规范（GPT Image 2.5、透明背景、单张）取代。
 
 ## Completed Proof History
 

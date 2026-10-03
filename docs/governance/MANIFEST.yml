@@ -1,9 +1,16 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-09-27T15:50:53.959Z
+generated_at: 2026-10-03T06:40:00.822Z
 generator_version: doc-gov@0.14.2
-docs_count: 14
+docs_count: 17
 docs:
+  - id: ADR-2026-10-03-JOIN-SWIMMER-FAMILY
+    path: docs/adr/2026-10-03-join-swimmer-family.md
+    type: decision
+    status: accepted
+    canonical: true
+    last_reviewed: 2026-10-03
+    pinned: false
   - id: GOV-AGENTS-ROUTING-ENGINEERING-RUNTIME-V1-1
     path: docs/governance/agents-routing/engineering-runtime-v1.1.md
     type: policy
@@ -39,6 +46,13 @@ docs:
     canonical: true
     last_reviewed: 2026-09-10
     pinned: true
+  - id: PLAN-SWIMMER-FAMILY-REBUILD
+    path: docs/plans/active/2026-10-03-swimmer-family-rebuild.md
+    type: plan
+    status: active
+    canonical: true
+    last_reviewed: 2026-10-03
+    pinned: false
   - id: POLICY-PROJECT-BEST-PRACTICE
     path: docs/policy/best-practice-for-this-project.md
     type: policy
@@ -100,5 +114,12 @@ docs:
     type: reference
     status: active
     canonical: true
-    last_reviewed: 2026-08-20
+    last_reviewed: 2026-10-03
     pinned: true
+  - id: SPEC-ACTOR-ASSET-LIBRARY
+    path: docs/specs/active/actor-asset-library.md
+    type: spec
+    status: active
+    canonical: true
+    last_reviewed: 2026-10-03
+    pinned: false
