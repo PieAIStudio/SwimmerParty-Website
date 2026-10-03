@@ -13,11 +13,13 @@ export interface MessageContracts {
   readonly "assets.background.white": {  };
   readonly "assets.cancel": {  };
   readonly "assets.clear": {  };
+  readonly "assets.close": {  };
   readonly "assets.dialogTitle": { readonly "count": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.downloadJson": {  };
   readonly "assets.downloadOne": {  };
   readonly "assets.downloadSelected": {  };
   readonly "assets.extended": {  };
+  readonly "assets.failed": {  };
   readonly "assets.format.model": {  };
   readonly "assets.format.modelNote": {  };
   readonly "assets.format.sheet": {  };
@@ -33,6 +35,7 @@ export interface MessageContracts {
   readonly "assets.legacyNote": {  };
   readonly "assets.metaTitle": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.model": {  };
+  readonly "assets.navigation": {  };
   readonly "assets.noSeed": {  };
   readonly "assets.none": {  };
   readonly "assets.notNow": {  };

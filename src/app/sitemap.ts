@@ -14,7 +14,7 @@ const PAGES = ["", "/actors", "/works", "/kit", "/studio", "/casting", "/pact"];
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const paths = [...PAGES, ...ACTORS.map((a) => `/actors/${a.slug}`)];
+  const paths = [...PAGES, ...ACTORS.flatMap((a) => [`/actors/${a.slug}`, `/kit/${a.slug}`])];
 
   return routing.locales.flatMap((locale) =>
     paths.map((path) => ({

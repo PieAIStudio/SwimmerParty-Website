@@ -403,6 +403,9 @@ M["assets"] = {
  "started": P("Download started", "已开始下载"),
  "cancel": P("Cancel", "取消"),
  "openLibrary": P("Open asset library", "打开资产库"),
+ "navigation": P("Asset series", "资产系列"),
+ "close": P("Close", "关闭"),
+ "failed": P("That could not be completed. Please try again.", "操作未完成，请重试。"),
 }
 # Stable protocol keys, authored labels; directions remain English production data.
 angles = {"front": P("Front", "正面"), "threeQuarter": P("Three-quarter", "四分之三侧"), "side": P("Side", "正侧"), "back": P("Back", "背面")}
