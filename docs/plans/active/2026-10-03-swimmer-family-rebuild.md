@@ -668,9 +668,9 @@ AuthKit 的服务端只接受 Node 的 `IncomingMessage` / `ServerResponse`，�
 
 | 变量                                                                                                                      | 取值                | 本地默认           | 说明                    |
 | ------------------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------ | ----------------------- |
-| `ASSET_STORE`                                                                                                             | `local` / `r2`      | `local`            | 母版存储                |
+| `ASSET_STORE`                                                                                                             | `local` / `blob`    | `local`            | 母版存储                |
 | `ASSET_LOCAL_ROOT`                                                                                                        | 路径                | `.assets-local`    | 本地存储根目录          |
-| `R2_ACCOUNT_ID` `R2_ACCESS_KEY_ID` `R2_SECRET_ACCESS_KEY` `R2_BUCKET`                                                     | —                   | 无                 | 只在 `r2` 模式读取      |
+| `BLOB_READ_WRITE_TOKEN`（或 Vercel OIDC + `BLOB_STORE_ID`）                                                               | —                   | 无                 | 只在 `blob` 模式读取    |
 | `ACCOUNT_MODE`                                                                                                            | `mock` / `swimmer`  | `mock`             | 登录                    |
 | `SWIMMER_BACKEND_URL` `SWIMMER_PUBLISHABLE_KEY` `SWIMMER_OAUTH_CLIENT_ID` `SWIMMER_COOKIE_PASSWORD` `SWIMMER_ACCOUNT_URL` | —                   | 无                 | 只在 `swimmer` 模式读取 |
 | `GUEST_LIMITER`                                                                                                           | `memory` / `vercel` | `memory`           | 游客限速                |
@@ -679,9 +679,13 @@ AuthKit 的服务端只接受 Node 的 `IncomingMessage` / `ServerResponse`，�
 - 游客窗口 `GUEST_DOWNLOAD_WINDOW_SECONDS = 30` 是代码常量，写在 `src/lib/downloads.ts`。
 - **防误用**：检测到运行在 Vercel（`process.env.VERCEL_ENV` 存在）时，`local`、`mock`、
   `memory` 一律拒绝：接口返回 503 并记录日志。生产环境绝不悄悄退回模拟模式。
-- **`r2` 适配器**：用 `aws4fetch` 生成预签名 GET URL，有效 120 秒，带
-  `response-content-disposition=attachment; filename="..."`。上传用同一库签名 PUT。
-  只写代码和单元测试（模拟 fetch），**不实际连接**。
+- **`blob` 适配器**：Vercel Blob **私有**存储（`access: "private"`）。
+  - 签出下载链接：服务端 `issueSignedToken({ pathname, operations: ["get"] })`，
+    再 `presignUrl(token, { operation: "get", pathname, access: "private", validUntil: 现在 + 120 秒 })`。
+    token 可缓存到快过期再换，避免每次请求都调控制 API。
+  - 上传母版（入库脚本）：`put(pathname, bytes, { access: "private", contentType: "image/png", addRandomSuffix: false, allowOverwrite: true })`。
+  - 先按 `@vercel/blob` 当前文档核实以上函数签名，以文档为准。
+  - 只写代码和单元测试（模拟 SDK），**不实际连接**。
 - **`swimmer` 账号适配器**：按 AuthKit README 与 Directing 示例配置 `createNodeAuth({ sso })`。
   只写代码并通过类型检查，**不实际连接**。
 - **`vercel` 限速适配器**：用 `@vercel/firewall` 的 `checkRateLimit("guest-asset-download", …)`，
@@ -690,9 +694,10 @@ AuthKit 的服务端只接受 Node 的 `IncomingMessage` / `ServerResponse`，�
 ### 5.3 接口
 
 - **`GET /api/assets/[slug]/[slot]/download`**
-  - 会员：302 到预签名 URL。
-  - 游客：先过限速。通过：302，加响应头 `X-Guest-Cooldown: 30`。
+  - 会员：200 `{ url, filename }`，`url` 是 120 秒有效的签名链接。
+  - 游客：先过限速。通过：200 `{ url, filename, cooldown: 30 }`。
     超限：429，返回 `{ retryAfter }` 并带 `Retry-After` 头。
+  - 浏览器拿到后 `fetch(url)` → Blob → 用 `<a download={filename}>` 存盘，文件名可控。
   - 未知演员或格位：404。
   - 响应头一律 `Cache-Control: private, no-store`。
 - **`POST /api/assets/[slug]/bundle`**，请求体 `{ slots: string[] }`，最多 64 个
@@ -704,7 +709,7 @@ AuthKit 的服务端只接受 Node 的 `IncomingMessage` / `ServerResponse`，�
     用 HttpOnly cookie `sp_mock_member=1`。
   - 两种模式都提供 `GET /api/auth/session` → `{ user: null | { id } }`。
 - **`GET /api/dev-assets/[...key]?exp=&sig=`**：只在 `local` 模式且不在 Vercel 时存在。
-  校验 HMAC 和过期时间后返回文件，模拟预签名。
+  校验 HMAC 和过期时间后返回文件，模拟 Vercel 签名链接。
 
 ### 5.4 客户端
 
@@ -775,12 +780,23 @@ shasum -a 256 ../SwimmerAuthKit/.devspace-reports/uikit3-compat-20261002/release
 
 **新增**（精确版本）
 
-- `fflate`、`aws4fetch`、`@vercel/firewall`、`@vercel/analytics`。
+- `fflate`、`@vercel/blob`、`@vercel/firewall`、`@vercel/analytics`。
 - 开发依赖 `sharp`。
 
 ## 7. 执行步骤
 
 每步末尾的命令都要通过才能进入下一步。
+
+本地执行清单（计划暂留 active，等待 Owner 审阅，不代表获准发布）：
+
+- [x] 第 0 步：依据首提交、候选校验和基线验证。
+- [x] 第 1 步：UIKit、主题与语言地基。
+- [x] 第 2 步：全站与 3D 换装及截图。
+- [x] 第 3 步：资产框架、旧图迁入、何姐与进度。
+- [x] 第 4 步：双语演员资产页与 sitemap。
+- [x] 第 5 步：本地下载、模拟账号与会员导出；完整 verify 通过。
+- [x] 第 6 步：DESIGN / README / current-work 收口与文档门禁。
+- [ ] 第 7 步：最终门禁、完整截图与中文报告。
 
 ### 第 0 步：准备
 
@@ -872,12 +888,12 @@ shasum -a 256 ../SwimmerAuthKit/.devspace-reports/uikit3-compat-20261002/release
    - SP-01 显示 3 张旧规格转面、"基础包 3/21"、"旧规格"标记。
    - SP-03 显示 21 个"待交付"格子，没有任何 `img`。
 3. 游客单张下载：
-   - 第一次 302。
+   - 第一次 200，返回 `url` 与 `filename`。
    - 立即第二次 429，带 `Retry-After`。
    - 界面出现冷却提示和登录动作。
 4. 游客点"下载所选"弹出登录邀请，邀请里只列 University 与 Directing。
 5. 模拟登录后：
-   - 打包接口返回预签名列表。
+   - 打包接口返回签名链接列表。
    - 原图打包触发下载，ZIP 里包含 `character.json`、`README-for-AI.txt`、`LICENSE.txt`。
 6. 拼成一张：PNG 尺寸 3840×2160。选"不加"时不调用任何文字绘制（对 canvas 的 `fillText` 计数为 0）。
 7. 按模型打包：Veo 恰好 3 个图片文件；选 20 张时 GPT Image 为 16 张、Seedance 为 9 张。

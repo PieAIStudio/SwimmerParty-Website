@@ -1,156 +1,109 @@
 # SWIMMER PARTY — Design System
 
-> 2026-10-03 起本文描述的 ACID VOID 设计即将退役：站点按
-> [ADR](docs/adr/2026-10-03-join-swimmer-family.md) 并入 Swimmer 家族（UIKit 3.0，灰阶，浅色/深色）。
-> 新设计系统见[重构计划第 2 节](docs/plans/active/2026-10-03-swimmer-family-rebuild.md)，重构完成后重写本文。
+本文是本站唯一的现行设计系统说明。历史取舍保留在
+[并入 Swimmer 家族 ADR](docs/adr/2026-10-03-join-swimmer-family.md)；
+重构验收记录见[执行计划](docs/plans/active/2026-10-03-swimmer-family-rebuild.md)。
 
-## 一条规则
+## 定位与内容
 
-**舞台是黑的，数据是酸的。** 没有暖色，没有圆角，不道歉。
+名册上的演员是产品，网站是清楚、安静的展示与取用入口。只做动画角色，绝不做真人形象。
+立场从 `src/content/doctrine.ts` 取，使用条款从 `src/content/kit.ts` 取，不复制另一套说法。
+不虚构交付、客户、片单进展或分成；没有图就是研发中，没有已锁定形象就没有种子。
 
-## Tokens
+## 主题与字体
 
-原始色值只允许出现在 `src/app/globals.css` 的 `@theme` 与 `:root` 块里。组件一律
-引用 token，这样将来换主题能整站级联。
+UIKit 3.0 的 `grey` 风格是唯一控件风格，明暗为 `light` / `dark`。`<html>` 同时设置
+`data-game-ui-style` 和 `data-game-ui-theme`。页头内联脚本在绘制前读取本地偏好；
+没有偏好就跟随系统。主题切换不改语言、不重建选择状态。
 
-| 用途              | Token             | 值           |
-| ----------------- | ----------------- | ------------ |
-| 真黑（页面底）    | `--color-void`    | `#000000`    |
-| OLED 黑（正文底） | `--color-black`   | `#050505`    |
-| 面板              | `--color-carbon`  | `#0b0b0d`    |
-| 发丝线            | `--sp-hairline`   | `bone / 12%` |
-| **主强调色**      | `--color-acid`    | `#ccff00`    |
-| 次强调色          | `--color-cyan`    | `#00e5ff`    |
-| 警示 / 热点       | `--color-magenta` | `#ff1e7a`    |
-| 第四色            | `--color-flare`   | `#ff4d00`    |
+`src/app/globals.css` 引入 UIKit 的 `styles.css`、`fonts.css`，不引入其 Tailwind 桥。
+本站只把背景、前景、卡片、弱表面、分隔线与禁止色映射到 UIKit token。组件不写私有
+色板，不给演员分配专属颜色；3D 材质常量和导出文档底色是明确隔离的例外。
 
-四个强调色不是装饰，是**身份**：名册上每个演员绑定一个，全站跟着他走。
+拉丁标题为 Baloo 2，正文为 Geist；中文用系统字体，不加载中文字库、不描边补重。
+等宽字体只服务编号、版本和身高数字。英文界面句首大写；品牌、编号保持原样。
 
-## 字体
+| 类                     | 字号                            | 字重 / 行高                 |
+| ---------------------- | ------------------------------- | --------------------------- |
+| `sp-display-xl`        | `clamp(2.75rem,6.5vw,5.25rem)`  | 800 / 1.02；中文 700 / 1.15 |
+| `sp-display-lg`        | `clamp(2.25rem,4.8vw,3.75rem)`  | 800 / 1.05；中文 700 / 1.2  |
+| `sp-title`             | `clamp(1.625rem,2.6vw,2.25rem)` | 700 / 1.15                  |
+| `sp-subtitle`          | 1.25rem                         | 700 / 1.3                   |
+| `sp-lead`              | 1.125rem                        | 400 / 1.7；中文 1.85        |
+| 正文                   | 1rem                            | 400 / 1.65；中文 1.8        |
+| `sp-small`             | .875rem                         | 400 / 1.55                  |
+| `sp-label` / `sp-code` | .8125rem                        | 600 / 1.3；编号 500         |
 
-- **Display**：Archivo Variable（带 `wdth` 轴）。海报级标题用 `wght 900 / wdth 125%`。
-- **Mono**：JetBrains Mono。所有标签、编号、规格值。
-- **中文**：系统栈（PingFang SC / 微软雅黑）。**故意不上中文 webfont**——中文字库
-  动辄 2–5 MB，PingFang 在 Mac/iOS 上本来就好看，这个取舍是专业选择不是偷懒。
+自定义布局类放在 `@layer components`，中文差异用 `:lang(zh)`。不用 CSS 强制全大写。
 
-被禁的字体：Inter、Roboto、Open Sans、Helvetica。
+## 布局与控件
 
-## 招牌视觉：暗底蓝图规格书
+内容最大宽度 75rem；左右留白为手机 20px、中屏 32px、桌面 48px。断点沿用 Tailwind。
+区块上下 64px / 96px，普通网格 24px。页头高 64px，只有页头允许 12px 背景模糊。
 
-`src/components/SpecSheet.tsx`。定妆板放进一个**测量框**里：发丝级标注线、站位刻度、
-角点十字线。
+卡片无描边、无阴影，使用 `bg-card`、18px 圆角及 20px / 24px 内边距。大展示面板
+26px 圆角。状态药丸高 26px，单色；可出演加实心点，研发中使用次要文字色。
+`SectionHead` 按眉标、标题、说明排列，不加编号和装饰线。
 
-**所有标注都是 SVG 和真实文本画在图片上层，绝不烤进图里。** 这带来四个好处：
-任意缩放都锐利、对屏幕阅读器和搜索引擎可读、写错了改文案不用重新生成像素、
-可以做动效。
+控件从客户端边界 `src/ui/kit.tsx` 具名导入，不复制或改造 UIKit 的轮廓、阴影、按压形变。
+普通操作用 secondary `GameButton`；单张下载、主题、菜单、关闭用带 label 的
+`GameIconButton`。勾选、分段选择、模型下拉、弹窗、提示和真实进度分别用
+`GameCheckbox`、`GameSegmentedControl`、`GameSelect`、`GameModal`、`GameToast`、`GameProgress`。
+图标是 `src/ui/icons.tsx` 的单色内联 SVG，不加载图标库。
 
-每个演员的身体站位（顶/肩/腰/膝/基线）是 `Actor.landmarks` 数据字段，因为定妆板是
-手工构图的，写死一套常量在下一张板上就会漂。
+每屏最多一个 primary：只给下载所选、开始下载或登录。弹窗出现时背景下载按钮退为
+secondary。导航始终是真链接加文字箭头，不用液体按钮。所有输入有明确可访问名称，
+菜单与弹窗支持键盘、Esc、关闭后回到触发位置；不依赖颜色表达状态。
 
-## CSS 分层（一个踩过的坑）
+## 角色图与资产页
 
-自定义类必须写在 `@layer components` 里。Tailwind v4 输出
-`@layer theme, base, components, utilities`，而**无层级的 CSS 优先级高于任何分层的
-CSS**——一个无层级的 `.sp-mega { font-size }` 会静默压掉同一元素上的每一个
-`text-[...]` 工具类。分层之后工具类才能正常覆盖。
+统一使用 `ActorPicture` 和准确 `sizes` 的 `next/image`。摄影棚背景为 `sp-sweep`：
+顶部到 58% 保持背景纸色，再过渡到地面色。
 
-## 3D
+- v1 透明图 contain；全身贴底、上留 4%，加独立接地影，头像居中无影。
+- legacy 保留原图黑底，按照片 cover，明确标记“旧规格”；不伪装透明，不叠身高刻度。
+- 未交付显示 `Mannequin` SVG 白膜或空格文字，不用生成图冒充。
 
-`src/three/`。R3F 独占这块 canvas 的渲染器，ACES 色调映射，**恰好一次** sRGB 编码。
-刻意不用 `EffectComposer`——插进去会移动编码位置并静默洗白画面。
+身高刻度只叠在已知 `heightCm` 的 v1 全身图上，遵循母版顶点与脚底位置；不猜其他演员身高。
+档案页展示少量样张和进度，完整选择、取图在 `/kit/[slug]`。
 
-DPR 钳制 `[1, 1.75]`，粗指针设备降到 `[1, 1.35]`。滚出视口或标签页切走时停止渲染。
+基础包固定 21 格：4 转面、3 头像、14 表情。缺图格不可选择、不可下载；可选服装、姿态、
+细节等系列只在实际交付后出现。进度只计算真实清单。旧规格计入已交付，但保持独立标识。
+数据与母版的唯一规范是[演员资产库 spec](docs/specs/active/actor-asset-library.md)。
 
-相机不要用 `onCreated` + `lookAt`：R3F 每次 resize 都会为默认相机重新执行配置并
-重置朝向。要改构图就移动场景，不要动相机。
+资产格全身 2:3，手机 / 中屏 / 桌面 2 / 3 / 4 列；头像 1:1，对应 3 / 4 / 6 列。
+间距 12px / 16px；标签不烤入图片。选择外框与图片内部区域分离，空格不放交互控件。
+工具条粘在页头下方；手机有选择时显示底部安全区操作条，桌面用工具条右侧操作区。
+选择按演员保存在 sessionStorage，关闭弹窗、刷新、切语言和登录后仍保留。
 
-## SwimmerUIKit
+游客单张取图有 30 秒窗口；文字复制和 JSON 不受限制。会员选择 ZIP、拼成一张或按模型
+打包。拼图默认无字、浅灰，3840×2160，边距 80px、格间距 40px；默认无字意味着完全不
+调用文字绘制。未交付的表情不拿空白图顶替，Veo 三图包缺少必要素材时明确提示。
 
-本站通过 `[data-game-ui-theme='acid']` 消费 `@pieai/swimmer-ui-kit`。这套主题满足
-kit 的 `GAME_UI_THEME_CONTRACT`，并额外覆盖了圆角、字体和投影——**光换颜色不够，
-把游戏 HUD 变成工业界面的是形状那四行。**
+## 动效与 3D
 
-这套主题是上游候选：等第二个产品需要同一种语言时，把它抽回 SwimmerUIKit 作为
-一等主题，而不是让每个产品各自分叉。参见 `docs/policy/shared-rules/brand-kit-first.md`。
+只保留 UIKit 按压反馈、一次 Reveal、图片 1.02 倍悬停和白黏土初次装配。
+Reveal 为 12px / 480ms，同组每项延迟 60ms、最多六项；仅 `html.js` 下隐藏初态。
+图片缩放为 300ms。减少动态时不位移、不缩放，3D 直接就位并静止。无滚动劫持、名册墙、
+自定义光标、跑马灯、噪点、扫描线或闪烁。
 
-## 立场（这条决定内容，不只是视觉）
+`src/three/Stage.tsx` 只在首页和无图档案主视觉挂载一个透明 R3F Canvas；名册卡用 SVG。
+保留 ACES、一次 sRGB 输出，不加后处理。滚出视口或切换后台标签页后停渲染；DPR 封顶 1.5。
+相机保持稳定，构图通过场景位置调整；不使用 resize 会重置的临时 lookAt。
 
-**只做动画角色，绝不做真人形象。** 名册上的人一眼就能看出是 CG，这是故意的。
+材质 `MeshStandardMaterial`，roughness .9、metalness 0；light `#f3f1ec`、dark `#d9d5cd`，
+颜色只在 `src/three/palette.ts`。半球光强度 1 / .6；主光位置 [-2.5,4,3]、强度 1.6 / 1.1、
+1024 软阴影；补光 [3,2,2]、强度 .35。`ContactShadows` 位于地面，scale 3、blur 2.4、
+far 1.2，明暗不透明度 .35 / .55。部件在 1.4 秒内缓出就位，偏航不超过 ±12°。
+WebGL 初始化失败时退回 SVG，不留破损画布。视觉验收检查哑光体积、身体高光不过曝、
+接地影、不闪烁和不穿插；不能以源码参数代替实际截图。
 
-这条不是文案，是约束，落在四个地方：
+## 多语言与验收
 
-1. `src/content/doctrine.ts` 是唯一出处。首页酸色板块、`/pact` 第一部分、每张
-   名册卡、每份规格书、页脚，全部引用同一份 `REFUSALS` / `STANCE_LINE` /
-   `CG_BADGE`。一个立场被四种略有出入的说法讲出来就变成了营销，只讲一次才是规矩。
-2. 所有 `promptSeed` 必须写 `Stylised 3D animated character … NOT photorealistic`
-   并以 `do not render as a real human` 收尾。种子是给外人用的，它得自己带着这条。
-3. `KIT_RULES` 里有一条明确禁止把角色做成真人。
-4. Playwright 有一条测试守着首页和 `/pact` 上这段话还在。
+`SwimmerI18nKit 0.2.0` 负责 ICU；本站保留 `/zh`、`/en` 路由。消息只改
+`tools/gen-messages.py` 再生成目录和合同，结构化内容保持 `{ en, zh }`。
+其他语言仅是明确标注、nofollow、不进 sitemap 的机器翻译外链。路由切换保留查询参数。
 
-写这条之前名册就已经是风格化 CG 了——顺序是这样，所以这话敢大声说。
-
-## 多语言
-
-`next-intl` v4 + `src/app/[locale]/**`，中间件是 Next 16 的 `src/proxy.ts`。
-
-**只有 zh / en 两个人工语言。** 其余语言在切换器里是一排指向
-`*.translate.goog` 的外链，并且在界面上明写「机器翻译」。理由：我们校得动两种，
-校不动十种，把代理渲染当本地化摆出来和摆假 logo 是同一类问题。
-
-- 人写的句子一律成对：JSON 在 `messages/{zh,en}.json`（由 `tools/gen-messages.py`
-  从一份配对源生成，改文案改那个文件，不要手改 JSON），结构化内容在 `src/content/*.ts` 里写成 `{ en, zh }`。
-- **不许中英混排。** 「VIEW ROSTER 看名册」这种按钮是被明令删掉的。
-  例外只有两类：品牌名 `SWIMMER PARTY`，以及编号型术语（`SP-01`、
-  `VERSION 6 / 10`、`UNITS: CM`）——那是图纸上的记号，不是句子。
-  有两条 Playwright 测试分别断言 `/en` 正文不含 CJK、`/zh` 标题不含英文。
-- 机器语言链接一律 `rel="nofollow"`，也不进 sitemap。
-- 根路径按 `Accept-Language` 协商，`zh` 只是兜底。
-
-## 中文海报字（第二个坑）
-
-DESIGN.md 早就定了不上中文 webfont（字库 2–5 MB）。代价是 PingFang 最重只到
-Semibold，`font-weight: 900` 会被合成，摆在 Archivo Black 旁边一眼就虚。
-
-解法在 `.sp-zh-mega` / `.sp-zh-display`：用 `-webkit-text-stroke: 0.014em currentColor`
-把重量补回来。描边用 `em`，所以跟着字号缩放，比换字体便宜得多。
-
-拉丁文和中文因此走两套类，`<Mega>` 按 locale 自己选——调用方不需要知道。
-
-## 动效
-
-GSAP + ScrollTrigger（2025 年起全部免费，含 ScrollTrigger）。统一在
-`src/motion/gsap.ts` 注册一次。
-
-四个滚动装置：`ScrubStage`（首页 hero）、`HorizontalRail`（名册横滚）、
-`StackDeck`（工序叠卡）、`VelocityMarquee`（跟滚轮变速的跑马灯）。
-
-**两条纪律：**
-
-1. **静止态写在 CSS 里，JS 只决定「什么时候」。** `.sp-word` / `.sp-reveal` /
-   `.sp-clip` 的初始样式在样式表中，`Reveal` 只负责加 `.is-in`。这样慢网络不会闪
-   一下已经就位的内容。
-2. **失效要往「显示」的方向倒。** `<noscript>` 里有一段把所有动效元素还原成完成态；
-   `ScrubStage` 也绝不预先把 `stageSignal.assembly` 设成 0——只有在 intro 补间真的
-   开始跑的那一帧才拆开白膜。rAF 不跑（后台标签页、被拦的 bundle、受限 webview）
-   时，人形是站着的，不是散成一地零件。
-
-`ScrubStage` 用 CSS `position: sticky` 而不是 GSAP pin，并把进度写成一个自定义属性
-`--p`，子元素用 `calc()` 跟着动——再加第五个动画元素，运行时成本是零。
-
-横滚轨道必须自己带 `overflow` 裁剪：轨道有好几屏宽，没有裁剪祖先就会把整站撑出
-横向滚动条。根节点用的是 `overflow-x: clip` 而不是 `hidden`——`hidden` 会让根变成
-滚动容器，把页面上每个 `position: sticky` 都重新挂载到它身上，pin 全废。
-
-## 3D（补充）
-
-`stageSignal`（`src/three/signal.ts`）是 DOM 与 R3F 帧循环之间的可变桥。
-刻意不用 React state：滚动和指针的频率远高于 React 有意义的重渲染频率。
-
-白膜有两种形态，用途不同：
-
-- **`WhiteModel`**（分件）——hero 的装配动画需要每个部件单独飞入。
-- **`whiteModelGeometry()`**（合并）——名册墙一次画 12 个人形。24 组 × 2 mesh × 12
-  是 576 个 draw call；合并之后一个人形一个 call，这才是这面墙在手机上跑得动的原因。
-- **`<Mannequin />`**（SVG）——名册卡和未交付的规格书里那个 2D 白膜。12 张卡不可能
-  各起一个 canvas；同一套比例画成内联 SVG，填的是「他现在真的就是个白膜」这件事，
-  而不是一片什么都不说的斜纹。
+改产品运行 `pnpm verify` 与 `pnpm exec swimmer-ui-check src`，改文档另跑
+`pnpm docs:check`。页面检查同时覆盖 390px / 1440px、light / dark、中 / 英、有图 / 无图。
+完整截图与执行报告留在本地 `.devspace-reports/swimmer-family-rebuild/`，不当作已部署证据。

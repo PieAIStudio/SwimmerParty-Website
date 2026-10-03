@@ -21,71 +21,43 @@ This file is the current project work index. It is not the agents-routing algori
 
 ## Current Focus
 
-- Current phase: **并入 Swimmer 家族：整站重构与演员资产库（计划就绪，待执行）**
-- Decision: [ADR：并入 Swimmer 家族](../../adr/2026-10-03-join-swimmer-family.md)
-- Current active plan: [整站重构与演员资产库](../../plans/active/2026-10-03-swimmer-family-rebuild.md)
-- Current active spec: [AI 演员资产库](../../specs/active/actor-asset-library.md)
-- 多语言自 `5bacfca` 起已用 SwimmerI18nKit（下文 08-20 记录里的 next-intl 是当时的事实）。
-- Current proof target: `pnpm verify` 全绿 + 线上 Vercel 可访问
+- Current phase: **重构已完成本地开发，等待 UIKit 3.0 / AuthKit 0.8 联合发布与资产出图**。
+- Decision: [ADR：并入 Swimmer 家族](../../adr/2026-10-03-join-swimmer-family.md)。
+- Current active plan: [整站重构与演员资产库](../../plans/active/2026-10-03-swimmer-family-rebuild.md)。
+- Current active spec: [AI 演员资产库](../../specs/active/actor-asset-library.md)。
+- Current design: [DESIGN.md](../../../DESIGN.md)，是唯一现行设计说明；本页不复制视觉规范。
+- Current proof: 本地 `pnpm verify`、`pnpm docs:check`、`pnpm exec swimmer-ui-check src`；
+  最终结果和截图索引写入 `.devspace-reports/swimmer-family-rebuild/REPORT.md`。不以线上可访问为本轮证据。
 
-## 已经完成（2026-08-20）
+## 本地已实现
 
-- 注册进 PGS portfolio（`swimmerparty-website`，`public-seo-site`，
-  `engineering-runtime` profile）；`portfolio check` / `assets-check` / `doctor` 三绿。
-- Next.js 16 + R3F 骨架，6 个页面全静态预渲染。
-- ACID VOID 设计系统与 `[data-game-ui-theme='acid']` kit 主题。
-- 白膜 3D 展台（单渲染器、ACES、一次 sRGB 编码、DPR 钳制、离屏停渲染）。
-- 暗底蓝图规格书组件，站位刻度做成 per-actor 数据。
-- SP-01 胡谦、SP-02 齐满 定妆板（可灵 `image_to_image` 多参考图锁人脸）。
-- Playwright 冒烟 5 条，含 WebGL canvas 存活断言与「不许拿占位图冒充定妆板」断言。
+`rebuild/swimmer-family` 从 `5bacfca` 开始；每步本地提交。此次未推送、未部署、未连接云服务。
+计划暂留 active，供 Owner 按本地报告审阅；本地实现完成不等于正式发布。
 
-## 已经完成（2026-08-20 第二轮）
+- UIKit 3.0 灰阶、浅色 / 深色、全站与 404、白黏土舞台，I18nKit 0.2.0。
+- 13 位演员和统一资产词表；基础包 21 格、可选系列按真实交付显示、何姐与已知身高。
+- 四张旧图原字节迁移，SP-01 为 3/21、SP-02 为 1/21，其余为 0/21。
+- 双语资产页、游客单张限速、模拟会员、原图 ZIP、无字拼图、按模型包和免费双语资料。
+- Blob / Swimmer SSO / WAF 的独立适配器与防误部署开关；本地、合成夹具和 SDK 注入测试。
 
-- **立场落地。** `src/content/doctrine.ts` 成为唯一出处：只做动画角色、绝不做真人
-  形象。首页整块酸色板、`/pact` 第一部分、名册卡徽标、规格书、页脚全部引用同一份
-  文案，Playwright 有测试守着它不被删掉。名册在写下这条之前就已经是风格化 CG，
-  没有任何素材需要返工。
-- **多语言。** `next-intl` v4 + `src/app/[locale]/**` + `src/proxy.ts`。zh / en 两个
-  人工语言，其余八种是 `translate.goog` 外链并在界面上明写「机器翻译」。中英混排
-  全部拆干净，两条测试分别断言 `/en` 无 CJK、`/zh` 标题无英文。
-  文案改 `tools/gen-messages.py`，不要手改 `messages/*.json`。
-- **视觉极端化。** GSAP + ScrollTrigger；四个滚动装置（hero 装配 scrub、名册横滚
-  pin、工序叠卡、跟滚轮变速的跑马灯）；中文海报字用描边补重量；整块荧光色板；
-  自定义光标、扫描线、RGB 分离、磁吸式 hover。
-- **3D 加料。** 白膜装配动画（部件飞入）、指针驱动转向、`/actors` 顶部 12 人名册墙
-  （合并几何，一个人形一个 draw call）、`<Mannequin />` 把同一套比例画成 2D SVG
-  填进名册卡和未交付的规格书。
-- **名册扩到 12 人**（SP-05 罗大江 … SP-12 关海，全部 `in-development`，诚实显示
-  白膜与 `NO PLATE DELIVERED`）。
-- **两个新板块。** `/kit` 开放物料包（SP-01 / SP-02 的角色种子提示词现在就能复制，
-  未做的明写「筹备中」）；`/pact` 共赢契约（第一部分是拒绝，第二部分是分账，
-  未定的百分比明写「以正式合同为准」）。
-- **SP-01 参考图组交付。** 可灵 `image_to_image` 多参考图出了四分之三侧与正侧两个
-  角度，脸、发型、服装、比例都稳住了。加上原有正面，SP-01 现在是三视图，
-  `/kit` 与档案页都能取。K-04 因此转 `live`；其余演员在页面上明写「目前只有正面」。
-  踩到的坑：**可灵不接受 `.webp` 上传**，参考图要先转 PNG（`dwebp`）再传。
-- Playwright 从 5 条扩到 12 条，含 locale 纯净度、立场留存与「参考图按人交付」断言。
+本分支仍引用邻接 UIKit / AuthKit 候选包。真实透明母版、云存储、账号中心登记、WAF
+规则、跨域签名下载和真实设备体验都没有因此自动完成。Veo 三图包缺表情时明确说明，
+不制造假素材；Seedance 九图上限仍待官方核实。
 
 ## 下一步（按优先级）
 
-| 优先级 | 事项                                                                                    |
-| ------ | --------------------------------------------------------------------------------------- |
-| P0     | 执行[整站重构计划](../../plans/active/2026-10-03-swimmer-family-rebuild.md)（Codex）    |
-| P0     | 按[母版规范](../../specs/active/actor-asset-library.md)为第一位演员出锚点与 21 张基础包 |
-| P1     | 其余演员按同一规范出图；每交付一个就把 `promptSeed` 补上                                |
-| P1     | 发布前置：UIKit 3.0 / AuthKit 0.8 联合发布、R2 开通、SSO 客户端登记                     |
-| P1     | 角色转台，对应 K-07                                                                     |
-| P2     | `/pact` 的分成百分比走完一次真实合同后再落数字                                          |
-| P3     | OG 图、结构化数据                                                                       |
-
-原 P2「把 `acid` 主题上游回 SwimmerUIKit」已由 ADR 取消；原「可灵出三视图/表情组/造型组」
-由新的母版规范（GPT Image 2.5、透明背景、单张）取代。
+| 优先级 | 事项与责任                                                                                                                           |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| P0     | Owner / 审阅者按计划第 2、3、9 节复核本地分支、报告和截图；批准后再结束本计划                                                        |
+| P0     | Owner 协调 UIKit 3.0 / AuthKit 0.8 联合发布，网站再切正式依赖并回归                                                                  |
+| P0     | 经另行授权，登记公开 PKCE 客户端、私有 Blob 与 `guest-asset-download` WAF 规则，验收真实 SSO / 签名下载 / 限速；不是本轮自动发布任务 |
+| P0     | 制作方按母版 spec 为第一位演员锁锚点并交付 21 张基础包，再执行本地入库与视觉核对                                                     |
+| P1     | 其余演员逐位出图；只有真正锁定形象后才补 `promptSeed`，不猜身高                                                                      |
+| P1     | 角色转台 K-07；真实 iOS / Android 下载、键盘与长会话回归                                                                             |
+| P2     | 分账数字必须有真实合同依据；另行评估 OG 图与结构化数据                                                                               |
 
 ## Completed Proof History
 
-Completed plans and specs live in:
-
-- `docs/plans/completed/`
-- `docs/specs/completed/`
-
-Do not move completed work back into active. Create a new plan and link the completed record as provenance.
+重构前的过程记录保存在 Git 历史（基线 `5bacfca`），不混入现行设计。
+已完成并通过审阅的计划 / spec 分别归档到 `docs/plans/completed/`、`docs/specs/completed/`。
+不要把已归档历史重新搬回 active；新任务建立新计划并引用既有证据。
