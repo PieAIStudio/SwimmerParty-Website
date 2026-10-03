@@ -17,10 +17,13 @@
     "format:check": "oxfmt src e2e docs AGENTS.md README.md DESIGN.md --check --ignore-path ./.oxfmtignore",
     "test": "playwright test",
     "test:e2e": "playwright test",
+    "assets:ingest": "node tools/assets-ingest.ts",
+    "assets:todo": "node tools/assets-todo.ts",
+    "test:tools": "node --test tools/*.test.ts",
     "doc-gov": "doc-gov",
     "pro-gov": "pro-gov",
     "docs:check": "pnpm pro-gov doctor && pnpm doc-gov router-check && pnpm doc-gov check && pnpm doc-gov scan --check && pnpm doc-gov links && pnpm doc-gov audit && pnpm doc-gov doctor",
-    "verify": "pnpm check:i18n && pnpm typecheck && pnpm lint && pnpm format:check && pnpm build && pnpm test",
+    "verify": "pnpm check:i18n && pnpm typecheck && pnpm lint && pnpm format:check && pnpm test:tools && pnpm build && pnpm test",
     "check:i18n": "swimmer-i18n-check check && swimmer-i18n-check types --out src/i18n/message-contracts.ts --check"
   },
   "dependencies": {

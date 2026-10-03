@@ -404,6 +404,26 @@ M["assets"] = {
  "cancel": P("Cancel", "取消"),
  "openLibrary": P("Open asset library", "打开资产库"),
 }
+# Stable protocol keys, authored labels; directions remain English production data.
+angles = {"front": P("Front", "正面"), "threeQuarter": P("Three-quarter", "四分之三侧"), "side": P("Side", "正侧"), "back": P("Back", "背面")}
+M["assets"]["slot"] = {
+ "turnaround": angles,
+ "face": {key: value for key, value in angles.items() if key != "back"},
+ "expression": {
+  "neutral": P("Neutral", "平静"), "smile": P("Smile", "浅笑"), "laugh": P("Laugh", "大笑"),
+  "sad": P("Sad", "难过"), "cry": P("Crying", "哭"), "annoyed": P("Annoyed", "烦躁"),
+  "angry": P("Angry", "发怒"), "surprised": P("Surprised", "惊讶"), "scared": P("Scared", "害怕"),
+  "disgusted": P("Disgusted", "嫌弃"), "embarrassed": P("Embarrassed", "窘迫"), "tired": P("Tired", "疲惫"),
+  "speaking": P("Speaking", "说话中"), "eyesClosed": P("Eyes closed", "闭眼"),
+  "worried": P("Worried", "发愁"), "skeptical": P("Skeptical", "怀疑"), "smug": P("Smug", "得意"),
+  "contempt": P("Contempt", "不屑"), "confused": P("Confused", "困惑"), "thinking": P("Thinking", "思考"),
+  "determined": P("Determined", "坚定"), "shy": P("Shy", "害羞"), "pain": P("In pain", "吃痛"),
+  "sleepy": P("Sleepy", "犯困"), "awkwardSmile": P("Awkward smile", "尴尬笑"), "deadpan": P("Deadpan", "面无表情"),
+ },
+ "wardrobe": angles,
+ "pose": {"walk": P("Walking", "走路"), "run": P("Running", "跑步"), "sit": P("Sitting", "坐着"), "point": P("Pointing", "指向"), "armsCrossed": P("Arms crossed", "抱臂"), "phone": P("On the phone", "打电话")},
+ "detail": {"hands": P("Hands", "手部"), "hairBack": P("Back of head", "后脑"), "prop": P("Signature prop", "招牌道具")},
+}
 M["casting"]["aboutActor"] = P("About: {name}", "关于：{name}")
 M["casting"]["copyEmail"] = P("Copy email", "复制邮箱")
 

@@ -2,14 +2,17 @@ import type { Metadata } from "next";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import type { AppLocale } from "@/i18n/routing";
 import { ACTORS } from "@/content/actors";
-import { KIT_MANIFEST, KIT_RULES, KIT_STATUS_LABEL } from "@/content/kit";
+import { KIT_RULES, KIT_STATUS_LABEL } from "@/content/kit";
+import { getKitManifest } from "@/content/kit-assets";
+import { getActorAssets } from "@/content/assets";
+import { slotLabelKey } from "@/content/asset-series";
 import { ActorCard } from "@/components/ActorCard";
 import { ActorPicture } from "@/components/ActorPicture";
 import { CopyBlock } from "@/components/CopyBlock";
 import { PageIntro } from "@/components/PageIntro";
 import { SectionHead } from "@/components/SectionHead";
 import { TextLink } from "@/components/TextLink";
-import { GameProgress } from "@/ui/kit";
+import { AssetProgress } from "@/components/AssetProgress";
 import { Icon } from "@/ui/icons";
 
 type Props = { params: Promise<{ locale: AppLocale }> };
@@ -34,16 +37,11 @@ export default async function KitPage({ params }: Props) {
         aria-label={t("nav.roster")}
       >
         {ACTORS.map((actor) => {
-          const done = actor.views.length || (actor.plate ? 1 : 0);
           return (
             <div key={actor.slug}>
-              <ActorCard actor={actor} href={`/kit#${actor.code}`} />
+              <ActorCard actor={actor} href={`/kit/${actor.slug}`} />
               <div className="mt-2 px-2">
-                <GameProgress
-                  value={done}
-                  max={21}
-                  label={t("assets.progress", { done, total: 21 })}
-                />
+                <AssetProgress slug={actor.slug} />
               </div>
             </div>
           );
@@ -63,25 +61,26 @@ export default async function KitPage({ params }: Props) {
               <div className="mt-6">
                 <p className="sp-label text-muted-foreground">
                   {t("kit.platesLabel")}
-                  {actor.views.length ? "" : ` — ${t("kit.platesNone")}`}
+                  {getActorAssets(actor.slug).items.filter((item) => item.series === "turnaround")
+                    .length > 1
+                    ? ""
+                    : ` — ${t("kit.platesNone")}`}
                 </p>
                 <div className="mt-4 grid max-w-xl grid-cols-3 gap-3 sm:gap-4">
-                  {(actor.views.length
-                    ? actor.views
-                    : actor.plate
-                      ? [{ id: "front", src: actor.plate, label: { en: "Front", zh: "正面" } }]
-                      : []
-                  ).map((view) => (
-                    <ActorPicture
-                      key={view.id}
-                      src={view.src}
-                      alt={`${actor.code} ${view.label[locale]}`}
-                      legacy
-                      legacyLabel={t("assets.legacy")}
-                      sizes="(min-width: 640px) 170px, 28vw"
-                      className="aspect-2/3 rounded-[var(--game-ui-radius-card)]"
-                    />
-                  ))}
+                  {getActorAssets(actor.slug)
+                    .items.filter((item) => item.series === "turnaround")
+                    .map((view) => (
+                      <ActorPicture
+                        key={view.slot}
+                        src={view.thumb}
+                        alt={`${actor.code} ${t(slotLabelKey(view.series, view.key))}`}
+                        legacy={view.conformance === "legacy"}
+                        fullBody
+                        legacyLabel={t("assets.legacy")}
+                        sizes="(min-width: 640px) 170px, 28vw"
+                        className="aspect-2/3 rounded-[var(--game-ui-radius-card)]"
+                      />
+                    ))}
                 </div>
               </div>
             </article>
@@ -107,7 +106,7 @@ export default async function KitPage({ params }: Props) {
           note={t("kit.manifestNote")}
         />
         <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-4">
-          {KIT_MANIFEST.map((item) => (
+          {getKitManifest().map((item) => (
             <article
               key={item.id}
               className="sp-card flex flex-col bg-card"

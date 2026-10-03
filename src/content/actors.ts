@@ -30,30 +30,6 @@ export type SpecRow = {
   value: L;
 };
 
-/**
- * Where the body landmarks sit inside this actor's plate, as a percentage
- * of frame height. Plates are framed by hand, so the station lines on the
- * spec sheet have to be told where the shoulders actually are — a single
- * hard-coded set drifts on every new plate.
- */
-export type Landmarks = {
-  crown: number;
-  shoulder: number;
-  waist: number;
-  knee: number;
-  base: number;
-};
-
-export const DEFAULT_LANDMARKS: Landmarks = {
-  crown: 6,
-  shoulder: 22,
-  waist: 50,
-  knee: 76,
-  base: 96,
-};
-
-export type ReferenceView = { id: string; src: string; label: L };
-
 export type Actor = {
   slug: string;
   /** Roster code. Reads as a serial number because that is the point. */
@@ -65,21 +41,10 @@ export type Actor = {
   status: ActorStatus;
   /** Design iteration count, shown as `VERSION n OF m` like a model sheet. */
   version: { current: number; total: number };
-  /** Full-body plate on black. Null while the actor is still in development. */
-  plate: string | null;
-  /** Tight crop used on roster cards. Falls back to `plate`. */
+  /** Authored height only; never inferred from the displayed picture. */
+  heightCm?: number;
+  /** Legacy public crop, used only until a new-spec image is delivered. */
   portrait: string | null;
-  /** Per-plate station calibration; omit to use DEFAULT_LANDMARKS. */
-  landmarks?: Landmarks;
-  /**
-   * Delivered reference angles beyond the front plate.
-   *
-   * Empty until the angles actually exist as files. Multi-reference is the
-   * only thing that reliably holds one face across generations, so this is
-   * the single most useful thing the open kit can hand over — which is
-   * exactly why it must never be padded with angles we have not made.
-   */
-  views: ReferenceView[];
   spec: SpecRow[];
   /** Longer character note. Kept short — the spec sheet does the talking. */
   note: L;
@@ -130,22 +95,8 @@ export const ACTORS: Actor[] = [
     },
     status: "active",
     version: { current: 6, total: 10 },
-    plate: "/media/actors/hu-qian/plate.webp",
+    heightCm: 178,
     portrait: "/media/actors/hu-qian/portrait.webp",
-    landmarks: { crown: 4, shoulder: 20, waist: 51, knee: 78, base: 97 },
-    views: [
-      { id: "front", src: "/media/actors/hu-qian/plate.webp", label: { en: "FRONT", zh: "正面" } },
-      {
-        id: "three-quarter",
-        src: "/media/actors/hu-qian/view-three-quarter.webp",
-        label: { en: "THREE-QUARTER", zh: "四分之三侧" },
-      },
-      {
-        id: "side",
-        src: "/media/actors/hu-qian/view-side.webp",
-        label: { en: "SIDE", zh: "正侧" },
-      },
-    ],
     spec: [
       row("age", "AGE", "年龄", "EARLY 30s", "30 出头"),
       row("height", "HEIGHT", "身高", "178 CM", "178 CM"),
@@ -202,10 +153,8 @@ export const ACTORS: Actor[] = [
     },
     status: "active",
     version: { current: 2, total: 10 },
-    plate: "/media/actors/qi-man/plate.webp",
+    heightCm: 165,
     portrait: "/media/actors/qi-man/portrait.webp",
-    landmarks: { crown: 5, shoulder: 21, waist: 49, knee: 74, base: 96 },
-    views: [],
     spec: [
       row("age", "AGE", "年龄", "MID 20s", "25 上下"),
       row("height", "HEIGHT", "身高", "165 CM", "165 CM"),
@@ -268,9 +217,7 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    plate: null,
     portrait: null,
-    views: [],
     spec: [
       row("age", "AGE", "年龄", "LATE 20s — EARLY 30s", "快 30 到 30 出头"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -309,9 +256,7 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    plate: null,
     portrait: null,
-    views: [],
     spec: [
       row("age", "AGE", "年龄", TBD[0], TBD[1]),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -343,9 +288,7 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    plate: null,
     portrait: null,
-    views: [],
     spec: [
       row("age", "AGE", "年龄", "EARLY 40s", "40 出头"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -387,9 +330,7 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    plate: null,
     portrait: null,
-    views: [],
     spec: [
       row("age", "AGE", "年龄", "LATE 20s", "快 30"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -426,9 +367,7 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    plate: null,
     portrait: null,
-    views: [],
     spec: [
       row("age", "AGE", "年龄", "EARLY 50s", "50 出头"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -470,9 +409,7 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    plate: null,
     portrait: null,
-    views: [],
     spec: [
       row("age", "AGE", "年龄", "23", "23"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -514,9 +451,7 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    plate: null,
     portrait: null,
-    views: [],
     spec: [
       row("age", "AGE", "年龄", "38", "38"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -558,9 +493,7 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    plate: null,
     portrait: null,
-    views: [],
     spec: [
       row("age", "AGE", "年龄", "35", "35"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -603,9 +536,7 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    plate: null,
     portrait: null,
-    views: [],
     spec: [
       row("age", "AGE", "年龄", "26", "26"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -642,9 +573,7 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    plate: null,
     portrait: null,
-    views: [],
     spec: [
       row("age", "AGE", "年龄", "47", "47"),
       row("height", "HEIGHT", "身高", TBD[0], TBD[1]),
@@ -672,6 +601,48 @@ export const ACTORS: Actor[] = [
         "Supporting lead",
       ],
       zh: ["社区喜剧", "门岗重场戏", "广告：物业 / 快递 / 公共服务", "重要配角"],
+    },
+    promptSeed: null,
+  },
+  {
+    slug: "he-jie",
+    code: "SP-13",
+    nameEn: "HE JIE",
+    nameCn: "何姐",
+    tagline: { en: "Says it's nothing. Never stops working.", zh: "嘴上说没事，手上一直没停。" },
+    status: "in-development",
+    version: { current: 0, total: 10 },
+    heightCm: 163,
+    portrait: null,
+    spec: [
+      row("age", "AGE", "年龄", "43", "43 岁"),
+      row("height", "HEIGHT", "身高", "163 CM", "163 CM"),
+      row(
+        "occupation",
+        "OCCUPATION",
+        "职业",
+        "STAFF AT A SMALL HOME-COOKING RESTAURANT",
+        "家常菜小店员工",
+      ),
+      ...devTail(
+        "OLD-TOWN CHONGQING — WORKS IN SHANGHAI",
+        "重庆老城区 — 在上海工作",
+        "CHONGQING DIALECT / MANDARIN",
+        "重庆话 / 普通话",
+      ),
+    ],
+    note: {
+      en: "She grew up in old-town Chongqing and moved to Shanghai for housekeeping and restaurant work. Her warmth is not politeness; her hands are simply faster than her mouth, and the dish arrives before the sentence ends. Playing her is not about hardship. It is about someone who makes an ordinary day taste good.",
+      zh: "在重庆老城区长大，后来到上海做家政和餐饮。她的热心不是客气，是手比嘴快——话还没说完，菜已经端上来了。演她不用演苦，只要演一个把平凡日子过得有滋味的人。",
+    },
+    castFor: {
+      en: [
+        "Slice-of-life shorts",
+        "Family comedy",
+        "Ads: food / home services / local services / condiments",
+        "Warm supporting role",
+      ],
+      zh: ["生活流短片", "家庭喜剧", "广告：餐饮 / 家政 / 生活服务 / 调味品", "温情配角"],
     },
     promptSeed: null,
   },

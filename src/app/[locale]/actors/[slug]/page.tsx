@@ -9,7 +9,11 @@ import { CopyBlock } from "@/components/CopyBlock";
 import { SectionHead } from "@/components/SectionHead";
 import { TextLink } from "@/components/TextLink";
 import { StageMount } from "@/three/StageMount";
-import { GameCallout, GameProgress } from "@/ui/kit";
+import { GameCallout } from "@/ui/kit";
+import { getActorAssets, firstImage } from "@/content/assets";
+import { slotLabelKey } from "@/content/asset-series";
+import { AssetProgress } from "@/components/AssetProgress";
+import { HeightScale } from "@/components/HeightScale";
 
 type Props = { params: Promise<{ locale: AppLocale; slug: string }> };
 export function generateStaticParams() {
@@ -19,11 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const actor = getActor(slug);
   if (!actor) return {};
+  const image = firstImage(slug, ["turnaround.front"]);
   return {
     title: `${locale === "zh" ? actor.nameCn : actor.nameEn} — ${actor.code}`,
     description: `${actor.tagline[locale]} ${STANCE_LINE[locale]}`,
-    openGraph: actor.plate
-      ? { images: [{ url: actor.plate, alt: `${actor.code} — ${actor.nameEn}` }] }
+    openGraph: image
+      ? { images: [{ url: image.preview, alt: `${actor.code} — ${actor.nameEn}` }] }
       : undefined,
   };
 }
@@ -36,11 +41,8 @@ export default async function ActorPage({ params }: Props) {
   const name = locale === "zh" ? actor.nameCn : actor.nameEn;
   const alternateName = locale === "zh" ? actor.nameEn : actor.nameCn;
   const next = ACTORS[(ACTORS.indexOf(actor) + 1) % ACTORS.length];
-  const previews = actor.views.length
-    ? actor.views
-    : actor.plate
-      ? [{ id: "front", src: actor.plate, label: { en: "Front", zh: "正面" } }]
-      : [];
+  const previews = getActorAssets(slug).items;
+  const front = firstImage(slug, ["turnaround.front"]);
   return (
     <div className="sp-container">
       <div className="py-8">
@@ -50,17 +52,21 @@ export default async function ActorPage({ params }: Props) {
       </div>
       <section className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-7">
-          {actor.plate ? (
+          {front ? (
             <ActorPicture
-              src={actor.plate}
+              src={front.preview}
               alt={`${name} — ${actor.code}`}
               sizes="(min-width: 1200px) 610px, (min-width: 1024px) 52vw, 90vw"
-              legacy
+              legacy={front.conformance === "legacy"}
               fullBody
               legacyLabel={t("assets.legacy")}
               priority
               className="sp-panel aspect-4/5"
-            />
+            >
+              {front.conformance === "v1" && actor.heightCm ? (
+                <HeightScale heightCm={actor.heightCm} />
+              ) : null}
+            </ActorPicture>
           ) : (
             <div className="sp-sweep sp-panel relative aspect-4/5">
               <StageMount />
@@ -69,7 +75,7 @@ export default async function ActorPage({ params }: Props) {
               </span>
             </div>
           )}
-          {!actor.plate ? (
+          {!front ? (
             <div className="mt-6">
               <p className="sp-label">{t("actor.noPlate")}</p>
               <p className="sp-small mt-2 text-muted-foreground">{t("actor.noPlateBody")}</p>
@@ -125,7 +131,7 @@ export default async function ActorPage({ params }: Props) {
             ))}
           </ul>
           <div className="mt-8 flex flex-wrap gap-6">
-            <TextLink href={`/kit#${actor.code}`}>{t("assets.openLibrary")}</TextLink>
+            <TextLink href={`/kit/${actor.slug}`}>{t("assets.openLibrary")}</TextLink>
             <TextLink href={`/casting?actor=${actor.slug}`} className="text-muted-foreground">
               {t("common.enquire")}
             </TextLink>
@@ -138,10 +144,11 @@ export default async function ActorPage({ params }: Props) {
           <div className="mt-8 grid grid-cols-4 gap-3 sm:grid-cols-6 lg:mt-10 lg:grid-cols-8">
             {previews.slice(0, 8).map((view) => (
               <ActorPicture
-                key={view.id}
-                src={view.src}
-                alt={`${actor.code} ${view.label[locale]}`}
-                legacy
+                key={view.slot}
+                src={view.thumb}
+                alt={`${actor.code} ${t(slotLabelKey(view.series, view.key))}`}
+                legacy={view.conformance === "legacy"}
+                fullBody={["turnaround", "wardrobe", "pose"].includes(view.series)}
                 sizes="(min-width: 1200px) 120px, (min-width: 640px) 14vw, 19vw"
                 className="aspect-2/3 rounded-[var(--game-ui-radius-card)]"
               />
@@ -153,13 +160,9 @@ export default async function ActorPage({ params }: Props) {
           </div>
         )}
         <div className="mt-6 max-w-xs">
-          <GameProgress
-            value={previews.length}
-            max={21}
-            label={t("assets.progress", { done: previews.length, total: 21 })}
-          />
+          <AssetProgress slug={actor.slug} />
         </div>
-        <TextLink href={`/kit#${actor.code}`} className="mt-6">
+        <TextLink href={`/kit/${actor.slug}`} className="mt-6">
           {t("assets.openLibrary")}
         </TextLink>
       </section>

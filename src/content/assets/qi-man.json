@@ -1,0 +1,23 @@
+{
+  "code": "SP-02",
+  "slug": "qi-man",
+  "looks": [],
+  "items": [
+    {
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "legacy",
+      "version": 0,
+      "width": 1248,
+      "height": 1872,
+      "bytes": 61196,
+      "sha256": "b73631451edce693e859ca36757ef8db500685ca1887b1348903c0f95efbdaac",
+      "format": "webp",
+      "object": "qi-man/v0/SP-02__turnaround__front__v0.webp",
+      "preview": "/media/assets/qi-man/turnaround.front.webp",
+      "thumb": "/media/assets/qi-man/turnaround.front.thumb.webp"
+    }
+  ]
+}

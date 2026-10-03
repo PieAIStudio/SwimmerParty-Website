@@ -2,25 +2,32 @@ import { getSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
 import { STATUS_LABEL, type Actor } from "@/content/actors";
 import { ActorPicture } from "./ActorPicture";
+import { getActorAssets } from "@/content/assets";
 
 export async function ActorCard({ actor, href }: { actor: Actor; href?: string }) {
   const locale = await getSiteLocale();
   const { t } = await getSiteI18n();
   const name = locale === "zh" ? actor.nameCn : actor.nameEn;
+  const items = getActorAssets(actor.slug).items.filter((item) => item.conformance === "v1");
+  const image =
+    items.find((item) => item.slot === "face.front") ??
+    items.find((item) => item.slot === "turnaround.front");
   return (
     <Link
       href={href ?? `/actors/${actor.slug}`}
       data-actor-card={actor.code}
-      className="group block min-w-0 rounded-[var(--game-ui-radius-card)]"
+      className="group -m-2 block min-w-0 rounded-[var(--game-ui-radius-card)] p-2 hover:bg-card"
     >
       <ActorPicture
-        src={actor.portrait}
+        src={image?.preview ?? actor.portrait}
         alt={`${name} — ${actor.code}`}
         sizes="(min-width: 1200px) 252px, (min-width: 1024px) 22vw, (min-width: 640px) 29vw, 42vw"
-        legacy={Boolean(actor.portrait)}
+        legacy={!image && Boolean(actor.portrait)}
+        legacyLabel={t("assets.legacy")}
+        fullBody={image?.series === "turnaround"}
         className="aspect-4/5 rounded-[var(--game-ui-radius-card)]"
       >
-        {!actor.portrait ? (
+        {!image && !actor.portrait ? (
           <span className="sp-pill absolute bottom-3 left-3 text-muted-foreground">
             {t("actor.inDevelopment")}
           </span>

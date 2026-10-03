@@ -102,7 +102,7 @@ test("the open kit ships a seed for delivered actors and admits the gap for the 
 
   // Reference angles are per-actor. SP-01 has three; SP-02 has only the
   // front plate and has to say so rather than showing empty frames.
-  await expect(page.locator('img[alt*="SP-01 THREE-QUARTER"]')).toBeVisible();
+  await expect(page.locator('img[alt*="SP-01 Three-quarter" i]')).toBeVisible();
   await expect(page.getByText(/REFERENCE PLATES — FRONT PLATE ONLY SO FAR/i)).toBeVisible();
 });
 

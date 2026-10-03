@@ -1,0 +1,55 @@
+{
+  "code": "SP-01",
+  "slug": "hu-qian",
+  "looks": [],
+  "items": [
+    {
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "legacy",
+      "version": 0,
+      "width": 1248,
+      "height": 1872,
+      "bytes": 95798,
+      "sha256": "ea5895ea215e79302a749710fc9c2dc9d039393e1beacae65825a332b6663bbf",
+      "format": "webp",
+      "object": "hu-qian/v0/SP-01__turnaround__front__v0.webp",
+      "preview": "/media/assets/hu-qian/turnaround.front.webp",
+      "thumb": "/media/assets/hu-qian/turnaround.front.thumb.webp"
+    },
+    {
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "legacy",
+      "version": 0,
+      "width": 1248,
+      "height": 1872,
+      "bytes": 72792,
+      "sha256": "7537b8b0a2c17e65ba4c897837bb6710795aebd03b38d6bf8a6d495ab6ee9d49",
+      "format": "webp",
+      "object": "hu-qian/v0/SP-01__turnaround__three-quarter__v0.webp",
+      "preview": "/media/assets/hu-qian/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/hu-qian/turnaround.three-quarter.thumb.webp"
+    },
+    {
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "legacy",
+      "version": 0,
+      "width": 1248,
+      "height": 1872,
+      "bytes": 78856,
+      "sha256": "55aa1c4edef1497b469ffe9aedd36ed696f51902ca4f0ffc36e2a278ae271aae",
+      "format": "webp",
+      "object": "hu-qian/v0/SP-01__turnaround__side__v0.webp",
+      "preview": "/media/assets/hu-qian/turnaround.side.webp",
+      "thumb": "/media/assets/hu-qian/turnaround.side.thumb.webp"
+    }
+  ]
+}

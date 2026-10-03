@@ -1,7 +1,9 @@
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import type { AppLocale } from "@/i18n/routing";
 import { ACTORS } from "@/content/actors";
-import { KIT_MANIFEST } from "@/content/kit";
+import { getKitManifest } from "@/content/kit-assets";
+import { getActorAssets, firstImage } from "@/content/assets";
+import { slotLabelKey } from "@/content/asset-series";
 import { CG_BADGE } from "@/content/doctrine";
 import { ActorCard } from "@/components/ActorCard";
 import { ActorPicture } from "@/components/ActorPicture";
@@ -18,15 +20,17 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
     [ACTORS.length, t("home.statRoster")],
     [ACTORS.filter((actor) => actor.status === "active").length, t("home.statCastable")],
     [ACTORS.reduce((sum, actor) => sum + actor.version.current, 0), t("home.statVersions")],
-    [ACTORS.filter((actor) => actor.plate).length, t("home.statPlates")],
-    [KIT_MANIFEST.filter((item) => item.status === "live").length, t("home.statKitLive")],
+    [
+      ACTORS.filter((actor) => firstImage(actor.slug, ["turnaround.front"])).length,
+      t("home.statPlates"),
+    ],
+    [getKitManifest().filter((item) => item.status === "live").length, t("home.statKitLive")],
   ] as const;
   const previews = ACTORS.flatMap((actor) =>
-    actor.views.length
-      ? actor.views.map((view) => ({ src: view.src, alt: `${actor.code} ${view.label[locale]}` }))
-      : actor.plate
-        ? [{ src: actor.plate, alt: `${actor.code} ${t("actor.sheetFront")}` }]
-        : [],
+    getActorAssets(actor.slug).items.map((item) => ({
+      ...item,
+      alt: `${actor.code} ${t(slotLabelKey(item.series, item.key))}`,
+    })),
   ).slice(0, 6);
   return (
     <div className="sp-container">
@@ -129,11 +133,12 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
         <div className="grid grid-cols-3 gap-3 sm:gap-4">
           {previews.map((image) => (
             <ActorPicture
-              key={image.src}
-              src={image.src}
+              key={image.preview}
+              src={image.preview}
               alt={image.alt}
               sizes="(min-width: 1200px) 160px, (min-width: 1024px) 14vw, 28vw"
-              legacy
+              legacy={image.conformance === "legacy"}
+              fullBody={["turnaround", "wardrobe", "pose"].includes(image.series)}
               legacyLabel={t("assets.legacy")}
               className="aspect-2/3 rounded-[var(--game-ui-radius-card)]"
             />
