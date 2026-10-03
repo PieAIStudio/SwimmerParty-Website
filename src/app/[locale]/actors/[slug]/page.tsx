@@ -41,7 +41,7 @@ export default async function ActorPage({ params }: Props) {
   const name = locale === "zh" ? actor.nameCn : actor.nameEn;
   const alternateName = locale === "zh" ? actor.nameEn : actor.nameCn;
   const next = ACTORS[(ACTORS.indexOf(actor) + 1) % ACTORS.length];
-  const previews = getActorAssets(slug).items;
+  const previews = getActorAssets(slug).items.slice(0, 8);
   const front = firstImage(slug, ["turnaround.front"]);
   return (
     <div className="sp-container">

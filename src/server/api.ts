@@ -44,7 +44,8 @@ export async function readJsonBody(req: NextApiRequest): Promise<Record<string, 
       throw new HttpError(415, "json-required");
     const chunks: Buffer[] = [];
     let bytes = 0;
-    for await (const chunk of req) {
+    // Oversized bodies must receive a private 413, not destroy the response socket.
+    for await (const chunk of req.iterator({ destroyOnReturn: false })) {
       const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk);
       bytes += buffer.length;
       if (bytes > 16 * 1024) {

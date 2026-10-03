@@ -88,7 +88,7 @@ Reveal 为 12px / 480ms，同组每项延迟 60ms、最多六项；仅 `html.js`
 自定义光标、跑马灯、噪点、扫描线或闪烁。
 
 `src/three/Stage.tsx` 只在首页和无图档案主视觉挂载一个透明 R3F Canvas；名册卡用 SVG。
-保留 ACES、一次 sRGB 输出，不加后处理。滚出视口或切换后台标签页后停渲染；DPR 封顶 1.5。
+保留 ACES、一次 sRGB 输出，不加后处理。滚出视口或切换后台标签页后停渲染；DPR 封顶 1.5，粗指针设备进一步降到 1.35。
 相机保持稳定，构图通过场景位置调整；不使用 resize 会重置的临时 lookAt。
 
 材质 `MeshStandardMaterial`，roughness .9、metalness 0；light `#f3f1ec`、dark `#d9d5cd`，

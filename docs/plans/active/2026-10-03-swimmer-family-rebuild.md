@@ -796,7 +796,7 @@ shasum -a 256 ../SwimmerAuthKit/.devspace-reports/uikit3-compat-20261002/release
 - [x] 第 4 步：双语演员资产页与 sitemap。
 - [x] 第 5 步：本地下载、模拟账号与会员导出；完整 verify 通过。
 - [x] 第 6 步：DESIGN / README / current-work 收口与文档门禁。
-- [ ] 第 7 步：最终门禁、完整截图与中文报告。
+- [x] 第 7 步：最终门禁、完整截图与中文报告。
 
 ### 第 0 步：准备
 

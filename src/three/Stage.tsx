@@ -1,6 +1,13 @@
 "use client";
 
-import { Component, useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  Component,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type ReactNode,
+} from "react";
 import { Canvas } from "@react-three/fiber";
 import { ContactShadows } from "@react-three/drei";
 import { ACESFilmicToneMapping, SRGBColorSpace } from "three";
@@ -9,6 +16,14 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { Mannequin } from "@/components/Mannequin";
 import { WhiteModel } from "./WhiteModel";
 import { STUDIO_LIGHT } from "./palette";
+
+const coarseQuery = "(pointer: coarse)";
+function subscribePointer(onChange: () => void) {
+  const query = window.matchMedia(coarseQuery);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+}
+const coarsePointer = () => window.matchMedia(coarseQuery).matches;
 
 function Fallback() {
   return (
@@ -30,6 +45,7 @@ class CanvasBoundary extends Component<{ children: ReactNode }, { failed: boolea
 export default function Stage({ assemble = false }: { assemble?: boolean }) {
   const theme = useSiteTheme();
   const reduced = useReducedMotion();
+  const coarse = useSyncExternalStore(subscribePointer, coarsePointer, () => false);
   const [active, setActive] = useState(true);
   const host = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -57,7 +73,7 @@ export default function Stage({ assemble = false }: { assemble?: boolean }) {
       <CanvasBoundary>
         <Canvas
           frameloop={active ? "always" : "never"}
-          dpr={[1, 1.5]}
+          dpr={[1, coarse ? 1.35 : 1.5]}
           camera={{ position: [0, 0.12, 3.8], fov: 32, near: 0.1, far: 20 }}
           gl={{
             alpha: true,
