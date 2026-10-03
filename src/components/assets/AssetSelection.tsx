@@ -9,6 +9,8 @@ import { characterProfile } from "@/lib/asset-profile";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { GUEST_COOLDOWN_KEY, GUEST_DOWNLOAD_WINDOW_SECONDS } from "@/lib/downloads";
 import { GameButton, GameModal, GameToast } from "@/ui/kit";
+import { useAccount } from "../AccountProvider";
+import { MemberExportDialog } from "./MemberExportDialog";
 
 type Selection = {
   selected: ReadonlySet<string>;
@@ -41,6 +43,8 @@ export function AssetSelectionProvider({
     slots: [],
   });
   const [invite, setInvite] = useState(false);
+  const [pack, setPack] = useState(false);
+  const account = useAccount();
   const [busy, setBusy] = useState(false);
   const inFlight = useRef(false);
   const request = useRef<AbortController | null>(null);
@@ -127,7 +131,7 @@ export function AssetSelectionProvider({
     setNotice("cooldown");
   }
   async function downloadOne(item: AssetItem) {
-    if (inFlight.current || remaining > 0) return;
+    if (inFlight.current || (!account.user && remaining > 0)) return;
     inFlight.current = true;
     setBusy(true);
     const controller = new AbortController();
@@ -151,6 +155,7 @@ export function AssetSelectionProvider({
       const blob = await fetchImageBlob(result.url, controller.signal);
       if (controller.signal.aborted) return;
       saveBlob(blob, result.filename);
+      account.event(result.cooldown ? "guest_download" : "member_download");
       if (!result.cooldown) setNotice("started");
     } catch {
       if (!controller.signal.aborted) setNotice("failed");
@@ -159,35 +164,15 @@ export function AssetSelectionProvider({
       if (!controller.signal.aborted) setBusy(false);
     }
   }
+  function showInvite() {
+    account.event("sign_in_prompt");
+    setInvite(true);
+  }
   async function signIn() {
-    if (inFlight.current) return;
-    inFlight.current = true;
-    setBusy(true);
     try {
-      const session = await fetch("/api/auth/session", { cache: "no-store" });
-      if (!session.ok) throw new Error("Account unavailable");
-      const { mode } = (await session.json()) as { mode: "mock" | "swimmer" };
-      const response = await fetch(
-        mode === "mock" ? "/api/auth/mock/sign-in" : "/api/auth/sso-start",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            redirectPath: location.pathname + location.search + location.hash,
-          }),
-        },
-      );
-      if (!response.ok) throw new Error("Sign-in unavailable");
-      if (mode === "mock") location.reload();
-      else {
-        const result = (await response.json()) as { redirect: string };
-        location.assign(result.redirect);
-      }
+      await account.signIn();
     } catch {
       setNotice("failed");
-    } finally {
-      inFlight.current = false;
-      setBusy(false);
     }
   }
   return (
@@ -196,10 +181,10 @@ export function AssetSelectionProvider({
         selected,
         change,
         downloadOne,
-        remaining,
-        busy,
-        modalOpen: invite,
-        requestPack: () => setInvite(true),
+        remaining: account.user ? 0 : remaining,
+        busy: busy || account.busy || account.loading,
+        modalOpen: invite || pack,
+        requestPack: () => (account.user ? setPack(true) : showInvite()),
       }}
     >
       {children}
@@ -211,7 +196,11 @@ export function AssetSelectionProvider({
         footer={
           <>
             <GameButton onClick={() => setInvite(false)}>{t("assets.notNow")}</GameButton>
-            <GameButton variant="primary" disabled={busy} onClick={signIn}>
+            <GameButton
+              variant="primary"
+              disabled={busy || account.busy || account.loading}
+              onClick={signIn}
+            >
               {t("assets.signIn")}
             </GameButton>
           </>
@@ -226,6 +215,22 @@ export function AssetSelectionProvider({
           ))}
         </ul>
       </GameModal>
+      {pack ? (
+        <MemberExportDialog
+          actor={actor}
+          assets={assets}
+          selected={assets.items.filter((item) => selected.has(item.slot))}
+          onClose={() => setPack(false)}
+          onSuccess={() => {
+            setPack(false);
+            setNotice("started");
+          }}
+          onSignIn={() => {
+            setPack(false);
+            showInvite();
+          }}
+        />
+      ) : null}
       {notice ? (
         <div className="fixed inset-x-5 bottom-24 z-50 mx-auto max-w-xl" data-asset-notice={notice}>
           <GameToast tone={notice === "failed" ? "danger" : "info"}>
@@ -237,7 +242,7 @@ export function AssetSelectionProvider({
                 <GameButton
                   onClick={() => {
                     setNotice(null);
-                    setInvite(true);
+                    showInvite();
                   }}
                 >
                   {t("assets.signIn")}

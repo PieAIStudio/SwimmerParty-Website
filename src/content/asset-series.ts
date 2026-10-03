@@ -54,8 +54,8 @@ export function requiredSlots(): ResolvedSlot[] {
 }
 
 export function slotLabelKey(seriesId: string, key: string): AssetLabelKey {
-  const series = seriesOf(seriesId);
-  if (!series.slots.some((slot) => slot.key === key))
+  const definition = seriesOf(seriesId);
+  if (!definition.slots.some((slot) => slot.key === key))
     throw new Error(`Unknown asset slot: ${seriesId}.${key}`);
   // Both catalogs are checked against every vocabulary key by test:tools.
   return `assets.slot.${seriesId}.${key.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase())}` as AssetLabelKey;

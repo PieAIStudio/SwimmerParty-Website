@@ -16,6 +16,6 @@ export function useSiteI18n() {
   return useI18n<SiteMessages, MessageContracts>();
 }
 export function useSiteLocale(): AppLocale {
-  const locale = useParams<{ locale?: string }>().locale;
+  const locale = useParams<{ locale?: string }>()?.locale;
   return hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
 }

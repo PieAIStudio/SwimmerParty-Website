@@ -5,10 +5,13 @@ import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { AccountProvider } from "@/components/AccountProvider";
+import { Analytics } from "@vercel/analytics/next";
 import { SITE_UI_STYLE, THEME_INIT_SCRIPT } from "@/lib/theme";
 import { LOCALE_HTML_LANG, LOCALE_OG, routing, type AppLocale } from "@/i18n/routing";
 import { SITE } from "@/lib/site";
 import { STANCE_LINE } from "@/content/doctrine";
+// oxlint-disable-next-line no-unassigned-import -- Root stylesheet initialization.
 import "../globals.css";
 
 type Props = {
@@ -95,15 +98,18 @@ export default async function LocaleLayout({ children, params }: Props) {
       </head>
       <body>
         <SiteI18nProvider locale={locale}>
-          <a
-            href="#main"
-            className="sp-label sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100 focus:bg-background focus:px-4 focus:py-3 focus:text-foreground"
-          >
-            {t("common.skipToContent")}
-          </a>
-          <SiteHeader />
-          <main id="main">{children}</main>
-          <SiteFooter />
+          <AccountProvider analytics={process.env.VERCEL_ENV === "production"}>
+            <a
+              href="#main"
+              className="sp-label sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100 focus:bg-background focus:px-4 focus:py-3 focus:text-foreground"
+            >
+              {t("common.skipToContent")}
+            </a>
+            <SiteHeader />
+            <main id="main">{children}</main>
+            <SiteFooter />
+          </AccountProvider>
+          {process.env.VERCEL_ENV === "production" ? <Analytics /> : null}
         </SiteI18nProvider>
       </body>
     </html>

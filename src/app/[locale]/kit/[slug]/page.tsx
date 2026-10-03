@@ -52,7 +52,7 @@ export default async function ActorAssetPage({ params }: Props) {
     (series) => series.required || assets.items.some((item) => item.series === series.id),
   );
   return (
-    <div className="sp-container pb-24 md:pb-0">
+    <div className="sp-container overflow-x-clip pb-24 [overflow-clip-margin:8px] md:pb-0">
       <AssetSelectionProvider actor={actor} assets={assets} key={actor.slug}>
         <div className="py-8">
           <TextLink href="/kit" back>

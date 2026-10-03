@@ -1,0 +1,156 @@
+import { zipSync, strToU8 } from "fflate";
+import type { Actor } from "../content/actors.ts";
+import type { ActorAssets, AssetItem } from "../content/asset-types.ts";
+import type { ExportTarget } from "../content/export-targets.ts";
+import { KIT_RULES } from "../content/kit.ts";
+import { listSeries } from "../content/asset-series.ts";
+import { SITE } from "./site.ts";
+import { characterProfile } from "./asset-profile.ts";
+import { assetFilename, MAX_BUNDLE_ITEMS } from "./downloads.ts";
+import { fetchImageBlob } from "./browser-files.ts";
+import { selectModelAssets, veoPlan } from "./export-plan.ts";
+import { createSheetPainter, sheetBlob, type SheetOptions } from "./render-sheet.ts";
+
+export type ExportFormat = "zip" | "sheet" | "model";
+export type ExportRequest = {
+  actor: Actor;
+  assets: ActorAssets;
+  selected: AssetItem[];
+  format: ExportFormat;
+  target: ExportTarget;
+  sheet: SheetOptions;
+  locale: "zh" | "en";
+  labels: Record<string, { en: string; zh: string }>;
+  signal: AbortSignal;
+};
+export class SignInRequired extends Error {}
+function ensureActive(signal: AbortSignal) {
+  signal.throwIfAborted();
+}
+
+export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; filename: string }> {
+  const { actor, assets, selected, signal } = input;
+  if (!selected.length || selected.length > MAX_BUNDLE_ITEMS)
+    throw new Error("Invalid export selection");
+  const veo =
+    input.format === "model" && input.target === "veo" ? veoPlan(selected, assets.items) : null;
+  if (input.format === "model" && input.target === "veo" && !veo)
+    throw new Error("Veo requires a face/front, turnaround and expression references");
+  const items =
+    input.format === "model"
+      ? veo
+        ? veo.items
+        : selectModelAssets(selected, input.target as "gpt-image" | "seedance")
+      : selected;
+  ensureActive(signal);
+  const response = await fetch(`/api/assets/${actor.slug}/bundle`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ slots: items.map((item) => item.slot) }),
+    signal,
+  });
+  if (response.status === 401) throw new SignInRequired("Sign in again");
+  if (!response.ok) throw new Error("Bundle authorization failed");
+  const body = (await response.json()) as {
+    items: { slot: string; url: string; filename: string }[];
+  };
+  if (
+    !Array.isArray(body.items) ||
+    body.items.length !== items.length ||
+    new Set(body.items.map((item) => item.slot)).size !== items.length
+  )
+    throw new Error("Invalid signed bundle");
+  const blobs = new Map<string, Blob>();
+  let bytes = 0;
+  for (const item of items) {
+    const signed = body.items.find((candidate) => candidate.slot === item.slot);
+    if (!signed || signed.filename !== assetFilename(actor.code, item))
+      throw new Error("Bundle identity mismatch");
+    const blob = await fetchImageBlob(signed.url, signal);
+    bytes += blob.size;
+    if (bytes > 256 * 1024 * 1024) throw new Error("Choose a smaller export");
+    blobs.set(item.slot, blob);
+  }
+  ensureActive(signal);
+  async function sheet(set: AssetItem[], options: SheetOptions): Promise<Blob> {
+    const painter = createSheetPainter(
+      set.map((item) => ({
+        fullBody: ["turnaround", "wardrobe", "pose"].includes(item.series),
+        labels: input.labels[item.slot] ?? { en: item.key, zh: item.key },
+      })),
+      options,
+    );
+    try {
+      // Decode at most one full-resolution image at a time, including large multi-selections.
+      for (const [index, item] of set.entries()) {
+        ensureActive(signal);
+        const source = await createImageBitmap(blobs.get(item.slot)!);
+        try {
+          ensureActive(signal);
+          painter.paint(index, { source, width: source.width, height: source.height });
+        } finally {
+          source.close();
+        }
+      }
+      const output = await sheetBlob(painter.canvas);
+      ensureActive(signal);
+      return output;
+    } finally {
+      painter.canvas.width = 1;
+      painter.canvas.height = 1;
+    }
+  }
+  if (input.format === "sheet")
+    return { blob: await sheet(items, input.sheet), filename: `${actor.code}_sheet.png` };
+  const files: Record<string, Uint8Array> = {};
+  const descriptions: string[] = [];
+  async function add(filename: string, blob: Blob, description: string) {
+    ensureActive(signal);
+    files[filename] = new Uint8Array(await blob.arrayBuffer());
+    descriptions.push(`Image ${descriptions.length + 1} (${filename}): ${description}`);
+  }
+  if (veo) {
+    await add(
+      assetFilename(actor.code, veo.identity),
+      blobs.get(veo.identity.slot)!,
+      "Identity reference. Preserve the animated character's face and proportions; do not make a real person.",
+    );
+    await add(
+      `${actor.code}_turnaround-sheet.png`,
+      await sheet(veo.turns, { labels: "none", background: "grey" }),
+      "Full-body turnaround references, with no labels.",
+    );
+    await add(
+      `${actor.code}_expression-sheet.png`,
+      await sheet(veo.expressions, { labels: "none", background: "grey", expressionGrid: true }),
+      "Expression references on a 4 by 3 grid, with no labels.",
+    );
+  } else
+    for (const item of items) {
+      const slot = listSeries()
+        .find((series) => series.id === item.series)
+        ?.slots.find((candidate) => candidate.key === item.key);
+      await add(
+        assetFilename(actor.code, item),
+        blobs.get(item.slot)!,
+        `${item.series}: ${slot?.direction ?? item.key}.${item.conformance === "legacy" ? " Legacy opaque-background original, not a transparent v1 asset." : " Transparent original."}`,
+      );
+    }
+  files["character.json"] = strToU8(
+    JSON.stringify(characterProfile(actor, assets), null, 2) + "\n",
+  );
+  files["README-for-AI.txt"] = strToU8(
+    `${actor.code} — ${actor.nameEn}\nAnimated character; never a real-person likeness.\n\n${descriptions.join("\n")}\n\nConsult character.json and LICENSE.txt.\n`,
+  );
+  files["LICENSE.txt"] = strToU8(
+    KIT_RULES.map((rule) => `${rule.head[input.locale]}\n${rule.body[input.locale]}`).join("\n\n") +
+      `\n\n${SITE.url}\n`,
+  );
+  ensureActive(signal);
+  const data = zipSync(files, { level: 0 });
+  ensureActive(signal);
+  return {
+    blob: new Blob([new Uint8Array(data)], { type: "application/zip" }),
+    filename: `${actor.code}_assets_${new Date().toISOString().slice(0, 10).replaceAll("-", "")}.zip`,
+  };
+}

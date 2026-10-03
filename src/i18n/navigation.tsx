@@ -19,7 +19,7 @@ export function Link({
   );
 }
 export function usePathname() {
-  const pathname = useNextPathname();
+  const pathname = useNextPathname() ?? "/";
   const locale = useSiteLocale();
   return pathname.replace(new RegExp(`^/${locale}(?=/|$)`), "") || "/";
 }

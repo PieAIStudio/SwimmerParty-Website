@@ -18,6 +18,7 @@ export interface MessageContracts {
   readonly "assets.downloadJson": {  };
   readonly "assets.downloadOne": {  };
   readonly "assets.downloadSelected": {  };
+  readonly "assets.exportFormat": {  };
   readonly "assets.extended": {  };
   readonly "assets.failed": {  };
   readonly "assets.format.model": {  };
@@ -34,6 +35,7 @@ export interface MessageContracts {
   readonly "assets.legacy": {  };
   readonly "assets.legacyNote": {  };
   readonly "assets.metaTitle": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "assets.mockAccount": {  };
   readonly "assets.model": {  };
   readonly "assets.navigation": {  };
   readonly "assets.noSeed": {  };
@@ -46,10 +48,13 @@ export interface MessageContracts {
   readonly "assets.note.turnaround": {  };
   readonly "assets.note.wardrobe": {  };
   readonly "assets.openLibrary": {  };
+  readonly "assets.originalsLegacy": {  };
   readonly "assets.overLimit": { readonly "count": string | number | bigint | boolean | null | undefined | Date; readonly "limit": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.pending": {  };
   readonly "assets.preparing": {  };
+  readonly "assets.preview": {  };
   readonly "assets.progress": { readonly "done": string | number | bigint | boolean | null | undefined | Date; readonly "total": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "assets.seedanceUnverified": {  };
   readonly "assets.select": { readonly "label": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.selectSeries": {  };
   readonly "assets.selected": { readonly "count": string | number | bigint | boolean | null | undefined | Date; };
@@ -113,6 +118,7 @@ export interface MessageContracts {
   readonly "assets.slot.wardrobe.threeQuarter": {  };
   readonly "assets.start": {  };
   readonly "assets.started": {  };
+  readonly "assets.veoMissing": {  };
   readonly "casting.aboutActor": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "casting.availableNote": {  };
   readonly "casting.availableNow": {  };

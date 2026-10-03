@@ -5,6 +5,8 @@ import sharp from "sharp";
 import { ASSET_FRAMES, assetSlotOrder, listSeries, slotsOf } from "../src/content/asset-series.ts";
 import { getActorAssets, type ActorAssets, type AssetItem } from "../src/content/assets.ts";
 import { localAssetStore, type AssetStore } from "../src/server/asset-store.ts";
+import { configuredBlobStore } from "../src/server/blob-store.ts";
+import { runtimeModes } from "../src/server/runtime-mode.ts";
 import { actorByCode, cliArgs, isMain, reportError, writeTransaction } from "./assets-common.ts";
 
 export type IngestOptions = { root?: string; legacy?: boolean; dryRun?: boolean; store?: AssetStore };
@@ -90,8 +92,9 @@ export async function ingest(code: string, options: IngestOptions = {}) {
   items.sort((a, b) => order.indexOf(a.slot) - order.indexOf(b.slot));
   const manifest = { ...current, items };
   if (options.dryRun) return { manifest, ingested: prepared.length, upgraded, dryRun: true };
-  if (!options.store && process.env.ASSET_STORE && process.env.ASSET_STORE !== "local") throw new Error("This CLI run requires an explicitly configured storage adapter; no automatic cloud fallback");
-  const store = options.store ?? localAssetStore(path.resolve(root, process.env.ASSET_LOCAL_ROOT ?? ".assets-local"));
+  const store = options.store ?? (runtimeModes().store === "blob"
+    ? await configuredBlobStore()
+    : localAssetStore(path.resolve(root, process.env.ASSET_LOCAL_ROOT ?? ".assets-local")));
   for (const item of prepared) await store.put(item.item.object, item.source);
   await writeTransaction([
     ...prepared.flatMap(({ item, preview, thumb }) => [

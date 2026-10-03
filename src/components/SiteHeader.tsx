@@ -5,6 +5,7 @@ import { useSiteLocale, useSiteI18n } from "@/i18n/client";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
+import { AccountMenu } from "./AccountProvider";
 import { NAV, SECONDARY_NAV, SITE } from "@/lib/site";
 import { GameIconButton } from "@/ui/kit";
 import { Icon } from "@/ui/icons";
@@ -76,6 +77,9 @@ function HeaderContent() {
           <div className="hidden lg:block">
             <LocaleSwitcher />
           </div>
+          <div className="hidden lg:block">
+            <AccountMenu />
+          </div>
           <div className="lg:hidden" ref={trigger}>
             <GameIconButton
               label={t("common.menu")}
@@ -127,8 +131,9 @@ function HeaderContent() {
               </Link>
             ))}
           </nav>
-          <div className="pb-8">
+          <div className="flex items-center justify-between gap-3 pb-8">
             <LocaleSwitcher variant="panel" />
+            <AccountMenu />
           </div>
         </div>
       </dialog>

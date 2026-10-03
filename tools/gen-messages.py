@@ -406,6 +406,12 @@ M["assets"] = {
  "navigation": P("Asset series", "资产系列"),
  "close": P("Close", "关闭"),
  "failed": P("That could not be completed. Please try again.", "操作未完成，请重试。"),
+ "exportFormat": P("Download format", "下载格式"),
+ "preview": P("Sheet preview", "拼图预览"),
+ "mockAccount": P("Local test account", "本地模拟账号"),
+ "originalsLegacy": P("The original files, including older WebP images, with the profile and terms of use.", "保留原始文件，包括旧规格 WebP，附角色资料和使用说明。"),
+ "veoMissing": P("This pack needs a front view, turnaround views and at least one expression. The expression set is not delivered yet.", "此包需要正面、转面和至少一张表情。目前表情尚未交付。"),
+ "seedanceUnverified": P("The nine-image limit follows the production plan; official confirmation is pending.", "9 张上限沿用制作计划，待官方核实。"),
 }
 # Stable protocol keys, authored labels; directions remain English production data.
 angles = {"front": P("Front", "正面"), "threeQuarter": P("Three-quarter", "四分之三侧"), "side": P("Side", "正侧"), "back": P("Back", "背面")}

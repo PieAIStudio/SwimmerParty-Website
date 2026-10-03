@@ -35,7 +35,7 @@ export function ActorPicture({
             fill
             sizes={sizes}
             priority={priority}
-            className={`sp-image ${legacy ? (fullBody ? "object-contain" : "object-cover") : fullBody ? "object-contain object-bottom" : "object-contain"}`}
+            className={`sp-image ${legacy ? "object-cover" : fullBody ? "object-contain object-bottom" : "object-contain"}`}
           />
           {legacy && legacyLabel ? (
             <span className="sp-pill sp-legacy-label absolute top-3 left-3">{legacyLabel}</span>
