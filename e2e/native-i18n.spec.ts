@@ -27,9 +27,8 @@ for (const width of [1280, 390]) {
     await page.setViewportSize({ width, height: 850 });
     await page.goto("/en/actors");
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
-    if (width < 768) await page.getByRole("button", { name: "MENU", exact: true }).click();
-    else await page.getByRole("button", { name: "LANGUAGE" }).first().click();
-    const link = page.locator('a[href="/zh/actors"]').first();
+    if (width < 1024) await page.getByRole("button", { name: /^MENU$/i }).click();
+    const link = page.locator('a[href="/zh/actors"]:visible').first();
     await expect(link).toHaveAttribute("href", "/zh/actors");
     await link.click();
     await expect(page.locator("html")).toHaveAttribute("lang", "zh-Hans");

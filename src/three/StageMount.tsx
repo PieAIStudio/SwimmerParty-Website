@@ -1,38 +1,15 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useSiteI18n } from "@/i18n/client";
-import type { StageMode } from "./Stage";
+import { Mannequin } from "@/components/Mannequin";
 
-function StagePlaceholder() {
-  const t = useSiteI18n().t;
-  return (
-    <div className="absolute inset-0 grid place-items-center">
-      <p className="sp-label text-[0.6rem] text-ash">
-        <span className="sp-blink">▊</span> {t("common.loading")}
-      </p>
-    </div>
-  );
-}
-
-/* WebGL cannot render on the server, so the stage is loaded client-side
- * only. This wrapper exists because `ssr: false` is not allowed inside a
- * Server Component in the Next app router. */
 const Stage = dynamic(() => import("./Stage"), {
   ssr: false,
-  loading: () => <StagePlaceholder />,
+  loading: () => (
+    <Mannequin className="absolute inset-x-0 bottom-[4%] mx-auto h-[90%] w-full opacity-[0.12]" />
+  ),
 });
 
-export function StageMount({
-  accent,
-  mode = "solo",
-  assemble = false,
-  count,
-}: {
-  accent?: string;
-  mode?: StageMode;
-  assemble?: boolean;
-  count?: number;
-}) {
-  return <Stage accent={accent} mode={mode} assemble={assemble} count={count} />;
+export function StageMount({ assemble = false }: { assemble?: boolean }) {
+  return <Stage assemble={assemble} />;
 }

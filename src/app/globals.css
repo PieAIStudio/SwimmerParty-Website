@@ -220,7 +220,6 @@
       var(--sp-sweep-top) 58%,
       var(--sp-sweep-floor) 100%
     );
-    border-radius: inherit;
   }
 
   .sp-contact {

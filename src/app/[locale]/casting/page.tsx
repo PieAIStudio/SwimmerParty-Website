@@ -1,158 +1,87 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
-import { setSiteLocale, getSiteI18n } from "@/i18n/server";
-import { Link } from "@/i18n/navigation";
-import { Mega, Display } from "@/components/Mega";
-import { SectionHead } from "@/components/SectionHead";
-import { Reveal } from "@/motion/Reveal";
-import { ACTORS } from "@/content/actors";
-import { STANCE_LINE } from "@/content/doctrine";
-import { SITE } from "@/lib/site";
 import type { AppLocale } from "@/i18n/routing";
+import { getSiteI18n, setSiteLocale } from "@/i18n/server";
+import { ACTORS } from "@/content/actors";
+import { SITE } from "@/lib/site";
+import { PageIntro } from "@/components/PageIntro";
+import { SectionHead } from "@/components/SectionHead";
+import { TextLink } from "@/components/TextLink";
+import { CopyButton } from "@/components/CopyButton";
+import { CastingContext } from "@/components/CastingContext";
 
-type Props = { params: Promise<{ locale: string }> };
-
-const ROUTE_ACCENT = ["var(--color-acid)", "var(--color-cyan)", "var(--color-magenta)"];
-
+type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getSiteI18n(locale).then((i18n) => i18n.t);
+  setSiteLocale(locale);
+  const { t } = await getSiteI18n();
   return { title: t("casting.metaTitle"), description: t("casting.metaDescription") };
 }
-
 export default async function CastingPage({ params }: Props) {
   const { locale } = await params;
   setSiteLocale(locale);
-  const loc = locale as AppLocale;
-
-  const t = await getSiteI18n().then((i18n) => i18n.t);
-  const heroLines = [t("casting.heroLines.0"), t("casting.heroLines.1")];
-  const routes = [
-    {
-      n: t("casting.routes.0.n"),
-      title: t("casting.routes.0.title"),
-      sub: t("casting.routes.0.sub"),
-      body: t("casting.routes.0.body"),
-      good: [
-        t("casting.routes.0.good.0"),
-        t("casting.routes.0.good.1"),
-        t("casting.routes.0.good.2"),
-      ],
-    },
-    {
-      n: t("casting.routes.1.n"),
-      title: t("casting.routes.1.title"),
-      sub: t("casting.routes.1.sub"),
-      body: t("casting.routes.1.body"),
-      good: [
-        t("casting.routes.1.good.0"),
-        t("casting.routes.1.good.1"),
-        t("casting.routes.1.good.2"),
-      ],
-    },
-    {
-      n: t("casting.routes.2.n"),
-      title: t("casting.routes.2.title"),
-      sub: t("casting.routes.2.sub"),
-      body: t("casting.routes.2.body"),
-      good: [
-        t("casting.routes.2.good.0"),
-        t("casting.routes.2.good.1"),
-        t("casting.routes.2.good.2"),
-      ],
-    },
-  ];
-  const castable = ACTORS.filter((a) => a.status === "active");
-
+  const { t } = await getSiteI18n();
   return (
-    <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] pt-32 pb-[var(--sp-section)]">
-      <p className="sp-label sp-cjk text-[0.625rem]">{t("casting.eyebrow")}</p>
-      <Mega
-        lines={heroLines}
-        immediate
-        className="mt-6 text-bone"
-        size="text-[clamp(2.75rem,12vw,10rem)]"
-      />
-      <p className="sp-cjk mt-8 max-w-2xl text-sm leading-[1.95] text-smoke">
+    <div className="sp-container">
+      <PageIntro
+        eyebrow={t("casting.eyebrow")}
+        lines={[t("casting.heroLines.0"), t("casting.heroLines.1")]}
+      >
         {t("casting.intro")}
-      </p>
-      <p className="sp-label mt-6 text-[0.5625rem] text-acid">{STANCE_LINE[loc]}</p>
-
-      <div className="mt-20">
-        <SectionHead index="01" label={t("casting.routesLabel")} title={t("casting.routesTitle")} />
-
-        <Reveal className="mt-12 grid gap-px bg-[var(--sp-hairline)] lg:grid-cols-3">
-          {routes.map((r, i) => (
-            <article
-              key={r.n}
-              className="sp-reveal sp-crosshair flex flex-col bg-black p-8"
-              style={{ ["--sp-accent" as string]: ROUTE_ACCENT[i] }}
-            >
-              <span className="sp-ghost-num text-[5rem]">{r.n}</span>
-              <Display
-                text={r.title}
-                as="h2"
-                className="mt-8 text-[clamp(1.1rem,2.4vw,1.5rem)] text-bone"
-              />
-              <p className="sp-cjk mt-2 text-sm text-[var(--sp-accent)]">{r.sub}</p>
-              <p className="sp-cjk mt-5 text-sm leading-[1.95] text-smoke">{r.body}</p>
-
-              <p className="sp-label sp-cjk mt-8 text-[0.5rem] text-ash">{t("casting.goodFor")}</p>
-              <ul className="mt-3 space-y-1.5">
-                {r.good.map((g) => (
-                  <li key={g} className="sp-cjk flex gap-2 text-xs text-smoke">
-                    <span className="text-[var(--sp-accent)]">—</span>
-                    {g}
+      </PageIntro>
+      <section className="sp-section">
+        <SectionHead label={t("casting.routesLabel")} title={t("casting.routesTitle")} />
+        <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-3">
+          {([0, 1, 2] as const).map((index) => (
+            <article key={index} className="sp-card bg-card">
+              <p className="sp-code text-muted-foreground">{t(`casting.routes.${index}.n`)}</p>
+              <h3 className="sp-subtitle mt-4">{t(`casting.routes.${index}.title`)}</h3>
+              <p className="sp-small mt-2 text-muted-foreground">
+                {t(`casting.routes.${index}.sub`)}
+              </p>
+              <p className="mt-6">{t(`casting.routes.${index}.body`)}</p>
+              <p className="sp-label mt-6 text-muted-foreground">{t("casting.goodFor")}</p>
+              <ul className="mt-3 space-y-2">
+                {([0, 1, 2] as const).map((item) => (
+                  <li className="sp-small" key={item}>
+                    {t(`casting.routes.${index}.good.${item}`)}
                   </li>
                 ))}
               </ul>
             </article>
           ))}
-        </Reveal>
-      </div>
-
-      <div className="mt-24 border border-[var(--sp-hairline)]">
-        <div className="grid gap-px bg-[var(--sp-hairline)] md:grid-cols-2">
-          <div className="bg-carbon p-10">
-            <p className="sp-label sp-cjk text-[0.5625rem]">{t("casting.contact")}</p>
+        </div>
+      </section>
+      <section className="sp-section">
+        <SectionHead title={t("casting.contact")} note={t("casting.contactBody")} />
+        <div className="mt-8 lg:mt-10">
+          <Suspense>
+            <CastingContext />
+          </Suspense>
+          <div className="flex flex-wrap items-center gap-6">
             <a
               href={`mailto:${SITE.contact}?subject=${encodeURIComponent("[CASTING] SWIMMER PARTY")}`}
-              data-cursor="MAIL"
-              className="sp-display mt-6 block text-[clamp(1.25rem,3.5vw,2.25rem)] leading-none break-all text-bone transition-colors hover:text-acid"
+              className="font-semibold break-all hover:underline underline-offset-4"
             >
               {SITE.contact}
             </a>
-            <p className="sp-cjk mt-6 text-xs leading-[1.9] text-smoke">
-              {t("casting.contactBody")}
-            </p>
-            <p className="sp-cjk mt-6 border-t border-[var(--sp-hairline)] pt-5 text-xs leading-[1.9] text-ash">
-              {t("casting.remixNote")}{" "}
-              <Link href="/kit" className="text-acid underline underline-offset-4">
-                →
-              </Link>
-            </p>
-          </div>
-
-          <div className="bg-carbon p-10">
-            <p className="sp-label sp-cjk text-[0.5625rem]">{t("casting.availableNow")}</p>
-            <ul className="mt-6 divide-y divide-[var(--sp-hairline)]">
-              {castable.map((a) => (
-                <li key={a.slug} className="flex items-baseline justify-between gap-4 py-3">
-                  <Link
-                    href={`/actors/${a.slug}`}
-                    className="sp-cjk text-lg text-bone transition-colors hover:text-acid"
-                  >
-                    {loc === "zh" ? a.nameCn : a.nameEn}
-                  </Link>
-                  <span className="sp-label text-[0.5rem] text-acid">{a.code} · OPEN</span>
-                </li>
-              ))}
-            </ul>
-            <p className="sp-cjk mt-6 text-xs leading-[1.9] text-ash">
-              {t("casting.availableNote")}
-            </p>
+            <CopyButton text={SITE.contact} label={t("casting.copyEmail")} />
           </div>
         </div>
-      </div>
+        <h3 className="sp-subtitle mt-12">{t("casting.availableNow")}</h3>
+        <div className="mt-4 flex flex-wrap gap-6">
+          {ACTORS.filter((actor) => actor.status === "active").map((actor) => (
+            <TextLink href={`/actors/${actor.slug}`} key={actor.slug}>
+              {locale === "zh" ? actor.nameCn : actor.nameEn}
+            </TextLink>
+          ))}
+        </div>
+        <p className="sp-small mt-4 text-muted-foreground">{t("casting.availableNote")}</p>
+        <p className="sp-small mt-12 text-muted-foreground">{t("casting.remixNote")}</p>
+        <TextLink href="/kit" className="mt-4">
+          {t("nav.kit")}
+        </TextLink>
+      </section>
     </div>
   );
 }

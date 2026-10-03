@@ -24,7 +24,6 @@ export type Work = {
   /** Roster codes, resolved to names at render time. */
   cast: string[];
   logline: L;
-  accent: "acid" | "cyan" | "magenta" | "flare";
 };
 
 export const WORKS: Work[] = [
@@ -41,7 +40,6 @@ export const WORKS: Work[] = [
       en: "A man who takes 'I do not lie' seriously tells his first lie — to save the last scrap of dignity of a man who wanted to hit him ten minutes ago, in front of that man's mother. The lie then forces two disasters to actually learn English.",
       zh: "一个把「我不骗人」看得很重的人，为了保住一个刚刚还想揍他的男人在母亲面前的最后一点体面，第一次撒了谎。结果这个谎逼着两个烂人真的开始学英语。",
     },
-    accent: "acid",
   },
   {
     code: "W-02",
@@ -56,7 +54,6 @@ export const WORKS: Work[] = [
       en: "Three in the morning at a convenience store is the best observation post in the city. She never comments — she just holds your eye half a second too long when she pushes the change back.",
       zh: "凌晨三点的便利店是全城最好的观察位。她不评价，只是把找零推过来的时候多看你一眼。",
     },
-    accent: "cyan",
   },
   {
     code: "W-03",
@@ -68,7 +65,6 @@ export const WORKS: Work[] = [
       en: "A man misread on sight, and a man who can say anything but understands nothing about how it works here. Premise not locked.",
       zh: "一个只看脸就被误会的人，和一个什么都会说却不懂规矩的人。设定尚未定稿。",
     },
-    accent: "magenta",
   },
   {
     code: "W-04",
@@ -80,6 +76,5 @@ export const WORKS: Work[] = [
       en: "One gatehouse, one logbook, and a captain who governs six metres of tarmac like a sovereign state. Premise not locked.",
       zh: "一个门岗，一本登记簿，一个把六米柏油路当主权国家治理的队长。设定尚未定稿。",
     },
-    accent: "flare",
   },
 ];

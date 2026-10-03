@@ -1,216 +1,161 @@
 import type { Metadata } from "next";
-import { setSiteLocale, getSiteI18n } from "@/i18n/server";
-import { Link } from "@/i18n/navigation";
-import { Mega, Display } from "@/components/Mega";
-import { SectionHead } from "@/components/SectionHead";
-import { CopyBlock } from "@/components/CopyBlock";
-import { ReferenceStrip } from "@/components/ReferenceStrip";
-import { Reveal } from "@/motion/Reveal";
-import { VelocityMarquee } from "@/motion/VelocityMarquee";
+import { getSiteI18n, setSiteLocale } from "@/i18n/server";
+import type { AppLocale } from "@/i18n/routing";
 import { ACTORS } from "@/content/actors";
 import { KIT_MANIFEST, KIT_RULES, KIT_STATUS_LABEL } from "@/content/kit";
-import { CG_BADGE } from "@/content/doctrine";
-import type { AppLocale } from "@/i18n/routing";
+import { ActorCard } from "@/components/ActorCard";
+import { ActorPicture } from "@/components/ActorPicture";
+import { CopyBlock } from "@/components/CopyBlock";
+import { PageIntro } from "@/components/PageIntro";
+import { SectionHead } from "@/components/SectionHead";
+import { TextLink } from "@/components/TextLink";
+import { GameProgress } from "@/ui/kit";
+import { Icon } from "@/ui/icons";
 
-type Props = { params: Promise<{ locale: string }> };
-
+type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getSiteI18n(locale).then((i18n) => i18n.t);
+  setSiteLocale(locale);
+  const { t } = await getSiteI18n();
   return { title: t("kit.metaTitle"), description: t("kit.metaDescription") };
 }
-
 export default async function KitPage({ params }: Props) {
   const { locale } = await params;
   setSiteLocale(locale);
-  const loc = locale as AppLocale;
-
-  const t = await getSiteI18n().then((i18n) => i18n.t);
-  const seeded = ACTORS.filter((a) => a.promptSeed);
-  const pending = ACTORS.filter((a) => !a.promptSeed);
-  const heroLines = [t("kit.heroLines.0"), t("kit.heroLines.1")];
-
+  const { t } = await getSiteI18n();
+  const seeded = ACTORS.filter((actor) => actor.promptSeed);
   return (
-    <div className="pt-14">
-      <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] pt-20">
-        <p className="sp-label sp-cjk text-[0.625rem]">{t("kit.eyebrow")}</p>
-        <Mega
-          lines={heroLines}
-          immediate
-          className="mt-6 text-bone"
-          size="text-[clamp(3rem,13vw,11rem)]"
-        />
-        <p className="sp-cjk mt-8 max-w-2xl text-base leading-[1.95] text-smoke">
-          {t("kit.intro")}
-        </p>
+    <div className="sp-container">
+      <PageIntro eyebrow={t("kit.eyebrow")} lines={[t("kit.heroLines.0"), t("kit.heroLines.1")]}>
+        {t("kit.intro")}
+      </PageIntro>
+      <section
+        className="sp-section grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4"
+        aria-label={t("nav.roster")}
+      >
+        {ACTORS.map((actor) => {
+          const done = actor.views.length || (actor.plate ? 1 : 0);
+          return (
+            <div key={actor.slug}>
+              <ActorCard actor={actor} href={`/kit#${actor.code}`} />
+              <div className="mt-2 px-2">
+                <GameProgress
+                  value={done}
+                  max={21}
+                  label={t("assets.progress", { done, total: 21 })}
+                />
+              </div>
+            </div>
+          );
+        })}
       </section>
-
-      <div className="mt-16 border-y border-[var(--sp-hairline)]">
-        <VelocityMarquee
-          items={[t("kit.eyebrow"), CG_BADGE[loc], t("kit.rulesTitle"), t("kit.seedsTitle")]}
-          tone="cyan"
-          speed={70}
-        />
-      </div>
-
-      {/* ---------------- Seeds: the part that actually works today ------- */}
-      <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
+      <section className="sp-section">
         <SectionHead
-          index="01"
           label={t("kit.seedsLabel")}
           title={t("kit.seedsTitle")}
           note={t("kit.seedsNote")}
         />
-
-        <div className="mt-14 space-y-px">
-          {seeded.map((a) => (
-            <div
-              key={a.slug}
-              className="grid gap-6 border border-[var(--sp-hairline)] bg-carbon p-6 lg:grid-cols-[minmax(0,0.6fr)_minmax(0,1.4fr)] lg:p-8"
-              style={{ ["--sp-accent" as string]: `var(--color-${a.accent})` }}
-            >
-              <div>
-                <p
-                  className="sp-label text-[0.5625rem]"
-                  style={{ color: `var(--color-${a.accent})` }}
-                >
-                  {a.code}
+        <div className="mt-8 space-y-12 lg:mt-10">
+          {seeded.map((actor) => (
+            <article id={actor.code} key={actor.slug} className="scroll-mt-24">
+              <h3 className="sp-subtitle mb-4">{locale === "zh" ? actor.nameCn : actor.nameEn}</h3>
+              <CopyBlock label={`${actor.code} / CHARACTER SEED`} text={actor.promptSeed!} />
+              <div className="mt-6">
+                <p className="sp-label text-muted-foreground">
+                  {t("kit.platesLabel")}
+                  {actor.views.length ? "" : ` — ${t("kit.platesNone")}`}
                 </p>
-                <Display
-                  text={loc === "zh" ? a.nameCn : a.nameEn}
-                  as="h3"
-                  className="mt-3 text-3xl text-bone"
-                />
-                <p className="sp-cjk mt-4 max-w-sm text-xs leading-[1.9] text-smoke">
-                  {a.tagline[loc]}
-                </p>
-                <Link
-                  href={`/actors/${a.slug}`}
-                  className="sp-label sp-cjk mt-6 inline-block border border-[var(--sp-hairline)] px-5 py-3 text-[0.5625rem] text-bone transition-colors hover:border-[var(--sp-accent)] hover:text-[var(--sp-accent)]"
-                >
-                  {a.code} →
-                </Link>
-              </div>
-              <div className="space-y-6">
-                <CopyBlock text={a.promptSeed!} label={`${a.code} / CHARACTER SEED`} />
-                <ReferenceStrip actor={a} />
-              </div>
-            </div>
-          ))}
-
-          <div className="border border-[var(--sp-hairline)] p-6 lg:p-8">
-            <p className="sp-label sp-cjk text-[0.5625rem] text-ash">{t("kit.seedPending")}</p>
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {pending.map((a) => (
-                <li
-                  key={a.slug}
-                  className="sp-cjk sp-hazard border border-[var(--sp-hairline)] px-3 py-1.5 text-[0.6875rem] text-smoke"
-                >
-                  <span className="text-ash">{a.code}</span> {loc === "zh" ? a.nameCn : a.nameEn}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------- Manifest ---------------- */}
-      <section className="border-y border-[var(--sp-hairline)] bg-carbon">
-        <div className="sp-blueprint mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
-          <SectionHead
-            index="02"
-            label={t("kit.manifestLabel")}
-            title={t("kit.manifestTitle")}
-            note={t("kit.manifestNote")}
-          />
-
-          <Reveal className="mt-14 grid gap-px bg-[var(--sp-hairline)] sm:grid-cols-2 lg:grid-cols-4">
-            {KIT_MANIFEST.map((k) => (
-              <article key={k.id} className="sp-reveal sp-crosshair flex flex-col bg-carbon p-6">
-                <div className="flex items-baseline justify-between gap-3">
-                  <span className="sp-label text-[0.5rem] text-ash">{k.index}</span>
-                  <span
-                    className={`sp-label sp-cjk text-[0.5rem] ${
-                      k.status === "live"
-                        ? "text-acid"
-                        : k.status === "preparing"
-                          ? "text-cyan"
-                          : "text-smoke"
-                    }`}
-                  >
-                    {k.status === "live" ? <span className="sp-blink">▊ </span> : null}
-                    {KIT_STATUS_LABEL[k.status][loc]}
-                  </span>
+                <div className="mt-4 grid max-w-xl grid-cols-3 gap-3 sm:gap-4">
+                  {(actor.views.length
+                    ? actor.views
+                    : actor.plate
+                      ? [{ id: "front", src: actor.plate, label: { en: "Front", zh: "正面" } }]
+                      : []
+                  ).map((view) => (
+                    <ActorPicture
+                      key={view.id}
+                      src={view.src}
+                      alt={`${actor.code} ${view.label[locale]}`}
+                      legacy
+                      legacyLabel={t("assets.legacy")}
+                      sizes="(min-width: 640px) 170px, 28vw"
+                      className="aspect-2/3 rounded-[var(--game-ui-radius-card)]"
+                    />
+                  ))}
                 </div>
-                <h3 className="sp-cjk mt-5 text-base leading-tight font-semibold text-bone">
-                  {k.name[loc]}
-                </h3>
-                <p className="sp-label mt-1.5 text-[0.5rem] text-smoke">{k.format}</p>
-                <p className="sp-cjk mt-4 text-xs leading-[1.9] text-smoke">{k.body[loc]}</p>
-              </article>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="sp-card mt-12 bg-card">
+          <p className="sp-label">{t("kit.seedPending")}</p>
+          <ul className="mt-4 flex flex-wrap gap-3">
+            {ACTORS.filter((actor) => !actor.promptSeed).map((actor) => (
+              <li key={actor.slug} id={actor.code}>
+                <TextLink href={`/actors/${actor.slug}`} className="sp-small">
+                  {actor.code} {locale === "zh" ? actor.nameCn : actor.nameEn}
+                </TextLink>
+              </li>
             ))}
-          </Reveal>
+          </ul>
         </div>
       </section>
-
-      {/* ---------------- Rules ---------------- */}
-      <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
+      <section className="sp-section">
         <SectionHead
-          index="03"
+          label={t("kit.manifestLabel")}
+          title={t("kit.manifestTitle")}
+          note={t("kit.manifestNote")}
+        />
+        <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-4">
+          {KIT_MANIFEST.map((item) => (
+            <article
+              key={item.id}
+              className="sp-card flex flex-col bg-card"
+              data-kit-item={item.index}
+            >
+              <p className="sp-code text-muted-foreground">{item.index}</p>
+              <h3 className="sp-subtitle mt-4">{item.name[locale]}</h3>
+              <p className="sp-small mt-2 text-muted-foreground">{item.format}</p>
+              <p className="sp-small mt-4 text-muted-foreground">{item.body[locale]}</p>
+              <div className="mt-auto pt-6">
+                <span className="sp-pill" data-active={item.status === "live"}>
+                  {KIT_STATUS_LABEL[item.status][locale]}
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="sp-section">
+        <SectionHead
           label={t("kit.rulesLabel")}
           title={t("kit.rulesTitle")}
           note={t("kit.rulesNote")}
         />
-
-        <Reveal className="mt-14 grid gap-px bg-[var(--sp-hairline)] md:grid-cols-2">
-          {KIT_RULES.map((r, i) => (
-            <article
-              key={r.id}
-              /* An odd count in a two-up grid leaves a hole; the last rule
-               * takes the whole row instead, which also happens to be the
-               * one about money. */
-              className={`sp-reveal p-8 ${r.allow ? "bg-black" : "sp-slab"} ${
-                i === KIT_RULES.length - 1 && KIT_RULES.length % 2 === 1 ? "md:col-span-2" : ""
-              }`}
-              style={r.allow ? undefined : { ["--sp-accent" as string]: "var(--color-magenta)" }}
-            >
-              <p
-                className={`sp-label sp-cjk text-[0.5625rem] ${
-                  r.allow ? "text-acid" : "text-black/60"
-                }`}
-              >
-                {r.allow ? t("kit.allowed") : t("kit.forbidden")}
-              </p>
-              <h3
-                className={`sp-cjk mt-5 text-[clamp(1.15rem,3vw,1.75rem)] leading-tight font-bold ${
-                  r.allow ? "text-bone" : "text-black"
-                }`}
-              >
-                {r.head[loc]}
-              </h3>
-              <p
-                className={`sp-cjk mt-4 max-w-md text-sm leading-[1.9] ${
-                  r.allow ? "text-smoke" : "text-black/80"
-                }`}
-              >
-                {r.body[loc]}
-              </p>
-            </article>
+        <div className="mt-8 grid items-start gap-6 lg:mt-10 lg:grid-cols-2">
+          {[true, false].map((allow) => (
+            <div key={String(allow)} className="sp-card bg-card">
+              <h3 className="sp-subtitle">{t(allow ? "kit.allowed" : "kit.forbidden")}</h3>
+              <ul className="mt-6 space-y-6">
+                {KIT_RULES.filter((rule) => rule.allow === allow).map((rule) => (
+                  <li key={rule.id} className="flex gap-3">
+                    <Icon
+                      name={allow ? "check" : "close"}
+                      className={`mt-1 shrink-0 ${allow ? "" : "text-danger-ink"}`}
+                    />
+                    <div>
+                      <h4 className="font-semibold">{rule.head[locale]}</h4>
+                      <p className="sp-small mt-2 text-muted-foreground">{rule.body[locale]}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </Reveal>
-
-        <div className="mt-14 flex flex-wrap items-center justify-between gap-6 border-t border-[var(--sp-hairline)] pt-10">
-          <p className="sp-cjk max-w-lg text-sm leading-[1.9] text-smoke">
-            {t("kit.manifestNote")}
-          </p>
-          <Link
-            href="/pact"
-            data-cursor="→"
-            className="sp-label sp-cjk border border-acid bg-acid px-8 py-4 text-[0.6875rem] text-black transition-colors hover:bg-transparent hover:text-acid"
-          >
-            {t("kit.pactCta")} →
-          </Link>
         </div>
+        <TextLink href="/pact" className="mt-8">
+          {t("kit.pactCta")}
+        </TextLink>
       </section>
     </div>
   );

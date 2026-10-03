@@ -1,432 +1,172 @@
-import { setSiteLocale, getSiteI18n } from "@/i18n/server";
-import { Link } from "@/i18n/navigation";
-import { ActorCard } from "@/components/ActorCard";
-import { SectionHead } from "@/components/SectionHead";
-import { Mega, Display } from "@/components/Mega";
-import { StageMount } from "@/three/StageMount";
-import { ScrubStage } from "@/motion/ScrubStage";
-import { HorizontalRail } from "@/motion/HorizontalRail";
-import { StackDeck } from "@/motion/StackDeck";
-import { VelocityMarquee } from "@/motion/VelocityMarquee";
-import { Reveal, Counter } from "@/motion/Reveal";
+import { getSiteI18n, setSiteLocale } from "@/i18n/server";
+import type { AppLocale } from "@/i18n/routing";
 import { ACTORS } from "@/content/actors";
 import { KIT_MANIFEST } from "@/content/kit";
-import { CLAUSES } from "@/content/pact";
-import { REFUSALS } from "@/content/doctrine";
-import { WORKS, WORK_STATUS_LABEL } from "@/content/works";
-import { SITE } from "@/lib/site";
-import type { AppLocale } from "@/i18n/routing";
+import { CG_BADGE } from "@/content/doctrine";
+import { ActorCard } from "@/components/ActorCard";
+import { ActorPicture } from "@/components/ActorPicture";
+import { SectionHead } from "@/components/SectionHead";
+import { TextLink } from "@/components/TextLink";
+import { Reveal } from "@/motion/Reveal";
+import { StageMount } from "@/three/StageMount";
 
-export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function Home({ params }: { params: Promise<{ locale: AppLocale }> }) {
   const { locale } = await params;
   setSiteLocale(locale);
-  const loc = locale as AppLocale;
-
-  const t = await getSiteI18n().then((i18n) => i18n.t);
-  const tc = await getSiteI18n().then((i18n) => i18n.t);
-  const castable = ACTORS.filter((a) => a.status === "active");
-  const plates = ACTORS.filter((a) => a.plate).length;
-  const burned = ACTORS.reduce((n, a) => n + a.version.current, 0);
-  const pipeline = [
-    {
-      step: t("home.pipeline.0.step"),
-      title: t("home.pipeline.0.title"),
-      body: t("home.pipeline.0.body"),
-    },
-    {
-      step: t("home.pipeline.1.step"),
-      title: t("home.pipeline.1.title"),
-      body: t("home.pipeline.1.body"),
-    },
-    {
-      step: t("home.pipeline.2.step"),
-      title: t("home.pipeline.2.title"),
-      body: t("home.pipeline.2.body"),
-    },
-    {
-      step: t("home.pipeline.3.step"),
-      title: t("home.pipeline.3.title"),
-      body: t("home.pipeline.3.body"),
-    },
-  ];
-  const heroLines = [t("home.heroLines.0"), t("home.heroLines.1"), t("home.heroLines.2")];
-  const marquee = [
-    t("home.marquee.0"),
-    t("home.marquee.1"),
-    t("home.marquee.2"),
-    t("home.marquee.3"),
-    t("home.marquee.4"),
-  ];
-  const stanceLines = [t("home.stanceTitle.0"), t("home.stanceTitle.1"), t("home.stanceTitle.2")];
-  const castingLines = [t("home.castingTitle.0"), t("home.castingTitle.1")];
-  const liveKit = KIT_MANIFEST.filter((k) => k.status === "live").length;
-
+  const { t } = await getSiteI18n();
+  const stats = [
+    [ACTORS.length, t("home.statRoster")],
+    [ACTORS.filter((actor) => actor.status === "active").length, t("home.statCastable")],
+    [ACTORS.reduce((sum, actor) => sum + actor.version.current, 0), t("home.statVersions")],
+    [ACTORS.filter((actor) => actor.plate).length, t("home.statPlates")],
+    [KIT_MANIFEST.filter((item) => item.status === "live").length, t("home.statKitLive")],
+  ] as const;
+  const previews = ACTORS.flatMap((actor) =>
+    actor.views.length
+      ? actor.views.map((view) => ({ src: view.src, alt: `${actor.code} ${view.label[locale]}` }))
+      : actor.plate
+        ? [{ src: actor.plate, alt: `${actor.code} ${t("actor.sheetFront")}` }]
+        : [],
+  ).slice(0, 6);
   return (
-    <>
-      {/* ======================= HERO ======================= */}
-      <ScrubStage className="relative" length={2.3}>
-        {/* Stage sits behind the type, biased right so the headline gets the
-         * left third clean. On mobile it drops behind everything at low
-         * opacity — a 3D scene fighting a headline on a 390px screen loses. */}
-        <div className="absolute inset-0 opacity-40 md:left-[32%] md:opacity-100">
-          <StageMount accent="#ccff00" assemble />
-        </div>
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, var(--color-black) 4%, color-mix(in srgb, var(--color-black) 62%, transparent) 34%, transparent 62%)",
-          }}
-        />
-
-        <div className="relative flex h-full flex-col justify-between px-[var(--sp-gutter)] pt-20 pb-12 sm:pb-8">
-          <div
-            className="mx-auto w-full max-w-[var(--sp-max)]"
-            style={{
-              transform: "translate3d(calc(var(--p) * -9vw), 0, 0)",
-              opacity: "calc(1 - var(--p) * 1.5)",
-            }}
-          >
-            <p className="sp-label sp-cjk text-[0.5625rem]">{t("home.eyebrow")}</p>
-            <Mega
-              lines={heroLines}
-              immediate
-              className="mt-6 text-bone"
-              size="text-[clamp(2.5rem,10.5vw,9.5rem)]"
-            />
-            <p className="sp-cjk mt-8 max-w-lg text-[0.8125rem] leading-[1.9] text-smoke">
-              {t("home.heroBody")}
-            </p>
-          </div>
-
-          {/* Readout that arrives as the figure finishes assembling. */}
-          <div
-            className="pointer-events-none absolute top-1/2 right-[var(--sp-gutter)] hidden w-64 -translate-y-1/2 border-l-2 border-acid pl-4 md:block"
-            style={{ opacity: "calc((var(--p) - 0.34) * 3.4)" }}
-            aria-hidden
-          >
-            <p className="sp-label text-[0.5rem] text-acid">WHITE MODEL / SP-STD-01</p>
-            <dl className="mt-3 space-y-1.5 font-mono text-[0.625rem] text-smoke">
-              <div className="flex justify-between gap-4">
-                <dt>HEIGHT</dt>
-                <dd className="text-bone">1755 MM</dd>
-              </div>
-              <div className="flex justify-between gap-4">
-                <dt>SEGMENTS</dt>
-                <dd className="text-bone">24</dd>
-              </div>
-              <div className="flex justify-between gap-4">
-                <dt>SURFACE</dt>
-                <dd className="text-bone">NOT APPLIED</dd>
-              </div>
-              <div className="flex justify-between gap-4">
-                <dt>RENDER</dt>
-                <dd className="text-acid">STYLISED / CG</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div className="mx-auto flex w-full max-w-[var(--sp-max)] flex-wrap items-end justify-between gap-6">
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/actors"
-                data-cursor={t("home.ctaRoster")}
-                className="sp-label sp-cjk border border-acid bg-acid px-6 py-3.5 text-[0.6875rem] text-black transition-colors hover:bg-transparent hover:text-acid"
-              >
-                {t("home.ctaRoster")}
-              </Link>
-              <Link
-                href="/kit"
-                data-cursor="KIT"
-                className="sp-label sp-cjk border border-[var(--sp-hairline)] px-6 py-3.5 text-[0.6875rem] text-bone transition-colors hover:border-bone"
-              >
-                {t("home.kitCta")}
-              </Link>
-            </div>
-
-            <dl className="flex gap-6 sm:gap-8">
-              <div>
-                <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("home.statRoster")}</dt>
-                <dd className="sp-display text-2xl leading-none text-bone sm:text-4xl">
-                  {String(ACTORS.length).padStart(2, "0")}
-                </dd>
-              </div>
-              <div>
-                <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("home.statCastable")}</dt>
-                <dd className="sp-display text-2xl leading-none text-acid sm:text-4xl">
-                  {String(castable.length).padStart(2, "0")}
-                </dd>
-              </div>
-              <div className="hidden sm:block">
-                <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{tc("common.scroll")}</dt>
-                <dd className="sp-display sp-blink text-4xl leading-none text-ash">↓</dd>
-              </div>
-            </dl>
+    <div className="sp-container">
+      <section className="grid items-center gap-10 py-12 lg:min-h-[82vh] lg:grid-cols-12 lg:gap-6">
+        <div className="lg:col-span-5">
+          <p className="sp-label text-muted-foreground">{t("home.eyebrow")}</p>
+          <h1 className="sp-display-xl mt-6">
+            {([0, 1, 2] as const).map((index) => (
+              <span className="block" key={index}>
+                {index ? " " : ""}
+                {t(`home.heroLines.${index}`)}
+              </span>
+            ))}
+          </h1>
+          <p className="sp-lead mt-6 max-w-[32rem] text-muted-foreground">{t("home.heroBody")}</p>
+          <div className="mt-8 flex flex-wrap gap-6">
+            <TextLink href="/actors">{t("home.ctaRoster")}</TextLink>
+            <TextLink href="/casting" className="text-muted-foreground">
+              {t("home.ctaBook")}
+            </TextLink>
           </div>
         </div>
-      </ScrubStage>
-
-      <div className="border-y border-[var(--sp-hairline)]">
-        <VelocityMarquee items={marquee} />
-      </div>
-
-      {/* ======================= ROSTER RAIL ======================= */}
-      <section className="py-[var(--sp-section)]">
-        <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)]">
-          <SectionHead
-            index="01"
-            label={t("home.rosterLabel")}
-            title={t("home.rosterTitle")}
-            note={t("home.rosterNote")}
-          />
+        <div className="sp-panel sp-sweep relative h-[56vh] min-h-80 lg:col-span-7 lg:h-[68vh] lg:max-h-[760px]">
+          <StageMount assemble />
         </div>
-
-        <HorizontalRail className="mt-14 md:mt-0" ariaLabel={t("home.rosterLabel")}>
-          {ACTORS.map((actor, i) => (
-            <ActorCard key={actor.slug} actor={actor} index={i} width="rail" />
-          ))}
-          <div className="flex w-[78vw] shrink-0 items-center justify-center self-stretch border border-[var(--sp-hairline)] bg-carbon sm:w-[42vw] lg:w-[24rem]">
-            <Link
-              href="/actors"
-              data-cursor="→"
-              className="sp-label sp-cjk px-8 text-center text-[0.6875rem] text-acid"
-            >
-              {t("home.rosterMore")} →
-            </Link>
-          </div>
-        </HorizontalRail>
       </section>
-
-      {/* ======================= STANCE ======================= */}
       <section
-        className="sp-slab relative overflow-hidden"
-        style={{ ["--sp-accent" as string]: "var(--color-acid)" }}
+        className="grid grid-cols-2 gap-6 py-10 lg:grid-cols-5"
+        aria-label={t("home.rosterLabel")}
       >
-        <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
-          <p className="sp-label sp-cjk text-[0.625rem]">{t("home.stanceLabel")}</p>
-          <Mega
-            as="h2"
-            lines={stanceLines}
-            accentLine={-1}
-            className="mt-6 text-black"
-            size="text-[clamp(2.25rem,10vw,9rem)]"
-          />
-          <Reveal className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-            <p className="sp-reveal sp-cjk max-w-xl text-base leading-[1.9] text-black/80">
-              {t("home.stanceBody")}
-            </p>
-            <ol className="sp-reveal divide-y divide-black/20 border-y border-black/20">
-              {REFUSALS.map((r) => (
-                <li key={r.id} className="flex items-baseline gap-4 py-3.5">
-                  <span className="sp-display shrink-0 text-lg text-black/40">{r.n}</span>
-                  <span className="sp-cjk text-sm leading-snug font-semibold text-black">
-                    {r.head[loc]}
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </Reveal>
-          <Link
-            href="/pact"
-            data-cursor={t("home.stanceCta")}
-            className="sp-label sp-cjk mt-12 inline-block border-2 border-black px-8 py-4 text-[0.6875rem] text-black transition-colors hover:bg-black hover:text-acid"
-          >
-            {t("home.stanceCta")} →
-          </Link>
-        </div>
+        {stats.map(([value, label]) => (
+          <div key={label}>
+            <p className="font-display text-[2.5rem] leading-tight font-bold">{value}</p>
+            <p className="sp-small mt-1 text-muted-foreground">{label}</p>
+          </div>
+        ))}
       </section>
-
-      {/* ======================= METHOD ======================= */}
-      <section className="border-b border-[var(--sp-hairline)] bg-carbon">
-        <div className="sp-blueprint mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] pt-[var(--sp-section)]">
-          <SectionHead
-            index="02"
-            label={t("home.methodLabel")}
-            title={t("home.methodTitle")}
-            note={t("home.methodNote")}
-          />
-        </div>
-
-        <StackDeck className="mt-14" ariaLabel={t("home.methodLabel")}>
-          {pipeline.map((p) => (
-            <div
-              key={p.step}
-              className="flex h-full flex-col justify-center border-t border-[var(--sp-hairline)] bg-carbon px-[var(--sp-gutter)] py-16 md:py-0"
-            >
-              <div className="mx-auto grid w-full max-w-[var(--sp-max)] items-center gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-                <div className="flex items-baseline gap-6">
-                  <span className="sp-ghost-num text-[clamp(5rem,16vw,13rem)]">{p.step}</span>
-                  <Display
-                    text={p.title}
-                    as="h3"
-                    className="text-[clamp(1.5rem,4.5vw,3.25rem)] text-bone"
-                  />
-                </div>
-                <p className="sp-cjk max-w-xl text-sm leading-[2] text-smoke md:text-base">
-                  {p.body}
-                </p>
-              </div>
-            </div>
-          ))}
-        </StackDeck>
-      </section>
-
-      {/* ======================= OPEN KIT ======================= */}
-      <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
+      <section className="sp-section">
         <SectionHead
-          index="03"
-          label={t("home.kitLabel")}
-          title={t("home.kitTitle")}
-          note={t("home.kitNote")}
+          label={t("home.rosterLabel")}
+          title={t("home.rosterTitle")}
+          note={t("home.rosterNote")}
         />
-
-        <Reveal className="mt-14 grid gap-px bg-[var(--sp-hairline)] sm:grid-cols-2 lg:grid-cols-4">
-          {KIT_MANIFEST.slice(0, 4).map((k) => (
-            <div key={k.id} className="sp-reveal sp-crosshair bg-black p-6">
-              <p className="sp-label text-[0.5rem] text-ash">{k.index}</p>
-              <p className="sp-cjk mt-4 text-base font-semibold text-bone">{k.name[loc]}</p>
-              <p className="sp-label mt-1 text-[0.5rem] text-acid">{k.format}</p>
-              <p className="sp-cjk mt-4 text-xs leading-[1.9] text-smoke">{k.body[loc]}</p>
+        <Reveal className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:mt-10 lg:grid-cols-4">
+          {ACTORS.slice(0, 8).map((actor) => (
+            <div key={actor.slug} className="sp-reveal min-w-0">
+              <ActorCard actor={actor} />
             </div>
           ))}
         </Reveal>
-
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-6 border-t border-[var(--sp-hairline)] pt-8">
-          <dl className="flex gap-10">
-            <div>
-              <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("home.statPlates")}</dt>
-              <dd className="sp-display text-3xl leading-none text-bone">
-                <Counter value={plates} />
-              </dd>
-            </div>
-            <div>
-              <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("home.statKitLive")}</dt>
-              <dd className="sp-display text-3xl leading-none text-acid">
-                <Counter value={liveKit} />
-              </dd>
-            </div>
-            <div>
-              <dt className="sp-label sp-cjk text-[0.5rem] text-ash">{t("home.statVersions")}</dt>
-              <dd className="sp-display text-3xl leading-none text-bone">
-                <Counter value={burned} />
-              </dd>
-            </div>
-          </dl>
-          <Link
-            href="/kit"
-            data-cursor={t("home.kitCta")}
-            className="sp-label sp-cjk border border-acid bg-acid px-8 py-4 text-[0.6875rem] text-black transition-colors hover:bg-transparent hover:text-acid"
-          >
-            {t("home.kitCta")} →
-          </Link>
-        </div>
+        <TextLink href="/actors" className="mt-8">
+          {t("home.rosterMore", { count: ACTORS.length })}
+        </TextLink>
       </section>
-
-      {/* ======================= PACT ======================= */}
-      <section className="border-y border-[var(--sp-hairline)] bg-void">
-        <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
-          <SectionHead
-            index="04"
-            label={t("home.pactLabel")}
-            title={t("home.pactTitle")}
-            note={t("home.pactNote")}
-          />
-          <Reveal className="mt-14 divide-y divide-[var(--sp-hairline)] border-y border-[var(--sp-hairline)]">
-            {CLAUSES.map((c) => (
-              <div
-                key={c.id}
-                className="sp-reveal flex flex-wrap items-baseline gap-x-8 gap-y-2 py-6"
-              >
-                <span className="sp-ghost-num w-16 shrink-0 text-4xl">{c.n}</span>
-                <span className="sp-cjk flex-1 text-[clamp(1.1rem,3vw,1.9rem)] leading-tight text-bone">
-                  {c.short[loc]}
-                </span>
-                <span className="sp-cjk max-w-md flex-1 text-xs leading-relaxed text-smoke">
-                  {c.head[loc]}
-                </span>
-              </div>
-            ))}
-          </Reveal>
-          <Link
-            href="/pact"
-            data-cursor={t("home.pactCta")}
-            className="sp-label sp-cjk mt-10 inline-block border border-[var(--sp-hairline)] px-8 py-4 text-[0.6875rem] text-bone transition-colors hover:border-acid hover:text-acid"
-          >
-            {t("home.pactCta")} →
-          </Link>
-        </div>
+      <section className="sp-panel bg-card p-7 lg:p-12">
+        <p className="sp-label text-muted-foreground">{t("home.stanceLabel")}</p>
+        <h2 className="sp-display-lg mt-4">
+          {([0, 1, 2] as const).map((index) => (
+            <span className="block" key={index}>
+              {index ? " " : ""}
+              {t(`home.stanceTitle.${index}`)}
+            </span>
+          ))}
+        </h2>
+        <span className="sp-pill mt-6">{CG_BADGE[locale]}</span>
+        <p className="sp-lead mt-6 max-w-[48rem] text-muted-foreground">{t("home.stanceBody")}</p>
+        <TextLink href="/pact" className="mt-6">
+          {t("home.stanceCta")}
+        </TextLink>
       </section>
-
-      {/* ======================= WORKS ======================= */}
-      <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
+      <section className="sp-section">
         <SectionHead
-          index="05"
-          label={t("home.worksLabel")}
-          title={t("home.worksTitle")}
-          note={t("home.worksNote")}
+          label={t("home.methodLabel")}
+          title={t("home.methodTitle")}
+          note={t("home.methodNote")}
         />
-
-        <Reveal className="mt-14 divide-y divide-[var(--sp-hairline)] border-y border-[var(--sp-hairline)]">
-          {WORKS.slice(0, 2).map((w) => (
-            <article
-              key={w.code}
-              className="sp-reveal grid gap-6 py-10 md:grid-cols-[7rem_minmax(0,1fr)]"
-            >
-              <div>
-                <p className="sp-display text-4xl leading-none text-ash">{w.code}</p>
-                <p
-                  className="sp-label sp-cjk mt-3 text-[0.5rem]"
-                  style={{ color: `var(--color-${w.accent})` }}
-                >
-                  <span className="sp-blink">▊</span> {WORK_STATUS_LABEL[w.status][loc]}
-                </p>
-              </div>
-              <div>
-                <Display
-                  text={w.title[loc]}
-                  as="h3"
-                  className="text-[clamp(1.4rem,4vw,2.75rem)] text-bone"
-                />
-                <p className="sp-cjk mt-5 max-w-2xl text-sm leading-[1.95] text-smoke">
-                  {w.logline[loc]}
-                </p>
-                <p className="sp-cjk mt-4 text-xs text-ash">{w.format[loc]}</p>
-              </div>
+        <Reveal className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-4">
+          {([0, 1, 2, 3] as const).map((index) => (
+            <article key={index} className="sp-reveal">
+              <p className="sp-code text-muted-foreground">{t(`home.pipeline.${index}.step`)}</p>
+              <h3 className="sp-subtitle mt-4">{t(`home.pipeline.${index}.title`)}</h3>
+              <p className="sp-small mt-3 text-muted-foreground">
+                {t(`home.pipeline.${index}.body`)}
+              </p>
             </article>
           ))}
         </Reveal>
-
-        <Link
-          href="/works"
-          data-cursor={t("home.worksCta")}
-          className="sp-label sp-cjk mt-10 inline-block border border-[var(--sp-hairline)] px-6 py-3.5 text-[0.6875rem] text-bone transition-colors hover:border-acid hover:text-acid"
-        >
-          {t("home.worksCta")} →
-        </Link>
       </section>
-
-      {/* ======================= CASTING ======================= */}
-      <section className="border-t border-[var(--sp-hairline)] bg-void">
-        <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)] text-center">
-          <p className="sp-label sp-cjk text-[0.625rem]">{SITE.claim[loc]}</p>
-          <Mega
-            as="h2"
-            lines={castingLines}
-            className="mt-8 text-bone"
-            size="text-[clamp(2.5rem,12vw,11rem)]"
+      <section className="sp-section grid items-center gap-10 lg:grid-cols-2">
+        <div>
+          <SectionHead
+            label={t("home.kitLabel")}
+            title={t("home.kitTitle")}
+            note={t("home.kitNote")}
           />
-          <p className="sp-cjk mx-auto mt-8 max-w-xl text-sm leading-[1.95] text-smoke">
-            {t("home.castingBody")}
-          </p>
-          <Link
-            href="/casting"
-            data-cursor={t("home.castingCta")}
-            className="sp-label sp-cjk mt-12 inline-block border border-acid bg-acid px-10 py-4 text-[0.6875rem] text-black transition-colors hover:bg-transparent hover:text-acid"
-          >
-            {t("home.castingCta")} →
-          </Link>
+          <TextLink href="/kit" className="mt-6">
+            {t("home.kitCta")}
+          </TextLink>
+        </div>
+        <div className="grid grid-cols-3 gap-3 sm:gap-4">
+          {previews.map((image) => (
+            <ActorPicture
+              key={image.src}
+              src={image.src}
+              alt={image.alt}
+              sizes="(min-width: 1200px) 160px, (min-width: 1024px) 14vw, 28vw"
+              legacy
+              legacyLabel={t("assets.legacy")}
+              className="aspect-2/3 rounded-[var(--game-ui-radius-card)]"
+            />
+          ))}
         </div>
       </section>
-    </>
+      <section className="sp-section grid gap-6 lg:grid-cols-2">
+        <article className="sp-card bg-card">
+          <SectionHead label={t("home.pactLabel")} title={t("home.pactTitle")} />
+          <p className="sp-small mt-4 text-muted-foreground">{t("home.pactNote")}</p>
+          <TextLink href="/pact" className="mt-6">
+            {t("home.pactCta")}
+          </TextLink>
+        </article>
+        <article className="sp-card bg-card">
+          <SectionHead label={t("home.worksLabel")} title={t("home.worksTitle")} />
+          <p className="sp-small mt-4 text-muted-foreground">{t("home.worksNote")}</p>
+          <TextLink href="/works" className="mt-6">
+            {t("home.worksCta")}
+          </TextLink>
+        </article>
+      </section>
+      <section className="sp-section text-center">
+        <h2 className="sp-display-lg">
+          {t("home.castingTitle.0")} {t("home.castingTitle.1")}
+        </h2>
+        <p className="sp-lead mx-auto mt-6 max-w-[36rem] text-muted-foreground">
+          {t("home.castingBody")}
+        </p>
+        <TextLink href="/casting" className="mt-8">
+          {t("home.castingCta")}
+        </TextLink>
+      </section>
+    </div>
   );
 }

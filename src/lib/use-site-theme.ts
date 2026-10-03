@@ -23,6 +23,9 @@ function subscribe(onChange: () => void) {
   };
   system.addEventListener("change", followSystem);
   window.addEventListener("storage", followSystem);
+  // A streamed not-found boundary can replace the document after its head script.
+  // Reapply the preference when the client subscribes, without recreating state.
+  followSystem();
   return () => {
     observer.disconnect();
     system.removeEventListener("change", followSystem);

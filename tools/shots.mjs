@@ -1,84 +1,94 @@
-import { chromium, devices } from "@playwright/test";
+import { chromium } from "@playwright/test";
 import path from "node:path";
-import fs from "node:fs";
+import fs from "node:fs/promises";
+import sharp from "sharp";
 
-/**
- * Visual QA capture.
- *
- * Viewport frames at a series of scroll offsets, not `fullPage`. This site
- * pins and sticks several sections, and a full-page capture composites
- * those at whatever position they were stuck at — which produces images
- * that show section order that no visitor ever sees. Stepping the scroll
- * and shooting the viewport is what the visitor actually gets.
+/** Seventeen document targets, plus asset libraries once they exist.
+ * Real scroll entrances run before the full-page capture; nothing is force-shown.
+ * Top frames keep the studio's actual viewport lighting available for review.
  */
 const OUT = process.argv[2];
-const ONLY = process.argv[3];
-// Matches the dev server in .claude/launch.json; override for ad-hoc ports.
-const BASE = process.env.SHOTS_BASE ?? "http://localhost:3311";
-
-const SETTLE = `
-  document.querySelectorAll('.sp-word').forEach(w => { w.style.opacity='1'; w.style.transform='none'; });
-  document.querySelectorAll('.sp-reveal,.sp-clip').forEach(e => e.classList.add('is-in'));
-`;
-
-const TARGETS = [
-  ["home", "/zh", 14],
-  ["home-en", "/en", 14],
-  ["actors", "/zh/actors", 7],
-  ["hu-qian", "/zh/actors/hu-qian", 5],
-  ["dai-er", "/zh/actors/dai-er", 5],
-  ["kit", "/zh/kit", 7],
-  ["pact", "/zh/pact", 8],
-  ["works", "/zh/works", 4],
-  ["studio", "/zh/studio", 5],
-  ["casting", "/zh/casting", 4],
+if (!OUT) throw new Error("Usage: node tools/shots.mjs <output-directory> [name-filter]");
+const FILTER = process.argv[3] ?? "";
+const BASE = process.env.SHOTS_BASE ?? "http://127.0.0.1:3398";
+const pages = ["", "/actors", "/works", "/kit", "/studio", "/casting", "/pact"];
+const targets = [
+  ...["zh", "en"].flatMap(locale => pages.map(route => [`${route.slice(1) || "home"}-${locale}`, `/${locale}${route}`])),
+  ["hu-qian-zh", "/zh/actors/hu-qian"],
+  ["dai-er-zh", "/zh/actors/dai-er"],
+  ["404-zh", "/zh/actors/not-an-actor"],
 ];
-
-const browser = await chromium.launch();
-const errors = [];
-
-async function run(vname, contextOptions) {
-  const ctx = await browser.newContext(contextOptions);
-  const page = await ctx.newPage();
-  page.on("pageerror", (e) => errors.push(`${vname} ${e}`));
-  page.on("console", (m) => {
-    if (m.type() === "error") errors.push(`${vname} ${m.text()}`);
-  });
-
-  for (const [name, url, frames] of TARGETS) {
-    if (ONLY && !name.startsWith(ONLY)) continue;
-    if (vname === "phone" && name.endsWith("-en")) continue;
-
-    await page.goto(BASE + url, { waitUntil: "networkidle" });
-    await page.waitForTimeout(1400);
-
-    const total = await page.evaluate(() => document.documentElement.scrollHeight);
-    const vh = page.viewportSize().height;
-    const span = Math.max(0, total - vh);
-
-    for (let i = 0; i < frames; i += 1) {
-      const y = frames === 1 ? 0 : Math.round((span * i) / (frames - 1));
-      await page.evaluate((to) => window.scrollTo(0, to), y);
-      await page.waitForTimeout(420);
-      await page.evaluate(SETTLE);
-      await page.waitForTimeout(180);
-      await page.screenshot({
-        path: path.join(OUT, `${vname}-${name}-${String(i).padStart(2, "0")}.png`),
-      });
-    }
-    console.log("shot", vname, name, frames, `doc=${total}`);
+if (process.env.SHOTS_ASSETS === "1") {
+  for (const locale of ["zh", "en"]) {
+    for (const slug of ["hu-qian", "dai-er"]) targets.push([`assets-${slug}-${locale}`, `/${locale}/kit/${slug}`]);
   }
-  await ctx.close();
 }
-
-fs.mkdirSync(OUT, { recursive: true });
-await run("desk", { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
-await run("phone", { ...devices["iPhone 14"], deviceScaleFactor: 1 });
-await browser.close();
-
-if (errors.length) {
-  console.log("\nPAGE ERRORS:");
-  for (const e of [...new Set(errors)].slice(0, 20)) console.log(" -", e);
-} else {
-  console.log("\nno page errors");
+await fs.mkdir(OUT, { recursive: true });
+const browser = await chromium.launch();
+const results = [];
+try {
+  for (const theme of ["light", "dark"]) {
+    for (const width of [390, 1440]) {
+      const context = await browser.newContext({ viewport: { width, height: width === 390 ? 844 : 900 }, colorScheme: theme, deviceScaleFactor: 1 });
+      const page = await context.newPage();
+      for (const [name, route] of targets) {
+        if (FILTER && !new RegExp(FILTER).test(name)) continue;
+        const errors = [];
+        const onError = error => errors.push(String(error));
+        page.on("pageerror", onError);
+        const response = await page.goto(BASE + route, { waitUntil: "networkidle" });
+        await page.evaluate(() => document.fonts.ready);
+        await page.waitForTimeout(1700);
+        const metrics = await page.evaluate(() => ({ height: document.documentElement.scrollHeight, width: document.documentElement.scrollWidth, theme: document.documentElement.dataset.gameUiTheme, style: document.documentElement.dataset.gameUiStyle }));
+        const height = page.viewportSize().height;
+        for (let y = 0; y < metrics.height; y += Math.floor(height * 0.8)) {
+          await page.evaluate(top => window.scrollTo(0, top), y);
+          await page.waitForTimeout(110);
+        }
+        await page.waitForTimeout(850);
+        await page.evaluate(() => window.scrollTo(0, 0));
+        await page.waitForTimeout(250);
+        const prefix = `${name}-${theme}-${width}`;
+        await page.screenshot({ path: path.join(OUT, `${prefix}.png`), fullPage: true });
+        await page.screenshot({ path: path.join(OUT, `${prefix}-top.png`) });
+        const canvases = page.locator("[data-clay-stage] canvas");
+        if (await canvases.count()) {
+          await canvases.first().scrollIntoViewIfNeeded();
+          await page.waitForTimeout(1700);
+          await canvases.first().screenshot({ path: path.join(OUT, `${prefix}-clay.png`) });
+        }
+        const status = response?.status();
+        const validStatus = name.startsWith("404") ? status === 404 : status === 200;
+        const ok = validStatus && !errors.length && metrics.width <= width && metrics.theme === theme && metrics.style === "grey";
+        results.push({ name, route, theme, width, status, metrics, errors, ok, file: `${prefix}.png` });
+        console.log(`${ok ? "PASS" : "FAIL"} ${prefix} status=${status} size=${metrics.width}x${metrics.height}`);
+        page.off("pageerror", onError);
+      }
+      await context.close();
+    }
+  }
+} finally {
+  await browser.close();
+  let previous = [];
+  if (FILTER) {
+    try { previous = JSON.parse(await fs.readFile(path.join(OUT, "index.json"), "utf8")); }
+    catch (error) { if (error.code !== "ENOENT") throw error; }
+  }
+  const identity = result => `${result.name}:${result.theme}:${result.width}`;
+  const merged = new Map(previous.map(result => [identity(result), result]));
+  results.forEach(result => merged.set(identity(result), result));
+  await fs.writeFile(path.join(OUT, "index.json"), JSON.stringify([...merged.values()], null, 2) + "\n");
 }
+// Four-theme/width contact sheets group each document for visual inspection.
+for (const [name] of targets) {
+  const group = results.filter(result => result.name === name);
+  if (!group.length) continue;
+  const panels = await Promise.all(group.map(async result => {
+    const input = await sharp(path.join(OUT, result.file)).resize({ width: 360 }).png().toBuffer();
+    return { input, height: (await sharp(input).metadata()).height };
+  }));
+  const panelHeight = Math.max(...panels.map(panel => panel.height));
+  await sharp({ create: { width: 360 * panels.length, height: panelHeight, channels: 4, background: { r: 125, g: 125, b: 125, alpha: 1 } } }).composite(panels.map((panel, index) => ({ input: panel.input, left: 360 * index, top: 0 }))).png().toFile(path.join(OUT, `${name}-review.png`));
+}
+if (results.some(result => !result.ok)) process.exitCode = 1;
+console.log(`Saved ${results.length} page/theme/width combinations to ${OUT}`);

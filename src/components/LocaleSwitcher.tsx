@@ -1,117 +1,79 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useSiteLocale, useSiteI18n } from "@/i18n/client";
 import { Link, usePathname } from "@/i18n/navigation";
-import {
-  LOCALE_LABEL,
-  MACHINE_LOCALES,
-  machineTranslateUrl,
-  routing,
-  type AppLocale,
-} from "@/i18n/routing";
+import { MACHINE_LOCALES, machineTranslateUrl } from "@/i18n/routing";
 import { SITE } from "@/lib/site";
+import { Icon } from "@/ui/icons";
 
-/**
- * Two authored languages, then a list that leaves the site.
- *
- * The split is drawn on screen, not hidden: a machine-translated page is a
- * different kind of object from one somebody wrote, and labelling nine
- * proxy renders as if they were localisations is the same species of claim
- * as a fake client logo. The proxy always translates the English build —
- * machine output from English beats machine output from Chinese for every
- * target in this list.
- */
+/** Authored locales remain ordinary links; machine proxies are labelled separately. */
 export function LocaleSwitcher({ variant = "rail" }: { variant?: "rail" | "panel" }) {
-  const t = useSiteI18n().t;
-  const active = useSiteLocale() as AppLocale;
+  const { t } = useSiteI18n();
+  const active = useSiteLocale();
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const host = useRef<HTMLDivElement>(null);
-
+  const details = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
-    if (!open) return;
-    const onDown = (e: MouseEvent) => {
-      if (!host.current?.contains(e.target as Node)) setOpen(false);
+    const close = (event: PointerEvent) => {
+      if (!details.current?.contains(event.target as Node))
+        details.current?.removeAttribute("open");
     };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && details.current?.open) {
+        details.current.removeAttribute("open");
+        details.current.querySelector("summary")?.focus();
+      }
     };
-    document.addEventListener("mousedown", onDown);
-    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", close);
+    document.addEventListener("keydown", escape);
     return () => {
-      document.removeEventListener("mousedown", onDown);
-      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", close);
+      document.removeEventListener("keydown", escape);
     };
-  }, [open]);
-
+  }, []);
   const englishPath = `/en${pathname === "/" ? "" : pathname}`;
-
-  const list = (
-    <div className="border border-[var(--sp-hairline)] bg-void">
-      <p className="sp-label border-b border-[var(--sp-hairline)] px-4 py-2 text-[0.5rem] text-acid">
-        {t("common.authored")}
-      </p>
-      <ul>
-        {routing.locales.map((code) => (
-          <li key={code}>
-            <Link
-              href={pathname}
-              locale={code}
-              onClick={() => setOpen(false)}
-              className={`flex items-center justify-between gap-8 px-4 py-2.5 text-xs transition-colors hover:bg-acid hover:text-black ${
-                code === active ? "text-acid" : "text-bone"
-              }`}
-              aria-current={code === active ? "true" : undefined}
-            >
-              <span className="sp-cjk">{LOCALE_LABEL[code]}</span>
-              <span className="sp-label text-[0.5rem] opacity-60">{code.toUpperCase()}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-      <p className="sp-label border-y border-[var(--sp-hairline)] px-4 py-2 text-[0.5rem] text-smoke">
-        {t("common.machine")}
-      </p>
-      <ul className="grid grid-cols-2">
-        {MACHINE_LOCALES.map((m) => (
-          <li key={m.code}>
-            <a
-              href={machineTranslateUrl(SITE.url, englishPath, m.code)}
-              rel="nofollow noopener"
-              target="_blank"
-              onClick={() => setOpen(false)}
-              className="sp-cjk block px-4 py-2 text-xs text-smoke transition-colors hover:bg-bone hover:text-black"
-            >
-              {m.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <p className="sp-cjk border-t border-[var(--sp-hairline)] px-4 py-3 text-[0.625rem] leading-relaxed text-ash">
-        {t("common.machineNote")}
-      </p>
-    </div>
-  );
-
-  if (variant === "panel") return list;
-
   return (
-    <div ref={host} className="relative">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        aria-label={t("common.language")}
-        className="sp-label flex items-center gap-1.5 px-2 py-2 text-[0.5625rem] text-bone transition-colors hover:text-acid"
-      >
-        {active.toUpperCase()}
-        <span aria-hidden className={open ? "rotate-180" : undefined}>
-          ▾
-        </span>
-      </button>
-      {open ? <div className="absolute top-full right-0 z-50 mt-2 w-72">{list}</div> : null}
+    <div className="flex flex-wrap items-center gap-3" aria-label={t("common.language")}>
+      <div className="inline-flex rounded-full bg-muted px-1 py-1">
+        {(["zh", "en"] as const).map((code) => (
+          <Link
+            key={code}
+            href={pathname}
+            locale={code}
+            lang={code === "zh" ? "zh-Hans" : "en"}
+            aria-current={code === active ? "true" : undefined}
+            className={`rounded-full px-2 py-1 text-[13px] font-semibold hover:underline underline-offset-4 ${code === active ? "bg-background text-foreground" : "text-muted-foreground"}`}
+          >
+            {code === "zh" ? "中文" : "EN"}
+          </Link>
+        ))}
+      </div>
+      <details ref={details} className="relative">
+        <summary className="sp-small cursor-pointer text-muted-foreground">
+          {t("common.machine")}
+        </summary>
+        <div
+          className={`${variant === "rail" ? "absolute top-full right-0 z-50 mt-3" : "mt-3"} sp-card w-72 max-w-full bg-card`}
+        >
+          <p className="sp-label text-muted-foreground">{t("common.machine")}</p>
+          <ul className="mt-3 grid grid-cols-2 gap-2">
+            {MACHINE_LOCALES.map((machine) => (
+              <li key={machine.code}>
+                <a
+                  href={machineTranslateUrl(SITE.url, englishPath, machine.code)}
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  className="sp-small inline-flex items-center gap-1 py-2 hover:underline underline-offset-4"
+                >
+                  {machine.label}
+                  <Icon name="external" width={14} height={14} />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="sp-small mt-4 text-muted-foreground">{t("common.machineNote")}</p>
+        </div>
+      </details>
     </div>
   );
 }

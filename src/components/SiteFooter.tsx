@@ -1,95 +1,72 @@
 import { getSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
-import { NAV, SECONDARY_NAV, SITE } from "@/lib/site";
+import { NAV, SITE } from "@/lib/site";
 import { ACTORS } from "@/content/actors";
 import { STANCE_LINE } from "@/content/doctrine";
-import type { AppLocale } from "@/i18n/routing";
+import { TextLink } from "./TextLink";
 
 export async function SiteFooter() {
-  const t = await getSiteI18n().then((i18n) => i18n.t);
-  const tn = await getSiteI18n().then((i18n) => i18n.t);
-  const locale = (await getSiteLocale()) as AppLocale;
-  const castable = ACTORS.filter((a) => a.status === "active").length;
-
+  const { t } = await getSiteI18n();
+  const locale = await getSiteLocale();
   return (
-    <footer className="border-t border-[var(--sp-hairline)] bg-void">
-      {/* The stance rides above the wordmark, in the accent, on every page.
-       * It is the last thing a visitor reads before they leave. */}
-      <div className="border-b border-[var(--sp-hairline)]">
-        <div className="mx-auto flex max-w-[var(--sp-max)] flex-wrap items-center justify-between gap-4 px-[var(--sp-gutter)] py-5">
-          <p className="sp-label text-[0.625rem] text-acid">{STANCE_LINE[locale]}</p>
-          <Link
-            href="/pact"
-            className="sp-label text-[0.5625rem] text-smoke underline-offset-4 transition-colors hover:text-acid hover:underline"
-          >
-            {t("footer.stanceLink")} →
+    <footer className="mt-24 bg-card">
+      <div className="sp-container grid gap-10 py-16 lg:grid-cols-3">
+        <div>
+          <Link href="/" className="font-display text-xl font-bold">
+            {SITE.name}
           </Link>
+          <p className="sp-small mt-4 max-w-xs">{SITE.claim[locale]}</p>
+          <p className="sp-small mt-6 max-w-xs text-muted-foreground">{STANCE_LINE[locale]}</p>
+          <TextLink href="/pact" className="sp-small mt-4">
+            {t("footer.stanceLink")}
+          </TextLink>
         </div>
-      </div>
-
-      <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-16">
-        <p className="sp-ultra text-[clamp(2.5rem,13vw,11rem)] text-ash select-none">{SITE.name}</p>
-
-        <div className="mt-12 grid gap-10 border-t border-[var(--sp-hairline)] pt-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <p className="sp-label">{t("footer.roster")}</p>
-            <ul className="mt-4 space-y-2">
-              {ACTORS.map((a) => (
-                <li key={a.slug}>
-                  <Link
-                    href={`/actors/${a.slug}`}
-                    className="text-xs text-smoke transition-colors hover:text-acid"
-                  >
-                    <span className="text-ash">{a.code}</span>{" "}
-                    <span className="sp-cjk">{locale === "zh" ? a.nameCn : a.nameEn}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        <nav aria-label={t("footer.index")}>
+          <ul className="flex flex-wrap gap-x-4 gap-y-3">
+            {NAV.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="sp-small font-semibold hover:underline underline-offset-4"
+                >
+                  {t(`nav.${item.key}`)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="sp-label mt-8 text-muted-foreground">{t("footer.roster")}</p>
+          <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3">
+            {ACTORS.map((actor) => (
+              <li key={actor.slug}>
+                <Link
+                  href={`/actors/${actor.slug}`}
+                  className="sp-small hover:underline underline-offset-4"
+                >
+                  <span className="sp-code text-muted-foreground">{actor.code}</span>{" "}
+                  {locale === "zh" ? actor.nameCn : actor.nameEn}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div>
+          <p className="sp-label text-muted-foreground">{t("footer.contact")}</p>
+          <a
+            href={`mailto:${SITE.contact}`}
+            className="mt-4 inline-block font-semibold break-all hover:underline underline-offset-4"
+          >
+            {SITE.contact}
+          </a>
+          <p className="sp-small mt-2 text-muted-foreground">{t("footer.contactNote")}</p>
+          <div className="mt-6 flex flex-wrap gap-6">
+            <TextLink href="/kit">{t("nav.kit")}</TextLink>
+            <TextLink href="/pact">{t("nav.pact")}</TextLink>
           </div>
-
-          <div>
-            <p className="sp-label">{t("footer.index")}</p>
-            <ul className="mt-4 space-y-2">
-              {[...NAV, ...SECONDARY_NAV].map((n) => (
-                <li key={n.href}>
-                  <Link
-                    href={n.href}
-                    className="sp-cjk text-xs text-smoke transition-colors hover:text-acid"
-                  >
-                    {tn(`nav.${n.key}`)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="sp-label">{t("footer.contact")}</p>
-            <a
-              href={`mailto:${SITE.contact}`}
-              className="mt-4 block text-xs text-smoke transition-colors hover:text-acid"
-            >
-              {SITE.contact}
-            </a>
-            <p className="sp-cjk mt-2 text-xs text-ash">{t("footer.contactNote")}</p>
-          </div>
-
-          <div>
-            <p className="sp-label">{t("footer.status")}</p>
-            <p className="sp-cjk mt-4 flex items-center gap-2 text-xs text-smoke">
-              <span className="sp-blink inline-block h-1.5 w-1.5 bg-acid" aria-hidden />
-              {t("footer.statusLine", { castable, building: ACTORS.length - castable })}
-            </p>
-            <p className="sp-cjk mt-2 text-xs text-ash">{t("footer.statusNote")}</p>
-          </div>
-        </div>
-
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--sp-hairline)] pt-6">
-          <p className="sp-label text-[0.55rem]">
-            © {SITE.founded} {SITE.name} — <span className="sp-cjk">{t("footer.rights")}</span>
+          <p className="sp-small mt-8 text-muted-foreground">
+            © {SITE.founded} {SITE.name}
+            <br />
+            {t("footer.rights")}
           </p>
-          <p className="sp-label sp-cjk text-[0.55rem] text-ash">{t("footer.disclaimer")}</p>
         </div>
       </div>
     </footer>

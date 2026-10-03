@@ -1,162 +1,71 @@
 import type { Metadata } from "next";
-import { setSiteLocale, getSiteI18n } from "@/i18n/server";
-import { Link } from "@/i18n/navigation";
-import { Mega, Display } from "@/components/Mega";
-import { SectionHead } from "@/components/SectionHead";
-import { StageMount } from "@/three/StageMount";
-import { Reveal } from "@/motion/Reveal";
-import { STANCE_LINE } from "@/content/doctrine";
 import type { AppLocale } from "@/i18n/routing";
+import { getSiteI18n, setSiteLocale } from "@/i18n/server";
+import { PageIntro } from "@/components/PageIntro";
+import { SectionHead } from "@/components/SectionHead";
+import { TextLink } from "@/components/TextLink";
 
-type Props = { params: Promise<{ locale: string }> };
-
+type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getSiteI18n(locale).then((i18n) => i18n.t);
+  setSiteLocale(locale);
+  const { t } = await getSiteI18n();
   return { title: t("studio.metaTitle"), description: t("studio.metaDescription") };
 }
-
 export default async function StudioPage({ params }: Props) {
   const { locale } = await params;
   setSiteLocale(locale);
-  const loc = locale as AppLocale;
-
-  const t = await getSiteI18n().then((i18n) => i18n.t);
-  const heroLines = [t("studio.heroLines.0"), t("studio.heroLines.1")];
-  const outroLines = [t("studio.outroLines.0"), t("studio.outroLines.1")];
-  const beliefs = [
-    {
-      n: t("studio.beliefs.0.n"),
-      title: t("studio.beliefs.0.title"),
-      body: t("studio.beliefs.0.body"),
-    },
-    {
-      n: t("studio.beliefs.1.n"),
-      title: t("studio.beliefs.1.title"),
-      body: t("studio.beliefs.1.body"),
-    },
-    {
-      n: t("studio.beliefs.2.n"),
-      title: t("studio.beliefs.2.title"),
-      body: t("studio.beliefs.2.body"),
-    },
-    {
-      n: t("studio.beliefs.3.n"),
-      title: t("studio.beliefs.3.title"),
-      body: t("studio.beliefs.3.body"),
-    },
-  ];
-  const stack = [
-    {
-      name: t("studio.stack.0.name"),
-      role: t("studio.stack.0.role"),
-      note: t("studio.stack.0.note"),
-    },
-    {
-      name: t("studio.stack.1.name"),
-      role: t("studio.stack.1.role"),
-      note: t("studio.stack.1.note"),
-    },
-    {
-      name: t("studio.stack.2.name"),
-      role: t("studio.stack.2.role"),
-      note: t("studio.stack.2.note"),
-    },
-    {
-      name: t("studio.stack.3.name"),
-      role: t("studio.stack.3.role"),
-      note: t("studio.stack.3.note"),
-    },
-  ];
-
+  const { t } = await getSiteI18n();
   return (
-    <div className="pt-14" style={{ ["--sp-accent" as string]: "var(--color-cyan)" }}>
-      <section className="relative overflow-hidden border-b border-[var(--sp-hairline)]">
-        <div className="absolute inset-0 opacity-40 md:left-1/2 md:opacity-90">
-          <StageMount accent="#00e5ff" />
-        </div>
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, var(--color-black) 6%, color-mix(in srgb, var(--color-black) 55%, transparent) 44%, transparent 68%)",
-          }}
-        />
-        <div className="relative mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-28">
-          <p className="sp-label sp-cjk text-[0.625rem]">{t("studio.eyebrow")}</p>
-          <Mega
-            lines={heroLines}
-            immediate
-            className="mt-6 text-bone"
-            size="text-[clamp(2.5rem,10vw,8rem)]"
-          />
-          <p className="sp-cjk mt-8 max-w-lg text-sm leading-[1.95] text-smoke">
-            {t("studio.intro")}
-          </p>
-          <p className="sp-label mt-8 text-[0.5625rem] text-cyan">{STANCE_LINE[loc]}</p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
+    <div className="sp-container">
+      <PageIntro
+        eyebrow={t("studio.eyebrow")}
+        lines={[t("studio.heroLines.0"), t("studio.heroLines.1")]}
+      >
+        {t("studio.intro")}
+      </PageIntro>
+      <section className="sp-section">
         <SectionHead
-          index="01"
           label={t("studio.beliefsLabel")}
           title={t("studio.beliefsTitle")}
           note={t("studio.beliefsNote")}
         />
-
-        <Reveal className="mt-14 grid gap-px bg-[var(--sp-hairline)] md:grid-cols-2">
-          {beliefs.map((b) => (
-            <article key={b.n} className="sp-reveal sp-crosshair bg-black p-8 md:p-10">
-              <span className="sp-ghost-num text-[5rem]">{b.n}</span>
-              <Display
-                text={b.title}
-                as="h3"
-                className="mt-8 text-[clamp(1.15rem,2.6vw,1.6rem)] text-bone"
-              />
-              <p className="sp-cjk mt-5 text-sm leading-[1.95] text-smoke">{b.body}</p>
+        <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-2">
+          {([0, 1, 2, 3] as const).map((index) => (
+            <article className="sp-card bg-card" key={index}>
+              <p className="sp-code text-muted-foreground">{t(`studio.beliefs.${index}.n`)}</p>
+              <h3 className="sp-subtitle mt-4">{t(`studio.beliefs.${index}.title`)}</h3>
+              <p className="mt-4 text-muted-foreground">{t(`studio.beliefs.${index}.body`)}</p>
             </article>
           ))}
-        </Reveal>
-      </section>
-
-      <section className="border-y border-[var(--sp-hairline)] bg-carbon">
-        <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)]">
-          <SectionHead
-            index="02"
-            label={t("studio.stackLabel")}
-            title={t("studio.stackTitle")}
-            note={t("studio.stackNote")}
-          />
-          <Reveal className="mt-14 grid gap-px bg-[var(--sp-hairline)] sm:grid-cols-2 lg:grid-cols-4">
-            {stack.map((s) => (
-              <article key={s.name} className="sp-reveal bg-carbon p-6">
-                <p className="sp-display text-sm text-bone">{s.name}</p>
-                <p className="sp-cjk mt-1 text-xs text-cyan">{s.role}</p>
-                <p className="sp-cjk mt-4 text-xs leading-relaxed text-smoke">{s.note}</p>
-              </article>
-            ))}
-          </Reveal>
         </div>
       </section>
-
-      <section className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] py-[var(--sp-section)] text-center">
-        <Mega
-          as="h2"
-          lines={outroLines}
-          className="text-bone"
-          size="text-[clamp(2rem,9vw,7.5rem)]"
+      <section className="sp-section">
+        <SectionHead
+          label={t("studio.stackLabel")}
+          title={t("studio.stackTitle")}
+          note={t("studio.stackNote")}
         />
-        <p className="sp-cjk mx-auto mt-8 max-w-xl text-sm leading-[1.95] text-smoke">
-          {t("studio.outroBody")}
-        </p>
-        <Link
-          href="/casting"
-          data-cursor="→"
-          className="sp-label sp-cjk mt-12 inline-block border border-cyan px-10 py-4 text-[0.6875rem] text-cyan transition-colors hover:bg-cyan hover:text-black"
-        >
-          {t("studio.outroCta")} →
-        </Link>
+        <dl className="mt-8 space-y-8 lg:mt-10">
+          {([0, 1, 2, 3] as const).map((index) => (
+            <div key={index} className="grid gap-2 lg:grid-cols-3">
+              <dt className="sp-subtitle">{t(`studio.stack.${index}.name`)}</dt>
+              <dd className="lg:col-span-2">
+                <p className="sp-label">{t(`studio.stack.${index}.role`)}</p>
+                <p className="mt-2 text-muted-foreground">{t(`studio.stack.${index}.note`)}</p>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+      <section className="sp-section">
+        <h2 className="sp-display-lg">
+          {t("studio.outroLines.0")} {t("studio.outroLines.1")}
+        </h2>
+        <p className="sp-lead mt-6 max-w-[36rem] text-muted-foreground">{t("studio.outroBody")}</p>
+        <TextLink href="/casting" className="mt-6">
+          {t("studio.outroCta")}
+        </TextLink>
       </section>
     </div>
   );

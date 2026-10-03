@@ -1,95 +1,61 @@
 import type { Metadata } from "next";
-import { setSiteLocale, getSiteI18n } from "@/i18n/server";
-import { ActorCard } from "@/components/ActorCard";
-import { SectionHead } from "@/components/SectionHead";
-import { Mega } from "@/components/Mega";
-import { StageMount } from "@/three/StageMount";
-import { Reveal } from "@/motion/Reveal";
-import { ACTORS } from "@/content/actors";
-import { CG_BADGE } from "@/content/doctrine";
 import type { AppLocale } from "@/i18n/routing";
+import { getSiteI18n, setSiteLocale } from "@/i18n/server";
+import { ACTORS } from "@/content/actors";
+import { ActorCard } from "@/components/ActorCard";
+import { PageIntro } from "@/components/PageIntro";
+import { SectionHead } from "@/components/SectionHead";
+import { Reveal } from "@/motion/Reveal";
 
-type Props = { params: Promise<{ locale: string }> };
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getSiteI18n(locale).then((i18n) => i18n.t);
+  setSiteLocale(locale);
+  const { t } = await getSiteI18n();
   return { title: t("roster.metaTitle"), description: t("roster.metaDescription") };
 }
 
-export default async function ActorsPage({ params }: Props) {
+export default async function RosterPage({ params }: { params: Promise<{ locale: AppLocale }> }) {
   const { locale } = await params;
   setSiteLocale(locale);
-  const loc = locale as AppLocale;
-
-  const t = await getSiteI18n().then((i18n) => i18n.t);
-  const castable = ACTORS.filter((a) => a.status === "active");
-  const building = ACTORS.filter((a) => a.status !== "active");
-  const heroLines = [t("roster.heroLines.0"), t("roster.heroLines.1")];
-
+  const { t } = await getSiteI18n();
+  const castable = ACTORS.filter((actor) => actor.status === "active");
+  const building = ACTORS.filter((actor) => actor.status !== "active");
   return (
-    <div className="pt-14">
-      {/* The roster wall: one merged figure per actor, receding into fog.
-       * It is the page's masthead and its census at the same time. */}
-      <section className="relative h-[62svh] overflow-hidden border-b border-[var(--sp-hairline)]">
-        <div className="absolute inset-0">
-          <StageMount accent="#ccff00" mode="wall" count={ACTORS.length} />
-        </div>
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, color-mix(in srgb, var(--color-black) 88%, transparent) 0%, transparent 42%, var(--color-black) 99%)",
-          }}
-        />
-        <div className="relative mx-auto flex h-full max-w-[var(--sp-max)] flex-col justify-end px-[var(--sp-gutter)] pb-10">
-          <p className="sp-label sp-cjk text-[0.625rem]">{t("roster.eyebrow")}</p>
-          <Mega
-            lines={heroLines}
-            immediate
-            className="mt-4 text-bone"
-            size="text-[clamp(2.5rem,11vw,9rem)]"
-          />
-        </div>
+    <div className="sp-container">
+      <PageIntro
+        eyebrow={t("roster.eyebrow")}
+        lines={[t("roster.heroLines.0"), t("roster.heroLines.1")]}
+      >
+        {t("roster.intro", { castable: castable.length, building: building.length })}
+      </PageIntro>
+      <section className="sp-section">
+        <SectionHead label={t("roster.castableLabel")} title={t("roster.castableTitle")} />
+        <Reveal className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:mt-10 lg:grid-cols-4">
+          {castable.map((actor) => (
+            <div className="sp-reveal min-w-0" key={actor.slug}>
+              <ActorCard actor={actor} />
+            </div>
+          ))}
+        </Reveal>
       </section>
-
-      <div className="mx-auto max-w-[var(--sp-max)] px-[var(--sp-gutter)] pt-14 pb-[var(--sp-section)]">
-        <p className="sp-cjk max-w-2xl text-sm leading-[1.95] text-smoke">
-          {t("roster.intro", { castable: castable.length, building: building.length })}
-        </p>
-        <p className="sp-label mt-4 text-[0.5rem] text-acid">{CG_BADGE[loc]}</p>
-
-        <div className="mt-20">
-          <SectionHead
-            index="A"
-            label={t("roster.castableLabel")}
-            title={t("roster.castableTitle")}
-          />
-          <Reveal className="mt-10 grid gap-px sm:grid-cols-2 lg:grid-cols-4">
-            {castable.map((actor, i) => (
-              <div key={actor.slug} className="sp-reveal">
-                <ActorCard actor={actor} index={i} />
-              </div>
-            ))}
-          </Reveal>
-        </div>
-
-        <div className="mt-24">
-          <SectionHead
-            index="B"
-            label={t("roster.buildingLabel")}
-            title={t("roster.buildingTitle")}
-            note={t("roster.buildingNote")}
-          />
-          <Reveal className="mt-10 grid gap-px sm:grid-cols-2 lg:grid-cols-4">
-            {building.map((actor, i) => (
-              <div key={actor.slug} className="sp-reveal">
-                <ActorCard actor={actor} index={castable.length + i} />
-              </div>
-            ))}
-          </Reveal>
-        </div>
-      </div>
+      <section className="sp-section">
+        <SectionHead
+          label={t("roster.buildingLabel")}
+          title={t("roster.buildingTitle")}
+          note={t("roster.buildingNote")}
+        />
+        <Reveal className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:mt-10 lg:grid-cols-4">
+          {building.map((actor) => (
+            <div className="sp-reveal min-w-0" key={actor.slug}>
+              <ActorCard actor={actor} />
+            </div>
+          ))}
+        </Reveal>
+      </section>
     </div>
   );
 }

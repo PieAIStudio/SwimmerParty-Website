@@ -1,155 +1,137 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSiteLocale, useSiteI18n } from "@/i18n/client";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
 import { NAV, SECONDARY_NAV, SITE } from "@/lib/site";
-import { ACTORS } from "@/content/actors";
-import { STANCE_LINE } from "@/content/doctrine";
-import type { AppLocale } from "@/i18n/routing";
+import { GameIconButton } from "@/ui/kit";
+import { Icon } from "@/ui/icons";
 
-/**
- * Not a sticky bar glued to the top of the viewport — that is the single
- * most templated thing a site can do. This is a thin instrument rail:
- * hairline-ruled, mono, with the roster count reading like a gauge.
- *
- * The rail carries five destinations and a language control, which is more
- * than fits on a 390px screen at a legible size. Rather than shrink the
- * type until nobody can read it, small screens get a full-bleed overlay
- * where the same links are set as poster type.
- */
 export function SiteHeader() {
   const pathname = usePathname();
   const locale = useSiteLocale();
-  return <SiteHeaderContent key={`${locale}:${pathname}`} />;
+  return <HeaderContent key={`${locale}:${pathname}`} />;
 }
 
-function SiteHeaderContent() {
-  const t = useSiteI18n().t;
-  const tc = useSiteI18n().t;
-  const th = useSiteI18n().t;
-  const locale = useSiteLocale() as AppLocale;
+function HeaderContent() {
+  const { t } = useSiteI18n();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-
-  // The parent key resets menu state on path or locale navigation.
+  const dialog = useRef<HTMLDialogElement>(null);
+  const trigger = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    const panel = dialog.current;
+    const menuButton = trigger.current?.querySelector("button");
+    if (!open || !panel) return;
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    panel.showModal();
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    desktop.addEventListener("change", closeOnDesktop);
     return () => {
-      document.body.style.overflow = "";
+      panel.close();
+      document.body.style.overflow = overflow;
+      desktop.removeEventListener("change", closeOnDesktop);
+      menuButton?.focus();
     };
   }, [open]);
 
-  const castable = ACTORS.filter((a) => a.status === "active").length;
-
+  const current = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
   return (
-    <>
-      <header className="fixed inset-x-0 top-0 z-60 border-b border-[var(--sp-hairline)] bg-[color-mix(in_srgb,var(--color-black)_82%,transparent)] backdrop-blur-xl">
-        <div className="mx-auto flex h-14 max-w-[var(--sp-max)] items-center gap-3 px-[var(--sp-gutter)] sm:gap-6">
-          <Link href="/" className="group flex items-baseline gap-2.5" aria-label={SITE.name}>
-            <span className="sp-display text-[0.82rem] leading-none whitespace-nowrap tracking-[-0.03em] text-bone transition-colors group-hover:text-acid sm:text-[1rem]">
-              {SITE.name}
-            </span>
-            <span className="sp-label hidden text-[0.5rem] lg:inline">EST. {SITE.founded}</span>
-          </Link>
-
-          <nav className="ml-auto hidden items-center md:flex" aria-label={tc("common.mainNav")}>
-            {NAV.map((item) => {
-              const current = pathname === item.href || pathname.startsWith(`${item.href}/`);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`sp-label px-3 py-2 text-[0.5625rem] whitespace-nowrap transition-colors hover:text-acid ${
-                    current ? "text-acid" : ""
-                  }`}
-                  aria-current={current ? "page" : undefined}
-                >
-                  {t(`nav.${item.key}`)}
-                </Link>
-              );
-            })}
-          </nav>
-
-          <div className="ml-auto flex items-center gap-1 md:ml-0">
-            <ThemeToggle />
-            <div className="hidden md:block">
-              <LocaleSwitcher />
-            </div>
-
+    <header className="sticky top-0 z-40 border-b border-border bg-[var(--sp-header)] backdrop-blur-[12px]">
+      <div className="sp-container flex h-16 items-center gap-6">
+        <Link
+          href="/"
+          className="shrink-0 font-display text-xl leading-none font-bold"
+          aria-label={SITE.name}
+        >
+          {SITE.name}
+        </Link>
+        <nav className="hidden items-center gap-5 lg:flex" aria-label={t("common.mainNav")}>
+          {NAV.map((item) => (
             <Link
-              href="/casting"
-              className="sp-label sp-cjk hidden border border-acid px-4 py-2 text-[0.5625rem] whitespace-nowrap text-acid transition-colors hover:bg-acid hover:text-black lg:inline-block"
+              key={item.href}
+              href={item.href}
+              aria-current={current(item.href) ? "page" : undefined}
+              className={`relative py-3 text-[15px] font-medium whitespace-nowrap hover:underline underline-offset-4 ${current(item.href) ? "text-foreground" : "text-muted-foreground"}`}
             >
-              {th("home.ctaBook")}
+              {t(`nav.${item.key}`)}
+              {current(item.href) ? (
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-current"
+                />
+              ) : null}
             </Link>
-
-            <button
-              type="button"
-              onClick={() => setOpen(true)}
-              className="sp-label border border-[var(--sp-hairline)] px-3 py-2 text-[0.5625rem] text-bone transition-colors hover:border-acid hover:text-acid md:hidden"
+          ))}
+        </nav>
+        <div className="ml-auto flex items-center gap-2">
+          <ThemeToggle />
+          <div className="hidden lg:block">
+            <LocaleSwitcher />
+          </div>
+          <div className="lg:hidden" ref={trigger}>
+            <GameIconButton
+              label={t("common.menu")}
               aria-expanded={open}
+              aria-controls="site-menu"
+              onClick={() => setOpen(true)}
             >
-              {tc("common.menu")}
-            </button>
+              <Icon name="menu" />
+            </GameIconButton>
           </div>
         </div>
-      </header>
-
-      {/* ---------------- Overlay ---------------- */}
-      {open ? (
-        <div className="fixed inset-0 z-70 flex flex-col overflow-y-auto bg-void md:hidden">
-          <div className="flex h-14 shrink-0 items-center justify-between border-b border-[var(--sp-hairline)] px-[var(--sp-gutter)]">
-            <span className="sp-display text-[0.82rem] tracking-[-0.03em] text-acid">
-              {SITE.name}
-            </span>
-            <button
-              type="button"
+      </div>
+      <dialog
+        id="site-menu"
+        ref={dialog}
+        aria-label={t("common.mainNav")}
+        onCancel={(event) => {
+          event.preventDefault();
+          setOpen(false);
+        }}
+        className="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto border-0 bg-background p-0 text-foreground"
+      >
+        <div className="flex min-h-full flex-col px-[var(--sp-gutter)]">
+          <div className="flex h-16 shrink-0 items-center justify-between gap-4">
+            <Link
+              href="/"
+              className="font-display text-xl font-bold"
               onClick={() => setOpen(false)}
-              className="sp-label border border-acid px-3 py-2 text-[0.5625rem] text-acid"
             >
-              {tc("common.close")}
-            </button>
+              {SITE.name}
+            </Link>
+            <GameIconButton label={t("common.close")} onClick={() => setOpen(false)}>
+              <Icon name="close" />
+            </GameIconButton>
           </div>
-
-          <nav className="flex-1 px-[var(--sp-gutter)] py-8" aria-label={tc("common.mainNav")}>
-            <ul className="divide-y divide-[var(--sp-hairline)]">
-              {[...NAV, ...SECONDARY_NAV].map((item, i) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="group flex items-baseline gap-4 py-5">
-                    <span className="sp-label w-8 shrink-0 text-[0.5rem] text-ash">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span
-                      className={
-                        locale === "zh"
-                          ? "sp-zh-display text-[2.75rem] text-bone group-hover:text-acid"
-                          : "sp-display text-[2.75rem] text-bone group-hover:text-acid"
-                      }
-                    >
-                      {t(`nav.${item.key}`)}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-10">
-              <LocaleSwitcher variant="panel" />
-            </div>
-
-            <p className="sp-label mt-10 text-[0.5rem] text-ash">
-              {castable} CASTABLE · {ACTORS.length} ON ROSTER
-            </p>
-            <p className="sp-cjk mt-2 text-[0.625rem] leading-relaxed text-smoke">
-              {STANCE_LINE[locale]}
-            </p>
+          <nav
+            aria-label={t("common.mainNav")}
+            className="flex flex-1 flex-col items-start gap-5 py-8"
+          >
+            {[...NAV, ...SECONDARY_NAV].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                aria-current={current(item.href) ? "page" : undefined}
+                className="font-display text-[32px] leading-tight font-bold hover:underline underline-offset-4"
+              >
+                {t(`nav.${item.key}`)}
+              </Link>
+            ))}
           </nav>
+          <div className="pb-8">
+            <LocaleSwitcher variant="panel" />
+          </div>
         </div>
-      ) : null}
-    </>
+      </dialog>
+    </header>
   );
 }

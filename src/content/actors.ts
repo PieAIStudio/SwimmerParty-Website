@@ -65,7 +65,6 @@ export type Actor = {
   status: ActorStatus;
   /** Design iteration count, shown as `VERSION n OF m` like a model sheet. */
   version: { current: number; total: number };
-  accent: "acid" | "cyan" | "magenta" | "flare";
   /** Full-body plate on black. Null while the actor is still in development. */
   plate: string | null;
   /** Tight crop used on roster cards. Falls back to `plate`. */
@@ -131,7 +130,6 @@ export const ACTORS: Actor[] = [
     },
     status: "active",
     version: { current: 6, total: 10 },
-    accent: "acid",
     plate: "/media/actors/hu-qian/plate.webp",
     portrait: "/media/actors/hu-qian/portrait.webp",
     landmarks: { crown: 4, shoulder: 20, waist: 51, knee: 78, base: 97 },
@@ -204,7 +202,6 @@ export const ACTORS: Actor[] = [
     },
     status: "active",
     version: { current: 2, total: 10 },
-    accent: "cyan",
     plate: "/media/actors/qi-man/plate.webp",
     portrait: "/media/actors/qi-man/portrait.webp",
     landmarks: { crown: 5, shoulder: 21, waist: 49, knee: 74, base: 96 },
@@ -271,7 +268,6 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    accent: "magenta",
     plate: null,
     portrait: null,
     views: [],
@@ -313,7 +309,6 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    accent: "flare",
     plate: null,
     portrait: null,
     views: [],
@@ -348,7 +343,6 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    accent: "acid",
     plate: null,
     portrait: null,
     views: [],
@@ -393,7 +387,6 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    accent: "cyan",
     plate: null,
     portrait: null,
     views: [],
@@ -433,7 +426,6 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    accent: "flare",
     plate: null,
     portrait: null,
     views: [],
@@ -478,7 +470,6 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    accent: "magenta",
     plate: null,
     portrait: null,
     views: [],
@@ -523,7 +514,6 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    accent: "acid",
     plate: null,
     portrait: null,
     views: [],
@@ -568,7 +558,6 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    accent: "cyan",
     plate: null,
     portrait: null,
     views: [],
@@ -614,7 +603,6 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    accent: "magenta",
     plate: null,
     portrait: null,
     views: [],
@@ -654,7 +642,6 @@ export const ACTORS: Actor[] = [
     },
     status: "in-development",
     version: { current: 0, total: 10 },
-    accent: "flare",
     plate: null,
     portrait: null,
     views: [],
@@ -689,13 +676,6 @@ export const ACTORS: Actor[] = [
     promptSeed: null,
   },
 ];
-
-export const ACCENT_VAR: Record<Actor["accent"], string> = {
-  acid: "var(--color-acid)",
-  cyan: "var(--color-cyan)",
-  magenta: "var(--color-magenta)",
-  flare: "var(--color-flare)",
-};
 
 export const STATUS_LABEL: Record<ActorStatus, L> = {
   active: { en: "CASTABLE", zh: "可出演" },
