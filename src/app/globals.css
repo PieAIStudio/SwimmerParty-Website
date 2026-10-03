@@ -1,682 +1,320 @@
 @import "tailwindcss";
 @import "@pieai/swimmer-ui-kit/styles.css";
+@import "@pieai/swimmer-ui-kit/fonts.css";
 
-/* ------------------------------------------------------------------ *
- * SWIMMER PARTY — ACID VOID
- *
- * One rule governs the whole site: the STAGE is black, the DATA is
- * acid. Nothing is warm, nothing is rounded, nothing apologises.
- *
- * Raw colour values live here and nowhere else. Components reference
- * tokens so a future theme swap cascades everywhere.
- * ------------------------------------------------------------------ */
+/* Site surfaces are derived from the kit. Controls keep their own geometry. */
+:root,
+[data-game-ui-theme="light"] {
+  --sp-card: color-mix(in srgb, var(--game-ui-text) 4%, var(--game-ui-bg));
+  --sp-muted: color-mix(in srgb, var(--game-ui-text) 8%, var(--game-ui-bg));
+  --sp-sweep-top: color-mix(in srgb, var(--game-ui-text) 3%, var(--game-ui-bg));
+  --sp-sweep-floor: color-mix(in srgb, var(--game-ui-text) 9%, var(--game-ui-bg));
+  --sp-contact: rgb(0 0 0 / 0.2);
+  --sp-header: color-mix(in srgb, var(--game-ui-bg) 86%, transparent);
+}
 
-@theme {
-  /* --- ground --- */
-  --color-void: #000000;
-  --color-black: #050505;
-  --color-carbon: #0b0b0d;
-  --color-graphite: #141418;
-  --color-ash: #26262c;
-  --color-smoke: #6e6e78;
-  --color-bone: #e9e9e4;
-  --color-paper: #ffffff;
-
-  /* --- acid --- */
-  --color-acid: #ccff00;
-  --color-acid-dim: #8aad00;
-  --color-cyan: #00e5ff;
-  --color-cyan-dim: #0090a3;
-  --color-magenta: #ff1e7a;
-  --color-flare: #ff4d00;
-
-  /* --- type --- */
-  --font-display: var(--sp-font-display);
-  --font-mono: var(--sp-font-mono);
-  --font-cjk: var(--sp-font-cjk);
-
-  /* --- motion --- */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+[data-game-ui-theme="dark"] {
+  --sp-card: color-mix(in srgb, var(--game-ui-text) 6%, var(--game-ui-bg));
+  --sp-muted: color-mix(in srgb, var(--game-ui-text) 11%, var(--game-ui-bg));
+  --sp-sweep-top: color-mix(in srgb, var(--game-ui-text) 9%, var(--game-ui-bg));
+  --sp-sweep-floor: color-mix(in srgb, var(--game-ui-text) 4%, var(--game-ui-bg));
+  --sp-contact: rgb(0 0 0 / 0.5);
+  --sp-header: color-mix(in srgb, var(--game-ui-bg) 86%, transparent);
 }
 
 :root {
-  color-scheme: dark;
-
-  --sp-rule: color-mix(in srgb, var(--color-cyan) 22%, transparent);
-  --sp-rule-strong: color-mix(in srgb, var(--color-cyan) 45%, transparent);
-  --sp-hairline: color-mix(in srgb, var(--color-bone) 12%, transparent);
-  --sp-glow-acid: 0 0 2.5rem color-mix(in srgb, var(--color-acid) 30%, transparent);
-  --sp-glow-cyan: 0 0 2.5rem color-mix(in srgb, var(--color-cyan) 28%, transparent);
-
-  /* Reading rhythm. Sections are enormous on purpose — the site should
-   * feel like a gallery, not a landing-page template. */
-  --sp-gutter: clamp(1.25rem, 4vw, 4.5rem);
-  --sp-section: clamp(6rem, 14vh, 12rem);
-  --sp-max: 96rem;
-
-  /* Live accent. Actor pages retint the whole page by overriding this one
-   * variable instead of threading a colour prop through every component. */
-  --sp-accent: var(--color-acid);
+  --sp-max: 75rem;
+  --sp-gutter: 20px;
+  --sp-section: 64px;
 }
 
-/* ------------------------------------------------------------------ *
- * SwimmerUIKit theme: `acid`
- *
- * Satisfies the kit's GAME_UI_THEME_CONTRACT so every kit component
- * (GameButton, GamePanel, GameTabs, GameBadge, GameDialog…) renders in
- * SWIMMER PARTY's language instead of the default Clay look.
- *
- * The kit's own docs sanction a downstream full theme; this block is a
- * candidate for upstreaming into SwimmerUIKit as a first-class theme —
- * see docs/reference/ui-kit-acid-theme.md.
- * ------------------------------------------------------------------ */
-[data-game-ui-theme="acid"] {
-  color-scheme: dark;
-
-  --game-ui-bg: #050505;
-  --game-ui-playfield-scrim: rgba(0, 0, 0, 0.72);
-  --game-ui-surface: rgba(20, 20, 24, 0.72);
-  --game-ui-surface-raised: rgba(26, 26, 31, 0.94);
-  --game-ui-panel: rgba(11, 11, 13, 0.92);
-  --game-ui-panel-strong: #0b0b0d;
-  --game-ui-panel-deep: #000000;
-  --game-ui-text: #e9e9e4;
-  --game-ui-text-muted: #6e6e78;
-  --game-ui-accent: #ccff00;
-  --game-ui-accent-bright: #e3ff5c;
-  --game-ui-accent-pale: #3d4a00;
-  /* Acid is a light surface — ink on it must be black to clear WCAG. */
-  --game-ui-accent-contrast: #050505;
-  --game-ui-secondary: #00e5ff;
-  --game-ui-secondary-pale: #003c44;
-  --game-ui-success: #00e5a0;
-  --game-ui-success-bright: #5cffcb;
-  --game-ui-danger: #ff1e7a;
-  --game-ui-danger-bright: #ff6aa8;
-  --game-ui-danger-ink: #ff6aa8;
-  --game-ui-accent-ink: #ccff00;
-  --game-ui-warning: #ff4d00;
-  --game-ui-berry: #b56bff;
-  --game-ui-berry-pale: #3a1a5c;
-  --game-ui-focus-ring: rgba(204, 255, 0, 0.85);
-  --game-ui-border-subtle: rgba(233, 233, 228, 0.14);
-  --game-ui-border-strong: rgba(233, 233, 228, 0.34);
-  --game-ui-disabled: rgba(110, 110, 120, 0.5);
-
-  --game-ui-ink-deep: #e9e9e4;
-  --game-ui-border-ink: #26262c;
-  --game-ui-wood: #26262c;
-  --game-ui-ink-title: #ffffff;
-  --game-ui-ink-heading: #e9e9e4;
-  --game-ui-text-on-dark: #e9e9e4;
-
-  --game-ui-glass-night: rgba(5, 5, 5, 0.78);
-  --game-ui-glass-night-soft: rgba(5, 5, 5, 0.6);
-  --game-ui-scrim-strong: rgba(0, 0, 0, 0.8);
-
-  /* Shape: the Clay kit is round and soft. Acid is machined. These four
-   * overrides are what actually turn a game HUD into an industrial
-   * interface — the colour swap alone is not enough. */
-  --game-ui-radius-bead: 0;
-  --game-ui-radius-control: 0;
-  --game-ui-radius-card: 0;
-  --game-ui-radius-panel: 0;
-  --game-ui-radius-modal: 0;
-
-  --game-ui-font-display: var(--sp-font-display);
-  --game-ui-font-body: var(--sp-font-mono);
-  --game-ui-weight-body: 500;
-  --game-ui-weight-strong: 700;
-  --game-ui-weight-title: 900;
-
-  --game-ui-shadow-button: none;
-  --game-ui-shadow-panel: none;
-  --game-ui-shadow-modal: 0 0 0 1px rgba(233, 233, 228, 0.14), 0 2rem 6rem rgba(0, 0, 0, 0.9);
-  --game-ui-shadow-inset: none;
+@theme inline {
+  --color-background: var(--game-ui-bg);
+  --color-foreground: var(--game-ui-text);
+  --color-muted-foreground: var(--game-ui-text-muted);
+  --color-card: var(--sp-card);
+  --color-muted: var(--sp-muted);
+  --color-border: var(--game-ui-border-subtle);
+  --color-danger-ink: var(--game-ui-danger-ink);
+  --font-sans: var(--game-ui-font-body);
+  --font-display: var(--game-ui-font-display);
+  --font-mono: var(--game-ui-font-mono);
 }
 
-/* ------------------------------------------------------------------ *
- * Base
- * ------------------------------------------------------------------ */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  background: var(--color-void);
-  -webkit-text-size-adjust: 100%;
-  /* `clip`, not `hidden`. Both stop sideways overflow, but `hidden` turns
-   * the root into a scroll container, which re-parents every
-   * `position: sticky` element on the site and breaks the pinned
-   * sections. `clip` never creates one. */
-  overflow-x: clip;
-}
-
-body {
-  margin: 0;
-  background: var(--color-black);
-  color: var(--color-bone);
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 0.875rem;
-  line-height: 1.55;
-  font-feature-settings: "ss01", "cv01";
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-::selection {
-  background: var(--color-acid);
-  color: var(--color-black);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-:focus-visible {
-  outline: 2px solid var(--color-acid);
-  outline-offset: 3px;
-}
-
-/* Kill the browser default scrollbar look — this site is a black room. */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-void);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-ash);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-acid-dim);
-}
-
-/* ------------------------------------------------------------------ *
- * Component classes
- *
- * These live in `@layer components` on purpose. Tailwind v4 emits
- * `@layer theme, base, components, utilities`, and UNLAYERED css outranks
- * anything inside a layer — so an unlayered `.sp-mega { font-size }` would
- * silently beat every `text-[...]` utility placed on the same element.
- * Layering them keeps utilities able to override, which is what a caller
- * expects.
- * ------------------------------------------------------------------ */
-
-@layer components {
-  /* ------------------------------------------------------------------ *
-   * Type primitives
-   * ------------------------------------------------------------------ */
-
-  .sp-display {
-    font-family: var(--font-display), system-ui, sans-serif;
-    font-weight: 900;
-    font-stretch: 125%;
-    line-height: 0.82;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    text-wrap: balance;
-  }
-
-  /* The one-word-per-line poster headline. Deliberately allowed to bleed. */
-  .sp-mega {
-    font-family: var(--font-display), system-ui, sans-serif;
-    font-weight: 900;
-    font-stretch: 125%;
-    font-size: clamp(3.5rem, 13vw, 15rem);
-    line-height: 0.78;
-    letter-spacing: -0.045em;
-    text-transform: uppercase;
-  }
-
-  .sp-label {
-    font-family: var(--font-mono), ui-monospace, monospace;
-    font-size: 0.6875rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--color-smoke);
-  }
-
-  .sp-cjk {
-    font-family: var(--font-cjk), var(--font-mono), sans-serif;
-    letter-spacing: 0.02em;
-  }
-
-  /* ------------------------------------------------------------------ *
-   * Blueprint layer — the site's signature device.
-   *
-   * A dark-mode technical drawing: hairline rules, corner crosshairs and
-   * measurement ticks drawn in CSS so they stay crisp at any zoom and
-   * remain real text for screen readers.
-   * ------------------------------------------------------------------ */
-
-  .sp-blueprint {
-    position: relative;
-  }
-
-  .sp-blueprint::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      linear-gradient(to right, var(--sp-rule) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--sp-rule) 1px, transparent 1px);
-    background-size: 4rem 4rem;
-    mask-image: radial-gradient(ellipse at center, #000 20%, transparent 78%);
-    opacity: 0.5;
-  }
-
-  .sp-crosshair {
-    position: relative;
-  }
-
-  .sp-crosshair::before,
-  .sp-crosshair::after {
-    content: "";
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    border: 1px solid var(--sp-rule-strong);
-    pointer-events: none;
-  }
-
-  .sp-crosshair::before {
-    top: -1px;
-    left: -1px;
-    border-right: 0;
-    border-bottom: 0;
-  }
-
-  .sp-crosshair::after {
-    right: -1px;
-    bottom: -1px;
-    border-left: 0;
-    border-top: 0;
-  }
-
-  /* Film grain. Very low opacity — it should be felt, never seen. */
-  .sp-grain::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 60;
-    pointer-events: none;
-    opacity: 0.05;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-}
-
-/* ------------------------------------------------------------------ *
- * Motion
- * ------------------------------------------------------------------ */
-
-@keyframes sp-marquee {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
-@keyframes sp-blink {
-  0%,
-  62% {
-    opacity: 1;
-  }
-  63%,
-  100% {
-    opacity: 0.25;
-  }
-}
-
-@keyframes sp-rise {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 1.5rem, 0);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.sp-rise {
-  animation: sp-rise 0.9s var(--ease-out-expo) both;
-}
-
-.sp-blink {
-  animation: sp-blink 1.9s steps(1, end) infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
+@layer base {
   *,
   *::before,
   *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
+    box-sizing: border-box;
+  }
+
+  html {
+    background: var(--game-ui-bg);
+    color-scheme: light;
+    overflow-x: clip;
+    scroll-padding-top: 9rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html[data-game-ui-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    background: var(--game-ui-bg);
+    color: var(--game-ui-text);
+    font-family: var(--game-ui-font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body:lang(zh) {
+    line-height: 1.8;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--game-ui-focus-ring);
+    outline-offset: 4px;
+  }
+
+  ::selection {
+    background: var(--game-ui-text);
+    color: var(--game-ui-bg);
   }
 }
 
-/* ------------------------------------------------------------------ *
- * ACID VOID — EXTREME PASS
- *
- * Everything below is the loud half of the system. Reopening
- * `@layer components` rather than writing unlayered rules is not
- * decoration: unlayered CSS outranks every layered utility, so a bare
- * `.sp-zh-mega { font-size }` here would silently beat `text-[...]` on the
- * same element. See the note on the first components block.
- * ------------------------------------------------------------------ */
-
 @layer components {
-  /* ---------------------------------------------------------------- *
-   * Chinese poster type
-   *
-   * DESIGN.md rules out a CJK webfont: the black weights are 2–5 MB and
-   * PingFang is already on every Mac and iPhone. But PingFang stops at
-   * Semibold, so a 900 headline gets synthesised and reads thin next to
-   * Archivo Black. A hairline stroke in the same colour puts the weight
-   * back — cheaper than a font, and it scales with the type because the
-   * stroke is set in `em`.
-   * ---------------------------------------------------------------- */
-
-  .sp-zh-mega {
-    font-family: var(--font-cjk), var(--font-mono), sans-serif;
-    font-weight: 900;
-    font-size: clamp(3rem, 12.5vw, 13rem);
-    line-height: 0.92;
-    letter-spacing: -0.045em;
-    -webkit-text-stroke: 0.014em currentColor;
-    paint-order: stroke fill;
+  .sp-display-xl,
+  .sp-display-lg,
+  .sp-title,
+  .sp-subtitle {
+    font-family: var(--game-ui-font-display);
+    text-wrap: balance;
   }
 
-  .sp-zh-display {
-    font-family: var(--font-cjk), var(--font-mono), sans-serif;
-    font-weight: 900;
+  .sp-display-xl {
+    font-size: clamp(2.75rem, 6.5vw, 5.25rem);
+    font-weight: 800;
     line-height: 1.02;
-    letter-spacing: -0.03em;
-    -webkit-text-stroke: 0.01em currentColor;
-    paint-order: stroke fill;
+    letter-spacing: -0.01em;
   }
 
-  /* Latin poster type, pushed further than the base `.sp-mega`. */
-  .sp-ultra {
-    font-family: var(--font-display), system-ui, sans-serif;
-    font-weight: 900;
-    font-stretch: 125%;
-    font-size: clamp(3.5rem, 15vw, 18rem);
-    line-height: 0.74;
-    letter-spacing: -0.058em;
-    text-transform: uppercase;
+  .sp-display-lg {
+    font-size: clamp(2.25rem, 4.8vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.005em;
   }
 
-  /* A numeral used as a graphic: enormous, hollow, allowed to leave the
-   * canvas. `-webkit-text-stroke` with a transparent fill is the only way
-   * to get an outline numeral without shipping a second font file. */
-  .sp-ghost-num {
-    font-family: var(--font-display), system-ui, sans-serif;
-    font-weight: 900;
-    font-stretch: 125%;
-    line-height: 0.72;
-    letter-spacing: -0.06em;
-    color: transparent;
-    -webkit-text-stroke: 1px color-mix(in srgb, var(--color-bone) 22%, transparent);
-    user-select: none;
+  .sp-display-xl:lang(zh) {
+    font-weight: 700;
+    line-height: 1.15;
   }
 
-  /* ---------------------------------------------------------------- *
-   * Slabs — whole blocks of fluorescent colour hard-cut against black.
-   * ---------------------------------------------------------------- */
-
-  .sp-slab {
-    background: var(--sp-accent);
-    color: var(--color-black);
+  .sp-display-lg:lang(zh) {
+    font-weight: 700;
+    line-height: 1.2;
   }
 
-  .sp-slab .sp-label {
-    color: color-mix(in srgb, var(--color-black) 62%, transparent);
+  .sp-title {
+    font-size: clamp(1.625rem, 2.6vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0;
   }
 
-  .sp-slab ::selection {
-    background: var(--color-black);
-    color: var(--sp-accent);
+  .sp-subtitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0;
   }
 
-  /* Diagonal caution banding, used on in-development surfaces. */
-  .sp-hazard {
-    background-image: repeating-linear-gradient(
-      135deg,
-      transparent 0 11px,
-      color-mix(in srgb, var(--color-ash) 60%, transparent) 11px 12px
-    );
+  .sp-lead {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.7;
   }
 
-  /* ---------------------------------------------------------------- *
-   * Instruments
-   * ---------------------------------------------------------------- */
+  .sp-lead:lang(zh) {
+    line-height: 1.85;
+  }
 
-  /* A CRT scanline field. Sits above content, never intercepts pointers. */
-  .sp-scanlines::after {
+  .sp-small {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.55;
+  }
+
+  .sp-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+
+  .sp-code {
+    font-family: var(--game-ui-font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+
+  .sp-container {
+    width: 100%;
+    max-width: var(--sp-max);
+    margin-inline: auto;
+    padding-inline: var(--sp-gutter);
+  }
+
+  .sp-section {
+    padding-block: var(--sp-section);
+  }
+
+  .sp-card {
+    border-radius: var(--game-ui-radius-card);
+    padding: 20px;
+  }
+
+  .sp-panel {
+    border-radius: var(--game-ui-radius-panel);
+  }
+
+  .sp-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 26px;
+    padding-inline: 10px;
+    border-radius: 999px;
+    background: var(--sp-muted);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .sp-pill[data-active="true"]::before {
     content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    pointer-events: none;
-    opacity: 0.28;
-    background-image: repeating-linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--color-void) 55%, transparent) 0 1px,
-      transparent 1px 3px
-    );
+    width: 6px;
+    height: 6px;
+    flex: none;
+    border-radius: 50%;
+    background: currentColor;
   }
 
-  /* A single bright line that travels down a card on hover. */
   .sp-sweep {
     position: relative;
     overflow: hidden;
-  }
-
-  .sp-sweep::before {
-    content: "";
-    position: absolute;
-    inset-inline: 0;
-    top: -30%;
-    height: 30%;
-    z-index: 3;
-    pointer-events: none;
-    opacity: 0;
     background: linear-gradient(
-      to bottom,
-      transparent,
-      color-mix(in srgb, var(--sp-accent) 22%, transparent),
-      transparent
+      180deg,
+      var(--sp-sweep-top) 0%,
+      var(--sp-sweep-top) 58%,
+      var(--sp-sweep-floor) 100%
     );
-    transition: opacity 0.25s linear;
+    border-radius: inherit;
   }
 
-  .sp-sweep:hover::before,
-  .sp-sweep:focus-visible::before {
-    opacity: 1;
-    animation: sp-sweep 1.05s var(--ease-out-expo) infinite;
-  }
-
-  /* Chromatic fringe on hover — two offset copies of the same text tinted
-   * to the two cold accents. Applied to a `data-text` carrier so the real
-   * text stays selectable and readable to assistive tech. */
-  .sp-rgb {
-    position: relative;
-  }
-
-  .sp-rgb::before,
-  .sp-rgb::after {
-    content: attr(data-text);
+  .sp-contact {
     position: absolute;
-    inset: 0;
+    left: 50%;
+    bottom: 3.5%;
+    width: 44%;
+    height: 3%;
+    transform: translateX(-50%);
+    background: radial-gradient(closest-side, var(--sp-contact), transparent);
+    filter: blur(3px);
     pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.18s linear;
   }
 
-  .sp-rgb::before {
-    color: var(--color-cyan);
-    transform: translate3d(-0.055em, 0, 0);
-    mix-blend-mode: screen;
+  .sp-legacy-label {
+    background: var(--sp-card);
   }
 
-  .sp-rgb::after {
-    color: var(--color-magenta);
-    transform: translate3d(0.055em, 0, 0);
-    mix-blend-mode: screen;
+  .sp-image {
+    transition: transform 300ms ease;
   }
 
-  .group:hover .sp-rgb::before,
-  .group:hover .sp-rgb::after,
-  .sp-rgb:hover::before,
-  .sp-rgb:hover::after {
-    opacity: 0.85;
+  .sp-image-host:hover .sp-image {
+    transform: scale(1.02);
   }
 
-  /* ---------------------------------------------------------------- *
-   * Reveal primitives
-   *
-   * The initial state is declared in CSS, not by GSAP, so a slow bundle
-   * never shows a flash of already-positioned content. `.is-in` is what
-   * ScrollTrigger toggles. `no-js`/reduced-motion fallbacks below make
-   * the same markup readable with the animation never running.
-   * ---------------------------------------------------------------- */
-
-  .sp-word {
-    display: inline-block;
-    transform: translate3d(0, 105%, 0) rotate(4deg);
-    opacity: 0;
-    will-change: transform, opacity;
+  .sp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    text-underline-offset: 4px;
   }
 
-  .sp-word-mask {
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: bottom;
-    padding-bottom: 0.06em;
+  .sp-link:hover {
+    text-decoration: underline;
   }
 
   .sp-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  html.js .sp-reveal:not(.is-in) {
     opacity: 0;
-    transform: translate3d(0, 2.25rem, 0);
-    will-change: transform, opacity;
+    transform: translateY(12px);
   }
 
   .sp-reveal.is-in {
     opacity: 1;
     transform: none;
     transition:
-      opacity 0.75s var(--ease-out-expo),
-      transform 0.95s var(--ease-out-expo);
+      opacity 480ms cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 480ms cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
-  .sp-clip {
-    clip-path: inset(0 100% 0 0);
-    will-change: clip-path;
+  .sp-reading {
+    font-size: var(--game-ui-font-reading);
+    line-height: var(--game-ui-line-reading);
+    max-width: var(--game-ui-measure-reading);
   }
 
-  .sp-clip.is-in {
-    clip-path: inset(0 0 0 0);
-    transition: clip-path 1.1s var(--ease-in-out-quint);
-  }
+  @media (prefers-reduced-motion: reduce) {
+    html.js .sp-reveal:not(.is-in) {
+      opacity: 1;
+      transform: none;
+    }
 
-  /* ---------------------------------------------------------------- *
-   * Cursor
-   *
-   * The native cursor is hidden only on fine pointers and only once the
-   * custom layer has actually mounted (`data-sp-cursor` on <html>), so a
-   * JS failure never leaves a visitor with no pointer at all.
-   * ---------------------------------------------------------------- */
+    .sp-reveal.is-in,
+    .sp-image {
+      transition: none;
+    }
 
-  .sp-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 90;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    will-change: transform;
+    .sp-image-host:hover .sp-image {
+      transform: none;
+    }
   }
 }
 
-@media (pointer: fine) {
-  html[data-sp-cursor="on"],
-  html[data-sp-cursor="on"] * {
-    cursor: none;
+@media (min-width: 640px) {
+  :root {
+    --sp-gutter: 32px;
   }
 }
 
-/* ------------------------------------------------------------------ *
- * Motion
- * ------------------------------------------------------------------ */
-
-@keyframes sp-sweep {
-  from {
-    top: -30%;
-  }
-  to {
-    top: 100%;
-  }
-}
-
-@keyframes sp-flicker {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  41% {
-    opacity: 1;
-  }
-  42% {
-    opacity: 0.35;
-  }
-  43% {
-    opacity: 1;
-  }
-  77% {
-    opacity: 1;
-  }
-  78% {
-    opacity: 0.6;
-  }
-  79% {
-    opacity: 1;
-  }
-}
-
-.sp-flicker {
-  animation: sp-flicker 6.5s linear infinite;
-}
-
-/* Reduced motion: land every animated primitive in its finished state.
- * The blanket rule further up kills durations, which without these would
- * leave `.sp-word` and `.sp-clip` stuck at opacity 0. */
-@media (prefers-reduced-motion: reduce) {
-  .sp-word,
-  .sp-reveal {
-    opacity: 1 !important;
-    transform: none !important;
+@media (min-width: 1024px) {
+  :root {
+    --sp-gutter: 48px;
+    --sp-section: 96px;
   }
 
-  .sp-clip {
-    clip-path: none !important;
-  }
-
-  .sp-sweep:hover::before {
-    animation: none !important;
+  @layer components {
+    .sp-card {
+      padding: 24px;
+    }
   }
 }

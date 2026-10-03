@@ -1,4 +1,7 @@
 {
+  "common.themeLight": "浅色",
+  "common.themeDark": "深色",
+  "common.themeToggle": "切换明暗",
   "common.skipToContent": "跳到正文",
   "common.menu": "菜单",
   "common.close": "关闭",

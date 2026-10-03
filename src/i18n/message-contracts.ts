@@ -70,6 +70,9 @@ export interface MessageContracts {
   readonly "common.next": {  };
   readonly "common.scroll": {  };
   readonly "common.skipToContent": {  };
+  readonly "common.themeDark": {  };
+  readonly "common.themeLight": {  };
+  readonly "common.themeToggle": {  };
   readonly "footer.contact": {  };
   readonly "footer.contactNote": {  };
   readonly "footer.disclaimer": {  };

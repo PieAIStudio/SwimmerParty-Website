@@ -11,6 +11,9 @@ def P(en, zh):
 
 M = {
  "common": {
+  "themeLight": P("Light", "浅色"),
+  "themeDark": P("Dark", "深色"),
+  "themeToggle": P("Switch light and dark", "切换明暗"),
   "skipToContent": P("Skip to content", "跳到正文"),
   "menu": P("MENU", "菜单"),
   "close": P("CLOSE", "关闭"),

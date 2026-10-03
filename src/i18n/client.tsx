@@ -1,22 +1,13 @@
 "use client";
 import type { MessageContracts } from "./message-contracts";
-import { useMemo, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { useParams } from "next/navigation";
 import { I18nProvider, useI18n } from "@pieai/swimmer-i18n-kit/react";
-import { createSiteI18n, type SiteMessages } from "./catalog";
+import { siteI18n, type SiteMessages } from "./catalog";
 import { catalogLocale, hasLocale, routing, type AppLocale } from "./routing";
-export function SiteI18nProvider({
-  locale,
-  messages,
-  children,
-}: {
-  locale: AppLocale;
-  messages: SiteMessages;
-  children: ReactNode;
-}) {
-  const i18n = useMemo(() => createSiteI18n(catalogLocale(locale), messages), [locale, messages]);
+export function SiteI18nProvider({ locale, children }: { locale: AppLocale; children: ReactNode }) {
   return (
-    <I18nProvider i18n={i18n} locale={catalogLocale(locale)}>
+    <I18nProvider i18n={siteI18n} locale={catalogLocale(locale)}>
       {children}
     </I18nProvider>
   );

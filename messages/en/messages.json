@@ -1,4 +1,7 @@
 {
+  "common.themeLight": "Light",
+  "common.themeDark": "Dark",
+  "common.themeToggle": "Switch light and dark",
   "common.skipToContent": "Skip to content",
   "common.menu": "MENU",
   "common.close": "CLOSE",

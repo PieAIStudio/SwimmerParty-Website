@@ -17,3 +17,8 @@ tsconfig.tsbuildinfo
 
 
 .agents/manual-skills/
+
+# Private masters, production inbox and local evidence never ship with the site.
+/assets-inbox/
+/.assets-local/
+/.devspace-reports/

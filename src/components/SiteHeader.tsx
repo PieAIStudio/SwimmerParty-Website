@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSiteLocale, useSiteI18n } from "@/i18n/client";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 import { NAV, SECONDARY_NAV, SITE } from "@/lib/site";
 import { ACTORS } from "@/content/actors";
 import { STANCE_LINE } from "@/content/doctrine";
@@ -74,6 +75,7 @@ function SiteHeaderContent() {
           </nav>
 
           <div className="ml-auto flex items-center gap-1 md:ml-0">
+            <ThemeToggle />
             <div className="hidden md:block">
               <LocaleSwitcher />
             </div>

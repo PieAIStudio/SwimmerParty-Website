@@ -1,31 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, JetBrains_Mono } from "next/font/google";
 import { SiteI18nProvider } from "@/i18n/client";
 import { hasLocale } from "@/i18n/routing";
-import { setSiteLocale, getSiteMessages, getSiteI18n } from "@/i18n/server";
+import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { CursorLayer } from "@/motion/CursorLayer";
+import { SITE_UI_STYLE, THEME_INIT_SCRIPT } from "@/lib/theme";
 import { LOCALE_HTML_LANG, LOCALE_OG, routing, type AppLocale } from "@/i18n/routing";
 import { SITE } from "@/lib/site";
 import { STANCE_LINE } from "@/content/doctrine";
 import "../globals.css";
-
-/* Variable grotesk with a real width axis — the poster headlines need
- * Expanded Black, and no static webfont gives us that plus body weights. */
-const archivo = Archivo({
-  subsets: ["latin"],
-  axes: ["wdth"],
-  variable: "--sp-font-display",
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--sp-font-mono",
-  display: "swap",
-});
 
 type Props = {
   children: React.ReactNode;
@@ -84,15 +68,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-/** Kept as a constant so the formatter cannot reflow it into the JSX. */
-const NOSCRIPT_CSS = `
-.sp-word,.sp-reveal{opacity:1!important;transform:none!important}
-.sp-clip{clip-path:none!important}
-`;
-
 export const viewport: Viewport = {
-  themeColor: "#050505",
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fffdf8" },
+    { media: "(prefers-color-scheme: dark)", color: "#1f2326" },
+  ],
+  colorScheme: "light dark",
 };
 
 export default async function LocaleLayout({ children, params }: Props) {
@@ -105,31 +86,24 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={LOCALE_HTML_LANG[locale as AppLocale]}
-      className={`${archivo.variable} ${jetbrains.variable}`}
-      data-game-ui-theme="acid"
+      data-game-ui-theme="light"
+      data-game-ui-style={SITE_UI_STYLE}
       suppressHydrationWarning
     >
       <head>
-        {/* Fail open. Every entrance animation on this site parks its
-         * subject at opacity 0 and waits for GSAP; without scripting that
-         * would be a blank page with a working screen reader. This puts
-         * all of it back to the finished state instead. */}
-        <noscript>
-          <style>{NOSCRIPT_CSS}</style>
-        </noscript>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
-      <body className="sp-grain">
-        <SiteI18nProvider locale={locale} messages={getSiteMessages(locale)}>
+      <body>
+        <SiteI18nProvider locale={locale}>
           <a
             href="#main"
-            className="sp-label sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100 focus:bg-acid focus:px-4 focus:py-2 focus:text-black"
+            className="sp-label sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100 focus:bg-background focus:px-4 focus:py-3 focus:text-foreground"
           >
             {t("common.skipToContent")}
           </a>
           <SiteHeader />
           <main id="main">{children}</main>
           <SiteFooter />
-          <CursorLayer />
         </SiteI18nProvider>
       </body>
     </html>
