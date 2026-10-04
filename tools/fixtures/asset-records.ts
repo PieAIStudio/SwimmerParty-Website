@@ -1,5 +1,5 @@
-import { requiredSlots, ASSET_FRAMES } from "../../src/content/asset-series.ts";
-import type { ActorAssets } from "../../src/content/asset-types.ts";
+import { requiredSlots, ASSET_FRAMES } from "../../src/features/assets/asset-series.ts";
+import type { ActorAssets } from "../../src/features/assets/asset-types.ts";
 
 /** Synthetic metadata for exercising twenty references, never written to production manifests. */
 export function syntheticAssetRecords(): ActorAssets {

@@ -1,5 +1,5 @@
-import type { Actor } from "../content/actors/index.ts";
-import type { ActorAssets } from "../content/asset-types.ts";
+import type { Actor } from "../../content/actors/index.ts";
+import type { ActorAssets } from "./asset-types.ts";
 
 /** The same public profile is used by the free JSON and every member pack. */
 export function characterProfile(actor: Actor, assets: ActorAssets) {

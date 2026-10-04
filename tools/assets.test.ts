@@ -10,8 +10,8 @@ import {
   requiredSlots,
   slotsOf,
   slotLabelKey,
-} from "../src/content/asset-series.ts";
-import { coreProgress, firstImage, getActorAssets, itemsBySeries } from "../src/content/assets.ts";
+} from "../src/features/assets/asset-series.ts";
+import { coreProgress, firstImage, getActorAssets, itemsBySeries } from "../src/features/assets/assets.ts";
 import { localAssetStore, objectPath } from "../src/server/asset-store.ts";
 import { ingest } from "./assets-ingest.ts";
 import { todo, writeTodo } from "./assets-todo.ts";

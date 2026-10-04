@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 import { ACTORS } from "../../src/content/actors/index.ts";
-import { getActorAssets } from "../../src/content/assets.ts";
+import { getActorAssets } from "../../src/features/assets/assets.ts";
 
 /** Test-only geometric pixels, not portraits or delivered production masters. */
 export async function prepareDownloadFixtures(root = path.resolve("e2e/fixtures/assets-store")) {

@@ -1,5 +1,5 @@
 import { getSiteI18n } from "@/i18n/server";
-import { coreProgress } from "@/content/assets";
+import { coreProgress } from "@/features/assets/assets";
 import { GameProgress } from "@pieai/swimmer-ui-kit";
 
 export async function AssetProgress({ slug }: { slug: string }) {

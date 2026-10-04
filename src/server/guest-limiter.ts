@@ -1,6 +1,6 @@
 import type { IncomingMessage } from "node:http";
 import type { checkRateLimit } from "@vercel/firewall";
-import { GUEST_DOWNLOAD_WINDOW_SECONDS } from "../lib/downloads.ts";
+import { GUEST_DOWNLOAD_WINDOW_SECONDS } from "../features/assets/downloads.ts";
 import { HttpError } from "./runtime-mode.ts";
 
 export function memoryGuestLimiter(now = Date.now) {

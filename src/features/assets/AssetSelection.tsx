@@ -10,12 +10,12 @@ import {
   type RefObject,
 } from "react";
 import type { Actor } from "@/content/actors";
-import type { ActorAssets, AssetItem } from "@/content/asset-types";
+import type { ActorAssets, AssetItem } from "@/features/assets/asset-types";
 import { SWIMMER_PRODUCTS } from "@/content/swimmer-products";
 import { useSiteI18n } from "@/i18n/client";
-import { characterProfile } from "@/lib/asset-profile";
+import { characterProfile } from "@/features/assets/asset-profile";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
-import { GUEST_COOLDOWN_KEY, GUEST_DOWNLOAD_WINDOW_SECONDS } from "@/lib/downloads";
+import { GUEST_COOLDOWN_KEY, GUEST_DOWNLOAD_WINDOW_SECONDS } from "@/features/assets/downloads";
 import { GameBadge, GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { useAccount } from "@/features/account";

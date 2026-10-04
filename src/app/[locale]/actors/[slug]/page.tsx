@@ -10,9 +10,9 @@ import { SectionHead } from "@/site/SectionHead";
 import { TextLink } from "@/site/TextLink";
 import { StageMount } from "@/features/stage";
 import { GameBadge, GameButton, GameCallout } from "@pieai/swimmer-ui-kit";
-import { getActorAssets, firstImage } from "@/content/assets";
-import { slotLabelKey } from "@/content/asset-series";
-import { AssetProgress } from "@/components/AssetProgress";
+import { getActorAssets, firstImage } from "@/features/assets/assets";
+import { slotLabelKey } from "@/features/assets/asset-series";
+import { AssetProgress } from "@/features/assets/AssetProgress";
 import { HeightScale } from "@/features/actors";
 import { Link } from "@/i18n/navigation";
 

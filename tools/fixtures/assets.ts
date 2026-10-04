@@ -2,7 +2,7 @@ import { mkdtemp, mkdir, writeFile, readdir, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import sharp from "sharp";
-import { ASSET_FRAMES, type AssetFrame } from "../../src/content/asset-series.ts";
+import { ASSET_FRAMES, type AssetFrame } from "../../src/features/assets/asset-series.ts";
 
 /** Geometric fixtures only: never generated actor images or published assets. */
 export async function fixtureRoot() {

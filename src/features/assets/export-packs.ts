@@ -1,13 +1,13 @@
 import { zipSync, strToU8 } from "fflate";
-import type { Actor } from "../content/actors/index.ts";
-import type { ActorAssets, AssetItem } from "../content/asset-types.ts";
-import type { ExportTarget } from "../content/export-targets.ts";
-import { KIT_RULES } from "../content/kit.ts";
-import { listSeries } from "../content/asset-series.ts";
-import { SITE } from "./site.ts";
+import type { Actor } from "../../content/actors/index.ts";
+import type { ActorAssets, AssetItem } from "./asset-types.ts";
+import type { ExportTarget } from "../../content/export-targets.ts";
+import { KIT_RULES } from "../../content/kit.ts";
+import { listSeries } from "./asset-series.ts";
+import { SITE } from "../../lib/site.ts";
 import { characterProfile } from "./asset-profile.ts";
 import { assetFilename, MAX_BUNDLE_ITEMS } from "./downloads.ts";
-import { fetchImageBlob } from "./browser-files.ts";
+import { fetchImageBlob } from "../../lib/browser-files.ts";
 import { selectModelAssets, veoPlan } from "./export-plan.ts";
 import { createSheetPainter, sheetBlob, type SheetOptions } from "./render-sheet.ts";
 

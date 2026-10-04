@@ -1,6 +1,6 @@
 "use client";
 
-import type { AssetItem } from "@/content/asset-types";
+import type { AssetItem } from "@/features/assets/asset-types";
 import { useSiteI18n } from "@/i18n/client";
 import { GameBadge, GameCheckbox, GameIconButton } from "@pieai/swimmer-ui-kit";
 import { GameIcon } from "@pieai/swimmer-ui-kit";

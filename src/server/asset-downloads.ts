@@ -1,5 +1,5 @@
-import type { AssetItem } from "../content/asset-types.ts";
-import { assetFilename } from "../lib/downloads.ts";
+import type { AssetItem } from "../features/assets/asset-types.ts";
+import { assetFilename } from "../features/assets/downloads.ts";
 import { signLocalObject, readLocalObject } from "./local-downloads.ts";
 import { configuredBlobStore } from "./blob-store.ts";
 

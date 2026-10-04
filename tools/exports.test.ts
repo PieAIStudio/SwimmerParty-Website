@@ -1,11 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { syntheticAssetRecords } from "./fixtures/asset-records.ts";
-import { selectModelAssets, veoPlan } from "../src/lib/export-plan.ts";
-import { sheetLayout, SHEET_WIDTH, SHEET_HEIGHT } from "../src/lib/sheet-layout.ts";
+import { selectModelAssets, veoPlan } from "../src/features/assets/export-plan.ts";
+import { sheetLayout, SHEET_WIDTH, SHEET_HEIGHT } from "../src/features/assets/sheet-layout.ts";
 import { EXPORT_TARGETS } from "../src/content/export-targets.ts";
-import { assetFilename } from "../src/lib/downloads.ts";
-import { getKitManifest } from "../src/content/kit-assets.ts";
+import { assetFilename } from "../src/features/assets/downloads.ts";
+import { getKitManifest } from "../src/features/assets/kit-assets.ts";
 const assets = syntheticAssetRecords();
 
 test("twenty selected references retain the explicit GPT and Seedance priorities and caps", () => {

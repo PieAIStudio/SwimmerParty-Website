@@ -2,20 +2,20 @@
 
 import { useEffect, useRef, useState, type RefObject } from "react";
 import type { Actor } from "@/content/actors";
-import type { ActorAssets, AssetItem } from "@/content/asset-types";
+import type { ActorAssets, AssetItem } from "@/features/assets/asset-types";
 import { EXPORT_TARGETS, type ExportTarget } from "@/content/export-targets";
-import { slotLabelKey } from "@/content/asset-series";
+import { slotLabelKey } from "@/features/assets/asset-series";
 import { useSiteI18n, useSiteLocale } from "@/i18n/client";
 import { siteI18n } from "@/i18n/catalog";
-import { exportPack, SignInRequired, type ExportFormat } from "@/lib/export-packs";
+import { exportPack, SignInRequired, type ExportFormat } from "@/features/assets/export-packs";
 import {
   renderSheet,
   type SheetBackground,
   type SheetLabels,
   type SheetImage,
-} from "@/lib/render-sheet";
+} from "@/features/assets/render-sheet";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
-import { veoPlan } from "@/lib/export-plan";
+import { veoPlan } from "@/features/assets/export-plan";
 import { GameButton, GameSegmentedControl, GameSelect, GameToast } from "@pieai/swimmer-ui-kit";
 import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { useAccount } from "@/features/account";

@@ -1,10 +1,10 @@
 import { getActor } from "../../../../content/actors/index.ts";
-import { getActorAssets } from "../../../../content/assets.ts";
+import { getActorAssets } from "../../../../features/assets/assets.ts";
 import { privateApi, queryText, readJsonBody } from "../../../../server/api.ts";
 import { HttpError } from "../../../../server/runtime-mode.ts";
 import { accountUser } from "../../../../server/account.ts";
 import { signedAsset } from "../../../../server/asset-downloads.ts";
-import { MAX_BUNDLE_ITEMS } from "../../../../lib/downloads.ts";
+import { MAX_BUNDLE_ITEMS } from "../../../../features/assets/downloads.ts";
 
 // Parse inside the private response wrapper so even malformed requests remain no-store.
 export const config = { api: { bodyParser: false } };

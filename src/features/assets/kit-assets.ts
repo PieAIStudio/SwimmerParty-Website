@@ -1,6 +1,6 @@
-import { ACTORS } from "./actors/index.ts";
+import { ACTORS } from "../../content/actors/index.ts";
 import { getActorAssets } from "./assets.ts";
-import { KIT_MANIFEST, type KitItem } from "./kit.ts";
+import { KIT_MANIFEST, type KitItem } from "../../content/kit.ts";
 
 /** Availability is computed from delivered files, never from a promised set. */
 export function getKitManifest(root = process.cwd()): KitItem[] {

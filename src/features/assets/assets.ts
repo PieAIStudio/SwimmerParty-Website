@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { getActor } from "./actors/index.ts";
+import { getActor } from "../../content/actors/index.ts";
 import { assetSlotOrder, listSeries, requiredSlots } from "./asset-series.ts";
 import type { ActorAssets, AssetItem } from "./asset-types.ts";
 export type { ActorAssets, AssetItem, AssetConformance } from "./asset-types.ts";

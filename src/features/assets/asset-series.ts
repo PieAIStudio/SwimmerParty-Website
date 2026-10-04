@@ -1,5 +1,5 @@
-import vocabulary from "./asset-series.json" with { type: "json" };
-import type { MessageContracts } from "../i18n/message-contracts.ts";
+import vocabulary from "../../content/asset-series.json" with { type: "json" };
+import type { MessageContracts } from "../../i18n/message-contracts.ts";
 type AssetLabelKey = Extract<keyof MessageContracts, `assets.slot.${string}`>;
 
 export type AssetFrame = keyof typeof vocabulary.frames;

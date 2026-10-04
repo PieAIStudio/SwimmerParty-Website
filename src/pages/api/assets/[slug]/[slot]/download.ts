@@ -1,11 +1,11 @@
 import { getActor } from "../../../../../content/actors/index.ts";
-import { getActorAssets } from "../../../../../content/assets.ts";
+import { getActorAssets } from "../../../../../features/assets/assets.ts";
 import { privateApi, queryText } from "../../../../../server/api.ts";
 import { HttpError } from "../../../../../server/runtime-mode.ts";
 import { accountUser } from "../../../../../server/account.ts";
 import { limitGuest } from "../../../../../server/guest-limiter.ts";
 import { signedAsset } from "../../../../../server/asset-downloads.ts";
-import { GUEST_DOWNLOAD_WINDOW_SECONDS } from "../../../../../lib/downloads.ts";
+import { GUEST_DOWNLOAD_WINDOW_SECONDS } from "../../../../../features/assets/downloads.ts";
 
 export default privateApi("GET", async (req, res, modes) => {
   const actor = getActor(queryText(req.query.slug));

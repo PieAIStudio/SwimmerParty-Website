@@ -1,5 +1,10 @@
-import type { ActorAssets } from "@/content/asset-types";
-import { listSeries, slotsOf, slotLabelKey, type ResolvedSlot } from "@/content/asset-series";
+import type { ActorAssets } from "@/features/assets/asset-types";
+import {
+  listSeries,
+  slotsOf,
+  slotLabelKey,
+  type ResolvedSlot,
+} from "@/features/assets/asset-series";
 import type { MessageContracts } from "@/i18n/message-contracts";
 import { getSiteI18n } from "@/i18n/server";
 import type { AppLocale } from "@/i18n/routing";

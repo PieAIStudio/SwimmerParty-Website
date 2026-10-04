@@ -1,9 +1,9 @@
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import type { AppLocale } from "@/i18n/routing";
 import { ACTORS } from "@/content/actors";
-import { getKitManifest } from "@/content/kit-assets";
-import { getActorAssets, firstImage } from "@/content/assets";
-import { slotLabelKey } from "@/content/asset-series";
+import { getKitManifest } from "@/features/assets/kit-assets";
+import { getActorAssets, firstImage } from "@/features/assets/assets";
+import { slotLabelKey } from "@/features/assets/asset-series";
 import { CG_BADGE } from "@/content/doctrine";
 import { ActorCard } from "@/features/actors";
 import { ActorPicture } from "@/features/actors";

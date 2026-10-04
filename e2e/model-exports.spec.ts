@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { unzipSync, strFromU8 } from "fflate";
 import sharp from "sharp";
 import { ACTORS } from "../src/content/actors";
-import { assetFilename } from "../src/lib/downloads";
+import { assetFilename } from "../src/features/assets/downloads";
 import { syntheticAssetRecords } from "../tools/fixtures/asset-records";
 import { installExportBrowserModules } from "./export-browser-modules";
 
@@ -41,7 +41,7 @@ for (const [target, count] of [
         const modulePath = "/__export_modules/src/lib/export-packs.ts";
         const { exportPack } = (await import(
           modulePath
-        )) as typeof import("../src/lib/export-packs");
+        )) as typeof import("../src/features/assets/export-packs");
         const file = await exportPack({
           actor: input.actor,
           assets: input.assets,

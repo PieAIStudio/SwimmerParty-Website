@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { ASSET_FRAMES, listSeries, seriesOf, slotsOf } from "../src/content/asset-series.ts";
-import { getActorAssets } from "../src/content/assets.ts";
+import { ASSET_FRAMES, listSeries, seriesOf, slotsOf } from "../src/features/assets/asset-series.ts";
+import { getActorAssets } from "../src/features/assets/assets.ts";
 import { actorByCode, cliArgs, isMain, reportError } from "./assets-common.ts";
 
 export function todo(code: string, options: { root?: string; all?: boolean } = {}) {

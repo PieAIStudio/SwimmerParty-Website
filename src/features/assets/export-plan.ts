@@ -1,6 +1,6 @@
-import { EXPORT_TARGETS, type ExportTarget } from "../content/export-targets.ts";
-import { listSeries } from "../content/asset-series.ts";
-import type { AssetItem } from "../content/asset-types.ts";
+import { EXPORT_TARGETS, type ExportTarget } from "../../content/export-targets.ts";
+import { listSeries } from "./asset-series.ts";
+import type { AssetItem } from "./asset-types.ts";
 
 const priority = [
   "face.front",
