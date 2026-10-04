@@ -4,8 +4,8 @@ import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { ACTORS } from "@/content/actors";
 import { WORKS, WORK_STATUS_LABEL } from "@/content/works";
 import { SITE } from "@/lib/site";
-import { PageIntro } from "@/features/site/PageIntro";
-import { TextLink } from "@/features/site/TextLink";
+import { PageIntro } from "@/site/PageIntro";
+import { TextLink } from "@/site/TextLink";
 import { Link } from "@/i18n/navigation";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
 

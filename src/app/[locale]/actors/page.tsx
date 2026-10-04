@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { ACTORS } from "@/content/actors";
-import { ActorCard } from "@/features/actors/ActorCard";
-import { PageIntro } from "@/features/site/PageIntro";
-import { SectionHead } from "@/features/site/SectionHead";
-import { Reveal } from "@/motion/Reveal";
+import { ActorCard } from "@/features/actors";
+import { PageIntro } from "@/site/PageIntro";
+import { SectionHead } from "@/site/SectionHead";
+import { Reveal } from "@/site/Reveal";
 
 export async function generateMetadata({
   params,

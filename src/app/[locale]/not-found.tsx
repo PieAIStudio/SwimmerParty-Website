@@ -1,5 +1,5 @@
 import { getSiteI18n } from "@/i18n/server";
-import { TextLink } from "@/features/site/TextLink";
+import { TextLink } from "@/site/TextLink";
 
 export default async function NotFound() {
   const { t } = await getSiteI18n();

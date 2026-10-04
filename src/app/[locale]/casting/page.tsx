@@ -4,10 +4,10 @@ import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { ACTORS } from "@/content/actors";
 import { SITE } from "@/lib/site";
-import { PageIntro } from "@/features/site/PageIntro";
-import { SectionHead } from "@/features/site/SectionHead";
-import { TextLink } from "@/features/site/TextLink";
-import { CopyButton } from "@/features/site/CopyButton";
+import { PageIntro } from "@/site/PageIntro";
+import { SectionHead } from "@/site/SectionHead";
+import { TextLink } from "@/site/TextLink";
+import { CopyButton } from "@/site/CopyButton";
 import { CastingContext } from "@/components/CastingContext";
 
 type Props = { params: Promise<{ locale: AppLocale }> };
