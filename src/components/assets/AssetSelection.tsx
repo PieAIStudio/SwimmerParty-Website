@@ -64,6 +64,7 @@ export function AssetSelectionProvider({
     null,
   );
   const sourceRef = useRef<HTMLElement>(null);
+  const inviteAnchorRef = useRef<HTMLSpanElement>(null);
   const selected = new Set(state.slug === actor.slug ? state.slots : []);
   const storageKey = `sp-asset-selection:${actor.slug}`;
 
@@ -178,12 +179,7 @@ export function AssetSelectionProvider({
     }
   }
   function showInvite() {
-    const trigger = [
-      ...document.querySelectorAll<HTMLElement>(
-        "[data-asset-slot] button, [data-selection-bar] button",
-      ),
-    ].find((node) => node.getClientRects().length > 0);
-    if (trigger) sourceRef.current = trigger;
+    if (inviteAnchorRef.current) sourceRef.current = inviteAnchorRef.current;
     account.event("sign_in_prompt");
     setInvite(true);
   }
@@ -215,6 +211,11 @@ export function AssetSelectionProvider({
       }}
     >
       {children}
+      <span
+        ref={inviteAnchorRef}
+        className="fixed bottom-4 left-4 z-50 block h-px w-px"
+        aria-hidden="true"
+      />
       <LiquidPopover
         open={invite}
         onOpenChange={(open) => {
