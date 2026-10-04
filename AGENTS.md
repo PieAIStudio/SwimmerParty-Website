@@ -104,3 +104,10 @@ Only after an explicit website release request and the relevant local gates:
    Promote that artifact; do not rebuild, guess a URL, or promote after failure.
 
 Existing package publishing or backend migration gates remain separate.
+
+## Project Maintenance
+
+SWIMMER PARTY 展示原创合成演员与真实交付的资产。目录入口见
+`docs/reference/architecture.md`；现行设计见 `DESIGN.md`。
+修改文案编辑 `src/i18n/messages.source.ts`，运行 `pnpm messages:generate`。
+日常快速验证用 `pnpm check`，阶段验收用 `pnpm verify`；文档改动加跑 `pnpm docs:check`。

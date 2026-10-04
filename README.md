@@ -98,10 +98,10 @@ Next.js 16 / React 19：App Router 静态页面 + Pages Router Node API。UIKit 
 ACES、一次 sRGB 输出的白黏土舞台。Tailwind 只管布局；fflate 在浏览器生成 ZIP；sharp
 用于本地入库。PGS 治理边界和检查保持不变。
 
-只编辑双语源 `tools/gen-messages.py`，再运行：
+只编辑双语源 `src/i18n/messages.source.ts`，再运行：
 
 ```bash
-python3 tools/gen-messages.py
+pnpm messages:generate
 pnpm exec swimmer-i18n-check types --out src/i18n/message-contracts.ts
 pnpm check:i18n
 ```
