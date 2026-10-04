@@ -1,6 +1,6 @@
 export { CopyBlock } from "./CopyBlock";
 export { CopyButton } from "./CopyButton";
-export { LocaleSwitcher } from "./LocaleSwitcher";
+export { LanguageMenu } from "./LanguageMenu";
 export { PageIntro } from "./PageIntro";
 export { SectionHead } from "./SectionHead";
 export { SiteFooter } from "./SiteFooter";

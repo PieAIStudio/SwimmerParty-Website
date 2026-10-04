@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { ACTORS } from "@/content/actors";
-import { SITE } from "@/lib/site";
+import { SITE } from "@/content/site";
 import { PageIntro } from "@/site/PageIntro";
 import { SectionHead } from "@/site/SectionHead";
 import { TextLink } from "@/site/TextLink";
 import { CopyButton } from "@/site/CopyButton";
-import { CastingContext } from "@/components/CastingContext";
+import { CastingContext } from "@/site/CastingContext";
 
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

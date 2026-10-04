@@ -7,9 +7,9 @@ import { SiteHeader } from "@/site/SiteHeader";
 import { SiteFooter } from "@/site/SiteFooter";
 import { AccountProvider } from "@/features/account";
 import { Analytics } from "@vercel/analytics/next";
-import { SITE_UI_STYLE, THEME_INIT_SCRIPT } from "@/lib/theme";
+import { SITE_UI_STYLE, THEME_INIT_SCRIPT } from "@/site/theme";
 import { LOCALE_HTML_LANG, LOCALE_OG, routing, type AppLocale } from "@/i18n/routing";
-import { SITE } from "@/lib/site";
+import { SITE } from "@/content/site";
 import { STANCE_LINE } from "@/content/doctrine";
 // oxlint-disable-next-line no-unassigned-import -- Root stylesheet initialization.
 import "../globals.css";

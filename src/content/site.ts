@@ -1,4 +1,4 @@
-import type { L } from "@/content/actors";
+import type { L } from "@/content/actors/index";
 
 /** Brand constants. Change the name here and it changes everywhere. */
 export const SITE = {

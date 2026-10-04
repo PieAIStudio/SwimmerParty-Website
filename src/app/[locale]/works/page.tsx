@@ -3,7 +3,7 @@ import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { ACTORS } from "@/content/actors";
 import { WORKS, WORK_STATUS_LABEL } from "@/content/works";
-import { SITE } from "@/lib/site";
+import { SITE } from "@/content/site";
 import { PageIntro } from "@/site/PageIntro";
 import { TextLink } from "@/site/TextLink";
 import { Link } from "@/i18n/navigation";

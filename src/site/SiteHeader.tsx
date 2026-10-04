@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useSiteLocale, useSiteI18n } from "@/i18n/client";
 import { Link, usePathname } from "@/i18n/navigation";
-import { LocaleSwitcher } from "./LocaleSwitcher";
+import { LanguageMenu } from "./LanguageMenu";
 import { ThemeToggle } from "./ThemeToggle";
 import { AccountMenu } from "@/features/account";
-import { NAV, SECONDARY_NAV, SITE } from "@/lib/site";
+import { NAV, SECONDARY_NAV, SITE } from "@/content/site";
 import { GameIconButton } from "@pieai/swimmer-ui-kit";
 import { GameIcon } from "@pieai/swimmer-ui-kit";
 
@@ -75,7 +75,7 @@ function HeaderContent() {
         <div className="ml-auto flex items-center gap-2">
           <ThemeToggle />
           <div className="hidden lg:block">
-            <LocaleSwitcher />
+            <LanguageMenu />
           </div>
           <div className="hidden lg:block">
             <AccountMenu />
@@ -132,7 +132,7 @@ function HeaderContent() {
             ))}
           </nav>
           <div className="flex items-center justify-between gap-3 pb-8">
-            <LocaleSwitcher variant="panel" />
+            <LanguageMenu variant="panel" />
             <AccountMenu />
           </div>
         </div>

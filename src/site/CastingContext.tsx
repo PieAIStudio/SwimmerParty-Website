@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { getActor } from "@/content/actors";
+import { getActor } from "@/content/actors/index";
 import { useSiteI18n, useSiteLocale } from "@/i18n/client";
 
 export function CastingContext() {

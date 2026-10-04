@@ -3,7 +3,7 @@
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import type { Group } from "three";
-import type { SiteTheme } from "@/lib/theme";
+import type { SiteTheme } from "@/site/theme";
 import { assemblyOrder, PARTS, scatterOf, type Part } from "./parts";
 import { CLAY } from "./palette";
 

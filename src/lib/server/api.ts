@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { SITE } from "../site.ts";
+import { SITE } from "../../content/site.ts";
 import { HttpError, runtimeModes, type RuntimeModes } from "./runtime-mode.ts";
 
 export type ApiHandler = (

@@ -4,7 +4,7 @@ import type { ActorAssets, AssetItem } from "./asset-types.ts";
 import type { ExportTarget } from "../../content/export-targets.ts";
 import { KIT_RULES } from "../../content/kit.ts";
 import { listSeries } from "./asset-series.ts";
-import { SITE } from "../../lib/site.ts";
+import { SITE } from "../../content/site.ts";
 import { characterProfile } from "./asset-profile.ts";
 import { assetFilename, MAX_BUNDLE_ITEMS } from "./downloads.ts";
 import { fetchImageBlob } from "../../lib/browser-files.ts";

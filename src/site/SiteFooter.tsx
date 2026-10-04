@@ -1,6 +1,6 @@
 import { getSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
-import { NAV, SITE } from "@/lib/site";
+import { NAV, SITE } from "@/content/site";
 import { ACTORS } from "@/content/actors";
 import { STANCE_LINE } from "@/content/doctrine";
 import { TextLink } from "./TextLink";

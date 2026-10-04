@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { ACTORS } from "@/content/actors";
 import { LOCALE_HTML_LANG, routing } from "@/i18n/routing";
-import { SITE } from "@/lib/site";
+import { SITE } from "@/content/site";
 
 const PAGES = ["", "/actors", "/works", "/kit", "/studio", "/casting", "/pact"];
 

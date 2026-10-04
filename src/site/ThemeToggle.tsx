@@ -1,7 +1,7 @@
 "use client";
 
 import { useSiteI18n } from "@/i18n/client";
-import { setSiteTheme, useSiteTheme } from "@/lib/use-site-theme";
+import { setSiteTheme, useSiteTheme } from "@/site/use-site-theme";
 import { GameIconButton } from "@pieai/swimmer-ui-kit";
 import { GameIcon } from "@pieai/swimmer-ui-kit";
 

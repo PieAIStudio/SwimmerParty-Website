@@ -1,16 +1,18 @@
 "use client";
 
 import { useSiteLocale, useSiteI18n } from "@/i18n/client";
+import { useRouter } from "next/navigation";
 import { usePathname } from "@/i18n/navigation";
 import { localePath, MACHINE_LOCALES, machineTranslateUrl } from "@/i18n/routing";
-import { SITE } from "@/lib/site";
+import { SITE } from "@/content/site";
 import { GameLanguageMenu } from "@pieai/swimmer-ui-kit";
 
 /** Authored locales retain the current path, query and hash. */
-export function LocaleSwitcher({ variant = "rail" }: { variant?: "rail" | "panel" }) {
+export function LanguageMenu({ variant = "rail" }: { variant?: "rail" | "panel" }) {
   const { t } = useSiteI18n();
   const active = useSiteLocale();
   const pathname = usePathname();
+  const router = useRouter();
   const options = [
     { id: "zh", label: "中文", meta: t("common.authored") },
     { id: "en", label: "English", meta: t("common.authored") },
@@ -22,9 +24,7 @@ export function LocaleSwitcher({ variant = "rail" }: { variant?: "rail" | "panel
   ];
   function select(id: string) {
     if (id === "zh" || id === "en") {
-      window.location.assign(
-        `${localePath(pathname, id)}${window.location.search}${window.location.hash}`,
-      );
+      router.push(`${localePath(pathname, id)}${window.location.search}${window.location.hash}`);
       return;
     }
     const englishPath = `/en${pathname === "/" ? "" : pathname}`;
