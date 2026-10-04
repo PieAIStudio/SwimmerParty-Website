@@ -1,8 +1,8 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { createAuthClient } from "@pieai/swimmer-backend-client";
 import type { NodeAuthConfig } from "@pieaistudio/swimmer-auth-kit/server";
-import { SITE } from "../lib/site.ts";
-import { HttpError } from "./runtime-mode.ts";
+import { SITE } from "../../../lib/site.ts";
+import { HttpError } from "../../../lib/server/runtime-mode.ts";
 
 export function swimmerAccountConfig(
   env: Readonly<Record<string, string | undefined>> = process.env,

@@ -3,8 +3,8 @@ import { constants } from "node:fs";
 import { lstat, open, realpath } from "node:fs/promises";
 import path from "node:path";
 import { objectPath } from "./asset-store.ts";
-import { HttpError } from "./runtime-mode.ts";
-import { SIGNED_DOWNLOAD_SECONDS } from "../features/assets/downloads.ts";
+import { HttpError } from "../../../lib/server/runtime-mode.ts";
+import { SIGNED_DOWNLOAD_SECONDS } from "../downloads.ts";
 
 const secretKey = Symbol.for("swimmer-party.local-asset-signing-secret");
 const globals = globalThis as typeof globalThis & { [secretKey]?: string };

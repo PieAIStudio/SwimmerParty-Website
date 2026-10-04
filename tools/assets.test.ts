@@ -12,7 +12,7 @@ import {
   slotLabelKey,
 } from "../src/features/assets/asset-series.ts";
 import { coreProgress, firstImage, getActorAssets, itemsBySeries } from "../src/features/assets/assets.ts";
-import { localAssetStore, objectPath } from "../src/server/asset-store.ts";
+import { localAssetStore, objectPath } from "../src/features/assets/server/asset-store.ts";
 import { ingest } from "./assets-ingest.ts";
 import { todo, writeTodo } from "./assets-todo.ts";
 import { writeTransaction } from "./assets-common.ts";

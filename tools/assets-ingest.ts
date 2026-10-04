@@ -4,9 +4,9 @@ import path from "node:path";
 import sharp from "sharp";
 import { ASSET_FRAMES, assetSlotOrder, listSeries, slotsOf } from "../src/features/assets/asset-series.ts";
 import { getActorAssets, type ActorAssets, type AssetItem } from "../src/features/assets/assets.ts";
-import { localAssetStore, type AssetStore } from "../src/server/asset-store.ts";
-import { configuredBlobStore } from "../src/server/blob-store.ts";
-import { runtimeModes } from "../src/server/runtime-mode.ts";
+import { localAssetStore, type AssetStore } from "../src/features/assets/server/asset-store.ts";
+import { configuredBlobStore } from "../src/features/assets/server/blob-store.ts";
+import { runtimeModes } from "../src/lib/server/runtime-mode.ts";
 import { actorByCode, cliArgs, isMain, reportError, writeTransaction } from "./assets-common.ts";
 
 export type IngestOptions = { root?: string; legacy?: boolean; dryRun?: boolean; store?: AssetStore };

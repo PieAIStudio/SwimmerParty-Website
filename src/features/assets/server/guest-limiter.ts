@@ -1,7 +1,7 @@
 import type { IncomingMessage } from "node:http";
 import type { checkRateLimit } from "@vercel/firewall";
-import { GUEST_DOWNLOAD_WINDOW_SECONDS } from "../features/assets/downloads.ts";
-import { HttpError } from "./runtime-mode.ts";
+import { GUEST_DOWNLOAD_WINDOW_SECONDS } from "../downloads.ts";
+import { HttpError } from "../../../lib/server/runtime-mode.ts";
 
 export function memoryGuestLimiter(now = Date.now) {
   const deadlines = new Map<string, number>();

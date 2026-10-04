@@ -1,6 +1,6 @@
 import type { issueSignedToken, presignUrl, put, IssuedSignedToken } from "@vercel/blob";
 import { objectPath, type AssetStore } from "./asset-store.ts";
-import { SIGNED_DOWNLOAD_SECONDS } from "../features/assets/downloads.ts";
+import { SIGNED_DOWNLOAD_SECONDS } from "../downloads.ts";
 
 export type BlobSdk = {
   issueSignedToken: typeof issueSignedToken;
