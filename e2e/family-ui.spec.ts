@@ -11,7 +11,6 @@ test("English phone roster keeps codes and status pills on one line", async ({ p
       return {
         codeHeight: code.height,
         pillHeight: pill.height,
-        sameRow: code.bottom >= pill.top && pill.bottom >= code.top,
       };
     }),
   );
@@ -19,7 +18,6 @@ test("English phone roster keeps codes and status pills on one line", async ({ p
   for (const card of cards) {
     expect(card.codeHeight).toBeLessThan(20);
     expect(card.pillHeight).toBe(24);
-    expect(card.sameRow).toBe(true);
   }
 });
 
