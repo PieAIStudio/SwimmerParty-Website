@@ -11,3 +11,5 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - '@pieai/doc-gov'
   - '@pieai/pro-gov'
+  - '@pieai/swimmer-ui-kit@3.0.0-rc.1'
+  - '@pieaistudio/swimmer-auth-kit@0.8.0-rc.1'

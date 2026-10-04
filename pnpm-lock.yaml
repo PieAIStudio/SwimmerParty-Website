@@ -8,15 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@pieai/swimmer-backend-client':
+        specifier: 0.7.2
+        version: 0.7.2(@supabase/supabase-js@2.110.3)
       '@pieai/swimmer-i18n-kit':
         specifier: 0.2.0
         version: 0.2.0(react@19.2.7)
       '@pieai/swimmer-ui-kit':
-        specifier: file:../SwimmerUIKit/.scratch/s6/final/swimmer-ui-kit-3.0.0.tgz
-        version: file:../SwimmerUIKit/.scratch/s6/final/swimmer-ui-kit-3.0.0.tgz(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 3.0.0-rc.1
+        version: 3.0.0-rc.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@pieaistudio/swimmer-auth-kit':
-        specifier: file:../SwimmerAuthKit/.devspace-reports/uikit3-compat-20261002/release/swimmer-auth-kit-0.8.0-rc.0.tgz
-        version: file:../SwimmerAuthKit/.devspace-reports/uikit3-compat-20261002/release/swimmer-auth-kit-0.8.0-rc.0.tgz(@pieai/swimmer-ui-kit@file:../SwimmerUIKit/.scratch/s6/final/swimmer-ui-kit-3.0.0.tgz(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@supabase/ssr@0.12.0(@supabase/supabase-js@2.110.3))(@supabase/supabase-js@2.110.3)(react@19.2.7)
+        specifier: 0.8.0-rc.1
+        version: 0.8.0-rc.1(@supabase/ssr@0.12.0(@supabase/supabase-js@2.110.3))(@supabase/supabase-js@2.110.3)(react@19.2.7)
       '@react-three/drei':
         specifier: 10.7.7
         version: 10.7.7(@react-three/fiber@9.6.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.185.1))(@types/react@19.2.17)(@types/three@0.185.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.185.1)
@@ -959,31 +962,21 @@ packages:
       react:
         optional: true
 
-  '@pieai/swimmer-ui-kit@file:../SwimmerUIKit/.scratch/s6/final/swimmer-ui-kit-3.0.0.tgz':
-    resolution: {integrity: sha512-r4sOU0TEl14Ox4VUVxh+0xaG5FPuiqfFjdBsPiB8CVxzBvUeNXE1YRdzN9tLwo/gWosS2bVjSO4J/78M2cT37g==, tarball: file:../SwimmerUIKit/.scratch/s6/final/swimmer-ui-kit-3.0.0.tgz}
-    version: 3.0.0
+  '@pieai/swimmer-ui-kit@3.0.0-rc.1':
+    resolution: {integrity: sha512-EekqhS1Yjn+ekOtOoue5aAQ3yq3QgaF58GxUzROZh5qYb5Mpa+0jVCbfof8ztQQMJTQPi/JKZNwx0tXPtbgLTw==}
     engines: {node: '>=24 <25'}
     hasBin: true
     peerDependencies:
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
 
-  '@pieaistudio/swimmer-auth-kit@file:../SwimmerAuthKit/.devspace-reports/uikit3-compat-20261002/release/swimmer-auth-kit-0.8.0-rc.0.tgz':
-    resolution: {integrity: sha512-pKIx13E+rVZ5os7G6Xe+rZ17C5i/1stRjXFuYF+O18oFaohRJZMw52ZXNyTodpI/MLV39TH/dU/8A+wf6evmNw==, tarball: file:../SwimmerAuthKit/.devspace-reports/uikit3-compat-20261002/release/swimmer-auth-kit-0.8.0-rc.0.tgz}
-    version: 0.8.0-rc.0
+  '@pieaistudio/swimmer-auth-kit@0.8.0-rc.1':
+    resolution: {integrity: sha512-OSU9y9F5h3YUJ/JQXreSs8RhkJ65xc6bBbrfKJU+XPHYSpL8xbr+bFeSAYzgUDpk1XaJl5WnpLOKz73HSnzEtQ==, tarball: https://npm.pkg.github.com/download/@pieaistudio/swimmer-auth-kit/0.8.0-rc.1/30608516d037325d01a3a8fa1fe9576a29ff2ebc}
     engines: {node: '>=24 <25'}
     peerDependencies:
-      '@pieai/swimmer-ui-kit': '>=2.6.1 <4'
       '@supabase/ssr': ^0.12.0
       '@supabase/supabase-js': ^2.110.3
       react: '>=18.3 <20'
-    peerDependenciesMeta:
-      '@pieai/swimmer-ui-kit':
-        optional: true
-      '@supabase/ssr':
-        optional: true
-      react:
-        optional: true
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -3866,24 +3859,21 @@ snapshots:
     optionalDependencies:
       react: 19.2.7
 
-  '@pieai/swimmer-ui-kit@file:../SwimmerUIKit/.scratch/s6/final/swimmer-ui-kit-3.0.0.tgz(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@pieai/swimmer-ui-kit@3.0.0-rc.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@floating-ui/react': 0.27.20(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
 
-  '@pieaistudio/swimmer-auth-kit@file:../SwimmerAuthKit/.devspace-reports/uikit3-compat-20261002/release/swimmer-auth-kit-0.8.0-rc.0.tgz(@pieai/swimmer-ui-kit@file:../SwimmerUIKit/.scratch/s6/final/swimmer-ui-kit-3.0.0.tgz(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@supabase/ssr@0.12.0(@supabase/supabase-js@2.110.3))(@supabase/supabase-js@2.110.3)(react@19.2.7)':
+  '@pieaistudio/swimmer-auth-kit@0.8.0-rc.1(@supabase/ssr@0.12.0(@supabase/supabase-js@2.110.3))(@supabase/supabase-js@2.110.3)(react@19.2.7)':
     dependencies:
-      '@pieai/swimmer-backend-client': 0.7.2(@supabase/supabase-js@2.110.3)
+      '@supabase/ssr': 0.12.0(@supabase/supabase-js@2.110.3)
       '@supabase/supabase-js': 2.110.3
       iron-session: 9.0.1
       libphonenumber-js: 1.13.14
       openid-client: 6.8.8
-      zod: 4.4.3
-    optionalDependencies:
-      '@pieai/swimmer-ui-kit': file:../SwimmerUIKit/.scratch/s6/final/swimmer-ui-kit-3.0.0.tgz(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@supabase/ssr': 0.12.0(@supabase/supabase-js@2.110.3)
       react: 19.2.7
+      zod: 4.4.3
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
