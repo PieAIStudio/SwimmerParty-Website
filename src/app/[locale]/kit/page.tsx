@@ -13,7 +13,7 @@ import { PageIntro } from "@/components/PageIntro";
 import { SectionHead } from "@/components/SectionHead";
 import { TextLink } from "@/components/TextLink";
 import { AssetProgress } from "@/components/AssetProgress";
-import { GameIcon } from "@pieai/swimmer-ui-kit";
+import { GameBadge, GameIcon } from "@pieai/swimmer-ui-kit";
 
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -117,9 +117,9 @@ export default async function KitPage({ params }: Props) {
               <p className="sp-small mt-2 text-muted-foreground">{item.format}</p>
               <p className="sp-small mt-4 text-muted-foreground">{item.body[locale]}</p>
               <div className="mt-auto pt-6">
-                <span className="sp-pill" data-active={item.status === "live"}>
+                <GameBadge tone={item.status === "live" ? "success" : "neutral"}>
                   {KIT_STATUS_LABEL[item.status][locale]}
-                </span>
+                </GameBadge>
               </div>
             </article>
           ))}

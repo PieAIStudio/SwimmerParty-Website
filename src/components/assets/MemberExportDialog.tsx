@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type RefObject } from "react";
 import type { Actor } from "@/content/actors";
 import type { ActorAssets, AssetItem } from "@/content/asset-types";
 import { EXPORT_TARGETS, type ExportTarget } from "@/content/export-targets";
@@ -16,7 +16,8 @@ import {
 } from "@/lib/render-sheet";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { veoPlan } from "@/lib/export-plan";
-import { GameButton, GameModal, GameSegmentedControl, GameSelect, GameToast } from "@pieai/swimmer-ui-kit";
+import { GameButton, GameSegmentedControl, GameSelect, GameToast } from "@pieai/swimmer-ui-kit";
+import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { useAccount } from "../AccountProvider";
 
 const translators = { en: siteI18n.translator("en"), zh: siteI18n.translator("zh-CN") };
@@ -31,6 +32,7 @@ export function MemberExportDialog({
   onClose,
   onSuccess,
   onSignIn,
+  source,
 }: {
   actor: Actor;
   assets: ActorAssets;
@@ -38,6 +40,7 @@ export function MemberExportDialog({
   onClose: () => void;
   onSuccess: () => void;
   onSignIn: () => void;
+  source: RefObject<HTMLElement | null>;
 }) {
   const { t } = useSiteI18n();
   const locale = useSiteLocale();
@@ -66,11 +69,11 @@ export function MemberExportDialog({
       try {
         for (const item of selectedRef.current) {
           const blob = await fetchImageBlob(item.thumb, abort.signal);
-          const source = await createImageBitmap(blob);
+          const bitmap = await createImageBitmap(blob);
           images.push({
-            source,
-            width: source.width,
-            height: source.height,
+            source: bitmap,
+            width: bitmap.width,
+            height: bitmap.height,
             fullBody: ["turnaround", "wardrobe", "pose"].includes(item.series),
             labels: labelsFor(item),
           });
@@ -123,24 +126,14 @@ export function MemberExportDialog({
     }
   }
   return (
-    <GameModal
+    <LiquidPopover
       open
-      onClose={cancel}
+      onOpenChange={(open) => {
+        if (!open) cancel();
+      }}
+      source={source}
       title={t("assets.dialogTitle", { count: selected.length })}
-      closeLabel={t("assets.close")}
-      size="lg"
-      footer={
-        <>
-          <GameButton onClick={cancel}>{t("assets.cancel")}</GameButton>
-          <GameButton
-            variant="primary"
-            disabled={busy || Boolean(unavailableVeo)}
-            onClick={() => void start()}
-          >
-            {t(busy ? "assets.preparing" : "assets.start")}
-          </GameButton>
-        </>
-      }
+      width={560}
     >
       <GameSegmentedControl
         activeId={format}
@@ -231,6 +224,16 @@ export function MemberExportDialog({
           <GameToast tone="danger">{t("assets.failed")}</GameToast>
         </div>
       ) : null}
-    </GameModal>
+      <div className="mt-6 flex justify-end gap-3">
+        <GameButton onClick={cancel}>{t("assets.cancel")}</GameButton>
+        <GameButton
+          variant="primary"
+          disabled={busy || Boolean(unavailableVeo)}
+          onClick={() => void start()}
+        >
+          {t(busy ? "assets.preparing" : "assets.start")}
+        </GameButton>
+      </div>
+    </LiquidPopover>
   );
 }

@@ -1,6 +1,14 @@
 "use client";
 
-import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+  type RefObject,
+} from "react";
 import type { Actor } from "@/content/actors";
 import type { ActorAssets, AssetItem } from "@/content/asset-types";
 import { SWIMMER_PRODUCTS } from "@/content/swimmer-products";
@@ -8,7 +16,8 @@ import { useSiteI18n } from "@/i18n/client";
 import { characterProfile } from "@/lib/asset-profile";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { GUEST_COOLDOWN_KEY, GUEST_DOWNLOAD_WINDOW_SECONDS } from "@/lib/downloads";
-import { GameButton, GameModal, GameToast } from "@pieai/swimmer-ui-kit";
+import { GameBadge, GameButton, GameToast } from "@pieai/swimmer-ui-kit";
+import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { useAccount } from "../AccountProvider";
 import { MemberExportDialog } from "./MemberExportDialog";
 
@@ -20,6 +29,7 @@ type Selection = {
   remaining: number;
   busy: boolean;
   modalOpen: boolean;
+  sourceRef: RefObject<HTMLButtonElement | null>;
 };
 const SelectionContext = createContext<Selection | null>(null);
 export function useAssetSelection(): Selection {
@@ -50,7 +60,10 @@ export function AssetSelectionProvider({
   const request = useRef<AbortController | null>(null);
   const [deadline, setDeadline] = useState(0);
   const [remaining, setRemaining] = useState(0);
-  const [notice, setNotice] = useState<"failed" | "started" | "cooldown" | null>(null);
+  const [notice, setNotice] = useState<"failed" | "started" | "cooldown" | "selectFirst" | null>(
+    null,
+  );
+  const sourceRef = useRef<HTMLButtonElement>(null);
   const selected = new Set(state.slug === actor.slug ? state.slots : []);
   const storageKey = `sp-asset-selection:${actor.slug}`;
 
@@ -184,37 +197,45 @@ export function AssetSelectionProvider({
         remaining: account.user ? 0 : remaining,
         busy: busy || account.busy || account.loading,
         modalOpen: invite || pack,
-        requestPack: () => (account.user ? setPack(true) : showInvite()),
+        sourceRef,
+        requestPack: () => {
+          if (!selected.size) {
+            setNotice("selectFirst");
+            return;
+          }
+          if (account.user) setPack(true);
+          else showInvite();
+        },
       }}
     >
       {children}
-      <GameModal
+      <LiquidPopover
         open={invite}
-        onClose={() => setInvite(false)}
+        onOpenChange={(open) => {
+          if (!open) setInvite(false);
+        }}
+        source={sourceRef}
         title={t("assets.signInTitle")}
-        closeLabel={t("assets.close")}
-        footer={
-          <>
-            <GameButton onClick={() => setInvite(false)}>{t("assets.notNow")}</GameButton>
-            <GameButton
-              variant="primary"
-              disabled={busy || account.busy || account.loading}
-              onClick={signIn}
-            >
-              {t("assets.signIn")}
-            </GameButton>
-          </>
-        }
       >
         <p>{t("assets.signInBody")}</p>
         <ul className="mt-4 flex flex-wrap gap-2">
           {SWIMMER_PRODUCTS.map((product) => (
-            <li className="sp-pill" key={product.id}>
-              {product.name}
+            <li key={product.id}>
+              <GameBadge tone="neutral">{product.name}</GameBadge>
             </li>
           ))}
         </ul>
-      </GameModal>
+        <div className="mt-6 flex justify-end gap-3">
+          <GameButton onClick={() => setInvite(false)}>{t("assets.notNow")}</GameButton>
+          <GameButton
+            variant="primary"
+            disabled={busy || account.busy || account.loading}
+            onClick={signIn}
+          >
+            {t("assets.signIn")}
+          </GameButton>
+        </div>
+      </LiquidPopover>
       {pack ? (
         <MemberExportDialog
           actor={actor}
@@ -229,6 +250,7 @@ export function AssetSelectionProvider({
             setPack(false);
             showInvite();
           }}
+          source={sourceRef}
         />
       ) : null}
       {notice ? (
@@ -249,7 +271,13 @@ export function AssetSelectionProvider({
                 </GameButton>
               </>
             ) : (
-              t(notice === "failed" ? "assets.failed" : "assets.started")
+              t(
+                notice === "failed"
+                  ? "assets.failed"
+                  : notice === "selectFirst"
+                    ? "assets.selectFirst"
+                    : "assets.started",
+              )
             )}
           </GameToast>
         </div>
@@ -260,8 +288,7 @@ export function AssetSelectionProvider({
 
 export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
   const { t } = useSiteI18n();
-  const { selected, change, requestPack, modalOpen, busy } = useAssetSelection();
-  if (mobile && !selected.size) return null;
+  const { selected, change, requestPack, modalOpen, busy, sourceRef } = useAssetSelection();
   return (
     <div
       className={mobile ? "sp-selection-mobile" : "hidden shrink-0 items-center gap-3 md:flex"}
@@ -274,8 +301,9 @@ export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
         {t("assets.clear")}
       </GameButton>
       <GameButton
+        ref={sourceRef}
         variant={modalOpen ? "secondary" : "primary"}
-        disabled={!selected.size || busy}
+        disabled={busy}
         onClick={requestPack}
       >
         {t("assets.downloadSelected")}

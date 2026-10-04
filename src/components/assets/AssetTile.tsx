@@ -2,7 +2,7 @@
 
 import type { AssetItem } from "@/content/asset-types";
 import { useSiteI18n } from "@/i18n/client";
-import { GameCheckbox, GameIconButton } from "@pieai/swimmer-ui-kit";
+import { GameBadge, GameCheckbox, GameIconButton } from "@pieai/swimmer-ui-kit";
 import { GameIcon } from "@pieai/swimmer-ui-kit";
 import { ActorPicture } from "../ActorPicture";
 import { useAssetSelection } from "./AssetSelection";
@@ -62,21 +62,19 @@ export function AssetTile({
             disabled={busy || remaining > 0}
             onClick={() => void downloadOne(item)}
           >
-            <GameIcon icon="download"  />
+            <GameIcon icon="download" />
           </GameIconButton>
           {remaining > 0 ? (
-            <span className="sp-pill" aria-live="off" data-cooldown>
+            <GameBadge tone="warning" aria-live="off" data-cooldown>
               {remaining}s
-            </span>
+            </GameBadge>
           ) : null}
         </div>
       </div>
       <div className="mt-3 flex flex-wrap items-center gap-2">
         <span className="sp-label">{label}</span>
         {item.conformance === "legacy" ? (
-          <span className="sp-pill" title={t("assets.legacyNote")}>
-            {t("assets.legacy")}
-          </span>
+          <GameBadge tone="warning">{t("assets.legacy")}</GameBadge>
         ) : null}
       </div>
     </article>

@@ -13,9 +13,9 @@ for (const locale of ["zh", "en"] as const) {
     await expect(page.locator("[data-delivered='false']")).toHaveCount(18);
     await expect(page.getByRole("checkbox")).toHaveCount(3);
     await expect(page.locator("[data-asset-series]")).toHaveCount(3);
-    await expect(page.locator("[data-delivered='true'] .sp-pill")).toHaveText(
-      Array(3).fill(locale === "zh" ? "旧规格" : "Legacy"),
-    );
+    await expect(
+      page.locator("[data-delivered='true']").getByText(locale === "zh" ? "旧规格" : "Legacy"),
+    ).toHaveCount(3);
     await page.goto(`/${locale}/kit/dai-er`);
     await expect(page.locator("[data-core-progress='0/21']")).toBeVisible();
     await expect(page.locator("[data-delivered='false']")).toHaveCount(21);

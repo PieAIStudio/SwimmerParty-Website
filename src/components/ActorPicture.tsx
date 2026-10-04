@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { Mannequin } from "./Mannequin";
+import { GameBadge } from "@pieai/swimmer-ui-kit";
 
 /** Image presentation is independent from the manifest's storage contract. */
 export function ActorPicture({
@@ -38,7 +39,9 @@ export function ActorPicture({
             className={`sp-image ${legacy ? "object-cover" : fullBody ? "object-contain object-bottom" : "object-contain"}`}
           />
           {legacy && legacyLabel ? (
-            <span className="sp-pill sp-legacy-label absolute top-3 left-3">{legacyLabel}</span>
+            <GameBadge tone="warning" className="sp-legacy-label absolute top-3 left-3">
+              {legacyLabel}
+            </GameBadge>
           ) : null}
         </>
       ) : (

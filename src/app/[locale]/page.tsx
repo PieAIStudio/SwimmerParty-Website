@@ -11,6 +11,8 @@ import { SectionHead } from "@/components/SectionHead";
 import { TextLink } from "@/components/TextLink";
 import { Reveal } from "@/motion/Reveal";
 import { StageMount } from "@/three/StageMount";
+import { GameBadge, GameButton } from "@pieai/swimmer-ui-kit";
+import { Link } from "@/i18n/navigation";
 
 export default async function Home({ params }: { params: Promise<{ locale: AppLocale }> }) {
   const { locale } = await params;
@@ -46,7 +48,10 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
             ))}
           </h1>
           <p className="sp-lead mt-6 max-w-[32rem] text-muted-foreground">{t("home.heroBody")}</p>
-          <div className="mt-8 flex flex-wrap gap-6">
+          <div className="mt-8 flex flex-wrap items-center gap-6">
+            <GameButton variant="primary" href="/kit" linkComponent={Link}>
+              {t("home.ctaAssets")}
+            </GameButton>
             <TextLink href="/actors">{t("home.ctaRoster")}</TextLink>
             <TextLink href="/casting" className="text-muted-foreground">
               {t("home.ctaBook")}
@@ -95,7 +100,9 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
             </span>
           ))}
         </h2>
-        <span className="sp-pill mt-6">{CG_BADGE[locale]}</span>
+        <GameBadge tone="ai" className="mt-6">
+          {CG_BADGE[locale]}
+        </GameBadge>
         <p className="sp-lead mt-6 max-w-[48rem] text-muted-foreground">{t("home.stanceBody")}</p>
         <TextLink href="/pact" className="mt-6">
           {t("home.stanceCta")}

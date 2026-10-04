@@ -7,6 +7,7 @@ import { SITE } from "@/lib/site";
 import { PageIntro } from "@/components/PageIntro";
 import { TextLink } from "@/components/TextLink";
 import { Link } from "@/i18n/navigation";
+import { GameBadge } from "@pieai/swimmer-ui-kit";
 
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -32,7 +33,7 @@ export default async function WorksPage({ params }: Props) {
           <article key={work.code} className="sp-card bg-card">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="sp-code text-muted-foreground">{work.code}</span>
-              <span className="sp-pill">{WORK_STATUS_LABEL[work.status][locale]}</span>
+              <GameBadge tone="neutral">{WORK_STATUS_LABEL[work.status][locale]}</GameBadge>
             </div>
             <h2 className="sp-subtitle mt-5">{work.title[locale]}</h2>
             <p className="sp-small mt-2 text-muted-foreground">{work.format[locale]}</p>

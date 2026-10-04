@@ -12,7 +12,7 @@ import {
 import { usePathname } from "next/navigation";
 import { track } from "@vercel/analytics";
 import { useSiteI18n } from "@/i18n/client";
-import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
+import { GameBadge, GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 
 type EventName =
   | "guest_download"
@@ -133,10 +133,10 @@ export function AccountMenu() {
   return (
     <details className="relative" data-account-menu>
       <summary
-        className="sp-pill cursor-pointer whitespace-nowrap"
+        className="cursor-pointer whitespace-nowrap"
         title={account.mode === "mock" ? t("assets.mockAccount") : undefined}
       >
-        {t("assets.signedIn")}
+        <GameBadge tone="success">{t("assets.signedIn")}</GameBadge>
       </summary>
       <div className="sp-card absolute right-0 z-50 mt-3 min-w-40 bg-background">
         {account.mode === "mock" ? (

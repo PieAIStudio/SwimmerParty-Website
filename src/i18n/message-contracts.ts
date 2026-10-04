@@ -56,6 +56,7 @@ export interface MessageContracts {
   readonly "assets.progress": { readonly "done": string | number | bigint | boolean | null | undefined | Date; readonly "total": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.seedanceUnverified": {  };
   readonly "assets.select": { readonly "label": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "assets.selectFirst": {  };
   readonly "assets.selectSeries": {  };
   readonly "assets.selected": { readonly "count": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.series.detail": {  };
@@ -182,6 +183,7 @@ export interface MessageContracts {
   readonly "home.castingCta": {  };
   readonly "home.castingTitle.0": {  };
   readonly "home.castingTitle.1": {  };
+  readonly "home.ctaAssets": {  };
   readonly "home.ctaBook": {  };
   readonly "home.ctaRoster": {  };
   readonly "home.eyebrow": {  };

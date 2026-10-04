@@ -1,23 +1,16 @@
 @import "tailwindcss";
 @import "@pieai/swimmer-ui-kit/styles.css";
 @import "@pieai/swimmer-ui-kit/fonts.css";
+@import "@pieai/swimmer-ui-kit/liquid-presence.css";
 
 /* Site surfaces are derived from the kit. Controls keep their own geometry. */
 :root,
 [data-game-ui-theme="light"] {
-  --sp-card: color-mix(in srgb, var(--game-ui-text) 4%, var(--game-ui-bg));
-  --sp-muted: color-mix(in srgb, var(--game-ui-text) 8%, var(--game-ui-bg));
-  --sp-sweep-top: color-mix(in srgb, var(--game-ui-text) 3%, var(--game-ui-bg));
-  --sp-sweep-floor: color-mix(in srgb, var(--game-ui-text) 9%, var(--game-ui-bg));
   --sp-contact: rgb(0 0 0 / 0.2);
   --sp-header: color-mix(in srgb, var(--game-ui-bg) 86%, transparent);
 }
 
 [data-game-ui-theme="dark"] {
-  --sp-card: color-mix(in srgb, var(--game-ui-text) 6%, var(--game-ui-bg));
-  --sp-muted: color-mix(in srgb, var(--game-ui-text) 11%, var(--game-ui-bg));
-  --sp-sweep-top: color-mix(in srgb, var(--game-ui-text) 9%, var(--game-ui-bg));
-  --sp-sweep-floor: color-mix(in srgb, var(--game-ui-text) 4%, var(--game-ui-bg));
   --sp-contact: rgb(0 0 0 / 0.5);
   --sp-header: color-mix(in srgb, var(--game-ui-bg) 86%, transparent);
 }
@@ -32,8 +25,9 @@
   --color-background: var(--game-ui-bg);
   --color-foreground: var(--game-ui-text);
   --color-muted-foreground: var(--game-ui-text-muted);
-  --color-card: var(--sp-card);
-  --color-muted: var(--sp-muted);
+  --color-card: var(--game-ui-surface);
+  --color-muted: var(--game-ui-surface-sunken);
+  --color-popover: var(--game-ui-surface-raised);
   --color-border: var(--game-ui-border-subtle);
   --color-danger-ink: var(--game-ui-danger-ink);
   --font-sans: var(--game-ui-font-body);
@@ -189,36 +183,14 @@
     border-radius: var(--game-ui-radius-panel);
   }
 
-  .sp-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    min-height: 26px;
-    padding-inline: 10px;
-    border-radius: 999px;
-    background: var(--sp-muted);
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.3;
-  }
-
-  .sp-pill[data-active="true"]::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    flex: none;
-    border-radius: 50%;
-    background: currentColor;
-  }
-
   .sp-sweep {
     position: relative;
     overflow: hidden;
     background: linear-gradient(
       180deg,
-      var(--sp-sweep-top) 0%,
-      var(--sp-sweep-top) 58%,
-      var(--sp-sweep-floor) 100%
+      var(--game-ui-surface) 0%,
+      var(--game-ui-surface) 58%,
+      var(--game-ui-surface-sunken) 100%
     );
   }
 
@@ -235,7 +207,7 @@
   }
 
   .sp-legacy-label {
-    background: var(--sp-card);
+    background: var(--game-ui-surface);
   }
 
   .sp-image {

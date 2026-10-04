@@ -9,11 +9,12 @@ import { CopyBlock } from "@/components/CopyBlock";
 import { SectionHead } from "@/components/SectionHead";
 import { TextLink } from "@/components/TextLink";
 import { StageMount } from "@/three/StageMount";
-import { GameCallout } from "@pieai/swimmer-ui-kit";
+import { GameBadge, GameButton, GameCallout } from "@pieai/swimmer-ui-kit";
 import { getActorAssets, firstImage } from "@/content/assets";
 import { slotLabelKey } from "@/content/asset-series";
 import { AssetProgress } from "@/components/AssetProgress";
 import { HeightScale } from "@/components/HeightScale";
+import { Link } from "@/i18n/navigation";
 
 type Props = { params: Promise<{ locale: AppLocale; slug: string }> };
 export function generateStaticParams() {
@@ -70,9 +71,9 @@ export default async function ActorPage({ params }: Props) {
           ) : (
             <div className="sp-sweep sp-panel relative aspect-4/5">
               <StageMount />
-              <span className="sp-pill absolute top-4 left-4 text-muted-foreground">
+              <GameBadge tone="neutral" className="absolute top-4 left-4">
                 {t("actor.inDevelopment")}
-              </span>
+              </GameBadge>
             </div>
           )}
           {!front ? (
@@ -85,16 +86,13 @@ export default async function ActorPage({ params }: Props) {
         <div className="min-w-0 lg:col-span-5">
           <div className="flex flex-wrap items-center gap-3">
             <span className="sp-code">{actor.code}</span>
-            <span
-              className={`sp-pill ${actor.status === "active" ? "" : "text-muted-foreground"}`}
-              data-active={actor.status === "active"}
-            >
+            <GameBadge tone={actor.status === "active" ? "success" : "neutral"}>
               {actor.status === "active"
                 ? t("roster.castableLabel")
                 : actor.status === "in-development"
                   ? t("actor.inDevelopment")
                   : STATUS_LABEL[actor.status][locale]}
-            </span>
+            </GameBadge>
           </div>
           <h1 className="sp-display-lg mt-5">
             {name}
@@ -106,7 +104,9 @@ export default async function ActorPage({ params }: Props) {
             </span>
           </h1>
           <p className="sp-lead mt-6">{actor.tagline[locale]}</p>
-          <span className="sp-pill mt-4">{CG_BADGE[locale]}</span>
+          <GameBadge tone="ai" className="mt-4">
+            {CG_BADGE[locale]}
+          </GameBadge>
           <p className="sp-code mt-6 text-muted-foreground">
             VERSION {actor.version.current} / {actor.version.total}
           </p>
@@ -125,13 +125,15 @@ export default async function ActorPage({ params }: Props) {
           <p className="sp-label mt-6 text-muted-foreground">{t("actor.castFor")}</p>
           <ul className="mt-3 flex flex-wrap gap-2">
             {actor.castFor[locale].map((value) => (
-              <li className="sp-pill" key={value}>
-                {value}
+              <li key={value}>
+                <GameBadge tone="neutral">{value}</GameBadge>
               </li>
             ))}
           </ul>
           <div className="mt-8 flex flex-wrap gap-6">
-            <TextLink href={`/kit/${actor.slug}`}>{t("assets.openLibrary")}</TextLink>
+            <GameButton variant="primary" linkComponent={Link} href={`/kit/${actor.slug}`}>
+              {t("assets.openLibrary")}
+            </GameButton>
             <TextLink href={`/casting?actor=${actor.slug}`} className="text-muted-foreground">
               {t("common.enquire")}
             </TextLink>

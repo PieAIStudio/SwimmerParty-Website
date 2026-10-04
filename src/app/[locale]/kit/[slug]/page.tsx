@@ -12,6 +12,7 @@ import { ActorPicture } from "@/components/ActorPicture";
 import { AssetProgress } from "@/components/AssetProgress";
 import { CopyBlock } from "@/components/CopyBlock";
 import { AssetLibrarySections } from "@/components/assets/AssetLibrarySections";
+import { GameBadge } from "@pieai/swimmer-ui-kit";
 import {
   AssetSelectionProvider,
   AssetSelectionBar,
@@ -75,7 +76,7 @@ export default async function ActorAssetPage({ params }: Props) {
           </div>
           <div className="mt-6 flex flex-wrap items-center gap-6">
             <AssetProgress slug={slug} />
-            <span className="sp-pill">{CG_BADGE[locale]}</span>
+            <GameBadge tone="ai">{CG_BADGE[locale]}</GameBadge>
           </div>
           <p className="sp-lead mt-6 max-w-3xl text-muted-foreground">
             {t("assets.intro", { name })}
@@ -87,7 +88,11 @@ export default async function ActorAssetPage({ params }: Props) {
             aria-label={t("assets.navigation")}
           >
             {sections.map((series) => (
-              <a className="sp-pill shrink-0" key={series.id} href={`#series-${series.id}`}>
+              <a
+                className="shrink-0 rounded-full border border-border px-3 py-1 text-sm"
+                key={series.id}
+                href={`#series-${series.id}`}
+              >
                 {t(
                   `assets.series.${series.id}` as Extract<
                     keyof MessageContracts,
@@ -96,7 +101,10 @@ export default async function ActorAssetPage({ params }: Props) {
                 )}
               </a>
             ))}
-            <a className="sp-pill shrink-0" href="#series-text">
+            <a
+              className="shrink-0 rounded-full border border-border px-3 py-1 text-sm"
+              href="#series-text"
+            >
               {t("assets.series.text")}
             </a>
           </nav>

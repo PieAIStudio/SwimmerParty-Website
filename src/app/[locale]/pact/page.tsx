@@ -6,7 +6,7 @@ import { CLAUSES, TERMS, PACT_VERSION } from "@/content/pact";
 import { PageIntro } from "@/components/PageIntro";
 import { SectionHead } from "@/components/SectionHead";
 import { TextLink } from "@/components/TextLink";
-import { GameIcon } from "@pieai/swimmer-ui-kit";
+import { GameBadge, GameIcon } from "@pieai/swimmer-ui-kit";
 
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -26,7 +26,7 @@ export default async function PactPage({ params }: Props) {
       </PageIntro>
       <div className="mt-6 flex flex-wrap gap-3">
         <span className="sp-code text-muted-foreground">{PACT_VERSION}</span>
-        <span className="sp-pill">{t("common.draft")}</span>
+        <GameBadge tone="warning">{t("common.draft")}</GameBadge>
       </div>
       <section className="sp-section">
         <SectionHead
@@ -38,7 +38,7 @@ export default async function PactPage({ params }: Props) {
           <ul className="space-y-8">
             {REFUSALS.map((refusal) => (
               <li key={refusal.id} className="flex gap-4">
-                <GameIcon icon="close" className="mt-1 shrink-0 text-danger-ink"  />
+                <GameIcon icon="close" className="mt-1 shrink-0 text-danger-ink" />
                 <div>
                   <h3 className="sp-subtitle">{refusal.head[locale]}</h3>
                   <p className="mt-3 max-w-[48rem] text-muted-foreground">{refusal.body[locale]}</p>
