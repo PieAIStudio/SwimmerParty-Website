@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
-import { PageIntro } from "@/components/PageIntro";
-import { SectionHead } from "@/components/SectionHead";
-import { TextLink } from "@/components/TextLink";
+import { PageIntro } from "@/features/site/PageIntro";
+import { SectionHead } from "@/features/site/SectionHead";
+import { TextLink } from "@/features/site/TextLink";
 
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

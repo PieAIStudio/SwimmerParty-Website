@@ -1,1 +1,1 @@
-export { AccountProvider, AccountMenu, useAccount } from "@/components/AccountProvider";
+export { AccountProvider, AccountMenu, useAccount } from "./AccountProvider";

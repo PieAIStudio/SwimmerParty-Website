@@ -18,7 +18,7 @@ import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { GUEST_COOLDOWN_KEY, GUEST_DOWNLOAD_WINDOW_SECONDS } from "@/lib/downloads";
 import { GameBadge, GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
-import { useAccount } from "../AccountProvider";
+import { useAccount } from "../account/AccountProvider";
 import { MemberExportDialog } from "./MemberExportDialog";
 
 type Selection = {

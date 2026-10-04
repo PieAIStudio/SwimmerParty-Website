@@ -18,7 +18,7 @@ import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { veoPlan } from "@/lib/export-plan";
 import { GameButton, GameSegmentedControl, GameSelect, GameToast } from "@pieai/swimmer-ui-kit";
 import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
-import { useAccount } from "../AccountProvider";
+import { useAccount } from "../account/AccountProvider";
 
 const translators = { en: siteI18n.translator("en"), zh: siteI18n.translator("zh-CN") };
 function labelsFor(item: AssetItem) {

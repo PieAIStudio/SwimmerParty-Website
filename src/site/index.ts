@@ -1,9 +1,0 @@
-export { CopyBlock } from "@/components/CopyBlock";
-export { PageIntro } from "@/components/PageIntro";
-export { SectionHead } from "@/components/SectionHead";
-export { TextLink } from "@/components/TextLink";
-export { LocaleSwitcher } from "@/components/LocaleSwitcher";
-export { ThemeToggle } from "@/components/ThemeToggle";
-export { SiteHeader } from "@/components/SiteHeader";
-export { SiteFooter } from "@/components/SiteFooter";
-export { Reveal } from "@/motion/Reveal";

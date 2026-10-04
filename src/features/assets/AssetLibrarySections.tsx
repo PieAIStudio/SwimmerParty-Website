@@ -3,7 +3,7 @@ import { listSeries, slotsOf, slotLabelKey, type ResolvedSlot } from "@/content/
 import type { MessageContracts } from "@/i18n/message-contracts";
 import { getSiteI18n } from "@/i18n/server";
 import type { AppLocale } from "@/i18n/routing";
-import { Mannequin } from "../Mannequin";
+import { Mannequin } from "../actors/Mannequin";
 import { AssetTile } from "./AssetTile";
 import { SelectAssetSeries } from "./AssetSelection";
 

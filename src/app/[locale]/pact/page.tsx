@@ -3,9 +3,9 @@ import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { REFUSALS, WHY } from "@/content/doctrine";
 import { CLAUSES, TERMS, PACT_VERSION } from "@/content/pact";
-import { PageIntro } from "@/components/PageIntro";
-import { SectionHead } from "@/components/SectionHead";
-import { TextLink } from "@/components/TextLink";
+import { PageIntro } from "@/features/site/PageIntro";
+import { SectionHead } from "@/features/site/SectionHead";
+import { TextLink } from "@/features/site/TextLink";
 import { GameBadge, GameIcon } from "@pieai/swimmer-ui-kit";
 
 type Props = { params: Promise<{ locale: AppLocale }> };

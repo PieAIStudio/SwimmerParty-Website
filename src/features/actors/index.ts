@@ -1,4 +1,4 @@
-export { ActorCard } from "@/components/ActorCard";
-export { ActorPicture } from "@/components/ActorPicture";
-export { HeightScale } from "@/components/HeightScale";
-export { Mannequin } from "@/components/Mannequin";
+export { ActorCard } from "./ActorCard";
+export { ActorPicture } from "./ActorPicture";
+export { HeightScale } from "./HeightScale";
+export { Mannequin } from "./Mannequin";

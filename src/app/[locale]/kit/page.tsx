@@ -6,12 +6,12 @@ import { KIT_RULES, KIT_STATUS_LABEL } from "@/content/kit";
 import { getKitManifest } from "@/content/kit-assets";
 import { getActorAssets } from "@/content/assets";
 import { slotLabelKey } from "@/content/asset-series";
-import { ActorCard } from "@/components/ActorCard";
-import { ActorPicture } from "@/components/ActorPicture";
-import { CopyBlock } from "@/components/CopyBlock";
-import { PageIntro } from "@/components/PageIntro";
-import { SectionHead } from "@/components/SectionHead";
-import { TextLink } from "@/components/TextLink";
+import { ActorCard } from "@/features/actors/ActorCard";
+import { ActorPicture } from "@/features/actors/ActorPicture";
+import { CopyBlock } from "@/features/site/CopyBlock";
+import { PageIntro } from "@/features/site/PageIntro";
+import { SectionHead } from "@/features/site/SectionHead";
+import { TextLink } from "@/features/site/TextLink";
 import { AssetProgress } from "@/components/AssetProgress";
 import { GameBadge, GameIcon } from "@pieai/swimmer-ui-kit";
 

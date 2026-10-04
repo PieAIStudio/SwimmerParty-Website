@@ -5,7 +5,7 @@ import { useSiteLocale, useSiteI18n } from "@/i18n/client";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
-import { AccountMenu } from "./AccountProvider";
+import { AccountMenu } from "../account/AccountProvider";
 import { NAV, SECONDARY_NAV, SITE } from "@/lib/site";
 import { GameIconButton } from "@pieai/swimmer-ui-kit";
 import { GameIcon } from "@pieai/swimmer-ui-kit";
