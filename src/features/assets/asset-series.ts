@@ -27,7 +27,6 @@ export type ResolvedSlot = SlotDefinition & {
 // The checked-in JSON is the shared protocol for UI, ingest, TODO and export.
 const series = vocabulary.series as readonly SeriesDefinition[];
 export const ASSET_FRAMES = vocabulary.frames;
-export const ASSET_PROTOCOL_VERSION = vocabulary.version;
 export const listSeries = (): readonly SeriesDefinition[] => series;
 
 export function seriesOf(id: string): SeriesDefinition {

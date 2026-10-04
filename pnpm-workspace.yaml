@@ -1,13 +1,7 @@
 allowBuilds:
-  # Pulled in transitively by next-intl's tooling. Neither needs its
-  # postinstall to run here: both ship prebuilt binaries and neither is
-  # exercised at build or runtime by this site.
-  "@parcel/watcher": false
-  "@swc/core": false
   "@tailwindcss/oxide": true
   lefthook: true
   sharp: true
-  unrs-resolver: true
 minimumReleaseAgeExclude:
   - "@pieai/doc-gov"
   - "@pieai/pro-gov"

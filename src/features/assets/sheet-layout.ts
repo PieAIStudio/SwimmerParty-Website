@@ -1,7 +1,7 @@
 export const SHEET_WIDTH = 3840;
 export const SHEET_HEIGHT = 2160;
-export const SHEET_MARGIN = 80;
-export const SHEET_GAP = 40;
+const SHEET_MARGIN = 80;
+const SHEET_GAP = 40;
 export type SheetBox = {
   index: number;
   x: number;

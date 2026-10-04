@@ -2,10 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { canonicalLocale } from "@pieai/swimmer-i18n-kit";
 import { catalogLocale, hasLocale, localePath, routing, type AppLocale } from "./routing";
 
-export function preferredLocale(
-  cookie: string | undefined,
-  acceptLanguage: string | null,
-): AppLocale {
+function preferredLocale(cookie: string | undefined, acceptLanguage: string | null): AppLocale {
   if (hasLocale(routing.locales, cookie)) return cookie;
   const candidates = (acceptLanguage ?? "")
     .split(",")

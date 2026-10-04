@@ -5,7 +5,6 @@ export interface MessageContracts {
   readonly "actor.noPlate": {  };
   readonly "actor.noPlateBody": {  };
   readonly "actor.seedEnNote": {  };
-  readonly "actor.sheetFront": {  };
   readonly "assets.back": {  };
   readonly "assets.background": {  };
   readonly "assets.background.dark": {  };
@@ -13,7 +12,6 @@ export interface MessageContracts {
   readonly "assets.background.white": {  };
   readonly "assets.cancel": {  };
   readonly "assets.clear": {  };
-  readonly "assets.close": {  };
   readonly "assets.dialogTitle": { readonly "count": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.downloadJson": {  };
   readonly "assets.downloadOne": {  };
@@ -28,7 +26,6 @@ export interface MessageContracts {
   readonly "assets.format.zip": {  };
   readonly "assets.format.zipNote": {  };
   readonly "assets.guestCooldown": { readonly "remaining": string | number | bigint | boolean | null | undefined | Date; readonly "seconds": string | number | bigint | boolean | null | undefined | Date; };
-  readonly "assets.guestHint": {  };
   readonly "assets.intro": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.labels": {  };
   readonly "assets.labels.none": {  };
@@ -166,7 +163,6 @@ export interface MessageContracts {
   readonly "common.enquire": {  };
   readonly "common.language": {  };
   readonly "common.machine": {  };
-  readonly "common.machineNote": {  };
   readonly "common.mainNav": {  };
   readonly "common.menu": {  };
   readonly "common.next": {  };

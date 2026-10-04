@@ -12,7 +12,7 @@ const priority = [
   "turnaround.back",
 ];
 const expressions = listSeries().find((series) => series.id === "expression")!.slots;
-export function orderedModelAssets(items: readonly AssetItem[]): AssetItem[] {
+function orderedModelAssets(items: readonly AssetItem[]): AssetItem[] {
   const rank = (item: AssetItem) => {
     const primary = priority.indexOf(item.slot);
     if (primary >= 0) return primary;

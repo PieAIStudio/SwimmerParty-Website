@@ -36,10 +36,6 @@ export const messages = {
     en: "Machine translated",
     zh: "机器翻译",
   },
-  "common.machineNote": {
-    en: "These open in Google's translation proxy. We publish two languages we can actually proofread, and we say so rather than shipping nine we cannot.",
-    zh: "以下语言由 Google 翻译代理打开。我们只发布两种自己校得动的语言，也把这件事说清楚，而不是硬塞九种校不动的。",
-  },
   "common.mainNav": {
     en: "Main navigation",
     zh: "主导航",
@@ -363,10 +359,6 @@ export const messages = {
   "actor.castFor": {
     en: "Cast for",
     zh: "可出演",
-  },
-  "actor.sheetFront": {
-    en: "FRONT",
-    zh: "正视",
   },
   "actor.noPlate": {
     en: "No plate delivered",
@@ -1064,10 +1056,6 @@ export const messages = {
     en: "Guests can download one full-size image every {seconds} seconds. {remaining} seconds to go.",
     zh: "游客每 {seconds} 秒可以下载一张高清图，还要等 {remaining} 秒。",
   },
-  "assets.guestHint": {
-    en: "Sign in with Swimmer to select several, download a pack or build a sheet.",
-    zh: "登录 Swimmer 账号，就能多选、打包和拼图。",
-  },
   "assets.signIn": {
     en: "Sign in with Swimmer",
     zh: "用 Swimmer 账号登录",
@@ -1175,10 +1163,6 @@ export const messages = {
   "assets.navigation": {
     en: "Asset series",
     zh: "资产系列",
-  },
-  "assets.close": {
-    en: "Close",
-    zh: "关闭",
   },
   "assets.failed": {
     en: "That could not be completed. Please try again.",

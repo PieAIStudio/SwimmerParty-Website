@@ -20,11 +20,6 @@ export const LOCALE_HTML_LANG: Record<AppLocale, string> = {
   en: "en",
 };
 
-export const LOCALE_LABEL: Record<AppLocale, string> = {
-  zh: "中文",
-  en: "English",
-};
-
 /** OpenGraph locale codes, which use underscores and full regions. */
 export const LOCALE_OG: Record<AppLocale, string> = {
   zh: "zh_CN",
