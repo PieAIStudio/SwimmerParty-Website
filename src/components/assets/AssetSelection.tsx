@@ -29,7 +29,7 @@ type Selection = {
   remaining: number;
   busy: boolean;
   modalOpen: boolean;
-  sourceRef: RefObject<HTMLButtonElement | null>;
+  sourceRef: RefObject<HTMLElement | null>;
 };
 const SelectionContext = createContext<Selection | null>(null);
 export function useAssetSelection(): Selection {
@@ -63,7 +63,7 @@ export function AssetSelectionProvider({
   const [notice, setNotice] = useState<"failed" | "started" | "cooldown" | "selectFirst" | null>(
     null,
   );
-  const sourceRef = useRef<HTMLButtonElement>(null);
+  const sourceRef = useRef<HTMLElement>(null);
   const selected = new Set(state.slug === actor.slug ? state.slots : []);
   const storageKey = `sp-asset-selection:${actor.slug}`;
 
@@ -228,7 +228,7 @@ export function AssetSelectionProvider({
         <div className="mt-6 flex justify-end gap-3">
           <GameButton onClick={() => setInvite(false)}>{t("assets.notNow")}</GameButton>
           <GameButton
-            variant="primary"
+            variant="secondary"
             disabled={busy || account.busy || account.loading}
             onClick={signIn}
           >
@@ -288,7 +288,7 @@ export function AssetSelectionProvider({
 
 export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
   const { t } = useSiteI18n();
-  const { selected, change, requestPack, modalOpen, busy, sourceRef } = useAssetSelection();
+  const { selected, change, requestPack, busy, sourceRef } = useAssetSelection();
   return (
     <div
       className={mobile ? "sp-selection-mobile" : "hidden shrink-0 items-center gap-3 md:flex"}
@@ -301,10 +301,12 @@ export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
         {t("assets.clear")}
       </GameButton>
       <GameButton
-        ref={sourceRef}
-        variant={modalOpen ? "secondary" : "primary"}
+        variant="primary"
         disabled={busy}
-        onClick={requestPack}
+        onClick={(event) => {
+          sourceRef.current = event.currentTarget;
+          requestPack();
+        }}
       >
         {t("assets.downloadSelected")}
       </GameButton>

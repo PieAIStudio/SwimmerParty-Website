@@ -157,6 +157,7 @@ export interface MessageContracts {
   readonly "casting.routes.2.title": {  };
   readonly "casting.routesLabel": {  };
   readonly "casting.routesTitle": {  };
+  readonly "common.authored": {  };
   readonly "common.backToRoster": {  };
   readonly "common.close": {  };
   readonly "common.copied": {  };

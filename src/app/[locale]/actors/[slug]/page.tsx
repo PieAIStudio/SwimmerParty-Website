@@ -104,7 +104,7 @@ export default async function ActorPage({ params }: Props) {
             </span>
           </h1>
           <p className="sp-lead mt-6">{actor.tagline[locale]}</p>
-          <GameBadge tone="ai" className="mt-4">
+          <GameBadge tone="neutral" className="mt-4">
             {CG_BADGE[locale]}
           </GameBadge>
           <p className="sp-code mt-6 text-muted-foreground">

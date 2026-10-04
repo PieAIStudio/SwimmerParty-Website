@@ -33,7 +33,9 @@ export default async function WorksPage({ params }: Props) {
           <article key={work.code} className="sp-card bg-card">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="sp-code text-muted-foreground">{work.code}</span>
-              <GameBadge tone="neutral">{WORK_STATUS_LABEL[work.status][locale]}</GameBadge>
+              <GameBadge tone={work.status === "shooting" ? "success" : "neutral"}>
+                {WORK_STATUS_LABEL[work.status][locale]}
+              </GameBadge>
             </div>
             <h2 className="sp-subtitle mt-5">{work.title[locale]}</h2>
             <p className="sp-small mt-2 text-muted-foreground">{work.format[locale]}</p>

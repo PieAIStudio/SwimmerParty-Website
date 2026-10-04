@@ -100,7 +100,7 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
             </span>
           ))}
         </h2>
-        <GameBadge tone="ai" className="mt-6">
+        <GameBadge tone="neutral" className="mt-6">
           {CG_BADGE[locale]}
         </GameBadge>
         <p className="sp-lead mt-6 max-w-[48rem] text-muted-foreground">{t("home.stanceBody")}</p>

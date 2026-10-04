@@ -26,7 +26,7 @@ export default async function PactPage({ params }: Props) {
       </PageIntro>
       <div className="mt-6 flex flex-wrap gap-3">
         <span className="sp-code text-muted-foreground">{PACT_VERSION}</span>
-        <GameBadge tone="warning">{t("common.draft")}</GameBadge>
+        <GameBadge tone="neutral">{t("common.draft")}</GameBadge>
       </div>
       <section className="sp-section">
         <SectionHead

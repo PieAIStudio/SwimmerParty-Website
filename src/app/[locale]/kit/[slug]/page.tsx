@@ -1,3 +1,4 @@
+import { SeriesJumpButton } from "@/components/assets/SeriesJumpButton";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ACTORS, getActor } from "@/content/actors";
@@ -76,7 +77,7 @@ export default async function ActorAssetPage({ params }: Props) {
           </div>
           <div className="mt-6 flex flex-wrap items-center gap-6">
             <AssetProgress slug={slug} />
-            <GameBadge tone="ai">{CG_BADGE[locale]}</GameBadge>
+            <GameBadge tone="neutral">{CG_BADGE[locale]}</GameBadge>
           </div>
           <p className="sp-lead mt-6 max-w-3xl text-muted-foreground">
             {t("assets.intro", { name })}
@@ -88,25 +89,16 @@ export default async function ActorAssetPage({ params }: Props) {
             aria-label={t("assets.navigation")}
           >
             {sections.map((series) => (
-              <a
-                className="shrink-0 rounded-full border border-border px-3 py-1 text-sm"
-                key={series.id}
-                href={`#series-${series.id}`}
-              >
+              <SeriesJumpButton key={series.id} id={`series-${series.id}`}>
                 {t(
                   `assets.series.${series.id}` as Extract<
                     keyof MessageContracts,
                     `assets.series.${string}`
                   >,
                 )}
-              </a>
+              </SeriesJumpButton>
             ))}
-            <a
-              className="shrink-0 rounded-full border border-border px-3 py-1 text-sm"
-              href="#series-text"
-            >
-              {t("assets.series.text")}
-            </a>
+            <SeriesJumpButton id="series-text">{t("assets.series.text")}</SeriesJumpButton>
           </nav>
           <AssetSelectionBar />
         </div>

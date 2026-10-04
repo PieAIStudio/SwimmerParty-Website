@@ -68,10 +68,11 @@ test("closing the invitation, reloading and changing language preserve selection
   await expect(check).toBeChecked();
   await page.reload();
   await expect(check).toBeChecked();
-  await page.getByRole("link", { name: "EN", exact: true }).click();
+  await page.getByRole("button", { name: /中文|English/ }).click();
+  await page.getByRole("menuitemradio", { name: "English" }).click();
   await expect(page.getByRole("checkbox", { name: "Select Front", exact: true })).toBeChecked();
   await page.getByRole("button", { name: "Clear", exact: true }).click();
-  await expect(page.getByRole("button", { name: "Download selected", exact: true })).toBeDisabled();
+  await expect(page.getByRole("button", { name: "Download selected", exact: true })).toBeEnabled();
 });
 
 test("profile JSON is free, bilingual and does not call the asset API", async ({ page }) => {

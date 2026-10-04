@@ -7,7 +7,7 @@ test("English phone roster keeps codes and status pills on one line", async ({ p
   const cards = await page.locator("[data-actor-card]").evaluateAll((nodes) =>
     nodes.map((node) => {
       const code = node.querySelector(".sp-code")!.getBoundingClientRect();
-      const pill = node.querySelector("[data-active]")!.getBoundingClientRect();
+      const pill = node.querySelector(".game-ui-badge")!.getBoundingClientRect();
       return {
         codeHeight: code.height,
         pillHeight: pill.height,
