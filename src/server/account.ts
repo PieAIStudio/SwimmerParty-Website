@@ -14,16 +14,18 @@ export function swimmerAccountConfig(
   };
   const cookiePassword = required("SWIMMER_COOKIE_PASSWORD");
   if (cookiePassword.length < 32) throw new HttpError(503, "account-not-configured");
+  const origin =
+    env.SWIMMER_ORIGIN ?? (env.NODE_ENV === "production" ? SITE.url : "http://localhost:3000");
   return {
     createAuthClient,
-    origin: SITE.url,
+    origin,
     backendUrl: required("SWIMMER_BACKEND_URL"),
     publishableKey: required("SWIMMER_PUBLISHABLE_KEY"),
-    cookieName: "sp_swimmer",
+    cookieName: "__Host-swimmerparty-session",
     basePath: "/api/auth",
-    successPath: "/zh/kit",
-    failurePath: "/zh/kit?auth=failed",
-    recoveryPath: "/zh/kit",
+    successPath: "/",
+    failurePath: "/?auth=failed",
+    recoveryPath: "/",
     sso: {
       clientId: required("SWIMMER_OAUTH_CLIENT_ID"),
       cookiePassword,

@@ -170,8 +170,9 @@ test("API validates method, actor, slots, duplicates and guest bundles", async (
 });
 
 test("Swimmer config uses the maintained SSO contract and never a browser-supplied issuer", () => {
-  const config = swimmerAccountConfig({ SWIMMER_COOKIE_PASSWORD: "x".repeat(32), SWIMMER_BACKEND_URL: "https://backend.example", SWIMMER_PUBLISHABLE_KEY: "fixture-public-key", SWIMMER_OAUTH_CLIENT_ID: "public-fixture-client", SWIMMER_ACCOUNT_URL: "https://account.example" });
-  assert.equal(config.origin, "https://swimmerparty.vercel.app");
+  const config = swimmerAccountConfig({ NODE_ENV: "production", SWIMMER_COOKIE_PASSWORD: "x".repeat(32), SWIMMER_BACKEND_URL: "https://backend.example", SWIMMER_PUBLISHABLE_KEY: "fixture-public-key", SWIMMER_OAUTH_CLIENT_ID: "public-fixture-client", SWIMMER_ACCOUNT_URL: "https://account.example" });
+  assert.equal(config.origin, "https://swimmerparty.swiminai.com");
+  assert.equal(config.cookieName, "__Host-swimmerparty-session");
   assert.equal(config.sso?.clientId, "public-fixture-client");
   assert.equal(config.basePath, "/api/auth");
   assert.throws(() => swimmerAccountConfig({}), /account-not-configured/);

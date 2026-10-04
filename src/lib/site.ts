@@ -14,7 +14,7 @@ export const SITE = {
     zh: "SWIMMER PARTY 是一间合成演员工厂。我们设计、制造并授权原创 AI 演员——完整人设规格、表情组与表演区间，可直接选角。",
   } satisfies L,
   /** Canonical production origin. The translate proxy is derived from it. */
-  url: "https://swimmerparty.vercel.app",
+  url: "https://swimmerparty.swiminai.com",
   founded: "2026",
   contact: "casting@pieflow.app",
 } as const;

@@ -53,7 +53,7 @@ export const MACHINE_LOCALES = [
  * Build a Google translate-proxy URL for an absolute page URL.
  *
  * The proxy addresses a site as `host-with-dashes.translate.goog`, so
- * `swimmerparty.vercel.app` becomes `swimmerparty-vercel-app.translate.goog`.
+ * `swimmerparty.swiminai.com` becomes `swimmerparty-swiminai-com.translate.goog`.
  * We always translate FROM the English build: machine translation out of
  * English is markedly better than out of Chinese for every target here.
  */
