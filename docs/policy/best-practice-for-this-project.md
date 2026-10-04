@@ -6,7 +6,7 @@ status: stable
 canonical: true
 owner: project
 created: 2026-05-08
-last_reviewed: 2026-05-08
+last_reviewed: 2026-10-05
 domain: project-policy
 tags:
   - project-policy
@@ -59,7 +59,7 @@ SWIMMER PARTY 官网。它的真相只有一条：**名册上的人是产品，�
 
 ## 3D 纪律
 
-即使本项目不是 `web3d-default`，`src/three/**` 仍自愿遵守能力基线的第 1–4 条：
+即使本项目不是 `web3d-default`，`src/features/stage/**` 仍自愿遵守能力基线的第 1–4 条：
 单渲染器、显式色彩管线、恰好一次 sRGB 编码、DPR 钳制 + 移动端降档。
 细节与踩过的坑见根目录 `DESIGN.md`。
 

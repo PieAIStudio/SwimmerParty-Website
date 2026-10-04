@@ -20,7 +20,7 @@ UIKit 3.0 的 `grey` 风格是唯一控件风格，明暗为 `light` / `dark`。
 本站只把背景、前景、卡片、弱表面、分隔线与禁止色映射到 UIKit token。组件不写私有
 色板，不给演员分配专属颜色；3D 材质常量和导出文档底色是明确隔离的例外。
 
-拉丁标题为 Baloo 2，正文为 Geist；中文用系统字体，不加载中文字库、不描边补重。
+拉丁标题为 Baloo 2，正文为 Geist；中文使用 UIKit 默认的资源圆体，不覆盖字体 token、不描边补重。
 等宽字体只服务编号、版本和身高数字。英文界面句首大写；品牌、编号保持原样。
 
 | 类                     | 字号                            | 字重 / 行高                 |
@@ -42,15 +42,16 @@ UIKit 3.0 的 `grey` 风格是唯一控件风格，明暗为 `light` / `dark`。
 区块上下 64px / 96px，普通网格 24px。页头高 64px，只有页头允许 12px 背景模糊。
 
 卡片无描边、无阴影，使用 `bg-card`、18px 圆角及 20px / 24px 内边距。大展示面板
-26px 圆角。状态标签统一使用 UIKit `GameBadge`；可出演用 success，旧规格用 warning，其余用 neutral。
+26px 圆角。状态标签统一使用 UIKit `GameBadge`；可出演、拍摄中、已开放用 success，旧规格用 warning，其余用 neutral。
 `SectionHead` 按眉标、标题、说明排列，不加编号和装饰线。
 
 控件直接从 `@pieai/swimmer-ui-kit` 具名导入，不复制或改造 UIKit 的轮廓、阴影、按压形变。
 普通操作用 secondary `GameButton`；单张下载、主题、菜单、关闭用带 label 的
 `GameIconButton`。勾选、分段选择、模型下拉、提示和真实进度分别用 `GameCheckbox`、`GameSegmentedControl`、`GameSelect`、`LiquidPopover`、`GameToast`、`GameProgress`；图标统一用 `GameIcon`。
 
-每屏最多一个 primary：只给下载所选、开始下载或登录。弹窗出现时背景下载按钮退为
-secondary。导航始终是真链接加文字箭头，不用液体按钮。所有输入有明确可访问名称，
+每屏最多一个 primary：首页“免费领取演员资产”、档案页“打开资产库”和资产页“下载所选”。
+前两者用 `href` 与站内 `Link`；其余导航是文字链接。弹层打开时来源按钮保留 primary，面板内所有按钮都是 secondary。
+液体仅用于 primary、`LiquidPopover` 与 `GameProgress` 的液面；不使用额外液体特效。所有输入有明确可访问名称，
 菜单与弹窗支持键盘、Esc、关闭后回到触发位置；不依赖颜色表达状态。
 
 ## 角色图与资产页
@@ -71,7 +72,7 @@ secondary。导航始终是真链接加文字箭头，不用液体按钮。所�
 
 资产格全身 2:3，手机 / 中屏 / 桌面 2 / 3 / 4 列；头像 1:1，对应 3 / 4 / 6 列。
 间距 12px / 16px；标签不烤入图片。选择外框与图片内部区域分离，空格不放交互控件。
-工具条粘在页头下方；手机有选择时显示底部安全区操作条，桌面用工具条右侧操作区。
+工具条粘在页头下方；手机始终显示底部安全区操作条，页面留出等高空白；零选择点击下载只显示提示，桌面用工具条右侧操作区。
 选择按演员保存在 sessionStorage，关闭弹窗、刷新、切语言和登录后仍保留。
 
 游客单张取图有 30 秒窗口；文字复制和 JSON 不受限制。会员选择 ZIP、拼成一张或按模型
@@ -85,12 +86,12 @@ Reveal 为 12px / 480ms，同组每项延迟 60ms、最多六项；仅 `html.js`
 图片缩放为 300ms。减少动态时不位移、不缩放，3D 直接就位并静止。无滚动劫持、名册墙、
 自定义光标、跑马灯、噪点、扫描线或闪烁。
 
-`src/three/Stage.tsx` 只在首页和无图档案主视觉挂载一个透明 R3F Canvas；名册卡用 SVG。
+`src/features/stage/Stage.tsx` 只在首页和无图档案主视觉挂载一个透明 R3F Canvas；名册卡用 SVG。
 保留 ACES、一次 sRGB 输出，不加后处理。滚出视口或切换后台标签页后停渲染；DPR 封顶 1.5，粗指针设备进一步降到 1.35。
 相机保持稳定，构图通过场景位置调整；不使用 resize 会重置的临时 lookAt。
 
 材质 `MeshStandardMaterial`，roughness .9、metalness 0；light `#f3f1ec`、dark `#d9d5cd`，
-颜色只在 `src/three/palette.ts`。半球光强度 1 / .6；主光位置 [-2.5,4,3]、强度 1.6 / 1.1、
+颜色只在 `src/features/stage/palette.ts`。半球光强度 1 / .6；主光位置 [-2.5,4,3]、强度 1.6 / 1.1、
 1024 软阴影；补光 [3,2,2]、强度 .35。`ContactShadows` 位于地面，scale 3、blur 2.4、
 far 1.2，明暗不透明度 .35 / .55。部件在 1.4 秒内缓出就位，偏航不超过 ±12°。
 WebGL 初始化失败时退回 SVG，不留破损画布。视觉验收检查哑光体积、身体高光不过曝、
@@ -99,9 +100,9 @@ WebGL 初始化失败时退回 SVG，不留破损画布。视觉验收检查哑�
 ## 多语言与验收
 
 `SwimmerI18nKit 0.2.0` 负责 ICU；本站保留 `/zh`、`/en` 路由。消息只改
-`tools/gen-messages.py` 再生成目录和合同，结构化内容保持 `{ en, zh }`。
+`src/i18n/messages.source.ts`，运行 `pnpm messages:generate` 再检查消息合同，结构化内容保持 `{ en, zh }`。
 其他语言仅是明确标注、nofollow、不进 sitemap 的机器翻译外链。路由切换保留查询参数。
 
 改产品运行 `pnpm verify` 与 `pnpm exec swimmer-ui-check src`，改文档另跑
 `pnpm docs:check`。页面检查同时覆盖 390px / 1440px、light / dark、中 / 英、有图 / 无图。
-完整截图与执行报告留在本地 `.devspace-reports/swimmer-family-rebuild/`，不当作已部署证据。
+完整截图与执行报告留在本地 `.devspace-reports/healthy-refactor/`，不当作已部署证据。

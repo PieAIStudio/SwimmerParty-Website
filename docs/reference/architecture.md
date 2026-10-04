@@ -18,14 +18,31 @@ related:
 
 # Architecture
 
-页面路由在 `src/app`，API 入口在 `src/pages/api`；它们只组装公开入口，不承载领域规则。功能入口位于 `src/features/{stage,actors,assets,account}`，全站外壳位于 `src/site`，纯内容位于 `src/content`，通用小工具位于 `src/lib`。
+按功能组织实现，保留全站外壳和纯内容的独立归属。拒绝继续按组件、工具、服务端三层拆散资产功能：一次导出修改现在集中在 `features/assets`，不用跨六个目录追踪。
 
-本轮选择按功能分区，拒绝继续按 `components/lib/server/content` 分层。资产库的界面、导出、下载和清单在一次改动中经常同时变化，功能入口能让改动从一处开始追踪；入口文件保留稳定的公共导出，内部实现可以继续收敛。
+| 路径                         | 归属与入口                                                                                |
+| ---------------------------- | ----------------------------------------------------------------------------------------- |
+| `src/app`                    | 页面路由，组合内容、site 与 feature 公共入口                                              |
+| `src/pages/api`              | Node API 薄入口，调用 feature 的 `server/index.ts`                                        |
+| `src/features/actors`        | 名册与档案组件；`index.ts` 是服务端组合入口，`client.ts` 只导出可在浏览器复用的图片和白膜 |
+| `src/features/assets`        | 资产库 UI、词表读取、清单读取、ZIP、拼图、模型包；公共入口 `index.ts`                     |
+| `src/features/assets/server` | 下载、签名、存储和游客限速；API 入口 `index.ts`                                           |
+| `src/features/account`       | 客户端 Provider 和账号小块；`server/index.ts` 管理逐请求的 AuthKit 与模拟适配             |
+| `src/features/stage`         | 白黏土舞台；入口只公开 `StageMount`，重型组件动态加载                                     |
+| `src/site`                   | 页头、页脚、语言、明暗、文案复制与 Reveal                                                 |
+| `src/content`                | 双语演员、片单、立场、条款、站点常量与资产词表数据                                        |
+| `src/i18n`                   | 路由、ICU 合同、成对文案源                                                                |
+| `src/lib`                    | 文件下载、减少动态及通用服务端响应/运行模式守卫                                           |
+
+依赖方向是路由 → 功能/site → 内容/i18n/lib。跨 feature 使用公开入口；同 feature 内使用直接实现。演员的 `client.ts` 是实际构建需要的边界：若把读取文件的名册组件与浏览器组件混在唯一 barrel，Turbopack 会把 Node 依赖带入客户端。
+
+`tools/check-boundaries.ts` 接入 lint，检查相对及别名导入、跨 feature 深层引用、内容反向依赖及客户端直引 server。`src/i18n/server.ts` 使用 `server-only`。普通 Node API/入库模块还要被无框架的工具测试加载，保持无顶层网络副作用并由入口检查和构建验证隔离；未宣称每个 Node 文件都有 `server-only` 标记。
 
 ## 常见改动
 
-- 加演员：更新 `src/content/actors.ts` 与对应资产清单，档案和资产页通过 `features/actors`、`features/assets` 自动读取。
-- 加资产系列：更新 `src/content/asset-series.ts`、消息源和资产词表，再运行 `pnpm assets:todo`。
-- 加页面：在 `src/app/[locale]` 增加薄路由，从 `src/site`、`src/features` 和 `src/content` 组合。
+- **加演员**：新增 `src/content/actors/<slug>/profile.ts`，在 `actors/index.ts` 明确名册顺序；共享类型位于 `shared.ts`。无图时不伪造交付。入库工具生成该目录下的 `assets.json`；未交付演员允许没有清单文件。
+- **加资产系列**：改 `src/content/asset-series.json` 的词表，以及 `src/i18n/messages.source.ts` 的双语标签；检查 `features/assets/asset-series.ts` 的解析规则，运行 `pnpm messages:generate`、`pnpm assets:todo SP-03` 和工具测试。
+- **加页面**：在 `src/app/[locale]` 组合 feature/site；按需要更新 sitemap 和 `tools/shots.ts` 的目标列表。
+- **改导出或下载**：从 `features/assets` 或其 `server` 进入。公开 `/api/assets/**`、`/media/**` 路径不随内部目录改变。
 
-服务端适配器在 `src/server`，每个 API 请求按运行模式创建适配器；本地和 Vercel 的存储、限速、账号边界由现有运行时守卫保持。下一步可以把这些实现逐单元移入对应 feature 的 `server/`，入口契约不变。
+快速圈 `pnpm check`；阶段圈 `pnpm verify`；文档 `pnpm docs:check`。工具夹具在 `tools/fixtures`，浏览器夹具在 `e2e/fixtures`。截图用 `node tools/shots.ts <output-directory>`，像素比较用 `node tools/compare-shots.ts <before> <after>`；输出保留在忽略的 `.devspace-reports`。

@@ -1,0 +1,328 @@
+{
+  "version": 1,
+  "frames": {
+    "full": {
+      "width": 1536,
+      "height": 2304,
+      "crownPct": 5,
+      "solePct": 96
+    },
+    "head": {
+      "width": 1920,
+      "height": 1920,
+      "eyeLinePct": 42
+    }
+  },
+  "series": [
+    {
+      "id": "turnaround",
+      "frame": "full",
+      "required": true,
+      "perLook": false,
+      "prompt": "Framing: {direction}. Crown of the head at 5% and soles of the feet at 96% of the image height, horizontally centered.",
+      "slots": [
+        {
+          "key": "front",
+          "required": true,
+          "direction": "full body, facing the camera directly, relaxed natural standing pose, arms hanging slightly away from the body"
+        },
+        {
+          "key": "three-quarter",
+          "required": true,
+          "direction": "full body, body and face turned 45 degrees toward the character's right, relaxed standing pose"
+        },
+        {
+          "key": "side",
+          "required": true,
+          "direction": "full body, exact profile facing left, relaxed standing pose"
+        },
+        {
+          "key": "back",
+          "required": true,
+          "direction": "full body, facing directly away from the camera, relaxed standing pose"
+        }
+      ]
+    },
+    {
+      "id": "face",
+      "frame": "head",
+      "required": true,
+      "perLook": false,
+      "prompt": "Framing: {direction}. Eyes at 42% of the image height, horizontally centered.",
+      "slots": [
+        {
+          "key": "front",
+          "required": true,
+          "direction": "head and shoulders, facing the camera directly, neutral relaxed expression"
+        },
+        {
+          "key": "three-quarter",
+          "required": true,
+          "direction": "head and shoulders, head turned 45 degrees toward the character's right, neutral relaxed expression"
+        },
+        {
+          "key": "side",
+          "required": true,
+          "direction": "head and shoulders, exact profile facing left, neutral relaxed expression"
+        }
+      ]
+    },
+    {
+      "id": "expression",
+      "frame": "head",
+      "required": true,
+      "perLook": false,
+      "prompt": "Framing: head and shoulders, facing the camera directly, eyes at 42% of the image height, horizontally centered. Expression: {direction}.",
+      "slots": [
+        {
+          "key": "neutral",
+          "required": true,
+          "tier": "core",
+          "direction": "relaxed resting face, mouth closed, calm open eyes"
+        },
+        {
+          "key": "smile",
+          "required": true,
+          "tier": "core",
+          "direction": "gentle closed-mouth smile with a slight lift of the cheeks"
+        },
+        {
+          "key": "laugh",
+          "required": true,
+          "tier": "core",
+          "direction": "big open-mouth laugh, eyes squeezed into crescents, head tipped slightly back"
+        },
+        {
+          "key": "sad",
+          "required": true,
+          "tier": "core",
+          "direction": "downturned mouth, inner eyebrows raised, glossy eyes, no tears"
+        },
+        {
+          "key": "cry",
+          "required": true,
+          "tier": "core",
+          "direction": "crying with visible tears, mouth open and trembling, eyebrows pulled up and together"
+        },
+        {
+          "key": "annoyed",
+          "required": true,
+          "tier": "core",
+          "direction": "irritated frown, lips pressed together, eyes narrowed"
+        },
+        {
+          "key": "angry",
+          "required": true,
+          "tier": "core",
+          "direction": "furious, eyebrows pulled down hard, shouting with teeth visible, nostrils flared"
+        },
+        {
+          "key": "surprised",
+          "required": true,
+          "tier": "core",
+          "direction": "eyebrows raised high, eyes wide open, mouth open in a round O"
+        },
+        {
+          "key": "scared",
+          "required": true,
+          "tier": "core",
+          "direction": "frightened, eyes wide with whites showing, eyebrows up and together, mouth stretched sideways"
+        },
+        {
+          "key": "disgusted",
+          "required": true,
+          "tier": "core",
+          "direction": "nose wrinkled, upper lip raised, head pulling back slightly"
+        },
+        {
+          "key": "embarrassed",
+          "required": true,
+          "tier": "core",
+          "direction": "awkward embarrassed grin, eyes glancing to the side, shoulders slightly raised"
+        },
+        {
+          "key": "tired",
+          "required": true,
+          "tier": "core",
+          "direction": "exhausted, heavy half-closed eyelids, slack mouth, slight slump"
+        },
+        {
+          "key": "speaking",
+          "required": true,
+          "tier": "technical",
+          "direction": "mid-sentence on an open 'ah' sound, teeth and tongue naturally visible"
+        },
+        {
+          "key": "eyes-closed",
+          "required": true,
+          "tier": "technical",
+          "direction": "eyes gently closed, relaxed neutral face"
+        },
+        {
+          "key": "worried",
+          "required": false,
+          "tier": "extended",
+          "direction": "eyebrows pinched upward, lips tight, uneasy eyes"
+        },
+        {
+          "key": "skeptical",
+          "required": false,
+          "tier": "extended",
+          "direction": "one eyebrow raised, sideways glance, slight frown"
+        },
+        {
+          "key": "smug",
+          "required": false,
+          "tier": "extended",
+          "direction": "half-lidded eyes, one-sided satisfied smirk"
+        },
+        {
+          "key": "contempt",
+          "required": false,
+          "tier": "extended",
+          "direction": "one corner of the mouth pulled up and back, chin slightly raised"
+        },
+        {
+          "key": "confused",
+          "required": false,
+          "tier": "extended",
+          "direction": "head tilted, uneven eyebrows, mouth slightly open"
+        },
+        {
+          "key": "thinking",
+          "required": false,
+          "tier": "extended",
+          "direction": "eyes looking up and to the side, lips pursed"
+        },
+        {
+          "key": "determined",
+          "required": false,
+          "tier": "extended",
+          "direction": "eyebrows lowered and steady, jaw set, direct gaze into the camera"
+        },
+        {
+          "key": "shy",
+          "required": false,
+          "tier": "extended",
+          "direction": "eyes lowered, small closed-mouth smile, head tucked slightly"
+        },
+        {
+          "key": "pain",
+          "required": false,
+          "tier": "extended",
+          "direction": "wincing, eyes squeezed shut, teeth clenched"
+        },
+        {
+          "key": "sleepy",
+          "required": false,
+          "tier": "extended",
+          "direction": "drooping eyelids, the start of a yawn"
+        },
+        {
+          "key": "awkward-smile",
+          "required": false,
+          "tier": "extended",
+          "direction": "forced polite smile that does not reach the eyes"
+        },
+        {
+          "key": "deadpan",
+          "required": false,
+          "tier": "extended",
+          "direction": "completely flat expression, direct stare, no emotion"
+        }
+      ]
+    },
+    {
+      "id": "wardrobe",
+      "frame": "full",
+      "required": false,
+      "perLook": true,
+      "prompt": "Wardrobe: {look}. Framing: {direction}. Crown of the head at 5% and soles of the feet at 96% of the image height, horizontally centered.",
+      "slots": [
+        {
+          "key": "front",
+          "required": false,
+          "direction": "full body, facing the camera directly, relaxed natural standing pose"
+        },
+        {
+          "key": "three-quarter",
+          "required": false,
+          "direction": "full body, turned 45 degrees toward the character's right, relaxed standing pose"
+        },
+        {
+          "key": "side",
+          "required": false,
+          "direction": "full body, exact profile facing left, relaxed standing pose"
+        },
+        {
+          "key": "back",
+          "required": false,
+          "direction": "full body, facing directly away from the camera, relaxed standing pose"
+        }
+      ]
+    },
+    {
+      "id": "pose",
+      "frame": "full",
+      "required": false,
+      "perLook": false,
+      "prompt": "Framing: {direction}. The whole figure inside the frame with a small margin, horizontally centered.",
+      "slots": [
+        {
+          "key": "walk",
+          "required": false,
+          "direction": "full body at a three-quarter angle, mid-stride walking, natural arm swing"
+        },
+        {
+          "key": "run",
+          "required": false,
+          "direction": "full body at a three-quarter angle, running mid-stride, arms pumping"
+        },
+        {
+          "key": "sit",
+          "required": false,
+          "direction": "full body at a three-quarter angle, sitting on a simple plain stool, hands resting on the knees"
+        },
+        {
+          "key": "point",
+          "required": false,
+          "direction": "full body at a three-quarter angle, pointing forward with the right hand"
+        },
+        {
+          "key": "arms-crossed",
+          "required": false,
+          "direction": "full body at a three-quarter angle, standing with arms crossed"
+        },
+        {
+          "key": "phone",
+          "required": false,
+          "direction": "full body at a three-quarter angle, holding a smartphone to the ear and talking"
+        }
+      ]
+    },
+    {
+      "id": "detail",
+      "frame": "head",
+      "required": false,
+      "perLook": false,
+      "prompt": "Framing: close-up, {direction}, centered.",
+      "slots": [
+        {
+          "key": "hands",
+          "required": false,
+          "direction": "both hands, palms and backs visible, skin and nails matching the character"
+        },
+        {
+          "key": "hair-back",
+          "required": false,
+          "direction": "the back of the head showing the full hairstyle"
+        },
+        {
+          "key": "prop",
+          "required": false,
+          "direction": "the character's signature prop on its own"
+        }
+      ]
+    }
+  ]
+}

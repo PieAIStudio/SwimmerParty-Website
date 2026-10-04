@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-04T12:52:37.954Z
+generated_at: 2026-10-04T16:19:42.288Z
 generator_version: doc-gov@0.14.2
 docs_count: 20
 docs:
@@ -65,7 +65,7 @@ docs:
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-05-08
+    last_reviewed: 2026-10-05
     pinned: true
   - id: POLICY-SHARED-AI-IN-THE-LOOP
     path: docs/policy/shared-rules/ai-in-the-loop.md
@@ -142,5 +142,5 @@ docs:
     type: spec
     status: active
     canonical: true
-    last_reviewed: 2026-10-03
+    last_reviewed: 2026-10-05
     pinned: false

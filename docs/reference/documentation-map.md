@@ -16,41 +16,17 @@ related: []
 
 # Documentation Map
 
-This is a human and AI map of the governed document shelves. It is not the AI startup entrypoint; `AGENTS.md` is.
+AI 入口是根目录 `AGENTS.md`；此页列出当前项目文档，不复制治理规则。
 
-## AI Startup Source
+| 文档                                                                    | 角色                         |
+| ----------------------------------------------------------------------- | ---------------------------- |
+| [架构](architecture.md)                                                 | 目录、依赖方向与常见改动入口 |
+| [上线手册](release.md)                                                  | 发布前置条件、步骤与回滚     |
+| [当前工作](execution/current-work.md)                                   | 当前状态和下一步             |
+| [项目规则](../policy/best-practice-for-this-project.md)                 | 内容诚实、产品边界与验证     |
+| [并入家族 ADR](../adr/2026-10-03-join-swimmer-family.md)                | 已采纳决定与取舍理由         |
+| [资产库 spec](../specs/active/actor-asset-library.md)                   | 现行资产契约                 |
+| [健康重构计划](../plans/active/2026-10-04-healthy-site-refactor.md)     | 本轮执行与审阅入口           |
+| [家族重建记录](../plans/completed/2026-10-03-swimmer-family-rebuild.md) | 历史批准与实现出处           |
 
-Use `AGENTS.md` for startup reading. It should point agents to:
-
-- `docs/policy/*.md`
-- `docs/governance/boundary.md`
-- `docs/governance/ssot-v1.1.md`
-- `docs/governance/doc-agent-rules.md`
-- `docs/governance/doc-types.md`
-- `docs/governance/agents-routing/<selected-profile>-v1.1.md`
-- `docs/reference/execution/current-work.md`
-
-## Areas
-
-| Area                        | Purpose                                                                         |
-| --------------------------- | ------------------------------------------------------------------------------- |
-| `docs/policy/`              | Project policy and AI development rules                                         |
-| `docs/adr/`                 | Governed durable decision records                                               |
-| `docs/specs/active/`        | Active requirements                                                             |
-| `docs/specs/completed/`     | Completed specs                                                                 |
-| `docs/plans/active/`        | Active implementation plans                                                     |
-| `docs/plans/completed/`     | Completed execution records                                                     |
-| `docs/reference/learnings/` | Governed reusable learning references, recalled only when relevant              |
-| `docs/canon/`               | Durable project truth                                                           |
-| `docs/reference/`           | Guides and references                                                           |
-| `docs/archive/`             | Retired history                                                                 |
-| `docs/governance/`          | Governance core rules, SSOT, agents routing, doc types, templates, and manifest |
-
-Markdown outside `docs/**` is not governed by default. Product prompts, assets,
-project-package canon, generated media notes, and source-package files stay in
-their product/workbench structure unless this project explicitly opts them into
-doc-gov.
-
-Optional skills may create `docs/brainstorms/**` or `docs/pulse-reports/**` as
-external artifacts. Capture Learning writes governed references under
-`docs/reference/learnings/**`.
+根目录 `README.md` 面向使用者，`DESIGN.md` 是现行设计来源。`docs/governance/` 与 `docs/policy/shared-rules/` 由 PGS 管理，按 AGENTS 路由按需阅读。`src/content/` 是产品内容，`brainstorms/` 是原始创作材料；它们不属于受治理文档。自动生成的完整索引为 `docs/governance/MANIFEST.yml`。

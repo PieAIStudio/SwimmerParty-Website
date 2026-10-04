@@ -35,12 +35,7 @@ function messages(error: unknown): string {
 }
 
 test("the vocabulary is exactly the approved appendix, with 21 unique core slots", async () => {
-  const plan = await readFile(
-    new URL("../docs/plans/completed/2026-10-03-swimmer-family-rebuild.md", import.meta.url),
-    "utf8",
-  );
-  const appendix = plan.slice(plan.indexOf("## 附录 A："), plan.indexOf("## 附录 B："));
-  const expected = JSON.parse(appendix.match(/```json\n([\s\S]+?)\n```/)![1]);
+  const expected = JSON.parse(await readFile(new URL("./fixtures/approved-vocabulary.json", import.meta.url), "utf8"));
   const actual = JSON.parse(
     await readFile(new URL("../src/content/asset-series.json", import.meta.url), "utf8"),
   );

@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-10-03
-last_reviewed: 2026-10-03
+last_reviewed: 2026-10-05
 domain: product
 tags:
   - assets
@@ -41,11 +41,11 @@ related:
 
 ## 1. 三层模型
 
-| 层   | 是什么                                               | 谁写                |
-| ---- | ---------------------------------------------------- | ------------------- |
-| 母版 | 单张、透明底 PNG、无文字、规范尺寸                   | 生产流程（第 5 节） |
-| 档案 | `src/content/actors.ts` 中的双语资料（沿用现有结构） | 人                  |
-| 导出 | 网页预览、单张下载、ZIP、拼图、模型参考包            | 站点自动派生        |
+| 层   | 是什么                                                              | 谁写                |
+| ---- | ------------------------------------------------------------------- | ------------------- |
+| 母版 | 单张、透明底 PNG、无文字、规范尺寸                                  | 生产流程（第 5 节） |
+| 档案 | `src/content/actors/<slug>/profile.ts` 中的双语资料（沿用现有结构） | 人                  |
+| 导出 | 网页预览、单张下载、ZIP、拼图、模型参考包                           | 站点自动派生        |
 
 ## 2. 资产系列框架
 
@@ -95,11 +95,11 @@ related:
 
 ## 4. 数据与多语言
 
-- 演员档案留在 `src/content/actors.ts`（`L = { en, zh }` 与双语规格行），新增可选
+- 演员档案留在 `src/content/actors/<slug>/profile.ts`（`L = { en, zh }` 与双语规格行），新增可选
   `heightCm`（身高刻度用）；移除 `plate`、`views`、`accent`。
 - 词表：`src/content/asset-series.json`（key、尺寸、必交、构图、英文指导），类型与
-  读取函数在 `src/content/asset-series.ts`。
-- 资产清单：`src/content/assets/<slug>.json`，入库脚本生成，不手改。每项记录
+  读取函数在 `src/features/assets/asset-series.ts`。
+- 资产清单：`src/content/actors/<slug>/assets.json`，入库脚本生成，不手改。每项记录
   `slot`、`series`、`key`、`look`、`conformance`（`v1` / `legacy`）、`version`、
   `width`、`height`、`bytes`、`sha256`、`format`、`object`（母版对象键）、`preview`、`thumb`。
 - 所有界面文字（系列名、格位名、按钮、提示）进 I18nKit 目录，源头是
@@ -129,7 +129,7 @@ related:
 - 不选 Supabase Storage：它的下载流量额度（Pro 每月 250 GB）是整个组织共享的，
   University、Directing 等产品都在用；资产下载一旦暴涨，默认的花费上限会让整个组织
   受限，连累其他产品。加存储桶还要走 SwimmerBackend 的注册与门禁。
-- 不选 Cloudflare R2：下载流量免费，但要再开一个服务。只有下载量大到每月几 TB 时才
+- 不选额外的 Cloudflare 对象存储：下载流量免费，但要再开一个服务。只有下载量大到每月几 TB 时才
   值得迁移；存储走适配器，到时只换一个实现。
 
 ## 7. 访问分级与引流
@@ -149,11 +149,11 @@ related:
 
 ## 8. 导出
 
-| 方式       | 结果                                                                                          |
-| ---------- | --------------------------------------------------------------------------------------------- |
-| 原图打包   | 每张一个透明 PNG + `character.json` + `README-for-AI.txt` + `LICENSE.txt`                     |
-| 拼成一张   | 选中图自动排成一张 16:9 PNG，可选标签语言与底色                                               |
-| 按模型打包 | GPT Image 2.5 ≤16 张原图；Veo 3.1 恰好 3 张（正脸 + 转面拼图 + 表情拼图）；Seedance 2.0 ≤9 张 |
+| 方式       | 结果                                                                                                |
+| ---------- | --------------------------------------------------------------------------------------------------- |
+| 原图打包   | 每张保留实际原始格式（v1 PNG，legacy WebP）+ `character.json` + `README-for-AI.txt` + `LICENSE.txt` |
+| 拼成一张   | 选中图自动排成一张 16:9 PNG，可选标签语言与底色                                                     |
+| 按模型打包 | GPT Image 2.5 ≤16 张原图；Veo 3.1 恰好 3 张（正脸 + 转面拼图 + 表情拼图）；Seedance 2.0 ≤9 张       |
 
 参考图上限（2026-10）：GPT Image 2.5 为 16（OpenAI 文档）；Veo 3.1 为 3（Google 文档
 "up to three asset images of a single person"）；Seedance 2.0 为 9（第三方资料，待官方
@@ -170,5 +170,4 @@ related:
 ## 待定
 
 1. Seedance、可灵的官方参考图上限。
-2. 是否把 University 任务 16 提前，以便 UIKit 3.0 / AuthKit 0.8 更早联合发布。
-3. 是否启用品牌域名（当前 `swimmerparty.vercel.app`）。
+2. 真实 SSO、Blob、WAF 与移动实机验收。品牌依赖已锁定 UIKit `3.0.0-rc.1` / AuthKit `0.8.0-rc.1`；正式域名是 `https://swimmerparty.swiminai.com`，上线操作见 [release.md](../../reference/release.md)。
