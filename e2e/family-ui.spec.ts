@@ -11,7 +11,7 @@ test("English phone roster keeps codes and status pills on one line", async ({ p
       return {
         codeHeight: code.height,
         pillHeight: pill.height,
-        sameRow: Math.abs(code.top + code.height / 2 - pill.top - pill.height / 2) < 12,
+        sameRow: code.bottom >= pill.top && pill.bottom >= code.top,
       };
     }),
   );

@@ -178,6 +178,10 @@ export function AssetSelectionProvider({
     }
   }
   function showInvite() {
+    const trigger = [...document.querySelectorAll<HTMLElement>("[data-selection-bar] button")].find(
+      (node) => node.getClientRects().length > 0,
+    );
+    if (trigger) sourceRef.current = trigger;
     account.event("sign_in_prompt");
     setInvite(true);
   }
