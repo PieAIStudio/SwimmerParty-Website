@@ -17,7 +17,6 @@ import { characterProfile } from "@/lib/asset-profile";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { GUEST_COOLDOWN_KEY, GUEST_DOWNLOAD_WINDOW_SECONDS } from "@/lib/downloads";
 import { GameBadge, GameButton, GameToast } from "@pieai/swimmer-ui-kit";
-import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { useAccount } from "../AccountProvider";
 import { MemberExportDialog } from "./MemberExportDialog";
 
@@ -216,33 +215,35 @@ export function AssetSelectionProvider({
         className="fixed bottom-4 left-4 z-50 block h-px w-px"
         aria-hidden="true"
       />
-      <LiquidPopover
-        open={invite}
-        onOpenChange={(open) => {
-          if (!open) setInvite(false);
-        }}
-        source={sourceRef}
-        title={t("assets.signInTitle")}
-      >
-        <p>{t("assets.signInBody")}</p>
-        <ul className="mt-4 flex flex-wrap gap-2">
-          {SWIMMER_PRODUCTS.map((product) => (
-            <li key={product.id}>
-              <GameBadge tone="neutral">{product.name}</GameBadge>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-6 flex justify-end gap-3">
-          <GameButton onClick={() => setInvite(false)}>{t("assets.notNow")}</GameButton>
-          <GameButton
-            variant="secondary"
-            disabled={busy || account.busy || account.loading}
-            onClick={signIn}
-          >
-            {t("assets.signIn")}
-          </GameButton>
-        </div>
-      </LiquidPopover>
+      {invite ? (
+        <dialog
+          open
+          aria-labelledby="asset-sign-in-title"
+          className="fixed inset-x-5 top-24 z-[60] mx-auto max-w-xl rounded-[var(--game-ui-radius-card)] bg-card p-6 shadow-[var(--game-ui-shadow-raised)]"
+        >
+          <h2 id="asset-sign-in-title" className="font-display text-xl font-bold">
+            {t("assets.signInTitle")}
+          </h2>
+          <p>{t("assets.signInBody")}</p>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {SWIMMER_PRODUCTS.map((product) => (
+              <li key={product.id}>
+                <GameBadge tone="neutral">{product.name}</GameBadge>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 flex justify-end gap-3">
+            <GameButton onClick={() => setInvite(false)}>{t("assets.notNow")}</GameButton>
+            <GameButton
+              variant="secondary"
+              disabled={busy || account.busy || account.loading}
+              onClick={signIn}
+            >
+              {t("assets.signIn")}
+            </GameButton>
+          </div>
+        </dialog>
+      ) : null}
       {pack ? (
         <MemberExportDialog
           actor={actor}
