@@ -50,6 +50,7 @@ UIKit 3.0 的 `grey` 风格是唯一控件风格，明暗为 `light` / `dark`。
 `GameIconButton`。勾选、分段选择、模型下拉、提示和真实进度分别用 `GameCheckbox`、`GameSegmentedControl`、`GameSelect`、`LiquidPopover`、`GameToast`、`GameProgress`；图标统一用 `GameIcon`。
 
 每屏最多一个 primary：首页“免费领取演员资产”、档案页“打开资产库”和资产页“下载所选”。
+首页手机文字链接放到主按钮下方；长用途标签限制在容器内，完整文字仍可从提示和辅助技术读取。
 前两者用 `href` 与站内 `Link`；其余导航是文字链接。弹层打开时来源按钮保留 primary，面板内所有按钮都是 secondary。
 液体仅用于 primary、`LiquidPopover` 与 `GameProgress` 的液面；不使用额外液体特效。所有输入有明确可访问名称，
 菜单与弹窗支持键盘、Esc、关闭后回到触发位置；不依赖颜色表达状态。

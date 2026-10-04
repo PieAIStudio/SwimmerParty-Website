@@ -23,3 +23,13 @@ test("English phone roster keeps codes and status pills on one line", async ({ p
     expect(card.sameRow).toBe(true);
   }
 });
+
+test("long casting labels stay within a 390px dossier", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/en/actors/qi-man");
+  await page.evaluate(() => document.fonts.ready);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+  await expect(
+    page.getByText("Ads: convenience retail / drinks / payments / city services", { exact: true }),
+  ).toBeVisible();
+});

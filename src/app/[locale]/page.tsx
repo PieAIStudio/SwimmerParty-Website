@@ -48,14 +48,16 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
             ))}
           </h1>
           <p className="sp-lead mt-6 max-w-[32rem] text-muted-foreground">{t("home.heroBody")}</p>
-          <div className="mt-8 flex flex-wrap items-center gap-6">
+          <div className="mt-8 flex flex-col items-start gap-6 sm:flex-row sm:flex-wrap sm:items-center">
             <GameButton variant="primary" href="/kit" linkComponent={Link}>
               {t("home.ctaAssets")}
             </GameButton>
-            <TextLink href="/actors">{t("home.ctaRoster")}</TextLink>
-            <TextLink href="/casting" className="text-muted-foreground">
-              {t("home.ctaBook")}
-            </TextLink>
+            <div className="flex flex-wrap items-center gap-6">
+              <TextLink href="/actors">{t("home.ctaRoster")}</TextLink>
+              <TextLink href="/casting" className="text-muted-foreground">
+                {t("home.ctaBook")}
+              </TextLink>
+            </div>
           </div>
         </div>
         <div className="sp-panel sp-sweep relative h-[56vh] min-h-80 lg:col-span-7 lg:h-[68vh] lg:max-h-[760px]">

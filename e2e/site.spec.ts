@@ -74,8 +74,10 @@ for (const [route, label, target] of [
 ]) {
   test(`one linked primary CTA on ${route}`, async ({ page }) => {
     await page.goto(route);
-    await expect(page.locator(".game-ui-button--primary:visible")).toHaveCount(1);
-    await page.getByRole("link", { name: label, exact: true }).click();
+    const primary = page.locator(".game-ui-button--primary:visible");
+    await expect(primary).toHaveCount(1);
+    await expect(primary).toHaveAccessibleName(label);
+    await primary.click();
     await expect(page).toHaveURL(new RegExp(`${target}$`));
     await expect(page.locator(".sp-pill")).toHaveCount(0);
   });

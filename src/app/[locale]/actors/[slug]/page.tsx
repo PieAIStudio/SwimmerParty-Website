@@ -125,8 +125,13 @@ export default async function ActorPage({ params }: Props) {
           <p className="sp-label mt-6 text-muted-foreground">{t("actor.castFor")}</p>
           <ul className="mt-3 flex flex-wrap gap-2">
             {actor.castFor[locale].map((value) => (
-              <li key={value}>
-                <GameBadge tone="neutral">{value}</GameBadge>
+              <li key={value} className="max-w-full">
+                {/* UIKit rc.1 badges are single-line; long casting labels need a bounded text child. */}
+                <GameBadge tone="neutral" className="max-w-full">
+                  <span className="truncate" title={value}>
+                    {value}
+                  </span>
+                </GameBadge>
               </li>
             ))}
           </ul>

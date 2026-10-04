@@ -36,7 +36,7 @@ related:
 
 依赖方向是路由 → 功能/site → 内容/i18n/lib。跨 feature 使用公开入口；同 feature 内使用直接实现。演员的 `client.ts` 是实际构建需要的边界：若把读取文件的名册组件与浏览器组件混在唯一 barrel，Turbopack 会把 Node 依赖带入客户端。
 
-`tools/check-boundaries.ts` 接入 lint，检查相对及别名导入、跨 feature 深层引用、内容反向依赖及客户端直引 server。`src/i18n/server.ts` 使用 `server-only`。普通 Node API/入库模块还要被无框架的工具测试加载，保持无顶层网络副作用并由入口检查和构建验证隔离；未宣称每个 Node 文件都有 `server-only` 标记。
+`tools/check-boundaries.ts` 接入 lint，检查相对及别名导入、跨 feature 深层引用、内容反向依赖及客户端直引 server。`src/i18n/server.ts` 与演员/资产的服务端组件入口使用 `server-only`。普通 Node API/入库模块还要被无框架的工具测试加载，保持无顶层网络副作用并由入口检查和构建验证隔离；未宣称每个 Node 文件都有 `server-only` 标记。
 
 ## 常见改动
 

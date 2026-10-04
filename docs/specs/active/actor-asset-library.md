@@ -103,7 +103,7 @@ related:
   `slot`、`series`、`key`、`look`、`conformance`（`v1` / `legacy`）、`version`、
   `width`、`height`、`bytes`、`sha256`、`format`、`object`（母版对象键）、`preview`、`thumb`。
 - 所有界面文字（系列名、格位名、按钮、提示）进 I18nKit 目录，源头是
-  `tools/gen-messages.py`；`@pieai/swimmer-i18n-kit` 升到 0.2.0。
+  `src/i18n/messages.source.ts`；`@pieai/swimmer-i18n-kit` 升到 0.2.0。
 - 给模型的文字（种子、表演指导、参考包说明）以英文为准，不随界面语言变。
 - 图上永远没有字；"给人看"的拼图可选加中文或英文标签，由浏览器在导出时画上。
 
