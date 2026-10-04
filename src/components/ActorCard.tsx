@@ -37,6 +37,7 @@ export async function ActorCard({ actor, href }: { actor: Actor; href?: string }
       <div className="mt-3.5 flex flex-wrap items-center justify-between gap-2">
         <span className="sp-code whitespace-nowrap text-muted-foreground">{actor.code}</span>
         <GameBadge
+          data-actor-status
           tone={actor.status === "active" ? "success" : "neutral"}
           className="whitespace-nowrap"
         >

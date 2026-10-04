@@ -7,10 +7,12 @@ test("English phone roster keeps codes and status pills on one line", async ({ p
   const cards = await page.locator("[data-actor-card]").evaluateAll((nodes) =>
     nodes.map((node) => {
       const code = node.querySelector(".sp-code")!.getBoundingClientRect();
-      const pill = node.querySelector(".game-ui-badge")!.getBoundingClientRect();
+      const pills = node.querySelectorAll(".game-ui-badge");
+      const pill = pills[pills.length - 1]!.getBoundingClientRect();
       return {
         codeHeight: code.height,
         pillHeight: pill.height,
+        sameRow: Math.abs(code.top + code.height / 2 - (pill.top + pill.height / 2)) < 2,
       };
     }),
   );
@@ -18,6 +20,7 @@ test("English phone roster keeps codes and status pills on one line", async ({ p
   for (const card of cards) {
     expect(card.codeHeight).toBeLessThan(20);
     expect(card.pillHeight).toBe(24);
+    expect(card.sameRow).toBe(true);
   }
 });
 

@@ -48,6 +48,10 @@ test("guest downloads a named original, then receives private 429 and a live coo
     .click();
   await expect(page.getByText("University", { exact: true })).toBeVisible();
   await expect(page.getByText("Directing", { exact: true })).toBeVisible();
+  await expect(page.getByRole("dialog")).toContainText("Take the whole set with a Swimmer account");
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("dialog")).not.toBeVisible();
+  await expect(page.locator("[data-download-selected]:visible")).toBeFocused();
 });
 
 test("mock sign-in preserves selection and produces a real ZIP with originals, bilingual profile, AI notes and the full licence", async ({

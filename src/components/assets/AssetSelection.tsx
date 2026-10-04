@@ -17,6 +17,7 @@ import { characterProfile } from "@/lib/asset-profile";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { GUEST_COOLDOWN_KEY, GUEST_DOWNLOAD_WINDOW_SECONDS } from "@/lib/downloads";
 import { GameBadge, GameButton, GameToast } from "@pieai/swimmer-ui-kit";
+import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { useAccount } from "../AccountProvider";
 import { MemberExportDialog } from "./MemberExportDialog";
 
@@ -63,7 +64,6 @@ export function AssetSelectionProvider({
     null,
   );
   const sourceRef = useRef<HTMLElement>(null);
-  const inviteAnchorRef = useRef<HTMLSpanElement>(null);
   const selected = new Set(state.slug === actor.slug ? state.slots : []);
   const storageKey = `sp-asset-selection:${actor.slug}`;
 
@@ -178,9 +178,16 @@ export function AssetSelectionProvider({
     }
   }
   function showInvite() {
-    if (inviteAnchorRef.current) sourceRef.current = inviteAnchorRef.current;
     account.event("sign_in_prompt");
     setInvite(true);
+  }
+  function focusInviteFromCooldown() {
+    const trigger = [...document.querySelectorAll<HTMLElement>("[data-download-selected]")].find(
+      (node) => node.getClientRects().length > 0,
+    );
+    if (trigger) sourceRef.current = trigger;
+    setNotice(null);
+    showInvite();
   }
   async function signIn() {
     try {
@@ -210,40 +217,35 @@ export function AssetSelectionProvider({
       }}
     >
       {children}
-      <span
-        ref={inviteAnchorRef}
-        className="fixed bottom-4 left-4 z-50 block h-px w-px"
-        aria-hidden="true"
-      />
-      {invite ? (
-        <dialog
-          open
-          aria-labelledby="asset-sign-in-title"
-          className="fixed inset-x-5 top-24 z-[60] mx-auto max-w-xl rounded-[var(--game-ui-radius-card)] bg-card p-6 shadow-[var(--game-ui-shadow-raised)]"
-        >
-          <h2 id="asset-sign-in-title" className="font-display text-xl font-bold">
-            {t("assets.signInTitle")}
-          </h2>
-          <p>{t("assets.signInBody")}</p>
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {SWIMMER_PRODUCTS.map((product) => (
-              <li key={product.id}>
-                <GameBadge tone="neutral">{product.name}</GameBadge>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6 flex justify-end gap-3">
-            <GameButton onClick={() => setInvite(false)}>{t("assets.notNow")}</GameButton>
-            <GameButton
-              variant="secondary"
-              disabled={busy || account.busy || account.loading}
-              onClick={signIn}
-            >
-              {t("assets.signIn")}
-            </GameButton>
-          </div>
-        </dialog>
-      ) : null}
+      <LiquidPopover
+        open={invite}
+        onOpenChange={(open) => {
+          if (!open) setInvite(false);
+        }}
+        source={sourceRef}
+        title={t("assets.signInTitle")}
+      >
+        <p>{t("assets.signInBody")}</p>
+        <ul className="mt-4 flex flex-wrap gap-2">
+          {SWIMMER_PRODUCTS.map((product) => (
+            <li key={product.id}>
+              <GameBadge tone="neutral">{product.name}</GameBadge>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-6 flex justify-end gap-3">
+          <GameButton variant="secondary" onClick={() => setInvite(false)}>
+            {t("assets.notNow")}
+          </GameButton>
+          <GameButton
+            variant="secondary"
+            disabled={busy || account.busy || account.loading}
+            onClick={signIn}
+          >
+            {t("assets.signIn")}
+          </GameButton>
+        </div>
+      </LiquidPopover>
       {pack ? (
         <MemberExportDialog
           actor={actor}
@@ -269,17 +271,7 @@ export function AssetSelectionProvider({
                 <p>
                   {t("assets.guestCooldown", { seconds: GUEST_DOWNLOAD_WINDOW_SECONDS, remaining })}
                 </p>
-                <GameButton
-                  ref={(node) => {
-                    sourceRef.current = node;
-                  }}
-                  onClick={() => {
-                    setNotice(null);
-                    showInvite();
-                  }}
-                >
-                  {t("assets.signIn")}
-                </GameButton>
+                <GameButton onClick={focusInviteFromCooldown}>{t("assets.signIn")}</GameButton>
               </>
             ) : (
               t(
@@ -313,6 +305,7 @@ export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
       </GameButton>
       <GameButton
         variant="primary"
+        data-download-selected
         disabled={busy}
         onClick={(event) => {
           sourceRef.current = event.currentTarget;
