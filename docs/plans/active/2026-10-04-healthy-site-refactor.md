@@ -35,7 +35,7 @@ related:
 衡量标准是：下一个人（或 AI）改一个功能时，需要读的文件更少、更确定该改哪里、改完怎么验证一目了然。
 
 本计划由 Codex 一次执行到底。前一份计划
-[PLAN-SWIMMER-FAMILY-REBUILD](2026-10-03-swimmer-family-rebuild.md) 的第 2、3 节
+[PLAN-SWIMMER-FAMILY-REBUILD](../completed/2026-10-03-swimmer-family-rebuild.md) 的第 2、3 节
 （设计系统与逐页设计）**仍然是设计规则**，本计划第 3 节列出的覆盖项除外。
 
 ## 0. 执行规则
@@ -394,23 +394,23 @@ src/
 
 按技能的"知识维护"方法进行：先认定每份文档的权威地位和生命周期，再决定动作。
 
-| 文档                                                     | 动作                                                                                                                                                                                              |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `README.md`                                              | 重写为给人看的简介：这是什么、怎么跑、目录在哪看（指向 `architecture.md`）、怎么上线（指向 `release.md`）。去掉历史和重复。                                                                       |
-| `DESIGN.md`                                              | 现行设计系统的唯一来源：气质、明暗与风格、token、字体、组件对照（含本计划 R2 的规则）、液体使用规则、动效、禁止清单。去掉历史叙述，必要的取舍理由留一句话。                                       |
-| `AGENTS.md`                                              | 只改 PGS 标记以外、项目自己的部分：项目一句话、目录入口、改文案的位置、验证命令。不写旧设计。                                                                                                     |
-| `docs/reference/architecture.md`                         | R3 新建。目录、依赖方向、每个功能的入口、"加一位演员 / 加一个资产系列 / 加一个页面"分别改哪里。                                                                                                   |
-| `docs/reference/release.md`                              | R5 新建。                                                                                                                                                                                         |
-| `docs/reference/execution/current-work.md`               | 只写当前状态和下一步，不写流水账。                                                                                                                                                                |
-| `docs/reference/documentation-map.md`                    | 补上真实日期和真实的文档清单。                                                                                                                                                                    |
-| `docs/policy/best-practice-for-this-project.md`          | 对照现实逐条核对，删掉旧设计、旧依赖的规则，保留仍然有效的硬规则。                                                                                                                                |
-| `docs/specs/active/actor-asset-library.md`               | 更新到现实：路径、Vercel Blob、rc.1、域名。仍是资产契约，保持 active。                                                                                                                            |
-| `docs/plans/active/2026-10-03-swimmer-family-rebuild.md` | 改为 `completed` 并移到 `docs/plans/completed/`。附录 A 的 JSON 和附录 C 的文案表已由代码成为权威来源，删掉重复内容，留一行指针。保留决定理由与设计规则的出处说明（设计规则已迁入 `DESIGN.md`）。 |
-| 本计划                                                   | 保持 `active`，在末尾写简短收尾（完成情况与报告位置），等审阅通过后再移到 completed。                                                                                                             |
-| ADR                                                      | 不改。                                                                                                                                                                                            |
-| `brainstorms/next-session-prompt.md`                     | 删除：过时，而且会误导 AI。                                                                                                                                                                       |
-| `brainstorms/` 其余文件                                  | 保留：Owner 的创作素材，约 10 MB。新增 `brainstorms/README.md`，一句话说明"原始创意素材，不是现行事实；现行事实见 `src/content` 与 `docs`"。是否移出公开仓库由 Owner 决定，写进报告。             |
-| 代码注释                                                 | 搜索并删除指向已退役事物的注释，例如 ACID、黑舞台、GSAP、next-intl、R2、`vercel.app`、`acid` 主题。                                                                                               |
+| 文档                                                        | 动作                                                                                                                                                                                              |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `README.md`                                                 | 重写为给人看的简介：这是什么、怎么跑、目录在哪看（指向 `architecture.md`）、怎么上线（指向 `release.md`）。去掉历史和重复。                                                                       |
+| `DESIGN.md`                                                 | 现行设计系统的唯一来源：气质、明暗与风格、token、字体、组件对照（含本计划 R2 的规则）、液体使用规则、动效、禁止清单。去掉历史叙述，必要的取舍理由留一句话。                                       |
+| `AGENTS.md`                                                 | 只改 PGS 标记以外、项目自己的部分：项目一句话、目录入口、改文案的位置、验证命令。不写旧设计。                                                                                                     |
+| `docs/reference/architecture.md`                            | R3 新建。目录、依赖方向、每个功能的入口、"加一位演员 / 加一个资产系列 / 加一个页面"分别改哪里。                                                                                                   |
+| `docs/reference/release.md`                                 | R5 新建。                                                                                                                                                                                         |
+| `docs/reference/execution/current-work.md`                  | 只写当前状态和下一步，不写流水账。                                                                                                                                                                |
+| `docs/reference/documentation-map.md`                       | 补上真实日期和真实的文档清单。                                                                                                                                                                    |
+| `docs/policy/best-practice-for-this-project.md`             | 对照现实逐条核对，删掉旧设计、旧依赖的规则，保留仍然有效的硬规则。                                                                                                                                |
+| `docs/specs/active/actor-asset-library.md`                  | 更新到现实：路径、Vercel Blob、rc.1、域名。仍是资产契约，保持 active。                                                                                                                            |
+| `docs/plans/completed/2026-10-03-swimmer-family-rebuild.md` | 改为 `completed` 并移到 `docs/plans/completed/`。附录 A 的 JSON 和附录 C 的文案表已由代码成为权威来源，删掉重复内容，留一行指针。保留决定理由与设计规则的出处说明（设计规则已迁入 `DESIGN.md`）。 |
+| 本计划                                                      | 保持 `active`，在末尾写简短收尾（完成情况与报告位置），等审阅通过后再移到 completed。                                                                                                             |
+| ADR                                                         | 不改。                                                                                                                                                                                            |
+| `brainstorms/next-session-prompt.md`                        | 删除：过时，而且会误导 AI。                                                                                                                                                                       |
+| `brainstorms/` 其余文件                                     | 保留：Owner 的创作素材，约 10 MB。新增 `brainstorms/README.md`，一句话说明"原始创意素材，不是现行事实；现行事实见 `src/content` 与 `docs`"。是否移出公开仓库由 Owner 决定，写进报告。             |
+| 代码注释                                                    | 搜索并删除指向已退役事物的注释，例如 ACID、黑舞台、GSAP、next-intl、R2、`vercel.app`、`acid` 主题。                                                                                               |
 
 **验收**：
 

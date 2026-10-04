@@ -2,7 +2,7 @@
 id: PLAN-SWIMMER-FAMILY-REBUILD
 title: 并入 Swimmer 家族的整站重构与演员资产库
 type: plan
-status: active
+status: completed
 canonical: true
 owner: ai-assisted
 created: 2026-10-03
@@ -22,7 +22,7 @@ related:
 
 # 并入 Swimmer 家族的整站重构与演员资产库
 
-本计划由 Codex 一次执行到底。决定见
+本计划由 Codex 一次执行到底，已于 2026-10-04 完成；现行实现与验证见 `docs/plans/active/2026-10-04-healthy-site-refactor.md`。决定见
 [ADR](../../adr/2026-10-03-join-swimmer-family.md)，资产库合同见
 [资产库 spec](../../specs/active/actor-asset-library.md)。本文写"怎么做"和"做成什么样"，
 设计部分是验收标准，不是参考意见。

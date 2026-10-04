@@ -28,7 +28,7 @@ related:
 一张表情脸约 250 px），说明用中文烤进图里，不能换语言、不能复用，也不能按镜头挑。
 每个项目于是从头反复调。网站面向全世界，又要把演员资产做成 Swimmer 账号的引流入口。
 决定见 [ADR：并入 Swimmer 家族](../../adr/2026-10-03-join-swimmer-family.md)；
-执行步骤与设计细节见 [重构计划](../../plans/active/2026-10-03-swimmer-family-rebuild.md)。
+执行步骤与设计细节见 [重构计划](../../plans/completed/2026-10-03-swimmer-family-rebuild.md)。
 
 ## 目标与不做
 
