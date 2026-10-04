@@ -1,4 +1,4 @@
-import { getActor } from "../../../../../content/actors.ts";
+import { getActor } from "../../../../../content/actors/index.ts";
 import { getActorAssets } from "../../../../../content/assets.ts";
 import { privateApi, queryText } from "../../../../../server/api.ts";
 import { HttpError } from "../../../../../server/runtime-mode.ts";

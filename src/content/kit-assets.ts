@@ -1,4 +1,4 @@
-import { ACTORS } from "./actors.ts";
+import { ACTORS } from "./actors/index.ts";
 import { getActorAssets } from "./assets.ts";
 import { KIT_MANIFEST, type KitItem } from "./kit.ts";
 

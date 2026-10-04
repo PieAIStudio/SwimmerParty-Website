@@ -70,7 +70,7 @@ test("production file traces contain manifests but no local originals, inbox, ev
         resolved,
       ).toBe(false);
       expect(resolved.startsWith(root + path.sep + ".env"), resolved).toBe(false);
-      if (resolved.startsWith(path.join(root, "src/content/assets") + path.sep))
+      if (resolved.startsWith(path.join(root, "src/content/actors/hu-qian") + path.sep))
         includesAssetMetadata = true;
     }
   }

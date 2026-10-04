@@ -221,9 +221,9 @@ test("wardrobe look IDs must be registered before ingest", async (t) => {
   const root = await rootFor(t);
   await input(root, "SP-01__wardrobe-casual__front__v1.png", await syntheticImage());
   await assert.rejects(run(root), (error) => /Register look 'casual'/.test(messages(error)));
-  await mkdir(path.join(root, "src/content/assets"), { recursive: true });
+  await mkdir(path.join(root, "src/content/actors/hu-qian"), { recursive: true });
   await writeFile(
-    path.join(root, "src/content/assets/hu-qian.json"),
+    path.join(root, "src/content/actors/hu-qian/assets.json"),
     JSON.stringify({
       code: "SP-01",
       slug: "hu-qian",

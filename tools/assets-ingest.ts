@@ -20,7 +20,7 @@ async function prepare(file: string, code: string, manifest: ActorAssets, root: 
   if (!series) throw new Error(`Unknown series: ${group}`);
   const look = series.perLook ? group.slice(series.id.length + 1) : null;
   if (series.perLook && !manifest.looks.some(item => item.id === look && item.prompt.trim())) {
-    throw new Error(`Register look '${look}' in src/content/assets/${manifest.slug}.json looks with id, bilingual label and prompt before ingesting it.`);
+    throw new Error(`Register look '${look}' in src/content/actors/${manifest.slug}/assets.json looks with id, bilingual label and prompt before ingesting it.`);
   }
   const slot = slotsOf(series.id, look).find(item => item.key === key);
   if (!slot) throw new Error(`Unknown slot: ${series.id}.${key}`);
@@ -101,7 +101,7 @@ export async function ingest(code: string, options: IngestOptions = {}) {
       { path: path.join(root, "public", item.preview), bytes: preview },
       { path: path.join(root, "public", item.thumb), bytes: thumb },
     ]),
-    { path: path.join(root, "src/content/assets", `${actor.slug}.json`), bytes: Buffer.from(JSON.stringify(manifest, null, 2) + "\n") },
+    { path: path.join(root, "src/content/actors", actor.slug, "assets.json"), bytes: Buffer.from(JSON.stringify(manifest, null, 2) + "\n") },
   ]);
   return { manifest, ingested: prepared.length, upgraded, dryRun: false };
 }

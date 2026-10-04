@@ -1,5 +1,5 @@
 import { zipSync, strToU8 } from "fflate";
-import type { Actor } from "../content/actors.ts";
+import type { Actor } from "../content/actors/index.ts";
 import type { ActorAssets, AssetItem } from "../content/asset-types.ts";
 import type { ExportTarget } from "../content/export-targets.ts";
 import { KIT_RULES } from "../content/kit.ts";

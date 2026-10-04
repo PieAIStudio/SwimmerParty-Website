@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { getActor } from "./actors.ts";
+import { getActor } from "./actors/index.ts";
 import { assetSlotOrder, listSeries, requiredSlots } from "./asset-series.ts";
 import type { ActorAssets, AssetItem } from "./asset-types.ts";
 export type { ActorAssets, AssetItem, AssetConformance } from "./asset-types.ts";
@@ -11,7 +11,9 @@ export function getActorAssets(slug: string, root = process.cwd()): ActorAssets 
   if (!actor) throw new Error(`Unknown actor: ${slug}`);
   let data: ActorAssets;
   try {
-    data = JSON.parse(readFileSync(path.join(root, "src/content/assets", `${slug}.json`), "utf8"));
+    data = JSON.parse(
+      readFileSync(path.join(root, "src/content/actors", slug, "assets.json"), "utf8"),
+    );
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT")
       return { code: actor.code, slug, looks: [], items: [] };

@@ -2,7 +2,7 @@ import { chromium } from "@playwright/test";
 import path from "node:path";
 import fs from "node:fs/promises";
 import sharp from "sharp";
-import { ACTORS } from "../src/content/actors.ts";
+import { ACTORS } from "../src/content/actors/index.ts";
 
 /** Seventeen document targets, plus asset libraries once they exist.
  * Real scroll entrances run before the full-page capture; nothing is force-shown.

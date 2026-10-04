@@ -2,11 +2,11 @@ import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { ACTORS } from "../src/content/actors.ts";
+import { ACTORS } from "../src/content/actors/index.ts";
 
 export function actorByCode(code: string) {
   const actor = ACTORS.find(item => item.code === code);
-  if (!actor) throw new Error(`Unknown actor code: ${code}. Use a code registered in src/content/actors.ts.`);
+  if (!actor) throw new Error(`Unknown actor code: ${code}. Use a code registered in src/content/actors/index.ts.`);
   return actor;
 }
 
