@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useSiteI18n } from "@/i18n/client";
-import { GameButton } from "@/ui/kit";
-import { Icon } from "@/ui/icons";
+import { GameButton } from "@pieai/swimmer-ui-kit";
+import { GameIcon } from "@pieai/swimmer-ui-kit";
 
 /** The surrounding text remains selectable when clipboard access is denied. */
 export function CopyButton({ text, label }: { text: string; label?: string }) {
@@ -23,7 +23,7 @@ export function CopyButton({ text, label }: { text: string; label?: string }) {
   };
   return (
     <GameButton onClick={copy}>
-      <Icon name={done ? "check" : "copy"} />
+      <GameIcon icon={done ? "check" : "copy"}  />
       <span aria-live="polite">{done ? t("common.copied") : (label ?? t("common.copy"))}</span>
     </GameButton>
   );

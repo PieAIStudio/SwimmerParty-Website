@@ -1,6 +1,6 @@
 import { getSiteI18n } from "@/i18n/server";
 import { coreProgress } from "@/content/assets";
-import { GameProgress } from "@/ui/kit";
+import { GameProgress } from "@pieai/swimmer-ui-kit";
 
 export async function AssetProgress({ slug }: { slug: string }) {
   const { t } = await getSiteI18n();

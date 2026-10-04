@@ -2,8 +2,8 @@
 
 import { useSiteI18n } from "@/i18n/client";
 import { setSiteTheme, useSiteTheme } from "@/lib/use-site-theme";
-import { GameIconButton } from "@/ui/kit";
-import { Icon } from "@/ui/icons";
+import { GameIconButton } from "@pieai/swimmer-ui-kit";
+import { GameIcon } from "@pieai/swimmer-ui-kit";
 
 export function ThemeToggle() {
   const theme = useSiteTheme();
@@ -14,7 +14,7 @@ export function ThemeToggle() {
       title={t(theme === "light" ? "common.themeDark" : "common.themeLight")}
       onClick={() => setSiteTheme(theme === "light" ? "dark" : "light")}
     >
-      <Icon name={theme === "light" ? "moon" : "sun"} />
+      <GameIcon icon={theme === "light" ? "moon" : "sun"}  />
     </GameIconButton>
   );
 }

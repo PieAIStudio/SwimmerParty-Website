@@ -7,8 +7,8 @@ import { LocaleSwitcher } from "./LocaleSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
 import { AccountMenu } from "./AccountProvider";
 import { NAV, SECONDARY_NAV, SITE } from "@/lib/site";
-import { GameIconButton } from "@/ui/kit";
-import { Icon } from "@/ui/icons";
+import { GameIconButton } from "@pieai/swimmer-ui-kit";
+import { GameIcon } from "@pieai/swimmer-ui-kit";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -87,7 +87,7 @@ function HeaderContent() {
               aria-controls="site-menu"
               onClick={() => setOpen(true)}
             >
-              <Icon name="menu" />
+              <GameIcon icon="menu"  />
             </GameIconButton>
           </div>
         </div>
@@ -112,7 +112,7 @@ function HeaderContent() {
               {SITE.name}
             </Link>
             <GameIconButton label={t("common.close")} onClick={() => setOpen(false)}>
-              <Icon name="close" />
+              <GameIcon icon="close"  />
             </GameIconButton>
           </div>
           <nav

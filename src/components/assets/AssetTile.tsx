@@ -2,8 +2,8 @@
 
 import type { AssetItem } from "@/content/asset-types";
 import { useSiteI18n } from "@/i18n/client";
-import { GameCheckbox, GameIconButton } from "@/ui/kit";
-import { Icon } from "@/ui/icons";
+import { GameCheckbox, GameIconButton } from "@pieai/swimmer-ui-kit";
+import { GameIcon } from "@pieai/swimmer-ui-kit";
 import { ActorPicture } from "../ActorPicture";
 import { useAssetSelection } from "./AssetSelection";
 
@@ -62,7 +62,7 @@ export function AssetTile({
             disabled={busy || remaining > 0}
             onClick={() => void downloadOne(item)}
           >
-            <Icon name="download" />
+            <GameIcon icon="download"  />
           </GameIconButton>
           {remaining > 0 ? (
             <span className="sp-pill" aria-live="off" data-cooldown>

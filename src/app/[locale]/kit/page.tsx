@@ -13,7 +13,7 @@ import { PageIntro } from "@/components/PageIntro";
 import { SectionHead } from "@/components/SectionHead";
 import { TextLink } from "@/components/TextLink";
 import { AssetProgress } from "@/components/AssetProgress";
-import { Icon } from "@/ui/icons";
+import { GameIcon } from "@pieai/swimmer-ui-kit";
 
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -138,8 +138,8 @@ export default async function KitPage({ params }: Props) {
               <ul className="mt-6 space-y-6">
                 {KIT_RULES.filter((rule) => rule.allow === allow).map((rule) => (
                   <li key={rule.id} className="flex gap-3">
-                    <Icon
-                      name={allow ? "check" : "close"}
+                    <GameIcon
+                      icon={allow ? "check" : "close"}
                       className={`mt-1 shrink-0 ${allow ? "" : "text-danger-ink"}`}
                     />
                     <div>

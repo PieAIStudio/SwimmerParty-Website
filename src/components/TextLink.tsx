@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 import { Link } from "@/i18n/navigation";
-import { Icon } from "@/ui/icons";
+import { GameIcon } from "@pieai/swimmer-ui-kit";
 
 export function TextLink({
   children,
@@ -10,9 +10,9 @@ export function TextLink({
 }: ComponentProps<typeof Link> & { back?: boolean }) {
   return (
     <Link {...props} className={`sp-link ${className}`}>
-      {back ? <Icon name="arrow-left" /> : null}
+      {back ? <GameIcon icon="arrow-left"  /> : null}
       {children}
-      {back ? null : <Icon name="arrow-right" />}
+      {back ? null : <GameIcon icon="arrow-right"  />}
     </Link>
   );
 }

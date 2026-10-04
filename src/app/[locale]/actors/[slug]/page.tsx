@@ -9,7 +9,7 @@ import { CopyBlock } from "@/components/CopyBlock";
 import { SectionHead } from "@/components/SectionHead";
 import { TextLink } from "@/components/TextLink";
 import { StageMount } from "@/three/StageMount";
-import { GameCallout } from "@/ui/kit";
+import { GameCallout } from "@pieai/swimmer-ui-kit";
 import { getActorAssets, firstImage } from "@/content/assets";
 import { slotLabelKey } from "@/content/asset-series";
 import { AssetProgress } from "@/components/AssetProgress";

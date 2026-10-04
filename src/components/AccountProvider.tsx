@@ -12,7 +12,7 @@ import {
 import { usePathname } from "next/navigation";
 import { track } from "@vercel/analytics";
 import { useSiteI18n } from "@/i18n/client";
-import { GameButton, GameToast } from "@/ui/kit";
+import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 
 type EventName =
   | "guest_download"

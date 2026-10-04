@@ -16,7 +16,7 @@ import {
 } from "@/lib/render-sheet";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { veoPlan } from "@/lib/export-plan";
-import { GameButton, GameModal, GameSegmentedControl, GameSelect, GameToast } from "@/ui/kit";
+import { GameButton, GameModal, GameSegmentedControl, GameSelect, GameToast } from "@pieai/swimmer-ui-kit";
 import { useAccount } from "../AccountProvider";
 
 const translators = { en: siteI18n.translator("en"), zh: siteI18n.translator("zh-CN") };

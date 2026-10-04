@@ -5,7 +5,7 @@ import { useSiteLocale, useSiteI18n } from "@/i18n/client";
 import { Link, usePathname } from "@/i18n/navigation";
 import { MACHINE_LOCALES, machineTranslateUrl } from "@/i18n/routing";
 import { SITE } from "@/lib/site";
-import { Icon } from "@/ui/icons";
+import { GameIcon } from "@pieai/swimmer-ui-kit";
 
 /** Authored locales remain ordinary links; machine proxies are labelled separately. */
 export function LocaleSwitcher({ variant = "rail" }: { variant?: "rail" | "panel" }) {
@@ -66,7 +66,7 @@ export function LocaleSwitcher({ variant = "rail" }: { variant?: "rail" | "panel
                   className="sp-small inline-flex items-center gap-1 py-2 hover:underline underline-offset-4"
                 >
                   {machine.label}
-                  <Icon name="external" width={14} height={14} />
+                  <GameIcon icon="external" size="sm" />
                 </a>
               </li>
             ))}

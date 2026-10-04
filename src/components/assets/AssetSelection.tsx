@@ -8,7 +8,7 @@ import { useSiteI18n } from "@/i18n/client";
 import { characterProfile } from "@/lib/asset-profile";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { GUEST_COOLDOWN_KEY, GUEST_DOWNLOAD_WINDOW_SECONDS } from "@/lib/downloads";
-import { GameButton, GameModal, GameToast } from "@/ui/kit";
+import { GameButton, GameModal, GameToast } from "@pieai/swimmer-ui-kit";
 import { useAccount } from "../AccountProvider";
 import { MemberExportDialog } from "./MemberExportDialog";
 
