@@ -34,3 +34,10 @@ test("local origin is explicit and does not alter the secure cookie contract", (
   assert.equal(swimmerAccountConfig({ ...env, NODE_ENV: "development" }).origin, "http://localhost:3000");
   assert.equal(swimmerAccountConfig({ ...env, SWIMMER_ORIGIN: "https://localhost:3000" }).origin, "https://localhost:3000");
 });
+
+test("the same-origin guard follows the explicitly registered preview origin", async () => {
+  const { requireSameOrigin } = await import("../src/lib/server/api.ts");
+  const request = { headers: { origin: "https://preview.example" } } as import("next").NextApiRequest;
+  assert.doesNotThrow(() => requireSameOrigin(request, "swimmer", "https://preview.example"));
+  assert.throws(() => requireSameOrigin(request, "swimmer", "https://swimmerparty.swiminai.com"), /cross-site/);
+});

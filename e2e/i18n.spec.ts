@@ -25,12 +25,13 @@ for (const width of [1280, 390]) {
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
     await page.setViewportSize({ width, height: 850 });
-    await page.goto("/en/actors");
+    await page.goto("/en/actors?ref=menu-check");
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
     if (width < 1024) await page.getByRole("button", { name: /^MENU$/i }).click();
     await page.getByRole("button", { name: /English|中文/ }).click();
     await page.getByRole("menuitemradio", { name: /中文/ }).click();
     await expect(page.locator("html")).toHaveAttribute("lang", "zh-Hans");
+    await expect(page).toHaveURL(/\/zh\/actors\?ref=menu-check$/);
     expect(errors).toEqual([]);
     await page.screenshot({ path: `/tmp/SwimmerParty-Website-i18n-${width}.png`, fullPage: false });
   });

@@ -65,11 +65,15 @@ export async function readJsonBody(req: NextApiRequest): Promise<Record<string, 
   return value as Record<string, unknown>;
 }
 
-export function requireSameOrigin(req: NextApiRequest, mode: "mock" | "swimmer") {
+export function requireSameOrigin(
+  req: NextApiRequest,
+  mode: "mock" | "swimmer",
+  expectedOrigin = process.env.SWIMMER_ORIGIN ?? SITE.url,
+) {
   if (req.headers["sec-fetch-site"] === "cross-site")
     throw new HttpError(403, "cross-site-request");
   if (mode === "swimmer") {
-    if (req.headers.origin !== SITE.url) throw new HttpError(403, "cross-site-request");
+    if (req.headers.origin !== expectedOrigin) throw new HttpError(403, "cross-site-request");
   } else if (req.headers.origin) {
     try {
       const origin = new URL(req.headers.origin);

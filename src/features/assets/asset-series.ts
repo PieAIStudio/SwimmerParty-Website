@@ -3,7 +3,7 @@ import type { MessageContracts } from "../../i18n/message-contracts.ts";
 type AssetLabelKey = Extract<keyof MessageContracts, `assets.slot.${string}`>;
 
 export type AssetFrame = keyof typeof vocabulary.frames;
-export type SlotDefinition = {
+type SlotDefinition = {
   key: string;
   required: boolean;
   direction: string;

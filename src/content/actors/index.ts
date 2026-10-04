@@ -1,5 +1,5 @@
 import type { Actor, ActorStatus, L } from "./shared.ts";
-export type { Actor, ActorStatus, L, LList, SpecRow } from "./shared.ts";
+export type { Actor, ActorStatus, L } from "./shared.ts";
 import { profile as actor0 } from "./hu-qian/profile.ts";
 import { profile as actor1 } from "./qi-man/profile.ts";
 import { profile as actor2 } from "./dai-er/profile.ts";

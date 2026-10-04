@@ -7,7 +7,6 @@ import { signedAsset } from "./asset-downloads.ts";
 import { MAX_BUNDLE_ITEMS } from "../downloads.ts";
 
 // Parse inside the private response wrapper so even malformed requests remain no-store.
-export const config = { api: { bodyParser: false } };
 export default privateApi("POST", async (req, res, modes) => {
   if (!(await accountUser(req, res, modes.account))) {
     res.status(401).json({ signIn: true });

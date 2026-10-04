@@ -178,6 +178,7 @@ test("empty selection never downloads and all three selection controls work at 1
   await trigger.click();
   const dialog = page.getByRole("dialog");
   await expect(dialog.getByRole("heading")).toBeFocused();
+  await expect(page.locator(".game-ui-button--primary:visible")).toHaveCount(1);
   await page.keyboard.press("Escape");
   await expect(dialog).not.toBeVisible();
   await expect(trigger).toBeFocused();

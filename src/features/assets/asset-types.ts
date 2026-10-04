@@ -1,6 +1,6 @@
 import type { L } from "../../content/actors/index.ts";
 
-export type AssetConformance = "v1" | "legacy";
+type AssetConformance = "v1" | "legacy";
 export type AssetItem = {
   slot: string;
   series: string;

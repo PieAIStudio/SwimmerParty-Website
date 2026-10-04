@@ -4,7 +4,6 @@ import { apiFailure, requireSameOrigin } from "../../../lib/server/api.ts";
 import { HttpError, runtimeModes } from "../../../lib/server/runtime-mode.ts";
 
 // AuthKit reads IncomingMessage itself; Next must not consume that stream first.
-export const config = { api: { bodyParser: false } };
 export default async function auth(req: NextApiRequest, res: NextApiResponse) {
   res.setHeader("Cache-Control", "private, no-store");
   res.setHeader("Vary", "Cookie");

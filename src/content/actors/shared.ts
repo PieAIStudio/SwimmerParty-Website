@@ -18,11 +18,11 @@
 /** A string that exists in both authored locales. */
 export type L = { en: string; zh: string };
 /** A list that exists in both authored locales. */
-export type LList = { en: string[]; zh: string[] };
+type LList = { en: string[]; zh: string[] };
 
 export type ActorStatus = "active" | "in-development" | "concept";
 
-export type SpecRow = {
+type SpecRow = {
   /** Stable identifier, used as the React key and never rendered. */
   id: string;
   /** Field name on the sheet. */

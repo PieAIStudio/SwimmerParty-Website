@@ -67,3 +67,16 @@ test("production file traces contain manifests but no local originals, inbox, ev
   expect(manifests).toBeGreaterThanOrEqual(4);
   expect(includesAssetMetadata).toBe(true);
 });
+
+for (const [route, label, target] of [
+  ["/en", "Get free actor assets", "/en/kit"],
+  ["/en/actors/hu-qian", "Open asset library", "/en/kit/hu-qian"],
+]) {
+  test(`one linked primary CTA on ${route}`, async ({ page }) => {
+    await page.goto(route);
+    await expect(page.locator(".game-ui-button--primary:visible")).toHaveCount(1);
+    await page.getByRole("link", { name: label, exact: true }).click();
+    await expect(page).toHaveURL(new RegExp(`${target}$`));
+    await expect(page.locator(".sp-pill")).toHaveCount(0);
+  });
+}

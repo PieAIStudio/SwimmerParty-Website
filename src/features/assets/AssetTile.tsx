@@ -74,7 +74,7 @@ export function AssetTile({
       <div className="mt-3 flex flex-wrap items-center gap-2">
         <span className="sp-label">{label}</span>
         {item.conformance === "legacy" ? (
-          <span title={t("assets.legacyNote")}>
+          <span className="contents" title={t("assets.legacyNote")}>
             <GameBadge tone="warning">{t("assets.legacy")}</GameBadge>
           </span>
         ) : null}
