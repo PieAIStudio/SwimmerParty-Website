@@ -1,5 +1,12 @@
 import { defineConfig, devices } from "@playwright/test";
 
+// Verification price (2026-10-04, macOS arm64, Node 24.19.0, 10 logical CPUs):
+// serial quick checks: i18n 2.27s, typecheck 10.65s, lint 2.92s,
+// format 3.76s, tools 7.67s; production build 47.85s. Playwright uses
+// five workers and took 22.15s then 18.94s (50/50 both runs). The first
+// concurrent baseline was contended by another project's browsers (46/50,
+// 229.87s); it is retained in R0 logs and is not a stability measurement.
+// Re-measure when the suite, runner or machine changes materially.
 const PORT = 3399;
 
 export default defineConfig({

@@ -2,6 +2,7 @@ import { chromium } from "@playwright/test";
 import path from "node:path";
 import fs from "node:fs/promises";
 import sharp from "sharp";
+import { ACTORS } from "../src/content/actors.ts";
 
 /** Seventeen document targets, plus asset libraries once they exist.
  * Real scroll entrances run before the full-page capture; nothing is force-shown.
@@ -13,23 +14,22 @@ const FILTER = process.argv[3] ?? "";
 const BASE = process.env.SHOTS_BASE ?? "http://127.0.0.1:3398";
 const pages = ["", "/actors", "/works", "/kit", "/studio", "/casting", "/pact"];
 const targets = [
-  ...["zh", "en"].flatMap(locale => pages.map(route => [`${route.slice(1) || "home"}-${locale}`, `/${locale}${route}`])),
-  ["hu-qian-zh", "/zh/actors/hu-qian"],
-  ["dai-er-zh", "/zh/actors/dai-er"],
-  ["404-zh", "/zh/actors/not-an-actor"],
+  ...["zh", "en"].flatMap(locale => [
+    ...pages.map(route => [`${route.slice(1) || "home"}-${locale}`, `/${locale}${route}`]),
+    ...ACTORS.flatMap(actor => [
+      [`${actor.slug}-${locale}`, `/${locale}/actors/${actor.slug}`],
+      [`assets-${actor.slug}-${locale}`, `/${locale}/kit/${actor.slug}`],
+    ]),
+    [`404-${locale}`, `/${locale}/actors/not-an-actor`],
+  ]),
 ];
-if (process.env.SHOTS_ASSETS === "1") {
-  for (const locale of ["zh", "en"]) {
-    for (const slug of ["hu-qian", "dai-er"]) targets.push([`assets-${slug}-${locale}`, `/${locale}/kit/${slug}`]);
-  }
-}
 await fs.mkdir(OUT, { recursive: true });
 const browser = await chromium.launch();
 const results = [];
 try {
   for (const theme of ["light", "dark"]) {
     for (const width of [390, 1440]) {
-      const context = await browser.newContext({ viewport: { width, height: width === 390 ? 844 : 900 }, colorScheme: theme, deviceScaleFactor: 1 });
+      const context = await browser.newContext({ viewport: { width, height: width === 390 ? 844 : 900 }, colorScheme: theme, reducedMotion: "reduce", deviceScaleFactor: 1 });
       const page = await context.newPage();
       for (const [name, route] of targets) {
         if (FILTER && !new RegExp(FILTER).test(name)) continue;
@@ -38,23 +38,24 @@ try {
         page.on("pageerror", onError);
         const response = await page.goto(BASE + route, { waitUntil: "networkidle" });
         await page.evaluate(() => document.fonts.ready);
-        await page.waitForTimeout(1700);
+        const stage = page.locator("[data-clay-stage] canvas");
+        if (await page.locator("[data-clay-stage]").count()) await stage.waitFor({ state: "visible" });
         const metrics = await page.evaluate(() => ({ height: document.documentElement.scrollHeight, width: document.documentElement.scrollWidth, theme: document.documentElement.dataset.gameUiTheme, style: document.documentElement.dataset.gameUiStyle }));
         const height = page.viewportSize().height;
         for (let y = 0; y < metrics.height; y += Math.floor(height * 0.8)) {
           await page.evaluate(top => window.scrollTo(0, top), y);
-          await page.waitForTimeout(110);
+          await page.waitForTimeout(16);
         }
-        await page.waitForTimeout(850);
+        await page.waitForTimeout(100);
         await page.evaluate(() => window.scrollTo(0, 0));
-        await page.waitForTimeout(250);
+        await page.waitForTimeout(100);
         const prefix = `${name}-${theme}-${width}`;
         await page.screenshot({ path: path.join(OUT, `${prefix}.png`), fullPage: true });
         await page.screenshot({ path: path.join(OUT, `${prefix}-top.png`) });
         const canvases = page.locator("[data-clay-stage] canvas");
         if (await canvases.count()) {
           await canvases.first().scrollIntoViewIfNeeded();
-          await page.waitForTimeout(1700);
+          await page.waitForTimeout(100);
           await canvases.first().screenshot({ path: path.join(OUT, `${prefix}-clay.png`) });
         }
         const status = response?.status();

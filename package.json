@@ -10,6 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "check": "pnpm check:i18n && pnpm typecheck && pnpm lint && pnpm format:check && pnpm test:tools",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint src e2e next.config.ts playwright.config.ts eslint.config.mjs -c ./.oxlintrc.json",
     "lint:next": "eslint",
