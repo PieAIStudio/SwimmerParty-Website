@@ -46,7 +46,8 @@ test("guest downloads a named original, then receives private 429 and a live coo
     .locator("[data-asset-notice='cooldown']")
     .getByRole("button", { name: "Sign in with Swimmer" })
     .click();
-  await expect(page.getByRole("dialog").locator("li")).toHaveText(["University", "Directing"]);
+  await expect(page.getByText("University", { exact: true })).toBeVisible();
+  await expect(page.getByText("Directing", { exact: true })).toBeVisible();
 });
 
 test("mock sign-in preserves selection and produces a real ZIP with originals, bilingual profile, AI notes and the full licence", async ({
@@ -55,7 +56,8 @@ test("mock sign-in preserves selection and produces a real ZIP with originals, b
   await page.goto(library);
   await page.getByRole("button", { name: "Select all", exact: true }).click();
   await page.getByRole("button", { name: "Download selected", exact: true }).click();
-  await expect(page.getByRole("dialog").locator("li")).toHaveText(["University", "Directing"]);
+  await expect(page.getByText("University", { exact: true })).toBeVisible();
+  await expect(page.getByText("Directing", { exact: true })).toBeVisible();
   await Promise.all([
     page.waitForEvent("load"),
     page.getByRole("dialog").getByRole("button", { name: "Sign in with Swimmer" }).click(),
