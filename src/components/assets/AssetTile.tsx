@@ -65,9 +65,9 @@ export function AssetTile({
             <GameIcon icon="download" />
           </GameIconButton>
           {remaining > 0 ? (
-            <GameBadge tone="warning" aria-live="off" data-cooldown>
-              {remaining}s
-            </GameBadge>
+            <span aria-live="off" data-cooldown>
+              <GameBadge tone="warning">{remaining}s</GameBadge>
+            </span>
           ) : null}
         </div>
       </div>
