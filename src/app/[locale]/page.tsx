@@ -10,7 +10,7 @@ import { ActorPicture } from "@/components/ActorPicture";
 import { SectionHead } from "@/components/SectionHead";
 import { TextLink } from "@/components/TextLink";
 import { Reveal } from "@/motion/Reveal";
-import { StageMount } from "@/three/StageMount";
+import { StageMount } from "@/features/stage";
 import { GameBadge, GameButton } from "@pieai/swimmer-ui-kit";
 import { Link } from "@/i18n/navigation";
 

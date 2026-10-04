@@ -1,4 +1,4 @@
-import { SeriesJumpButton } from "@/components/assets/SeriesJumpButton";
+import { SeriesJumpButton } from "@/features/assets";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ACTORS, getActor } from "@/content/actors";
@@ -12,13 +12,9 @@ import { TextLink } from "@/components/TextLink";
 import { ActorPicture } from "@/components/ActorPicture";
 import { AssetProgress } from "@/components/AssetProgress";
 import { CopyBlock } from "@/components/CopyBlock";
-import { AssetLibrarySections } from "@/components/assets/AssetLibrarySections";
+import { AssetLibrarySections } from "@/features/assets";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
-import {
-  AssetSelectionProvider,
-  AssetSelectionBar,
-  DownloadActorProfile,
-} from "@/components/assets/AssetSelection";
+import { AssetSelectionProvider, AssetSelectionBar, DownloadActorProfile } from "@/features/assets";
 
 type Props = { params: Promise<{ locale: AppLocale; slug: string }> };
 export function generateStaticParams() {

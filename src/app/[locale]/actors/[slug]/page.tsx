@@ -8,7 +8,7 @@ import { ActorPicture } from "@/components/ActorPicture";
 import { CopyBlock } from "@/components/CopyBlock";
 import { SectionHead } from "@/components/SectionHead";
 import { TextLink } from "@/components/TextLink";
-import { StageMount } from "@/three/StageMount";
+import { StageMount } from "@/features/stage";
 import { GameBadge, GameButton, GameCallout } from "@pieai/swimmer-ui-kit";
 import { getActorAssets, firstImage } from "@/content/assets";
 import { slotLabelKey } from "@/content/asset-series";

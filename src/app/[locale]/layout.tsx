@@ -5,7 +5,7 @@ import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AccountProvider } from "@/components/AccountProvider";
+import { AccountProvider } from "@/features/account";
 import { Analytics } from "@vercel/analytics/next";
 import { SITE_UI_STYLE, THEME_INIT_SCRIPT } from "@/lib/theme";
 import { LOCALE_HTML_LANG, LOCALE_OG, routing, type AppLocale } from "@/i18n/routing";
