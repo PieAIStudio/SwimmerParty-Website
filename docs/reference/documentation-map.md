@@ -5,8 +5,8 @@ type: reference
 status: active
 canonical: true
 owner: human
-created: YYYY-MM-DD
-last_reviewed: YYYY-MM-DD
+created: 2026-08-20
+last_reviewed: 2026-10-04
 domain: meta
 tags:
   - navigation

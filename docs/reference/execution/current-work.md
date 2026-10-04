@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-08-20
-last_reviewed: 2026-10-03
+last_reviewed: 2026-10-04
 domain: meta
 tags:
   - current-work
@@ -21,9 +21,9 @@ This file is the current project work index. It is not the agents-routing algori
 
 ## Current Focus
 
-- Current phase: **重构已完成本地开发，等待 UIKit 3.0 / AuthKit 0.8 联合发布与资产出图**。
+- Current phase: **健康站点重构 R0–R5 已完成本地实现，R6–R8 正在收尾；不部署、不推送。**
 - Decision: [ADR：并入 Swimmer 家族](../../adr/2026-10-03-join-swimmer-family.md)。
-- Current active plan: [整站重构与演员资产库](../../plans/active/2026-10-03-swimmer-family-rebuild.md)。
+- Current active plan: [健康站点重构](../../plans/active/2026-10-04-healthy-site-refactor.md)。
 - Current active spec: [AI 演员资产库](../../specs/active/actor-asset-library.md)。
 - Current design: [DESIGN.md](../../../DESIGN.md)，是唯一现行设计说明；本页不复制视觉规范。
 - Current proof: 本地 `pnpm verify`、`pnpm docs:check`、`pnpm exec swimmer-ui-check src`；
@@ -48,7 +48,7 @@ This file is the current project work index. It is not the agents-routing algori
 
 | 优先级 | 事项与责任                                                                                                                           |
 | ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| P0     | Owner / 审阅者按计划第 2、3、9 节复核本地分支、报告和截图；批准后再结束本计划                                                        |
+| P0     | Owner / 审阅者按健康重构报告复核本地分支、报告和截图；批准后再归档计划                                                               |
 | P0     | Owner 协调 UIKit 3.0 / AuthKit 0.8 联合发布，网站再切正式依赖并回归                                                                  |
 | P0     | 经另行授权，登记公开 PKCE 客户端、私有 Blob 与 `guest-asset-download` WAF 规则，验收真实 SSO / 签名下载 / 限速；不是本轮自动发布任务 |
 | P0     | 制作方按母版 spec 为第一位演员锁锚点并交付 21 张基础包，再执行本地入库与视觉核对                                                     |
@@ -61,3 +61,5 @@ This file is the current project work index. It is not the agents-routing algori
 重构前的过程记录保存在 Git 历史（基线 `5bacfca`），不混入现行设计。
 已完成并通过审阅的计划 / spec 分别归档到 `docs/plans/completed/`、`docs/specs/completed/`。
 不要把已归档历史重新搬回 active；新任务建立新计划并引用既有证据。
+
+Pinned-Override: REF-CURRENT-WORK

@@ -24,14 +24,7 @@ AI 演员。这个仓库是公开官网和演员资产库。
 
 ## 本地开发与验证
 
-使用 Node 24 和仓库指定的 pnpm 11。本分支引用两个**尚未发布**的邻接候选 tarball，
-不是从任意机器克隆后即可独立安装的正式发布包：
-
-- UIKit：`swimmer-ui-kit-3.0.0.tgz`
-- AuthKit：`swimmer-auth-kit-0.8.0-rc.0.tgz`
-
-具体定位以 `package.json` 的 file 依赖为准。校验值与接入授权见[执行计划第 0 节](docs/plans/active/2026-10-03-swimmer-family-rebuild.md)。
-候选缺失时先取得已批准的相同候选；不要临时发布或复制另一份品牌组件。
+使用 Node 24 和仓库指定的 pnpm 11。依赖使用已发布的 UIKit `3.0.0-rc.1`、AuthKit `0.8.0-rc.1`、backend-client `0.7.2` 与 I18nKit `0.2.0`。私有 AuthKit 包通过 `.npmrc` 的 GitHub Packages registry 读取，令牌不进仓库。架构与上线准备见 [architecture.md](docs/reference/architecture.md) 和 [release.md](docs/reference/release.md)。
 
 ```bash
 pnpm install --frozen-lockfile

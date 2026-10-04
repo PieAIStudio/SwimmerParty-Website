@@ -1,8 +1,8 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-04T06:47:33.849Z
+generated_at: 2026-10-04T12:50:40.806Z
 generator_version: doc-gov@0.14.2
-docs_count: 18
+docs_count: 20
 docs:
   - id: ADR-2026-10-03-JOIN-SWIMMER-FAMILY
     path: docs/adr/2026-10-03-join-swimmer-family.md
@@ -109,20 +109,34 @@ docs:
     canonical: true
     last_reviewed: 2026-09-08
     pinned: true
+  - id: REF-ARCHITECTURE
+    path: docs/reference/architecture.md
+    type: reference
+    status: active
+    canonical: true
+    last_reviewed: 2026-10-04
+    pinned: false
   - id: REF-DOCUMENTATION-MAP
     path: docs/reference/documentation-map.md
     type: reference
     status: active
     canonical: true
-    last_reviewed: YYYY-MM-DD
+    last_reviewed: 2026-10-04
     pinned: false
   - id: REF-CURRENT-WORK
     path: docs/reference/execution/current-work.md
     type: reference
     status: active
     canonical: true
-    last_reviewed: 2026-10-03
+    last_reviewed: 2026-10-04
     pinned: true
+  - id: REF-RELEASE
+    path: docs/reference/release.md
+    type: reference
+    status: active
+    canonical: true
+    last_reviewed: 2026-10-04
+    pinned: false
   - id: SPEC-ACTOR-ASSET-LIBRARY
     path: docs/specs/active/actor-asset-library.md
     type: spec

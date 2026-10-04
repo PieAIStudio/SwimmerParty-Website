@@ -2,7 +2,7 @@
 
 本文是本站唯一的现行设计系统说明。历史取舍保留在
 [并入 Swimmer 家族 ADR](docs/adr/2026-10-03-join-swimmer-family.md)；
-重构验收记录见[执行计划](docs/plans/active/2026-10-03-swimmer-family-rebuild.md)。
+重构验收记录见 [健康重构计划](docs/plans/active/2026-10-04-healthy-site-refactor.md)。
 
 ## 定位与内容
 
@@ -42,14 +42,12 @@ UIKit 3.0 的 `grey` 风格是唯一控件风格，明暗为 `light` / `dark`。
 区块上下 64px / 96px，普通网格 24px。页头高 64px，只有页头允许 12px 背景模糊。
 
 卡片无描边、无阴影，使用 `bg-card`、18px 圆角及 20px / 24px 内边距。大展示面板
-26px 圆角。状态药丸高 26px，单色；可出演加实心点，研发中使用次要文字色。
+26px 圆角。状态标签统一使用 UIKit `GameBadge`；可出演用 success，旧规格用 warning，其余用 neutral。
 `SectionHead` 按眉标、标题、说明排列，不加编号和装饰线。
 
-控件从客户端边界 `src/ui/kit.tsx` 具名导入，不复制或改造 UIKit 的轮廓、阴影、按压形变。
+控件直接从 `@pieai/swimmer-ui-kit` 具名导入，不复制或改造 UIKit 的轮廓、阴影、按压形变。
 普通操作用 secondary `GameButton`；单张下载、主题、菜单、关闭用带 label 的
-`GameIconButton`。勾选、分段选择、模型下拉、弹窗、提示和真实进度分别用
-`GameCheckbox`、`GameSegmentedControl`、`GameSelect`、`GameModal`、`GameToast`、`GameProgress`。
-图标是 `src/ui/icons.tsx` 的单色内联 SVG，不加载图标库。
+`GameIconButton`。勾选、分段选择、模型下拉、提示和真实进度分别用 `GameCheckbox`、`GameSegmentedControl`、`GameSelect`、`LiquidPopover`、`GameToast`、`GameProgress`；图标统一用 `GameIcon`。
 
 每屏最多一个 primary：只给下载所选、开始下载或登录。弹窗出现时背景下载按钮退为
 secondary。导航始终是真链接加文字箭头，不用液体按钮。所有输入有明确可访问名称，
