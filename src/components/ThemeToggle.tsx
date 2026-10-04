@@ -14,7 +14,7 @@ export function ThemeToggle() {
       title={t(theme === "light" ? "common.themeDark" : "common.themeLight")}
       onClick={() => setSiteTheme(theme === "light" ? "dark" : "light")}
     >
-      <GameIcon icon={theme === "light" ? "moon" : "sun"}  />
+      <GameIcon icon={theme === "light" ? "moon" : "sun"} />
     </GameIconButton>
   );
 }

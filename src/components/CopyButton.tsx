@@ -23,7 +23,7 @@ export function CopyButton({ text, label }: { text: string; label?: string }) {
   };
   return (
     <GameButton onClick={copy}>
-      <GameIcon icon={done ? "check" : "copy"}  />
+      <GameIcon icon={done ? "check" : "copy"} />
       <span aria-live="polite">{done ? t("common.copied") : (label ?? t("common.copy"))}</span>
     </GameButton>
   );

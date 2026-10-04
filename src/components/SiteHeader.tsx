@@ -87,7 +87,7 @@ function HeaderContent() {
               aria-controls="site-menu"
               onClick={() => setOpen(true)}
             >
-              <GameIcon icon="menu"  />
+              <GameIcon icon="menu" />
             </GameIconButton>
           </div>
         </div>
@@ -112,7 +112,7 @@ function HeaderContent() {
               {SITE.name}
             </Link>
             <GameIconButton label={t("common.close")} onClick={() => setOpen(false)}>
-              <GameIcon icon="close"  />
+              <GameIcon icon="close" />
             </GameIconButton>
           </div>
           <nav

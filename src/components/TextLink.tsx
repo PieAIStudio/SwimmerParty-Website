@@ -10,9 +10,9 @@ export function TextLink({
 }: ComponentProps<typeof Link> & { back?: boolean }) {
   return (
     <Link {...props} className={`sp-link ${className}`}>
-      {back ? <GameIcon icon="arrow-left"  /> : null}
+      {back ? <GameIcon icon="arrow-left" /> : null}
       {children}
-      {back ? null : <GameIcon icon="arrow-right"  />}
+      {back ? null : <GameIcon icon="arrow-right" />}
     </Link>
   );
 }
