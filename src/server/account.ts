@@ -1,4 +1,5 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
+import { createAuthClient } from "@pieai/swimmer-backend-client";
 import type { NodeAuthConfig } from "@pieaistudio/swimmer-auth-kit/server";
 import { SITE } from "../lib/site.ts";
 import { HttpError } from "./runtime-mode.ts";
@@ -14,6 +15,7 @@ export function swimmerAccountConfig(
   const cookiePassword = required("SWIMMER_COOKIE_PASSWORD");
   if (cookiePassword.length < 32) throw new HttpError(503, "account-not-configured");
   return {
+    createAuthClient,
     origin: SITE.url,
     backendUrl: required("SWIMMER_BACKEND_URL"),
     publishableKey: required("SWIMMER_PUBLISHABLE_KEY"),
