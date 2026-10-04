@@ -1,4 +1,4 @@
-import { ASSET_FRAMES } from "@/features/assets/asset-series";
+import { ASSET_FRAMES } from "@/features/assets";
 
 /** Measurement is HTML/SVG, never burned into an actor's downloadable image. */
 export function HeightScale({ heightCm }: { heightCm: number }) {

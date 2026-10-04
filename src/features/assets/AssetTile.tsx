@@ -4,7 +4,7 @@ import type { AssetItem } from "@/features/assets/asset-types";
 import { useSiteI18n } from "@/i18n/client";
 import { GameBadge, GameCheckbox, GameIconButton } from "@pieai/swimmer-ui-kit";
 import { GameIcon } from "@pieai/swimmer-ui-kit";
-import { ActorPicture } from "@/features/actors";
+import { ActorPicture } from "@/features/actors/client";
 import { useAssetSelection } from "./AssetSelection";
 
 export function AssetTile({

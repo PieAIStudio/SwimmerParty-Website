@@ -12,7 +12,7 @@
     "start": "next start",
     "check": "pnpm check:i18n && pnpm typecheck && pnpm lint && pnpm format:check && pnpm test:tools",
     "typecheck": "tsc --noEmit",
-    "lint": "oxlint src e2e next.config.ts playwright.config.ts eslint.config.mjs -c ./.oxlintrc.json",
+    "lint": "oxlint src e2e next.config.ts playwright.config.ts eslint.config.mjs -c ./.oxlintrc.json && node tools/check-boundaries.ts",
     "lint:next": "eslint",
     "format": "oxfmt src e2e docs AGENTS.md README.md DESIGN.md --write --ignore-path ./.oxfmtignore",
     "format:check": "oxfmt src e2e docs AGENTS.md README.md DESIGN.md --check --ignore-path ./.oxfmtignore",

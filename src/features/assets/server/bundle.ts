@@ -2,7 +2,7 @@ import { getActor } from "../../../content/actors/index.ts";
 import { getActorAssets } from "../assets.ts";
 import { privateApi, queryText, readJsonBody } from "../../../lib/server/api.ts";
 import { HttpError } from "../../../lib/server/runtime-mode.ts";
-import { accountUser } from "../../account/server/account.ts";
+import { accountUser } from "../../account/server/index.ts";
 import { signedAsset } from "./asset-downloads.ts";
 import { MAX_BUNDLE_ITEMS } from "../downloads.ts";
 
