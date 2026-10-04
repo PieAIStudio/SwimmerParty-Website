@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  outputFileTracingIncludes: { "/api/**": ["./src/content/assets/*.json"] },
+  outputFileTracingIncludes: { "/api/**": ["./src/content/actors/*/assets.json"] },
   // Local originals and test evidence are never deployment artifacts.
   outputFileTracingExcludes: {
     "/api/**": [

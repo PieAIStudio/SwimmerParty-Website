@@ -222,3 +222,21 @@ test("local production build sends no analytics, cloud storage or account-provid
   expect(external).toEqual([]);
   expect(telemetry).toEqual([]);
 });
+
+test("bad JSON and oversized member bodies return private errors without severing the connection", async ({
+  request,
+}) => {
+  await request.post("/api/auth/mock/sign-in");
+  for (const [data, status] of [
+    ["{", 400],
+    [JSON.stringify({ slots: ["x".repeat(17_000)] }), 413],
+  ] as const) {
+    const response = await request.post("/api/assets/hu-qian/bundle", {
+      headers: { "Content-Type": "application/json" },
+      data,
+    });
+    expect(response.status()).toBe(status);
+    expect(response.headers()["cache-control"]).toBe("private, no-store");
+    expect((await response.json()).error).toBeTruthy();
+  }
+});

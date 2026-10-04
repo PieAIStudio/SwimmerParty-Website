@@ -124,3 +124,36 @@ test("sitemap lists every actor in every authored locale", async ({ request }) =
     expect(xml).toContain(`/${locale}/pact`);
   }
 });
+
+for (const coarse of [false, true]) {
+  test(`high-density clay rendering has an explicit ${coarse ? "coarse-pointer" : "desktop"} pixel budget`, async ({
+    browser,
+  }) => {
+    const context = await browser.newContext({
+      viewport: { width: coarse ? 390 : 1440, height: 900 },
+      deviceScaleFactor: 3,
+      hasTouch: coarse,
+      reducedMotion: "reduce",
+    });
+    try {
+      const page = await context.newPage();
+      await page.goto("http://127.0.0.1:3399/en");
+      expect(await page.evaluate(() => matchMedia("(pointer: coarse)").matches)).toBe(coarse);
+      const canvas = page.locator("[data-clay-stage] canvas");
+      await expect(canvas).toBeVisible();
+      const limit = coarse ? 1.35 : 1.5;
+      await expect
+        .poll(async () =>
+          Math.abs(
+            (await canvas.evaluate(
+              (node) => (node as HTMLCanvasElement).width / node.clientWidth,
+            )) - limit,
+          ),
+        )
+        .toBeLessThan(0.015);
+      expect(await page.locator("canvas").count()).toBe(1);
+    } finally {
+      await context.close();
+    }
+  });
+}

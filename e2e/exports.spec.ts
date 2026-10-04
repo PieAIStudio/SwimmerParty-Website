@@ -38,7 +38,7 @@ for (const [target, count] of [
     await page.goto("/en/kit/hu-qian");
     const result = await page.evaluate(
       async (input) => {
-        const modulePath = "/__export_modules/src/lib/export-packs.ts";
+        const modulePath = "/__export_modules/src/features/assets/export-packs.ts";
         const { exportPack } = (await import(
           modulePath
         )) as typeof import("../src/features/assets/export-packs");

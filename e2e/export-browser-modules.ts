@@ -17,7 +17,7 @@ export async function installExportBrowserModules(page: Page) {
       return;
     }
     const safe = path.posix.normalize(relative);
-    if (!/^(src\/lib|src\/content)\/[a-z0-9-]+\.(ts|json)$/.test(safe))
+    if (!/^(src\/lib|src\/content|src\/features\/assets)\/[a-z0-9-]+\.(ts|json)$/.test(safe))
       throw new Error(`Unexpected browser test import: ${safe}`);
     const source = await readFile(path.resolve(safe), "utf8");
     if (safe.endsWith(".json")) {
