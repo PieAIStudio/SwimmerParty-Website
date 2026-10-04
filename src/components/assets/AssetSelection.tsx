@@ -262,6 +262,9 @@ export function AssetSelectionProvider({
                   {t("assets.guestCooldown", { seconds: GUEST_DOWNLOAD_WINDOW_SECONDS, remaining })}
                 </p>
                 <GameButton
+                  ref={(node) => {
+                    sourceRef.current = node;
+                  }}
                   onClick={() => {
                     setNotice(null);
                     showInvite();
