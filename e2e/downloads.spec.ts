@@ -62,10 +62,14 @@ test("mock sign-in preserves selection and produces a real ZIP with originals, b
   await page.getByRole("button", { name: "Download selected", exact: true }).click();
   await expect(page.getByText("University", { exact: true })).toBeVisible();
   await expect(page.getByText("Directing", { exact: true })).toBeVisible();
+  const signInRequest = page.waitForRequest((request) =>
+    request.url().endsWith("/api/auth/mock/sign-in"),
+  );
   await Promise.all([
     page.waitForEvent("load"),
     page.getByRole("dialog").getByRole("button", { name: "Sign in with Swimmer" }).click(),
   ]);
+  expect((await signInRequest).postDataJSON()).toEqual({ redirectPath: library });
   await expect(page.locator("[data-account-menu]").first()).toContainText("Signed in");
   await expect(page.getByRole("checkbox").first()).toBeChecked();
   const cookie = (await page.context().cookies()).find((item) => item.name === "sp_mock_member");

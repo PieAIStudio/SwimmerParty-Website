@@ -1,6 +1,6 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { createAuthClient } from "@pieai/swimmer-backend-client";
-import type { NodeAuthConfig } from "@pieaistudio/swimmer-auth-kit/server";
+import type { createNodeAuth, NodeAuthConfig } from "@pieaistudio/swimmer-auth-kit/server";
 import { SITE } from "../../../content/site.ts";
 import { HttpError } from "../../../lib/server/runtime-mode.ts";
 
@@ -34,19 +34,30 @@ export function swimmerAccountConfig(
     // This configuration requires an explicitly registered public PKCE client at the account center.
   };
 }
-export async function swimmerAccount(request: IncomingMessage, response: ServerResponse) {
-  const { createNodeAuth } = await import("@pieaistudio/swimmer-auth-kit/server");
-  return createNodeAuth(swimmerAccountConfig())(request, response);
+type AccountDependencies = {
+  createNodeAuth?: typeof createNodeAuth;
+  env?: Readonly<Record<string, string | undefined>>;
+};
+export async function swimmerAccount(
+  request: IncomingMessage,
+  response: ServerResponse,
+  dependencies: AccountDependencies = {},
+) {
+  const factory =
+    dependencies.createNodeAuth ??
+    (await import("@pieaistudio/swimmer-auth-kit/server")).createNodeAuth;
+  return factory(swimmerAccountConfig(dependencies.env))(request, response);
 }
 export async function accountUser(
   request: IncomingMessage,
   response: ServerResponse,
   mode: "mock" | "swimmer",
+  dependencies: AccountDependencies = {},
 ): Promise<{ id: string } | null> {
   if (mode === "mock")
     return /(?:^|;\s*)sp_mock_member=1(?:;|$)/.test(request.headers.cookie ?? "")
       ? { id: "local-mock-member" }
       : null;
-  const user = await (await swimmerAccount(request, response)).verifiedUser();
+  const user = await (await swimmerAccount(request, response, dependencies)).verifiedUser();
   return user && user.is_anonymous === false ? { id: user.id } : null;
 }

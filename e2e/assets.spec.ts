@@ -152,3 +152,33 @@ for (const width of [390, 1440])
       ).not.toBeVisible();
     });
   }
+
+test("empty selection never downloads and all three selection controls work at 1280", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  let downloads = 0;
+  page.on("request", (request) => {
+    if (/\/api\/assets\/.+\/(download|bundle)/.test(request.url())) downloads++;
+  });
+  await page.goto("/en/kit/hu-qian");
+  const trigger = page.getByRole("button", { name: "Download selected", exact: true });
+  await trigger.click();
+  await expect(page.locator('[data-asset-notice="selectFirst"]')).toBeVisible();
+  expect(downloads).toBe(0);
+  const tile = page.locator('[data-asset-slot="turnaround.front"]');
+  const select = tile.getByRole("button", { name: "Select Front", exact: true });
+  await select.click();
+  await expect(tile.getByRole("checkbox")).toBeChecked();
+  await select.click({ position: { x: 50, y: 120 } });
+  await expect(tile.getByRole("checkbox")).not.toBeChecked();
+  await tile.getByRole("checkbox").focus();
+  await page.keyboard.press("Space");
+  await expect(tile.getByRole("checkbox")).toBeChecked();
+  await trigger.click();
+  const dialog = page.getByRole("dialog");
+  await expect(dialog.getByRole("heading")).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(dialog).not.toBeVisible();
+  await expect(trigger).toBeFocused();
+});
