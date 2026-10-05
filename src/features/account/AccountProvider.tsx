@@ -128,7 +128,16 @@ export function AccountMenu() {
   const account = useAccount();
   const { t } = useSiteI18n();
   const [error, setError] = useState(false);
-  if (!account.user) return null;
+  if (!account.user)
+    return (
+      <GameButton
+        variant="secondary"
+        disabled={account.loading || account.busy || !account.mode}
+        onClick={() => void account.signIn().catch(() => setError(true))}
+      >
+        {t("assets.signIn")}
+      </GameButton>
+    );
   return (
     <details className="relative" data-account-menu>
       <summary

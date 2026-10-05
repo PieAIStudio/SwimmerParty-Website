@@ -90,11 +90,11 @@ export const messages = {
   },
   "home.metaTitle": {
     en: "Synthetic Talent House",
-    zh: "合成演员工厂",
+    zh: "原创 AI 演员工作室",
   },
   "home.eyebrow": {
-    en: "SWIMMER PARTY — Synthetic talent house",
-    zh: "SWIMMER PARTY — 合成演员工厂",
+    en: "SWIMMER PARTY — Original AI actors",
+    zh: "SWIMMER PARTY — 原创 AI 演员工作室",
   },
   "home.heroLines.0": {
     en: "We do not",
@@ -109,8 +109,8 @@ export const messages = {
     zh: "我们自己造",
   },
   "home.heroBody": {
-    en: "Every one of them carries a serial number, a revision, an expression set and a licensable performance range. Manufactured, not lucky.",
-    zh: "每一个都有编号、版本号、表情组和可授权的表演区间——像一件工业制品，不像一次侥幸。",
+    en: "Each actor has a code, a specification, and downloadable image assets.",
+    zh: "每位演员都有编号、规格和可下载的图片资产。",
   },
   "home.ctaRoster": {
     en: "View roster",
@@ -133,16 +133,16 @@ export const messages = {
     zh: "可出演",
   },
   "home.statVersions": {
-    en: "Versions burned",
-    zh: "推翻过的版本",
+    en: "Images delivered",
+    zh: "已交付图片",
   },
   "home.statPlates": {
     en: "Plates delivered",
     zh: "已交付定妆板",
   },
   "home.statKitLive": {
-    en: "Kit items live",
-    zh: "已开放物料",
+    en: "Images open",
+    zh: "已开放图片",
   },
   "home.rosterLabel": {
     en: "Roster",
@@ -153,8 +153,8 @@ export const messages = {
     zh: "我们造出来的人",
   },
   "home.rosterNote": {
-    en: "Everyone here has a number and a revision. The revision is not decoration — it counts how many times this character was torn up and rebuilt. Where there is no delivered plate, we say so.",
-    zh: "每个人都有编号和版本号。版本号不是装饰——它是这个角色被推翻重做过几次。没有定妆板的，我们就明着说没有。",
+    en: "Each actor has a code and a delivered image set. Where an asset is not available, we say so.",
+    zh: "每位演员都有编号和已交付的图片资产。没有开放的资产，我们会直接写明。",
   },
   "home.rosterMore": {
     en: "All {count} on the roster",
@@ -217,8 +217,8 @@ export const messages = {
     zh: "开演",
   },
   "home.pipeline.3.body": {
-    en: "Put them in a scene. The ones who hold stay on the roster; the ones who do not go back in. The revision number is how many times that happened.",
-    zh: "把他放进戏里。演得住的留在名册上，演不住的回炉。版本号就是他被推翻过几次。",
+    en: "Put them in a scene. The ones who hold stay on the roster; the others return to production.",
+    zh: "把他放进戏里。演得住的留在名册上，其他的回到制作流程。",
   },
   "home.kitLabel": {
     en: "Open kit",
@@ -329,8 +329,8 @@ export const messages = {
     zh: "名册",
   },
   "roster.intro": {
-    en: "The code is the identity, the revision is the résumé. {castable} castable now, {building} still on the line — we do not call an unfinished one finished.",
-    zh: "编号是身份，版本号是履历。{castable} 位可直接出演，{building} 位还在产线上——我们不把在建的说成建好的。",
+    en: "Each actor has a code and a current status. {castable} castable now, {building} still in progress.",
+    zh: "每位演员都有编号和当前状态。{castable} 位现在可出演，{building} 位仍在制作中。",
   },
   "roster.castableLabel": {
     en: "Castable",
@@ -389,8 +389,8 @@ export const messages = {
     zh: "在做",
   },
   "works.intro": {
-    en: "This house opened in {year}. Nothing on this slate is invented — one goes live, one goes up; what is in progress says it is in progress.",
-    zh: "我们是 {year} 年才开工的厂牌。片单上没有一条是编出来的——上线一条，挂一条；在做的就写在做的。",
+    en: "This house opened in {year}. The slate lists works with a recorded status.",
+    zh: "我们是 {year} 年开始工作的厂牌。片单只列有记录的作品和进度。",
   },
   "works.slateTitle": {
     en: "What we are making",
@@ -441,8 +441,8 @@ export const messages = {
     zh: "一个包里有什么",
   },
   "kit.manifestNote": {
-    en: "Status is literal. AVAILABLE means it is on this site right now and you can test it in thirty seconds. Everything else says what it actually is.",
-    zh: "状态是字面意思。「已开放」表示它现在就在这个站上，你三十秒就能验证。其他的都写它真实的样子。",
+    en: "AVAILABLE means the file is on this site now. Everything else is marked by its current status.",
+    zh: "“已开放”表示文件现在就在这个站上；其他状态按实际情况标注。",
   },
   "kit.seedsLabel": {
     en: "Seeds",
@@ -585,16 +585,16 @@ export const messages = {
     zh: "工作室",
   },
   "studio.heroLines.0": {
-    en: "A factory",
+    en: "A studio",
     zh: "一间",
   },
   "studio.heroLines.1": {
     en: "For people.",
-    zh: "造人的厂",
+    zh: "制作原创 AI 演员的工作室",
   },
   "studio.intro": {
     en: "SWIMMER PARTY is the synthetic talent house of PieAI Studio. We do not take outsourced rendering. We build our own actors and then we lend them out.",
-    zh: "SWIMMER PARTY 是 PieAI Studio 旗下的合成演员工厂。我们不接外包渲染，我们只造自己的演员，然后把他们租出去。",
+    zh: "SWIMMER PARTY 是 PieAI Studio 旗下的原创 AI 演员工作室。我们不接外包渲染，我们只造自己的演员，然后把他们租出去。",
   },
   "studio.beliefsLabel": {
     en: "Beliefs",
@@ -626,19 +626,19 @@ export const messages = {
   },
   "studio.beliefs.1.title": {
     en: "Version numbers are honest",
-    zh: "版本号是诚实的",
+    zh: "当前状态是公开的",
   },
   "studio.beliefs.1.body": {
-    en: "We print how many times a character was torn up right on the roster. VERSION 6 OF 10 means the first five were not good enough. Hiding that is what looks guilty.",
-    zh: "我们把每个角色被推翻过几次直接印在名册上。VERSION 6 OF 10 的意思是前面五版都不够好。藏起来才叫心虚。",
+    en: "We publish the current status and the assets that are available now.",
+    zh: "我们公开当前状态和现在可下载的资产。",
   },
   "studio.beliefs.2.n": {
     en: "03",
     zh: "03",
   },
   "studio.beliefs.2.title": {
-    en: "The white model comes first",
-    zh: "先有白膜",
+    en: "We lock the character specification first",
+    zh: "先确认角色规格",
   },
   "studio.beliefs.2.body": {
     en: "Proportion, build and range of motion get locked before anyone talks about skin or clothes. Reverse the order and the character is just a poster that moves.",
@@ -690,7 +690,7 @@ export const messages = {
   },
   "studio.stack.1.note": {
     en: "The white-model stage",
-    zh: "白膜舞台",
+    zh: "角色规格展示",
   },
   "studio.stack.2.name": {
     en: "Next.js",
@@ -865,8 +865,8 @@ export const messages = {
     zh: "现在可约",
   },
   "casting.availableNote": {
-    en: "The ones in development can be discussed too — whoever asks first gets first call on delivery.",
-    zh: "研发中的演员也可以先聊，交付后优先给到先约的人。",
+    en: "The castable roster is available now. Commissioned actors are assessed separately.",
+    zh: "可直接出演的演员现在可约；定制演员另行评估。",
   },
   "casting.remixNote": {
     en: "Not a brand, just want to make something? The kit is free and you do not need this page.",

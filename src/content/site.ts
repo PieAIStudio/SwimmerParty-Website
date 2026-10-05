@@ -6,8 +6,8 @@ export const SITE = {
   nameCn: "游泳派对",
   /** The positioning line, in both authored locales. */
   claim: {
-    en: "WE DO NOT CAST ACTORS. WE BUILD THEM.",
-    zh: "我们不找演员。我们造演员。",
+    en: "WE MAKE AND LICENSE ORIGINAL AI ACTORS.",
+    zh: "我们制作并授权原创 AI 演员。",
   } satisfies L,
   description: {
     en: "SWIMMER PARTY is a synthetic talent house. We design, build and license original AI actors — full character specifications, expression sets and performance range, ready to cast.",
@@ -16,7 +16,7 @@ export const SITE = {
   /** Canonical production origin. The translate proxy is derived from it. */
   url: "https://swimmerparty.swiminai.com",
   founded: "2026",
-  contact: "casting@pieflow.app",
+  contact: "swimmerparty@swiminai.com",
 } as const;
 
 export const NAV = [

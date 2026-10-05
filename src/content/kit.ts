@@ -19,7 +19,7 @@ export type KitItemStatus = "live" | "preparing" | "planned";
 export const KIT_STATUS_LABEL: Record<KitItemStatus, L> = {
   live: { en: "AVAILABLE", zh: "已开放" },
   preparing: { en: "IN PREPARATION", zh: "筹备中" },
-  planned: { en: "PLANNED", zh: "已排期" },
+  planned: { en: "PLANNED", zh: "规划中" },
 };
 
 export type KitItem = {
@@ -44,35 +44,35 @@ export const KIT_MANIFEST: KitItem[] = [
     status: "live",
   },
   {
-    id: "register",
+    id: "images",
     index: "K-02",
-    name: { en: "VOICE & REGISTER", zh: "语域说明" },
-    format: "TXT",
+    name: { en: "IMAGE ORIGINALS", zh: "透明背景 PNG 原图" },
+    format: "PNG / 941×1672",
     body: {
-      en: "How this actor talks: speed, accent under pressure, what they never say, and the beat they hold instead. Feed it to a writing model and the dialogue stops sounding generic.",
-      zh: "这个人怎么说话：语速、一急就冒出来的口音、他绝不会说的话，以及他用什么停顿代替。喂给写作模型，台词就不再是通用腔。",
+      en: "Transparent PNG originals, listed per actor and look. The current manifests contain 63 images per delivered actor.",
+      zh: "透明背景 PNG 原图，按演员和造型列出。当前每位已交付演员的清单有 63 张图片。",
     },
     status: "live",
   },
   {
-    id: "negatives",
+    id: "profile",
     index: "K-03",
-    name: { en: "NEGATIVE LIST", zh: "排除项清单" },
-    format: "TXT",
+    name: { en: "CHARACTER PROFILE", zh: "角色资料 JSON" },
+    format: "JSON",
     body: {
-      en: "The things that break the character on sight — wrong age band, wrong glamour level, a lamp painted into the rim light. It opens with the line that matters most: do not render as a real human. Half of holding a face steady is knowing what to forbid.",
-      zh: "一眼就会让角色垮掉的东西——年龄段错、精致度错、模型把轮廓光画成一根灯管。第一条是最要紧的那条：不要渲染成真人。锁住一张脸，一半靠禁止什么。",
+      en: "A bilingual character profile with the actor code, specification, prompt seed, looks and delivered slots.",
+      zh: "双语角色资料，含演员编号、规格、角色种子、造型和已交付图片格位。",
     },
     status: "live",
   },
   {
-    id: "plates",
+    id: "licence",
     index: "K-04",
-    name: { en: "REFERENCE PLATES", zh: "参考图组" },
-    format: "WEBP / 2K",
+    name: { en: "LICENCE TERMS", zh: "授权说明" },
+    format: "TXT / JSON",
     body: {
-      en: "Front, three-quarter and side on seamless black. Multi-reference is the only thing that actually holds a face across generations; one image is a coin flip. Delivered per actor — the roster below says exactly who has which angles.",
-      zh: "正面、四分之三侧、正侧，纯黑无缝底。多参考图是真正锁住一张脸的唯一办法，单张图只是碰运气。按演员逐个交付——下面的名单写清楚了谁有哪几个角度。",
+      en: "The current non-commercial use terms and the restrictions that protect the animated characters.",
+      zh: "当前非商业使用条款，以及保护动画角色的限制。",
     },
     status: "live",
   },
