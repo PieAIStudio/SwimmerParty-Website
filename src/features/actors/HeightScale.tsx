@@ -1,8 +1,7 @@
-import { ASSET_FRAMES } from "@/features/assets";
-
 /** Measurement is HTML/SVG, never burned into an actor's downloadable image. */
 export function HeightScale({ heightCm }: { heightCm: number }) {
-  const { crownPct, solePct } = ASSET_FRAMES.full;
+  const crownPct = 5;
+  const solePct = 96;
   const max = Math.ceil((heightCm + 20) / 10) * 10;
   const y = (cm: number) => solePct - (cm / heightCm) * (solePct - crownPct);
   return (

@@ -1,16 +1,17 @@
 {
-  "version": 1,
+  "version": 2,
   "frames": {
     "full": {
       "width": 1536,
-      "height": 2304,
-      "crownPct": 5,
-      "solePct": 96
+      "height": 2304
     },
     "head": {
       "width": 1920,
-      "height": 1920,
-      "eyeLinePct": 42
+      "height": 1920
+    },
+    "portrait": {
+      "width": 941,
+      "height": 1672
     }
   },
   "series": [
@@ -19,7 +20,7 @@
       "frame": "full",
       "required": true,
       "perLook": false,
-      "prompt": "Framing: {direction}. Crown of the head at 5% and soles of the feet at 96% of the image height, horizontally centered.",
+      "prompt": "Framing: {direction}.",
       "slots": [
         {
           "key": "front",
@@ -34,12 +35,22 @@
         {
           "key": "side",
           "required": true,
-          "direction": "full body, exact profile facing left, relaxed standing pose"
+          "direction": "full body, exact profile, face pointing to the RIGHT edge of the frame"
         },
         {
           "key": "back",
           "required": true,
           "direction": "full body, facing directly away from the camera, relaxed standing pose"
+        },
+        {
+          "key": "back-three-quarter-left",
+          "required": false,
+          "direction": "full body seen from behind at a three-quarter angle; we see the character's left shoulder and a little of the left cheek, face peeking toward the RIGHT side of the frame"
+        },
+        {
+          "key": "back-three-quarter-right",
+          "required": false,
+          "direction": "same, mirrored: right shoulder and right cheek, face peeking toward the LEFT side of the frame"
         }
       ]
     },
@@ -48,7 +59,7 @@
       "frame": "head",
       "required": true,
       "perLook": false,
-      "prompt": "Framing: {direction}. Eyes at 42% of the image height, horizontally centered.",
+      "prompt": "Framing: {direction}.",
       "slots": [
         {
           "key": "front",
@@ -64,6 +75,26 @@
           "key": "side",
           "required": true,
           "direction": "head and shoulders, exact profile facing left, neutral relaxed expression"
+        },
+        {
+          "key": "three-quarter-left",
+          "required": false,
+          "direction": "head and shoulders, head turned 45 degrees toward the character's left (face toward the RIGHT side of the frame)"
+        },
+        {
+          "key": "side-right",
+          "required": false,
+          "direction": "head and shoulders, exact profile, face pointing to the RIGHT edge of the frame"
+        },
+        {
+          "key": "up",
+          "required": false,
+          "direction": "head and shoulders, facing the camera, head tilted up about 30 degrees, eyes looking up"
+        },
+        {
+          "key": "down",
+          "required": false,
+          "direction": "head and shoulders, facing the camera, head tilted down about 30 degrees, eyes looking down"
         }
       ]
     },
@@ -237,7 +268,7 @@
       "frame": "full",
       "required": false,
       "perLook": true,
-      "prompt": "Wardrobe: {look}. Framing: {direction}. Crown of the head at 5% and soles of the feet at 96% of the image height, horizontally centered.",
+      "prompt": "Wardrobe: {look}. Framing: {direction}.",
       "slots": [
         {
           "key": "front",

@@ -66,7 +66,7 @@ related:
 必交合计 4 + 3 + 14 = **基础包 21 张**。页面上必交格位永远显示（未交付就显示
 "待交付"空位，同时是出图清单）；可选系列有了第一张才出现。
 
-## 3. 母版规范 v1
+## 3. 母版规范 v2
 
 出图模型 GPT Image 2.5。OpenAI 文档（2026-10 核实）：支持透明背景；宽高为 16 的
 倍数；像素数不超过 2560×1440（3,686,400）为稳定档，最高 3840×2160 为实验档；
@@ -75,7 +75,9 @@ related:
 - 透明背景 PNG（`background: transparent`）；网页按明暗铺底，导出给 AI 时铺中性底。
 - 中性柔光；不加彩色轮廓光、地面投影或入画灯具（参考图里的布光会被模型学走）。
 - 同一造型内服装、发型一致；无文字、无水印、无边框。
-- 构图百分比（全身图头顶/脚底、头像眼线）写在词表里，组合时各角度自然对齐。
+- 新交付统一使用 941×1672（9:16）透明 PNG；仍接受 v1 的精确画幅，用于已有生产物。
+- 入库会把 alpha ≤3 归零、≥250 归满，并记录透明人物的 `bbox` 百分比；拼图和身高刻度使用实测边界。
+- 同一母版内容使用 `<slug>/<sha256 前 16 位>/<文件名>` 对象键；原文件摘要保存在 `sourceSha256`。
 - 命名 `{code}__{series}__{key}__v{n}.png`，服装 `{code}__wardrobe-{look}__{key}__v{n}.png`。
 - 锚点：`face.front` 与 `turnaround.front`。改形象就升锚点版本、整套重出。
 - **旧规格（legacy）**：v1 之前已交付的黑底 WebP（SP-01 三视图、SP-02 正面）按原样
@@ -99,9 +101,9 @@ related:
   `heightCm`（身高刻度用）；移除 `plate`、`views`、`accent`。
 - 词表：`src/content/asset-series.json`（key、尺寸、必交、构图、英文指导），类型与
   读取函数在 `src/features/assets/asset-series.ts`。
-- 资产清单：`src/content/actors/<slug>/assets.json`，入库脚本生成，不手改。每项记录
+- 造型注册放在 `src/content/actors/<slug>/looks.ts`；资产清单只由入库脚本生成，不手改。每项记录
   `slot`、`series`、`key`、`look`、`conformance`（`v1` / `legacy`）、`version`、
-  `width`、`height`、`bytes`、`sha256`、`format`、`object`（母版对象键）、`preview`、`thumb`。
+  `width`、`height`、`bytes`、`sha256`、`sourceSha256`、`bbox`、`format`、`object`（母版对象键）、`preview`、`thumb`。
 - 所有界面文字（系列名、格位名、按钮、提示）进 I18nKit 目录，源头是
   `src/i18n/messages.source.ts`；`@pieai/swimmer-i18n-kit` 升到 0.2.0。
 - 给模型的文字（种子、表演指导、参考包说明）以英文为准，不随界面语言变。

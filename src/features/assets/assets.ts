@@ -3,6 +3,8 @@ import path from "node:path";
 import { getActor } from "../../content/actors/index.ts";
 import { assetSlotOrder, listSeries, requiredSlots } from "./asset-series.ts";
 import type { ActorAssets, AssetItem } from "./asset-types.ts";
+import { looks as heJieLooks } from "../../content/actors/he-jie/looks.ts";
+import { looks as daiErLooks } from "../../content/actors/dai-er/looks.ts";
 export type { ActorAssets, AssetItem } from "./asset-types.ts";
 
 /** Server/build-time read. Client islands receive the public manifest as props. */
@@ -19,15 +21,12 @@ export function getActorAssets(slug: string, root = process.cwd()): ActorAssets 
       return { code: actor.code, slug, looks: [], items: [] };
     throw error;
   }
-  if (
-    data.code !== actor.code ||
-    data.slug !== slug ||
-    !Array.isArray(data.looks) ||
-    !Array.isArray(data.items)
-  ) {
+  const authoredLooks = slug === "he-jie" ? heJieLooks : slug === "dai-er" ? daiErLooks : [];
+  const registeredLooks = authoredLooks.length ? authoredLooks : (data.looks ?? []);
+  if (data.code !== actor.code || data.slug !== slug || !Array.isArray(data.items)) {
     throw new Error(`Invalid asset manifest: ${slug}`);
   }
-  const order = assetSlotOrder(data.looks);
+  const order = assetSlotOrder(registeredLooks);
   const seen = new Set<string>();
   for (const item of data.items) {
     if (
@@ -39,7 +38,7 @@ export function getActorAssets(slug: string, root = process.cwd()): ActorAssets 
     }
     seen.add(item.slot);
   }
-  return data;
+  return { ...data, looks: registeredLooks };
 }
 
 export function coreProgress(slug: string, root = process.cwd()) {

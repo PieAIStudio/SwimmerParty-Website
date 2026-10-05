@@ -1016,6 +1016,18 @@ export const messages = {
     en: "This actor's assets are still being made.",
     zh: "这位演员的资产还在制作中。",
   },
+  "assets.slot.face.threeQuarterLeft": { en: "Other three-quarter", zh: "另一侧 3/4" },
+  "assets.slot.face.sideRight": { en: "Other profile", zh: "另一侧正侧" },
+  "assets.slot.face.up": { en: "Looking up", zh: "仰头" },
+  "assets.slot.face.down": { en: "Looking down", zh: "低头" },
+  "assets.slot.turnaround.backThreeQuarterLeft": {
+    en: "Back three-quarter left",
+    zh: "背后 3/4（左）",
+  },
+  "assets.slot.turnaround.backThreeQuarterRight": {
+    en: "Back three-quarter right",
+    zh: "背后 3/4（右）",
+  },
   "assets.selectSeries": {
     en: "Select all",
     zh: "全选本组",

@@ -97,9 +97,13 @@ export interface MessageContracts {
   readonly "assets.slot.expression.thinking": {  };
   readonly "assets.slot.expression.tired": {  };
   readonly "assets.slot.expression.worried": {  };
+  readonly "assets.slot.face.down": {  };
   readonly "assets.slot.face.front": {  };
   readonly "assets.slot.face.side": {  };
+  readonly "assets.slot.face.sideRight": {  };
   readonly "assets.slot.face.threeQuarter": {  };
+  readonly "assets.slot.face.threeQuarterLeft": {  };
+  readonly "assets.slot.face.up": {  };
   readonly "assets.slot.pose.armsCrossed": {  };
   readonly "assets.slot.pose.phone": {  };
   readonly "assets.slot.pose.point": {  };
@@ -107,6 +111,8 @@ export interface MessageContracts {
   readonly "assets.slot.pose.sit": {  };
   readonly "assets.slot.pose.walk": {  };
   readonly "assets.slot.turnaround.back": {  };
+  readonly "assets.slot.turnaround.backThreeQuarterLeft": {  };
+  readonly "assets.slot.turnaround.backThreeQuarterRight": {  };
   readonly "assets.slot.turnaround.front": {  };
   readonly "assets.slot.turnaround.side": {  };
   readonly "assets.slot.turnaround.threeQuarter": {  };

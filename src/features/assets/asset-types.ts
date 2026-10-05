@@ -1,4 +1,4 @@
-import type { L } from "../../content/actors/index.ts";
+import type { Look } from "../../content/actors/look-types.ts";
 
 type AssetConformance = "v1" | "legacy";
 export type AssetItem = {
@@ -12,6 +12,8 @@ export type AssetItem = {
   height: number;
   bytes: number;
   sha256: string;
+  sourceSha256: string;
+  bbox: { left: number; top: number; right: number; bottom: number };
   format: "png" | "webp";
   object: string;
   preview: string;
@@ -20,6 +22,6 @@ export type AssetItem = {
 export type ActorAssets = {
   code: string;
   slug: string;
-  looks: { id: string; label: L; prompt: string }[];
+  looks: Look[];
   items: AssetItem[];
 };

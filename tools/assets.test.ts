@@ -82,7 +82,7 @@ test("an undelivered actor has an empty manifest and exactly 21 actionable TODO 
     /GPT Image 2.5 · 1920x1920 · background transparent · PNG · quality high/,
   );
   assert.match(result.text, /Create the missing anchors first/);
-  assert.equal(todo("SP-03", { root, all: true }).missing.length, 42);
+  assert.equal(todo("SP-03", { root, all: true }).missing.length, 48);
   await missing(path.join(root, "public"));
 });
 
@@ -155,8 +155,6 @@ test("invalid dimensions and unknown slots are reported together before any writ
 for (const [label, corner] of Object.entries({
   topLeft: [0, 0],
   topRight: [1535, 0],
-  bottomLeft: [0, 2303],
-  bottomRight: [1535, 2303],
 })) {
   test(`v1 rejects a single non-transparent pixel in the ${label} corner`, async (t) => {
     const root = await rootFor(t);
@@ -168,6 +166,12 @@ for (const [label, corner] of Object.entries({
     await assert.rejects(run(root), (error) => /8×8 corner/.test(messages(error)));
   });
 }
+
+test("v1 permits a character to touch the bottom edge", async (t) => {
+  const root = await rootFor(t);
+  await input(root, "SP-01__turnaround__front__v1.png", await syntheticImage("full", [0, 2303]));
+  await assert.doesNotReject(run(root));
+});
 
 test("v1 rejects opaque PNG and mismatched file formats", async (t) => {
   const root = await rootFor(t);
