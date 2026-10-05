@@ -310,6 +310,7 @@ alpha ≤ 3 归 0、≥ 250 归 255，颜色不动，无损 PNG；存下修正�
 6. `/kit` 和资产页的"已开放 / 待交付"：新增的可选格位不算"待交付"。
 7. 两位演员的 `promptSeed` 填附录 A 的英文种子；`status` 按附录 A。
 8. 更新 `tools/shots.ts` 的页面清单（去掉下线的页面）；加浏览器测试：9:16 卡片、造型分组、角色标签、拼图标签默认语言、旧网址跳转。
+9. **媒介占位**（附录 D）：新增 `src/content/media-kinds.ts`，在演员档案页加入五行“资料 / Materials”，在资产库页加入 `series-more` 的四个规划中资料块和系列跳转入口。状态由清单自动计算；没有真实文件时只显示“规划中”，不加入选择、下载、打包或拼图。使用 `GameEmptyState`、`GameFactList`、`GameBadge` 和 `hourglass` 图标；同步文案、`DESIGN.md`、资产 spec 与中英明暗/390px 测试。
 
 ### P4 两位演员素材入库（本地）
 
@@ -463,6 +464,20 @@ alpha ≤ 3 归 0、≥ 250 归 255，颜色不动，无损 PNG；存下修正�
 - SP-13 `maid`：`Role look (He Jie playing the maid): perfectly neat, glossy, heavily hair-sprayed bun with a large white lace maid headpiece; short-drama glam makeup with slightly too-long false lashes, slightly too-red lipstick and two round rosy blush spots; deep navy knee-length maid dress with puffed short sleeves, oversized white lace collar, layered white ruffled apron with an extra-large bow at the back, white cuffs, dark grey flat shoes.`
 - SP-03 `personal`：`Personal style: faded olive-green cotton bomber jacket worn open; plain white crew-neck T-shirt; mid-blue straight jeans; clean white low-top sneakers. His own tousled light-brown hair.`
 - SP-03 `ceo`：`Role look (Dai Er playing the CEO): his own tousled light-brown hair combed back with too much gel, ends still sticking up; slim glossy deep royal-blue suit with shiny black satin lapels, white shirt, wide shiny silver tie, white pocket square stuffed in carelessly, pointed glossy black-brown shoes. Too flashy and trying too hard — funny, not cool. Unbranded.`
+
+### 附录 D：声音、视频、三维和动作占位
+
+本附录来自 Owner 文件 `AI演员-尝试/10-website-media-placeholders.md`，在 P3 第 9 个单元执行。
+
+- 目的：为未来媒介预留位置；当前没有声音、视频、三维模型或动作文件。
+- 诚实规则：只写“规划中”，不放假的播放器、波形或三维预览，不写上线日期和数量。
+- 数据源：新增 `src/content/media-kinds.ts`，登记 `image`、`voice`、`video`、`model3d`、`motion` 五种媒介。图片由现有清单自动显示“已开放 · N 张”；其余没有文件时显示“规划中”。
+- 图标：图片使用 `card`；其余暂用 `hourglass`。使用 UIKit 的 `GameEmptyState`、`GameFactList` 和 `GameBadge`，并在报告中提出 `mic`、`video`、`cube`、`motion` 图标上游请求。
+- 演员档案页：图片预览下方增加五行“资料 / Materials”，图片链接到资产库，其余四项为规划中。
+- 资产库页：图片系列之后增加 `id="series-more"` 的“更多资料（规划中）”区块，四个资料块桌面两列、手机一列，并在系列跳转中加入入口。四块不参与选择、下载、打包和拼图。
+- 其他页面保持只统计图片；资产页进度明确写“图片”。
+- 后续真实媒介的入库方向写入资产 spec：声音 WAV→AAC/MP3，视频 MP4 预览，三维 GLB，动作 GLB/FBX；仍遵守公开预览、私有母版、游客限速和会员不限速。
+- 验收：两位演员中英、明暗、390px 档案页五行正确；资产库四块存在且没有 `<audio>`、`<video>`、`<canvas>`，不可选；截图纳入 P5。
 
 ## 5. 报告
 
