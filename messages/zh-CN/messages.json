@@ -88,7 +88,6 @@
   "roster.buildingTitle": "在产线上",
   "roster.buildingNote": "人设已定，白膜阶段。定妆板交付后自动转入可出演。",
   "actor.inDevelopment": "研发中",
-  "actor.castFor": "可出演",
   "actor.noPlate": "尚未交付定妆板",
   "actor.noPlateBody": "这个演员还在白膜阶段。定妆板、表情组和造型交付后此处自动替换。",
   "actor.seedEnNote": "种子提示词是故意用英文写的：不管你是谁，图像模型对英文的服从度都明显更高。原样粘贴就行。",

@@ -42,15 +42,18 @@ export default async function WorksPage({ params }: Props) {
             <p className="mt-6">{work.logline[locale]}</p>
             <div className="sp-small mt-6 flex flex-wrap gap-3">
               <span className="text-muted-foreground">{t("works.cast")}</span>
-              {work.cast.map((code) => {
-                const actor = ACTORS.find((person) => person.code === code);
+              {work.cast.map((credit) => {
+                const actor = ACTORS.find((person) => person.code === credit.actor);
                 return actor ? (
                   <Link
-                    key={code}
+                    key={credit.actor}
                     href={`/actors/${actor.slug}`}
                     className="font-semibold hover:underline underline-offset-4"
                   >
                     {locale === "zh" ? actor.nameCn : actor.nameEn}
+                    {credit.role
+                      ? ` ${locale === "zh" ? "饰" : "as"} ${credit.role.name[locale]}`
+                      : ""}
                   </Link>
                 ) : null;
               })}

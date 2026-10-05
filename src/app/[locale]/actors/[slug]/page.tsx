@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { ACTORS, getActor, STATUS_LABEL } from "@/content/actors";
@@ -37,6 +37,24 @@ export default async function ActorPage({ params }: Props) {
   const { locale, slug } = await params;
   setSiteLocale(locale);
   const actor = getActor(slug);
+  if (slug === "he-jie") permanentRedirect(`/actors/tang-yunqiu`);
+  if (slug === "dai-er") permanentRedirect(`/actors/misha-luo`);
+  if (
+    [
+      "bai-lu",
+      "ding-yi",
+      "guan-hai",
+      "hao-anquan",
+      "hu-qian",
+      "jin-mantang",
+      "lu-dekai",
+      "luo-dajiang",
+      "mi-xue",
+      "qi-man",
+      "su-xiao",
+    ].includes(slug)
+  )
+    permanentRedirect(`/actors`);
   if (!actor) notFound();
   const { t } = await getSiteI18n();
   const name = locale === "zh" ? actor.nameCn : actor.nameEn;
@@ -107,9 +125,6 @@ export default async function ActorPage({ params }: Props) {
           <GameBadge tone="neutral" className="mt-4">
             {CG_BADGE[locale]}
           </GameBadge>
-          <p className="sp-code mt-6 text-muted-foreground">
-            VERSION {actor.version.current} / {actor.version.total}
-          </p>
           <dl className="mt-4 divide-y divide-border">
             {actor.spec.map((row) => (
               <div
@@ -122,19 +137,6 @@ export default async function ActorPage({ params }: Props) {
             ))}
           </dl>
           <p className="mt-6">{actor.note[locale]}</p>
-          <p className="sp-label mt-6 text-muted-foreground">{t("actor.castFor")}</p>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            {actor.castFor[locale].map((value) => (
-              <li key={value} className="max-w-full">
-                {/* UIKit rc.1 badges are single-line; long casting labels need a bounded text child. */}
-                <GameBadge tone="neutral" className="max-w-full">
-                  <span className="truncate" title={value}>
-                    {value}
-                  </span>
-                </GameBadge>
-              </li>
-            ))}
-          </ul>
           <div className="mt-8 flex flex-wrap gap-6">
             <GameButton variant="primary" linkComponent={Link} href={`/kit/${actor.slug}`}>
               {t("assets.openLibrary")}

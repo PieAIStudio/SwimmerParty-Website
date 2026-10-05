@@ -29,10 +29,13 @@ export const looks: Look[] = [
   {
     id: "maid",
     kind: "role",
-    label: { en: "Journey to the East · He Jie as the maid", zh: "《东游记》何姐（演女佣）" },
+    label: {
+      en: "Journey to the East · Tang Yunqiu as the maid",
+      zh: "《东游记》唐韵秋（演女佣）",
+    },
     prompt:
-      "Role look (He Jie playing the maid): perfectly neat, glossy, heavily hair-sprayed bun with a large white lace maid headpiece; short-drama glam makeup with slightly too-long false lashes, slightly too-red lipstick and two round rosy blush spots; deep navy knee-length maid dress with puffed short sleeves, oversized white lace collar, layered white ruffled apron with an extra-large bow at the back, white cuffs, dark grey flat shoes.",
-    role: { work: "W-01", id: "he-jie" },
+      "Role look (Tang Yunqiu playing the maid): perfectly neat, glossy, heavily hair-sprayed bun with a large white lace maid headpiece; short-drama glam makeup with slightly too-long false lashes, slightly too-red lipstick and two round rosy blush spots; deep navy knee-length maid dress with puffed short sleeves, oversized white lace collar, layered white ruffled apron with an extra-large bow at the back, white cuffs, dark grey flat shoes.",
+    role: { work: "W-01", id: "tang-yunqiu" },
     extras: [
       {
         key: "portrait",

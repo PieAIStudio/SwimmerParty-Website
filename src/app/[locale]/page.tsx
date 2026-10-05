@@ -21,7 +21,6 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
   const stats = [
     [ACTORS.length, t("home.statRoster")],
     [ACTORS.filter((actor) => actor.status === "active").length, t("home.statCastable")],
-    [ACTORS.reduce((sum, actor) => sum + actor.version.current, 0), t("home.statVersions")],
     [
       ACTORS.filter((actor) => firstImage(actor.slug, ["turnaround.front"])).length,
       t("home.statPlates"),

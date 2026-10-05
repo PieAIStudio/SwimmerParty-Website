@@ -1,6 +1,6 @@
 import { SeriesJumpButton } from "@/features/assets";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { ACTORS, getActor } from "@/content/actors";
 import { getActorAssets, firstImage } from "@/features/assets";
 import { listSeries } from "@/features/assets";
@@ -41,6 +41,24 @@ export default async function ActorAssetPage({ params }: Props) {
   const { locale, slug } = await params;
   setSiteLocale(locale);
   const actor = getActor(slug);
+  if (slug === "he-jie") permanentRedirect(`/kit/tang-yunqiu`);
+  if (slug === "dai-er") permanentRedirect(`/kit/misha-luo`);
+  if (
+    [
+      "bai-lu",
+      "ding-yi",
+      "guan-hai",
+      "hao-anquan",
+      "hu-qian",
+      "jin-mantang",
+      "lu-dekai",
+      "luo-dajiang",
+      "mi-xue",
+      "qi-man",
+      "su-xiao",
+    ].includes(slug)
+  )
+    permanentRedirect(`/kit`);
   if (!actor) notFound();
   const assets = getActorAssets(slug);
   const { t } = await getSiteI18n();

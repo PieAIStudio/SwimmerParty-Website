@@ -356,10 +356,6 @@ export const messages = {
     en: "In development",
     zh: "研发中",
   },
-  "actor.castFor": {
-    en: "Cast for",
-    zh: "可出演",
-  },
   "actor.noPlate": {
     en: "No plate delivered",
     zh: "尚未交付定妆板",

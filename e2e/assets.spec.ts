@@ -16,7 +16,7 @@ for (const locale of ["zh", "en"] as const) {
     await expect(
       page.locator("[data-delivered='true']").getByText(locale === "zh" ? "旧规格" : "Legacy"),
     ).toHaveCount(3);
-    await page.goto(`/${locale}/kit/dai-er`);
+    await page.goto(`/${locale}/kit/misha-luo`);
     await expect(page.locator("[data-core-progress='0/21']")).toBeVisible();
     await expect(page.locator("[data-delivered='false']")).toHaveCount(21);
     await expect(page.locator("main img, main input, [data-delivered='false'] button")).toHaveCount(
@@ -81,14 +81,14 @@ test("profile JSON is free, bilingual and does not call the asset API", async ({
     if (new URL(request.url()).pathname.startsWith("/api/assets/"))
       assetRequests.push(request.url());
   });
-  await page.goto("/en/kit/he-jie");
+  await page.goto("/en/kit/tang-yunqiu");
   for (let index = 0; index < 2; index++) {
     const downloadEvent = page.waitForEvent("download");
     await page.getByRole("button", { name: "Download profile (JSON)", exact: true }).click();
     const download = await downloadEvent;
     expect(download.suggestedFilename()).toBe("character.json");
     const profile = JSON.parse(await readFile((await download.path())!, "utf8"));
-    expect(profile.name).toEqual({ zh: "何姐", en: "HE JIE" });
+    expect(profile.name).toEqual({ zh: "唐韵秋", en: "TANG YUNQIU" });
     expect(profile.heightCm).toBe(163);
     expect(profile.slots).toEqual([]);
     expect(profile.note.en).toBeTruthy();
@@ -112,7 +112,7 @@ for (const width of [390, 1440])
       await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
       await page.emulateMedia({ colorScheme: theme, reducedMotion: "reduce" });
       for (const locale of ["zh", "en"])
-        for (const slug of ["hu-qian", "dai-er"]) {
+        for (const slug of ["hu-qian", "misha-luo"]) {
           await page.goto(`/${locale}/kit/${slug}`);
           await page.evaluate(() => document.fonts.ready);
           await expect(page.locator("html")).toHaveAttribute("data-game-ui-theme", theme);

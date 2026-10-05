@@ -10,7 +10,6 @@ export function characterProfile(actor: Actor, assets: ActorAssets) {
     tagline: actor.tagline,
     spec: actor.spec,
     note: actor.note,
-    castFor: actor.castFor,
     heightCm: actor.heightCm ?? null,
     promptSeed: actor.promptSeed,
     looks: assets.looks,

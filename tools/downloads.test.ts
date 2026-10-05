@@ -53,7 +53,7 @@ test("deployment mode guard rejects every local adapter, even an empty VERCEL_EN
 test("download API returns private 503 before touching auth or storage on Vercel", async () => {
   await withModes({ VERCEL_ENV: "preview", ACCOUNT_MODE: "mock" }, async () => {
     const out = response();
-    await download(request({ query: { slug: "hu-qian", slot: "turnaround.front" } }), out.res);
+    await download(request({ query: { slug: "tang-yunqiu", slot: "turnaround.front" } }), out.res);
     assert.equal(out.value.code, 503);
     assert.equal(out.headers.get("cache-control"), "private, no-store");
   });
@@ -158,12 +158,12 @@ test("API validates method, actor, slots, duplicates and guest bundles", async (
     assert.equal(wrongMethod.value.code, 405);
     assert.equal(wrongMethod.headers.get("allow"), "GET");
     const guest = response();
-    await bundle(request({ method: "POST", query: { slug: "hu-qian" }, body: { slots: ["turnaround.front"] } }), guest.res);
+    await bundle(request({ method: "POST", query: { slug: "tang-yunqiu" }, body: { slots: ["turnaround.front"] } }), guest.res);
     assert.equal(guest.value.code, 401);
     assert.deepEqual(guest.value.body, { signIn: true });
     for (const slots of [[], Array(65).fill("turnaround.front"), ["turnaround.front", "turnaround.front"], [4], "front"]) {
       const out = response();
-      await bundle(request({ method: "POST", query: { slug: "hu-qian" }, headers: { cookie: "sp_mock_member=1" }, body: { slots } }), out.res);
+      await bundle(request({ method: "POST", query: { slug: "tang-yunqiu" }, headers: { cookie: "sp_mock_member=1" }, body: { slots } }), out.res);
       assert.equal(out.value.code, 400);
     }
   });

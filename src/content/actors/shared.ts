@@ -18,7 +18,6 @@
 /** A string that exists in both authored locales. */
 export type L = { en: string; zh: string };
 /** A list that exists in both authored locales. */
-type LList = { en: string[]; zh: string[] };
 
 export type ActorStatus = "active" | "in-development" | "concept";
 
@@ -39,8 +38,6 @@ export type Actor = {
   /** One line that has to do all the work on a card. */
   tagline: L;
   status: ActorStatus;
-  /** Design iteration count, shown as `VERSION n OF m` like a model sheet. */
-  version: { current: number; total: number };
   /** Authored height only; never inferred from the displayed picture. */
   heightCm?: number;
   /** Legacy public crop, used only until a new-spec image is delivered. */
@@ -48,8 +45,6 @@ export type Actor = {
   spec: SpecRow[];
   /** Longer character note. Kept short — the spec sheet does the talking. */
   note: L;
-  /** What this actor is castable for. Drives the /casting conversation. */
-  castFor: LList;
   /**
    * A copy-pasteable character seed for the open kit.
    *

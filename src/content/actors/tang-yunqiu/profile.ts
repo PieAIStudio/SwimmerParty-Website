@@ -1,0 +1,23 @@
+import { row, type Actor } from "../shared.ts";
+
+export const profile: Actor = {
+  slug: "tang-yunqiu",
+  code: "SP-13",
+  nameEn: "TANG YUNQIU",
+  nameCn: "唐韵秋",
+  tagline: { en: "Actress from Chongqing, 43.", zh: "重庆女演员，43 岁。" },
+  status: "active",
+  heightCm: 163,
+  portrait: null,
+  spec: [
+    row("age", "AGE", "年龄", "43", "43 岁"),
+    row("height", "HEIGHT", "身高", "163 CM", "163 CM"),
+    row("origin", "ORIGIN", "籍贯", "CHONGQING", "重庆"),
+  ],
+  note: {
+    en: "Tang Yunqiu is an AI actress at SWIMMER PARTY. She is from Chongqing, 43 years old and 163 cm tall. She plays He Jie in Journey to the East and also appears in Modern Freaks.",
+    zh: "唐韵秋是 SWIMMER PARTY 的 AI 演员，重庆人，43 岁，身高 163 厘米。她在《东游记》里演何姐，也出演《摩登怪咖》。",
+  },
+  promptSeed:
+    "3D feature-animation woman, 43, Chinese, from Chongqing, 163 cm, slim-average build; gentle smile lines, faint crow's feet, noticeably full lips; dark brown shoulder-length waves worn down with a few fine grey strands; noticeably enlarged expressive eyes, smooth stylized skin, hair in clean grouped clumps; realistic adult proportions, about 7 heads tall. Unmistakably CG, never photoreal.",
+};

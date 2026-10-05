@@ -25,10 +25,10 @@ export const looks: Look[] = [
   {
     id: "ceo",
     kind: "role",
-    label: { en: "Journey to the East · Dai Er as the CEO", zh: "《东游记》戴尔（演霸总）" },
+    label: { en: "Journey to the East · Misha Luo as the CEO", zh: "《东游记》罗米沙（演霸总）" },
     prompt:
-      "Role look (Dai Er playing the CEO): his own tousled light-brown hair combed back with too much gel, ends still sticking up; slim glossy deep royal-blue suit with shiny black satin lapels, white shirt, wide shiny silver tie, white pocket square stuffed in carelessly, pointed glossy black-brown shoes. Too flashy and trying too hard — funny, not cool. Unbranded.",
-    role: { work: "W-01", id: "dai-er" },
+      "Role look (Misha Luo playing the CEO): his own tousled light-brown hair combed back with too much gel, ends still sticking up; slim glossy deep royal-blue suit with shiny black satin lapels, white shirt, wide shiny silver tie, white pocket square stuffed in carelessly, pointed glossy black-brown shoes. Too flashy and trying too hard — funny, not cool. Unbranded.",
+    role: { work: "W-01", id: "misha-luo" },
     extras: [
       {
         key: "portrait",

@@ -2,10 +2,15 @@ import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { ACTORS } from "../src/content/actors/index.ts";
+import { ACTORS, type Actor } from "../src/content/actors/index.ts";
 
 export function actorByCode(code: string) {
   const actor = ACTORS.find(item => item.code === code);
+  const fixture: Record<string, Actor> = {
+    "SP-01": { slug: "hu-qian", code: "SP-01", nameEn: "HU QIAN", nameCn: "胡倩", tagline: { en: "Fixture", zh: "夹具" }, status: "in-development", portrait: null, spec: [], note: { en: "Fixture", zh: "夹具" }, promptSeed: null },
+    "SP-02": { slug: "qi-man", code: "SP-02", nameEn: "QI MAN", nameCn: "齐满", tagline: { en: "Fixture", zh: "夹具" }, status: "in-development", portrait: null, spec: [], note: { en: "Fixture", zh: "夹具" }, promptSeed: null },
+  };
+  if (!actor && fixture[code]) return fixture[code];
   if (!actor) throw new Error(`Unknown actor code: ${code}. Use a code registered in src/content/actors/index.ts.`);
   return actor;
 }

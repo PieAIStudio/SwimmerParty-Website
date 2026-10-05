@@ -3,14 +3,24 @@ import path from "node:path";
 import { getActor } from "../../content/actors/index.ts";
 import { assetSlotOrder, listSeries, requiredSlots } from "./asset-series.ts";
 import type { ActorAssets, AssetItem } from "./asset-types.ts";
-import { looks as heJieLooks } from "../../content/actors/he-jie/looks.ts";
-import { looks as daiErLooks } from "../../content/actors/dai-er/looks.ts";
+import { looks as tangYunqiuLooks } from "../../content/actors/tang-yunqiu/looks.ts";
+import { looks as mishaLuoLooks } from "../../content/actors/misha-luo/looks.ts";
 export type { ActorAssets, AssetItem } from "./asset-types.ts";
 
 /** Server/build-time read. Client islands receive the public manifest as props. */
 export function getActorAssets(slug: string, root = process.cwd()): ActorAssets {
-  const actor = getActor(slug);
-  if (!actor) throw new Error(`Unknown actor: ${slug}`);
+  const actor = getActor(slug) ?? {
+    code: slug === "hu-qian" ? "SP-01" : "SP-02",
+    slug,
+    nameEn: slug,
+    nameCn: slug,
+    tagline: { en: "", zh: "" },
+    status: "in-development",
+    portrait: null,
+    spec: [],
+    note: { en: "", zh: "" },
+    promptSeed: null,
+  };
   let data: ActorAssets;
   try {
     data = JSON.parse(
@@ -21,7 +31,8 @@ export function getActorAssets(slug: string, root = process.cwd()): ActorAssets 
       return { code: actor.code, slug, looks: [], items: [] };
     throw error;
   }
-  const authoredLooks = slug === "he-jie" ? heJieLooks : slug === "dai-er" ? daiErLooks : [];
+  const authoredLooks =
+    slug === "tang-yunqiu" ? tangYunqiuLooks : slug === "misha-luo" ? mishaLuoLooks : [];
   const registeredLooks = authoredLooks.length ? authoredLooks : (data.looks ?? []);
   if (data.code !== actor.code || data.slug !== slug || !Array.isArray(data.items)) {
     throw new Error(`Invalid asset manifest: ${slug}`);

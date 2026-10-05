@@ -59,7 +59,7 @@ test("the Chinese build is Chinese, not Chinese with English prose in it", async
 
 for (const locale of ["zh", "en"] as const) {
   test(`every actor has a reachable dossier (${locale})`, async ({ page }) => {
-    for (const slug of ["hu-qian", "qi-man", "dai-er", "guan-hai"]) {
+    for (const slug of ["hu-qian", "qi-man", "misha-luo", "guan-hai"]) {
       const res = await page.goto(`/${locale}/actors/${slug}`);
       expect(res?.status(), `/${locale}/actors/${slug}`).toBe(200);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
@@ -69,7 +69,7 @@ for (const locale of ["zh", "en"] as const) {
   test(`an actor with no delivered plate says so instead of faking one (${locale})`, async ({
     page,
   }) => {
-    await page.goto(`/${locale}/actors/dai-er`);
+    await page.goto(`/${locale}/actors/misha-luo`);
     await expect(
       page.getByText(locale === "zh" ? "尚未交付定妆板" : /NO PLATE DELIVERED/i),
     ).toBeVisible();
@@ -117,7 +117,7 @@ test("sitemap lists every actor in every authored locale", async ({ request }) =
   expect(res.status()).toBe(200);
   const xml = await res.text();
   for (const locale of ["zh", "en"]) {
-    for (const slug of ["hu-qian", "qi-man", "dai-er", "ding-yi", "guan-hai"]) {
+    for (const slug of ["hu-qian", "qi-man", "misha-luo", "ding-yi", "guan-hai"]) {
       expect(xml).toContain(`/${locale}/actors/${slug}`);
     }
     expect(xml).toContain(`/${locale}/kit`);

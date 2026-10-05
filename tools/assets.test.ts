@@ -64,13 +64,13 @@ test("every vocabulary label is authored in both locales", async () => {
 
 test("an undelivered actor has an empty manifest and exactly 21 actionable TODO prompts", async (t) => {
   const root = await rootFor(t);
-  assert.deepEqual(coreProgress("dai-er", root), { done: 0, total: 21 });
-  assert.deepEqual(getActorAssets("dai-er", root).items, []);
-  assert.equal(firstImage("dai-er", ["face.front"], root), undefined);
+  assert.deepEqual(coreProgress("misha-luo", root), { done: 0, total: 21 });
+  assert.deepEqual(getActorAssets("misha-luo", root).items, []);
+  assert.equal(firstImage("misha-luo", ["face.front"], root), undefined);
   const result = await writeTodo("SP-03", { root });
   assert.equal(result.missing.length, 21);
   assert.equal((result.text.match(/^## /gm) ?? []).length, 21);
-  assert.match(result.text, /only source of this character's identity: DAI ER \(SP-03\)/);
+  assert.match(result.text, /only source of this character's identity: MISHA LUO \(SP-03\)/);
   assert.match(
     result.text,
     /No colored rim light, no visible lamps or light fixtures, no cast floor shadow/,

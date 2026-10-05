@@ -88,7 +88,6 @@
   "roster.buildingTitle": "On the line",
   "roster.buildingNote": "Character locked, white-model stage. They move to castable the day the plate is delivered.",
   "actor.inDevelopment": "In development",
-  "actor.castFor": "Cast for",
   "actor.noPlate": "No plate delivered",
   "actor.noPlateBody": "This actor is still at the white-model stage. The plate, expression set and wardrobe replace this frame on delivery.",
   "actor.seedEnNote": "The seed is written in English on purpose: image models follow English far more reliably than Chinese, whoever you are. Paste it as it is.",
