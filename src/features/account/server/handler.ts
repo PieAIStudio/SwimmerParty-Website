@@ -8,16 +8,20 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
   res.setHeader("Cache-Control", "private, no-store");
   res.setHeader("Vary", "Cookie");
   res.setHeader("Referrer-Policy", "no-referrer");
+  let stage = "runtime-modes";
   try {
     const { account } = runtimeModes();
+    stage = "route";
     const action = Array.isArray(req.query.action) ? req.query.action.join("/") : "";
     if (action === "session" && req.method === "GET") {
       if (req.headers["sec-fetch-site"] === "cross-site")
         throw new HttpError(403, "cross-site-request");
+      stage = "account-user";
       res.status(200).json({ user: await accountUser(req, res, account), mode: account });
       return;
     }
     if (account === "swimmer") {
+      stage = "auth-handle";
       if (!(await (await swimmerAccount(req, res)).handle()))
         throw new HttpError(404, "auth-not-found");
       return;
@@ -38,7 +42,7 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
   } catch (error) {
     if (!(error instanceof HttpError)) {
       process.stderr.write(
-        `[swimmer-party] auth-runtime-failure:${error instanceof Error ? error.name : "unknown"}\n`,
+        `[swimmer-party] auth-runtime-failure:${stage}:${error instanceof Error ? error.name : "unknown"}\n`,
       );
     }
     apiFailure(res, error);
