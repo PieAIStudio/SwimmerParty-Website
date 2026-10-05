@@ -41,8 +41,14 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json({ ok: true });
   } catch (error) {
     if (!(error instanceof HttpError)) {
+      const detail = error instanceof Error ? error.message : "unknown";
+      const safeDetail = detail.startsWith("iron-session:")
+        ? detail
+        : detail === "Explicit isolated SSO configuration required."
+          ? detail
+          : "unclassified";
       process.stderr.write(
-        `[swimmer-party] auth-runtime-failure:${stage}:${error instanceof Error ? error.name : "unknown"}\n`,
+        `[swimmer-party] auth-runtime-failure:${stage}:${error instanceof Error ? error.name : "unknown"}:${safeDetail}\n`,
       );
     }
     apiFailure(res, error);
