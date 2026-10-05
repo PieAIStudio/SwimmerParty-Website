@@ -25,7 +25,10 @@ export function cliArgs(allowed: readonly string[]) {
 
 export function reportError(error: unknown) {
   const errors = error instanceof AggregateError ? error.errors : [error];
-  for (const item of errors) console.error(item instanceof Error ? item.message : String(item));
+  for (const item of errors) {
+    if (item instanceof AggregateError) reportError(item);
+    else console.error(item instanceof Error ? item.message : String(item));
+  }
   process.exitCode = 1;
 }
 

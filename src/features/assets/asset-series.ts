@@ -64,7 +64,12 @@ export function slotLabelKey(seriesId: string, key: string): AssetLabelKey {
 export function assetSlotOrder(looks: readonly { id: string }[] = []): string[] {
   return series.flatMap((item) =>
     item.perLook
-      ? looks.flatMap((look) => slotsOf(item.id, look.id).map((slot) => slot.slot))
+      ? looks.flatMap((look) => [
+          ...slotsOf(item.id, look.id).map((slot) => slot.slot),
+          ...(("extras" in look && Array.isArray(look.extras))
+            ? look.extras.map((extra: { key: string }) => `${item.id}.${look.id}.${extra.key}`)
+            : []),
+        ])
       : slotsOf(item.id).map((slot) => slot.slot),
   );
 }

@@ -116,7 +116,14 @@ async function prepare(
       `Register look '${look}' in src/content/actors/${manifest.slug}/assets.json looks with id, bilingual label and prompt before ingesting it.`,
     );
   }
-  const slot = slotsOf(series.id, look).find((item) => item.key === key);
+  const slot =
+    slotsOf(series.id, look).find((item) => item.key === key) ??
+    (series.perLook && look
+      ? (() => {
+          const extra = manifest.looks.find((item) => item.id === look)?.extras.find((item) => item.key === key);
+          return extra ? { slot: `${series.id}.${look}.${key}`, series: series.id, frame: series.frame, look, key, required: false, direction: extra.direction } : undefined;
+        })()
+      : undefined);
   if (!slot) throw new Error(`Unknown slot: ${series.id}.${key}`);
   const version = Number(number);
   if (!Number.isSafeInteger(version) || (legacy ? version !== 0 : version < 1))
@@ -134,14 +141,15 @@ async function prepare(
   if (!legacy) {
     if (format !== "png") throw new Error("New assets must be PNG");
     const frame = ASSET_FRAMES[series.frame];
-    if (metadata.width !== frame.width || metadata.height !== frame.height)
+    const accepted = [frame, ASSET_FRAMES.portrait];
+    if (!accepted.some((candidate) => metadata.width === candidate.width && metadata.height === candidate.height))
       throw new Error(
-        `Expected ${frame.width}×${frame.height}; received ${metadata.width}×${metadata.height}`,
+        `Expected ${accepted.map((candidate) => `${candidate.width}×${candidate.height}`).join(" or ")}; received ${metadata.width}×${metadata.height}`,
       );
     if (!metadata.hasAlpha) throw new Error("New assets require an alpha channel");
     for (const [left, top] of [
       [0, 0],
-      [frame.width - 8, 0],
+      [metadata.width - 8, 0],
     ]) {
       const alpha = await image
         .clone()
@@ -324,9 +332,16 @@ if (isMain(import.meta.url)) {
             `${result.dryRun ? "Validated only" : "Ingested"}: ${code}, ${result.ingested} image(s)${result.upgraded ? "; previous anchor entries removed" : ""}`,
           );
         } catch (error) {
-          errors.push(
-            new Error(`${code}: ${error instanceof Error ? error.message : String(error)}`),
-          );
+          if (error instanceof AggregateError)
+            errors.push(
+              ...error.errors.map(
+                (item) => new Error(`${code}: ${item instanceof Error ? item.message : String(item)}`),
+              ),
+            );
+          else
+            errors.push(
+              new Error(`${code}: ${error instanceof Error ? error.message : String(error)}`),
+            );
         }
       }
       if (flags.has("--dry-run") && results.length)
