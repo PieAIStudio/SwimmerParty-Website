@@ -58,6 +58,11 @@ export async function accountUser(
     return /(?:^|;\s*)sp_mock_member=1(?:;|$)/.test(request.headers.cookie ?? "")
       ? { id: "local-mock-member" }
       : null;
+  // An anonymous request has no session to verify. Avoid invoking the SSO
+  // cookie reader in that case; the authenticated path below still verifies
+  // every present grant with AuthKit on every request.
+  if (!request.headers.cookie && !dependencies.createNodeAuth)
+    return null;
   const user = await (await swimmerAccount(request, response, dependencies)).verifiedUser();
   return user && user.is_anonymous === false ? { id: user.id } : null;
 }
