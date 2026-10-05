@@ -76,7 +76,7 @@ export function AssetSelectionProvider({
     } catch {
       /* Selection still works when storage is unavailable. */
     }
-    setState({ slug: actor.slug, slots });
+    queueMicrotask(() => setState({ slug: actor.slug, slots }));
   }, [actor.slug, assets.items, storageKey]);
   useEffect(() => {
     if (state.slug !== actor.slug) return;

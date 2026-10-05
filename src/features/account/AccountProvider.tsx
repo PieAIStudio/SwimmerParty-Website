@@ -59,7 +59,6 @@ export function AccountProvider({
   );
   useEffect(() => {
     const controller = new AbortController();
-    setLoading(true);
     void fetch("/api/auth/session", { cache: "no-store", signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error("Account unavailable");

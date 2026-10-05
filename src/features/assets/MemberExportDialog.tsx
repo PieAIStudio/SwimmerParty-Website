@@ -51,12 +51,16 @@ export function MemberExportDialog({
   const [target, setTarget] = useState<ExportTarget>("gpt-image");
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
-  const [previewReady, setPreviewReady] = useState(false);
+  const [previewKey, setPreviewKey] = useState<string | null>(null);
   const controller = useRef<AbortController | null>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const selectedKey = selected.map((item) => item.slot).join("|");
   const selectedRef = useRef(selected);
-  selectedRef.current = selected;
+  useEffect(() => {
+    selectedRef.current = selected;
+  }, [selected]);
+  const renderKey = `${selectedKey}:${labels}:${background}`;
+  const previewReady = format !== "sheet" || previewKey === renderKey;
   const limit = EXPORT_TARGETS.find((model) => model.id === target)!.limit;
   const unavailableVeo = format === "model" && target === "veo" && !veoPlan(selected, assets.items);
   useEffect(() => () => controller.current?.abort(), []);
@@ -64,7 +68,6 @@ export function MemberExportDialog({
     if (format !== "sheet") return;
     const abort = new AbortController();
     const images: SheetImage[] = [];
-    setPreviewReady(false);
     void (async () => {
       try {
         for (const item of selectedRef.current) {
@@ -80,7 +83,7 @@ export function MemberExportDialog({
           abort.signal.throwIfAborted();
         }
         if (canvas.current) renderSheet(images, { labels, background }, canvas.current, true);
-        setPreviewReady(true);
+        setPreviewKey(renderKey);
       } catch {
         if (!abort.signal.aborted) setFailed(true);
       } finally {
@@ -88,7 +91,7 @@ export function MemberExportDialog({
       }
     })();
     return () => abort.abort();
-  }, [format, selectedKey, labels, background]);
+  }, [format, selectedKey, labels, background, renderKey]);
   function cancel() {
     controller.current?.abort();
     onClose();

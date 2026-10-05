@@ -2,7 +2,7 @@
 id: PLAN-HEALTHY-SITE-REFACTOR
 title: 新包接入与彻底重构
 type: plan
-status: active
+status: completed
 canonical: true
 owner: ai-assisted
 created: 2026-10-04
@@ -488,4 +488,4 @@ src/
 
 ## 收尾（2026-10-05）
 
-R0–R7 的代码、依赖、结构、登录模拟、文档与卫生单元已完成并保留本地证据；R8 的最终 verify、文档检查、UI 检查、资产待办检查已通过。最终截图与液体面板截图正在同一串行会话中收尾，完成后证据位于 `.devspace-reports/healthy-refactor/`。真实 SSO、Blob、WAF、Vercel 私有包读取、部署和移动实机仍按报告列为上线前 Owner 工作，本计划不执行这些云端动作。
+R0–R8 已完成本地验收：最终 verify、文档检查、UI 检查、资产待办检查、272 组截图和液体面板截图均有证据。ESLint 4 项已修复并纳入 verify；R1 视觉差异中仍有部分像素差异留给 Owner 审阅。真实 SSO、Blob、WAF、Vercel 私有包读取、部署和移动实机按报告列为未验证事项。

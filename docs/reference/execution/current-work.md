@@ -17,7 +17,7 @@ related: []
 
 # Current Work
 
-当前在 `rebuild/swimmer-family` 执行[健康站点重构](../../plans/active/2026-10-04-healthy-site-refactor.md)，不推送、不部署。品牌依赖已改为已发布精确版本，功能目录和 TypeScript 文案源已迁移；最近结构阶段验证为 50 个浏览器测试、33 个工具测试通过。R0–R7 已完成；最终干净安装、54 浏览器测试、36 工具测试、文档与组件门禁通过，R8 272/272 截图、16 张面板截图和报告证据已完成。
+当前在 `rebuild/swimmer-family` 执行[健康站点重构](../../plans/completed/2026-10-04-healthy-site-refactor.md)，不推送、不部署。品牌依赖已改为已发布精确版本，功能目录和 TypeScript 文案源已迁移；最近结构阶段验证为 50 个浏览器测试、33 个工具测试通过。R0–R7 已完成；最终干净安装、54 浏览器测试、36 工具测试、文档与组件门禁通过，R8 272/272 截图、16 张面板截图和报告证据已完成。
 
 现行设计见 [DESIGN.md](../../../DESIGN.md)，目录入口见 [architecture.md](../architecture.md)，发布前置条件见 [release.md](../release.md)。资产契约仍为[活动 spec](../../specs/active/actor-asset-library.md)。最终证据写入 `.devspace-reports/healthy-refactor/REPORT.md`，计划审阅通过前保持 active。
 
