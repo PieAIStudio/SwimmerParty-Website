@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { Mannequin } from "./Mannequin";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
 
@@ -12,6 +12,7 @@ export function ActorPicture({
   legacy = false,
   legacyLabel,
   className = "",
+  style,
   priority = false,
   children,
 }: {
@@ -22,11 +23,12 @@ export function ActorPicture({
   legacy?: boolean;
   legacyLabel?: string;
   className?: string;
+  style?: CSSProperties;
   priority?: boolean;
   children?: ReactNode;
 }) {
   return (
-    <div className={`sp-sweep sp-image-host ${className}`}>
+    <div className={`sp-sweep sp-image-host ${className}`} style={style}>
       {src ? (
         <>
           {fullBody && !legacy ? <span className="sp-contact" aria-hidden="true" /> : null}

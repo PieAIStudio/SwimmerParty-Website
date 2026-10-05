@@ -39,7 +39,8 @@ export function AssetTile({
               ? "(min-width: 1200px) 252px, (min-width: 1024px) 22vw, (min-width: 640px) 29vw, 42vw"
               : "(min-width: 1200px) 168px, (min-width: 1024px) 14vw, (min-width: 640px) 21vw, 27vw"
           }
-          className={`${fullBody ? "aspect-2/3" : "aspect-square"} rounded-[var(--game-ui-radius-card)]`}
+          className="rounded-[var(--game-ui-radius-card)]"
+          style={{ aspectRatio: `${item.width} / ${item.height}` }}
         />
         <button
           type="button"

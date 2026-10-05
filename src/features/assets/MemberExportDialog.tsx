@@ -46,7 +46,7 @@ export function MemberExportDialog({
   const locale = useSiteLocale();
   const account = useAccount();
   const [format, setFormat] = useState<ExportFormat>("zip");
-  const [labels, setLabels] = useState<SheetLabels>("none");
+  const [labels, setLabels] = useState<SheetLabels>(locale);
   const [background, setBackground] = useState<SheetBackground>("grey");
   const [target, setTarget] = useState<ExportTarget>("gpt-image");
   const [busy, setBusy] = useState(false);

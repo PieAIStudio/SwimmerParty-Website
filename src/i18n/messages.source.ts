@@ -968,6 +968,58 @@ export const messages = {
     en: "Text",
     zh: "文字资料",
   },
+  "assets.series.more": {
+    en: "More materials",
+    zh: "更多资料",
+  },
+  "assets.note.more": {
+    en: "Future media formats are planned. No files are available yet.",
+    zh: "其他媒介正在规划中，目前没有文件。",
+  },
+  "media.materials": {
+    en: "Materials",
+    zh: "资料",
+  },
+  "media.image.title": {
+    en: "Images",
+    zh: "图片",
+  },
+  "media.image.open": {
+    en: "Open image library",
+    zh: "打开图片资产库",
+  },
+  "media.voice.title": {
+    en: "Voice",
+    zh: "声音",
+  },
+  "media.video.title": {
+    en: "Video",
+    zh: "视频",
+  },
+  "media.model3d.title": {
+    en: "3D model",
+    zh: "三维模型",
+  },
+  "media.motion.title": {
+    en: "Motion",
+    zh: "动作",
+  },
+  "media.voice.planned": {
+    en: "Planned",
+    zh: "规划中",
+  },
+  "media.video.planned": {
+    en: "Planned",
+    zh: "规划中",
+  },
+  "media.model3d.planned": {
+    en: "Planned",
+    zh: "规划中",
+  },
+  "media.motion.planned": {
+    en: "Planned",
+    zh: "规划中",
+  },
   "assets.note.turnaround": {
     en: "Front, three-quarter, side and back. Full body, transparent background.",
     zh: "正面、四分之三侧、正侧、背面，全身，透明背景。",

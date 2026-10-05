@@ -40,6 +40,7 @@ export interface MessageContracts {
   readonly "assets.note.detail": {  };
   readonly "assets.note.expression": {  };
   readonly "assets.note.face": {  };
+  readonly "assets.note.more": {  };
   readonly "assets.note.pose": {  };
   readonly "assets.note.turnaround": {  };
   readonly "assets.note.wardrobe": {  };
@@ -58,6 +59,7 @@ export interface MessageContracts {
   readonly "assets.series.detail": {  };
   readonly "assets.series.expression": {  };
   readonly "assets.series.face": {  };
+  readonly "assets.series.more": {  };
   readonly "assets.series.pose": {  };
   readonly "assets.series.text": {  };
   readonly "assets.series.turnaround": {  };
@@ -257,6 +259,17 @@ export interface MessageContracts {
   readonly "kit.seedsLabel": {  };
   readonly "kit.seedsNote": {  };
   readonly "kit.seedsTitle": {  };
+  readonly "media.image.open": {  };
+  readonly "media.image.title": {  };
+  readonly "media.materials": {  };
+  readonly "media.model3d.planned": {  };
+  readonly "media.model3d.title": {  };
+  readonly "media.motion.planned": {  };
+  readonly "media.motion.title": {  };
+  readonly "media.video.planned": {  };
+  readonly "media.video.title": {  };
+  readonly "media.voice.planned": {  };
+  readonly "media.voice.title": {  };
   readonly "nav.casting": {  };
   readonly "nav.kit": {  };
   readonly "nav.pact": {  };

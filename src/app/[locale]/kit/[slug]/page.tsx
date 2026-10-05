@@ -113,6 +113,7 @@ export default async function ActorAssetPage({ params }: Props) {
               </SeriesJumpButton>
             ))}
             <SeriesJumpButton id="series-text">{t("assets.series.text")}</SeriesJumpButton>
+            <SeriesJumpButton id="series-more">{t("assets.series.more")}</SeriesJumpButton>
           </nav>
           <AssetSelectionBar />
         </div>

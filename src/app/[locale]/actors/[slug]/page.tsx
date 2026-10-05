@@ -15,6 +15,7 @@ import { slotLabelKey } from "@/features/assets";
 import { AssetProgress } from "@/features/assets";
 import { HeightScale } from "@/features/actors";
 import { Link } from "@/i18n/navigation";
+import { GameFactList } from "@pieai/swimmer-ui-kit";
 
 type Props = { params: Promise<{ locale: AppLocale; slug: string }> };
 export function generateStaticParams() {
@@ -159,7 +160,8 @@ export default async function ActorPage({ params }: Props) {
                 legacy={view.conformance === "legacy"}
                 fullBody={["turnaround", "wardrobe", "pose"].includes(view.series)}
                 sizes="(min-width: 1200px) 120px, (min-width: 640px) 14vw, 19vw"
-                className="aspect-2/3 rounded-[var(--game-ui-radius-card)]"
+                className="rounded-[var(--game-ui-radius-card)]"
+                style={{ aspectRatio: `${view.width} / ${view.height}` }}
               />
             ))}
           </div>
@@ -174,6 +176,47 @@ export default async function ActorPage({ params }: Props) {
         <TextLink href={`/kit/${actor.slug}`} className="mt-6">
           {t("assets.openLibrary")}
         </TextLink>
+      </section>
+      <section className="sp-section" aria-labelledby="materials-title">
+        <h2 id="materials-title" className="sp-title">
+          {t("media.materials")}
+        </h2>
+        <GameFactList
+          label={t("media.materials")}
+          facts={[
+            {
+              id: "image",
+              icon: "card",
+              label: t("media.image.title"),
+              value: <TextLink href={`/kit/${actor.slug}`}>{t("media.image.open")}</TextLink>,
+              tone: "success",
+            },
+            {
+              id: "voice",
+              icon: "hourglass",
+              label: t("media.voice.title"),
+              value: t("media.voice.planned"),
+            },
+            {
+              id: "video",
+              icon: "hourglass",
+              label: t("media.video.title"),
+              value: t("media.video.planned"),
+            },
+            {
+              id: "model3d",
+              icon: "hourglass",
+              label: t("media.model3d.title"),
+              value: t("media.model3d.planned"),
+            },
+            {
+              id: "motion",
+              icon: "hourglass",
+              label: t("media.motion.title"),
+              value: t("media.motion.planned"),
+            },
+          ]}
+        />
       </section>
       {actor.promptSeed ? (
         <section className="pb-16">
