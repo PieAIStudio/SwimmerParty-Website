@@ -2,7 +2,14 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  outputFileTracingIncludes: { "/api/**": ["./src/content/actors/*/assets.json"] },
+  outputFileTracingIncludes: {
+    "/api/**": [
+      "./src/content/actors/*/assets.json",
+      // AuthKit's phone surface is an externalized ESM dependency under pnpm.
+      // Keep its parser beside the API function for production SSO routes.
+      "./node_modules/.pnpm/libphonenumber-js@1.13.14/node_modules/libphonenumber-js/**",
+    ],
+  },
   // Local originals and test evidence are never deployment artifacts.
   outputFileTracingExcludes: {
     "/api/**": [
@@ -16,7 +23,14 @@ const nextConfig: NextConfig = {
   },
   // three and its R3F wrappers ship ESM that Next must transpile for the
   // server pass; without this the app router fails on `import ... from 'three'`.
-  transpilePackages: ["three", "@react-three/fiber", "@react-three/drei"],
+  transpilePackages: [
+    "three",
+    "@react-three/fiber",
+    "@react-three/drei",
+    // AuthKit's phone parser is ESM and otherwise remains an absent pnpm
+    // external in Vercel's server function trace.
+    "libphonenumber-js",
+  ],
   images: {
     formats: ["image/avif", "image/webp"],
   },
