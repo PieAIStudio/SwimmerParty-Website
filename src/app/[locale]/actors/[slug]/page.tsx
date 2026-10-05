@@ -64,7 +64,7 @@ export default async function ActorPage({ params }: Props) {
   const previews = getActorAssets(slug).items.slice(0, 8);
   const front = firstImage(slug, ["turnaround.front"]);
   return (
-    <div className="sp-container">
+    <div className="sp-container overflow-x-clip [overflow-clip-margin:8px]">
       <div className="py-8">
         <TextLink href="/actors" back>
           {t("common.backToRoster")}
