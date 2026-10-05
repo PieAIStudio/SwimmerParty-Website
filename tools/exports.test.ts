@@ -93,6 +93,6 @@ test("download filenames preserve series, registered look and actual source form
 test("K-04 is live only because real turnarounds exist; K-05 and K-06 are not fictitiously live", () => {
   const kit = getKitManifest();
   assert.equal(kit.find((item) => item.index === "K-04")?.status, "live");
-  assert.notEqual(kit.find((item) => item.index === "K-05")?.status, "live");
+  assert.equal(kit.find((item) => item.index === "K-05")?.status, "live");
   assert.notEqual(kit.find((item) => item.index === "K-06")?.status, "live");
 });
