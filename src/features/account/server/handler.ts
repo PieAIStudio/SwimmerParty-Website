@@ -36,6 +36,11 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
     );
     res.status(200).json({ ok: true });
   } catch (error) {
+    if (!(error instanceof HttpError)) {
+      process.stderr.write(
+        `[swimmer-party] auth-runtime-failure:${error instanceof Error ? error.name : "unknown"}\n`,
+      );
+    }
     apiFailure(res, error);
   }
 }
