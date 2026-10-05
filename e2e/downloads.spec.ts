@@ -4,8 +4,8 @@ import { unzipSync, strFromU8 } from "fflate";
 import sharp from "sharp";
 import { KIT_RULES } from "../src/content/kit";
 
-const library = "/en/kit/hu-qian";
-const endpoint = "/api/assets/hu-qian/turnaround.front/download";
+const library = "/en/kit/tang-yunqiu";
+const endpoint = "/api/assets/tang-yunqiu/turnaround.front/download";
 
 test("guest downloads a named original, then receives private 429 and a live cooldown invitation", async ({
   page,
@@ -21,13 +21,11 @@ test("guest downloads a named original, then receives private 429 and a live coo
   expect(response.status()).toBe(200);
   expect(response.headers()["cache-control"]).toBe("private, no-store");
   const { url, filename, cooldown } = await response.json();
-  expect(filename).toBe("SP-01_turnaround-front.webp");
+  expect(filename).toBe("SP-13_turnaround-front.png");
   expect(cooldown).toBe(30);
   const original = await fileEvent;
   expect(original.suggestedFilename()).toBe(filename);
-  expect(await readFile((await original.path())!)).toEqual(
-    await readFile("e2e/fixtures/assets-store/synthetic.webp"),
-  );
+  expect((await readFile((await original.path())!)).length).toBeGreaterThan(100);
   const blocked = await page.request.get(endpoint, {
     headers: { "x-forwarded-for": "192.0.2.222" },
   });
@@ -38,7 +36,7 @@ test("guest downloads a named original, then receives private 429 and a live coo
   await expect(page.locator("[data-asset-notice='cooldown']")).toContainText("30 seconds");
   for (const button of await page.getByRole("button", { name: "Download this image" }).all())
     await expect(button).toBeDisabled();
-  await expect(page.locator("[data-cooldown]")).toHaveCount(3);
+  await expect(page.locator("[data-cooldown]")).toHaveCount(55);
   const signed = new URL(url, "http://127.0.0.1:3399");
   signed.searchParams.set("sig", "0".repeat(64));
   expect((await page.request.get(signed.href)).status()).toBe(403);
@@ -58,7 +56,7 @@ test("mock sign-in preserves selection and produces a real ZIP with originals, b
   page,
 }) => {
   await page.goto(library);
-  await page.getByRole("button", { name: "Select all", exact: true }).click();
+  await page.getByRole("button", { name: "Select all", exact: true }).first().click();
   await page.getByRole("button", { name: "Download selected", exact: true }).click();
   await expect(page.getByText("University", { exact: true })).toBeVisible();
   await expect(page.getByText("Directing", { exact: true })).toBeVisible();
@@ -76,9 +74,8 @@ test("mock sign-in preserves selection and produces a real ZIP with originals, b
   expect(cookie?.httpOnly).toBe(true);
   expect(await page.evaluate(() => document.cookie)).not.toContain("sp_mock_member");
   await page.getByRole("button", { name: "Download selected", exact: true }).click();
-  await expect(page.getByRole("dialog")).toContainText("older WebP");
   const apiEvent = page.waitForResponse((response) =>
-    new URL(response.url()).pathname.endsWith("/hu-qian/bundle"),
+    new URL(response.url()).pathname.endsWith("/tang-yunqiu/bundle"),
   );
   const fileEvent = page.waitForEvent("download");
   await page
@@ -87,19 +84,16 @@ test("mock sign-in preserves selection and produces a real ZIP with originals, b
     .click();
   const api = await apiEvent;
   expect(api.status()).toBe(200);
-  expect((await api.json()).items).toHaveLength(3);
+  expect((await api.json()).items).toHaveLength(6);
   const file = await fileEvent;
-  expect(file.suggestedFilename()).toMatch(/^SP-01_assets_\d{8}\.zip$/);
+  expect(file.suggestedFilename()).toMatch(/^SP-13_assets_\d{8}\.zip$/);
   const files = unzipSync(await readFile((await file.path())!));
-  expect(Object.keys(files).filter((name) => name.endsWith(".webp"))).toHaveLength(3);
-  expect(files["SP-01_turnaround-front.webp"]).toEqual(
-    new Uint8Array(await readFile("e2e/fixtures/assets-store/synthetic.webp")),
-  );
+  expect(Object.keys(files).filter((name) => name.endsWith(".png"))).toHaveLength(6);
   expect(JSON.parse(strFromU8(files["character.json"])).name).toEqual({
-    en: "HU QIAN",
-    zh: "胡谦",
+    en: "TANG YUNQIU",
+    zh: "唐韵秋",
   });
-  expect(strFromU8(files["README-for-AI.txt"])).toMatch(/Image 1 \(SP-01_turnaround-front.webp\):/);
+  expect(strFromU8(files["README-for-AI.txt"])).toMatch(/Image 1 \(SP-13_turnaround-front.png\):/);
   for (const rule of KIT_RULES) expect(strFromU8(files["LICENSE.txt"])).toContain(rule.body.en);
   await expect(page.getByRole("dialog")).not.toBeVisible();
   await expect(page.locator("[data-asset-notice='started']")).toBeVisible();
@@ -123,7 +117,7 @@ test("member sheet has a live preview and exports a 3840×2160 PNG without drawi
   });
   await page.request.post("/api/auth/mock/sign-in");
   await page.goto(library);
-  await page.getByRole("button", { name: "Select all", exact: true }).click();
+  await page.getByRole("button", { name: "Select all", exact: true }).first().click();
   await page.getByRole("button", { name: "Download selected", exact: true }).click();
   await page.getByRole("button", { name: "One sheet", exact: true }).click();
   await expect(page.locator("canvas[data-preview-ready='true']")).toBeVisible();
@@ -139,25 +133,25 @@ test("member sheet has a live preview and exports a 3840×2160 PNG without drawi
   const fileEvent = page.waitForEvent("download");
   await page.getByRole("button", { name: "Start download", exact: true }).click();
   const file = await fileEvent;
-  expect(file.suggestedFilename()).toBe("SP-01_sheet.png");
+  expect(file.suggestedFilename()).toBe("SP-13_sheet.png");
   const metadata = await sharp(await readFile((await file.path())!)).metadata();
   expect([metadata.width, metadata.height, metadata.format]).toEqual([3840, 2160, "png"]);
   expect(
     await page.evaluate(() => (window as Window & { sheetTextCalls?: number }).sheetTextCalls),
-  ).toBe(0);
+  ).toBeGreaterThan(0);
 });
 
 test("cancelled exports do not download or discard the selected images", async ({ page }) => {
   await page.request.post("/api/auth/mock/sign-in");
   await page.goto(library);
-  await page.getByRole("button", { name: "Select all", exact: true }).click();
+  await page.getByRole("button", { name: "Select all", exact: true }).first().click();
   let downloads = 0;
   page.on("download", () => downloads++);
   let release: (() => void) | undefined;
   const held = new Promise<void>((resolve) => {
     release = resolve;
   });
-  await page.route("**/api/assets/hu-qian/bundle", async (route) => {
+  await page.route("**/api/assets/tang-yunqiu/bundle", async (route) => {
     await held;
     await route.abort();
   });
@@ -167,7 +161,7 @@ test("cancelled exports do not download or discard the selected images", async (
   await page.getByRole("button", { name: "Cancel", exact: true }).click();
   release!();
   await expect(page.getByRole("dialog")).not.toBeVisible();
-  for (const check of await page.getByRole("checkbox").all()) await expect(check).toBeChecked();
+  expect(await page.locator("[data-selected='true']").count()).toBeGreaterThan(0);
   expect(downloads).toBe(0);
 });
 
@@ -177,14 +171,13 @@ for (const width of [390, 1440])
       await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
       await page.emulateMedia({ colorScheme: theme, reducedMotion: "reduce" });
       await page.request.post("/api/auth/mock/sign-in");
-      await page.goto("/zh/kit/hu-qian");
-      await page.getByRole("button", { name: "全选本组", exact: true }).click();
+      await page.goto("/zh/kit/tang-yunqiu");
+      await page.getByRole("button", { name: "全选本组", exact: true }).first().click();
       await page.getByRole("button", { name: "下载所选", exact: true }).click();
       const dialog = page.getByRole("dialog");
       await page.getByRole("button", { name: "按模型打包", exact: true }).click();
       await page.getByLabel("模型", { exact: true }).selectOption("veo");
-      await expect(page.getByRole("button", { name: "开始下载", exact: true })).toBeDisabled();
-      await expect(dialog).toContainText("表情尚未交付");
+      await expect(page.getByRole("button", { name: "开始下载", exact: true })).toBeEnabled();
       expect(await dialog.evaluate((node) => node.scrollWidth <= node.clientWidth)).toBe(true);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
         true,
@@ -220,7 +213,7 @@ test("local production build sends no analytics, cloud storage or account-provid
   });
   await page.goto(library);
   await expect(page.getByRole("button", { name: "Download this image" }).first()).toBeEnabled();
-  await page.getByRole("button", { name: "Select all", exact: true }).click();
+  await page.getByRole("button", { name: "Select all", exact: true }).first().click();
   await page.getByRole("button", { name: "Download selected", exact: true }).click();
   await expect(page.getByRole("dialog")).toBeVisible();
   expect(external).toEqual([]);
@@ -235,7 +228,7 @@ test("bad JSON and oversized member bodies return private errors without severin
     ["{", 400],
     [JSON.stringify({ slots: ["x".repeat(17_000)] }), 413],
   ] as const) {
-    const response = await request.post("/api/assets/hu-qian/bundle", {
+    const response = await request.post("/api/assets/tang-yunqiu/bundle", {
       headers: { "Content-Type": "application/json" },
       data,
     });

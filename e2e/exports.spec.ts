@@ -16,13 +16,13 @@ for (const [target, count] of [
     page,
   }) => {
     const assets = syntheticAssetRecords();
-    const actor = ACTORS.find((item) => item.slug === assets.slug)!;
+    const actor = ACTORS[0]!;
     const pixels = await readFile("e2e/fixtures/assets-store/synthetic.png");
     await installExportBrowserModules(page);
     await page.route("**/__synthetic-image.png", (route) =>
       route.fulfill({ contentType: "image/png", body: pixels }),
     );
-    await page.route("**/api/assets/hu-qian/bundle", async (route) => {
+    await page.route("**/api/assets/tang-yunqiu/bundle", async (route) => {
       const slots = route.request().postDataJSON().slots as string[];
       const items = slots.map((slot) => assets.items.find((item) => item.slot === slot)!);
       await route.fulfill({
@@ -35,7 +35,7 @@ for (const [target, count] of [
         },
       });
     });
-    await page.goto("/en/kit/hu-qian");
+    await page.goto("/en/kit/tang-yunqiu");
     const result = await page.evaluate(
       async (input) => {
         const modulePath = "/__export_modules/src/features/assets/export-packs.ts";
@@ -67,13 +67,13 @@ for (const [target, count] of [
     expect(images).toHaveLength(count);
     expect(strFromU8(files["README-for-AI.txt"]).match(/^Image \d+ /gm)).toHaveLength(count);
     if (target !== "veo") {
-      expect(images[0]).toBe("SP-01_face-front.png");
+      expect(images[0]).toBe("SP-13_face-front.png");
       for (const name of images) expect(files[name]).toEqual(new Uint8Array(pixels));
     } else {
       expect(images).toEqual([
-        "SP-01_face-front.png",
-        "SP-01_turnaround-sheet.png",
-        "SP-01_expression-sheet.png",
+        "SP-13_face-front.png",
+        "SP-13_turnaround-sheet.png",
+        "SP-13_expression-sheet.png",
       ]);
       for (const name of images.filter((filename) => filename.endsWith("-sheet.png"))) {
         const image = await sharp(files[name]).metadata();

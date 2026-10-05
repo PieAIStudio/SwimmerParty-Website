@@ -60,7 +60,7 @@ test("production file traces contain manifests but no local originals, inbox, ev
         resolved,
       ).toBe(false);
       expect(resolved.startsWith(root + path.sep + ".env"), resolved).toBe(false);
-      if (resolved.startsWith(path.join(root, "src/content/actors/hu-qian") + path.sep))
+      if (resolved.startsWith(path.join(root, "src/content/actors/tang-yunqiu") + path.sep))
         includesAssetMetadata = true;
     }
   }
@@ -70,7 +70,7 @@ test("production file traces contain manifests but no local originals, inbox, ev
 
 for (const [route, label, target] of [
   ["/en", "Get free actor assets", "/en/kit"],
-  ["/en/actors/hu-qian", "Open asset library", "/en/kit/hu-qian"],
+  ["/en/actors/tang-yunqiu", "Open asset library", "/en/kit/tang-yunqiu"],
 ]) {
   test(`one linked primary CTA on ${route}`, async ({ page }) => {
     await page.goto(route);

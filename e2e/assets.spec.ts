@@ -6,38 +6,22 @@ for (const locale of ["zh", "en"] as const) {
   test(`asset library renders delivered files and all 21 required slots (${locale})`, async ({
     page,
   }) => {
-    await page.goto(`/${locale}/kit/hu-qian`);
-    await expect(page.locator("[data-core-progress='3/21']")).toBeVisible();
-    await expect(page.locator("[data-asset-slot]")).toHaveCount(21);
-    await expect(page.locator("[data-delivered='true']")).toHaveCount(3);
-    await expect(page.locator("[data-delivered='false']")).toHaveCount(18);
-    await expect(page.getByRole("checkbox")).toHaveCount(3);
-    await expect(page.locator("[data-asset-series]")).toHaveCount(3);
-    await expect(
-      page.locator("[data-delivered='true']").getByText(locale === "zh" ? "旧规格" : "Legacy"),
-    ).toHaveCount(3);
+    await page.goto(`/${locale}/kit/tang-yunqiu`);
+    await expect(page.locator("[data-core-progress=\'21/21\']")).toBeVisible();
+    await expect(page.locator("[data-asset-slot]")).toHaveCount(55);
+    await expect(page.locator("[data-delivered=\'true\']")).toHaveCount(55);
     await page.goto(`/${locale}/kit/misha-luo`);
-    await expect(page.locator("[data-core-progress='0/21']")).toBeVisible();
-    await expect(page.locator("[data-delivered='false']")).toHaveCount(21);
-    await expect(page.locator("main img, main input, [data-delivered='false'] button")).toHaveCount(
-      0,
-    );
-    await expect(
-      page.getByText(
-        locale === "zh"
-          ? "形象尚未锁定，暂无种子。"
-          : "The look is not locked yet, so there is no seed.",
-      ),
-    ).toBeVisible();
+    await expect(page.locator("[data-core-progress=\'21/21\']")).toBeVisible();
+    await expect(page.locator("[data-delivered=\'true\']")).toHaveCount(55);
   });
 }
 
 test("asset HTML is complete before JavaScript", async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
-  await page.goto("/zh/kit/hu-qian");
-  await expect(page.locator("[data-asset-slot]")).toHaveCount(21);
-  await expect(page.locator("[data-delivered='true'] img")).toHaveCount(3);
+  await page.goto("/zh/kit/tang-yunqiu");
+  await expect(page.locator("[data-asset-slot]")).toHaveCount(55);
+  await expect(page.locator("[data-delivered='true'] img")).toHaveCount(55);
   await context.close();
 });
 
@@ -50,10 +34,10 @@ test("unknown libraries return the localized 404", async ({ page }) => {
 test("closing the invitation, reloading and changing language preserve selection", async ({
   page,
 }) => {
-  await page.goto("/zh/kit/hu-qian");
-  const check = page.getByRole("checkbox", { name: "选择 正面", exact: true });
+  await page.goto("/zh/kit/tang-yunqiu");
+  const check = page.getByRole("checkbox", { name: "选择 正面", exact: true }).first();
   // UIKit intentionally clips the native input; users click its visible label.
-  await page.locator("label").filter({ has: check }).click();
+  await page.locator("label").filter({ has: check }).first().click();
   await expect(check).toBeChecked();
   await check.focus();
   await page.keyboard.press("Space");
@@ -70,7 +54,9 @@ test("closing the invitation, reloading and changing language preserve selection
   await expect(check).toBeChecked();
   await page.getByRole("button", { name: /中文|English/ }).click();
   await page.getByRole("menuitemradio", { name: "English" }).click();
-  await expect(page.getByRole("checkbox", { name: "Select Front", exact: true })).toBeChecked();
+  await expect(
+    page.getByRole("checkbox", { name: "Select Front", exact: true }).first(),
+  ).toBeChecked();
   await page.getByRole("button", { name: "Clear", exact: true }).click();
   await expect(page.getByRole("button", { name: "Download selected", exact: true })).toBeEnabled();
 });
@@ -90,7 +76,7 @@ test("profile JSON is free, bilingual and does not call the asset API", async ({
     const profile = JSON.parse(await readFile((await download.path())!, "utf8"));
     expect(profile.name).toEqual({ zh: "唐韵秋", en: "TANG YUNQIU" });
     expect(profile.heightCm).toBe(163);
-    expect(profile.slots).toEqual([]);
+    expect(profile.slots).toHaveLength(63);
     expect(profile.note.en).toBeTruthy();
     expect(profile.note.zh).toBeTruthy();
   }
@@ -101,7 +87,7 @@ test("sitemap includes all thirteen actor libraries in both authored locales", a
   request,
 }) => {
   const xml = await request.get("/sitemap.xml").then((response) => response.text());
-  expect(ACTORS).toHaveLength(13);
+  expect(ACTORS).toHaveLength(2);
   for (const actor of ACTORS)
     for (const locale of ["zh", "en"]) expect(xml).toContain(`/${locale}/kit/${actor.slug}`);
 });
@@ -112,7 +98,7 @@ for (const width of [390, 1440])
       await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
       await page.emulateMedia({ colorScheme: theme, reducedMotion: "reduce" });
       for (const locale of ["zh", "en"])
-        for (const slug of ["hu-qian", "misha-luo"]) {
+        for (const slug of ["tang-yunqiu", "misha-luo"]) {
           await page.goto(`/${locale}/kit/${slug}`);
           await page.evaluate(() => document.fonts.ready);
           await expect(page.locator("html")).toHaveAttribute("data-game-ui-theme", theme);
@@ -133,16 +119,16 @@ for (const width of [390, 1440])
           expect(overflow.width, JSON.stringify({ locale, slug, ...overflow })).toBeLessThanOrEqual(
             width,
           );
-          await expect(page.locator("[data-asset-slot]")).toHaveCount(21);
+          await expect(page.locator("[data-asset-slot]")).toHaveCount(55);
           if (process.env.CAPTURE_ASSETS === "1")
             await page.screenshot({
               path: `.devspace-reports/swimmer-family-rebuild/step4/${locale}-${slug}-${theme}-${width}.png`,
               fullPage: true,
             });
         }
-      await page.goto("/en/kit/hu-qian");
-      const front = page.getByRole("checkbox", { name: "Select Front", exact: true });
-      await page.locator("label").filter({ has: front }).click();
+      await page.goto("/en/kit/tang-yunqiu");
+      const front = page.getByRole("checkbox", { name: "Select Front", exact: true }).first();
+      await page.locator("label").filter({ has: front }).first().click();
       await expect(front).toBeChecked();
       await expect(
         page.locator(`[data-selection-bar='${width < 768 ? "mobile" : "desktop"}']`),
@@ -161,7 +147,7 @@ test("empty selection never downloads and all three selection controls work at 1
   page.on("request", (request) => {
     if (/\/api\/assets\/.+\/(download|bundle)/.test(request.url())) downloads++;
   });
-  await page.goto("/en/kit/hu-qian");
+  await page.goto("/en/kit/tang-yunqiu");
   const trigger = page.getByRole("button", { name: "Download selected", exact: true });
   await trigger.click();
   await expect(page.locator('[data-asset-notice="selectFirst"]')).toBeVisible();

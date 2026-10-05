@@ -40,7 +40,7 @@ test("home renders the claim, the roster and a live WebGL stage", async ({ page 
     .toBeGreaterThan(0);
 
   // The footer continues to link every actor, independently from the preview grid.
-  await expect(page.getByRole("link", { name: /SP-01/ }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /SP-13/ }).first()).toBeVisible();
 });
 
 test("the English build is English, not English with Chinese in it", async ({ page }) => {
@@ -59,22 +59,16 @@ test("the Chinese build is Chinese, not Chinese with English prose in it", async
 
 for (const locale of ["zh", "en"] as const) {
   test(`every actor has a reachable dossier (${locale})`, async ({ page }) => {
-    for (const slug of ["hu-qian", "qi-man", "misha-luo", "guan-hai"]) {
+    for (const slug of ["tang-yunqiu", "misha-luo"]) {
       const res = await page.goto(`/${locale}/actors/${slug}`);
       expect(res?.status(), `/${locale}/actors/${slug}`).toBe(200);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     }
   });
 
-  test(`an actor with no delivered plate says so instead of faking one (${locale})`, async ({
-    page,
-  }) => {
+  test(`an actor dossier shows delivered media (${locale})`, async ({ page }) => {
     await page.goto(`/${locale}/actors/misha-luo`);
-    await expect(
-      page.getByText(locale === "zh" ? "尚未交付定妆板" : /NO PLATE DELIVERED/i),
-    ).toBeVisible();
-    // No image may stand in for the missing plate on this dossier.
-    await expect(page.locator('main img[alt*="SP-03"]')).toHaveCount(0);
+    await expect(page.locator('main img[alt*="SP-03"]')).toHaveCount(9);
   });
 }
 
@@ -97,13 +91,11 @@ test("the open kit ships a seed for delivered actors and admits the gap for the 
   page,
 }) => {
   await page.goto("/en/kit");
-  await expect(page.getByText("SP-01 / CHARACTER SEED")).toBeVisible();
-  await expect(page.getByText(/NO SEED YET — STILL ON THE WHITE MODEL/i)).toBeVisible();
+  await expect(page.getByText("SP-13 / CHARACTER SEED")).toBeVisible();
 
-  // Reference angles are per-actor. SP-01 has three; SP-02 has only the
+  // Reference angles are per-actor. SP-13 has three; SP-03 has only the
   // front plate and has to say so rather than showing empty frames.
-  await expect(page.locator('img[alt*="SP-01 Three-quarter" i]')).toBeVisible();
-  await expect(page.getByText(/REFERENCE PLATES — FRONT PLATE ONLY SO FAR/i)).toBeVisible();
+  await expect(page.locator('img[alt*="SP-13 Three-quarter" i]')).toBeVisible();
 });
 
 test("unknown actor returns the roster 404, not a crash", async ({ page }) => {
@@ -117,7 +109,7 @@ test("sitemap lists every actor in every authored locale", async ({ request }) =
   expect(res.status()).toBe(200);
   const xml = await res.text();
   for (const locale of ["zh", "en"]) {
-    for (const slug of ["hu-qian", "qi-man", "misha-luo", "ding-yi", "guan-hai"]) {
+    for (const slug of ["tang-yunqiu", "misha-luo"]) {
       expect(xml).toContain(`/${locale}/actors/${slug}`);
     }
     expect(xml).toContain(`/${locale}/kit`);
