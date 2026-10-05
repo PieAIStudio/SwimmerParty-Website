@@ -312,6 +312,14 @@
   }
 }
 
+/* The UI kit's decorative liquid layer is absolutely positioned. Constrain it
+ * to the language control so its unpainted SVG cannot widen the page. */
+.game-ui-language-trigger > .game-ui-droplet {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 640px) {
   :root {
     --sp-gutter: 32px;
