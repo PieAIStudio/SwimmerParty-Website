@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
+import { localizedAlternates } from "@/i18n/metadata";
 import { PageIntro } from "@/site/PageIntro";
 import { SectionHead } from "@/site/SectionHead";
 import { TextLink } from "@/site/TextLink";
@@ -10,7 +11,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   setSiteLocale(locale);
   const { t } = await getSiteI18n();
-  return { title: t("studio.metaTitle"), description: t("studio.metaDescription") };
+  return {
+    title: t("studio.metaTitle"),
+    description: t("studio.metaDescription"),
+    alternates: localizedAlternates("/studio"),
+  };
 }
 export default async function StudioPage({ params }: Props) {
   const { locale } = await params;

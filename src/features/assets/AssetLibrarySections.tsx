@@ -1,6 +1,7 @@
 import type { ActorAssets } from "@/features/assets/asset-types";
 import {
   listSeries,
+  slotsForLook,
   slotsOf,
   slotLabelKey,
   type ResolvedSlot,
@@ -29,7 +30,10 @@ export async function AssetLibrarySections({
     >
       {slots.map((slot) => {
         const item = delivered.get(slot.slot);
-        const label = t(slotLabelKey(slot.series, slot.key));
+        const extra = assets.looks
+          .find((look) => look.id === slot.look)
+          ?.extras.find((entry) => entry.key === slot.key);
+        const label = extra ? extra.label[locale] : t(slotLabelKey(slot.series, slot.key));
         return item ? (
           <AssetTile
             key={slot.slot}
@@ -65,7 +69,7 @@ export async function AssetLibrarySections({
         )
         .map((series) => {
           const all = series.perLook
-            ? assets.looks.flatMap((look) => slotsOf(series.id, look.id))
+            ? assets.looks.flatMap((look) => slotsForLook(series.id, look))
             : slotsOf(series.id);
           const visible = all.filter(
             (slot) => (series.required && slot.required) || delivered.has(slot.slot),

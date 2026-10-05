@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
+import { localizedAlternates } from "@/i18n/metadata";
 import { REFUSALS, WHY } from "@/content/doctrine";
 import { CLAUSES, TERMS, PACT_VERSION } from "@/content/pact";
 import { PageIntro } from "@/site/PageIntro";
@@ -13,7 +14,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   setSiteLocale(locale);
   const { t } = await getSiteI18n();
-  return { title: t("pact.metaTitle"), description: t("pact.metaDescription") };
+  return {
+    title: t("pact.metaTitle"),
+    description: t("pact.metaDescription"),
+    alternates: localizedAlternates("/pact"),
+  };
 }
 export default async function PactPage({ params }: Props) {
   const { locale } = await params;

@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { SITE } from "../src/content/site";
 
 /**
  * Smoke coverage for the surfaces a caster actually lands on. These assert
@@ -114,6 +115,41 @@ test("sitemap lists every actor in every authored locale", async ({ request }) =
     }
     expect(xml).toContain(`/${locale}/kit`);
     expect(xml).toContain(`/${locale}/pact`);
+  }
+});
+
+test("authored pages expose their own localized canonical", async ({ page }) => {
+  for (const path of [
+    "/en",
+    "/en/actors",
+    "/en/works",
+    "/en/kit",
+    "/en/studio",
+    "/en/casting",
+    "/en/pact",
+    "/en/actors/tang-yunqiu",
+    "/en/kit/tang-yunqiu",
+  ]) {
+    await page.goto(path);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      `${SITE.url}${path.slice(3) || ""}`,
+    );
+  }
+});
+
+test("legacy actor and kit URLs redirect once and keep locale", async ({ request }) => {
+  for (const path of [
+    "/en/actors/he-jie",
+    "/zh/actors/dai-er",
+    "/en/kit/he-jie",
+    "/zh/kit/dai-er",
+  ]) {
+    const response = await request.get(path, { maxRedirects: 0 });
+    expect(response.status(), path).toBe(308);
+    expect(response.headers().location, path).toMatch(
+      new RegExp(`^/${path.slice(1, 3)}/(actors|kit)/`),
+    );
   }
 });
 

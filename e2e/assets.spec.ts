@@ -8,11 +8,11 @@ for (const locale of ["zh", "en"] as const) {
   }) => {
     await page.goto(`/${locale}/kit/tang-yunqiu`);
     await expect(page.locator("[data-core-progress='21/21']")).toBeVisible();
-    await expect(page.locator("[data-asset-slot]")).toHaveCount(55);
-    await expect(page.locator("[data-delivered='true']")).toHaveCount(55);
+    await expect(page.locator("[data-asset-slot]")).toHaveCount(63);
+    await expect(page.locator("[data-delivered='true']")).toHaveCount(63);
     await page.goto(`/${locale}/kit/misha-luo`);
     await expect(page.locator("[data-core-progress='21/21']")).toBeVisible();
-    await expect(page.locator("[data-delivered='true']")).toHaveCount(55);
+    await expect(page.locator("[data-delivered='true']")).toHaveCount(63);
   });
 }
 
@@ -20,8 +20,8 @@ test("asset HTML is complete before JavaScript", async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto("/zh/kit/tang-yunqiu");
-  await expect(page.locator("[data-asset-slot]")).toHaveCount(55);
-  await expect(page.locator("[data-delivered='true'] img")).toHaveCount(55);
+  await expect(page.locator("[data-asset-slot]")).toHaveCount(63);
+  await expect(page.locator("[data-delivered='true'] img")).toHaveCount(63);
   await context.close();
 });
 
@@ -119,7 +119,7 @@ for (const width of [390, 1440])
           expect(overflow.width, JSON.stringify({ locale, slug, ...overflow })).toBeLessThanOrEqual(
             width,
           );
-          await expect(page.locator("[data-asset-slot]")).toHaveCount(55);
+          await expect(page.locator("[data-asset-slot]")).toHaveCount(63);
           if (process.env.CAPTURE_ASSETS === "1")
             await page.screenshot({
               path: `.devspace-reports/swimmer-family-rebuild/step4/${locale}-${slug}-${theme}-${width}.png`,

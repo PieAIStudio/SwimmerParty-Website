@@ -9,14 +9,25 @@ import {
   listSeries,
   requiredSlots,
   slotsOf,
+  slotsForLook,
+  assetSlotOrder,
   slotLabelKey,
 } from "../src/features/assets/asset-series.ts";
-import { coreProgress, firstImage, getActorAssets, itemsBySeries } from "../src/features/assets/assets.ts";
+import {
+  coreProgress,
+  firstImage,
+  getActorAssets,
+  itemsBySeries,
+} from "../src/features/assets/assets.ts";
 import { localAssetStore, objectPath } from "../src/features/assets/server/asset-store.ts";
 import { ingest } from "./assets-ingest.ts";
 import { todo, writeTodo } from "./assets-todo.ts";
 import { writeTransaction } from "./assets-common.ts";
 import { fixtureRoot, syntheticImage, input, emptyInbox } from "./fixtures/assets.ts";
+import { ACTORS } from "../src/content/actors/index.ts";
+import { WORKS } from "../src/content/works.ts";
+import { looks as tangLooks } from "../src/content/actors/tang-yunqiu/looks.ts";
+import { looks as mishaLooks } from "../src/content/actors/misha-luo/looks.ts";
 
 async function rootFor(t: { after: (fn: () => Promise<void>) => void }) {
   const root = await fixtureRoot();
@@ -35,7 +46,9 @@ function messages(error: unknown): string {
 }
 
 test("the vocabulary is exactly the approved appendix, with 21 unique core slots", async () => {
-  const expected = JSON.parse(await readFile(new URL("./fixtures/approved-vocabulary.json", import.meta.url), "utf8"));
+  const expected = JSON.parse(
+    await readFile(new URL("./fixtures/approved-vocabulary.json", import.meta.url), "utf8"),
+  );
   const actual = JSON.parse(
     await readFile(new URL("../src/content/asset-series.json", import.meta.url), "utf8"),
   );
@@ -59,6 +72,30 @@ test("every vocabulary label is authored in both locales", async () => {
           `${locale}: ${series.id}.${slot.key}`,
         );
     }
+  }
+});
+
+test("every delivered manifest item has one ordered asset slot", () => {
+  for (const actor of ACTORS) {
+    const assets = getActorAssets(actor.slug);
+    const slots = new Set(assetSlotOrder(assets.looks));
+    const delivered = assets.items.map((item) => item.slot);
+    assert.equal(new Set(delivered).size, delivered.length, actor.slug);
+    assert.ok(
+      delivered.every((slot) => slots.has(slot)),
+      actor.slug,
+    );
+  }
+});
+
+test("role looks point to the matching work role", () => {
+  for (const look of [...tangLooks, ...mishaLooks].filter((item) => item.role)) {
+    const work = WORKS.find((item) => item.code === look.role!.work);
+    assert.ok(work, look.id);
+    assert.ok(
+      work.cast.some((credit) => credit.role?.id === look.role!.id),
+      look.id,
+    );
   }
 });
 

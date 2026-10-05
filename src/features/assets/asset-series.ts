@@ -23,6 +23,10 @@ export type ResolvedSlot = SlotDefinition & {
   look: string | null;
   slot: string;
 };
+type LookWithExtras = {
+  id: string;
+  extras?: readonly { key: string; label?: unknown; direction?: string }[];
+};
 
 // The checked-in JSON is the shared protocol for UI, ingest, TODO and export.
 const series = vocabulary.series as readonly SeriesDefinition[];
@@ -46,6 +50,21 @@ export function slotsOf(id: string, look: string | null = null): ResolvedSlot[] 
   }));
 }
 
+export function slotsForLook(id: string, look: LookWithExtras): ResolvedSlot[] {
+  return [
+    ...slotsOf(id, look.id),
+    ...(look.extras ?? []).map((extra) => ({
+      key: extra.key,
+      required: false,
+      direction: extra.direction ?? extra.key,
+      series: id,
+      frame: seriesOf(id).frame,
+      look: look.id,
+      slot: `${id}.${look.id}.${extra.key}`,
+    })),
+  ];
+}
+
 export function requiredSlots(): ResolvedSlot[] {
   return series
     .filter((item) => !item.perLook)
@@ -66,12 +85,7 @@ export function slotLabelKey(seriesId: string, key: string): AssetLabelKey {
 export function assetSlotOrder(looks: readonly { id: string }[] = []): string[] {
   return series.flatMap((item) =>
     item.perLook
-      ? looks.flatMap((look) => [
-          ...slotsOf(item.id, look.id).map((slot) => slot.slot),
-          ...("extras" in look && Array.isArray(look.extras)
-            ? look.extras.map((extra: { key: string }) => `${item.id}.${look.id}.${extra.key}`)
-            : []),
-        ])
+      ? looks.flatMap((look) => [...slotsForLook(item.id, look).map((slot) => slot.slot)])
       : slotsOf(item.id).map((slot) => slot.slot),
   );
 }

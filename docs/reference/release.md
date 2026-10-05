@@ -48,6 +48,7 @@ UIKit `3.0.0-rc.1`、AuthKit `0.8.0-rc.1` 当前按精确版本安装；正式�
 1. 在已绑定的 Vercel `swimmerparty` 项目 Storage 中创建 **private** Blob，连接目标环境并注入权限。不要创建 public 母版桶。
 2. 制作方按[资产 spec](../specs/active/actor-asset-library.md)把母版放到 `assets-inbox/SP-XX/`。先跑 `pnpm assets:ingest SP-XX --dry-run`，再在授权环境执行 `ASSET_STORE=blob ACCOUNT_MODE=swimmer GUEST_LIMITER=vercel pnpm assets:ingest SP-XX`。模式由环境变量选择，没有 `--blob` 参数。旧规格才加 `--legacy`。保留公开预览和清单的同次提交，母版不得在同一对象键下换字节。
 3. 在项目 Firewall 中登记供 `checkRateLimit` 调用的规则 `guest-asset-download`，按 IP 每 30 秒 1 次。只有游客请求调用它；规则缺失时 API 应返回私有 503，不能自动降级。
+   该规则必须是 `@vercel/firewall` 的 Rate limit ID 条件；发布前运行 `vercel firewall rules inspect guest-asset-download` 核对。
 4. 将以下请求交给 SwimmerBackend 的负责会话：产品 SWIMMER PARTY、public OAuth PKCE 客户端、origin `https://swimmerparty.swiminai.com`、精确回调 `https://swimmerparty.swiminai.com/api/auth/sso-callback`、scope `openid email profile`。不得登记通配回调或附加权限。账号中心的授权页与 `/account` 管理页必须实际挂载。取得客户端标识后配置环境；本手册不代替该团队的登记流程。
 5. Cookie 为 `__Host-swimmerparty-session`，由 AuthKit 管理。已安装 AuthKit 要求 HTTPS origin；HTTP localhost 仅供 mock 模式。本地真实 SSO 验证需显式配置已登记 HTTPS origin，不能关闭 Secure 或弱化回调校验。
 
@@ -55,9 +56,8 @@ UIKit `3.0.0-rc.1`、AuthKit `0.8.0-rc.1` 当前按精确版本安装；正式�
 
 1. 选择干净、已提交候选，运行 `pnpm verify`、`pnpm docs:check`、`pnpm exec swimmer-ui-check src`。按项目要求完成该精确提交的人工 Actions 验收；失败不得发布。
 2. 确认 Vercel 绑定 `swimmerparty` / `pie-0f420159`。未绑定时由获授权的发布会话执行 `vercel link --project swimmerparty --scope pie-0f420159`。
-3. 先创建预览部署并验收。预览也必须使用真实模式，拥有自己已登记的 HTTPS origin、回调和隔离配置；不能把 mock cookie 部署到 Vercel。记录返回的精确 URL。
-4. 预览验收后按根目录 `AGENTS.md` 的 Website Release Entry：`vercel deploy --prod --skip-domain --yes --scope pie-0f420159`。
-5. 在返回的生产配置候选 URL 上完成冒烟；通过后执行 `vercel promote <verified-deployment-url> --scope pie-0f420159`。必须 promote 已验证的同一产物，不重建、不猜 URL。
+3. 使用本地已验证的 prebuilt 产物创建生产配置候选：`vercel deploy --prod --skip-domain --yes --scope pie-0f420159`。
+4. 在返回的生产候选 URL 上完成冒烟；通过后执行 `vercel promote <verified-deployment-url> --scope pie-0f420159`。必须 promote 已验证的同一产物，不重建、不猜 URL。
 
 ## 冒烟与回滚
 

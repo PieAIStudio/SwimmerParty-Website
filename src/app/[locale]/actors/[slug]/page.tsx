@@ -16,6 +16,8 @@ import { AssetProgress } from "@/features/assets";
 import { HeightScale } from "@/features/actors";
 import { Link } from "@/i18n/navigation";
 import { GameFactList } from "@pieai/swimmer-ui-kit";
+import { localizedAlternates } from "@/i18n/metadata";
+import { WORKS } from "@/content/works";
 
 type Props = { params: Promise<{ locale: AppLocale; slug: string }> };
 export function generateStaticParams() {
@@ -29,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${locale === "zh" ? actor.nameCn : actor.nameEn} — ${actor.code}`,
     description: `${actor.tagline[locale]} ${STANCE_LINE[locale]}`,
+    alternates: localizedAlternates(`/actors/${slug}`),
     openGraph: image
       ? { images: [{ url: image.preview, alt: `${actor.code} — ${actor.nameEn}` }] }
       : undefined,
@@ -38,8 +41,8 @@ export default async function ActorPage({ params }: Props) {
   const { locale, slug } = await params;
   setSiteLocale(locale);
   const actor = getActor(slug);
-  if (slug === "he-jie") permanentRedirect(`/actors/tang-yunqiu`);
-  if (slug === "dai-er") permanentRedirect(`/actors/misha-luo`);
+  if (slug === "he-jie") permanentRedirect(`/${locale}/actors/tang-yunqiu`);
+  if (slug === "dai-er") permanentRedirect(`/${locale}/actors/misha-luo`);
   if (
     [
       "bai-lu",
@@ -55,7 +58,7 @@ export default async function ActorPage({ params }: Props) {
       "su-xiao",
     ].includes(slug)
   )
-    permanentRedirect(`/actors`);
+    permanentRedirect(`/${locale}/actors`);
   if (!actor) notFound();
   const { t } = await getSiteI18n();
   const name = locale === "zh" ? actor.nameCn : actor.nameEn;
@@ -188,7 +191,11 @@ export default async function ActorPage({ params }: Props) {
               id: "image",
               icon: "card",
               label: t("media.image.title"),
-              value: <TextLink href={`/kit/${actor.slug}`}>{t("media.image.open")}</TextLink>,
+              value: (
+                <TextLink href={`/kit/${actor.slug}`}>
+                  {t("media.image.count", { count: getActorAssets(slug).items.length })}
+                </TextLink>
+              ),
               tone: "success",
             },
             {
@@ -217,6 +224,33 @@ export default async function ActorPage({ params }: Props) {
             },
           ]}
         />
+      </section>
+      <section className="sp-section" aria-labelledby="appearances-title">
+        <h2 id="appearances-title" className="sp-title">
+          {t("actor.appearances")}
+        </h2>
+        <div className="mt-6 space-y-4">
+          {WORKS.flatMap((work) =>
+            work.cast
+              .filter((credit) => credit.actor === actor.code && credit.role)
+              .map((credit) => (
+                <div key={`${work.code}-${credit.role!.id}`} className="sp-card bg-card">
+                  <TextLink href={`/works`}>{work.title[locale]}</TextLink>
+                  <p className="mt-2">
+                    {t("actor.appearanceRole", { role: credit.role!.name[locale] })}
+                  </p>
+                  {credit.role!.note ? (
+                    <p className="sp-small mt-2 text-muted-foreground">
+                      {credit.role!.note[locale]}
+                    </p>
+                  ) : null}
+                  <TextLink href={`/kit/${actor.slug}#series-wardrobe`} className="mt-3">
+                    {t("assets.openLibrary")}
+                  </TextLink>
+                </div>
+              )),
+          )}
+        </div>
       </section>
       {actor.promptSeed ? (
         <section className="pb-16">

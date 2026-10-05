@@ -6,6 +6,7 @@ import { ActorCard } from "@/features/actors";
 import { PageIntro } from "@/site/PageIntro";
 import { SectionHead } from "@/site/SectionHead";
 import { Reveal } from "@/site/Reveal";
+import { localizedAlternates } from "@/i18n/metadata";
 
 export async function generateMetadata({
   params,
@@ -15,7 +16,11 @@ export async function generateMetadata({
   const { locale } = await params;
   setSiteLocale(locale);
   const { t } = await getSiteI18n();
-  return { title: t("roster.metaTitle"), description: t("roster.metaDescription") };
+  return {
+    title: t("roster.metaTitle"),
+    description: t("roster.metaDescription"),
+    alternates: localizedAlternates("/actors"),
+  };
 }
 
 export default async function RosterPage({ params }: { params: Promise<{ locale: AppLocale }> }) {

@@ -988,6 +988,18 @@ export const messages = {
     en: "Open image library",
     zh: "打开图片资产库",
   },
+  "media.image.count": {
+    en: "Open {count} images",
+    zh: "打开 {count} 张图片",
+  },
+  "actor.appearances": {
+    en: "Credits",
+    zh: "出演",
+  },
+  "actor.appearanceRole": {
+    en: "Plays {role}",
+    zh: "饰 {role}",
+  },
   "media.voice.title": {
     en: "Voice",
     zh: "声音",

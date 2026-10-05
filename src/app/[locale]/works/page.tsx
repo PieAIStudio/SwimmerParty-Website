@@ -8,13 +8,18 @@ import { PageIntro } from "@/site/PageIntro";
 import { TextLink } from "@/site/TextLink";
 import { Link } from "@/i18n/navigation";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
+import { localizedAlternates } from "@/i18n/metadata";
 
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   setSiteLocale(locale);
   const { t } = await getSiteI18n();
-  return { title: t("works.metaTitle"), description: t("works.metaDescription") };
+  return {
+    title: t("works.metaTitle"),
+    description: t("works.metaDescription"),
+    alternates: localizedAlternates("/works"),
+  };
 }
 export default async function WorksPage({ params }: Props) {
   const { locale } = await params;

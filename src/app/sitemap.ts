@@ -23,9 +23,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: path === "" ? 1 : path.startsWith("/actors/") ? 0.7 : 0.8,
       alternates: {
-        languages: Object.fromEntries(
-          routing.locales.map((l) => [LOCALE_HTML_LANG[l], `${SITE.url}/${l}${path}`]),
-        ),
+        languages: Object.fromEntries([
+          ...routing.locales.map((l) => [LOCALE_HTML_LANG[l], `${SITE.url}/${l}${path}`]),
+          ["x-default", `${SITE.url}/en${path}`],
+        ]),
       },
     })),
   );

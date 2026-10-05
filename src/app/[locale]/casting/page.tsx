@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
+import { localizedAlternates } from "@/i18n/metadata";
 import { ACTORS } from "@/content/actors";
 import { SITE } from "@/content/site";
 import { PageIntro } from "@/site/PageIntro";
@@ -15,7 +16,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   setSiteLocale(locale);
   const { t } = await getSiteI18n();
-  return { title: t("casting.metaTitle"), description: t("casting.metaDescription") };
+  return {
+    title: t("casting.metaTitle"),
+    description: t("casting.metaDescription"),
+    alternates: localizedAlternates("/casting"),
+  };
 }
 export default async function CastingPage({ params }: Props) {
   const { locale } = await params;

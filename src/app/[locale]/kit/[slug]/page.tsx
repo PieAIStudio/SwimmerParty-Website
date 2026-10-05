@@ -5,7 +5,8 @@ import { ACTORS, getActor } from "@/content/actors";
 import { getActorAssets, firstImage } from "@/features/assets";
 import { listSeries } from "@/features/assets";
 import { CG_BADGE } from "@/content/doctrine";
-import { routing, LOCALE_HTML_LANG, type AppLocale } from "@/i18n/routing";
+import { routing, type AppLocale } from "@/i18n/routing";
+import { localizedAlternates } from "@/i18n/metadata";
 import type { MessageContracts } from "@/i18n/message-contracts";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { TextLink } from "@/site/TextLink";
@@ -28,12 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const image = firstImage(slug, ["turnaround.front"]);
   return {
     title: t("assets.metaTitle", { name: locale === "zh" ? actor.nameCn : actor.nameEn }),
-    alternates: {
-      canonical: `/${locale}/kit/${slug}`,
-      languages: Object.fromEntries(
-        routing.locales.map((value) => [LOCALE_HTML_LANG[value], `/${value}/kit/${slug}`]),
-      ),
-    },
+    alternates: localizedAlternates(`/kit/${slug}`),
     openGraph: image ? { images: [{ url: image.preview, alt: actor.code }] } : undefined,
   };
 }
@@ -41,8 +37,8 @@ export default async function ActorAssetPage({ params }: Props) {
   const { locale, slug } = await params;
   setSiteLocale(locale);
   const actor = getActor(slug);
-  if (slug === "he-jie") permanentRedirect(`/kit/tang-yunqiu`);
-  if (slug === "dai-er") permanentRedirect(`/kit/misha-luo`);
+  if (slug === "he-jie") permanentRedirect(`/${locale}/kit/tang-yunqiu`);
+  if (slug === "dai-er") permanentRedirect(`/${locale}/kit/misha-luo`);
   if (
     [
       "bai-lu",
@@ -58,7 +54,7 @@ export default async function ActorAssetPage({ params }: Props) {
       "su-xiao",
     ].includes(slug)
   )
-    permanentRedirect(`/kit`);
+    permanentRedirect(`/${locale}/kit`);
   if (!actor) notFound();
   const assets = getActorAssets(slug);
   const { t } = await getSiteI18n();

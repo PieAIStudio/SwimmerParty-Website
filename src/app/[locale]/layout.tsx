@@ -11,6 +11,7 @@ import { SITE_UI_STYLE, THEME_INIT_SCRIPT } from "@/site/theme";
 import { LOCALE_HTML_LANG, LOCALE_OG, routing, type AppLocale } from "@/i18n/routing";
 import { SITE } from "@/content/site";
 import { STANCE_LINE } from "@/content/doctrine";
+import { localizedAlternates } from "@/i18n/metadata";
 // oxlint-disable-next-line no-unassigned-import -- Root stylesheet initialization.
 import "../globals.css";
 
@@ -50,10 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             "virtual talent",
             "SWIMMER PARTY",
           ],
-    alternates: {
-      canonical: `/${loc}`,
-      languages: Object.fromEntries(routing.locales.map((l) => [LOCALE_HTML_LANG[l], `/${l}`])),
-    },
+    alternates: localizedAlternates("/"),
     openGraph: {
       type: "website",
       locale: LOCALE_OG[loc],

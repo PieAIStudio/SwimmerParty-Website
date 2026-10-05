@@ -36,7 +36,7 @@ test("guest downloads a named original, then receives private 429 and a live coo
   await expect(page.locator("[data-asset-notice='cooldown']")).toContainText("30 seconds");
   for (const button of await page.getByRole("button", { name: "Download this image" }).all())
     await expect(button).toBeDisabled();
-  await expect(page.locator("[data-cooldown]")).toHaveCount(55);
+  await expect(page.locator("[data-cooldown]")).toHaveCount(63);
   const signed = new URL(url, "http://127.0.0.1:3399");
   signed.searchParams.set("sig", "0".repeat(64));
   expect((await page.request.get(signed.href)).status()).toBe(403);
@@ -138,7 +138,7 @@ test("member sheet has a live preview and exports a 3840×2160 PNG without drawi
   expect([metadata.width, metadata.height, metadata.format]).toEqual([3840, 2160, "png"]);
   expect(
     await page.evaluate(() => (window as Window & { sheetTextCalls?: number }).sheetTextCalls),
-  ).toBeGreaterThan(0);
+  ).toBe(0);
 });
 
 test("cancelled exports do not download or discard the selected images", async ({ page }) => {

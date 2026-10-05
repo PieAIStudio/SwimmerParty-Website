@@ -21,7 +21,11 @@ import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { useAccount } from "@/features/account";
 
 const translators = { en: siteI18n.translator("en"), zh: siteI18n.translator("zh-CN") };
-function labelsFor(item: AssetItem) {
+function labelsFor(item: AssetItem, assets: ActorAssets) {
+  const extra = assets.looks
+    .find((look) => look.id === item.look)
+    ?.extras.find((entry) => entry.key === item.key);
+  if (extra) return { en: extra.label.en, zh: extra.label.zh };
   const key = slotLabelKey(item.series, item.key);
   return { en: translators.en.t(key), zh: translators.zh.t(key) };
 }
@@ -46,7 +50,7 @@ export function MemberExportDialog({
   const locale = useSiteLocale();
   const account = useAccount();
   const [format, setFormat] = useState<ExportFormat>("zip");
-  const [labels, setLabels] = useState<SheetLabels>(locale);
+  const [labels, setLabels] = useState<SheetLabels>("none");
   const [background, setBackground] = useState<SheetBackground>("grey");
   const [target, setTarget] = useState<ExportTarget>("gpt-image");
   const [busy, setBusy] = useState(false);
@@ -78,7 +82,7 @@ export function MemberExportDialog({
             width: bitmap.width,
             height: bitmap.height,
             fullBody: ["turnaround", "wardrobe", "pose"].includes(item.series),
-            labels: labelsFor(item),
+            labels: labelsFor(item, assets),
           });
           abort.signal.throwIfAborted();
         }
@@ -91,7 +95,7 @@ export function MemberExportDialog({
       }
     })();
     return () => abort.abort();
-  }, [format, selectedKey, labels, background, renderKey]);
+  }, [assets, format, selectedKey, labels, background, renderKey]);
   function cancel() {
     controller.current?.abort();
     onClose();
@@ -111,7 +115,9 @@ export function MemberExportDialog({
         target,
         sheet: { labels, background },
         locale,
-        labels: Object.fromEntries(assets.items.map((item) => [item.slot, labelsFor(item)])),
+        labels: Object.fromEntries(
+          assets.items.map((item) => [item.slot, labelsFor(item, assets)]),
+        ),
         signal: abort.signal,
       });
       abort.signal.throwIfAborted();
