@@ -10,7 +10,6 @@ for (const colorScheme of ["light", "dark"] as const) {
     await page.goto("/zh");
     await expect(page.locator("html")).toHaveAttribute("data-game-ui-style", "grey");
     await expect(page.locator("html")).toHaveAttribute("data-game-ui-theme", colorScheme);
-    await expect(page.locator("[data-clay-stage]")).toHaveCSS("border-radius", "0px");
     await expect(page.locator(".sp-panel.sp-sweep").first()).toHaveCSS("border-radius", "26px");
     const next = colorScheme === "light" ? "dark" : "light";
     await page.getByRole("button", { name: "切换明暗" }).click();

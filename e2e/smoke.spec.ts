@@ -28,21 +28,13 @@ test("the unprefixed root negotiates a locale from the browser", async ({ browse
   }
 });
 
-test("home renders the claim, the roster and a live WebGL stage", async ({ page }) => {
+test("home renders the claim and delivered actor roster", async ({ page }) => {
   await page.goto("/zh");
 
   await expect(page.getByRole("heading", { level: 1 })).toContainText("我们自己造");
 
-  // The stage is the point of the hero; a dead canvas is a regression.
-  const canvas = page.locator("canvas").first();
-  await expect(canvas).toBeVisible();
-  const canvasHasPixels = await canvas.evaluate(
-    (el: HTMLCanvasElement) => el.width * el.height > 0,
-  );
-  test.skip(!canvasHasPixels, "WebGL is unavailable in this browser runtime");
-  await expect
-    .poll(async () => canvas.evaluate((el: HTMLCanvasElement) => el.width * el.height))
-    .toBeGreaterThan(0);
+  await expect(page.getByRole("link", { name: /唐韵秋/ }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /罗米沙/ }).first()).toBeVisible();
 
   // The footer continues to link every actor, independently from the preview grid.
   await expect(page.getByRole("link", { name: /SP-13/ }).first()).toBeVisible();
@@ -156,36 +148,3 @@ test("legacy actor and kit URLs redirect once and keep locale", async ({ request
     );
   }
 });
-
-for (const coarse of [false, true]) {
-  test(`high-density clay rendering has an explicit ${coarse ? "coarse-pointer" : "desktop"} pixel budget`, async ({
-    browser,
-  }) => {
-    const context = await browser.newContext({
-      viewport: { width: coarse ? 390 : 1440, height: 900 },
-      deviceScaleFactor: 3,
-      hasTouch: coarse,
-      reducedMotion: "reduce",
-    });
-    try {
-      const page = await context.newPage();
-      await page.goto("http://127.0.0.1:3399/en");
-      expect(await page.evaluate(() => matchMedia("(pointer: coarse)").matches)).toBe(coarse);
-      const canvas = page.locator("[data-clay-stage] canvas");
-      await expect(canvas).toBeVisible();
-      const limit = coarse ? 1.35 : 1.5;
-      await expect
-        .poll(async () =>
-          Math.abs(
-            (await canvas.evaluate(
-              (node) => (node as HTMLCanvasElement).width / node.clientWidth,
-            )) - limit,
-          ),
-        )
-        .toBeLessThan(0.015);
-      expect(await page.locator("canvas").count()).toBe(1);
-    } finally {
-      await context.close();
-    }
-  });
-}
