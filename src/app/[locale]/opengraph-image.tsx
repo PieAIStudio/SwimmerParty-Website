@@ -1,0 +1,38 @@
+import { ImageResponse } from "next/og";
+import { SITE } from "@/content/site";
+import { hasLocale, type AppLocale } from "@/i18n/routing";
+
+export const alt = "SWIMMER PARTY";
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
+
+export default async function OpenGraphImage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const lang = hasLocale(["zh", "en"], locale) ? (locale as AppLocale) : "en";
+  return new ImageResponse(
+    <div
+      style={{
+        background: "#1f2326",
+        color: "#fffdf8",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        padding: 64,
+        fontSize: 48,
+      }}
+    >
+      <div style={{ color: "#a8d8ff", fontSize: 28 }}>{SITE.name}</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+        <div style={{ fontSize: 64, fontWeight: 700 }}>
+          {lang === "zh" ? "原创 AI 演员" : "Original AI actors"}
+        </div>
+        <div style={{ fontSize: 30, color: "#c7ced3" }}>
+          {lang === "zh" ? "制作、交付、授权" : "Made, delivered, licensed"}
+        </div>
+      </div>
+    </div>,
+    size,
+  );
+}

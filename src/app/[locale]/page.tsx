@@ -10,7 +10,6 @@ import { ActorPicture } from "@/features/actors";
 import { SectionHead } from "@/site/SectionHead";
 import { TextLink } from "@/site/TextLink";
 import { Reveal } from "@/site/Reveal";
-import { StageMount } from "@/features/stage";
 import { GameBadge, GameButton } from "@pieai/swimmer-ui-kit";
 import { Link } from "@/i18n/navigation";
 
@@ -59,8 +58,26 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
             </div>
           </div>
         </div>
-        <div className="sp-panel sp-sweep relative h-[56vh] min-h-80 lg:col-span-7 lg:h-[68vh] lg:max-h-[760px]">
-          <StageMount assemble />
+        <div className="grid grid-cols-2 gap-4 lg:col-span-7 lg:gap-6">
+          {ACTORS.map((actor) => {
+            const image = firstImage(actor.slug, ["turnaround.front"]);
+            return (
+              <Link key={actor.slug} href={`/actors/${actor.slug}`} className="group block">
+                <ActorPicture
+                  src={image?.preview}
+                  alt={`${actor.nameEn} — ${actor.code}`}
+                  sizes="(min-width: 1024px) 30vw, 45vw"
+                  fullBody
+                  priority
+                  className="sp-panel aspect-[3/5]"
+                />
+                <p className="sp-code mt-3 text-muted-foreground">{actor.code}</p>
+                <p className="font-display text-xl font-bold group-hover:underline">
+                  {locale === "zh" ? actor.nameCn : actor.nameEn}
+                </p>
+              </Link>
+            );
+          })}
         </div>
       </section>
       <section
