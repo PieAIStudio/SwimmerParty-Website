@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-05T03:39:00.351Z
+generated_at: 2026-10-05T11:45:51.502Z
 generator_version: doc-gov@0.14.2
 docs_count: 21
 docs:
@@ -46,13 +46,6 @@ docs:
     canonical: true
     last_reviewed: 2026-09-10
     pinned: true
-  - id: PLAN-ACTORS-AND-LAUNCH
-    path: docs/plans/active/2026-10-05-actors-and-launch.md
-    type: plan
-    status: active
-    canonical: true
-    last_reviewed: 2026-10-05
-    pinned: false
   - id: PLAN-SWIMMER-FAMILY-REBUILD
     path: docs/plans/completed/2026-10-03-swimmer-family-rebuild.md
     type: plan
@@ -66,6 +59,13 @@ docs:
     status: completed
     canonical: true
     last_reviewed: 2026-10-04
+    pinned: false
+  - id: PLAN-ACTORS-AND-LAUNCH
+    path: docs/plans/completed/2026-10-05-actors-and-launch.md
+    type: plan
+    status: active
+    canonical: true
+    last_reviewed: 2026-10-05
     pinned: false
   - id: POLICY-PROJECT-BEST-PRACTICE
     path: docs/policy/best-practice-for-this-project.md
@@ -135,7 +135,7 @@ docs:
     type: reference
     status: active
     canonical: true
-    last_reviewed: 2026-10-04
+    last_reviewed: 2026-10-05
     pinned: true
   - id: REF-RELEASE
     path: docs/reference/release.md

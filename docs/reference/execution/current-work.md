@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-08-20
-last_reviewed: 2026-10-04
+last_reviewed: 2026-10-05
 domain: meta
 tags:
   - current-work
@@ -17,8 +17,8 @@ related: []
 
 # Current Work
 
-当前在 `rebuild/swimmer-family` 执行[健康站点重构](../../plans/completed/2026-10-04-healthy-site-refactor.md)，不推送、不部署。品牌依赖已改为已发布精确版本，功能目录和 TypeScript 文案源已迁移；最近结构阶段验证为 50 个浏览器测试、33 个工具测试通过。R0–R7 已完成；最终干净安装、54 浏览器测试、36 工具测试、文档与组件门禁通过，R8 272/272 截图、16 张面板截图和报告证据已完成。
+当前在 `main` 维护[两位演员上线与正式发布](../../plans/completed/2026-10-05-actors-and-launch.md)的收尾记录。正式站 `https://swimmerparty.swiminai.com` 已运行重构后的站点；SP-13 唐韵秋和 SP-03 罗米沙各有 63 张图片，私有 Blob、游客限速、Swimmer AuthKit 和 Public PKCE client 已配置。公开页面、匿名会话、授权入口、桌面与手机截图，以及本地门禁均已验收。
 
 现行设计见 [DESIGN.md](../../../DESIGN.md)，目录入口见 [architecture.md](../architecture.md)，发布前置条件见 [release.md](../release.md)。资产契约仍为[活动 spec](../../specs/active/actor-asset-library.md)。最终证据写入 `.devspace-reports/healthy-refactor/REPORT.md`，计划审阅通过前保持 active。
 
-下一步：Owner 审阅报告中的剩余视觉差异后，另行授权云端登记和发布；Owner 审阅后另行授权云端登记和发布。真实 SSO、私有 Blob、WAF、跨域下载和移动实机尚未验证。制作方继续交付透明母版；缺图、未锁定形象和参考图上限待核实事项不能用假素材填补。
+下一步：真实账号回调需要账号中心存在可用用户；登录入口已能把用户送到账号中心。后续媒介仍按附录 D 的“规划中”显示，不用假素材填补。
