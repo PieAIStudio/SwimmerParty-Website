@@ -66,7 +66,7 @@ export function assetSlotOrder(looks: readonly { id: string }[] = []): string[] 
     item.perLook
       ? looks.flatMap((look) => [
           ...slotsOf(item.id, look.id).map((slot) => slot.slot),
-          ...(("extras" in look && Array.isArray(look.extras))
+          ...("extras" in look && Array.isArray(look.extras)
             ? look.extras.map((extra: { key: string }) => `${item.id}.${look.id}.${extra.key}`)
             : []),
         ])

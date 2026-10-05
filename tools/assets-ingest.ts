@@ -120,8 +120,20 @@ async function prepare(
     slotsOf(series.id, look).find((item) => item.key === key) ??
     (series.perLook && look
       ? (() => {
-          const extra = manifest.looks.find((item) => item.id === look)?.extras.find((item) => item.key === key);
-          return extra ? { slot: `${series.id}.${look}.${key}`, series: series.id, frame: series.frame, look, key, required: false, direction: extra.direction } : undefined;
+          const extra = manifest.looks
+            .find((item) => item.id === look)
+            ?.extras.find((item) => item.key === key);
+          return extra
+            ? {
+                slot: `${series.id}.${look}.${key}`,
+                series: series.id,
+                frame: series.frame,
+                look,
+                key,
+                required: false,
+                direction: extra.direction,
+              }
+            : undefined;
         })()
       : undefined);
   if (!slot) throw new Error(`Unknown slot: ${series.id}.${key}`);
@@ -142,7 +154,11 @@ async function prepare(
     if (format !== "png") throw new Error("New assets must be PNG");
     const frame = ASSET_FRAMES[series.frame];
     const accepted = [frame, ASSET_FRAMES.portrait];
-    if (!accepted.some((candidate) => metadata.width === candidate.width && metadata.height === candidate.height))
+    if (
+      !accepted.some(
+        (candidate) => metadata.width === candidate.width && metadata.height === candidate.height,
+      )
+    )
       throw new Error(
         `Expected ${accepted.map((candidate) => `${candidate.width}×${candidate.height}`).join(" or ")}; received ${metadata.width}×${metadata.height}`,
       );
@@ -335,7 +351,8 @@ if (isMain(import.meta.url)) {
           if (error instanceof AggregateError)
             errors.push(
               ...error.errors.map(
-                (item) => new Error(`${code}: ${item instanceof Error ? item.message : String(item)}`),
+                (item) =>
+                  new Error(`${code}: ${item instanceof Error ? item.message : String(item)}`),
               ),
             );
           else
