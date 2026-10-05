@@ -7,12 +7,12 @@ for (const locale of ["zh", "en"] as const) {
     page,
   }) => {
     await page.goto(`/${locale}/kit/tang-yunqiu`);
-    await expect(page.locator("[data-core-progress=\'21/21\']")).toBeVisible();
+    await expect(page.locator("[data-core-progress='21/21']")).toBeVisible();
     await expect(page.locator("[data-asset-slot]")).toHaveCount(55);
-    await expect(page.locator("[data-delivered=\'true\']")).toHaveCount(55);
+    await expect(page.locator("[data-delivered='true']")).toHaveCount(55);
     await page.goto(`/${locale}/kit/misha-luo`);
-    await expect(page.locator("[data-core-progress=\'21/21\']")).toBeVisible();
-    await expect(page.locator("[data-delivered=\'true\']")).toHaveCount(55);
+    await expect(page.locator("[data-core-progress='21/21']")).toBeVisible();
+    await expect(page.locator("[data-delivered='true']")).toHaveCount(55);
   });
 }
 
