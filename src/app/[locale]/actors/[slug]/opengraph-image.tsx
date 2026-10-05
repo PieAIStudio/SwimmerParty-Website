@@ -28,7 +28,7 @@ export default async function OpenGraphImage({
         padding: 64,
       }}
     >
-      <div style={{ color: "#a8d8ff", fontSize: 28 }}>
+      <div style={{ color: "#a8d8ff", fontSize: 28, display: "flex" }}>
         {SITE.name} · {actor?.code ?? ""}
       </div>
       <div style={{ fontSize: 76, fontWeight: 700 }}>{name}</div>
