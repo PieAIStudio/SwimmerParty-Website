@@ -27,3 +27,6 @@ tsconfig.tsbuildinfo
 
 .worktrees/
 .env*
+
+# Production pack media (masters live in private Blob; local working library is not source)
+/media-pack/library/

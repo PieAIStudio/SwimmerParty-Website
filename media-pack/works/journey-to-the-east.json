@@ -1,0 +1,290 @@
+{
+  "schemaVersion": "media-pack-work-1",
+  "id": "journey-to-the-east",
+  "siteCode": "W-01",
+  "title": {
+    "zh": "东游记",
+    "en": "Journey to the East"
+  },
+  "format": {
+    "zh": "AI 喜剧短片",
+    "en": "AI comedy shorts"
+  },
+  "status": "development",
+  "premise": {
+    "zh": "一个剧组在江景别墅里拍霸总短剧《霸道总裁爱上我的中年女佣》。戏里一本正经，戏外状况百出。",
+    "en": "A film crew shoots a domineering-CEO short drama in a riverside villa. On camera it is deadly serious; off camera everything goes wrong."
+  },
+  "sources": [
+    {
+      "type": "screenplay",
+      "episode": "EP01",
+      "title": {
+        "zh": "戏里戏外"
+      },
+      "path": "../../AnvilLocal/screenplays/journey-to-the-east/东游记-EP01.fountain"
+    },
+    {
+      "type": "storyboard",
+      "episode": "EP01",
+      "note": "Owner storyboard with shot-level descriptions and production prompts",
+      "path": "../../AnvilLocal/screenplays/journey-to-the-east/东游记-EP01.md"
+    }
+  ],
+  "factRule": "Use only facts written in these sources or confirmed by the Owner. Appearance that the sources do not specify is proposed first and approved by the Owner before any image is made.",
+  "roles": [
+    {
+      "id": "he-jie",
+      "name": {
+        "zh": "何姐",
+        "en": "He Jie"
+      },
+      "actor": "SP-13",
+      "looks": [
+        "maid"
+      ],
+      "facts": {
+        "zh": [
+          "剧组里的中年女演员，重庆人",
+          "在短剧里演怯生生的女佣，穿旧女佣制服",
+          "一喊卡就变回张罗大小事的重庆大姐，从制服口袋里掏出纸，指挥导演找制片去买药"
+        ]
+      }
+    },
+    {
+      "id": "dai-er",
+      "name": {
+        "zh": "戴尔",
+        "en": "Dai Er"
+      },
+      "actor": "SP-03",
+      "looks": [
+        "ceo"
+      ],
+      "facts": {
+        "zh": [
+          "剧组里的男演员",
+          "深眼窝、高鼻梁，一张标准的外国霸总脸，其实是老重庆，说重庆话",
+          "在短剧里演霸道总裁（少爷）；剧本写黑西装、头发后梳，网站现用宝蓝西装造型（黑/灰西装版曾被 ChatGPT 拦下）",
+          "本集喝了掺颜料的假红酒后拉肚子"
+        ]
+      }
+    }
+  ],
+  "characters": [
+    {
+      "id": "director",
+      "name": {
+        "zh": "导演"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "坐在监视器后面，手里捏着话筒",
+          "喊\"大家专业一点！\"努力找回威严",
+          "对何姐客气：\"晓得晓得，何姐\"",
+          "用手机扫码交罚款；对周总说\"既然我是导演，你就要相信我\""
+        ]
+      }
+    },
+    {
+      "id": "producer",
+      "name": {
+        "zh": "制片"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "被导演叫去买止泻药，转身小跑出门",
+          "片尾满头大汗冲进来：\"药来了。\""
+        ]
+      }
+    },
+    {
+      "id": "zhou-zong",
+      "name": {
+        "zh": "周总"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "资方，带四五个公司员工和合作伙伴来片场",
+          "走在最前面，大衣还没脱，裹得严实，中气足",
+          "盯着监视器，非要霸总走起来：\"他要压人，得走起来，空间是他的\""
+        ]
+      }
+    },
+    {
+      "id": "zhou-entourage",
+      "name": {
+        "zh": "周总随行（四五人）"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "公司员工和合作伙伴，西装笔挺，手里拿着手机"
+        ]
+      }
+    },
+    {
+      "id": "security-captain",
+      "name": {
+        "zh": "保安队长"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "小区物业保安队长，说重庆话",
+          "扒开树叶看见戴尔，憋出中式英语\"Sir! No…No toilet!\"",
+          "一本正经地罚款、清场，双手背在身后",
+          "腋下夹着一条烟（出图时用无品牌的普通烟盒）"
+        ]
+      }
+    },
+    {
+      "id": "security-guards",
+      "name": {
+        "zh": "物业保安（二十多人）"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "在铁栏杆外的空地集合操练，站成方阵，一本正经、目不斜视",
+          "其中一个年轻保安嘴角抽了一下又绷住"
+        ]
+      }
+    },
+    {
+      "id": "sound-recordist",
+      "name": {
+        "zh": "录音师"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "戴着耳机，瞪圆眼睛看向前方（剧本：先睡着后猛地坐直）"
+        ]
+      }
+    },
+    {
+      "id": "prop-master",
+      "name": {
+        "zh": "道具师"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "抱着胳膊站在灯架旁，面无表情，是全场唯一没反应的人",
+          "用矿泉水兑脏塑料瓶里的红色食用色素调\"红酒\"，用牙咬开瓶盖"
+        ]
+      }
+    },
+    {
+      "id": "grip-big-brother",
+      "name": {
+        "zh": "场务大哥"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "占着二楼唯一的卫生间，坐在马桶上叼着烟",
+          "说话不紧不慢、重庆话，像在自家客厅招呼客人，给戴尔递烟"
+        ]
+      }
+    },
+    {
+      "id": "camera-operator",
+      "name": {
+        "zh": "掌机摄影师"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "扛机拍摄，憋笑憋得肩膀发抖"
+        ]
+      }
+    },
+    {
+      "id": "shareholder-a",
+      "name": {
+        "zh": "股东甲（群演）"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "西装，身体前倾像在董事会上审问",
+          "憋笑时腮帮子鼓成两个球，死盯着天花板"
+        ]
+      }
+    },
+    {
+      "id": "shareholder-b",
+      "name": {
+        "zh": "股东乙（群演）"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "西装，抱着双臂、眉头紧锁",
+          "憋笑时咬住下唇，低头假装看文件"
+        ]
+      }
+    },
+    {
+      "id": "extras-shareholders",
+      "name": {
+        "zh": "其他股东群演"
+      },
+      "cast": null,
+      "facts": {
+        "zh": [
+          "西装；最边上那个在桌下掐自己的大腿，五官拧成一团"
+        ]
+      }
+    }
+  ],
+  "castingNote": "cast:null means no actor is assigned. Whether a character becomes a new SWIMMER PARTY actor (stage name and SP code) is an Owner decision; ask before creating a cast file.",
+  "settings": [
+    {
+      "id": "villa-living-room",
+      "name": {
+        "zh": "江景别墅客厅（日）"
+      },
+      "facts": {
+        "zh": [
+          "落地窗占满一面墙，窗外是阳光下的江面",
+          "沙发、实木茶几；折叠长桌伪装成会议桌",
+          "戏中戏部分按偶像剧拍：纱帘逆光、暖色、浅景深；片场暴露后能看到灯架、监视器、线缆、反光板、矿泉水瓶、器材箱"
+        ]
+      }
+    },
+    {
+      "id": "upstairs-bathroom",
+      "name": {
+        "zh": "二楼走廊和卫生间（日）"
+      }
+    },
+    {
+      "id": "downstairs-bathroom",
+      "name": {
+        "zh": "一楼卫生间"
+      },
+      "facts": {
+        "zh": [
+          "塞满灯箱、电缆、纸箱，马桶被器材包围"
+        ]
+      }
+    },
+    {
+      "id": "backyard-lawn",
+      "name": {
+        "zh": "后院草坪（日）"
+      },
+      "facts": {
+        "zh": [
+          "阳光明亮，树篱茂密，外面一圈铁栏杆；栏杆外是小区物业空地"
+        ]
+      }
+    }
+  ]
+}
