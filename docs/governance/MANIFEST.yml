@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-06T01:58:09.738Z
+generated_at: 2026-10-06T02:15:23.552Z
 generator_version: doc-gov@0.14.2
 docs_count: 24
 docs:
@@ -46,13 +46,6 @@ docs:
     canonical: true
     last_reviewed: 2026-09-10
     pinned: true
-  - id: PLAN-SITE-ROUND-3
-    path: docs/plans/active/2026-10-06-site-round-3.md
-    type: plan
-    status: active
-    canonical: true
-    last_reviewed: 2026-10-06
-    pinned: false
   - id: PLAN-SITE-ROUND-4
     path: docs/plans/active/2026-10-06-site-round-4.md
     type: plan
@@ -83,6 +76,13 @@ docs:
     pinned: false
   - id: PLAN-SITE-ROUND-2
     path: docs/plans/completed/2026-10-05-site-round-2.md
+    type: plan
+    status: completed
+    canonical: true
+    last_reviewed: 2026-10-06
+    pinned: false
+  - id: PLAN-SITE-ROUND-3
+    path: docs/plans/completed/2026-10-06-site-round-3.md
     type: plan
     status: completed
     canonical: true
