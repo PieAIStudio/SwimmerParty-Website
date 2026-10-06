@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm generate:og-assets && next build",
     "start": "next start",
     "check": "pnpm check:i18n && pnpm typecheck && pnpm lint && pnpm lint:next && pnpm format:check && pnpm test:tools",
     "typecheck": "tsc --noEmit",
@@ -26,7 +26,8 @@
     "docs:check": "pnpm pro-gov doctor && pnpm doc-gov router-check && pnpm doc-gov check && pnpm doc-gov scan --check && pnpm doc-gov links && pnpm doc-gov audit && pnpm doc-gov doctor",
     "verify": "pnpm check:i18n && pnpm typecheck && pnpm lint && pnpm lint:next && pnpm format:check && pnpm test:tools && pnpm build && pnpm test",
     "check:i18n": "swimmer-i18n-check check && swimmer-i18n-check types --out src/i18n/message-contracts.ts --check",
-    "messages:generate": "node tools/gen-messages.ts"
+    "messages:generate": "node tools/gen-messages.ts",
+    "generate:og-assets": "node tools/generate-og-assets.ts"
   },
   "dependencies": {
     "@pieai/swimmer-backend-client": "0.7.2",
@@ -42,7 +43,7 @@
     "@vercel/firewall": "1.2.5",
     "fflate": "0.8.3",
     "libphonenumber-js": "1.13.14",
-    "next": "16.2.10",
+    "next": "16.3.8",
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "server-only": "0.0.1",
@@ -58,9 +59,9 @@
     "@types/react-dom": "19.2.3",
     "@types/three": "0.185.1",
     "eslint": "^9",
-    "eslint-config-next": "16.2.10",
+    "eslint-config-next": "16.3.8",
     "lefthook": "^2.1.10",
-    "oxfmt": "0.58.0",
+    "oxfmt": "0.72.0",
     "oxlint": "1.73.0",
     "sharp": "0.35.5",
     "tailwindcss": "^4",
