@@ -16,7 +16,8 @@ export const SITE = {
   /** Canonical production origin. The translate proxy is derived from it. */
   url: "https://swimmerparty.swiminai.com",
   founded: "2026",
-  contact: "swimmerparty@swiminai.com",
+  /** Owner's personal inbox until the brand mailbox is set up (Owner, 2026-10-06). */
+  contact: "pieai@hotmail.com",
 } as const;
 
 export const NAV = [

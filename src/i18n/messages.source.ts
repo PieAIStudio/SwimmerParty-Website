@@ -860,10 +860,6 @@ export const messages = {
     en: "Tell us: what kind of project, roughly when, and which actor you want (or what kind of actor you want). One sentence is fine — we will ask the rest.",
     zh: "来信请带上：项目类型、大致时间、想用哪位演员（或想要什么样的演员）。一句话也行，我们会问清楚。",
   },
-  "casting.contactPending": {
-    en: "Contact details are being set up. Please check back soon.",
-    zh: "联系方式正在开通，请稍后再来。",
-  },
   "casting.availableNow": {
     en: "Available now",
     zh: "现在可约",

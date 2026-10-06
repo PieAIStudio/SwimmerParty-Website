@@ -131,7 +131,6 @@ export interface MessageContracts {
   readonly "casting.availableNow": {  };
   readonly "casting.contact": {  };
   readonly "casting.contactBody": {  };
-  readonly "casting.contactPending": {  };
   readonly "casting.copyEmail": {  };
   readonly "casting.eyebrow": {  };
   readonly "casting.goodFor": {  };
