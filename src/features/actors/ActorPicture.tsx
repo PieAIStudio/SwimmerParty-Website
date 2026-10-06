@@ -14,6 +14,7 @@ export function ActorPicture({
   className = "",
   style,
   priority = false,
+  quality = 65,
   children,
 }: {
   src?: string | null;
@@ -25,6 +26,7 @@ export function ActorPicture({
   className?: string;
   style?: CSSProperties;
   priority?: boolean;
+  quality?: number;
   children?: ReactNode;
 }) {
   return (
@@ -38,6 +40,7 @@ export function ActorPicture({
             fill
             sizes={sizes}
             priority={priority}
+            quality={quality}
             className={`sp-image ${legacy ? "object-cover" : fullBody ? "object-contain object-bottom" : "object-contain"}`}
           />
           {legacy && legacyLabel ? (

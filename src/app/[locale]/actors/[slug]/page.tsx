@@ -80,6 +80,7 @@ export default async function ActorPage({ params }: Props) {
               fullBody
               legacyLabel={t("assets.legacy")}
               priority
+              quality={70}
               className="sp-panel aspect-4/5"
             >
               {front.conformance === "v1" && actor.heightCm ? (
@@ -159,6 +160,7 @@ export default async function ActorPage({ params }: Props) {
                 legacy={view.conformance === "legacy"}
                 fullBody={["turnaround", "wardrobe", "pose"].includes(view.series)}
                 sizes="(min-width: 1200px) 120px, (min-width: 640px) 14vw, 19vw"
+                quality={60}
                 className="rounded-[var(--game-ui-radius-card)]"
                 style={{ aspectRatio: `${view.width} / ${view.height}` }}
               />
