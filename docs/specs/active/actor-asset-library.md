@@ -114,7 +114,8 @@ related:
 1. 锁脸：出 `face.front` 与 `turnaround.front`，Owner 认可后定为锚点 v1。
 2. `pnpm assets:todo <code>` 列出缺的格位，每格附可直接粘贴的英文出图提示词。
 3. 以锚点为参考图逐格生成（一张张做或批量做都可以），与锚点并排验收，不过就重出。
-4. 放进 `assets-inbox/<code>/`（不进 Git），运行 `pnpm assets:ingest <code>`。
+4. 放进 `media-pack/library/staging/<code>/`（不进 Git），在交接单
+   `media-pack/notes/handoffs/` 留下批次记录，再运行 `pnpm assets:ingest <code>`。
 
 何姐（SP-13）、戴尔（SP-03）现有角色表不符合规范，只作设计参考，资产先空着。
 

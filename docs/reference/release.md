@@ -46,7 +46,7 @@ UIKit `3.0.0-rc.1`、AuthKit `0.8.0-rc.1` 当前按精确版本安装；正式�
 ## 存储、限速与账号登记
 
 1. 在已绑定的 Vercel `swimmerparty` 项目 Storage 中创建 **private** Blob，连接目标环境并注入权限。不要创建 public 母版桶。
-2. 制作方按[资产 spec](../specs/active/actor-asset-library.md)把母版放到 `assets-inbox/SP-XX/`。先跑 `pnpm assets:ingest SP-XX --dry-run`，再在授权环境执行 `ASSET_STORE=blob ACCOUNT_MODE=swimmer GUEST_LIMITER=vercel pnpm assets:ingest SP-XX`。模式由环境变量选择，没有 `--blob` 参数。旧规格才加 `--legacy`。保留公开预览和清单的同次提交，母版不得在同一对象键下换字节。
+2. 制作方按[资产 spec](../specs/active/actor-asset-library.md)把母版放到 `media-pack/library/staging/SP-XX/`，并在 `media-pack/notes/handoffs/` 留交接单。先跑 `pnpm assets:ingest SP-XX --dry-run`，再在授权环境执行 `ASSET_STORE=blob ACCOUNT_MODE=swimmer GUEST_LIMITER=vercel pnpm assets:ingest SP-XX`。模式由环境变量选择，没有 `--blob` 参数。旧规格才加 `--legacy`。保留公开预览和清单的同次提交，母版不得在同一对象键下换字节。
 3. 在项目 Firewall 中登记供 `checkRateLimit` 调用的规则 `guest-asset-download`，按 IP 每 30 秒 1 次。只有游客请求调用它；规则缺失时 API 应返回私有 503，不能自动降级。
    该规则必须是 `@vercel/firewall` 的 Rate limit ID 条件；发布前运行 `vercel firewall rules inspect guest-asset-download` 核对。
 4. 将以下请求交给 SwimmerBackend 的负责会话：产品 SWIMMER PARTY、public OAuth PKCE 客户端、origin `https://swimmerparty.swiminai.com`、精确回调 `https://swimmerparty.swiminai.com/api/auth/sso-callback`、scope `openid email profile`。不得登记通配回调或附加权限。账号中心的授权页与 `/account` 管理页必须实际挂载。取得客户端标识后配置环境；本手册不代替该团队的登记流程。

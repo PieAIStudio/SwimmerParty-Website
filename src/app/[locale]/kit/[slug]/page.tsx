@@ -26,11 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const actor = getActor(slug);
   if (!actor) return {};
   const { t } = await getSiteI18n(locale);
-  const image = firstImage(slug, ["turnaround.front"]);
   return {
     title: t("assets.metaTitle", { name: locale === "zh" ? actor.nameCn : actor.nameEn }),
-    alternates: localizedAlternates(`/kit/${slug}`),
-    openGraph: image ? { images: [{ url: image.preview, alt: actor.code }] } : undefined,
+    alternates: localizedAlternates(locale, `/kit/${slug}`),
   };
 }
 export default async function ActorAssetPage({ params }: Props) {

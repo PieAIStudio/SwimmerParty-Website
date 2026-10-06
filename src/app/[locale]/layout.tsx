@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             "virtual talent",
             "SWIMMER PARTY",
           ],
-    alternates: localizedAlternates("/"),
+    alternates: localizedAlternates(loc, "/"),
     openGraph: {
       type: "website",
       locale: LOCALE_OG[loc],

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("kit.metaTitle"),
     description: t("kit.metaDescription"),
-    alternates: localizedAlternates("/kit"),
+    alternates: localizedAlternates(locale, "/kit"),
   };
 }
 export default async function KitPage({ params }: Props) {

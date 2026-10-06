@@ -19,7 +19,7 @@ export async function generateMetadata({
   return {
     title: t("roster.metaTitle"),
     description: t("roster.metaDescription"),
-    alternates: localizedAlternates("/actors"),
+    alternates: localizedAlternates(locale, "/actors"),
   };
 }
 

@@ -27,14 +27,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const actor = getActor(slug);
   if (!actor) return {};
-  const image = firstImage(slug, ["turnaround.front"]);
   return {
     title: `${locale === "zh" ? actor.nameCn : actor.nameEn} — ${actor.code}`,
     description: `${actor.tagline[locale]} ${STANCE_LINE[locale]}`,
-    alternates: localizedAlternates(`/actors/${slug}`),
-    openGraph: image
-      ? { images: [{ url: image.preview, alt: `${actor.code} — ${actor.nameEn}` }] }
-      : undefined,
+    alternates: localizedAlternates(locale, `/actors/${slug}`),
   };
 }
 export default async function ActorPage({ params }: Props) {

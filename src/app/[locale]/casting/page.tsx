@@ -4,11 +4,9 @@ import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { localizedAlternates } from "@/i18n/metadata";
 import { ACTORS } from "@/content/actors";
-import { SITE } from "@/content/site";
 import { PageIntro } from "@/site/PageIntro";
 import { SectionHead } from "@/site/SectionHead";
 import { TextLink } from "@/site/TextLink";
-import { CopyButton } from "@/site/CopyButton";
 import { CastingContext } from "@/site/CastingContext";
 
 type Props = { params: Promise<{ locale: AppLocale }> };
@@ -19,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("casting.metaTitle"),
     description: t("casting.metaDescription"),
-    alternates: localizedAlternates("/casting"),
+    alternates: localizedAlternates(locale, "/casting"),
   };
 }
 export default async function CastingPage({ params }: Props) {
@@ -63,15 +61,7 @@ export default async function CastingPage({ params }: Props) {
           <Suspense>
             <CastingContext />
           </Suspense>
-          <div className="flex flex-wrap items-center gap-6">
-            <a
-              href={`mailto:${SITE.contact}?subject=${encodeURIComponent("[CASTING] SWIMMER PARTY")}`}
-              className="font-semibold break-all hover:underline underline-offset-4"
-            >
-              {SITE.contact}
-            </a>
-            <CopyButton text={SITE.contact} label={t("casting.copyEmail")} />
-          </div>
+          <p className="sp-small text-muted-foreground">{t("casting.contactPending")}</p>
         </div>
         <h3 className="sp-subtitle mt-12">{t("casting.availableNow")}</h3>
         <div className="mt-4 flex flex-wrap gap-6">

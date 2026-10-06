@@ -29,6 +29,20 @@ import { WORKS } from "../src/content/works.ts";
 import { looks as tangLooks } from "../src/content/actors/tang-yunqiu/looks.ts";
 import { looks as mishaLooks } from "../src/content/actors/misha-luo/looks.ts";
 
+const projectLookFields = (look: {
+  id: string;
+  label: { en: string; zh: string };
+  prompt: string;
+  role?: { work: string; id: string };
+  extras: { key: string; label: { en: string; zh: string }; direction: string }[];
+}) => ({
+  id: look.id,
+  label: look.label,
+  prompt: look.prompt,
+  role: look.role,
+  extras: look.extras,
+});
+
 async function rootFor(t: { after: (fn: () => Promise<void>) => void }) {
   const root = await fixtureRoot();
   t.after(() => rm(root, { recursive: true, force: true }));
@@ -95,6 +109,40 @@ test("role looks point to the matching work role", () => {
     assert.ok(
       work.cast.some((credit) => credit.role?.id === look.role!.id),
       look.id,
+    );
+  }
+});
+
+test("published look copies match the media-pack production descriptions", async () => {
+  const sources = [
+    ["SP-13", "../media-pack/cast/SP-13.json", tangLooks],
+    ["SP-03", "../media-pack/cast/SP-03.json", mishaLooks],
+  ] as const;
+  for (const [code, file, siteLooks] of sources) {
+    const pack = JSON.parse(await readFile(new URL(file, import.meta.url), "utf8")) as {
+      code: string;
+      looks: Array<{
+        id: string;
+        label: { en: string; zh: string };
+        prompt: string;
+        role?: { work: string; siteWork?: string; id: string };
+        extras?: { key: string; label: { en: string; zh: string }; direction: string }[];
+      }>;
+    };
+    assert.equal(pack.code, code);
+    const productionLooks = pack.looks.filter((look) => look.id !== "casting-basics");
+    assert.deepEqual(
+      siteLooks.map(projectLookFields),
+      productionLooks.map((look) =>
+        projectLookFields({
+          ...look,
+          role: look.role
+            ? { work: look.role.siteWork ?? look.role.work, id: look.role.id }
+            : undefined,
+          extras: look.extras ?? [],
+        }),
+      ),
+      `${code}: site look copy drifted from media-pack`,
     );
   }
 });

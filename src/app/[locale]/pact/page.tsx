@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("pact.metaTitle"),
     description: t("pact.metaDescription"),
-    alternates: localizedAlternates("/pact"),
+    alternates: localizedAlternates(locale, "/pact"),
   };
 }
 export default async function PactPage({ params }: Props) {

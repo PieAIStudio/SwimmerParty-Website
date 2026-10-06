@@ -129,7 +129,7 @@ test("authored pages expose their own localized canonical", async ({ page }) => 
     await page.goto(path);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
-      `${SITE.url}${path.slice(3) || ""}`,
+      `${SITE.url}${path}`,
     );
   }
 });

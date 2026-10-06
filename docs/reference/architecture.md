@@ -42,6 +42,7 @@ related:
 
 - **加演员**：新增 `src/content/actors/<slug>/profile.ts`，在 `actors/index.ts` 明确名册顺序；共享类型位于 `shared.ts`。无图时不伪造交付。入库工具生成该目录下的 `assets.json`；未交付演员允许没有清单文件。
 - **加资产系列**：改 `src/content/asset-series.json` 的词表，以及 `src/i18n/messages.source.ts` 的双语标签；检查 `features/assets/asset-series.ts` 的解析规则，运行 `pnpm messages:generate`、`pnpm assets:todo SP-03` 和工具测试。
+- **接入新媒体包**：生产描述以 `media-pack/cast/<code>.json` 为准；新图从 `media-pack/library/staging/<code>/` 接入，交接单放在 `media-pack/notes/handoffs/`，再同步网站造型副本和资产清单。
 - **加页面**：在 `src/app/[locale]` 组合 feature/site；按需要更新 sitemap 和 `tools/shots.ts` 的目标列表。
 - **改导出或下载**：从 `features/assets` 或其 `server` 进入。公开 `/api/assets/**`、`/media/**` 路径不随内部目录改变。
 
