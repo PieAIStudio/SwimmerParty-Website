@@ -43,6 +43,7 @@ export default async function ActorPage({ params }: Props) {
   const front = firstImage(slug, ["turnaround.front"]);
   const next = ACTORS[(ACTORS.indexOf(actor) + 1) % ACTORS.length];
   const voice = assets.items.find((i) => i.kind === "voice" && i.key === "intro");
+  const frontLabel = actor.status === "new-face" ? t("assets.castingPhoto") : name;
   const origin = actor.spec.find((row) => row.id === "origin")?.value[locale] ?? "";
   const description =
     actor.status === "new-face"
@@ -62,7 +63,7 @@ export default async function ActorPage({ params }: Props) {
       <section className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
         <div className="max-w-[560px] lg:col-span-7">
           {front ? (
-            <ImageLightbox item={front} name={name} displayLarge />
+            <ImageLightbox item={front} name={`${name} · ${frontLabel}`} displayLarge />
           ) : (
             <div className="sp-sweep sp-panel aspect-4/5" />
           )}

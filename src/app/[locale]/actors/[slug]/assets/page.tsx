@@ -73,7 +73,11 @@ export default async function AssetsPage({ params }: Props) {
                   actor.portrait ??
                   "/media/placeholder.svg"
                 }
-                alt=""
+                alt={
+                  actor.status === "new-face"
+                    ? `${name} · ${t("assets.castingPhoto")}`
+                    : name
+                }
                 width={941}
                 height={1672}
                 className="h-full w-full object-contain"
