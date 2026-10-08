@@ -11,7 +11,7 @@ import { ShareButton } from "@/site/ShareButton";
 import { VersionBadge } from "@/site/VersionBadge";
 import { TextLink } from "@/site/TextLink";
 import { Link } from "@/i18n/navigation";
-import { GameBadge, GameButton } from "@pieai/swimmer-ui-kit";
+import { GameBadge } from "@pieai/swimmer-ui-kit";
 import { localizedAlternates } from "@/i18n/metadata";
 import { WORKS } from "@/content/works";
 import { CastAddButton } from "@/features/cast";

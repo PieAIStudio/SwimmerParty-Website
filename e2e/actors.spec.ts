@@ -7,8 +7,6 @@ test("roster uses slug actors and exposes the free license", async ({ page }) =>
 });
 test("actor dossier has library and lightbox controls", async ({ page }) => {
   await page.goto("/en/actors/tang-yunqiu");
-  await expect(
-    page.getByRole("link", { name: /starter pack|asset library/i }).first(),
-  ).toBeVisible();
+  await expect(page.getByRole("button", { name: /starter pack/i }).first()).toBeVisible();
   await expect(page.getByRole("button", { name: /view larger|open/i }).first()).toBeVisible();
 });
