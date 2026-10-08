@@ -22,7 +22,7 @@ MediaFactory 第二轮重构结束后，请把这份收进 MediaFactory 的 `doc
 
 Claude 2026-10-09 实测，命令行提示"Not signed in"：网页登录不等于命令行登录。
 
-**Owner 在终端里运行一次**：
+**已完成**：2026-10-09 Owner 已经登录。以后如果检查命令又返回 "Not signed in"，就请 Owner 再运行一次：
 
 ```bash
 ~/.grok/bin/grok login
@@ -37,6 +37,28 @@ Claude 2026-10-09 实测，命令行提示"Not signed in"：网页登录不等�
 ```
 
 返回 `OK` 就是登录成功。还没登录，就停下来告诉 Owner，不要尝试别的登录方式。
+
+## 实测结果（Claude，2026-10-09 02:20）
+
+- **登录**：Owner 已用设备码完成命令行登录，显示 "Signed in as PIEAI@HOTMAIL.COM"。检查命令返回 OK。
+- **测试做了什么**：唐韵秋的正面全身图，先垫上浅灰底当第一帧，透明原图放进 `images`。参数是 9:16、6 秒、480p，动作是挥手加镜头推近。
+- **结果**：
+  - 视频直接存成本地 mp4，约 1.1 MB，480×848，24fps，时长 6.04 秒；
+  - 首帧是唐韵秋，中段挥手，结尾推到半身，脸、发型、衣服都稳定；
+  - 命令行报告的花费是 0.035 美元（检查命令约 0.014 美元），看起来走的是订阅额度；
+  - 一次调用要跑 3 轮 agent。
+- **音轨**：视频自带一条环境音（平均 -32 dB），不是演员的声音。**样片一律去掉音轨**：
+
+  ```bash
+  ffmpeg -i in.mp4 -an -c:v copy out.mp4
+  ```
+- **透明图垫底**，生成第一帧时用：
+
+  ```bash
+  ffmpeg -f lavfi -i color=c=0xE8E6E1:s=941x1672 -i front.png -filter_complex "[0][1]overlay=format=auto" -frames:v 1 front-grey.png
+  ```
+
+  正式样片用 ChatGPT 生成的场景图当第一帧，效果更好。
 
 ## 视频工具 `reference_to_video` 的要点
 
