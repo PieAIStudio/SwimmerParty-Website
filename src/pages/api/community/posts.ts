@@ -21,6 +21,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       (body.tool && !TOOLS.includes(body.tool as never))
     )
       return res.status(400).json({ error: "invalid-post" });
+    if (body.creditConfirmed !== true || body.rightsConfirmed !== true)
+      return res.status(400).json({ error: "confirmations-required" });
     return res.status(201).json({
       post: addPost({
         kind: body.kind as never,

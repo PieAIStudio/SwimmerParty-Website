@@ -9,6 +9,11 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
   const [title, setTitle] = useState("");
   const [kind, setKind] = useState("image");
   const [actor, setActor] = useState("tang-yunqiu");
+  const [description, setDescription] = useState("");
+  const [recipe, setRecipe] = useState("");
+  const [tool, setTool] = useState("");
+  const [creditConfirmed, setCreditConfirmed] = useState(false);
+  const [rightsConfirmed, setRightsConfirmed] = useState(false);
   useEffect(() => {
     fetch("/api/community/posts")
       .then((r) => r.json())
@@ -20,7 +25,16 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
     const r = await fetch("/api/community/posts", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ title, kind, actorSlugs: [actor] }),
+      body: JSON.stringify({
+        title,
+        kind,
+        actorSlugs: [actor],
+        description,
+        recipe,
+        tool: tool || undefined,
+        creditConfirmed,
+        rightsConfirmed,
+      }),
     });
     if (r.ok) {
       const result = (await r.json()) as { post: CommunityPost };
@@ -70,7 +84,53 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
               className="rounded border border-border bg-background p-3"
             />
           </div>
-          <GameButton type="submit" variant="primary">
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder={locale === "zh" ? "简介（可选）" : "Description (optional)"}
+            className="rounded border border-border bg-background p-3"
+          />
+          <textarea
+            value={recipe}
+            onChange={(e) => setRecipe(e.target.value)}
+            placeholder={
+              locale === "zh"
+                ? "怎么做的：提示词或步骤（可选）"
+                : "How you made it: prompt or steps (optional)"
+            }
+            className="rounded border border-border bg-background p-3"
+          />
+          <input
+            value={tool}
+            onChange={(e) => setTool(e.target.value)}
+            placeholder={
+              locale === "zh" ? "用什么做的？（可选）" : "What did you make it with? (optional)"
+            }
+            className="rounded border border-border bg-background p-3"
+          />
+          <label className="flex gap-2">
+            <input
+              type="checkbox"
+              checked={creditConfirmed}
+              onChange={(e) => setCreditConfirmed(e.target.checked)}
+            />
+            {locale === "zh" ? "我的作品里署了 Swim In AI。" : "My work credits Swim In AI."}
+          </label>
+          <label className="flex gap-2">
+            <input
+              type="checkbox"
+              checked={rightsConfirmed}
+              onChange={(e) => setRightsConfirmed(e.target.checked)}
+            />
+            {locale === "zh"
+              ? "这是我做的，并且遵守免费商用的规则。"
+              : "I made this, and it follows the Free License rules."}
+          </label>
+          <GameButton
+            type="submit"
+            variant="primary"
+            disabled={!creditConfirmed || !rightsConfirmed}
+          >
             {locale === "zh" ? "发布" : "Post"}
           </GameButton>
         </form>
