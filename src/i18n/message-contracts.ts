@@ -182,6 +182,7 @@ export interface MessageContracts {
   readonly "assets.video.walk": {  };
   readonly "assets.videoNote": {  };
   readonly "assets.viewLarger": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "assets.viewer": {  };
   readonly "assets.voice.angry": {  };
   readonly "assets.voice.chat": {  };
   readonly "assets.voice.happy": {  };

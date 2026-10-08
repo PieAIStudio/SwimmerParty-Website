@@ -1851,6 +1851,7 @@ export const messages = {
     en: "Breadcrumb",
     zh: "当前位置",
   },
+  "assets.viewer": { en: "Image viewer", zh: "图片查看器" },
   "assets.versionLabel": {
     en: "Version {version}. Show history",
     zh: "版本 {version}，查看版本记录",

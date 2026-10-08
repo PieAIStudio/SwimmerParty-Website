@@ -76,9 +76,11 @@ export default async function AssetsPage({ params }: Props) {
                   "/media/placeholder.svg"
                 }
                 alt=""
-                width={64}
-                height={64}
+                width={941}
+                height={1672}
                 className="h-full w-full object-contain"
+                quality={85}
+                sizes="64px"
               />
             </div>
             <div className="min-w-0">

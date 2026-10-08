@@ -52,9 +52,9 @@ export default async function ActorPage({ params }: Props) {
         items={[{ label: t("nav.actors"), href: "/actors" }, { label: name }]}
       />
       <section className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-        <div className="lg:col-span-7">
+        <div className="max-w-[560px] lg:col-span-7">
           {front ? (
-            <ImageLightbox item={front} name={name} />
+            <ImageLightbox item={front} name={name} displayLarge />
           ) : (
             <div className="sp-sweep sp-panel aspect-4/5" />
           )}
