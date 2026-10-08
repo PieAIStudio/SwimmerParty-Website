@@ -420,8 +420,8 @@
    },
    "voice": {
     "language": "zh",
-    "brief": "36岁内蒙古女性，普通话标准带一点北方口音，声音沉稳有力，中低音，干脆，有野性和力量感。",
-    "introLine": "我叫冯野，呼和浩特人，三十六岁。名字里这个野字，是我爸起的，说希望我像草原上的风。我骑马、射箭都会一点。我想演那种独来独往、靠自己闯出来的女人，警察、向导、赛车手，都行。"
+    "brief": "36岁女性，呼和浩特人，普通话标准带一点北方口音，声音沉稳有力，中低音，干脆利落，有力量感。",
+    "introLine": "我叫冯野，呼和浩特人，三十六岁。名字里这个野字，是我爸起的，说希望我像草原上的风。我会骑马，也爱开车跑长途。我想演那种独来独往、靠自己闯出来的女人，向导、赛车手、牧场主，都行。"
    },
    "look": "East Asian (Chinese) woman, about 36, average build, about 162 cm; strong cheekbones, a wide jaw, very short pixie crop; rust-orange top",
    "image": "library/claude-casting-2026-10-07/final/CC-081.png"
@@ -871,7 +871,7 @@
    "voice": {
     "language": "zh",
     "brief": "48岁哈尔滨男人，普通话带东北口音，声音低沉粗糙，话不多，硬汉气，偶尔冷幽默。",
-    "introLine": "我叫邵铁峰，哈尔滨的，四十八。鼻子是年轻时候练拳歪的，眉毛这道疤是冬天摔的。看着凶，其实我挺爱养花的。我适合演警察、保安、老刑警，或者一个刀子嘴豆腐心的老哥。"
+    "introLine": "我叫邵铁峰，哈尔滨的，四十八。鼻子是年轻时候练拳歪的，眉毛这道疤是冬天摔的。看着凶，其实我挺爱养花的。我适合演出租车司机、保安队长、老工人，或者一个刀子嘴豆腐心的老哥。"
    },
    "look": "East Asian (Chinese) man, about 48, average build, about 171 cm; a slightly crooked nose, a small scar through one eyebrow, short hair; charcoal top",
    "image": "library/claude-casting-2026-10-07/final/CC-077.png"
