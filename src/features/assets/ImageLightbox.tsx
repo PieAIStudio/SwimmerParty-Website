@@ -19,7 +19,9 @@ export function ImageLightbox({
 }) {
   const { t } = useSiteI18n();
   const [open, setOpen] = useState(false);
-  const [lightboxSlides, setLightboxSlides] = useState([{ src: item.large ?? item.preview, alt: name }]);
+  const [lightboxSlides, setLightboxSlides] = useState([
+    { src: item.large ?? item.preview, alt: name },
+  ]);
   const trigger = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     if (!open) trigger.current?.focus();

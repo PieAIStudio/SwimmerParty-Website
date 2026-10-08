@@ -11,7 +11,10 @@ test("new face asset route is available", async ({ page }) => {
   await expect(page.getByRole("heading").first()).toBeVisible();
 });
 
-test("actor hero uses the large source and voice preview is playable", async ({ page, request }) => {
+test("actor hero uses the large source and voice preview is playable", async ({
+  page,
+  request,
+}) => {
   await page.goto("/en/actors/tang-yunqiu");
   const hero = page.locator('img[src*="large.webp"]').first();
   await expect(hero).toBeVisible();
