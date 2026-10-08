@@ -1,7 +1,8 @@
 import { test, expect } from "@playwright/test";
 test("home and legal pages render", async ({ page }) => {
   await page.goto("/en");
-  await expect(page.getByText(/Free for commercial use|Credit Swim In AI/).first()).toBeVisible();
+  await expect(page.getByText(/original animated actors.*even when you get paid\./i)).toBeVisible();
+  await expect(page.locator("body")).not.toContainText("Free. Just credit Swim In AI.");
   await page.goto("/en/license");
   await expect(page.getByRole("heading", { name: /Use them anywhere/i })).toBeVisible();
   await page.goto("/en/privacy");
