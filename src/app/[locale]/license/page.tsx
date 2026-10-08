@@ -63,20 +63,39 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
             </div>
           ))}
         </div>
+        <p className="sp-small mt-6 text-muted-foreground">
+          {locale === "zh"
+            ? "我们最喜欢第三种：写上演员名字。他因为你火了，后面的项目你优先。"
+            : "Our favourite is the third: name the actor. It helps them get famous, and if they take off because of you, you get first call."}
+        </p>
         <div className="mt-6 flex items-center gap-4">
-          <CopyButton text={LICENSE.credit[locale]} />
-          <span className="sp-small">{locale === "zh" ? "复制署名" : "Copy credit line"}</span>
+          <CopyButton
+            text={LICENSE.credit[locale]}
+            label={locale === "zh" ? "复制署名" : "Copy credit line"}
+          />
         </div>
       </section>
       <section className="mt-16">
         <h2 className="sp-display-md">{locale === "zh" ? "放在哪" : "Where it goes"}</h2>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
-          {LICENSE_WHERE.map((item) => (
-            <div key={item.en} className="sp-panel p-4">
-              <b>{l(item, locale)}</b>
-              <p className="sp-small mt-2">{locale === "zh" ? item.bodyZh : item.bodyEn}</p>
-            </div>
-          ))}
+        <div className="mt-6 overflow-x-auto sp-panel">
+          <table className="w-full min-w-[720px] text-left text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="p-4">{locale === "zh" ? "你做的" : "What you made"}</th>
+                <th className="p-4">{locale === "zh" ? "放在哪" : "Where"}</th>
+                <th className="p-4">{locale === "zh" ? "多大" : "How big"}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {LICENSE_WHERE.map((item) => (
+                <tr key={item.en} className="border-b border-border last:border-0">
+                  <td className="p-4 align-top font-semibold">{l(item, locale)}</td>
+                  <td className="p-4 align-top">{locale === "zh" ? item.whereZh : item.whereEn}</td>
+                  <td className="p-4 align-top">{locale === "zh" ? item.sizeZh : item.sizeEn}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {LICENSE_EXAMPLES.map((item) => (
