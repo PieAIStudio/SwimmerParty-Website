@@ -21,6 +21,7 @@ export type Actor = {
   version?: string;
   versionDate?: string;
   versionNote?: L;
+  versionHistory?: Array<{ version: string; date: string; note: L }>;
   voiceLanguage?: "en" | "zh";
   assetSource?: string;
 };

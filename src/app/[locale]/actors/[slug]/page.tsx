@@ -68,6 +68,10 @@ export default async function ActorPage({ params }: Props) {
               version={actor.version}
               date={actor.versionDate}
               note={actor.versionNote?.[locale]}
+              history={actor.versionHistory?.map((entry) => ({
+                ...entry,
+                note: entry.note[locale],
+              }))}
             />
           </div>
           <h1 className="sp-display-lg mt-5">

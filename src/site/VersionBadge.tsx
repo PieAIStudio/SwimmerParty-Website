@@ -6,10 +6,12 @@ export function VersionBadge({
   version,
   date,
   note,
+  history = [],
 }: {
   version?: string;
   date?: string;
   note?: string;
+  history?: Array<{ version: string; date: string; note: string }>;
 }) {
   const { t } = useSiteI18n();
   const [open, setOpen] = useState(false);
@@ -35,6 +37,11 @@ export function VersionBadge({
             {date ? ` · ${date}` : ""} · {t("assets.current")}
           </p>
           {note ? <p className="sp-small mt-2 text-muted-foreground">{note}</p> : null}
+          {history.map((entry) => (
+            <p key={entry.version} className="sp-small mt-2">
+              v{entry.version} · {entry.date} · {entry.note}
+            </p>
+          ))}
           <p className="sp-small mt-3 text-muted-foreground">{t("actor.versionNote")}</p>
         </dialog>
       ) : null}

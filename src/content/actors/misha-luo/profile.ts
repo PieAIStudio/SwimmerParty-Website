@@ -34,5 +34,12 @@ export const profile: Actor = {
     en: "Voice added: 7 clips. The self-introduction doubles as a voice reference.",
     zh: "加入声音：7 段。自我介绍可以直接当参考音用。",
   },
+  versionHistory: [
+    {
+      version: "1.0.0",
+      date: "2026-10-05",
+      note: { en: "First release: 63 images.", zh: "首次发布：63 张图片。" },
+    },
+  ],
   voiceLanguage: "zh",
 };

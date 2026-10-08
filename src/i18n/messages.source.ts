@@ -913,8 +913,8 @@ export const messages = {
     zh: "联系",
   },
   "footer.contactNote": {
-    en: "Casting, licensing and commissioned actors",
-    zh: "选角、授权和定制演员",
+    en: "Custom actors and co-productions",
+    zh: "定制演员和联合出品",
   },
   "footer.rights": {
     en: "A PieAI Studio project",
