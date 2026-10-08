@@ -21,7 +21,7 @@ related: []
 
 现行设计见 [DESIGN.md](../../../DESIGN.md)，目录入口见 [architecture.md](../architecture.md)，发布前置条件见 [release.md](../release.md)。资产契约仍为[活动 spec](../../specs/active/actor-asset-library.md)。第三轮证据写入 `.devspace-reports/site-round-3/REPORT.md`；第四轮证据写入 `.devspace-reports/site-round-4/REPORT.md`。
 
-已排第五轮：[网站结构、看大图、可点元素规则、版本号、作品页与推广占位](../../plans/active/2026-10-07-site-round-5.md)。出图会话留下的张强、陈伟按第六轮 5.4 节并入，其余候选清理掉。紧接着做[第六轮：演员身份与存档、声音视频、95 位新面孔、角色设定图、面向全球的文案](../../plans/active/2026-10-08-site-round-6.md)，全站文字以[文案稿](../../plans/active/2026-10-08-site-copy.md)为准。之后是[第七轮：署名即可商用、下载重构、作品社区、新面孔投票、选角单、埋点、隐私与条款](../../plans/active/2026-10-08-site-round-7.md)（文字见[第七轮文案稿](../../plans/active/2026-10-08-site-copy-round-7.md)，覆盖第三版同位置），最后是[第八轮深度重构](../../plans/active/2026-10-08-site-round-8-deep-refactor.md)。
+已排第五轮：[网站结构、看大图、可点元素规则、版本号、作品页与推广占位](../../plans/active/2026-10-07-site-round-5.md)。出图会话留下的张强、陈伟按第六轮 5.4 节并入，其余候选清理掉。紧接着做[第六轮：演员身份与存档、声音视频、95 位新面孔、角色设定图、面向全球的文案](../../plans/active/2026-10-08-site-round-6.md)，全站文字以[文案稿](../../plans/active/2026-10-08-site-copy.md)为准。之后是[第七轮：署名即可商用、下载重构、作品社区、新面孔投票、选角单、埋点、隐私与条款](../../plans/active/2026-10-08-site-round-7.md)（文字见[第七轮文案稿](../../plans/active/2026-10-08-site-copy-round-7.md)，覆盖第三版同位置），第七轮之后先做[第 7.5 轮打磨](../../plans/active/2026-10-09-site-round-7-5-polish.md)（统一弹窗、讲清是谁、去掉空格子、补齐文字），最后是[第八轮深度重构](../../plans/active/2026-10-08-site-round-8-deep-refactor.md)。
 
 并行测试：汤米·布兰尼根全套资产，由网站侧 Codex 下单、MediaFactory 生产，见[制作单](../../../media-pack/notes/handoffs/2026-10-08-tommy-brannigan-full-pack.md)。
 
