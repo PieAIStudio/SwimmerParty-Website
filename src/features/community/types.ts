@@ -5,6 +5,7 @@ export type CommunityPost = {
   title: string;
   description?: string;
   author: string;
+  authorId?: string;
   actorSlugs: string[];
   tool?: string;
   recipe?: string;

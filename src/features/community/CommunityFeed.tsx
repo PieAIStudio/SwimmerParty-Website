@@ -22,6 +22,8 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
       body: JSON.stringify({ title, kind, actorSlugs: [actor] }),
     });
     if (r.ok) {
+      const result = (await r.json()) as { post: CommunityPost };
+      setPosts((current) => [result.post, ...current]);
       setTitle("");
       setOpen(false);
     }
