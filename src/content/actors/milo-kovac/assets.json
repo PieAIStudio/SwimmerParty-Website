@@ -1,0 +1,61 @@
+{
+  "slug": "milo-kovac",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 947065,
+      "sha256": "396f5825a7803148332109e920ca924180ac3137ca144246ae19936efd0077e4",
+      "sourceSha256": "396f5825a7803148332109e920ca924180ac3137ca144246ae19936efd0077e4",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "milo-kovac/CC-089.png",
+      "preview": "/media/assets/milo-kovac/turnaround.front.webp",
+      "large": "/media/assets/milo-kovac/turnaround.front.large.webp",
+      "thumb": "/media/assets/milo-kovac/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkwBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKoAAAABgGLb2rLl+d39/4HmiQGQ3L2xaDQnkVwSzZ0peHWH5u7u7i43vc87h4iYACIin7YqPUmLgTRZDP6CZNTXT1Jz2cNnhy9XAwADjOpc+PUSFKPXwOOGQqCTSWDxUcXszAIHK2pB2XYL/LST6Jj8+nzFulZQlXzPTKCU+K/Wxn+l5Lgo60vNKT4LExHE6VAQgijOgwzzbw5n+k3XvGVyuQiltU4uO5wouNpCBFZQOCB8AAAAkAMAnQEqDAAVAD8Baq1OqyYkIjAIAWAgCWUAAEnzewtgV2dDQAD9IdVDxiC/nx2bNScXyQI5XvDKoy0UCaADJfRTFh3Mqz1qnHli27HjGkJaBAKDeoW8MysDXiMGqZhTEmMhzk7WS5kRjmrRSKic48boeYv9sAGWsGvgAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 307860,
+      "sha256": "ad77110e5963ecc50de16f481421eb62f3f7f3e53b1f5ad6072f4592eb8f9746",
+      "sourceSha256": "ad77110e5963ecc50de16f481421eb62f3f7f3e53b1f5ad6072f4592eb8f9746",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/milo-kovac/candidate-1.mp3",
+      "preview": "/api/voice/milo-kovac/intro",
+      "thumb": "/api/voice/milo-kovac/intro",
+      "previewUrl": "/api/voice/milo-kovac/intro",
+      "durationSec": 25.5,
+      "transcript": {
+        "text": "Hi, hi, Milo Kovač, thirty-seven, from Zagreb. I'm a street magician, so if your watch is missing, that's not me. Probably. I'm small and fast and I never sit still. I'd love to play a pickpocket, a wedding planner, or the friend with a terrible plan that somehow works."
+      }
+    }
+  ]
+}

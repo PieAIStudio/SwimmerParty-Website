@@ -1,0 +1,61 @@
+{
+  "slug": "lu-xingye",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 805713,
+      "sha256": "16247fb56b85bdf230caec939d827af9e9916e7b161157eb4ee3651ac4d6b8e2",
+      "sourceSha256": "16247fb56b85bdf230caec939d827af9e9916e7b161157eb4ee3651ac4d6b8e2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "lu-xingye/CC-042.png",
+      "preview": "/media/assets/lu-xingye/turnaround.front.webp",
+      "large": "/media/assets/lu-xingye/turnaround.front.large.webp",
+      "thumb": "/media/assets/lu-xingye/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjgBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJwAAAABgJtt27Hn+W109grGAP8AtqocqZJR7C6l7aRzUjuVbeOu8nw7RMQEEBGpWyokXMaXXMh8uUrC2uVpnUDtHnisc4cAcMBoLl6A11P1P9oZBIa3iD2bBGZOuP5jYK+Pa/sAPnu4EdzcYpwzYmEFJk703dUJLUcvTXXoOfVfQxxBzo6KHwnOjJwVjZwXMelXiWuGhXYHuLSPyF2XEgFWUDggdgAAAFAEAJ0BKgwAFQA/AWquTysmJCIwCAFgIAllAMiYH9TjiJvO7DfYycZYHAAAx+GdtYDJDjXbOV1j943t5w1f9jSxkpmZ0/s8cXAn0o+ufN9c0ANJ8v3A/Y7ajOq/nusXYikTnn4aiNh8TIJhXce6Gwize+BooAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 204180,
+      "sha256": "9dbb887ca5e868cc5851478fed3f8a917d1eb1d477782aec0541fdb066a6d3e2",
+      "sourceSha256": "9dbb887ca5e868cc5851478fed3f8a917d1eb1d477782aec0541fdb066a6d3e2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/lu-xingye/candidate-1.mp3",
+      "preview": "/api/voice/lu-xingye/intro",
+      "thumb": "/api/voice/lu-xingye/intro",
+      "previewUrl": "/api/voice/lu-xingye/intro",
+      "durationSec": 16.8,
+      "transcript": {
+        "text": "嗨，我是陆星野，深圳的，二十五岁。头发是上个月刚漂的，还行吧？我以前做过一段时间街舞，后来又去写代码，现在来演戏。我挺适合演那种看着吊儿郎当、其实什么都懂的年轻人。"
+      }
+    }
+  ]
+}

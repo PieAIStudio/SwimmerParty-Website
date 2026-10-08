@@ -1,0 +1,61 @@
+{
+  "slug": "hyacinth-campbell",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 959752,
+      "sha256": "c2465271c58f3b143a17bb3316536844f5af4fe6bf543ef814a24f102234b3ff",
+      "sourceSha256": "c2465271c58f3b143a17bb3316536844f5af4fe6bf543ef814a24f102234b3ff",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "hyacinth-campbell/CC-045.png",
+      "preview": "/media/assets/hyacinth-campbell/turnaround.front.webp",
+      "large": "/media/assets/hyacinth-campbell/turnaround.front.large.webp",
+      "thumb": "/media/assets/hyacinth-campbell/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJoAAAABgJtt27Hn+W3bHMBYIJ0WUW2nTJUyaW11KjOAbdvOXX3Pu0NETAARUaKvyUy87ADoF8jvgEEBlb9fRkS64VG9IPUMvGa4RgBo5OpfgY8GbuwIuJjktgBgh1uQLDPqVfx+YEMn0Y3jbBfzBgkZPlaW/h3En00PvJDwpbcbOsFnTxOsgp+2Gtg5FeoqkeRc32V+lLhCg0ZWXUVEVlA4IHIAAADwAwCdASoMABUAPwFqrE6rJiQiMAgBYCAJZwAFEAJDLDg5xZUF2WbAAP4vdCE/sQnW6H7xrQZ3/5GMtoSUzRcOkb7S6LtTWbo72g/l2+7wAgg49+6xFrZBcGT0pV9cYKOlndCrAfzrrvuK2IqwEJGZAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 309588,
+      "sha256": "504fb0574a48b441347bcf650ca56f46fc0189994facee5017c4c14ca5b55928",
+      "sourceSha256": "504fb0574a48b441347bcf650ca56f46fc0189994facee5017c4c14ca5b55928",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/hyacinth-campbell/candidate-1.mp3",
+      "preview": "/api/voice/hyacinth-campbell/intro",
+      "thumb": "/api/voice/hyacinth-campbell/intro",
+      "previewUrl": "/api/voice/hyacinth-campbell/intro",
+      "durationSec": 25.6,
+      "transcript": {
+        "text": "Hello darling, I'm Hyacinth Campbell, sixty-six, from Kingston, Jamaica. I was a nurse for forty years, so I've seen everything, and I'm not shy about telling you to eat your vegetables. I love dominoes and loud music. Cast me as the grandma, the nurse, or the neighbour who adopts everyone."
+      }
+    }
+  ]
+}

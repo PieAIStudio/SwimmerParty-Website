@@ -133,48 +133,48 @@ export type KitRule = { id: string; head: L; body: L; allow: boolean };
 
 export const KIT_RULES: KitRule[] = [
   {
-    id: "free",
+    id: "non-commercial",
     allow: true,
-    head: { en: "MAKE ANYTHING, FOR FREE", zh: "随便做，不收钱" },
+    head: { en: "Make anything non-commercial", zh: "非商业的，随便做" },
     body: {
-      en: "Fan films, memes, comics, covers, game mods, fan fiction, your own edits. Non-commercial use of a kit costs nothing and needs no permission.",
-      zh: "同人片、表情包、漫画、翻唱、游戏 mod、同人文、你自己的剪辑。非商业使用物料包，不收费，也不用问。",
+      en: "Fan films, comics, memes, games, music videos, edits. It’s free and you don’t need to ask.",
+      zh: "同人片、漫画、表情包、游戏、MV、剪辑，都免费，不用打招呼。",
     },
   },
   {
-    id: "credit",
+    id: "name",
     allow: true,
-    head: { en: "KEEP THE NAME AND THE CODE", zh: "保留名字和编号" },
+    head: { en: "Keep their name", zh: "保留演员名字" },
     body: {
-      en: "Call them by their name and their roster code. That is the whole attribution requirement — no logo lockup, no link obligation, no watermark.",
-      zh: "叫他的名字，带上他的编号。署名要求就这一条——不用摆 logo，不用挂链接，不用打水印。",
+      en: "Credit the actor by name, for example “Tang Yunqiu (SWIMMER PARTY)”. No logo or link required.",
+      zh: "署名写演员名字就行，比如“唐韵秋（SWIMMER PARTY）”。不用放 logo，也不用挂链接。",
     },
   },
   {
-    id: "voice",
+    id: "words",
     allow: false,
-    head: { en: "DO NOT PUT WORDS IN THEIR MOUTH", zh: "别让他说他不会说的话" },
+    head: { en: "Don’t put words in their mouth", zh: "别让他们说不该说的话" },
     body: {
-      en: "No real-person impersonation, no political endorsement, no sexual content, no harassment of an identifiable person, nothing illegal where you are. These characters are ours to protect.",
-      zh: "不冒充真人，不代言政治立场，不做成人内容，不用来攻击具体的人，不做你所在地违法的事。这些角色我们得护着。",
+      en: "No impersonating real people, no political endorsements, no sexual content, no harassment, nothing illegal where you live.",
+      zh: "不冒充真人，不替政治立场代言，不做色情内容，不攻击具体的人，不做你当地违法的事。",
     },
   },
   {
-    id: "no-real",
+    id: "real",
     allow: false,
-    head: { en: "DO NOT MAKE THEM LOOK REAL", zh: "别把他们做成真人" },
+    head: { en: "Don’t make them look real", zh: "别把他们做成真人" },
     body: {
-      en: "No photoreal pass, no swapping in a living person's face, no 'you can't tell any more' edit. These are animated characters and they stay animated characters. This is the one rule we will actually chase you about.",
-      zh: "不做写实化，不换上任何活人的脸，不做那种「已经看不出来了」的版本。他们是动画角色，就一直是动画角色。这一条是我们真的会来找你的那条。",
+      en: "No photoreal versions and no swapping in a real person’s face. They stay animated.",
+      zh: "不做写实版，不换上真人的脸。他们一直是动画角色。",
     },
   },
   {
-    id: "commercial",
+    id: "sell",
     allow: false,
-    head: { en: "TELL US BEFORE YOU CHARGE FOR IT", zh: "要收钱，先说一声" },
+    head: { en: "Ask before you sell", zh: "要赚钱，先说一声" },
     body: {
-      en: "The moment money changes hands — a brand pays you, a platform pays you, you sell the print — it stops being a remix and becomes a licence. That conversation is short and it is on the Pact page.",
-      zh: "只要钱开始流动——品牌付你、平台付你、你卖印刷品——它就不再是二创，而是授权。这个对话很短，在共赢契约那一页。",
+      en: "If money changes hands — a brand pays you, you sell prints, you run ads — that’s a license. Write to us first. It’s a short conversation.",
+      zh: "只要涉及收钱，比如品牌付你钱、卖周边、投广告，就需要授权。先给我们写信，很快就能谈完。",
     },
   },
 ];

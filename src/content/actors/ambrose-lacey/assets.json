@@ -1,0 +1,61 @@
+{
+  "slug": "ambrose-lacey",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 795115,
+      "sha256": "5ad82312e6a3c01b916ec0e18469daf51a9ae4b960a8a747b3458c7280af4a1e",
+      "sourceSha256": "5ad82312e6a3c01b916ec0e18469daf51a9ae4b960a8a747b3458c7280af4a1e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ambrose-lacey/CC-019.png",
+      "preview": "/media/assets/ambrose-lacey/turnaround.front.webp",
+      "large": "/media/assets/ambrose-lacey/turnaround.front.large.webp",
+      "thumb": "/media/assets/ambrose-lacey/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRh4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJUAAAABgGJb27Ht/mwNQb+RPYO/23+1ktOfbVvVZrLN5GZe6bvvOUTEBBAR2fqySG4FwqQa/IVKzvsNrWCu/vxos3CpABDPVXqVcPk7wG4x17sMTI9xQ1PA+CBXNgesV3Kz2y93p2tc2tbWzFUKR8PjtfskNnVlHUp9w7Gv0vBIDEzCUHsAnMJgu+YnmnMcVdFZIeeTaaRoLwBWUDggYgAAAJADAJ0BKgwAFQA/AWqtTysmJCIwCAFgIAlnAABH+1zIXtj3uMAA/nBmUqk3jVBO1BZN4zIk5z5sX8uHIlRr86xgAL3+yANorDu/JmuIoOkKtGKFQpMAN24Ku9pd/mAKEfwA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 355380,
+      "sha256": "a038bb1100faf21ee66fc6074fbff1aff767d715b24c5cba116f68d731ae037c",
+      "sourceSha256": "a038bb1100faf21ee66fc6074fbff1aff767d715b24c5cba116f68d731ae037c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/ambrose-lacey/candidate-1.mp3",
+      "preview": "/api/voice/ambrose-lacey/intro",
+      "thumb": "/api/voice/ambrose-lacey/intro",
+      "previewUrl": "/api/voice/ambrose-lacey/intro",
+      "durationSec": 29.4,
+      "transcript": {
+        "text": "Good day. Ambrose Lacey, sixty-six years old, from Edinburgh. I spent forty years in the theatre, mostly playing kings, ghosts, and very angry fathers. My eyebrows have a life of their own. I would be delighted to play a wizard, a professor, or a ghost who won't leave."
+      }
+    }
+  ]
+}

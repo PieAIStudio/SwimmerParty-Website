@@ -1,0 +1,61 @@
+{
+  "slug": "gu-wenyuan",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 899190,
+      "sha256": "b2ba98b2994e55107374335a88d54d7191bd860a95ec8c6cd0a10b8eb47aae4b",
+      "sourceSha256": "b2ba98b2994e55107374335a88d54d7191bd860a95ec8c6cd0a10b8eb47aae4b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "gu-wenyuan/CC-017.png",
+      "preview": "/media/assets/gu-wenyuan/turnaround.front.webp",
+      "large": "/media/assets/gu-wenyuan/turnaround.front.large.webp",
+      "thumb": "/media/assets/gu-wenyuan/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiwBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJcAAAABgGPb2rHn+W30mIcrxSkzgbQegG27T7qUtm3brOzkVv/zzCEiJoCIKLCURvIg/q1SNd4Nkm2/gkRn48d7m4vrAoBORvcUdaeMor59YK+H2NNJYG6Pm9sBTse4ynfgp5ab/fv9xDKX9Xu4jlSO3nq7YRceW3NhlXJT4BC+ipLhFu5ygvALlyUBRDj/Z4YV2VxsgpLiC4kIAFZQOCBuAAAA8AMAnQEqDAAVAD8Baq1OqyYkIjAIAWAgCWMAsOwbsjxZ+lRX9/aLAAD+cPb5S3xq7ERnDPhbbZsl77tSVOn7fNWoc4MjcZt067AVk99tmSXtCnAp8i4JCeNo65j4a26DuU9m1OJ8EKZ2gQlAAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 346740,
+      "sha256": "9466c922bafe93a875fca6af6439f61f1ae387b2eff1437bfd2c6facf5f56757",
+      "sourceSha256": "9466c922bafe93a875fca6af6439f61f1ae387b2eff1437bfd2c6facf5f56757",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/gu-wenyuan/candidate-1.mp3",
+      "preview": "/api/voice/gu-wenyuan/intro",
+      "thumb": "/api/voice/gu-wenyuan/intro",
+      "previewUrl": "/api/voice/gu-wenyuan/intro",
+      "durationSec": 28.7,
+      "transcript": {
+        "text": "我叫顾文渊，上海人，今年六十岁。在大学里教了三十年的书，教的是古典文学。退休以后，学生说我这张脸适合演戏，我就来试试。教授、老学者、固执的老父亲，这些角色我大概不用怎么演。"
+      }
+    }
+  ]
+}

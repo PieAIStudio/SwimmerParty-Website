@@ -1,0 +1,61 @@
+{
+  "slug": "agnes-lefevre",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 873984,
+      "sha256": "05d4ebc4bd9eac0000009e15e211052771ca6690c23fbd50510a9c3fd8afb51f",
+      "sourceSha256": "05d4ebc4bd9eac0000009e15e211052771ca6690c23fbd50510a9c3fd8afb51f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "agnes-lefevre/CC-073.png",
+      "preview": "/media/assets/agnes-lefevre/turnaround.front.webp",
+      "large": "/media/assets/agnes-lefevre/turnaround.front.large.webp",
+      "thumb": "/media/assets/agnes-lefevre/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRigBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJwAAAAJgFvbtqpq4+7ukDq04KTE9EADhBbSgedkdOHufHfL3OXcHiJiAgDAXl6VwaxkC2GGMAZkGF+Dm2Gb8VGZ8QN8ytOJBlpp6vsbwDslGwAjCRXRAMYwpZcBOgXFfceb6I2y2N4m8FLVh/nmu0it7iZnD10Kqs3dI2iJ4fzdxDDyHp9FAgYu7qCipN9Xj1/vlOPwaPYuogQ5XOStAABWUDggZgAAANADAJ0BKgwAFQA/AWqsTysmJCIwCAFgIAlAE6ADbaTdgQbL8S4kwAD+vhEowTpsNhWwwPO2RH7r9DbmyvcDT9eDdbv/pgw1FDe3ij9vwoFHAddDdq8pzS+qLYzjUr41VvrQKXuAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 267252,
+      "sha256": "26e991bad5ccb04acd846ce6b0461fb91882910bda9b1fd99cb920c8e83c806c",
+      "sourceSha256": "26e991bad5ccb04acd846ce6b0461fb91882910bda9b1fd99cb920c8e83c806c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/agnes-lefevre/candidate-1.mp3",
+      "preview": "/api/voice/agnes-lefevre/intro",
+      "thumb": "/api/voice/agnes-lefevre/intro",
+      "previewUrl": "/api/voice/agnes-lefevre/intro",
+      "durationSec": 22.1,
+      "transcript": {
+        "text": "Bonjour, I am Agnès Lefèvre, thirty-seven, from Paris. I sell old books by the river, and I read most of them before I sell them. My ears are a bit big, I know, they make me a very good listener. I would love to play a writer, a thief, or a woman in a comedy."
+      }
+    }
+  ]
+}

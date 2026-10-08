@@ -23,6 +23,9 @@ export const profile: Actor = {
     "3D feature-animation woman, 43, Chinese, from Chongqing, 163 cm, slim-average build; gentle smile lines, faint crow's feet, noticeably full lips; dark brown shoulder-length waves worn down with a few fine grey strands; noticeably enlarged expressive eyes, smooth stylized skin, hair in clean grouped clumps; realistic adult proportions, about 7 heads tall. Unmistakably CG, never photoreal.",
   version: "1.1.0",
   versionDate: "2026-10-08",
-  versionNote: { en: "Voice added: 7 clips. The self-introduction doubles as a voice reference.", zh: "加入声音：7 段。自我介绍可以直接当参考音用。" },
+  versionNote: {
+    en: "Voice added: 7 clips. The self-introduction doubles as a voice reference.",
+    zh: "加入声音：7 段。自我介绍可以直接当参考音用。",
+  },
   voiceLanguage: "zh",
 };

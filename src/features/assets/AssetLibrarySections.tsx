@@ -1,29 +1,31 @@
-import type { ActorAssets } from "@/features/assets/asset-types";
-import {
-  listSeries,
-  slotsForLook,
-  slotsOf,
-  slotLabelKey,
-  type ResolvedSlot,
-} from "@/features/assets/asset-series";
+import type { ActorAssets } from "./asset-types";
+import { listSeries, slotsForLook, slotsOf, slotLabelKey, type ResolvedSlot } from "./asset-series";
+import type { AppLocale } from "@/i18n/routing";
 import type { MessageContracts } from "@/i18n/message-contracts";
 import { getSiteI18n } from "@/i18n/server";
-import type { AppLocale } from "@/i18n/routing";
-import { Mannequin } from "@/features/actors";
 import { AssetTile } from "./AssetTile";
+import { VoiceTile } from "./VoiceTile";
 import { SelectAssetSeries } from "./AssetSelection";
-import { GameEmptyState } from "@pieai/swimmer-ui-kit";
+import { Mannequin } from "@/features/actors";
 
-type SeriesMessage = Extract<keyof MessageContracts, `assets.${"series" | "note"}.${string}`>;
+type DynamicKey = Extract<keyof MessageContracts, string>;
 export async function AssetLibrarySections({
   assets,
   locale,
+  actorName,
 }: {
   assets: ActorAssets;
   locale: AppLocale;
+  actorName: string;
 }) {
   const { t } = await getSiteI18n();
+  const msg = (key: string) => t(key as DynamicKey, {} as never);
   const delivered = new Map(assets.items.map((item) => [item.slot, item]));
+  const imageSeries = listSeries().filter(
+    (series) =>
+      !["voice", "video"].includes(series.id) &&
+      (series.required || assets.items.some((item) => item.series === series.id)),
+  );
   const grid = (slots: ResolvedSlot[], fullBody: boolean) => (
     <div
       className={`mt-8 grid gap-3 sm:gap-4 ${fullBody ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" : "grid-cols-3 sm:grid-cols-4 lg:grid-cols-6"}`}
@@ -35,13 +37,7 @@ export async function AssetLibrarySections({
           ?.extras.find((entry) => entry.key === slot.key);
         const label = extra ? extra.label[locale] : t(slotLabelKey(slot.series, slot.key));
         return item ? (
-          <AssetTile
-            key={slot.slot}
-            item={item}
-            label={label}
-            code={assets.code}
-            fullBody={fullBody}
-          />
+          <AssetTile key={slot.slot} item={item} label={label} actorName={actorName} />
         ) : (
           <div
             key={slot.slot}
@@ -63,77 +59,93 @@ export async function AssetLibrarySections({
   );
   return (
     <>
-      {listSeries()
-        .filter(
-          (series) => series.required || assets.items.some((item) => item.series === series.id),
-        )
-        .map((series) => {
-          const all = series.perLook
-            ? assets.looks.flatMap((look) => slotsForLook(series.id, look))
-            : slotsOf(series.id);
-          const visible = all.filter(
-            (slot) => (series.required && slot.required) || delivered.has(slot.slot),
-          );
-          const available = visible
-            .filter((slot) => delivered.has(slot.slot))
-            .map((slot) => slot.slot);
-          const extended = visible.filter((slot) => slot.tier === "extended");
-          const core = visible.filter((slot) => slot.tier !== "extended");
-          return (
-            <section
-              id={`series-${series.id}`}
-              key={series.id}
-              className="sp-section scroll-mt-40"
-              data-asset-series={series.id}
-            >
-              <div className="flex flex-wrap items-start justify-between gap-4">
-                <div>
-                  <h2 className="sp-title">
-                    {t(`assets.series.${series.id}` as SeriesMessage)}{" "}
-                    <span className="sp-code ml-2 text-muted-foreground">
-                      {available.length}/{visible.length}
-                    </span>
-                  </h2>
-                  <p className="sp-small mt-3 text-muted-foreground">
-                    {t(`assets.note.${series.id}` as SeriesMessage)}
-                  </p>
-                </div>
-                <SelectAssetSeries slots={available} />
+      {imageSeries.map((series) => {
+        const all = series.perLook
+          ? assets.looks.flatMap((look) => slotsForLook(series.id, look))
+          : slotsOf(series.id);
+        const visible = all.filter(
+          (slot) => (series.required && slot.required) || delivered.has(slot.slot),
+        );
+        const available = visible
+          .filter((slot) => delivered.has(slot.slot))
+          .map((slot) => slot.slot);
+        const core = visible.filter((slot) => slot.tier !== "extended");
+        const extended = visible.filter((slot) => slot.tier === "extended");
+        return (
+          <section
+            id={`series-${series.id}`}
+            key={series.id}
+            className="sp-section scroll-mt-40"
+            data-asset-series={series.id}
+          >
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <h2 className="sp-title">
+                  {msg(`assets.series.${series.id}`)}{" "}
+                  <span className="sp-code ml-2 text-muted-foreground">
+                    {available.length}/{visible.length}
+                  </span>
+                </h2>
+                <p className="sp-small mt-3 text-muted-foreground">
+                  {msg(`assets.note.${series.id}`)}
+                </p>
               </div>
-              {series.perLook
-                ? assets.looks
-                    .filter((look) =>
-                      available.some((slot) => slot.startsWith(`${series.id}.${look.id}.`)),
-                    )
-                    .map((look) => (
-                      <div key={look.id} className="mt-8">
-                        <h3 className="sp-subtitle">{look.label[locale]}</h3>
-                        {grid(
-                          core.filter((slot) => slot.look === look.id),
-                          series.frame === "full",
-                        )}
-                      </div>
-                    ))
-                : grid(core, series.frame === "full")}
-              {extended.length ? (
-                <div className="mt-10">
-                  <h3 className="sp-subtitle">{t("assets.extended")}</h3>
-                  {grid(extended, false)}
-                </div>
-              ) : null}
-            </section>
-          );
-        })}
-      <section id="series-more" className="sp-section scroll-mt-40" data-asset-series="more">
-        <h2 className="sp-title">{t("assets.series.more")}</h2>
-        <p className="sp-small mt-3 text-muted-foreground">{t("assets.note.more")}</p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {(["voice", "video", "model3d", "motion"] as const).map((kind) => (
-            <GameEmptyState
-              key={kind}
-              icon="hourglass"
-              title={t(`media.${kind}.title`)}
-              description={t(`media.${kind}.planned`)}
+              <SelectAssetSeries slots={available} />
+            </div>
+            {series.perLook
+              ? assets.looks
+                  .filter((look) =>
+                    available.some((slot) => slot.startsWith(`${series.id}.${look.id}.`)),
+                  )
+                  .map((look) => (
+                    <div key={look.id} className="mt-8">
+                      <h3 className="sp-subtitle">{look.label[locale]}</h3>
+                      {grid(
+                        core.filter((slot) => slot.look === look.id),
+                        series.frame === "full",
+                      )}
+                    </div>
+                  ))
+              : grid(core, series.frame === "full")}
+            {extended.length ? (
+              <div className="mt-10">
+                <h3 className="sp-subtitle">{t("assets.extended")}</h3>
+                {grid(extended, false)}
+              </div>
+            ) : null}
+          </section>
+        );
+      })}
+      <section id="series-voice" className="sp-section scroll-mt-40">
+        <h2 className="sp-title">{t("assets.series.voice")}</h2>
+        <p className="sp-small mt-3 max-w-2xl text-muted-foreground">{t("assets.voiceNote")}</p>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {slotsOf("voice").map((slot) => {
+            const item = delivered.get(slot.slot);
+            const label = msg(
+              `assets.voice.${slot.key.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase())}`,
+            );
+            return (
+              <VoiceTile
+                key={slot.slot}
+                item={item}
+                label={label}
+                reference={slot.key === "intro" && Boolean(item)}
+              />
+            );
+          })}
+        </div>
+      </section>
+      <section id="series-video" className="sp-section scroll-mt-40">
+        <h2 className="sp-title">{t("assets.series.video")}</h2>
+        <p className="sp-small mt-3 max-w-2xl text-muted-foreground">{t("assets.videoNote")}</p>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {slotsOf("video").map((slot) => (
+            <VoiceTile
+              key={slot.slot}
+              label={msg(
+                `assets.video.${slot.key.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase())}`,
+              )}
             />
           ))}
         </div>

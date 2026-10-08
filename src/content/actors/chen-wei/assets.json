@@ -21,9 +21,12 @@
         "bottom": 0.9611244019138756
       },
       "format": "png",
-      "object": "chen-wei/59478d8607d894ef/SP-17__turnaround__front__v1.png",
+      "object": "chen-wei/59478d8607d894ef/chen-wei__turnaround__front__v1.png",
       "preview": "/media/assets/chen-wei/turnaround.front.webp",
-      "thumb": "/media/assets/chen-wei/turnaround.front.thumb.webp"
+      "thumb": "/media/assets/chen-wei/turnaround.front.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/turnaround.front.large.webp",
+      "blur": "data:image/webp;base64,UklGRjIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJoAAAABgJtt27Hn+W1zjz+u7M7osoKT0ikzgG3bdrKArQHMu3ie/FkhIiaA/q1srAnC9PsShOb6SPlH/jVwki64PwDg2cIKIOawylN2Ws7W5tncNFuvZLVzbKWJtc6yzgngF7M9TF+Bh0s06BmlYXsUxSSGorcMhVIMhjLRLaWgMxp7UjzGvHiSolCvvD1WCKvnAar/rhDUSiLyO4kAVlA4IHIAAABwAwCdASoMABUAPwFqrE6rJiQiMAgBYCAJZwAAR73XssIBvQAA/hZbqMmV0iK64uzGczNROLuFlSCRpa0t84iVnvPNETQR71tqz5GkHKfPi0FMIIS2IcYwRxIQtw7KMIuPw++AX19Rp+yp21RgCeAgAAA="
     },
     {
       "slot": "turnaround.three-quarter",
@@ -44,9 +47,12 @@
         "bottom": 0.9748803827751196
       },
       "format": "png",
-      "object": "chen-wei/e54146b243757dd6/SP-17__turnaround__three-quarter__v1.png",
+      "object": "chen-wei/e54146b243757dd6/chen-wei__turnaround__three-quarter__v1.png",
       "preview": "/media/assets/chen-wei/turnaround.three-quarter.webp",
-      "thumb": "/media/assets/chen-wei/turnaround.three-quarter.thumb.webp"
+      "thumb": "/media/assets/chen-wei/turnaround.three-quarter.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/turnaround.three-quarter.large.webp",
+      "blur": "data:image/webp;base64,UklGRigBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJcAAAABgGNt2zHnG6OeypWr6VxOZcVsnVROmQ3YdrrZQLICG61t8yne7zvZQkRMAPt38GRJIyoEdKI0Npg48v67YOFVAMCehJMl8HBWOTlE/wXg7KaWxF4BfB2Wk7ZuADhyk+F2AhcxpciAnDAdPl4RYPybxyxKBMuox4RgHmFsCmahP3uTcEJXP7LFJ46qoyXIGr4chKutsjIGAFZQOCBqAAAA0AMAnQEqDAAVAD8Baq1PKyWkIjAIAWAgCWcAygAbpYKduURHSTQgAP4WK4HxGDyAffgoNPj8mXhATQIgMHEjVDqmdS5tkEBrqCEpxJ6gy9cwTcxiDApgetCfl8nfPOr6mlNM3oUyJAAAAA=="
     },
     {
       "slot": "turnaround.side",
@@ -67,9 +73,12 @@
         "bottom": 0.9683014354066986
       },
       "format": "png",
-      "object": "chen-wei/69601123a3f45b7e/SP-17__turnaround__side__v1.png",
+      "object": "chen-wei/69601123a3f45b7e/chen-wei__turnaround__side__v1.png",
       "preview": "/media/assets/chen-wei/turnaround.side.webp",
-      "thumb": "/media/assets/chen-wei/turnaround.side.thumb.webp"
+      "thumb": "/media/assets/chen-wei/turnaround.side.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/turnaround.side.large.webp",
+      "blur": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSHMAAAABgJpt27LsARIHK7AHJJLDBE6iMoNHlyXcukUSC7i7JPj9Tvf7rxAREyD/Nu2bCiGsFIwYK1SRYrov/HmIXIE2GwFT1gN+NWQCHITOgD4rABUWAaLMClhYGE8Di6EmvISMQhp5hTBeFT3xAjUtEaPdLCICAFZQOCBWAAAAsAMAnQEqDAAVAD8Baq9PqyYkIjAIAWAgCWcAAF7tbbiSATxy44AA/hZqlN2WxQ/1eTaBzkmYUODxzoJYiTo4THGUbA2rBBmT0C6rCXSW/HvV2qBAAAA="
     },
     {
       "slot": "turnaround.back",
@@ -90,9 +99,12 @@
         "bottom": 0.9647129186602871
       },
       "format": "png",
-      "object": "chen-wei/51d3eb4be39c7759/SP-17__turnaround__back__v1.png",
+      "object": "chen-wei/51d3eb4be39c7759/chen-wei__turnaround__back__v1.png",
       "preview": "/media/assets/chen-wei/turnaround.back.webp",
-      "thumb": "/media/assets/chen-wei/turnaround.back.thumb.webp"
+      "thumb": "/media/assets/chen-wei/turnaround.back.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/turnaround.back.large.webp",
+      "blur": "data:image/webp;base64,UklGRiABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJgAAAABgKpt+/rkm/tW/Qy07VTW3NoGyd0dkrsmJ5GoXGSr7u7OG77vf3EKETEB9P/SLrWSA3AqGU4vzQqhme+fubDgfgOAdx8rhVjGhm/Y7TjbWWQr++yoijWcsa08K2yzlWm2sM4CLXi8RUeQUTk2N1BBYgJdLUhL1YjFUC/1IxpFvzSNQARj0sCfL/jXLx2dEV0eSBY/UcBMRFZQOCBiAAAAkAMAnQEqDAAVAD8Baq1PKyYkIjAIAWAgCWcAAEhWBuatmqNnAAD+nvvv3u1mRgywJW6EhG7Wqqf3Z1bqig+7BfGeNhRb3DJrcr2QNtH9Zp4qpnFlePXEC6WUq+ikqcgAAAA="
     },
     {
       "slot": "face.front",
@@ -113,9 +125,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/f2543f9409bc205f/SP-17__face__front__v1.png",
+      "object": "chen-wei/f2543f9409bc205f/chen-wei__face__front__v1.png",
       "preview": "/media/assets/chen-wei/face.front.webp",
-      "thumb": "/media/assets/chen-wei/face.front.thumb.webp"
+      "thumb": "/media/assets/chen-wei/face.front.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/face.front.large.webp",
+      "blur": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGgAAAABcFpt27LcHa1/QwYgEh2yLWErUB0WIGr3RmUCTwzhzu8CLBARE8A3HbnOsOXWCCxFURQXQcC2FzUPAoRE3RQk9TLg0QtBSW8AZb0uRO9azyww09oBFLXqgNDXmvtpX0Xd50D865eRF1ZQOCBqAAAA8AMAnQEqDAAVAD8Baq1PKyYkIjAIAWAgCWoAsOwmn9+d5hLkfm7uAAD+zyEPWDJCgX450tt9RdbSO9+SGfDqTZoj8ehvXE4qgcJnYwjDveX3aEJ5TFLGemB+fbaNE9ucKiFup0fxDJAAAA=="
     },
     {
       "slot": "face.three-quarter",
@@ -136,9 +151,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/4b57acb8bbe4a142/SP-17__face__three-quarter__v1.png",
+      "object": "chen-wei/4b57acb8bbe4a142/chen-wei__face__three-quarter__v1.png",
       "preview": "/media/assets/chen-wei/face.three-quarter.webp",
-      "thumb": "/media/assets/chen-wei/face.three-quarter.thumb.webp"
+      "thumb": "/media/assets/chen-wei/face.three-quarter.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/face.three-quarter.large.webp",
+      "blur": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGgAAAABcFvbtqKcGTSWiBIIoQoWIZRAD+RU4D04HbhrDrHlZM64TwERMQE4mSwNusWwTuYuSZI0zwPiRtJ95iD+1JMOEHgYnIChQQs4GjRB/BiUISbpXxIQfeoVACp6aSB71hunWEjGv57km1ZQOCBoAAAA0AMAnQEqDAAVAD8BaqxPKyYkIjAIAWAgCWYAuwAiI4BgLrg77f1gAP6+D2Htqvo8njg/nWl1Br7gB/vVjuJJYsSIJM1UahO+mxkxtKzHu+LQ0BFSVpPdwYN9wqxc0pNnAqlXq+gAAAA="
     },
     {
       "slot": "face.side",
@@ -159,9 +177,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/ac9726da2bc546d8/SP-17__face__side__v1.png",
+      "object": "chen-wei/ac9726da2bc546d8/chen-wei__face__side__v1.png",
       "preview": "/media/assets/chen-wei/face.side.webp",
-      "thumb": "/media/assets/chen-wei/face.side.thumb.webp"
+      "thumb": "/media/assets/chen-wei/face.side.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/face.side.large.webp",
+      "blur": "data:image/webp;base64,UklGRggBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSHYAAAABcFpt27I8eOOP+ArQGYNmUROdwwAuzbO7wz6a3eHX9zuHDSJiAvBPb33aipkVirx813UAzp8Czx+McKUIPg7NiCpDfaRS4M5UEDOefFsQp9ZAhgoAScoBJO5E1wBw0bMCPwHg3ijx0JZ+PJXhGU0vFg/P2mACVlA4IGwAAAAQBACdASoMABUAPwFqrE8rJiQiMAgBYCAJaACo9Yuk31hLZrECdr6aYAD+y8mbat2Bp5KHhC8kgfLn71R50/raLyjkXf+Ud66i5eY7QTo8NzY4PDsEtFcruIlCOb7OER0X7YlWn/pL2mqtsAA="
     },
     {
       "slot": "expression.neutral",
@@ -182,9 +203,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/7f2e248c5b35eb1b/SP-17__expression__neutral__v1.png",
+      "object": "chen-wei/7f2e248c5b35eb1b/chen-wei__expression__neutral__v1.png",
       "preview": "/media/assets/chen-wei/expression.neutral.webp",
-      "thumb": "/media/assets/chen-wei/expression.neutral.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.neutral.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.neutral.large.webp",
+      "blur": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGUAAAABcFpt27LcW+CdxgZE764bkNjBXRLdpesKDECk0d1+/39sgIiYAD5pyc03PZuKey8IgrANApaDoHpyQljQzEBcKwkuLQ/ktUbQ1OpD8KZ2DwELtR1AVq0CmPpqCwfNo6B57gp/EwBWUDggZgAAANADAJ0BKgwAFQA/AWqsTysmJCIwCAFgIAlsAJ0AIiMoHk8aVKMjAAD+vg9gzk6H9WAiQkbC7t4AgcjhiA48GbKDjxIh48FjmdjCL4WYRw5WuJBPYE8wc7P82S+QwopGLvIRQ5gAAA=="
     },
     {
       "slot": "expression.smile",
@@ -205,9 +229,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/3ba4652d0f6aa771/SP-17__expression__smile__v1.png",
+      "object": "chen-wei/3ba4652d0f6aa771/chen-wei__expression__smile__v1.png",
       "preview": "/media/assets/chen-wei/expression.smile.webp",
-      "thumb": "/media/assets/chen-wei/expression.smile.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.smile.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.smile.large.webp",
+      "blur": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGMAAAABcFNt27LcKdCNCLBRQTeHCk4Kd2jA6DJZDCZYCeD++48GiIgJ4JPGbHfZt6k414IgCCsfYNwKqmcH+AXNDER02bVCUNaaQVtrDK6r2j0GLNQ2AHG1HGDoqE2t5HeC5rEm/E0AVlA4IGoAAADwAwCdASoMABUAPwFqrE6rJiQiMAgBYCAJagCw7CIjH4pyLE84UG8AAP6+D2DOTof1YCJCRsLuIoLo7Ycd0sWN2BaQLimEKVBe05O11zPfc04dn0UAjShlsQ1XGhWJq7lPn1xxGJkVAAAA"
     },
     {
       "slot": "expression.laugh",
@@ -228,9 +255,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/9f88375ddaef27e7/SP-17__expression__laugh__v1.png",
+      "object": "chen-wei/9f88375ddaef27e7/chen-wei__expression__laugh__v1.png",
       "preview": "/media/assets/chen-wei/expression.laugh.webp",
-      "thumb": "/media/assets/chen-wei/expression.laugh.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.laugh.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.laugh.large.webp",
+      "blur": "data:image/webp;base64,UklGRgoBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGsAAAABcFpt27LcuMsMDKCVyBSwwD8BlQQD/Blv3q0R2cCluzs/7gNExATwut5mfeCuHE8j753AUZIkqR+Wg30n3RcgJD1Mg/ioAMKjCKQebTRUH51MiI9qoJ4/8AGxewMzELzX0uApSg/rfulvAgBWUDggeAAAADAEAJ0BKgwAFQA/AWqsTysmJCIwCAFgIAlsAJ0AI/S5e+MYUFZ/X98aAAD+vg67CKQztPHbTktBhHfUM+IqjVdmq0x2fdtKbu80qwxl91oa3qr21IppqkrvAWwpokfi4aYqRr3wGAClx7tyUBVgEC80znQVSVYAAA=="
     },
     {
       "slot": "expression.sad",
@@ -251,9 +281,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/4a09bd5ed8ca740c/SP-17__expression__sad__v1.png",
+      "object": "chen-wei/4a09bd5ed8ca740c/chen-wei__expression__sad__v1.png",
       "preview": "/media/assets/chen-wei/expression.sad.webp",
-      "thumb": "/media/assets/chen-wei/expression.sad.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.sad.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.sad.large.webp",
+      "blur": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGUAAAABcFpt27LcS/yuQ5B1DLcdLDs0NnA6CRKsAYkBaP+h2a84A0TEBPBJubbaLeyI+NF1XfeQAbSTG3lJQ9Z92IXqoxbEHmVh9GgD40dbKN4eNIF9lAPQj5oCwjJqLTNw3Ifnofs3AQBWUDggZAAAAPADAJ0BKgwAFQA/AWqsTysmJCIwCAFgIAlqALDsIiMoHOgMe4NHdKAA/s8hDtbrA9qa8cMpPhlMrVkAphc+KHp/94biyo2IBHe8vMgavIAVLq2JGrDcrSaQVhRXYNMOGeFGgAA="
     },
     {
       "slot": "expression.cry",
@@ -274,9 +307,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/86ff60716d9b3e34/SP-17__expression__cry__v1.png",
+      "object": "chen-wei/86ff60716d9b3e34/chen-wei__expression__cry__v1.png",
       "preview": "/media/assets/chen-wei/expression.cry.webp",
-      "thumb": "/media/assets/chen-wei/expression.cry.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.cry.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.cry.large.webp",
+      "blur": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGcAAAABcGJr26I8ozSPRJqzChagiTaHRnaorGIqGn0DFtkDne6M4iwgIiaAT3pL+rDpcUntDMMwlmkgtDdcDxHIGg/LoD2qQPJREaqPJtB9NIXM+YEGrNyOItBx6wPhsds2in40Hl57xt8EAFZQOCBmAAAAsAMAnQEqDAAVAD8Baq1PKyWkIjAIAWAgCWoAsOwgfrV+YTr7KxgA/s8hfgVA0EHmxG7F5WpZwIgYy4o8xaQi/LykRWR3mJgSAwpoVzuJO3sJIWGiCUuPz+j6n+EOv1Mt1yQcNAAA"
     },
     {
       "slot": "expression.annoyed",
@@ -297,9 +333,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/e81130b3d5c890c3/SP-17__expression__annoyed__v1.png",
+      "object": "chen-wei/e81130b3d5c890c3/chen-wei__expression__annoyed__v1.png",
       "preview": "/media/assets/chen-wei/expression.annoyed.webp",
-      "thumb": "/media/assets/chen-wei/expression.annoyed.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.annoyed.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.annoyed.large.webp",
+      "blur": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGQAAAABcFpt27LcayBJk0W6V9fqWzhraHPZgENjA5iARnL9FWeAiJgAPqkpzRYNvYprLQiCsEoB2o2genJAXHhYgNCjNFge+aH4qPtUB5xbtXMAmKotATJqdcAwUJtb6VyEh7ex8DcBVlA4IGgAAADwAwCdASoMABUAPwForE6rJaQiMAgBYCAJaACw7CHRiux/LP88rNaAAP7PIQ6Xx+ZzHS1q5yGJoZ7NlEt7ue2cJrP93YQMWGTCdL4+Jqipb5yxfJgW2rVdyn3BQfWHyuK9DNXJUkAAAA=="
     },
     {
       "slot": "expression.angry",
@@ -320,9 +359,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/81dce6d5d936cf9c/SP-17__expression__angry__v1.png",
+      "object": "chen-wei/81dce6d5d936cf9c/chen-wei__expression__angry__v1.png",
       "preview": "/media/assets/chen-wei/expression.angry.webp",
-      "thumb": "/media/assets/chen-wei/expression.angry.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.angry.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.angry.large.webp",
+      "blur": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGMAAAABcFNt27LcSXCoQAKHCjr9EZjYOOzuPrO7lyCDFfDfDQgQEROAne7ibDVwaCTPoiiKpzTgvomazxDkRN0SCHoFCOqloKy3hYbeCmJ3rY8AbLSuAHmtEeCYah0DdO+i7nMi/k0AVlA4IGoAAACwAwCdASoMABUAPwFqrE6rJiQiMAgBYCAJagC06CIjJ5hX7WeXmAD+zyEPWDJEDhEqwPZeb+82/kgtfODVU/jaM84NN2GUsGFFBV9/X7fQqjagxzkiqn/UW/KJAwgbUaJO1SYHIKwDkAAA"
     },
     {
       "slot": "expression.surprised",
@@ -343,9 +385,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/60ff64ef50ab0f20/SP-17__expression__surprised__v1.png",
+      "object": "chen-wei/60ff64ef50ab0f20/chen-wei__expression__surprised__v1.png",
       "preview": "/media/assets/chen-wei/expression.surprised.webp",
-      "thumb": "/media/assets/chen-wei/expression.surprised.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.surprised.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.surprised.large.webp",
+      "blur": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGoAAAABcFpt27I8Y+Akqlayu0NjAE26gC2g0d0G8BkYwRLN9RdcBoiICcAnGcFev8G9I58RBEFMDQD4K+LuXgq4iYcBwPXIAwgfWYHkow4Qe1QEZOt7Zw2Ayb0lAETv5QCwqvfGAqR2xMNTnvibVlA4IGgAAAAQBACdASoMABUAPwFqrE6rJiQiMAgBYCAJagCw7CajDwpXxfNXaojVgAD+vg5wiE4tFK975wBRnilwZ8OpRSRLNg+ByBQOEzsYRgd47eHtjsxcjX+26TZNLS5ROthTdhns6D5ZwxwAAA=="
     },
     {
       "slot": "expression.scared",
@@ -366,9 +411,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/1281ba98546810f4/SP-17__expression__scared__v1.png",
+      "object": "chen-wei/1281ba98546810f4/chen-wei__expression__scared__v1.png",
       "preview": "/media/assets/chen-wei/expression.scared.webp",
-      "thumb": "/media/assets/chen-wei/expression.scared.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.scared.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.scared.large.webp",
+      "blur": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGgAAAABcFtt23PcQ/y5TphA6ShVqmwMLaU6LeBXGUDnKI2gpLRBTn/O/wARMQFkKUz2x7UWUj87juOcWoB4dULvJrSdyBF0owZQi2rANGoDsygbmq+wbwc4hF0AxmFzQLLDdjqrmxP53TqlCVZQOCBoAAAA0AMAnQEqDAAVAD8BaqxPKyYkIjAIAWAgCWgAsOwiIyQjzI1BUMX4AP7PIQ7W6wPamvHDKT4ZS5rdniK4wxIf/QN17lLIamUSq42YONVgI8IyCK4JehlsQ1XGqVNWChONJcs8KNAAAAA="
     },
     {
       "slot": "expression.disgusted",
@@ -389,9 +437,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/b6ec125d5f9be036/SP-17__expression__disgusted__v1.png",
+      "object": "chen-wei/b6ec125d5f9be036/chen-wei__expression__disgusted__v1.png",
       "preview": "/media/assets/chen-wei/expression.disgusted.webp",
-      "thumb": "/media/assets/chen-wei/expression.disgusted.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.disgusted.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.disgusted.large.webp",
+      "blur": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGgAAAABcFpt27Lc/78F3a3ZEhwSnWYLkB0SiUOGCWj/DJAZwiW5/va9+AARMQG8rulSarjcTeKK0tU0TXNdAbxXU52GvCnWISuVISYVoSONoC0ZkNqqbhnAUE0Bcqoe4BmoxkG6B1O89s2/CVZQOCBqAAAAEAQAnQEqDAAVAD8BaqxPKyYkIjAIAWAgCWoArAGJrizmm7s10y0jiaAA/r4PW2tMeVbN7UA8zaRGn3dWNSwm7ge7bAVZNLUXBfBNwIsv3w1expRUNNoKIbwJpaXJ4Jn/vMpv4mrjZ4AAAA=="
     },
     {
       "slot": "expression.embarrassed",
@@ -412,9 +463,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/e2bed58901f5cd01/SP-17__expression__embarrassed__v1.png",
+      "object": "chen-wei/e2bed58901f5cd01/chen-wei__expression__embarrassed__v1.png",
       "preview": "/media/assets/chen-wei/expression.embarrassed.webp",
-      "thumb": "/media/assets/chen-wei/expression.embarrassed.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.embarrassed.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.embarrassed.large.webp",
+      "blur": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGAAAAABcNva2tNcQscMLAALIEZA1AyTc8cCcQvcegTLnXvLZU5tzmGAiJgAPqlkw3Gl3THmp9PpNLMAeXq6ezBAPz0sQH0UgXl84EB5etiB+6gEdX9vbwKjez3Y2eTeeuCf/j5WUDggYAAAAHADAJ0BKgwAFQA/AWqsTysmJCIwCAFgIAloAKwAIH69FA4hDAD+vg9g6ROdzHUK5bQ7geTTjChEDGYFTiwOv3HoieiGXSMgR1fAGm/sDK7OPmcrKEUGA3nYTljFMDNIAA=="
     },
     {
       "slot": "expression.tired",
@@ -435,9 +489,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/d8ef3a9ba8f6a0f4/SP-17__expression__tired__v1.png",
+      "object": "chen-wei/d8ef3a9ba8f6a0f4/chen-wei__expression__tired__v1.png",
       "preview": "/media/assets/chen-wei/expression.tired.webp",
-      "thumb": "/media/assets/chen-wei/expression.tired.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.tired.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.tired.large.webp",
+      "blur": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGkAAAABcFtr25o8SWABt5IBKJ0tcii1T4lVHFbQDRxKamoOrfcM4RDFGSAiJoBPOpTJrOO1iOxUVVWXMuDcq5anBMjqwzqkH1Uh9KgAyqMF1B7NIXV/UAT6Vhc7kLGaAsGu1SpM46A+vPXVvwkAVlA4IG4AAAAwBACdASoMABUAPwFqrU8rJaQiMAgBYCAJagC06Caf354ccDptOEiwKAAA/s8hDyhdmggZamrRP1TujthtLz2/lV57kcJjD9Pc8p4gC3qjZO1xDrG+P7dbFDC3leZ8WK7u4fRQQ1KIj4i6S8AAAA=="
     },
     {
       "slot": "expression.speaking",
@@ -458,9 +515,12 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/17854193c9914d6e/SP-17__expression__speaking__v1.png",
+      "object": "chen-wei/17854193c9914d6e/chen-wei__expression__speaking__v1.png",
       "preview": "/media/assets/chen-wei/expression.speaking.webp",
-      "thumb": "/media/assets/chen-wei/expression.speaking.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.speaking.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.speaking.large.webp",
+      "blur": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGgAAAABcBvbtqrsSiB0SxkqYIg9ghr+0AK59eDuEBEydED2C0Az57sBBUTEBOCku7zdrwM6yYMkSZJYAFxXSfcVh7xkWIKikQAxoxRUjIZQN2pD4qb3ygIbPRFA0KsBnpneLkrjJRm++9LfBFZQOCBoAAAA0AMAnQEqDAAVAD8BaqxOqyYkIjAIAWAgCWoAsOwiIywwSIMLfJ/AAP6+DnAqV0Ybmpnad/Mo1fyQW4Y5/QWegINvLzvoK6Z03B1szHSXHBainP0kS4/P6Puj11vzMft4C+UI8RR4AAA="
     },
     {
       "slot": "expression.eyes-closed",
@@ -481,10 +541,41 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "chen-wei/bc90c6d9dbf690bb/SP-17__expression__eyes-closed__v1.png",
+      "object": "chen-wei/bc90c6d9dbf690bb/chen-wei__expression__eyes-closed__v1.png",
       "preview": "/media/assets/chen-wei/expression.eyes-closed.webp",
-      "thumb": "/media/assets/chen-wei/expression.eyes-closed.thumb.webp"
+      "thumb": "/media/assets/chen-wei/expression.eyes-closed.thumb.webp",
+      "kind": "image",
+      "large": "/media/assets/chen-wei/expression.eyes-closed.large.webp",
+      "blur": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSGcAAAABcFpr25s8QySq+ZxMkAWiCsXhObg+AhbFAqC7jmcGXFWs0CG9Z4CImACKFCd7dyHFGCfP87yjBQh3L/ahg+UldqGd1AMtyYZp0hZmSSsw33HfDuDG3QD6cXNAXcUdNJYvL/G78WoTAFZQOCBoAAAAsAMAnQEqDAAVAD8BaKxOqyYkIjAIAWAgCWoAsOwiIyop5XxUJQAA/r4PZexIMJoqtQ74Bv7+qjgqkQzRZ8OpNKVsWQgvWQYSHEbWIylp+1IKF5ExEiXH5/R71vw9VYFvk1CvEUeAAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 211956,
+      "sha256": "e99c6ca1c8cbb3e2b54dae77fa2ce56a2c9bb70aa38d96c21ef2287fe50f9683",
+      "sourceSha256": "e99c6ca1c8cbb3e2b54dae77fa2ce56a2c9bb70aa38d96c21ef2287fe50f9683",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/chen-wei/candidate-1.mp3",
+      "preview": "/api/voice/chen-wei/intro",
+      "thumb": "/api/voice/chen-wei/intro",
+      "previewUrl": "/api/voice/chen-wei/intro",
+      "durationSec": 17.5,
+      "transcript": {
+        "text": "我叫陈伟，成都人，四十六岁。大家都说我眼睛像没睡醒，其实我啥子都看到了，就是懒得说。我在《东游记》里演场务大哥，就是那个……一直占着厕所的人。不是我想占哈，是剧本这么写的。"
+      }
     }
-  ],
-  "code": "SP-17"
+  ]
 }

@@ -64,7 +64,7 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
   let bytes = 0;
   for (const item of items) {
     const signed = body.items.find((candidate) => candidate.slot === item.slot);
-    if (!signed || signed.filename !== assetFilename(actor.code, item))
+    if (!signed || signed.filename !== assetFilename(actor.slug, item))
       throw new Error("Bundle identity mismatch");
     const blob = await fetchImageBlob(signed.url, signal);
     bytes += blob.size;
@@ -101,7 +101,7 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
     }
   }
   if (input.format === "sheet")
-    return { blob: await sheet(items, input.sheet), filename: `${actor.code}_sheet.png` };
+    return { blob: await sheet(items, input.sheet), filename: `${actor.slug}_sheet.png` };
   const files: Record<string, Uint8Array> = {};
   const descriptions: string[] = [];
   async function add(filename: string, blob: Blob, description: string) {
@@ -111,17 +111,17 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
   }
   if (veo) {
     await add(
-      assetFilename(actor.code, veo.identity),
+      assetFilename(actor.slug, veo.identity),
       blobs.get(veo.identity.slot)!,
       "Identity reference. Preserve the animated character's face and proportions; do not make a real person.",
     );
     await add(
-      `${actor.code}_turnaround-sheet.png`,
+      `${actor.slug}_turnaround-sheet.png`,
       await sheet(veo.turns, { labels: "none", background: "grey" }),
       "Full-body turnaround references, with no labels.",
     );
     await add(
-      `${actor.code}_expression-sheet.png`,
+      `${actor.slug}_expression-sheet.png`,
       await sheet(veo.expressions, { labels: "none", background: "grey", expressionGrid: true }),
       "Expression references on a 4 by 3 grid, with no labels.",
     );
@@ -131,7 +131,7 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
         .find((series) => series.id === item.series)
         ?.slots.find((candidate) => candidate.key === item.key);
       await add(
-        assetFilename(actor.code, item),
+        assetFilename(actor.slug, item),
         blobs.get(item.slot)!,
         `${item.series}: ${slot?.direction ?? item.key}.${item.conformance === "legacy" ? " Legacy opaque-background original, not a transparent v1 asset." : " Transparent original."}`,
       );
@@ -140,7 +140,7 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
     JSON.stringify(characterProfile(actor, assets), null, 2) + "\n",
   );
   files["README-for-AI.txt"] = strToU8(
-    `${actor.code} — ${actor.nameEn}\nAnimated character; never a real-person likeness.\n\n${descriptions.join("\n")}\n\nConsult character.json and LICENSE.txt.\n`,
+    `${actor.slug} — ${actor.nameEn}\nAnimated character; never a real-person likeness.\n\n${descriptions.join("\n")}\n\nConsult character.json and LICENSE.txt.\n`,
   );
   files["LICENSE.txt"] = strToU8(
     KIT_RULES.map((rule) => `${rule.head[input.locale]}\n${rule.body[input.locale]}`).join("\n\n") +
@@ -151,6 +151,6 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
   ensureActive(signal);
   return {
     blob: new Blob([new Uint8Array(data)], { type: "application/zip" }),
-    filename: `${actor.code}_assets_${new Date().toISOString().slice(0, 10).replaceAll("-", "")}.zip`,
+    filename: `${actor.slug}_assets_${new Date().toISOString().slice(0, 10).replaceAll("-", "")}.zip`,
   };
 }

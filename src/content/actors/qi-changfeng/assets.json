@@ -1,0 +1,61 @@
+{
+  "slug": "qi-changfeng",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 827684,
+      "sha256": "a95aacf6a351a69f48960195aadcf39af2ed92205e40e9e6207bee29b603df4c",
+      "sourceSha256": "a95aacf6a351a69f48960195aadcf39af2ed92205e40e9e6207bee29b603df4c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/CC-047.png",
+      "preview": "/media/assets/qi-changfeng/turnaround.front.webp",
+      "large": "/media/assets/qi-changfeng/turnaround.front.large.webp",
+      "thumb": "/media/assets/qi-changfeng/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJsAAAABgKpt//nn8zeSWTFvbXHHsL60uP+OwGp2XLLtZNu2beNtn885RMQEEBFpmqsVJIbhxyg5jsf1EvWmkxg2CIz5uXIAyOba/oHfGi5vDhjJ5fongcZ+rmUCqKvjko6A2VSu8+7t52yAS3xc2L2K4+iso++UxJWK0n1pqzDwrhAui+JhEg7yYuERjvJjEM0pNgPmvygupNKryEkgIgBWUDggXgAAAPADAJ0BKgwAFQA/AWytTysmJCIwCAFgIAllAABKuwTOyuPbDdO4PAAA/hZpjTCu5ydDitbZnqYb7iW/iV7PUzuQvGosSc7OcdglgdFHSG71xo2UGyMlQmjkWQS8TAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 252132,
+      "sha256": "431711c85d90dd76042102e8e4138afd2380ae641dacd97ff649ab0cd581945c",
+      "sourceSha256": "431711c85d90dd76042102e8e4138afd2380ae641dacd97ff649ab0cd581945c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/qi-changfeng/candidate-1.mp3",
+      "preview": "/api/voice/qi-changfeng/intro",
+      "thumb": "/api/voice/qi-changfeng/intro",
+      "previewUrl": "/api/voice/qi-changfeng/intro",
+      "durationSec": 20.8,
+      "transcript": {
+        "text": "我叫祁长风，兰州人，四十二。话不多，见谅。在西北跑了十几年长途货车，一个人开夜路，习惯了安静。我觉得我适合演那种不说话的人，比如守夜的人、送信的人，或者一个藏着过去的男人。"
+      }
+    }
+  ]
+}

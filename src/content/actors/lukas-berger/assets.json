@@ -1,0 +1,61 @@
+{
+  "slug": "lukas-berger",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 818528,
+      "sha256": "26935392eb09fc88b5ab31426ac65b0cbec2e1ff3ae16c47a51827289255c21e",
+      "sourceSha256": "26935392eb09fc88b5ab31426ac65b0cbec2e1ff3ae16c47a51827289255c21e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "lukas-berger/CC-044.png",
+      "preview": "/media/assets/lukas-berger/turnaround.front.webp",
+      "large": "/media/assets/lukas-berger/turnaround.front.large.webp",
+      "thumb": "/media/assets/lukas-berger/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRi4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJcAAAABgCMAEMHmYmvKrgckH8ia1UmNyW5XW6tt29bmzXa7mjf17g8RMQEAAKJkP/AuRDtn/bs3crAfC6y68PMwwJQiItqooX9BqnwPcc9BDc4iLsZRoxuIyxlU7hpiVxrVdX7wcpVPhT5PbT06KVjuGNgEtquxepUba8k+4oYHE164+tEQFDPls3Y0UYLOPtl3DGXIMUFEjQgAAFZQOCBwAAAA0AMAnQEqDAAVAD8BbK1PKyYkIjAIAWAgCWMAAEq3KT5BzW9rZWNAAO81b87QiZ4RmRIlO1UjGkg1tgC3HdpZPR5oGyHAIPAHYqQHuJBegT2xLuDXR/VHPWdhmF/BGf9ZeoNRj5/hpel9n/nQsRxAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 231828,
+      "sha256": "cd9a5453459f571d8ba1ca16e7fec8b62b67fd488e782cbf075eb60b202cb804",
+      "sourceSha256": "cd9a5453459f571d8ba1ca16e7fec8b62b67fd488e782cbf075eb60b202cb804",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/lukas-berger/candidate-1.mp3",
+      "preview": "/api/voice/lukas-berger/intro",
+      "thumb": "/api/voice/lukas-berger/intro",
+      "previewUrl": "/api/voice/lukas-berger/intro",
+      "durationSec": 19.1,
+      "transcript": {
+        "text": "Hi... I'm Lukas Berger, twenty-two, from Innsbruck. I teach snowboarding in winter and sleep most of the summer. People think I'm always tired. I'm not, I'm just relaxed. I'd like to play the dreamy younger brother, the stoner roommate, or the boy who's secretly brave."
+      }
+    }
+  ]
+}

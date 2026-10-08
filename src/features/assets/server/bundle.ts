@@ -27,6 +27,6 @@ export default privateApi("POST", async (req, res, modes) => {
   const selected = slots.map((slot) => delivered.find((item) => item.slot === slot));
   if (selected.some((item) => !item)) throw new HttpError(404, "asset-not-found");
   res.status(200).json({
-    items: await Promise.all(selected.map((item) => signedAsset(actor.code, item!, modes.store))),
+    items: await Promise.all(selected.map((item) => signedAsset(actor.slug, item!, modes.store))),
   });
 });

@@ -1,0 +1,61 @@
+{
+  "slug": "owen-pryce",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1290607,
+      "sha256": "d99d76d7fb378f1dc0b816c056fcf2c365274635d66d533b8c1f0050182c7485",
+      "sourceSha256": "d99d76d7fb378f1dc0b816c056fcf2c365274635d66d533b8c1f0050182c7485",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "owen-pryce/CC-049.png",
+      "preview": "/media/assets/owen-pryce/turnaround.front.webp",
+      "large": "/media/assets/owen-pryce/turnaround.front.large.webp",
+      "thumb": "/media/assets/owen-pryce/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSK0AAAABgGLb2rLl/u5uuLtbY5GIrH8CjIAZkN0azZ1KdHenukt2l5ve55tDREwAAFRsdUJTv0vWaUR+yW4N4wM5JNl7v8i/CZfSQLEBgOFWutQBusdP5eNJD6TySrlkBlD0t6gs/OYC4cM1ZfPQAwTfn5X3Ny+g77jj2wvv6nUAsMv5eS5AHGRDC7ukAUZrOCBNMlrJFWmK1Qm8kNa+bbonyX50Csw9xinlA1VA4XgtAABWUDggcAAAANADAJ0BKgwAFQA/AWqtTqsmJCIwCAFgIAlnAABKswGHlM21l62oAAD+22gAplCxRRoE7c6EUuwN/jqIgvm9EoUwGHeb1ejuDs4DFX7Anh+rYkRnjghnzTVBVZ3OWcR7jd64vIWuu98+ZgKImc7sAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 227076,
+      "sha256": "2fb67072c8e1003b33841d12806d2de579caafbe1f16ce26e3cfe326d31c2bfc",
+      "sourceSha256": "2fb67072c8e1003b33841d12806d2de579caafbe1f16ce26e3cfe326d31c2bfc",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/owen-pryce/candidate-1.mp3",
+      "preview": "/api/voice/owen-pryce/intro",
+      "thumb": "/api/voice/owen-pryce/intro",
+      "previewUrl": "/api/voice/owen-pryce/intro",
+      "durationSec": 18.7,
+      "transcript": {
+        "text": "Hiya, I'm Owen Pryce, thirty-eight, from Swansea in Wales. I teach guitar, I sing in a pub on Fridays, and I make a very serious Sunday roast. People say I give big hugs. I'd love to play the folk singer, the gentle dad, or the friend who always shows up with food."
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "bernice-washington",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1207186,
+      "sha256": "18c07785021b0086ad35344e36daf668ec753d7710fc6a6bcd0b84e3d83fca2d",
+      "sourceSha256": "18c07785021b0086ad35344e36daf668ec753d7710fc6a6bcd0b84e3d83fca2d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bernice-washington/CC-025.png",
+      "preview": "/media/assets/bernice-washington/turnaround.front.webp",
+      "large": "/media/assets/bernice-washington/turnaround.front.large.webp",
+      "thumb": "/media/assets/bernice-washington/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKMAAAABgCJb2/LmmYnMRGUio5iZGUqqPr4baDVzVRXXRRU0MzPtgFvHoJr/Uf/77yEiJgAAQsvDJmhekHNa6+S0VpCvJo22a/KhWwgpVMdVgxQHVDuKcALA8E+xbgAs39KfGYgvSsceoLX2J+xlAX1hj3zhW1gHAGN8neYtxA5uVnknjXLJSRqFLs7qfukXOjmBS7YIVbZjkM1Crd6CFmVcaAgDyDQBAFZQOCBoAAAA0AMAnQEqDAAVAD8BaqxPKyYkIjAIAWAgCUAACVYp4uDtq30yQeBAAP7L+uFNBWrABZ6zgJH61GawqIBfnAero367fZK/cWZbDvVnneXm4PtyMH2dV7ERO14+4eC/UWCzahuf1HBwAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 275028,
+      "sha256": "fbcc7c1bef2003412242343201c38f3f50615ea87c249378c7de9a7ab56c7467",
+      "sourceSha256": "fbcc7c1bef2003412242343201c38f3f50615ea87c249378c7de9a7ab56c7467",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/bernice-washington/candidate-1.mp3",
+      "preview": "/api/voice/bernice-washington/intro",
+      "thumb": "/api/voice/bernice-washington/intro",
+      "previewUrl": "/api/voice/bernice-washington/intro",
+      "durationSec": 22.8,
+      "transcript": {
+        "text": "Hey baby, I'm Bernice Washington, fifty-five, from Atlanta, Georgia. I've led the church choir for twenty years, and I run the best soul food kitchen on my street. I hug everybody, so get ready. Cast me as the mama, the auntie, or the lady who tells you the truth when you need it."
+      }
+    }
+  ]
+}

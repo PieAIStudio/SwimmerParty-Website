@@ -1,0 +1,61 @@
+{
+  "slug": "deng-xiaoshu",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 731636,
+      "sha256": "b13e4bd249c0e154165a42c9887358b3157f599dfff82452471aedf69a0e21e0",
+      "sourceSha256": "b13e4bd249c0e154165a42c9887358b3157f599dfff82452471aedf69a0e21e0",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "deng-xiaoshu/CC-002.png",
+      "preview": "/media/assets/deng-xiaoshu/turnaround.front.webp",
+      "large": "/media/assets/deng-xiaoshu/turnaround.front.large.webp",
+      "thumb": "/media/assets/deng-xiaoshu/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRigBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJsAAAABgFvbtqntfEbk74vUgP/4LwAFsAHbtlGBMtu2GSm3/Wf/t7NzeoiICSAiMnRVaUiMB6KlqJ8Xp0R92SSaWn+eq7RcKgDEck0R4D+DSzoDDmO42nNgPZ+r3gGmc7n8RWAylSv8u/l8yeK8F0u7pzaOprp750nsqy2blmbq066lqdrke6k/L/gijZQGI0bOdZtiRBznS9ApE9OJCABWUDggZgAAANADAJ0BKgwAFQA/AWqtTqsmJCIwCAFgIAlnAABKRrBSGIX2h2qaAADbUvMa3hrBXS1Vf375sDDh651B6MT3v2BT+biuGmSLOJm/Z5QvXhb4rrqDHDtDjEzMvGz+/OlYoMdaDwAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 225348,
+      "sha256": "622a66c0e6c22184da2596d8209ea54059f864009cb788f3b511784d35cb4296",
+      "sourceSha256": "622a66c0e6c22184da2596d8209ea54059f864009cb788f3b511784d35cb4296",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/deng-xiaoshu/candidate-1.mp3",
+      "preview": "/api/voice/deng-xiaoshu/intro",
+      "thumb": "/api/voice/deng-xiaoshu/intro",
+      "previewUrl": "/api/voice/deng-xiaoshu/intro",
+      "durationSec": 18.6,
+      "transcript": {
+        "text": "大家好，我叫邓小树，贵阳的，二十二岁。我妈说我长得跟树一样，又高又细，所以叫小树。我耳朵有点大，小时候老被笑，现在觉得挺好认的。我想演那种笨笨的、但特别真诚的男生。"
+      }
+    }
+  ]
+}

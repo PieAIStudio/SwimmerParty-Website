@@ -6,12 +6,12 @@ import { notFound } from "next/navigation";
 import { SiteHeader } from "@/site/SiteHeader";
 import { SiteFooter } from "@/site/SiteFooter";
 import { AccountProvider } from "@/features/account";
-import { Analytics } from "@vercel/analytics/next";
 import { SITE_UI_STYLE, THEME_INIT_SCRIPT } from "@/site/theme";
 import { LOCALE_HTML_LANG, LOCALE_OG, routing, type AppLocale } from "@/i18n/routing";
 import { SITE } from "@/content/site";
 import { STANCE_LINE } from "@/content/doctrine";
 import { localizedAlternates } from "@/i18n/metadata";
+import { PostHog } from "@/features/analytics";
 // oxlint-disable-next-line no-unassigned-import -- Root stylesheet initialization.
 import "../globals.css";
 
@@ -106,8 +106,8 @@ export default async function LocaleLayout({ children, params }: Props) {
             <SiteHeader />
             <main id="main">{children}</main>
             <SiteFooter />
+            <PostHog />
           </AccountProvider>
-          {process.env.VERCEL_ENV === "production" ? <Analytics /> : null}
         </SiteI18nProvider>
       </body>
     </html>

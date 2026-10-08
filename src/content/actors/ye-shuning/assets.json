@@ -1,0 +1,61 @@
+{
+  "slug": "ye-shuning",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 819370,
+      "sha256": "93b68b6c91e452ba45fbd7a0dfbbfa4b696d98cfd05d5dff14d0418ff6b6e60a",
+      "sourceSha256": "93b68b6c91e452ba45fbd7a0dfbbfa4b696d98cfd05d5dff14d0418ff6b6e60a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ye-shuning/CC-046.png",
+      "preview": "/media/assets/ye-shuning/turnaround.front.webp",
+      "large": "/media/assets/ye-shuning/turnaround.front.large.webp",
+      "thumb": "/media/assets/ye-shuning/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJUAAAAJgFtt2zHpGRuZbaRWA2xgamAzZjbZ9LBIbRv/RGt79/16iIgJAABhaX0BzPpgzsTyQBJgzQAPLDngZmQawKhIxfkAL0Y9cwD3QAWOAM5L6fWAQ0PtWADNLRUWft4jRA2xt4c2NcHeGcbU6/vx+fsTpRUeTb94lI53z5MIKBE+vr8+KQG4a56AEn+vrD2pqM/sdL78DwBWUDggZgAAALADAJ0BKgwAFQA/AWytTysmJCIwCAFgIAlnAMssGRVwIaHn1REgAP0h1TWsplz02WfVWrQMZ2fW2/304QatcYwdRV/q55YIRLSpYjYneEyYWkxnM9625853uAjYAr+TE1cyvugAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 270276,
+      "sha256": "e34d86b53a4149877f53b02dfeb91cdb3706fe125c69e452600719b687ccd43f",
+      "sourceSha256": "e34d86b53a4149877f53b02dfeb91cdb3706fe125c69e452600719b687ccd43f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/ye-shuning/candidate-1.mp3",
+      "preview": "/api/voice/ye-shuning/intro",
+      "thumb": "/api/voice/ye-shuning/intro",
+      "previewUrl": "/api/voice/ye-shuning/intro",
+      "durationSec": 22.3,
+      "transcript": {
+        "text": "你好，我是叶书宁，杭州人，三十四岁。我平时喜欢逛书店、喝茶，朋友说我身上有股安静劲儿。我想演那种看起来温温柔柔，心里有自己主意的女人，比如开书店的老板，或者一个守着秘密的姐姐。"
+      }
+    }
+  ]
+}

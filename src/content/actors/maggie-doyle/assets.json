@@ -1,0 +1,61 @@
+{
+  "slug": "maggie-doyle",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1124749,
+      "sha256": "674091256e14c7e92f158325c1c93ce1a9eebbb09e5324f483ad3ea133a7994a",
+      "sourceSha256": "674091256e14c7e92f158325c1c93ce1a9eebbb09e5324f483ad3ea133a7994a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "maggie-doyle/CC-013.png",
+      "preview": "/media/assets/maggie-doyle/turnaround.front.webp",
+      "large": "/media/assets/maggie-doyle/turnaround.front.large.webp",
+      "thumb": "/media/assets/maggie-doyle/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKMAAAABgGJt2zLlHZ801X3S4BIn4S7RYQlUrSSH6O7u7kQ2QHJ39ye977+HiJgAIqKIhSoNKc4BEUrV+LYpGU/31QqFR8B5sWC4BoArPfNDdLK8z3/g7yeLdYF/N7DlF3Y5wJae2OEU27pnb0PMOYCHa8ybGZXhYBQtJMZhthy1UipGg1iXgpi340iKxYDq8lcvuFBDvTAJgZ9SKvj1CgmVGjK05hIBAFZQOCB4AAAA0AMAnQEqDAAVAD8BaqxPKyWkIjAIAWAgCWwAnQAU6f0zE2vngktAAPnrYt72rSd8SZtbXfNNLjEhlwWqgWxkQtBdP1YjwV7bOpyqXQtkx+tO0lMWuvlyUCMX+rqeJipYGP9L5s7DrSjMb6mHeBt044eFAOGAqWAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 251268,
+      "sha256": "bb5491140af9485216bc9db56cdfd200b6abfa6bf46043077121a4ae01d1483a",
+      "sourceSha256": "bb5491140af9485216bc9db56cdfd200b6abfa6bf46043077121a4ae01d1483a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/maggie-doyle/candidate-1.mp3",
+      "preview": "/api/voice/maggie-doyle/intro",
+      "thumb": "/api/voice/maggie-doyle/intro",
+      "previewUrl": "/api/voice/maggie-doyle/intro",
+      "durationSec": 20.7,
+      "transcript": {
+        "text": "Well hello there, I'm Maggie Doyle, forty-seven, from Cork. I ran a pub for twelve years, so there's no story I haven't heard twice. I laugh loud and I talk fast, sorry about that. Cast me as the landlady, the nosy aunt, or the mum who knows everything."
+      }
+    }
+  ]
+}

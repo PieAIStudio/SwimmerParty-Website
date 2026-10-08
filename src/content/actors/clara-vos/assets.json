@@ -1,0 +1,61 @@
+{
+  "slug": "clara-vos",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 920311,
+      "sha256": "566587d728b4ef4be399eabcb49a2b7f2a514c627d53cadb2eae00580a859a4f",
+      "sourceSha256": "566587d728b4ef4be399eabcb49a2b7f2a514c627d53cadb2eae00580a859a4f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "clara-vos/CC-003.png",
+      "preview": "/media/assets/clara-vos/turnaround.front.webp",
+      "large": "/media/assets/clara-vos/turnaround.front.large.webp",
+      "thumb": "/media/assets/clara-vos/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRhoBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJEAAAAJgJtt27Hn+m3bqGJukCoDpGbLBVRlCJdp2aVklwFs23aeZ4eImACA4tDyAGpHQ2+Z9gFZzQx1SrYRmjJScwlUt0u3b/D+IHnnYckt1VdBpFoy+CH1IX1YP778j1IF+ydUSz2cbzAozV3c7DArsfeyik8xsEKp8hg/Ja3c2E6JKTsvZ7chZePse9KtBCcYL7gAAFZQOCBiAAAAkAMAnQEqDAAVAD8Baq1OqyYkIjAIAWAgCWUAAEqOsphbbZnOUAD+cQkbSrHZkCO44psyc5W2O97DQivrQwsHhpxc7DTMUYPVf/HEsOv6I5qHJJIDM/Kplxi151rhIMhYqAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 190788,
+      "sha256": "16aa2fda4e58e2802e1f689c3669a5a2da4247fdd45208577ee58ab4d4ac78dd",
+      "sourceSha256": "16aa2fda4e58e2802e1f689c3669a5a2da4247fdd45208577ee58ab4d4ac78dd",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/clara-vos/candidate-1.mp3",
+      "preview": "/api/voice/clara-vos/intro",
+      "thumb": "/api/voice/clara-vos/intro",
+      "previewUrl": "/api/voice/clara-vos/intro",
+      "durationSec": 15.7,
+      "transcript": {
+        "text": "Hi! I'm Clara Vos, I'm twenty-five, and I'm from Rotterdam. Yes, there's a gap in my teeth, and no, I'm not fixing it. I grew up on a bike, in the rain, arguing with my brothers. Give me the friend who says the thing everyone else is thinking."
+      }
+    }
+  ]
+}

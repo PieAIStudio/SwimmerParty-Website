@@ -1,0 +1,61 @@
+{
+  "slug": "du-shouren",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 934952,
+      "sha256": "00156bb92c9f7cf7f302f54b243b9c521babbf9184c6e0ef7a77a94e84ff3bb7",
+      "sourceSha256": "00156bb92c9f7cf7f302f54b243b9c521babbf9184c6e0ef7a77a94e84ff3bb7",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/CC-087.png",
+      "preview": "/media/assets/du-shouren/turnaround.front.webp",
+      "large": "/media/assets/du-shouren/turnaround.front.large.webp",
+      "thumb": "/media/assets/du-shouren/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRioBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKAAAAABgGNt2zHnHdssZwncglp3U5kLmOniRbDLSZWWtW3btpOn+r5vDxExAUREynqGxE38Z0QtQE7kud6wCRTp072UgtcFAO0cyQFzIGGMZ1/A14GekTztADs3xMrm3oDbaY58EAD6OdZ1/PxjU8VQCftHyBJX9jUxDg2PDoa6oRLcDjSgFxz31OARbPXE4BUsDUcR5NlPOty/DZ45oiJfiIgAVlA4IGQAAACwAwCdASoMABUAPwFsrU8rJiQiMAgBYCAJZwAASpNqYy9ZyWYDQAD+naDN/XOAaCYf7gEFXZfqs88hbMImsTNCxH3gUZVQkw+kds5J/xN3oWImpAOxouCFp5R7HZtPw0AuwAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 338100,
+      "sha256": "80102d46239572fbe16ed9dc7035c5bbb1ef806a07cdbccc3bad5c3c125824b0",
+      "sourceSha256": "80102d46239572fbe16ed9dc7035c5bbb1ef806a07cdbccc3bad5c3c125824b0",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/du-shouren/candidate-1.mp3",
+      "preview": "/api/voice/du-shouren/intro",
+      "thumb": "/api/voice/du-shouren/intro",
+      "previewUrl": "/api/voice/du-shouren/intro",
+      "durationSec": 28,
+      "transcript": {
+        "text": "我叫杜守仁，洛阳人，七十二了。家里三代都是开中药铺的，我从小闻着药香长大。说话慢，你们莫嫌弃。我适合演老大夫、老先生，或者在关键时候点醒年轻人的那个老人。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "bao-mancang",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1021063,
+      "sha256": "e1a0cf4187881d650a53166adab176ce95c948344198c8c18d889fbc90acf754",
+      "sourceSha256": "e1a0cf4187881d650a53166adab176ce95c948344198c8c18d889fbc90acf754",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-mancang/CC-007.png",
+      "preview": "/media/assets/bao-mancang/turnaround.front.webp",
+      "large": "/media/assets/bao-mancang/turnaround.front.large.webp",
+      "thumb": "/media/assets/bao-mancang/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ4AAAABgKJt27Hp+e0/aVyVvALbtr0CJkVbzZ5JturUydNsz52e59tDREwAEZE60knKzXjzV5oGSpRS/7/9FJztnz/dXoLlBgBu7SwHYhFr+WJfbWxki+2NsLUZtrnIxjpZTy/ruWRXHSxtH49vuEhklI39E+SSGIHeQURI8SgtRZpUiqxkNEo1iAhApZSKYMdvkzT4qqfrC70QHUTkTDQQAVZQOCBwAAAAkAMAnQEqDAAVAD8Baq1PKyYkIjAIAWAgCWcAAEgYSis8BuaWeAD+ueHEkEg1Qoi83KhDvTbk5UxN6krqglG0xZ/e+ofCKlNf6XkJZ5QokjM71Z2rId+q9qUN+1Ynbt6XDx0vMmYm6aeR9aZcgAAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 252996,
+      "sha256": "b9b59f78d7511dc54cc8a3afd1ee7dcc0e2f81004b40e61a6cf936a5ea332519",
+      "sourceSha256": "b9b59f78d7511dc54cc8a3afd1ee7dcc0e2f81004b40e61a6cf936a5ea332519",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/bao-mancang/candidate-1.mp3",
+      "preview": "/api/voice/bao-mancang/intro",
+      "thumb": "/api/voice/bao-mancang/intro",
+      "previewUrl": "/api/voice/bao-mancang/intro",
+      "durationSec": 20.9,
+      "transcript": {
+        "text": "嘿，各位好，我叫包满仓，天津卫的，三十三了。这名儿是我爷爷起的，说是粮仓满满不愁吃。您看我这脑门儿，越来越亮了，省电。我打小听相声长大，演个嘴贫的、演个老实人吃亏的，都行！"
+      }
+    }
+  ]
+}

@@ -268,9 +268,7 @@ export function AssetSelectionProvider({
           <GameToast tone={notice === "failed" ? "danger" : "info"}>
             {notice === "cooldown" ? (
               <>
-                <p>
-                  {t("assets.guestCooldown", { seconds: GUEST_DOWNLOAD_WINDOW_SECONDS, remaining })}
-                </p>
+                <p>{t("assets.guestCooldown", { seconds: remaining })}</p>
                 <GameButton onClick={focusInviteFromCooldown}>{t("assets.signIn")}</GameButton>
               </>
             ) : (

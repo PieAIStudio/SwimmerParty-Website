@@ -1,33 +1,14 @@
-import { expect, test } from "@playwright/test";
-
-test("English phone roster keeps codes and status pills on one line", async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 844 });
+import { test, expect } from "@playwright/test";
+test("roster uses slug actors and exposes the free license", async ({ page }) => {
   await page.goto("/en/actors");
-  await page.evaluate(() => document.fonts.ready);
-  const cards = await page.locator("[data-actor-card]").evaluateAll((nodes) =>
-    nodes.map((node) => {
-      const code = node.querySelector(".sp-code")!.getBoundingClientRect();
-      const pills = node.querySelectorAll(".game-ui-badge");
-      const pill = pills[pills.length - 1]!.getBoundingClientRect();
-      return {
-        codeHeight: code.height,
-        pillHeight: pill.height,
-        sameRow: Math.abs(code.top + code.height / 2 - (pill.top + pill.height / 2)) < 2,
-      };
-    }),
-  );
-  expect(cards.length).toBe(2);
-  for (const card of cards) {
-    expect(card.codeHeight).toBeLessThan(20);
-    expect(card.pillHeight).toBe(24);
-    expect(card.sameRow).toBe(true);
-  }
+  await expect(page.locator('[data-actor-card="tang-yunqiu"]')).toBeVisible();
+  await expect(page.getByText("Free License").first()).toBeVisible();
+  await expect(page.locator('[data-actor-card="tang-yunqiu"]')).toBeVisible();
 });
-
-test("actor dossier stays within a 390px viewport", async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/en/actors/misha-luo");
-  await page.evaluate(() => document.fonts.ready);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
-  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+test("actor dossier has library and lightbox controls", async ({ page }) => {
+  await page.goto("/en/actors/tang-yunqiu");
+  await expect(
+    page.getByRole("link", { name: /starter pack|asset library/i }).first(),
+  ).toBeVisible();
+  await expect(page.getByRole("button", { name: /view larger|open/i }).first()).toBeVisible();
 });

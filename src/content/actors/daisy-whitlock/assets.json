@@ -1,0 +1,61 @@
+{
+  "slug": "daisy-whitlock",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1016123,
+      "sha256": "a582d334ecd6e853e4217c518671ce5e70772e960c9491ea616aeea0ed9be521",
+      "sourceSha256": "a582d334ecd6e853e4217c518671ce5e70772e960c9491ea616aeea0ed9be521",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "daisy-whitlock/CC-053.png",
+      "preview": "/media/assets/daisy-whitlock/turnaround.front.webp",
+      "large": "/media/assets/daisy-whitlock/turnaround.front.large.webp",
+      "thumb": "/media/assets/daisy-whitlock/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKMAAAABgGLb1vLmhRWpZACRiWf0DGVmZubOAFUVtxItuXruAJiZ4ar3MoeImAAiIsvYqIoyLgO9GUzvwJlC0ux8v/aS7N74+FlxSCcAcCjowf90zP5/AfzAysq/foF/5LKmewD4rGQdl+yqjrW9spcGpp7B5S2mtYzqsbmLIhKzMDWPkNSB2kEUSMNI16NaGoQ3iQap7d9sQ67Uu0d02iaFPUT+OBEBAFZQOCB6AAAAMAQAnQEqDAAVAD8BaKxOqyWkIjAIAWAgCWYAuwGL1qxuO1EhrtBDAiPKAPu8gADKsJP4CFB6+1ADcFGFJcS007oMNCDCHjG3vbHr3x8JmRBDd7NE6/fyVxf1Ym26mTKbiUmbJN++txAMEvIunQTamUxKPz+94oOAAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 227940,
+      "sha256": "46f7d25b715edffecd632cf618c215109428c01f065a845217077e9b6c47e252",
+      "sourceSha256": "46f7d25b715edffecd632cf618c215109428c01f065a845217077e9b6c47e252",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/daisy-whitlock/candidate-1.mp3",
+      "preview": "/api/voice/daisy-whitlock/intro",
+      "thumb": "/api/voice/daisy-whitlock/intro",
+      "previewUrl": "/api/voice/daisy-whitlock/intro",
+      "durationSec": 18.8,
+      "transcript": {
+        "text": "Hiya! I'm Daisy Whitlock, thirty-one, from Leeds. I work in a cake shop, which explains a lot, honestly. People tell me I'm the kind of person you'd tell a secret to on a bus. I'd love to play the best friend, the clumsy one, the one who falls in love too fast."
+      }
+    }
+  ]
+}

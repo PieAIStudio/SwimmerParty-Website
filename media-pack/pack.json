@@ -33,7 +33,8 @@
     "cast/SP-13.json",
     "cast/SP-03.json",
     "actors/zhang-qiang.json",
-    "actors/chen-wei.json"
+    "actors/chen-wei.json",
+    "actors/tommy-brannigan.json"
   ],
   "works": [
     "works/journey-to-the-east.json"

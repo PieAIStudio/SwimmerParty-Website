@@ -1,0 +1,61 @@
+{
+  "slug": "yu-fugen",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1111220,
+      "sha256": "1da2fd8c157c42cd3556f0d23a8762ab4b909c9037179aa79ef496091337f194",
+      "sourceSha256": "1da2fd8c157c42cd3556f0d23a8762ab4b909c9037179aa79ef496091337f194",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yu-fugen/CC-037.png",
+      "preview": "/media/assets/yu-fugen/turnaround.front.webp",
+      "large": "/media/assets/yu-fugen/turnaround.front.large.webp",
+      "thumb": "/media/assets/yu-fugen/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRj4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ8AAAABgLJt2/lX+vM3ZnuLtp28attmXNuxaDUjMS1aydsXUGb6607P84uICSAi8p5u0ZDiCTCgdAvsKU0B9QrOExbLpLt0BACnQpiNIZyl2OyAw5bBSt7ZVxFrugOA+ypWuc32S1nHG/soYyHz+P/Glg+jBDxeoYDEQByvIkMKw+Io8qUYzDSgSkrDQDrapXA0JqFFWkOGwbEtqOuyiPK61UQAVlA4IHgAAABwAwCdASoMABUAPwFqrU8rJiQiMAgBYCAJZQDCgAuIhluxrmgA9yQWQZUnCnIAnSTpoOlUd7wJEdBgSBIJAensOhRvJbMjBfyUcNPPtzqbGvdCpGoBf8udvtNZE4PXvjGqZ9vK++Y8cxexUpLIlsn9A7Y+AAxoAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 313044,
+      "sha256": "9fef2c64316ed90177bec99be83d56792a4748fe84c2a28df9347c38b89136ca",
+      "sourceSha256": "9fef2c64316ed90177bec99be83d56792a4748fe84c2a28df9347c38b89136ca",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/yu-fugen/candidate-1.mp3",
+      "preview": "/api/voice/yu-fugen/intro",
+      "thumb": "/api/voice/yu-fugen/intro",
+      "previewUrl": "/api/voice/yu-fugen/intro",
+      "durationSec": 25.9,
+      "transcript": {
+        "text": "我叫余福根，宁波人，七十岁了。年轻时候是跑船的，去过好多港口。现在呢，每天早上要喝一碗汤圆。我讲话慢，但故事多，你们要听，我能讲三天三夜。演爷爷、演老船长，我觉得蛮合适的。"
+      }
+    }
+  ]
+}

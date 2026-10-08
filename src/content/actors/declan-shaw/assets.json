@@ -1,0 +1,61 @@
+{
+  "slug": "declan-shaw",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 982010,
+      "sha256": "cbbe5e4c2906a5545668f96419eb3f4c9c11359fd68162812e3a7016425528ef",
+      "sourceSha256": "cbbe5e4c2906a5545668f96419eb3f4c9c11359fd68162812e3a7016425528ef",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "declan-shaw/CC-079.png",
+      "preview": "/media/assets/declan-shaw/turnaround.front.webp",
+      "large": "/media/assets/declan-shaw/turnaround.front.large.webp",
+      "thumb": "/media/assets/declan-shaw/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKUAAAABgLpt2/FX//MzZ7UdS0tbstvS4n55zbZtJdtbNfuOJduKtnGn531/ETEBREThg14kH0arFRYUWRGEJXeRqvMX+K4RBIB/aVm0AD4sfhPAyVUk6xn4B7ZnC1hnA4DrzExWEw/gPyqGVY7jHZiNZR4pWNlDti0jNww3I4LEtzUWhEneGzwRI3kcdEKR5GiC3loky8O0OiayOS2hlgOzwLvUSHYNfkQAVlA4IGQAAACQAwCdASoMABUAPwFqrE6rJiQiMAgBYCAJZQAASnnqfIPEdaIgAP6e6eCVISe2rR4eJrrFWzkjcjC56fh2JT+bkCkAOttJtQILL0oWjlV2rlk9lnEa+P07cnXcPF7+BlGWAAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 221028,
+      "sha256": "801db4faf811de2e0996a5a1665e01a320ca282d09c8d662fdc05f5ebd2f7f1f",
+      "sourceSha256": "801db4faf811de2e0996a5a1665e01a320ca282d09c8d662fdc05f5ebd2f7f1f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/declan-shaw/candidate-1.mp3",
+      "preview": "/api/voice/declan-shaw/intro",
+      "thumb": "/api/voice/declan-shaw/intro",
+      "previewUrl": "/api/voice/declan-shaw/intro",
+      "durationSec": 18.2,
+      "transcript": {
+        "text": "How's it going, I'm Declan Shaw, thirty-three, from Dublin. I played rugby until my knee said no, and now I coach the under-twelves. My smile goes a bit sideways, my mam says it's how you know I'm lying. I'd love to play the charmer, the firefighter, or the guy next door."
+      }
+    }
+  ]
+}

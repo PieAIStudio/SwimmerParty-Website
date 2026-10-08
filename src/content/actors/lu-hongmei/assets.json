@@ -1,0 +1,61 @@
+{
+  "slug": "lu-hongmei",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1236919,
+      "sha256": "0f73221ac570efb41adfb2158dfbf2a9618eac8ec71a1730d85a269967efc9a2",
+      "sourceSha256": "0f73221ac570efb41adfb2158dfbf2a9618eac8ec71a1730d85a269967efc9a2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "lu-hongmei/CC-091.png",
+      "preview": "/media/assets/lu-hongmei/turnaround.front.webp",
+      "large": "/media/assets/lu-hongmei/turnaround.front.large.webp",
+      "thumb": "/media/assets/lu-hongmei/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ0AAAAJgFzb2rHn/Lb9x04KSClZKcDJMDWoAtvpwxx9Gdm27ecpIiImACDQbGvbQ29vrBlAz6+EcrMWMoPZpj3ew55F8U35obRXqYoCVBSLGNISEy+v4scl8s3iu1iYN8WOT9iLRTomugzerjgeFlMTXBnMrQoMLlZ4Qr3mY4VS7RnnGmXaA5a1l7BFObl0v8/Zc5TozxYL5CvZk010tRcBAFZQOCBuAAAA0AMAnQEqDAAVAD8Baq1PKyYkIjAIAWAgCWcAAFVNMYHABBiNxrYwAP6l9z6Jqoz+7DHeIM3BXmJ8JLdV1JiW6WPXPg02njDbZYLNBxwFftDg33Pa/DSx58f45s7oZBh1LD9Ve8sK4mS7bgAAAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 290580,
+      "sha256": "8fdf404e5b497d1be1d574ff8b1c6d2e98925af06486b44c2f4444a3745d90d9",
+      "sourceSha256": "8fdf404e5b497d1be1d574ff8b1c6d2e98925af06486b44c2f4444a3745d90d9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/lu-hongmei/candidate-1.mp3",
+      "preview": "/api/voice/lu-hongmei/intro",
+      "thumb": "/api/voice/lu-hongmei/intro",
+      "previewUrl": "/api/voice/lu-hongmei/intro",
+      "durationSec": 24,
+      "transcript": {
+        "text": "俺叫鲁红梅，济南人，五十二了。下巴这道小疤，是年轻时候在厂里干活碰的。俺这个人实在，说话直，干活快。演工人、演食堂大姐、演一个人撑起一个家的妈，俺心里有数。"
+      }
+    }
+  ]
+}

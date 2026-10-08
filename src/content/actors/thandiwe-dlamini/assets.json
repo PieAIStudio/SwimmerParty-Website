@@ -1,0 +1,61 @@
+{
+  "slug": "thandiwe-dlamini",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1228742,
+      "sha256": "7974d6227454d960ab01c14a4ae42845cebe929ec76dac22484837ed3a0e5d20",
+      "sourceSha256": "7974d6227454d960ab01c14a4ae42845cebe929ec76dac22484837ed3a0e5d20",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "thandiwe-dlamini/CC-085.png",
+      "preview": "/media/assets/thandiwe-dlamini/turnaround.front.webp",
+      "large": "/media/assets/thandiwe-dlamini/turnaround.front.large.webp",
+      "thumb": "/media/assets/thandiwe-dlamini/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjwBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ8AAAABgKJt27Hp/m0O2qzAMxULMPPkyVONxGbbrLatxmpbd3qfbw8RMQEAEFad54TsuyNrNCJJjmrohshYrbj7uwSz1EeS20YlnGKqkiXlKp3SjHIi/F8pK6/K7zoAy+mvwks/oG+75PsT78qNADDLuUkuQpxgYRknpCNmZHNGumZoMvcE9/+3OYbHgulrAaaHMyHsJwdo/IhSQlJ1gC4+GAAAVlA4IHYAAAAQBACdASoMABUAPwFqrE8rJiQiMAgBYCAJZQCdABu108aCDBncaru78AD+zuYVLLL3+gklP2q2D1K1m6ALi8Gvs/+uYDZCWiaEcXn9pCaKfQtFnYgt4hCqhYOouPM8878neEAn+ujodZ+kbWD9V9tVcSggwQAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 283668,
+      "sha256": "edb2d83374ce50e21cc2dee96c6624e48690084a7c866dfca31a9588a316a28e",
+      "sourceSha256": "edb2d83374ce50e21cc2dee96c6624e48690084a7c866dfca31a9588a316a28e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/thandiwe-dlamini/candidate-1.mp3",
+      "preview": "/api/voice/thandiwe-dlamini/intro",
+      "thumb": "/api/voice/thandiwe-dlamini/intro",
+      "previewUrl": "/api/voice/thandiwe-dlamini/intro",
+      "durationSec": 23.4,
+      "transcript": {
+        "text": "Sawubona, hello! I'm Thandiwe Dlamini, fifty-nine, from Johannesburg. I was a school principal for twenty-five years, so I can quiet a room with one look. But I laugh easily, I promise. I'd love to play a principal, a grandmother, or a woman who leads her whole community."
+      }
+    }
+  ]
+}

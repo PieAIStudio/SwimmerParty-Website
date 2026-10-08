@@ -3,13 +3,10 @@ import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { ACTORS } from "@/content/actors";
 import { WORKS, WORK_STATUS_LABEL } from "@/content/works";
-import { SITE } from "@/content/site";
 import { PageIntro } from "@/site/PageIntro";
-import { TextLink } from "@/site/TextLink";
 import { Link } from "@/i18n/navigation";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
 import { localizedAlternates } from "@/i18n/metadata";
-
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -31,45 +28,54 @@ export default async function WorksPage({ params }: Props) {
         eyebrow={t("works.eyebrow")}
         lines={[t("works.heroLines.0"), t("works.heroLines.1")]}
       >
-        {t("works.intro", { year: SITE.founded })}
+        {t("works.intro")}
       </PageIntro>
-      <section className="sp-section grid gap-6 lg:grid-cols-2" aria-label={t("works.slateTitle")}>
-        {WORKS.map((work) => (
-          <article key={work.code} className="sp-card bg-card">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <span className="sp-code text-muted-foreground">{work.code}</span>
-              <GameBadge tone={work.status === "shooting" ? "success" : "neutral"}>
-                {WORK_STATUS_LABEL[work.status][locale]}
-              </GameBadge>
-            </div>
-            <h2 className="sp-subtitle mt-5">{work.title[locale]}</h2>
-            <p className="sp-small mt-2 text-muted-foreground">{work.format[locale]}</p>
-            <p className="mt-6">{work.logline[locale]}</p>
-            <div className="sp-small mt-6 flex flex-wrap gap-3">
-              <span className="text-muted-foreground">{t("works.cast")}</span>
-              {work.cast.map((credit) => {
-                const actor = ACTORS.find((person) => person.code === credit.actor);
-                return actor ? (
-                  <Link
-                    key={credit.actor}
-                    href={`/actors/${actor.slug}`}
-                    className="font-semibold hover:underline underline-offset-4"
-                  >
-                    {locale === "zh" ? actor.nameCn : actor.nameEn}
-                    {credit.role
-                      ? ` ${locale === "zh" ? "饰" : "as"} ${credit.role.name[locale]}`
-                      : ""}
-                  </Link>
-                ) : null;
-              })}
-            </div>
-          </article>
-        ))}
+      <section className="sp-section">
+        <h2 className="sp-title">{t("works.ourProductions")}</h2>
+        <div className="mt-8 grid gap-6 lg:grid-cols-2">
+          {WORKS.map((work) => (
+            <Link
+              data-card
+              key={work.slug}
+              href={`/works/${work.slug}`}
+              className="sp-card block bg-card hover:bg-muted"
+            >
+              <div className="flex items-center justify-between">
+                <span className="sp-code">{work.code}</span>
+                <GameBadge tone="neutral">{WORK_STATUS_LABEL[work.status][locale]}</GameBadge>
+              </div>
+              <h2 className="sp-subtitle mt-5">{work.title[locale]}</h2>
+              <p className="sp-small mt-2 text-muted-foreground">{work.format[locale]}</p>
+              <p className="mt-6">{work.logline[locale]}</p>
+              <p className="sp-small mt-6">
+                <span className="text-muted-foreground">{t("works.starring")} </span>
+                {work.cast.map((credit, index) => {
+                  const actor = ACTORS.find((a) => a.slug === credit.actor);
+                  return actor ? (
+                    <span key={credit.actor}>
+                      {index ? " · " : ""}
+                      {locale === "zh" ? actor.nameCn : actor.nameEn}
+                      {credit.role
+                        ? ` ${locale === "zh" ? "饰" : "as"} ${credit.role.name[locale]}`
+                        : ""}
+                    </span>
+                  ) : null;
+                })}
+              </p>
+            </Link>
+          ))}
+        </div>
       </section>
-      <p className="sp-lead">{t("works.outro")}</p>
-      <TextLink href="/casting" className="mt-4">
-        {t("works.outroCta")}
-      </TextLink>
+      <section className="sp-section">
+        <h2 className="sp-title">{t("works.madeByYou")}</h2>
+        <p className="sp-lead mt-6">{t("works.emptyFan")}</p>
+        <a
+          className="sp-link mt-6"
+          href={`mailto:pieai@hotmail.com?subject=${encodeURIComponent("[FAN WORK] SWIMMER PARTY")}`}
+        >
+          {t("works.submit")}
+        </a>
+      </section>
     </div>
   );
 }

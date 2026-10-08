@@ -1,0 +1,61 @@
+{
+  "slug": "gemma-conti",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 898357,
+      "sha256": "beb2e0951bd841b4d23da8213f4263b609c3be7f1b4477482790a9fb25aaeed8",
+      "sourceSha256": "beb2e0951bd841b4d23da8213f4263b609c3be7f1b4477482790a9fb25aaeed8",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "gemma-conti/CC-023.png",
+      "preview": "/media/assets/gemma-conti/turnaround.front.webp",
+      "large": "/media/assets/gemma-conti/turnaround.front.large.webp",
+      "thumb": "/media/assets/gemma-conti/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRi4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJgAAAABgKJt27Hp+e2/2d0a26i2Pcmq01gnzzQtwBuwkSaZybjb8+4hIiaAiKhsb05Owj382UWTgFuU8LBjEJnWlkyC8Dfw7eNaAaCea7gGbmq52RPgeI5bfQOeV7hFAFjgzvB6hyuuFPvbqOJ0WJmHl6PX6T5YOPn/SC4yBBjwoZKjzy7tf7/gpYAuJ7iUdztN7aoZb5hIVW4kAlZQOCBwAAAA8AMAnQEqDAAVAD8BaqxPKyYkIjAIAWAgCUAToAN1IqzgJ4OkMwYckAD9Idcp+xyhZFtS3VkSBQ9dIKbIQS8TakzUFBaQiaK9KfCiEbaHEIgv4d0BDT5RTO0/12MwGhC3nZ511uiEwJ7AD27LaAAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 238308,
+      "sha256": "5134acaf50a3fee3a0654e3a9db64c0e65c94908448c559bbd3a5a53b92128bb",
+      "sourceSha256": "5134acaf50a3fee3a0654e3a9db64c0e65c94908448c559bbd3a5a53b92128bb",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/gemma-conti/candidate-1.mp3",
+      "preview": "/api/voice/gemma-conti/intro",
+      "thumb": "/api/voice/gemma-conti/intro",
+      "previewUrl": "/api/voice/gemma-conti/intro",
+      "durationSec": 19.7,
+      "transcript": {
+        "text": "Ciao! I'm Gemma Conti, twenty-two, from Naples. My family says I talk with my hands, my face, my whole body, and they're right. I grew up above my nonna's bakery. I want to play someone loud, warm, a little dramatic, and always the first one to cry at weddings."
+      }
+    }
+  ]
+}

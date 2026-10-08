@@ -1,0 +1,61 @@
+{
+  "slug": "xia-zhiyao",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 903250,
+      "sha256": "eb97dba5dece537cbe044c31212f3053af560306e263d7537ba5be783629573e",
+      "sourceSha256": "eb97dba5dece537cbe044c31212f3053af560306e263d7537ba5be783629573e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xia-zhiyao/CC-071.png",
+      "preview": "/media/assets/xia-zhiyao/turnaround.front.webp",
+      "large": "/media/assets/xia-zhiyao/turnaround.front.large.webp",
+      "thumb": "/media/assets/xia-zhiyao/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiYBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJgAAAABgGNt2/HojducdKxSpfMCNCyNSiuw7ZklmJXRsbZt2/bTve8eImICiIjMQ5kktwFeQX8FNAi6R6BciARwZuDiACCN878DP+Fc2AgwFcXl7AJHZVzNNXBTzxX+/f+hgmv8v9pEN2d8XeyFg6PT8SpYhLX+FBiFuR4fIoXpSRvShckdzXeX0HNLq9NC1jg17Cq55CSyjtqJAFZQOCBoAAAA0AMAnQEqDAAVAD8BaKxOqyWkIjAIAWAgCWcAAEqVuOfdICcreG9AAP4xQLRm1bbX5TyVMyImS6btZHjtk/KKh+32ckL4mUYjNnv3r2zk6Ds+GGEQn/AR/w8tMOVF60OcEn2IKRvAAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 215844,
+      "sha256": "b4202f216d8db3a983f8d2daa41709fb46306558af2f62785596271c3eec25bb",
+      "sourceSha256": "b4202f216d8db3a983f8d2daa41709fb46306558af2f62785596271c3eec25bb",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/xia-zhiyao/candidate-1.mp3",
+      "preview": "/api/voice/xia-zhiyao/intro",
+      "thumb": "/api/voice/xia-zhiyao/intro",
+      "previewUrl": "/api/voice/xia-zhiyao/intro",
+      "durationSec": 17.8,
+      "transcript": {
+        "text": "我叫夏知遥，厦门人，二十九岁。我左边眉毛比右边高一点，所以总有人问我是不是在怀疑他。其实我只是在发呆。我喜欢海，也喜欢有点奇怪的故事。如果有悬疑片，我很想演那个知道真相的人。"
+      }
+    }
+  ]
+}

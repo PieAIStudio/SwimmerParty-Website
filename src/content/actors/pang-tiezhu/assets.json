@@ -1,0 +1,61 @@
+{
+  "slug": "pang-tiezhu",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1201460,
+      "sha256": "565bbdd673b27ac2fcf139d1b5c1298de2b4c088ba15d045c7f2e206366f7c61",
+      "sourceSha256": "565bbdd673b27ac2fcf139d1b5c1298de2b4c088ba15d045c7f2e206366f7c61",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "pang-tiezhu/CC-057.png",
+      "preview": "/media/assets/pang-tiezhu/turnaround.front.webp",
+      "large": "/media/assets/pang-tiezhu/turnaround.front.large.webp",
+      "thumb": "/media/assets/pang-tiezhu/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRj4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKMAAAABgGLb2rLl/v5Xaf5DIsEIXJMOguzukByS0/5IcneaQ3NI7u7c9DzfHCJiAgAgbqYYxvV89RhV8NtrFPvzkqQ5Iz8kl10in2qxmNDmxPy5uFwFYHmbFJPvJsDx1yMGBHaqRc0mABwviL11UbXGm0duFwi0cmSKnVALWVXLMq2BuVls0bqZEs9hrZkJIS5rXYy2fG8rtsUfM/bP3CJmKA9IjGQCAFZQOCB0AAAA0AMAnQEqDAAVAD8Baq1PKyYkIjAIAWAgCWgAuwAbpno7u6s4S84AAP5xm6yoRsclK2T3ZcafiB8jNqMGlI4lqd/nkeVOY+V3scWrYMrkBdTMsVhH1lL1jaogGup4/C4C5idfT61+TDUOWYwlTVQzS9aqAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 312180,
+      "sha256": "1e2cb426df7799d65a027c76cbf0edf8cb9bb67a7d47865c4691954c367ffc03",
+      "sourceSha256": "1e2cb426df7799d65a027c76cbf0edf8cb9bb67a7d47865c4691954c367ffc03",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/pang-tiezhu/candidate-1.mp3",
+      "preview": "/api/voice/pang-tiezhu/intro",
+      "thumb": "/api/voice/pang-tiezhu/intro",
+      "previewUrl": "/api/voice/pang-tiezhu/intro",
+      "durationSec": 25.8,
+      "transcript": {
+        "text": "我叫庞铁柱，唐山的，五十七了。名字土，人也实在。在钢厂干了三十年，力气大。我这颗门牙是年轻时候打球磕的，就不修了，留个纪念。演工人、演老实人、演倔老头，我都能演出那股劲儿。"
+      }
+    }
+  ]
+}

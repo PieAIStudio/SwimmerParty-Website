@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "slug": "tommy-brannigan",
+  "kind": "actor",
+  "name": {
+    "zh": "汤米·布兰尼根",
+    "en": "Tommy Brannigan"
+  },
+  "status": {
+    "siteProfile": "src/content/actors/tommy-brannigan/profile.ts",
+    "delivered": 2,
+    "published": false,
+    "version": "0.1.0",
+    "preparedOn": "2026-10-08"
+  },
+  "facts": {
+    "zh": [
+      "英国利物浦男性，41 岁",
+      "矮壮，约 167 cm",
+      "方脑袋和方下巴",
+      "很短的深棕色寸头",
+      "宽而扁的拳击手鼻子",
+      "眉骨厚，眼睛小而深，笑时眼角会起皱"
+    ],
+    "en": [
+      "White English man from Liverpool, about 41",
+      "Short and stocky, about 167 cm",
+      "Square head and square jaw",
+      "Very short dark-brown buzz cut",
+      "Broad flattened boxer's nose",
+      "Heavy brow and small deep-set eyes that crinkle when he smiles"
+    ]
+  },
+  "identity": "The same fictional white man as the reference: about 41 years old, short and stocky, about 167 cm, realistic adult proportions around 7 heads tall; a heavy, powerful build with broad shoulders, a thick neck and muscular forearms; no oversized head and no shortened legs. Signature features: a square head and square jaw, a very short dark-brown buzz cut, a broad flattened boxer's nose, a heavy brow, small deep-set eyes that crinkle when he smiles. Keep these features recognizable in every angle, expression and wardrobe. Do not make him a generic tough guy or an average face.",
+  "stylization": "Character stylization (A2, pushed): 3D feature-animation human with realistic adult body proportions at about 7–7.25 heads tall for a 160–170 cm adult — crown-to-chin about 23–24 cm at ~167 cm, normal head size, natural neck, torso, pelvis and leg lengths; no elongated legs or shortened torso. Face: an ordinary, specific white English adult of Liverpool appearance with distinctive, imperfect signature features and visibly simplified animated facial planes — slightly enlarged expressive eye shapes, softened cheek/nose/lip forms, and gentle exaggeration from life; never a live-action portrait, idealized model face or photographic facial detail. CG rendering: smooth simplified skin shading with soft subsurface scattering and no pores; hair sculpted into clean grouped clumps. Clothing, fabrics and accessories: realistic materials, true-to-life fit and detail, clean and unbranded. Unmistakably feature-animation CG at first glance; never photoreal.",
+  "styleOrder": "Use style/aesthetic.md verbatim, then style/character-rules.md, then the approved actor identity block.",
+  "proportions": {
+    "headsTall": 7,
+    "heightCm": 167,
+    "heightNote": "Identity and proportions are fixed by the 2026-10-08 Tommy Brannigan production brief.",
+    "headHeightCmAt175": "23–24",
+    "proportionGuide": "Use natural adult proportions: crown-to-chin about 23–24 cm at 167 cm, pelvis near the body midpoint, normal neck and torso, and natural leg length."
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/claude-casting-2026-10-07/final/CC-029.png",
+    "body": "library/claude-casting-2026-10-07/final/CC-029.png"
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "heather-grey plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos.",
+      "note": "Identity pack outfit. Use this outfit for turnaround, face, expression, pose and detail series."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "zh": "个人风格",
+        "en": "Personal style"
+      },
+      "prompt": "Personal style: a faded red zip-up track jacket worn open over a plain white crew-neck T-shirt; grey cotton joggers; scuffed black trainers; no logos, no text. His own short dark-brown buzz cut.",
+      "note": "个人风格：褪色红色拉链运动夹克敞穿，内搭素白圆领 T 恤；灰色棉质慢跑裤；有磨痕的黑色运动鞋；无 logo、无文字。保留本人短深棕色寸头。"
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "owner-confirmed",
+    "appearance": "Owner-confirmed; see identity and facts.",
+    "roleLook": null,
+    "phase": "actor-identity-locked",
+    "note": "The actor identity and personal style are fixed by the 2026-10-08 production brief. No role costume is included in this pack; casting options remain trainer, bouncer or dad until a work assigns one.",
+    "signatureFeatures": [
+      "方脑袋和方下巴",
+      "宽而扁的拳击手鼻子",
+      "很短的深棕色寸头"
+    ]
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": null,
+      "note": "Create one dedicated character chat for the image batches in the Pics-A project; use the CC-029 identity anchor first."
+    }
+  }
+}

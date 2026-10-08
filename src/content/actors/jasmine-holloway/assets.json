@@ -1,0 +1,61 @@
+{
+  "slug": "jasmine-holloway",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1033532,
+      "sha256": "7891a294188fe9f89cd375a0a5b59ad8de46f35f310507cf97f3359467ff89a6",
+      "sourceSha256": "7891a294188fe9f89cd375a0a5b59ad8de46f35f310507cf97f3359467ff89a6",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "jasmine-holloway/CC-075.png",
+      "preview": "/media/assets/jasmine-holloway/turnaround.front.webp",
+      "large": "/media/assets/jasmine-holloway/turnaround.front.large.webp",
+      "thumb": "/media/assets/jasmine-holloway/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRigBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJsAAAABgGLb2rLl/jaCf/1VkycG4JocMskiyYZApv4J1+aW3V2auzucxPPNISImQJKKp+ezZKc+4cJvdQJkWy3Ad9yKHf6x6rP6AAqs0R+g1Bobh80662ITTjOG++QPHnsN/yrApBE94vqOU9c/VbIyTLNM7+94E/WWnrrSdDi8TehmxuFhQctXDgdbyhCwxrdVS9zq6laQMqsqLjW1SwBWUDggZgAAAHADAJ0BKgwAFQA/AWqsTysmJCIwCAFgIAlAAAlXXip41vbmQAD+hKDVQLdnqh4VZDLJRINjQSemsee8g2XbdW1W0f2yPXZHWVft1sadaLlHSklPjvfSjrCAVtIDwpwexBVhW+gAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 270708,
+      "sha256": "08e7f1b5afdcf745b4a2edcffa55fbeed8f5693b0c16afbc57ff88c7a21e0c72",
+      "sourceSha256": "08e7f1b5afdcf745b4a2edcffa55fbeed8f5693b0c16afbc57ff88c7a21e0c72",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/jasmine-holloway/candidate-1.mp3",
+      "preview": "/api/voice/jasmine-holloway/intro",
+      "thumb": "/api/voice/jasmine-holloway/intro",
+      "previewUrl": "/api/voice/jasmine-holloway/intro",
+      "durationSec": 22.4,
+      "transcript": {
+        "text": "Hiya, I'm Jasmine Holloway, twenty-five, from South London. I'm a hairdresser, so I know everyone's gossip before they do. I'm small, but trust me, I'm the loudest person at the party. I'd love to play the cheeky best friend, the girl with a plan, or the boss of the whole crew."
+      }
+    }
+  ]
+}

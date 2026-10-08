@@ -1,0 +1,61 @@
+{
+  "slug": "freja-mortensen",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 974250,
+      "sha256": "afe3769234266bf8bb0697d0d7435509b15d3138850edfa2eb57cb09ea154304",
+      "sourceSha256": "afe3769234266bf8bb0697d0d7435509b15d3138850edfa2eb57cb09ea154304",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "freja-mortensen/CC-098.png",
+      "preview": "/media/assets/freja-mortensen/turnaround.front.webp",
+      "large": "/media/assets/freja-mortensen/turnaround.front.large.webp",
+      "thumb": "/media/assets/freja-mortensen/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKQAAAABgJtt27Hn+WM7GcG2URmV3bm1bWeAbOAM4M62bTvvXT3vlxkiYgKIiMzHC0k5GqfqSvq7q/9wmF60VmgCgFqJ6pbdqJj63wvwITRZ4PsJcPjpx7I/AOAvixWssp00Vn0LATxls9BZ3F1hy4dRPOYG0UlSf4yVoEXmiP4ADMgC0GWIGZk7euhmX2Yi+mjiS01iKMqoAVYSPxFHYXCTpRBp1SUQAVZQOCBqAAAAsAMAnQEqDAAVAD8BaqxPKyYkIjAIAWAgCWYAA+QJrTvo7VzLAAAA/nFif9UVKIZhtwp2DliHcTY8NICeKkxoO5nM/HbI/cHk6noWjGI+sOb2XnMbvVEbRWyJyUHhVuZPmEEXizvMdSAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 235284,
+      "sha256": "c13a652c8c5c81f4df0045526bdafad434c9c87be8aa118eaf06d509ceac6742",
+      "sourceSha256": "c13a652c8c5c81f4df0045526bdafad434c9c87be8aa118eaf06d509ceac6742",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/freja-mortensen/candidate-1.mp3",
+      "preview": "/api/voice/freja-mortensen/intro",
+      "thumb": "/api/voice/freja-mortensen/intro",
+      "previewUrl": "/api/voice/freja-mortensen/intro",
+      "durationSec": 19.4,
+      "transcript": {
+        "text": "Hej! I'm Freja Mortensen, thirty, from Aarhus in Denmark. I played handball for the national youth team, so I'm strong, loud, and very competitive at board games. I'd love to play a firefighter, a Viking, or the friend who carries everyone home after a party."
+      }
+    }
+  ]
+}

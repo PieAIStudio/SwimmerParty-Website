@@ -1,0 +1,61 @@
+{
+  "slug": "henri-dubois",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 977103,
+      "sha256": "8c6da72d20123ed5b1743a9301ceac2d1ea884c77396c5be15553af5ee75b0db",
+      "sourceSha256": "8c6da72d20123ed5b1743a9301ceac2d1ea884c77396c5be15553af5ee75b0db",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "henri-dubois/CC-039.png",
+      "preview": "/media/assets/henri-dubois/turnaround.front.webp",
+      "large": "/media/assets/henri-dubois/turnaround.front.large.webp",
+      "thumb": "/media/assets/henri-dubois/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKcAAAABgKpt//nn87ftf7KmxmZ2xuWdwZrt7QTMtuit/dtsm8l80/f7PYeImAAiotBUvYaECaBINAzkiVxrJySUFO0eFUl43QDQw1E+M09KxvT6AXy8mRnvxQnwchBgstbegL/5PCbWCgA96UzSHPCL+WzGt4ardSSSGAp/rMwik/jXo+0wCR77a+EXPAzVIE1wMliOAsFOdxxlvJzPOitGJJz8ahnlNxmJAABWUDggdgAAANADAJ0BKgwAFQA/AWqsTysmJCIwCAFgIAlmAJ0AG7NgcRRApOMeAAD+FKvHn97JUme7ULEWugnK5zDAZN4X0P1oCKo9GVp9wIbYsa6zbn6WUUOpZIAl/fSOCeueXqJ6s/JaJ9t+OHfCwzDV3tjFgkMTBlTl9AA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 351924,
+      "sha256": "707b977ade4b959202fefb7eae0f5fe89643a910932308648c6a3d11df400f9c",
+      "sourceSha256": "707b977ade4b959202fefb7eae0f5fe89643a910932308648c6a3d11df400f9c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/henri-dubois/candidate-1.mp3",
+      "preview": "/api/voice/henri-dubois/intro",
+      "thumb": "/api/voice/henri-dubois/intro",
+      "previewUrl": "/api/voice/henri-dubois/intro",
+      "durationSec": 29.1,
+      "transcript": {
+        "text": "Bonjour. I am Henri Dubois, seventy-three, from Bordeaux. I made wine for fifty years, and I am still not satisfied with any of it. My grandchildren say I am impossible to please. They are correct. I would play a grumpy grandfather, a strict teacher, or a very old detective."
+      }
+    }
+  ]
+}

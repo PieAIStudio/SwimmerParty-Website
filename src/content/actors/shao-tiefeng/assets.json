@@ -1,0 +1,61 @@
+{
+  "slug": "shao-tiefeng",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1052136,
+      "sha256": "98ffa209391b266a20c8aef0c465c86ae142781596862dd62a140ba4c8e88a8a",
+      "sourceSha256": "98ffa209391b266a20c8aef0c465c86ae142781596862dd62a140ba4c8e88a8a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "shao-tiefeng/CC-077.png",
+      "preview": "/media/assets/shao-tiefeng/turnaround.front.webp",
+      "large": "/media/assets/shao-tiefeng/turnaround.front.large.webp",
+      "thumb": "/media/assets/shao-tiefeng/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKAAAAABgKJt27Hp+Y3x7IBdzbaZrGRPs9O/hrGVbNbptm3d6Xm+PUTEBBAR2fT025FiJJCgVAiEKJl/1kkxcw/YiRKc/gHgQcfyIPqyonMA77fRrH8awPNEK5uxAECXhQ2XsdIGNrGMX2C3hWUMY+cSc96MstE9giISfdFah0zJG7XBqJdC0eiOQckfNY5YktxQSUebUibSqf/MSmjIMJPXWCoRVlA4IGoAAADwAwCdASoMABUAPwFqrE6rJiQiMAgBYCAJZwDG9Bu1aRQAr9MlTQ7WAP659TWt402ojHDwb4RJh/k/6rlbpAOfy9o27iE+1F6XYp3wDryOhnMvRDWsvGJ7LaleoBS59PvOP9RYeAHgAAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 301380,
+      "sha256": "5d174a400ccea4fa7b86e4b73fef4ecaca3a0ab8189fb4a1590c3adb52df3ce7",
+      "sourceSha256": "5d174a400ccea4fa7b86e4b73fef4ecaca3a0ab8189fb4a1590c3adb52df3ce7",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/shao-tiefeng/candidate-1.mp3",
+      "preview": "/api/voice/shao-tiefeng/intro",
+      "thumb": "/api/voice/shao-tiefeng/intro",
+      "previewUrl": "/api/voice/shao-tiefeng/intro",
+      "durationSec": 24.9,
+      "transcript": {
+        "text": "我叫邵铁峰，哈尔滨的，四十八。鼻子是年轻时候练拳歪的，眉毛这道疤是冬天摔的。看着凶，其实我挺爱养花的。我适合演出租车司机、保安队长、老工人，或者一个刀子嘴豆腐心的老哥。"
+      }
+    }
+  ]
+}

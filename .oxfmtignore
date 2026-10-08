@@ -14,3 +14,5 @@ docs/governance
 tools
 
 src/i18n/message-contracts.ts
+# Active plan and copy sources are authored source text; preserve exact wording.
+docs/plans/active

@@ -1,0 +1,61 @@
+{
+  "slug": "folake-adeyemi",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1032785,
+      "sha256": "01127529b3a21eeb27c8fdee2c141a3e26494898fa6c19d3b4c6af71e533b244",
+      "sourceSha256": "01127529b3a21eeb27c8fdee2c141a3e26494898fa6c19d3b4c6af71e533b244",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "folake-adeyemi/CC-015.png",
+      "preview": "/media/assets/folake-adeyemi/turnaround.front.webp",
+      "large": "/media/assets/folake-adeyemi/turnaround.front.large.webp",
+      "thumb": "/media/assets/folake-adeyemi/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjoBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKcAAAABgGpr27Hp+W20P/3tjxzbtm1Pm2p0JqtPMk7AM81OZrLu9D7fOUTEBBARGedXrSQZDvhL2d9eNFK261mzRMcX8JPL3QPAEqPEP/C/z9j/94DTN6NQ+PoN/PyFCY13APCUJXRdCPfNQusVfoDNasE4ifV3VMsE6sXQCUKJ7UPZEpzcGjwziOKOYJ1AIvdyTcOIYxS/c9SJIMbxWUs+iGZCWzQkb0wlIgBWUDggbAAAANADAJ0BKgwAFQA/AWisTqslpCIwCAFgIAllAABDvzAwNq7aL90WAADvmP0eWTQt00m3Tn06KRhuY2TgFAsNviapO/uvZYYWdoA14XtaVi32TlOKXQ1z9hmjx5scT/dqQDu9Yf3c7Ap6KScwAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 223188,
+      "sha256": "cd8b7d98d8ef956d7973e8a82e2722f8914726e3554d0db492d8cd4f757f72d1",
+      "sourceSha256": "cd8b7d98d8ef956d7973e8a82e2722f8914726e3554d0db492d8cd4f757f72d1",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/folake-adeyemi/candidate-1.mp3",
+      "preview": "/api/voice/folake-adeyemi/intro",
+      "thumb": "/api/voice/folake-adeyemi/intro",
+      "previewUrl": "/api/voice/folake-adeyemi/intro",
+      "durationSec": 18.4,
+      "transcript": {
+        "text": "Good afternoon, I'm Folake Adeyemi, thirty-eight, from Lagos. I run my own event company, which means I am always calm and always in control, even when I'm not. I love a strong woman on screen. Give me a CEO, a lawyer, or a mother who will fight the whole world for her children."
+      }
+    }
+  ]
+}

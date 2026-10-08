@@ -1,0 +1,61 @@
+{
+  "slug": "tess-callahan",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1032056,
+      "sha256": "60f02ecdb36c2036937b01130ebde0326357fa9691236e924d060c287960c655",
+      "sourceSha256": "60f02ecdb36c2036937b01130ebde0326357fa9691236e924d060c287960c655",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "tess-callahan/CC-088.png",
+      "preview": "/media/assets/tess-callahan/turnaround.front.webp",
+      "large": "/media/assets/tess-callahan/turnaround.front.large.webp",
+      "thumb": "/media/assets/tess-callahan/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKUAAAABgGPb2rHn+V39f2tbqdGydzKEpLIHkAzCdmezsp10tp3c6n3eOUTEBBARqZrnvSRNBMpl0RckyfTbKJEUPAN3KdwRAHRyO5/Abw+jOB8EFpcY99kNcPKsFcKbAP7HDUL8KgAs+IS0S5w84iZB0BViqgONKoGMGMhDLbGKnzYnGiW/HXS6y9H7LE3/arjrQ6pHHLd0SvlI54ZmyYYcRlseJEVNHREAVlA4IGYAAACwAwCdASoMABUAPwFqrU8rJiQiMAgBYCAJQAAJVm6k3bmzODf6AAD+FSLoo9qxigtSssa5S22mK1hDWc1GdJuA2djHtkhGoLxKzhBzMPP4wE9Du/zVndR08slxBX6TtPL+f08AAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 202884,
+      "sha256": "d94199f50fd41647867537df3e09ba0cdf6fd10842cc00780ab82e3cbfb3447f",
+      "sourceSha256": "d94199f50fd41647867537df3e09ba0cdf6fd10842cc00780ab82e3cbfb3447f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/tess-callahan/candidate-1.mp3",
+      "preview": "/api/voice/tess-callahan/intro",
+      "thumb": "/api/voice/tess-callahan/intro",
+      "previewUrl": "/api/voice/tess-callahan/intro",
+      "durationSec": 16.7,
+      "transcript": {
+        "text": "Hey! I'm Tess Callahan, forty-five, from San Diego. I've taught surfing for twenty years, so I've got the tan and the wrinkles to prove it. I'm calm in big waves and terrible at sitting still. I'd love to play a coach, a lifeguard, or a mom who still skates to work."
+      }
+    }
+  ]
+}

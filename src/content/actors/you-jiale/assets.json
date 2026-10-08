@@ -1,0 +1,61 @@
+{
+  "slug": "you-jiale",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 868780,
+      "sha256": "b76427ce4f355f1d4524bd98f7a61d6a67fb9284a31929f22de1125dda9af08c",
+      "sourceSha256": "b76427ce4f355f1d4524bd98f7a61d6a67fb9284a31929f22de1125dda9af08c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "you-jiale/CC-072.png",
+      "preview": "/media/assets/you-jiale/turnaround.front.webp",
+      "large": "/media/assets/you-jiale/turnaround.front.large.webp",
+      "thumb": "/media/assets/you-jiale/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjgBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJoAAAABgLJt2/lX+PNXdfw3+xvY//+2ZCRGL66tMbuq296Skx1tb3fa80TEBBARmdoqSB4E8qQWICAZlzdJVCT3rks0XC0AdHNT/065gQPgaI7bGAWG97mVKWBxg+s6Bq7aueW3t+fveS74u7WODEe3I/2fSuG8tfGexNva4l+18FqTA6NwXR781Qln+eZvLVf4GzF+NnNWl4IsfiICVlA4IHgAAABwAwCdASoMABUAPwForE6rJaQiMAgBYCAJZgC7AAMYCHZqGQAAyL+htt2Gcg8ValpmqQO8Vug90rqnhcquZ/MxlQTw4PRsgWq35lmCNC2v7HF0X5lwf3wSE/sBxIvajaG7kMqMwwGI2GB9BIIo2rzpFZSvTUUQAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 216708,
+      "sha256": "4e92f7e61c6b16f0a595317a2e53d3a5f69aa54909f19ab15e8bec0150dcc18a",
+      "sourceSha256": "4e92f7e61c6b16f0a595317a2e53d3a5f69aa54909f19ab15e8bec0150dcc18a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/you-jiale/candidate-1.mp3",
+      "preview": "/api/voice/you-jiale/intro",
+      "thumb": "/api/voice/you-jiale/intro",
+      "previewUrl": "/api/voice/you-jiale/intro",
+      "durationSec": 17.9,
+      "transcript": {
+        "text": "嗨嗨，我是尤嘉乐，南宁的，二十四岁。我笑的时候只有一边嘴角动，朋友说我笑得很欠揍，哈哈。这个卷是我妈带我去烫的。我想演那种搞笑的室友、机灵的小跟班，或者一不小心成了主角的普通人。"
+      }
+    }
+  ]
+}

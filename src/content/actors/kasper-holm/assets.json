@@ -1,0 +1,61 @@
+{
+  "slug": "kasper-holm",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1176723,
+      "sha256": "81f1829ed5fa429243b7ded6134079de68c9c6543e25d52c987cadf03701b6a6",
+      "sourceSha256": "81f1829ed5fa429243b7ded6134079de68c9c6543e25d52c987cadf03701b6a6",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kasper-holm/CC-064.png",
+      "preview": "/media/assets/kasper-holm/turnaround.front.webp",
+      "large": "/media/assets/kasper-holm/turnaround.front.large.webp",
+      "thumb": "/media/assets/kasper-holm/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRlwBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKwAAAABgGLb2rLl/u5/cku4W9dIJzEBd5JDcocJkNwhW/sb7gNwd7vpeb85RMQEAEDcYrcJmlNkvlYzmakV/ftPUpm6nsivCbtopLJL7Khi4vxL/FwCcH7tir1vF5DENbHMeCB40i9GjrxA6HZabNx5AHdskzdX3N+xATCPcGWac0bIKnaWcxLKepalcVHVx1IPj1VtLMbFq1nRwjws/bqFY4s+9LBcpIyV6ODvHNYBVlA4IIoAAADwAwCdASoMABUAPwForE6rJiQiMAgBYCAJagCsAYssbDzGt9TSR7GgAPcqU6ZUY/DT3pDbmUzhHKTSRXH+wdZHY2wdsGMtMA3w/UbfEGZjxG43t0HPyXUrReD/lGm8bx7kat3Zwr65LPEvqpoeXV7cdt3uyqPdBz4CVkzvq+7l8FS8/9LoEs+bwAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 227940,
+      "sha256": "4a3f7f5178fab3962826f97f4bb0ea3e2783e3dc135b9b2669b316620d678269",
+      "sourceSha256": "4a3f7f5178fab3962826f97f4bb0ea3e2783e3dc135b9b2669b316620d678269",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/kasper-holm/candidate-1.mp3",
+      "preview": "/api/voice/kasper-holm/intro",
+      "thumb": "/api/voice/kasper-holm/intro",
+      "previewUrl": "/api/voice/kasper-holm/intro",
+      "durationSec": 18.8,
+      "transcript": {
+        "text": "Hej, I'm Kasper Holm, twenty-six, from Copenhagen. I'm a baker. I start work at four in the morning, so if I look sleepy, that's why. I'm big, but I'm very gentle, ask anyone. I'd like to play the lovable giant, the loyal best friend, or the guy who's terrible at flirting."
+      }
+    }
+  ]
+}

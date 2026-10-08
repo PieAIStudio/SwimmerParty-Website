@@ -1,0 +1,61 @@
+{
+  "slug": "yaw-owusu",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 893239,
+      "sha256": "ae20e4f350c1a2cba320ac545175b8abbd9d12a7c6c7012578ad068c4fc82275",
+      "sourceSha256": "ae20e4f350c1a2cba320ac545175b8abbd9d12a7c6c7012578ad068c4fc82275",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yaw-owusu/CC-010.png",
+      "preview": "/media/assets/yaw-owusu/turnaround.front.webp",
+      "large": "/media/assets/yaw-owusu/turnaround.front.large.webp",
+      "thumb": "/media/assets/yaw-owusu/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJwAAAABgCoAtLHn/H+y0f83sF7ir2hMatbsuKWl/XFG3aJt27Z10s55h4iYAAAAcWudCFjj75+JMz1cqTgYCQArz72ueZkqREQ71fkvRDUuIc55qOE+xJ4WanQIsb+DqppB7K2iypu7r2Nlqv1gaOm0khIdtA2sCiiYyNeNArsZDR5xN4ngt5D5ivhQw1z6LX86yvBulv+6qWCtGJIFAABWUDggYgAAABAEAJ0BKgwAFQA/AWisTqslpCIwCAFgIAlnAABe7wj/7WjfI3/V/P8AAP5xvaUWbSi7pZ5f5hQIVKkJ/ig9iFoizYBgTqtiq+QGJ3N2uuDFsGUgKBg/6uaeYXOjgae1AAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 230532,
+      "sha256": "bd7fa1ac90124bfba3415db8119b89a79c4896212ebdb014ab92dedb91765a86",
+      "sourceSha256": "bd7fa1ac90124bfba3415db8119b89a79c4896212ebdb014ab92dedb91765a86",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/yaw-owusu/candidate-1.mp3",
+      "preview": "/api/voice/yaw-owusu/intro",
+      "thumb": "/api/voice/yaw-owusu/intro",
+      "previewUrl": "/api/voice/yaw-owusu/intro",
+      "durationSec": 19,
+      "transcript": {
+        "text": "Hello, I'm Yaw Owusu, twenty-six, from Kumasi in Ghana. I'm an engineer, but on weekends I play drums at weddings. My ears are big, my mother says it's because I listen well. I'd like to play the kind young man, the inventor, or the guy who's quietly in love with his neighbour."
+      }
+    }
+  ]
+}

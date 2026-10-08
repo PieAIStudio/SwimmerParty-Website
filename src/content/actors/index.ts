@@ -21,13 +21,22 @@ const newFaces: Actor[] = NEW_FACE_DATA.map((entry) => ({
     row("age", "Age", "年龄", String(entry.age), `${entry.age} 岁`),
     row("height", "Height", "身高", `${entry.heightCm} cm`, `${entry.heightCm} cm`),
     row("origin", "From", "籍贯", entry.origin.en, entry.origin.zh),
-    row("language", "Speaks", "语言", entry.voice.language === "en" ? "English" : "Chinese", entry.voice.language === "en" ? "英语" : "中文"),
+    row(
+      "language",
+      "Speaks",
+      "语言",
+      entry.voice.language === "en" ? "English" : "Chinese",
+      entry.voice.language === "en" ? "英语" : "中文",
+    ),
   ],
   note: entry.tagline,
   promptSeed: null,
   version: "0.1.0",
   versionDate: "2026-10-08",
-  versionNote: { en: "New face: one full-body casting photo and a self-introduction.", zh: "新面孔：一张全身试镜照、一段自我介绍。" },
+  versionNote: {
+    en: "New face: one full-body casting photo and a self-introduction.",
+    zh: "新面孔：一张全身试镜照、一段自我介绍。",
+  },
   voiceLanguage: entry.voice.language,
   assetSource: entry.image,
 }));
@@ -39,5 +48,12 @@ export const STATUS_LABEL: Record<ActorStatus, L> = {
   "in-development": { en: "In development", zh: "制作中" },
   concept: { en: "Concept", zh: "概念" },
 };
-export function getActor(slug: string): Actor | undefined { return ACTORS.find((actor) => actor.slug === slug); }
-export function latestActors(limit = 5): Actor[] { return ACTORS.filter((actor) => actor.versionDate).slice().sort((a,b)=>(b.versionDate??"").localeCompare(a.versionDate??"")).slice(0,limit); }
+export function getActor(slug: string): Actor | undefined {
+  return ACTORS.find((actor) => actor.slug === slug);
+}
+export function latestActors(limit = 5): Actor[] {
+  return ACTORS.filter((actor) => actor.versionDate)
+    .slice()
+    .sort((a, b) => (b.versionDate ?? "").localeCompare(a.versionDate ?? ""))
+    .slice(0, limit);
+}

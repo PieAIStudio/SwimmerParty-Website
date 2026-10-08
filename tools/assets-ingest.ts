@@ -216,6 +216,7 @@ async function prepare(
   };
   const sha256 = createHash("sha256").update(corrected).digest("hex");
   const item: AssetItem = {
+    kind: "image",
     slot: slot.slot,
     series: series.id,
     key,
@@ -327,7 +328,7 @@ if (isMain(import.meta.url)) {
       const codes = args.filter((arg) => !arg.startsWith("--"));
       if (flags.has("--all"))
         codes.push(
-          ...(await import("../src/content/actors/index.ts")).ACTORS.map((actor) => actor.code),
+          ...(await import("../src/content/actors/index.ts")).ACTORS.map((actor) => actor.slug),
         );
       if (
         !codes.length ||

@@ -1,0 +1,61 @@
+{
+  "slug": "samuel-oduya",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1192887,
+      "sha256": "c80f876d66cdfd44df44798e1317c318d697347f41fd5e7f6be9385dcc9738e0",
+      "sourceSha256": "c80f876d66cdfd44df44798e1317c318d697347f41fd5e7f6be9385dcc9738e0",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "samuel-oduya/CC-090.png",
+      "preview": "/media/assets/samuel-oduya/turnaround.front.webp",
+      "large": "/media/assets/samuel-oduya/turnaround.front.large.webp",
+      "thumb": "/media/assets/samuel-oduya/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKMAAAABgGLb1vLmhZk8ycSxJ5V4lJkCl5mZmUFxqxltVDV3BIxXve+fQ0RMABGRfnRKT5JZIC2VA7xSlp8TkoxXgcOgwPMHAM9q1gJhkjW9A/j5TrCBGwBvp3m2fQQA20NsuZ+VO9nKFtsZYMPneHlFtZ5pG3BxhUE5ozDmelAioRvdMTSLnJi2Y1+k+liTv96K6O6c9p9lAtvzOpXgFISaHOTaLBEBAFZQOCBoAAAAkAMAnQEqDAAVAD8BaqxOqyYkIjAIAWAgCWUAAFqgVj5tBAGvQAD+uUkKObqzTawIQqz394AZ8bRPD+xjDnXcLQUd5haKeeCtbH7TyKjt8u45lgfX5Ob416HJQ2ypUxpd9iobtsKwAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 318228,
+      "sha256": "c5e249707148b2e315c5eb05b74c5ab634930da7d72210d7fdc6ece848f4a536",
+      "sourceSha256": "c5e249707148b2e315c5eb05b74c5ab634930da7d72210d7fdc6ece848f4a536",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/samuel-oduya/candidate-1.mp3",
+      "preview": "/api/voice/samuel-oduya/intro",
+      "thumb": "/api/voice/samuel-oduya/intro",
+      "previewUrl": "/api/voice/samuel-oduya/intro",
+      "durationSec": 26.3,
+      "transcript": {
+        "text": "Hello, my friends. I'm Samuel Oduya, fifty-eight, from Kisumu by Lake Victoria. I've been a fisherman, a radio host, and now an actor. I like to take my time, with stories and with people. I'd love to play a wise father, a village chief, or an old man who remembers everything."
+      }
+    }
+  ]
+}

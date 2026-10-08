@@ -1,0 +1,61 @@
+{
+  "slug": "gus-abernathy",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1212412,
+      "sha256": "2f42190008c33fa9ef892215eca9275cdb334c9f36440cf9144e8991d23f3b2f",
+      "sourceSha256": "2f42190008c33fa9ef892215eca9275cdb334c9f36440cf9144e8991d23f3b2f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "gus-abernathy/CC-084.png",
+      "preview": "/media/assets/gus-abernathy/turnaround.front.webp",
+      "large": "/media/assets/gus-abernathy/turnaround.front.large.webp",
+      "thumb": "/media/assets/gus-abernathy/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRlABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSK0AAAABgGPb2rHn/mZp/3+cVOyclBmAMQBbtVWZPaoMwE7nVLZa81bv+80hIiYAAGzdBVCe5F+C0gZZrDRHxiikfpOLuZKMX5L8zxG2KN1VAdZb2aUZMLxeCw8fJiCOB8IJYwHvwZKwsecAQjebwuGzF/Cf7vDvjQ8nDgCR4zxd46IbYgUXejgPaTln8rgsq+RUBG9kzexWvfxbJSUcwioTBfUsizDIDsFalwbo89vVAABWUDggfAAAABAEAJ0BKgwAFQA/AWqsTysmJCIwCAFgIAliALsBipaIHicfUOEjafgAANlHgLsrQgX7CVXMpHrsHwHvtawpiYXZlmUviDzgGxT/+rdAtZn8DeXcIBV2rfcjU94P4EWbVu2YBU0CGVbHKeYSeExpnpot9tbjqv+0AuIGAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 275028,
+      "sha256": "3036ac51045081989e050ea5d8a02849b77297beabc479aa125f95535173e1a8",
+      "sourceSha256": "3036ac51045081989e050ea5d8a02849b77297beabc479aa125f95535173e1a8",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/gus-abernathy/candidate-1.mp3",
+      "preview": "/api/voice/gus-abernathy/intro",
+      "thumb": "/api/voice/gus-abernathy/intro",
+      "previewUrl": "/api/voice/gus-abernathy/intro",
+      "durationSec": 22.7,
+      "transcript": {
+        "text": "Well howdy, I'm Gus Abernathy. Sixty-nine, from Austin, Texas. I've been playing bass in bars since before most folks were born. Never cut the ponytail, never will. I tell long stories and I don't apologize for it. Cast me as the old rocker, the hippie grandpa, or the wise man at the bar."
+      }
+    }
+  ]
+}

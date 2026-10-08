@@ -5,15 +5,17 @@ import { pathToFileURL } from "node:url";
 import { ACTORS, type Actor } from "../src/content/actors/index.ts";
 
 export function actorByCode(code: string) {
-  const actor = ACTORS.find((item) => item.code === code);
+  const legacySlugs: Record<string, string> = { "SP-03": "misha-luo", "SP-13": "tang-yunqiu", "SP-14": "zhang-qiang", "SP-17": "chen-wei" };
+  const actor = ACTORS.find((item) => item.slug === (legacySlugs[code] ?? code));
   const fixture: Record<string, Actor> = {
     "SP-01": {
       slug: "hu-qian",
-      code: "SP-01",
       nameEn: "HU QIAN",
       nameCn: "胡倩",
       tagline: { en: "Fixture", zh: "夹具" },
       status: "in-development",
+      gender: "male",
+      age: 0,
       portrait: null,
       spec: [],
       note: { en: "Fixture", zh: "夹具" },
@@ -21,11 +23,12 @@ export function actorByCode(code: string) {
     },
     "SP-02": {
       slug: "qi-man",
-      code: "SP-02",
       nameEn: "QI MAN",
       nameCn: "齐满",
       tagline: { en: "Fixture", zh: "夹具" },
       status: "in-development",
+      gender: "male",
+      age: 0,
       portrait: null,
       spec: [],
       note: { en: "Fixture", zh: "夹具" },

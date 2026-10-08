@@ -1,0 +1,61 @@
+{
+  "slug": "liu-manqing",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 852537,
+      "sha256": "cb1bc24057ed877146ebc037416b5c084dc5e89bbcb9f92589a6cf4fb3b29076",
+      "sourceSha256": "cb1bc24057ed877146ebc037416b5c084dc5e89bbcb9f92589a6cf4fb3b29076",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-manqing/CC-026.png",
+      "preview": "/media/assets/liu-manqing/turnaround.front.webp",
+      "large": "/media/assets/liu-manqing/turnaround.front.large.webp",
+      "thumb": "/media/assets/liu-manqing/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJcAAAABgGLb1vLmhSST4mQEOIeoqEQzs2Yso42rY7K1VaSrmZn5uvfNISImgIhItzgmJ+EMEBWdAFuiIVAX6PeBbRMXA4ACF3gHPoJceBfYCXHjp8BRn5t/Am4muTn847/NreHyCQuc+Wv34M3M0cnmygkJD4dTN6LTscqfQvDaicDEKf5rYbg4+WspAAenvPdrYOGcVTml3UQEAFZQOCBkAAAA0AMAnQEqDAAVAD8BaKxOqyWkIjAIAWAgCWcAAEnxM9Q5gUNgq/uAAP658uztYKDmrQ3H6ap+A+6GwdV2q6lsxa3yP3TNjBnJsOc2BMO0Ryv6WaSTn9cPfEsf+WAy5WtlXAAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 251700,
+      "sha256": "a95c6df850a552a4338747bd937860207c0f416d55852be2a0849ec3be72bbaf",
+      "sourceSha256": "a95c6df850a552a4338747bd937860207c0f416d55852be2a0849ec3be72bbaf",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/liu-manqing/candidate-1.mp3",
+      "preview": "/api/voice/liu-manqing/intro",
+      "thumb": "/api/voice/liu-manqing/intro",
+      "previewUrl": "/api/voice/liu-manqing/intro",
+      "durationSec": 20.8,
+      "transcript": {
+        "text": "侬好，我是柳曼青，上海人，三十八岁。很多人第一眼觉得我不好接近，大概是因为这双眼睛吧。其实我挺爱笑的。我适合演精明的职场女性，也可以演看起来厉害、其实很怕孤单的人。"
+      }
+    }
+  ]
+}

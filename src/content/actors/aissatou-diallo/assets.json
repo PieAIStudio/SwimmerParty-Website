@@ -1,0 +1,61 @@
+{
+  "slug": "aissatou-diallo",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 945163,
+      "sha256": "ae5261326820f558df653b7349189873e968f868a1ed716dfe06a0909e2e2509",
+      "sourceSha256": "ae5261326820f558df653b7349189873e968f868a1ed716dfe06a0909e2e2509",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "aissatou-diallo/CC-055.png",
+      "preview": "/media/assets/aissatou-diallo/turnaround.front.webp",
+      "large": "/media/assets/aissatou-diallo/turnaround.front.large.webp",
+      "thumb": "/media/assets/aissatou-diallo/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ0AAAABgGPb2rHn+W20tuIZOBP4q7jOSsk2LUs7qZ3O9hBs286t3uedQ0RMAImlS0GS5gC1sgqgWxbexpzE23OPWw/XAgAt3Lgwys3vACeTjOrtAXh+UAj2JwB4NQm+Y+HIIWRc4/sPtxFBVYedC1QrBIpgYuvPQGwy6odeiU+gvAsmrgwF7dBxCWTXfxCfiVDlviTpTVGwLslvpvCglogAAFZQOCBeAAAA8AMAnQEqDAAVAD8BaKxOqyWkIjAIAWAgCWUAAFqhpFh859MousYqKAD+ueFQEAAgtxYVi2NS5Nzcvd/gY9w9jM/7BSbKUqYcM2nDoHnDmzRwgdiidUkyz83uAAAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 291012,
+      "sha256": "168a63ab471c6c59f4aa1d95e8492d4e512a50cd3a9ee7f94cbf9b1ce3c77766",
+      "sourceSha256": "168a63ab471c6c59f4aa1d95e8492d4e512a50cd3a9ee7f94cbf9b1ce3c77766",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/aissatou-diallo/candidate-1.mp3",
+      "preview": "/api/voice/aissatou-diallo/intro",
+      "thumb": "/api/voice/aissatou-diallo/intro",
+      "previewUrl": "/api/voice/aissatou-diallo/intro",
+      "durationSec": 24.1,
+      "transcript": {
+        "text": "Hello, I'm Aïssatou Diallo, thirty-three, from Dakar in Senegal. I speak French, Wolof, and English, and I mix them all when I'm excited. I design clothes, and I braid my sister's hair every Sunday. I'd love to play a designer, a teacher, or a woman starting her life again."
+      }
+    }
+  ]
+}

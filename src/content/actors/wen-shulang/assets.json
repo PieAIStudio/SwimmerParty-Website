@@ -1,0 +1,61 @@
+{
+  "slug": "wen-shulang",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 985451,
+      "sha256": "149d50a2c7a4d6475f1c99e2e5155ed82cf83f83aa1aca86b3ce56fe948dc5b4",
+      "sourceSha256": "149d50a2c7a4d6475f1c99e2e5155ed82cf83f83aa1aca86b3ce56fe948dc5b4",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wen-shulang/CC-082.png",
+      "preview": "/media/assets/wen-shulang/turnaround.front.webp",
+      "large": "/media/assets/wen-shulang/turnaround.front.large.webp",
+      "thumb": "/media/assets/wen-shulang/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKMAAAABgLJt2/lX+POf7S1azWq2EW0v29YHWFU02vqWbW9pzd6V3vcXERMgImI+uuUlhnHQYeTy8epv5Hm1bW3Q9wzXBZpQ1EeTMqQhTim4Ai5+nJXW5R84vYlQ2maB97Uopbwd+OsPVCp3+IOTAMVnjqMXpiwUSWRpj0DR+jK0iIMukuYeQnQJ1NaTosumJJ4GXTEZ3szoOgmQp10rxTSWIZKznCoCAFZQOCB2AAAA8AMAnQEqDAAVAD8Baq1OqyYkIjAIAWAgCWUAA+QJ7abj0rG4zi6foADbVmmv5tZ1Uo0UBrN9A1Oj6aP6QncIoH/ADUaqY4ErSpMtEqkX1jUWe1ocV/TDFDSkLqwP6A+wyfMuOT5DDkIInhBhM/9ID0I7WVYAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 250404,
+      "sha256": "77237bc64b1d5b40e5887a6ec0ce4fca17f7532c3a63ccf1a8aeabb0687f9a78",
+      "sourceSha256": "77237bc64b1d5b40e5887a6ec0ce4fca17f7532c3a63ccf1a8aeabb0687f9a78",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/wen-shulang/candidate-1.mp3",
+      "preview": "/api/voice/wen-shulang/intro",
+      "thumb": "/api/voice/wen-shulang/intro",
+      "previewUrl": "/api/voice/wen-shulang/intro",
+      "durationSec": 20.7,
+      "transcript": {
+        "text": "你好，我是温书朗，桂林人，三十五岁。之前在电台做了几年夜间节目，陪很多睡不着的人聊天。我喜欢山水，也喜欢安静的爱情片。我想演一个好丈夫、一个温柔的老师，或者一个让人想信任的医生。"
+      }
+    }
+  ]
+}

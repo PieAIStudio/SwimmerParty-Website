@@ -1,36 +1,42 @@
 import type { L } from "./actors";
-
 export type WorkStatus = "shooting" | "writing" | "development";
 export const WORK_STATUS_LABEL: Record<WorkStatus, L> = {
   shooting: { en: "SHOOTING", zh: "制作中" },
   writing: { en: "WRITING", zh: "编剧中" },
   development: { en: "DEVELOPMENT", zh: "开发中" },
 };
-export type WorkRole = { id: string; name: L; note?: L };
+export type WorkRole = { id: string; name: L; note?: L; look?: string };
 export type Work = {
+  slug: string;
   code: string;
   title: L;
   status: WorkStatus;
   format: L;
   cast: { actor: string; role?: WorkRole }[];
   logline: L;
+  episodes?: { id: string; title: L; status: WorkStatus }[];
 };
-
 export const WORKS: Work[] = [
   {
+    slug: "journey-to-the-east",
     code: "W-01",
-    title: { en: "JOURNEY TO THE EAST", zh: "《东游记》" },
+    title: { en: "Journey to the East", zh: "《东游记》" },
     status: "development",
     format: { en: "AI comedy shorts", zh: "AI 喜剧短片" },
+    logline: {
+      en: "A film crew shoots a domineering-CEO short drama in a riverside villa. On camera, everything is deadly serious. Off camera, everything goes wrong.",
+      zh: "一个剧组在江边别墅里拍霸总短剧。镜头里一本正经，镜头外状况百出。",
+    },
     cast: [
       {
         actor: "tang-yunqiu",
         role: {
           id: "he-jie",
+          look: "maid",
           name: { en: "He Jie", zh: "何姐" },
           note: {
-            en: "A middle-aged actress on the crew. She plays the maid in the short drama.",
-            zh: "剧组里的中年女演员，在短剧里演女佣。",
+            en: "An actress on the crew. On camera she plays the timid maid; off camera she runs the whole set.",
+            zh: "剧组里的女演员。镜头前演胆小的女佣，镜头后整个片场都归她管。",
           },
         },
       },
@@ -38,25 +44,38 @@ export const WORKS: Work[] = [
         actor: "misha-luo",
         role: {
           id: "dai-er",
+          look: "ceo",
           name: { en: "Dai Er", zh: "戴尔" },
           note: {
-            en: "An actor on the crew. He plays the domineering CEO in the short drama.",
-            zh: "剧组里的男演员，在短剧里演霸道总裁。",
+            en: "An actor on the crew with a foreign face and a Chongqing accent. On camera he plays the domineering CEO.",
+            zh: "剧组里长着外国脸、一开口是重庆话的男演员。镜头前演霸道总裁。",
           },
         },
       },
+      { actor: "zhang-qiang", role: { id: "director", name: { en: "director", zh: "导演" } } },
+      {
+        actor: "chen-wei",
+        role: { id: "grip-big-brother", name: { en: "the crew's grip", zh: "场务大哥" } },
+      },
     ],
-    logline: {
-      en: "A film crew shoots a domineering-CEO short drama in a villa. On camera it is deadly serious; off camera everything goes wrong.",
-      zh: "一个剧组在别墅里拍霸总短剧。戏里一本正经，戏外状况百出。",
-    },
+    episodes: [
+      {
+        id: "EP01",
+        title: { en: "EP01 · On Camera, Off Camera", zh: "EP01 · 《戏里戏外》" },
+        status: "development",
+      },
+    ],
   },
   {
+    slug: "modern-freaks",
     code: "W-02",
-    title: { en: "MODERN FREAKS", zh: "《摩登怪咖》" },
+    title: { en: "Modern Freaks", zh: "《摩登怪咖》" },
     status: "development",
-    format: { en: "AI sitcom series with superpowers", zh: "带超能力的 AI 情景喜剧系列" },
+    format: { en: "AI sitcom with superpowers", zh: "带超能力的 AI 情景喜剧" },
     cast: [{ actor: "tang-yunqiu" }, { actor: "misha-luo" }],
-    logline: { en: "An AI sitcom with superpowers.", zh: "一部带超能力的 AI 情景喜剧。" },
+    logline: {
+      en: "An AI sitcom with superpowers. More soon.",
+      zh: "一部带超能力的 AI 情景喜剧。更多信息稍后公布。",
+    },
   },
 ];

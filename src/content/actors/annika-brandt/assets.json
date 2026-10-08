@@ -1,0 +1,61 @@
+{
+  "slug": "annika-brandt",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 825209,
+      "sha256": "cfc527e925db6a868e121bbbb1200374619642581f2ce8e7218b4b4f4b935b6a",
+      "sourceSha256": "cfc527e925db6a868e121bbbb1200374619642581f2ce8e7218b4b4f4b935b6a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/CC-063.png",
+      "preview": "/media/assets/annika-brandt/turnaround.front.webp",
+      "large": "/media/assets/annika-brandt/turnaround.front.large.webp",
+      "thumb": "/media/assets/annika-brandt/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiwBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJoAAAABgGLb1vLmhRldViTMIVGRWVHo2aHlETCUq5hbx2DrOgRmZobr3jeHiJgAIiL7UITEc/hziEbx6RRZVg71AuvY+8uYnksCQICLfgE/fq6wC+wluMVn4KGPm/kBnjvcNj7/McktY/8aPc6EnU0YOMnveENEz7UU7JwKZS98nA4lF+Kc/D+v+a9wdJum8yqnPHbTWIeTu+Vk8xARVlA4IGwAAACwAwCdASoMABUAPwForE6rJaQiMAgBYCAJZQAASo7r0WJvBmUXcADvbH3nGinwufyi6+Unc85Vu/qTUlSqYOOYsrj6RgwUDZCQOxANt3m1IKa2g+p7T5LJroIcUs5GRkeuR+amvtucB4Q0AAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 226212,
+      "sha256": "dd70c6e18e635ffc88d6c078a77e9d11b0b7f93c08528bcd35a46a7c6af80bc0",
+      "sourceSha256": "dd70c6e18e635ffc88d6c078a77e9d11b0b7f93c08528bcd35a46a7c6af80bc0",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/annika-brandt/candidate-1.mp3",
+      "preview": "/api/voice/annika-brandt/intro",
+      "thumb": "/api/voice/annika-brandt/intro",
+      "previewUrl": "/api/voice/annika-brandt/intro",
+      "durationSec": 18.7,
+      "transcript": {
+        "text": "Hi, I'm Annika Brandt, twenty-six, from Hamburg. I study marine biology, so if you need someone to talk about octopuses for an hour, I'm here. My hair does whatever it wants. I'd like to play the nerdy one, the scientist, or the girl who finds the clue nobody saw."
+      }
+    }
+  ]
+}

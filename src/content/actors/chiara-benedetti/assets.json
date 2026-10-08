@@ -1,0 +1,61 @@
+{
+  "slug": "chiara-benedetti",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 977449,
+      "sha256": "f7619adf0b074788ba77dc7c39298c5e8364e69ed90e2e147c2332e47d1af5d2",
+      "sourceSha256": "f7619adf0b074788ba77dc7c39298c5e8364e69ed90e2e147c2332e47d1af5d2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "chiara-benedetti/CC-083.png",
+      "preview": "/media/assets/chiara-benedetti/turnaround.front.webp",
+      "large": "/media/assets/chiara-benedetti/turnaround.front.large.webp",
+      "thumb": "/media/assets/chiara-benedetti/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiwBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJgAAAABgGLb2rLl+f8fl0Z2slb+TvUBMAEG4O409+Ra3d0teXJ3h5N4njlExASIiMRNZYjp2oN4I+gWCo3gD1gx4n7hJUqrBmgzfuCvScs/hfMSbeoHbse0Q+DGOOEHepXAW/bfuHT8k3Tmp8gV1fdvuBS3JueDySQaR0MRlBnbq863aWPxRNaujZp7ySRCq10VN5Fae4J4dqSJAFZQOCBuAAAA0AMAnQEqDAAVAD8Baq1PKyYkIjAIAWAgCWUAAETdYUgn6Y7ssG2AAP2j6UDnCa3a7DCykrUwa7rwRTQe12vavgm7yajqvmZ0mRGGTHe2P/Vg6j4hpADbaBCuWKWDSwuh/udS/Pav2zDPmwPTQAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 235716,
+      "sha256": "3ec5b35638b071c190b243977d582005619cf1b066ef7a1b292cbbc69b13fab2",
+      "sourceSha256": "3ec5b35638b071c190b243977d582005619cf1b066ef7a1b292cbbc69b13fab2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/chiara-benedetti/candidate-1.mp3",
+      "preview": "/api/voice/chiara-benedetti/intro",
+      "thumb": "/api/voice/chiara-benedetti/intro",
+      "previewUrl": "/api/voice/chiara-benedetti/intro",
+      "durationSec": 19.5,
+      "transcript": {
+        "text": "Hi, I'm Chiara Benedetti, twenty-three, from Bologna. I broke my nose playing football when I was twelve, and I scored anyway. I study architecture and I draw everything I see. I would love to play a young artist, a stubborn daughter, or someone falling in love in a new city."
+      }
+    }
+  ]
+}

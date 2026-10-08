@@ -1,0 +1,61 @@
+{
+  "slug": "desmond-ellery",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1331825,
+      "sha256": "3b3a2f02a0104d24a9a9aab476b1e993f1d48b5a8bc29a9d089ef6a428774950",
+      "sourceSha256": "3b3a2f02a0104d24a9a9aab476b1e993f1d48b5a8bc29a9d089ef6a428774950",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "desmond-ellery/CC-080.png",
+      "preview": "/media/assets/desmond-ellery/turnaround.front.webp",
+      "large": "/media/assets/desmond-ellery/turnaround.front.large.webp",
+      "thumb": "/media/assets/desmond-ellery/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjwBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKcAAAABgLJt2/lX+f03ZqWtrdvNbN7SPsCSbVvt12e0f53ZXG3buNP7vhExAQDgN1aog1Ijs1QdZLiqmb+BsoAFkpz1B2A9p3QJQD6VCcCwqhXYOPwQ9i+XgTfHn3A79QwcF1CaegVs9sjKj4HxIfLnmyx1AIZgcm+FjDYCwB21etIX4i1zgshIyTdj7P/Mk5wyCMesklzTB/1sEJwv73RIpyaEzqQBHtqSHQBWUDggbgAAANADAJ0BKgwAFQA/AWytTysmJCIwCAFgIAllAABaoREuzdwPitQyQAD+2T/RPFgpHLolpQBG0llkVjF+GlGU8m4OqQLOwwMfFJa5vTw1f8jT/yYs5sKjKHhkWxzp2KMyiBFNJ2/UmX/Fa3JIVQAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 202884,
+      "sha256": "286a77bda4a7d849c101ebd84714f8a1ee4c8b4814da17152952b5e54469505f",
+      "sourceSha256": "286a77bda4a7d849c101ebd84714f8a1ee4c8b4814da17152952b5e54469505f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/desmond-ellery/candidate-1.mp3",
+      "preview": "/api/voice/desmond-ellery/intro",
+      "thumb": "/api/voice/desmond-ellery/intro",
+      "previewUrl": "/api/voice/desmond-ellery/intro",
+      "durationSec": 16.7,
+      "transcript": {
+        "text": "Alright, I'm Desmond Ellery, thirty-six, from Birmingham. I drive the number fifty bus, and I know every regular by name and by sandwich. I'm a big lad and a big softie. I'd love to play the bus driver, the best mate, or the dad who's trying his best, bless him."
+      }
+    }
+  ]
+}

@@ -25,7 +25,13 @@ export type Actor = {
   assetSource?: string;
 };
 
-export const row = (id: string, en: string, zh: string, valueEn: string, valueZh: string): SpecRow => ({
+export const row = (
+  id: string,
+  en: string,
+  zh: string,
+  valueEn: string,
+  valueZh: string,
+): SpecRow => ({
   id,
   label: { en, zh },
   value: { en: valueEn, zh: valueZh },

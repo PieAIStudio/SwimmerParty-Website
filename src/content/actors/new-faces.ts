@@ -1,2378 +1,2481 @@
 // Source: media-pack/casting/new-faces-2026-10.json.
 export const NEW_FACE_DATA = [
   {
-    "slug": "lin-xiaoman",
-    "source": "CC-001",
-    "nameZh": "林小满",
-    "nameEn": "Lin Xiaoman",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 23,
-    "heightCm": 156,
-    "origin": {
-      "zh": "黑龙江哈尔滨",
-      "en": "Harbin, Heilongjiang"
-    },
-    "tagline": {
-      "zh": "个子小，嗓门大，东北姑娘。",
-      "en": "Small frame, big voice. A Harbin girl through and through."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "23岁东北姑娘，普通话带一点东北味，声音清亮脆生，语速快，爱笑，说话直来直去。",
-      "introLine": "大家好啊，我叫林小满，哈尔滨的，今年二十三。别看我个儿小，嗓门可一点不小，片场喊一嗓子全组都能听见。我最想演那种表面乖乖的、心里一肚子小主意的人。有戏找我，保证不掉链子！"
-    },
-    "look": "East Asian (Chinese) woman, about 23, petite and slim, about 156 cm; round face, wide-set eyes, a small beauty mark under one eye; blunt black bob with straight-cut bangs; dusty-pink top",
-    "image": "library/claude-casting-2026-10-07/final/CC-001.png"
-  },
-  {
-    "slug": "wei-qinghe",
-    "source": "CC-006",
-    "nameZh": "卫青禾",
-    "nameEn": "Wei Qinghe",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 31,
-    "heightCm": 174,
-    "origin": {
-      "zh": "辽宁大连",
-      "en": "Dalian, Liaoning"
-    },
-    "tagline": {
-      "zh": "高，瘦，说话慢，眼神很稳。",
-      "en": "Tall, lean and unhurried, with a very steady gaze."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "31岁女性，普通话标准略带北方口音，声音偏低、沉稳、干净，语速慢，句子之间有停顿，冷静克制。",
-      "introLine": "我叫卫青禾，大连人，三十一岁。我说话一向比较慢，不是反应慢，是想清楚了再说。朋友都说我适合演医生、律师，或者那种什么都不说、最后一句话把大家镇住的人。我挺喜欢这种角色的。"
-    },
-    "look": "East Asian (Chinese) woman, about 31, tall and lanky, about 174 cm; long narrow face, high cheekbones, thin perfectly straight eyebrows; sleek low ponytail; sage-green top",
-    "image": "library/claude-casting-2026-10-07/final/CC-006.png"
-  },
-  {
-    "slug": "hu-guifen",
-    "source": "CC-011",
-    "nameZh": "胡桂芬",
-    "nameEn": "Hu Guifen",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 45,
-    "heightCm": 155,
-    "origin": {
-      "zh": "湖北武汉",
-      "en": "Wuhan, Hubei"
-    },
-    "tagline": {
-      "zh": "酒窝很深，笑声比人先到。",
-      "en": "Deep dimples. Her laugh arrives before she does."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "45岁武汉女人，普通话带明显武汉口音，声音圆润洪亮，热情泼辣，语速快，笑声多，像街口热干面店的老板娘。",
-      "introLine": "哎哟，我是胡桂芬，武汉的，今年四十五咯。我这个人啊，就是爱笑，一笑脸上两个酒窝。以前在街口帮我姐守过早点摊，什么人都见过。你要我演个热心肠的大姐、厉害的老板娘，那是手到擒来！"
-    },
-    "look": "East Asian (Chinese) woman, about 45, plump and short, about 155 cm; full round cheeks with deep dimples, monolid eyes, small button nose; short permed curly black hair; mustard-yellow top",
-    "image": "library/claude-casting-2026-10-07/final/CC-011.png"
-  },
-  {
-    "slug": "chang-shulan",
-    "source": "CC-016",
-    "nameZh": "常淑兰",
-    "nameEn": "Chang Shulan",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 62,
-    "heightCm": 152,
-    "origin": {
-      "zh": "山西太原",
-      "en": "Taiyuan, Shanxi"
-    },
-    "tagline": {
-      "zh": "下巴方，脾气硬，心最软。",
-      "en": "Square jaw, hard temper, soft heart."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "62岁山西女性，普通话带山西口音，声音略沙、有力，说话干脆利落，带点严厉，但尾音有温度。",
-      "introLine": "我叫常淑兰，太原人，六十二了。年轻时在纺织厂当过车间主任，嗓门是那时候练出来的。我这人脾气是硬了点，可谁家有事我第一个到。演婆婆、演奶奶、演居委会主任，我都行。"
-    },
-    "look": "East Asian (Chinese) woman, about 62, small and sturdy, about 152 cm; strong square jaw, deep smile lines, salt-and-pepper short cropped hair; navy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-016.png"
-  },
-  {
-    "slug": "cheng-xiaolu",
-    "source": "CC-021",
-    "nameZh": "程小鹿",
-    "nameEn": "Cheng Xiaolu",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 27,
-    "heightCm": 163,
-    "origin": {
-      "zh": "湖南长沙",
-      "en": "Changsha, Hunan"
-    },
-    "tagline": {
-      "zh": "眉毛浓，嘴巴大，鼻梁上有几颗雀斑。",
-      "en": "Heavy brows, a wide grin and a few freckles across the nose."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "27岁长沙女孩，普通话带一点湖南口音，声音明亮有活力，爱开玩笑，语速快，情绪外放。",
-      "introLine": "嗨，我是程小鹿，长沙妹子，二十七岁。我嘴巴大，笑起来可能有点夸张，不过大家都说看我笑会被传染。我最想演那种冒冒失失、但关键时刻特别靠谱的朋友。对了，吃辣我是认真的！"
-    },
-    "look": "East Asian (Chinese) woman, about 27, average build, about 163 cm; heavy straight eyebrows, a very wide mouth, a sprinkle of freckles over the nose; long hair in a loose messy bun; white top",
-    "image": "library/claude-casting-2026-10-07/final/CC-021.png"
-  },
-  {
-    "slug": "liu-manqing",
-    "source": "CC-026",
-    "nameZh": "柳曼青",
-    "nameEn": "Liu Manqing",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 38,
-    "heightCm": 166,
-    "origin": {
-      "zh": "上海",
-      "en": "Shanghai"
-    },
-    "tagline": {
-      "zh": "尖下巴，上挑眼，嘴角一颗痣。",
-      "en": "Pointed chin, upturned eyes, a beauty mark above her lip."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "38岁上海女性，普通话带一点上海口音，声音柔而有锋芒，语调精致，偶尔带点调侃，语速中等。",
-      "introLine": "侬好，我是柳曼青，上海人，三十八岁。很多人第一眼觉得我不好接近，大概是因为这双眼睛吧。其实我挺爱笑的。我适合演精明的职场女性，也可以演看起来厉害、其实很怕孤单的人。"
-    },
-    "look": "East Asian (Chinese) woman, about 38, slim, about 166 cm; heart-shaped face with a pointed chin, strongly upturned eyes, a beauty mark above her upper lip; layered shoulder-length hair dyed copper-brown; black top",
-    "image": "library/claude-casting-2026-10-07/final/CC-026.png"
-  },
-  {
-    "slug": "zou-meihua",
-    "source": "CC-031",
-    "nameZh": "邹美华",
-    "nameEn": "Zou Meihua",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 55,
-    "heightCm": 160,
-    "origin": {
-      "zh": "江西南昌",
-      "en": "Nanchang, Jiangxi"
-    },
-    "tagline": {
-      "zh": "圆脸，细边眼镜，一笑眼睛就没了。",
-      "en": "Round face, thin glasses, eyes that vanish when she smiles."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "55岁南昌女性，普通话带江西口音，声音温和敦厚，说话慢悠悠，像中学数学老师，偶尔絮叨。",
-      "introLine": "大家好，我叫邹美华，南昌人，五十五岁。我以前在中学教了二十多年数学，所以说话可能有点慢、有点啰嗦，你们多担待。我演老师肯定像，演那种操心全家的妈妈，也不在话下。"
-    },
-    "look": "East Asian (Chinese) woman, about 55, heavyset, about 160 cm; round face, soft double chin, a warm squint; blunt short bob; thin generic metal-frame glasses; burgundy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-031.png"
-  },
-  {
-    "slug": "qian-sumei",
-    "source": "CC-036",
-    "nameZh": "钱素梅",
-    "nameEn": "Qian Sumei",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 71,
-    "heightCm": 150,
-    "origin": {
-      "zh": "江苏苏州",
-      "en": "Suzhou, Jiangsu"
-    },
-    "tagline": {
-      "zh": "白发盘得一丝不乱，脸上一颗小痣。",
-      "en": "White hair pinned in a perfect bun, a small mole on her cheek."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "71岁苏州老太太，普通话带吴语软糯口音，声音轻柔、慢、带笑，气息略弱但清楚，慈祥。",
-      "introLine": "我叫钱素梅，苏州人，今年七十一岁啦。我说话慢，你们不要急哦。年轻时候在评弹团里打过杂，听了一辈子的好故事。现在能自己来演戏，我开心得不得了。演外婆、演老邻居，我最拿手。"
-    },
-    "look": "East Asian (Chinese) woman, about 71, thin and small, about 150 cm; finely wrinkled kind face, a small mole on her cheek, white hair in a tight bun; lavender top",
-    "image": "library/claude-casting-2026-10-07/final/CC-036.png"
-  },
-  {
-    "slug": "jiang-yifan",
-    "source": "CC-041",
-    "nameZh": "江一帆",
-    "nameEn": "Jiang Yifan",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 20,
-    "heightCm": 168,
-    "origin": {
-      "zh": "山东青岛",
-      "en": "Qingdao, Shandong"
-    },
-    "tagline": {
-      "zh": "短寸头，眉毛硬，跑得比谁都快。",
-      "en": "Undercut, strong brows, faster than anyone on the lot."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "20岁青岛女生，普通话带一点山东口音，声音中性偏低，干脆利落，有运动员的爽快劲儿。",
-      "introLine": "我叫江一帆，青岛的，二十岁，以前练过五年短跑。我头发短，好多人第一眼以为我是男生，我无所谓。动作戏、跑戏、摔戏，你尽管来，我不用替身。文戏我也在练，真的。"
-    },
-    "look": "East Asian (Chinese) woman, about 20, athletic and sporty, about 168 cm; strong dark eyebrows, a slightly crooked nose, short tomboy undercut; heather-grey top",
-    "image": "library/claude-casting-2026-10-07/final/CC-041.png"
-  },
-  {
-    "slug": "ye-shuning",
-    "source": "CC-046",
-    "nameZh": "叶书宁",
-    "nameEn": "Ye Shuning",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 34,
-    "heightCm": 160,
-    "origin": {
-      "zh": "浙江杭州",
-      "en": "Hangzhou, Zhejiang"
-    },
-    "tagline": {
-      "zh": "长脸，大眼睛，下巴一颗小痣。",
-      "en": "Long face, big eyes, a tiny mole on the chin."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "34岁杭州女性，普通话标准、柔和，声音温润，语气平静带一点书卷气，语速中等偏慢。",
-      "introLine": "你好，我是叶书宁，杭州人，三十四岁。我平时喜欢逛书店、喝茶，朋友说我身上有股安静劲儿。我想演那种看起来温温柔柔，心里有自己主意的女人，比如开书店的老板，或者一个守着秘密的姐姐。"
-    },
-    "look": "East Asian (Chinese) woman, about 34, average build, about 160 cm; long face, big eyes, a small mole on her chin; shoulder-length hair tucked behind her ears; light-blue top",
-    "image": "library/claude-casting-2026-10-07/final/CC-046.png"
-  },
-  {
-    "slug": "meng-zhaohua",
-    "source": "CC-051",
-    "nameZh": "孟昭华",
-    "nameEn": "Meng Zhaohua",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 49,
-    "heightCm": 172,
-    "origin": {
-      "zh": "辽宁沈阳",
-      "en": "Shenyang, Liaoning"
-    },
-    "tagline": {
-      "zh": "肩膀宽，鬓角白，站着就像个领导。",
-      "en": "Broad shoulders, greying temples. She stands like the boss."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "49岁沈阳女性，普通话带东北口音，声音低沉有力，气场强，说话干脆有分量，偶尔幽默。",
-      "introLine": "我叫孟昭华，沈阳人，四十九。个子高，肩膀宽，往那一站，大家都以为我是领导。其实我挺能逗的。演厂长、演局长、演那种说一不二的大家长，我有经验。不过你要让我演个搞笑的，我也接得住。"
-    },
-    "look": "East Asian (Chinese) woman, about 49, tall and broad-shouldered, about 172 cm; angular face, thin lips, sharp narrow nose; chin-length straight hair greying at the temples; olive top",
-    "image": "library/claude-casting-2026-10-07/final/CC-051.png"
-  },
-  {
-    "slug": "gan-xiaotang",
-    "source": "CC-056",
-    "nameZh": "甘小棠",
-    "nameEn": "Gan Xiaotang",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 26,
-    "heightCm": 158,
-    "origin": {
-      "zh": "四川成都",
-      "en": "Chengdu, Sichuan"
-    },
-    "tagline": {
-      "zh": "苹果脸，小圆鼻，说话软软的。",
-      "en": "Apple cheeks, a button nose and a soft, sweet voice."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "26岁成都女孩，普通话带明显四川口音，声音甜软，慢悠悠的，爱撒娇，有点憨。",
-      "introLine": "大家好，我是甘小棠，成都的，二十六岁。我说话可能有点慢，因为成都人都比较巴适嘛。我脸圆圆的，好多人说我像个汤圆。我想演那种憨憨的、可爱的、偶尔吃货的角色，演得肯定很真实。"
-    },
-    "look": "East Asian (Chinese) woman, about 26, chubby, about 158 cm; round face with apple cheeks, a button nose; short fluffy bob; peach top",
-    "image": "library/claude-casting-2026-10-07/final/CC-056.png"
-  },
-  {
-    "slug": "yan-ruolin",
-    "source": "CC-061",
-    "nameZh": "严若琳",
-    "nameEn": "Yan Ruolin",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 41,
-    "heightCm": 165,
-    "origin": {
-      "zh": "北京",
-      "en": "Beijing"
-    },
-    "tagline": {
-      "zh": "额头高，眉毛细，发髻扎得一丝不苟。",
-      "en": "High forehead, fine brows, hair pulled into a tight low bun."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "41岁北京女性，普通话字正腔圆带一点京味，声音清冷、精确，语速平稳，带点距离感。",
-      "introLine": "我是严若琳，北京人，四十一岁。我说话比较直接，不太爱绕弯子。很多人觉得我冷，其实我只是认真。我适合演严格的主编、医院的主任，或者那种你以为是反派、最后才发现她一直在帮你的人。"
-    },
-    "look": "East Asian (Chinese) woman, about 41, slim, about 165 cm; very high forehead, thin arched eyebrows, a small tight mouth, a sharp chin; hair pulled back in a tight low bun; charcoal top",
-    "image": "library/claude-casting-2026-10-07/final/CC-061.png"
-  },
-  {
-    "slug": "niu-fengying",
-    "source": "CC-066",
-    "nameZh": "牛凤英",
-    "nameEn": "Niu Fengying",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 58,
-    "heightCm": 158,
-    "origin": {
-      "zh": "河南郑州",
-      "en": "Zhengzhou, Henan"
-    },
-    "tagline": {
-      "zh": "红褐色卷发，眉边一颗痣，笑纹很深。",
-      "en": "Red-brown perm, a mole by her brow and deep laugh lines."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "58岁郑州女性，普通话带河南口音，声音敞亮，爱说爱笑，带点俏皮，像广场舞领队。",
-      "introLine": "中！我叫牛凤英，郑州的，五十八了。我是我们小区广场舞的领队，嗓门大，人缘好。这头卷发是我自己染的，好看不？演热心大妈、演媒婆、演爱管闲事的邻居，我张嘴就来。"
-    },
-    "look": "East Asian (Chinese) woman, about 58, average build, about 158 cm; laugh lines, a mole near one eyebrow, short curly perm dyed dark red-brown; teal top",
-    "image": "library/claude-casting-2026-10-07/final/CC-066.png"
-  },
-  {
-    "slug": "xia-zhiyao",
-    "source": "CC-071",
-    "nameZh": "夏知遥",
-    "nameEn": "Xia Zhiyao",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 29,
-    "heightCm": 170,
-    "origin": {
-      "zh": "福建厦门",
-      "en": "Xiamen, Fujian"
-    },
-    "tagline": {
-      "zh": "两边眉毛不一样高，看起来总在想事情。",
-      "en": "One brow sits higher, so she always looks like she's thinking."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "29岁厦门女性，普通话带一点闽南口音，声音轻柔偏气声，语速慢，有点神秘感和文艺感。",
-      "introLine": "我叫夏知遥，厦门人，二十九岁。我左边眉毛比右边高一点，所以总有人问我是不是在怀疑他。其实我只是在发呆。我喜欢海，也喜欢有点奇怪的故事。如果有悬疑片，我很想演那个知道真相的人。"
-    },
-    "look": "East Asian (Chinese) woman, about 29, tall and slim, about 170 cm; uneven eyebrows (her left one higher), a small mole on one cheek, long wavy hair; cream top",
-    "image": "library/claude-casting-2026-10-07/final/CC-071.png"
-  },
-  {
-    "slug": "tao-guixiang",
-    "source": "CC-076",
-    "nameZh": "陶桂香",
-    "nameEn": "Tao Guixiang",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 66,
-    "heightCm": 154,
-    "origin": {
-      "zh": "江苏南京",
-      "en": "Nanjing, Jiangsu"
-    },
-    "tagline": {
-      "zh": "灰黑卷发，笑起来像过年。",
-      "en": "Grey-black curls and a smile like Spring Festival."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "66岁南京老太太，普通话带南京口音，声音温暖、略沙，慢条斯理，絮絮叨叨很亲切。",
-      "introLine": "我叫陶桂香，南京人，六十六岁。退休以后天天给孙子做饭，现在孙子上大学了，我闲不住，就来演戏了。我做的盐水鸭可好吃了。演奶奶、演外婆、演菜市场的老阿姨，你们放心交给我。"
-    },
-    "look": "East Asian (Chinese) woman, about 66, plump, about 154 cm; soft round face, smile lines, permed grey-black curls; rose-pink top",
-    "image": "library/claude-casting-2026-10-07/final/CC-076.png"
-  },
-  {
-    "slug": "feng-ye",
-    "source": "CC-081",
-    "nameZh": "冯野",
-    "nameEn": "Feng Ye",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 36,
-    "heightCm": 162,
-    "origin": {
-      "zh": "内蒙古呼和浩特",
-      "en": "Hohhot, Inner Mongolia"
-    },
-    "tagline": {
-      "zh": "颧骨高，下颌宽，短得利落的头发。",
-      "en": "High cheekbones, a wide jaw and a sharp pixie crop."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "36岁女性，呼和浩特人，普通话标准带一点北方口音，声音沉稳有力，中低音，干脆利落，有力量感。",
-      "introLine": "我叫冯野，呼和浩特人，三十六岁。名字里这个野字，是我爸起的，说希望我像草原上的风。我会骑马，也爱开车跑长途。我想演那种独来独往、靠自己闯出来的女人，向导、赛车手、牧场主，都行。"
-    },
-    "look": "East Asian (Chinese) woman, about 36, average build, about 162 cm; strong cheekbones, a wide jaw, very short pixie crop; rust-orange top",
-    "image": "library/claude-casting-2026-10-07/final/CC-081.png"
-  },
-  {
-    "slug": "fang-xiaoyu",
-    "source": "CC-086",
-    "nameZh": "方小语",
-    "nameEn": "Fang Xiaoyu",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 24,
-    "heightCm": 160,
-    "origin": {
-      "zh": "安徽合肥",
-      "en": "Hefei, Anhui"
-    },
-    "tagline": {
-      "zh": "细框眼镜，齐刘海，说话轻声细语。",
-      "en": "Thin glasses, straight bangs and a quiet voice."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "24岁合肥女生，普通话标准，声音轻柔细腻，有点害羞，语速偏慢，偶尔紧张地笑。",
-      "introLine": "大家好，我叫方小语，合肥人，二十四岁。我平时话不多，说话也比较小声，嗯……熟了以后就好了。我研究生读的是图书馆学。我觉得我很适合演那种安静的、但观察力特别强的女孩子。"
-    },
-    "look": "East Asian (Chinese) woman, about 24, slim, about 160 cm; an oval face, thin oval generic glasses, long straight black hair with bangs; bright-yellow top",
-    "image": "library/claude-casting-2026-10-07/final/CC-086.png"
-  },
-  {
-    "slug": "lu-hongmei",
-    "source": "CC-091",
-    "nameZh": "鲁红梅",
-    "nameEn": "Lu Hongmei",
-    "gender": "female",
-    "group": "east-asian",
-    "age": 52,
-    "heightCm": 156,
-    "origin": {
-      "zh": "山东济南",
-      "en": "Jinan, Shandong"
-    },
-    "tagline": {
-      "zh": "方脸浓眉，下巴一道小疤，干活利索。",
-      "en": "Square face, thick brows, a small scar on the chin. Gets things done."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "52岁济南女性，普通话带山东口音，声音厚实有力，说话实在，爽朗，偶尔大嗓门。",
-      "introLine": "俺叫鲁红梅，济南人，五十二了。下巴这道小疤，是年轻时候在厂里干活碰的。俺这个人实在，说话直，干活快。演工人、演食堂大姐、演一个人撑起一个家的妈，俺心里有数。"
-    },
-    "look": "East Asian (Chinese) woman, about 52, stocky, about 156 cm; square face, thick eyebrows, a small pale scar on her chin; straight shoulder-length hair; denim-blue top",
-    "image": "library/claude-casting-2026-10-07/final/CC-091.png"
-  },
-  {
-    "slug": "deng-xiaoshu",
-    "source": "CC-002",
-    "nameZh": "邓小树",
-    "nameEn": "Deng Xiaoshu",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 22,
-    "heightCm": 182,
-    "origin": {
-      "zh": "贵州贵阳",
-      "en": "Guiyang, Guizhou"
-    },
-    "tagline": {
-      "zh": "又高又瘦，耳朵有点招风。",
-      "en": "Tall, skinny, with ears that stick out a little."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "22岁贵阳男生，普通话带一点西南口音，声音清亮、少年感，有点腼腆，说话时会笑。",
-      "introLine": "大家好，我叫邓小树，贵阳的，二十二岁。我妈说我长得跟树一样，又高又细，所以叫小树。我耳朵有点大，小时候老被笑，现在觉得挺好认的。我想演那种笨笨的、但特别真诚的男生。"
-    },
-    "look": "East Asian (Chinese) man, about 22, skinny and tall, about 182 cm; long face, big ears that stick out, messy fringe; white top",
-    "image": "library/claude-casting-2026-10-07/final/CC-002.png"
-  },
-  {
-    "slug": "bao-mancang",
-    "source": "CC-007",
-    "nameZh": "包满仓",
-    "nameEn": "Bao Mancang",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 33,
-    "heightCm": 172,
-    "origin": {
-      "zh": "天津",
-      "en": "Tianjin"
-    },
-    "tagline": {
-      "zh": "圆脸小眼，发际线往后跑，一张嘴就是相声。",
-      "en": "Round face, small eyes, retreating hairline. Every sentence sounds like a punchline."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "33岁天津男人，普通话带浓天津口音，声音明亮，贫嘴幽默，节奏感强，像说相声。",
-      "introLine": "嘿，各位好，我叫包满仓，天津卫的，三十三了。这名儿是我爷爷起的，说是粮仓满满不愁吃。您看我这脑门儿，越来越亮了，省电。我打小听相声长大，演个嘴贫的、演个老实人吃亏的，都行！"
-    },
-    "look": "East Asian (Chinese) man, about 33, average build, about 172 cm; round face, small eyes, a slightly receding hairline; navy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-007.png"
-  },
-  {
-    "slug": "lei-dahai",
-    "source": "CC-012",
-    "nameZh": "雷大海",
-    "nameEn": "Lei Dahai",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 46,
-    "heightCm": 170,
-    "origin": {
-      "zh": "湖北武汉",
-      "en": "Wuhan, Hubei"
-    },
-    "tagline": {
-      "zh": "啤酒肚，寸头，笑起来震天响。",
-      "en": "Beer belly, buzz cut and a laugh you can hear down the street."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "46岁武汉男人，普通话带浓武汉口音，声音洪亮粗犷，豪爽，急脾气，但很热心。",
-      "introLine": "我叫雷大海，武汉的，四十六岁。你看我这个肚子，都是热干面跟啤酒喂出来的。我嗓门大，脾气急，但是心热。以前开过出租车，满武汉没有我不熟的路。演司机、演大排档老板，那是本色出演！"
-    },
-    "look": "East Asian (Chinese) man, about 46, heavyset with a pot belly, about 170 cm; broad face, double chin, very short buzz cut; heather-grey top",
-    "image": "library/claude-casting-2026-10-07/final/CC-012.png"
-  },
-  {
-    "slug": "gu-wenyuan",
-    "source": "CC-017",
-    "nameZh": "顾文渊",
-    "nameEn": "Gu Wenyuan",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 60,
-    "heightCm": 168,
-    "origin": {
-      "zh": "上海",
-      "en": "Shanghai"
-    },
-    "tagline": {
-      "zh": "粗黑框眼镜，皱纹很深，灰发随手往后一拢。",
-      "en": "Thick black glasses, deep lines and grey hair pushed back by hand."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "60岁上海男性，普通话带上海口音，声音低沉温和，学者气，语速慢，用词讲究。",
-      "introLine": "我叫顾文渊，上海人，今年六十岁。在大学里教了三十年的书，教的是古典文学。退休以后，学生说我这张脸适合演戏，我就来试试。教授、老学者、固执的老父亲，这些角色我大概不用怎么演。"
-    },
-    "look": "East Asian (Chinese) man, about 60, thin, about 168 cm; deeply lined face, thick generic black-rimmed glasses, grey hair brushed back loosely; olive top",
-    "image": "library/claude-casting-2026-10-07/final/CC-017.png"
-  },
-  {
-    "slug": "qin-lie",
-    "source": "CC-022",
-    "nameZh": "秦烈",
-    "nameEn": "Qin Lie",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 28,
-    "heightCm": 178,
-    "origin": {
-      "zh": "陕西西安",
-      "en": "Xi'an, Shaanxi"
-    },
-    "tagline": {
-      "zh": "方下巴，浓眉，一身腱子肉。",
-      "en": "Square jaw, heavy brows and solid muscle."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "28岁西安男人，普通话带一点陕西口音，声音浑厚有力，说话简短干脆，有江湖气。",
-      "introLine": "我叫秦烈，西安人，二十八岁。练了十年散打，所以看着有点凶，其实我挺好说话的。动作戏是我的强项，打戏我自己上。我也想试试那种外表硬、心里软的角色，比如一个照顾妹妹的哥哥。"
-    },
-    "look": "East Asian (Chinese) man, about 28, muscular and broad, about 178 cm; square jaw, thick eyebrows, short spiky hair; black top",
-    "image": "library/claude-casting-2026-10-07/final/CC-022.png"
-  },
-  {
-    "slug": "zhu-youfu",
-    "source": "CC-027",
-    "nameZh": "朱有福",
-    "nameEn": "Zhu Youfu",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 39,
-    "heightCm": 163,
-    "origin": {
-      "zh": "广东佛山",
-      "en": "Foshan, Guangdong"
-    },
-    "tagline": {
-      "zh": "矮壮，头顶秃了，笑得比谁都开心。",
-      "en": "Short and stocky, bald on top, always the happiest man in the room."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "39岁佛山男人，普通话带粤语口音，声音明亮，乐呵呵，语速快，热情好客。",
-      "introLine": "哈喽大家好，我叫朱有福，佛山人，三十九岁。你看我这头，前面已经放假了，哈哈。我家开烧腊店的，从小在店里招呼客人，所以我最会讲好话。演老板、演开心果、演倒霉但乐观的人，没问题！"
-    },
-    "look": "East Asian (Chinese) man, about 39, short and stocky, about 163 cm; round head, bald on top with short hair at the sides, a big cheerful grin; mustard-yellow top",
-    "image": "library/claude-casting-2026-10-07/final/CC-027.png"
-  },
-  {
-    "slug": "ge-changlin",
-    "source": "CC-032",
-    "nameZh": "葛长林",
-    "nameEn": "Ge Changlin",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 52,
-    "heightCm": 175,
-    "origin": {
-      "zh": "河北石家庄",
-      "en": "Shijiazhuang, Hebei"
-    },
-    "tagline": {
-      "zh": "马脸，眼袋重，一撇小胡子。",
-      "en": "Long horse face, heavy eye bags and a neat mustache."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "52岁石家庄男人，普通话带河北口音，声音低沉、慢、有点疲惫的幽默感，冷面笑匠。",
-      "introLine": "我叫葛长林，石家庄的，五十二。我这张脸长，眼袋重，大家说我天生一副没睡醒的样子。我以前是火车站的值班员，见惯了人来人往。我说话慢，但冷不丁一句能把人逗乐。演个冷面的老头，我在行。"
-    },
-    "look": "East Asian (Chinese) man, about 52, average build, about 175 cm; long horse-like face, bags under his eyes, side-parted hair, a neat mustache; burgundy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-032.png"
-  },
-  {
-    "slug": "yu-fugen",
-    "source": "CC-037",
-    "nameZh": "余福根",
-    "nameEn": "Yu Fugen",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 70,
-    "heightCm": 162,
-    "origin": {
-      "zh": "浙江宁波",
-      "en": "Ningbo, Zhejiang"
-    },
-    "tagline": {
-      "zh": "白发梳得整整齐齐，脸蛋圆圆的。",
-      "en": "White hair combed neat, round rosy cheeks."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "70岁宁波老爷爷，普通话带宁波口音，声音温和、慢、有点含糊的老人音，慈眉善目，爱讲古。",
-      "introLine": "我叫余福根，宁波人，七十岁了。年轻时候是跑船的，去过好多港口。现在呢，每天早上要喝一碗汤圆。我讲话慢，但故事多，你们要听，我能讲三天三夜。演爷爷、演老船长，我觉得蛮合适的。"
-    },
-    "look": "East Asian (Chinese) man, about 70, small, about 162 cm; thin white hair combed neatly to one side, big round cheeks, deep smile lines; beige top",
-    "image": "library/claude-casting-2026-10-07/final/CC-037.png"
-  },
-  {
-    "slug": "lu-xingye",
-    "source": "CC-042",
-    "nameZh": "陆星野",
-    "nameEn": "Lu Xingye",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 25,
-    "heightCm": 170,
-    "origin": {
-      "zh": "广东深圳",
-      "en": "Shenzhen, Guangdong"
-    },
-    "tagline": {
-      "zh": "染了一头灰金色，嘴角总挂着一点坏笑。",
-      "en": "Bleached ash-blond hair and a permanent half-smirk."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "25岁深圳男生，普通话标准带一点港台腔，声音年轻、懒散、带点玩世不恭，语速随意。",
-      "introLine": "嗨，我是陆星野，深圳的，二十五岁。头发是上个月刚漂的，还行吧？我以前做过一段时间街舞，后来又去写代码，现在来演戏。我挺适合演那种看着吊儿郎当、其实什么都懂的年轻人。"
-    },
-    "look": "East Asian (Chinese) man, about 25, slim, about 170 cm; narrow face, bleached ash-blond dyed hair, a faint smirk; lavender top",
-    "image": "library/claude-casting-2026-10-07/final/CC-042.png"
-  },
-  {
-    "slug": "qi-changfeng",
-    "source": "CC-047",
-    "nameZh": "祁长风",
-    "nameEn": "Qi Changfeng",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 42,
-    "heightCm": 185,
-    "origin": {
-      "zh": "甘肃兰州",
-      "en": "Lanzhou, Gansu"
-    },
-    "tagline": {
-      "zh": "高瘦，脸颊凹，喉结很明显。",
-      "en": "Tall and gaunt, hollow cheeks, a prominent Adam's apple."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "42岁兰州男人，普通话带西北口音，声音干、低沉、有沙哑颗粒感，话少，沉默寡言。",
-      "introLine": "我叫祁长风，兰州人，四十二。话不多，见谅。在西北跑了十几年长途货车，一个人开夜路，习惯了安静。我觉得我适合演那种不说话的人，比如守夜的人、送信的人，或者一个藏着过去的男人。"
-    },
-    "look": "East Asian (Chinese) man, about 42, tall and lanky, about 185 cm; hollow cheeks, a prominent Adam's apple, short crew cut; sage-green top",
-    "image": "library/claude-casting-2026-10-07/final/CC-047.png"
-  },
-  {
-    "slug": "fan-yiming",
-    "source": "CC-052",
-    "nameZh": "范一鸣",
-    "nameEn": "Fan Yiming",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 36,
-    "heightCm": 168,
-    "origin": {
-      "zh": "江苏无锡",
-      "en": "Wuxi, Jiangsu"
-    },
-    "tagline": {
-      "zh": "圆脸，侧分卷发，留着一小撮山羊胡。",
-      "en": "Round face, side-parted waves and a neat little goatee."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "36岁无锡男人，普通话带一点吴语口音，声音圆润，温和健谈，有点小得意，像社区活动的主持人。",
-      "introLine": "大家好，我是范一鸣，无锡人，三十六岁。以前在婚庆公司当过主持人，三百多场婚礼，台下的人哭我也跟着哭。这撮小胡子是我的标志。我适合演热心的主持人、爱面子的小老板，或者暖心的大哥。"
-    },
-    "look": "East Asian (Chinese) man, about 36, chubby, about 168 cm; round face, short wavy hair with a side part, a neat goatee; light-blue top",
-    "image": "library/claude-casting-2026-10-07/final/CC-052.png"
-  },
-  {
-    "slug": "pang-tiezhu",
-    "source": "CC-057",
-    "nameZh": "庞铁柱",
-    "nameEn": "Pang Tiezhu",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 57,
-    "heightCm": 176,
-    "origin": {
-      "zh": "河北唐山",
-      "en": "Tangshan, Hebei"
-    },
-    "tagline": {
-      "zh": "宽肩膀，一颗门牙有点歪，胡茬扎人。",
-      "en": "Broad shoulders, one crooked front tooth, rough stubble."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "57岁唐山男人，普通话带浓唐山口音，声音粗哑有劲，憨厚，说话带笑，接地气。",
-      "introLine": "我叫庞铁柱，唐山的，五十七了。名字土，人也实在。在钢厂干了三十年，力气大。我这颗门牙是年轻时候打球磕的，就不修了，留个纪念。演工人、演老实人、演倔老头，我都能演出那股劲儿。"
-    },
-    "look": "East Asian (Chinese) man, about 57, broad, about 176 cm; a slightly crooked front tooth, crew cut greying at the temples, light stubble; rust-orange top",
-    "image": "library/claude-casting-2026-10-07/final/CC-057.png"
-  },
-  {
-    "slug": "bai-yunchuan",
-    "source": "CC-062",
-    "nameZh": "白云川",
-    "nameEn": "Bai Yunchuan",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 30,
-    "heightCm": 174,
-    "origin": {
-      "zh": "云南昆明",
-      "en": "Kunming, Yunnan"
-    },
-    "tagline": {
-      "zh": "眉心一颗痣，扎个小发髻，留点小胡子。",
-      "en": "A mole between the brows, a small topknot and a thin goatee."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "30岁昆明男人，普通话带一点云南口音，声音温和舒缓，带点慵懒和禅意，语速慢。",
-      "introLine": "你好，我叫白云川，昆明人，三十岁。我在大理开过一家小客栈，每天看云、煮茶、跟客人聊天。眉心这颗痣，好多人说像点上去的。我适合演那种看起来很佛系、其实心里很有故事的人。"
-    },
-    "look": "East Asian (Chinese) man, about 30, average build, about 174 cm; a mole between his eyebrows, long hair tied in a small bun, a thin goatee; teal top",
-    "image": "library/claude-casting-2026-10-07/final/CC-062.png"
-  },
-  {
-    "slug": "zhong-fuhai",
-    "source": "CC-067",
-    "nameZh": "钟福海",
-    "nameEn": "Zhong Fuhai",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 64,
-    "heightCm": 166,
-    "origin": {
-      "zh": "广东广州",
-      "en": "Guangzhou, Guangdong"
-    },
-    "tagline": {
-      "zh": "脸蛋圆鼓鼓，笑眼，头发梳得想盖住头顶。",
-      "en": "Big round cheeks, smiling eyes and a hopeful comb-over."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "64岁广州阿伯，普通话带浓广东口音，声音和蔼、略沙，慢悠悠，爱开玩笑，像茶楼常客。",
-      "introLine": "大家好，我叫钟福海，广州人，六十四岁。每天早上一定要去饮早茶，一盅两件，跟老朋友吹吹水。我头顶的头发少了，所以要梳得靓一点。演阿伯、演茶楼老板、演好脾气的爷爷，交给我啦。"
-    },
-    "look": "East Asian (Chinese) man, about 64, heavy, about 166 cm; round face with very full cheeks, laughing eyes, thinning hair combed over; forest-green top",
-    "image": "library/claude-casting-2026-10-07/final/CC-067.png"
-  },
-  {
-    "slug": "you-jiale",
-    "source": "CC-072",
-    "nameZh": "尤嘉乐",
-    "nameEn": "You Jiale",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 24,
-    "heightCm": 165,
-    "origin": {
-      "zh": "广西南宁",
-      "en": "Nanning, Guangxi"
-    },
-    "tagline": {
-      "zh": "一边嘴角先笑，头发烫成小卷。",
-      "en": "His smile starts on one side. Short permed curls."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "24岁南宁男生，普通话带一点广西口音，声音明亮俏皮，爱开玩笑，语速快，阳光。",
-      "introLine": "嗨嗨，我是尤嘉乐，南宁的，二十四岁。我笑的时候只有一边嘴角动，朋友说我笑得很欠揍，哈哈。这个卷是我妈带我去烫的。我想演那种搞笑的室友、机灵的小跟班，或者一不小心成了主角的普通人。"
-    },
-    "look": "East Asian (Chinese) man, about 24, short and slim, about 165 cm; a lopsided smile, high cheekbones, short curly permed hair; bright-yellow top",
-    "image": "library/claude-casting-2026-10-07/final/CC-072.png"
-  },
-  {
-    "slug": "shao-tiefeng",
-    "source": "CC-077",
-    "nameZh": "邵铁峰",
-    "nameEn": "Shao Tiefeng",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 48,
-    "heightCm": 171,
-    "origin": {
-      "zh": "黑龙江哈尔滨",
-      "en": "Harbin, Heilongjiang"
-    },
-    "tagline": {
-      "zh": "鼻梁有点歪，眉毛上一道小疤。",
-      "en": "A slightly crooked nose and a small scar through one eyebrow."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "48岁哈尔滨男人，普通话带东北口音，声音低沉粗糙，话不多，硬汉气，偶尔冷幽默。",
-      "introLine": "我叫邵铁峰，哈尔滨的，四十八。鼻子是年轻时候练拳歪的，眉毛这道疤是冬天摔的。看着凶，其实我挺爱养花的。我适合演出租车司机、保安队长、老工人，或者一个刀子嘴豆腐心的老哥。"
-    },
-    "look": "East Asian (Chinese) man, about 48, average build, about 171 cm; a slightly crooked nose, a small scar through one eyebrow, short hair; charcoal top",
-    "image": "library/claude-casting-2026-10-07/final/CC-077.png"
-  },
-  {
-    "slug": "wen-shulang",
-    "source": "CC-082",
-    "nameZh": "温书朗",
-    "nameEn": "Wen Shulang",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 35,
-    "heightCm": 180,
-    "origin": {
-      "zh": "广西桂林",
-      "en": "Guilin, Guangxi"
-    },
-    "tagline": {
-      "zh": "下巴有道深沟，头发微卷，笑起来很暖。",
-      "en": "A deep cleft chin, loose waves and a warm smile."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "35岁桂林男人，普通话标准，声音温暖醇厚，带磁性，语速舒缓，适合讲故事。",
-      "introLine": "你好，我是温书朗，桂林人，三十五岁。之前在电台做了几年夜间节目，陪很多睡不着的人聊天。我喜欢山水，也喜欢安静的爱情片。我想演一个好丈夫、一个温柔的老师，或者一个让人想信任的医生。"
-    },
-    "look": "East Asian (Chinese) man, about 35, tall, about 180 cm; long chin with a deep cleft, wavy medium-length hair; cream top",
-    "image": "library/claude-casting-2026-10-07/final/CC-082.png"
-  },
-  {
-    "slug": "du-shouren",
-    "source": "CC-087",
-    "nameZh": "杜守仁",
-    "nameEn": "Du Shouren",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 72,
-    "heightCm": 162,
-    "origin": {
-      "zh": "河南洛阳",
-      "en": "Luoyang, Henan"
-    },
-    "tagline": {
-      "zh": "白短发，瘦长脸，下巴一颗痣，眼睛总带笑。",
-      "en": "Short white hair, a lean face, a mole on the chin and kind eyes."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "72岁洛阳老人，普通话带河南口音，声音苍老但清晰，温和慈祥，语速慢，像老中医。",
-      "introLine": "我叫杜守仁，洛阳人，七十二了。家里三代都是开中药铺的，我从小闻着药香长大。说话慢，你们莫嫌弃。我适合演老大夫、老先生，或者在关键时候点醒年轻人的那个老人。"
-    },
-    "look": "East Asian (Chinese) man, about 72, lean, about 162 cm; short white hair, a lean face, kind eyes, a small mole on his chin; navy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-087.png"
-  },
-  {
-    "slug": "shen-dali",
-    "source": "CC-092",
-    "nameZh": "申大力",
-    "nameEn": "Shen Dali",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 41,
-    "heightCm": 169,
-    "origin": {
-      "zh": "河北保定",
-      "en": "Baoding, Hebei"
-    },
-    "tagline": {
-      "zh": "脖子粗，平头，嘴角一翘就是不服。",
-      "en": "Thick neck, flat-top haircut and a 'try me' smirk."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "41岁保定男人，普通话带河北口音，声音粗壮，自信带点痞气，语速中等，爱抬杠。",
-      "introLine": "我叫申大力，保定人，四十一。名字叫大力，人也真有力气，以前在驾校当教练，骂人一套一套的，学员都怕我。我这人爱抬杠，但讲义气。演教练、演小头目、演嘴硬的大哥，我在行。"
-    },
-    "look": "East Asian (Chinese) man, about 41, stocky, about 169 cm; thick neck, flat-top haircut, a confident smirk; red top",
-    "image": "library/claude-casting-2026-10-07/final/CC-092.png"
-  },
-  {
-    "slug": "tu-letian",
-    "source": "CC-097",
-    "nameZh": "涂乐天",
-    "nameEn": "Tu Letian",
-    "gender": "male",
-    "group": "east-asian",
-    "age": 29,
-    "heightCm": 176,
-    "origin": {
-      "zh": "湖北宜昌",
-      "en": "Yichang, Hubei"
-    },
-    "tagline": {
-      "zh": "脸有点肉，耳朵大，永远一副没睡醒的笑。",
-      "en": "Chubby cheeks, big ears and a sleepy, easy grin."
-    },
-    "voice": {
-      "language": "zh",
-      "brief": "29岁宜昌男生，普通话带一点湖北口音，声音慵懒松弛，慢吞吞，爱打哈哈，很治愈。",
-      "introLine": "大家好……我叫涂乐天，宜昌人，二十九岁。名字叫乐天，人也比较乐天，天塌下来先睡一觉再说。我说话慢，别着急哈。我觉得我很适合演那种懒洋洋的室友，或者关键时刻突然很靠谱的人。"
-    },
-    "look": "East Asian (Chinese) man, about 29, average build, about 176 cm; slightly chubby cheeks, big ears, undercut hair, a relaxed lazy smile; denim-blue top",
-    "image": "library/claude-casting-2026-10-07/final/CC-097.png"
-  },
-  {
-    "slug": "clara-vos",
-    "source": "CC-003",
-    "nameZh": "克拉拉·沃斯",
-    "nameEn": "Clara Vos",
-    "gender": "female",
-    "group": "white",
-    "age": 25,
-    "heightCm": 167,
-    "origin": {
-      "zh": "荷兰鹿特丹",
-      "en": "Rotterdam, Netherlands"
-    },
-    "tagline": {
-      "zh": "高鼻梁，门牙有缝，笑得毫无保留。",
-      "en": "Long nose, gap-toothed and laughs without holding back."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "25岁荷兰女孩，说英语带轻微荷兰口音，声音明亮、直率、有活力，语速稍快，爱笑。",
-      "introLine": "Hi! I'm Clara Vos, I'm twenty-five, and I'm from Rotterdam. Yes, there's a gap in my teeth, and no, I'm not fixing it. I grew up on a bike, in the rain, arguing with my brothers. Give me the friend who says the thing everyone else is thinking."
-    },
-    "look": "White woman, about 25, slim, about 167 cm; a long nose, a gap between her front teeth, shoulder-length wavy dark-blonde hair tucked behind her ears; forest-green top",
-    "image": "library/claude-casting-2026-10-07/final/CC-003.png"
-  },
-  {
-    "slug": "ingrid-halvorsen",
-    "source": "CC-008",
-    "nameZh": "英格丽·哈尔沃森",
-    "nameEn": "Ingrid Halvorsen",
-    "gender": "female",
-    "group": "white",
-    "age": 34,
-    "heightCm": 178,
-    "origin": {
-      "zh": "挪威卑尔根",
-      "en": "Bergen, Norway"
-    },
-    "tagline": {
-      "zh": "高，下颌方，眉毛淡得几乎看不见。",
-      "en": "Tall, square-jawed, with brows so pale they almost vanish."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "34岁挪威女性，说英语带挪威口音，声音沉稳、冷静、清晰，语速慢，干练的幽默。",
-      "introLine": "Hello. I'm Ingrid Halvorsen, thirty-four, from Bergen in Norway. It rains there about three hundred days a year, so I'm very patient. I used to guide hikers up mountains. I'd love to play a ship captain, a detective, or the calm one when everything falls apart."
-    },
-    "look": "White woman of Scandinavian look, about 34, tall and athletic, about 178 cm; strong square jaw, very pale eyebrows, short ash-blonde hair cut straight at the jaw; navy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-008.png"
-  },
-  {
-    "slug": "maggie-doyle",
-    "source": "CC-013",
-    "nameZh": "玛姬·多伊尔",
-    "nameEn": "Maggie Doyle",
-    "gender": "female",
-    "group": "white",
-    "age": 47,
-    "heightCm": 162,
-    "origin": {
-      "zh": "爱尔兰科克",
-      "en": "Cork, Ireland"
-    },
-    "tagline": {
-      "zh": "红扑扑的圆脸，笑纹深，短发。",
-      "en": "Rosy round face, deep laugh lines, short pixie cut."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "47岁爱尔兰女性，说英语带浓爱尔兰口音，声音温暖、爽朗、爱说笑，语速快。",
-      "introLine": "Well hello there, I'm Maggie Doyle, forty-seven, from Cork. I ran a pub for twelve years, so there's no story I haven't heard twice. I laugh loud and I talk fast, sorry about that. Cast me as the landlady, the nosy aunt, or the mum who knows everything."
-    },
-    "look": "White woman, about 47, plump, about 162 cm; rosy round cheeks, deep laugh lines, short brown pixie cut; mustard-yellow top",
-    "image": "library/claude-casting-2026-10-07/final/CC-013.png"
-  },
-  {
-    "slug": "helene-marchand",
-    "source": "CC-018",
-    "nameZh": "埃莱娜·马尔尚",
-    "nameEn": "Hélène Marchand",
-    "gender": "female",
-    "group": "white",
-    "age": 63,
-    "heightCm": 160,
-    "origin": {
-      "zh": "法国里昂",
-      "en": "Lyon, France"
-    },
-    "tagline": {
-      "zh": "鹰钩鼻，薄唇，银发侧分，细框眼镜。",
-      "en": "Aquiline nose, thin lips, silver side-parted hair and fine glasses."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "63岁法国女性，说英语带法国口音，声音优雅、略低、清晰，语气克制而犀利。",
-      "introLine": "Good afternoon. I am Hélène Marchand. I am sixty-three, and I come from Lyon. For thirty years I taught piano to children who did not want to practise. I am strict, yes, but fair. I would make a very good headmistress, or a grandmother with secrets."
-    },
-    "look": "White woman, about 63, slim, about 160 cm; sharp aquiline nose, thin lips, short silver hair with a side part, thin rectangular generic glasses; black top",
-    "image": "library/claude-casting-2026-10-07/final/CC-018.png"
-  },
-  {
-    "slug": "gemma-conti",
-    "source": "CC-023",
-    "nameZh": "杰玛·孔蒂",
-    "nameEn": "Gemma Conti",
-    "gender": "female",
-    "group": "white",
-    "age": 22,
-    "heightCm": 165,
-    "origin": {
-      "zh": "意大利那不勒斯",
-      "en": "Naples, Italy"
-    },
-    "tagline": {
-      "zh": "眼睛大，嘴巴宽，卷发高高扎起。",
-      "en": "Big eyes, a wide mouth and dark curls piled up high."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "22岁意大利女孩，说英语带意大利口音，声音热情、明亮、表情丰富，说话手舞足蹈的感觉，语速快。",
-      "introLine": "Ciao! I'm Gemma Conti, twenty-two, from Naples. My family says I talk with my hands, my face, my whole body, and they're right. I grew up above my nonna's bakery. I want to play someone loud, warm, a little dramatic, and always the first one to cry at weddings."
-    },
-    "look": "White woman, about 22, average build, about 165 cm; big round eyes, a very wide mouth, dark curly hair pulled up in a puff; peach top",
-    "image": "library/claude-casting-2026-10-07/final/CC-023.png"
-  },
-  {
-    "slug": "lucia-ortega",
-    "source": "CC-028",
-    "nameZh": "露西娅·奥尔特加",
-    "nameEn": "Lucía Ortega",
-    "gender": "female",
-    "group": "white",
-    "age": 39,
-    "heightCm": 170,
-    "origin": {
-      "zh": "西班牙塞维利亚",
-      "en": "Seville, Spain"
-    },
-    "tagline": {
-      "zh": "橄榄色皮肤，浓眉，高鼻梁，长卷发。",
-      "en": "Olive skin, thick brows, a strong nose and long dark waves."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "39岁西班牙女性，说英语带西班牙口音，声音浓郁、温暖、有力量，语速中等，富有激情。",
-      "introLine": "Hola, I'm Lucía Ortega, I'm thirty-nine, from Seville. I danced flamenco for many years, so I know how to make an entrance. I'm passionate, I'm stubborn, and I will feed you whether you're hungry or not. Give me a mother, a matriarch, or a woman with fire."
-    },
-    "look": "White woman of Mediterranean look, about 39, curvy, about 170 cm; olive skin, thick dark eyebrows, a strong nose, long wavy black hair; white top",
-    "image": "library/claude-casting-2026-10-07/final/CC-028.png"
-  },
-  {
-    "slug": "brenda-kowalski",
-    "source": "CC-033",
-    "nameZh": "布伦达·科瓦尔斯基",
-    "nameEn": "Brenda Kowalski",
-    "gender": "female",
-    "group": "white",
-    "age": 56,
-    "heightCm": 163,
-    "origin": {
-      "zh": "美国密尔沃基",
-      "en": "Milwaukee, USA"
-    },
-    "tagline": {
-      "zh": "双下巴，小眼睛，一头金灰色小卷。",
-      "en": "Soft double chin, small eyes and short blonde-grey curls."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "56岁美国中西部女性，说英语带美国中西部口音，声音亲切、热心、有点碎嘴，语速中等。",
-      "introLine": "Hi there, I'm Brenda Kowalski, fifty-six, from Milwaukee, Wisconsin. I've worked the front desk at the same dentist's office for twenty-two years, so I know everybody's business. I bake for every occasion. Cast me as the neighbor, the school secretary, the lady with the casserole."
-    },
-    "look": "White woman, about 56, heavyset, about 163 cm; soft double chin, small eyes, short permed blonde-grey curls; rose-pink top",
-    "image": "library/claude-casting-2026-10-07/final/CC-033.png"
-  },
-  {
-    "slug": "edith-pemberton",
-    "source": "CC-038",
-    "nameZh": "伊迪丝·彭伯顿",
-    "nameEn": "Edith Pemberton",
-    "gender": "female",
-    "group": "white",
-    "age": 72,
-    "heightCm": 155,
-    "origin": {
-      "zh": "英国巴斯",
-      "en": "Bath, England"
-    },
-    "tagline": {
-      "zh": "脸颊粉粉的，白发松松盘着，总在笑。",
-      "en": "Pink cheeks, a loose white bun and a smile that never quits."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "72岁英国老太太，说英式英语，声音轻柔、慈祥、略颤但清晰，语速慢，优雅可爱。",
-      "introLine": "Hello, dear. I'm Edith Pemberton, I'm seventy-two, and I live in Bath. I've kept bees, raised three children, and won a village baking contest, twice. I'm rather new to acting, but I've been watching people my whole life. A grandmother, a librarian, a sweet old lady who isn't."
-    },
-    "look": "White woman, about 72, small, about 155 cm; a soft wrinkled face, a warm smile, pink cheeks, white hair in a loose bun; lavender top",
-    "image": "library/claude-casting-2026-10-07/final/CC-038.png"
-  },
-  {
-    "slug": "sasha-kerr",
-    "source": "CC-043",
-    "nameZh": "萨莎·克尔",
-    "nameEn": "Sasha Kerr",
-    "gender": "female",
-    "group": "white",
-    "age": 29,
-    "heightCm": 175,
-    "origin": {
-      "zh": "英国格拉斯哥",
-      "en": "Glasgow, Scotland"
-    },
-    "tagline": {
-      "zh": "颧骨锋利，脸长，头发剃得很短。",
-      "en": "Razor-sharp cheekbones, a long face and a buzzed head."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "29岁苏格兰女性，说英语带苏格兰口音，声音低、利落、带点冷幽默和叛逆，语速中等。",
-      "introLine": "Hiya, I'm Sasha Kerr, twenty-nine, from Glasgow. I shaved my head at nineteen and never looked back. I've been a bike courier, a bartender, and a drummer in a very bad band. I'd love to play the rebel, the soldier, or the woman who doesn't need saving."
-    },
-    "look": "White woman, about 29, lanky, about 175 cm; very sharp cheekbones, a long face, a very short buzz cut; heather-grey top",
-    "image": "library/claude-casting-2026-10-07/final/CC-043.png"
-  },
-  {
-    "slug": "polina-orlova",
-    "source": "CC-048",
-    "nameZh": "波琳娜·奥尔洛娃",
-    "nameEn": "Polina Orlova",
-    "gender": "female",
-    "group": "white",
-    "age": 43,
-    "heightCm": 168,
-    "origin": {
-      "zh": "俄罗斯圣彼得堡",
-      "en": "Saint Petersburg, Russia"
-    },
-    "tagline": {
-      "zh": "颧骨宽，浅色眼睛分得开，直发。",
-      "en": "Wide cheekbones, pale wide-set eyes and straight light-brown hair."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "43岁俄罗斯女性，说英语带俄语口音，声音清冷、低沉、有分量，语速慢，带一点忧郁。",
-      "introLine": "Hello. My name is Polina Orlova. I am forty-three, from Saint Petersburg. I worked many years as a translator, so I like words very much, and silence even more. I think I could play a spy, a scientist, or a mother who carries a long and heavy story."
-    },
-    "look": "White woman of Slavic look, about 43, average build, about 168 cm; high wide cheekbones, wide-set pale eyes, straight light-brown hair; teal top",
-    "image": "library/claude-casting-2026-10-07/final/CC-048.png"
-  },
-  {
-    "slug": "daisy-whitlock",
-    "source": "CC-053",
-    "nameZh": "黛西·惠特洛克",
-    "nameEn": "Daisy Whitlock",
-    "gender": "female",
-    "group": "white",
-    "age": 31,
-    "heightCm": 157,
-    "origin": {
-      "zh": "英国利兹",
-      "en": "Leeds, England"
-    },
-    "tagline": {
-      "zh": "圆脸酒窝，栗色齐刘海短发。",
-      "en": "Round face, dimples and a chestnut bob with bangs."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "31岁英格兰北部女性，说英语带约克郡口音，声音甜、俏皮、爱笑，语速快。",
-      "introLine": "Hiya! I'm Daisy Whitlock, thirty-one, from Leeds. I work in a cake shop, which explains a lot, honestly. People tell me I'm the kind of person you'd tell a secret to on a bus. I'd love to play the best friend, the clumsy one, the one who falls in love too fast."
-    },
-    "look": "White woman, about 31, short and chubby, about 157 cm; round face with dimples, chestnut-brown bob with bangs; bright-yellow top",
-    "image": "library/claude-casting-2026-10-07/final/CC-053.png"
-  },
-  {
-    "slug": "miriam-adler",
-    "source": "CC-058",
-    "nameZh": "米丽娅姆·阿德勒",
-    "nameEn": "Miriam Adler",
-    "gender": "female",
-    "group": "white",
-    "age": 50,
-    "heightCm": 174,
-    "origin": {
-      "zh": "奥地利维也纳",
-      "en": "Vienna, Austria"
-    },
-    "tagline": {
-      "zh": "高瘦，鹰钩鼻，眼窝深，深色头发盘起。",
-      "en": "Tall and slim, a hooked nose, deep-set eyes and dark hair pinned up."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "50岁奥地利女性，说英语带德语口音，声音低沉、优雅、略带讽刺，语速稳定，很有气场。",
-      "introLine": "Good evening. I am Miriam Adler, fifty, from Vienna. I spent twenty years backstage at the opera, so I know drama very well. People say I look severe. That is mostly true. I would be wonderful as a duchess, a museum director, or a villain with excellent taste."
-    },
-    "look": "White woman, about 50, tall and slim, about 174 cm; hooked nose, deep-set eyes, dark hair pinned up in a twist; burgundy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-058.png"
-  },
-  {
-    "slug": "annika-brandt",
-    "source": "CC-063",
-    "nameZh": "安妮卡·勃兰特",
-    "nameEn": "Annika Brandt",
-    "gender": "female",
-    "group": "white",
-    "age": 26,
-    "heightCm": 164,
-    "origin": {
-      "zh": "德国汉堡",
-      "en": "Hamburg, Germany"
-    },
-    "tagline": {
-      "zh": "淡淡的雀斑，翘鼻子，毛躁的深金色发髻。",
-      "en": "Light freckles, an upturned nose and a frizzy dark-blonde bun."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "26岁德国女孩，说英语带轻微德国口音，声音清脆、认真、有点书呆子的可爱，语速中等。",
-      "introLine": "Hi, I'm Annika Brandt, twenty-six, from Hamburg. I study marine biology, so if you need someone to talk about octopuses for an hour, I'm here. My hair does whatever it wants. I'd like to play the nerdy one, the scientist, or the girl who finds the clue nobody saw."
-    },
-    "look": "White woman, about 26, average build, about 164 cm; light freckles, an upturned nose, frizzy dark-blonde hair in a low bun; light-blue top",
-    "image": "library/claude-casting-2026-10-07/final/CC-063.png"
-  },
-  {
-    "slug": "dot-harrington",
-    "source": "CC-068",
-    "nameZh": "多特·哈林顿",
-    "nameEn": "Dot Harrington",
-    "gender": "female",
-    "group": "white",
-    "age": 59,
-    "heightCm": 160,
-    "origin": {
-      "zh": "澳大利亚墨尔本",
-      "en": "Melbourne, Australia"
-    },
-    "tagline": {
-      "zh": "方脸，厚镜片，灰短发，说话不绕弯。",
-      "en": "Square face, thick glasses, cropped grey hair. No small talk."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "59岁澳大利亚女性，说英语带澳洲口音，声音粗哑、直爽、带点粗糙的幽默，语速中等偏快。",
-      "introLine": "G'day, I'm Dot Harrington. Fifty-nine, from Melbourne. I drove school buses for thirty years, so trust me, nothing scares me anymore. I say what I mean and I mean what I say. Put me in as the tough coach, the bossy aunt, or the woman who runs the whole town."
-    },
-    "look": "White woman, about 59, stocky, about 160 cm; square face, thick generic glasses, cropped grey hair; olive top",
-    "image": "library/claude-casting-2026-10-07/final/CC-068.png"
-  },
-  {
-    "slug": "agnes-lefevre",
-    "source": "CC-073",
-    "nameZh": "阿涅丝·勒费弗尔",
-    "nameEn": "Agnès Lefèvre",
-    "gender": "female",
-    "group": "white",
-    "age": 37,
-    "heightCm": 169,
-    "origin": {
-      "zh": "法国巴黎",
-      "en": "Paris, France"
-    },
-    "tagline": {
-      "zh": "尖下巴，耳朵有点大，利落的深色波波头。",
-      "en": "Pointed chin, slightly big ears and a sleek dark bob."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "37岁法国女性，说英语带法国口音，声音轻快、俏皮、带点慵懒，语速中等。",
-      "introLine": "Bonjour, I am Agnès Lefèvre, thirty-seven, from Paris. I sell old books by the river, and I read most of them before I sell them. My ears are a bit big, I know, they make me a very good listener. I would love to play a writer, a thief, or a woman in a comedy."
-    },
-    "look": "White woman, about 37, slim, about 169 cm; pointy chin, big ears, a sleek dark bob; rust-orange top",
-    "image": "library/claude-casting-2026-10-07/final/CC-073.png"
-  },
-  {
-    "slug": "rosemary-finch",
-    "source": "CC-078",
-    "nameZh": "罗斯玛丽·芬奇",
-    "nameEn": "Rosemary Finch",
-    "gender": "female",
-    "group": "white",
-    "age": 67,
-    "heightCm": 158,
-    "origin": {
-      "zh": "英国卡迪夫",
-      "en": "Cardiff, Wales"
-    },
-    "tagline": {
-      "zh": "脸颊圆润，鼻头红红，一头蓬松白卷发。",
-      "en": "Soft jowls, a rosy nose and a cloud of curly white hair."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "67岁威尔士女性，说英语带威尔士口音，声音温暖、歌唱般的语调起伏，语速中等，慈爱。",
-      "introLine": "Hello, love! I'm Rosemary Finch, sixty-seven, from Cardiff. I sang in a choir for forty years, so I can't help putting a bit of a tune in everything I say. I've got five grandchildren and a very fat cat. Cast me as the nan, the choir lady, the kind soul next door."
-    },
-    "look": "White woman, about 67, plump, about 158 cm; soft jowls, a rosy nose, fluffy curly white hair; sage-green top",
-    "image": "library/claude-casting-2026-10-07/final/CC-078.png"
-  },
-  {
-    "slug": "chiara-benedetti",
-    "source": "CC-083",
-    "nameZh": "基娅拉·贝内代蒂",
-    "nameEn": "Chiara Benedetti",
-    "gender": "female",
-    "group": "white",
-    "age": 23,
-    "heightCm": 171,
-    "origin": {
-      "zh": "意大利博洛尼亚",
-      "en": "Bologna, Italy"
-    },
-    "tagline": {
-      "zh": "浓眉，鼻梁微歪，栗色波浪长发。",
-      "en": "Strong brows, a slightly crooked nose and wavy chestnut hair."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "23岁意大利女孩，说英语带意大利口音，声音温柔、真诚、带点倔强，语速中等。",
-      "introLine": "Hi, I'm Chiara Benedetti, twenty-three, from Bologna. I broke my nose playing football when I was twelve, and I scored anyway. I study architecture and I draw everything I see. I would love to play a young artist, a stubborn daughter, or someone falling in love in a new city."
-    },
-    "look": "White woman, about 23, average build, about 171 cm; strong eyebrows, a slightly crooked nose, wavy chestnut hair; cream top",
-    "image": "library/claude-casting-2026-10-07/final/CC-083.png"
-  },
-  {
-    "slug": "tess-callahan",
-    "source": "CC-088",
-    "nameZh": "苔丝·卡拉汉",
-    "nameEn": "Tess Callahan",
-    "gender": "female",
-    "group": "white",
-    "age": 45,
-    "heightCm": 166,
-    "origin": {
-      "zh": "美国圣迭戈",
-      "en": "San Diego, USA"
-    },
-    "tagline": {
-      "zh": "晒得黝黑，眼角笑纹，沙金色马尾。",
-      "en": "Sun-tanned, crow's feet and a sandy-blonde ponytail."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "45岁美国西海岸女性，说美式英语，声音明亮、松弛、阳光，语速中等，有运动员的爽快。",
-      "introLine": "Hey! I'm Tess Callahan, forty-five, from San Diego. I've taught surfing for twenty years, so I've got the tan and the wrinkles to prove it. I'm calm in big waves and terrible at sitting still. I'd love to play a coach, a lifeguard, or a mom who still skates to work."
-    },
-    "look": "White woman, about 45, athletic, about 166 cm; sun-tanned skin, crow's feet, a sandy-blonde ponytail; denim-blue top",
-    "image": "library/claude-casting-2026-10-07/final/CC-088.png"
-  },
-  {
-    "slug": "vera-kucerova",
-    "source": "CC-093",
-    "nameZh": "薇拉·库切罗娃",
-    "nameEn": "Vera Kučerová",
-    "gender": "female",
-    "group": "white",
-    "age": 53,
-    "heightCm": 165,
-    "origin": {
-      "zh": "捷克布拉格",
-      "en": "Prague, Czech Republic"
-    },
-    "tagline": {
-      "zh": "长脸，眼皮沉沉的，黑色及下巴卷发。",
-      "en": "Long face, heavy-lidded eyes and black chin-length waves."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "53岁捷克女性，说英语带中欧口音，声音低沉、慵懒、带点神秘和讽刺，语速慢。",
-      "introLine": "Hello. I am Vera Kučerová, fifty-three, from Prague. I read tarot cards in a café for many years, mostly for tourists, sometimes for myself. People say I look like I know something. Maybe I do. I would play a fortune teller, a landlady, or the mother in a strange old house."
-    },
-    "look": "White woman, about 53, average build, about 165 cm; long face, heavy-lidded eyes, black hair in chin-length waves; charcoal top",
-    "image": "library/claude-casting-2026-10-07/final/CC-093.png"
-  },
-  {
-    "slug": "freja-mortensen",
-    "source": "CC-098",
-    "nameZh": "芙蕾雅·莫滕森",
-    "nameEn": "Freja Mortensen",
-    "gender": "female",
-    "group": "white",
-    "age": 30,
-    "heightCm": 176,
-    "origin": {
-      "zh": "丹麦奥胡斯",
-      "en": "Aarhus, Denmark"
-    },
-    "tagline": {
-      "zh": "高大骨架宽，圆脸，金色短寸。",
-      "en": "Tall, big-boned, round-faced, with a short blonde undercut."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "30岁丹麦女性，说英语带丹麦口音，声音洪亮、开朗、直率，语速中等，很有力量感。",
-      "introLine": "Hej! I'm Freja Mortensen, thirty, from Aarhus in Denmark. I played handball for the national youth team, so I'm strong, loud, and very competitive at board games. I'd love to play a firefighter, a Viking, or the friend who carries everyone home after a party."
-    },
-    "look": "White woman, about 30, tall and big-boned, about 176 cm; broad shoulders, round face, short blonde undercut; red top",
-    "image": "library/claude-casting-2026-10-07/final/CC-098.png"
-  },
-  {
-    "slug": "felix-hartmann",
-    "source": "CC-004",
-    "nameZh": "费利克斯·哈特曼",
-    "nameEn": "Felix Hartmann",
-    "gender": "male",
-    "group": "white",
-    "age": 24,
-    "heightCm": 180,
-    "origin": {
-      "zh": "德国莱比锡",
-      "en": "Leipzig, Germany"
-    },
-    "tagline": {
-      "zh": "鼻子大，脸窄，一头浅棕卷发。",
-      "en": "Big nose, narrow face and a mop of light-brown curls."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "24岁德国男生，说英语带德国口音，声音偏高、紧张、有点笨拙的可爱，语速时快时慢。",
-      "introLine": "Hello, I'm Felix Hartmann. I'm twenty-four, from Leipzig. I play the cello, badly, and I collect old maps, very well. I get nervous when people look at me, which is funny for an actor, I know. I'd like to play the awkward genius, the shy boyfriend, or the boy who gets lost."
-    },
-    "look": "White man, about 24, skinny, about 180 cm; a big nose, a narrow face, curly light-brown hair; sage-green top",
-    "image": "library/claude-casting-2026-10-07/final/CC-004.png"
-  },
-  {
-    "slug": "callum-reid",
-    "source": "CC-009",
-    "nameZh": "卡勒姆·里德",
-    "nameEn": "Callum Reid",
-    "gender": "male",
-    "group": "white",
-    "age": 35,
-    "heightCm": 188,
-    "origin": {
-      "zh": "英国阿伯丁",
-      "en": "Aberdeen, Scotland"
-    },
-    "tagline": {
-      "zh": "光头，大胡子，熊一样的块头。",
-      "en": "Shaved head, big bushy beard and the build of a bear."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "35岁苏格兰男人，说英语带浓苏格兰口音，声音浑厚低沉，粗犷但温和，语速中等。",
-      "introLine": "Alright, I'm Callum Reid, thirty-five, from Aberdeen. I worked on the oil rigs out in the North Sea for ten years, so I'm used to wind, noise, and very bad coffee. I look scary, but I cry at dog films. Give me a bodyguard, a blacksmith, or a big soft giant."
-    },
-    "look": "White man, about 35, burly, about 188 cm; shaved head, full bushy brown beard, broad face; black top",
-    "image": "library/claude-casting-2026-10-07/final/CC-009.png"
-  },
-  {
-    "slug": "ray-kowalczyk",
-    "source": "CC-014",
-    "nameZh": "雷·科瓦尔奇克",
-    "nameEn": "Ray Kowalczyk",
-    "gender": "male",
-    "group": "white",
-    "age": 48,
-    "heightCm": 175,
-    "origin": {
-      "zh": "美国匹兹堡",
-      "en": "Pittsburgh, USA"
-    },
-    "tagline": {
-      "zh": "啤酒肚，发际线后退，一大撇胡子。",
-      "en": "Pot belly, receding hairline and a big thick mustache."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "48岁美国男人，说英语带匹兹堡口音，声音粗哑、热络、爱抱怨，语速中等偏快，蓝领幽默。",
-      "introLine": "Hey, how ya doin'. Ray Kowalczyk, forty-eight, Pittsburgh born and raised. I've run a hardware store on the same corner for twenty-five years. I complain about everything and fix anything. Cast me as the plumber, the coach, the dad who swears at the TV during the game."
-    },
-    "look": "White man, about 48, pot-bellied, about 175 cm; receding hairline, double chin, a thick mustache; white top",
-    "image": "library/claude-casting-2026-10-07/final/CC-014.png"
-  },
-  {
-    "slug": "ambrose-lacey",
-    "source": "CC-019",
-    "nameZh": "安布罗斯·莱西",
-    "nameEn": "Ambrose Lacey",
-    "gender": "male",
-    "group": "white",
-    "age": 66,
-    "heightCm": 183,
-    "origin": {
-      "zh": "英国爱丁堡",
-      "en": "Edinburgh, Scotland"
-    },
-    "tagline": {
-      "zh": "高瘦，白发及领，眉毛又浓又乱。",
-      "en": "Tall and thin, white hair to the collar and wild bushy brows."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "66岁苏格兰老绅士，说英语带爱丁堡口音，声音深沉、缓慢、带戏剧腔，像老派舞台演员。",
-      "introLine": "Good day. Ambrose Lacey, sixty-six years old, from Edinburgh. I spent forty years in the theatre, mostly playing kings, ghosts, and very angry fathers. My eyebrows have a life of their own. I would be delighted to play a wizard, a professor, or a ghost who won't leave."
-    },
-    "look": "White man, about 66, thin and tall, about 183 cm; long face, wavy white hair down to the collar, bushy grey eyebrows; navy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-019.png"
-  },
-  {
-    "slug": "nikos-andreou",
-    "source": "CC-024",
-    "nameZh": "尼科斯·安德鲁",
-    "nameEn": "Nikos Andreou",
-    "gender": "male",
-    "group": "white",
-    "age": 28,
-    "heightCm": 177,
-    "origin": {
-      "zh": "希腊塞萨洛尼基",
-      "en": "Thessaloniki, Greece"
-    },
-    "tagline": {
-      "zh": "浓密黑卷发，两道眉毛快连在一起，高鼻梁。",
-      "en": "Thick black curls, brows that nearly meet and a strong nose."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "28岁希腊男人，说英语带希腊口音，声音热情、温暖、爱说笑，语速快，很有感染力。",
-      "introLine": "Yassou! I'm Nikos Andreou, twenty-eight, from Thessaloniki. My family runs a fish taverna by the sea, and I've been carrying plates since I was eight. I sing, I dance, I talk too much. Give me the charming waiter, the romantic fool, or the cousin who ruins the wedding."
-    },
-    "look": "White man of Mediterranean look, about 28, average build, about 177 cm; thick curly black hair, heavy eyebrows that almost meet, a strong nose; mustard-yellow top",
-    "image": "library/claude-casting-2026-10-07/final/CC-024.png"
-  },
-  {
-    "slug": "tommy-brannigan",
-    "source": "CC-029",
-    "nameZh": "汤米·布兰尼根",
-    "nameEn": "Tommy Brannigan",
-    "gender": "male",
-    "group": "white",
-    "age": 41,
-    "heightCm": 167,
-    "origin": {
-      "zh": "英国利物浦",
-      "en": "Liverpool, England"
-    },
-    "tagline": {
-      "zh": "矮壮，方脑袋，鼻子被打扁过。",
-      "en": "Short and stocky, square head, a nose flattened in the ring."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "41岁利物浦男人，说英语带浓利物浦口音，声音粗犷、直爽、幽默，语速快，有拳击手的劲儿。",
-      "introLine": "Alright, I'm Tommy Brannigan, forty-one, from Liverpool. I boxed for fifteen years, hence the nose. Now I run a gym for kids who need somewhere to go after school. I'm tougher on the outside than the inside. Cast me as the trainer, the bouncer, or the dad who never gives up."
-    },
-    "look": "White man, about 41, short and stocky, about 167 cm; square head, buzz cut, a flattened boxer's nose; heather-grey top",
-    "image": "library/claude-casting-2026-10-07/final/CC-029.png"
-  },
-  {
-    "slug": "pavel-sokolov",
-    "source": "CC-034",
-    "nameZh": "帕维尔·索科洛夫",
-    "nameEn": "Pavel Sokolov",
-    "gender": "male",
-    "group": "white",
-    "age": 55,
-    "heightCm": 179,
-    "origin": {
-      "zh": "俄罗斯新西伯利亚",
-      "en": "Novosibirsk, Russia"
-    },
-    "tagline": {
-      "zh": "颧骨宽，深陷的蓝眼睛，花白短胡子。",
-      "en": "Broad cheekbones, deep-set blue eyes and a salt-and-pepper beard."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "55岁俄罗斯男人，说英语带浓俄语口音，声音低沉粗厚，沉稳，话少，有分量。",
-      "introLine": "Hello. Pavel Sokolov. Fifty-five, from Novosibirsk, in Siberia. I drove trains across the taiga for thirty years. Very long trips, very little talking. I like chess, black bread, and quiet people. I think I could play a soldier, a ship engineer, or a father who never says I love you."
-    },
-    "look": "White man of Slavic look, about 55, average build, about 179 cm; broad cheekbones, deep-set blue eyes, a short salt-and-pepper beard; olive top",
-    "image": "library/claude-casting-2026-10-07/final/CC-034.png"
-  },
-  {
-    "slug": "henri-dubois",
-    "source": "CC-039",
-    "nameZh": "亨利·杜布瓦",
-    "nameEn": "Henri Dubois",
-    "gender": "male",
-    "group": "white",
-    "age": 73,
-    "heightCm": 168,
-    "origin": {
-      "zh": "法国波尔多",
-      "en": "Bordeaux, France"
-    },
-    "tagline": {
-      "zh": "长脸，鹰钩鼻，秃顶一圈白发，金属细框眼镜。",
-      "en": "Long face, hooked nose, a white fringe round a bald crown, wire glasses."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "73岁法国老先生，说英语带法国口音，声音苍老、细腻、慢条斯理，带点挑剔和幽默。",
-      "introLine": "Bonjour. I am Henri Dubois, seventy-three, from Bordeaux. I made wine for fifty years, and I am still not satisfied with any of it. My grandchildren say I am impossible to please. They are correct. I would play a grumpy grandfather, a strict teacher, or a very old detective."
-    },
-    "look": "White man, about 73, small, about 168 cm; a long face, a white fringe around a bald crown, a hooked nose, thin wire-frame glasses; rust-orange top",
-    "image": "library/claude-casting-2026-10-07/final/CC-039.png"
-  },
-  {
-    "slug": "lukas-berger",
-    "source": "CC-044",
-    "nameZh": "卢卡斯·贝格尔",
-    "nameEn": "Lukas Berger",
-    "gender": "male",
-    "group": "white",
-    "age": 22,
-    "heightCm": 186,
-    "origin": {
-      "zh": "奥地利因斯布鲁克",
-      "en": "Innsbruck, Austria"
-    },
-    "tagline": {
-      "zh": "高瘦，长下巴，金发软塌塌，总像刚睡醒。",
-      "en": "Lanky, long-chinned, floppy blond hair and permanently sleepy eyes."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "22岁奥地利男生，说英语带德语口音，声音慵懒、慢、温柔，有点迷糊，语速慢。",
-      "introLine": "Hi... I'm Lukas Berger, twenty-two, from Innsbruck. I teach snowboarding in winter and sleep most of the summer. People think I'm always tired. I'm not, I'm just relaxed. I'd like to play the dreamy younger brother, the stoner roommate, or the boy who's secretly brave."
-    },
-    "look": "White man, about 22, lanky, about 186 cm; long chin, floppy blond hair, sleepy eyes; light-blue top",
-    "image": "library/claude-casting-2026-10-07/final/CC-044.png"
-  },
-  {
-    "slug": "owen-pryce",
-    "source": "CC-049",
-    "nameZh": "欧文·普赖斯",
-    "nameEn": "Owen Pryce",
-    "gender": "male",
-    "group": "white",
-    "age": 38,
-    "heightCm": 178,
-    "origin": {
-      "zh": "英国斯旺西",
-      "en": "Swansea, Wales"
-    },
-    "tagline": {
-      "zh": "圆脸，短胡子，波浪长发披到肩。",
-      "en": "Round face, short beard and wavy hair down to the shoulders."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "38岁威尔士男人，说英语带威尔士口音，声音温厚、歌唱般的抑扬，开朗，语速中等。",
-      "introLine": "Hiya, I'm Owen Pryce, thirty-eight, from Swansea in Wales. I teach guitar, I sing in a pub on Fridays, and I make a very serious Sunday roast. People say I give big hugs. I'd love to play the folk singer, the gentle dad, or the friend who always shows up with food."
-    },
-    "look": "White man, about 38, heavyset, about 178 cm; round face, a short brown beard, shoulder-length wavy hair; forest-green top",
-    "image": "library/claude-casting-2026-10-07/final/CC-049.png"
-  },
-  {
-    "slug": "benoit-lacroix",
-    "source": "CC-054",
-    "nameZh": "伯努瓦·拉克鲁瓦",
-    "nameEn": "Benoît Lacroix",
-    "gender": "male",
-    "group": "white",
-    "age": 31,
-    "heightCm": 172,
-    "origin": {
-      "zh": "法国马赛",
-      "en": "Marseille, France"
-    },
-    "tagline": {
-      "zh": "耳朵大，一字小胡子，头发侧分抹得服帖。",
-      "en": "Big ears, a thin pencil mustache and hair parted just so."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "31岁法国男人，说英语带法国南部口音，声音轻快、自负又滑稽，语速快，戏剧化。",
-      "introLine": "Bonjour! I am Benoît Lacroix, thirty-one, from Marseille. I am a waiter in a very fancy restaurant, and I take it very, very seriously. This mustache took me three years. I would be perfect as a snobbish maître d', a ridiculous count, or a man who thinks he's smarter than he is."
-    },
-    "look": "White man, about 31, slim, about 172 cm; big ears, a thin pencil mustache, side-parted dark hair; cream top",
-    "image": "library/claude-casting-2026-10-07/final/CC-054.png"
-  },
-  {
-    "slug": "hank-sorensen",
-    "source": "CC-059",
-    "nameZh": "汉克·索伦森",
-    "nameEn": "Hank Sorensen",
-    "gender": "male",
-    "group": "white",
-    "age": 60,
-    "heightCm": 180,
-    "origin": {
-      "zh": "美国明尼苏达",
-      "en": "Minnesota, USA"
-    },
-    "tagline": {
-      "zh": "宽肩，风霜脸，灰色平头，脸上一道疤。",
-      "en": "Broad shoulders, a weathered face, a grey crew cut and a scar."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "60岁美国男人，说英语带明尼苏达口音，声音低沉、慢、稳，话少，可靠的老派硬汉。",
-      "introLine": "Name's Hank Sorensen. Sixty years old, from northern Minnesota. Spent most of my life on the lake, fishing, and fixing boats. Got this scar from a bad winter, long story. I don't talk much, but I listen. I'd play a sheriff, a fisherman, or a grandfather with a good secret."
-    },
-    "look": "White man, about 60, broad, about 180 cm; weathered face, strong jaw, grey crew cut, a small scar on one cheek; denim-blue top",
-    "image": "library/claude-casting-2026-10-07/final/CC-059.png"
-  },
-  {
-    "slug": "kasper-holm",
-    "source": "CC-064",
-    "nameZh": "卡斯珀·霍尔姆",
-    "nameEn": "Kasper Holm",
-    "gender": "male",
-    "group": "white",
-    "age": 26,
-    "heightCm": 174,
-    "origin": {
-      "zh": "丹麦哥本哈根",
-      "en": "Copenhagen, Denmark"
-    },
-    "tagline": {
-      "zh": "块头大，方下巴，金色卷发，胡茬。",
-      "en": "Big and broad, square-jawed, curly blond hair and stubble."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "26岁丹麦男生，说英语带丹麦口音，声音憨厚、开朗、有点傻乐，语速中等。",
-      "introLine": "Hej, I'm Kasper Holm, twenty-six, from Copenhagen. I'm a baker. I start work at four in the morning, so if I look sleepy, that's why. I'm big, but I'm very gentle, ask anyone. I'd like to play the lovable giant, the loyal best friend, or the guy who's terrible at flirting."
-    },
-    "look": "White man, about 26, chubby with a broad adult build, about 174 cm; a square jaw, curly blond hair, light stubble; bright-yellow top",
-    "image": "library/claude-casting-2026-10-07/final/CC-064.png"
-  },
-  {
-    "slug": "edmund-crane",
-    "source": "CC-069",
-    "nameZh": "埃德蒙·克兰",
-    "nameEn": "Edmund Crane",
-    "gender": "male",
-    "group": "white",
-    "age": 44,
-    "heightCm": 190,
-    "origin": {
-      "zh": "美国波士顿",
-      "en": "Boston, USA"
-    },
-    "tagline": {
-      "zh": "又高又瘦，鹰钩鼻，发际线往后退。",
-      "en": "Very tall, very thin, a hawk nose and a receding hairline."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "44岁美国男人，说英语带波士顿口音，声音细长、紧绷、神经质的幽默，语速快。",
-      "introLine": "Hi, uh, Edmund Crane. Forty-four. Boston. I'm an accountant, I was an accountant, I'm trying something new, okay? I'm six foot three and I bump my head on everything. People say I look like I'm worried. I usually am. Cast me as the nervous lawyer, the butler, or the man who panics."
-    },
-    "look": "White man, about 44, very tall and thin, about 190 cm; narrow face, a hawk nose, receding dark hair; charcoal top",
-    "image": "library/claude-casting-2026-10-07/final/CC-069.png"
-  },
-  {
-    "slug": "bruno-ferraro",
-    "source": "CC-074",
-    "nameZh": "布鲁诺·费拉罗",
-    "nameEn": "Bruno Ferraro",
-    "gender": "male",
-    "group": "white",
-    "age": 52,
-    "heightCm": 176,
-    "origin": {
-      "zh": "意大利都灵",
-      "en": "Turin, Italy"
-    },
-    "tagline": {
-      "zh": "下巴肉多，灰色大胡子，头顶光亮。",
-      "en": "Jowly, a bushy grey mustache and a shiny bald top."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "52岁意大利男人，说英语带意大利口音，声音浑厚、热情、爱抱怨又爱笑，语速快，手势感强。",
-      "introLine": "Buongiorno! Bruno Ferraro, fifty-two, from Turin. I fix old Fiat cars, and I talk to them like they are my children. Sometimes they listen. My mustache is famous in my neighborhood. I would be perfect as a mechanic, a big uncle, or the restaurant owner who shouts and then hugs you."
-    },
-    "look": "White man, about 52, average build, about 176 cm; jowly face, a bushy grey mustache, bald on top; burgundy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-074.png"
-  },
-  {
-    "slug": "declan-shaw",
-    "source": "CC-079",
-    "nameZh": "德克兰·肖",
-    "nameEn": "Declan Shaw",
-    "gender": "male",
-    "group": "white",
-    "age": 33,
-    "heightCm": 182,
-    "origin": {
-      "zh": "爱尔兰都柏林",
-      "en": "Dublin, Ireland"
-    },
-    "tagline": {
-      "zh": "方下巴，下巴有沟，笑起来歪歪的。",
-      "en": "Square jaw, a cleft chin and a crooked, charming smile."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "33岁爱尔兰男人，说英语带都柏林口音，声音迷人、轻松、带点调皮，语速中等。",
-      "introLine": "How's it going, I'm Declan Shaw, thirty-three, from Dublin. I played rugby until my knee said no, and now I coach the under-twelves. My smile goes a bit sideways, my mam says it's how you know I'm lying. I'd love to play the charmer, the firefighter, or the guy next door."
-    },
-    "look": "White man, about 33, athletic, about 182 cm; square jaw with a cleft chin, a crooked smile, short wavy brown hair; teal top",
-    "image": "library/claude-casting-2026-10-07/final/CC-079.png"
-  },
-  {
-    "slug": "gus-abernathy",
-    "source": "CC-084",
-    "nameZh": "格斯·阿伯内西",
-    "nameEn": "Gus Abernathy",
-    "gender": "male",
-    "group": "white",
-    "age": 69,
-    "heightCm": 170,
-    "origin": {
-      "zh": "美国奥斯汀",
-      "en": "Austin, USA"
-    },
-    "tagline": {
-      "zh": "圆脸刮得干净，灰色长马尾，笑纹很深。",
-      "en": "Clean-shaven round face, a long grey ponytail and deep smile lines."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "69岁美国得州男人，说英语带美国南方口音，声音沙哑、悠闲、慢吞吞，很有故事感。",
-      "introLine": "Well howdy, I'm Gus Abernathy. Sixty-nine, from Austin, Texas. I've been playing bass in bars since before most folks were born. Never cut the ponytail, never will. I tell long stories and I don't apologize for it. Cast me as the old rocker, the hippie grandpa, or the wise man at the bar."
-    },
-    "look": "White man, about 69, plump, about 170 cm; a clean-shaven round face, a long grey ponytail, smile lines; peach top",
-    "image": "library/claude-casting-2026-10-07/final/CC-084.png"
-  },
-  {
-    "slug": "milo-kovac",
-    "source": "CC-089",
-    "nameZh": "米洛·科瓦奇",
-    "nameEn": "Milo Kovač",
-    "gender": "male",
-    "group": "white",
-    "age": 37,
-    "heightCm": 165,
-    "origin": {
-      "zh": "克罗地亚萨格勒布",
-      "en": "Zagreb, Croatia"
-    },
-    "tagline": {
-      "zh": "矮小精瘦，窄脸，眼睛亮，黑发乱糟糟。",
-      "en": "Short and wiry, a narrow face, bright eyes and messy black hair."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "37岁克罗地亚男人，说英语带东欧口音，声音机灵、跳脱、语速很快，有点神经质的喜感。",
-      "introLine": "Hi, hi, Milo Kovač, thirty-seven, from Zagreb. I'm a street magician, so if your watch is missing, that's not me. Probably. I'm small and fast and I never sit still. I'd love to play a pickpocket, a wedding planner, or the friend with a terrible plan that somehow works."
-    },
-    "look": "White man, about 37, short and wiry, about 165 cm; a narrow face, bright eyes, messy black hair; lavender top",
-    "image": "library/claude-casting-2026-10-07/final/CC-089.png"
-  },
-  {
-    "slug": "ama-mensah",
-    "source": "CC-005",
-    "nameZh": "阿玛·门萨",
-    "nameEn": "Ama Mensah",
-    "gender": "female",
-    "group": "black",
-    "age": 24,
-    "heightCm": 168,
-    "origin": {
-      "zh": "加纳阿克拉",
-      "en": "Accra, Ghana"
-    },
-    "tagline": {
-      "zh": "蓬蓬的爆炸头，门牙有缝，眼睛特别亮。",
-      "en": "An afro puff, a gap-toothed grin and very bright eyes."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "24岁加纳女孩，说英语带加纳口音，声音明亮、活泼、爱笑，语速快，元气满满。",
-      "introLine": "Hi, I'm Ama Mensah, twenty-four, from Accra in Ghana. I sell fabric at the market with my aunties, so I can talk to anybody about anything. I laugh at my own jokes, it's a problem. I'd love to play the funny best friend, the young entrepreneur, or a girl with big dreams."
-    },
-    "look": "Black woman, about 24, slim, about 168 cm; deep brown skin, a natural afro puff, a small gap between her front teeth, bright lively eyes; bright-yellow top",
-    "image": "library/claude-casting-2026-10-07/final/CC-005.png"
-  },
-  {
-    "slug": "folake-adeyemi",
-    "source": "CC-015",
-    "nameZh": "福拉克·阿德耶米",
-    "nameEn": "Folake Adeyemi",
-    "gender": "female",
-    "group": "black",
-    "age": 38,
-    "heightCm": 165,
-    "origin": {
-      "zh": "尼日利亚拉各斯",
-      "en": "Lagos, Nigeria"
-    },
-    "tagline": {
-      "zh": "颧骨高，眉毛浓，头发剪得很短。",
-      "en": "High cheekbones, strong brows and close-cropped natural hair."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "38岁尼日利亚女性，说英语带尼日利亚口音，声音浑厚、自信、干练，语速中等，有掌控感。",
-      "introLine": "Good afternoon, I'm Folake Adeyemi, thirty-eight, from Lagos. I run my own event company, which means I am always calm and always in control, even when I'm not. I love a strong woman on screen. Give me a CEO, a lawyer, or a mother who will fight the whole world for her children."
-    },
-    "look": "Black woman, about 38, curvy, about 165 cm; high cheekbones, strong eyebrows, very short cropped natural hair; white top",
-    "image": "library/claude-casting-2026-10-07/final/CC-015.png"
-  },
-  {
-    "slug": "bernice-washington",
-    "source": "CC-025",
-    "nameZh": "伯妮丝·华盛顿",
-    "nameEn": "Bernice Washington",
-    "gender": "female",
-    "group": "black",
-    "age": 55,
-    "heightCm": 162,
-    "origin": {
-      "zh": "美国亚特兰大",
-      "en": "Atlanta, USA"
-    },
-    "tagline": {
-      "zh": "圆脸，脸颊饱满，灰色小辫子。",
-      "en": "Round full cheeks and short grey-streaked twists."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "55岁美国南方女性，说美式英语带南方口音，声音温暖醇厚、慈爱、有教堂唱诗班的韵味，语速中等。",
-      "introLine": "Hey baby, I'm Bernice Washington, fifty-five, from Atlanta, Georgia. I've led the church choir for twenty years, and I run the best soul food kitchen on my street. I hug everybody, so get ready. Cast me as the mama, the auntie, or the lady who tells you the truth when you need it."
-    },
-    "look": "Black woman, about 55, heavyset, about 162 cm; full round cheeks, short grey-streaked twists; burgundy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-025.png"
-  },
-  {
-    "slug": "zawadi-mwangi",
-    "source": "CC-035",
-    "nameZh": "扎瓦迪·姆旺吉",
-    "nameEn": "Zawadi Mwangi",
-    "gender": "female",
-    "group": "black",
-    "age": 29,
-    "heightCm": 178,
-    "origin": {
-      "zh": "肯尼亚内罗毕",
-      "en": "Nairobi, Kenya"
-    },
-    "tagline": {
-      "zh": "高个子，光头，下颌线锋利，眼睛很大。",
-      "en": "Tall, shaved head, a sharp jaw and big expressive eyes."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "29岁肯尼亚女性，说英语带东非口音，声音清亮、坚定、有力量，语速中等，自信。",
-      "introLine": "Hello, I'm Zawadi Mwangi, twenty-nine, from Nairobi in Kenya. I ran the eight hundred metres for my country, so I know how to keep going when it hurts. I shaved my head before a race once and kept it. I'd love to play an athlete, a pilot, or a warrior in a story people remember."
-    },
-    "look": "Black woman, about 29, tall and athletic, about 178 cm; shaved head, a sharp jaw, big expressive eyes; sage-green top",
-    "image": "library/claude-casting-2026-10-07/final/CC-035.png"
-  },
-  {
-    "slug": "hyacinth-campbell",
-    "source": "CC-045",
-    "nameZh": "海辛丝·坎贝尔",
-    "nameEn": "Hyacinth Campbell",
-    "gender": "female",
-    "group": "black",
-    "age": 66,
-    "heightCm": 157,
-    "origin": {
-      "zh": "牙买加金斯敦",
-      "en": "Kingston, Jamaica"
-    },
-    "tagline": {
-      "zh": "银色短卷发，圆框眼镜，笑纹深深。",
-      "en": "Short silver curls, round glasses and deep smile lines."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "66岁牙买加女性，说英语带牙买加口音，声音温暖、有韵律、慈祥又俏皮，语速中等。",
-      "introLine": "Hello darling, I'm Hyacinth Campbell, sixty-six, from Kingston, Jamaica. I was a nurse for forty years, so I've seen everything, and I'm not shy about telling you to eat your vegetables. I love dominoes and loud music. Cast me as the grandma, the nurse, or the neighbour who adopts everyone."
-    },
-    "look": "Black woman, about 66, small and slim, about 157 cm; short silver curls, round generic glasses, deep smile lines; lavender top",
-    "image": "library/claude-casting-2026-10-07/final/CC-045.png"
-  },
-  {
-    "slug": "aissatou-diallo",
-    "source": "CC-055",
-    "nameZh": "艾莎图·迪亚洛",
-    "nameEn": "Aïssatou Diallo",
-    "gender": "female",
-    "group": "black",
-    "age": 33,
-    "heightCm": 163,
-    "origin": {
-      "zh": "塞内加尔达喀尔",
-      "en": "Dakar, Senegal"
-    },
-    "tagline": {
-      "zh": "酒窝很深，嘴唇上方一颗痣，长辫子束在脑后。",
-      "en": "Deep dimples, a mole above her lip and long braids tied back."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "33岁塞内加尔女性，说英语带法语和西非口音，声音柔和、温暖、优雅，语速中等。",
-      "introLine": "Hello, I'm Aïssatou Diallo, thirty-three, from Dakar in Senegal. I speak French, Wolof, and English, and I mix them all when I'm excited. I design clothes, and I braid my sister's hair every Sunday. I'd love to play a designer, a teacher, or a woman starting her life again."
-    },
-    "look": "Black woman, about 33, average build, about 163 cm; deep dimples, a small mole above her lip, long braids tied back; teal top",
-    "image": "library/claude-casting-2026-10-07/final/CC-055.png"
-  },
-  {
-    "slug": "claudette-morel",
-    "source": "CC-065",
-    "nameZh": "克洛黛特·莫雷尔",
-    "nameEn": "Claudette Morel",
-    "gender": "female",
-    "group": "black",
-    "age": 47,
-    "heightCm": 172,
-    "origin": {
-      "zh": "法国巴黎",
-      "en": "Paris, France"
-    },
-    "tagline": {
-      "zh": "高个子，长脸，颧骨高，利落的直发波波头。",
-      "en": "Tall, long-faced, high cheekbones and a sleek relaxed bob."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "47岁法国女性，说英语带法国口音，声音低沉、优雅、从容，语速慢，有权威感。",
-      "introLine": "Good evening. My name is Claudette Morel. I am forty-seven, and I live in Paris. For many years I was a news editor, so I am very good at deciding what matters. I am calm, and I am rarely wrong. I would play a judge, a diplomat, or a mother who knows the whole story."
-    },
-    "look": "Black woman, about 47, tall, about 172 cm; long face, high cheekbones, a short relaxed bob; navy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-065.png"
-  },
-  {
-    "slug": "jasmine-holloway",
-    "source": "CC-075",
-    "nameZh": "贾丝敏·霍洛韦",
-    "nameEn": "Jasmine Holloway",
-    "gender": "female",
-    "group": "black",
-    "age": 25,
-    "heightCm": 155,
-    "origin": {
-      "zh": "英国伦敦",
-      "en": "London, England"
-    },
-    "tagline": {
-      "zh": "个子小，心形脸，及肩卷发。",
-      "en": "Petite, heart-shaped face and shoulder-length curls."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "25岁伦敦女孩，说英语带伦敦口音，声音轻快、自信、带点俏皮，语速快。",
-      "introLine": "Hiya, I'm Jasmine Holloway, twenty-five, from South London. I'm a hairdresser, so I know everyone's gossip before they do. I'm small, but trust me, I'm the loudest person at the party. I'd love to play the cheeky best friend, the girl with a plan, or the boss of the whole crew."
-    },
-    "look": "Black woman, about 25, petite, about 155 cm; light brown skin, a heart-shaped face, a confident grown-up look, curly shoulder-length hair; peach top",
-    "image": "library/claude-casting-2026-10-07/final/CC-075.png"
-  },
-  {
-    "slug": "thandiwe-dlamini",
-    "source": "CC-085",
-    "nameZh": "坦迪薇·德拉米尼",
-    "nameEn": "Thandiwe Dlamini",
-    "gender": "female",
-    "group": "black",
-    "age": 59,
-    "heightCm": 160,
-    "origin": {
-      "zh": "南非约翰内斯堡",
-      "en": "Johannesburg, South Africa"
-    },
-    "tagline": {
-      "zh": "下巴方，笑纹深，椒盐色短爆炸头。",
-      "en": "Square jaw, deep laugh lines and a short salt-and-pepper afro."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "59岁南非女性，说英语带南非口音，声音浑厚、温暖、有力量，说话带笑，语速中等。",
-      "introLine": "Sawubona, hello! I'm Thandiwe Dlamini, fifty-nine, from Johannesburg. I was a school principal for twenty-five years, so I can quiet a room with one look. But I laugh easily, I promise. I'd love to play a principal, a grandmother, or a woman who leads her whole community."
-    },
-    "look": "Black woman, about 59, stocky, about 160 cm; square jaw, laugh lines, a short salt-and-pepper afro; olive top",
-    "image": "library/claude-casting-2026-10-07/final/CC-085.png"
-  },
-  {
-    "slug": "yaw-owusu",
-    "source": "CC-010",
-    "nameZh": "亚乌·奥乌苏",
-    "nameEn": "Yaw Owusu",
-    "gender": "male",
-    "group": "black",
-    "age": 26,
-    "heightCm": 188,
-    "origin": {
-      "zh": "加纳库马西",
-      "en": "Kumasi, Ghana"
-    },
-    "tagline": {
-      "zh": "长脸，大耳朵，短短的小辫子。",
-      "en": "Long face, big ears and short twists."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "26岁加纳男生，说英语带加纳口音，声音温和、开朗、带点害羞，语速中等。",
-      "introLine": "Hello, I'm Yaw Owusu, twenty-six, from Kumasi in Ghana. I'm an engineer, but on weekends I play drums at weddings. My ears are big, my mother says it's because I listen well. I'd like to play the kind young man, the inventor, or the guy who's quietly in love with his neighbour."
-    },
-    "look": "Black man, about 26, lanky, about 188 cm; long face, big ears, short twists; heather-grey top",
-    "image": "library/claude-casting-2026-10-07/final/CC-010.png"
-  },
-  {
-    "slug": "dele-ajayi",
-    "source": "CC-020",
-    "nameZh": "德莱·阿贾伊",
-    "nameEn": "Dele Ajayi",
-    "gender": "male",
-    "group": "black",
-    "age": 40,
-    "heightCm": 185,
-    "origin": {
-      "zh": "尼日利亚拉各斯",
-      "en": "Lagos, Nigeria"
-    },
-    "tagline": {
-      "zh": "光头，浓黑大胡子，浓眉，块头大。",
-      "en": "Bald head, a full black beard, thick brows and a big frame."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "40岁尼日利亚男人，说英语带尼日利亚口音，声音低沉浑厚、有威严，又带幽默感，语速中等。",
-      "introLine": "Good day, I'm Dele Ajayi, forty, from Lagos, Nigeria. I own a car repair workshop, and my voice can stop an argument from across the street. I look serious, but I'm the funniest man in my family, ask them. Cast me as the big boss, the bodyguard, or the uncle everybody fears and loves."
-    },
-    "look": "Black man, about 40, burly, about 185 cm; bald head, a full black beard, thick eyebrows; navy top",
-    "image": "library/claude-casting-2026-10-07/final/CC-020.png"
-  },
-  {
-    "slug": "clarence-pettiford",
-    "source": "CC-030",
-    "nameZh": "克拉伦斯·佩蒂福德",
-    "nameEn": "Clarence Pettiford",
-    "gender": "male",
-    "group": "black",
-    "age": 53,
-    "heightCm": 175,
-    "origin": {
-      "zh": "美国孟菲斯",
-      "en": "Memphis, USA"
-    },
-    "tagline": {
-      "zh": "圆脸，啤酒肚，灰白小胡子。",
-      "en": "Round face, a round belly and a grey mustache."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "53岁美国南方男人，说美式英语带孟菲斯口音，声音醇厚、慢悠悠、爱讲笑话，语速慢。",
-      "introLine": "Hey now, I'm Clarence Pettiford, fifty-three, from Memphis, Tennessee. I've run a barbecue joint for twenty years, and my ribs have fans in three states. I like the blues, long naps, and longer stories. Cast me as the diner owner, the deacon, or the old friend with all the answers."
-    },
-    "look": "Black man, about 53, pot-bellied, about 175 cm; round face, a grey mustache, short receding grey hair; mustard-yellow top",
-    "image": "library/claude-casting-2026-10-07/final/CC-030.png"
-  },
-  {
-    "slug": "jalen-brooks",
-    "source": "CC-040",
-    "nameZh": "贾伦·布鲁克斯",
-    "nameEn": "Jalen Brooks",
-    "gender": "male",
-    "group": "black",
-    "age": 31,
-    "heightCm": 178,
-    "origin": {
-      "zh": "美国芝加哥",
-      "en": "Chicago, USA"
-    },
-    "tagline": {
-      "zh": "高顶短发，修得整齐的短胡子，眼神沉稳。",
-      "en": "A high-top fade, a neat short beard and a calm, steady look."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "31岁芝加哥男人，说美式英语，声音沉稳、温和、自信，语速中等，很有说服力。",
-      "introLine": "Hey, I'm Jalen Brooks, thirty-one, from Chicago's South Side. I'm a high school basketball coach and part-time DJ. I stay calm when everyone else is losing it, that's kind of my thing. I'd love to play a coach, a detective, or the brother who holds the family together."
-    },
-    "look": "Black man, about 31, average build, about 178 cm; high-top fade, a neatly trimmed short beard, a calm confident look; white top",
-    "image": "library/claude-casting-2026-10-07/final/CC-040.png"
-  },
-  {
-    "slug": "ousmane-coulibaly",
-    "source": "CC-050",
-    "nameZh": "乌斯曼·库利巴利",
-    "nameEn": "Ousmane Coulibaly",
-    "gender": "male",
-    "group": "black",
-    "age": 68,
-    "heightCm": 172,
-    "origin": {
-      "zh": "马里巴马科",
-      "en": "Bamako, Mali"
-    },
-    "tagline": {
-      "zh": "光头，白色短胡子，额头皱纹深，细框眼镜。",
-      "en": "Bald, a short white beard, a lined forehead and thin glasses."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "68岁马里老人，说英语带法语和西非口音，声音苍老、平静、充满智慧，语速慢。",
-      "introLine": "Peace be with you. I am Ousmane Coulibaly, sixty-eight, from Bamako in Mali. I taught history at the university for many years, and I still believe a good story can change a person. I speak slowly, please be patient. I would play a teacher, an elder, or a grandfather with wisdom."
-    },
-    "look": "Black man, about 68, thin, about 172 cm; bald, a short white beard, a wrinkled forehead, thin rectangular generic glasses; cream top",
-    "image": "library/claude-casting-2026-10-07/final/CC-050.png"
-  },
-  {
-    "slug": "chidi-eze",
-    "source": "CC-060",
-    "nameZh": "奇迪·埃泽",
-    "nameEn": "Chidi Eze",
-    "gender": "male",
-    "group": "black",
-    "age": 23,
-    "heightCm": 170,
-    "origin": {
-      "zh": "尼日利亚埃努古",
-      "en": "Enugu, Nigeria"
-    },
-    "tagline": {
-      "zh": "圆脸，酒窝深，短寸头，敦实。",
-      "en": "Round face, deep dimples, a buzz cut and a sturdy build."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "23岁尼日利亚男生，说英语带尼日利亚口音，声音年轻、开心、爱笑，语速快，阳光。",
-      "introLine": "Hey hey! I'm Chidi Eze, twenty-three, from Enugu in Nigeria. I study computer science, but honestly I spend more time making comedy videos. People say my dimples are dangerous. I'd love to play the funny little brother, the hopeless romantic, or the student who accidentally saves the day."
-    },
-    "look": "Black man, about 23, stocky, about 170 cm; round baby face, deep dimples, short buzz cut; red top",
-    "image": "library/claude-casting-2026-10-07/final/CC-060.png"
-  },
-  {
-    "slug": "ibrahima-ndiaye",
-    "source": "CC-070",
-    "nameZh": "易卜拉希马·恩迪亚耶",
-    "nameEn": "Ibrahima Ndiaye",
-    "gender": "male",
-    "group": "black",
-    "age": 45,
-    "heightCm": 190,
-    "origin": {
-      "zh": "塞内加尔达喀尔",
-      "en": "Dakar, Senegal"
-    },
-    "tagline": {
-      "zh": "高瘦，颧骨锋利，光头，一字小胡子。",
-      "en": "Tall and slim, sharp cheekbones, a shaved head and a thin mustache."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "45岁塞内加尔男人，说英语带法语口音，声音低沉、优雅、从容，语速慢，很有风度。",
-      "introLine": "Good evening. I am Ibrahima Ndiaye, forty-five, from Dakar, Senegal. I was a jazz saxophonist in Paris for fifteen years before I came home. I like good suits and quiet rooms. I would be a fine diplomat, a mysterious stranger, or a man who walks in and changes everything."
-    },
-    "look": "Black man, about 45, tall and slim, about 190 cm; very dark skin, sharp cheekbones, shaved head, a thin mustache; sage-green top",
-    "image": "library/claude-casting-2026-10-07/final/CC-070.png"
-  },
-  {
-    "slug": "desmond-ellery",
-    "source": "CC-080",
-    "nameZh": "德斯蒙德·埃勒里",
-    "nameEn": "Desmond Ellery",
-    "gender": "male",
-    "group": "black",
-    "age": 36,
-    "heightCm": 180,
-    "origin": {
-      "zh": "英国伯明翰",
-      "en": "Birmingham, England"
-    },
-    "tagline": {
-      "zh": "脸蛋肉肉的，脖子粗，短脏辫。",
-      "en": "Chubby cheeks, a thick neck and short locs."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "36岁英国伯明翰男人，说英语带伯明翰口音，声音憨厚、松弛、幽默，语速中等。",
-      "introLine": "Alright, I'm Desmond Ellery, thirty-six, from Birmingham. I drive the number fifty bus, and I know every regular by name and by sandwich. I'm a big lad and a big softie. I'd love to play the bus driver, the best mate, or the dad who's trying his best, bless him."
-    },
-    "look": "Black man, about 36, heavyset, about 180 cm; chubby cheeks, thick neck, short locs; forest-green top",
-    "image": "library/claude-casting-2026-10-07/final/CC-080.png"
-  },
-  {
-    "slug": "samuel-oduya",
-    "source": "CC-090",
-    "nameZh": "塞缪尔·奥杜亚",
-    "nameEn": "Samuel Oduya",
-    "gender": "male",
-    "group": "black",
-    "age": 58,
-    "heightCm": 176,
-    "origin": {
-      "zh": "肯尼亚基苏木",
-      "en": "Kisumu, Kenya"
-    },
-    "tagline": {
-      "zh": "眼窝深，椒盐色胡子，灰色短爆炸头。",
-      "en": "Deep-set eyes, a salt-and-pepper beard and a short grey afro."
-    },
-    "voice": {
-      "language": "en",
-      "brief": "58岁肯尼亚男人，说英语带东非口音，声音温和、沉稳、醇厚，语速慢，像个讲故事的人。",
-      "introLine": "Hello, my friends. I'm Samuel Oduya, fifty-eight, from Kisumu by Lake Victoria. I've been a fisherman, a radio host, and now an actor. I like to take my time, with stories and with people. I'd love to play a wise father, a village chief, or an old man who remembers everything."
-    },
-    "look": "Black man, about 58, average build, about 176 cm; deep-set eyes, a salt-and-pepper beard, a short grey afro; denim-blue top",
-    "image": "library/claude-casting-2026-10-07/final/CC-090.png"
-  }
+    slug: "lin-xiaoman",
+    source: "CC-001",
+    nameZh: "林小满",
+    nameEn: "Lin Xiaoman",
+    gender: "female",
+    group: "east-asian",
+    age: 23,
+    heightCm: 156,
+    origin: {
+      zh: "黑龙江哈尔滨",
+      en: "Harbin, Heilongjiang",
+    },
+    tagline: {
+      zh: "个子小，嗓门大，东北姑娘。",
+      en: "Small frame, big voice. A Harbin girl through and through.",
+    },
+    voice: {
+      language: "zh",
+      brief: "23岁东北姑娘，普通话带一点东北味，声音清亮脆生，语速快，爱笑，说话直来直去。",
+      introLine:
+        "大家好啊，我叫林小满，哈尔滨的，今年二十三。别看我个儿小，嗓门可一点不小，片场喊一嗓子全组都能听见。我最想演那种表面乖乖的、心里一肚子小主意的人。有戏找我，保证不掉链子！",
+    },
+    look: "East Asian (Chinese) woman, about 23, petite and slim, about 156 cm; round face, wide-set eyes, a small beauty mark under one eye; blunt black bob with straight-cut bangs; dusty-pink top",
+    image: "library/claude-casting-2026-10-07/final/CC-001.png",
+  },
+  {
+    slug: "wei-qinghe",
+    source: "CC-006",
+    nameZh: "卫青禾",
+    nameEn: "Wei Qinghe",
+    gender: "female",
+    group: "east-asian",
+    age: 31,
+    heightCm: 174,
+    origin: {
+      zh: "辽宁大连",
+      en: "Dalian, Liaoning",
+    },
+    tagline: {
+      zh: "高，瘦，说话慢，眼神很稳。",
+      en: "Tall, lean and unhurried, with a very steady gaze.",
+    },
+    voice: {
+      language: "zh",
+      brief:
+        "31岁女性，普通话标准略带北方口音，声音偏低、沉稳、干净，语速慢，句子之间有停顿，冷静克制。",
+      introLine:
+        "我叫卫青禾，大连人，三十一岁。我说话一向比较慢，不是反应慢，是想清楚了再说。朋友都说我适合演医生、律师，或者那种什么都不说、最后一句话把大家镇住的人。我挺喜欢这种角色的。",
+    },
+    look: "East Asian (Chinese) woman, about 31, tall and lanky, about 174 cm; long narrow face, high cheekbones, thin perfectly straight eyebrows; sleek low ponytail; sage-green top",
+    image: "library/claude-casting-2026-10-07/final/CC-006.png",
+  },
+  {
+    slug: "hu-guifen",
+    source: "CC-011",
+    nameZh: "胡桂芬",
+    nameEn: "Hu Guifen",
+    gender: "female",
+    group: "east-asian",
+    age: 45,
+    heightCm: 155,
+    origin: {
+      zh: "湖北武汉",
+      en: "Wuhan, Hubei",
+    },
+    tagline: {
+      zh: "酒窝很深，笑声比人先到。",
+      en: "Deep dimples. Her laugh arrives before she does.",
+    },
+    voice: {
+      language: "zh",
+      brief:
+        "45岁武汉女人，普通话带明显武汉口音，声音圆润洪亮，热情泼辣，语速快，笑声多，像街口热干面店的老板娘。",
+      introLine:
+        "哎哟，我是胡桂芬，武汉的，今年四十五咯。我这个人啊，就是爱笑，一笑脸上两个酒窝。以前在街口帮我姐守过早点摊，什么人都见过。你要我演个热心肠的大姐、厉害的老板娘，那是手到擒来！",
+    },
+    look: "East Asian (Chinese) woman, about 45, plump and short, about 155 cm; full round cheeks with deep dimples, monolid eyes, small button nose; short permed curly black hair; mustard-yellow top",
+    image: "library/claude-casting-2026-10-07/final/CC-011.png",
+  },
+  {
+    slug: "chang-shulan",
+    source: "CC-016",
+    nameZh: "常淑兰",
+    nameEn: "Chang Shulan",
+    gender: "female",
+    group: "east-asian",
+    age: 62,
+    heightCm: 152,
+    origin: {
+      zh: "山西太原",
+      en: "Taiyuan, Shanxi",
+    },
+    tagline: {
+      zh: "下巴方，脾气硬，心最软。",
+      en: "Square jaw, hard temper, soft heart.",
+    },
+    voice: {
+      language: "zh",
+      brief:
+        "62岁山西女性，普通话带山西口音，声音略沙、有力，说话干脆利落，带点严厉，但尾音有温度。",
+      introLine:
+        "我叫常淑兰，太原人，六十二了。年轻时在纺织厂当过车间主任，嗓门是那时候练出来的。我这人脾气是硬了点，可谁家有事我第一个到。演婆婆、演奶奶、演居委会主任，我都行。",
+    },
+    look: "East Asian (Chinese) woman, about 62, small and sturdy, about 152 cm; strong square jaw, deep smile lines, salt-and-pepper short cropped hair; navy top",
+    image: "library/claude-casting-2026-10-07/final/CC-016.png",
+  },
+  {
+    slug: "cheng-xiaolu",
+    source: "CC-021",
+    nameZh: "程小鹿",
+    nameEn: "Cheng Xiaolu",
+    gender: "female",
+    group: "east-asian",
+    age: 27,
+    heightCm: 163,
+    origin: {
+      zh: "湖南长沙",
+      en: "Changsha, Hunan",
+    },
+    tagline: {
+      zh: "眉毛浓，嘴巴大，鼻梁上有几颗雀斑。",
+      en: "Heavy brows, a wide grin and a few freckles across the nose.",
+    },
+    voice: {
+      language: "zh",
+      brief: "27岁长沙女孩，普通话带一点湖南口音，声音明亮有活力，爱开玩笑，语速快，情绪外放。",
+      introLine:
+        "嗨，我是程小鹿，长沙妹子，二十七岁。我嘴巴大，笑起来可能有点夸张，不过大家都说看我笑会被传染。我最想演那种冒冒失失、但关键时刻特别靠谱的朋友。对了，吃辣我是认真的！",
+    },
+    look: "East Asian (Chinese) woman, about 27, average build, about 163 cm; heavy straight eyebrows, a very wide mouth, a sprinkle of freckles over the nose; long hair in a loose messy bun; white top",
+    image: "library/claude-casting-2026-10-07/final/CC-021.png",
+  },
+  {
+    slug: "liu-manqing",
+    source: "CC-026",
+    nameZh: "柳曼青",
+    nameEn: "Liu Manqing",
+    gender: "female",
+    group: "east-asian",
+    age: 38,
+    heightCm: 166,
+    origin: {
+      zh: "上海",
+      en: "Shanghai",
+    },
+    tagline: {
+      zh: "尖下巴，上挑眼，嘴角一颗痣。",
+      en: "Pointed chin, upturned eyes, a beauty mark above her lip.",
+    },
+    voice: {
+      language: "zh",
+      brief:
+        "38岁上海女性，普通话带一点上海口音，声音柔而有锋芒，语调精致，偶尔带点调侃，语速中等。",
+      introLine:
+        "侬好，我是柳曼青，上海人，三十八岁。很多人第一眼觉得我不好接近，大概是因为这双眼睛吧。其实我挺爱笑的。我适合演精明的职场女性，也可以演看起来厉害、其实很怕孤单的人。",
+    },
+    look: "East Asian (Chinese) woman, about 38, slim, about 166 cm; heart-shaped face with a pointed chin, strongly upturned eyes, a beauty mark above her upper lip; layered shoulder-length hair dyed copper-brown; black top",
+    image: "library/claude-casting-2026-10-07/final/CC-026.png",
+  },
+  {
+    slug: "zou-meihua",
+    source: "CC-031",
+    nameZh: "邹美华",
+    nameEn: "Zou Meihua",
+    gender: "female",
+    group: "east-asian",
+    age: 55,
+    heightCm: 160,
+    origin: {
+      zh: "江西南昌",
+      en: "Nanchang, Jiangxi",
+    },
+    tagline: {
+      zh: "圆脸，细边眼镜，一笑眼睛就没了。",
+      en: "Round face, thin glasses, eyes that vanish when she smiles.",
+    },
+    voice: {
+      language: "zh",
+      brief: "55岁南昌女性，普通话带江西口音，声音温和敦厚，说话慢悠悠，像中学数学老师，偶尔絮叨。",
+      introLine:
+        "大家好，我叫邹美华，南昌人，五十五岁。我以前在中学教了二十多年数学，所以说话可能有点慢、有点啰嗦，你们多担待。我演老师肯定像，演那种操心全家的妈妈，也不在话下。",
+    },
+    look: "East Asian (Chinese) woman, about 55, heavyset, about 160 cm; round face, soft double chin, a warm squint; blunt short bob; thin generic metal-frame glasses; burgundy top",
+    image: "library/claude-casting-2026-10-07/final/CC-031.png",
+  },
+  {
+    slug: "qian-sumei",
+    source: "CC-036",
+    nameZh: "钱素梅",
+    nameEn: "Qian Sumei",
+    gender: "female",
+    group: "east-asian",
+    age: 71,
+    heightCm: 150,
+    origin: {
+      zh: "江苏苏州",
+      en: "Suzhou, Jiangsu",
+    },
+    tagline: {
+      zh: "白发盘得一丝不乱，脸上一颗小痣。",
+      en: "White hair pinned in a perfect bun, a small mole on her cheek.",
+    },
+    voice: {
+      language: "zh",
+      brief: "71岁苏州老太太，普通话带吴语软糯口音，声音轻柔、慢、带笑，气息略弱但清楚，慈祥。",
+      introLine:
+        "我叫钱素梅，苏州人，今年七十一岁啦。我说话慢，你们不要急哦。年轻时候在评弹团里打过杂，听了一辈子的好故事。现在能自己来演戏，我开心得不得了。演外婆、演老邻居，我最拿手。",
+    },
+    look: "East Asian (Chinese) woman, about 71, thin and small, about 150 cm; finely wrinkled kind face, a small mole on her cheek, white hair in a tight bun; lavender top",
+    image: "library/claude-casting-2026-10-07/final/CC-036.png",
+  },
+  {
+    slug: "jiang-yifan",
+    source: "CC-041",
+    nameZh: "江一帆",
+    nameEn: "Jiang Yifan",
+    gender: "female",
+    group: "east-asian",
+    age: 20,
+    heightCm: 168,
+    origin: {
+      zh: "山东青岛",
+      en: "Qingdao, Shandong",
+    },
+    tagline: {
+      zh: "短寸头，眉毛硬，跑得比谁都快。",
+      en: "Undercut, strong brows, faster than anyone on the lot.",
+    },
+    voice: {
+      language: "zh",
+      brief: "20岁青岛女生，普通话带一点山东口音，声音中性偏低，干脆利落，有运动员的爽快劲儿。",
+      introLine:
+        "我叫江一帆，青岛的，二十岁，以前练过五年短跑。我头发短，好多人第一眼以为我是男生，我无所谓。动作戏、跑戏、摔戏，你尽管来，我不用替身。文戏我也在练，真的。",
+    },
+    look: "East Asian (Chinese) woman, about 20, athletic and sporty, about 168 cm; strong dark eyebrows, a slightly crooked nose, short tomboy undercut; heather-grey top",
+    image: "library/claude-casting-2026-10-07/final/CC-041.png",
+  },
+  {
+    slug: "ye-shuning",
+    source: "CC-046",
+    nameZh: "叶书宁",
+    nameEn: "Ye Shuning",
+    gender: "female",
+    group: "east-asian",
+    age: 34,
+    heightCm: 160,
+    origin: {
+      zh: "浙江杭州",
+      en: "Hangzhou, Zhejiang",
+    },
+    tagline: {
+      zh: "长脸，大眼睛，下巴一颗小痣。",
+      en: "Long face, big eyes, a tiny mole on the chin.",
+    },
+    voice: {
+      language: "zh",
+      brief: "34岁杭州女性，普通话标准、柔和，声音温润，语气平静带一点书卷气，语速中等偏慢。",
+      introLine:
+        "你好，我是叶书宁，杭州人，三十四岁。我平时喜欢逛书店、喝茶，朋友说我身上有股安静劲儿。我想演那种看起来温温柔柔，心里有自己主意的女人，比如开书店的老板，或者一个守着秘密的姐姐。",
+    },
+    look: "East Asian (Chinese) woman, about 34, average build, about 160 cm; long face, big eyes, a small mole on her chin; shoulder-length hair tucked behind her ears; light-blue top",
+    image: "library/claude-casting-2026-10-07/final/CC-046.png",
+  },
+  {
+    slug: "meng-zhaohua",
+    source: "CC-051",
+    nameZh: "孟昭华",
+    nameEn: "Meng Zhaohua",
+    gender: "female",
+    group: "east-asian",
+    age: 49,
+    heightCm: 172,
+    origin: {
+      zh: "辽宁沈阳",
+      en: "Shenyang, Liaoning",
+    },
+    tagline: {
+      zh: "肩膀宽，鬓角白，站着就像个领导。",
+      en: "Broad shoulders, greying temples. She stands like the boss.",
+    },
+    voice: {
+      language: "zh",
+      brief: "49岁沈阳女性，普通话带东北口音，声音低沉有力，气场强，说话干脆有分量，偶尔幽默。",
+      introLine:
+        "我叫孟昭华，沈阳人，四十九。个子高，肩膀宽，往那一站，大家都以为我是领导。其实我挺能逗的。演厂长、演局长、演那种说一不二的大家长，我有经验。不过你要让我演个搞笑的，我也接得住。",
+    },
+    look: "East Asian (Chinese) woman, about 49, tall and broad-shouldered, about 172 cm; angular face, thin lips, sharp narrow nose; chin-length straight hair greying at the temples; olive top",
+    image: "library/claude-casting-2026-10-07/final/CC-051.png",
+  },
+  {
+    slug: "gan-xiaotang",
+    source: "CC-056",
+    nameZh: "甘小棠",
+    nameEn: "Gan Xiaotang",
+    gender: "female",
+    group: "east-asian",
+    age: 26,
+    heightCm: 158,
+    origin: {
+      zh: "四川成都",
+      en: "Chengdu, Sichuan",
+    },
+    tagline: {
+      zh: "苹果脸，小圆鼻，说话软软的。",
+      en: "Apple cheeks, a button nose and a soft, sweet voice.",
+    },
+    voice: {
+      language: "zh",
+      brief: "26岁成都女孩，普通话带明显四川口音，声音甜软，慢悠悠的，爱撒娇，有点憨。",
+      introLine:
+        "大家好，我是甘小棠，成都的，二十六岁。我说话可能有点慢，因为成都人都比较巴适嘛。我脸圆圆的，好多人说我像个汤圆。我想演那种憨憨的、可爱的、偶尔吃货的角色，演得肯定很真实。",
+    },
+    look: "East Asian (Chinese) woman, about 26, chubby, about 158 cm; round face with apple cheeks, a button nose; short fluffy bob; peach top",
+    image: "library/claude-casting-2026-10-07/final/CC-056.png",
+  },
+  {
+    slug: "yan-ruolin",
+    source: "CC-061",
+    nameZh: "严若琳",
+    nameEn: "Yan Ruolin",
+    gender: "female",
+    group: "east-asian",
+    age: 41,
+    heightCm: 165,
+    origin: {
+      zh: "北京",
+      en: "Beijing",
+    },
+    tagline: {
+      zh: "额头高，眉毛细，发髻扎得一丝不苟。",
+      en: "High forehead, fine brows, hair pulled into a tight low bun.",
+    },
+    voice: {
+      language: "zh",
+      brief: "41岁北京女性，普通话字正腔圆带一点京味，声音清冷、精确，语速平稳，带点距离感。",
+      introLine:
+        "我是严若琳，北京人，四十一岁。我说话比较直接，不太爱绕弯子。很多人觉得我冷，其实我只是认真。我适合演严格的主编、医院的主任，或者那种你以为是反派、最后才发现她一直在帮你的人。",
+    },
+    look: "East Asian (Chinese) woman, about 41, slim, about 165 cm; very high forehead, thin arched eyebrows, a small tight mouth, a sharp chin; hair pulled back in a tight low bun; charcoal top",
+    image: "library/claude-casting-2026-10-07/final/CC-061.png",
+  },
+  {
+    slug: "niu-fengying",
+    source: "CC-066",
+    nameZh: "牛凤英",
+    nameEn: "Niu Fengying",
+    gender: "female",
+    group: "east-asian",
+    age: 58,
+    heightCm: 158,
+    origin: {
+      zh: "河南郑州",
+      en: "Zhengzhou, Henan",
+    },
+    tagline: {
+      zh: "红褐色卷发，眉边一颗痣，笑纹很深。",
+      en: "Red-brown perm, a mole by her brow and deep laugh lines.",
+    },
+    voice: {
+      language: "zh",
+      brief: "58岁郑州女性，普通话带河南口音，声音敞亮，爱说爱笑，带点俏皮，像广场舞领队。",
+      introLine:
+        "中！我叫牛凤英，郑州的，五十八了。我是我们小区广场舞的领队，嗓门大，人缘好。这头卷发是我自己染的，好看不？演热心大妈、演媒婆、演爱管闲事的邻居，我张嘴就来。",
+    },
+    look: "East Asian (Chinese) woman, about 58, average build, about 158 cm; laugh lines, a mole near one eyebrow, short curly perm dyed dark red-brown; teal top",
+    image: "library/claude-casting-2026-10-07/final/CC-066.png",
+  },
+  {
+    slug: "xia-zhiyao",
+    source: "CC-071",
+    nameZh: "夏知遥",
+    nameEn: "Xia Zhiyao",
+    gender: "female",
+    group: "east-asian",
+    age: 29,
+    heightCm: 170,
+    origin: {
+      zh: "福建厦门",
+      en: "Xiamen, Fujian",
+    },
+    tagline: {
+      zh: "两边眉毛不一样高，看起来总在想事情。",
+      en: "One brow sits higher, so she always looks like she's thinking.",
+    },
+    voice: {
+      language: "zh",
+      brief: "29岁厦门女性，普通话带一点闽南口音，声音轻柔偏气声，语速慢，有点神秘感和文艺感。",
+      introLine:
+        "我叫夏知遥，厦门人，二十九岁。我左边眉毛比右边高一点，所以总有人问我是不是在怀疑他。其实我只是在发呆。我喜欢海，也喜欢有点奇怪的故事。如果有悬疑片，我很想演那个知道真相的人。",
+    },
+    look: "East Asian (Chinese) woman, about 29, tall and slim, about 170 cm; uneven eyebrows (her left one higher), a small mole on one cheek, long wavy hair; cream top",
+    image: "library/claude-casting-2026-10-07/final/CC-071.png",
+  },
+  {
+    slug: "tao-guixiang",
+    source: "CC-076",
+    nameZh: "陶桂香",
+    nameEn: "Tao Guixiang",
+    gender: "female",
+    group: "east-asian",
+    age: 66,
+    heightCm: 154,
+    origin: {
+      zh: "江苏南京",
+      en: "Nanjing, Jiangsu",
+    },
+    tagline: {
+      zh: "灰黑卷发，笑起来像过年。",
+      en: "Grey-black curls and a smile like Spring Festival.",
+    },
+    voice: {
+      language: "zh",
+      brief: "66岁南京老太太，普通话带南京口音，声音温暖、略沙，慢条斯理，絮絮叨叨很亲切。",
+      introLine:
+        "我叫陶桂香，南京人，六十六岁。退休以后天天给孙子做饭，现在孙子上大学了，我闲不住，就来演戏了。我做的盐水鸭可好吃了。演奶奶、演外婆、演菜市场的老阿姨，你们放心交给我。",
+    },
+    look: "East Asian (Chinese) woman, about 66, plump, about 154 cm; soft round face, smile lines, permed grey-black curls; rose-pink top",
+    image: "library/claude-casting-2026-10-07/final/CC-076.png",
+  },
+  {
+    slug: "feng-ye",
+    source: "CC-081",
+    nameZh: "冯野",
+    nameEn: "Feng Ye",
+    gender: "female",
+    group: "east-asian",
+    age: 36,
+    heightCm: 162,
+    origin: {
+      zh: "内蒙古呼和浩特",
+      en: "Hohhot, Inner Mongolia",
+    },
+    tagline: {
+      zh: "颧骨高，下颌宽，短得利落的头发。",
+      en: "High cheekbones, a wide jaw and a sharp pixie crop.",
+    },
+    voice: {
+      language: "zh",
+      brief:
+        "36岁女性，呼和浩特人，普通话标准带一点北方口音，声音沉稳有力，中低音，干脆利落，有力量感。",
+      introLine:
+        "我叫冯野，呼和浩特人，三十六岁。名字里这个野字，是我爸起的，说希望我像草原上的风。我会骑马，也爱开车跑长途。我想演那种独来独往、靠自己闯出来的女人，向导、赛车手、牧场主，都行。",
+    },
+    look: "East Asian (Chinese) woman, about 36, average build, about 162 cm; strong cheekbones, a wide jaw, very short pixie crop; rust-orange top",
+    image: "library/claude-casting-2026-10-07/final/CC-081.png",
+  },
+  {
+    slug: "fang-xiaoyu",
+    source: "CC-086",
+    nameZh: "方小语",
+    nameEn: "Fang Xiaoyu",
+    gender: "female",
+    group: "east-asian",
+    age: 24,
+    heightCm: 160,
+    origin: {
+      zh: "安徽合肥",
+      en: "Hefei, Anhui",
+    },
+    tagline: {
+      zh: "细框眼镜，齐刘海，说话轻声细语。",
+      en: "Thin glasses, straight bangs and a quiet voice.",
+    },
+    voice: {
+      language: "zh",
+      brief: "24岁合肥女生，普通话标准，声音轻柔细腻，有点害羞，语速偏慢，偶尔紧张地笑。",
+      introLine:
+        "大家好，我叫方小语，合肥人，二十四岁。我平时话不多，说话也比较小声，嗯……熟了以后就好了。我研究生读的是图书馆学。我觉得我很适合演那种安静的、但观察力特别强的女孩子。",
+    },
+    look: "East Asian (Chinese) woman, about 24, slim, about 160 cm; an oval face, thin oval generic glasses, long straight black hair with bangs; bright-yellow top",
+    image: "library/claude-casting-2026-10-07/final/CC-086.png",
+  },
+  {
+    slug: "lu-hongmei",
+    source: "CC-091",
+    nameZh: "鲁红梅",
+    nameEn: "Lu Hongmei",
+    gender: "female",
+    group: "east-asian",
+    age: 52,
+    heightCm: 156,
+    origin: {
+      zh: "山东济南",
+      en: "Jinan, Shandong",
+    },
+    tagline: {
+      zh: "方脸浓眉，下巴一道小疤，干活利索。",
+      en: "Square face, thick brows, a small scar on the chin. Gets things done.",
+    },
+    voice: {
+      language: "zh",
+      brief: "52岁济南女性，普通话带山东口音，声音厚实有力，说话实在，爽朗，偶尔大嗓门。",
+      introLine:
+        "俺叫鲁红梅，济南人，五十二了。下巴这道小疤，是年轻时候在厂里干活碰的。俺这个人实在，说话直，干活快。演工人、演食堂大姐、演一个人撑起一个家的妈，俺心里有数。",
+    },
+    look: "East Asian (Chinese) woman, about 52, stocky, about 156 cm; square face, thick eyebrows, a small pale scar on her chin; straight shoulder-length hair; denim-blue top",
+    image: "library/claude-casting-2026-10-07/final/CC-091.png",
+  },
+  {
+    slug: "deng-xiaoshu",
+    source: "CC-002",
+    nameZh: "邓小树",
+    nameEn: "Deng Xiaoshu",
+    gender: "male",
+    group: "east-asian",
+    age: 22,
+    heightCm: 182,
+    origin: {
+      zh: "贵州贵阳",
+      en: "Guiyang, Guizhou",
+    },
+    tagline: {
+      zh: "又高又瘦，耳朵有点招风。",
+      en: "Tall, skinny, with ears that stick out a little.",
+    },
+    voice: {
+      language: "zh",
+      brief: "22岁贵阳男生，普通话带一点西南口音，声音清亮、少年感，有点腼腆，说话时会笑。",
+      introLine:
+        "大家好，我叫邓小树，贵阳的，二十二岁。我妈说我长得跟树一样，又高又细，所以叫小树。我耳朵有点大，小时候老被笑，现在觉得挺好认的。我想演那种笨笨的、但特别真诚的男生。",
+    },
+    look: "East Asian (Chinese) man, about 22, skinny and tall, about 182 cm; long face, big ears that stick out, messy fringe; white top",
+    image: "library/claude-casting-2026-10-07/final/CC-002.png",
+  },
+  {
+    slug: "bao-mancang",
+    source: "CC-007",
+    nameZh: "包满仓",
+    nameEn: "Bao Mancang",
+    gender: "male",
+    group: "east-asian",
+    age: 33,
+    heightCm: 172,
+    origin: {
+      zh: "天津",
+      en: "Tianjin",
+    },
+    tagline: {
+      zh: "圆脸小眼，发际线往后跑，一张嘴就是相声。",
+      en: "Round face, small eyes, retreating hairline. Every sentence sounds like a punchline.",
+    },
+    voice: {
+      language: "zh",
+      brief: "33岁天津男人，普通话带浓天津口音，声音明亮，贫嘴幽默，节奏感强，像说相声。",
+      introLine:
+        "嘿，各位好，我叫包满仓，天津卫的，三十三了。这名儿是我爷爷起的，说是粮仓满满不愁吃。您看我这脑门儿，越来越亮了，省电。我打小听相声长大，演个嘴贫的、演个老实人吃亏的，都行！",
+    },
+    look: "East Asian (Chinese) man, about 33, average build, about 172 cm; round face, small eyes, a slightly receding hairline; navy top",
+    image: "library/claude-casting-2026-10-07/final/CC-007.png",
+  },
+  {
+    slug: "lei-dahai",
+    source: "CC-012",
+    nameZh: "雷大海",
+    nameEn: "Lei Dahai",
+    gender: "male",
+    group: "east-asian",
+    age: 46,
+    heightCm: 170,
+    origin: {
+      zh: "湖北武汉",
+      en: "Wuhan, Hubei",
+    },
+    tagline: {
+      zh: "啤酒肚，寸头，笑起来震天响。",
+      en: "Beer belly, buzz cut and a laugh you can hear down the street.",
+    },
+    voice: {
+      language: "zh",
+      brief: "46岁武汉男人，普通话带浓武汉口音，声音洪亮粗犷，豪爽，急脾气，但很热心。",
+      introLine:
+        "我叫雷大海，武汉的，四十六岁。你看我这个肚子，都是热干面跟啤酒喂出来的。我嗓门大，脾气急，但是心热。以前开过出租车，满武汉没有我不熟的路。演司机、演大排档老板，那是本色出演！",
+    },
+    look: "East Asian (Chinese) man, about 46, heavyset with a pot belly, about 170 cm; broad face, double chin, very short buzz cut; heather-grey top",
+    image: "library/claude-casting-2026-10-07/final/CC-012.png",
+  },
+  {
+    slug: "gu-wenyuan",
+    source: "CC-017",
+    nameZh: "顾文渊",
+    nameEn: "Gu Wenyuan",
+    gender: "male",
+    group: "east-asian",
+    age: 60,
+    heightCm: 168,
+    origin: {
+      zh: "上海",
+      en: "Shanghai",
+    },
+    tagline: {
+      zh: "粗黑框眼镜，皱纹很深，灰发随手往后一拢。",
+      en: "Thick black glasses, deep lines and grey hair pushed back by hand.",
+    },
+    voice: {
+      language: "zh",
+      brief: "60岁上海男性，普通话带上海口音，声音低沉温和，学者气，语速慢，用词讲究。",
+      introLine:
+        "我叫顾文渊，上海人，今年六十岁。在大学里教了三十年的书，教的是古典文学。退休以后，学生说我这张脸适合演戏，我就来试试。教授、老学者、固执的老父亲，这些角色我大概不用怎么演。",
+    },
+    look: "East Asian (Chinese) man, about 60, thin, about 168 cm; deeply lined face, thick generic black-rimmed glasses, grey hair brushed back loosely; olive top",
+    image: "library/claude-casting-2026-10-07/final/CC-017.png",
+  },
+  {
+    slug: "qin-lie",
+    source: "CC-022",
+    nameZh: "秦烈",
+    nameEn: "Qin Lie",
+    gender: "male",
+    group: "east-asian",
+    age: 28,
+    heightCm: 178,
+    origin: {
+      zh: "陕西西安",
+      en: "Xi'an, Shaanxi",
+    },
+    tagline: {
+      zh: "方下巴，浓眉，一身腱子肉。",
+      en: "Square jaw, heavy brows and solid muscle.",
+    },
+    voice: {
+      language: "zh",
+      brief: "28岁西安男人，普通话带一点陕西口音，声音浑厚有力，说话简短干脆，有江湖气。",
+      introLine:
+        "我叫秦烈，西安人，二十八岁。练了十年散打，所以看着有点凶，其实我挺好说话的。动作戏是我的强项，打戏我自己上。我也想试试那种外表硬、心里软的角色，比如一个照顾妹妹的哥哥。",
+    },
+    look: "East Asian (Chinese) man, about 28, muscular and broad, about 178 cm; square jaw, thick eyebrows, short spiky hair; black top",
+    image: "library/claude-casting-2026-10-07/final/CC-022.png",
+  },
+  {
+    slug: "zhu-youfu",
+    source: "CC-027",
+    nameZh: "朱有福",
+    nameEn: "Zhu Youfu",
+    gender: "male",
+    group: "east-asian",
+    age: 39,
+    heightCm: 163,
+    origin: {
+      zh: "广东佛山",
+      en: "Foshan, Guangdong",
+    },
+    tagline: {
+      zh: "矮壮，头顶秃了，笑得比谁都开心。",
+      en: "Short and stocky, bald on top, always the happiest man in the room.",
+    },
+    voice: {
+      language: "zh",
+      brief: "39岁佛山男人，普通话带粤语口音，声音明亮，乐呵呵，语速快，热情好客。",
+      introLine:
+        "哈喽大家好，我叫朱有福，佛山人，三十九岁。你看我这头，前面已经放假了，哈哈。我家开烧腊店的，从小在店里招呼客人，所以我最会讲好话。演老板、演开心果、演倒霉但乐观的人，没问题！",
+    },
+    look: "East Asian (Chinese) man, about 39, short and stocky, about 163 cm; round head, bald on top with short hair at the sides, a big cheerful grin; mustard-yellow top",
+    image: "library/claude-casting-2026-10-07/final/CC-027.png",
+  },
+  {
+    slug: "ge-changlin",
+    source: "CC-032",
+    nameZh: "葛长林",
+    nameEn: "Ge Changlin",
+    gender: "male",
+    group: "east-asian",
+    age: 52,
+    heightCm: 175,
+    origin: {
+      zh: "河北石家庄",
+      en: "Shijiazhuang, Hebei",
+    },
+    tagline: {
+      zh: "马脸，眼袋重，一撇小胡子。",
+      en: "Long horse face, heavy eye bags and a neat mustache.",
+    },
+    voice: {
+      language: "zh",
+      brief: "52岁石家庄男人，普通话带河北口音，声音低沉、慢、有点疲惫的幽默感，冷面笑匠。",
+      introLine:
+        "我叫葛长林，石家庄的，五十二。我这张脸长，眼袋重，大家说我天生一副没睡醒的样子。我以前是火车站的值班员，见惯了人来人往。我说话慢，但冷不丁一句能把人逗乐。演个冷面的老头，我在行。",
+    },
+    look: "East Asian (Chinese) man, about 52, average build, about 175 cm; long horse-like face, bags under his eyes, side-parted hair, a neat mustache; burgundy top",
+    image: "library/claude-casting-2026-10-07/final/CC-032.png",
+  },
+  {
+    slug: "yu-fugen",
+    source: "CC-037",
+    nameZh: "余福根",
+    nameEn: "Yu Fugen",
+    gender: "male",
+    group: "east-asian",
+    age: 70,
+    heightCm: 162,
+    origin: {
+      zh: "浙江宁波",
+      en: "Ningbo, Zhejiang",
+    },
+    tagline: {
+      zh: "白发梳得整整齐齐，脸蛋圆圆的。",
+      en: "White hair combed neat, round rosy cheeks.",
+    },
+    voice: {
+      language: "zh",
+      brief: "70岁宁波老爷爷，普通话带宁波口音，声音温和、慢、有点含糊的老人音，慈眉善目，爱讲古。",
+      introLine:
+        "我叫余福根，宁波人，七十岁了。年轻时候是跑船的，去过好多港口。现在呢，每天早上要喝一碗汤圆。我讲话慢，但故事多，你们要听，我能讲三天三夜。演爷爷、演老船长，我觉得蛮合适的。",
+    },
+    look: "East Asian (Chinese) man, about 70, small, about 162 cm; thin white hair combed neatly to one side, big round cheeks, deep smile lines; beige top",
+    image: "library/claude-casting-2026-10-07/final/CC-037.png",
+  },
+  {
+    slug: "lu-xingye",
+    source: "CC-042",
+    nameZh: "陆星野",
+    nameEn: "Lu Xingye",
+    gender: "male",
+    group: "east-asian",
+    age: 25,
+    heightCm: 170,
+    origin: {
+      zh: "广东深圳",
+      en: "Shenzhen, Guangdong",
+    },
+    tagline: {
+      zh: "染了一头灰金色，嘴角总挂着一点坏笑。",
+      en: "Bleached ash-blond hair and a permanent half-smirk.",
+    },
+    voice: {
+      language: "zh",
+      brief: "25岁深圳男生，普通话标准带一点港台腔，声音年轻、懒散、带点玩世不恭，语速随意。",
+      introLine:
+        "嗨，我是陆星野，深圳的，二十五岁。头发是上个月刚漂的，还行吧？我以前做过一段时间街舞，后来又去写代码，现在来演戏。我挺适合演那种看着吊儿郎当、其实什么都懂的年轻人。",
+    },
+    look: "East Asian (Chinese) man, about 25, slim, about 170 cm; narrow face, bleached ash-blond dyed hair, a faint smirk; lavender top",
+    image: "library/claude-casting-2026-10-07/final/CC-042.png",
+  },
+  {
+    slug: "qi-changfeng",
+    source: "CC-047",
+    nameZh: "祁长风",
+    nameEn: "Qi Changfeng",
+    gender: "male",
+    group: "east-asian",
+    age: 42,
+    heightCm: 185,
+    origin: {
+      zh: "甘肃兰州",
+      en: "Lanzhou, Gansu",
+    },
+    tagline: {
+      zh: "高瘦，脸颊凹，喉结很明显。",
+      en: "Tall and gaunt, hollow cheeks, a prominent Adam's apple.",
+    },
+    voice: {
+      language: "zh",
+      brief: "42岁兰州男人，普通话带西北口音，声音干、低沉、有沙哑颗粒感，话少，沉默寡言。",
+      introLine:
+        "我叫祁长风，兰州人，四十二。话不多，见谅。在西北跑了十几年长途货车，一个人开夜路，习惯了安静。我觉得我适合演那种不说话的人，比如守夜的人、送信的人，或者一个藏着过去的男人。",
+    },
+    look: "East Asian (Chinese) man, about 42, tall and lanky, about 185 cm; hollow cheeks, a prominent Adam's apple, short crew cut; sage-green top",
+    image: "library/claude-casting-2026-10-07/final/CC-047.png",
+  },
+  {
+    slug: "fan-yiming",
+    source: "CC-052",
+    nameZh: "范一鸣",
+    nameEn: "Fan Yiming",
+    gender: "male",
+    group: "east-asian",
+    age: 36,
+    heightCm: 168,
+    origin: {
+      zh: "江苏无锡",
+      en: "Wuxi, Jiangsu",
+    },
+    tagline: {
+      zh: "圆脸，侧分卷发，留着一小撮山羊胡。",
+      en: "Round face, side-parted waves and a neat little goatee.",
+    },
+    voice: {
+      language: "zh",
+      brief:
+        "36岁无锡男人，普通话带一点吴语口音，声音圆润，温和健谈，有点小得意，像社区活动的主持人。",
+      introLine:
+        "大家好，我是范一鸣，无锡人，三十六岁。以前在婚庆公司当过主持人，三百多场婚礼，台下的人哭我也跟着哭。这撮小胡子是我的标志。我适合演热心的主持人、爱面子的小老板，或者暖心的大哥。",
+    },
+    look: "East Asian (Chinese) man, about 36, chubby, about 168 cm; round face, short wavy hair with a side part, a neat goatee; light-blue top",
+    image: "library/claude-casting-2026-10-07/final/CC-052.png",
+  },
+  {
+    slug: "pang-tiezhu",
+    source: "CC-057",
+    nameZh: "庞铁柱",
+    nameEn: "Pang Tiezhu",
+    gender: "male",
+    group: "east-asian",
+    age: 57,
+    heightCm: 176,
+    origin: {
+      zh: "河北唐山",
+      en: "Tangshan, Hebei",
+    },
+    tagline: {
+      zh: "宽肩膀，一颗门牙有点歪，胡茬扎人。",
+      en: "Broad shoulders, one crooked front tooth, rough stubble.",
+    },
+    voice: {
+      language: "zh",
+      brief: "57岁唐山男人，普通话带浓唐山口音，声音粗哑有劲，憨厚，说话带笑，接地气。",
+      introLine:
+        "我叫庞铁柱，唐山的，五十七了。名字土，人也实在。在钢厂干了三十年，力气大。我这颗门牙是年轻时候打球磕的，就不修了，留个纪念。演工人、演老实人、演倔老头，我都能演出那股劲儿。",
+    },
+    look: "East Asian (Chinese) man, about 57, broad, about 176 cm; a slightly crooked front tooth, crew cut greying at the temples, light stubble; rust-orange top",
+    image: "library/claude-casting-2026-10-07/final/CC-057.png",
+  },
+  {
+    slug: "bai-yunchuan",
+    source: "CC-062",
+    nameZh: "白云川",
+    nameEn: "Bai Yunchuan",
+    gender: "male",
+    group: "east-asian",
+    age: 30,
+    heightCm: 174,
+    origin: {
+      zh: "云南昆明",
+      en: "Kunming, Yunnan",
+    },
+    tagline: {
+      zh: "眉心一颗痣，扎个小发髻，留点小胡子。",
+      en: "A mole between the brows, a small topknot and a thin goatee.",
+    },
+    voice: {
+      language: "zh",
+      brief: "30岁昆明男人，普通话带一点云南口音，声音温和舒缓，带点慵懒和禅意，语速慢。",
+      introLine:
+        "你好，我叫白云川，昆明人，三十岁。我在大理开过一家小客栈，每天看云、煮茶、跟客人聊天。眉心这颗痣，好多人说像点上去的。我适合演那种看起来很佛系、其实心里很有故事的人。",
+    },
+    look: "East Asian (Chinese) man, about 30, average build, about 174 cm; a mole between his eyebrows, long hair tied in a small bun, a thin goatee; teal top",
+    image: "library/claude-casting-2026-10-07/final/CC-062.png",
+  },
+  {
+    slug: "zhong-fuhai",
+    source: "CC-067",
+    nameZh: "钟福海",
+    nameEn: "Zhong Fuhai",
+    gender: "male",
+    group: "east-asian",
+    age: 64,
+    heightCm: 166,
+    origin: {
+      zh: "广东广州",
+      en: "Guangzhou, Guangdong",
+    },
+    tagline: {
+      zh: "脸蛋圆鼓鼓，笑眼，头发梳得想盖住头顶。",
+      en: "Big round cheeks, smiling eyes and a hopeful comb-over.",
+    },
+    voice: {
+      language: "zh",
+      brief: "64岁广州阿伯，普通话带浓广东口音，声音和蔼、略沙，慢悠悠，爱开玩笑，像茶楼常客。",
+      introLine:
+        "大家好，我叫钟福海，广州人，六十四岁。每天早上一定要去饮早茶，一盅两件，跟老朋友吹吹水。我头顶的头发少了，所以要梳得靓一点。演阿伯、演茶楼老板、演好脾气的爷爷，交给我啦。",
+    },
+    look: "East Asian (Chinese) man, about 64, heavy, about 166 cm; round face with very full cheeks, laughing eyes, thinning hair combed over; forest-green top",
+    image: "library/claude-casting-2026-10-07/final/CC-067.png",
+  },
+  {
+    slug: "you-jiale",
+    source: "CC-072",
+    nameZh: "尤嘉乐",
+    nameEn: "You Jiale",
+    gender: "male",
+    group: "east-asian",
+    age: 24,
+    heightCm: 165,
+    origin: {
+      zh: "广西南宁",
+      en: "Nanning, Guangxi",
+    },
+    tagline: {
+      zh: "一边嘴角先笑，头发烫成小卷。",
+      en: "His smile starts on one side. Short permed curls.",
+    },
+    voice: {
+      language: "zh",
+      brief: "24岁南宁男生，普通话带一点广西口音，声音明亮俏皮，爱开玩笑，语速快，阳光。",
+      introLine:
+        "嗨嗨，我是尤嘉乐，南宁的，二十四岁。我笑的时候只有一边嘴角动，朋友说我笑得很欠揍，哈哈。这个卷是我妈带我去烫的。我想演那种搞笑的室友、机灵的小跟班，或者一不小心成了主角的普通人。",
+    },
+    look: "East Asian (Chinese) man, about 24, short and slim, about 165 cm; a lopsided smile, high cheekbones, short curly permed hair; bright-yellow top",
+    image: "library/claude-casting-2026-10-07/final/CC-072.png",
+  },
+  {
+    slug: "shao-tiefeng",
+    source: "CC-077",
+    nameZh: "邵铁峰",
+    nameEn: "Shao Tiefeng",
+    gender: "male",
+    group: "east-asian",
+    age: 48,
+    heightCm: 171,
+    origin: {
+      zh: "黑龙江哈尔滨",
+      en: "Harbin, Heilongjiang",
+    },
+    tagline: {
+      zh: "鼻梁有点歪，眉毛上一道小疤。",
+      en: "A slightly crooked nose and a small scar through one eyebrow.",
+    },
+    voice: {
+      language: "zh",
+      brief: "48岁哈尔滨男人，普通话带东北口音，声音低沉粗糙，话不多，硬汉气，偶尔冷幽默。",
+      introLine:
+        "我叫邵铁峰，哈尔滨的，四十八。鼻子是年轻时候练拳歪的，眉毛这道疤是冬天摔的。看着凶，其实我挺爱养花的。我适合演出租车司机、保安队长、老工人，或者一个刀子嘴豆腐心的老哥。",
+    },
+    look: "East Asian (Chinese) man, about 48, average build, about 171 cm; a slightly crooked nose, a small scar through one eyebrow, short hair; charcoal top",
+    image: "library/claude-casting-2026-10-07/final/CC-077.png",
+  },
+  {
+    slug: "wen-shulang",
+    source: "CC-082",
+    nameZh: "温书朗",
+    nameEn: "Wen Shulang",
+    gender: "male",
+    group: "east-asian",
+    age: 35,
+    heightCm: 180,
+    origin: {
+      zh: "广西桂林",
+      en: "Guilin, Guangxi",
+    },
+    tagline: {
+      zh: "下巴有道深沟，头发微卷，笑起来很暖。",
+      en: "A deep cleft chin, loose waves and a warm smile.",
+    },
+    voice: {
+      language: "zh",
+      brief: "35岁桂林男人，普通话标准，声音温暖醇厚，带磁性，语速舒缓，适合讲故事。",
+      introLine:
+        "你好，我是温书朗，桂林人，三十五岁。之前在电台做了几年夜间节目，陪很多睡不着的人聊天。我喜欢山水，也喜欢安静的爱情片。我想演一个好丈夫、一个温柔的老师，或者一个让人想信任的医生。",
+    },
+    look: "East Asian (Chinese) man, about 35, tall, about 180 cm; long chin with a deep cleft, wavy medium-length hair; cream top",
+    image: "library/claude-casting-2026-10-07/final/CC-082.png",
+  },
+  {
+    slug: "du-shouren",
+    source: "CC-087",
+    nameZh: "杜守仁",
+    nameEn: "Du Shouren",
+    gender: "male",
+    group: "east-asian",
+    age: 72,
+    heightCm: 162,
+    origin: {
+      zh: "河南洛阳",
+      en: "Luoyang, Henan",
+    },
+    tagline: {
+      zh: "白短发，瘦长脸，下巴一颗痣，眼睛总带笑。",
+      en: "Short white hair, a lean face, a mole on the chin and kind eyes.",
+    },
+    voice: {
+      language: "zh",
+      brief: "72岁洛阳老人，普通话带河南口音，声音苍老但清晰，温和慈祥，语速慢，像老中医。",
+      introLine:
+        "我叫杜守仁，洛阳人，七十二了。家里三代都是开中药铺的，我从小闻着药香长大。说话慢，你们莫嫌弃。我适合演老大夫、老先生，或者在关键时候点醒年轻人的那个老人。",
+    },
+    look: "East Asian (Chinese) man, about 72, lean, about 162 cm; short white hair, a lean face, kind eyes, a small mole on his chin; navy top",
+    image: "library/claude-casting-2026-10-07/final/CC-087.png",
+  },
+  {
+    slug: "shen-dali",
+    source: "CC-092",
+    nameZh: "申大力",
+    nameEn: "Shen Dali",
+    gender: "male",
+    group: "east-asian",
+    age: 41,
+    heightCm: 169,
+    origin: {
+      zh: "河北保定",
+      en: "Baoding, Hebei",
+    },
+    tagline: {
+      zh: "脖子粗，平头，嘴角一翘就是不服。",
+      en: "Thick neck, flat-top haircut and a 'try me' smirk.",
+    },
+    voice: {
+      language: "zh",
+      brief: "41岁保定男人，普通话带河北口音，声音粗壮，自信带点痞气，语速中等，爱抬杠。",
+      introLine:
+        "我叫申大力，保定人，四十一。名字叫大力，人也真有力气，以前在驾校当教练，骂人一套一套的，学员都怕我。我这人爱抬杠，但讲义气。演教练、演小头目、演嘴硬的大哥，我在行。",
+    },
+    look: "East Asian (Chinese) man, about 41, stocky, about 169 cm; thick neck, flat-top haircut, a confident smirk; red top",
+    image: "library/claude-casting-2026-10-07/final/CC-092.png",
+  },
+  {
+    slug: "tu-letian",
+    source: "CC-097",
+    nameZh: "涂乐天",
+    nameEn: "Tu Letian",
+    gender: "male",
+    group: "east-asian",
+    age: 29,
+    heightCm: 176,
+    origin: {
+      zh: "湖北宜昌",
+      en: "Yichang, Hubei",
+    },
+    tagline: {
+      zh: "脸有点肉，耳朵大，永远一副没睡醒的笑。",
+      en: "Chubby cheeks, big ears and a sleepy, easy grin.",
+    },
+    voice: {
+      language: "zh",
+      brief: "29岁宜昌男生，普通话带一点湖北口音，声音慵懒松弛，慢吞吞，爱打哈哈，很治愈。",
+      introLine:
+        "大家好……我叫涂乐天，宜昌人，二十九岁。名字叫乐天，人也比较乐天，天塌下来先睡一觉再说。我说话慢，别着急哈。我觉得我很适合演那种懒洋洋的室友，或者关键时刻突然很靠谱的人。",
+    },
+    look: "East Asian (Chinese) man, about 29, average build, about 176 cm; slightly chubby cheeks, big ears, undercut hair, a relaxed lazy smile; denim-blue top",
+    image: "library/claude-casting-2026-10-07/final/CC-097.png",
+  },
+  {
+    slug: "clara-vos",
+    source: "CC-003",
+    nameZh: "克拉拉·沃斯",
+    nameEn: "Clara Vos",
+    gender: "female",
+    group: "white",
+    age: 25,
+    heightCm: 167,
+    origin: {
+      zh: "荷兰鹿特丹",
+      en: "Rotterdam, Netherlands",
+    },
+    tagline: {
+      zh: "高鼻梁，门牙有缝，笑得毫无保留。",
+      en: "Long nose, gap-toothed and laughs without holding back.",
+    },
+    voice: {
+      language: "en",
+      brief: "25岁荷兰女孩，说英语带轻微荷兰口音，声音明亮、直率、有活力，语速稍快，爱笑。",
+      introLine:
+        "Hi! I'm Clara Vos, I'm twenty-five, and I'm from Rotterdam. Yes, there's a gap in my teeth, and no, I'm not fixing it. I grew up on a bike, in the rain, arguing with my brothers. Give me the friend who says the thing everyone else is thinking.",
+    },
+    look: "White woman, about 25, slim, about 167 cm; a long nose, a gap between her front teeth, shoulder-length wavy dark-blonde hair tucked behind her ears; forest-green top",
+    image: "library/claude-casting-2026-10-07/final/CC-003.png",
+  },
+  {
+    slug: "ingrid-halvorsen",
+    source: "CC-008",
+    nameZh: "英格丽·哈尔沃森",
+    nameEn: "Ingrid Halvorsen",
+    gender: "female",
+    group: "white",
+    age: 34,
+    heightCm: 178,
+    origin: {
+      zh: "挪威卑尔根",
+      en: "Bergen, Norway",
+    },
+    tagline: {
+      zh: "高，下颌方，眉毛淡得几乎看不见。",
+      en: "Tall, square-jawed, with brows so pale they almost vanish.",
+    },
+    voice: {
+      language: "en",
+      brief: "34岁挪威女性，说英语带挪威口音，声音沉稳、冷静、清晰，语速慢，干练的幽默。",
+      introLine:
+        "Hello. I'm Ingrid Halvorsen, thirty-four, from Bergen in Norway. It rains there about three hundred days a year, so I'm very patient. I used to guide hikers up mountains. I'd love to play a ship captain, a detective, or the calm one when everything falls apart.",
+    },
+    look: "White woman of Scandinavian look, about 34, tall and athletic, about 178 cm; strong square jaw, very pale eyebrows, short ash-blonde hair cut straight at the jaw; navy top",
+    image: "library/claude-casting-2026-10-07/final/CC-008.png",
+  },
+  {
+    slug: "maggie-doyle",
+    source: "CC-013",
+    nameZh: "玛姬·多伊尔",
+    nameEn: "Maggie Doyle",
+    gender: "female",
+    group: "white",
+    age: 47,
+    heightCm: 162,
+    origin: {
+      zh: "爱尔兰科克",
+      en: "Cork, Ireland",
+    },
+    tagline: {
+      zh: "红扑扑的圆脸，笑纹深，短发。",
+      en: "Rosy round face, deep laugh lines, short pixie cut.",
+    },
+    voice: {
+      language: "en",
+      brief: "47岁爱尔兰女性，说英语带浓爱尔兰口音，声音温暖、爽朗、爱说笑，语速快。",
+      introLine:
+        "Well hello there, I'm Maggie Doyle, forty-seven, from Cork. I ran a pub for twelve years, so there's no story I haven't heard twice. I laugh loud and I talk fast, sorry about that. Cast me as the landlady, the nosy aunt, or the mum who knows everything.",
+    },
+    look: "White woman, about 47, plump, about 162 cm; rosy round cheeks, deep laugh lines, short brown pixie cut; mustard-yellow top",
+    image: "library/claude-casting-2026-10-07/final/CC-013.png",
+  },
+  {
+    slug: "helene-marchand",
+    source: "CC-018",
+    nameZh: "埃莱娜·马尔尚",
+    nameEn: "Hélène Marchand",
+    gender: "female",
+    group: "white",
+    age: 63,
+    heightCm: 160,
+    origin: {
+      zh: "法国里昂",
+      en: "Lyon, France",
+    },
+    tagline: {
+      zh: "鹰钩鼻，薄唇，银发侧分，细框眼镜。",
+      en: "Aquiline nose, thin lips, silver side-parted hair and fine glasses.",
+    },
+    voice: {
+      language: "en",
+      brief: "63岁法国女性，说英语带法国口音，声音优雅、略低、清晰，语气克制而犀利。",
+      introLine:
+        "Good afternoon. I am Hélène Marchand. I am sixty-three, and I come from Lyon. For thirty years I taught piano to children who did not want to practise. I am strict, yes, but fair. I would make a very good headmistress, or a grandmother with secrets.",
+    },
+    look: "White woman, about 63, slim, about 160 cm; sharp aquiline nose, thin lips, short silver hair with a side part, thin rectangular generic glasses; black top",
+    image: "library/claude-casting-2026-10-07/final/CC-018.png",
+  },
+  {
+    slug: "gemma-conti",
+    source: "CC-023",
+    nameZh: "杰玛·孔蒂",
+    nameEn: "Gemma Conti",
+    gender: "female",
+    group: "white",
+    age: 22,
+    heightCm: 165,
+    origin: {
+      zh: "意大利那不勒斯",
+      en: "Naples, Italy",
+    },
+    tagline: {
+      zh: "眼睛大，嘴巴宽，卷发高高扎起。",
+      en: "Big eyes, a wide mouth and dark curls piled up high.",
+    },
+    voice: {
+      language: "en",
+      brief:
+        "22岁意大利女孩，说英语带意大利口音，声音热情、明亮、表情丰富，说话手舞足蹈的感觉，语速快。",
+      introLine:
+        "Ciao! I'm Gemma Conti, twenty-two, from Naples. My family says I talk with my hands, my face, my whole body, and they're right. I grew up above my nonna's bakery. I want to play someone loud, warm, a little dramatic, and always the first one to cry at weddings.",
+    },
+    look: "White woman, about 22, average build, about 165 cm; big round eyes, a very wide mouth, dark curly hair pulled up in a puff; peach top",
+    image: "library/claude-casting-2026-10-07/final/CC-023.png",
+  },
+  {
+    slug: "lucia-ortega",
+    source: "CC-028",
+    nameZh: "露西娅·奥尔特加",
+    nameEn: "Lucía Ortega",
+    gender: "female",
+    group: "white",
+    age: 39,
+    heightCm: 170,
+    origin: {
+      zh: "西班牙塞维利亚",
+      en: "Seville, Spain",
+    },
+    tagline: {
+      zh: "橄榄色皮肤，浓眉，高鼻梁，长卷发。",
+      en: "Olive skin, thick brows, a strong nose and long dark waves.",
+    },
+    voice: {
+      language: "en",
+      brief: "39岁西班牙女性，说英语带西班牙口音，声音浓郁、温暖、有力量，语速中等，富有激情。",
+      introLine:
+        "Hola, I'm Lucía Ortega, I'm thirty-nine, from Seville. I danced flamenco for many years, so I know how to make an entrance. I'm passionate, I'm stubborn, and I will feed you whether you're hungry or not. Give me a mother, a matriarch, or a woman with fire.",
+    },
+    look: "White woman of Mediterranean look, about 39, curvy, about 170 cm; olive skin, thick dark eyebrows, a strong nose, long wavy black hair; white top",
+    image: "library/claude-casting-2026-10-07/final/CC-028.png",
+  },
+  {
+    slug: "brenda-kowalski",
+    source: "CC-033",
+    nameZh: "布伦达·科瓦尔斯基",
+    nameEn: "Brenda Kowalski",
+    gender: "female",
+    group: "white",
+    age: 56,
+    heightCm: 163,
+    origin: {
+      zh: "美国密尔沃基",
+      en: "Milwaukee, USA",
+    },
+    tagline: {
+      zh: "双下巴，小眼睛，一头金灰色小卷。",
+      en: "Soft double chin, small eyes and short blonde-grey curls.",
+    },
+    voice: {
+      language: "en",
+      brief: "56岁美国中西部女性，说英语带美国中西部口音，声音亲切、热心、有点碎嘴，语速中等。",
+      introLine:
+        "Hi there, I'm Brenda Kowalski, fifty-six, from Milwaukee, Wisconsin. I've worked the front desk at the same dentist's office for twenty-two years, so I know everybody's business. I bake for every occasion. Cast me as the neighbor, the school secretary, the lady with the casserole.",
+    },
+    look: "White woman, about 56, heavyset, about 163 cm; soft double chin, small eyes, short permed blonde-grey curls; rose-pink top",
+    image: "library/claude-casting-2026-10-07/final/CC-033.png",
+  },
+  {
+    slug: "edith-pemberton",
+    source: "CC-038",
+    nameZh: "伊迪丝·彭伯顿",
+    nameEn: "Edith Pemberton",
+    gender: "female",
+    group: "white",
+    age: 72,
+    heightCm: 155,
+    origin: {
+      zh: "英国巴斯",
+      en: "Bath, England",
+    },
+    tagline: {
+      zh: "脸颊粉粉的，白发松松盘着，总在笑。",
+      en: "Pink cheeks, a loose white bun and a smile that never quits.",
+    },
+    voice: {
+      language: "en",
+      brief: "72岁英国老太太，说英式英语，声音轻柔、慈祥、略颤但清晰，语速慢，优雅可爱。",
+      introLine:
+        "Hello, dear. I'm Edith Pemberton, I'm seventy-two, and I live in Bath. I've kept bees, raised three children, and won a village baking contest, twice. I'm rather new to acting, but I've been watching people my whole life. A grandmother, a librarian, a sweet old lady who isn't.",
+    },
+    look: "White woman, about 72, small, about 155 cm; a soft wrinkled face, a warm smile, pink cheeks, white hair in a loose bun; lavender top",
+    image: "library/claude-casting-2026-10-07/final/CC-038.png",
+  },
+  {
+    slug: "sasha-kerr",
+    source: "CC-043",
+    nameZh: "萨莎·克尔",
+    nameEn: "Sasha Kerr",
+    gender: "female",
+    group: "white",
+    age: 29,
+    heightCm: 175,
+    origin: {
+      zh: "英国格拉斯哥",
+      en: "Glasgow, Scotland",
+    },
+    tagline: {
+      zh: "颧骨锋利，脸长，头发剃得很短。",
+      en: "Razor-sharp cheekbones, a long face and a buzzed head.",
+    },
+    voice: {
+      language: "en",
+      brief: "29岁苏格兰女性，说英语带苏格兰口音，声音低、利落、带点冷幽默和叛逆，语速中等。",
+      introLine:
+        "Hiya, I'm Sasha Kerr, twenty-nine, from Glasgow. I shaved my head at nineteen and never looked back. I've been a bike courier, a bartender, and a drummer in a very bad band. I'd love to play the rebel, the soldier, or the woman who doesn't need saving.",
+    },
+    look: "White woman, about 29, lanky, about 175 cm; very sharp cheekbones, a long face, a very short buzz cut; heather-grey top",
+    image: "library/claude-casting-2026-10-07/final/CC-043.png",
+  },
+  {
+    slug: "polina-orlova",
+    source: "CC-048",
+    nameZh: "波琳娜·奥尔洛娃",
+    nameEn: "Polina Orlova",
+    gender: "female",
+    group: "white",
+    age: 43,
+    heightCm: 168,
+    origin: {
+      zh: "俄罗斯圣彼得堡",
+      en: "Saint Petersburg, Russia",
+    },
+    tagline: {
+      zh: "颧骨宽，浅色眼睛分得开，直发。",
+      en: "Wide cheekbones, pale wide-set eyes and straight light-brown hair.",
+    },
+    voice: {
+      language: "en",
+      brief: "43岁俄罗斯女性，说英语带俄语口音，声音清冷、低沉、有分量，语速慢，带一点忧郁。",
+      introLine:
+        "Hello. My name is Polina Orlova. I am forty-three, from Saint Petersburg. I worked many years as a translator, so I like words very much, and silence even more. I think I could play a spy, a scientist, or a mother who carries a long and heavy story.",
+    },
+    look: "White woman of Slavic look, about 43, average build, about 168 cm; high wide cheekbones, wide-set pale eyes, straight light-brown hair; teal top",
+    image: "library/claude-casting-2026-10-07/final/CC-048.png",
+  },
+  {
+    slug: "daisy-whitlock",
+    source: "CC-053",
+    nameZh: "黛西·惠特洛克",
+    nameEn: "Daisy Whitlock",
+    gender: "female",
+    group: "white",
+    age: 31,
+    heightCm: 157,
+    origin: {
+      zh: "英国利兹",
+      en: "Leeds, England",
+    },
+    tagline: {
+      zh: "圆脸酒窝，栗色齐刘海短发。",
+      en: "Round face, dimples and a chestnut bob with bangs.",
+    },
+    voice: {
+      language: "en",
+      brief: "31岁英格兰北部女性，说英语带约克郡口音，声音甜、俏皮、爱笑，语速快。",
+      introLine:
+        "Hiya! I'm Daisy Whitlock, thirty-one, from Leeds. I work in a cake shop, which explains a lot, honestly. People tell me I'm the kind of person you'd tell a secret to on a bus. I'd love to play the best friend, the clumsy one, the one who falls in love too fast.",
+    },
+    look: "White woman, about 31, short and chubby, about 157 cm; round face with dimples, chestnut-brown bob with bangs; bright-yellow top",
+    image: "library/claude-casting-2026-10-07/final/CC-053.png",
+  },
+  {
+    slug: "miriam-adler",
+    source: "CC-058",
+    nameZh: "米丽娅姆·阿德勒",
+    nameEn: "Miriam Adler",
+    gender: "female",
+    group: "white",
+    age: 50,
+    heightCm: 174,
+    origin: {
+      zh: "奥地利维也纳",
+      en: "Vienna, Austria",
+    },
+    tagline: {
+      zh: "高瘦，鹰钩鼻，眼窝深，深色头发盘起。",
+      en: "Tall and slim, a hooked nose, deep-set eyes and dark hair pinned up.",
+    },
+    voice: {
+      language: "en",
+      brief: "50岁奥地利女性，说英语带德语口音，声音低沉、优雅、略带讽刺，语速稳定，很有气场。",
+      introLine:
+        "Good evening. I am Miriam Adler, fifty, from Vienna. I spent twenty years backstage at the opera, so I know drama very well. People say I look severe. That is mostly true. I would be wonderful as a duchess, a museum director, or a villain with excellent taste.",
+    },
+    look: "White woman, about 50, tall and slim, about 174 cm; hooked nose, deep-set eyes, dark hair pinned up in a twist; burgundy top",
+    image: "library/claude-casting-2026-10-07/final/CC-058.png",
+  },
+  {
+    slug: "annika-brandt",
+    source: "CC-063",
+    nameZh: "安妮卡·勃兰特",
+    nameEn: "Annika Brandt",
+    gender: "female",
+    group: "white",
+    age: 26,
+    heightCm: 164,
+    origin: {
+      zh: "德国汉堡",
+      en: "Hamburg, Germany",
+    },
+    tagline: {
+      zh: "淡淡的雀斑，翘鼻子，毛躁的深金色发髻。",
+      en: "Light freckles, an upturned nose and a frizzy dark-blonde bun.",
+    },
+    voice: {
+      language: "en",
+      brief: "26岁德国女孩，说英语带轻微德国口音，声音清脆、认真、有点书呆子的可爱，语速中等。",
+      introLine:
+        "Hi, I'm Annika Brandt, twenty-six, from Hamburg. I study marine biology, so if you need someone to talk about octopuses for an hour, I'm here. My hair does whatever it wants. I'd like to play the nerdy one, the scientist, or the girl who finds the clue nobody saw.",
+    },
+    look: "White woman, about 26, average build, about 164 cm; light freckles, an upturned nose, frizzy dark-blonde hair in a low bun; light-blue top",
+    image: "library/claude-casting-2026-10-07/final/CC-063.png",
+  },
+  {
+    slug: "dot-harrington",
+    source: "CC-068",
+    nameZh: "多特·哈林顿",
+    nameEn: "Dot Harrington",
+    gender: "female",
+    group: "white",
+    age: 59,
+    heightCm: 160,
+    origin: {
+      zh: "澳大利亚墨尔本",
+      en: "Melbourne, Australia",
+    },
+    tagline: {
+      zh: "方脸，厚镜片，灰短发，说话不绕弯。",
+      en: "Square face, thick glasses, cropped grey hair. No small talk.",
+    },
+    voice: {
+      language: "en",
+      brief: "59岁澳大利亚女性，说英语带澳洲口音，声音粗哑、直爽、带点粗糙的幽默，语速中等偏快。",
+      introLine:
+        "G'day, I'm Dot Harrington. Fifty-nine, from Melbourne. I drove school buses for thirty years, so trust me, nothing scares me anymore. I say what I mean and I mean what I say. Put me in as the tough coach, the bossy aunt, or the woman who runs the whole town.",
+    },
+    look: "White woman, about 59, stocky, about 160 cm; square face, thick generic glasses, cropped grey hair; olive top",
+    image: "library/claude-casting-2026-10-07/final/CC-068.png",
+  },
+  {
+    slug: "agnes-lefevre",
+    source: "CC-073",
+    nameZh: "阿涅丝·勒费弗尔",
+    nameEn: "Agnès Lefèvre",
+    gender: "female",
+    group: "white",
+    age: 37,
+    heightCm: 169,
+    origin: {
+      zh: "法国巴黎",
+      en: "Paris, France",
+    },
+    tagline: {
+      zh: "尖下巴，耳朵有点大，利落的深色波波头。",
+      en: "Pointed chin, slightly big ears and a sleek dark bob.",
+    },
+    voice: {
+      language: "en",
+      brief: "37岁法国女性，说英语带法国口音，声音轻快、俏皮、带点慵懒，语速中等。",
+      introLine:
+        "Bonjour, I am Agnès Lefèvre, thirty-seven, from Paris. I sell old books by the river, and I read most of them before I sell them. My ears are a bit big, I know, they make me a very good listener. I would love to play a writer, a thief, or a woman in a comedy.",
+    },
+    look: "White woman, about 37, slim, about 169 cm; pointy chin, big ears, a sleek dark bob; rust-orange top",
+    image: "library/claude-casting-2026-10-07/final/CC-073.png",
+  },
+  {
+    slug: "rosemary-finch",
+    source: "CC-078",
+    nameZh: "罗斯玛丽·芬奇",
+    nameEn: "Rosemary Finch",
+    gender: "female",
+    group: "white",
+    age: 67,
+    heightCm: 158,
+    origin: {
+      zh: "英国卡迪夫",
+      en: "Cardiff, Wales",
+    },
+    tagline: {
+      zh: "脸颊圆润，鼻头红红，一头蓬松白卷发。",
+      en: "Soft jowls, a rosy nose and a cloud of curly white hair.",
+    },
+    voice: {
+      language: "en",
+      brief: "67岁威尔士女性，说英语带威尔士口音，声音温暖、歌唱般的语调起伏，语速中等，慈爱。",
+      introLine:
+        "Hello, love! I'm Rosemary Finch, sixty-seven, from Cardiff. I sang in a choir for forty years, so I can't help putting a bit of a tune in everything I say. I've got five grandchildren and a very fat cat. Cast me as the nan, the choir lady, the kind soul next door.",
+    },
+    look: "White woman, about 67, plump, about 158 cm; soft jowls, a rosy nose, fluffy curly white hair; sage-green top",
+    image: "library/claude-casting-2026-10-07/final/CC-078.png",
+  },
+  {
+    slug: "chiara-benedetti",
+    source: "CC-083",
+    nameZh: "基娅拉·贝内代蒂",
+    nameEn: "Chiara Benedetti",
+    gender: "female",
+    group: "white",
+    age: 23,
+    heightCm: 171,
+    origin: {
+      zh: "意大利博洛尼亚",
+      en: "Bologna, Italy",
+    },
+    tagline: {
+      zh: "浓眉，鼻梁微歪，栗色波浪长发。",
+      en: "Strong brows, a slightly crooked nose and wavy chestnut hair.",
+    },
+    voice: {
+      language: "en",
+      brief: "23岁意大利女孩，说英语带意大利口音，声音温柔、真诚、带点倔强，语速中等。",
+      introLine:
+        "Hi, I'm Chiara Benedetti, twenty-three, from Bologna. I broke my nose playing football when I was twelve, and I scored anyway. I study architecture and I draw everything I see. I would love to play a young artist, a stubborn daughter, or someone falling in love in a new city.",
+    },
+    look: "White woman, about 23, average build, about 171 cm; strong eyebrows, a slightly crooked nose, wavy chestnut hair; cream top",
+    image: "library/claude-casting-2026-10-07/final/CC-083.png",
+  },
+  {
+    slug: "tess-callahan",
+    source: "CC-088",
+    nameZh: "苔丝·卡拉汉",
+    nameEn: "Tess Callahan",
+    gender: "female",
+    group: "white",
+    age: 45,
+    heightCm: 166,
+    origin: {
+      zh: "美国圣迭戈",
+      en: "San Diego, USA",
+    },
+    tagline: {
+      zh: "晒得黝黑，眼角笑纹，沙金色马尾。",
+      en: "Sun-tanned, crow's feet and a sandy-blonde ponytail.",
+    },
+    voice: {
+      language: "en",
+      brief: "45岁美国西海岸女性，说美式英语，声音明亮、松弛、阳光，语速中等，有运动员的爽快。",
+      introLine:
+        "Hey! I'm Tess Callahan, forty-five, from San Diego. I've taught surfing for twenty years, so I've got the tan and the wrinkles to prove it. I'm calm in big waves and terrible at sitting still. I'd love to play a coach, a lifeguard, or a mom who still skates to work.",
+    },
+    look: "White woman, about 45, athletic, about 166 cm; sun-tanned skin, crow's feet, a sandy-blonde ponytail; denim-blue top",
+    image: "library/claude-casting-2026-10-07/final/CC-088.png",
+  },
+  {
+    slug: "vera-kucerova",
+    source: "CC-093",
+    nameZh: "薇拉·库切罗娃",
+    nameEn: "Vera Kučerová",
+    gender: "female",
+    group: "white",
+    age: 53,
+    heightCm: 165,
+    origin: {
+      zh: "捷克布拉格",
+      en: "Prague, Czech Republic",
+    },
+    tagline: {
+      zh: "长脸，眼皮沉沉的，黑色及下巴卷发。",
+      en: "Long face, heavy-lidded eyes and black chin-length waves.",
+    },
+    voice: {
+      language: "en",
+      brief: "53岁捷克女性，说英语带中欧口音，声音低沉、慵懒、带点神秘和讽刺，语速慢。",
+      introLine:
+        "Hello. I am Vera Kučerová, fifty-three, from Prague. I read tarot cards in a café for many years, mostly for tourists, sometimes for myself. People say I look like I know something. Maybe I do. I would play a fortune teller, a landlady, or the mother in a strange old house.",
+    },
+    look: "White woman, about 53, average build, about 165 cm; long face, heavy-lidded eyes, black hair in chin-length waves; charcoal top",
+    image: "library/claude-casting-2026-10-07/final/CC-093.png",
+  },
+  {
+    slug: "freja-mortensen",
+    source: "CC-098",
+    nameZh: "芙蕾雅·莫滕森",
+    nameEn: "Freja Mortensen",
+    gender: "female",
+    group: "white",
+    age: 30,
+    heightCm: 176,
+    origin: {
+      zh: "丹麦奥胡斯",
+      en: "Aarhus, Denmark",
+    },
+    tagline: {
+      zh: "高大骨架宽，圆脸，金色短寸。",
+      en: "Tall, big-boned, round-faced, with a short blonde undercut.",
+    },
+    voice: {
+      language: "en",
+      brief: "30岁丹麦女性，说英语带丹麦口音，声音洪亮、开朗、直率，语速中等，很有力量感。",
+      introLine:
+        "Hej! I'm Freja Mortensen, thirty, from Aarhus in Denmark. I played handball for the national youth team, so I'm strong, loud, and very competitive at board games. I'd love to play a firefighter, a Viking, or the friend who carries everyone home after a party.",
+    },
+    look: "White woman, about 30, tall and big-boned, about 176 cm; broad shoulders, round face, short blonde undercut; red top",
+    image: "library/claude-casting-2026-10-07/final/CC-098.png",
+  },
+  {
+    slug: "felix-hartmann",
+    source: "CC-004",
+    nameZh: "费利克斯·哈特曼",
+    nameEn: "Felix Hartmann",
+    gender: "male",
+    group: "white",
+    age: 24,
+    heightCm: 180,
+    origin: {
+      zh: "德国莱比锡",
+      en: "Leipzig, Germany",
+    },
+    tagline: {
+      zh: "鼻子大，脸窄，一头浅棕卷发。",
+      en: "Big nose, narrow face and a mop of light-brown curls.",
+    },
+    voice: {
+      language: "en",
+      brief: "24岁德国男生，说英语带德国口音，声音偏高、紧张、有点笨拙的可爱，语速时快时慢。",
+      introLine:
+        "Hello, I'm Felix Hartmann. I'm twenty-four, from Leipzig. I play the cello, badly, and I collect old maps, very well. I get nervous when people look at me, which is funny for an actor, I know. I'd like to play the awkward genius, the shy boyfriend, or the boy who gets lost.",
+    },
+    look: "White man, about 24, skinny, about 180 cm; a big nose, a narrow face, curly light-brown hair; sage-green top",
+    image: "library/claude-casting-2026-10-07/final/CC-004.png",
+  },
+  {
+    slug: "callum-reid",
+    source: "CC-009",
+    nameZh: "卡勒姆·里德",
+    nameEn: "Callum Reid",
+    gender: "male",
+    group: "white",
+    age: 35,
+    heightCm: 188,
+    origin: {
+      zh: "英国阿伯丁",
+      en: "Aberdeen, Scotland",
+    },
+    tagline: {
+      zh: "光头，大胡子，熊一样的块头。",
+      en: "Shaved head, big bushy beard and the build of a bear.",
+    },
+    voice: {
+      language: "en",
+      brief: "35岁苏格兰男人，说英语带浓苏格兰口音，声音浑厚低沉，粗犷但温和，语速中等。",
+      introLine:
+        "Alright, I'm Callum Reid, thirty-five, from Aberdeen. I worked on the oil rigs out in the North Sea for ten years, so I'm used to wind, noise, and very bad coffee. I look scary, but I cry at dog films. Give me a bodyguard, a blacksmith, or a big soft giant.",
+    },
+    look: "White man, about 35, burly, about 188 cm; shaved head, full bushy brown beard, broad face; black top",
+    image: "library/claude-casting-2026-10-07/final/CC-009.png",
+  },
+  {
+    slug: "ray-kowalczyk",
+    source: "CC-014",
+    nameZh: "雷·科瓦尔奇克",
+    nameEn: "Ray Kowalczyk",
+    gender: "male",
+    group: "white",
+    age: 48,
+    heightCm: 175,
+    origin: {
+      zh: "美国匹兹堡",
+      en: "Pittsburgh, USA",
+    },
+    tagline: {
+      zh: "啤酒肚，发际线后退，一大撇胡子。",
+      en: "Pot belly, receding hairline and a big thick mustache.",
+    },
+    voice: {
+      language: "en",
+      brief: "48岁美国男人，说英语带匹兹堡口音，声音粗哑、热络、爱抱怨，语速中等偏快，蓝领幽默。",
+      introLine:
+        "Hey, how ya doin'. Ray Kowalczyk, forty-eight, Pittsburgh born and raised. I've run a hardware store on the same corner for twenty-five years. I complain about everything and fix anything. Cast me as the plumber, the coach, the dad who swears at the TV during the game.",
+    },
+    look: "White man, about 48, pot-bellied, about 175 cm; receding hairline, double chin, a thick mustache; white top",
+    image: "library/claude-casting-2026-10-07/final/CC-014.png",
+  },
+  {
+    slug: "ambrose-lacey",
+    source: "CC-019",
+    nameZh: "安布罗斯·莱西",
+    nameEn: "Ambrose Lacey",
+    gender: "male",
+    group: "white",
+    age: 66,
+    heightCm: 183,
+    origin: {
+      zh: "英国爱丁堡",
+      en: "Edinburgh, Scotland",
+    },
+    tagline: {
+      zh: "高瘦，白发及领，眉毛又浓又乱。",
+      en: "Tall and thin, white hair to the collar and wild bushy brows.",
+    },
+    voice: {
+      language: "en",
+      brief: "66岁苏格兰老绅士，说英语带爱丁堡口音，声音深沉、缓慢、带戏剧腔，像老派舞台演员。",
+      introLine:
+        "Good day. Ambrose Lacey, sixty-six years old, from Edinburgh. I spent forty years in the theatre, mostly playing kings, ghosts, and very angry fathers. My eyebrows have a life of their own. I would be delighted to play a wizard, a professor, or a ghost who won't leave.",
+    },
+    look: "White man, about 66, thin and tall, about 183 cm; long face, wavy white hair down to the collar, bushy grey eyebrows; navy top",
+    image: "library/claude-casting-2026-10-07/final/CC-019.png",
+  },
+  {
+    slug: "nikos-andreou",
+    source: "CC-024",
+    nameZh: "尼科斯·安德鲁",
+    nameEn: "Nikos Andreou",
+    gender: "male",
+    group: "white",
+    age: 28,
+    heightCm: 177,
+    origin: {
+      zh: "希腊塞萨洛尼基",
+      en: "Thessaloniki, Greece",
+    },
+    tagline: {
+      zh: "浓密黑卷发，两道眉毛快连在一起，高鼻梁。",
+      en: "Thick black curls, brows that nearly meet and a strong nose.",
+    },
+    voice: {
+      language: "en",
+      brief: "28岁希腊男人，说英语带希腊口音，声音热情、温暖、爱说笑，语速快，很有感染力。",
+      introLine:
+        "Yassou! I'm Nikos Andreou, twenty-eight, from Thessaloniki. My family runs a fish taverna by the sea, and I've been carrying plates since I was eight. I sing, I dance, I talk too much. Give me the charming waiter, the romantic fool, or the cousin who ruins the wedding.",
+    },
+    look: "White man of Mediterranean look, about 28, average build, about 177 cm; thick curly black hair, heavy eyebrows that almost meet, a strong nose; mustard-yellow top",
+    image: "library/claude-casting-2026-10-07/final/CC-024.png",
+  },
+  {
+    slug: "tommy-brannigan",
+    source: "CC-029",
+    nameZh: "汤米·布兰尼根",
+    nameEn: "Tommy Brannigan",
+    gender: "male",
+    group: "white",
+    age: 41,
+    heightCm: 167,
+    origin: {
+      zh: "英国利物浦",
+      en: "Liverpool, England",
+    },
+    tagline: {
+      zh: "矮壮，方脑袋，鼻子被打扁过。",
+      en: "Short and stocky, square head, a nose flattened in the ring.",
+    },
+    voice: {
+      language: "en",
+      brief: "41岁利物浦男人，说英语带浓利物浦口音，声音粗犷、直爽、幽默，语速快，有拳击手的劲儿。",
+      introLine:
+        "Alright, I'm Tommy Brannigan, forty-one, from Liverpool. I boxed for fifteen years, hence the nose. Now I run a gym for kids who need somewhere to go after school. I'm tougher on the outside than the inside. Cast me as the trainer, the bouncer, or the dad who never gives up.",
+    },
+    look: "White man, about 41, short and stocky, about 167 cm; square head, buzz cut, a flattened boxer's nose; heather-grey top",
+    image: "library/claude-casting-2026-10-07/final/CC-029.png",
+  },
+  {
+    slug: "pavel-sokolov",
+    source: "CC-034",
+    nameZh: "帕维尔·索科洛夫",
+    nameEn: "Pavel Sokolov",
+    gender: "male",
+    group: "white",
+    age: 55,
+    heightCm: 179,
+    origin: {
+      zh: "俄罗斯新西伯利亚",
+      en: "Novosibirsk, Russia",
+    },
+    tagline: {
+      zh: "颧骨宽，深陷的蓝眼睛，花白短胡子。",
+      en: "Broad cheekbones, deep-set blue eyes and a salt-and-pepper beard.",
+    },
+    voice: {
+      language: "en",
+      brief: "55岁俄罗斯男人，说英语带浓俄语口音，声音低沉粗厚，沉稳，话少，有分量。",
+      introLine:
+        "Hello. Pavel Sokolov. Fifty-five, from Novosibirsk, in Siberia. I drove trains across the taiga for thirty years. Very long trips, very little talking. I like chess, black bread, and quiet people. I think I could play a soldier, a ship engineer, or a father who never says I love you.",
+    },
+    look: "White man of Slavic look, about 55, average build, about 179 cm; broad cheekbones, deep-set blue eyes, a short salt-and-pepper beard; olive top",
+    image: "library/claude-casting-2026-10-07/final/CC-034.png",
+  },
+  {
+    slug: "henri-dubois",
+    source: "CC-039",
+    nameZh: "亨利·杜布瓦",
+    nameEn: "Henri Dubois",
+    gender: "male",
+    group: "white",
+    age: 73,
+    heightCm: 168,
+    origin: {
+      zh: "法国波尔多",
+      en: "Bordeaux, France",
+    },
+    tagline: {
+      zh: "长脸，鹰钩鼻，秃顶一圈白发，金属细框眼镜。",
+      en: "Long face, hooked nose, a white fringe round a bald crown, wire glasses.",
+    },
+    voice: {
+      language: "en",
+      brief: "73岁法国老先生，说英语带法国口音，声音苍老、细腻、慢条斯理，带点挑剔和幽默。",
+      introLine:
+        "Bonjour. I am Henri Dubois, seventy-three, from Bordeaux. I made wine for fifty years, and I am still not satisfied with any of it. My grandchildren say I am impossible to please. They are correct. I would play a grumpy grandfather, a strict teacher, or a very old detective.",
+    },
+    look: "White man, about 73, small, about 168 cm; a long face, a white fringe around a bald crown, a hooked nose, thin wire-frame glasses; rust-orange top",
+    image: "library/claude-casting-2026-10-07/final/CC-039.png",
+  },
+  {
+    slug: "lukas-berger",
+    source: "CC-044",
+    nameZh: "卢卡斯·贝格尔",
+    nameEn: "Lukas Berger",
+    gender: "male",
+    group: "white",
+    age: 22,
+    heightCm: 186,
+    origin: {
+      zh: "奥地利因斯布鲁克",
+      en: "Innsbruck, Austria",
+    },
+    tagline: {
+      zh: "高瘦，长下巴，金发软塌塌，总像刚睡醒。",
+      en: "Lanky, long-chinned, floppy blond hair and permanently sleepy eyes.",
+    },
+    voice: {
+      language: "en",
+      brief: "22岁奥地利男生，说英语带德语口音，声音慵懒、慢、温柔，有点迷糊，语速慢。",
+      introLine:
+        "Hi... I'm Lukas Berger, twenty-two, from Innsbruck. I teach snowboarding in winter and sleep most of the summer. People think I'm always tired. I'm not, I'm just relaxed. I'd like to play the dreamy younger brother, the stoner roommate, or the boy who's secretly brave.",
+    },
+    look: "White man, about 22, lanky, about 186 cm; long chin, floppy blond hair, sleepy eyes; light-blue top",
+    image: "library/claude-casting-2026-10-07/final/CC-044.png",
+  },
+  {
+    slug: "owen-pryce",
+    source: "CC-049",
+    nameZh: "欧文·普赖斯",
+    nameEn: "Owen Pryce",
+    gender: "male",
+    group: "white",
+    age: 38,
+    heightCm: 178,
+    origin: {
+      zh: "英国斯旺西",
+      en: "Swansea, Wales",
+    },
+    tagline: {
+      zh: "圆脸，短胡子，波浪长发披到肩。",
+      en: "Round face, short beard and wavy hair down to the shoulders.",
+    },
+    voice: {
+      language: "en",
+      brief: "38岁威尔士男人，说英语带威尔士口音，声音温厚、歌唱般的抑扬，开朗，语速中等。",
+      introLine:
+        "Hiya, I'm Owen Pryce, thirty-eight, from Swansea in Wales. I teach guitar, I sing in a pub on Fridays, and I make a very serious Sunday roast. People say I give big hugs. I'd love to play the folk singer, the gentle dad, or the friend who always shows up with food.",
+    },
+    look: "White man, about 38, heavyset, about 178 cm; round face, a short brown beard, shoulder-length wavy hair; forest-green top",
+    image: "library/claude-casting-2026-10-07/final/CC-049.png",
+  },
+  {
+    slug: "benoit-lacroix",
+    source: "CC-054",
+    nameZh: "伯努瓦·拉克鲁瓦",
+    nameEn: "Benoît Lacroix",
+    gender: "male",
+    group: "white",
+    age: 31,
+    heightCm: 172,
+    origin: {
+      zh: "法国马赛",
+      en: "Marseille, France",
+    },
+    tagline: {
+      zh: "耳朵大，一字小胡子，头发侧分抹得服帖。",
+      en: "Big ears, a thin pencil mustache and hair parted just so.",
+    },
+    voice: {
+      language: "en",
+      brief: "31岁法国男人，说英语带法国南部口音，声音轻快、自负又滑稽，语速快，戏剧化。",
+      introLine:
+        "Bonjour! I am Benoît Lacroix, thirty-one, from Marseille. I am a waiter in a very fancy restaurant, and I take it very, very seriously. This mustache took me three years. I would be perfect as a snobbish maître d', a ridiculous count, or a man who thinks he's smarter than he is.",
+    },
+    look: "White man, about 31, slim, about 172 cm; big ears, a thin pencil mustache, side-parted dark hair; cream top",
+    image: "library/claude-casting-2026-10-07/final/CC-054.png",
+  },
+  {
+    slug: "hank-sorensen",
+    source: "CC-059",
+    nameZh: "汉克·索伦森",
+    nameEn: "Hank Sorensen",
+    gender: "male",
+    group: "white",
+    age: 60,
+    heightCm: 180,
+    origin: {
+      zh: "美国明尼苏达",
+      en: "Minnesota, USA",
+    },
+    tagline: {
+      zh: "宽肩，风霜脸，灰色平头，脸上一道疤。",
+      en: "Broad shoulders, a weathered face, a grey crew cut and a scar.",
+    },
+    voice: {
+      language: "en",
+      brief: "60岁美国男人，说英语带明尼苏达口音，声音低沉、慢、稳，话少，可靠的老派硬汉。",
+      introLine:
+        "Name's Hank Sorensen. Sixty years old, from northern Minnesota. Spent most of my life on the lake, fishing, and fixing boats. Got this scar from a bad winter, long story. I don't talk much, but I listen. I'd play a sheriff, a fisherman, or a grandfather with a good secret.",
+    },
+    look: "White man, about 60, broad, about 180 cm; weathered face, strong jaw, grey crew cut, a small scar on one cheek; denim-blue top",
+    image: "library/claude-casting-2026-10-07/final/CC-059.png",
+  },
+  {
+    slug: "kasper-holm",
+    source: "CC-064",
+    nameZh: "卡斯珀·霍尔姆",
+    nameEn: "Kasper Holm",
+    gender: "male",
+    group: "white",
+    age: 26,
+    heightCm: 174,
+    origin: {
+      zh: "丹麦哥本哈根",
+      en: "Copenhagen, Denmark",
+    },
+    tagline: {
+      zh: "块头大，方下巴，金色卷发，胡茬。",
+      en: "Big and broad, square-jawed, curly blond hair and stubble.",
+    },
+    voice: {
+      language: "en",
+      brief: "26岁丹麦男生，说英语带丹麦口音，声音憨厚、开朗、有点傻乐，语速中等。",
+      introLine:
+        "Hej, I'm Kasper Holm, twenty-six, from Copenhagen. I'm a baker. I start work at four in the morning, so if I look sleepy, that's why. I'm big, but I'm very gentle, ask anyone. I'd like to play the lovable giant, the loyal best friend, or the guy who's terrible at flirting.",
+    },
+    look: "White man, about 26, chubby with a broad adult build, about 174 cm; a square jaw, curly blond hair, light stubble; bright-yellow top",
+    image: "library/claude-casting-2026-10-07/final/CC-064.png",
+  },
+  {
+    slug: "edmund-crane",
+    source: "CC-069",
+    nameZh: "埃德蒙·克兰",
+    nameEn: "Edmund Crane",
+    gender: "male",
+    group: "white",
+    age: 44,
+    heightCm: 190,
+    origin: {
+      zh: "美国波士顿",
+      en: "Boston, USA",
+    },
+    tagline: {
+      zh: "又高又瘦，鹰钩鼻，发际线往后退。",
+      en: "Very tall, very thin, a hawk nose and a receding hairline.",
+    },
+    voice: {
+      language: "en",
+      brief: "44岁美国男人，说英语带波士顿口音，声音细长、紧绷、神经质的幽默，语速快。",
+      introLine:
+        "Hi, uh, Edmund Crane. Forty-four. Boston. I'm an accountant, I was an accountant, I'm trying something new, okay? I'm six foot three and I bump my head on everything. People say I look like I'm worried. I usually am. Cast me as the nervous lawyer, the butler, or the man who panics.",
+    },
+    look: "White man, about 44, very tall and thin, about 190 cm; narrow face, a hawk nose, receding dark hair; charcoal top",
+    image: "library/claude-casting-2026-10-07/final/CC-069.png",
+  },
+  {
+    slug: "bruno-ferraro",
+    source: "CC-074",
+    nameZh: "布鲁诺·费拉罗",
+    nameEn: "Bruno Ferraro",
+    gender: "male",
+    group: "white",
+    age: 52,
+    heightCm: 176,
+    origin: {
+      zh: "意大利都灵",
+      en: "Turin, Italy",
+    },
+    tagline: {
+      zh: "下巴肉多，灰色大胡子，头顶光亮。",
+      en: "Jowly, a bushy grey mustache and a shiny bald top.",
+    },
+    voice: {
+      language: "en",
+      brief: "52岁意大利男人，说英语带意大利口音，声音浑厚、热情、爱抱怨又爱笑，语速快，手势感强。",
+      introLine:
+        "Buongiorno! Bruno Ferraro, fifty-two, from Turin. I fix old Fiat cars, and I talk to them like they are my children. Sometimes they listen. My mustache is famous in my neighborhood. I would be perfect as a mechanic, a big uncle, or the restaurant owner who shouts and then hugs you.",
+    },
+    look: "White man, about 52, average build, about 176 cm; jowly face, a bushy grey mustache, bald on top; burgundy top",
+    image: "library/claude-casting-2026-10-07/final/CC-074.png",
+  },
+  {
+    slug: "declan-shaw",
+    source: "CC-079",
+    nameZh: "德克兰·肖",
+    nameEn: "Declan Shaw",
+    gender: "male",
+    group: "white",
+    age: 33,
+    heightCm: 182,
+    origin: {
+      zh: "爱尔兰都柏林",
+      en: "Dublin, Ireland",
+    },
+    tagline: {
+      zh: "方下巴，下巴有沟，笑起来歪歪的。",
+      en: "Square jaw, a cleft chin and a crooked, charming smile.",
+    },
+    voice: {
+      language: "en",
+      brief: "33岁爱尔兰男人，说英语带都柏林口音，声音迷人、轻松、带点调皮，语速中等。",
+      introLine:
+        "How's it going, I'm Declan Shaw, thirty-three, from Dublin. I played rugby until my knee said no, and now I coach the under-twelves. My smile goes a bit sideways, my mam says it's how you know I'm lying. I'd love to play the charmer, the firefighter, or the guy next door.",
+    },
+    look: "White man, about 33, athletic, about 182 cm; square jaw with a cleft chin, a crooked smile, short wavy brown hair; teal top",
+    image: "library/claude-casting-2026-10-07/final/CC-079.png",
+  },
+  {
+    slug: "gus-abernathy",
+    source: "CC-084",
+    nameZh: "格斯·阿伯内西",
+    nameEn: "Gus Abernathy",
+    gender: "male",
+    group: "white",
+    age: 69,
+    heightCm: 170,
+    origin: {
+      zh: "美国奥斯汀",
+      en: "Austin, USA",
+    },
+    tagline: {
+      zh: "圆脸刮得干净，灰色长马尾，笑纹很深。",
+      en: "Clean-shaven round face, a long grey ponytail and deep smile lines.",
+    },
+    voice: {
+      language: "en",
+      brief: "69岁美国得州男人，说英语带美国南方口音，声音沙哑、悠闲、慢吞吞，很有故事感。",
+      introLine:
+        "Well howdy, I'm Gus Abernathy. Sixty-nine, from Austin, Texas. I've been playing bass in bars since before most folks were born. Never cut the ponytail, never will. I tell long stories and I don't apologize for it. Cast me as the old rocker, the hippie grandpa, or the wise man at the bar.",
+    },
+    look: "White man, about 69, plump, about 170 cm; a clean-shaven round face, a long grey ponytail, smile lines; peach top",
+    image: "library/claude-casting-2026-10-07/final/CC-084.png",
+  },
+  {
+    slug: "milo-kovac",
+    source: "CC-089",
+    nameZh: "米洛·科瓦奇",
+    nameEn: "Milo Kovač",
+    gender: "male",
+    group: "white",
+    age: 37,
+    heightCm: 165,
+    origin: {
+      zh: "克罗地亚萨格勒布",
+      en: "Zagreb, Croatia",
+    },
+    tagline: {
+      zh: "矮小精瘦，窄脸，眼睛亮，黑发乱糟糟。",
+      en: "Short and wiry, a narrow face, bright eyes and messy black hair.",
+    },
+    voice: {
+      language: "en",
+      brief: "37岁克罗地亚男人，说英语带东欧口音，声音机灵、跳脱、语速很快，有点神经质的喜感。",
+      introLine:
+        "Hi, hi, Milo Kovač, thirty-seven, from Zagreb. I'm a street magician, so if your watch is missing, that's not me. Probably. I'm small and fast and I never sit still. I'd love to play a pickpocket, a wedding planner, or the friend with a terrible plan that somehow works.",
+    },
+    look: "White man, about 37, short and wiry, about 165 cm; a narrow face, bright eyes, messy black hair; lavender top",
+    image: "library/claude-casting-2026-10-07/final/CC-089.png",
+  },
+  {
+    slug: "ama-mensah",
+    source: "CC-005",
+    nameZh: "阿玛·门萨",
+    nameEn: "Ama Mensah",
+    gender: "female",
+    group: "black",
+    age: 24,
+    heightCm: 168,
+    origin: {
+      zh: "加纳阿克拉",
+      en: "Accra, Ghana",
+    },
+    tagline: {
+      zh: "蓬蓬的爆炸头，门牙有缝，眼睛特别亮。",
+      en: "An afro puff, a gap-toothed grin and very bright eyes.",
+    },
+    voice: {
+      language: "en",
+      brief: "24岁加纳女孩，说英语带加纳口音，声音明亮、活泼、爱笑，语速快，元气满满。",
+      introLine:
+        "Hi, I'm Ama Mensah, twenty-four, from Accra in Ghana. I sell fabric at the market with my aunties, so I can talk to anybody about anything. I laugh at my own jokes, it's a problem. I'd love to play the funny best friend, the young entrepreneur, or a girl with big dreams.",
+    },
+    look: "Black woman, about 24, slim, about 168 cm; deep brown skin, a natural afro puff, a small gap between her front teeth, bright lively eyes; bright-yellow top",
+    image: "library/claude-casting-2026-10-07/final/CC-005.png",
+  },
+  {
+    slug: "folake-adeyemi",
+    source: "CC-015",
+    nameZh: "福拉克·阿德耶米",
+    nameEn: "Folake Adeyemi",
+    gender: "female",
+    group: "black",
+    age: 38,
+    heightCm: 165,
+    origin: {
+      zh: "尼日利亚拉各斯",
+      en: "Lagos, Nigeria",
+    },
+    tagline: {
+      zh: "颧骨高，眉毛浓，头发剪得很短。",
+      en: "High cheekbones, strong brows and close-cropped natural hair.",
+    },
+    voice: {
+      language: "en",
+      brief: "38岁尼日利亚女性，说英语带尼日利亚口音，声音浑厚、自信、干练，语速中等，有掌控感。",
+      introLine:
+        "Good afternoon, I'm Folake Adeyemi, thirty-eight, from Lagos. I run my own event company, which means I am always calm and always in control, even when I'm not. I love a strong woman on screen. Give me a CEO, a lawyer, or a mother who will fight the whole world for her children.",
+    },
+    look: "Black woman, about 38, curvy, about 165 cm; high cheekbones, strong eyebrows, very short cropped natural hair; white top",
+    image: "library/claude-casting-2026-10-07/final/CC-015.png",
+  },
+  {
+    slug: "bernice-washington",
+    source: "CC-025",
+    nameZh: "伯妮丝·华盛顿",
+    nameEn: "Bernice Washington",
+    gender: "female",
+    group: "black",
+    age: 55,
+    heightCm: 162,
+    origin: {
+      zh: "美国亚特兰大",
+      en: "Atlanta, USA",
+    },
+    tagline: {
+      zh: "圆脸，脸颊饱满，灰色小辫子。",
+      en: "Round full cheeks and short grey-streaked twists.",
+    },
+    voice: {
+      language: "en",
+      brief:
+        "55岁美国南方女性，说美式英语带南方口音，声音温暖醇厚、慈爱、有教堂唱诗班的韵味，语速中等。",
+      introLine:
+        "Hey baby, I'm Bernice Washington, fifty-five, from Atlanta, Georgia. I've led the church choir for twenty years, and I run the best soul food kitchen on my street. I hug everybody, so get ready. Cast me as the mama, the auntie, or the lady who tells you the truth when you need it.",
+    },
+    look: "Black woman, about 55, heavyset, about 162 cm; full round cheeks, short grey-streaked twists; burgundy top",
+    image: "library/claude-casting-2026-10-07/final/CC-025.png",
+  },
+  {
+    slug: "zawadi-mwangi",
+    source: "CC-035",
+    nameZh: "扎瓦迪·姆旺吉",
+    nameEn: "Zawadi Mwangi",
+    gender: "female",
+    group: "black",
+    age: 29,
+    heightCm: 178,
+    origin: {
+      zh: "肯尼亚内罗毕",
+      en: "Nairobi, Kenya",
+    },
+    tagline: {
+      zh: "高个子，光头，下颌线锋利，眼睛很大。",
+      en: "Tall, shaved head, a sharp jaw and big expressive eyes.",
+    },
+    voice: {
+      language: "en",
+      brief: "29岁肯尼亚女性，说英语带东非口音，声音清亮、坚定、有力量，语速中等，自信。",
+      introLine:
+        "Hello, I'm Zawadi Mwangi, twenty-nine, from Nairobi in Kenya. I ran the eight hundred metres for my country, so I know how to keep going when it hurts. I shaved my head before a race once and kept it. I'd love to play an athlete, a pilot, or a warrior in a story people remember.",
+    },
+    look: "Black woman, about 29, tall and athletic, about 178 cm; shaved head, a sharp jaw, big expressive eyes; sage-green top",
+    image: "library/claude-casting-2026-10-07/final/CC-035.png",
+  },
+  {
+    slug: "hyacinth-campbell",
+    source: "CC-045",
+    nameZh: "海辛丝·坎贝尔",
+    nameEn: "Hyacinth Campbell",
+    gender: "female",
+    group: "black",
+    age: 66,
+    heightCm: 157,
+    origin: {
+      zh: "牙买加金斯敦",
+      en: "Kingston, Jamaica",
+    },
+    tagline: {
+      zh: "银色短卷发，圆框眼镜，笑纹深深。",
+      en: "Short silver curls, round glasses and deep smile lines.",
+    },
+    voice: {
+      language: "en",
+      brief: "66岁牙买加女性，说英语带牙买加口音，声音温暖、有韵律、慈祥又俏皮，语速中等。",
+      introLine:
+        "Hello darling, I'm Hyacinth Campbell, sixty-six, from Kingston, Jamaica. I was a nurse for forty years, so I've seen everything, and I'm not shy about telling you to eat your vegetables. I love dominoes and loud music. Cast me as the grandma, the nurse, or the neighbour who adopts everyone.",
+    },
+    look: "Black woman, about 66, small and slim, about 157 cm; short silver curls, round generic glasses, deep smile lines; lavender top",
+    image: "library/claude-casting-2026-10-07/final/CC-045.png",
+  },
+  {
+    slug: "aissatou-diallo",
+    source: "CC-055",
+    nameZh: "艾莎图·迪亚洛",
+    nameEn: "Aïssatou Diallo",
+    gender: "female",
+    group: "black",
+    age: 33,
+    heightCm: 163,
+    origin: {
+      zh: "塞内加尔达喀尔",
+      en: "Dakar, Senegal",
+    },
+    tagline: {
+      zh: "酒窝很深，嘴唇上方一颗痣，长辫子束在脑后。",
+      en: "Deep dimples, a mole above her lip and long braids tied back.",
+    },
+    voice: {
+      language: "en",
+      brief: "33岁塞内加尔女性，说英语带法语和西非口音，声音柔和、温暖、优雅，语速中等。",
+      introLine:
+        "Hello, I'm Aïssatou Diallo, thirty-three, from Dakar in Senegal. I speak French, Wolof, and English, and I mix them all when I'm excited. I design clothes, and I braid my sister's hair every Sunday. I'd love to play a designer, a teacher, or a woman starting her life again.",
+    },
+    look: "Black woman, about 33, average build, about 163 cm; deep dimples, a small mole above her lip, long braids tied back; teal top",
+    image: "library/claude-casting-2026-10-07/final/CC-055.png",
+  },
+  {
+    slug: "claudette-morel",
+    source: "CC-065",
+    nameZh: "克洛黛特·莫雷尔",
+    nameEn: "Claudette Morel",
+    gender: "female",
+    group: "black",
+    age: 47,
+    heightCm: 172,
+    origin: {
+      zh: "法国巴黎",
+      en: "Paris, France",
+    },
+    tagline: {
+      zh: "高个子，长脸，颧骨高，利落的直发波波头。",
+      en: "Tall, long-faced, high cheekbones and a sleek relaxed bob.",
+    },
+    voice: {
+      language: "en",
+      brief: "47岁法国女性，说英语带法国口音，声音低沉、优雅、从容，语速慢，有权威感。",
+      introLine:
+        "Good evening. My name is Claudette Morel. I am forty-seven, and I live in Paris. For many years I was a news editor, so I am very good at deciding what matters. I am calm, and I am rarely wrong. I would play a judge, a diplomat, or a mother who knows the whole story.",
+    },
+    look: "Black woman, about 47, tall, about 172 cm; long face, high cheekbones, a short relaxed bob; navy top",
+    image: "library/claude-casting-2026-10-07/final/CC-065.png",
+  },
+  {
+    slug: "jasmine-holloway",
+    source: "CC-075",
+    nameZh: "贾丝敏·霍洛韦",
+    nameEn: "Jasmine Holloway",
+    gender: "female",
+    group: "black",
+    age: 25,
+    heightCm: 155,
+    origin: {
+      zh: "英国伦敦",
+      en: "London, England",
+    },
+    tagline: {
+      zh: "个子小，心形脸，及肩卷发。",
+      en: "Petite, heart-shaped face and shoulder-length curls.",
+    },
+    voice: {
+      language: "en",
+      brief: "25岁伦敦女孩，说英语带伦敦口音，声音轻快、自信、带点俏皮，语速快。",
+      introLine:
+        "Hiya, I'm Jasmine Holloway, twenty-five, from South London. I'm a hairdresser, so I know everyone's gossip before they do. I'm small, but trust me, I'm the loudest person at the party. I'd love to play the cheeky best friend, the girl with a plan, or the boss of the whole crew.",
+    },
+    look: "Black woman, about 25, petite, about 155 cm; light brown skin, a heart-shaped face, a confident grown-up look, curly shoulder-length hair; peach top",
+    image: "library/claude-casting-2026-10-07/final/CC-075.png",
+  },
+  {
+    slug: "thandiwe-dlamini",
+    source: "CC-085",
+    nameZh: "坦迪薇·德拉米尼",
+    nameEn: "Thandiwe Dlamini",
+    gender: "female",
+    group: "black",
+    age: 59,
+    heightCm: 160,
+    origin: {
+      zh: "南非约翰内斯堡",
+      en: "Johannesburg, South Africa",
+    },
+    tagline: {
+      zh: "下巴方，笑纹深，椒盐色短爆炸头。",
+      en: "Square jaw, deep laugh lines and a short salt-and-pepper afro.",
+    },
+    voice: {
+      language: "en",
+      brief: "59岁南非女性，说英语带南非口音，声音浑厚、温暖、有力量，说话带笑，语速中等。",
+      introLine:
+        "Sawubona, hello! I'm Thandiwe Dlamini, fifty-nine, from Johannesburg. I was a school principal for twenty-five years, so I can quiet a room with one look. But I laugh easily, I promise. I'd love to play a principal, a grandmother, or a woman who leads her whole community.",
+    },
+    look: "Black woman, about 59, stocky, about 160 cm; square jaw, laugh lines, a short salt-and-pepper afro; olive top",
+    image: "library/claude-casting-2026-10-07/final/CC-085.png",
+  },
+  {
+    slug: "yaw-owusu",
+    source: "CC-010",
+    nameZh: "亚乌·奥乌苏",
+    nameEn: "Yaw Owusu",
+    gender: "male",
+    group: "black",
+    age: 26,
+    heightCm: 188,
+    origin: {
+      zh: "加纳库马西",
+      en: "Kumasi, Ghana",
+    },
+    tagline: {
+      zh: "长脸，大耳朵，短短的小辫子。",
+      en: "Long face, big ears and short twists.",
+    },
+    voice: {
+      language: "en",
+      brief: "26岁加纳男生，说英语带加纳口音，声音温和、开朗、带点害羞，语速中等。",
+      introLine:
+        "Hello, I'm Yaw Owusu, twenty-six, from Kumasi in Ghana. I'm an engineer, but on weekends I play drums at weddings. My ears are big, my mother says it's because I listen well. I'd like to play the kind young man, the inventor, or the guy who's quietly in love with his neighbour.",
+    },
+    look: "Black man, about 26, lanky, about 188 cm; long face, big ears, short twists; heather-grey top",
+    image: "library/claude-casting-2026-10-07/final/CC-010.png",
+  },
+  {
+    slug: "dele-ajayi",
+    source: "CC-020",
+    nameZh: "德莱·阿贾伊",
+    nameEn: "Dele Ajayi",
+    gender: "male",
+    group: "black",
+    age: 40,
+    heightCm: 185,
+    origin: {
+      zh: "尼日利亚拉各斯",
+      en: "Lagos, Nigeria",
+    },
+    tagline: {
+      zh: "光头，浓黑大胡子，浓眉，块头大。",
+      en: "Bald head, a full black beard, thick brows and a big frame.",
+    },
+    voice: {
+      language: "en",
+      brief: "40岁尼日利亚男人，说英语带尼日利亚口音，声音低沉浑厚、有威严，又带幽默感，语速中等。",
+      introLine:
+        "Good day, I'm Dele Ajayi, forty, from Lagos, Nigeria. I own a car repair workshop, and my voice can stop an argument from across the street. I look serious, but I'm the funniest man in my family, ask them. Cast me as the big boss, the bodyguard, or the uncle everybody fears and loves.",
+    },
+    look: "Black man, about 40, burly, about 185 cm; bald head, a full black beard, thick eyebrows; navy top",
+    image: "library/claude-casting-2026-10-07/final/CC-020.png",
+  },
+  {
+    slug: "clarence-pettiford",
+    source: "CC-030",
+    nameZh: "克拉伦斯·佩蒂福德",
+    nameEn: "Clarence Pettiford",
+    gender: "male",
+    group: "black",
+    age: 53,
+    heightCm: 175,
+    origin: {
+      zh: "美国孟菲斯",
+      en: "Memphis, USA",
+    },
+    tagline: {
+      zh: "圆脸，啤酒肚，灰白小胡子。",
+      en: "Round face, a round belly and a grey mustache.",
+    },
+    voice: {
+      language: "en",
+      brief: "53岁美国南方男人，说美式英语带孟菲斯口音，声音醇厚、慢悠悠、爱讲笑话，语速慢。",
+      introLine:
+        "Hey now, I'm Clarence Pettiford, fifty-three, from Memphis, Tennessee. I've run a barbecue joint for twenty years, and my ribs have fans in three states. I like the blues, long naps, and longer stories. Cast me as the diner owner, the deacon, or the old friend with all the answers.",
+    },
+    look: "Black man, about 53, pot-bellied, about 175 cm; round face, a grey mustache, short receding grey hair; mustard-yellow top",
+    image: "library/claude-casting-2026-10-07/final/CC-030.png",
+  },
+  {
+    slug: "jalen-brooks",
+    source: "CC-040",
+    nameZh: "贾伦·布鲁克斯",
+    nameEn: "Jalen Brooks",
+    gender: "male",
+    group: "black",
+    age: 31,
+    heightCm: 178,
+    origin: {
+      zh: "美国芝加哥",
+      en: "Chicago, USA",
+    },
+    tagline: {
+      zh: "高顶短发，修得整齐的短胡子，眼神沉稳。",
+      en: "A high-top fade, a neat short beard and a calm, steady look.",
+    },
+    voice: {
+      language: "en",
+      brief: "31岁芝加哥男人，说美式英语，声音沉稳、温和、自信，语速中等，很有说服力。",
+      introLine:
+        "Hey, I'm Jalen Brooks, thirty-one, from Chicago's South Side. I'm a high school basketball coach and part-time DJ. I stay calm when everyone else is losing it, that's kind of my thing. I'd love to play a coach, a detective, or the brother who holds the family together.",
+    },
+    look: "Black man, about 31, average build, about 178 cm; high-top fade, a neatly trimmed short beard, a calm confident look; white top",
+    image: "library/claude-casting-2026-10-07/final/CC-040.png",
+  },
+  {
+    slug: "ousmane-coulibaly",
+    source: "CC-050",
+    nameZh: "乌斯曼·库利巴利",
+    nameEn: "Ousmane Coulibaly",
+    gender: "male",
+    group: "black",
+    age: 68,
+    heightCm: 172,
+    origin: {
+      zh: "马里巴马科",
+      en: "Bamako, Mali",
+    },
+    tagline: {
+      zh: "光头，白色短胡子，额头皱纹深，细框眼镜。",
+      en: "Bald, a short white beard, a lined forehead and thin glasses.",
+    },
+    voice: {
+      language: "en",
+      brief: "68岁马里老人，说英语带法语和西非口音，声音苍老、平静、充满智慧，语速慢。",
+      introLine:
+        "Peace be with you. I am Ousmane Coulibaly, sixty-eight, from Bamako in Mali. I taught history at the university for many years, and I still believe a good story can change a person. I speak slowly, please be patient. I would play a teacher, an elder, or a grandfather with wisdom.",
+    },
+    look: "Black man, about 68, thin, about 172 cm; bald, a short white beard, a wrinkled forehead, thin rectangular generic glasses; cream top",
+    image: "library/claude-casting-2026-10-07/final/CC-050.png",
+  },
+  {
+    slug: "chidi-eze",
+    source: "CC-060",
+    nameZh: "奇迪·埃泽",
+    nameEn: "Chidi Eze",
+    gender: "male",
+    group: "black",
+    age: 23,
+    heightCm: 170,
+    origin: {
+      zh: "尼日利亚埃努古",
+      en: "Enugu, Nigeria",
+    },
+    tagline: {
+      zh: "圆脸，酒窝深，短寸头，敦实。",
+      en: "Round face, deep dimples, a buzz cut and a sturdy build.",
+    },
+    voice: {
+      language: "en",
+      brief: "23岁尼日利亚男生，说英语带尼日利亚口音，声音年轻、开心、爱笑，语速快，阳光。",
+      introLine:
+        "Hey hey! I'm Chidi Eze, twenty-three, from Enugu in Nigeria. I study computer science, but honestly I spend more time making comedy videos. People say my dimples are dangerous. I'd love to play the funny little brother, the hopeless romantic, or the student who accidentally saves the day.",
+    },
+    look: "Black man, about 23, stocky, about 170 cm; round baby face, deep dimples, short buzz cut; red top",
+    image: "library/claude-casting-2026-10-07/final/CC-060.png",
+  },
+  {
+    slug: "ibrahima-ndiaye",
+    source: "CC-070",
+    nameZh: "易卜拉希马·恩迪亚耶",
+    nameEn: "Ibrahima Ndiaye",
+    gender: "male",
+    group: "black",
+    age: 45,
+    heightCm: 190,
+    origin: {
+      zh: "塞内加尔达喀尔",
+      en: "Dakar, Senegal",
+    },
+    tagline: {
+      zh: "高瘦，颧骨锋利，光头，一字小胡子。",
+      en: "Tall and slim, sharp cheekbones, a shaved head and a thin mustache.",
+    },
+    voice: {
+      language: "en",
+      brief: "45岁塞内加尔男人，说英语带法语口音，声音低沉、优雅、从容，语速慢，很有风度。",
+      introLine:
+        "Good evening. I am Ibrahima Ndiaye, forty-five, from Dakar, Senegal. I was a jazz saxophonist in Paris for fifteen years before I came home. I like good suits and quiet rooms. I would be a fine diplomat, a mysterious stranger, or a man who walks in and changes everything.",
+    },
+    look: "Black man, about 45, tall and slim, about 190 cm; very dark skin, sharp cheekbones, shaved head, a thin mustache; sage-green top",
+    image: "library/claude-casting-2026-10-07/final/CC-070.png",
+  },
+  {
+    slug: "desmond-ellery",
+    source: "CC-080",
+    nameZh: "德斯蒙德·埃勒里",
+    nameEn: "Desmond Ellery",
+    gender: "male",
+    group: "black",
+    age: 36,
+    heightCm: 180,
+    origin: {
+      zh: "英国伯明翰",
+      en: "Birmingham, England",
+    },
+    tagline: {
+      zh: "脸蛋肉肉的，脖子粗，短脏辫。",
+      en: "Chubby cheeks, a thick neck and short locs.",
+    },
+    voice: {
+      language: "en",
+      brief: "36岁英国伯明翰男人，说英语带伯明翰口音，声音憨厚、松弛、幽默，语速中等。",
+      introLine:
+        "Alright, I'm Desmond Ellery, thirty-six, from Birmingham. I drive the number fifty bus, and I know every regular by name and by sandwich. I'm a big lad and a big softie. I'd love to play the bus driver, the best mate, or the dad who's trying his best, bless him.",
+    },
+    look: "Black man, about 36, heavyset, about 180 cm; chubby cheeks, thick neck, short locs; forest-green top",
+    image: "library/claude-casting-2026-10-07/final/CC-080.png",
+  },
+  {
+    slug: "samuel-oduya",
+    source: "CC-090",
+    nameZh: "塞缪尔·奥杜亚",
+    nameEn: "Samuel Oduya",
+    gender: "male",
+    group: "black",
+    age: 58,
+    heightCm: 176,
+    origin: {
+      zh: "肯尼亚基苏木",
+      en: "Kisumu, Kenya",
+    },
+    tagline: {
+      zh: "眼窝深，椒盐色胡子，灰色短爆炸头。",
+      en: "Deep-set eyes, a salt-and-pepper beard and a short grey afro.",
+    },
+    voice: {
+      language: "en",
+      brief: "58岁肯尼亚男人，说英语带东非口音，声音温和、沉稳、醇厚，语速慢，像个讲故事的人。",
+      introLine:
+        "Hello, my friends. I'm Samuel Oduya, fifty-eight, from Kisumu by Lake Victoria. I've been a fisherman, a radio host, and now an actor. I like to take my time, with stories and with people. I'd love to play a wise father, a village chief, or an old man who remembers everything.",
+    },
+    look: "Black man, about 58, average build, about 176 cm; deep-set eyes, a salt-and-pepper beard, a short grey afro; denim-blue top",
+    image: "library/claude-casting-2026-10-07/final/CC-090.png",
+  },
 ] as const;

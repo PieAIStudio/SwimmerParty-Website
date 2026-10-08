@@ -354,6 +354,84 @@
           "direction": "the character's signature prop on its own"
         }
       ]
+    },
+    {
+      "id": "voice",
+      "frame": "head",
+      "required": false,
+      "perLook": false,
+      "prompt": "Audio reference: {direction}.",
+      "slots": [
+        {
+          "key": "intro",
+          "required": false,
+          "direction": "self-introduction"
+        },
+        {
+          "key": "intro-alt",
+          "required": false,
+          "direction": "second-language introduction"
+        },
+        {
+          "key": "chat",
+          "required": false,
+          "direction": "casual talk"
+        },
+        {
+          "key": "happy",
+          "required": false,
+          "direction": "happy"
+        },
+        {
+          "key": "angry",
+          "required": false,
+          "direction": "angry"
+        },
+        {
+          "key": "sad",
+          "required": false,
+          "direction": "sad"
+        },
+        {
+          "key": "role-maid",
+          "required": false,
+          "direction": "role line: maid"
+        },
+        {
+          "key": "role-ceo",
+          "required": false,
+          "direction": "role line: CEO"
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "frame": "full",
+      "required": false,
+      "perLook": false,
+      "prompt": "Video reference: {direction}.",
+      "slots": [
+        {
+          "key": "turntable",
+          "required": false,
+          "direction": "turntable"
+        },
+        {
+          "key": "intro",
+          "required": false,
+          "direction": "self-introduction"
+        },
+        {
+          "key": "walk",
+          "required": false,
+          "direction": "walk cycle"
+        },
+        {
+          "key": "expressions",
+          "required": false,
+          "direction": "expression reel"
+        }
+      ]
     }
   ]
 }

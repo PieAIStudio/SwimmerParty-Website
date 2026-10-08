@@ -1,0 +1,61 @@
+{
+  "slug": "meng-zhaohua",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 840151,
+      "sha256": "58d3deffd66a1c81c04133f2d532bbdd754bfeeaf1bb53dbe64c889ffa8c5499",
+      "sourceSha256": "58d3deffd66a1c81c04133f2d532bbdd754bfeeaf1bb53dbe64c889ffa8c5499",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "meng-zhaohua/CC-051.png",
+      "preview": "/media/assets/meng-zhaohua/turnaround.front.webp",
+      "large": "/media/assets/meng-zhaohua/turnaround.front.large.webp",
+      "thumb": "/media/assets/meng-zhaohua/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJoAAAABgGPb2rHn+W1M4f9LxXbSp7STNmOwbac0Kqu309lmZdzueeYQERNAROSYKyB5GP9OaQWIkVw3nQoh8RI/SwZuEgASuNE34CeKW5kDdvK400fgoplbBnBfzZgO8Q/0MeYlHP6hnCEfTB9Ax2nfB8Z+SLxsL4RFeO1IQphw3x+MTOFk2PZfLEw00n4dp9rLp9YNA6P015Eh1U4EVlA4IGQAAACwAwCdASoMABUAPwFqrU8rJiQiMAgBYCAJZQDG9BrFpmm9PL9dgAD+ca0Icuq2UgbCF/RaYnnQJZfU6MSzja46PRx6BGIVArJY/cZ9gP86yH9oHco8gCLNQ+fzLvEA7h2ARCAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 258180,
+      "sha256": "ba82de9171fae16f3287bdf27a599e738ac50eb4d7c555f95c2b0d870cabfe76",
+      "sourceSha256": "ba82de9171fae16f3287bdf27a599e738ac50eb4d7c555f95c2b0d870cabfe76",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/meng-zhaohua/candidate-1.mp3",
+      "preview": "/api/voice/meng-zhaohua/intro",
+      "thumb": "/api/voice/meng-zhaohua/intro",
+      "previewUrl": "/api/voice/meng-zhaohua/intro",
+      "durationSec": 21.3,
+      "transcript": {
+        "text": "我叫孟昭华，沈阳人，四十九。个子高，肩膀宽，往那一站，大家都以为我是领导。其实我挺能逗的。演厂长、演局长、演那种说一不二的大家长，我有经验。不过你要让我演个搞笑的，我也接得住。"
+      }
+    }
+  ]
+}

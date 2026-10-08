@@ -1,0 +1,61 @@
+{
+  "slug": "feng-ye",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 991580,
+      "sha256": "0a86a94ff70f494dc0cc9f87568276b26399f11ff07d8d2841af28cb491ba202",
+      "sourceSha256": "0a86a94ff70f494dc0cc9f87568276b26399f11ff07d8d2841af28cb491ba202",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/CC-081.png",
+      "preview": "/media/assets/feng-ye/turnaround.front.webp",
+      "large": "/media/assets/feng-ye/turnaround.front.large.webp",
+      "thumb": "/media/assets/feng-ye/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKUAAAAJgFzb2rHn/DZjc5qRnXbMBpyRU8E//QuI2YBt27bzPl8PETEBAO76i44P5Mqa1mI09/i50ApODs1ppPakZrTFSG0l3tC6BsGcA5AnvL8cwfmZEON1wE+6XvHdeCHi0qK4TwGOHIo/gU9I9ShjQQ6uCWwrL70czTP+o7DH1TI/iC+czZMkfWLdI1m6+faskyh93V4ePDok08PB13ikQUieCNBwmAYAVlA4IHYAAADwAwCdASoMABUAPwFqrE6rJiQiMAgBYCAJZADCgBuzmTyz7xXC63BgAP5xtqxe8X/U0GSNPP+R9T9QUqLlvG8p9FR6VYm1XeeYqXAoVDXb7HcXxLDsPcsEj9DIfh5k7dBRPHfL2rvnn7MFd/DNPl09gAQqAAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 246084,
+      "sha256": "3622e454846dc563e0d42e7ed09aa9a3c74eca60ca9729cd3ab1e7fbcf558f1f",
+      "sourceSha256": "3622e454846dc563e0d42e7ed09aa9a3c74eca60ca9729cd3ab1e7fbcf558f1f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/feng-ye/candidate-1.mp3",
+      "preview": "/api/voice/feng-ye/intro",
+      "thumb": "/api/voice/feng-ye/intro",
+      "previewUrl": "/api/voice/feng-ye/intro",
+      "durationSec": 20.3,
+      "transcript": {
+        "text": "我叫冯野，呼和浩特人，三十六岁。名字里这个野字，是我爸起的，说希望我像草原上的风。我会骑马，也爱开车跑长途。我想演那种独来独往、靠自己闯出来的女人，向导、赛车手、牧场主，都行。"
+      }
+    }
+  ]
+}

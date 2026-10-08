@@ -1,0 +1,61 @@
+{
+  "slug": "dele-ajayi",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1174442,
+      "sha256": "d2438541fbf94f7f79a11ea06c353ac9f9f012144dac27d407b679b0c695e0bd",
+      "sourceSha256": "d2438541fbf94f7f79a11ea06c353ac9f9f012144dac27d407b679b0c695e0bd",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "dele-ajayi/CC-020.png",
+      "preview": "/media/assets/dele-ajayi/turnaround.front.webp",
+      "large": "/media/assets/dele-ajayi/turnaround.front.large.webp",
+      "thumb": "/media/assets/dele-ajayi/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSK4AAAABgGLb2rLl/P+POzTILJq7N4ga3W0K7g6VRdWqA9Dors3dMj83ve83h4iYAMziNJzTde1yqtevr4OnRw8FtqwjSTqMM05lnQGivbYvFyTr3NhVDDRqyuhXOTS+dRgNr2VQsDRrjC9nQs7Thrz/OnrIgYDJVd2e6azTF2BEi0Pawdqi9hSt2/pU4adnW4dKuftzW3pVxJxiLXUqZFqpRtT5byKVWvcFgnLCgfjaIABWUDggbAAAAHADAJ0BKgwAFQA/AWisTqslpCIwCAFgIAlnAAwv4ML2SzL3wAD+400l/JfAE84eAGyGUfx1nZpf2ZAEs/ACiB4w+s1eyOTLYi8vLtkGbTy24w3VkljIMfPvIr0uvHuQy2teJyfLsYr/mhwAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 295764,
+      "sha256": "434d65e66865818af6df095b40f2e0e3a671797fe5b75b30c135f72de1467d66",
+      "sourceSha256": "434d65e66865818af6df095b40f2e0e3a671797fe5b75b30c135f72de1467d66",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/dele-ajayi/candidate-1.mp3",
+      "preview": "/api/voice/dele-ajayi/intro",
+      "thumb": "/api/voice/dele-ajayi/intro",
+      "previewUrl": "/api/voice/dele-ajayi/intro",
+      "durationSec": 24.5,
+      "transcript": {
+        "text": "Good day, I'm Dele Ajayi, forty, from Lagos, Nigeria. I own a car repair workshop, and my voice can stop an argument from across the street. I look serious, but I'm the funniest man in my family, ask them. Cast me as the big boss, the bodyguard, or the uncle everybody fears and loves."
+      }
+    }
+  ]
+}

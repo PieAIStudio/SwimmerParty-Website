@@ -73,6 +73,10 @@ export function requiredSlots(): ResolvedSlot[] {
 
 export function slotLabelKey(seriesId: string, key: string): AssetLabelKey {
   const definition = seriesOf(seriesId);
+  if (seriesId === "voice" || seriesId === "video") {
+    const camel = key.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase());
+    return `assets.${seriesId}.${camel}` as AssetLabelKey;
+  }
   if (!definition.slots.some((slot) => slot.key === key)) {
     if (definition.perLook) return `assets.series.${seriesId}` as AssetLabelKey;
     throw new Error(`Unknown asset slot: ${seriesId}.${key}`);

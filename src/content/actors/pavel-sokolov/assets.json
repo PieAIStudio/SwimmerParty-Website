@@ -1,0 +1,61 @@
+{
+  "slug": "pavel-sokolov",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 934679,
+      "sha256": "d10d655668af8425caea41f29eba97ea3ca74e82923b5ff00e4da891e6f273e5",
+      "sourceSha256": "d10d655668af8425caea41f29eba97ea3ca74e82923b5ff00e4da891e6f273e5",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "pavel-sokolov/CC-034.png",
+      "preview": "/media/assets/pavel-sokolov/turnaround.front.webp",
+      "large": "/media/assets/pavel-sokolov/turnaround.front.large.webp",
+      "thumb": "/media/assets/pavel-sokolov/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ8AAAABgGPb2rHn+W37j20bA7DV2sk4Ult9ukzCtq1OlXmr9/n+MUTEBBARqbtSSHoQjwFU4T4A+cOcVMEaMJ/DnQDAPGP/F360QtDLFXD8YRJKli6ArcMcoWzyE3icZQqHAGA4SihYxesXzsIFeQsWdlBPbAhGZuDkFL8Dg/8azo+uZiRyHrTWIlOqIg/FnPm/Mgb5XO9LuOqrh4sJIsptICIAVlA4IGoAAADQAwCdASoMABUAPwFqrU6rJiQiMAgBYCAJZQAASrfiqQj+1gr/8eAA/nGj0aA3PjBoVxhRafN9Fku6mg4dELtXz5NdO4hNS7tjwtNyyKXon2KioPyf9pMqrpK1HuQHYKcGeYIFQ4SXAAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 354084,
+      "sha256": "b86fcc44ba57850c3aa0237685152b31cef4d817ecfb9767228f0bd0192379cd",
+      "sourceSha256": "b86fcc44ba57850c3aa0237685152b31cef4d817ecfb9767228f0bd0192379cd",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/pavel-sokolov/candidate-1.mp3",
+      "preview": "/api/voice/pavel-sokolov/intro",
+      "thumb": "/api/voice/pavel-sokolov/intro",
+      "previewUrl": "/api/voice/pavel-sokolov/intro",
+      "durationSec": 29.3,
+      "transcript": {
+        "text": "Hello. Pavel Sokolov. Fifty-five, from Novosibirsk, in Siberia. I drove trains across the taiga for thirty years. Very long trips, very little talking. I like chess, black bread, and quiet people. I think I could play a soldier, a ship engineer, or a father who never says I love you."
+      }
+    }
+  ]
+}

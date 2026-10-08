@@ -1,0 +1,61 @@
+{
+  "slug": "polina-orlova",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 940020,
+      "sha256": "66f0d1fcc7a95388928d275467fa7e80c45ba13465ab3064d4802b0adce9f2fd",
+      "sourceSha256": "66f0d1fcc7a95388928d275467fa7e80c45ba13465ab3064d4802b0adce9f2fd",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "polina-orlova/CC-048.png",
+      "preview": "/media/assets/polina-orlova/turnaround.front.webp",
+      "large": "/media/assets/polina-orlova/turnaround.front.large.webp",
+      "thumb": "/media/assets/polina-orlova/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRigBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJoAAAABgGLb2rLl+d2bo829M4s/Ut218jc0QXcbAMmdCbi7Q3KHk77nm0NETICIiKO3wy2mZVBvNgJTZh0wZhJZgos8LQEwqfUZprWhDThe17b24PbVpuz/Ah8+ZRbgIGCwnvN3y2O6Qdo4XKbfpjj/ZkdJF/1poOffprn/E80EtSgNtaRqSZRWE9I8xOP4NO9bccZfRMvqdDraS0QEVlA4IGgAAAAQBACdASoMABUAPwForE6rJaQiMAgBYCAJYwAARog9r4ru1DMz6/VMAAD+caH24W029BxWLn/nUd2gDZ7A2zxeA9StsUL0gDkQKPxQKsQqNirYnNirtoonKLhDmx02tfrCCg6r8LgAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 313476,
+      "sha256": "dee9ce3dc3313c8f163f77c90cfa9057285ca157b8da4075d501bce15aeba332",
+      "sourceSha256": "dee9ce3dc3313c8f163f77c90cfa9057285ca157b8da4075d501bce15aeba332",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/polina-orlova/candidate-1.mp3",
+      "preview": "/api/voice/polina-orlova/intro",
+      "thumb": "/api/voice/polina-orlova/intro",
+      "previewUrl": "/api/voice/polina-orlova/intro",
+      "durationSec": 25.9,
+      "transcript": {
+        "text": "Hello. My name is Polina Orlova. I am forty-three, from Saint Petersburg. I worked many years as a translator, so I like words very much, and silence even more. I think I could play a spy, a scientist, or a mother who carries a long and heavy story."
+      }
+    }
+  ]
+}

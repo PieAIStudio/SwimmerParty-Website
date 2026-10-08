@@ -1,0 +1,61 @@
+{
+  "slug": "dot-harrington",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1054622,
+      "sha256": "8129dd574abf502838d88ddc2d473b9b2e1e655f9bbaac972cc5f5951fdb739d",
+      "sourceSha256": "8129dd574abf502838d88ddc2d473b9b2e1e655f9bbaac972cc5f5951fdb739d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "dot-harrington/CC-068.png",
+      "preview": "/media/assets/dot-harrington/turnaround.front.webp",
+      "large": "/media/assets/dot-harrington/turnaround.front.large.webp",
+      "thumb": "/media/assets/dot-harrington/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRigBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJYAAAABgFpt2/LmlWFUHM+0QUaI40RiuZWMEzBrHqCSLXOrmRke9b7fDhExAcTtelKXvq/cqjUgp2oGEirN5blGUXsAnpoE4zMAvBhZAGKQ5W/ZdYGNfLKvUTZ/yA7n2eotu1tlTbv4fsdeI6Ne7O1giMQ8FmZQlirobUOH1IpaFn1SA1JJdErpX5/tuyYNHxOtT0p+N5EjQkRWUDggbAAAALADAJ0BKgwAFQA/AWisTqslpCIwCAFgIAllAABJ82zbUwutntsgAP4VzeONgR6yZ2hn0VMGrWN9vMmn0bViSwArfIX3RDN8KA0tFe+di/evOF6KbTW5baqILqPyW7mpGgD4Nzd0NOJZJwkuAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 226644,
+      "sha256": "261ddfe0cf473a219fff94ef42224865b575452282a7aebcb88f78b9a4d25f46",
+      "sourceSha256": "261ddfe0cf473a219fff94ef42224865b575452282a7aebcb88f78b9a4d25f46",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/dot-harrington/candidate-1.mp3",
+      "preview": "/api/voice/dot-harrington/intro",
+      "thumb": "/api/voice/dot-harrington/intro",
+      "previewUrl": "/api/voice/dot-harrington/intro",
+      "durationSec": 18.7,
+      "transcript": {
+        "text": "G'day, I'm Dot Harrington. Fifty-nine, from Melbourne. I drove school buses for thirty years, so trust me, nothing scares me anymore. I say what I mean and I mean what I say. Put me in as the tough coach, the bossy aunt, or the woman who runs the whole town."
+      }
+    }
+  ]
+}

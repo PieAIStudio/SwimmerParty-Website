@@ -1,0 +1,61 @@
+{
+  "slug": "lin-xiaoman",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 821881,
+      "sha256": "eee57393d3f81024f93102dd9bf7ccb5a75bdeff807cadd14431cf283299f9ce",
+      "sourceSha256": "eee57393d3f81024f93102dd9bf7ccb5a75bdeff807cadd14431cf283299f9ce",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "lin-xiaoman/CC-001.png",
+      "preview": "/media/assets/lin-xiaoman/turnaround.front.webp",
+      "large": "/media/assets/lin-xiaoman/turnaround.front.large.webp",
+      "thumb": "/media/assets/lin-xiaoman/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJcAAAABgGJt2zLlG3epPtndZ1bgswA0sQcSJE9OnUN1h2qZ6O7uDk/iffcQERMg/lsMgq/+fMS4VaCDuwUGucjRnI/J7eF3XU71A4Cfaj0Enl1U/xpwWaCWH4H3NqoG4L6d2sDRL8aoeqzsoUxJX6dnYaDE8WgvzMxeXzPczGl/CXlmcySMFmZnUPbcQSlP6sR4jZIm1cIWEkIAAFZQOCBmAAAAcAMAnQEqDAAVAD8BaKxOqyWkIjAIAWAgCWUAAEpQtRhQR2sAAP4WaGYRAqPE9ydibw9ao68+/3GmxLSOkt0xuqCNYMg89cbATC+4mbZOXbc8ILeQAfDpWuZ5Iyz3U3C5nRBpCwAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 204180,
+      "sha256": "83c55a468f7bf31e5735efc693e408d1573204c6a53cf63eb473abe3b3873ec9",
+      "sourceSha256": "83c55a468f7bf31e5735efc693e408d1573204c6a53cf63eb473abe3b3873ec9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/lin-xiaoman/candidate-1.mp3",
+      "preview": "/api/voice/lin-xiaoman/intro",
+      "thumb": "/api/voice/lin-xiaoman/intro",
+      "previewUrl": "/api/voice/lin-xiaoman/intro",
+      "durationSec": 16.8,
+      "transcript": {
+        "text": "大家好啊，我叫林小满，哈尔滨的，今年二十三。别看我个儿小，嗓门可一点不小，片场喊一嗓子全组都能听见。我最想演那种表面乖乖的、心里一肚子小主意的人。有戏找我，保证不掉链子！"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "qin-lie",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 970365,
+      "sha256": "d695fc2bc28f52af6d8ae7b1f0cd8f6007e81dc6e1fcdb4dc2144760f95ba4f2",
+      "sourceSha256": "d695fc2bc28f52af6d8ae7b1f0cd8f6007e81dc6e1fcdb4dc2144760f95ba4f2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/CC-022.png",
+      "preview": "/media/assets/qin-lie/turnaround.front.webp",
+      "large": "/media/assets/qin-lie/turnaround.front.large.webp",
+      "thumb": "/media/assets/qin-lie/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjwBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKYAAAABgKtt//nlkyfXEbhW2zYne7S3pn+rbbsDsDHbdpNd7/T5/DqGiJgAIiK1RFtS9sTdP2z+nnSVNDa2tRRS94HjbMEDoh/LkfJZ1eEj8LZby6YrD4BT1Qxbjv8AfhMW2IQdALgNsdFG/AG9ncyjArvnUDkwCkdbH2JItEVWJjykKAQ5IF1KgZ8lSqQSOOqgSsr/M1K7GhJ012+JJh/MmXm5KZFJWQARVlA4IHAAAADQAwCdASoMABUAPwFsrU8rJiQiMAgBYCAJZwDKABulBJw53nihXAAA/tldGdgrtNzYb4/TCU8zu56DqRKoo010S9cU6KMZxmCo+DyBs1Gc7s7BjulyZ4hZqcNvRvKDa+JxyER8h/KSNQLhpRV++AAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 202020,
+      "sha256": "59988f2fa4a583b39bc6db06598b8f34536791f9c021c7d8ee579c7c54459201",
+      "sourceSha256": "59988f2fa4a583b39bc6db06598b8f34536791f9c021c7d8ee579c7c54459201",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/qin-lie/candidate-1.mp3",
+      "preview": "/api/voice/qin-lie/intro",
+      "thumb": "/api/voice/qin-lie/intro",
+      "previewUrl": "/api/voice/qin-lie/intro",
+      "durationSec": 16.6,
+      "transcript": {
+        "text": "我叫秦烈，西安人，二十八岁。练了十年散打，所以看着有点凶，其实我挺好说话的。动作戏是我的强项，打戏我自己上。我也想试试那种外表硬、心里软的角色，比如一个照顾妹妹的哥哥。"
+      }
+    }
+  ]
+}

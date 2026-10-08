@@ -23,7 +23,7 @@ export default privateApi("GET", async (req, res, modes) => {
       return;
     }
   }
-  const { url, filename } = await signedAsset(actor.code, item, modes.store);
+  const { url, filename } = await signedAsset(actor.slug, item, modes.store);
   res
     .status(200)
     .json({ url, filename, ...(!user ? { cooldown: GUEST_DOWNLOAD_WINDOW_SECONDS } : {}) });

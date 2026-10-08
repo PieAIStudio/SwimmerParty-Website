@@ -1,0 +1,61 @@
+{
+  "slug": "rosemary-finch",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1269656,
+      "sha256": "a2fdc11bb52aff265c437fa16b05f44d09f9858b8e2ae5c696739dccaa0a5c75",
+      "sourceSha256": "a2fdc11bb52aff265c437fa16b05f44d09f9858b8e2ae5c696739dccaa0a5c75",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "rosemary-finch/CC-078.png",
+      "preview": "/media/assets/rosemary-finch/turnaround.front.webp",
+      "large": "/media/assets/rosemary-finch/turnaround.front.large.webp",
+      "thumb": "/media/assets/rosemary-finch/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ4AAAABgGJb27Ht+ozmOfj7BvCl38kz8N/9V9tGdbOjbUQn21d67n8OETEBAJA4XeGEHPkizyxSE8k/jxT7wd8ejeRu/fiuDQvaI5J8cShRFNOVLKlEGXwSJpVzijfKmXQNQPvPpQbQz9+SX/ye1gGwLvJug7tGqBVcGWQ/xAIOlLJWKmVXHnukAjbmclQqYkECl6Rq+m0PW1phrFSDtIkgAFZQOCB8AAAA8AMAnQEqDAAVAD8Baq1PKyYkIjAIAWAgCWUAwoGLXpU3j69mARlCrADJAOCHOSNpfHDtLvRt6pM/dG5D/MR8O0rsXzxQZ2ssitNDXNhGfruFzTeuJyTw3wyy/r+Ii7O3KzNYl0/3VX9nRpTFYB9zbWf+Z+GSBGTwKT74AA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 258612,
+      "sha256": "a922d35e3006fc0252847ff6abbba49ca6f044d32e9fe8b1b32eca630390569a",
+      "sourceSha256": "a922d35e3006fc0252847ff6abbba49ca6f044d32e9fe8b1b32eca630390569a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/rosemary-finch/candidate-1.mp3",
+      "preview": "/api/voice/rosemary-finch/intro",
+      "thumb": "/api/voice/rosemary-finch/intro",
+      "previewUrl": "/api/voice/rosemary-finch/intro",
+      "durationSec": 21.4,
+      "transcript": {
+        "text": "Hello, love! I'm Rosemary Finch, sixty-seven, from Cardiff. I sang in a choir for forty years, so I can't help putting a bit of a tune in everything I say. I've got five grandchildren and a very fat cat. Cast me as the nan, the choir lady, the kind soul next door."
+      }
+    }
+  ]
+}

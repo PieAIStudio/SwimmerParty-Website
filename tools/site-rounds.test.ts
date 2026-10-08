@@ -14,3 +14,23 @@ test("round six roster has the selected order and all 95 new faces", () => {
 test("works use actor slugs", () => {
   assert.ok(WORKS.every((work) => work.cast.every((credit) => ACTORS.some((actor) => actor.slug === credit.actor))));
 });
+
+test("every actor has a local asset manifest and new faces have image plus voice source", async () => {
+  const { readdir, access } = await import("node:fs/promises");
+  const { join } = await import("node:path");
+  for (const actor of ACTORS) {
+    await access(join(process.cwd(), "src/content/actors", actor.slug, "assets.json"));
+  }
+  const newFaceDirs = await readdir(join(process.cwd(), "src/content/actors"));
+  assert.ok(newFaceDirs.includes("lin-xiaoman"));
+  await access(join(process.cwd(), "media-pack/library/voice/new-faces/lin-xiaoman/candidate-1.mp3"));
+});
+
+test("voice manifests match round six delivery counts", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const { join } = await import("node:path");
+  for (const [slug, expected] of [["tang-yunqiu", 7], ["misha-luo", 7], ["zhang-qiang", 1], ["chen-wei", 1]] as const) {
+    const manifest = JSON.parse(await readFile(join(process.cwd(), "src/content/actors", slug, "assets.json"), "utf8"));
+    assert.equal(manifest.items.filter((item: { kind: string }) => item.kind === "voice").length, expected);
+  }
+});

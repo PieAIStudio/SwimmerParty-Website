@@ -1,0 +1,61 @@
+{
+  "slug": "vera-kucerova",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 953005,
+      "sha256": "16bb64e14bb16193dbd2875bf31d5d9d82db7cea525d29adead5765fe89f8ad2",
+      "sourceSha256": "16bb64e14bb16193dbd2875bf31d5d9d82db7cea525d29adead5765fe89f8ad2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "vera-kucerova/CC-093.png",
+      "preview": "/media/assets/vera-kucerova/turnaround.front.webp",
+      "large": "/media/assets/vera-kucerova/turnaround.front.large.webp",
+      "thumb": "/media/assets/vera-kucerova/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRioBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJwAAAABgGPb2rHn+e3Of5fONkZh1bbTundaZwT5+9i2bdu51fs+c4iICSAi8u5NI1axjL9AJh5AO+P1ivdCxphzsZSsltUCQI5sRxiWed6Ar07Z8RvwNiYx/AHAkcS1Jgwphahd/Pzj0S3YmnG6hUGdQFYsdSGV5A9jWUhntsZ90cRMbWq+PczADc0fMjV/+u57JnOHcv5DZUkJZKkoJgJWUDggaAAAADADAJ0BKgwAFQA/AWqsTqsmJCIwCAFgIAlnAACDq/ZuVAAA/uw7c8eXsy40SBwpH2UOKLDYseqKAie9ItCKIfUZFcmwxMwnULfst+42pb9zOo0eeuKjD+qaCao3hVSzrp1qwrmuAAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 298788,
+      "sha256": "dd428c5c8516133edb75b89a7c7a3a4d8d30cf8e1e071dbd55996d3032b43c68",
+      "sourceSha256": "dd428c5c8516133edb75b89a7c7a3a4d8d30cf8e1e071dbd55996d3032b43c68",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/vera-kucerova/candidate-1.mp3",
+      "preview": "/api/voice/vera-kucerova/intro",
+      "thumb": "/api/voice/vera-kucerova/intro",
+      "previewUrl": "/api/voice/vera-kucerova/intro",
+      "durationSec": 24.7,
+      "transcript": {
+        "text": "Hello. I am Vera Kučerová, fifty-three, from Prague. I read tarot cards in a café for many years, mostly for tourists, sometimes for myself. People say I look like I know something. Maybe I do. I would play a fortune teller, a landlady, or the mother in a strange old house."
+      }
+    }
+  ]
+}

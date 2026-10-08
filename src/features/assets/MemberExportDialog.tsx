@@ -141,7 +141,7 @@ export function MemberExportDialog({
         if (!open) cancel();
       }}
       source={source}
-      title={t("assets.dialogTitle", { count: selected.length })}
+      title={t("assets.dialogTitle")}
       width={560}
     >
       <GameSegmentedControl

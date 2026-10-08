@@ -1,0 +1,61 @@
+{
+  "slug": "tao-guixiang",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1105328,
+      "sha256": "d5e4958c1a113873ca2bf2431b2a4fd76a697b4be19ce1edbec645ca8c695eaa",
+      "sourceSha256": "d5e4958c1a113873ca2bf2431b2a4fd76a697b4be19ce1edbec645ca8c695eaa",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "tao-guixiang/CC-076.png",
+      "preview": "/media/assets/tao-guixiang/turnaround.front.webp",
+      "large": "/media/assets/tao-guixiang/turnaround.front.large.webp",
+      "thumb": "/media/assets/tao-guixiang/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJUAAAABgKJt2zHtGS+Ae1CfNCuwPfPbzdXNZjeSqm0no5t3ep5/DxExAURE+vK4kmTNHjDyjwXAi1pSHAHtJGuq8eTSCeZbAJgTGiHa2cSvEGTL10IvO3hjvwts/ok9C2N/7HeDObaBPxw7GbXg8xyjJGZxtYRaqQBTg8iTKtHegRKpDtWtqJBKEa6HT8qDyY2QlA2TIpUlIgBWUDggdAAAAJADAJ0BKgwAFQA/AWisTqsmJCIwCAFgIAlAAAjDb6wUiRfzBzwA/oUMwxiqPaip6hVfcQvcROuI8eJY8flkW2yMzEOP/uRonRiZaoAotoBGbaHhp2mLYM3fvHc/f1i7EUfX7sLtN//3AdB0gT2gbQeWqAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 295332,
+      "sha256": "59513f592376e34b563b31426e5a2d82b18ba27d6150a46d263abfe0120b7042",
+      "sourceSha256": "59513f592376e34b563b31426e5a2d82b18ba27d6150a46d263abfe0120b7042",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/tao-guixiang/candidate-1.mp3",
+      "preview": "/api/voice/tao-guixiang/intro",
+      "thumb": "/api/voice/tao-guixiang/intro",
+      "previewUrl": "/api/voice/tao-guixiang/intro",
+      "durationSec": 24.4,
+      "transcript": {
+        "text": "我叫陶桂香，南京人，六十六岁。退休以后天天给孙子做饭，现在孙子上大学了，我闲不住，就来演戏了。我做的盐水鸭可好吃了。演奶奶、演外婆、演菜市场的老阿姨，你们放心交给我。"
+      }
+    }
+  ]
+}

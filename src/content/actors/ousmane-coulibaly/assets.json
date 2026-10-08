@@ -1,0 +1,61 @@
+{
+  "slug": "ousmane-coulibaly",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 832441,
+      "sha256": "c75afdfc8522c8ae57714057bdfd2e6a97b6c47beb732e008e97b85ef7e8e6ff",
+      "sourceSha256": "c75afdfc8522c8ae57714057bdfd2e6a97b6c47beb732e008e97b85ef7e8e6ff",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ousmane-coulibaly/CC-050.png",
+      "preview": "/media/assets/ousmane-coulibaly/turnaround.front.webp",
+      "large": "/media/assets/ousmane-coulibaly/turnaround.front.large.webp",
+      "thumb": "/media/assets/ousmane-coulibaly/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJQAAAABgCMAEMHmYo+ZM1m/yJbJXtPJdrva7Sds27Ztj8ZNuftDREwAJMbcwNvxT8U5/99NHCxXA6tt+f2o1VANiIjJ1FhCM9W+jrheS930Ig7NUKMriAMdVNk54lwJNfdw/3U8RGU/DGydhCi4qW+dBnYvvXyWe0zOv+UecuKv3HGu60vMvPr1aKSS3hyy80FKpQKQ6gAAVlA4IGYAAACwAwCdASoMABUAPwFqrk8rJiQiMAgBYCAJZwAASrhYfmBbFG1ngADbTGIFzINrm79PsaZvIMY7auiC6XFsaGZ8xG8djUWOXDq/ePzb6uJPqVtVvyUQnDMPd/U10Mkrlbz8qYizAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 436164,
+      "sha256": "7e085b0c2282e5283a0586096e5ea78e2daf8180a094d437b7519df184df67a6",
+      "sourceSha256": "7e085b0c2282e5283a0586096e5ea78e2daf8180a094d437b7519df184df67a6",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/ousmane-coulibaly/candidate-1.mp3",
+      "preview": "/api/voice/ousmane-coulibaly/intro",
+      "thumb": "/api/voice/ousmane-coulibaly/intro",
+      "previewUrl": "/api/voice/ousmane-coulibaly/intro",
+      "durationSec": 36.1,
+      "transcript": {
+        "text": "Peace be with you. I am Ousmane Coulibaly, sixty-eight, from Bamako in Mali. I taught history at the university for many years, and I still believe a good story can change a person. I speak slowly, please be patient. I would play a teacher, an elder, or a grandfather with wisdom."
+      }
+    }
+  ]
+}

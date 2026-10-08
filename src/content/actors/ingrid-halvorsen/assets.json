@@ -1,0 +1,61 @@
+{
+  "slug": "ingrid-halvorsen",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 861479,
+      "sha256": "91d02b94977e01727f6ec8657461d91f5724e3a49ab13c7be80efd58bc805a6b",
+      "sourceSha256": "91d02b94977e01727f6ec8657461d91f5724e3a49ab13c7be80efd58bc805a6b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ingrid-halvorsen/CC-008.png",
+      "preview": "/media/assets/ingrid-halvorsen/turnaround.front.webp",
+      "large": "/media/assets/ingrid-halvorsen/turnaround.front.large.webp",
+      "thumb": "/media/assets/ingrid-halvorsen/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiYBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ0AAAABgGJt27LoxZ3ssAUOWRfgJNfmySIdFiDjViW6e5tJVodp7v4k3n8PETEBNNqdlJOgC/AJxYGQkPX0zChQ/Af+CtwCAMxwy0NguMgdzgDzB9ztAXB+w82+A39LjHgH+MEFo9jH3TV2xCPkxMYK7MQa0Jv4l3C6/0rrXcS54K9Bz0XhqEDH5aCpP4u45Ju4fUl855hiVwouYSVJSk9EAFZQOCBiAAAAsAMAnQEqDAAVAD8BaKxOqyWkIjAIAWAgCWUAAEqzFV7X+ddqM6AA/p6FkJcIR378kMmpBF0uuYv8fzKB09nIPoAFKXpIInHcU6uIj+mSvtqokY5FVC9EJ32P5/9VyQwAAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 227940,
+      "sha256": "6dde7a7e6761430d8d15575f1c1f17cfae5a5e3a4483234c5e228848b895e20c",
+      "sourceSha256": "6dde7a7e6761430d8d15575f1c1f17cfae5a5e3a4483234c5e228848b895e20c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/ingrid-halvorsen/candidate-1.mp3",
+      "preview": "/api/voice/ingrid-halvorsen/intro",
+      "thumb": "/api/voice/ingrid-halvorsen/intro",
+      "previewUrl": "/api/voice/ingrid-halvorsen/intro",
+      "durationSec": 18.8,
+      "transcript": {
+        "text": "Hello. I'm Ingrid Halvorsen, thirty-four, from Bergen in Norway. It rains there about three hundred days a year, so I'm very patient. I used to guide hikers up mountains. I'd love to play a ship captain, a detective, or the calm one when everything falls apart."
+      }
+    }
+  ]
+}

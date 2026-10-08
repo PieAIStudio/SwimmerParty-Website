@@ -1,0 +1,61 @@
+{
+  "slug": "zhong-fuhai",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1231822,
+      "sha256": "e2022fb436b19c51ba8f2203974e3b05a9a6a876e7948b914981adc61d552d21",
+      "sourceSha256": "e2022fb436b19c51ba8f2203974e3b05a9a6a876e7948b914981adc61d552d21",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zhong-fuhai/CC-067.png",
+      "preview": "/media/assets/zhong-fuhai/turnaround.front.webp",
+      "large": "/media/assets/zhong-fuhai/turnaround.front.large.webp",
+      "thumb": "/media/assets/zhong-fuhai/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRj4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKIAAAAJgJtt27Hn+u3/r9TZlRWrZK9FkmU4Qkawbdu2k/f9doiICQAwtUyvozg4MF2t5MWUV1qAewX3PRRjkvRGG3TOVQrdFgBtF+BuRNrgAZ3mVXhTOSDJrfD4nYDP+TvJ0Bs8fjoFt+kNniyvwqv6GmZaL3g55rFpBljfZWGCo1PENZbGWUWq5vwYs+yd+ye+ZTdcL2GShZlafQ7ZJIvNU+R77ABWUDggdgAAANADAJ0BKgwAFQA/AWqsTqsmJCIwCAFgIAlnALDsG5fzVFgFNbiRwAD+nbN8zXFirvuXhlRbrllb4DUuhEYflTezn3ljGsq+0KpHs8onnhqSw2VMvrjr8DVeQVj3cZz0Gpz2z60G/Cl2xOcBd3SsFd6AGLsQAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 242196,
+      "sha256": "d70499a5f525c3039180e8a4cb8e9cc95dcc20b45aa1205e5845ce6dab1953cf",
+      "sourceSha256": "d70499a5f525c3039180e8a4cb8e9cc95dcc20b45aa1205e5845ce6dab1953cf",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/zhong-fuhai/candidate-1.mp3",
+      "preview": "/api/voice/zhong-fuhai/intro",
+      "thumb": "/api/voice/zhong-fuhai/intro",
+      "previewUrl": "/api/voice/zhong-fuhai/intro",
+      "durationSec": 20,
+      "transcript": {
+        "text": "大家好，我叫钟福海，广州人，六十四岁。每天早上一定要去饮早茶，一盅两件，跟老朋友吹吹水。我头顶的头发少了，所以要梳得靓一点。演阿伯、演茶楼老板、演好脾气的爷爷，交给我啦。"
+      }
+    }
+  ]
+}

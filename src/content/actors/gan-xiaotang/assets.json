@@ -1,0 +1,61 @@
+{
+  "slug": "gan-xiaotang",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1113684,
+      "sha256": "8fb46b2818f8b63816633e57b403915aee01e9b8aaa8491e31c88e0f450867fc",
+      "sourceSha256": "8fb46b2818f8b63816633e57b403915aee01e9b8aaa8491e31c88e0f450867fc",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "gan-xiaotang/CC-056.png",
+      "preview": "/media/assets/gan-xiaotang/turnaround.front.webp",
+      "large": "/media/assets/gan-xiaotang/turnaround.front.large.webp",
+      "thumb": "/media/assets/gan-xiaotang/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRlABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKcAAAABgJtt27Hn/u3qj5MBbFsTWBVHQJkjpd0bnW2zzgC27bt63n+HiJgAALDkB8OlZoksd5FJ8sahqiJ561Q5Wu6ewqCuviM/+zXC74cyWSTxX+SKspcXks81ou+PJP8mxOyZuFgVO0fiZk+0LfP/lYddArW8XucwlCU8qGeXqoAj2ZxUlXHMnyeqQnYb3n6NiizWYZ5eADSIZj7KmKLRQIfwSgP0pXEaDQBWUDggggAAABAEAJ0BKgwAFQA/AWqtTysmJCIwCAFgIAlAF2AD8Lug0BHMg+HYiykAAP6FE7CUJ/wudYIa//w2nIUltmHpfH8zF9Wh9pC3QyIuWh4A6KR8t6AYb5o/inrAmGfizJz8/WfE/ns6/vjHhVltC8FLpSCrnKFVI250G7jlEoO28yaAAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 249540,
+      "sha256": "4fb29287136a6625f5bb2b528eb23a0670b665311c6e3ba71051b27a7a928d2e",
+      "sourceSha256": "4fb29287136a6625f5bb2b528eb23a0670b665311c6e3ba71051b27a7a928d2e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/gan-xiaotang/candidate-1.mp3",
+      "preview": "/api/voice/gan-xiaotang/intro",
+      "thumb": "/api/voice/gan-xiaotang/intro",
+      "previewUrl": "/api/voice/gan-xiaotang/intro",
+      "durationSec": 20.6,
+      "transcript": {
+        "text": "大家好，我是甘小棠，成都的，二十六岁。我说话可能有点慢，因为成都人都比较巴适嘛。我脸圆圆的，好多人说我像个汤圆。我想演那种憨憨的、可爱的、偶尔吃货的角色，演得肯定很真实。"
+      }
+    }
+  ]
+}

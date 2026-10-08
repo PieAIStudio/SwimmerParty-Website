@@ -1,0 +1,61 @@
+{
+  "slug": "chidi-eze",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1197850,
+      "sha256": "e9e4f95ce5fecaca9f4a64cb896cd427903b838f49fe1814fa18f3824df29ecf",
+      "sourceSha256": "e9e4f95ce5fecaca9f4a64cb896cd427903b838f49fe1814fa18f3824df29ecf",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "chidi-eze/CC-060.png",
+      "preview": "/media/assets/chidi-eze/turnaround.front.webp",
+      "large": "/media/assets/chidi-eze/turnaround.front.large.webp",
+      "thumb": "/media/assets/chidi-eze/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkYBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKUAAAABgGPb2rHn/nbs3ja6vw0nkC4TSZeOldGytG3btu3c6nm/OUTEBABAZGshtCt446lVR4ZpZfPPrfJu+ic5GCjKqCwTm6otcfchfi8BBHNF7DIYiOKMmGco4Hs4JIZOHID99Urcf5oA08gTnx/41KUHEDLFwX5OeECWsLiItVBWsiCLrao25mdyXNXCtOD/eVX7j0X3ogo4OwBG74NFZnUKEN/oBgAAVlA4IHoAAADQAwCdASoMABUAPwFqrE8rJiQiMAgBYCAJagC/OCFjZSxV3LQcsWgA/rm945aYEkQu5b9sUUQiX2aLN7nm8zgGoNoIAVImOLVvEXkyQIfWOZ3neAoO5Hq7Ey6yMuCtXkC2By3as9ZLRwINRu0MjZca/EHsqASwAiQAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 240036,
+      "sha256": "3adfc361ab856950f78121faa3b97d06d34d091445f9eb342fc4d5c635b0d590",
+      "sourceSha256": "3adfc361ab856950f78121faa3b97d06d34d091445f9eb342fc4d5c635b0d590",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/chidi-eze/candidate-1.mp3",
+      "preview": "/api/voice/chidi-eze/intro",
+      "thumb": "/api/voice/chidi-eze/intro",
+      "previewUrl": "/api/voice/chidi-eze/intro",
+      "durationSec": 19.8,
+      "transcript": {
+        "text": "Hey hey! I'm Chidi Eze, twenty-three, from Enugu in Nigeria. I study computer science, but honestly I spend more time making comedy videos. People say my dimples are dangerous. I'd love to play the funny little brother, the hopeless romantic, or the student who accidentally saves the day."
+      }
+    }
+  ]
+}

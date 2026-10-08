@@ -1,0 +1,61 @@
+{
+  "slug": "hu-guifen",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1094552,
+      "sha256": "e747a45ad31d0a2c7a68778f89b7f09e8048d55be1b696bc51ae5cd21eb98ebf",
+      "sourceSha256": "e747a45ad31d0a2c7a68778f89b7f09e8048d55be1b696bc51ae5cd21eb98ebf",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "hu-guifen/CC-011.png",
+      "preview": "/media/assets/hu-guifen/turnaround.front.webp",
+      "large": "/media/assets/hu-guifen/turnaround.front.large.webp",
+      "thumb": "/media/assets/hu-guifen/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRk4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKUAAAABgGLb1vLmhZnBZcVFcqsYXCWzrcIBMGhmycwsuzqCqDLXMXOvei9ziIgJICJShB2UUDn6f1OcIBfAk1bK+Qf2lRLVvz6nkpy+/vG3WyioLgDgxcyCELNZ/vsvgPcqNvAKAG/jbOJZWGQzF+x2gTWcsftWpujA/xW2lIzK8bCMERKTcdKITimKeB4WJB/2UrAkGb52XH9jkve2h+Lrkr9SS4FqFREAVlA4IIIAAAAQBACdASoMABUAPwFqrE6rJiQiMAgBYCAJYgDCgYtUz6V2MqnMTLingAD+hKDSCsmLB2kbFgjldCouN39495saQzIK8Qt7qgfR92EZjzLmLLcNTXgvFhSJOTSis+xZCNL2OQ/pVpDN7SdJ5TgAdEuYtQnPs+pppydm199+9H/wDWgA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 263796,
+      "sha256": "e472f3e30f77760824f1213094fa8847595c4d61cd0e774d166fc98c8297dd7b",
+      "sourceSha256": "e472f3e30f77760824f1213094fa8847595c4d61cd0e774d166fc98c8297dd7b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/hu-guifen/candidate-1.mp3",
+      "preview": "/api/voice/hu-guifen/intro",
+      "thumb": "/api/voice/hu-guifen/intro",
+      "previewUrl": "/api/voice/hu-guifen/intro",
+      "durationSec": 21.8,
+      "transcript": {
+        "text": "哎哟，我是胡桂芬，武汉的，今年四十五咯。我这个人啊，就是爱笑，一笑脸上两个酒窝。以前在街口帮我姐守过早点摊，什么人都见过。你要我演个热心肠的大姐、厉害的老板娘，那是手到擒来！"
+      }
+    }
+  ]
+}

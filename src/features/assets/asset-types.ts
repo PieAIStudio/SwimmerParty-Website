@@ -1,7 +1,8 @@
 import type { Look } from "../../content/actors/look-types.ts";
-
-type AssetConformance = "v1" | "legacy";
+export type AssetKind = "image" | "voice" | "video";
+export type AssetConformance = "v1" | "legacy";
 export type AssetItem = {
+  kind: AssetKind;
   slot: string;
   series: string;
   key: string;
@@ -14,14 +15,14 @@ export type AssetItem = {
   sha256: string;
   sourceSha256: string;
   bbox: { left: number; top: number; right: number; bottom: number };
-  format: "png" | "webp";
+  format: "png" | "webp" | "wav" | "mp3" | "mp4";
   object: string;
   preview: string;
   thumb: string;
+  large?: string;
+  blur?: string;
+  durationSec?: number;
+  transcript?: { text: string };
+  previewUrl?: string;
 };
-export type ActorAssets = {
-  code: string;
-  slug: string;
-  looks: Look[];
-  items: AssetItem[];
-};
+export type ActorAssets = { slug: string; looks: Look[]; items: AssetItem[] };

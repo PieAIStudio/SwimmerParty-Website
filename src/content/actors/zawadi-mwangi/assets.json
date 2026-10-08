@@ -1,0 +1,61 @@
+{
+  "slug": "zawadi-mwangi",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 872005,
+      "sha256": "574ab7d66413fb965e1f8edbfb541a1f295f2f16e37483fec378ef3bb3dba057",
+      "sourceSha256": "574ab7d66413fb965e1f8edbfb541a1f295f2f16e37483fec378ef3bb3dba057",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/CC-035.png",
+      "preview": "/media/assets/zawadi-mwangi/turnaround.front.webp",
+      "large": "/media/assets/zawadi-mwangi/turnaround.front.large.webp",
+      "thumb": "/media/assets/zawadi-mwangi/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiYBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ4AAAABgGPb2rHnCTqntW0btZOKtdl6As4IbNuVNYCsVLZbnup7/n8METEBIiIWtbFiOpB9M1xelsxwOhl3MFH+Db+5Wj9AuzbzCLd92ukKTGwqll9PcHGn2JwBbFsbPHZ5/2XT1eCzw9k5i54GyWRqhkRRQ+ntIEoLo7KMLC2f0jQatVKKgujQCslzoluLJ1Que7XgbyvpH9Fii0WcmyxEAFZQOCBiAAAAsAMAnQEqDAAVAD8Baq5PKyYkIjAIAWAgCWUAAFqeppVaPkJ42AAA/nGjdiqacNlbiq4knMpTd8r2+8XbhIkuqRp2IMgEuHfbWdDtFozo4oUseY94Gg8zjF+6F0vs/4AAAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 230532,
+      "sha256": "3e03ed684a9934a45dd723dea92bf5731ef3a6011f5a77db3137d4b66eb2c1b5",
+      "sourceSha256": "3e03ed684a9934a45dd723dea92bf5731ef3a6011f5a77db3137d4b66eb2c1b5",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/zawadi-mwangi/candidate-1.mp3",
+      "preview": "/api/voice/zawadi-mwangi/intro",
+      "thumb": "/api/voice/zawadi-mwangi/intro",
+      "previewUrl": "/api/voice/zawadi-mwangi/intro",
+      "durationSec": 19,
+      "transcript": {
+        "text": "Hello, I'm Zawadi Mwangi, twenty-nine, from Nairobi in Kenya. I ran the eight hundred metres for my country, so I know how to keep going when it hurts. I shaved my head before a race once and kept it. I'd love to play an athlete, a pilot, or a warrior in a story people remember."
+      }
+    }
+  ]
+}

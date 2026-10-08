@@ -1,0 +1,61 @@
+{
+  "slug": "nikos-andreou",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 992311,
+      "sha256": "cc0fdc664b67fc25aef936bfae33b8fc98c0952efc5ba44fb923a5fb07fa0fb9",
+      "sourceSha256": "cc0fdc664b67fc25aef936bfae33b8fc98c0952efc5ba44fb923a5fb07fa0fb9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "nikos-andreou/CC-024.png",
+      "preview": "/media/assets/nikos-andreou/turnaround.front.webp",
+      "large": "/media/assets/nikos-andreou/turnaround.front.large.webp",
+      "thumb": "/media/assets/nikos-andreou/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkgBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKMAAAABgGrbtrLl/LhDcnd3d3e3pm9Ao0F3aVSHSLZEcm3uDtVZ6TvfO0TEBIiI+M8MWonpFBSZ9fLpa2b3tCCmtQewmqRY3gBWFF+A/1Ml9PUUtu6Vjs17WPz3VKaBjW0PQ8MQcLlkY2g+4YPPMweD4wBLH7/5olbQv/5vpSVQO/ohejF5fbhp1SR14mcWlUOMVvTnEkiKtnxpZX+7blGi3ERcMy0iAFZQOCB+AAAA0AMAnQEqDAAVAD8BaqxOqyYkIjAIAWAgCWgAtOgfpx7cf7zxsXNAAPnrmRGivFLupiDb8Z3+GgtThbghbmhft+/9F8Wll6fGuow3vJ/0Mq5Te3kL65V2xThL6Kq5d9ArNo9ozLpv9ectWGYHwkgnIl3hu/jH+l9vOiBLAAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 254724,
+      "sha256": "4998c39dcda448a9544ae979c16c66f147ce29544fa3639386eb33d788598e6e",
+      "sourceSha256": "4998c39dcda448a9544ae979c16c66f147ce29544fa3639386eb33d788598e6e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/nikos-andreou/candidate-1.mp3",
+      "preview": "/api/voice/nikos-andreou/intro",
+      "thumb": "/api/voice/nikos-andreou/intro",
+      "previewUrl": "/api/voice/nikos-andreou/intro",
+      "durationSec": 21,
+      "transcript": {
+        "text": "Yassou! I'm Nikos Andreou, twenty-eight, from Thessaloniki. My family runs a fish taverna by the sea, and I've been carrying plates since I was eight. I sing, I dance, I talk too much. Give me the charming waiter, the romantic fool, or the cousin who ruins the wedding."
+      }
+    }
+  ]
+}

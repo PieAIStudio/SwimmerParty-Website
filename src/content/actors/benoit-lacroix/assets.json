@@ -1,0 +1,61 @@
+{
+  "slug": "benoit-lacroix",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 873904,
+      "sha256": "8b1a25adb6f169d0272705da0e0075cc777b3bd61ec7cd158fa73fd3208da924",
+      "sourceSha256": "8b1a25adb6f169d0272705da0e0075cc777b3bd61ec7cd158fa73fd3208da924",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "benoit-lacroix/CC-054.png",
+      "preview": "/media/assets/benoit-lacroix/turnaround.front.webp",
+      "large": "/media/assets/benoit-lacroix/turnaround.front.large.webp",
+      "thumb": "/media/assets/benoit-lacroix/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ0AAAABgGLb1vLmhZkzgAyA2UZFYXUVMzNXVzUjKNrIMihmZvbMfFXfN4eImAAiInV3n5SE5UBEVIzvXJF8aJ6Eusqbpy471wMA/dzovzVuZhnYXuFuB4DsI3c0AcwdcplD4CLDHTx8fb0ecK1fm3tf9RzdjmQfSHja1XsokLwVVz4KtMgrhJIzI54DAyf7jPn/rJzz1+dAlCtqVsqq6okIAFZQOCBuAAAA8AMAnQEqDAAVAD8BaqxOqyYkIjAIAWAgCWUAnQAf0qpmpu6UECpYQADIvfdXK13Vaj2481WRmJ91WOCUFoxxRRxeu8J6AbkoDzcWsjqGVU2tMeIJ/z78Pqz/6O/3zdtDNntTd5zZ2pYBq6MfwAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 326868,
+      "sha256": "3dcd73c2c8a16665b9b0e0416b345df58a9eedca16d5525e3bbc8d8e7c809184",
+      "sourceSha256": "3dcd73c2c8a16665b9b0e0416b345df58a9eedca16d5525e3bbc8d8e7c809184",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/benoit-lacroix/candidate-1.mp3",
+      "preview": "/api/voice/benoit-lacroix/intro",
+      "thumb": "/api/voice/benoit-lacroix/intro",
+      "previewUrl": "/api/voice/benoit-lacroix/intro",
+      "durationSec": 27.1,
+      "transcript": {
+        "text": "Bonjour! I am Benoît Lacroix, thirty-one, from Marseille. I am a waiter in a very fancy restaurant, and I take it very, very seriously. This mustache took me three years. I would be perfect as a snobbish maître d', a ridiculous count, or a man who thinks he's smarter than he is."
+      }
+    }
+  ]
+}

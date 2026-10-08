@@ -1,0 +1,61 @@
+{
+  "slug": "tommy-brannigan",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1352118,
+      "sha256": "e9f91026fe0bc271d5dd62e2f0e5e4c662be4ef112659cc6b98fb15755447e37",
+      "sourceSha256": "e9f91026fe0bc271d5dd62e2f0e5e4c662be4ef112659cc6b98fb15755447e37",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "tommy-brannigan/CC-029.png",
+      "preview": "/media/assets/tommy-brannigan/turnaround.front.webp",
+      "large": "/media/assets/tommy-brannigan/turnaround.front.large.webp",
+      "thumb": "/media/assets/tommy-brannigan/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRlIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSK4AAAABgLpt2/FX+f2z268NaUs7llRXbbvatm1He2u2Gtv6om3d6X2/iJgAANDmJUA5nLQr9ZE+Skn8ssmsjZ/kVY5GWKS0BIDuRXYEwIX/ws+7CgjjjLBAD6CWHcIIU4CcnQGh9DgSSB0bFbqWo4Gs8wU+/XLpIhGwBo1y9ZDLvjoAqGZVPichrWOYOzdkg4xx4KWslW6qu3dZN10x++0omI7+1EhlvxqAc7U3YI1vsgNWUDggfgAAAPADAJ0BKgwAFQA/AWqtTysmJCIwCAFgIAllAK4diqqIHfzfOzjbYPAA+epXE5cFrb8PcH4cncHgctKsBslK3k3fd61x/BxOpSoTXsx15HQKIfguIBSOwer/yRHftrNNaiQXv4CYLGhOMsER40Chf3x86A6YhB3pZrGr/AAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 310020,
+      "sha256": "96a9ebd2f475c85e3bab00e58015bafe7e385661ce05f1273648ee8b15333a53",
+      "sourceSha256": "96a9ebd2f475c85e3bab00e58015bafe7e385661ce05f1273648ee8b15333a53",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/tommy-brannigan/candidate-1.mp3",
+      "preview": "/api/voice/tommy-brannigan/intro",
+      "thumb": "/api/voice/tommy-brannigan/intro",
+      "previewUrl": "/api/voice/tommy-brannigan/intro",
+      "durationSec": 25.6,
+      "transcript": {
+        "text": "Alright, I'm Tommy Brannigan, forty-one, from Liverpool. I boxed for fifteen years, hence the nose. Now I run a gym for kids who need somewhere to go after school. I'm tougher on the outside than the inside. Cast me as the trainer, the bouncer, or the dad who never gives up."
+      }
+    }
+  ]
+}

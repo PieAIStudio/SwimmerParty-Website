@@ -1,0 +1,61 @@
+{
+  "slug": "edmund-crane",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 733965,
+      "sha256": "9baf6e49ee56b0661bc16c0c54fd3bafd6893a2097307f785c10e4b6cebc0063",
+      "sourceSha256": "9baf6e49ee56b0661bc16c0c54fd3bafd6893a2097307f785c10e4b6cebc0063",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "edmund-crane/CC-069.png",
+      "preview": "/media/assets/edmund-crane/turnaround.front.webp",
+      "large": "/media/assets/edmund-crane/turnaround.front.large.webp",
+      "thumb": "/media/assets/edmund-crane/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRhYBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJgAAAAJgFvb1rLo4u4RhBaSags0QAoxJbgWQA+QkbmnFrrbuLv7zPumhoiYAACQpjMtMG3eFNjzk+U/DnJdliDgCUQFlDOq1QXslPQdeJNS9z2g/U5ZX4BzK8WTAviibo+Aq1tKbFocOQXUTrPuK7ZUOXO2ylcp3F+seGBqBVcWlpB7Y2AJDiZSFu/9UK+kjO69qxs/JfNl4ToAAFZQOCBYAAAAkAMAnQEqDAAVAD8Baq5PKyYkIjAIAWAgCWcAAEhsQZJLSl7TAAD+ufUkWeyBWPmPM9IZaMrHTkfYbF+gMDWPn07UW70tcekEvjUON5hIuFpy9oSlGj1wAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 302676,
+      "sha256": "0cc652d35a5cebf1ee4555545f733938864e4a985b931b384668e4d72f96119d",
+      "sourceSha256": "0cc652d35a5cebf1ee4555545f733938864e4a985b931b384668e4d72f96119d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/edmund-crane/candidate-1.mp3",
+      "preview": "/api/voice/edmund-crane/intro",
+      "thumb": "/api/voice/edmund-crane/intro",
+      "previewUrl": "/api/voice/edmund-crane/intro",
+      "durationSec": 25,
+      "transcript": {
+        "text": "Hi, uh, Edmund Crane. Forty-four. Boston. I'm an accountant, I was an accountant, I'm trying something new, okay? I'm six foot three and I bump my head on everything. People say I look like I'm worried. I usually am. Cast me as the nervous lawyer, the butler, or the man who panics."
+      }
+    }
+  ]
+}

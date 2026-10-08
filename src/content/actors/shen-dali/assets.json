@@ -1,0 +1,61 @@
+{
+  "slug": "shen-dali",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1143648,
+      "sha256": "bff96e32d89815a451eff5a28d72b3ddb38343ad884df75f01a6f876f397913f",
+      "sourceSha256": "bff96e32d89815a451eff5a28d72b3ddb38343ad884df75f01a6f876f397913f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "shen-dali/CC-092.png",
+      "preview": "/media/assets/shen-dali/turnaround.front.webp",
+      "large": "/media/assets/shen-dali/turnaround.front.large.webp",
+      "thumb": "/media/assets/shen-dali/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRlABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKwAAAABgKpt//nn/as5/RPnLdmutu0t/XcC9qJtW+dgpiVvHdFv+n5/5xAREwAA2ma3BYrBZLrSAFmilETaFGIvybt6rVBLaScAzYPswwRE8F/4ZRwQyQNhg5lA9e+wMPXpBgpWxoTDwWog53ZVOD6uA7zXj/j7zvsePwCqXV7s8AnSKY428U02z0Yvfukk+6zQ/NApmWcyXhkiWaMvlpgs2J6pRxVbhICmQMDaPakGVlA4IH4AAADQAwCdASoMABUAPwFqrE8rJiQiMAgBYCAJbAC06CFslyGQmQHRKcAA/p6cAyl1SUgci3v8RchZgZggqKtkJ5PYsQDPJZ2ACIstji4M8MxPd1GfnWLC7VKD7yVoOEX/F68qATKCom64OXFfbTT+b+ikYRdwUB2eh//6A0meAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 301380,
+      "sha256": "1eda57427c1e95665c98acb8fec6b3ce35de32b89ae8bf02c2d8055c57a9bd86",
+      "sourceSha256": "1eda57427c1e95665c98acb8fec6b3ce35de32b89ae8bf02c2d8055c57a9bd86",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/shen-dali/candidate-1.mp3",
+      "preview": "/api/voice/shen-dali/intro",
+      "thumb": "/api/voice/shen-dali/intro",
+      "previewUrl": "/api/voice/shen-dali/intro",
+      "durationSec": 24.9,
+      "transcript": {
+        "text": "我叫申大力，保定人，四十一。名字叫大力，人也真有力气，以前在驾校当教练，骂人一套一套的，学员都怕我。我这人爱抬杠，但讲义气。演教练、演小头目、演嘴硬的大哥，我在行。"
+      }
+    }
+  ]
+}

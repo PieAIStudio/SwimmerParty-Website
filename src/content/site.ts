@@ -21,12 +21,13 @@ export const SITE = {
 } as const;
 
 export const NAV = [
-  { href: "/actors", key: "roster" },
+  { href: "/actors", key: "actors" },
   { href: "/works", key: "works" },
-  { href: "/kit", key: "kit" },
+  { href: "/license", key: "license" },
   { href: "/studio", key: "studio" },
-  { href: "/casting", key: "casting" },
 ] as const;
 
-/** Linked from the footer and the open kit, not from the main rail. */
-export const SECONDARY_NAV = [{ href: "/pact", key: "pact" }] as const;
+export const SECONDARY_NAV = [
+  { href: "/privacy", key: "privacy" },
+  { href: "/terms", key: "terms" },
+] as const;

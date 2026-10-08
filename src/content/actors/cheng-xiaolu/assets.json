@@ -1,0 +1,61 @@
+{
+  "slug": "cheng-xiaolu",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 883307,
+      "sha256": "e0a6dc2bc15c781920e2dff4e491f007d5aa862ec48cee3a5cda9f49221556ca",
+      "sourceSha256": "e0a6dc2bc15c781920e2dff4e491f007d5aa862ec48cee3a5cda9f49221556ca",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "cheng-xiaolu/CC-021.png",
+      "preview": "/media/assets/cheng-xiaolu/turnaround.front.webp",
+      "large": "/media/assets/cheng-xiaolu/turnaround.front.large.webp",
+      "thumb": "/media/assets/cheng-xiaolu/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRi4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJkAAAABgGLb1vLmBRRNgNlGZUUxziGWMwC2UGbF3LpaJhdXzczMTFf1fXOIiAmg/5FeBQmtd3CLCkBWFH1/D4iUbfNqgWEDOPdwaQBo4WI7wHOJy80Auz3c+Drwtsh1vwNY5erADU6kTAUna5iSMA7MLsJIrAVd0x9yzoX4yC3xaYQnXgU16Me+BUMXNHgpqE9ReV/CaKacZB+0ExEAVlA4IG4AAACwAwCdASoMABUAPwFqrU8rJiQiMAgBYCAJZwCzgBaFYU6LSE3QQADvk1MOZkMtSZb3b/eY+fDgGQjA86GaKsxM/DJw1rRm6OekSQo/B+npK5fwGMCCKhFaO66ihX1TR6TLXiJyvkFj6MVnuIAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 221028,
+      "sha256": "f2b0e5437c152e8ac10b8b49328a3462bd733016c525a4e5311dd3798b39bdd2",
+      "sourceSha256": "f2b0e5437c152e8ac10b8b49328a3462bd733016c525a4e5311dd3798b39bdd2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/cheng-xiaolu/candidate-1.mp3",
+      "preview": "/api/voice/cheng-xiaolu/intro",
+      "thumb": "/api/voice/cheng-xiaolu/intro",
+      "previewUrl": "/api/voice/cheng-xiaolu/intro",
+      "durationSec": 18.2,
+      "transcript": {
+        "text": "嗨，我是程小鹿，长沙妹子，二十七岁。我嘴巴大，笑起来可能有点夸张，不过大家都说看我笑会被传染。我最想演那种冒冒失失、但关键时刻特别靠谱的朋友。对了，吃辣我是认真的！"
+      }
+    }
+  ]
+}

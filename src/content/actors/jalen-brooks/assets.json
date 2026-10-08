@@ -1,0 +1,61 @@
+{
+  "slug": "jalen-brooks",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 950841,
+      "sha256": "bde7c4226198bbb3867506d0fe8620bdced1c280da22fc5f32e3a72a4faf8263",
+      "sourceSha256": "bde7c4226198bbb3867506d0fe8620bdced1c280da22fc5f32e3a72a4faf8263",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "jalen-brooks/CC-040.png",
+      "preview": "/media/assets/jalen-brooks/turnaround.front.webp",
+      "large": "/media/assets/jalen-brooks/turnaround.front.large.webp",
+      "thumb": "/media/assets/jalen-brooks/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkwBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKwAAAABgLJt2/lX+/P/R9v/efsGa7aXHP9LNqNtW2mJyeqLVvOavd3peX+LiAkgIgrZGCLpPNz8owgfRinl2zZJes/8fXTbBaYnALiUsUgIHSzr+RG4+gtkzSuHwNZ+CVvtfAEeZubYchAARM+yhRR8/SJtno3V4OAUtQNME46ZcSSoGCn+yrLhR0JPuIOQLApAlhfcIi9Eyd+qRDok0WGTKA+htHekEuSkEnm2+BIBVlA4IHoAAAAQBACdASoMABUAPwForE6rJaQiMAgBYCAJZwDImYrctayQT5dOkVh0SADI3HNlhjiWdfwK+o+AJJ12cNJ5Z2YBYGMyJcPXBavGCgTCDElWkyzak2YMipTZ100IxbrrewS1zfN28FTPzNP2ykQzttG+elp7eIFwOAAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 235284,
+      "sha256": "02cb842c44e28a16369874968dcd7df0c360edef894bad898c6664354b4b7fb8",
+      "sourceSha256": "02cb842c44e28a16369874968dcd7df0c360edef894bad898c6664354b4b7fb8",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/jalen-brooks/candidate-1.mp3",
+      "preview": "/api/voice/jalen-brooks/intro",
+      "thumb": "/api/voice/jalen-brooks/intro",
+      "previewUrl": "/api/voice/jalen-brooks/intro",
+      "durationSec": 19.4,
+      "transcript": {
+        "text": "Hey, I'm Jalen Brooks, thirty-one, from Chicago's South Side. I'm a high school basketball coach and part-time DJ. I stay calm when everyone else is losing it, that's kind of my thing. I'd love to play a coach, a detective, or the brother who holds the family together."
+      }
+    }
+  ]
+}

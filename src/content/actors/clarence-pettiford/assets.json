@@ -1,0 +1,61 @@
+{
+  "slug": "clarence-pettiford",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1158329,
+      "sha256": "14081c3780dadc22794049198eb9057a5a72a454ba68ee8d40a3e5dcdfc51e23",
+      "sourceSha256": "14081c3780dadc22794049198eb9057a5a72a454ba68ee8d40a3e5dcdfc51e23",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "clarence-pettiford/CC-030.png",
+      "preview": "/media/assets/clarence-pettiford/turnaround.front.webp",
+      "large": "/media/assets/clarence-pettiford/turnaround.front.large.webp",
+      "thumb": "/media/assets/clarence-pettiford/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRk4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKYAAAABgFtt2/LkiXtSBXdqFnCfwindXSoOC7g7lFSkwit3m8Hdqv+p3vffISImAAAy9itgPsYHj9kMjZCJtYPvxVrwlCQjVtFItVhsa8Pi+kP8rwOI5qN4/wCQ/LUhFn8BhLf2xOQVgJTXA7H5bAOsPRHe/3KsHnKUa0dsg9rJgVmWau2sGWCF1sqqVtZqtayuY5XWwIIStivuXSM9wdhzidjBTCBnKAYAVlA4IIIAAABwAwCdASoMABUAPwForE6rJaQiMAgBYCAJaAAAG4r/wUM7EgAA+wWKdL1XFsVE1hJZiUh+MX2m2yTFb8zWlWtUj1EiTQZMvnV+xM6pRP+1w3hxcyC/Xb7HlfcVfZ9UM1UrrOC8jvZrmO9iiGOdta/Qe+zrNd9m+ylBe3BecBlyoAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 270708,
+      "sha256": "a72f1a431eea6bb0db0207e236dc82ac1efa8f38670f8470e996e4ed0b3ac279",
+      "sourceSha256": "a72f1a431eea6bb0db0207e236dc82ac1efa8f38670f8470e996e4ed0b3ac279",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/clarence-pettiford/candidate-1.mp3",
+      "preview": "/api/voice/clarence-pettiford/intro",
+      "thumb": "/api/voice/clarence-pettiford/intro",
+      "previewUrl": "/api/voice/clarence-pettiford/intro",
+      "durationSec": 22.4,
+      "transcript": {
+        "text": "Hey now, I'm Clarence Pettiford, fifty-three, from Memphis, Tennessee. I've run a barbecue joint for twenty years, and my ribs have fans in three states. I like the blues, long naps, and longer stories. Cast me as the diner owner, the deacon, or the old friend with all the answers."
+      }
+    }
+  ]
+}

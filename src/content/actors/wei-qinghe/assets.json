@@ -1,0 +1,61 @@
+{
+  "slug": "wei-qinghe",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 774793,
+      "sha256": "7d778fa8505d50e01317c7a208d6abdbd3bab8f06d583f044c86aa871a9d1845",
+      "sourceSha256": "7d778fa8505d50e01317c7a208d6abdbd3bab8f06d583f044c86aa871a9d1845",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wei-qinghe/CC-006.png",
+      "preview": "/media/assets/wei-qinghe/turnaround.front.webp",
+      "large": "/media/assets/wei-qinghe/turnaround.front.large.webp",
+      "thumb": "/media/assets/wei-qinghe/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRhYBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJYAAAAJgJtt2/Hsjm0bpdXbGSRDpGSbrJFOO6RKnY6/bRvPs0NETAAAyIb7fbC5ZtvCLS83z9z+wCxi9LOWdhyk0g0lMmVqdwqcrynbApibqFQI8McohQjQvVEfhtdX1x3l+NhbCRxU/+hi89ilrs+u16+3FG4v1tdgDfcHfhHzKXmU6Zk7zS08zNXHDgrm/OL4TMR8j9APAQBWUDggWgAAAHADAJ0BKgwAFQA/AWqsTqsmJCIwCAFgIAllAABKjiIvIhHRSAD+FmhItQGY/qGdJSUjDSmC6PzVyLu0Ul8PyIJmXNnMkdXgfEStiuSl8i3cdvS7oV1BEYAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 249972,
+      "sha256": "69688f66f6fa5e6aae6ad39c253b5535d4610283134737412907568acc280482",
+      "sourceSha256": "69688f66f6fa5e6aae6ad39c253b5535d4610283134737412907568acc280482",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/wei-qinghe/candidate-1.mp3",
+      "preview": "/api/voice/wei-qinghe/intro",
+      "thumb": "/api/voice/wei-qinghe/intro",
+      "previewUrl": "/api/voice/wei-qinghe/intro",
+      "durationSec": 20.7,
+      "transcript": {
+        "text": "我叫卫青禾，大连人，三十一岁。我说话一向比较慢，不是反应慢，是想清楚了再说。朋友都说我适合演医生、律师，或者那种什么都不说、最后一句话把大家镇住的人。我挺喜欢这种角色的。"
+      }
+    }
+  ]
+}

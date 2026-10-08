@@ -1,0 +1,61 @@
+{
+  "slug": "fang-xiaoyu",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 908836,
+      "sha256": "08cfe5ee38110cc36173c78b7d465c04eec961b3860feb632d01e41e5e9b7a1a",
+      "sourceSha256": "08cfe5ee38110cc36173c78b7d465c04eec961b3860feb632d01e41e5e9b7a1a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fang-xiaoyu/CC-086.png",
+      "preview": "/media/assets/fang-xiaoyu/turnaround.front.webp",
+      "large": "/media/assets/fang-xiaoyu/turnaround.front.large.webp",
+      "thumb": "/media/assets/fang-xiaoyu/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRi4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJMAAAABgGNt2/Hoi1mlMheQk30YddI6W1Br2xir0g6mnDXYU1lPlffbQ0RMAGOMac+O1IybAaK8LlDibQEbHO0NcGOnMgBQpsZrO1TkErhKU4Vv4LNNVf+AP04f+MecOsDrHXYpEy7OYaNEv8d7/3KKPY5Lb4z7UUhCQwn+q2E4KTn6Xng5P00HApTsLiS+D1PmvJS51gAAVlA4IHQAAADwAwCdASoMABUAPwFqrE8rJiQiMAgBYCAJQBhQA/hvoRoqfs09Z66gAPnrkoqy5TIwaJtgbDggrYIy8c7+26pdlm1+IBJtaPvR5u2njZv2sorMqeSwh4T372NlqzCcAMg7J94bRyl6U4zivx9UvDM5QL0AAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 242628,
+      "sha256": "dcf17171fd1c11047c35b9813e262d043667fface630eb94dbfc3a01f417a2ff",
+      "sourceSha256": "dcf17171fd1c11047c35b9813e262d043667fface630eb94dbfc3a01f417a2ff",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/fang-xiaoyu/candidate-1.mp3",
+      "preview": "/api/voice/fang-xiaoyu/intro",
+      "thumb": "/api/voice/fang-xiaoyu/intro",
+      "previewUrl": "/api/voice/fang-xiaoyu/intro",
+      "durationSec": 20,
+      "transcript": {
+        "text": "大家好，我叫方小语，合肥人，二十四岁。我平时话不多，说话也比较小声，嗯……熟了以后就好了。我研究生读的是图书馆学。我觉得我很适合演那种安静的、但观察力特别强的女孩子。"
+      }
+    }
+  ]
+}

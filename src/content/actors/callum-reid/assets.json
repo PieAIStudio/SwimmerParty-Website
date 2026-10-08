@@ -1,0 +1,61 @@
+{
+  "slug": "callum-reid",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1084783,
+      "sha256": "f6a6c70f4ab5cd7c5d53a779587a3cca5e5e0b02c9dd0e5571991a953a57770b",
+      "sourceSha256": "f6a6c70f4ab5cd7c5d53a779587a3cca5e5e0b02c9dd0e5571991a953a57770b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/CC-009.png",
+      "preview": "/media/assets/callum-reid/turnaround.front.webp",
+      "large": "/media/assets/callum-reid/turnaround.front.large.webp",
+      "thumb": "/media/assets/callum-reid/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkgBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSK4AAAABgJpt27Ll/iX9P+6uyQegctCcxgIkhwTJNf0Hzd0dBnB3GMDd3eFOz/PtEBETAJnTBOOAFwYbOfPHZuDZzt9qu5LwQJJX8aKVaoPY0mYBWK8HxMSpCYhmiahkOBD1limy3kOBoJUckbflBgTctvLzm/037gByGrmwyrZsyGKWl7ESaj6Tk1iqORjpwS5tlH7Wv3lt+sWE/TVtZgsYPVI8DtqAqsdgkejwApzr0wBWUDggdAAAANADAJ0BKgwAFQA/AWqtTysmJCIwCAFgIAlnALe4G5kukMn+6fTl2AD+2UJ1B3nHBAOChSLcYM0KV/rF0Qpy5Sl3JCHbWBO4M57R1Gu/GhpwcjhINtt2ubQC9DbrwCUwYBur+Bpm7XGW7Cij+aCuAh2RAAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 218004,
+      "sha256": "602f8504ceff53c245bf62de1b69522f35f715e295882124ced3e0fc997feaa3",
+      "sourceSha256": "602f8504ceff53c245bf62de1b69522f35f715e295882124ced3e0fc997feaa3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/callum-reid/candidate-1.mp3",
+      "preview": "/api/voice/callum-reid/intro",
+      "thumb": "/api/voice/callum-reid/intro",
+      "previewUrl": "/api/voice/callum-reid/intro",
+      "durationSec": 18,
+      "transcript": {
+        "text": "Alright, I'm Callum Reid, thirty-five, from Aberdeen. I worked on the oil rigs out in the North Sea for ten years, so I'm used to wind, noise, and very bad coffee. I look scary, but I cry at dog films. Give me a bodyguard, a blacksmith, or a big soft giant."
+      }
+    }
+  ]
+}

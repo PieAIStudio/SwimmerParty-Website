@@ -6,3 +6,5 @@ export { getActorAssets, firstImage } from "./assets";
 export { getKitManifest } from "./kit-assets";
 export { listSeries, slotLabelKey, ASSET_FRAMES } from "./asset-series";
 export { AssetProgress } from "./AssetProgress";
+export { ImageLightbox } from "./ImageLightbox";
+export { VoiceTile } from "./VoiceTile";

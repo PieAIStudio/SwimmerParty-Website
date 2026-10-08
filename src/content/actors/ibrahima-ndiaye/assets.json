@@ -1,0 +1,61 @@
+{
+  "slug": "ibrahima-ndiaye",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 872321,
+      "sha256": "2c00e57babc0222f8b11231beaac4943e7b2d6be2a885fa56c2993d21069d355",
+      "sourceSha256": "2c00e57babc0222f8b11231beaac4943e7b2d6be2a885fa56c2993d21069d355",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/CC-070.png",
+      "preview": "/media/assets/ibrahima-ndiaye/turnaround.front.webp",
+      "large": "/media/assets/ibrahima-ndiaye/turnaround.front.large.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjgBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKgAAAABgLpt2/FX/fOz/UvmkJZ2LHtJzU6LS45WX/KWjWZbzWaztzu9z28RMQEk1tdT+MDbzT/orDOcouxjP1PGTQFAAyP9FGYZ2dclcLbKmK8ngYEHmRB7sAaMPzqEYMcHcN1tERwt+MNPu13wb+DoEtteQZL3NzyIUuIf6ypg4SRvBUnwcjoURCOFsyJL+5vPmZFNl+Uc3abRQi2X+h1PwxMSJiaOyFWlJQJWUDggagAAAJADAJ0BKgwAFQA/AWqtTysmJCIwCAFgIAlnAABH7+AxdQFDYsAA/qX1G4t4ymMPEMtxll9FNsp/gKkaZJTC86gPpFwa2fv/ppeXkd9fNpzVo6Ly8eUwxo5BS33q/8WvDULBA7cQIoP4AAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 400740,
+      "sha256": "bd77f8b8b2cdf4251f7b2ba44d29daed25671b4cd826dbf35e28028cb76523ac",
+      "sourceSha256": "bd77f8b8b2cdf4251f7b2ba44d29daed25671b4cd826dbf35e28028cb76523ac",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/ibrahima-ndiaye/candidate-1.mp3",
+      "preview": "/api/voice/ibrahima-ndiaye/intro",
+      "thumb": "/api/voice/ibrahima-ndiaye/intro",
+      "previewUrl": "/api/voice/ibrahima-ndiaye/intro",
+      "durationSec": 33.2,
+      "transcript": {
+        "text": "Good evening. I am Ibrahima Ndiaye, forty-five, from Dakar, Senegal. I was a jazz saxophonist in Paris for fifteen years before I came home. I like good suits and quiet rooms. I would be a fine diplomat, a mysterious stranger, or a man who walks in and changes everything."
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "tu-letian",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1103249,
+      "sha256": "af4ecefb6673070d886dadcbe830c539b22853b64a36c68299f5945e2e25aec7",
+      "sourceSha256": "af4ecefb6673070d886dadcbe830c539b22853b64a36c68299f5945e2e25aec7",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "tu-letian/CC-097.png",
+      "preview": "/media/assets/tu-letian/turnaround.front.webp",
+      "large": "/media/assets/tu-letian/turnaround.front.large.webp",
+      "thumb": "/media/assets/tu-letian/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ4AAAABgGNt2zHnHU+pFbCbymY35bSK7dRWZdtJaSzB6rKAdEln46ne79tDREwAEZF+dF1P0gRQL2sGmmW6+zuzxDn3/THqEBheAOBBx0ohzLDWT/ZZxNpv2GU9mz5ih/1sqIt1trOBHXbQxmKTeH/DootRGrfHKCGhF1sTqJL1Z1EhiqMtiG5RCk0WTInCSCsfV0TlcNLFmU4w1KCl6GaUCFZQOCBwAAAAsAMAnQEqDAAVAD8BaqxOqyYkIjAIAWAgCWcAAEq4fofA1hQbpTQA/p72pf1zOBKiwHSSzWF51FKH80p5WoX5uwNIteGUnkZwNkJAZhlpdinfAAj34voCP2/yJ6Qew6QNLd39ild8gs7LWfV7AAAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 207204,
+      "sha256": "d13b6acecffa1932ccb12ddc53ee92da3acd3d2d996a3b60f562890abfbb6302",
+      "sourceSha256": "d13b6acecffa1932ccb12ddc53ee92da3acd3d2d996a3b60f562890abfbb6302",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/tu-letian/candidate-1.mp3",
+      "preview": "/api/voice/tu-letian/intro",
+      "thumb": "/api/voice/tu-letian/intro",
+      "previewUrl": "/api/voice/tu-letian/intro",
+      "durationSec": 17.1,
+      "transcript": {
+        "text": "大家好……我叫涂乐天，宜昌人，二十九岁。名字叫乐天，人也比较乐天，天塌下来先睡一觉再说。我说话慢，别着急哈。我觉得我很适合演那种懒洋洋的室友，或者关键时刻突然很靠谱的人。"
+      }
+    }
+  ]
+}

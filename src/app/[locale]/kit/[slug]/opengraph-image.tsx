@@ -50,7 +50,7 @@ export default async function OpenGraphImage({
         />
       ) : null}
       <div style={{ color: "#a8d8ff", fontSize: 28, display: "flex" }}>
-        {SITE.name} · {actor?.code ?? ""}
+        {SITE.name} · {actor?.nameEn ?? ""}
       </div>
       <div style={{ fontSize: 76, fontWeight: 700, display: "flex" }}>{name}</div>
     </div>,

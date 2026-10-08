@@ -1,0 +1,61 @@
+{
+  "slug": "chang-shulan",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1004413,
+      "sha256": "37a6d01059b701fba8f666fc4657ca0a05a2f6df3d719ce734667fa94703b51e",
+      "sourceSha256": "37a6d01059b701fba8f666fc4657ca0a05a2f6df3d719ce734667fa94703b51e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "chang-shulan/CC-016.png",
+      "preview": "/media/assets/chang-shulan/turnaround.front.webp",
+      "large": "/media/assets/chang-shulan/turnaround.front.large.webp",
+      "thumb": "/media/assets/chang-shulan/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjgBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKIAAAABkGNr27FXT5wZmHUyACelbdtJ6bSuMIRUTrpUZmfbtnnOd1Xv+80hIiZARMQ+N8hKTIehwmwTWs2qIdjMYe/AxaT0D/43aix3AW7tFHn4B4ah8TKW4P7VT4na+AJO8pWUHoDRMqV8CgzWa5WoCe53WUhTJIH5EUpEG0p3B5m6OBoKKdZVURpLk66BmBA6dZV4u9Ola/+ykssBXZqviE+llQhWUDggcAAAALADAJ0BKgwAFQA/AWqtTysmJCIwCAFgIAlnAABKt+flLg4BW47gAP6ezOptK73FlKCuOPdSZEBRgjWx2J51uhAY8/hmBZcjNu21aQzrp83JjndjLMdOC6sMx3StczyRvkfVf6zj8SsVsHs/4AqMAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 249540,
+      "sha256": "9f252b1c4d482e2d98aab3c76f428c6c25fb0b8781da414532154d4437be6efd",
+      "sourceSha256": "9f252b1c4d482e2d98aab3c76f428c6c25fb0b8781da414532154d4437be6efd",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/chang-shulan/candidate-1.mp3",
+      "preview": "/api/voice/chang-shulan/intro",
+      "thumb": "/api/voice/chang-shulan/intro",
+      "previewUrl": "/api/voice/chang-shulan/intro",
+      "durationSec": 20.6,
+      "transcript": {
+        "text": "我叫常淑兰，太原人，六十二了。年轻时在纺织厂当过车间主任，嗓门是那时候练出来的。我这人脾气是硬了点，可谁家有事我第一个到。演婆婆、演奶奶、演居委会主任，我都行。"
+      }
+    }
+  ]
+}

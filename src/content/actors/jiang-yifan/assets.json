@@ -1,0 +1,61 @@
+{
+  "slug": "jiang-yifan",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 945366,
+      "sha256": "81d0ed78eccb03790eba88fc7ef99903f83f9554c85253d98b8ea376970b33de",
+      "sourceSha256": "81d0ed78eccb03790eba88fc7ef99903f83f9554c85253d98b8ea376970b33de",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "jiang-yifan/CC-041.png",
+      "preview": "/media/assets/jiang-yifan/turnaround.front.webp",
+      "large": "/media/assets/jiang-yifan/turnaround.front.large.webp",
+      "thumb": "/media/assets/jiang-yifan/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKAAAAABgKtt//nl87c12WfAanJNro1bJ2BNTa22bc5NbrOx2vY79fmdQ0RMABGRp7uYhHvwpxJK/rs2CVFLJwk6xt8+p3xcKQBUc1X3wEMN1zAADHVx66vA+gY3/AS8jnEL+PzAIiPbxtEWziT/KArzg0gn1ozaMgQ5PQqSEM/5kWNFIRePLPFnJ5eNaNpf4+LhpZ5NLvlbSvnnSqakVET2oXgiVlA4IG4AAABwAwCdASoMABUAPwFqrU6rJiQiMAgBYCAJZwDKABp4m06ckoAA/hZqpqYgVSVMmyFCCqx31slNIohQM1hvqnHjTJbFhF100len2pR1o3aPsXNctiYK1809/jm+00uAobRXz2BJbSxh5IBYngAAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 219300,
+      "sha256": "9b947c3804dddc7fe0fc91b3fbc871849da65807ec970c901073fc3b916378c5",
+      "sourceSha256": "9b947c3804dddc7fe0fc91b3fbc871849da65807ec970c901073fc3b916378c5",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/jiang-yifan/candidate-1.mp3",
+      "preview": "/api/voice/jiang-yifan/intro",
+      "thumb": "/api/voice/jiang-yifan/intro",
+      "previewUrl": "/api/voice/jiang-yifan/intro",
+      "durationSec": 18.1,
+      "transcript": {
+        "text": "我叫江一帆，青岛的，二十岁，以前练过五年短跑。我头发短，好多人第一眼以为我是男生，我无所谓。动作戏、跑戏、摔戏，你尽管来，我不用替身。文戏我也在练，真的。"
+      }
+    }
+  ]
+}

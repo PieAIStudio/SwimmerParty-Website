@@ -9,7 +9,7 @@ export function todo(code: string, options: { root?: string; all?: boolean } = {
   const actor = actorByCode(code);
   const manifest = getActorAssets(actor.slug, root);
   const delivered = new Set(manifest.items.map(item => item.slot));
-  const missing = listSeries().flatMap(series => series.perLook
+  const missing = listSeries().filter(series => !["voice", "video"].includes(series.id)).flatMap(series => series.perLook
     ? options.all ? manifest.looks.flatMap(look => slotsOf(series.id, look.id)) : []
     : slotsOf(series.id).filter(slot => options.all || slot.required)
   ).filter(slot => !delivered.has(slot.slot));

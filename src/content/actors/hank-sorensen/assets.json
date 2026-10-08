@@ -1,0 +1,61 @@
+{
+  "slug": "hank-sorensen",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1192016,
+      "sha256": "4de317249b13874c725677a8978fd4026ef925775401b87bf49182c49f8ef973",
+      "sourceSha256": "4de317249b13874c725677a8978fd4026ef925775401b87bf49182c49f8ef973",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "hank-sorensen/CC-059.png",
+      "preview": "/media/assets/hank-sorensen/turnaround.front.webp",
+      "large": "/media/assets/hank-sorensen/turnaround.front.large.webp",
+      "thumb": "/media/assets/hank-sorensen/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjwBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKMAAAABgKpt//nn/WvezkDJRrTZ7Pw/gNn2km0zLZrJaIz/RftNn+/+xxAREwAALnWu+L+Zy2ZUcc+MFD4GqywHf8i/ZWtRQGWB6FYtiJlncbMpTJui8UMHaL4HRe67FsBlmUi/BICnDX7/8eBWFA7z5JrrRgEjxzvZD2UMy+M5ropgjQMvVf5sh+nXSuHFShzTS+HIMhQxTNH1lYoQ1ioivQBtZqsWAFZQOCByAAAAUAMAnQEqDAAVAD8BaqxOqyYkIjAIAWAgCWNdgFXWldDqT7AA/uj7FsQ360IrS/uJwLTpR8PBz3YHG6RZpVL9n/pP+xHHiNUT3ouR0TY3XgoBex1AZ1TUBQqQVbOZf91JzqNx0BXlPfdMAN4Fn97BFgAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 293172,
+      "sha256": "fa4ca9025df3ddb76c9ead1682badbf1d8613ad1e37c215064645e1f38243006",
+      "sourceSha256": "fa4ca9025df3ddb76c9ead1682badbf1d8613ad1e37c215064645e1f38243006",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/hank-sorensen/candidate-1.mp3",
+      "preview": "/api/voice/hank-sorensen/intro",
+      "thumb": "/api/voice/hank-sorensen/intro",
+      "previewUrl": "/api/voice/hank-sorensen/intro",
+      "durationSec": 24.2,
+      "transcript": {
+        "text": "Name's Hank Sorensen. Sixty years old, from northern Minnesota. Spent most of my life on the lake, fishing, and fixing boats. Got this scar from a bad winter, long story. I don't talk much, but I listen. I'd play a sheriff, a fisherman, or a grandfather with a good secret."
+      }
+    }
+  ]
+}

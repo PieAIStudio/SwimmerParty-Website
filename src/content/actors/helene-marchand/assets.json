@@ -1,0 +1,61 @@
+{
+  "slug": "helene-marchand",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 805670,
+      "sha256": "6f28a5f0a4c8a657286900ed4fe9d93ceb590280ccc9ff528f715a53271aa0c1",
+      "sourceSha256": "6f28a5f0a4c8a657286900ed4fe9d93ceb590280ccc9ff528f715a53271aa0c1",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "helene-marchand/CC-018.png",
+      "preview": "/media/assets/helene-marchand/turnaround.front.webp",
+      "large": "/media/assets/helene-marchand/turnaround.front.large.webp",
+      "thumb": "/media/assets/helene-marchand/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJsAAAABgGJt2zLlHXf36ZomGS47cHe3ZMkbzAo4JKJDJkGy6JCcpnH8ae+7h4iYACIi28aSksQ1oFWaQCkuKR7HSdQM/J51CSMAykFuuQwgxs1eAF9xbusFyI1xOwXgZ5HLII+/Oe6k8PiNba7p+fq0mODo8CZTUAmbDwPwCStfMdQKs1lTeVDogPZ7XWiE+XxXGPin1TcXVxkibX+UCABWUDggYgAAANADAJ0BKgwAFQA/AWqtTysmJCIwCAFgIAlnAABKlhU7dy2r7t/4AAD+uS7XRlywFSNH82EIUOCB/48h1CdDCGIRn+dHgMRar3+5lKTiuRmYzmnawZ79Zl9VdtPQJPrpMuYA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 224916,
+      "sha256": "d2cf630e8e257e61985d0a1fae832d9b5405b97620997b2824a39953f26a156f",
+      "sourceSha256": "d2cf630e8e257e61985d0a1fae832d9b5405b97620997b2824a39953f26a156f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/helene-marchand/candidate-1.mp3",
+      "preview": "/api/voice/helene-marchand/intro",
+      "thumb": "/api/voice/helene-marchand/intro",
+      "previewUrl": "/api/voice/helene-marchand/intro",
+      "durationSec": 18.6,
+      "transcript": {
+        "text": "Good afternoon. I am Hélène Marchand. I am sixty-three, and I come from Lyon. For thirty years I taught piano to children who did not want to practise. I am strict, yes, but fair. I would make a very good headmistress, or a grandmother with secrets."
+      }
+    }
+  ]
+}

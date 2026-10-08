@@ -2,12 +2,9 @@ import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { ACTORS } from "@/content/actors";
-import { ActorCard } from "@/features/actors";
+import { ActorFilters } from "@/features/actors";
 import { PageIntro } from "@/site/PageIntro";
-import { SectionHead } from "@/site/SectionHead";
-import { Reveal } from "@/site/Reveal";
 import { localizedAlternates } from "@/i18n/metadata";
-
 export async function generateMetadata({
   params,
 }: {
@@ -22,45 +19,24 @@ export async function generateMetadata({
     alternates: localizedAlternates(locale, "/actors"),
   };
 }
-
-export default async function RosterPage({ params }: { params: Promise<{ locale: AppLocale }> }) {
+export default async function ActorsPage({ params }: { params: Promise<{ locale: AppLocale }> }) {
   const { locale } = await params;
   setSiteLocale(locale);
   const { t } = await getSiteI18n();
-  const castable = ACTORS.filter((actor) => actor.status === "active");
-  const building = ACTORS.filter((actor) => actor.status !== "active");
+  const counts = {
+    castable: ACTORS.filter((a) => a.status === "active").length,
+    newFaces: ACTORS.filter((a) => a.status === "new-face").length,
+    building: ACTORS.filter((a) => a.status === "in-development").length,
+  };
   return (
     <div className="sp-container">
       <PageIntro
         eyebrow={t("roster.eyebrow")}
         lines={[t("roster.heroLines.0"), t("roster.heroLines.1")]}
       >
-        {t("roster.intro", { castable: castable.length, building: building.length })}
+        {t("roster.intro", counts)}
       </PageIntro>
-      <section className="sp-section">
-        <SectionHead label={t("roster.castableLabel")} title={t("roster.castableTitle")} />
-        <Reveal className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:mt-10 lg:grid-cols-4">
-          {castable.map((actor) => (
-            <div className="sp-reveal min-w-0" key={actor.slug}>
-              <ActorCard actor={actor} />
-            </div>
-          ))}
-        </Reveal>
-      </section>
-      <section className="sp-section">
-        <SectionHead
-          label={t("roster.buildingLabel")}
-          title={t("roster.buildingTitle")}
-          note={t("roster.buildingNote")}
-        />
-        <Reveal className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:mt-10 lg:grid-cols-4">
-          {building.map((actor) => (
-            <div className="sp-reveal min-w-0" key={actor.slug}>
-              <ActorCard actor={actor} />
-            </div>
-          ))}
-        </Reveal>
-      </section>
+      <ActorFilters actors={ACTORS} />
     </div>
   );
 }

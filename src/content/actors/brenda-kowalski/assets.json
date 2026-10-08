@@ -1,0 +1,61 @@
+{
+  "slug": "brenda-kowalski",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1200876,
+      "sha256": "113e8620b1db9465366b74abaef4797f6f6b41999b2b741d67ba8256219f4a5c",
+      "sourceSha256": "113e8620b1db9465366b74abaef4797f6f6b41999b2b741d67ba8256219f4a5c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "brenda-kowalski/CC-033.png",
+      "preview": "/media/assets/brenda-kowalski/turnaround.front.webp",
+      "large": "/media/assets/brenda-kowalski/turnaround.front.large.webp",
+      "thumb": "/media/assets/brenda-kowalski/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKYAAAABgGNt2zHnGc9ULm3ExibsbCALcHonVc5UySwgbm2blbEF86n+999DREwAAMTSHQbI1hcypRIhuaiC4b/PcpWKxX/utAiJH5L8y1IMUBxRLP8LqwDMH2+Kr08zEPih+BsAIjvSfgQovpHuigFL7Svf3/lWZwGAXV6ccQ9iinOTTEvj7O3hhDTDtlYuSFNsruSiNMfsEOcF7eYDcH2sVbhGc4H8MTcAVlA4IHgAAADQAwCdASoMABUAPwFqrE8rJiQiMAgBYCAJYgC/OBbxYgyfYAPhrRgA+u/62e1mSdrNqUk9fxjBbfCdX+QrbCf2D4IajX4vfeL/3y60tPlTFSPLK/Gt2ROMTf26/5GOYxZ/P5S9+uWWLfhQbsRzc00qN7jK2G1AAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 210660,
+      "sha256": "bd2c21b114dcabc17e990214910bb8653a6e8260ec732fa36ec719f9f981c9ee",
+      "sourceSha256": "bd2c21b114dcabc17e990214910bb8653a6e8260ec732fa36ec719f9f981c9ee",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/brenda-kowalski/candidate-1.mp3",
+      "preview": "/api/voice/brenda-kowalski/intro",
+      "thumb": "/api/voice/brenda-kowalski/intro",
+      "previewUrl": "/api/voice/brenda-kowalski/intro",
+      "durationSec": 17.4,
+      "transcript": {
+        "text": "Hi there, I'm Brenda Kowalski, fifty-six, from Milwaukee, Wisconsin. I've worked the front desk at the same dentist's office for twenty-two years, so I know everybody's business. I bake for every occasion. Cast me as the neighbor, the school secretary, the lady with the casserole."
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "claudette-morel",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 931045,
+      "sha256": "df141c5bf9ae41ff8b92d55606e384b2c52f51dfd9f90006439a5063f5b3cd1d",
+      "sourceSha256": "df141c5bf9ae41ff8b92d55606e384b2c52f51dfd9f90006439a5063f5b3cd1d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "claudette-morel/CC-065.png",
+      "preview": "/media/assets/claudette-morel/turnaround.front.webp",
+      "large": "/media/assets/claudette-morel/turnaround.front.large.webp",
+      "thumb": "/media/assets/claudette-morel/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRh4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ0AAAABgGNt2/HoTZnStrOAVFpCMjMrST9mZc+Utm17atu29VR5vz1ExAQQEWn6W+UkbAOSRUtApch6uOgS+EfwM2zmBgAghVv+B35KuL0VYLabUeMNuDtlfB8AsMmE1vEPbDGJy9h4wqMsTp6BqW40SOJIhoEYYsSf9/mRL9iZl9wtCMZ2aPRaUPtCeTByye+UhAiXfUnSsxyuMkwUqCECAFZQOCBaAAAAMAMAnQEqDAAVAD8BbK1PKyYkIjAIAWAgCWdZ8gA2d/3cQAD+7Nknn+M94+W2n9TE41ftxu6UMTeCaL0r7m5GaccKbxn+tE5iZjnrOZSemHDmsKLcrn/zQAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 232260,
+      "sha256": "3fad87988c758bce531c8f6a74ea4f791c92e7053b8a3fdbb0d825fdd9de9363",
+      "sourceSha256": "3fad87988c758bce531c8f6a74ea4f791c92e7053b8a3fdbb0d825fdd9de9363",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/claudette-morel/candidate-1.mp3",
+      "preview": "/api/voice/claudette-morel/intro",
+      "thumb": "/api/voice/claudette-morel/intro",
+      "previewUrl": "/api/voice/claudette-morel/intro",
+      "durationSec": 19.2,
+      "transcript": {
+        "text": "Good evening. My name is Claudette Morel. I am forty-seven, and I live in Paris. For many years I was a news editor, so I am very good at deciding what matters. I am calm, and I am rarely wrong. I would play a judge, a diplomat, or a mother who knows the whole story."
+      }
+    }
+  ]
+}

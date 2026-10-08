@@ -1,21 +1,16 @@
 import type { MetadataRoute } from "next";
 import { ACTORS } from "@/content/actors";
+import { WORKS } from "@/content/works";
 import { LOCALE_HTML_LANG, routing } from "@/i18n/routing";
 import { SITE } from "@/content/site";
-
-const PAGES = ["", "/actors", "/works", "/kit", "/studio", "/casting", "/pact"];
-
-/**
- * Every page in every authored locale, cross-linked with hreflang.
- *
- * The machine-translated languages are deliberately absent: those live on
- * Google's proxy domain, are marked `nofollow` in the switcher, and are not
- * ours to submit as canonical versions of this site.
- */
+const PAGES = ["", "/actors", "/works", "/license", "/studio", "/privacy", "/terms", "/cast"];
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const paths = [...PAGES, ...ACTORS.flatMap((a) => [`/actors/${a.slug}`, `/kit/${a.slug}`])];
-
+  const paths = [
+    ...PAGES,
+    ...ACTORS.flatMap((actor) => [`/actors/${actor.slug}`, `/actors/${actor.slug}/assets`]),
+    ...WORKS.map((work) => `/works/${work.slug}`),
+  ];
   return routing.locales.flatMap((locale) =>
     paths.map((path) => ({
       url: `${SITE.url}/${locale}${path}`,

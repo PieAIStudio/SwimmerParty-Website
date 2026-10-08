@@ -1,0 +1,61 @@
+{
+  "slug": "felix-hartmann",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 788107,
+      "sha256": "3bd5d9df7533c72fc9a78a39c0a80d4351035ea354d59c54ebfd1104be1f5aa4",
+      "sourceSha256": "3bd5d9df7533c72fc9a78a39c0a80d4351035ea354d59c54ebfd1104be1f5aa4",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "felix-hartmann/CC-004.png",
+      "preview": "/media/assets/felix-hartmann/turnaround.front.webp",
+      "large": "/media/assets/felix-hartmann/turnaround.front.large.webp",
+      "thumb": "/media/assets/felix-hartmann/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRhYBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJYAAAAJgGNt2/HoiW2bpVWpzA6yDFVps5l0qdwNy5nKtm0b7ztriIgJAABtfaYDttFs+7l1fN1xrWH7grOKw2HGv1bKLiSpolwAcZG62P/CyTEVngUWPZRZAHwYqdsT4Oya0uZeHwsqakS0sCiapManNtfGRyhcHew+gzU+Xbg42eOr6h+CazOn29+2McHI/KomQ9kr0ydlMwBWUDggWgAAABAEAJ0BKgwAFQA/AWqtTysmJCIwCAFgIAllAJ0HeAB9P4uqafDD5qSwAP4WA+K50b2JREXQzpbZYst66a6EHYFnh7Ryj4bHX2QeH8+sfBA1OjsMXJLQYz+AAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 277188,
+      "sha256": "8d2365081783b0417605c9535eb9cee40732855bc7ee57a9078d27d7b3fa0605",
+      "sourceSha256": "8d2365081783b0417605c9535eb9cee40732855bc7ee57a9078d27d7b3fa0605",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/felix-hartmann/candidate-1.mp3",
+      "preview": "/api/voice/felix-hartmann/intro",
+      "thumb": "/api/voice/felix-hartmann/intro",
+      "previewUrl": "/api/voice/felix-hartmann/intro",
+      "durationSec": 22.9,
+      "transcript": {
+        "text": "Hello, I'm Felix Hartmann. I'm twenty-four, from Leipzig. I play the cello, badly, and I collect old maps, very well. I get nervous when people look at me, which is funny for an actor, I know. I'd like to play the awkward genius, the shy boyfriend, or the boy who gets lost."
+      }
+    }
+  ]
+}

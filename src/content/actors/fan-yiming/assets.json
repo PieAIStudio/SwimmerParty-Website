@@ -1,0 +1,61 @@
+{
+  "slug": "fan-yiming",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1112445,
+      "sha256": "80749bf84f85e5ee648321d075061d676483bb7bffc1adc26414837dbf5bbb35",
+      "sourceSha256": "80749bf84f85e5ee648321d075061d676483bb7bffc1adc26414837dbf5bbb35",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/CC-052.png",
+      "preview": "/media/assets/fan-yiming/turnaround.front.webp",
+      "large": "/media/assets/fan-yiming/turnaround.front.large.webp",
+      "thumb": "/media/assets/fan-yiming/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjoBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJsAAAAJgFzb2rHn/PYf27ZaSAGpISPP/pSQfoyRbdu2bT7P10NETABAel1HK7qjr6Kp1OD9E5INfjr5GTeIvIayCKVgI4CpfiNb1HoBfNUiH7VEsCN2HSL5TTwlifNFsXgurrJE9oVYsPHzQdCaCDRwvEJXrWCXtRkOfpQXxod4Rw3h8ZxY7YerY3zaK1c3vGuhbG3fpVmUr+oFyi9SAQBWUDggeAAAABAEAJ0BKgwAFQA/AWqtTqsmJCIwCAFgIAljAMDdi9aW8j+BkNwJPZwAAP2hPUBR385TGJYepQjEuYzqw33juSpFSyJu0K5IJNfWaEs+kq8+dsYBr2hHcoNcT6WUorCtmTSNQ8MM6bnDXvpslP9lrfK+/09wIkbwAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 244788,
+      "sha256": "18bd871667686a92d9428499ef9fc968201ec556036b4c8857f4e95cd24e97ff",
+      "sourceSha256": "18bd871667686a92d9428499ef9fc968201ec556036b4c8857f4e95cd24e97ff",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/fan-yiming/candidate-1.mp3",
+      "preview": "/api/voice/fan-yiming/intro",
+      "thumb": "/api/voice/fan-yiming/intro",
+      "previewUrl": "/api/voice/fan-yiming/intro",
+      "durationSec": 20.2,
+      "transcript": {
+        "text": "大家好，我是范一鸣，无锡人，三十六岁。以前在婚庆公司当过主持人，三百多场婚礼，台下的人哭我也跟着哭。这撮小胡子是我的标志。我适合演热心的主持人、爱面子的小老板，或者暖心的大哥。"
+      }
+    }
+  ]
+}

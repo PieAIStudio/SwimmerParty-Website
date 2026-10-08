@@ -1,0 +1,61 @@
+{
+  "slug": "bai-yunchuan",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 884765,
+      "sha256": "c2520f5c4ccbeeb04d5179978c66d52dad5551d513f0c314a69cbaf6c00045c2",
+      "sourceSha256": "c2520f5c4ccbeeb04d5179978c66d52dad5551d513f0c314a69cbaf6c00045c2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bai-yunchuan/CC-062.png",
+      "preview": "/media/assets/bai-yunchuan/turnaround.front.webp",
+      "large": "/media/assets/bai-yunchuan/turnaround.front.large.webp",
+      "thumb": "/media/assets/bai-yunchuan/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKQAAAABgLJt2/lX9/O3zTEayVZV3rHoLSHtE6wy2XZltBWXbBt3ep83IiaAiEjRVkvyTPy5ZZFf9zaZcmWcpAVHwE4edwIAa4z59w/4fVQJhocFYPZOKcQdLgMzp8FCZNMlcNzrESIaAXy2u4TQIbx8Yc4sUDTWdxFGbAB6uxHKaf7qa+DnglGciwQuAkWxyOeikWVDqSxe8VrHVfybab6DK0khCm8gIlZQOCBmAAAAkAMAnQEqDAAVAD8Baq1OqyYkIjAIAWAgCWUAAEqy/2b18DAngAD+nvaia3RvOttYDq6JDoIehnPUCmIJ0Y0Rtivq32wUmyins6Tnsoqfs2nnVYFwwqFGFzBy9XqUT/sQ8Vc5QAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 281940,
+      "sha256": "06dae9ba292ce0f4d449aee27cedd84efca81bb9a3870e7828f439b4872bbbe9",
+      "sourceSha256": "06dae9ba292ce0f4d449aee27cedd84efca81bb9a3870e7828f439b4872bbbe9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/bai-yunchuan/candidate-1.mp3",
+      "preview": "/api/voice/bai-yunchuan/intro",
+      "thumb": "/api/voice/bai-yunchuan/intro",
+      "previewUrl": "/api/voice/bai-yunchuan/intro",
+      "durationSec": 23.3,
+      "transcript": {
+        "text": "你好，我叫白云川，昆明人，三十岁。我在大理开过一家小客栈，每天看云、煮茶、跟客人聊天。眉心这颗痣，好多人说像点上去的。我适合演那种看起来很佛系、其实心里很有故事的人。"
+      }
+    }
+  ]
+}

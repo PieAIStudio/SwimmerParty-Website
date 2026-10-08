@@ -10,7 +10,6 @@ import {
   type ReactNode,
 } from "react";
 import { usePathname } from "next/navigation";
-import { track } from "@vercel/analytics";
 import { useSiteI18n } from "@/i18n/client";
 import { GameBadge, GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 
@@ -53,7 +52,8 @@ export function AccountProvider({
   const event = useCallback(
     (name: EventName, data?: { format: string }) => {
       // Next production builds also run locally: NODE_ENV alone must not enable telemetry.
-      if (analytics) track(name, data);
+      if (analytics && typeof window !== "undefined")
+        window.dispatchEvent(new CustomEvent("swimmer-party-event", { detail: { name, data } }));
     },
     [analytics],
   );

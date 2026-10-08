@@ -1,0 +1,61 @@
+{
+  "slug": "qian-sumei",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 904753,
+      "sha256": "c2dbe1cda03c062d362fb47ad845ad8495f92151b66a4df4bce5173e0fb9a5a4",
+      "sourceSha256": "c2dbe1cda03c062d362fb47ad845ad8495f92151b66a4df4bce5173e0fb9a5a4",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qian-sumei/CC-036.png",
+      "preview": "/media/assets/qian-sumei/turnaround.front.webp",
+      "large": "/media/assets/qian-sumei/turnaround.front.large.webp",
+      "thumb": "/media/assets/qian-sumei/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRioBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJUAAAAJgJtt2/Hsjm20SZURvioYg6Urm10GyQDODBrAyW/bNp53h4iYAAAQ18dNMKOphosVgMzP2gW+WZnBboFlFeliakrb59S1AGUTArBR93fA+QNlVwEGjtI/A3we4wPvUFMCJdbgU9Wt00N4qOfj3cv3BQXF6QEPTMvdu1BB8XQX7+BR+N58/XinOMFk49NMydyDXkQDAABWUDggbgAAALADAJ0BKgwAFQA/AWqtTysmJCIwCAFgIAlnAMTYGqU+dmD1d9JAANeqO5xoRnfH/f2jHQUTvgzbM7iC+oVrVm5uatRQiIVjV//P8XyO6eD5USDpX+v+cxNUcYuXXuEOqxttYo/L0Wy86WtIwAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 265524,
+      "sha256": "1417c2b1fa75e6986d5e6299679455e9ccffebae861dfa7ff33b56cc21a86b72",
+      "sourceSha256": "1417c2b1fa75e6986d5e6299679455e9ccffebae861dfa7ff33b56cc21a86b72",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/qian-sumei/candidate-1.mp3",
+      "preview": "/api/voice/qian-sumei/intro",
+      "thumb": "/api/voice/qian-sumei/intro",
+      "previewUrl": "/api/voice/qian-sumei/intro",
+      "durationSec": 21.9,
+      "transcript": {
+        "text": "我叫钱素梅，苏州人，今年七十一岁啦。我说话慢，你们不要急哦。年轻时候在评弹团里打过杂，听了一辈子的好故事。现在能自己来演戏，我开心得不得了。演外婆、演老邻居，我最拿手。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "niu-fengying",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1105004,
+      "sha256": "70cc6c7ea4d2e58a7e2871f84f5ae7ffb88785f027bb998c72b13327275077eb",
+      "sourceSha256": "70cc6c7ea4d2e58a7e2871f84f5ae7ffb88785f027bb998c72b13327275077eb",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "niu-fengying/CC-066.png",
+      "preview": "/media/assets/niu-fengying/turnaround.front.webp",
+      "large": "/media/assets/niu-fengying/turnaround.front.large.webp",
+      "thumb": "/media/assets/niu-fengying/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRj4BAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKIAAAABgGNt2zHnnZnYVqslsEpntE5lWztg6x24te2kzLSx7eSuvnf2EBETICIS01sTIXrwLRw5acnAb4jmfQB94tB399bDQfwxXFZr8wAvnobl1CDScPuww9tFrBF//QqcFBsZ+wA7VUbxlrHaahRO8v3KVKUhydgPKLQo4ayMESeqF6OdJGrhjHaQrfkxUk6eJg/DqeRoXld1Ab9tWliDhyQViQhWUDggdgAAAJADAJ0BKgwAFQA/AWqtTyslpCIwCAFgIAljAAAlHnt+jy4aFgAA/r3BXVQ/qYTFm3/+upJOrYwkdhYpLmOuknkHG2isiOFymcS2lG55FvDUHHAq60ErjozYtrHR+dDM9VjuO9gZwPPbQyooaDHSd8zDATAAAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 183444,
+      "sha256": "891bff5b525aec9f6c8b134ff724b08a47bd768eecd2a06917e93a25757f2927",
+      "sourceSha256": "891bff5b525aec9f6c8b134ff724b08a47bd768eecd2a06917e93a25757f2927",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/niu-fengying/candidate-1.mp3",
+      "preview": "/api/voice/niu-fengying/intro",
+      "thumb": "/api/voice/niu-fengying/intro",
+      "previewUrl": "/api/voice/niu-fengying/intro",
+      "durationSec": 15.1,
+      "transcript": {
+        "text": "中！我叫牛凤英，郑州的，五十八了。我是我们小区广场舞的领队，嗓门大，人缘好。这头卷发是我自己染的，好看不？演热心大妈、演媒婆、演爱管闲事的邻居，我张嘴就来。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "ray-kowalczyk",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1164132,
+      "sha256": "6a2980794fde15a48ccc1a34d12228988ccd151f2443e822bec839077d46ef49",
+      "sourceSha256": "6a2980794fde15a48ccc1a34d12228988ccd151f2443e822bec839077d46ef49",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ray-kowalczyk/CC-014.png",
+      "preview": "/media/assets/ray-kowalczyk/turnaround.front.webp",
+      "large": "/media/assets/ray-kowalczyk/turnaround.front.large.webp",
+      "thumb": "/media/assets/ray-kowalczyk/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRkYBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJ0AAAABgGPb2rHn/m79/3FSJuNwZTudbdvTcJlOnV0ZE7CtWz3PN4eImAAAcDTWmmBYTmYZDZFJRsl8c2jmyltyJ1YponxzijmF2WL1S/yMArC9XorrYwAuLoqFGwA4HRL1++JqRayfir4lvr1zqlKgi6urbIeax8kJlmhlLC1kg9bG1DgOa12MDuOYNkq39WVecR48AYeXXhFVEQR462MAAFZQOCCCAAAAEAQAnQEqDAAVAD8Baq1PKyYkIjAIAWAgCWUAA+MA8PZCr9QYrkA5JgAA/F3VNW8E7xojujEzn+LWJdeinXBY7Vwz0801/PLdUVnXs8QsDMmhiwUvXZT+Bc643ipe85BRxAXOV/E6/vZBYnpDPcDVLZtQvyX9tRxj9fXmp0+aorIAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 223620,
+      "sha256": "74d10622c80077c46ade73aa8f9578d2aecdc9fef9e0e341b64aab4dcd548426",
+      "sourceSha256": "74d10622c80077c46ade73aa8f9578d2aecdc9fef9e0e341b64aab4dcd548426",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/ray-kowalczyk/candidate-1.mp3",
+      "preview": "/api/voice/ray-kowalczyk/intro",
+      "thumb": "/api/voice/ray-kowalczyk/intro",
+      "previewUrl": "/api/voice/ray-kowalczyk/intro",
+      "durationSec": 18.4,
+      "transcript": {
+        "text": "Hey, how ya doin'. Ray Kowalczyk, forty-eight, Pittsburgh born and raised. I've run a hardware store on the same corner for twenty-five years. I complain about everything and fix anything. Cast me as the plumber, the coach, the dad who swears at the TV during the game."
+      }
+    }
+  ]
+}

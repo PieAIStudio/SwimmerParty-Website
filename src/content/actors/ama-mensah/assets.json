@@ -1,0 +1,61 @@
+{
+  "slug": "ama-mensah",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 829479,
+      "sha256": "b921278a1159f1b381bb83b444babdcb5e768d8c70331d2d931ee06368a8268f",
+      "sourceSha256": "b921278a1159f1b381bb83b444babdcb5e768d8c70331d2d931ee06368a8268f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ama-mensah/CC-005.png",
+      "preview": "/media/assets/ama-mensah/turnaround.front.webp",
+      "large": "/media/assets/ama-mensah/turnaround.front.large.webp",
+      "thumb": "/media/assets/ama-mensah/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJsAAAABgKpt+/rkm2/R3X3rvkFzd5fGCbg3h6Yn4JC4OANvUKG6O2nwtu93DhExAUREhUd7RhIeAQOiSSAjsn68GESypS2pwPkGPHi5agBo5mrOget2bvgMuJji1t6A73Vu8Q95rHEH+LjCIVeGs330cvS7ufSvFOTnR6DhtOjrhocLoKsMKS6GijgquUKEregRPMrosk7K5NqJqorkRABWUDggYgAAALADAJ0BKgwAFQA/AWqtTqsmJCIwCAFgIAlAE6ADbd/sxnOFf6/QAP5xvKRAOiw4jF1pf/9guv6iWZ6xtIULjaw6Tfg+tINQ1emiZoJMnPYC9i7mTq4z/5BrSjhC8vFp5UAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 189060,
+      "sha256": "00f83a283fbbd825cba782b1768e3e102564f67127a8b8f82afccdcebe9f41a3",
+      "sourceSha256": "00f83a283fbbd825cba782b1768e3e102564f67127a8b8f82afccdcebe9f41a3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/ama-mensah/candidate-1.mp3",
+      "preview": "/api/voice/ama-mensah/intro",
+      "thumb": "/api/voice/ama-mensah/intro",
+      "previewUrl": "/api/voice/ama-mensah/intro",
+      "durationSec": 15.6,
+      "transcript": {
+        "text": "Hi, I'm Ama Mensah, twenty-four, from Accra in Ghana. I sell fabric at the market with my aunties, so I can talk to anybody about anything. I laugh at my own jokes, it's a problem. I'd love to play the funny best friend, the young entrepreneur, or a girl with big dreams."
+      }
+    }
+  ]
+}

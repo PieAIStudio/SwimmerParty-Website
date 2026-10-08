@@ -1,0 +1,61 @@
+{
+  "slug": "bruno-ferraro",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1033327,
+      "sha256": "e736a6d0df44da6e1d81a8c862cbbd6f628854706d21be6d5b4bafd0ce3c5ea8",
+      "sourceSha256": "e736a6d0df44da6e1d81a8c862cbbd6f628854706d21be6d5b4bafd0ce3c5ea8",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bruno-ferraro/CC-074.png",
+      "preview": "/media/assets/bruno-ferraro/turnaround.front.webp",
+      "large": "/media/assets/bruno-ferraro/turnaround.front.large.webp",
+      "thumb": "/media/assets/bruno-ferraro/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiwBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJsAAAABgGPb2rHn+f9YVVq7tCdg204qawA2Stutbdt2UmUGvtXzfHOIiAkg7hWtIkWTfxQqOQNJSub/v/aSTs8X8DWowRIg+rFWqYF1P7LHNnY2yxaO2H0ja7lmq8WsdJWtr7KdPRbUjs8PdAcxSsXkGEpI9EFdMbKlEKR7o0xKQ4oNBqQchOv/j0sx8KCXFan+15CGH4yEEjci42oHIgBWUDggagAAAHADAJ0BKgwAFQA/AWqtTysmJCIwCAFgIAlAGFADWxIPD+A2gAD+ub3j2v5XnDP+yMEhlg7F7RBAMunG8gUBCoWf2LhA0D3wP02cdfPcdTmo5VK6NYetT3+Ob7TQhRQ5+V3ebpPaAxQAAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 252996,
+      "sha256": "8418d66a41999fac61785c53a276e6d716a9828cecc20dc4c74ce8696cf44f7a",
+      "sourceSha256": "8418d66a41999fac61785c53a276e6d716a9828cecc20dc4c74ce8696cf44f7a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/bruno-ferraro/candidate-1.mp3",
+      "preview": "/api/voice/bruno-ferraro/intro",
+      "thumb": "/api/voice/bruno-ferraro/intro",
+      "previewUrl": "/api/voice/bruno-ferraro/intro",
+      "durationSec": 20.9,
+      "transcript": {
+        "text": "Buongiorno! Bruno Ferraro, fifty-two, from Turin. I fix old Fiat cars, and I talk to them like they are my children. Sometimes they listen. My mustache is famous in my neighborhood. I would be perfect as a mechanic, a big uncle, or the restaurant owner who shouts and then hugs you."
+      }
+    }
+  ]
+}

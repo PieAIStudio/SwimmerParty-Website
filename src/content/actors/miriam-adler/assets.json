@@ -1,0 +1,61 @@
+{
+  "slug": "miriam-adler",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 777198,
+      "sha256": "d09ef789e8ff97ea1e5d4e426c814e84e46cae71c58a52afec156776d43ab36d",
+      "sourceSha256": "d09ef789e8ff97ea1e5d4e426c814e84e46cae71c58a52afec156776d43ab36d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/CC-058.png",
+      "preview": "/media/assets/miriam-adler/turnaround.front.webp",
+      "large": "/media/assets/miriam-adler/turnaround.front.large.webp",
+      "thumb": "/media/assets/miriam-adler/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJoAAAABgKJt27Hp+f3/G2A1xvYa7JnmmeZkMylNMxqTrcZk28ad5n32EBETQP87WuTERgCRnN/7h5OTDZdIGHX+xXomEwkAJlHiN/DtI4qeBBbDRRV7wFGxqPUeuKoXlfz+fP2Vivp+TjYxKArY3RiGp4hGZsuhYbpm0qBnOue8EcQ0r2kRxxRv01Mek75Ba9VMWzc1jjCZOjJOWIkAVlA4IGQAAADQAwCdASoMABUAPwFqrU8rJiQiMAgBYCAJYwAAWqF+1rrs29foxAAA/stnJ9FbWVTFo8UgR2LfH5SCBjDcx+cA3bnaHgoNVWUeihgU8omP6tX5Y8x4hYEsl420mAgN5JqAAAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 248676,
+      "sha256": "9fbd3d19efa9a7ca2182510da0672c48d5e2a2336af9f4e726f762943aa17187",
+      "sourceSha256": "9fbd3d19efa9a7ca2182510da0672c48d5e2a2336af9f4e726f762943aa17187",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/miriam-adler/candidate-1.mp3",
+      "preview": "/api/voice/miriam-adler/intro",
+      "thumb": "/api/voice/miriam-adler/intro",
+      "previewUrl": "/api/voice/miriam-adler/intro",
+      "durationSec": 20.5,
+      "transcript": {
+        "text": "Good evening. I am Miriam Adler, fifty, from Vienna. I spent twenty years backstage at the opera, so I know drama very well. People say I look severe. That is mostly true. I would be wonderful as a duchess, a museum director, or a villain with excellent taste."
+      }
+    }
+  ]
+}

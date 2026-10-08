@@ -1,0 +1,61 @@
+{
+  "slug": "sasha-kerr",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 761239,
+      "sha256": "06ce60d34a8070c4c3bcd33507633ebf65fd87175b22f51586023b1e3f0c753f",
+      "sourceSha256": "06ce60d34a8070c4c3bcd33507633ebf65fd87175b22f51586023b1e3f0c753f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sasha-kerr/CC-043.png",
+      "preview": "/media/assets/sasha-kerr/turnaround.front.webp",
+      "large": "/media/assets/sasha-kerr/turnaround.front.large.webp",
+      "thumb": "/media/assets/sasha-kerr/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRiIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSJwAAAABgJtt27Hn+c3Ktv/qD0dwm86VU2UAGyM4qZI+C9i2bavKf3fPu0NETAARkWygkcQOfEhFyqlJEkv7+qUCwz3wYODiKQBxLjINzCa4nBFgtJCr3wQ2GgQbwE4913769nTVwVVfL8/d1HN0ODF+RcKtntYd0WltxZ3or7L4X8pJUxV50HM6FKXDwcl+s02wcro3C90HOW8JUX6SiABWUDggYAAAAJADAJ0BKgwAFQA/AWqtTqsmJCIwCAFgIAlnAABH+4Rw4OyqvngA/SHBiNcmhckeQFYLErvfy8PwRk3zR8+Q1+iKkhTxpr6Msvqfz3q9Yu5EWqxUic8BXvaWo/3w50AAAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 256884,
+      "sha256": "209f3c79f7d28ef44422b0f38a8e89fe9229199eabb35739a9225883a3cbd3cd",
+      "sourceSha256": "209f3c79f7d28ef44422b0f38a8e89fe9229199eabb35739a9225883a3cbd3cd",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/sasha-kerr/candidate-1.mp3",
+      "preview": "/api/voice/sasha-kerr/intro",
+      "thumb": "/api/voice/sasha-kerr/intro",
+      "previewUrl": "/api/voice/sasha-kerr/intro",
+      "durationSec": 21.2,
+      "transcript": {
+        "text": "Hiya, I'm Sasha Kerr, twenty-nine, from Glasgow. I shaved my head at nineteen and never looked back. I've been a bike courier, a bartender, and a drummer in a very bad band. I'd love to play the rebel, the soldier, or the woman who doesn't need saving."
+      }
+    }
+  ]
+}

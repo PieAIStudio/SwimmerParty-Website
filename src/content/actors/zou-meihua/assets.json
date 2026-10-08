@@ -1,0 +1,61 @@
+{
+  "slug": "zou-meihua",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1108425,
+      "sha256": "b7c604bc07d53cd38c766b79f753cb63987db8f70880edff13bbe14f41de43c0",
+      "sourceSha256": "b7c604bc07d53cd38c766b79f753cb63987db8f70880edff13bbe14f41de43c0",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zou-meihua/CC-031.png",
+      "preview": "/media/assets/zou-meihua/turnaround.front.webp",
+      "large": "/media/assets/zou-meihua/turnaround.front.large.webp",
+      "thumb": "/media/assets/zou-meihua/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKAAAAABgGNt2/HoiZ1swdtImfTpMZ5qpjJL27ZVcQM5U9q2W+OpvvffQ0RMAADoYmE9NMvJAg3dLfmg03gjtzWslZ/MdwrGDZK88ihxisVK878wpWzdKz8nyvu78vtvAHBwqXxuGgHn/YPyd+gE9IXb5D+fSvQAsMSnc6YgVjO1zimpmeNdHJL62VLBWWmIVXlclhqYm+CY1MaQ979bSo8CkSwAVlA4IGwAAACQAwCdASoMABUAPwFqrU8rJaQiMAgBYCAJYwAAKvaEslpg6KHgAP7PItaxL/mV6tWWCTz4Yytn5MVzI1DUeGK4JlCXKwngjJwCKuN+u32SgFzdp/SZb/FP5BdexilD0fLJxI0Ms8x4SfCaAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 275028,
+      "sha256": "9bc11341acf8a3dff7d7122969718aaca0d40e69cc181082eee1b1ba2c6178f3",
+      "sourceSha256": "9bc11341acf8a3dff7d7122969718aaca0d40e69cc181082eee1b1ba2c6178f3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/zou-meihua/candidate-1.mp3",
+      "preview": "/api/voice/zou-meihua/intro",
+      "thumb": "/api/voice/zou-meihua/intro",
+      "previewUrl": "/api/voice/zou-meihua/intro",
+      "durationSec": 22.7,
+      "transcript": {
+        "text": "大家好，我叫邹美华，南昌人，五十五岁。我以前在中学教了二十多年数学，所以说话可能有点慢、有点啰嗦，你们多担待。我演老师肯定像，演那种操心全家的妈妈，也不在话下。"
+      }
+    }
+  ]
+}

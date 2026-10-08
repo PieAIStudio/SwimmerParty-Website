@@ -1,0 +1,61 @@
+{
+  "slug": "ge-changlin",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 919924,
+      "sha256": "35e7be6629f859a92926b2f73603196c8621f7fc6608314f73fcdb2f9e191a71",
+      "sourceSha256": "35e7be6629f859a92926b2f73603196c8621f7fc6608314f73fcdb2f9e191a71",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ge-changlin/CC-032.png",
+      "preview": "/media/assets/ge-changlin/turnaround.front.webp",
+      "large": "/media/assets/ge-changlin/turnaround.front.large.webp",
+      "thumb": "/media/assets/ge-changlin/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRjgBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKMAAAABgGPb2rHn+R3brm0nna0JuLSdiqWTMTjpNYRUf5XOtnGq9/3mEBETICLiMVkoxlMQbdQPSUb+p0cmA5fWm9NGh+4QYE/j9aO8uyqBv8/w8OutpDhP4NiZrBRvPcPleqGSOwL892cqBVsAe1lKxDznFywEKRLE4T6horV8r63+23U+DHcRoouhvYkUXSyNJZTpoihPpFrXRrz1b07XkC0S1ygiAFZQOCBuAAAA0AMAnQEqDAAVAD8BaKxOqyWkIjAIAWAgCUAYUAN2m3j1aoqOJ2cAAP7L9ht6MLLQn9/aj2Cr3g/IWK7BmlK5vUzsGmFlJiBlt3V7NKfBj89+z5uTBregyj4ginKGC16HdfgtUCeKs/E77WgUMAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 293172,
+      "sha256": "2d6b79f7b358030d881c126f792042da31fc641c86585a6b02b877ebc99b1413",
+      "sourceSha256": "2d6b79f7b358030d881c126f792042da31fc641c86585a6b02b877ebc99b1413",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/ge-changlin/candidate-1.mp3",
+      "preview": "/api/voice/ge-changlin/intro",
+      "thumb": "/api/voice/ge-changlin/intro",
+      "previewUrl": "/api/voice/ge-changlin/intro",
+      "durationSec": 24.2,
+      "transcript": {
+        "text": "我叫葛长林，石家庄的，五十二。我这张脸长，眼袋重，大家说我天生一副没睡醒的样子。我以前是火车站的值班员，见惯了人来人往。我说话慢，但冷不丁一句能把人逗乐。演个冷面的老头，我在行。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "zhu-youfu",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1190420,
+      "sha256": "cbdec87e561283f9f651144abd99df6d4bd45600afab0d5f94146a57c1237f3b",
+      "sourceSha256": "cbdec87e561283f9f651144abd99df6d4bd45600afab0d5f94146a57c1237f3b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zhu-youfu/CC-027.png",
+      "preview": "/media/assets/zhu-youfu/turnaround.front.webp",
+      "large": "/media/assets/zhu-youfu/turnaround.front.large.webp",
+      "thumb": "/media/assets/zhu-youfu/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRlIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSKUAAAABkGNr27FXd2zbtq3aSZ2ViRgzsG1Xtp1UNlrbOueu3vebQ0RMAERbeygX/vxmKe2QE0oDZJWCSiYZL3PZI8klY6GF0lwAqreyNQD631vC+QWAGA4Ii7QEgg7bhNonA8D3YFToutQB/PY2+UOuHxsD8FzhzAn7/SB2MaeBRZDWMzGD5bIpxsVwWjZIDwsuydYf1XF0K4l8nwCa/6cLrqmagEpaOAAAVlA4IIYAAAAwBACdASoMABUAPwFqrE6rJiQiMAgBYCAJaAC06YtUlwumn56boy3U3gAAvy5bWmO/yfoyPWtz00QbeIquQUTxwjHOYRLb8jElMr4EIvJ3q6f/JV7ffwbNxNFnyIQHB4MwNsiQF3gCcmVX6oRqLTUYBJ1WFsJ8AByvny6k1SnLFaQ7g71uAA=="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 247380,
+      "sha256": "1f0fc12f8d959983cdf4342a4a0c5cd3f0ab2945e36ac5988114a54d9f012441",
+      "sourceSha256": "1f0fc12f8d959983cdf4342a4a0c5cd3f0ab2945e36ac5988114a54d9f012441",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/zhu-youfu/candidate-1.mp3",
+      "preview": "/api/voice/zhu-youfu/intro",
+      "thumb": "/api/voice/zhu-youfu/intro",
+      "previewUrl": "/api/voice/zhu-youfu/intro",
+      "durationSec": 20.4,
+      "transcript": {
+        "text": "哈喽大家好，我叫朱有福，佛山人，三十九岁。你看我这头，前面已经放假了，哈哈。我家开烧腊店的，从小在店里招呼客人，所以我最会讲好话。演老板、演开心果、演倒霉但乐观的人，没问题！"
+      }
+    }
+  ]
+}

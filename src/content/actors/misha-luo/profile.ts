@@ -30,6 +30,9 @@ export const profile: Actor = {
     "3D feature-animation man of Russian descent, late twenties, grew up in Chongqing, slim-average build; long narrow face, prominent slightly crooked nose, ears that stick out a little, heavy brows, deep-set grey-blue eyes, uneven light stubble, thin lips, tousled light-brown hair overdue for a cut; realistic adult proportions, about 7.5 heads tall. Unmistakably CG, never photoreal.",
   version: "1.1.0",
   versionDate: "2026-10-08",
-  versionNote: { en: "Voice added: 7 clips. The self-introduction doubles as a voice reference.", zh: "加入声音：7 段。自我介绍可以直接当参考音用。" },
+  versionNote: {
+    en: "Voice added: 7 clips. The self-introduction doubles as a voice reference.",
+    zh: "加入声音：7 段。自我介绍可以直接当参考音用。",
+  },
   voiceLanguage: "zh",
 };
