@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     metadataBase: new URL(SITE.url),
     title: {
-      default: `${SITE.name} — ${t("home.metaTitle")}`,
+      default: t("home.metaTitle"),
       template: `%s — ${SITE.name}`,
     },
     description: SITE.description[loc],
