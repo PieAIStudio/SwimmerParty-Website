@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GameButton } from "@pieai/swimmer-ui-kit";
 export function VoteButton({
   slug,
@@ -12,6 +12,13 @@ export function VoteButton({
 }) {
   const [count, setCount] = useState(0);
   const [voted, setVoted] = useState(false);
+  useEffect(() => {
+    void fetch(`/api/community/votes?slug=${encodeURIComponent(slug)}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((x: { count?: number } | null) => {
+        if (x?.count !== undefined) setCount(x.count);
+      });
+  }, [slug]);
   async function vote() {
     const r = await fetch("/api/community/votes", {
       method: "POST",
@@ -33,7 +40,7 @@ export function VoteButton({
       {voted
         ? locale === "zh"
           ? "已想看"
-          : "You want more"
+          : `Want more of ${name}`
         : locale === "zh"
           ? `想看更多${name}`
           : `Want more of ${name}`}{" "}
