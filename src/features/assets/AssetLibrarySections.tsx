@@ -133,7 +133,11 @@ export async function AssetLibrarySections({
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {slotsOf("voice")
-            .filter((slot) => !isNewFace || delivered.has(slot.slot))
+            .filter(
+              (slot) =>
+                (!isNewFace || delivered.has(slot.slot)) &&
+                (!slot.key.startsWith("role-") || delivered.has(slot.slot)),
+            )
             .map((slot) => {
               const item = delivered.get(slot.slot);
               const label = msg(
