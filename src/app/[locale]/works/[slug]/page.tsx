@@ -56,6 +56,13 @@ export default async function WorkPage({ params }: Props) {
       </section>
       <section className="sp-section">
         <h2 className="sp-title">{t("works.castTitle")}</h2>
+        {work.slug === "journey-to-the-east" ? (
+          <p className="sp-lead mt-4">
+            {locale === "zh"
+              ? "主演：唐韵秋 饰 何姐 · 罗米沙 饰 戴尔 · 张强 饰 导演 · 陈伟 饰 场务大哥"
+              : "Starring Tang Yunqiu as He Jie · Misha Luo as Dai Er · Zhang Qiang as the Director · Chen Wei as the Grip"}
+          </p>
+        ) : null}
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {work.cast.map((credit) => {
             const actor = ACTORS.find((a) => a.slug === credit.actor);
