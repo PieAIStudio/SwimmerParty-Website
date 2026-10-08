@@ -15,8 +15,7 @@ import { useSiteI18n } from "@/i18n/client";
 import { characterProfile } from "@/features/assets/asset-profile";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { GUEST_COOLDOWN_KEY, GUEST_DOWNLOAD_WINDOW_SECONDS } from "@/features/assets/downloads";
-import { GameBadge, GameButton, GameToast } from "@pieai/swimmer-ui-kit";
-import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
+import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { useAccount } from "@/features/account";
 import { MemberExportDialog } from "./MemberExportDialog";
 
@@ -224,18 +223,12 @@ export function AssetSelectionProvider({
     >
       {children}
       {invite ? (
-        <div
-          className="fixed inset-0 z-50 grid place-items-center bg-black/40 p-5"
-          role="presentation"
-          onClick={() => setInvite(false)}
+        <dialog
+          open
+          aria-labelledby="sign-in-title"
+          className="fixed inset-0 z-50 m-0 grid h-full w-full max-w-none place-items-center bg-black/40 p-5"
         >
-          <section
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="sign-in-title"
-            className="w-full max-w-lg rounded-[26px] bg-card p-7 text-foreground shadow-2xl"
-            onClick={(event) => event.stopPropagation()}
-          >
+          <section className="w-full max-w-lg rounded-[26px] bg-card p-7 text-foreground shadow-2xl">
             <div className="flex items-start justify-between gap-4">
               <h2 id="sign-in-title" className="sp-title">
                 {t("assets.signInTitle")}
@@ -276,7 +269,7 @@ export function AssetSelectionProvider({
             </div>
             <p className="sp-small mt-5 text-muted-foreground">{t("assets.signInConsent")}</p>
           </section>
-        </div>
+        </dialog>
       ) : null}
       {pack ? (
         <MemberExportDialog
