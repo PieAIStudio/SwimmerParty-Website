@@ -24,7 +24,7 @@ export const WORKS: Work[] = [
     format: { en: "AI comedy shorts", zh: "AI 喜剧短片" },
     cast: [
       {
-        actor: "SP-13",
+        actor: "tang-yunqiu",
         role: {
           id: "he-jie",
           name: { en: "He Jie", zh: "何姐" },
@@ -35,7 +35,7 @@ export const WORKS: Work[] = [
         },
       },
       {
-        actor: "SP-03",
+        actor: "misha-luo",
         role: {
           id: "dai-er",
           name: { en: "Dai Er", zh: "戴尔" },
@@ -56,7 +56,7 @@ export const WORKS: Work[] = [
     title: { en: "MODERN FREAKS", zh: "《摩登怪咖》" },
     status: "development",
     format: { en: "AI sitcom series with superpowers", zh: "带超能力的 AI 情景喜剧系列" },
-    cast: [{ actor: "SP-13" }, { actor: "SP-03" }],
+    cast: [{ actor: "tang-yunqiu" }, { actor: "misha-luo" }],
     logline: { en: "An AI sitcom with superpowers.", zh: "一部带超能力的 AI 情景喜剧。" },
   },
 ];

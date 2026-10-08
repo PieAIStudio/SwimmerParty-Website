@@ -1,0 +1,32 @@
+import { row, type Actor } from "../shared.ts";
+
+export const profile: Actor = {
+  slug: "zhang-qiang",
+  nameEn: "ZHANG QIANG",
+  nameCn: "张强",
+  tagline: {
+    en: "One eyebrow sits a little higher, so he always looks like he's reviewing your cut.",
+    zh: "左边眉毛天生高一点，看谁都像在审片。",
+  },
+  status: "active",
+  gender: "male",
+  age: 41,
+  heightCm: 176,
+  portrait: "/media/assets/zhang-qiang/turnaround.front.webp",
+  spec: [
+    row("origin", "From", "籍贯", "Qingdao, Shandong", "山东青岛"),
+    row("age", "Age", "年龄", "41", "41"),
+    row("height", "Height", "身高", "176 cm", "176 cm"),
+    row("language", "Speaks", "语言", "Chinese", "中文"),
+  ],
+  note: {
+    en: "Zhang Qiang is a SWIMMER PARTY AI actor from Qingdao. Forty-one, tall and lean, with a long, narrow face. He plays the director in Journey to the East.",
+    zh: "张强是 SWIMMER PARTY 的 AI 演员，青岛人，四十一岁，瘦高个，窄长脸。他在《东游记》里演导演。",
+  },
+  version: "1.0.0",
+  versionDate: "2026-10-08",
+  versionNote: { en: "First release: 21 images, including a turnaround, faces and 14 expressions.", zh: "首次上线：21 张图片，包括转面、脸部和 14 个表情。" },
+  voiceLanguage: "zh",
+  promptSeed:
+    "The same fictional Chinese man of East Asian appearance as the reference: about 41 years old, slim build, about 176 cm, realistic adult body proportions around 7.25–7.5 heads tall; at this height, crown-to-chin is about 23–24 cm, with natural neck, torso, pelvis and leg lengths; no large head, long neck, short torso or elongated fashion-model legs. Signature features: a noticeably narrow elongated face, subtly prominent cheekbones, a left eyebrow slightly higher than the right, and a straight nose with a subtly hooked tip. Short neat black hair with only a trace of grey at the temples; mild under-eye tiredness. Keep these features recognizable in every angle, expression and wardrobe. Do not make him a generic handsome man or an average face.",
+};

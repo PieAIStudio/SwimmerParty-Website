@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "slug": "zhang-qiang",
+  "kind": "actor",
+  "name": {
+    "zh": "张强",
+    "en": "Zhang Qiang"
+  },
+  "status": {
+    "siteProfile": "src/content/actors/zhang-qiang/profile.ts",
+    "delivered": 21,
+    "published": false,
+    "version": "1.0.0",
+    "preparedOn": "2026-10-08"
+  },
+  "facts": {
+    "zh": [
+      "中国男性，约 41 岁",
+      "偏瘦，约 176 cm",
+      "窄长脸，颧骨轻微明显",
+      "左眉略高于右眉",
+      "鼻梁直但鼻尖略带钩形",
+      "短黑发，鬓角有极少量灰发"
+    ],
+    "en": [
+      "Chinese man, about 41",
+      "Slim build, about 176 cm",
+      "Narrow elongated face with subtly visible cheekbones",
+      "Left eyebrow slightly higher than the right",
+      "Straight nose with a subtly hooked tip",
+      "Short black hair with only a trace of grey at the temples"
+    ]
+  },
+  "identity": "The same fictional Chinese man of East Asian appearance as the reference: about 41 years old, slim build, about 176 cm, realistic adult body proportions around 7.25–7.5 heads tall; at this height, crown-to-chin is about 23–24 cm, with natural neck, torso, pelvis and leg lengths; no large head, long neck, short torso or elongated fashion-model legs. Signature features: a noticeably narrow elongated face, subtly prominent cheekbones, a left eyebrow slightly higher than the right, and a straight nose with a subtly hooked tip. Short neat black hair with only a trace of grey at the temples; mild under-eye tiredness. Keep these features recognizable in every angle, expression and wardrobe. Do not make him a generic handsome man or an average face.",
+  "stylization": "Character stylization (A2, pushed): 3D feature-animation human with realistic adult body proportions at about 7.25–7.5 heads tall for a 170–180 cm adult — crown-to-chin about 23–24 cm at ~175 cm, normal head size, natural neck, torso, pelvis and leg lengths; no elongated legs or shortened torso. Face: an ordinary, specific Chinese adult of East Asian appearance with distinctive, imperfect signature features and visibly simplified animated facial planes — slightly enlarged expressive eye shapes, softened cheek/nose/lip forms, and gentle exaggeration from life; never a live-action portrait, idealized model face or photographic facial detail. CG rendering: smooth simplified skin shading with soft subsurface scattering and no pores; hair sculpted into clean grouped clumps. Clothing, fabrics and accessories: realistic materials, true-to-life fit and detail, clean and unbranded. Unmistakably feature-animation CG at first glance; never photoreal.",
+  "styleOrder": "Use style/aesthetic.md verbatim, then style/character-rules.md, then the approved actor identity block.",
+  "proportions": {
+    "headsTall": 7.4,
+    "heightCm": 176,
+    "heightNote": "Owner confirmed actor identity specification.",
+    "headHeightCmAt175": "23–24",
+    "proportionGuide": "Use natural adult proportions: crown-to-chin about 23–24 cm at 175 cm, pelvis near the body midpoint, normal neck and torso, and natural leg length."
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/actors/zhang-qiang/1.0.0/zhang-qiang__face__front__v1.png",
+    "body": "library/actors/zhang-qiang/1.0.0/zhang-qiang__turnaround__front__v1.png"
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "slate-blue plain fitted crew-neck shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos.",
+      "note": "Identity pack outfit. Use the same template across the roster; only the shirt colour changes."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "zh": "个人风格",
+        "en": "Personal style"
+      },
+      "prompt": "Personal style: faded blue-grey lightweight work jacket worn open; plain warm-grey crew-neck T-shirt; dark straight-leg trousers; clean white low-top sneakers. His own short black hair with a trace of grey at the temples. Practical, quiet and restrained; no role costume.",
+      "note": "个人风格：褪色蓝灰色轻薄工作夹克敞穿，暖灰色素色圆领 T 恤，深色直筒长裤，干净白色低帮鞋。保留本人短黑发和极少量鬓角灰发。实用、安静、克制；不是角色戏服。"
+    }
+  ],
+  "roles": [
+    {
+      "work": "journey-to-the-east",
+      "role": "director"
+    }
+  ],
+  "proposals": {
+    "approval": "owner-confirmed",
+    "appearance": "Owner-confirmed; see identity and facts.",
+    "roleLook": null,
+    "phase": "actor-identity-locked",
+    "note": "Only the actor identity and personal style are being proposed now. Role wardrobe is deferred until identity approval.",
+    "signatureFeatures": [
+      "窄长脸，颧骨轻微明显",
+      "左眉略高于右眉",
+      "鼻梁直但鼻尖略带钩形"
+    ]
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00/c/6ac61354-d748-83ea-84aa-ca03e9e8a182",
+      "note": "Create one dedicated character chat after the identity proposal is approved."
+    }
+  }
+}

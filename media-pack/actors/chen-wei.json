@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "slug": "chen-wei",
+  "kind": "actor",
+  "name": {
+    "zh": "陈伟",
+    "en": "Chen Wei"
+  },
+  "status": {
+    "siteProfile": "src/content/actors/chen-wei/profile.ts",
+    "delivered": 21,
+    "published": false,
+    "version": "1.0.0",
+    "preparedOn": "2026-10-08"
+  },
+  "facts": {
+    "zh": [
+      "中国男性，约 46 岁",
+      "略壮，约 173 cm",
+      "偏宽脸，脸颊较厚",
+      "眼睛半眯，眼尾略向下",
+      "下唇较厚，嘴角自然不对称",
+      "自然短黑发，带轻微胡茬"
+    ],
+    "en": [
+      "Chinese man, about 46",
+      "Slightly heavy build, about 173 cm",
+      "Broad face with full cheeks",
+      "Half-lidded eyes with slightly downturned outer corners",
+      "Full lower lip and a naturally uneven mouth line",
+      "Natural short black hair with light stubble"
+    ]
+  },
+  "identity": "The same fictional Chinese man of East Asian appearance as the reference: about 46 years old, slightly heavy build, about 173 cm, realistic adult body proportions around 7.25–7.5 heads tall; at this height, crown-to-chin is about 23–24 cm, with natural neck, torso, pelvis and leg lengths; no large head, long neck, short torso or elongated fashion-model legs. Signature features: a broad face with full cheeks, half-lidded eyes with slightly downturned outer corners, a full lower lip, and a naturally uneven mouth line. Natural short black hair with light stubble. Keep these features recognizable in every angle, expression and wardrobe. Do not make him a generic comic sidekick or an average face.",
+  "stylization": "Character stylization (A2, pushed): 3D feature-animation human with realistic adult body proportions at about 7.25–7.5 heads tall for a 170–180 cm adult — crown-to-chin about 23–24 cm at ~175 cm, normal head size, natural neck, torso, pelvis and leg lengths; no elongated legs or shortened torso. Face: an ordinary, specific Chinese adult of East Asian appearance with distinctive, imperfect signature features and visibly simplified animated facial planes — slightly enlarged expressive eye shapes, softened cheek/nose/lip forms, and gentle exaggeration from life; never a live-action portrait, idealized model face or photographic facial detail. CG rendering: smooth simplified skin shading with soft subsurface scattering and no pores; hair sculpted into clean grouped clumps. Clothing, fabrics and accessories: realistic materials, true-to-life fit and detail, clean and unbranded. Unmistakably feature-animation CG at first glance; never photoreal.",
+  "styleOrder": "Use style/aesthetic.md verbatim, then style/character-rules.md, then the approved actor identity block.",
+  "proportions": {
+    "headsTall": 7.4,
+    "heightCm": 173,
+    "heightNote": "Owner confirmed actor identity specification.",
+    "headHeightCmAt175": "23–24",
+    "proportionGuide": "Use natural adult proportions: crown-to-chin about 23–24 cm at 175 cm, pelvis near the body midpoint, normal neck and torso, and natural leg length."
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/actors/chen-wei/1.0.0/chen-wei__face__front__v1.png",
+    "body": "library/actors/chen-wei/1.0.0/chen-wei__turnaround__front__v1.png"
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "faded grey-green plain fitted crew-neck shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos.",
+      "note": "Identity pack outfit. Use the same template across the roster; only the shirt colour changes."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "zh": "个人风格",
+        "en": "Personal style"
+      },
+      "prompt": "Personal style: washed dark olive overshirt worn open; plain faded grey-green crew-neck T-shirt; dark straight-leg trousers; clean white low-top sneakers. Natural short black hair and light stubble. Relaxed, unhurried and lived-in; no role costume.",
+      "note": "个人风格：洗旧深橄榄色衬衫式外套敞穿，褪色灰绿色素色圆领 T 恤，深色直筒长裤，干净白色低帮鞋。自然短黑发和轻微胡茬。松弛、慢性子、有生活感；不是角色戏服。"
+    }
+  ],
+  "roles": [
+    {
+      "work": "journey-to-the-east",
+      "role": "grip-big-brother"
+    }
+  ],
+  "proposals": {
+    "approval": "owner-confirmed",
+    "appearance": "Owner-confirmed; see identity and facts.",
+    "roleLook": null,
+    "phase": "actor-identity-locked",
+    "note": "Only the actor identity and personal style are being proposed now. Role wardrobe is deferred until identity approval.",
+    "signatureFeatures": [
+      "偏宽脸，脸颊较厚",
+      "眼睛半眯，眼尾略向下",
+      "下唇较厚，嘴角自然不对称"
+    ]
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00/c/6ac621d1-8b40-83ea-b81c-024414267bba",
+      "note": "Dedicated owner-selected identity pack chat. Only original approved face.front and turnaround.front anchors are identity authority."
+    }
+  }
+}

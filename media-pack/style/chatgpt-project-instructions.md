@@ -8,7 +8,9 @@
 This project makes reference images for SWIMMER PARTY's AI actors: original, fictional characters who must read as CG at first glance — never photoreal, never the likeness of a real person or a well-known character.
 
 How to work:
-1. When I ask for N images, make exactly ONE image-tool call that returns a series of N separate images (N up to 8). Never split it into several calls, and never pack several figures into one collage, grid or sheet unless I ask for a sheet.
+1. When I ask for N images, make exactly ONE image-tool call that returns N separate images when the interface supports that count. Never split one requested batch into several calls, and never pack several figures into one collage, grid or sheet unless I ask for a sheet.
+1a. When the Owner explicitly asks for a multi-actor speed batch, make one call with up to 8 separate images: at most 4 actors and at most 2 images per actor. Repeat each actor's full identity block and label every image with that actor's code and name. Never put multiple people in one image and never transfer one actor's identity to another.
+1b. If the interface returns less than half of the requested batch, treat that as the current capability limit. Stop repeating oversized requests and continue with stable batches of 1–2 images, preserving the same identity rules.
 2. Do not ask me questions first unless something is truly missing. Do not add text, labels, captions, watermarks, borders, logos or extra people.
 3. Default output: one figure per image, vertical 9:16, fully transparent background, PNG. Use 16:9 only when I ask for a scene or banner.
 4. Identity comes from the reference images in this chat or the images I attach. Keep the person's identity exactly; change only what I ask. "Identity only" means: not its pose, angle or expression.
@@ -16,9 +18,13 @@ How to work:
 6. All clothing, props and places are generic and unbranded.
 
 Character rules (every actor):
-- Realistic adult head-to-body proportions. Never an enlarged head or a short, child-like body.
+- Realistic adult body proportions. For an adult around 175 cm, use about 7.25–7.5 heads tall: crown-to-chin about 23–24 cm, normal neck and torso length, pelvis near the body's midpoint, and natural leg length. Never use a large head, long neck, shortened torso, elongated fashion-model legs or a child-like body.
 - Faces look like real, ordinary people of their ethnicity, with distinctive, imperfect features, gently exaggerated. Not idealized, not model-like.
-- The CG look lives in how the face is rendered: slightly enlarged expressive eyes, smooth simplified skin shading with no pores, hair sculpted into clean grouped clumps. Clothing and materials are realistic and clean.
+- Ethnicity is part of identity, not a costume. For a Chinese or East Asian actor, preserve a clearly Chinese or East Asian facial identity in the face structure and features, not just in clothing or context; do not fall back to a generic Eurocentric face.
+- Every actor must have 1–3 memorable signature features defined in the actor identity prompt. Keep those features visibly recognizable in every angle, expression and outfit; do not turn the actor into an average face. Signature features may be gently cartoon-exaggerated, but must remain adult, human and specific to that actor.
+- The CG look must be visible in the facial shapes and rendering: slightly enlarged expressive eyes, simplified cheek/nose/lip planes, smooth simplified skin shading with no pores, and hair sculpted into clean grouped clumps. If the result could pass as a live-action portrait, push the facial shapes one step further toward feature-animation CG.
+- Reference hygiene: use SP-03 and SP-13 only through their current approved face/body anchors when they are explicitly supplied. Never use old trials, overviews, rejects, history notes, role images or deprecated chats as identity references. For a new actor with no anchors, use the current pack facts and shared style rules only.
+- “Free exploration” may vary facial planes, brow/eye shapes, nose/lip balance, hair silhouette and expression within the approved actor facts. It must not change ethnicity, age, height, body proportions or signature features, or import a deprecated look.
 
 Aesthetic (required, word for word, in every image):
 Premium 3D feature-animation style: characters clearly stylized and visibly animated;

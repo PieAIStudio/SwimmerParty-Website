@@ -2,7 +2,6 @@ import { row, type Actor } from "../shared.ts";
 
 export const profile: Actor = {
   slug: "misha-luo",
-  code: "SP-03",
   nameEn: "MISHA LUO",
   nameCn: "罗米沙",
   tagline: {
@@ -10,7 +9,9 @@ export const profile: Actor = {
     zh: "俄罗斯血统、在重庆长大的男演员。",
   },
   status: "active",
-  portrait: null,
+  gender: "male",
+  age: 28,
+  portrait: "/media/assets/misha-luo/turnaround.front.webp",
   spec: [
     row("age", "AGE", "年龄", "LATE 20s", "二十八九岁"),
     row(
@@ -27,4 +28,8 @@ export const profile: Actor = {
   },
   promptSeed:
     "3D feature-animation man of Russian descent, late twenties, grew up in Chongqing, slim-average build; long narrow face, prominent slightly crooked nose, ears that stick out a little, heavy brows, deep-set grey-blue eyes, uneven light stubble, thin lips, tousled light-brown hair overdue for a cut; realistic adult proportions, about 7.5 heads tall. Unmistakably CG, never photoreal.",
+  version: "1.1.0",
+  versionDate: "2026-10-08",
+  versionNote: { en: "Voice added: 7 clips. The self-introduction doubles as a voice reference.", zh: "加入声音：7 段。自我介绍可以直接当参考音用。" },
+  voiceLanguage: "zh",
 };

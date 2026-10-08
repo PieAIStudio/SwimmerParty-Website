@@ -1,13 +1,20 @@
 {
   "schemaVersion": "media-pack-1",
   "id": "swimmerparty",
-  "name": { "zh": "SWIMMER PARTY", "en": "SWIMMER PARTY" },
+  "name": {
+    "zh": "SWIMMER PARTY",
+    "en": "SWIMMER PARTY"
+  },
   "owner": "SWIMMER PARTY (PieAI Studio)",
   "ownerLanguage": "zh",
   "factRule": "Creative facts (who a character is, story, role, costume, appearance) come only from this pack, the sources it names, or the Owner. Propose anything missing and wait for the Owner's yes before generating.",
   "style": {
-    "verbatim": ["style/aesthetic.md"],
-    "brief": ["style/character-rules.md"],
+    "verbatim": [
+      "style/aesthetic.md"
+    ],
+    "brief": [
+      "style/character-rules.md"
+    ],
     "order": "aesthetic block (verbatim) -> character rules -> the actor's stylization block -> identity -> look -> per-image items",
     "defaults": {
       "aspect": "9:16",
@@ -16,10 +23,21 @@
       "format": "png",
       "figuresPerImage": 1
     },
-    "scenes": { "aspect": "16:9", "size": "1672x941", "background": "opaque" }
+    "scenes": {
+      "aspect": "16:9",
+      "size": "1672x941",
+      "background": "opaque"
+    }
   },
-  "cast": ["cast/SP-13.json", "cast/SP-03.json"],
-  "works": ["works/journey-to-the-east.json"],
+  "cast": [
+    "cast/SP-13.json",
+    "cast/SP-03.json",
+    "actors/zhang-qiang.json",
+    "actors/chen-wei.json"
+  ],
+  "works": [
+    "works/journey-to-the-east.json"
+  ],
   "checks": "checks.md",
   "library": {
     "root": "library/",
@@ -51,6 +69,7 @@
       "project": "Pics-A",
       "projectInstructions": "style/chatgpt-project-instructions.md",
       "model": "5.6 Pro (GPT-5.6 Sol, thinking effort at max)",
+      "thinkingEffort": "max",
       "chatPerCharacter": true,
       "existingChats": "See routes.chatgpt-web.chat in each cast file. They currently live in ChatGPT project 'Claude'.",
       "newCharacters": "Start one new chat per character in Pics-A. For scenes with several actors, upload each actor's anchors.face and anchors.body first and say 'identity only'."
