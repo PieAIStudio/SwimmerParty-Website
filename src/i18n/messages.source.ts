@@ -577,32 +577,32 @@ export const messages = {
     zh: "工作室",
   },
   "studio.metaDescription": {
-    en: "How SWIMMER PARTY builds an AI actor: the full line from brief to white model to plate to performance.",
-    zh: "SWIMMER PARTY 怎么造一个 AI 演员：从人设、白膜、定妆到表演的完整产线。",
+    en: "How SWIMMER PARTY designs AI actors, keeps them consistent and decides who joins the roster.",
+    zh: "SWIMMER PARTY 怎么设计 AI 演员、怎么让他们始终如一、谁能留在名单上。",
   },
   "studio.eyebrow": {
     en: "Studio",
     zh: "工作室",
   },
   "studio.heroLines.0": {
-    en: "A studio",
-    zh: "一间",
+    en: "A small studio",
+    zh: "一间小工作室，",
   },
   "studio.heroLines.1": {
-    en: "For people.",
-    zh: "制作原创 AI 演员的工作室",
+    en: "making new faces.",
+    zh: "专门造新面孔。",
   },
   "studio.intro": {
-    en: "SWIMMER PARTY is the synthetic talent house of PieAI Studio. We do not take outsourced rendering. We build our own actors and then we lend them out.",
-    zh: "SWIMMER PARTY 是 PieAI Studio 旗下的原创 AI 演员工作室。我们不接外包渲染，我们只造自己的演员，然后把他们租出去。",
+    en: "SWIMMER PARTY is the AI actor studio of PieAI Studio. We design original animated actors, give each one a consistent identity, and cast them in our own films first. Then we open them up to everyone.",
+    zh: "SWIMMER PARTY 是 PieAI Studio 旗下的 AI 演员工作室。我们设计原创动画演员，给每个人一套始终如一的身份资料，先用在自己的片子里，再开放给所有人。",
   },
   "studio.beliefsLabel": {
-    en: "Beliefs",
-    zh: "我们怎么想",
+    en: "What we believe",
+    zh: "我们相信什么",
   },
   "studio.beliefsTitle": {
-    en: "Four things we hold",
-    zh: "站得住的四条",
+    en: "Four things we hold to",
+    zh: "我们坚持的四件事",
   },
   "studio.beliefsNote": {
     en: "These four decide what everyone on the roster looks like, how they talk, and when they get cut.",
@@ -613,60 +613,60 @@ export const messages = {
     zh: "01",
   },
   "studio.beliefs.0.title": {
-    en: "A face is not a character",
+    en: "A face isn’t a character",
     zh: "一张脸不是一个角色",
   },
   "studio.beliefs.0.body": {
-    en: "Plenty of people can generate a good-looking face. Very few can make the same face still be the same person, saying the same kind of thing, in the tenth film. The difference is not the model. It is whether a specification was written down and held to.",
-    zh: "能生成好看的脸的人很多。能让同一张脸在第十条片子里还是同一个人、还讲同一套话的人很少。差别不在模型，在有没有一份写死的规格书。",
+    en: "Anyone can generate a good face. Keeping it the same person in shot fifty is the real work.",
+    zh: "生成一张好看的脸谁都会。难的是第五十个镜头里，他还是同一个人。",
   },
   "studio.beliefs.1.n": {
     en: "02",
     zh: "02",
   },
   "studio.beliefs.1.title": {
-    en: "Version numbers are honest",
-    zh: "当前状态是公开的",
+    en: "Animated, never photoreal",
+    zh: "做动画，不做写实",
   },
   "studio.beliefs.1.body": {
-    en: "We publish the current status and the assets that are available now.",
-    zh: "我们公开当前状态和现在可下载的资产。",
+    en: "Our actors are clearly animated. That keeps us honest and leaves human actors’ work to humans.",
+    zh: "我们的演员一眼就是动画角色。这样诚实，也不抢真人演员的饭碗。",
   },
   "studio.beliefs.2.n": {
     en: "03",
     zh: "03",
   },
   "studio.beliefs.2.title": {
-    en: "We lock the character specification first",
-    zh: "先确认角色规格",
+    en: "Open by default",
+    zh: "默认开放",
   },
   "studio.beliefs.2.body": {
-    en: "Proportion, build and range of motion get locked before anyone talks about skin or clothes. Reverse the order and the character is just a poster that moves.",
-    zh: "比例、体型、动作范围先定死，再谈皮肤和衣服。顺序反了，角色就只是一张会动的海报。",
+    en: "Free for anyone, even for paid work. The more people make things with them, the more they become real characters.",
+    zh: "谁都可以免费用，赚钱也行。用他们做东西的人越多，他们就越像真正的角色。",
   },
   "studio.beliefs.3.n": {
     en: "04",
     zh: "04",
   },
   "studio.beliefs.3.title": {
-    en: "Comedy is the hardest test",
-    zh: "喜剧是最难的验收",
+    en: "Comedy is the test",
+    zh: "喜剧是最难的考试",
   },
   "studio.beliefs.3.body": {
-    en: "Whether a character holds up is decided in comedy. Tragedy can be papered over with music. If it is not funny, it is not funny.",
-    zh: "一个角色能不能站住，看他在喜剧里演不演得住。悲情可以靠音乐糊过去，笑不出来就是笑不出来。",
+    en: "Every actor gets tested in comedy. If the timing works, the character works.",
+    zh: "每位演员都要在喜剧里过一遍。节奏对了，角色就立住了。",
   },
   "studio.stackLabel": {
-    en: "Stack",
-    zh: "技术栈",
+    en: "How we use AI",
+    zh: "我们怎么用 AI",
   },
   "studio.stackTitle": {
-    en: "Built on our own rails",
-    zh: "跑在自己的轨道上",
+    en: "Made with AI, checked by people",
+    zh: "AI 来做，人来把关",
   },
   "studio.stackNote": {
-    en: "This site and every actor on the roster run on PieAI's own toolchain, not on something bolted together.",
-    zh: "这个站和名册上的每一个演员，跑在 PieAI 自己的品牌工具链上，不是拼来的。",
+    en: "We use current image, voice and video models, chosen for each job. Nothing goes on the site until a person has reviewed it.",
+    zh: "我们按需要选用当下的图像、声音和视频模型。所有内容都经过人工审看才会上线。",
   },
   "studio.stack.0.name": {
     en: "Swimmer UI Kit",
@@ -717,20 +717,20 @@ export const messages = {
     zh: "版本、边界与交付纪律",
   },
   "studio.outroLines.0": {
-    en: "Want one",
-    zh: "想造",
+    en: "Want an actor",
+    zh: "想要一位",
   },
   "studio.outroLines.1": {
-    en: "Built?",
-    zh: "一个？",
+    en: "of your own?",
+    zh: "专属演员？",
   },
   "studio.outroBody": {
-    en: "We take commissions too — an actor built for your brand or your film and nobody else's.",
-    zh: "我们也接定制——为你的品牌或你的片子造一个只属于你的演员。",
+    en: "We build commissioned actors for brands and films. Designed for you, and never cast by anyone else. Or make something with us.",
+    zh: "我们为品牌和影片定制专属演员，只给你用。也可以和我们一起做片。",
   },
   "studio.outroCta": {
-    en: "Talk to us",
-    zh: "聊聊",
+    en: "Work with us →",
+    zh: "找我们合作 →",
   },
   "casting.metaTitle": {
     en: "Casting",
