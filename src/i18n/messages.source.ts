@@ -1589,8 +1589,8 @@ export const messages = {
     zh: "角色待定",
   },
   "actor.noCredits": {
-    en: "Not cast yet. Want this actor in your project?",
-    zh: "还没有出演作品。想让 TA 出现在你的项目里？",
+    en: "Not in a production yet. Use {name} in yours. It’s free.",
+    zh: "还没有出演作品。把{name}用进你的作品吧，免费。",
   },
   "actor.voiceTitle": {
     en: "Hear {name}",

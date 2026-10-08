@@ -3,7 +3,7 @@ export interface MessageContracts {
   readonly "actor.appearanceRole": { readonly "role": string | number | bigint | boolean | null | undefined | Date; };
   readonly "actor.appearances": {  };
   readonly "actor.inDevelopment": {  };
-  readonly "actor.noCredits": {  };
+  readonly "actor.noCredits": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "actor.noPlate": {  };
   readonly "actor.noPlateBody": {  };
   readonly "actor.openLibrary": {  };
