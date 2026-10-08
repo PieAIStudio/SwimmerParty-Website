@@ -42,10 +42,15 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
             <TextLink href="/casting">{t("home.ctaBook")}</TextLink>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 lg:col-span-6">
+        <div className="flex gap-3 overflow-x-auto pb-2 lg:col-span-6 lg:grid lg:grid-cols-2 lg:gap-4 lg:overflow-visible">
           {ACTORS.slice(0, 4).map((actor) => (
-            <Link data-card key={actor.slug} href={`/actors/${actor.slug}`} className="group">
-              <div className="sp-sweep sp-panel aspect-[3/5]">
+            <Link
+              data-card
+              key={actor.slug}
+              href={`/actors/${actor.slug}`}
+              className="group min-w-[118px] flex-1 lg:min-w-0"
+            >
+              <div className="sp-sweep sp-panel aspect-[3/5] lg:aspect-[3/5]">
                 {actor.portrait ? (
                   <Image
                     src={actor.portrait}
