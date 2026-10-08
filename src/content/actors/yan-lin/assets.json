@@ -1,0 +1,61 @@
+{
+  "slug": "yan-lin",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 802430,
+      "sha256": "886a0ee0d92f0dc4a3d0f7f9213e88e0721aa1dc7e045ece061a54b887ff2135",
+      "sourceSha256": "886a0ee0d92f0dc4a3d0f7f9213e88e0721aa1dc7e045ece061a54b887ff2135",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yan-lin/CC-061.png",
+      "preview": "/media/assets/yan-lin/turnaround.front.webp",
+      "large": "/media/assets/yan-lin/turnaround.front.large.webp",
+      "thumb": "/media/assets/yan-lin/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRnoBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSLsAAAABgCLZtmpn3fdemBlkKpaZfVQcKWZmBs8q/48i5DICtvkqzMyMR9yXOUTEBIBBzIpDYWvRI2/xGJpJqexEozSFx/YIFoAi2nl/OOSmWbTLl/ykYWjNf5/fD0l2DS653czVDJyn8nJShgUw+/nze6Up3Bx/3z9P1TbWsmzdSgcmGGTJnOssGAUKf5lZ2kdX+Ej7+CkozVsqqr49/6stkFgMzf2tI07yMTXjYtRHiuw8Duo4HrOL6A2hsA8AAFZQOCCYAAAAsAMAnQEqDAAVAD8BaqxPKyYkIjAIAWAgCWwArAGKoFuJm/rX4QAA/p/QhhqX4EhYFQAOiQpoX1BAbAxRE7a6geO2yUn9DQUC15+9seAw0FfR242ezuI00F/vrut6rrJ7LiL+ayecwj70z6H5kie5f/pconRWHixnxPBiB+9uwtKqJrk1PVcfv7BJr//YIP4S/s6YLp5lYAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 227940,
+      "sha256": "03601fe2dc43ce88ec874361315afe83370a9feefd3e5e14fe4ef5eb84c1bb26",
+      "sourceSha256": "03601fe2dc43ce88ec874361315afe83370a9feefd3e5e14fe4ef5eb84c1bb26",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/yan-lin/candidate-1.mp3",
+      "preview": "/api/voice/yan-lin/intro",
+      "thumb": "/api/voice/yan-lin/intro",
+      "previewUrl": "/api/voice/yan-lin/intro",
+      "durationSec": 18.8,
+      "transcript": {
+        "text": "我是严琳，北京人，四十一岁。我说话直接，不爱绕弯子。很多人觉得我冷，其实我只是认真。我适合演严格的主编、医院的主任，或者那种你以为是反派、最后才发现一直在帮你的人。"
+      }
+    }
+  ]
+}

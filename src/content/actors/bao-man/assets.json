@@ -1,0 +1,61 @@
+{
+  "slug": "bao-man",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1021063,
+      "sha256": "e1a0cf4187881d650a53166adab176ce95c948344198c8c18d889fbc90acf754",
+      "sourceSha256": "e1a0cf4187881d650a53166adab176ce95c948344198c8c18d889fbc90acf754",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/CC-007.png",
+      "preview": "/media/assets/bao-man/turnaround.front.webp",
+      "large": "/media/assets/bao-man/turnaround.front.large.webp",
+      "thumb": "/media/assets/bao-man/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRoYBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSMUAAAAJgGPb2rHnPM8f2za6vw7mYLtKnQGwZp0BpE+XSq3tdEZl+/34zyEiJgDEiu/dW8JXGZhaqEQ9kEF0MNS09byIAeS/vPU7ZiRoBLHS5/vDtW8u1xKlrugbvnJqUCEbS8QiHbEo2X5WfTgpwRhSnwXCXuOxlKPbePOffHWACoFqQCstsNh4iXh5Cnvdhf/AzGRgZZ3R2cA/Fqes7XAGICRzuE2yXwYfd+QjADHc3eJrccffHZZfxdfp41UTf4LhovOZpoUkAABWUDggmgAAAHAEAJ0BKgwAFQA/AWisTqslpCIwCAFgIAlsALUITGCoEY5rn3hQd2silhkAAP54Mna7gesIGPdwfX8kA01ySuVMTd2JvAoyWAAPIWiH6qr//JdK+dbHtpCfmHUUh4n78i0COVhLlLtirRnlcsp0Mgbv7KTxqMlI3iC3jCYG+c9e00mUO6ki8wbnrwvM3MPGljNfdf5oHAAAAAA="
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 252996,
+      "sha256": "b9b59f78d7511dc54cc8a3afd1ee7dcc0e2f81004b40e61a6cf936a5ea332519",
+      "sourceSha256": "b9b59f78d7511dc54cc8a3afd1ee7dcc0e2f81004b40e61a6cf936a5ea332519",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/bao-man/candidate-1.mp3",
+      "preview": "/api/voice/bao-man/intro",
+      "thumb": "/api/voice/bao-man/intro",
+      "previewUrl": "/api/voice/bao-man/intro",
+      "durationSec": 20.9,
+      "transcript": {
+        "text": "嘿，各位好，我叫包满，天津卫的，三十三了。我爷爷说“满”字好，饭碗满、口袋满，啥都满。结果就我这脑门儿最满，满得发亮，省电。我打小听相声长大，演个嘴贫的、演个老实人吃亏的，都行！"
+      }
+    }
+  ]
+}

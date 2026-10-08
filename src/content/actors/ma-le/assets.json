@@ -1,0 +1,61 @@
+{
+  "slug": "ma-le",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 868780,
+      "sha256": "b76427ce4f355f1d4524bd98f7a61d6a67fb9284a31929f22de1125dda9af08c",
+      "sourceSha256": "b76427ce4f355f1d4524bd98f7a61d6a67fb9284a31929f22de1125dda9af08c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ma-le/CC-072.png",
+      "preview": "/media/assets/ma-le/turnaround.front.webp",
+      "large": "/media/assets/ma-le/turnaround.front.large.webp",
+      "thumb": "/media/assets/ma-le/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRooBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSL4AAAABgKtt//nl/Xx/f6NWN3YE7bbtNtsdgNvs3ZxcI7eabNvmZ/j+OoeICEDAdbTeBAJkL3M0FKmgjN/cISQRplYAAkAwxm68FNqCAA1K+PuLOyAAwgh/fPGqACDQcPH3dzwGgKDpWWCemtVJU88i8/KQWVpq1pj3KlX66c/nWx5XABD8eH6OI0FS/9jd+mNSK5cVWe8atfYhLejTVm38SPX4dVEbbuPd3v+J7STHWzspEMoeZs6DAhA84/UIDQMBVlA4IKYAAAAwBACdASoMABUAPwFqrE6rJiQiMAgBYCAJbAC073gHmA5RRSuXOssv5sAA9D2FBAhjeJcyV78wt0FzEejZnQGUn84ZIh756N5x/PBLDUpd2XNfXaoMvjja8n1KykS5/NPLiJ67NcEJsIfiLZmMBtAvzE0XO5TN5snNv97e1Qtjuj/2xtf9d8FUmU7lD3tGxZ3Y/3Xvfl2Mj969jrw1U5/8ZNiyAAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 216708,
+      "sha256": "4e92f7e61c6b16f0a595317a2e53d3a5f69aa54909f19ab15e8bec0150dcc18a",
+      "sourceSha256": "4e92f7e61c6b16f0a595317a2e53d3a5f69aa54909f19ab15e8bec0150dcc18a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/ma-le/candidate-1.mp3",
+      "preview": "/api/voice/ma-le/intro",
+      "thumb": "/api/voice/ma-le/intro",
+      "previewUrl": "/api/voice/ma-le/intro",
+      "durationSec": 17.9,
+      "transcript": {
+        "text": "嗨嗨，我是马乐，南宁的，二十四岁，一米七五。我笑的时候只有一边嘴角动，朋友说我笑得很欠揍，哈哈。这个卷是我妈带我去烫的。我想演那种搞笑的室友、机灵的小跟班，或者一不小心成了主角的普通人。"
+      }
+    }
+  ]
+}

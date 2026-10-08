@@ -1,0 +1,61 @@
+{
+  "slug": "lei-le",
+  "looks": [],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "v1",
+      "version": 0.1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1331252,
+      "sha256": "2afe969855c85269e87a5ab6d24a05affa3eabcd7d48ce75dec8aa2fa5a56ff7",
+      "sourceSha256": "2afe969855c85269e87a5ab6d24a05affa3eabcd7d48ce75dec8aa2fa5a56ff7",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "lei-le/CC-012.png",
+      "preview": "/media/assets/lei-le/turnaround.front.webp",
+      "large": "/media/assets/lei-le/turnaround.front.large.webp",
+      "thumb": "/media/assets/lei-le/turnaround.front.thumb.webp",
+      "blur": "data:image/webp;base64,UklGRoQBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSM8AAAABkLJt//nnyq/v77ctLS3ZfAdL9tqqbbt5bdVKTGq27ebMx/7h8ygiJgAUXlPN/F+nU+xk9P+NiOThCCiNVrGL0RQaAVu2acqGP0pjXH5Z1k8ZRcP/o21alinvfCHe/GxblvXViIQGuRLDlAcpg7abTTEM2b9rguqxtX+2Jkqh8OpSDFMeLzPBp/hQfnyT2yJ3FCzL5a7sAzgwID1dMosGOt1SmCKrAIpJyQiTa+0/05IYKvdOKHR6JZy3CwUK5yPThbMnV5RG2FwqxK0moAMAVlA4II4AAADQAwCdASoMABUAPwForE6rJaQiMAgBYCAJbAC/OBIx7Xak1JuQR5AAyXaFTiE48xhB124i+TvE1us78bORSrE/Xi2a0dUiSC1bcsK+XcXIy2m5NBU3wC2x1FD5jHsyL/6SB2m+hvz9BM6WF7DvKODpPxu5nLV8g4NF/p1kMWBOEnUYZulA3dv/WiwRwAAA"
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "v1",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 250404,
+      "sha256": "3061ecd5608cd9ba3508ecb3ddeed8d83ba934ba790818b3434a6ef8cdc41ddd",
+      "sourceSha256": "3061ecd5608cd9ba3508ecb3ddeed8d83ba934ba790818b3434a6ef8cdc41ddd",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "mp3",
+      "object": "voice/lei-le/candidate-1.mp3",
+      "preview": "/api/voice/lei-le/intro",
+      "thumb": "/api/voice/lei-le/intro",
+      "previewUrl": "/api/voice/lei-le/intro",
+      "durationSec": 20.7,
+      "transcript": {
+        "text": "我叫雷乐，武汉的，四十六。名字里有个乐，所以我一天到晚乐呵呵的，笑起来整条街都听得到。你看我这个肚子，都是热干面跟啤酒喂出来的。以前开过出租车，满武汉没有我不熟的路。演司机、演大排档老板，那是本色出演！"
+      }
+    }
+  ]
+}
