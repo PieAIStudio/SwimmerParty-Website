@@ -52,10 +52,13 @@ export const WORKS: Work[] = [
           },
         },
       },
-      { actor: "zhang-qiang", role: { id: "director", name: { en: "director", zh: "导演" } } },
+      {
+        actor: "zhang-qiang",
+        role: { id: "director", name: { en: "the Director", zh: "导演" } },
+      },
       {
         actor: "chen-wei",
-        role: { id: "grip-big-brother", name: { en: "the crew's grip", zh: "场务大哥" } },
+        role: { id: "grip-big-brother", name: { en: "the Grip", zh: "场务大哥" } },
       },
     ],
     episodes: [
