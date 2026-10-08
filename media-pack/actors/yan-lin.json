@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "slug": "yan-lin",
+  "kind": "actor",
+  "name": {
+    "zh": "严琳",
+    "en": "Yan Lin"
+  },
+  "status": {
+    "siteProfile": "src/content/actors/yan-lin/profile.ts",
+    "delivered": 0,
+    "published": false,
+    "version": "0.1.0",
+    "preparedOn": "2026-10-09"
+  },
+  "facts": {
+    "zh": [
+      "北京女性，41 岁",
+      "身高 165 cm",
+      "slim and upright",
+      "a high forehead, thin precise eyebrows, calm narrow eyes, and black hair pulled into a tight low bun"
+    ],
+    "en": [
+      "East Asian woman from 北京, about 41",
+      "About 165 cm tall",
+      "slim and upright",
+      "a high forehead, thin precise eyebrows, calm narrow eyes, and black hair pulled into a tight low bun"
+    ]
+  },
+  "identity": "The same fictional Chinese person of East Asian appearance as the reference: about 41 years old, slim and upright, about 165 cm, realistic adult proportions about 约 7.25 heads tall (crown to chin about 约 22–23 cm), never a large head. Signature features: a high forehead, thin precise eyebrows, calm narrow eyes, and black hair pulled into a tight low bun. Keep these features recognizable in every angle, expression and wardrobe.",
+  "stylization": "Character stylization (A2, pushed): realistic adult body proportions with a normal head size at the specified height; simplified 3D feature-animation facial planes, smooth stylized skin shading with no pores, and clean grouped hair clumps; never photoreal, never a generic face, never oversized head.",
+  "styleOrder": "Use style/aesthetic.md verbatim, then style/character-rules.md, then this actor identity block.",
+  "proportions": {
+    "headsTall": 7.25,
+    "heightCm": 165,
+    "headHeightCm": "约 22–23 cm",
+    "heightNote": "2026-10-09 new-face proportion-fix brief; new audition image required before full pack."
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/claude-casting-2026-10-07/final/CC-061.png",
+    "body": null
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "charcoal-grey plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos.",
+      "note": "Provisional audition look. Owner must select the new full-body audition image before full pack production."
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "owner-confirmed-facts-provisional-identity",
+    "appearance": "Provisional until Owner selects new audition image",
+    "roleLook": null,
+    "phase": "audition-pending-owner",
+    "note": "Old CC image is face reference only; do not use it as body or proportion anchor. New audition image from 2026-10-09 proportion-fix trial becomes the identity anchor only after Owner approval.",
+    "signatureFeatures": [
+      "a high forehead, thin precise eyebrows, calm narrow eyes, and black hair pulled into a tight low bun"
+    ]
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": null,
+      "note": "Create one dedicated character chat in Pics-A for the audition trial; use the old CC image only as face reference and enforce the specified adult proportions."
+    }
+  }
+}
