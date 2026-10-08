@@ -19,11 +19,12 @@ export function ImageLightbox({
 }) {
   const { t } = useSiteI18n();
   const [open, setOpen] = useState(false);
+  const [lightboxSlides, setLightboxSlides] = useState([{ src: item.large ?? item.preview, alt: name }]);
   const trigger = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     if (!open) trigger.current?.focus();
   }, [open]);
-  function slides() {
+  function collectSlides() {
     const nodes = [...document.querySelectorAll<HTMLElement>("[data-lightbox-item]")];
     const grouped = nodes
       .map((node) => ({
@@ -44,7 +45,10 @@ export function ImageLightbox({
         data-alt={name}
         className="block w-full cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
         aria-label={t("assets.viewLarger", { name })}
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setLightboxSlides(collectSlides());
+          setOpen(true);
+        }}
       >
         <Image
           src={displayLarge ? (item.large ?? item.preview) : item.preview}
@@ -61,7 +65,7 @@ export function ImageLightbox({
       <Lightbox
         open={open}
         close={() => setOpen(false)}
-        slides={slides()}
+        slides={lightboxSlides}
         plugins={[Zoom, Counter]}
         counter={{ container: { style: { top: "unset", bottom: 16 } } }}
         zoom={{ maxZoomPixelRatio: 1 }}
