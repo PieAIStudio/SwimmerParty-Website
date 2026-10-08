@@ -56,7 +56,10 @@ export function ImageLightbox({
           const slides = collectSlides();
           setLightboxSlides(slides);
           const clickedSrc = item.large ?? item.preview;
-          const clickedIndex = Math.max(0, slides.findIndex((slide) => slide.src === clickedSrc));
+          const clickedIndex = Math.max(
+            0,
+            slides.findIndex((slide) => slide.src === clickedSrc),
+          );
           setStartIndex(clickedIndex);
           setActiveIndex(clickedIndex);
           setOpen(true);
