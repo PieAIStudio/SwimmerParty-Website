@@ -89,8 +89,8 @@ export const messages = {
     zh: "共赢契约",
   },
   "home.metaTitle": {
-    en: "Original animated AI actors with consistent faces, voices and character prompts. Free to use in anything, even paid work. Just credit Swim In AI.",
-    zh: "原创 AI 动画演员，长相和声音始终如一，配齐角色提示词。用在任何地方都免费，赚钱的也行，署上 Swim In AI 就好。",
+    en: "SWIMMER PARTY — AI actors who stay the same",
+    zh: "SWIMMER PARTY——每次都是同一个人的 AI 演员",
   },
   "home.eyebrow": {
     en: "SWIMMER PARTY · An open roster of AI actors",
