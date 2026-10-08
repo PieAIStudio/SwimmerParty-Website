@@ -96,9 +96,6 @@ export async function AssetLibrarySections({
                     {available.length}/{visible.length}
                   </span>
                 </h2>
-                <p className="sp-small mt-3 text-muted-foreground">
-                  {msg(`assets.note.${series.id}`)}
-                </p>
               </div>
               <SelectAssetSeries slots={available} />
             </div>

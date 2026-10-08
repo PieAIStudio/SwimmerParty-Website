@@ -121,24 +121,6 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
               : "Films, ads, YouTube, games, comics, merch. No fee, no forms, no asking. Put “Swim In AI” in small text at the start and in the credits. That’s the whole deal."
           }
         />
-        <div className="mt-6 grid gap-3 md:grid-cols-3">
-          {(locale === "zh"
-            ? [
-                "视频：开头一行小字，片尾字幕一行",
-                "图片：角落一行小字",
-                "声音、游戏、周边：写在致谢或简介里",
-              ]
-            : [
-                "Video: one small line at the start, one in the end credits",
-                "Image: one small line in a corner",
-                "Audio, games, merch: in the credits or the description",
-              ]
-          ).map((x) => (
-            <div key={x} className="sp-card bg-background p-4">
-              {x}
-            </div>
-          ))}
-        </div>
         <TextLink href="/license" className="mt-6">
           {locale === "zh" ? "看怎么署名 →" : "See how to credit →"}
         </TextLink>

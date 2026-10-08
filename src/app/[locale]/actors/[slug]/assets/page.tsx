@@ -18,7 +18,6 @@ import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { Breadcrumbs } from "@/site/Breadcrumbs";
 import { CopyBlock } from "@/site/CopyBlock";
 import { VersionBadge } from "@/site/VersionBadge";
-import { GameBadge } from "@pieai/swimmer-ui-kit";
 import { TextLink } from "@/site/TextLink";
 import type { MessageContracts } from "@/i18n/message-contracts";
 type Key = Extract<keyof MessageContracts, string>;
@@ -90,9 +89,6 @@ export default async function AssetsPage({ params }: Props) {
                   date={actor.versionDate}
                   note={actor.versionNote?.[locale]}
                 />
-              </div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <GameBadge tone="neutral">{t("common.animatedBadge")}</GameBadge>
               </div>
             </div>
           </div>

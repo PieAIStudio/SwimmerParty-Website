@@ -18,7 +18,6 @@ export async function SiteFooter() {
               {t("footer.project")}
             </a>
           </p>
-          <p className="sp-small mt-6 max-w-xs text-muted-foreground">{t("footer.stance")}</p>
         </div>
         <div className="lg:justify-self-end">
           <p className="sp-label">{t("footer.contact")}</p>

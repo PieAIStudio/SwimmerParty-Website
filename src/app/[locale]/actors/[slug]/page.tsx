@@ -87,9 +87,6 @@ export default async function ActorPage({ params }: Props) {
             <span className="sp-small mt-3 block font-sans text-muted-foreground">{alternate}</span>
           </h1>
           <p className="sp-lead mt-6">{actor.tagline[locale]}</p>
-          <GameBadge tone="neutral" className="mt-4">
-            {t("common.animatedBadge")}
-          </GameBadge>
           <dl className="mt-4 divide-y divide-border">
             {actor.spec.map((row) => (
               <div

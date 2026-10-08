@@ -109,8 +109,8 @@ export const messages = {
     zh: "同一个人。",
   },
   "home.heroBody": {
-    en: "{count} original animated actors, each with images, a voice and a character prompt. Use them in films, ads, games, anything, even when you get paid. Free. Just credit Swim In AI.",
-    zh: "{count} 位原创动画演员，每人都有图片、声音和角色提示词。拍片、做广告、做游戏都行，赚钱也行。免费，署上 Swim In AI 就好。",
+    en: "{count} original animated actors, each with images, a voice and a character prompt. Use them in films, ads, games, anything, even when you get paid.",
+    zh: "{count} 位原创动画演员，每人都有图片、声音和角色提示词。拍片、做广告、做游戏都行，赚钱也行。",
   },
   "home.ctaRoster": {
     en: "View roster",
@@ -957,8 +957,8 @@ export const messages = {
     zh: "物料包",
   },
   "assets.intro": {
-    en: "Everything you can take: images, voice, video and text. Free for any use, even paid work. Just credit Swim In AI. Sign in for packs and 4K character sheets.",
-    zh: "这里是可以拿走的全部资料：图片、声音、视频和文字。用在哪都免费，赚钱的也行，署上 Swim In AI 就好。登录后可以打包下载、导出 4K 角色设定图。",
+    en: "Everything you can take: images, voice, video and text.",
+    zh: "这里是可以拿走的全部资料：图片、声音、视频和文字。",
   },
   "assets.progress": {
     en: "Core set {done}/{total}",
@@ -1877,8 +1877,8 @@ export const messages = {
     zh: "主视觉 · 尚未发布",
   },
   "footer.claim": {
-    en: "An open roster of animated AI actors. Free for any use. Credit Swim In AI.",
-    zh: "一份开放的 AI 动画演员名单。用在哪都免费，署上 Swim In AI。",
+    en: "An open roster of animated AI actors.",
+    zh: "一份开放的 AI 动画演员名单。",
   },
   "footer.stance": {
     en: "Animated on purpose. Never photoreal, never a real person.",
