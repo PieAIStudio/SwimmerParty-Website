@@ -296,6 +296,26 @@ export const messages = {
     en: "Use our",
     zh: "用我们的",
   },
+  "home.customLabel": {
+    en: "Work with us",
+    zh: "找我们合作",
+  },
+  "home.customTitle.0": {
+    en: "Want an actor",
+    zh: "想要一位",
+  },
+  "home.customTitle.1": {
+    en: "of your own?",
+    zh: "专属演员？",
+  },
+  "home.customBody": {
+    en: "We design custom actors for brands and films, built only for you. Or make something with us.",
+    zh: "我们为品牌和影片定制专属演员，只给你用。也可以和我们一起做片。",
+  },
+  "home.customCta": {
+    en: "Work with us →",
+    zh: "找我们合作 →",
+  },
   "home.castingTitle.1": {
     en: "Actors.",
     zh: "演员",

@@ -201,10 +201,13 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
         </TextLink>
       </section>
       <section className="sp-section sp-panel bg-card p-7 lg:p-12" id="work-with-us">
-        <SectionHead title={`${t("home.castingTitle.0")} ${t("home.castingTitle.1")}`} />
-        <p className="sp-lead mt-6 max-w-2xl text-muted-foreground">{t("home.castingBody")}</p>
+        <SectionHead
+          label={t("home.customLabel")}
+          title={`${t("home.customTitle.0")} ${t("home.customTitle.1")}`}
+        />
+        <p className="sp-lead mt-6 max-w-2xl text-muted-foreground">{t("home.customBody")}</p>
         <TextLink href="/studio#work-with-us" className="mt-6">
-          {t("home.castingCta")}
+          {t("home.customCta")}
         </TextLink>
       </section>
     </div>

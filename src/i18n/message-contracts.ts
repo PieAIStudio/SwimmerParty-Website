@@ -277,6 +277,11 @@ export interface MessageContracts {
   readonly "home.ctaAssets": {  };
   readonly "home.ctaBook": {  };
   readonly "home.ctaRoster": {  };
+  readonly "home.customBody": {  };
+  readonly "home.customCta": {  };
+  readonly "home.customLabel": {  };
+  readonly "home.customTitle.0": {  };
+  readonly "home.customTitle.1": {  };
   readonly "home.eyebrow": {  };
   readonly "home.heroBody": { readonly "count": string | number | bigint | boolean | null | undefined | Date; };
   readonly "home.heroLines.0": {  };
