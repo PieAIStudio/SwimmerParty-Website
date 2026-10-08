@@ -23,11 +23,8 @@ export function ActorCardClient({ actor }: { actor: Actor }) {
         className="aspect-4/5 rounded-[var(--game-ui-radius-card)]"
       />
       <div className="mt-3.5 flex flex-wrap items-center justify-between gap-2">
-        <GameBadge tone={actor.status === "active" ? "success" : "neutral"}>
-          {STATUS_LABEL[actor.status][locale]}
-        </GameBadge>
-        {actor.version ? (
-          <span className="sp-small text-muted-foreground">v{actor.version}</span>
+        {actor.status !== "active" ? (
+          <GameBadge tone="neutral">{STATUS_LABEL[actor.status][locale]}</GameBadge>
         ) : null}
       </div>
       <h3 className="mt-3 font-display text-[1.375rem] font-bold group-hover:underline">{name}</h3>
