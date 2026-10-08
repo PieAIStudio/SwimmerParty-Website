@@ -937,8 +937,12 @@ export const messages = {
     zh: "定制演员和联合出品",
   },
   "footer.rights": {
-    en: "A PieAI Studio project",
-    zh: "PieAI Studio 出品",
+    en: "© {year} Pie AI Studio",
+    zh: "© {year} Pie AI Studio",
+  },
+  "footer.project": {
+    en: "A Swim In AI project, made by Pie AI Studio.",
+    zh: "Swim In AI 旗下项目，由 Pie AI Studio 制作。",
   },
   "footer.stanceLink": {
     en: "Why",

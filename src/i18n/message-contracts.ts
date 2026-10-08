@@ -308,7 +308,10 @@ export interface MessageContracts {
   readonly "footer.contactNote": {};
   readonly "footer.index": {};
   readonly "footer.pact": {};
-  readonly "footer.rights": {};
+  readonly "footer.project": {};
+  readonly "footer.rights": {
+    readonly year: string | number | bigint | boolean | null | undefined | Date;
+  };
   readonly "footer.roster": {};
   readonly "footer.stance": {};
   readonly "footer.stanceLink": {};

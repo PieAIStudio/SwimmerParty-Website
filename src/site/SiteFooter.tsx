@@ -13,6 +13,11 @@ export async function SiteFooter() {
             {SITE.name}
           </Link>
           <p className="sp-small mt-4 max-w-xs">{t("footer.claim")}</p>
+          <p className="sp-small mt-2 max-w-xs">
+            <a href="https://swiminai.com" className="underline underline-offset-4">
+              {t("footer.project")}
+            </a>
+          </p>
           <p className="sp-small mt-6 max-w-xs text-muted-foreground">{t("footer.stance")}</p>
         </div>
         <div className="lg:justify-self-end">
@@ -33,7 +38,7 @@ export async function SiteFooter() {
             <TextLink href="/license">{t("nav.license")}</TextLink>
           </div>
           <p className="sp-small mt-10 text-muted-foreground">
-            © {new Date().getFullYear()} {SITE.name} · {t("footer.rights")}
+            {t("footer.rights", { year: new Date().getFullYear() })}
           </p>
         </div>
       </div>

@@ -274,4 +274,10 @@ export const LICENSE_FAQ = [
     "以后规则变了怎么办？",
     "你已经做好的东西，按做的时候的版本算。本页是 v1.0，2026 年 10 月 8 日生效。",
   ],
+  [
+    "Why credit Swim In AI and not SWIMMER PARTY?",
+    "Swim In AI is our home. SWIMMER PARTY is one of its projects, and the credit helps people find all of them.",
+    "为什么署 Swim In AI，不署 SWIMMER PARTY？",
+    "Swim In AI 是我们的总站，SWIMMER PARTY 是其中一个项目。署 Swim In AI，大家能找到我们所有的项目。",
+  ],
 ] as const;
