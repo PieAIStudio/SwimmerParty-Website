@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { Actor } from "@/content/actors";
 import { GameButton } from "@pieai/swimmer-ui-kit";
 export function CastBoard({ actors, locale }: { actors: Actor[]; locale: "en" | "zh" }) {
+  const [downloading, setDownloading] = useState(false);
   const [slugs, setSlugs] = useState<string[]>(() => {
     if (typeof window === "undefined") return [];
     const p = new URLSearchParams(location.search).get("a");
@@ -18,6 +19,22 @@ export function CastBoard({ actors, locale }: { actors: Actor[]; locale: "en" | 
   }
   async function copy(value: string) {
     await navigator.clipboard?.writeText(value);
+  }
+  async function downloadPack() {
+    setDownloading(true);
+    try {
+      const response = await fetch(`/api/cast/pack?slugs=${encodeURIComponent(slugs.join(","))}`);
+      if (!response.ok) return;
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "swimmer-party-cast.zip";
+      link.click();
+      URL.revokeObjectURL(url);
+    } finally {
+      setDownloading(false);
+    }
   }
   return (
     <div>
@@ -89,8 +106,19 @@ export function CastBoard({ actors, locale }: { actors: Actor[]; locale: "en" | 
           ? "一张所有人按真实身高并排站的 4K 合影、每位演员的懒人包，和一份合并好的署名。"
           : "A 4K lineup of everyone at true height, each actor’s starter pack, and one credit line for all."}
       </p>
-      <GameButton className="mt-4" variant="primary">
-        {locale === "zh" ? "下载选角包" : "Download cast pack"}
+      <GameButton
+        className="mt-4"
+        variant="primary"
+        onClick={() => void downloadPack()}
+        disabled={downloading || cast.length === 0}
+      >
+        {downloading
+          ? locale === "zh"
+            ? "下载中…"
+            : "Downloading…"
+          : locale === "zh"
+            ? "下载选角包"
+            : "Download cast pack"}
       </GameButton>
     </div>
   );
