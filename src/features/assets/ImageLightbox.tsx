@@ -19,6 +19,7 @@ export function ImageLightbox({
 }) {
   const { t } = useSiteI18n();
   const [open, setOpen] = useState(false);
+  const [startIndex, setStartIndex] = useState(0);
   const [lightboxSlides, setLightboxSlides] = useState([
     { src: item.large ?? item.preview, alt: name },
   ]);
@@ -48,7 +49,10 @@ export function ImageLightbox({
         className="block w-full cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
         aria-label={t("assets.viewLarger", { name })}
         onClick={() => {
-          setLightboxSlides(collectSlides());
+          const slides = collectSlides();
+          setLightboxSlides(slides);
+          const clickedSrc = item.large ?? item.preview;
+          setStartIndex(Math.max(0, slides.findIndex((slide) => slide.src === clickedSrc)));
           setOpen(true);
         }}
       >
@@ -68,6 +72,7 @@ export function ImageLightbox({
         open={open}
         close={() => setOpen(false)}
         slides={lightboxSlides}
+        index={startIndex}
         plugins={[Zoom, Counter]}
         counter={{ container: { style: { top: "unset", bottom: 16 } } }}
         zoom={{ maxZoomPixelRatio: 1 }}
