@@ -313,8 +313,8 @@ export const messages = {
     zh: "演员",
   },
   "roster.metaDescription": {
-    en: "Every SWIMMER PARTY AI actor: ready to cast, new faces and in development. Free reference assets for non-commercial creation.",
-    zh: "SWIMMER PARTY 的全部 AI 演员：可出演、新面孔和制作中。非商业创作可免费使用参考资料。",
+    en: "Every SWIMMER PARTY AI actor: ready to cast, new faces and in development. Free to use, even commercially. Just credit Swim In AI.",
+    zh: "SWIMMER PARTY 的全部 AI 演员：可出演、新面孔和制作中。商用也免费，署上 Swim In AI 就好。",
   },
   "roster.eyebrow": {
     en: "Meet them",

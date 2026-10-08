@@ -37,14 +37,7 @@ export function VoteButton({
   }
   return (
     <GameButton variant="ghost" onClick={vote}>
-      {voted
-        ? locale === "zh"
-          ? "已想看"
-          : `Want more of ${name}`
-        : locale === "zh"
-          ? `想看更多${name}`
-          : `Want more of ${name}`}{" "}
-      · {count}
+      {locale === "zh" ? `想看更多${name}` : `Want more of ${name}`} {""}· {count}
     </GameButton>
   );
 }
