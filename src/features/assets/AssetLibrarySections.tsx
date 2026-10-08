@@ -26,7 +26,8 @@ export async function AssetLibrarySections({
   const imageSeries = listSeries().filter(
     (series) =>
       !["voice", "video"].includes(series.id) &&
-      (series.required || assets.items.some((item) => item.series === series.id)),
+      (series.required || assets.items.some((item) => item.series === series.id)) &&
+      (!isNewFace || assets.items.some((item) => item.series === series.id)),
   );
   const grid = (slots: ResolvedSlot[], fullBody: boolean) => (
     <div
@@ -70,8 +71,10 @@ export async function AssetLibrarySections({
         const all = series.perLook
           ? assets.looks.flatMap((look) => slotsForLook(series.id, look))
           : slotsOf(series.id);
-        const visible = all.filter(
-          (slot) => (series.required && slot.required) || delivered.has(slot.slot),
+        const visible = all.filter((slot) =>
+          isNewFace
+            ? delivered.has(slot.slot)
+            : (series.required && slot.required) || delivered.has(slot.slot),
         );
         const available = visible
           .filter((slot) => delivered.has(slot.slot))
@@ -125,37 +128,45 @@ export async function AssetLibrarySections({
       })}
       <section id="series-voice" className="sp-section scroll-mt-40">
         <h2 className="sp-title">{t("assets.series.voice")}</h2>
-        <p className="sp-small mt-3 max-w-2xl text-muted-foreground">{t("assets.voiceNote")}</p>
+        <p className="sp-small mt-3 max-w-2xl text-muted-foreground">
+          {isNewFace ? t("assets.newFaceNote", { name: actorName }) : t("assets.voiceNote")}
+        </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {slotsOf("voice").map((slot) => {
-            const item = delivered.get(slot.slot);
-            const label = msg(
-              `assets.voice.${slot.key.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase())}`,
-            );
-            return (
-              <VoiceTile
-                key={slot.slot}
-                item={item}
-                label={label}
-                reference={slot.key === "intro" && Boolean(item)}
-              />
-            );
-          })}
+          {slotsOf("voice")
+            .filter((slot) => !isNewFace || delivered.has(slot.slot))
+            .map((slot) => {
+              const item = delivered.get(slot.slot);
+              const label = msg(
+                `assets.voice.${slot.key.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase())}`,
+              );
+              return (
+                <VoiceTile
+                  key={slot.slot}
+                  item={item}
+                  label={label}
+                  reference={slot.key === "intro" && Boolean(item)}
+                />
+              );
+            })}
         </div>
       </section>
       <section id="series-video" className="sp-section scroll-mt-40">
-        <h2 className="sp-title">{t("assets.series.video")}</h2>
-        <p className="sp-small mt-3 max-w-2xl text-muted-foreground">{t("assets.videoNote")}</p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {slotsOf("video").map((slot) => (
-            <VoiceTile
-              key={slot.slot}
-              label={msg(
-                `assets.video.${slot.key.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase())}`,
-              )}
-            />
-          ))}
-        </div>
+        {!isNewFace ? (
+          <>
+            <h2 className="sp-title">{t("assets.series.video")}</h2>
+            <p className="sp-small mt-3 max-w-2xl text-muted-foreground">{t("assets.videoNote")}</p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {slotsOf("video").map((slot) => (
+                <VoiceTile
+                  key={slot.slot}
+                  label={msg(
+                    `assets.video.${slot.key.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase())}`,
+                  )}
+                />
+              ))}
+            </div>
+          </>
+        ) : null}
       </section>
     </>
   );

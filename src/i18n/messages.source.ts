@@ -1752,6 +1752,10 @@ export const messages = {
     en: "Self-introduction",
     zh: "自我介绍",
   },
+  "assets.newFaceNote": {
+    en: "So far: one casting photo and one voice. More comes when {name} is cast.",
+    zh: "目前有一张试镜照和一段声音。{name}被选进项目后，再补齐其他资料。",
+  },
   "assets.voice.introAlt": {
     en: "Second-language intro",
     zh: "第二语言自我介绍",

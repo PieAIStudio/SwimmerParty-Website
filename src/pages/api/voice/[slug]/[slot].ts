@@ -9,6 +9,19 @@ export default async function voicePreview(req: NextApiRequest, res: NextApiResp
   }
   const slug = typeof req.query.slug === "string" ? req.query.slug : "";
   const slot = typeof req.query.slot === "string" ? req.query.slot : "";
+  if (slot === "intro") {
+    try {
+      const bytes = await readFile(
+        path.join(process.cwd(), "media-pack/library/voice/new-faces", slug, "candidate-1.mp3"),
+      );
+      res.setHeader("Content-Type", "audio/mpeg");
+      res.setHeader("Cache-Control", "no-store");
+      res.status(200).send(bytes);
+      return;
+    } catch {
+      // Fall through to the actor manifest lookup for delivered actors.
+    }
+  }
   let manifest: { items?: Array<Record<string, unknown>> };
   try {
     manifest = JSON.parse(
