@@ -11,7 +11,9 @@ export default async function voicePreview(req: NextApiRequest, res: NextApiResp
   const slot = typeof req.query.slot === "string" ? req.query.slot : "";
   let manifest: { items?: Array<Record<string, unknown>> };
   try {
-    manifest = JSON.parse(await readFile(path.join(process.cwd(), "src/content/actors", slug, "assets.json"), "utf8")) as typeof manifest;
+    manifest = JSON.parse(
+      await readFile(path.join(process.cwd(), "src/content/actors", slug, "assets.json"), "utf8"),
+    ) as typeof manifest;
   } catch {
     res.status(404).json({ error: "voice-not-found" });
     return;
