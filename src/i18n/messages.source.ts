@@ -1108,6 +1108,7 @@ export const messages = {
     en: "Download selected",
     zh: "下载所选",
   },
+  "assets.download": { en: "Download", zh: "下载" },
   "assets.selectFirst": {
     en: "Select the images you want first.",
     zh: "先勾选要下载的图。",

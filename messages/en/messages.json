@@ -279,6 +279,7 @@
   "assets.selected": "Selected {count} images",
   "assets.select": "Select",
   "assets.downloadSelected": "Download selected",
+  "assets.download": "Download",
   "assets.selectFirst": "Select the images you want first.",
   "assets.downloadOne": "Download this image",
   "assets.downloadJson": "Download profile (JSON)",

@@ -279,6 +279,7 @@
   "assets.selected": "已选 {count} 张",
   "assets.select": "选中",
   "assets.downloadSelected": "下载所选",
+  "assets.download": "下载",
   "assets.selectFirst": "先勾选要下载的图。",
   "assets.downloadOne": "下载这一张",
   "assets.downloadJson": "下载角色资料（JSON）",

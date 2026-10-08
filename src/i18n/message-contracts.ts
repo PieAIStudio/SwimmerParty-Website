@@ -33,6 +33,7 @@ export interface MessageContracts {
   readonly "assets.current": {  };
   readonly "assets.dialogTitle": {  };
   readonly "assets.dont": {  };
+  readonly "assets.download": {  };
   readonly "assets.downloadJson": {  };
   readonly "assets.downloadNamed": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.downloadOne": {  };

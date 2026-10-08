@@ -25,6 +25,7 @@ type Selection = {
   change: (slots: string[], add: boolean) => void;
   downloadOne: (item: AssetItem) => Promise<void>;
   requestPack: () => void;
+  requestStarter: () => void;
   remaining: number;
   busy: boolean;
   modalOpen: boolean;
@@ -180,6 +181,11 @@ export function AssetSelectionProvider({
     account.event("sign_in_prompt");
     setInvite(true);
   }
+  function requestStarter() {
+    if (account.user) {
+      window.location.href = `/api/assets/${actor.slug}/pack`;
+    } else showInvite();
+  }
   function focusInviteFromCooldown() {
     const trigger = [...document.querySelectorAll<HTMLElement>("[data-download-selected]")].find(
       (node) => node.getClientRects().length > 0,
@@ -213,6 +219,7 @@ export function AssetSelectionProvider({
           if (account.user) setPack(true);
           else showInvite();
         },
+        requestStarter,
       }}
     >
       {children}
@@ -291,7 +298,7 @@ export function AssetSelectionProvider({
 
 export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
   const { t } = useSiteI18n();
-  const { selected, change, requestPack, busy, sourceRef } = useAssetSelection();
+  const { selected, change, requestPack, requestStarter, busy, sourceRef } = useAssetSelection();
   return (
     <div
       className={mobile ? "sp-selection-mobile" : "hidden shrink-0 items-center gap-3 md:flex"}
@@ -302,6 +309,16 @@ export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
       </span>
       <GameButton disabled={!selected.size || busy} onClick={() => change([...selected], false)}>
         {t("assets.clear")}
+      </GameButton>
+      <GameButton
+        variant="secondary"
+        disabled={busy}
+        onClick={(event) => {
+          sourceRef.current = event.currentTarget;
+          requestStarter();
+        }}
+      >
+        {t("assets.download")}
       </GameButton>
       <GameButton
         variant="primary"
