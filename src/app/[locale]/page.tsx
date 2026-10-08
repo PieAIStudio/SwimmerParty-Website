@@ -21,6 +21,11 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
       <section className="grid items-center gap-10 py-12 lg:min-h-[82vh] lg:grid-cols-12">
         <div className="lg:col-span-6">
           <p className="sp-label text-muted-foreground">{t("home.eyebrow")}</p>
+          <p className="mt-4 inline-flex rounded-full border border-border px-3 py-1 text-sm font-semibold">
+            {locale === "zh"
+              ? "商用免费 · 署名 Swim In AI"
+              : "Free for commercial use · Credit Swim In AI"}
+          </p>
           <h1 className="sp-display-xl mt-6">
             {[0, 1, 2].map((i) => (
               <span className="block" key={i}>
@@ -81,7 +86,7 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
         />
         <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
           {ACTORS.slice(0, 4)
-            .concat(ACTORS.slice(4, 12))
+            .concat(ACTORS.slice(4, 8))
             .map((actor) => (
               <ActorCard key={actor.slug} actor={actor} />
             ))}
@@ -94,8 +99,44 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
         <p className="sp-label text-muted-foreground">{t("home.stanceLabel")}</p>
         <h2 className="sp-display-lg mt-4">{t("home.stanceTitle")}</h2>
         <p className="sp-lead mt-6 max-w-[48rem] text-muted-foreground">{t("home.stanceBody")}</p>
-        <TextLink href="/pact" className="mt-6">
-          {t("home.stanceCta")}
+        <TextLink href="/license" className="mt-6">
+          {locale === "zh" ? "我们的承诺 →" : "Our promises →"}
+        </TextLink>
+      </section>
+      <section className="sp-section sp-panel bg-card p-7 lg:p-12">
+        <SectionHead
+          label={locale === "zh" ? "商用也免费" : "Free, even commercially"}
+          title={
+            locale === "zh"
+              ? "用在哪都行，赚钱也行。"
+              : "Use them anywhere. Even when you get paid."
+          }
+          note={
+            locale === "zh"
+              ? "电影、广告、YouTube、游戏、漫画、周边，都行。不收钱，不填表，不用问。在开头和片尾字幕里放一行小字“Swim In AI”，就这么简单。"
+              : "Films, ads, YouTube, games, comics, merch. No fee, no forms, no asking. Put “Swim In AI” in small text at the start and in the credits. That’s the whole deal."
+          }
+        />
+        <div className="mt-6 grid gap-3 md:grid-cols-3">
+          {(locale === "zh"
+            ? [
+                "视频：开头一行小字，片尾字幕一行",
+                "图片：角落一行小字",
+                "声音、游戏、周边：写在致谢或简介里",
+              ]
+            : [
+                "Video: one small line at the start, one in the end credits",
+                "Image: one small line in a corner",
+                "Audio, games, merch: in the credits or the description",
+              ]
+          ).map((x) => (
+            <div key={x} className="sp-card bg-background p-4">
+              {x}
+            </div>
+          ))}
+        </div>
+        <TextLink href="/license" className="mt-6">
+          {locale === "zh" ? "看怎么署名 →" : "See how to credit →"}
         </TextLink>
       </section>
       <section className="sp-section">

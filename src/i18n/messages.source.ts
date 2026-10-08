@@ -109,8 +109,8 @@ export const messages = {
     zh: "同一个人。",
   },
   "home.heroBody": {
-    en: "{count} original animated actors, each with turnarounds, expressions, wardrobe and a voice. Use them free for non-commercial work. License them when it’s business.",
-    zh: "{count} 位原创动画演员，每人都有转面图、表情、服装和声音。非商业创作免费用，商用找我们授权。",
+    en: "{count} original animated actors, each with images, a voice and a character prompt. Use them in films, ads, games, anything, even when you get paid. Free. Just credit Swim In AI.",
+    zh: "{count} 位原创动画演员，每人都有图片、声音和角色提示词。拍片、做广告、做游戏都行，赚钱也行。免费，署上 Swim In AI 就好。",
   },
   "home.ctaRoster": {
     en: "View roster",
@@ -121,8 +121,8 @@ export const messages = {
     zh: "免费领取演员资产",
   },
   "home.ctaBook": {
-    en: "Open asset library →",
-    zh: "打开资产库 →",
+    en: "How to credit →",
+    zh: "怎么署名 →",
   },
   "home.statRoster": {
     en: "On roster",
@@ -145,8 +145,8 @@ export const messages = {
     zh: "已开放图片",
   },
   "home.rosterLabel": {
-    en: "The roster",
-    zh: "演员名单",
+    en: "Meet them",
+    zh: "认识他们",
   },
   "home.rosterTitle": {
     en: "Meet the actors",
@@ -317,8 +317,8 @@ export const messages = {
     zh: "SWIMMER PARTY 的全部 AI 演员：可出演、新面孔和制作中。非商业创作可免费使用参考资料。",
   },
   "roster.eyebrow": {
-    en: "The roster",
-    zh: "演员名单",
+    en: "Meet them",
+    zh: "认识他们",
   },
   "roster.heroLines.0": {
     en: "Everyone",
@@ -1552,8 +1552,8 @@ export const messages = {
     zh: "领取懒人包",
   },
   "actor.workWithUs": {
-    en: "Open asset library →",
-    zh: "打开资产库 →",
+    en: "How to credit →",
+    zh: "怎么署名 →",
   },
   "actor.referenceImages": {
     en: "Reference images",
