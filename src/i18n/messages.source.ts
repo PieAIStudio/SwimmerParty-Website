@@ -613,8 +613,8 @@ export const messages = {
     zh: "专门造新面孔。",
   },
   "studio.intro": {
-    en: "SWIMMER PARTY is the AI actor studio of PieAI Studio. We design original animated actors, give each one a consistent identity, and cast them in our own films first. Then we open them up to everyone.",
-    zh: "SWIMMER PARTY 是 PieAI Studio 旗下的 AI 演员工作室。我们设计原创动画演员，给每个人一套始终如一的身份资料，先用在自己的片子里，再开放给所有人。",
+    en: "SWIMMER PARTY is an AI actor project by Pie AI Studio. We design original animated actors, give each one a consistent identity, and cast them in our own films first. Then we open them up to everyone.",
+    zh: "SWIMMER PARTY 是 Pie AI Studio 旗下的 AI 演员项目。我们设计原创动画演员，给每个人一套始终如一的身份资料，先用在自己的片子里，再开放给所有人。",
   },
   "studio.beliefsLabel": {
     en: "What we believe",
