@@ -22,7 +22,17 @@ export function AssetTile({
         className="sp-asset-frame overflow-hidden rounded-[var(--game-ui-radius-card)]"
         data-selected={checked}
       >
-        <ImageLightbox item={item} name={`${actorName} · ${label}`} />
+        <ImageLightbox
+          item={item}
+          name={`${actorName} · ${label}`}
+          onSelect={(src) => {
+            const node = [...document.querySelectorAll<HTMLElement>("[data-lightbox-item]")].find(
+              (candidate) => (candidate.dataset.large ?? candidate.dataset.preview) === src,
+            );
+            const slot = node?.closest<HTMLElement>("[data-asset-slot]")?.dataset.assetSlot;
+            if (slot) change([slot], true);
+          }}
+        />
       </div>
       <div className="mt-2 flex min-h-11 items-center gap-2">
         <GameCheckbox

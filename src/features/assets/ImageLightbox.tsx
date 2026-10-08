@@ -4,6 +4,7 @@ import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Counter from "yet-another-react-lightbox/plugins/counter";
+import Download from "yet-another-react-lightbox/plugins/download";
 // oxlint-disable-next-line import/no-unassigned-import -- Lightbox package stylesheet.
 import "yet-another-react-lightbox/styles.css";
 import { useSiteI18n } from "@/i18n/client";
@@ -12,14 +13,17 @@ export function ImageLightbox({
   item,
   name,
   displayLarge = false,
+  onSelect,
 }: {
   item: AssetItem;
   name: string;
   displayLarge?: boolean;
+  onSelect?: (src: string) => void;
 }) {
   const { t } = useSiteI18n();
   const [open, setOpen] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxSlides, setLightboxSlides] = useState([
     { src: item.large ?? item.preview, alt: name },
   ]);
@@ -52,7 +56,9 @@ export function ImageLightbox({
           const slides = collectSlides();
           setLightboxSlides(slides);
           const clickedSrc = item.large ?? item.preview;
-          setStartIndex(Math.max(0, slides.findIndex((slide) => slide.src === clickedSrc)));
+          const clickedIndex = Math.max(0, slides.findIndex((slide) => slide.src === clickedSrc));
+          setStartIndex(clickedIndex);
+          setActiveIndex(clickedIndex);
           setOpen(true);
         }}
       >
@@ -73,15 +79,37 @@ export function ImageLightbox({
         close={() => setOpen(false)}
         slides={lightboxSlides}
         index={startIndex}
-        plugins={[Zoom, Counter]}
+        plugins={[Zoom, Counter, Download]}
         counter={{ container: { style: { top: "unset", bottom: 16 } } }}
         zoom={{ maxZoomPixelRatio: 1 }}
         labels={{
+          Lightbox: t("assets.imageViewer"),
+          Download: t("assets.downloadThis"),
           Close: t("assets.close"),
           Next: t("assets.next"),
           Previous: t("assets.previous"),
           "Zoom in": t("assets.zoomIn"),
           "Zoom out": t("assets.zoomOut"),
+        }}
+        on={{ view: ({ index }) => setActiveIndex(index) }}
+        toolbar={{
+          buttons: [
+            ...(onSelect
+              ? [
+                  <button
+                    key="select"
+                    type="button"
+                    className="yarl__button"
+                    aria-label={t("assets.select")}
+                    onClick={() => onSelect(lightboxSlides[activeIndex]?.src ?? item.preview)}
+                  >
+                    {t("assets.select")}
+                  </button>,
+                ]
+              : []),
+            "download",
+            "close",
+          ],
         }}
       />
     </>
