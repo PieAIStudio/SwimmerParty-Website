@@ -1898,4 +1898,8 @@ export const messages = {
   },
   "assets.voice.roleMaid": { en: "In role: maid", zh: "角色：女佣" },
   "assets.voice.roleCeo": { en: "In role: CEO", zh: "角色：霸道总裁" },
+  "community.reviewTitle": { en: "Review queue", zh: "审核队列" },
+  "community.approve": { en: "Approve", zh: "通过" },
+  "community.hide": { en: "Hide", zh: "隐藏" },
+  "community.reviewEmpty": { en: "Nothing to review.", zh: "没有待审核的。" },
 } as const;

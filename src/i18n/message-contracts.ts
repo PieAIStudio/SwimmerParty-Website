@@ -256,6 +256,10 @@ export interface MessageContracts {
   readonly "common.themeDark": {  };
   readonly "common.themeLight": {  };
   readonly "common.themeToggle": {  };
+  readonly "community.approve": {  };
+  readonly "community.hide": {  };
+  readonly "community.reviewEmpty": {  };
+  readonly "community.reviewTitle": {  };
   readonly "footer.claim": {  };
   readonly "footer.contact": {  };
   readonly "footer.contactNote": {  };

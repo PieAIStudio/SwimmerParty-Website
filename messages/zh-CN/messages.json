@@ -480,5 +480,9 @@
   "status.in-development": "制作中",
   "status.concept": "概念",
   "assets.voice.roleMaid": "角色：女佣",
-  "assets.voice.roleCeo": "角色：霸道总裁"
+  "assets.voice.roleCeo": "角色：霸道总裁",
+  "community.reviewTitle": "审核队列",
+  "community.approve": "通过",
+  "community.hide": "隐藏",
+  "community.reviewEmpty": "没有待审核的。"
 }

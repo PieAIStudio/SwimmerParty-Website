@@ -480,5 +480,9 @@
   "status.in-development": "In development",
   "status.concept": "Concept",
   "assets.voice.roleMaid": "In role: maid",
-  "assets.voice.roleCeo": "In role: CEO"
+  "assets.voice.roleCeo": "In role: CEO",
+  "community.reviewTitle": "Review queue",
+  "community.approve": "Approve",
+  "community.hide": "Hide",
+  "community.reviewEmpty": "Nothing to review."
 }
