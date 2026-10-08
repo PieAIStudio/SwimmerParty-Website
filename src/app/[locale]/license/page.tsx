@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
-import { LICENSE, LICENSE_RULES } from "@/content/license";
+import Image from "next/image";
+import {
+  LICENSE,
+  LICENSE_FAQ,
+  LICENSE_EXAMPLES,
+  LICENSE_RULES,
+  LICENSE_WHERE,
+} from "@/content/license";
 import { setSiteLocale } from "@/i18n/server";
 import type { AppLocale } from "@/i18n/routing";
 import { localizedAlternates } from "@/i18n/metadata";
-import { GameBadge, GameButton } from "@pieai/swimmer-ui-kit";
+import { GameBadge } from "@pieai/swimmer-ui-kit";
+import { CopyButton } from "@/site/CopyButton";
 const l = (x: { en: string; zh: string }, locale: AppLocale) => x[locale];
 export async function generateMetadata({
   params,
@@ -55,9 +63,52 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
             </div>
           ))}
         </div>
-        <GameButton className="mt-6" variant="secondary">
-          {locale === "zh" ? "复制署名" : "Copy credit line"}
-        </GameButton>
+        <div className="mt-6 flex items-center gap-4">
+          <CopyButton text={LICENSE.credit[locale]} />
+          <span className="sp-small">{locale === "zh" ? "复制署名" : "Copy credit line"}</span>
+        </div>
+      </section>
+      <section className="mt-16">
+        <h2 className="sp-display-md">{locale === "zh" ? "放在哪" : "Where it goes"}</h2>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          {LICENSE_WHERE.map((item) => (
+            <div key={item.en} className="sp-panel p-4">
+              <b>{l(item, locale)}</b>
+              <p className="sp-small mt-2">{locale === "zh" ? item.bodyZh : item.bodyEn}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {LICENSE_EXAMPLES.map((item) => (
+            <figure key={item.en} className="sp-panel overflow-hidden">
+              <Image
+                src={item.image}
+                alt=""
+                width={941}
+                height={1672}
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <figcaption className="p-4 sp-small">
+                {locale === "zh" ? item.zh : item.en}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+      <section className="mt-16">
+        <h2 className="sp-display-md">{locale === "zh" ? "署名素材包" : "Credit kit"}</h2>
+        <p className="mt-3">
+          {locale === "zh"
+            ? "做好的“Swim In AI”字样，白色和黑色两版，透明 PNG 和 SVG，按 1080p 和 4K 准备好了。拖进去就行，不用登录。"
+            : "Ready-made “Swim In AI” text marks in white and black, transparent PNG and SVG, sized for 1080p and 4K. Drop it in and you’re done. No sign-in needed."}
+        </p>
+        <a
+          className="sp-link mt-5 inline-block"
+          href="/downloads/swim-in-ai-credit-kit.zip"
+          download
+        >
+          {locale === "zh" ? "下载署名素材包" : "Download credit kit"}
+        </a>
       </section>
       <section className="mt-16">
         <h2 className="sp-display-md">{locale === "zh" ? "可以" : "You can"}</h2>
@@ -82,80 +133,29 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
+        <h2 className="sp-display-md">{locale === "zh" ? "常见问题" : "Questions people ask"}</h2>
+        <div className="mt-6 grid gap-3">
+          {LICENSE_FAQ.map(([enQ, enA, zhQ, zhA]) => (
+            <details key={enQ} className="sp-panel p-4">
+              <summary className="font-semibold">{locale === "zh" ? zhQ : enQ}</summary>
+              <p className="sp-small mt-3">{locale === "zh" ? zhA : enA}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+      <section className="mt-16">
         <h2 className="sp-display-md">{locale === "zh" ? "我们的承诺" : "Our promises"}</h2>
+        <p className="mt-3">
+          {locale === "zh"
+            ? "规矩是双向的。这是我们对你的承诺。"
+            : "Rules go both ways. Here’s what we promise you."}
+        </p>
         <div className="mt-6 space-y-4">
           {LICENSE.promises.map((x) => (
             <article key={x.en} className="sp-panel p-5">
               <h3 className="font-semibold">{l(x, locale)}</h3>
               <p className="sp-small mt-2">{locale === "zh" ? x.bodyZh : x.bodyEn}</p>
             </article>
-          ))}
-        </div>
-      </section>
-      <section className="mt-16">
-        <h2 className="sp-display-md">{locale === "zh" ? "放在哪" : "Where it goes"}</h2>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
-          {(locale === "zh"
-            ? [
-                ["视频", "开头和片尾字幕各一次"],
-                ["图片", "角落一行小字"],
-                ["声音", "简介、节目说明或歌曲信息里"],
-                ["游戏和应用", "制作人员名单页和商店页面"],
-              ]
-            : [
-                ["Video", "At the start and in the end credits"],
-                ["Images", "In a corner"],
-                ["Audio", "In the description, show notes or track info"],
-                ["Games and apps", "On the credits screen and the store page"],
-              ]
-          ).map(([a, b]) => (
-            <div key={a} className="sp-panel p-4">
-              <b>{a}</b>
-              <p className="sp-small mt-2">{b}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="mt-16">
-        <h2 className="sp-display-md">{locale === "zh" ? "署名素材包" : "Credit kit"}</h2>
-        <p className="mt-3">
-          {locale === "zh"
-            ? "做好的“Swim In AI”字样，白色和黑色两版，透明 PNG 和 SVG，按 1080p 和 4K 准备好了。拖进去就行，不用登录。"
-            : "Ready-made “Swim In AI” text marks in white and black, transparent PNG and SVG, sized for 1080p and 4K. Drop it in and you’re done. No sign-in needed."}
-        </p>
-        <a
-          className="sp-link mt-5 inline-block"
-          href="/downloads/swim-in-ai-credit-kit.zip"
-          download
-        >
-          {locale === "zh" ? "下载署名素材包" : "Download credit kit"}
-        </a>
-      </section>
-      <section className="mt-16">
-        <h2 className="sp-display-md">{locale === "zh" ? "常见问题" : "Questions people ask"}</h2>
-        <div className="mt-6 grid gap-3">
-          {(locale === "zh"
-            ? [
-                ["我的 YouTube 频道有收入，可以用吗？", "可以。视频里署上 Swim In AI 就行。"],
-                ["能拍电影吗？", "能。开头一次，片尾字幕一次。"],
-                ["要告诉你们吗？", "不用。但我们很想看，发到“作品”里吧。"],
-              ]
-            : [
-                [
-                  "My YouTube channel makes money. Is that OK?",
-                  "Yes. Credit Swim In AI in the video and you’re set.",
-                ],
-                [
-                  "Can I use them in a feature film?",
-                  "Yes. Once at the start, once in the end credits.",
-                ],
-                ["Do I have to tell you?", "No. But we’d love to see it. Post it in Works."],
-              ]
-          ).map(([q, a]) => (
-            <details key={q} className="sp-panel p-4">
-              <summary className="font-semibold">{q}</summary>
-              <p className="sp-small mt-3">{a}</p>
-            </details>
           ))}
         </div>
       </section>

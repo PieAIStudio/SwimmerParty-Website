@@ -116,3 +116,121 @@ export const LICENSE_RULES = {
     ],
   ],
 } as const;
+
+export const LICENSE_WHERE = [
+  {
+    en: "Video",
+    bodyEn: "At the start and in the end credits",
+    zh: "视频",
+    bodyZh: "开头和片尾字幕各一次",
+  },
+  { en: "Images", bodyEn: "In a corner", zh: "图片", bodyZh: "角落一行小字" },
+  {
+    en: "Audio: podcasts, songs, audiobooks, voice-overs",
+    bodyEn: "In the description, show notes or track info",
+    zh: "声音：播客、歌曲、有声书、配音",
+    bodyZh: "简介、节目说明或歌曲信息里",
+  },
+  {
+    en: "Games and apps",
+    bodyEn: "On the credits screen and the store page",
+    zh: "游戏和应用",
+    bodyZh: "制作人员名单页和商店页面",
+  },
+  {
+    en: "Livestreams and VTubing",
+    bodyEn: "In the stream title or description, or as a small overlay",
+    zh: "直播、虚拟主播",
+    bodyZh: "直播标题或简介里，或者画面上一个小角标",
+  },
+  {
+    en: "Print and merch",
+    bodyEn: "On the item, its tag or its packaging · Small is fine",
+    zh: "印刷品和周边",
+    bodyZh: "商品本身、吊牌或包装上 · 小字就行",
+  },
+] as const;
+export const LICENSE_EXAMPLES = [
+  {
+    image: "/media/assets/tang-yunqiu/turnaround.front.webp",
+    en: "Opening shot: small credit under the title",
+    zh: "开头：片名下面一行小字",
+  },
+  {
+    image: "/media/assets/misha-luo/turnaround.front.webp",
+    en: "End credits: one line in the cast list",
+    zh: "片尾：演员表里一行",
+  },
+  {
+    image: "/media/assets/tang-yunqiu/face.front.webp",
+    en: "Image: bottom corner",
+    zh: "图片：右下角",
+  },
+  {
+    image: "/media/assets/misha-luo/face.front.webp",
+    en: "Game: credits screen",
+    zh: "游戏：制作人员名单",
+  },
+] as const;
+export const LICENSE_FAQ = [
+  [
+    "My YouTube channel makes money. Is that OK?",
+    "Yes. Credit Swim In AI in the video and you’re set.",
+    "我的 YouTube 频道有收入，可以用吗？",
+    "可以。视频里署上 Swim In AI 就行。",
+  ],
+  [
+    "A brand is paying me to make an ad with one of your actors.",
+    "Go ahead. A small credit at the start and on the end card. If the brand wants an actor nobody else can use, that’s a custom actor. Talk to us.",
+    "品牌付钱让我用你们的演员拍广告。",
+    "去拍吧。开头一行小字，结尾画面一行。如果品牌想要一个别人不能用的演员，那是定制演员，来找我们。",
+  ],
+  [
+    "Can I use them in a feature film?",
+    "Yes. Once at the start, once in the end credits.",
+    "能拍电影吗？",
+    "能。开头一次，片尾字幕一次。",
+  ],
+  [
+    "Do I have to tell you?",
+    "No. But we’d love to see it. Post it in Works.",
+    "要告诉你们吗？",
+    "不用。但我们很想看，发到“作品”里吧。",
+  ],
+  [
+    "Can someone else use the same actor?",
+    "Yes. The roster is open to everyone. If you need exclusivity, ask about a custom actor.",
+    "别人能用同一位演员吗？",
+    "能，名单对所有人开放。要独家，问问定制演员。",
+  ],
+  [
+    "Can I change how they look?",
+    "Clothes, hair, setting and art style, yes. If you change them into someone else, don’t use their name.",
+    "能改他们的样子吗？",
+    "衣服、发型、场景、画风都能改。改得不像本人了，就别用他们的名字。",
+  ],
+  [
+    "Can I use only the voice?",
+    "Yes. Same rule: credit Swim In AI in the description or credits.",
+    "只用声音可以吗？",
+    "可以，规则一样：在简介或致谢里署上 Swim In AI。",
+  ],
+  [
+    "Who owns what I make?",
+    "You do. The actors stay ours; your work is yours.",
+    "我做的东西归谁？",
+    "归你。演员归我们，作品归你。",
+  ],
+  [
+    "I forgot the credit.",
+    "Add it when you can. If we notice first, we’ll ask nicely.",
+    "我忘了署名。",
+    "能补就补上。我们先看到的话，会客气地提醒你。",
+  ],
+  [
+    "What if you change these rules later?",
+    "Whatever you made keeps the license version it was made under. This is v1.0, effective 8 October 2026.",
+    "以后规则变了怎么办？",
+    "你已经做好的东西，按做的时候的版本算。本页是 v1.0，2026 年 10 月 8 日生效。",
+  ],
+] as const;

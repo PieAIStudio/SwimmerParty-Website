@@ -11,7 +11,6 @@ export function VoteButton({
   locale: "en" | "zh";
 }) {
   const [count, setCount] = useState(0);
-  const [voted, setVoted] = useState(false);
   useEffect(() => {
     void fetch(`/api/community/votes?slug=${encodeURIComponent(slug)}`)
       .then((r) => (r.ok ? r.json() : null))
@@ -32,7 +31,6 @@ export function VoteButton({
     if (r.ok) {
       const x = await r.json();
       setCount(x.count);
-      setVoted(x.voted);
     }
   }
   return (
