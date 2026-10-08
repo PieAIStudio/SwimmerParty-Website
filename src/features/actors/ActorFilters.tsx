@@ -4,6 +4,7 @@ import { useSiteI18n, useSiteLocale } from "@/i18n/client";
 import type { Actor } from "@/content/actors";
 import { ActorCardClient } from "./ActorCardClient";
 import { GameButton, GameSegmentedControl, GameSelect } from "@pieai/swimmer-ui-kit";
+import { VoteButton } from "@/features/community";
 export function ActorFilters({ actors }: { actors: Actor[] }) {
   const { t } = useSiteI18n();
   const locale = useSiteLocale();
@@ -113,7 +114,16 @@ export function ActorFilters({ actors }: { actors: Actor[] }) {
               <h2 className="sp-title">{title}</h2>
               <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
                 {group.map((actor) => (
-                  <ActorCardClient key={actor.slug} actor={actor} />
+                  <div key={actor.slug}>
+                    <ActorCardClient actor={actor} />
+                    {actor.status === "new-face" ? (
+                      <VoteButton
+                        slug={actor.slug}
+                        name={locale === "zh" ? actor.nameCn : actor.nameEn}
+                        locale={locale}
+                      />
+                    ) : null}
+                  </div>
                 ))}
               </div>
             </section>
