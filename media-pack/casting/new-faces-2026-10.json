@@ -302,10 +302,10 @@
    "image": "library/claude-casting-2026-10-07/final/CC-056.png"
   },
   {
-   "slug": "yan-ruolin",
+   "slug": "yan-lin",
    "source": "CC-061",
-   "nameZh": "严若琳",
-   "nameEn": "Yan Ruolin",
+   "nameZh": "严琳",
+   "nameEn": "Yan Lin",
    "gender": "female",
    "group": "east-asian",
    "age": 41,
@@ -321,7 +321,7 @@
    "voice": {
     "language": "zh",
     "brief": "41岁北京女性，普通话字正腔圆带一点京味，声音清冷、精确，语速平稳，带点距离感。",
-    "introLine": "我是严若琳，北京人，四十一岁。我说话比较直接，不太爱绕弯子。很多人觉得我冷，其实我只是认真。我适合演严格的主编、医院的主任，或者那种你以为是反派、最后才发现她一直在帮你的人。"
+    "introLine": "我是严琳，北京人，四十一岁。我说话直接，不爱绕弯子。很多人觉得我冷，其实我只是认真。我适合演严格的主编、医院的主任，或者那种你以为是反派、最后才发现一直在帮你的人。"
    },
    "look": "East Asian (Chinese) woman, about 41, slim, about 165 cm; very high forehead, thin arched eyebrows, a small tight mouth, a sharp chin; hair pulled back in a tight low bun; charcoal top",
    "image": "library/claude-casting-2026-10-07/final/CC-061.png"
@@ -502,10 +502,10 @@
    "image": "library/claude-casting-2026-10-07/final/CC-002.png"
   },
   {
-   "slug": "bao-mancang",
+   "slug": "bao-man",
    "source": "CC-007",
-   "nameZh": "包满仓",
-   "nameEn": "Bao Mancang",
+   "nameZh": "包满",
+   "nameEn": "Bao Man",
    "gender": "male",
    "group": "east-asian",
    "age": 33,
@@ -520,17 +520,17 @@
    },
    "voice": {
     "language": "zh",
-    "brief": "33岁天津男人，普通话带浓天津口音，声音明亮，贫嘴幽默，节奏感强，像说相声。",
-    "introLine": "嘿，各位好，我叫包满仓，天津卫的，三十三了。这名儿是我爷爷起的，说是粮仓满满不愁吃。您看我这脑门儿，越来越亮了，省电。我打小听相声长大，演个嘴贫的、演个老实人吃亏的，都行！"
+    "brief": "33岁天津男人，普通话带浓重的天津口音（天津话的声调，不是北京腔），声音明亮，嘴快幽默，节奏感强，像说相声，爱用“嘿”“您”“得”。",
+    "introLine": "嘿，各位好，我叫包满，天津卫的，三十三了。我爷爷说“满”字好，饭碗满、口袋满，啥都满。结果就我这脑门儿最满，满得发亮，省电。我打小听相声长大，演个嘴贫的、演个老实人吃亏的，都行！"
    },
    "look": "East Asian (Chinese) man, about 33, average build, about 172 cm; round face, small eyes, a slightly receding hairline; navy top",
    "image": "library/claude-casting-2026-10-07/final/CC-007.png"
   },
   {
-   "slug": "lei-dahai",
+   "slug": "lei-le",
    "source": "CC-012",
-   "nameZh": "雷大海",
-   "nameEn": "Lei Dahai",
+   "nameZh": "雷乐",
+   "nameEn": "Lei Le",
    "gender": "male",
    "group": "east-asian",
    "age": 46,
@@ -546,7 +546,7 @@
    "voice": {
     "language": "zh",
     "brief": "46岁武汉男人，普通话带浓武汉口音，声音洪亮粗犷，豪爽，急脾气，但很热心。",
-    "introLine": "我叫雷大海，武汉的，四十六岁。你看我这个肚子，都是热干面跟啤酒喂出来的。我嗓门大，脾气急，但是心热。以前开过出租车，满武汉没有我不熟的路。演司机、演大排档老板，那是本色出演！"
+    "introLine": "我叫雷乐，武汉的，四十六。名字里有个乐，所以我一天到晚乐呵呵的，笑起来整条街都听得到。你看我这个肚子，都是热干面跟啤酒喂出来的。以前开过出租车，满武汉没有我不熟的路。演司机、演大排档老板，那是本色出演！"
    },
    "look": "East Asian (Chinese) man, about 46, heavyset with a pot belly, about 170 cm; broad face, double chin, very short buzz cut; heather-grey top",
    "image": "library/claude-casting-2026-10-07/final/CC-012.png"
@@ -827,14 +827,14 @@
    "image": "library/claude-casting-2026-10-07/final/CC-067.png"
   },
   {
-   "slug": "you-jiale",
+   "slug": "ma-le",
    "source": "CC-072",
-   "nameZh": "尤嘉乐",
-   "nameEn": "You Jiale",
+   "nameZh": "马乐",
+   "nameEn": "Ma Le",
    "gender": "male",
    "group": "east-asian",
    "age": 24,
-   "heightCm": 165,
+   "heightCm": 175,
    "origin": {
     "zh": "广西南宁",
     "en": "Nanning, Guangxi"
@@ -846,7 +846,7 @@
    "voice": {
     "language": "zh",
     "brief": "24岁南宁男生，普通话带一点广西口音，声音明亮俏皮，爱开玩笑，语速快，阳光。",
-    "introLine": "嗨嗨，我是尤嘉乐，南宁的，二十四岁。我笑的时候只有一边嘴角动，朋友说我笑得很欠揍，哈哈。这个卷是我妈带我去烫的。我想演那种搞笑的室友、机灵的小跟班，或者一不小心成了主角的普通人。"
+    "introLine": "嗨嗨，我是马乐，南宁的，二十四岁，一米七五。我笑的时候只有一边嘴角动，朋友说我笑得很欠揍，哈哈。这个卷是我妈带我去烫的。我想演那种搞笑的室友、机灵的小跟班，或者一不小心成了主角的普通人。"
    },
    "look": "East Asian (Chinese) man, about 24, short and slim, about 165 cm; a lopsided smile, high cheekbones, short curly permed hair; bright-yellow top",
    "image": "library/claude-casting-2026-10-07/final/CC-072.png"

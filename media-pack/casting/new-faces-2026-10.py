@@ -312,7 +312,24 @@ def slugify(name):
 
 idx = {x["id"]: x for x in json.load(open(os.path.join(HERE, "..", "library", "claude-casting-2026-10-07", "index.json")))}
 out, seen = [], set()
+# Owner 2026-10-09: renames and fixes for the five actors picked for full packs.
+# Not yet published, so the slugs can still change.
+OVERRIDES = {
+    "061": {"zh": "严琳", "en": "Yan Lin",
+            "line": "我是严琳，北京人，四十一岁。我说话直接，不爱绕弯子。很多人觉得我冷，其实我只是认真。我适合演严格的主编、医院的主任，或者那种你以为是反派、最后才发现一直在帮你的人。"},
+    "007": {"zh": "包满", "en": "Bao Man",
+            "brief": "33岁天津男人，普通话带浓重的天津口音（天津话的声调，不是北京腔），声音明亮，嘴快幽默，节奏感强，像说相声，爱用“嘿”“您”“得”。",
+            "line": "嘿，各位好，我叫包满，天津卫的，三十三了。我爷爷说“满”字好，饭碗满、口袋满，啥都满。结果就我这脑门儿最满，满得发亮，省电。我打小听相声长大，演个嘴贫的、演个老实人吃亏的，都行！"},
+    "012": {"zh": "雷乐", "en": "Lei Le",
+            "line": "我叫雷乐，武汉的，四十六。名字里有个乐，所以我一天到晚乐呵呵的，笑起来整条街都听得到。你看我这个肚子，都是热干面跟啤酒喂出来的。以前开过出租车，满武汉没有我不熟的路。演司机、演大排档老板，那是本色出演！"},
+    "072": {"zh": "马乐", "en": "Ma Le", "heightCm": 175,
+            "line": "嗨嗨，我是马乐，南宁的，二十四岁，一米七五。我笑的时候只有一边嘴角动，朋友说我笑得很欠揍，哈哈。这个卷是我妈带我去烫的。我想演那种搞笑的室友、机灵的小跟班，或者一不小心成了主角的普通人。"},
+}
+
 for cc, zh, en, oz, oe, tz, te, lang, brief, line in R:
+    o = OVERRIDES.get(cc, {})
+    zh, en = o.get("zh", zh), o.get("en", en)
+    brief, line = o.get("brief", brief), o.get("line", line)
     src = idx[f"CC-{cc}"]["description"]
     m = re.search(r"about (\d+), .*?about (\d+) cm", src)
     gender = "female" if re.search(r"\bwoman\b", src) else "male"
@@ -322,7 +339,7 @@ for cc, zh, en, oz, oe, tz, te, lang, brief, line in R:
     seen.add(slug)
     out.append({
         "slug": slug, "source": f"CC-{cc}", "nameZh": zh, "nameEn": en, "gender": gender, "group": group,
-        "age": int(m.group(1)), "heightCm": int(m.group(2)),
+        "age": int(m.group(1)), "heightCm": o.get("heightCm", int(m.group(2))),
         "origin": {"zh": oz, "en": oe}, "tagline": {"zh": tz, "en": te},
         "voice": {"language": lang, "brief": brief, "introLine": line},
         "look": src,
