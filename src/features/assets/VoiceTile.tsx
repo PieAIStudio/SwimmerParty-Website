@@ -59,7 +59,7 @@ export function VoiceTile({
             href={item.previewUrl ?? item.preview}
             download
           >
-            {item.format === "wav" ? t("assets.downloadWav") : t("assets.downloadOne")}
+            {t("assets.downloadWav")}
           </a>
         </>
       ) : (
