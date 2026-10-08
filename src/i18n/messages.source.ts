@@ -1132,6 +1132,17 @@ export const messages = {
     en: "Sign in with Swimmer",
     zh: "用 Swimmer 账号登录",
   },
+  "assets.signInBenefits.0": {
+    en: "Starter packs, full packs and your own selection",
+    zh: "懒人包、全部资产和自选打包",
+  },
+  "assets.signInBenefits.1": { en: "Post your work, like and vote", zh: "发作品、点赞、投票" },
+  "assets.signInBenefits.2": { en: "4K character sheets", zh: "4K 角色设定图" },
+  "assets.signInBenefits.3": { en: "No waiting between downloads", zh: "下载不用等待" },
+  "assets.signInConsent": {
+    en: "By signing in you agree to our Terms of Use and Privacy Policy.",
+    zh: "登录即表示同意《使用条款》和《隐私政策》。",
+  },
   "assets.signInTitle": {
     en: "Sign in to keep going",
     zh: "登录后继续",

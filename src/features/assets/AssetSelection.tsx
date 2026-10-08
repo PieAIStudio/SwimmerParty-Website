@@ -11,7 +11,6 @@ import {
 } from "react";
 import type { Actor } from "@/content/actors";
 import type { ActorAssets, AssetItem } from "@/features/assets/asset-types";
-import { SWIMMER_PRODUCTS } from "@/content/swimmer-products";
 import { useSiteI18n } from "@/i18n/client";
 import { characterProfile } from "@/features/assets/asset-profile";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
@@ -226,13 +225,16 @@ export function AssetSelectionProvider({
         title={t("assets.signInTitle")}
       >
         <p>{t("assets.signInBody")}</p>
-        <ul className="mt-4 flex flex-wrap gap-2">
-          {SWIMMER_PRODUCTS.map((product) => (
-            <li key={product.id}>
-              <GameBadge tone="neutral">{product.name}</GameBadge>
+        <ul className="mt-4 space-y-2">
+          {[0, 1, 2, 3].map((index) => (
+            <li key={index}>
+              <GameBadge tone="neutral">
+                {t(`assets.signInBenefits.${index}` as "assets.signInBenefits.0")}
+              </GameBadge>
             </li>
           ))}
         </ul>
+        <p className="sp-small mt-5 text-muted-foreground">{t("assets.signInConsent")}</p>
         <div className="mt-6 flex justify-end gap-3">
           <GameButton variant="secondary" onClick={() => setInvite(false)}>
             {t("assets.notNow")}

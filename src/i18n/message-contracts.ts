@@ -111,7 +111,12 @@ export interface MessageContracts {
   readonly "assets.sheetRendering": {  };
   readonly "assets.showLines": {  };
   readonly "assets.signIn": {  };
+  readonly "assets.signInBenefits.0": {  };
+  readonly "assets.signInBenefits.1": {  };
+  readonly "assets.signInBenefits.2": {  };
+  readonly "assets.signInBenefits.3": {  };
   readonly "assets.signInBody": {  };
+  readonly "assets.signInConsent": {  };
   readonly "assets.signInTitle": {  };
   readonly "assets.signOut": {  };
   readonly "assets.signedIn": {  };
