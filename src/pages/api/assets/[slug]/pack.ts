@@ -14,6 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (!user) throw new HttpError(401, "sign-in-required");
     if (modes.store !== "local") throw new HttpError(503, "pack-storage-not-configured");
     const slug = queryText(req.query.slug);
+    const kind = req.query.kind === "full" ? "full" : "starter";
     const actor = getActor(slug);
     if (!actor) throw new HttpError(404, "pack-not-found");
     const version = actor.version ?? "0.1.0";
@@ -22,13 +23,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       "media-pack/library/packs",
       slug,
       `v${version}`,
-      `${slug}_v${version}_starter.zip`,
+      `${slug}_v${version}_${kind}.zip`,
     );
     const info = await stat(file).catch(() => null);
     if (!info?.isFile()) throw new HttpError(404, "pack-not-found");
     res.setHeader("Content-Type", "application/zip");
     res.setHeader("Content-Length", info.size);
-    res.setHeader("Content-Disposition", `attachment; filename="${slug}_v${version}_starter.zip"`);
+    res.setHeader("Content-Disposition", `attachment; filename="${slug}_v${version}_${kind}.zip"`);
     res.setHeader("Cache-Control", "private, no-store");
     res.status(200).send(await readFile(file));
   } catch (error) {
