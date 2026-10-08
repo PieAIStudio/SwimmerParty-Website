@@ -17,7 +17,9 @@ for (const path of pages) {
     const builder = new AxeBuilder({ page });
     if (path === "/en/actors") builder.exclude('section[aria-label="Filters"]');
     const result = await builder.analyze();
-    expect(result.violations.filter((item) => ["critical", "serious"].includes(item.impact ?? ""))).toEqual([]);
+    expect(
+      result.violations.filter((item) => ["critical", "serious"].includes(item.impact ?? "")),
+    ).toEqual([]);
   });
 }
 
@@ -28,5 +30,7 @@ test("sign-in guidance dialog has no serious accessibility violations", async ({
   await page.getByRole("button", { name: /download selected/i }).click();
   await expect(page.getByRole("dialog")).toBeVisible();
   const result = await new AxeBuilder({ page }).analyze();
-  expect(result.violations.filter((item) => ["critical", "serious"].includes(item.impact ?? ""))).toEqual([]);
+  expect(
+    result.violations.filter((item) => ["critical", "serious"].includes(item.impact ?? "")),
+  ).toEqual([]);
 });
