@@ -92,6 +92,73 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
           ))}
         </div>
       </section>
+      <section className="mt-16">
+        <h2 className="sp-display-md">{locale === "zh" ? "放在哪" : "Where it goes"}</h2>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          {(locale === "zh"
+            ? [
+                ["视频", "开头和片尾字幕各一次"],
+                ["图片", "角落一行小字"],
+                ["声音", "简介、节目说明或歌曲信息里"],
+                ["游戏和应用", "制作人员名单页和商店页面"],
+              ]
+            : [
+                ["Video", "At the start and in the end credits"],
+                ["Images", "In a corner"],
+                ["Audio", "In the description, show notes or track info"],
+                ["Games and apps", "On the credits screen and the store page"],
+              ]
+          ).map(([a, b]) => (
+            <div key={a} className="sp-panel p-4">
+              <b>{a}</b>
+              <p className="sp-small mt-2">{b}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="mt-16">
+        <h2 className="sp-display-md">{locale === "zh" ? "署名素材包" : "Credit kit"}</h2>
+        <p className="mt-3">
+          {locale === "zh"
+            ? "做好的“Swim In AI”字样，白色和黑色两版，透明 PNG 和 SVG，按 1080p 和 4K 准备好了。拖进去就行，不用登录。"
+            : "Ready-made “Swim In AI” text marks in white and black, transparent PNG and SVG, sized for 1080p and 4K. Drop it in and you’re done. No sign-in needed."}
+        </p>
+        <a
+          className="sp-link mt-5 inline-block"
+          href="/downloads/swim-in-ai-credit-kit.zip"
+          download
+        >
+          {locale === "zh" ? "下载署名素材包" : "Download credit kit"}
+        </a>
+      </section>
+      <section className="mt-16">
+        <h2 className="sp-display-md">{locale === "zh" ? "常见问题" : "Questions people ask"}</h2>
+        <div className="mt-6 grid gap-3">
+          {(locale === "zh"
+            ? [
+                ["我的 YouTube 频道有收入，可以用吗？", "可以。视频里署上 Swim In AI 就行。"],
+                ["能拍电影吗？", "能。开头一次，片尾字幕一次。"],
+                ["要告诉你们吗？", "不用。但我们很想看，发到“作品”里吧。"],
+              ]
+            : [
+                [
+                  "My YouTube channel makes money. Is that OK?",
+                  "Yes. Credit Swim In AI in the video and you’re set.",
+                ],
+                [
+                  "Can I use them in a feature film?",
+                  "Yes. Once at the start, once in the end credits.",
+                ],
+                ["Do I have to tell you?", "No. But we’d love to see it. Post it in Works."],
+              ]
+          ).map(([q, a]) => (
+            <details key={q} className="sp-panel p-4">
+              <summary className="font-semibold">{q}</summary>
+              <p className="sp-small mt-3">{a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
       <p className="sp-small mt-16 text-muted-foreground">
         {locale === "zh"
           ? "授权 v1.0 · 2026 年 10 月 8 日生效 · 属于《使用条款》的一部分"
