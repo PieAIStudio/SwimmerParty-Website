@@ -11,7 +11,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === "zh" ? "选角单" : "My cast",
+    title: locale === "zh" ? "我的选角单" : "Your cast",
     alternates: localizedAlternates(locale, "/cast"),
   };
 }
@@ -21,11 +21,11 @@ export default async function CastPage({ params }: { params: Promise<{ locale: A
   return (
     <div className="sp-container py-16">
       <p className="sp-label">{locale === "zh" ? "选角单" : "Cast"}</p>
-      <h1 className="sp-display-xl mt-3">{locale === "zh" ? "我的选角单" : "My cast"}</h1>
+      <h1 className="sp-display-xl mt-3">{locale === "zh" ? "我的选角单" : "Your cast"}</h1>
       <p className="sp-lead mt-5">
         {locale === "zh"
-          ? "把演员放在一起，复制名单，发给团队。"
-          : "Put actors together, copy the lineup and share it with your team."}
+          ? "挑好你项目要用的演员，一次全部下载。"
+          : "Pick the actors for your project, then download them all at once."}
       </p>
       <CastBoard actors={ACTORS} locale={locale} />
     </div>
