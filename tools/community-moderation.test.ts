@@ -1,0 +1,2 @@
+import test from "node:test"; import assert from "node:assert/strict"; import { reportPost } from "../src/features/community/moderation.ts";
+test("three distinct reports mark a post hidden",()=>{assert.equal(reportPost("fixture-post","u1","reason").hidden,false);assert.equal(reportPost("fixture-post","u2","reason").hidden,false);assert.equal(reportPost("fixture-post","u3","reason").hidden,true);});
