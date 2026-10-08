@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { getActorAssets } from "@/features/assets";
 export default async function voicePreview(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "GET") {
     res.setHeader("Allow", "GET");
@@ -10,8 +9,17 @@ export default async function voicePreview(req: NextApiRequest, res: NextApiResp
   }
   const slug = typeof req.query.slug === "string" ? req.query.slug : "";
   const slot = typeof req.query.slot === "string" ? req.query.slot : "";
-  const item = getActorAssets(slug).items.find((candidate) => candidate.slot === `voice.${slot}`);
-  if (!item || item.kind !== "voice") {
+  let manifest: { items?: Array<Record<string, unknown>> };
+  try {
+    manifest = JSON.parse(await readFile(path.join(process.cwd(), "src/content/actors", slug, "assets.json"), "utf8")) as typeof manifest;
+  } catch {
+    res.status(404).json({ error: "voice-not-found" });
+    return;
+  }
+  const item = manifest.items?.find((candidate) => candidate.slot === `voice.${slot}`) as
+    | { kind?: string; object?: string; format?: string }
+    | undefined;
+  if (!item || item.kind !== "voice" || !item.object) {
     res.status(404).json({ error: "voice-not-found" });
     return;
   }
