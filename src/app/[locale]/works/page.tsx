@@ -7,6 +7,7 @@ import { PageIntro } from "@/site/PageIntro";
 import { Link } from "@/i18n/navigation";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
 import { localizedAlternates } from "@/i18n/metadata";
+import { CommunityFeed } from "@/features/community";
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -69,12 +70,7 @@ export default async function WorksPage({ params }: Props) {
       <section className="sp-section">
         <h2 className="sp-title">{t("works.madeByYou")}</h2>
         <p className="sp-lead mt-6">{t("works.emptyFan")}</p>
-        <a
-          className="sp-link mt-6"
-          href={`mailto:pieai@hotmail.com?subject=${encodeURIComponent("[FAN WORK] SWIMMER PARTY")}`}
-        >
-          {t("works.submit")}
-        </a>
+        <CommunityFeed locale={locale} />
       </section>
     </div>
   );
