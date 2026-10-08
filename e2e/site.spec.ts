@@ -6,5 +6,5 @@ test("primary navigation has four current routes", async ({ page }) => {
 });
 test("cast page loads", async ({ page }) => {
   await page.goto("/en/cast?a=tang-yunqiu,misha-luo");
-  await expect(page.getByRole("heading", { name: "My cast" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Your cast" })).toBeVisible();
 });
