@@ -2,7 +2,7 @@ import { row, type Actor } from "../shared.ts";
 
 export const profile: Actor = {
   slug: "chen-wei",
-  nameEn: "CHEN WEI",
+  nameEn: "Chen Wei",
   nameCn: "陈伟",
   tagline: {
     en: "Looks half asleep. Sees everything.",

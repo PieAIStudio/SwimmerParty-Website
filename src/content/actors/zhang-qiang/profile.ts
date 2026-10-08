@@ -2,7 +2,7 @@ import { row, type Actor } from "../shared.ts";
 
 export const profile: Actor = {
   slug: "zhang-qiang",
-  nameEn: "ZHANG QIANG",
+  nameEn: "Zhang Qiang",
   nameCn: "张强",
   tagline: {
     en: "One eyebrow sits a little higher, so he always looks like he's reviewing your cut.",

@@ -145,8 +145,8 @@ export const messages = {
     zh: "已开放图片",
   },
   "home.rosterLabel": {
-    en: "Meet them",
-    zh: "认识他们",
+    en: "The roster",
+    zh: "演员名单",
   },
   "home.rosterTitle": {
     en: "Meet the actors",
@@ -285,8 +285,8 @@ export const messages = {
     zh: "我们的片子",
   },
   "home.worksNote": {
-    en: "We cast our own actors in our own productions first. Nothing is listed before it exists.",
-    zh: "我们先用自己的演员拍自己的片。还没做出来的，不会先挂出来。",
+    en: "Our own films first. Then everything you make with them.",
+    zh: "先是我们自己的片，然后是大家用他们做的一切。",
   },
   "home.worksCta": {
     en: "See all works →",

@@ -20,7 +20,6 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
     <div className="sp-container">
       <section className="grid items-center gap-10 py-12 lg:min-h-[82vh] lg:grid-cols-12">
         <div className="lg:col-span-6">
-          <p className="sp-label text-muted-foreground">{t("home.eyebrow")}</p>
           <p className="mt-4 inline-flex rounded-full border border-border px-3 py-1 text-sm font-semibold">
             {locale === "zh"
               ? "商用免费 · 署名 Swim In AI"

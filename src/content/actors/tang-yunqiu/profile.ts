@@ -2,9 +2,12 @@ import { row, type Actor } from "../shared.ts";
 
 export const profile: Actor = {
   slug: "tang-yunqiu",
-  nameEn: "TANG YUNQIU",
+  nameEn: "Tang Yunqiu",
   nameCn: "唐韵秋",
-  tagline: { en: "Actress from Chongqing, 43.", zh: "重庆女演员，43 岁。" },
+  tagline: {
+    en: "The timid maid on camera. The one running the set off it.",
+    zh: "镜头前是胆小的女佣，镜头后整个片场归她管。",
+  },
   status: "active",
   gender: "female",
   age: 43,

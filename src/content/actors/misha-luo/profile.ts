@@ -2,11 +2,11 @@ import { row, type Actor } from "../shared.ts";
 
 export const profile: Actor = {
   slug: "misha-luo",
-  nameEn: "MISHA LUO",
+  nameEn: "Misha Luo",
   nameCn: "罗米沙",
   tagline: {
-    en: "Actor of Russian descent, raised in Chongqing.",
-    zh: "俄罗斯血统、在重庆长大的男演员。",
+    en: "A Russian face with a Chongqing accent. Plays the CEO, eats hot pot like a local.",
+    zh: "长着俄罗斯脸，一开口是重庆话。戏里演总裁，戏外吃火锅比谁都地道。",
   },
   status: "active",
   gender: "male",

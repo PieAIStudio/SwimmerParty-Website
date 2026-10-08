@@ -28,14 +28,13 @@ export async function ActorCard({ actor, href }: { actor: Actor; href?: string }
         fullBody={item?.series === "turnaround"}
         className="aspect-4/5 rounded-[var(--game-ui-radius-card)]"
       />
-      <div className="mt-3.5 flex flex-wrap items-center justify-between gap-2">
-        <GameBadge data-actor-status tone={actor.status === "active" ? "success" : "neutral"}>
-          {STATUS_LABEL[actor.status][locale]}
-        </GameBadge>
-        {actor.version ? (
-          <span className="sp-small text-muted-foreground">v{actor.version}</span>
-        ) : null}
-      </div>
+      {actor.status !== "active" ? (
+        <div className="mt-3.5">
+          <GameBadge data-actor-status tone="neutral">
+            {STATUS_LABEL[actor.status][locale]}
+          </GameBadge>
+        </div>
+      ) : null}
       <h3 className="mt-3 font-display text-[1.375rem] leading-tight font-bold group-hover:underline">
         {name}
       </h3>
