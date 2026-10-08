@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import posthog from "posthog-js";
-import { isApprovedEvent } from "./events";
+import { normalizeEvent } from "./events";
 export function PostHog() {
   useEffect(() => {
     const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
@@ -12,7 +12,8 @@ export function PostHog() {
     });
     const onEvent = (event: Event) => {
       const detail = (event as CustomEvent).detail;
-      if (isApprovedEvent(detail?.name)) posthog.capture(detail.name, detail.data);
+      const normalized = normalizeEvent(detail?.name, detail?.data);
+      if (normalized) posthog.capture(normalized.name, normalized.data);
     };
     window.addEventListener("swimmer-party-event", onEvent);
     return () => window.removeEventListener("swimmer-party-event", onEvent);
