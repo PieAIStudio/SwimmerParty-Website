@@ -43,6 +43,13 @@ export default async function ActorPage({ params }: Props) {
   const front = firstImage(slug, ["turnaround.front"]);
   const next = ACTORS[(ACTORS.indexOf(actor) + 1) % ACTORS.length];
   const voice = assets.items.find((i) => i.kind === "voice" && i.key === "intro");
+  const origin = actor.spec.find((row) => row.id === "origin")?.value[locale] ?? "";
+  const description =
+    actor.status === "new-face"
+      ? locale === "zh"
+        ? `${name}是 SWIMMER PARTY 的新面孔，${actor.age} 岁，来自${origin}。现在有一张照片和一段声音；最受欢迎的新面孔会先补齐全套资料。`
+        : `${name} is a new face at SWIMMER PARTY: ${actor.age}, from ${origin}. One photo and one voice so far. The most wanted new faces get their full identity packs first.`
+      : actor.note[locale];
   const credits = WORKS.flatMap((work) =>
     work.cast.filter((credit) => credit.actor === actor.slug).map((credit) => ({ work, credit })),
   );
@@ -94,7 +101,7 @@ export default async function ActorPage({ params }: Props) {
               </div>
             ))}
           </dl>
-          <p className="mt-6">{actor.note[locale]}</p>
+          <p className="mt-6">{description}</p>
           {voice ? (
             <div className="mt-8">
               <h2 className="sp-subtitle">{t("actor.voiceTitle", { name })}</h2>
