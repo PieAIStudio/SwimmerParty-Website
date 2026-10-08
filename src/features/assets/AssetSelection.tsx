@@ -181,9 +181,8 @@ export function AssetSelectionProvider({
     setInvite(true);
   }
   function requestStarter() {
-    if (account.user) {
-      window.location.href = `/api/assets/${actor.slug}/pack`;
-    } else showInvite();
+    setState({ slug: actor.slug, slots: assets.items.map((item) => item.slot) });
+    setPack(true);
   }
   function focusInviteFromCooldown() {
     const trigger = [...document.querySelectorAll<HTMLElement>("[data-download-selected]")].find(

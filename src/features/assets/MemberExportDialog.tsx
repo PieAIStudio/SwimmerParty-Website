@@ -29,6 +29,10 @@ function labelsFor(item: AssetItem, assets: ActorAssets) {
   const key = slotLabelKey(item.series, item.key);
   return { en: translators.en.t(key), zh: translators.zh.t(key) };
 }
+function fileSize(bytes: number) {
+  if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
 export function MemberExportDialog({
   actor,
   assets,
@@ -67,6 +71,7 @@ export function MemberExportDialog({
   const previewReady = format !== "sheet" || previewKey === renderKey;
   const limit = EXPORT_TARGETS.find((model) => model.id === target)!.limit;
   const unavailableVeo = format === "model" && target === "veo" && !veoPlan(selected, assets.items);
+  const selectedBytes = selected.reduce((total, item) => total + item.bytes, 0);
   useEffect(() => () => controller.current?.abort(), []);
   useEffect(() => {
     if (format !== "sheet") return;
@@ -144,6 +149,23 @@ export function MemberExportDialog({
       title={t("assets.dialogTitle")}
       width={560}
     >
+      <div className="mb-6 rounded-2xl border border-border p-4">
+        <p className="sp-label">{t("assets.download")}</p>
+        <ul className="mt-3 space-y-2 text-sm">
+          <li className="flex justify-between gap-4">
+            <span>{t("assets.format.zipNote")}</span>
+            <span className="shrink-0 text-muted-foreground">{fileSize(selectedBytes)} · ZIP</span>
+          </li>
+          <li className="flex justify-between gap-4">
+            <span>{t("assets.format.sheetNote")}</span>
+            <span className="shrink-0 text-muted-foreground">4K · PNG</span>
+          </li>
+          <li className="flex justify-between gap-4">
+            <span>{t("assets.format.modelNote")}</span>
+            <span className="shrink-0 text-muted-foreground">{fileSize(selectedBytes)} · ZIP</span>
+          </li>
+        </ul>
+      </div>
       <GameSegmentedControl
         activeId={format}
         label={t("assets.exportFormat")}
