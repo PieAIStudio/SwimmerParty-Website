@@ -27,7 +27,7 @@ export default async function CastPage({ params }: { params: Promise<{ locale: A
           ? "把演员放在一起，复制名单，发给团队。"
           : "Put actors together, copy the lineup and share it with your team."}
       </p>
-      <CastBoard actors={ACTORS} />
+      <CastBoard actors={ACTORS} locale={locale} />
     </div>
   );
 }

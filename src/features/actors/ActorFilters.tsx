@@ -5,6 +5,7 @@ import type { Actor } from "@/content/actors";
 import { ActorCardClient } from "./ActorCardClient";
 import { GameButton, GameSegmentedControl, GameSelect } from "@pieai/swimmer-ui-kit";
 import { VoteButton } from "@/features/community";
+import { CastAddButton } from "@/features/cast";
 export function ActorFilters({ actors }: { actors: Actor[] }) {
   const { t } = useSiteI18n();
   const locale = useSiteLocale();
@@ -123,6 +124,11 @@ export function ActorFilters({ actors }: { actors: Actor[] }) {
                         locale={locale}
                       />
                     ) : null}
+                    <CastAddButton
+                      slug={actor.slug}
+                      locale={locale}
+                      name={locale === "zh" ? actor.nameCn : actor.nameEn}
+                    />
                   </div>
                 ))}
               </div>
