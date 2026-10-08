@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { listReviewQueue, reviewPost } from "@/features/community/mock-store";
-import { accountUser } from "@/features/account/server/account";
+import { listReviewQueue, reviewPost } from "@/features/community";
+import { accountUser } from "@/features/account/server";
 import { apiFailure, requireSameOrigin } from "@/lib/server/api";
 import { HttpError, runtimeModes } from "@/lib/server/runtime-mode";
 

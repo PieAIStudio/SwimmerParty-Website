@@ -1,7 +1,7 @@
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { accountUser } from "@/features/account/server/account";
+import { accountUser } from "@/features/account/server";
 import { apiFailure, queryText } from "@/lib/server/api";
 import { HttpError, runtimeModes } from "@/lib/server/runtime-mode";
 import { getActor } from "@/content/actors";
