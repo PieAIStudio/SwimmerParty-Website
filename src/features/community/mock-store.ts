@@ -4,6 +4,15 @@ const trustedAuthors = new Set<string>();
 export function listPosts() {
   return [...posts].filter((p) => p.status === "published").sort((a, b) => b.likes - a.likes);
 }
+export function getPost(id: string) {
+  return posts.find((post) => post.id === id);
+}
+export function deletePost(id: string, authorId: string) {
+  const index = posts.findIndex((post) => post.id === id && post.authorId === authorId);
+  if (index < 0) return false;
+  posts.splice(index, 1);
+  return true;
+}
 export function listReviewQueue() {
   return [...posts]
     .filter((p) => p.status === "pending")

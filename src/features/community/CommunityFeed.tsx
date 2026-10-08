@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { GameButton } from "@pieai/swimmer-ui-kit";
 import type { CommunityPost } from "./types";
+import { Link } from "@/i18n/navigation";
 export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
   const [posts, setPosts] = useState<CommunityPost[]>([]);
   const [open, setOpen] = useState(false);
@@ -77,7 +78,9 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {posts.map((post) => (
           <article key={post.id} className="sp-panel p-5">
-            <h3 className="sp-subtitle">{post.title}</h3>
+            <Link href={`/works/p/${post.id}`} className="sp-subtitle hover:underline">
+              {post.title}
+            </Link>
             <p className="sp-small mt-2 text-muted-foreground">
               {locale === "zh" ? `作者：${post.author}` : `by ${post.author}`}
             </p>
