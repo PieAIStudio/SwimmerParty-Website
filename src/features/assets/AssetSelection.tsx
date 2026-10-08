@@ -223,38 +223,61 @@ export function AssetSelectionProvider({
       }}
     >
       {children}
-      <LiquidPopover
-        open={invite}
-        onOpenChange={(open) => {
-          if (!open) setInvite(false);
-        }}
-        source={sourceRef}
-        title={t("assets.signInTitle")}
-      >
-        <p>{t("assets.signInBody")}</p>
-        <ul className="mt-4 space-y-2">
-          {[0, 1, 2, 3].map((index) => (
-            <li key={index}>
-              <GameBadge tone="neutral">
-                {t(`assets.signInBenefits.${index}` as "assets.signInBenefits.0")}
-              </GameBadge>
-            </li>
-          ))}
-        </ul>
-        <p className="sp-small mt-5 text-muted-foreground">{t("assets.signInConsent")}</p>
-        <div className="mt-6 flex justify-end gap-3">
-          <GameButton variant="secondary" onClick={() => setInvite(false)}>
-            {t("assets.notNow")}
-          </GameButton>
-          <GameButton
-            variant="secondary"
-            disabled={busy || account.busy || account.loading}
-            onClick={signIn}
+      {invite ? (
+        <div
+          className="fixed inset-0 z-50 grid place-items-center bg-black/40 p-5"
+          role="presentation"
+          onClick={() => setInvite(false)}
+        >
+          <section
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="sign-in-title"
+            className="w-full max-w-lg rounded-[26px] bg-card p-7 text-foreground shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
           >
-            {t("assets.signIn")}
-          </GameButton>
+            <div className="flex items-start justify-between gap-4">
+              <h2 id="sign-in-title" className="sp-title">
+                {t("assets.signInTitle")}
+              </h2>
+              <button
+                type="button"
+                aria-label={t("common.close")}
+                className="sp-small"
+                onClick={() => setInvite(false)}
+              >
+                ✕
+              </button>
+            </div>
+            <p className="mt-4">{t("assets.signInBody")}</p>
+            <ul className="mt-5 space-y-3">
+              {[0, 3, 2, 1].map((index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span aria-hidden="true">✓</span>
+                  <span>{t(`assets.signInBenefits.${index}` as "assets.signInBenefits.0")}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-7 flex flex-col items-start gap-3">
+              <GameButton
+                variant="primary"
+                disabled={busy || account.busy || account.loading}
+                onClick={signIn}
+              >
+                {t("assets.signIn")}
+              </GameButton>
+              <button
+                type="button"
+                className="sp-small underline underline-offset-4"
+                onClick={() => setInvite(false)}
+              >
+                {t("assets.notNow")}
+              </button>
+            </div>
+            <p className="sp-small mt-5 text-muted-foreground">{t("assets.signInConsent")}</p>
+          </section>
         </div>
-      </LiquidPopover>
+      ) : null}
       {pack ? (
         <MemberExportDialog
           actor={actor}

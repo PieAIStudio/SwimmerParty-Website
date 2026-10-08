@@ -1173,8 +1173,8 @@ export const messages = {
     zh: "登录后继续",
   },
   "assets.signInBody": {
-    en: "It’s free with a Swimmer account:",
-    zh: "用 Swimmer 账号登录，全部免费：",
+    en: "Free with a Swimmer account, the one account for every Swim In AI project.",
+    zh: "用 Swimmer 账号登录，免费。这是 Swim In AI 所有项目通用的账号。",
   },
   "assets.notNow": {
     en: "Not now",
