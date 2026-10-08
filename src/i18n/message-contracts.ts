@@ -22,11 +22,13 @@ export interface MessageContracts {
   readonly "assets.breadcrumb": {  };
   readonly "assets.can": {  };
   readonly "assets.cancel": {  };
+  readonly "assets.castingPhoto": {  };
   readonly "assets.characterPrompt": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.characterPromptNote": {  };
   readonly "assets.clear": {  };
   readonly "assets.close": {  };
   readonly "assets.cooldownBadge": { readonly "seconds": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "assets.copyCredit": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.count": { readonly "index": string | number | bigint | boolean | null | undefined | Date; readonly "total": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.current": {  };
   readonly "assets.dialogTitle": {  };
@@ -84,6 +86,7 @@ export interface MessageContracts {
   readonly "assets.preview": {  };
   readonly "assets.previous": {  };
   readonly "assets.progress": { readonly "done": string | number | bigint | boolean | null | undefined | Date; readonly "total": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "assets.rulesBody": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.rulesPact": {  };
   readonly "assets.rulesTitle": {  };
   readonly "assets.seedanceUnverified": {  };

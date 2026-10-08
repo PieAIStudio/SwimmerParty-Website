@@ -1700,8 +1700,20 @@ export const messages = {
     zh: "故意用英文写：图像模型对英文的执行最稳定。原样粘贴即可。",
   },
   "assets.rulesTitle": {
-    en: "Five rules. That’s all.",
-    zh: "就五条。",
+    en: "One rule: credit Swim In AI.",
+    zh: "只有一条：署上 Swim In AI。",
+  },
+  "assets.rulesBody": {
+    en: "Use {name} in anything, even paid work. Put a small “Swim In AI” at the start and in the credits of a video, or in a corner of an image.",
+    zh: "{name}可以用在任何地方，赚钱的也行。视频开头和片尾字幕放一行小字“Swim In AI”，图片放在角落。",
+  },
+  "assets.copyCredit": {
+    en: "Copy credit: {name} · Swim In AI",
+    zh: "复制署名：{name} · Swim In AI",
+  },
+  "assets.castingPhoto": {
+    en: "Casting photo",
+    zh: "试镜照",
   },
   "assets.can": {
     en: "You can",

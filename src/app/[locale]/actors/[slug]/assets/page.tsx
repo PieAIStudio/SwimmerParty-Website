@@ -20,7 +20,6 @@ import { CopyBlock } from "@/site/CopyBlock";
 import { VersionBadge } from "@/site/VersionBadge";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
 import { TextLink } from "@/site/TextLink";
-import { KIT_RULES } from "@/content/kit";
 import type { MessageContracts } from "@/i18n/message-contracts";
 type Key = Extract<keyof MessageContracts, string>;
 type Props = { params: Promise<{ locale: AppLocale; slug: string }> };
@@ -117,7 +116,12 @@ export default async function AssetsPage({ params }: Props) {
           </nav>
           <AssetSelectionBar />
         </div>
-        <AssetLibrarySections assets={assets} locale={locale} actorName={name} />
+        <AssetLibrarySections
+          assets={assets}
+          locale={locale}
+          actorName={name}
+          isNewFace={actor.status === "new-face"}
+        />
         <section id="series-how-to" className="sp-section scroll-mt-40">
           <h2 className="sp-title">{t("assets.series.howTo")}</h2>
           <ol className="mt-8 grid gap-4 md:grid-cols-3">
@@ -146,24 +150,11 @@ export default async function AssetsPage({ params }: Props) {
         </section>
         <section id="series-rules" className="sp-section scroll-mt-40">
           <h2 className="sp-title">{t("assets.rulesTitle")}</h2>
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            {[true, false].map((allow) => (
-              <div key={String(allow)} className="sp-card bg-card">
-                <h3 className="sp-subtitle">{t(allow ? "assets.can" : "assets.dont")}</h3>
-                <ul className="mt-6 space-y-5">
-                  {KIT_RULES.filter((r) => r.allow === allow).map((rule) => (
-                    <li key={rule.id}>
-                      <h4 className="font-semibold">{rule.head[locale]}</h4>
-                      <p className="sp-small mt-2 text-muted-foreground">{rule.body[locale]}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <p className="mt-6 max-w-3xl text-lg">{t("assets.rulesBody", { name })}</p>
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <CopyBlock label={t("assets.copyCredit", { name })} text={`${name} · Swim In AI`} />
+            <TextLink href="/license">{t("assets.rulesPact")}</TextLink>
           </div>
-          <TextLink href="/pact" className="mt-8">
-            {t("assets.rulesPact")}
-          </TextLink>
         </section>
         <AssetSelectionBar mobile />
       </AssetSelectionProvider>

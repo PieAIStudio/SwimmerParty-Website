@@ -14,6 +14,7 @@ import { Link } from "@/i18n/navigation";
 import { GameBadge, GameButton } from "@pieai/swimmer-ui-kit";
 import { localizedAlternates } from "@/i18n/metadata";
 import { WORKS } from "@/content/works";
+import { CastAddButton } from "@/features/cast";
 type Props = { params: Promise<{ locale: AppLocale; slug: string }> };
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => ACTORS.map((actor) => ({ locale, slug: actor.slug })));
@@ -110,6 +111,7 @@ export default async function ActorPage({ params }: Props) {
             >
               {t("actor.openLibrary")}
             </GameButton>
+            <CastAddButton slug={actor.slug} locale={locale} name={name} />
             <TextLink href="/cast">{t("actor.workWithUs")}</TextLink>
             <ShareButton />
           </div>

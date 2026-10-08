@@ -13,10 +13,12 @@ export async function AssetLibrarySections({
   assets,
   locale,
   actorName,
+  isNewFace,
 }: {
   assets: ActorAssets;
   locale: AppLocale;
   actorName: string;
+  isNewFace?: boolean;
 }) {
   const { t } = await getSiteI18n();
   const msg = (key: string) => t(key as DynamicKey, {} as never);
@@ -35,7 +37,12 @@ export async function AssetLibrarySections({
         const extra = assets.looks
           .find((look) => look.id === slot.look)
           ?.extras.find((entry) => entry.key === slot.key);
-        const label = extra ? extra.label[locale] : t(slotLabelKey(slot.series, slot.key));
+        const label =
+          isNewFace && slot.series === "turnaround" && slot.key === "front"
+            ? t("assets.castingPhoto")
+            : extra
+              ? extra.label[locale]
+              : t(slotLabelKey(slot.series, slot.key));
         return item ? (
           <AssetTile key={slot.slot} item={item} label={label} actorName={actorName} />
         ) : (
