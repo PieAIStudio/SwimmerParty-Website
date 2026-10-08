@@ -3,7 +3,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { ACTORS, getActor, STATUS_LABEL } from "@/content/actors";
-import { getActorAssets, firstImage, slotLabelKey } from "@/features/assets";
+import { getActorAssets, firstImage, slotLabelKey, StarterPackButton } from "@/features/assets";
 import { ImageLightbox } from "@/features/assets";
 import { VoiceTile } from "@/features/assets";
 import { Breadcrumbs } from "@/site/Breadcrumbs";
@@ -104,13 +104,7 @@ export default async function ActorPage({ params }: Props) {
             </div>
           ) : null}
           <div className="mt-8 flex flex-wrap gap-4">
-            <GameButton
-              variant="primary"
-              linkComponent={Link}
-              href={`/actors/${actor.slug}/assets`}
-            >
-              {t("actor.openLibrary")}
-            </GameButton>
+            <StarterPackButton slug={actor.slug} />
             <CastAddButton slug={actor.slug} locale={locale} name={name} />
             <TextLink href="/cast">{t("actor.workWithUs")}</TextLink>
             <ShareButton />

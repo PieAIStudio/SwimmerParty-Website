@@ -1,6 +1,7 @@
 import "server-only";
 export { AssetSelectionBar, AssetSelectionProvider, DownloadActorProfile } from "./AssetSelection";
 export { AssetLibrarySections } from "./AssetLibrarySections";
+export { StarterPackButton } from "./StarterPackButton";
 export { SeriesJumpButton } from "./SeriesJumpButton";
 export { getActorAssets, firstImage } from "./assets";
 export { getKitManifest } from "./kit-assets";
