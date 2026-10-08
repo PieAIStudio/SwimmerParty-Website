@@ -1,13 +1,19 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-const likes = new Set<string>();
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== "POST") return res.status(405).end();
-  if (!/(?:^|;)\s*sp_mock_member=1(?:;|$)/.test(req.headers.cookie ?? ""))
-    return res.status(401).json({ error: "sign-in-required" });
-  const id = String(req.body?.postId ?? "");
-  if (!id) return res.status(400).json({ error: "post-required" });
-  const key = `local-mock-member:${id}`;
-  if (likes.has(key)) likes.delete(key);
-  else likes.add(key);
-  return res.status(200).json({ liked: likes.has(key) });
+import { setPostLike } from "@/features/community";
+import { communityUser } from "@/features/community/server";
+import { apiFailure } from "@/lib/server/api";
+import { HttpError } from "@/lib/server/runtime-mode";
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  try {
+    if (req.method !== "POST") throw new HttpError(405, "method-not-allowed");
+    const user = await communityUser(req, res);
+    const { postId, liked } = req.body ?? {};
+    if (typeof postId !== "string" || typeof liked !== "boolean")
+      throw new HttpError(400, "invalid-like");
+    const result = setPostLike(postId, user!.id, liked);
+    if (!result) throw new HttpError(404, "post-not-found");
+    res.status(200).json(result);
+  } catch (error) {
+    apiFailure(res, error);
+  }
 }

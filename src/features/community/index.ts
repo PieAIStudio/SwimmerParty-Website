@@ -1,5 +1,6 @@
 export type { CommunityPost, CommunityKind } from "./types";
 export {
+  setPostLike,
   listPosts,
   getPost,
   deletePost,

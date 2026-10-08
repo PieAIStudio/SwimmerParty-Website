@@ -9,7 +9,7 @@ export function PostActions({ id, locale }: { id: string; locale: "en" | "zh" })
     const response = await fetch("/api/community/likes", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ postId: id }),
+      body: JSON.stringify({ postId: id, liked: !liked }),
     });
     if (response.status === 401)
       return alert(locale === "zh" ? "登录后参与" : "Sign in to join in");
@@ -27,8 +27,8 @@ export function PostActions({ id, locale }: { id: string; locale: "en" | "zh" })
   }
   return (
     <div className="mt-8 flex flex-wrap gap-3">
-      <GameButton onClick={() => void like()}>
-        {liked ? (locale === "zh" ? "已赞" : "Liked") : locale === "zh" ? "赞" : "Like"}
+      <GameButton aria-pressed={liked} onClick={() => void like()}>
+        {locale === "zh" ? "赞" : "Like"}
       </GameButton>
       <GameButton variant="ghost" onClick={() => void report()} disabled={reported}>
         {reported

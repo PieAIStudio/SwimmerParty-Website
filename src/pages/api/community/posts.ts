@@ -1,16 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { addPost, listPosts } from "@/features/community";
 import { TOOLS } from "@/content/tools";
-import { accountUser } from "@/features/account/server";
+import { communityUser } from "@/features/community/server";
 import { apiFailure } from "@/lib/server/api";
-import { HttpError, runtimeModes } from "@/lib/server/runtime-mode";
+import { HttpError } from "@/lib/server/runtime-mode";
 const kinds = new Set(["image", "video", "audio", "game", "other"]);
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
+    const user = await communityUser(req, res, req.method !== "GET");
     if (req.method === "GET") return res.status(200).json({ posts: listPosts() });
     if (req.method !== "POST") return res.status(405).end();
-    const modes = runtimeModes();
-    const user = await accountUser(req, res, modes.account);
     if (!user) throw new HttpError(401, "sign-in-required");
     const body = req.body as Record<string, unknown>;
     if (
