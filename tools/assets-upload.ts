@@ -3,7 +3,7 @@ import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { ACTORS } from "../src/content/actors/index.ts";
 import { getActorAssets } from "../src/features/assets/assets.ts";
-import { blobAssetStore } from "../src/features/assets/server/blob-store.ts";
+import { blobAssetStore, privateObjectType } from "../src/features/assets/server/blob-store.ts";
 
 // Uploads every manifest master (images and voices) to the private Blob store.
 // Sources are found by sha256 under the local master folders, so renamed or re-foldered
@@ -62,7 +62,12 @@ const queue = [...pending];
 await Promise.all(
   Array.from({ length: 4 }, async () => {
     for (let item = queue.shift(); item; item = queue.shift()) {
-      await store.put(item.object, await readFile(sources.get(item.sha256)!));
+      await sdk.put(item.object, await readFile(sources.get(item.sha256)!), {
+        access: "private",
+        contentType: privateObjectType(item.object),
+        addRandomSuffix: false,
+        allowOverwrite: false,
+      });
       if ((await store.exists(item.object)) !== item.bytes)
         throw new Error(`Upload did not verify: ${item.object}`);
       if (++done % 25 === 0) console.log(`uploaded ${done}/${pending.length}`);
@@ -70,3 +75,6 @@ await Promise.all(
   }),
 );
 console.log(`uploaded ${done}`);
+console.log(
+  `stored all ${items.length} masters (${items.length - pending.length} already present, ${done} uploaded)`,
+);

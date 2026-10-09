@@ -5,7 +5,13 @@ import { pathToFileURL } from "node:url";
 import { ACTORS, type Actor } from "../src/content/actors/index.ts";
 
 export function actorByCode(code: string) {
-  const legacySlugs: Record<string, string> = { "SP-03": "misha-luo", "SP-13": "tang-yunqiu", "SP-14": "zhang-qiang", "SP-17": "chen-wei" };
+  const legacySlugs: Record<string, string> = {
+    "SP-03": "misha-luo",
+    "SP-13": "tang-yunqiu",
+    "SP-14": "zhang-qiang",
+    "SP-17": "chen-wei",
+    "SP-18": "yan-lin",
+  };
   const actor = ACTORS.find((item) => item.slug === (legacySlugs[code] ?? code));
   const fixture: Record<string, Actor> = {
     "SP-01": {

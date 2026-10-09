@@ -8,9 +8,9 @@
   },
   "status": {
     "siteProfile": "src/content/actors/yan-lin/profile.ts",
-    "delivered": 0,
-    "published": false,
-    "version": "0.1.0",
+    "delivered": 55,
+    "published": true,
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "facts": {
@@ -34,12 +34,12 @@
     "headsTall": 7.25,
     "heightCm": 165,
     "headHeightCm": "约 22–23 cm",
-    "heightNote": "2026-10-09 new-face proportion-fix brief; new audition image required before full pack."
+    "heightNote": "2026-10-09 measured replacement candidate-1: approx 7.35 heads tall; selected as corrected body anchor."
   },
   "anchorVersion": 1,
   "anchors": {
     "face": "library/claude-casting-2026-10-07/final/CC-061.png",
-    "body": null
+    "body": "library/actors/yan-lin/staging/yan-lin__audition__candidate-1.png"
   },
   "looks": [
     {
@@ -50,16 +50,16 @@
         "en": "Casting basics"
       },
       "prompt": "charcoal-grey plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos.",
-      "note": "Provisional audition look. Owner must select the new full-body audition image before full pack production."
+      "note": "Owner-selected identity anchor; approved for full pack production."
     }
   ],
   "roles": [],
   "proposals": {
     "approval": "owner-confirmed-facts-provisional-identity",
-    "appearance": "Provisional until Owner selects new audition image",
+    "appearance": "owner-selected-candidate-1; approved for full identity pack",
     "roleLook": null,
-    "phase": "audition-pending-owner",
-    "note": "Old CC image is face reference only; do not use it as body or proportion anchor. New audition image from 2026-10-09 proportion-fix trial becomes the identity anchor only after Owner approval.",
+    "phase": "full-pack-approved",
+    "note": "Owner-selected face identity and corrected proportion candidate-1. Earlier full-body outputs with approx 6.5 heads were rejected and remain in run rejected/.",
     "signatureFeatures": [
       "a high forehead, thin precise eyebrows, calm narrow eyes, and black hair pulled into a tight low bun"
     ]
@@ -69,5 +69,22 @@
       "chat": null,
       "note": "Create one dedicated character chat in Pics-A for the audition trial; use the old CC image only as face reference and enforce the specified adult proportions."
     }
+  },
+  "officialSamples": {
+    "postId": "official-sample-yan-lin",
+    "approvedOn": "2026-10-09",
+    "tools": ["ChatGPT", "Grok"],
+    "media": [
+      {
+        "kind": "image",
+        "source": "library/samples/yan-lin/yan-lin__sample__image-01__v1.png",
+        "public": "/media/works/samples/yan-lin/image-01.webp"
+      },
+      {
+        "kind": "video",
+        "source": "library/samples/yan-lin/yan-lin__sample__video-01__v1.mp4",
+        "public": "/media/works/samples/yan-lin/video-01.mp4"
+      }
+    ]
   }
 }

@@ -53,6 +53,14 @@ export const OFFICIAL_SAMPLES: OfficialSample[] = [
     video: "/media/works/samples/chen-wei/video-01.mp4",
     approvedOn: "2026-10-09",
   },
+  {
+    slug: "yan-lin",
+    tools: ["ChatGPT", "Grok"],
+    images: ["/media/works/samples/yan-lin/image-01.webp"],
+    poster: "/media/works/samples/yan-lin/image-01.webp",
+    video: "/media/works/samples/yan-lin/video-01.mp4",
+    approvedOn: "2026-10-09",
+  },
 ];
 
 export function officialSampleFor(slug: string): OfficialSample | undefined {

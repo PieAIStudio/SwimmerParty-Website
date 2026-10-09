@@ -13,7 +13,7 @@ type SampleSource = {
   };
 };
 
-const slugs = ["tang-yunqiu", "misha-luo", "zhang-qiang", "chen-wei"] as const;
+const slugs = ["tang-yunqiu", "misha-luo", "zhang-qiang", "chen-wei", "yan-lin"] as const;
 const root = process.cwd();
 const samples = [];
 for (const slug of slugs) {
@@ -21,31 +21,34 @@ for (const slug of slugs) {
     await readFile(path.join(root, "media-pack", "actors", `${slug}.json`), "utf8"),
   ) as SampleSource;
   const source = actor.officialSamples;
-  const kinds = source?.media.map((item) => item.kind).join(",");
-  if (!source || kinds !== "image,image,video")
-    throw new Error(`${slug}: officialSamples must list two images then one video`);
+  const imageItems = source?.media.filter((item) => item.kind === "image") ?? [];
+  const video = source?.media.find((item) => item.kind === "video");
+  if (
+    !source ||
+    ![1, 2].includes(imageItems.length) ||
+    !video ||
+    source.media.length !== imageItems.length + 1
+  )
+    throw new Error(`${slug}: officialSamples must list one or two images and one video`);
   const outDir = path.join(root, "public", "media", "works", "samples", slug);
   await rm(outDir, { recursive: true, force: true });
   await mkdir(outDir, { recursive: true });
-  const images: string[] = [];
-  for (const [index, item] of source.media.slice(0, 2).entries()) {
+  const imagePaths: string[] = [];
+  for (const [index, item] of imageItems.entries()) {
     const name = `image-0${index + 1}.webp`;
     await sharp(path.join(root, "media-pack", item.source))
       .resize({ width: 720, withoutEnlargement: true })
       .webp({ quality: 82 })
       .toFile(path.join(outDir, name));
-    images.push(`/media/works/samples/${slug}/${name}`);
+    imagePaths.push(`/media/works/samples/${slug}/${name}`);
   }
-  await copyFile(
-    path.join(root, "media-pack", source.media[2]!.source),
-    path.join(outDir, "video-01.mp4"),
-  );
+  await copyFile(path.join(root, "media-pack", video.source), path.join(outDir, "video-01.mp4"));
   samples.push({
     slug,
     tools: source.tools,
-    images,
+    images: imagePaths,
     // The video opens on the first scene image, so it doubles as the poster.
-    poster: images[0]!,
+    poster: imagePaths[0]!,
     video: `/media/works/samples/${slug}/video-01.mp4`,
     approvedOn: source.approvedOn,
   });

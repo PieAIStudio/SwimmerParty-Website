@@ -4,6 +4,7 @@ import { assetSlotOrder, listSeries, requiredSlots } from "./asset-series.ts";
 import type { ActorAssets, AssetItem } from "./asset-types.ts";
 import { looks as tangYunqiuLooks } from "../../content/actors/tang-yunqiu/looks.ts";
 import { looks as mishaLuoLooks } from "../../content/actors/misha-luo/looks.ts";
+import { looks as yanLinLooks } from "../../content/actors/yan-lin/looks.ts";
 export type { ActorAssets, AssetItem } from "./asset-types.ts";
 
 /** Server/build-time read. Client islands receive the public manifest as props. */
@@ -18,7 +19,13 @@ export function getActorAssets(slug: string, root = process.cwd()): ActorAssets 
     throw error;
   }
   const authoredLooks =
-    slug === "tang-yunqiu" ? tangYunqiuLooks : slug === "misha-luo" ? mishaLuoLooks : [];
+    slug === "tang-yunqiu"
+      ? tangYunqiuLooks
+      : slug === "misha-luo"
+        ? mishaLuoLooks
+        : slug === "yan-lin"
+          ? yanLinLooks
+          : [];
   const registeredLooks = authoredLooks.length ? authoredLooks : (data.looks ?? []);
   if (data.slug !== slug || !Array.isArray(data.items)) {
     throw new Error(`Invalid asset manifest: ${slug}`);

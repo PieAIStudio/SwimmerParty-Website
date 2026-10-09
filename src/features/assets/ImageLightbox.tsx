@@ -28,8 +28,14 @@ export function ImageLightbox({
     { src: item.large ?? item.preview, alt: name },
   ]);
   const trigger = useRef<HTMLButtonElement>(null);
+  const wasOpen = useRef(false);
   useEffect(() => {
-    if (!open) trigger.current?.focus();
+    if (open) {
+      wasOpen.current = true;
+    } else if (wasOpen.current) {
+      trigger.current?.focus();
+      wasOpen.current = false;
+    }
   }, [open]);
   function collectSlides() {
     const nodes = [...document.querySelectorAll<HTMLElement>("[data-lightbox-item]")];

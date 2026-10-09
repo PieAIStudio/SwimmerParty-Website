@@ -4,6 +4,7 @@ import { profile as tangYunqiu } from "./tang-yunqiu/profile.ts";
 import { profile as mishaLuo } from "./misha-luo/profile.ts";
 import { profile as zhangQiang } from "./zhang-qiang/profile.ts";
 import { profile as chenWei } from "./chen-wei/profile.ts";
+import { profile as yanLin } from "./yan-lin/profile.ts";
 import { NEW_FACE_DATA } from "./new-faces.ts";
 import { row } from "./shared.ts";
 
@@ -41,7 +42,7 @@ const newFaces: Actor[] = NEW_FACE_DATA.map((entry) => ({
   assetSource: entry.image,
 }));
 
-export const ACTORS: Actor[] = [tangYunqiu, mishaLuo, zhangQiang, chenWei, ...newFaces];
+export const ACTORS: Actor[] = [tangYunqiu, mishaLuo, zhangQiang, chenWei, yanLin, ...newFaces];
 export const STATUS_LABEL: Record<ActorStatus, L> = {
   active: { en: "Ready to cast", zh: "可出演" },
   "new-face": { en: "New face", zh: "新面孔" },

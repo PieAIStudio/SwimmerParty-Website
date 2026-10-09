@@ -278,29 +278,6 @@ export const NEW_FACE_DATA = [
     look: "East Asian (Chinese) woman, about 26, chubby, about 158 cm; round face with apple cheeks, a button nose; short fluffy bob; peach top",
   },
   {
-    slug: "yan-lin",
-    source: "CC-061",
-    nameZh: "严琳",
-    nameEn: "Yan Lin",
-    gender: "female",
-    group: "east-asian",
-    age: 41,
-    heightCm: 165,
-    origin: { zh: "北京", en: "Beijing" },
-    tagline: {
-      zh: "额头高，眉毛细，发髻扎得一丝不苟。",
-      en: "High forehead, fine brows, hair pulled into a tight low bun.",
-    },
-    voice: {
-      language: "zh",
-      brief: "41岁北京女性，普通话字正腔圆带一点京味，声音清冷、精确，语速平稳，带点距离感。",
-      introLine:
-        "我是严琳，北京人，四十一岁。我说话直接，不爱绕弯子。很多人觉得我冷，其实我只是认真。我适合演严格的主编、医院的主任，或者那种你以为是反派、最后才发现一直在帮你的人。",
-    },
-    image: "library/claude-casting-2026-10-07/final/CC-061.png",
-    look: "East Asian (Chinese) woman, about 41, slim, about 165 cm; very high forehead, thin arched eyebrows, a small tight mouth, a sharp chin; hair pulled back in a tight low bun; charcoal top",
-  },
-  {
     slug: "niu-fengying",
     source: "CC-066",
     nameZh: "牛凤英",

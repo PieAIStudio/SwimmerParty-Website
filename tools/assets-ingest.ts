@@ -277,7 +277,11 @@ export async function ingest(code: string, options: IngestOptions = {}) {
   }
   const versions = new Set(prepared.map(({ item }) => item.version));
   const previousVersions = new Set(
-    current.items.filter((item) => item.conformance === "v1").map((item) => item.version),
+    current.items
+      .filter(
+        (item) => item.conformance === "v1" && Number.isInteger(item.version) && item.version >= 1,
+      )
+      .map((item) => item.version),
   );
   if (previousVersions.size > 1)
     errors.push(new Error("Manifest contains mixed anchor versions; repair it before ingest"));

@@ -5,9 +5,21 @@ import path from "node:path";
 import { ACTORS } from "../src/content/actors/index.ts";
 
 const root = process.cwd();
-const slots = { intro: "intro", "intro-alt": "intro-en", chat: "chat", happy: "happy", angry: "angry", sad: "sad", "role-maid": "role-maid", "role-ceo": "role-ceo" } as const;
-const authored = new Set(["tang-yunqiu", "misha-luo", "zhang-qiang", "chen-wei"]);
-for (const actor of ACTORS) {
+const slots = {
+  intro: "intro",
+  "intro-alt": "intro-en",
+  chat: "chat",
+  happy: "happy",
+  angry: "angry",
+  sad: "sad",
+  "role-maid": "role-maid",
+  "role-ceo": "role-ceo",
+} as const;
+const authored = new Set(["tang-yunqiu", "misha-luo", "zhang-qiang", "chen-wei", "yan-lin"]);
+const requested = new Set(process.argv.slice(2));
+const unknown = [...requested].filter((slug) => !ACTORS.some((actor) => actor.slug === slug));
+if (unknown.length) throw new Error(`Unknown actor slug(s): ${unknown.join(", ")}`);
+for (const actor of ACTORS.filter((item) => !requested.size || requested.has(item.slug))) {
   const manifestPath = path.join(root, "src/content/actors", actor.slug, "assets.json");
   const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
   manifest.slug = actor.slug;
@@ -47,7 +59,10 @@ for (const actor of ACTORS) {
     if (files.includes("candidate-1.mp3")) await addVoice("intro", "candidate-1.mp3", lines.intro?.text);
   } else if (authored.has(actor.slug)) {
     for (const [slot, stem] of Object.entries(slots)) {
-      const file = files.find((name) => name.includes(`__voice__${stem}__v1.`));
+      const stems = slot === "intro-alt" ? [stem, "intro-alt"] : [stem];
+      const file = files.find((name) =>
+        stems.some((candidate) => name.includes(`__voice__${candidate}__v1.`)),
+      );
       if (file) await addVoice(slot, file, lines[slot]?.text);
     }
   }

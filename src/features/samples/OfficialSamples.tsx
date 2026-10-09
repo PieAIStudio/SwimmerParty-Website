@@ -22,7 +22,9 @@ async function SampleBlock({ sample, linkActor }: { sample: OfficialSample; link
         )}
         <span className="sp-small text-muted-foreground">{t("samples.official")}</span>
       </div>
-      <div className="mt-5 grid grid-cols-3 gap-3">
+      <div
+        className={`mt-5 grid ${sample.images.length === 1 ? "grid-cols-2" : "grid-cols-3"} gap-3`}
+      >
         {sample.images.map((src, index) => (
           // Small, fixed-size web copies; next/image would add nothing here.
           // eslint-disable-next-line @next/next/no-img-element
