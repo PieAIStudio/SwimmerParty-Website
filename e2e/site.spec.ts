@@ -1,10 +1,14 @@
 import { test, expect } from "@playwright/test";
-test("primary navigation has four current routes", async ({ page }) => {
+import { downloadFrom, localMember } from "./fixtures/download";
+
+test("navigation leads to the license and its credit mark downloads", async ({ page, context }) => {
+  await localMember(context);
   await page.goto("/en");
   for (const name of ["Actors", "Works", "Free License", "Studio"])
     await expect(page.getByRole("link", { name, exact: true }).first()).toBeVisible();
-});
-test("cast page loads", async ({ page }) => {
-  await page.goto("/en/cast?a=tang-yunqiu,misha-luo");
-  await expect(page.getByRole("heading", { name: "Your cast" })).toBeVisible();
+  await page.getByRole("link", { name: "Free License", exact: true }).first().click();
+  await expect(page).toHaveURL(/\/en\/license$/);
+  const mark = await downloadFrom(page, page.getByText("Download black", { exact: true }));
+  expect(mark.name).toBe("swim-in-ai-black.png");
+  expect(mark.bytes.subarray(1, 4).toString()).toBe("PNG");
 });
