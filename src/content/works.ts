@@ -1,9 +1,9 @@
 import type { L } from "./actors";
 export type WorkStatus = "shooting" | "writing" | "development";
 export const WORK_STATUS_LABEL: Record<WorkStatus, L> = {
-  shooting: { en: "SHOOTING", zh: "制作中" },
-  writing: { en: "WRITING", zh: "编剧中" },
-  development: { en: "DEVELOPMENT", zh: "开发中" },
+  shooting: { en: "Shooting", zh: "制作中" },
+  writing: { en: "Writing", zh: "编剧中" },
+  development: { en: "In development", zh: "开发中" },
 };
 export type WorkRole = { id: string; name: L; note?: L; look?: string };
 export type Work = {

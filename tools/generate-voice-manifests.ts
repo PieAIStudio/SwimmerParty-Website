@@ -24,28 +24,70 @@ for (const actor of ACTORS.filter((item) => !requested.size || requested.has(ite
   const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
   manifest.slug = actor.slug;
   delete manifest.code;
-  const items = (manifest.items ?? []).filter((item: Record<string, unknown>) => item.kind !== "voice").map((item: Record<string, unknown>) => {
-    if ((item.series ?? "") !== "voice") {
-      item.kind = "image";
-      if (typeof item.object === "string") item.object = item.object.replace(/SP-\d{2,4}__/g, `${actor.slug}__`);
-    }
-    return item;
-  });
-  const voiceRoot = actor.status === "new-face" ? path.join(root, "media-pack/library/voice/new-faces", actor.slug) : path.join(root, "media-pack/library/voice", actor.slug);
+  const items = (manifest.items ?? [])
+    .filter((item: Record<string, unknown>) => item.kind !== "voice")
+    .map((item: Record<string, unknown>) => {
+      if ((item.series ?? "") !== "voice") {
+        item.kind = "image";
+        if (typeof item.object === "string")
+          item.object = item.object.replace(/SP-\d{2,4}__/g, `${actor.slug}__`);
+      }
+      return item;
+    });
+  const voiceRoot =
+    actor.status === "new-face"
+      ? path.join(root, "media-pack/library/voice/new-faces", actor.slug)
+      : path.join(root, "media-pack/library/voice", actor.slug);
   let files: string[] = [];
-  try { files = await readdir(voiceRoot); } catch { files = []; }
+  try {
+    files = await readdir(voiceRoot);
+  } catch {
+    files = [];
+  }
   const linesPath = path.join(voiceRoot, "lines.json");
   let lines: Record<string, { text?: string }> = {};
-  try { lines = JSON.parse(await readFile(linesPath, "utf8")).lines ?? {}; } catch { /* new-face source has its line in actor data */ }
+  try {
+    lines = JSON.parse(await readFile(linesPath, "utf8")).lines ?? {};
+  } catch {
+    /* new-face source has its line in actor data */
+  }
   const addVoice = async (slot: string, file: string, text: string | undefined) => {
     const filename = path.join(voiceRoot, file);
     const bytes = await readFile(filename);
-    const duration = Number(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "default=noprint_wrappers=1:nokey=1", filename], { encoding: "utf8" }).trim());
+    const duration = Number(
+      execFileSync(
+        "ffprobe",
+        [
+          "-v",
+          "error",
+          "-show_entries",
+          "format=duration",
+          "-of",
+          "default=noprint_wrappers=1:nokey=1",
+          filename,
+        ],
+        { encoding: "utf8" },
+      ).trim(),
+    );
     const item: Record<string, unknown> = {
-      kind: "voice", slot: `voice.${slot}`, series: "voice", key: slot, look: null, conformance: "v1", version: 1,
-      width: 0, height: 0, bytes: bytes.length, sha256: createHash("sha256").update(bytes).digest("hex"), sourceSha256: createHash("sha256").update(bytes).digest("hex"),
-      bbox: { left: 0, top: 0, right: 0, bottom: 0 }, format: file.endsWith(".wav") ? "wav" : "mp3", object: `voice/${actor.slug}/${file}`,
-      preview: `/api/voice/${actor.slug}/${slot}`, thumb: `/api/voice/${actor.slug}/${slot}`, previewUrl: `/api/voice/${actor.slug}/${slot}`,
+      kind: "voice",
+      slot: `voice.${slot}`,
+      series: "voice",
+      key: slot,
+      look: null,
+      conformance: "v1",
+      version: 1,
+      width: 0,
+      height: 0,
+      bytes: bytes.length,
+      sha256: createHash("sha256").update(bytes).digest("hex"),
+      sourceSha256: createHash("sha256").update(bytes).digest("hex"),
+      bbox: { left: 0, top: 0, right: 0, bottom: 0 },
+      format: file.endsWith(".wav") ? "wav" : "mp3",
+      object: `voice/${actor.slug}/${file}`,
+      preview: `/api/voice/${actor.slug}/${slot}`,
+      thumb: `/api/voice/${actor.slug}/${slot}`,
+      previewUrl: `/api/voice/${actor.slug}/${slot}`,
       durationSec: Number.isFinite(duration) ? Math.round(duration * 10) / 10 : 0,
     };
     if (text) item.transcript = { text };
@@ -53,10 +95,13 @@ for (const actor of ACTORS.filter((item) => !requested.size || requested.has(ite
   };
   if (actor.status === "new-face") {
     const file = "candidate-1.mp3";
-    const source = JSON.parse(await readFile(path.join(root, "media-pack/casting/new-faces-2026-10.json"), "utf8")).actors.find((item: { slug: string }) => item.slug === actor.slug);
+    const source = JSON.parse(
+      await readFile(path.join(root, "media-pack/casting/new-faces-2026-10.json"), "utf8"),
+    ).actors.find((item: { slug: string }) => item.slug === actor.slug);
     await addVoice("intro", file, source?.voice?.introLine);
   } else if (actor.slug === "zhang-qiang" || actor.slug === "chen-wei") {
-    if (files.includes("candidate-1.mp3")) await addVoice("intro", "candidate-1.mp3", lines.intro?.text);
+    if (files.includes("candidate-1.mp3"))
+      await addVoice("intro", "candidate-1.mp3", lines.intro?.text);
   } else if (authored.has(actor.slug)) {
     for (const [slot, stem] of Object.entries(slots)) {
       const stems = slot === "intro-alt" ? [stem, "intro-alt"] : [stem];
@@ -69,4 +114,3 @@ for (const actor of ACTORS.filter((item) => !requested.size || requested.has(ite
   manifest.items = items;
   await writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
 }
-

@@ -108,8 +108,8 @@ export const WHY: { id: string; body: L }[] = [
  * only one sentence of this file survives a redesign, it should be this.
  */
 export const STANCE_LINE: L = {
-  en: "ANIMATED CHARACTERS ONLY — NEVER A HUMAN LIKENESS",
-  zh: "只做动画角色 — 绝不做真人形象",
+  en: "Animated characters only, never a real person’s likeness",
+  zh: "只做动画角色，绝不做真人形象",
 };
 
 /** The short badge that sits on every roster card and dossier. */

@@ -6,12 +6,12 @@ export const SITE = {
   nameCn: "游泳派对",
   /** The positioning line, in both authored locales. */
   claim: {
-    en: "WE MAKE AND LICENSE ORIGINAL AI ACTORS.",
-    zh: "我们制作并授权原创 AI 演员。",
+    en: "Original AI actors, free to use",
+    zh: "原创 AI 演员，免费商用",
   } satisfies L,
   description: {
-    en: "SWIMMER PARTY makes and licenses original animated AI actors.",
-    zh: "SWIMMER PARTY 制作并授权原创 AI 动画演员。",
+    en: "Original animated AI actors with free image and voice packs. Free for commercial use; just credit Swim In AI.",
+    zh: "原创 AI 动画演员，免费图片和声音素材包。商用免费，署名 Swim In AI 即可。",
   } satisfies L,
   /** Canonical production origin. The translate proxy is derived from it. */
   url: "https://swimmerparty.swiminai.com",

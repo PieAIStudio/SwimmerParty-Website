@@ -13,15 +13,9 @@ export const profile: Actor = {
   age: 28,
   portrait: "/media/assets/misha-luo/turnaround.front.webp",
   spec: [
-    row("age", "AGE", "年龄", "LATE 20s", "二十八九岁"),
-    row(
-      "origin",
-      "ORIGIN",
-      "籍贯",
-      "RUSSIAN DESCENT, RAISED IN CHONGQING",
-      "俄罗斯血统，在重庆长大",
-    ),
-    row("language", "SPEAKS", "语言", "CHINESE", "中文"),
+    row("age", "Age", "年龄", "Late 20s", "二十八九岁"),
+    row("origin", "From", "籍贯", "Russian descent, raised in Chongqing", "俄罗斯血统，在重庆长大"),
+    row("language", "Speaks", "语言", "Chinese", "中文"),
   ],
   note: {
     en: "Misha Luo is an AI actor at SWIMMER PARTY. He is of Russian descent, grew up in Chongqing and is in his late twenties. He plays Dai Er in Journey to the East and also appears in Modern Freaks.",

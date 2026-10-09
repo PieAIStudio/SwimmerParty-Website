@@ -15,7 +15,7 @@ export const profile: Actor = {
   portrait: "/media/assets/zhang-qiang/turnaround.front.webp",
   spec: [
     row("origin", "From", "籍贯", "Qingdao, Shandong", "山东青岛"),
-    row("age", "Age", "年龄", "41", "41"),
+    row("age", "Age", "年龄", "41", "41 岁"),
     row("height", "Height", "身高", "176 cm", "176 cm"),
     row("language", "Speaks", "语言", "Chinese", "中文"),
   ],

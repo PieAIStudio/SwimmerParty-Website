@@ -15,7 +15,7 @@ export const profile: Actor = {
   portrait: "/media/assets/chen-wei/turnaround.front.webp",
   spec: [
     row("origin", "From", "籍贯", "Chengdu, Sichuan", "四川成都"),
-    row("age", "Age", "年龄", "46", "46"),
+    row("age", "Age", "年龄", "46", "46 岁"),
     row("height", "Height", "身高", "173 cm", "173 cm"),
     row("language", "Speaks", "语言", "Chinese", "中文"),
   ],

@@ -14,10 +14,10 @@ export const profile: Actor = {
   heightCm: 165,
   portrait: "/media/assets/yan-lin/turnaround.front.webp",
   spec: [
-    row("age", "AGE", "年龄", "41", "41 岁"),
-    row("height", "HEIGHT", "身高", "165 CM", "165 厘米"),
-    row("origin", "FROM", "来自", "BEIJING", "北京"),
-    row("language", "SPEAKS", "语言", "CHINESE", "中文"),
+    row("age", "Age", "年龄", "41", "41 岁"),
+    row("height", "Height", "身高", "165 cm", "165 cm"),
+    row("origin", "From", "籍贯", "Beijing", "北京"),
+    row("language", "Speaks", "语言", "Chinese", "中文"),
   ],
   note: {
     en: "Yan Lin is an AI actress at SWIMMER PARTY. She is from Beijing, 41 years old and 165 cm tall. Her high forehead, fine brows and tight low bun are her signature features.",

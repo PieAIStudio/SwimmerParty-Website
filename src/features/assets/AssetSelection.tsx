@@ -309,6 +309,9 @@ export function AssetSelectionProvider({
 export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
   const { t } = useSiteI18n();
   const { selected, change, requestPack, requestStarter, busy, sourceRef } = useAssetSelection();
+  // On phones the bar only appears once something is picked; the hero already offers the full pack.
+  if (mobile && !selected.size) return null;
+  const size = mobile ? "sm" : undefined;
   return (
     <div
       className={mobile ? "sp-selection-mobile" : "hidden shrink-0 items-center gap-3 md:flex"}
@@ -317,21 +320,28 @@ export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
       <span className="sp-small whitespace-nowrap">
         {t("assets.selected", { count: selected.size })}
       </span>
-      <GameButton disabled={!selected.size || busy} onClick={() => change([...selected], false)}>
+      <GameButton
+        size={size}
+        disabled={!selected.size || busy}
+        onClick={() => change([...selected], false)}
+      >
         {t("assets.clear")}
       </GameButton>
-      <GameButton
-        variant="secondary"
-        disabled={busy}
-        onClick={(event) => {
-          sourceRef.current = event.currentTarget;
-          requestStarter();
-        }}
-      >
-        {t("assets.download")}
-      </GameButton>
+      {mobile ? null : (
+        <GameButton
+          variant="secondary"
+          disabled={busy}
+          onClick={(event) => {
+            sourceRef.current = event.currentTarget;
+            requestStarter();
+          }}
+        >
+          {t("assets.download")}
+        </GameButton>
+      )}
       <GameButton
         variant="primary"
+        size={size}
         data-download-selected
         disabled={busy}
         onClick={(event) => {

@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { AppLocale } from "@/i18n/routing";
 import { ACTORS, latestActors } from "@/content/actors";
 import { ActorCard } from "@/features/actors";
+import { getActorAssets } from "@/features/assets";
 import { SectionHead } from "@/site/SectionHead";
 import { TextLink } from "@/site/TextLink";
 import { Link } from "@/i18n/navigation";
@@ -16,6 +17,8 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
   const { t } = await getSiteI18n();
   const newest = latestActors(5);
   const msg = (key: string) => t(key as Key, {} as never);
+  const items = ACTORS.flatMap((actor) => getActorAssets(actor.slug).items);
+  const count = (kind: string) => items.filter((item) => item.kind === kind).length;
   return (
     <div className="sp-container">
       <section className="grid items-center gap-10 py-12 lg:min-h-[82vh] lg:grid-cols-12">
@@ -74,11 +77,11 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
           <p className="sp-small mt-1 text-muted-foreground">{t("home.statActors")}</p>
         </div>
         <div>
-          <p className="font-display text-[2.5rem] font-bold">263</p>
+          <p className="font-display text-[2.5rem] font-bold">{count("image")}</p>
           <p className="sp-small mt-1 text-muted-foreground">{t("home.statImages")}</p>
         </div>
         <div>
-          <p className="font-display text-[2.5rem] font-bold">111</p>
+          <p className="font-display text-[2.5rem] font-bold">{count("voice")}</p>
           <p className="sp-small mt-1 text-muted-foreground">{t("home.statVoices")}</p>
         </div>
       </section>
