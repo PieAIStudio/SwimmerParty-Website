@@ -1,22 +1,21 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useSiteLocale, useSiteI18n } from "@/i18n/client";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageMenu } from "./LanguageMenu";
 import { ThemeToggle } from "./ThemeToggle";
-import { AccountMenu } from "@/features/account";
 import { NAV, SECONDARY_NAV, SITE } from "@/content/site";
 import { GameIconButton } from "@pieai/swimmer-ui-kit";
 import { GameIcon } from "@pieai/swimmer-ui-kit";
 
-export function SiteHeader() {
+export function SiteHeader({ accountMenu }: { accountMenu: ReactNode }) {
   const pathname = usePathname();
   const locale = useSiteLocale();
-  return <HeaderContent key={`${locale}:${pathname}`} />;
+  return <HeaderContent key={`${locale}:${pathname}`} accountMenu={accountMenu} />;
 }
 
-function HeaderContent() {
+function HeaderContent({ accountMenu }: { accountMenu: ReactNode }) {
   const { t } = useSiteI18n();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -77,9 +76,7 @@ function HeaderContent() {
           <div className="hidden lg:block">
             <LanguageMenu />
           </div>
-          <div className="hidden lg:block">
-            <AccountMenu />
-          </div>
+          <div className="hidden lg:block">{accountMenu}</div>
           <div className="lg:hidden" ref={trigger}>
             <GameIconButton
               label={t("common.menu")}
@@ -133,7 +130,7 @@ function HeaderContent() {
           </nav>
           <div className="flex items-center justify-between gap-3 pb-8">
             <LanguageMenu variant="panel" />
-            <AccountMenu />
+            {accountMenu}
           </div>
         </div>
       </dialog>

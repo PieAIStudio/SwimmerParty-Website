@@ -1,38 +1,20 @@
 import { TERMS } from "@/content/legal";
-import { getSiteI18n, setSiteLocale } from "@/i18n/server";
+import { LegalDocument } from "@/features/license";
+import { setSiteLocale } from "@/i18n/server";
 import type { AppLocale } from "@/i18n/routing";
 import type { Metadata } from "next";
 import { localizedAlternates } from "@/i18n/metadata";
-const l = (x: { en: string; zh: string }, loc: AppLocale) => x[loc];
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: AppLocale }>;
-}): Promise<Metadata> {
+type Props = { params: Promise<{ locale: AppLocale }> };
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: l(TERMS.title, locale),
-    description: l(TERMS.description, locale),
+    title: TERMS.title[locale],
+    description: TERMS.description[locale],
     alternates: localizedAlternates(locale, "/terms"),
   };
 }
-export default async function Terms({ params }: { params: Promise<{ locale: AppLocale }> }) {
+export default async function Terms({ params }: Props) {
   const { locale } = await params;
-  const { t } = await getSiteI18n(locale);
   setSiteLocale(locale);
-  return (
-    <div className="sp-container py-16">
-      <h1 className="sp-display-xl">{l(TERMS.title, locale)}</h1>
-      <p className="sp-lead mt-5 max-w-3xl">{l(TERMS.intro, locale)}</p>
-      <p className="sp-small mt-4 text-muted-foreground">{t("legal.lastUpdated")}</p>
-      <div className="mt-12 space-y-5">
-        {TERMS.rows.map(([enT, enB, zhT, zhB]) => (
-          <article key={enT} className="sp-panel p-5">
-            <h2 className="font-semibold">{locale === "zh" ? zhT : enT}</h2>
-            <p className="sp-small mt-2">{locale === "zh" ? zhB : enB}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  );
+  return <LegalDocument document={TERMS} locale={locale} introWidth="max-w-3xl" />;
 }

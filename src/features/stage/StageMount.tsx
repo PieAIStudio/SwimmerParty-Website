@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Mannequin } from "@/features/actors/client";
+import { Mannequin } from "@/site/Mannequin";
 
 const Stage = dynamic(() => import("./Stage"), {
   ssr: false,

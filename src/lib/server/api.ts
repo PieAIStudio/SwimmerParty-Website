@@ -1,30 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { SITE } from "../../content/site.ts";
-import { HttpError, runtimeModes, type RuntimeModes } from "./runtime-mode.ts";
 
-export type ApiHandler = (
-  req: NextApiRequest,
-  res: NextApiResponse,
-  modes: RuntimeModes,
-) => Promise<void>;
-export function privateApi(method: "GET" | "POST", handler: ApiHandler) {
-  return async (req: NextApiRequest, res: NextApiResponse) => {
-    res.setHeader("Cache-Control", "private, no-store");
-    res.setHeader("Vary", "Cookie");
-    res.setHeader("Referrer-Policy", "no-referrer");
-    res.setHeader("X-Content-Type-Options", "nosniff");
-    try {
-      const modes = runtimeModes();
-      if (req.method !== method) {
-        res.setHeader("Allow", method);
-        throw new HttpError(405, "method-not-allowed");
-      }
-      if (method === "POST") requireSameOrigin(req, modes.account);
-      await handler(req, res, modes);
-    } catch (error) {
-      apiFailure(res, error);
-    }
-  };
+export class HttpError extends Error {
+  status: number;
+  constructor(status: number, code: string) {
+    super(code);
+    this.status = status;
+  }
 }
 export function apiFailure(res: NextApiResponse, error: unknown) {
   if (res.writableEnded) return;
@@ -32,10 +13,6 @@ export function apiFailure(res: NextApiResponse, error: unknown) {
   const code = error instanceof HttpError ? error.message : "service-unavailable";
   if (status >= 500) process.stderr.write(`[swimmer-party] ${code}\n`); // No provider errors, cookies or tokens.
   res.status(status).json({ error: code });
-}
-export function queryText(value: string | string[] | undefined): string {
-  if (typeof value !== "string" || value.length > 160) throw new HttpError(404, "asset-not-found");
-  return value;
 }
 export async function readJsonBody(req: NextApiRequest): Promise<Record<string, unknown>> {
   let value: unknown = req.body;
@@ -68,12 +45,13 @@ export async function readJsonBody(req: NextApiRequest): Promise<Record<string, 
 export function requireSameOrigin(
   req: NextApiRequest,
   mode: "mock" | "swimmer",
-  expectedOrigin = process.env.SWIMMER_ORIGIN ?? SITE.url,
+  expectedOrigin?: string,
 ) {
   if (req.headers["sec-fetch-site"] === "cross-site")
     throw new HttpError(403, "cross-site-request");
   if (mode === "swimmer") {
-    if (req.headers.origin !== expectedOrigin) throw new HttpError(403, "cross-site-request");
+    if (!expectedOrigin || req.headers.origin !== expectedOrigin)
+      throw new HttpError(403, "cross-site-request");
   } else if (req.headers.origin) {
     try {
       const origin = new URL(req.headers.origin);

@@ -5,7 +5,7 @@ import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/site/SiteHeader";
 import { SiteFooter } from "@/site/SiteFooter";
-import { AccountProvider } from "@/features/account";
+import { AccountProvider, AccountMenu } from "@/features/account";
 import { SITE_UI_STYLE, THEME_INIT_SCRIPT } from "@/site/theme";
 import { LOCALE_HTML_LANG, LOCALE_OG, routing, type AppLocale } from "@/i18n/routing";
 import { SITE } from "@/content/site";
@@ -100,7 +100,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             >
               {t("common.skipToContent")}
             </a>
-            <SiteHeader />
+            <SiteHeader accountMenu={<AccountMenu />} />
             <main id="main">{children}</main>
             <SiteFooter />
             <PostHog />

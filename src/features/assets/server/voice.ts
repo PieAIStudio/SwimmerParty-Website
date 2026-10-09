@@ -1,10 +1,10 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { getActor } from "../../../content/actors/index.ts";
+import { getActor } from "../../actors/queries.ts";
 import { getActorAssets } from "../assets.ts";
 import { configuredBlobStore } from "./blob-store.ts";
-import { privateApi, queryText } from "../../../lib/server/api.ts";
-import { HttpError } from "../../../lib/server/runtime-mode.ts";
+import { privateApi, queryText } from "./route.ts";
+import { HttpError } from "../../../lib/server/api.ts";
 
 /** Public voice preview. Blob mode redirects to a short-lived signed URL; local mode streams. */
 export default privateApi("GET", async (req, res, modes) => {

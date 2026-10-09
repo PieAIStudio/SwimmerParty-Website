@@ -2,7 +2,7 @@ import { getSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
 import { STATUS_LABEL, type Actor } from "@/content/actors";
 import { ActorPicture } from "./ActorPicture";
-import { getActorAssets } from "@/features/assets";
+import { getActorAssets } from "@/features/assets/queries";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
 
 export async function ActorCard({ actor, href }: { actor: Actor; href?: string }) {

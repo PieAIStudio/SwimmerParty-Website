@@ -16,10 +16,10 @@
 
 网站文案由网站维护者在 `website` 撰写，生产身份字段由生产侧维护。`website.specOrder` 只定义展示顺序，年龄和身高直接来自结构化事实；`ageDisplay` 仅保留经批准的年龄表达。未确认的身高保持空值，不猜测。`website.exportPrompt` 仅用于已经与生产提示词不同的批准导出文案，否则直接读 `identity`。
 
-晋升时保留 casting 记录，在同名生产记录设置 `website.published`、`status.version` 和 `release`。生成器只抑制这个 slug 的新面孔副本，不发布其他制作中的演员；姓名必须保持一致。合成夹具与反例见 `tools/actor-data.test.ts`。
+晋升时保留 casting 记录，在同名生产记录设置 `website.published`、`status.version` 和 `release`。生成器只抑制这个 slug 的新面孔副本，不发布其他制作中的演员；姓名必须保持一致。合成夹具与反例见 `tools/test/actor-data.test.ts`。
 
 旧的 `new-faces.ts` 和三份手写 `looks.ts` 已退役：它们分别逐值匹配 casting 和生产造型，消费者已转向生成档案或清单；不包含独有原件。既有版本可从 Git 恢复。
 
 ## 生成素材的边界
 
-纯资料核对不需要真实素材。图片、录音和字体原件不在全新克隆里，不能把“公开文件哈希没变”说成“源到产物已经重生成验证”。生成物清单、可执行核对和明确例外见 `tools/generated-media.test.ts`；真实转换工具只在恢复批准原件并显式要求生成时使用，不能在普通验证中运行。
+纯资料核对不需要真实素材。图片、录音和字体原件不在全新克隆里，不能把“公开文件哈希没变”说成“源到产物已经重生成验证”。生成物清单、可执行核对和明确例外见 `tools/test/generated-media.test.ts`；真实转换工具只在恢复批准原件并显式要求生成时使用，不能在普通验证中运行。

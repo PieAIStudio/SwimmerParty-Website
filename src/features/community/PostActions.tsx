@@ -2,6 +2,7 @@
 import { useSiteI18n } from "@/i18n/client";
 import { useState } from "react";
 import { GameButton } from "@pieai/swimmer-ui-kit";
+import { likeResultSchema } from "@/contracts/community";
 
 export function PostActions({ id }: { id: string; locale: "en" | "zh" }) {
   const { t } = useSiteI18n();
@@ -14,7 +15,7 @@ export function PostActions({ id }: { id: string; locale: "en" | "zh" }) {
       body: JSON.stringify({ postId: id, liked: !liked }),
     });
     if (response.status === 401) return alert(t("community.signIn"));
-    if (response.ok) setLiked(((await response.json()) as { liked: boolean }).liked);
+    if (response.ok) setLiked(likeResultSchema.parse(await response.json()).liked);
   }
   async function report() {
     const response = await fetch("/api/community/reports", {

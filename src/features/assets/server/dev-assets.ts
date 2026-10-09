@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { privateApi, queryText } from "../../../lib/server/api.ts";
-import { HttpError } from "../../../lib/server/runtime-mode.ts";
+import { privateApi, queryText } from "./route.ts";
+import { HttpError } from "../../../lib/server/api.ts";
 import { readLocalObject, verifyLocalObject } from "./local-downloads.ts";
 
 const serve = privateApi("GET", async (req, res) => {

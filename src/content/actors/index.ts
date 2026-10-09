@@ -10,12 +10,3 @@ export const STATUS_LABEL: Record<ActorStatus, L> = {
   "in-development": { en: "In development", zh: "制作中" },
   concept: { en: "Concept", zh: "概念" },
 };
-export function getActor(slug: string): Actor | undefined {
-  return ACTORS.find((actor) => actor.slug === slug);
-}
-export function latestActors(limit = 5): Actor[] {
-  return ACTORS.filter((actor) => actor.versionDate)
-    .slice()
-    .sort((a, b) => (b.versionDate ?? "").localeCompare(a.versionDate ?? ""))
-    .slice(0, limit);
-}

@@ -34,7 +34,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
     >
       {image ? (
         // ImageResponse requires a raw image element for embedded bitmap data.
-        // eslint-disable-next-line @next/next/no-img-element
+        // oxlint-disable-next-line next/no-img-element
         <img
           alt=""
           src={image}

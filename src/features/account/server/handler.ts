@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { accountUser, swimmerAccount } from "./account.ts";
 import { apiFailure, requireSameOrigin } from "../../../lib/server/api.ts";
-import { HttpError, runtimeModes } from "../../../lib/server/runtime-mode.ts";
+import { HttpError } from "../../../lib/server/api.ts";
+import { runtimeModes } from "../../../config/server.ts";
 
 // AuthKit reads IncomingMessage itself; Next must not consume that stream first.
 export default async function auth(req: NextApiRequest, res: NextApiResponse) {

@@ -4,9 +4,9 @@ import { useSiteI18n, useSiteLocale } from "@/i18n/client";
 import type { Actor } from "@/content/actors";
 import { ActorCardClient } from "./ActorCardClient";
 import { GameButton, GameSegmentedControl, GameSelect } from "@pieai/swimmer-ui-kit";
-import { VoteButton } from "@/features/community";
+import { VoteButton } from "@/features/community/client";
 import { COMMUNITY_ENABLED } from "@/content/features";
-import { CastAddButton } from "@/features/cast";
+import { CastAddButton } from "@/features/cast/client";
 export function ActorFilters({ actors }: { actors: Actor[] }) {
   const { t } = useSiteI18n();
   const locale = useSiteLocale();

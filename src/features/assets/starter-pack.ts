@@ -1,8 +1,8 @@
-import { strToU8, zipSync } from "fflate";
+import { strToU8 } from "fflate";
 import { SITE } from "../../content/site.ts";
 import { LICENSE, STARTER_LICENSE } from "../../content/license.ts";
-import { fetchImageBlob } from "../../lib/browser-files.ts";
-import { SignInRequired } from "./downloads.ts";
+import { zipBlob } from "../../lib/browser-files.ts";
+import { loadSignedImages } from "./signed-images.ts";
 
 /** The references every tool needs first. New faces have only the full-body front. */
 const STARTER_SLOTS = ["turnaround.front", "face.front"];
@@ -37,20 +37,17 @@ ${STARTER_LICENSE.zh}${SITE.url}/zh/license
 }
 
 async function actorFiles(actor: StarterActor, prefix: string, signal?: AbortSignal) {
-  const response = await fetch(`/api/assets/${actor.slug}/bundle`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ slots: actor.slots }),
-    signal,
-  });
-  if (response.status === 401) throw new SignInRequired("Sign in again");
-  if (!response.ok) throw new Error("Starter pack authorization failed");
-  const body = (await response.json()) as { items: { url: string; filename: string }[] };
+  const images = await loadSignedImages(
+    actor.slug,
+    actor.slots.map((slot) => ({ slot })),
+    {
+      signal,
+      authorizationError: "Starter pack authorization failed",
+    },
+  );
   const files: Record<string, Uint8Array> = {};
-  for (const item of body.items)
-    files[`${prefix}${item.filename}`] = new Uint8Array(
-      await (await fetchImageBlob(item.url, signal)).arrayBuffer(),
-    );
+  for (const item of images)
+    files[`${prefix}${item.filename}`] = new Uint8Array(await item.blob.arrayBuffer());
   files[`${prefix}prompt.txt`] = strToU8(`${actor.promptSeed ?? ""}\n`);
   files[`${prefix}README.txt`] = strToU8(guide(actor));
   return files;
@@ -78,7 +75,7 @@ export async function starterPack(
     );
   }
   return {
-    blob: new Blob([new Uint8Array(zipSync(files, { level: 0 }))], { type: "application/zip" }),
+    blob: zipBlob(files, signal),
     filename: single ? `${actors[0]!.slug}_starter.zip` : "swimmer-party-cast.zip",
   };
 }

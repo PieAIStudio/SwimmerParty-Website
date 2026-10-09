@@ -6,7 +6,7 @@ import { getSiteI18n } from "@/i18n/server";
 import { AssetTile } from "./AssetTile";
 import { VoiceTile } from "./VoiceTile";
 import { SelectAssetSeries } from "./AssetSelection";
-import { Mannequin } from "@/features/actors";
+import { Mannequin } from "@/site/Mannequin";
 
 export async function AssetLibrarySections({
   assets,

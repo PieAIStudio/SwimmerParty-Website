@@ -1,7 +1,7 @@
-import { getActor } from "../../../content/actors/index.ts";
+import { getActor } from "../../actors/queries.ts";
 import { getActorAssets } from "../assets.ts";
-import { privateApi, queryText } from "../../../lib/server/api.ts";
-import { HttpError } from "../../../lib/server/runtime-mode.ts";
+import { privateApi, queryText } from "./route.ts";
+import { HttpError } from "../../../lib/server/api.ts";
 import { accountUser } from "../../account/server/index.ts";
 import { limitGuest } from "./guest-limiter.ts";
 import { signedAsset } from "./asset-downloads.ts";

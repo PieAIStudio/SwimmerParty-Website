@@ -1,3 +1,13 @@
+import { zipSync } from "fflate";
+
+/** Both export flows use the same uncompressed, ordered ZIP container. */
+export function zipBlob(files: Record<string, Uint8Array>, signal?: AbortSignal): Blob {
+  signal?.throwIfAborted();
+  const bytes = zipSync(files, { level: 0 });
+  signal?.throwIfAborted();
+  return new Blob([new Uint8Array(bytes)], { type: "application/zip" });
+}
+
 export function saveBlob(blob: Blob, filename: string): void {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");

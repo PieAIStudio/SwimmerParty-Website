@@ -240,7 +240,7 @@ export const LICENSE_WHERE = [
     sizeZh: "小字就行",
   },
 ] as const;
-// Pictures come from tools/generate-license-examples.ts as <image>.<locale>.webp.
+// Pictures come from tools/assets/generate-license-examples.ts as <image>.<locale>.webp.
 export const LICENSE_EXAMPLES = [
   {
     image: "/media/license/opening",

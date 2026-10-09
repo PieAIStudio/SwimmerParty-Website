@@ -13,7 +13,7 @@ import { ContactShadows } from "@react-three/drei";
 import { ACESFilmicToneMapping, SRGBColorSpace } from "three";
 import { useSiteTheme } from "@/site/use-site-theme";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { Mannequin } from "@/features/actors/client";
+import { Mannequin } from "@/site/Mannequin";
 import { WhiteModel } from "./WhiteModel";
 import { STUDIO_LIGHT } from "./palette";
 

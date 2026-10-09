@@ -1,6 +1,6 @@
 import { getSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
-import { getActor } from "@/content/actors";
+import { getActor } from "@/features/actors/queries";
 import { OFFICIAL_SAMPLES, type OfficialSample } from "@/content/official-samples.generated";
 
 /** One actor's sample: two scene images and a short video, plus the recipe to repeat it. */

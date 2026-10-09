@@ -2,7 +2,7 @@
  * Paired authored UI messages; generate catalogs with pnpm messages:generate.
  * Bounded authored-body exceptions: src/content/legal.ts and src/content/license.ts
  * retain their long legal text, credit lines, examples and rule/FAQ tables verbatim.
- * Actor/content field locale selectors remain data. ZIP README/KIT_RULES delivery
+ * Actor/content field locale selectors remain data. ZIP README/legacy delivery
  * copy is outside this UI catalog; do not change its legal wording in this block.
  */
 export const messages = {
@@ -313,10 +313,6 @@ export const messages = {
   "casting.routes.2.body": {
     en: "We bring the actors and the production, you bring the subject, the channel or the money. The film belongs to both of us; the character stays on the roster and keeps working.",
     zh: "我们出演员和制作，你出题材、渠道或资金。片子归双方，角色留在名册上继续演。",
-  },
-  "casting.aboutActor": {
-    en: "About: {name}",
-    zh: "关于：{name}",
   },
   "notFound.eyebrow": {
     en: "404 — no such talent",

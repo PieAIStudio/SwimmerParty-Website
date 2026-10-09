@@ -182,7 +182,6 @@ export interface MessageContracts {
   readonly "cast.remove": {  };
   readonly "cast.share": {  };
   readonly "cast.title": {  };
-  readonly "casting.aboutActor": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "casting.routes.1.body": {  };
   readonly "casting.routes.1.title": {  };
   readonly "casting.routes.2.body": {  };

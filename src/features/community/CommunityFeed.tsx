@@ -3,6 +3,7 @@ import { useSiteI18n } from "@/i18n/client";
 import { useEffect, useState } from "react";
 import { GameButton } from "@pieai/swimmer-ui-kit";
 import type { CommunityPost } from "./types";
+import { communityPostResponseSchema, communityPostsResponseSchema } from "@/contracts/community";
 import { Link } from "@/i18n/navigation";
 export function CommunityFeed({ locale: _locale }: { locale: "en" | "zh" }) {
   // Retain the existing locale prop; authored copy follows the site provider.
@@ -21,7 +22,10 @@ export function CommunityFeed({ locale: _locale }: { locale: "en" | "zh" }) {
   useEffect(() => {
     fetch("/api/community/posts")
       .then((r) => r.json())
-      .then((x) => setPosts(x.posts ?? []))
+      .then((x: unknown) => {
+        const parsed = communityPostsResponseSchema.safeParse(x);
+        setPosts(parsed.success ? parsed.data.posts : []);
+      })
       .catch(() => undefined);
   }, []);
   async function submit(e: React.FormEvent) {
@@ -41,7 +45,7 @@ export function CommunityFeed({ locale: _locale }: { locale: "en" | "zh" }) {
       }),
     });
     if (r.ok) {
-      const result = (await r.json()) as { post: CommunityPost };
+      const result = communityPostResponseSchema.parse(await r.json());
       setPosts((current) => [result.post, ...current]);
       setTitle("");
       setOpen(false);

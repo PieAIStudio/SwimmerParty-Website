@@ -1,3 +1,4 @@
+import { signedDownloadSchema } from "../../contracts/downloads.ts";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 
 export type AssetDownloadAccount = {
@@ -26,11 +27,7 @@ export async function downloadAsset({
     throw new GuestDownloadCooldownError(Number.isFinite(retryAfter) ? retryAfter : 30);
   }
   if (!response.ok) throw new Error("Download request failed");
-  const result = (await response.json()) as {
-    url: string;
-    filename: string;
-    cooldown?: number;
-  };
+  const result = signedDownloadSchema.parse(await response.json());
   const blob = await fetchImageBlob(result.url, signal);
   if (signal.aborted) return result;
   saveBlob(blob, result.filename);

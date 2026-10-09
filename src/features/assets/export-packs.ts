@@ -1,4 +1,4 @@
-import { zipSync, strToU8 } from "fflate";
+import { strToU8 } from "fflate";
 import type { Actor } from "../../content/actors/index.ts";
 import type { ActorAssets, AssetItem } from "./asset-types.ts";
 import type { ExportTarget } from "../../content/tools.ts";
@@ -7,7 +7,8 @@ import { listSeries } from "./asset-series.ts";
 import { SITE } from "../../content/site.ts";
 import { characterProfile } from "./asset-profile.ts";
 import { assetFilename, MAX_BUNDLE_ITEMS, SignInRequired } from "./downloads.ts";
-import { fetchImageBlob } from "../../lib/browser-files.ts";
+import { zipBlob } from "../../lib/browser-files.ts";
+import { loadSignedImages } from "./signed-images.ts";
 import { selectModelAssets, veoPlan } from "./export-plan.ts";
 import { createSheetPainter, sheetBlob, type SheetOptions } from "./render-sheet.ts";
 
@@ -43,34 +44,12 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
         : selectModelAssets(selected, input.target as "gpt-image" | "seedance")
       : selected;
   ensureActive(signal);
-  const response = await fetch(`/api/assets/${actor.slug}/bundle`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ slots: items.map((item) => item.slot) }),
-    signal,
-  });
-  if (response.status === 401) throw new SignInRequired("Sign in again");
-  if (!response.ok) throw new Error("Bundle authorization failed");
-  const body = (await response.json()) as {
-    items: { slot: string; url: string; filename: string }[];
-  };
-  if (
-    !Array.isArray(body.items) ||
-    body.items.length !== items.length ||
-    new Set(body.items.map((item) => item.slot)).size !== items.length
-  )
-    throw new Error("Invalid signed bundle");
-  const blobs = new Map<string, Blob>();
-  let bytes = 0;
-  for (const item of items) {
-    const signed = body.items.find((candidate) => candidate.slot === item.slot);
-    if (!signed || signed.filename !== assetFilename(actor.slug, item))
-      throw new Error("Bundle identity mismatch");
-    const blob = await fetchImageBlob(signed.url, signal);
-    bytes += blob.size;
-    if (bytes > 256 * 1024 * 1024) throw new Error("Choose a smaller export");
-    blobs.set(item.slot, blob);
-  }
+  const images = await loadSignedImages(
+    actor.slug,
+    items.map((item) => ({ slot: item.slot, filename: assetFilename(actor.slug, item) })),
+    { signal, maxBytes: 256 * 1024 * 1024 },
+  );
+  const blobs = new Map(images.map((item) => [item.slot, item.blob]));
   ensureActive(signal);
   async function sheet(set: AssetItem[], options: SheetOptions): Promise<Blob> {
     const painter = createSheetPainter(
@@ -148,10 +127,8 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
     ).join("\n\n") + `\n\n${SITE.url}\n`,
   );
   ensureActive(signal);
-  const data = zipSync(files, { level: 0 });
-  ensureActive(signal);
   return {
-    blob: new Blob([new Uint8Array(data)], { type: "application/zip" }),
+    blob: zipBlob(files, signal),
     filename: `${actor.slug}_assets_${new Date().toISOString().slice(0, 10).replaceAll("-", "")}.zip`,
   };
 }

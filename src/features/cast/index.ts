@@ -1,2 +1,2 @@
-export { CastBoard } from "./CastBoard";
-export { CastAddButton } from "./CastBoard.tsx";
+import "server-only";
+export { CastView } from "./CastView";

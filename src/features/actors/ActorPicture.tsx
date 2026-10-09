@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties, ReactNode } from "react";
-import { Mannequin } from "./Mannequin";
+import { Mannequin } from "@/site/Mannequin";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
 
 /** Image presentation is independent from the manifest's storage contract. */

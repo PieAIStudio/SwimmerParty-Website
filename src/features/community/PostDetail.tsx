@@ -3,6 +3,7 @@ import { useSiteI18n } from "@/i18n/client";
 import { useEffect, useState } from "react";
 import { PostActions } from "./PostActions";
 import type { CommunityPost } from "./types";
+import { communityPostResponseSchema } from "@/contracts/community";
 import { useAccount } from "@/features/account";
 import { GameButton } from "@pieai/swimmer-ui-kit";
 export function PostDetail({ id, locale }: { id: string; locale: "en" | "zh" }) {
@@ -12,7 +13,10 @@ export function PostDetail({ id, locale }: { id: string; locale: "en" | "zh" }) 
   useEffect(() => {
     void fetch(`/api/community/posts/${id}`)
       .then((r) => (r.ok ? r.json() : null))
-      .then((x: { post?: CommunityPost } | null) => setPost(x?.post ?? null));
+      .then((x: unknown) => {
+        const parsed = communityPostResponseSchema.safeParse(x);
+        setPost(parsed.success ? parsed.data.post : null);
+      });
   }, [id]);
   if (!post) return <p className="sp-lead mt-8">{t("community.notFound")}</p>;
   const postId = post.id;
