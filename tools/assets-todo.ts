@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { EXPORT_TARGETS } from "../src/content/tools.ts";
 import {
   ASSET_FRAMES,
   listSeries,
@@ -51,7 +52,7 @@ export function todo(code: string, options: { root?: string; all?: boolean } = {
         "Lighting: soft, even, neutral-white studio light from the front. No colored rim light, no visible lamps or light fixtures, no cast floor shadow.",
         "Background: fully transparent. No text, no watermark, no border, no other people.",
         "",
-        `GPT Image 2.5 · ${frame.width}x${frame.height} · background transparent · PNG · quality high`,
+        `${EXPORT_TARGETS.find((target) => target.id === "gpt-image")!.name} · ${frame.width}x${frame.height} · background transparent · PNG · quality high`,
         delivered.has("face.front") && delivered.has("turnaround.front")
           ? "References: face.front and turnaround.front."
           : "References: face.front and turnaround.front. Create the missing anchors first.",

@@ -1,3 +1,52 @@
+/** Current v1.0 policy and immutable delivery wording are owned here, not by exporters. */
+export const STARTER_LICENSE = {
+  en: "Free for any use, even commercial. License:",
+  zh: "用在哪都免费，赚钱的也行。授权：",
+} as const;
+
+/**
+ * Existing member ZIP payload, preserved verbatim by the round-eight contract.
+ * It contradicts LICENSE v1.0 below and is NOT the current website policy.
+ * Changing these delivered terms requires an explicit Owner decision, not a refactor.
+ */
+export const LEGACY_MEMBER_LICENSE_RULES = [
+  {
+    head: { en: "Make anything non-commercial", zh: "非商业的，随便做" },
+    body: {
+      en: "Fan films, comics, memes, games, music videos, edits. It’s free and you don’t need to ask.",
+      zh: "同人片、漫画、表情包、游戏、MV、剪辑，都免费，不用打招呼。",
+    },
+  },
+  {
+    head: { en: "Keep their name", zh: "保留演员名字" },
+    body: {
+      en: "Credit the actor by name, for example “Tang Yunqiu (SWIMMER PARTY)”. No logo or link required.",
+      zh: "署名写演员名字就行，比如“唐韵秋（SWIMMER PARTY）”。不用放 logo，也不用挂链接。",
+    },
+  },
+  {
+    head: { en: "Don’t put words in their mouth", zh: "别让他们说不该说的话" },
+    body: {
+      en: "No impersonating real people, no political endorsements, no sexual content, no harassment, nothing illegal where you live.",
+      zh: "不冒充真人，不替政治立场代言，不做色情内容，不攻击具体的人，不做你当地违法的事。",
+    },
+  },
+  {
+    head: { en: "Don’t make them look real", zh: "别把他们做成真人" },
+    body: {
+      en: "No photoreal versions and no swapping in a real person’s face. They stay animated.",
+      zh: "不做写实版，不换上真人的脸。他们一直是动画角色。",
+    },
+  },
+  {
+    head: { en: "Ask before you sell", zh: "要赚钱，先说一声" },
+    body: {
+      en: "If money changes hands — a brand pays you, you sell prints, you run ads — that’s a license. Write to us first. It’s a short conversation.",
+      zh: "只要涉及收钱，比如品牌付你钱、卖周边、投广告，就需要授权。先给我们写信，很快就能谈完。",
+    },
+  },
+] as const;
+
 export type LicenseLine = { en: string; zh: string };
 export const LICENSE = {
   version: "1.0",

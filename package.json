@@ -2,15 +2,11 @@
   "name": "swimmerparty-website",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@11.22.0",
-  "engines": {
-    "node": ">=24 <25"
-  },
   "scripts": {
     "dev": "next dev",
-    "build": "pnpm generate:og-assets && next build",
+    "build": "pnpm generate:og-assets && next build && node tools/generate-og-assets.ts --check",
     "start": "next start",
-    "check": "pnpm check:i18n && pnpm typecheck && pnpm lint && pnpm lint:next && pnpm format:check && pnpm test:tools",
+    "check": "pnpm data:check && pnpm check:i18n && pnpm typecheck && pnpm lint && pnpm lint:next && pnpm format:check && pnpm test:tools",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint src e2e next.config.ts playwright.config.ts eslint.config.mjs -c ./.oxlintrc.json && node tools/check-boundaries.ts",
     "lint:next": "eslint src e2e next.config.ts playwright.config.ts eslint.config.mjs",
@@ -24,11 +20,13 @@
     "doc-gov": "doc-gov",
     "pro-gov": "pro-gov",
     "docs:check": "pnpm pro-gov doctor && pnpm doc-gov router-check && pnpm doc-gov check && pnpm doc-gov scan --check && pnpm doc-gov links && pnpm doc-gov audit && pnpm doc-gov doctor",
-    "verify": "pnpm check:i18n && pnpm typecheck && pnpm lint && pnpm lint:next && pnpm format:check && pnpm test:tools && pnpm build && pnpm test",
+    "verify": "pnpm data:check && pnpm check:i18n && pnpm typecheck && pnpm lint && pnpm lint:next && pnpm format:check && pnpm test:tools && pnpm build && pnpm test",
     "check:i18n": "swimmer-i18n-check check && swimmer-i18n-check types --out src/i18n/message-contracts.ts --check && node tools/check-messages.ts",
     "messages:generate": "node tools/gen-messages.ts",
     "generate:og-assets": "node tools/generate-og-assets.ts",
-    "assets:upload": "node tools/assets-upload.ts"
+    "assets:upload": "node tools/assets-upload.ts",
+    "data:generate": "node tools/generate-actor-data.ts",
+    "data:check": "node tools/generate-actor-data.ts --check && node tools/check-generated-media.ts"
   },
   "dependencies": {
     "@pieai/swimmer-backend-client": "0.7.2",
@@ -49,7 +47,8 @@
     "react-dom": "19.2.7",
     "server-only": "0.0.1",
     "three": "0.185.1",
-    "yet-another-react-lightbox": "3.32.2"
+    "yet-another-react-lightbox": "3.32.2",
+    "zod": "4.4.3"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.0",
@@ -69,5 +68,9 @@
     "sharp": "0.35.5",
     "tailwindcss": "^4",
     "typescript": "6.0.3"
-  }
+  },
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "packageManager": "pnpm@11.22.0"
 }

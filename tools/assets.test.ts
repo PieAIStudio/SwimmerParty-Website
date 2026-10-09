@@ -26,8 +26,8 @@ import { writeTransaction } from "./assets-common.ts";
 import { fixtureRoot, syntheticImage, input, emptyInbox } from "./fixtures/assets.ts";
 import { ACTORS } from "../src/content/actors/index.ts";
 import { WORKS } from "../src/content/works.ts";
-import { looks as tangLooks } from "../src/content/actors/tang-yunqiu/looks.ts";
-import { looks as mishaLooks } from "../src/content/actors/misha-luo/looks.ts";
+const tangLooks = getActorAssets("tang-yunqiu").looks;
+const mishaLooks = getActorAssets("misha-luo").looks;
 
 const projectLookFields = (look: {
   id: string;
@@ -67,7 +67,12 @@ test("the vocabulary is exactly the approved appendix, with 21 unique core slots
     await readFile(new URL("../src/content/asset-series.json", import.meta.url), "utf8"),
   );
   assert.deepEqual(
-    { ...actual, series: actual.series.filter((series: { id: string }) => !["voice", "video"].includes(series.id)) },
+    {
+      ...actual,
+      series: actual.series.filter(
+        (series: { id: string }) => !["voice", "video"].includes(series.id),
+      ),
+    },
     expected,
   );
   assert.ok(actual.series.some((series: { id: string }) => series.id === "voice"));
@@ -317,7 +322,13 @@ test("wardrobe look IDs must be registered before ingest", async (t) => {
       code: "SP-01",
       slug: "hu-qian",
       looks: [
-        { id: "casual", label: { en: "Casual", zh: "便装" }, prompt: "a plain casual shirt" },
+        {
+          id: "casual",
+          kind: "personal",
+          label: { en: "Casual", zh: "便装" },
+          prompt: "a plain casual shirt",
+          extras: [],
+        },
       ],
       items: [],
     }),

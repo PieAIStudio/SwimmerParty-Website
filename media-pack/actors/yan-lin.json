@@ -51,6 +51,49 @@
       },
       "prompt": "charcoal-grey plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos.",
       "note": "Owner-selected identity anchor; approved for full pack production."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal style",
+        "zh": "个人风格"
+      },
+      "prompt": "Personal style: light camel double-breasted trench coat worn open; white button-up blouse; tailored charcoal-grey straight-leg trousers; black low-block heels; small pearl stud earrings. Her black hair is pulled into her signature tight low bun.",
+      "extras": [
+        {
+          "key": "manuscript",
+          "label": {
+            "en": "Reviewing a manuscript",
+            "zh": "审阅稿件"
+          },
+          "direction": "reading a paper manuscript, focused and composed"
+        },
+        {
+          "key": "red-pen",
+          "label": {
+            "en": "Marking a script",
+            "zh": "红笔批稿"
+          },
+          "direction": "marking a paper manuscript with a red pen"
+        },
+        {
+          "key": "half-smile",
+          "label": {
+            "en": "Half-smile",
+            "zh": "浅笑"
+          },
+          "direction": "close-up with a restrained half-smile"
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "肖像"
+          },
+          "direction": "head-and-shoulders portrait"
+        }
+      ]
     }
   ],
   "roles": [],
@@ -73,7 +116,10 @@
   "officialSamples": {
     "postId": "official-sample-yan-lin",
     "approvedOn": "2026-10-09",
-    "tools": ["ChatGPT", "Grok"],
+    "tools": [
+      "ChatGPT",
+      "Grok"
+    ],
     "media": [
       {
         "kind": "image",
@@ -86,5 +132,44 @@
         "public": "/media/works/samples/yan-lin/video-01.mp4"
       }
     ]
+  },
+  "demographics": {
+    "age": 41,
+    "gender": "female",
+    "origin": {
+      "en": "Beijing",
+      "zh": "北京"
+    },
+    "voiceLanguage": "zh"
+  },
+  "release": {
+    "date": "2026-10-09",
+    "note": {
+      "en": "First release: 55 images and 6 voice clips.",
+      "zh": "首次上线：55 张图片和 6 段声音。"
+    }
+  },
+  "website": {
+    "published": true,
+    "order": 4,
+    "status": "active",
+    "tagline": {
+      "en": "High forehead, fine brows, hair pulled into a tight low bun.",
+      "zh": "额头高，眉毛细，发髻扎得一丝不苟。"
+    },
+    "introduction": {
+      "en": "Yan Lin is an AI actress at SWIMMER PARTY. She is from Beijing, 41 years old and 165 cm tall. Her high forehead, fine brows and tight low bun are her signature features.",
+      "zh": "严琳是 SWIMMER PARTY 的 AI 演员，北京人，41 岁，身高 165 厘米。高额头、细眉和一丝不苟的低发髻是她鲜明的特征。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ],
+    "exportPrompt": "3D feature-animation woman of East Asian appearance, 41, from Beijing, 165 cm, slim and upright; high forehead, thin precise eyebrows, calm narrow eyes, black hair pulled into a tight low bun; realistic adult proportions, about 7 heads tall. Unmistakably CG, never photoreal."
   }
 }

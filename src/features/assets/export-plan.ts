@@ -1,4 +1,4 @@
-import { EXPORT_TARGETS, type ExportTarget } from "../../content/export-targets.ts";
+import { EXPORT_TARGETS, type ExportTarget } from "../../content/tools.ts";
 import { listSeries } from "./asset-series.ts";
 import type { AssetItem } from "./asset-types.ts";
 

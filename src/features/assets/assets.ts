@@ -2,31 +2,28 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { assetSlotOrder, listSeries, requiredSlots } from "./asset-series.ts";
 import type { ActorAssets, AssetItem } from "./asset-types.ts";
-import { looks as tangYunqiuLooks } from "../../content/actors/tang-yunqiu/looks.ts";
-import { looks as mishaLuoLooks } from "../../content/actors/misha-luo/looks.ts";
-import { looks as yanLinLooks } from "../../content/actors/yan-lin/looks.ts";
+import { actorAssetsSchema } from "../../contracts/assets.ts";
 export type { ActorAssets, AssetItem } from "./asset-types.ts";
 
 /** Server/build-time read. Client islands receive the public manifest as props. */
 export function getActorAssets(slug: string, root = process.cwd()): ActorAssets {
   let data: ActorAssets;
   try {
-    data = JSON.parse(
+    const input: unknown = JSON.parse(
       readFileSync(path.join(root, "src/content/actors", slug, "assets.json"), "utf8"),
     );
+    const parsed = actorAssetsSchema.safeParse(input);
+    if (!parsed.success)
+      throw new Error(
+        `Invalid asset manifest ${slug}: ${parsed.error.issues.map((issue) => `${issue.path.join(".")}: ${issue.message}`).join("; ")}`,
+      );
+    // Validation only; preserve property ordering and producer-owned extensions.
+    data = input as ActorAssets;
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") return { slug, looks: [], items: [] };
     throw error;
   }
-  const authoredLooks =
-    slug === "tang-yunqiu"
-      ? tangYunqiuLooks
-      : slug === "misha-luo"
-        ? mishaLuoLooks
-        : slug === "yan-lin"
-          ? yanLinLooks
-          : [];
-  const registeredLooks = authoredLooks.length ? authoredLooks : (data.looks ?? []);
+  const registeredLooks = data.looks;
   if (data.slug !== slug || !Array.isArray(data.items)) {
     throw new Error(`Invalid asset manifest: ${slug}`);
   }

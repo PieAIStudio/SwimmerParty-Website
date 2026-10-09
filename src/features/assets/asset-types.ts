@@ -1,28 +1,6 @@
-import type { Look } from "../../content/actors/look-types.ts";
-export type AssetKind = "image" | "voice" | "video";
-export type AssetConformance = "v1" | "legacy";
-export type AssetItem = {
-  kind: AssetKind;
-  slot: string;
-  series: string;
-  key: string;
-  look: string | null;
-  conformance: AssetConformance;
-  version: number;
-  width: number;
-  height: number;
-  bytes: number;
-  sha256: string;
-  sourceSha256: string;
-  bbox: { left: number; top: number; right: number; bottom: number };
-  format: "png" | "webp" | "wav" | "mp3" | "mp4";
-  object: string;
-  preview: string;
-  thumb: string;
-  large?: string;
-  blur?: string;
-  durationSec?: number;
-  transcript?: { text: string };
-  previewUrl?: string;
-};
-export type ActorAssets = { slug: string; looks: Look[]; items: AssetItem[] };
+export type {
+  ActorAssets,
+  AssetConformance,
+  AssetItem,
+  AssetKind,
+} from "../../contracts/assets.ts";

@@ -1,5 +1,6 @@
 import { strToU8, zipSync } from "fflate";
 import { SITE } from "../../content/site.ts";
+import { LICENSE, STARTER_LICENSE } from "../../content/license.ts";
 import { fetchImageBlob } from "../../lib/browser-files.ts";
 import { SignInRequired } from "./downloads.ts";
 
@@ -23,15 +24,15 @@ function guide(actor: StarterActor): string {
 2. Paste the character prompt from prompt.txt.
 3. Describe your scene.
 
-Credit: ${actor.nameEn} · Swim In AI
-Free for any use, even commercial. License: ${SITE.url}/en/license
+Credit: ${actor.nameEn} · ${LICENSE.credit.en}
+${STARTER_LICENSE.en} ${SITE.url}/en/license
 
 1. 把这个文件夹里的图片上传到你的图像或视频工具。
 2. 粘贴 prompt.txt 里的角色提示词。
 3. 写你想要的场景。
 
-署名：${actor.nameCn} · Swim In AI
-用在哪都免费，赚钱的也行。授权：${SITE.url}/zh/license
+署名：${actor.nameCn} · ${LICENSE.credit.zh}
+${STARTER_LICENSE.zh}${SITE.url}/zh/license
 `;
 }
 
@@ -73,7 +74,7 @@ export async function starterPack(
       ) + "\n",
     );
     files["credit.txt"] = strToU8(
-      `${actors.map((actor) => actor.nameEn).join(", ")} · Swim In AI\n`,
+      `${actors.map((actor) => actor.nameEn).join(", ")} · ${LICENSE.credit.en}\n`,
     );
   }
   return {

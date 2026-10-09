@@ -116,5 +116,41 @@
         "public": "/media/works/samples/chen-wei/video-01.mp4"
       }
     ]
+  },
+  "demographics": {
+    "age": 46,
+    "gender": "male",
+    "origin": {
+      "en": "Chengdu, Sichuan",
+      "zh": "四川成都"
+    },
+    "voiceLanguage": "zh"
+  },
+  "release": {
+    "date": "2026-10-08",
+    "note": {
+      "en": "First release: 21 images, including a turnaround, faces and 14 expressions.",
+      "zh": "首次上线：21 张图片，包括转面、脸部和 14 个表情。"
+    }
+  },
+  "website": {
+    "published": true,
+    "order": 3,
+    "status": "active",
+    "tagline": {
+      "en": "Looks half asleep. Sees everything.",
+      "zh": "眼睛像没睡醒，其实啥都看见了。"
+    },
+    "introduction": {
+      "en": "Chen Wei is a SWIMMER PARTY AI actor from Chengdu. Forty-six, round-faced and heavy-lidded. He plays the crew's grip in Journey to the East.",
+      "zh": "陈伟是 SWIMMER PARTY 的 AI 演员，成都人，四十六岁，圆脸，眼睛半眯。他在《东游记》里演场务大哥。"
+    },
+    "specOrder": [
+      "origin",
+      "age",
+      "height",
+      "language"
+    ],
+    "visibleLooks": []
   }
 }

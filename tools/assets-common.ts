@@ -1,5 +1,4 @@
-import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
-import { randomUUID } from "node:crypto";
+export { writeTransaction } from "./file-transaction.ts";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { ACTORS, type Actor } from "../src/content/actors/index.ts";
@@ -66,38 +65,4 @@ export function reportError(error: unknown) {
     else console.error(item instanceof Error ? item.message : String(item));
   }
   process.exitCode = 1;
-}
-
-async function atomicWrite(target: string, bytes: Uint8Array) {
-  await mkdir(path.dirname(target), { recursive: true });
-  const temporary = `${target}.${randomUUID()}.tmp`;
-  try {
-    await writeFile(temporary, bytes);
-    await rename(temporary, target);
-  } finally {
-    await rm(temporary, { force: true });
-  }
-}
-
-/** Restore the visible previews and manifest if a filesystem write fails. */
-export async function writeTransaction(changes: { path: string; bytes: Uint8Array }[]) {
-  const applied: { path: string; previous: Buffer | null }[] = [];
-  try {
-    for (const change of changes) {
-      let previous: Buffer | null = null;
-      try {
-        previous = await readFile(change.path);
-      } catch (error) {
-        if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
-      }
-      await atomicWrite(change.path, change.bytes);
-      applied.push({ path: change.path, previous });
-    }
-  } catch (error) {
-    for (const change of applied.reverse()) {
-      if (change.previous) await atomicWrite(change.path, change.previous);
-      else await rm(change.path, { force: true });
-    }
-    throw error;
-  }
 }

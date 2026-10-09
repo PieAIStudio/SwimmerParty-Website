@@ -1,8 +1,8 @@
 import { zipSync, strToU8 } from "fflate";
 import type { Actor } from "../../content/actors/index.ts";
 import type { ActorAssets, AssetItem } from "./asset-types.ts";
-import type { ExportTarget } from "../../content/export-targets.ts";
-import { KIT_RULES } from "../../content/kit.ts";
+import type { ExportTarget } from "../../content/tools.ts";
+import { LEGACY_MEMBER_LICENSE_RULES } from "../../content/license.ts";
 import { listSeries } from "./asset-series.ts";
 import { SITE } from "../../content/site.ts";
 import { characterProfile } from "./asset-profile.ts";
@@ -143,8 +143,9 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
     `${actor.slug} — ${actor.nameEn}\nAnimated character; never a real-person likeness.\n\n${descriptions.join("\n")}\n\nConsult character.json and LICENSE.txt.\n`,
   );
   files["LICENSE.txt"] = strToU8(
-    KIT_RULES.map((rule) => `${rule.head[input.locale]}\n${rule.body[input.locale]}`).join("\n\n") +
-      `\n\n${SITE.url}\n`,
+    LEGACY_MEMBER_LICENSE_RULES.map(
+      (rule) => `${rule.head[input.locale]}\n${rule.body[input.locale]}`,
+    ).join("\n\n") + `\n\n${SITE.url}\n`,
   );
   ensureActive(signal);
   const data = zipSync(files, { level: 0 });

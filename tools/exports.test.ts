@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { syntheticAssetRecords } from "./fixtures/asset-records.ts";
 import { selectModelAssets, veoPlan } from "../src/features/assets/export-plan.ts";
 import { sheetLayout, SHEET_WIDTH, SHEET_HEIGHT } from "../src/features/assets/sheet-layout.ts";
-import { EXPORT_TARGETS } from "../src/content/export-targets.ts";
+import { EXPORT_TARGETS } from "../src/content/tools.ts";
 import { assetFilename } from "../src/features/assets/downloads.ts";
 import { getKitManifest } from "../src/features/assets/kit-assets.ts";
 const assets = syntheticAssetRecords();

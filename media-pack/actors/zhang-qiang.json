@@ -116,5 +116,41 @@
         "public": "/media/works/samples/zhang-qiang/video-01.mp4"
       }
     ]
+  },
+  "demographics": {
+    "age": 41,
+    "gender": "male",
+    "origin": {
+      "en": "Qingdao, Shandong",
+      "zh": "山东青岛"
+    },
+    "voiceLanguage": "zh"
+  },
+  "release": {
+    "date": "2026-10-08",
+    "note": {
+      "en": "First release: 21 images, including a turnaround, faces and 14 expressions.",
+      "zh": "首次上线：21 张图片，包括转面、脸部和 14 个表情。"
+    }
+  },
+  "website": {
+    "published": true,
+    "order": 2,
+    "status": "active",
+    "tagline": {
+      "en": "One eyebrow sits a little higher, so he always looks like he's reviewing your cut.",
+      "zh": "左边眉毛天生高一点，看谁都像在审片。"
+    },
+    "introduction": {
+      "en": "Zhang Qiang is a SWIMMER PARTY AI actor from Qingdao. Forty-one, tall and lean, with a long, narrow face. He plays the director in Journey to the East.",
+      "zh": "张强是 SWIMMER PARTY 的 AI 演员，青岛人，四十一岁，瘦高个，窄长脸。他在《东游记》里演导演。"
+    },
+    "specOrder": [
+      "origin",
+      "age",
+      "height",
+      "language"
+    ],
+    "visibleLooks": []
   }
 }

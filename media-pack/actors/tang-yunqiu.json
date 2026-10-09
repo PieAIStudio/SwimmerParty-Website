@@ -10,7 +10,8 @@
   "status": {
     "siteProfile": "src/content/actors/tang-yunqiu/profile.ts",
     "delivered": 63,
-    "published": true
+    "published": true,
+    "version": "1.1.0"
   },
   "facts": {
     "zh": [
@@ -190,5 +191,55 @@
         "public": "/media/works/samples/tang-yunqiu/video-01.mp4"
       }
     ]
+  },
+  "demographics": {
+    "age": 43,
+    "gender": "female",
+    "origin": {
+      "en": "Chongqing",
+      "zh": "重庆"
+    },
+    "voiceLanguage": "zh"
+  },
+  "release": {
+    "date": "2026-10-08",
+    "note": {
+      "en": "Voice added: 7 clips.",
+      "zh": "加入声音：7 段。"
+    },
+    "history": [
+      {
+        "version": "1.0.0",
+        "date": "2026-10-05",
+        "note": {
+          "en": "First release: 63 images.",
+          "zh": "首次发布：63 张图片。"
+        }
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 0,
+    "status": "active",
+    "tagline": {
+      "en": "The timid maid on camera. The one running the set off it.",
+      "zh": "镜头前是胆小的女佣，镜头后整个片场归她管。"
+    },
+    "introduction": {
+      "en": "Tang Yunqiu is an AI actress at SWIMMER PARTY. She is from Chongqing, 43 years old and 163 cm tall. She plays He Jie in Journey to the East and also appears in Modern Freaks.",
+      "zh": "唐韵秋是 SWIMMER PARTY 的 AI 演员，重庆人，43 岁，身高 163 厘米。她在《东游记》里演何姐，也出演《摩登怪咖》。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal",
+      "maid"
+    ],
+    "exportPrompt": "3D feature-animation woman, 43, Chinese, from Chongqing, 163 cm, slim-average build; gentle smile lines, faint crow's feet, noticeably full lips; dark brown shoulder-length waves worn down with a few fine grey strands; noticeably enlarged expressive eyes, smooth stylized skin, hair in clean grouped clumps; realistic adult proportions, about 7 heads tall. Unmistakably CG, never photoreal."
   }
 }

@@ -1,48 +1,9 @@
-import type { Actor, ActorGender, ActorStatus, L } from "./shared.ts";
+import type { Actor, ActorStatus, L } from "./shared.ts";
 export type { Actor, ActorGender, ActorStatus, L } from "./shared.ts";
-import { profile as tangYunqiu } from "./tang-yunqiu/profile.ts";
-import { profile as mishaLuo } from "./misha-luo/profile.ts";
-import { profile as zhangQiang } from "./zhang-qiang/profile.ts";
-import { profile as chenWei } from "./chen-wei/profile.ts";
-import { profile as yanLin } from "./yan-lin/profile.ts";
-import { NEW_FACE_DATA } from "./new-faces.ts";
-import { row } from "./shared.ts";
+import { ACTIVE_ACTORS } from "./active.generated.ts";
+import { NEW_FACE_ACTORS } from "./new-face-profiles.generated.ts";
 
-const newFaces: Actor[] = NEW_FACE_DATA.map((entry) => ({
-  slug: entry.slug,
-  nameEn: entry.nameEn,
-  nameCn: entry.nameZh,
-  tagline: entry.tagline,
-  status: "new-face" as const,
-  gender: entry.gender as ActorGender,
-  age: entry.age,
-  heightCm: entry.heightCm,
-  portrait: `/media/assets/${entry.slug}/turnaround.front.webp`,
-  spec: [
-    row("age", "Age", "年龄", String(entry.age), `${entry.age} 岁`),
-    row("height", "Height", "身高", `${entry.heightCm} cm`, `${entry.heightCm} cm`),
-    row("origin", "From", "籍贯", entry.origin.en, entry.origin.zh),
-    row(
-      "language",
-      "Speaks",
-      "语言",
-      entry.voice.language === "en" ? "English" : "Chinese",
-      entry.voice.language === "en" ? "英语" : "中文",
-    ),
-  ],
-  note: entry.tagline,
-  promptSeed: `3D feature-animation character, the same character as the reference image: ${entry.look}. Realistic adult body proportions, about 7 heads tall. Clearly stylized and visibly animated, never photoreal.`,
-  version: "0.1.0",
-  versionDate: "2026-10-08",
-  versionNote: {
-    en: "New face: one full-body casting photo and a self-introduction.",
-    zh: "新面孔：一张全身试镜照、一段自我介绍。",
-  },
-  voiceLanguage: entry.voice.language,
-  assetSource: entry.image,
-}));
-
-export const ACTORS: Actor[] = [tangYunqiu, mishaLuo, zhangQiang, chenWei, yanLin, ...newFaces];
+export const ACTORS: Actor[] = [...ACTIVE_ACTORS, ...NEW_FACE_ACTORS];
 export const STATUS_LABEL: Record<ActorStatus, L> = {
   active: { en: "Ready to cast", zh: "可出演" },
   "new-face": { en: "New face", zh: "新面孔" },

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
 import type { Actor } from "@/content/actors";
 import type { ActorAssets, AssetItem } from "@/features/assets/asset-types";
-import { EXPORT_TARGETS, type ExportTarget } from "@/content/export-targets";
+import { EXPORT_TARGETS, type ExportTarget } from "@/content/tools";
 import { slotLabelKey } from "@/features/assets/asset-series";
 import { useSiteI18n, useSiteLocale } from "@/i18n/client";
 import { siteI18n } from "@/i18n/catalog";

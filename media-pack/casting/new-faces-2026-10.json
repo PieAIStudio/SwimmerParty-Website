@@ -1,5 +1,6 @@
 {
  "note": "95 new faces cast by Claude, 2026-10. Facts invented with the Owner's approval; first public roster, may change in later versions.",
+ "release": {"version":"0.1.0","date":"2026-10-08","note":{"en":"New face: one full-body casting photo and a self-introduction.","zh":"新面孔：一张全身试镜照、一段自我介绍。"}},
  "actors": [
   {
    "slug": "lin-xiaoman",
