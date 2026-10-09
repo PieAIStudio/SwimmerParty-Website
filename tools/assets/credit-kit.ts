@@ -29,7 +29,7 @@ async function render(fill: string): Promise<Buffer> {
     .toBuffer();
 }
 
-export async function generateCreditMarks(root = process.cwd()) {
+async function generateCreditMarks(root = process.cwd()) {
   // Raster bytes depend on the installed font; don't regenerate during ordinary checks.
   await writeTransaction([
     { path: path.join(root, output.white), bytes: await render("#FFFFFF") },

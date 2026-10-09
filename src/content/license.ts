@@ -47,7 +47,6 @@ export const LEGACY_MEMBER_LICENSE_RULES = [
   },
 ] as const;
 
-export type LicenseLine = { en: string; zh: string };
 export const LICENSE = {
   version: "1.0",
   effective: "8 October 2026",

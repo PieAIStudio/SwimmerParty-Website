@@ -23,5 +23,3 @@ export const bundleRequestSchema = z.object({
     .max(MAX_BUNDLE_ITEMS)
     .refine((slots) => new Set(slots).size === slots.length, "Duplicate slots"),
 });
-export type SignedDownload = z.infer<typeof signedDownloadSchema>;
-export type SignedBundle = z.infer<typeof signedBundleSchema>;

@@ -1,6 +1,1 @@
-export type {
-  ActorAssets,
-  AssetConformance,
-  AssetItem,
-  AssetKind,
-} from "../../contracts/assets.ts";
+export type { ActorAssets, AssetItem } from "../../contracts/assets.ts";

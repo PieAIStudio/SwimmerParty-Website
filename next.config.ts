@@ -22,12 +22,7 @@ const nextConfig: NextConfig = {
       "./.env*",
     ],
   },
-  // three and its R3F wrappers ship ESM that Next must transpile for the
-  // server pass; without this the app router fails on `import ... from 'three'`.
   transpilePackages: [
-    "three",
-    "@react-three/fiber",
-    "@react-three/drei",
     // AuthKit's phone parser is ESM and otherwise remains an absent pnpm
     // external in Vercel's server function trace.
     "libphonenumber-js",

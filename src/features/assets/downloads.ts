@@ -8,7 +8,5 @@ export function assetFilename(
   slug: string,
   item: Pick<AssetItem, "series" | "key" | "look" | "format">,
 ): string {
-  if (/^SP-\d/.test(slug))
-    return `${slug}_${item.series}${item.look ? `-${item.look}` : ""}-${item.key}.${item.format}`;
   return `${slug}__${item.series}${item.look ? `-${item.look}` : ""}__${item.key}.${item.format}`;
 }

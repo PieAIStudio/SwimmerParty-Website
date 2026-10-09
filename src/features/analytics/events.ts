@@ -1,4 +1,4 @@
-export const POSTHOG_EVENTS = new Set([
+const POSTHOG_EVENTS = new Set([
   "page_viewed",
   "actor_viewed",
   "voice_played",

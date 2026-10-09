@@ -1,7 +1,7 @@
 import { z } from "zod";
 
-export const communityKindSchema = z.enum(["image", "video", "audio", "game", "other"]);
-export const communityPostSchema = z.object({
+const communityKindSchema = z.enum(["image", "video", "audio", "game", "other"]);
+const communityPostSchema = z.object({
   id: z.string(),
   kind: communityKindSchema,
   title: z.string(),
@@ -22,7 +22,7 @@ export const communityPostResponseSchema = z.object({ post: communityPostSchema 
 export const voteCountSchema = z.object({ count: z.number().int().nonnegative() });
 export const voteResultSchema = voteCountSchema.extend({ voted: z.boolean() });
 export const likeResultSchema = voteCountSchema.extend({ liked: z.boolean() });
-export const reportReasons = [
+const reportReasons = [
   "Looks like a real person",
   "Sexual or violent",
   "Hateful or harassing",
@@ -47,7 +47,7 @@ export const postRequestSchema = z.object({
   creditConfirmed: z.unknown().optional(),
   rightsConfirmed: z.unknown().optional(),
 });
-export type CommunityKind = z.infer<typeof communityKindSchema>;
+
 export type CommunityPost = z.infer<typeof communityPostSchema>;
 export type NewCommunityPost = Omit<CommunityPost, "id" | "createdAt" | "likes" | "status">;
 export type ReviewAction = z.infer<typeof reviewRequestSchema>["action"];

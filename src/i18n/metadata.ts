@@ -17,7 +17,3 @@ export function localizedAlternates(locale: AppLocale, path: string) {
     },
   };
 }
-
-export function localizedUrl(locale: AppLocale, path: string) {
-  return `/${locale}${path}`;
-}

@@ -23,7 +23,10 @@ for (const file of files) {
     }
     let changed = 0;
     for (let i = 0; i < before.data.length; i += 4) {
-      if (before.data.subarray(i, i + 4).some((value, channel) => value !== after.data[i + channel])) changed += 1;
+      if (
+        before.data.subarray(i, i + 4).some((value, channel) => value !== after.data[i + channel])
+      )
+        changed += 1;
     }
     results.push({ file, difference: (changed / (before.data.length / 4)) * 100 });
   } catch (error) {

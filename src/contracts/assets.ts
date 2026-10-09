@@ -1,10 +1,10 @@
 import { z } from "zod";
 import { lookSchema, slugSchema } from "./actors.ts";
 
-export const assetKindSchema = z.enum(["image", "voice", "video"]);
-export const assetConformanceSchema = z.enum(["v1", "legacy"]);
+const assetKindSchema = z.enum(["image", "voice", "video"]);
+const assetConformanceSchema = z.enum(["v1", "legacy"]);
 const hashSchema = z.string().regex(/^[a-f0-9]{64}$/);
-export const assetItemSchema = z.looseObject({
+const assetItemSchema = z.looseObject({
   kind: assetKindSchema,
   slot: z.string().min(1),
   series: z.string().min(1),
@@ -33,7 +33,6 @@ export const actorAssetsSchema = z.looseObject({
   looks: z.array(lookSchema),
   items: z.array(assetItemSchema),
 });
-export type AssetKind = z.infer<typeof assetKindSchema>;
-export type AssetConformance = z.infer<typeof assetConformanceSchema>;
+
 export type AssetItem = z.infer<typeof assetItemSchema>;
 export type ActorAssets = z.infer<typeof actorAssetsSchema>;

@@ -51,7 +51,11 @@ async function rootFor(t: { after: (fn: () => Promise<void>) => void }) {
 const sha = (bytes: Uint8Array) => createHash("sha256").update(bytes).digest("hex");
 const missing = (file: string) => assert.rejects(access(file), { code: "ENOENT" });
 const run = (root: string, options: Parameters<typeof ingest>[1] = {}) =>
-  ingest("SP-01", { root, store: localAssetStore(path.join(root, ".assets-local")), ...options });
+  ingest("zhang-qiang", {
+    root,
+    store: localAssetStore(path.join(root, ".assets-local")),
+    ...options,
+  });
 
 function messages(error: unknown): string {
   return error instanceof AggregateError
@@ -183,7 +187,7 @@ test("an undelivered actor has an empty manifest and exactly 21 actionable TODO 
 
 test("dry-run validates without writing previews, masters or manifests", async (t) => {
   const root = await rootFor(t);
-  await input(root, "SP-01__turnaround__front__v1.png", await syntheticImage());
+  await input(root, "zhang-qiang__turnaround__front__v1.png", await syntheticImage());
   const result = await run(root, { dryRun: true });
   assert.equal(result.manifest.items.length, 1);
   await missing(path.join(root, "public"));
@@ -194,7 +198,7 @@ test("dry-run validates without writing previews, masters or manifests", async (
 test("v1 ingest preserves master bytes and transparent derivatives, and readers use the manifest", async (t) => {
   const root = await rootFor(t);
   const original = await syntheticImage();
-  await input(root, "SP-01__turnaround__front__v1.png", original);
+  await input(root, "zhang-qiang__turnaround__front__v1.png", original);
   const result = await run(root);
   const item = result.manifest.items[0];
   assert.equal(item.sha256, sha(original));
@@ -220,13 +224,13 @@ test("v1 ingest preserves master bytes and transparent derivatives, and readers 
       false,
     );
   }
-  assert.deepEqual(coreProgress("hu-qian", root), { done: 1, total: 21 });
+  assert.deepEqual(coreProgress("zhang-qiang", root), { done: 1, total: 21 });
   assert.equal(
-    firstImage("hu-qian", ["face.front", "turnaround.front"], root)?.slot,
+    firstImage("zhang-qiang", ["face.front", "turnaround.front"], root)?.slot,
     "turnaround.front",
   );
-  assert.equal(itemsBySeries("hu-qian", root).turnaround.length, 1);
-  assert.equal(todo("SP-01", { root }).missing.length, 20);
+  assert.equal(itemsBySeries("zhang-qiang", root).turnaround.length, 1);
+  assert.equal(todo("zhang-qiang", { root }).missing.length, 20);
   assert.equal((await run(root)).manifest.items.length, 1, "identical re-ingest is idempotent");
 });
 
@@ -237,8 +241,8 @@ test("invalid dimensions and unknown slots are reported together before any writ
   })
     .png()
     .toBuffer();
-  await input(root, "SP-01__face__front__v1.png", tiny);
-  await input(root, "SP-01__face__invented__v1.png", tiny);
+  await input(root, "zhang-qiang__face__front__v1.png", tiny);
+  await input(root, "zhang-qiang__face__invented__v1.png", tiny);
   await assert.rejects(
     run(root),
     (error) => /1920×1920/.test(messages(error)) && /Unknown slot/.test(messages(error)),
@@ -255,7 +259,7 @@ for (const [label, corner] of Object.entries({
     const root = await rootFor(t);
     await input(
       root,
-      "SP-01__turnaround__front__v1.png",
+      "zhang-qiang__turnaround__front__v1.png",
       await syntheticImage("full", corner as [number, number]),
     );
     await assert.rejects(run(root), (error) => /8×8 corner/.test(messages(error)));
@@ -264,7 +268,11 @@ for (const [label, corner] of Object.entries({
 
 test("v1 permits a character to touch the bottom edge", async (t) => {
   const root = await rootFor(t);
-  await input(root, "SP-01__turnaround__front__v1.png", await syntheticImage("full", [0, 2303]));
+  await input(
+    root,
+    "zhang-qiang__turnaround__front__v1.png",
+    await syntheticImage("full", [0, 2303]),
+  );
   await assert.doesNotReject(run(root));
 });
 
@@ -273,54 +281,24 @@ test("v1 rejects opaque PNG and mismatched file formats", async (t) => {
   const opaque = await sharp({ create: { ...ASSET_FRAMES.head, channels: 3, background: "white" } })
     .png()
     .toBuffer();
-  await input(root, "SP-01__face__front__v1.png", opaque);
-  await input(root, "SP-01__face__side__v1.webp", opaque);
+  await input(root, "zhang-qiang__face__front__v1.png", opaque);
+  await input(root, "zhang-qiang__face__side__v1.webp", opaque);
   await assert.rejects(
     run(root),
     (error) => /alpha channel/.test(messages(error)) && /format must match/.test(messages(error)),
   );
 });
 
-test("legacy imports keep the exact original bytes and are explicitly v0", async (t) => {
-  const root = await rootFor(t);
-  const image = await sharp({
-    create: { width: 80, height: 120, channels: 3, background: "black" },
-  })
-    .webp()
-    .toBuffer();
-  await input(root, "SP-01__turnaround__front__v0.webp", image);
-  const { manifest } = await run(root, { legacy: true });
-  assert.equal(manifest.items[0].conformance, "legacy");
-  assert.equal(manifest.items[0].version, 0);
-  assert.equal(manifest.items[0].sha256, sha(image));
-  assert.equal(coreProgress("hu-qian", root).done, 1);
-  assert.deepEqual(
-    await readFile(path.join(root, ".assets-local", manifest.items[0].object)),
-    image,
-  );
-});
-
-test("a duplicate slot in one batch cannot overwrite another image", async (t) => {
-  const root = await rootFor(t);
-  const png = await syntheticImage();
-  await input(root, "SP-01__turnaround__front__v0.png", png);
-  await input(root, "SP-01__turnaround__front__v0.webp", await sharp(png).webp().toBuffer());
-  await assert.rejects(run(root, { legacy: true }), (error) =>
-    /Duplicate slot/.test(messages(error)),
-  );
-  await missing(path.join(root, ".assets-local"));
-});
-
 test("wardrobe look IDs must be registered before ingest", async (t) => {
   const root = await rootFor(t);
-  await input(root, "SP-01__wardrobe-casual__front__v1.png", await syntheticImage());
+  await input(root, "zhang-qiang__wardrobe-casual__front__v1.png", await syntheticImage());
   await assert.rejects(run(root), (error) => /Register look 'casual'/.test(messages(error)));
-  await mkdir(path.join(root, "src/content/actors/hu-qian"), { recursive: true });
+  await mkdir(path.join(root, "src/content/actors/zhang-qiang"), { recursive: true });
   await writeFile(
-    path.join(root, "src/content/actors/hu-qian/assets.json"),
+    path.join(root, "src/content/actors/zhang-qiang/assets.json"),
     JSON.stringify({
-      code: "SP-01",
-      slug: "hu-qian",
+      code: "zhang-qiang",
+      slug: "zhang-qiang",
       looks: [
         {
           id: "casual",
@@ -335,47 +313,55 @@ test("wardrobe look IDs must be registered before ingest", async (t) => {
   );
   const { manifest } = await run(root);
   assert.equal(manifest.items[0].slot, "wardrobe.casual.front");
-  assert.equal(coreProgress("hu-qian", root).done, 0);
-  assert.match(todo("SP-01", { root, all: true }).text, /Wardrobe: a plain casual shirt/);
+  assert.equal(coreProgress("zhang-qiang", root).done, 0);
+  assert.match(todo("zhang-qiang", { root, all: true }).text, /Wardrobe: a plain casual shirt/);
 });
 
 test("an anchor upgrade removes old entries and mixed or skipped versions fail", async (t) => {
   const root = await rootFor(t);
-  await input(root, "SP-01__turnaround__front__v1.png", await syntheticImage());
-  await input(root, "SP-01__face__front__v1.png", await syntheticImage("head"));
+  await input(root, "zhang-qiang__turnaround__front__v1.png", await syntheticImage());
+  await input(root, "zhang-qiang__face__front__v1.png", await syntheticImage("head"));
   await run(root);
   await emptyInbox(root);
-  await input(root, "SP-01__expression__neutral__v3.png", await syntheticImage("head"));
+  await input(root, "zhang-qiang__expression__neutral__v3.png", await syntheticImage("head"));
   await assert.rejects(run(root), (error) => /Use v1, or upgrade/.test(messages(error)));
   await emptyInbox(root);
-  await input(root, "SP-01__expression__neutral__v2.png", await syntheticImage("head"));
+  await input(root, "zhang-qiang__expression__neutral__v2.png", await syntheticImage("head"));
   const result = await run(root);
   assert.equal(result.upgraded, true);
   assert.deepEqual(
     result.manifest.items.map((item) => item.slot),
     ["expression.neutral"],
   );
-  await input(root, "SP-01__face__side__v3.png", await syntheticImage("head"));
+  await input(root, "zhang-qiang__face__side__v3.png", await syntheticImage("head"));
   await assert.rejects(run(root), (error) => /One batch must use one anchor/.test(messages(error)));
 });
 
 test("masters cannot change under an existing key; storage rejects traversal", async (t) => {
   const root = await rootFor(t);
   const store = localAssetStore(root);
-  const key = "hu-qian/v0/SP-01__turnaround__front__v0.webp";
+  const key = "zhang-qiang/0123456789abcdef/zhang-qiang__turnaround__front__v0.webp";
   await store.put(key, Buffer.from("original"));
   await store.put(key, Buffer.from("original"));
   await assert.rejects(store.put(key, Buffer.from("changed")), /different bytes/);
-  for (const object of ["../secret", "/absolute", "hu-qian/../../secret", "hu-qian/v0/a%2fb.png"])
+  for (const object of [
+    "../secret",
+    "/absolute",
+    "zhang-qiang/../../secret",
+    "zhang-qiang/0123456789abcdef/a%2fb.png",
+  ])
     assert.throws(() => objectPath(root, object), /Invalid/);
 });
 
 test("input symlinks and unknown actor codes are rejected", async (t) => {
   const root = await rootFor(t);
-  await mkdir(path.join(root, "assets-inbox/SP-01"), { recursive: true });
+  await mkdir(path.join(root, "assets-inbox/zhang-qiang"), { recursive: true });
   const original = path.join(root, "elsewhere.png");
   await writeFile(original, await syntheticImage());
-  await symlink(original, path.join(root, "assets-inbox/SP-01/SP-01__turnaround__front__v1.png"));
+  await symlink(
+    original,
+    path.join(root, "assets-inbox/zhang-qiang/zhang-qiang__turnaround__front__v1.png"),
+  );
   await assert.rejects(run(root), (error) => /regular file/.test(messages(error)));
   await assert.rejects(ingest("SP-99", { root }), /Unknown actor code/);
 });

@@ -1,13 +1,13 @@
 import { z } from "zod";
 
-export const localizedSchema = z.object({ en: z.string(), zh: z.string() });
-export const actorStatusSchema = z.enum(["active", "new-face", "in-development", "concept"]);
-export const genderSchema = z.enum(["female", "male"]);
-export const languageSchema = z.enum(["en", "zh"]);
+const localizedSchema = z.object({ en: z.string(), zh: z.string() });
+const actorStatusSchema = z.enum(["active", "new-face", "in-development", "concept"]);
+const genderSchema = z.enum(["female", "male"]);
+const languageSchema = z.enum(["en", "zh"]);
 export const slugSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
-export const versionSchema = z.string().regex(/^\d+\.\d+\.\d+$/);
-export const dateSchema = z.iso.date();
-export const releaseHistorySchema = z.object({
+const versionSchema = z.string().regex(/^\d+\.\d+\.\d+$/);
+const dateSchema = z.iso.date();
+const releaseHistorySchema = z.object({
   version: versionSchema,
   date: dateSchema,
   note: localizedSchema,
@@ -52,7 +52,7 @@ const releaseSchema = z.looseObject({
   note: localizedSchema,
   history: z.array(releaseHistorySchema).optional(),
 });
-export const websiteSchema = z.looseObject({
+const websiteSchema = z.looseObject({
   published: z.boolean(),
   order: z.number().int().nonnegative(),
   status: actorStatusSchema,
@@ -101,7 +101,7 @@ export const productionLookSchema = lookSchema
     role: z.looseObject({ work: z.string(), siteWork: z.string(), id: z.string() }).optional(),
   })
   .loose();
-export const newFaceSchema = z.looseObject({
+const newFaceSchema = z.looseObject({
   slug: slugSchema,
   source: z.string(),
   nameZh: z.string(),

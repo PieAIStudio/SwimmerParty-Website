@@ -63,7 +63,6 @@ export interface MessageContracts {
   readonly "assets.preparing": {  };
   readonly "assets.preview": {  };
   readonly "assets.previous": {  };
-  readonly "assets.progress": { readonly "done": string | number | bigint | boolean | null | undefined | Date; readonly "total": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.rulesBody": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.rulesPact": {  };
   readonly "assets.rulesTitle": {  };

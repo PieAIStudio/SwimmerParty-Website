@@ -30,7 +30,7 @@ import voice from "../../src/features/assets/server/voice.ts";
 import { getActorAssets } from "../../src/features/assets/assets.ts";
 import { syntheticWav } from "./fixtures/audio.ts";
 
-const object = "hu-qian/v0/SP-01__turnaround__front__v0.webp";
+const object = "zhang-qiang/0123456789abcdef/zhang-qiang__turnaround__front__v0.webp";
 const epoch = 1_791_000_000_000;
 const key = "synthetic-signing-key-for-tests-only";
 function response() {

@@ -5,7 +5,6 @@ import { selectModelAssets, veoPlan } from "../../src/features/assets/export-pla
 import { sheetLayout, SHEET_WIDTH, SHEET_HEIGHT } from "../../src/features/assets/sheet-layout.ts";
 import { EXPORT_TARGETS } from "../../src/content/tools.ts";
 import { assetFilename } from "../../src/features/assets/downloads.ts";
-import { getKitManifest } from "../../src/features/assets/kit-assets.ts";
 const assets = syntheticAssetRecords();
 
 test("twenty selected references retain the explicit GPT and Seedance priorities and caps", () => {
@@ -81,18 +80,16 @@ test("one-kind and mixed contact sheets stay inside 3840×2160 with exact margin
 
 test("download filenames preserve series, registered look and actual source format", () => {
   assert.equal(
-    assetFilename("SP-01", { series: "turnaround", key: "front", look: null, format: "webp" }),
-    "SP-01_turnaround-front.webp",
+    assetFilename("zhang-qiang", {
+      series: "turnaround",
+      key: "front",
+      look: null,
+      format: "webp",
+    }),
+    "zhang-qiang__turnaround__front.webp",
   );
   assert.equal(
-    assetFilename("SP-01", { series: "wardrobe", key: "side", look: "work", format: "png" }),
-    "SP-01_wardrobe-work-side.png",
+    assetFilename("zhang-qiang", { series: "wardrobe", key: "side", look: "work", format: "png" }),
+    "zhang-qiang__wardrobe-work__side.png",
   );
-});
-
-test("K-04 is live only because real turnarounds exist; K-05 and K-06 are not fictitiously live", () => {
-  const kit = getKitManifest();
-  assert.equal(kit.find((item) => item.index === "K-04")?.status, "live");
-  assert.equal(kit.find((item) => item.index === "K-05")?.status, "live");
-  assert.equal(kit.find((item) => item.index === "K-06")?.status, "live");
 });

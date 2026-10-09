@@ -1,1 +1,1 @@
-export { CastBoard, CastAddButton } from "./CastBoard.tsx";
+export { CastAddButton } from "./CastBoard.tsx";

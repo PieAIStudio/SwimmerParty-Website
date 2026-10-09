@@ -11,7 +11,7 @@ import {
 } from "../../src/contracts/actors.ts";
 import type { Actor, Look } from "../../src/contracts/actors.ts";
 
-export function parseSource<T>(schema: z.ZodType<T>, input: unknown, file: string): T {
+function parseSource<T>(schema: z.ZodType<T>, input: unknown, file: string): T {
   const result = schema.safeParse(input);
   if (!result.success)
     throw new Error(
@@ -21,7 +21,7 @@ export function parseSource<T>(schema: z.ZodType<T>, input: unknown, file: strin
   // producer extensions: delivered JSON must not be silently re-serialized.
   return input as T;
 }
-export function unique(values: string[], context: string) {
+function unique(values: string[], context: string) {
   const seen = new Set<string>();
   for (const value of values) {
     if (seen.has(value)) throw new Error(`${context}: duplicate ${value}`);
@@ -217,7 +217,7 @@ export function projectActorData(production: unknown[], castingInput: unknown) {
     published,
   };
 }
-export async function readActorSources(root = process.cwd()) {
+async function readActorSources(root = process.cwd()) {
   const dir = path.join(root, "media-pack/actors");
   const files = (await readdir(dir)).filter((f) => f.endsWith(".json")).sort();
   const production = await Promise.all(

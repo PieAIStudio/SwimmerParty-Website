@@ -1,0 +1,6 @@
+{
+  "$schema": "https://unpkg.com/knip/schema.json",
+  "entry": ["tools/release/shots.ts", "tools/release/compare-shots.ts"],
+  "ignoreDependencies": ["libphonenumber-js"],
+  "ignoreBinaries": ["ffprobe"]
+}

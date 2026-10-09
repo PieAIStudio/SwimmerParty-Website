@@ -1,50 +1,21 @@
 export { writeTransaction } from "./file-transaction.ts";
 import path from "node:path";
+import { readdirSync, readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { pathToFileURL } from "node:url";
-import { ACTORS, type Actor } from "../../src/content/actors/index.ts";
+import { ACTORS } from "../../src/content/actors/index.ts";
 
 export function actorByCode(code: string) {
-  const legacySlugs: Record<string, string> = {
-    "SP-03": "misha-luo",
-    "SP-13": "tang-yunqiu",
-    "SP-14": "zhang-qiang",
-    "SP-17": "chen-wei",
-    "SP-18": "yan-lin",
-  };
-  const actor = ACTORS.find((item) => item.slug === (legacySlugs[code] ?? code));
-  const fixture: Record<string, Actor> = {
-    "SP-01": {
-      slug: "hu-qian",
-      nameEn: "HU QIAN",
-      nameCn: "胡倩",
-      tagline: { en: "Fixture", zh: "夹具" },
-      status: "in-development",
-      gender: "male",
-      age: 0,
-      portrait: null,
-      spec: [],
-      note: { en: "Fixture", zh: "夹具" },
-      promptSeed: null,
-    },
-    "SP-02": {
-      slug: "qi-man",
-      nameEn: "QI MAN",
-      nameCn: "齐满",
-      tagline: { en: "Fixture", zh: "夹具" },
-      status: "in-development",
-      gender: "male",
-      age: 0,
-      portrait: null,
-      spec: [],
-      note: { en: "Fixture", zh: "夹具" },
-      promptSeed: null,
-    },
-  };
-  if (!actor && fixture[code]) return fixture[code];
+  const directory = fileURLToPath(new URL("../../media-pack/actors/", import.meta.url));
+  const production = code.startsWith("SP-")
+    ? readdirSync(directory)
+        .filter((name) => name.endsWith(".json"))
+        .map((name) => JSON.parse(readFileSync(path.join(directory, name), "utf8")))
+        .find((record) => record.code === code)
+    : undefined;
+  const actor = ACTORS.find((item) => item.slug === (production?.slug ?? code));
   if (!actor)
-    throw new Error(
-      `Unknown actor code: ${code}. Use a code registered in src/content/actors/index.ts.`,
-    );
+    throw new Error(`Unknown actor code: ${code}. Use a published actor slug or production code.`);
   return actor;
 }
 

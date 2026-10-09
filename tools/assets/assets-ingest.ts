@@ -8,7 +8,11 @@ import {
   listSeries,
   slotsOf,
 } from "../../src/features/assets/asset-series.ts";
-import { getActorAssets, type ActorAssets, type AssetItem } from "../../src/features/assets/assets.ts";
+import {
+  getActorAssets,
+  type ActorAssets,
+  type AssetItem,
+} from "../../src/features/assets/assets.ts";
 import { localAssetStore, type AssetStore } from "../../src/features/assets/server/asset-store.ts";
 import { configuredBlobStore } from "../../src/features/assets/server/blob-store.ts";
 import { runtimeModes } from "../../src/config/server.ts";
@@ -16,7 +20,6 @@ import { actorByCode, isMain, reportError, writeTransaction } from "./assets-com
 
 export type IngestOptions = {
   root?: string;
-  legacy?: boolean;
   dryRun?: boolean;
   store?: AssetStore;
 };
@@ -98,9 +101,10 @@ async function prepare(
   code: string,
   manifest: ActorAssets,
   root: string,
-  legacy: boolean,
 ): Promise<Prepared> {
-  const match = /^(SP-\d{2,4})__([a-z0-9-]+)__([a-z0-9-]+)__v(\d+)\.(png|webp)$/.exec(file);
+  const match = /^([a-z0-9-]+|SP-\d{2,4})__([a-z0-9-]+)__([a-z0-9-]+)__v(\d+)\.(png|webp)$/.exec(
+    file,
+  );
   if (!match || match[1] !== code)
     throw new Error(
       "Filename must match the actor code, series, key, version and png/webp protocol",
@@ -138,8 +142,8 @@ async function prepare(
       : undefined);
   if (!slot) throw new Error(`Unknown slot: ${series.id}.${key}`);
   const version = Number(number);
-  if (!Number.isSafeInteger(version) || (legacy ? version !== 0 : version < 1))
-    throw new Error(legacy ? "Legacy assets must use v0" : "New assets must use v1 or later");
+  if (!Number.isSafeInteger(version) || version < 1)
+    throw new Error("New assets must use v1 or later");
   const sourcePath = path.join(root, "assets-inbox", code, file);
   if (!(await lstat(sourcePath)).isFile())
     throw new Error("Input must be a regular file, not a directory or symbolic link");
@@ -150,7 +154,7 @@ async function prepare(
   const metadata = await image.metadata();
   if (metadata.format !== format || !metadata.width || !metadata.height)
     throw new Error("Actual image format must match its filename");
-  if (!legacy) {
+  {
     if (format !== "png") throw new Error("New assets must be PNG");
     const frame = ASSET_FRAMES[series.frame];
     const accepted = [frame, ASSET_FRAMES.portrait];
@@ -185,10 +189,10 @@ async function prepare(
     else if (alpha >= 250) raw.data[index] = 255;
     if (raw.data[index] === 0) transparent++;
   }
-  if (!legacy && transparent / (raw.info.width * raw.info.height) < 0.05)
+  if (transparent / (raw.info.width * raw.info.height) < 0.05)
     throw new Error("Corrected image must retain at least 5% transparent pixels");
-  const corrected = legacy ? source : await sharp(raw.data, { raw: raw.info }).png().toBuffer();
-  const correctedImage = legacy ? image : sharp(corrected, { limitInputPixels: 40_000_000 });
+  const corrected = await sharp(raw.data, { raw: raw.info }).png().toBuffer();
+  const correctedImage = sharp(corrected, { limitInputPixels: 40_000_000 });
   const correctedMeta = await correctedImage.metadata();
   const alphaBuffer = await correctedImage
     .clone()
@@ -221,7 +225,7 @@ async function prepare(
     series: series.id,
     key,
     look,
-    conformance: legacy ? "legacy" : "v1",
+    conformance: "v1",
     version,
     width: correctedMeta.width!,
     height: correctedMeta.height!,
@@ -229,8 +233,8 @@ async function prepare(
     sha256,
     sourceSha256,
     bbox,
-    format: legacy ? (format as "png" | "webp") : "png",
-    object: `${manifest.slug}/${sha256.slice(0, 16)}/${file}`,
+    format: "png",
+    object: `${manifest.slug}/${sha256.slice(0, 16)}/${manifest.slug}__${group}__${key}__v${version}.png`,
     preview: `/media/assets/${manifest.slug}/${slot.slot}.webp`,
     thumb: `/media/assets/${manifest.slug}/${slot.slot}.thumb.webp`,
   };
@@ -265,7 +269,7 @@ export async function ingest(code: string, options: IngestOptions = {}) {
   const errors: Error[] = [];
   for (const file of files) {
     try {
-      prepared.push(await prepare(file, code, current, root, options.legacy ?? false));
+      prepared.push(await prepare(file, code, current, root));
     } catch (error) {
       errors.push(new Error(`${file}: ${error instanceof Error ? error.message : String(error)}`));
     }
@@ -288,17 +292,10 @@ export async function ingest(code: string, options: IngestOptions = {}) {
   const previous = [...previousVersions][0];
   const version = [...versions][0];
   if (versions.size > 1) errors.push(new Error("One batch must use one anchor version"));
-  if (!options.legacy && previous !== undefined && version !== previous && version !== previous + 1)
+  if (previous !== undefined && version !== previous && version !== previous + 1)
     errors.push(new Error(`Use v${previous}, or upgrade the entire batch to v${previous + 1}`));
-  if (
-    options.legacy &&
-    prepared.some(({ item }) =>
-      current.items.some((old) => old.slot === item.slot && old.conformance === "v1"),
-    )
-  )
-    errors.push(new Error("Legacy input cannot replace a delivered v1 slot"));
   if (errors.length) throw new AggregateError(errors, "Asset validation failed; nothing written");
-  const upgraded = !options.legacy && previous !== undefined && version === previous + 1;
+  const upgraded = previous !== undefined && version === previous + 1;
   const items = upgraded ? [] : current.items.filter((item) => !seen.has(item.slot));
   items.push(...prepared.map(({ item }) => item));
   const order = assetSlotOrder(current.looks);
@@ -334,18 +331,14 @@ if (isMain(import.meta.url)) {
         codes.push(
           ...(await import("../../src/content/actors/index.ts")).ACTORS.map((actor) => actor.slug),
         );
-      if (
-        !codes.length ||
-        [...flags].some((flag) => !["--legacy", "--dry-run", "--all"].includes(flag))
-      )
-        throw new Error("Expected <code>... [--all] [--legacy] [--dry-run]");
+      if (!codes.length || [...flags].some((flag) => !["--dry-run", "--all"].includes(flag)))
+        throw new Error("Expected <code>... [--all] [--dry-run]");
       const uniqueCodes = [...new Set(codes)];
       const results: { code: string; result: Awaited<ReturnType<typeof ingest>> }[] = [];
       const errors: Error[] = [];
       for (const code of uniqueCodes) {
         try {
           const result = await ingest(code, {
-            legacy: flags.has("--legacy"),
             dryRun: flags.has("--dry-run"),
           });
           results.push({ code, result });

@@ -1,1 +1,1 @@
-export type { CommunityKind, CommunityPost } from "../../contracts/community.ts";
+export type { CommunityPost } from "../../contracts/community.ts";

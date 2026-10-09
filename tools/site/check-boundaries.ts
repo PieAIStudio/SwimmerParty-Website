@@ -13,6 +13,9 @@ async function walk(directory: string) {
 await walk("src");
 const failures = analyzeBoundaries(sources);
 if (failures.length) {
-  process.stderr.write(`${failures.map(item => `${item.file}: ${item.message}`).join("\n")}\n`);
+  process.stderr.write(`${failures.map((item) => `${item.file}: ${item.message}`).join("\n")}\n`);
   process.exitCode = 1;
-} else process.stdout.write(`Module boundaries OK (${sources.size} modules; no value cycles or browser-to-server paths)\n`);
+} else
+  process.stdout.write(
+    `Module boundaries OK (${sources.size} modules; no value cycles or browser-to-server paths)\n`,
+  );

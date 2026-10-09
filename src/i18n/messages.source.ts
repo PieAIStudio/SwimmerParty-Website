@@ -346,10 +346,6 @@ export const messages = {
     en: "A Swim In AI project, made by Pie AI Studio.",
     zh: "Swim In AI 旗下项目，由 Pie AI Studio 制作。",
   },
-  "assets.progress": {
-    en: "Core set {done}/{total}",
-    zh: "基础包 {done}/{total}",
-  },
   "assets.series.turnaround": {
     en: "Turnarounds",
     zh: "转面图",

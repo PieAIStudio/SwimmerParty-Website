@@ -17,7 +17,6 @@ export const TOOLS = [
   "Blender",
   "Other",
 ] as const;
-export type CommunityTool = (typeof TOOLS)[number];
 
 /** Export policies are a separate use of the same tool catalog, not additional community tags. */
 export const EXPORT_TARGETS = [

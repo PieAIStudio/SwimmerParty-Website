@@ -4,7 +4,5 @@ export { CreditMarkDownload } from "./CreditMarkDownload";
 export { AssetLibrarySections } from "./AssetLibrarySections";
 export { StarterPackButton } from "./StarterPackButton";
 export { SeriesJumpButton } from "./SeriesJumpButton";
-export { getKitManifest } from "./kit-assets";
-export { AssetProgress } from "./AssetProgress";
 export { ImageLightbox } from "./ImageLightbox";
 export { VoiceTile } from "./VoiceTile";

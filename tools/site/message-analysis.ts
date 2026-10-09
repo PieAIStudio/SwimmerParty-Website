@@ -2,7 +2,7 @@ import ts from "typescript";
 import { readFileSync, readdirSync } from "node:fs";
 import { resolve, relative } from "node:path";
 
-export type MessageIssue = { file: string; line: number; message: string };
+type MessageIssue = { file: string; line: number; message: string };
 export type MessageAnalysis = {
   used: Set<string>;
   unused: string[];
@@ -12,7 +12,7 @@ export type MessageAnalysis = {
 type Vocabulary = { series: { id: string; perLook: boolean; slots: { key: string }[] }[] };
 const excluded =
   /(?:\.test\.|\.spec\.|\.d\.ts$|(?:^|\/)__fixtures__\/|(?:^|\/)fixtures\/|\.generated\.)/;
-export function isRuntimeSource(file: string): boolean {
+function isRuntimeSource(file: string): boolean {
   const normalized = file.replaceAll("\\", "/");
   return (
     normalized.startsWith("src/") &&

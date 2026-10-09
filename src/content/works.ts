@@ -5,7 +5,7 @@ export const WORK_STATUS_LABEL: Record<WorkStatus, L> = {
   writing: { en: "Writing", zh: "编剧中" },
   development: { en: "In development", zh: "开发中" },
 };
-export type WorkRole = { id: string; name: L; note?: L; look?: string };
+type WorkRole = { id: string; name: L; note?: L; look?: string };
 export type Work = {
   slug: string;
   code: string;
