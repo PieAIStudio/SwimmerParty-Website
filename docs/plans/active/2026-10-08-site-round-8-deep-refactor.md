@@ -45,26 +45,25 @@ Owner 2026-10-08 的要求，原话要点：
 
 ## 1. 执行方式
 
-### 1.1 在 worktree 里做
+### 1.1 在哪里做
 
-主线上一直有别的会话在提交（编排器往 `media-pack/` 交付演员资料和素材），所以第八轮放进独立的 worktree：
+Owner 用网页版 Codex 执行：它在 GitHub 上的全新克隆里工作，开自己的分支，最后提一个 PR，不直接推 `main`，不部署。
 
-```bash
-git -C /Users/yuanfei/PieAI/SwimmerParty-Website worktree add .worktrees/site-round-8 -b refactor/site-round-8 main
-cd /Users/yuanfei/PieAI/SwimmerParty-Website/.worktrees/site-round-8
-pnpm install --frozen-lockfile
-```
-
-- worktree 必须放在仓库根目录的 `.worktrees/` 下。`.gitignore` 已经包含 `.worktrees/`，开工前再确认一次。
-- 被忽略的本地文件不会出现在 worktree 里：`media-pack/library/`、`.assets-local/`、`.vercel/`、`e2e/fixtures/assets-store/`。
-  - e2e 夹具由 `e2e/global-setup.ts` 自动生成；
-  - 需要真实素材的工具（`tools/assets-upload.ts`、`tools/generate-official-samples.ts`）只在主仓库目录跑，第八轮不运行它们。
-- **每完成一块**就 `git rebase main` 一次，把主线的新提交（主要是 `media-pack/`）接进来。冲突只可能出现在第 3.1 节动到的 `media-pack/actors/*.json`：以主线内容为准，再重做本分支的结构调整。
-- 不部署，不动 Vercel、Blob、PostHog、SwimmerBackend，不跑 GitHub Actions。
+- **安装**：
+  - Node 24、pnpm 11.22.0；
+  - `@pieaistudio/swimmer-auth-kit` 来自 GitHub Packages，环境的安装脚本需要一个只读 packages 的令牌；
+  - e2e 需要 `pnpm exec playwright install --with-deps chromium`。
+- **全新克隆里没有被忽略的本地文件**：`media-pack/library/`、`.assets-local/`、`.vercel/`、`e2e/fixtures/assets-store/`。
+  - e2e 的图片夹具由 `e2e/global-setup.ts` 自动生成。
+  - 有检查读 `media-pack/library/` 里的真实声音：`tools/site-rounds.test.ts` 的 lin-xiaoman 声音、e2e 的 `/api/voice/tang-yunqiu/intro`。所以全新克隆上的基线会失败。**第一块**就是让全新克隆跑通全部检查（声音也用合成夹具），先把失败的清单和原因写进报告。
+  - 需要真实素材的工具（`tools/assets-upload.ts`、`tools/generate-official-samples.ts`、真实入库）第八轮不运行。
+- **跟上主线**：编排器一直在往 `main` 提交 `media-pack/`。每完成一块就 rebase 到最新的 `origin/main`。冲突只可能出现在第 5.1 节动到的 `media-pack/actors/*.json`：以主线内容为准，再重做本分支的结构调整。
+- 不动 Vercel、Blob、PostHog、SwimmerBackend，不跑 GitHub Actions。
+- 在本机执行时，改用 `.worktrees/site-round-8` 和分支 `refactor/site-round-8`，其余相同。
 
 ### 1.2 汇报格式
 
-每一块完成后，在 `.devspace-reports/site-round-8/REPORT.md` 里追加一行。不写"完成"而没有证据。
+报告写在 PR 描述里（第 9 节），每一块一行。不写"完成"而没有证据。
 
 | 块 | 状态 | 证据（命令输出摘要、提交号、前后对比） | 回退方法 |
 | -- | ---- | -------------------------------------- | -------- |
@@ -103,7 +102,7 @@ Claude 会逐条核对证据；过去出现过"写了完成但没做"的情况�
 - `pnpm verify`：约 3 分钟，其中构建约 1 分钟，25 个 e2e 约 30 秒；
 - `pnpm docs:check`：约 10 秒。
 
-在 worktree 里重测一次，写进 `docs/reference/verification.md`（这一页已经存在，更新它），以后的人直接看。连跑两次结果不一样的测试，先单独修好，作为有自己证据的一块。
+在全新克隆里重测一次，写进 `docs/reference/verification.md`（这一页已经存在，更新它），以后的人直接看。连跑两次结果不一样的测试，先单独修好，作为有自己证据的一块。
 
 ## 4. 地图（写进报告，重构以它为依据）
 
@@ -198,7 +197,7 @@ tools/          按用途分子目录：assets/、site/、release/、test/，加
 - **决策**：`docs/reference/decisions.md` 是唯一的决策页。从计划和 `DESIGN.md` 里把仍然有效的决定浓缩进去：每条写清决定、原因、什么情况下重新考虑、证据在哪。被推翻的老决定只留一句"曾经这样，因为什么改了"。
 - **真相文档按重构后的代码重写成现状**，不保留过程：`architecture.md`、`release.md`、`verification.md`、`DESIGN.md`、`current-work.md`。
   - `release.md` 里"待 Owner 确认的私有包安装选项"那段已经过时：现在用本地 prebuilt 发布。改成现状。
-- **报告**：`.devspace-reports/` 现在有 38 项。只留最近一次发布和第八轮的报告；更早的，有决策价值的信息先浓缩进 `decisions.md`，再按留存规则处理。这是被忽略的本地目录，删除前在报告里列清单。
+- **报告**：`.devspace-reports/` 现在有 38 项。只留最近一次发布和第八轮的报告；更早的，有决策价值的信息先浓缩进 `decisions.md`，再按留存规则处理。这是本机被忽略的目录，云端看不到，这一项由 Claude 合并后在本机做。
 - 项目包格式只在 MediaFactory 写一处，这边只放链接。
 
 ### 5.6 对 AI 友好
@@ -225,9 +224,9 @@ tools/          按用途分子目录：assets/、site/、release/、test/，加
 
 ## 6. 顺序
 
-每一块按"改 → 验证 → 提交 → rebase main"推进：
+每一块按"改 → 验证 → 提交 → rebase 到 origin/main"推进：
 
-1. 定价和地图（第 3、4 节）；
+1. 全新克隆跑通全部检查，定价和地图（第 1.1、3、4 节）；
 2. 文案搬家和没用的键（5.1 第 2、3 项）；
 3. 演员资料唯一来源和生成物检查（5.1 第 1、4、5 项）；
 4. 代码结构、API 路由决定、删除（5.2）；
@@ -242,7 +241,7 @@ tools/          按用途分子目录：assets/、site/、release/、test/，加
 
 ## 7. 验收
 
-- **零上下文测试**：在 worktree 里开一个全新的 AI 会话，只告诉它"读 AGENTS.md"，让它独立完成三件事，不问人、不走错地方：
+- **零上下文测试**：在 PR 分支上开一个全新的 AI 会话，只告诉它"读 AGENTS.md"，让它独立完成三件事，不问人、不走错地方：
   1. 改首页一句文案并通过检查；
   2. 用测试夹具把一位新面孔升到 1.0.0；
   3. 加一个埋点事件。
@@ -259,18 +258,14 @@ tools/          按用途分子目录：assets/、site/、release/、test/，加
 
 ## 8. 合并和收尾
 
-1. 最后一次 `git rebase main`，重跑全部检查。
-2. Claude 按报告逐条核对，并在本地预览上抽查页面。
-3. 通过后快进合并：`git -C <主仓库> merge --ff-only refactor/site-round-8`，推送 `main`。
-4. 删除 worktree 和分支，本地和远端都删，保持"只有 main"：
-   - `git worktree remove .worktrees/site-round-8`
-   - `git branch -d refactor/site-round-8`
-   - `git push origin --delete refactor/site-round-8`（如果推送过）
-5. 按 `release.md` 发布，冒烟通过后上线。
+1. 最后一次 rebase 到 `origin/main`，重跑全部检查，提 PR，标题 `refactor(site): round 8 deep refactor`，描述就是第 9 节的报告。
+2. Claude 在本机拉下 PR 分支，按报告逐条核对，用真实素材再跑一遍 `pnpm verify`，在本地预览上抽查页面。
+3. 通过后保留一块一提交合进 `main`，推送，删除远端分支；本机和远端都只留 `main`。
+4. 按 `release.md` 发布，冒烟通过后上线。
 
 ## 9. 报告
 
-`.devspace-reports/site-round-8/REPORT.md`：
+PR 描述：
 
 - 第 1.2 节的逐块表；
 - 地图；
