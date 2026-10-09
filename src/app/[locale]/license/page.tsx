@@ -71,6 +71,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </p>
         <div className="mt-6 flex items-center gap-4">
           <CopyButton
+            primary
             text={LICENSE.credit[locale]}
             label={locale === "zh" ? "复制署名" : "Copy credit line"}
           />

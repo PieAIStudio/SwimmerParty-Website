@@ -6,7 +6,16 @@ import { GameButton } from "@pieai/swimmer-ui-kit";
 import { GameIcon } from "@pieai/swimmer-ui-kit";
 
 /** The surrounding text remains selectable when clipboard access is denied. */
-export function CopyButton({ text, label }: { text: string; label?: string }) {
+export function CopyButton({
+  text,
+  label,
+  primary = false,
+}: {
+  text: string;
+  label?: string;
+  /** The page's main action uses the liquid CTA. */
+  primary?: boolean;
+}) {
   const { t } = useSiteI18n();
   const [done, setDone] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -22,7 +31,7 @@ export function CopyButton({ text, label }: { text: string; label?: string }) {
     }
   };
   return (
-    <GameButton onClick={copy}>
+    <GameButton variant={primary ? "primary" : undefined} onClick={copy}>
       <GameIcon icon={done ? "check" : "copy"} />
       <span aria-live="polite">{done ? t("common.copied") : (label ?? t("common.copy"))}</span>
     </GameButton>

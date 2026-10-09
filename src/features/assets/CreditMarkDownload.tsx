@@ -116,7 +116,9 @@ export function CreditMarkDownload({
             {notice === "cooldown" ? (
               <>
                 <p>{t("assets.guestCooldown", { seconds: remaining })}</p>
-                <GameButton onClick={() => void signIn()}>{t("assets.signIn")}</GameButton>
+                <GameButton variant="primary" onClick={() => void signIn()}>
+                  {t("assets.signIn")}
+                </GameButton>
               </>
             ) : (
               t(notice === "failed" ? "assets.failed" : "assets.started")

@@ -258,7 +258,7 @@ export function MemberExportDialog({
       <div className="mt-6 flex justify-end gap-3">
         <GameButton onClick={cancel}>{t("assets.cancel")}</GameButton>
         <GameButton
-          variant="secondary"
+          variant="primary"
           disabled={busy || Boolean(unavailableVeo)}
           onClick={() => void start()}
         >

@@ -32,7 +32,11 @@ export function StarterPackButton({ actor }: { actor: StarterActor }) {
   }
   return (
     <>
-      <GameButton disabled={busy || !actor.slots.length} onClick={() => void start()}>
+      <GameButton
+        variant="primary"
+        disabled={busy || !actor.slots.length}
+        onClick={() => void start()}
+      >
         {busy ? t("assets.loading") : t("actor.openLibrary")}
       </GameButton>
       {failed ? <GameToast tone="danger">{t("assets.failed")}</GameToast> : null}

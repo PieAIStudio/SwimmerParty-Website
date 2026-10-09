@@ -286,7 +286,9 @@ export function AssetSelectionProvider({
             {notice === "cooldown" ? (
               <>
                 <p>{t("assets.guestCooldown", { seconds: remaining })}</p>
-                <GameButton onClick={focusInviteFromCooldown}>{t("assets.signIn")}</GameButton>
+                <GameButton variant="primary" onClick={focusInviteFromCooldown}>
+                  {t("assets.signIn")}
+                </GameButton>
               </>
             ) : (
               t(

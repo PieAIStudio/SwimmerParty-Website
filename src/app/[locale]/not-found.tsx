@@ -1,5 +1,6 @@
 import { getSiteI18n } from "@/i18n/server";
-import { TextLink } from "@/site/TextLink";
+import { GameButton } from "@pieai/swimmer-ui-kit";
+import { Link } from "@/i18n/navigation";
 
 export default async function NotFound() {
   const { t } = await getSiteI18n();
@@ -10,9 +11,9 @@ export default async function NotFound() {
         <h1 className="sp-display-lg mt-4">
           {t("notFound.lines.0")} {t("notFound.lines.1")}
         </h1>
-        <TextLink href="/actors" className="mt-8">
+        <GameButton variant="primary" href="/actors" linkComponent={Link} className="mt-8">
           {t("notFound.cta")}
-        </TextLink>
+        </GameButton>
       </div>
     </div>
   );

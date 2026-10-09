@@ -132,7 +132,8 @@ export function AccountMenu() {
   if (!account.user)
     return (
       <GameButton
-        variant="secondary"
+        variant="primary"
+        size="sm"
         disabled={account.loading || account.busy || !account.mode}
         onClick={() => void account.signIn().catch(() => setError(true))}
       >

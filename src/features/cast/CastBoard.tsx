@@ -3,7 +3,7 @@ import { useMemo, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import type { Actor } from "@/content/actors";
 import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
-import { TextLink } from "@/site/TextLink";
+import { Link } from "@/i18n/navigation";
 import { useAccount } from "@/features/account";
 import { starterPack, SignInRequired } from "@/features/assets/client";
 import { saveBlob } from "@/lib/browser-files";
@@ -83,9 +83,9 @@ export function CastBoard({
     return (
       <div className="mt-8">
         <p className="sp-lead">{locale === "zh" ? "选角单是空的。" : "Your cast is empty."}</p>
-        <TextLink href="/actors" className="mt-6">
+        <GameButton variant="primary" href="/actors" linkComponent={Link} className="mt-6">
           {locale === "zh" ? "去挑演员" : "Pick actors"}
-        </TextLink>
+        </GameButton>
       </div>
     );
   return (

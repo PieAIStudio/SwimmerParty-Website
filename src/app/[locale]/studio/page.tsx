@@ -4,8 +4,7 @@ import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { localizedAlternates } from "@/i18n/metadata";
 import { PageIntro } from "@/site/PageIntro";
 import { SectionHead } from "@/site/SectionHead";
-import { TextLink } from "@/site/TextLink";
-import { GameIcon } from "@pieai/swimmer-ui-kit";
+import { GameButton, GameIcon } from "@pieai/swimmer-ui-kit";
 import type { MessageContracts } from "@/i18n/message-contracts";
 type Key = Extract<keyof MessageContracts, string>;
 
@@ -81,9 +80,9 @@ export default async function StudioPage({ params }: Props) {
             </article>
           ))}
         </div>
-        <TextLink href="mailto:pieai@hotmail.com" className="mt-6">
+        <GameButton variant="primary" href="mailto:pieai@hotmail.com" className="mt-6">
           {locale === "zh" ? "找我们合作" : "Work with us"}
-        </TextLink>
+        </GameButton>
       </section>
     </div>
   );
