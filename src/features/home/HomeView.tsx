@@ -3,6 +3,7 @@ import { latestActors } from "@/features/actors/queries";
 import { WORKS } from "@/content/works";
 import { ActorCard } from "@/features/actors";
 import { getActorAssets } from "@/features/assets/queries";
+import { OfficialSamplesSection } from "@/features/samples";
 import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n } from "@/i18n/server";
@@ -81,6 +82,7 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
           <p className="sp-small mt-1 text-muted-foreground">{t("home.statVoices")}</p>
         </div>
       </section>
+      <OfficialSamplesSection limit={2} />
       <section className="sp-section">
         <SectionHead
           label={t("home.rosterLabel")}

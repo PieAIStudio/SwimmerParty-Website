@@ -1095,6 +1095,7 @@ export const messages = {
     zh: "只用免费懒人包和一段提示词做的。",
   },
   "samples.official": { en: "By SWIMMER PARTY", zh: "SWIMMER PARTY 出品" },
+  "samples.seeAll": { en: "See all samples", zh: "看全部样片" },
   "samples.madeWith": { en: "Made with", zh: "用的工具" },
   "samples.howMade": { en: "How it was made", zh: "怎么做的" },
   "samples.step1": {

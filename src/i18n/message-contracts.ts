@@ -338,6 +338,7 @@ export interface MessageContracts {
   readonly "samples.madeWith": {  };
   readonly "samples.official": {  };
   readonly "samples.sceneAlt": { readonly "name": string | number | bigint | boolean | null | undefined | Date; readonly "tool": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "samples.seeAll": {  };
   readonly "samples.step1": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "samples.step2": {  };
   readonly "samples.step3": {  };

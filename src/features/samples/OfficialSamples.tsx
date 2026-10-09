@@ -1,5 +1,6 @@
 import { getSiteLocale, getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
+import { TextLink } from "@/site/TextLink";
 import { getActor } from "@/features/actors/queries";
 import { OFFICIAL_SAMPLES, type OfficialSample } from "@/content/official-samples.generated";
 
@@ -67,19 +68,25 @@ async function SampleBlock({ sample, linkActor }: { sample: OfficialSample; link
   );
 }
 
-/** Works page: every actor that has an approved sample. */
-export async function OfficialSamplesSection() {
+/** Works page: every approved sample. Home: the first `limit`, with a link to the rest. */
+export async function OfficialSamplesSection({ limit }: { limit?: number } = {}) {
   const { t } = await getSiteI18n();
   if (!OFFICIAL_SAMPLES.length) return null;
+  const samples = limit ? OFFICIAL_SAMPLES.slice(0, limit) : OFFICIAL_SAMPLES;
   return (
-    <section className="sp-section" data-official-samples>
+    <section id="samples" className="sp-section scroll-mt-24" data-official-samples>
       <h2 className="sp-title">{t("samples.worksTitle")}</h2>
       <p className="sp-lead mt-6 max-w-[36rem] text-muted-foreground">{t("samples.description")}</p>
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
-        {OFFICIAL_SAMPLES.map((sample) => (
+        {samples.map((sample) => (
           <SampleBlock key={sample.slug} sample={sample} linkActor />
         ))}
       </div>
+      {samples.length < OFFICIAL_SAMPLES.length ? (
+        <TextLink href="/works#samples" className="mt-8">
+          {t("samples.seeAll")}
+        </TextLink>
+      ) : null}
     </section>
   );
 }
