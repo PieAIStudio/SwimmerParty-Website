@@ -1,8 +1,10 @@
 "use client";
+import { useSiteI18n } from "@/i18n/client";
 import { useState } from "react";
 import { GameButton } from "@pieai/swimmer-ui-kit";
 
-export function PostActions({ id, locale }: { id: string; locale: "en" | "zh" }) {
+export function PostActions({ id }: { id: string; locale: "en" | "zh" }) {
+  const { t } = useSiteI18n();
   const [liked, setLiked] = useState(false);
   const [reported, setReported] = useState(false);
   async function like() {
@@ -11,8 +13,7 @@ export function PostActions({ id, locale }: { id: string; locale: "en" | "zh" })
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ postId: id, liked: !liked }),
     });
-    if (response.status === 401)
-      return alert(locale === "zh" ? "登录后参与" : "Sign in to join in");
+    if (response.status === 401) return alert(t("community.signIn"));
     if (response.ok) setLiked(((await response.json()) as { liked: boolean }).liked);
   }
   async function report() {
@@ -21,23 +22,16 @@ export function PostActions({ id, locale }: { id: string; locale: "en" | "zh" })
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ postId: id, reason: "Something else" }),
     });
-    if (response.status === 401)
-      return alert(locale === "zh" ? "登录后参与" : "Sign in to join in");
+    if (response.status === 401) return alert(t("community.signIn"));
     if (response.ok) setReported(true);
   }
   return (
     <div className="mt-8 flex flex-wrap gap-3">
       <GameButton aria-pressed={liked} onClick={() => void like()}>
-        {locale === "zh" ? "赞" : "Like"}
+        {t("community.like")}
       </GameButton>
       <GameButton variant="ghost" onClick={() => void report()} disabled={reported}>
-        {reported
-          ? locale === "zh"
-            ? "谢谢，我们会看一下。"
-            : "Thanks. We’ll take a look."
-          : locale === "zh"
-            ? "举报这个作品"
-            : "Report this post"}
+        {reported ? t("community.reported") : t("community.report")}
       </GameButton>
     </div>
   );

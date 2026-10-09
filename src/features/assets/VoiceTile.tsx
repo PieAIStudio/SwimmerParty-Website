@@ -42,7 +42,7 @@ export function VoiceTile({
             <track
               kind="captions"
               srcLang="en"
-              label="English"
+              label={t("common.languageName.en")}
               src={`data:text/vtt,WEBVTT%0A%0A00:00.000%20--%3E%2000:30.000%0A${encodeURIComponent(item.transcript?.text ?? "")}`}
             />
           </audio>

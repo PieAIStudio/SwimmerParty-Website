@@ -9,14 +9,11 @@ import { TextLink } from "@/site/TextLink";
 import { Link } from "@/i18n/navigation";
 import { GameButton } from "@pieai/swimmer-ui-kit";
 import { WORKS } from "@/content/works";
-import type { MessageContracts } from "@/i18n/message-contracts";
-type Key = Extract<keyof MessageContracts, string>;
 export default async function Home({ params }: { params: Promise<{ locale: AppLocale }> }) {
   const { locale } = await params;
   setSiteLocale(locale);
   const { t } = await getSiteI18n();
   const newest = latestActors(5);
-  const msg = (key: string) => t(key as Key, {} as never);
   const items = ACTORS.flatMap((actor) => getActorAssets(actor.slug).items);
   const count = (kind: string) => items.filter((item) => item.kind === kind).length;
   return (
@@ -24,16 +21,16 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
       <section className="grid items-center gap-10 py-12 lg:min-h-[82vh] lg:grid-cols-12">
         <div className="lg:col-span-6">
           <p className="mt-4 inline-flex rounded-full border border-border px-3 py-1 text-sm font-semibold">
-            {locale === "zh"
-              ? "商用免费 · 署名 Swim In AI"
-              : "Free for commercial use · Credit Swim In AI"}
+            {t("home.licenseBadge")}
           </p>
           <h1 className="sp-display-xl mt-6">
-            {[0, 1, 2].map((i) => (
-              <span className="block" key={i}>
-                {msg(`home.heroLines.${i}`)}
-              </span>
-            ))}
+            {(["home.heroLines.0", "home.heroLines.1", "home.heroLines.2"] as const).map(
+              (key, i) => (
+                <span className="block" key={i}>
+                  {t(key)}
+                </span>
+              ),
+            )}
           </h1>
           <p className="sp-lead mt-6 max-w-[32rem] text-muted-foreground">
             {t("home.heroBody", { count: ACTORS.length })}
@@ -104,20 +101,12 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
       </section>
       <section className="sp-section sp-panel bg-card p-7 lg:p-12">
         <SectionHead
-          label={locale === "zh" ? "商用也免费" : "Free, even commercially"}
-          title={
-            locale === "zh"
-              ? "用在哪都行，赚钱也行。"
-              : "Use them anywhere. Even when you get paid."
-          }
-          note={
-            locale === "zh"
-              ? "不收钱，不填表，不用问。署上“Swim In AI”就行。"
-              : "No fee, no forms, no asking. Just credit “Swim In AI”."
-          }
+          label={t("home.licenseLabel")}
+          title={t("home.licenseTitle")}
+          note={t("home.licenseNote")}
         />
         <TextLink href="/license" className="mt-6">
-          {locale === "zh" ? "看怎么署名" : "See how to credit"}
+          {t("home.licenseCta")}
         </TextLink>
       </section>
       <section className="sp-section">

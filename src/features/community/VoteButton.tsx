@@ -1,15 +1,9 @@
 "use client";
+import { useSiteI18n } from "@/i18n/client";
 import { useEffect, useState } from "react";
 import { GameButton } from "@pieai/swimmer-ui-kit";
-export function VoteButton({
-  slug,
-  name,
-  locale,
-}: {
-  slug: string;
-  name: string;
-  locale: "en" | "zh";
-}) {
+export function VoteButton({ slug, name }: { slug: string; name: string; locale: "en" | "zh" }) {
+  const { t } = useSiteI18n();
   const [count, setCount] = useState(0);
   useEffect(() => {
     void fetch(`/api/community/votes?slug=${encodeURIComponent(slug)}`)
@@ -25,7 +19,7 @@ export function VoteButton({
       body: JSON.stringify({ slug }),
     });
     if (r.status === 401) {
-      alert(locale === "zh" ? "登录后投票" : "Sign in to vote");
+      alert(t("community.signInToVote"));
       return;
     }
     if (r.ok) {
@@ -35,7 +29,7 @@ export function VoteButton({
   }
   return (
     <GameButton variant="ghost" onClick={vote}>
-      {locale === "zh" ? `想看更多${name}` : `Want more of ${name}`} {""}· {count}
+      {t("community.voteLabel", { name })} {""}· {count}
     </GameButton>
   );
 }

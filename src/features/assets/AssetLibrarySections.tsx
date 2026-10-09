@@ -1,14 +1,13 @@
 import type { ActorAssets } from "./asset-types";
 import { listSeries, slotsForLook, slotsOf, slotLabelKey, type ResolvedSlot } from "./asset-series";
 import type { AppLocale } from "@/i18n/routing";
-import type { MessageContracts } from "@/i18n/message-contracts";
+import { seriesLabelKey } from "@/i18n/asset-labels";
 import { getSiteI18n } from "@/i18n/server";
 import { AssetTile } from "./AssetTile";
 import { VoiceTile } from "./VoiceTile";
 import { SelectAssetSeries } from "./AssetSelection";
 import { Mannequin } from "@/features/actors";
 
-type DynamicKey = Extract<keyof MessageContracts, string>;
 export async function AssetLibrarySections({
   assets,
   locale,
@@ -24,7 +23,6 @@ export async function AssetLibrarySections({
   skipVoiceSlot?: string;
 }) {
   const { t } = await getSiteI18n();
-  const msg = (key: string) => t(key as DynamicKey, {} as never);
   const delivered = new Map(assets.items.map((item) => [item.slot, item]));
   const hasVideo = assets.items.some((item) => item.kind === "video" || item.series === "video");
   const imageSeries = listSeries().filter(
@@ -99,7 +97,7 @@ export async function AssetLibrarySections({
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <h2 className="sp-title">
-                  {msg(`assets.series.${series.id}`)}{" "}
+                  {t(seriesLabelKey(series.id))}{" "}
                   <span className="sp-code ml-2 text-muted-foreground">
                     {available.length}/{visible.length}
                   </span>
@@ -137,9 +135,7 @@ export async function AssetLibrarySections({
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {voiceSlots.map((slot) => {
               const item = delivered.get(slot.slot);
-              const label = msg(
-                `assets.voice.${slot.key.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase())}`,
-              );
+              const label = t(slotLabelKey("voice", slot.key));
               return (
                 <VoiceTile
                   key={slot.slot}
@@ -158,12 +154,7 @@ export async function AssetLibrarySections({
           <p className="sp-small mt-3 max-w-2xl text-muted-foreground">{t("assets.videoNote")}</p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {slotsOf("video").map((slot) => (
-              <VoiceTile
-                key={slot.slot}
-                label={msg(
-                  `assets.video.${slot.key.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase())}`,
-                )}
-              />
+              <VoiceTile key={slot.slot} label={t(slotLabelKey("video", slot.key))} />
             ))}
           </div>
         </section>

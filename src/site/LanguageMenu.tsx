@@ -14,8 +14,8 @@ export function LanguageMenu({ variant = "rail" }: { variant?: "rail" | "panel" 
   const pathname = usePathname();
   const router = useRouter();
   const options = [
-    { id: "zh", label: "中文", meta: t("common.authored") },
-    { id: "en", label: "English", meta: t("common.authored") },
+    { id: "zh", label: t("common.languageName.zh"), meta: t("common.authored") },
+    { id: "en", label: t("common.languageName.en"), meta: t("common.authored") },
     ...MACHINE_LOCALES.map((machine) => ({
       id: machine.code,
       label: machine.label,
@@ -34,7 +34,7 @@ export function LanguageMenu({ variant = "rail" }: { variant?: "rail" | "panel" 
     <GameLanguageMenu
       className={variant === "rail" ? "relative z-10" : "w-full"}
       label={t("common.language")}
-      currentLabel={active === "zh" ? "中文" : "English"}
+      currentLabel={t(active === "zh" ? "common.languageName.zh" : "common.languageName.en")}
       value={active}
       options={options}
       onSelect={select}

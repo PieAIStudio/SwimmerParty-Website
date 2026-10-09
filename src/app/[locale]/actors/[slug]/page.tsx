@@ -18,7 +18,7 @@ import {
   SeriesJumpButton,
 } from "@/features/assets";
 import { CopyBlock } from "@/site/CopyBlock";
-import type { MessageContracts } from "@/i18n/message-contracts";
+import { seriesLabelKey } from "@/i18n/asset-labels";
 import { Breadcrumbs } from "@/site/Breadcrumbs";
 import { ShareButton } from "@/site/ShareButton";
 import { VersionBadge } from "@/site/VersionBadge";
@@ -29,7 +29,6 @@ import { localizedAlternates } from "@/i18n/metadata";
 import { WORKS } from "@/content/works";
 import { CastAddButton } from "@/features/cast";
 import { ActorSample } from "@/features/samples";
-type Key = Extract<keyof MessageContracts, string>;
 type Props = { params: Promise<{ locale: AppLocale; slug: string }> };
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => ACTORS.map((actor) => ({ locale, slug: actor.slug })));
@@ -60,14 +59,8 @@ export default async function ActorPage({ params }: Props) {
   const voice = assets.items.find((i) => i.kind === "voice" && i.key === "intro");
   const frontLabel = actor.status === "new-face" ? t("assets.castingPhoto") : name;
   // The info table and appearances already say who they are; new faces only add what's next.
-  const description =
-    actor.status === "new-face"
-      ? locale === "zh"
-        ? "目前只有一张照片和一段声音。"
-        : "One photo and one voice so far."
-      : null;
+  const description = actor.status === "new-face" ? t("actor.newFaceDescription") : null;
   const isNewFace = actor.status === "new-face";
-  const msg = (key: string) => t(key as Key, {} as never);
   // The library sits below the profile; the intro voice already plays in the profile.
   const imageSeries = listSeries().filter(
     (s) =>
@@ -165,7 +158,7 @@ export default async function ActorPage({ params }: Props) {
           >
             {imageSeries.map((s) => (
               <SeriesJumpButton key={s.id} id={`series-${s.id}`}>
-                {msg(`assets.series.${s.id}`)}
+                {t(seriesLabelKey(s.id))}
               </SeriesJumpButton>
             ))}
             {moreVoices ? (
@@ -189,15 +182,16 @@ export default async function ActorPage({ params }: Props) {
         <section id="series-how-to" className="sp-section scroll-mt-40">
           <h2 className="sp-title">{t("assets.series.howTo")}</h2>
           <ol className="mt-8 grid gap-4 md:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <li key={i} className="sp-card bg-card">
-                <span className="sp-code">{String(i).padStart(2, "0")}</span>
-                <p className="mt-4">
-                  {t(
-                    `assets.howTo.${isNewFace && i !== 2 ? `newFace${i}` : i}` as Key,
-                    {} as never,
-                  )}
-                </p>
+            {(
+              [
+                ["assets.howTo.1", "assets.howTo.newFace1"],
+                ["assets.howTo.2", "assets.howTo.2"],
+                ["assets.howTo.3", "assets.howTo.newFace3"],
+              ] as const
+            ).map(([regularKey, newFaceKey], index) => (
+              <li key={index + 1} className="sp-card bg-card">
+                <span className="sp-code">{String(index + 1).padStart(2, "0")}</span>
+                <p className="mt-4">{t(isNewFace ? newFaceKey : regularKey)}</p>
               </li>
             ))}
           </ol>

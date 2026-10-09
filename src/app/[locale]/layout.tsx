@@ -39,18 +39,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       template: `%s — ${SITE.name}`,
     },
     description: SITE.description[loc],
-    keywords:
-      loc === "zh"
-        ? ["AI 演员", "动画角色", "虚拟演员", "CG 角色", "角色授权", "合成演员", "SWIMMER PARTY"]
-        : [
-            "AI actor",
-            "animated character",
-            "synthetic talent",
-            "CG character",
-            "character licensing",
-            "virtual talent",
-            "SWIMMER PARTY",
-          ],
+    keywords: [
+      t("home.keywords.aiActor"),
+      t("home.keywords.animatedCharacter"),
+      t("home.keywords.syntheticTalent"),
+      t("home.keywords.cgCharacter"),
+      t("home.keywords.characterLicensing"),
+      t("home.keywords.virtualTalent"),
+      t("home.keywords.brand"),
+    ],
     alternates: localizedAlternates(loc, "/"),
     openGraph: {
       type: "website",

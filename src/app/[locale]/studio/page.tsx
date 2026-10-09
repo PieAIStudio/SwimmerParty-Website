@@ -5,8 +5,6 @@ import { localizedAlternates } from "@/i18n/metadata";
 import { PageIntro } from "@/site/PageIntro";
 import { SectionHead } from "@/site/SectionHead";
 import { GameButton, GameIcon } from "@pieai/swimmer-ui-kit";
-import type { MessageContracts } from "@/i18n/message-contracts";
-type Key = Extract<keyof MessageContracts, string>;
 
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -23,7 +21,6 @@ export default async function StudioPage({ params }: Props) {
   const { locale } = await params;
   setSiteLocale(locale);
   const { t } = await getSiteI18n();
-  const msg = (key: string) => t(key as Key, {} as never);
   return (
     <div className="sp-container">
       <PageIntro
@@ -63,25 +60,21 @@ export default async function StudioPage({ params }: Props) {
       </section>
       <section className="sp-section" id="work-with-us">
         <SectionHead
-          label={locale === "zh" ? "找我们合作" : "Work with us"}
-          title={locale === "zh" ? "两种合作方式" : "Two ways to work together"}
-          note={
-            locale === "zh"
-              ? "名单上的演员谁都能免费用。如果你需要更多："
-              : "The roster is free for everyone. If you need more than that:"
-          }
+          label={t("studio.workWithUs")}
+          title={t("studio.cooperationTitle")}
+          note={t("studio.cooperationNote")}
         />
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          {[1, 2].map((index, position) => (
+          {([1, 2] as const).map((index, position) => (
             <article key={index} className="sp-card bg-card">
               <p className="sp-code">{String(position + 1).padStart(2, "0")}</p>
-              <h3 className="sp-subtitle mt-4">{msg(`casting.routes.${index}.title`)}</h3>
-              <p className="mt-4 text-muted-foreground">{msg(`casting.routes.${index}.body`)}</p>
+              <h3 className="sp-subtitle mt-4">{t(`casting.routes.${index}.title`)}</h3>
+              <p className="mt-4 text-muted-foreground">{t(`casting.routes.${index}.body`)}</p>
             </article>
           ))}
         </div>
         <GameButton variant="primary" href="mailto:pieai@hotmail.com" className="mt-6">
-          {locale === "zh" ? "找我们合作" : "Work with us"}
+          {t("studio.workWithUs")}
         </GameButton>
       </section>
     </div>

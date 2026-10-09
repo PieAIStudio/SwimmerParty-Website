@@ -236,10 +236,10 @@ export function AssetSelectionProvider({
             </div>
             <p className="mt-4">{t("assets.signInBody")}</p>
             <ul className="mt-5 space-y-3">
-              {(COMMUNITY_ENABLED ? [0, 3, 2, 1] : [0, 3, 2]).map((index) => (
+              {(COMMUNITY_ENABLED ? ([0, 3, 2, 1] as const) : ([0, 3, 2] as const)).map((index) => (
                 <li key={index} className="flex items-start gap-2">
                   <span aria-hidden="true">✓</span>
-                  <span>{t(`assets.signInBenefits.${index}` as "assets.signInBenefits.0")}</span>
+                  <span>{t(`assets.signInBenefits.${index}`)}</span>
                 </li>
               ))}
             </ul>

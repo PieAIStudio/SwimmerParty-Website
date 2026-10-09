@@ -1,3 +1,4 @@
+import { getSiteI18n } from "@/i18n/server";
 import { ImageResponse } from "next/og";
 import { SITE } from "@/content/site";
 import { hasLocale, type AppLocale } from "@/i18n/routing";
@@ -13,6 +14,7 @@ export const contentType = "image/png";
 export default async function OpenGraphImage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const lang = hasLocale(["zh", "en"], locale) ? (locale as AppLocale) : "en";
+  const { t } = await getSiteI18n(lang);
   const actor = ACTORS.find((item) => item.status === "active") ?? ACTORS[0];
   const image = actor ? await actorOgImage(actor.slug) : null;
   return new ImageResponse(
@@ -48,12 +50,8 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
       ) : null}
       <div style={{ color: "#a8d8ff", fontSize: 28 }}>{SITE.name}</div>
       <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-        <div style={{ fontSize: 64, fontWeight: 700 }}>
-          {lang === "zh" ? "原创 AI 演员" : "Original AI actors"}
-        </div>
-        <div style={{ fontSize: 30, color: "#c7ced3" }}>
-          {lang === "zh" ? "制作、交付、授权" : "Made, delivered, licensed"}
-        </div>
+        <div style={{ fontSize: 64, fontWeight: 700 }}>{t("home.ogTitle")}</div>
+        <div style={{ fontSize: 30, color: "#c7ced3" }}>{t("home.ogSubtitle")}</div>
       </div>
     </div>,
     size,

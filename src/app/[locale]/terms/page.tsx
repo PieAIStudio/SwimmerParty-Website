@@ -1,5 +1,5 @@
 import { TERMS } from "@/content/legal";
-import { setSiteLocale } from "@/i18n/server";
+import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import type { AppLocale } from "@/i18n/routing";
 import type { Metadata } from "next";
 import { localizedAlternates } from "@/i18n/metadata";
@@ -18,14 +18,13 @@ export async function generateMetadata({
 }
 export default async function Terms({ params }: { params: Promise<{ locale: AppLocale }> }) {
   const { locale } = await params;
+  const { t } = await getSiteI18n(locale);
   setSiteLocale(locale);
   return (
     <div className="sp-container py-16">
       <h1 className="sp-display-xl">{l(TERMS.title, locale)}</h1>
       <p className="sp-lead mt-5 max-w-3xl">{l(TERMS.intro, locale)}</p>
-      <p className="sp-small mt-4 text-muted-foreground">
-        {locale === "zh" ? "最后更新：2026 年 10 月 8 日" : "Last updated 8 October 2026"}
-      </p>
+      <p className="sp-small mt-4 text-muted-foreground">{t("legal.lastUpdated")}</p>
       <div className="mt-12 space-y-5">
         {TERMS.rows.map(([enT, enB, zhT, zhB]) => (
           <article key={enT} className="sp-panel p-5">

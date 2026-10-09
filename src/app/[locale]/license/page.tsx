@@ -7,7 +7,7 @@ import {
   LICENSE_RULES,
   LICENSE_WHERE,
 } from "@/content/license";
-import { setSiteLocale } from "@/i18n/server";
+import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import type { AppLocale } from "@/i18n/routing";
 import { localizedAlternates } from "@/i18n/metadata";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
@@ -28,35 +28,22 @@ export async function generateMetadata({
 }
 export default async function LicensePage({ params }: { params: Promise<{ locale: AppLocale }> }) {
   const { locale } = await params;
+  const { t } = await getSiteI18n(locale);
   setSiteLocale(locale);
   return (
     <div className="sp-container py-16">
-      <GameBadge tone="neutral">
-        {locale === "zh" ? "免费商用 · v1.0" : "Free License · v1.0"}
-      </GameBadge>
+      <GameBadge tone="neutral">{t("license.badge")}</GameBadge>
       <h1 className="sp-display-xl mt-6 max-w-3xl">
-        {locale === "zh" ? (
-          <>
-            随便用，
-            <br />
-            署上 Swim In AI。
-          </>
-        ) : (
-          <>
-            Use them anywhere.
-            <br />
-            Credit Swim In AI.
-          </>
-        )}
+        <>
+          {t("license.heroLines.0")}
+          <br />
+          {t("license.heroLines.1")}
+        </>
       </h1>
       <p className="sp-lead mt-6 max-w-3xl">{l(LICENSE.intro, locale)}</p>
       <section id="credit" className="mt-16 scroll-mt-24">
-        <h2 className="sp-title">{locale === "zh" ? "怎么署名" : "How to credit"}</h2>
-        <p className="mt-3 max-w-2xl">
-          {locale === "zh"
-            ? "下面任选一种都算。“Swim In AI”这几个字始终写英文，前后的话用什么语言都行。"
-            : "Any one of these counts. “Swim In AI” always stays in English; the words around it can be in any language."}
-        </p>
+        <h2 className="sp-title">{t("license.creditTitle")}</h2>
+        <p className="mt-3 max-w-2xl">{t("license.creditNote")}</p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {LICENSE.creditLines.map((x) => (
             <div key={x} className="sp-panel p-5 font-semibold">
@@ -64,28 +51,20 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
             </div>
           ))}
         </div>
-        <p className="sp-small mt-6 text-muted-foreground">
-          {locale === "zh"
-            ? "我们最喜欢第三种：写上演员名字。他因为你火了，后面的项目你优先。"
-            : "Our favourite is the third: name the actor. It helps them get famous, and if they take off because of you, you get first call."}
-        </p>
+        <p className="sp-small mt-6 text-muted-foreground">{t("license.creditFavourite")}</p>
         <div className="mt-6 flex items-center gap-4">
-          <CopyButton
-            primary
-            text={LICENSE.credit[locale]}
-            label={locale === "zh" ? "复制署名" : "Copy credit line"}
-          />
+          <CopyButton primary text={LICENSE.credit[locale]} label={t("license.copyCredit")} />
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-title">{locale === "zh" ? "放在哪" : "Where it goes"}</h2>
+        <h2 className="sp-title">{t("license.whereTitle")}</h2>
         <div className="mt-6 overflow-x-auto sp-panel">
           <table className="w-full min-w-[720px] text-left text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="p-4">{locale === "zh" ? "你做的" : "What you made"}</th>
-                <th className="p-4">{locale === "zh" ? "放在哪" : "Where"}</th>
-                <th className="p-4">{locale === "zh" ? "多大" : "How big"}</th>
+                <th className="p-4">{t("license.whereMade")}</th>
+                <th className="p-4">{t("license.wherePlacement")}</th>
+                <th className="p-4">{t("license.whereSize")}</th>
               </tr>
             </thead>
             <tbody>
@@ -117,12 +96,8 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-title">{locale === "zh" ? "署名标" : "Credit mark"}</h2>
-        <p className="mt-3">
-          {locale === "zh"
-            ? "纯白和纯黑两种，透明背景，直接拖进剪辑或修图软件就能用。"
-            : "Pure white or pure black, on a transparent background. Drop it into any editor."}
-        </p>
+        <h2 className="sp-title">{t("license.markTitle")}</h2>
+        <p className="mt-3">{t("license.markNote")}</p>
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           <article className="sp-panel p-4">
             <div className="flex aspect-[3/1] items-center justify-center rounded-[var(--game-ui-radius-card)] bg-[#1f2326] p-5">
@@ -135,7 +110,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
               />
             </div>
             <CreditMarkDownload endpoint="/api/assets/public/swim-in-ai-white/download">
-              {locale === "zh" ? "下载纯白" : "Download white"}
+              {t("license.downloadWhite")}
             </CreditMarkDownload>
           </article>
           <article className="sp-panel p-4">
@@ -149,13 +124,13 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
               />
             </div>
             <CreditMarkDownload endpoint="/api/assets/public/swim-in-ai-black/download">
-              {locale === "zh" ? "下载纯黑" : "Download black"}
+              {t("license.downloadBlack")}
             </CreditMarkDownload>
           </article>
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-title">{locale === "zh" ? "可以" : "You can"}</h2>
+        <h2 className="sp-title">{t("license.canTitle")}</h2>
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           {LICENSE_RULES.can.map(([enTitle, enBody, zhTitle, zhBody]) => (
             <article key={enTitle} className="sp-panel p-5">
@@ -166,7 +141,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-title">{locale === "zh" ? "不可以" : "You can’t"}</h2>
+        <h2 className="sp-title">{t("license.cannotTitle")}</h2>
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           {LICENSE_RULES.cannot.map(([enTitle, enBody, zhTitle, zhBody]) => (
             <article key={enTitle} className="sp-panel p-5">
@@ -177,7 +152,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-title">{locale === "zh" ? "常见问题" : "Questions people ask"}</h2>
+        <h2 className="sp-title">{t("license.faqTitle")}</h2>
         <div className="mt-6 grid gap-3">
           {LICENSE_FAQ.map(([enQ, enA, zhQ, zhA]) => (
             <details key={enQ} className="sp-panel p-4">
@@ -188,7 +163,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-title">{locale === "zh" ? "我们的承诺" : "Our promises"}</h2>
+        <h2 className="sp-title">{t("license.promisesTitle")}</h2>
         <div className="mt-6 space-y-4">
           {LICENSE.promises.map((x) => (
             <article key={x.en} className="sp-panel p-5">
@@ -198,11 +173,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
           ))}
         </div>
       </section>
-      <p className="sp-small mt-16 text-muted-foreground">
-        {locale === "zh"
-          ? "授权 v1.0 · 2026 年 10 月 8 日生效 · 属于《使用条款》的一部分"
-          : "License v1.0 · Effective 8 October 2026 · Part of our Terms of Use"}
-      </p>
+      <p className="sp-small mt-16 text-muted-foreground">{t("license.effectiveNote")}</p>
     </div>
   );
 }

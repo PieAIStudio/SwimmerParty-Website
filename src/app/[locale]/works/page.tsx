@@ -57,9 +57,7 @@ export default async function WorksPage({ params }: Props) {
                     <span key={credit.actor}>
                       {index ? " · " : ""}
                       {locale === "zh" ? actor.nameCn : actor.nameEn}
-                      {credit.role
-                        ? ` ${locale === "zh" ? "饰" : "as"} ${credit.role.name[locale]}`
-                        : ""}
+                      {credit.role ? ` ${t("works.rolePrefix")} ${credit.role.name[locale]}` : ""}
                     </span>
                   ) : null;
                 })}

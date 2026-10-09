@@ -1,9 +1,13 @@
 "use client";
+import { useSiteI18n } from "@/i18n/client";
 import { useEffect, useState } from "react";
 import { GameButton } from "@pieai/swimmer-ui-kit";
 import type { CommunityPost } from "./types";
 import { Link } from "@/i18n/navigation";
-export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
+export function CommunityFeed({ locale: _locale }: { locale: "en" | "zh" }) {
+  // Retain the existing locale prop; authored copy follows the site provider.
+  void _locale;
+  const { t } = useSiteI18n();
   const [posts, setPosts] = useState<CommunityPost[]>([]);
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState("");
@@ -46,19 +50,15 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
   return (
     <div>
       <div className="flex items-center justify-between gap-4">
-        <p className="sp-lead">
-          {locale === "zh"
-            ? "先是我们自己的作品，然后是大家用我们演员做的一切：图片、视频、声音、游戏。"
-            : "Our own productions first. Then everything you make with our actors: images, videos, voices, games."}
-        </p>
+        <p className="sp-lead">{t("community.intro")}</p>
         <GameButton variant="secondary" onClick={() => setOpen((v) => !v)}>
-          {locale === "zh" ? "发布作品" : "Post your work"}
+          {t("community.openForm")}
         </GameButton>
       </div>
       {open ? (
         <form onSubmit={submit} className="sp-panel mt-6 grid gap-4 p-5">
           <label className="grid gap-2">
-            <span className="sp-label">{locale === "zh" ? "标题" : "Title"}</span>
+            <span className="sp-label">{t("community.titleLabel")}</span>
             <input
               required
               value={title}
@@ -72,40 +72,34 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
               onChange={(e) => setKind(e.target.value)}
               className="rounded border border-border bg-background p-3"
             >
-              <option value="image">Image · 图片</option>
-              <option value="video">Video · 视频</option>
-              <option value="audio">Audio · 声音</option>
-              <option value="game">Game · 游戏</option>
+              <option value="image">{t("community.kind.image")}</option>
+              <option value="video">{t("community.kind.video")}</option>
+              <option value="audio">{t("community.kind.audio")}</option>
+              <option value="game">{t("community.kind.game")}</option>
             </select>
             <input
               value={actor}
               onChange={(e) => setActor(e.target.value)}
-              aria-label="Actor slug"
+              aria-label={t("community.actorSlugLabel")}
               className="rounded border border-border bg-background p-3"
             />
           </div>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder={locale === "zh" ? "简介（可选）" : "Description (optional)"}
+            placeholder={t("community.descriptionPlaceholder")}
             className="rounded border border-border bg-background p-3"
           />
           <textarea
             value={recipe}
             onChange={(e) => setRecipe(e.target.value)}
-            placeholder={
-              locale === "zh"
-                ? "怎么做的：提示词或步骤（可选）"
-                : "How you made it: prompt or steps (optional)"
-            }
+            placeholder={t("community.recipePlaceholder")}
             className="rounded border border-border bg-background p-3"
           />
           <input
             value={tool}
             onChange={(e) => setTool(e.target.value)}
-            placeholder={
-              locale === "zh" ? "用什么做的？（可选）" : "What did you make it with? (optional)"
-            }
+            placeholder={t("community.toolPlaceholder")}
             className="rounded border border-border bg-background p-3"
           />
           <label className="flex gap-2">
@@ -114,7 +108,7 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
               checked={creditConfirmed}
               onChange={(e) => setCreditConfirmed(e.target.checked)}
             />
-            {locale === "zh" ? "我的作品里署了 Swim In AI。" : "My work credits Swim In AI."}
+            {t("community.creditConfirmation")}
           </label>
           <label className="flex gap-2">
             <input
@@ -122,16 +116,14 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
               checked={rightsConfirmed}
               onChange={(e) => setRightsConfirmed(e.target.checked)}
             />
-            {locale === "zh"
-              ? "这是我做的，并且遵守免费商用的规则。"
-              : "I made this, and it follows the Free License rules."}
+            {t("community.rightsConfirmation")}
           </label>
           <GameButton
             type="submit"
             variant="primary"
             disabled={!creditConfirmed || !rightsConfirmed}
           >
-            {locale === "zh" ? "发布" : "Post"}
+            {t("community.submit")}
           </GameButton>
         </form>
       ) : null}
@@ -142,18 +134,12 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
               {post.title}
             </Link>
             <p className="sp-small mt-2 text-muted-foreground">
-              {locale === "zh" ? `作者：${post.author}` : `by ${post.author}`}
+              {t("community.author", { author: post.author })}
             </p>
-            <p className="sp-small mt-4">{locale === "zh" ? "等待审核" : "Waiting for review"}</p>
+            <p className="sp-small mt-4">{t("community.waiting")}</p>
           </article>
         ))}
-        {!posts.length ? (
-          <p className="sp-lead">
-            {locale === "zh"
-              ? "还没有作品。来当第一个：发一个你用我们演员做的东西。"
-              : "Nothing here yet. Be the first: post something you made with our actors."}
-          </p>
-        ) : null}
+        {!posts.length ? <p className="sp-lead">{t("community.empty")}</p> : null}
       </div>
     </div>
   );

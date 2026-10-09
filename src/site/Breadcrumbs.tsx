@@ -1,12 +1,15 @@
+import { getSiteI18n } from "@/i18n/server";
 import { Link } from "@/i18n/navigation";
 export type BreadcrumbItem = { label: string; href?: string };
-export function Breadcrumbs({
+export async function Breadcrumbs({
   items,
-  ariaLabel = "当前位置",
+  ariaLabel,
 }: {
   items: BreadcrumbItem[];
   ariaLabel?: string;
 }) {
+  const { t } = await getSiteI18n();
+  const label = ariaLabel ?? t("common.breadcrumbFallback");
   const json = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -19,7 +22,7 @@ export function Breadcrumbs({
   };
   return (
     <>
-      <nav aria-label={ariaLabel} className="py-8">
+      <nav aria-label={label} className="py-8">
         <ol className="flex min-h-11 flex-wrap items-center gap-2 sp-small">
           {items.map((item, index) => (
             <li key={`${item.label}-${index}`} className="flex items-center gap-2">

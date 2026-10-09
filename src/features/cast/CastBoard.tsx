@@ -1,4 +1,5 @@
 "use client";
+import { useSiteI18n } from "@/i18n/client";
 import { useMemo, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import type { Actor } from "@/content/actors";
@@ -34,6 +35,7 @@ export function CastBoard({
   starterSlots: Record<string, string[]>;
   locale: "en" | "zh";
 }) {
+  const { t } = useSiteI18n();
   const account = useAccount();
   const [downloading, setDownloading] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -82,52 +84,38 @@ export function CastBoard({
   if (cast.length === 0)
     return (
       <div className="mt-8">
-        <p className="sp-lead">{locale === "zh" ? "选角单是空的。" : "Your cast is empty."}</p>
+        <p className="sp-lead">{t("cast.empty")}</p>
         <GameButton variant="primary" href="/actors" linkComponent={Link} className="mt-6">
-          {locale === "zh" ? "去挑演员" : "Pick actors"}
+          {t("cast.pickActors")}
         </GameButton>
       </div>
     );
   return (
     <div>
-      <p className="sp-small mt-8">
-        {locale === "zh"
-          ? `${cast.length} 位演员 · 最多 12 位`
-          : `${cast.length} actors · up to 12`}
-      </p>
+      <p className="sp-small mt-8">{t("cast.count", { count: cast.length })}</p>
       <div className="mt-4 flex flex-wrap gap-3">
         <GameButton variant="primary" onClick={() => void downloadPack()} disabled={downloading}>
-          {downloading
-            ? locale === "zh"
-              ? "下载中…"
-              : "Downloading…"
-            : locale === "zh"
-              ? "下载选角包"
-              : "Download cast pack"}
+          {downloading ? t("cast.downloading") : t("cast.downloadPack")}
         </GameButton>
         <GameButton
           variant="secondary"
           onClick={() => void copy(`${location.origin}/cast?a=${slugs.join(",")}`)}
         >
-          {locale === "zh" ? "分享选角单" : "Share cast"}
+          {t("cast.share")}
         </GameButton>
         <GameButton
           variant="secondary"
-          onClick={() =>
-            void copy(`${locale === "zh" ? "署名：" : "Credit: "}${names} · Swim In AI`)
-          }
+          onClick={() => void copy(`${t("cast.creditPrefix")}${names} · Swim In AI`)}
         >
-          {locale === "zh" ? "复制署名" : "Copy credit"}
+          {t("cast.copyCredit")}
         </GameButton>
         <GameButton variant="ghost" onClick={() => save([])}>
-          {locale === "zh" ? "清空" : "Clear cast"}
+          {t("cast.clear")}
         </GameButton>
       </div>
       {failed ? (
         <div className="mt-4">
-          <GameToast tone="danger">
-            {locale === "zh" ? "出了点问题，请再试一次。" : "Something went wrong. Try again."}
-          </GameToast>
+          <GameToast tone="danger">{t("cast.failed")}</GameToast>
         </div>
       ) : null}
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -148,7 +136,7 @@ export function CastBoard({
               variant="ghost"
               onClick={() => save(slugs.filter((s) => s !== a.slug))}
             >
-              {locale === "zh" ? "移出" : "Remove"}
+              {t("cast.remove")}
             </GameButton>
           </article>
         ))}
@@ -156,14 +144,8 @@ export function CastBoard({
     </div>
   );
 }
-export function CastAddButton({
-  slug,
-  locale,
-}: {
-  slug: string;
-  locale: "en" | "zh";
-  name?: string;
-}) {
+export function CastAddButton({ slug }: { slug: string; locale: "en" | "zh"; name?: string }) {
+  const { t } = useSiteI18n();
   const [added, setAdded] = useState(false);
   function add() {
     const saved = (localStorage.getItem("sp-cast") ?? "").split(",").filter(Boolean);
@@ -174,13 +156,7 @@ export function CastAddButton({
   }
   return (
     <GameButton variant="ghost" onClick={add}>
-      {added
-        ? locale === "zh"
-          ? "已在选角单"
-          : "In your cast"
-        : locale === "zh"
-          ? "加入选角单"
-          : "Add to cast"}
+      {added ? t("cast.added") : t("cast.add")}
     </GameButton>
   );
 }

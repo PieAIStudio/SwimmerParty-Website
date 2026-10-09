@@ -8,8 +8,9 @@ import { PostDetail } from "@/features/community";
 type Props = { params: Promise<{ locale: AppLocale; id: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const { t } = await getSiteI18n(locale);
   return {
-    title: locale === "zh" ? "作品" : "Works",
+    title: t("community.postTitle"),
     alternates: localizedAlternates(locale, "/works"),
   };
 }
@@ -21,10 +22,7 @@ export default async function CommunityPostPage({ params }: Props) {
     <div className="sp-container">
       <Breadcrumbs
         ariaLabel={t("common.breadcrumb")}
-        items={[
-          { label: t("nav.works"), href: "/works" },
-          { label: locale === "zh" ? "作品" : "Works" },
-        ]}
+        items={[{ label: t("nav.works"), href: "/works" }, { label: t("community.postTitle") }]}
       />
       <PostDetail id={id} locale={locale} />
     </div>

@@ -66,9 +66,9 @@ export function ActorFilters({ actors }: { actors: Actor[] }) {
             activeId={gender}
             onSelect={setGender}
             options={[
-              { id: "all", label: locale === "zh" ? "全部" : "All" },
-              { id: "female", label: locale === "zh" ? "女" : "Women" },
-              { id: "male", label: locale === "zh" ? "男" : "Men" },
+              { id: "all", label: t("roster.filters.all") },
+              { id: "female", label: t("roster.filters.women") },
+              { id: "male", label: t("roster.filters.men") },
             ]}
           />
           <div>
@@ -81,10 +81,10 @@ export function ActorFilters({ actors }: { actors: Actor[] }) {
               value={age}
               onChange={(e) => setAge(e.target.value)}
             >
-              <option value="all">{locale === "zh" ? "全部" : "All"}</option>
-              <option value="under30">{locale === "zh" ? "30 岁以下" : "Under 30"}</option>
+              <option value="all">{t("roster.filters.all")}</option>
+              <option value="under30">{t("roster.filters.under30")}</option>
               <option value="30to45">30–45</option>
-              <option value="over45">{locale === "zh" ? "45 岁以上" : "Over 45"}</option>
+              <option value="over45">{t("roster.filters.over45")}</option>
             </GameSelect>
           </div>
           <div>
@@ -97,9 +97,9 @@ export function ActorFilters({ actors }: { actors: Actor[] }) {
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
             >
-              <option value="all">{locale === "zh" ? "全部" : "All"}</option>
-              <option value="en">{locale === "zh" ? "英语" : "English"}</option>
-              <option value="zh">{locale === "zh" ? "中文" : "Chinese"}</option>
+              <option value="all">{t("roster.filters.all")}</option>
+              <option value="en">{t("roster.filters.english")}</option>
+              <option value="zh">{t("roster.filters.chinese")}</option>
             </GameSelect>
           </div>
         </div>

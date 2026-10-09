@@ -25,7 +25,7 @@
     "pro-gov": "pro-gov",
     "docs:check": "pnpm pro-gov doctor && pnpm doc-gov router-check && pnpm doc-gov check && pnpm doc-gov scan --check && pnpm doc-gov links && pnpm doc-gov audit && pnpm doc-gov doctor",
     "verify": "pnpm check:i18n && pnpm typecheck && pnpm lint && pnpm lint:next && pnpm format:check && pnpm test:tools && pnpm build && pnpm test",
-    "check:i18n": "swimmer-i18n-check check && swimmer-i18n-check types --out src/i18n/message-contracts.ts --check",
+    "check:i18n": "swimmer-i18n-check check && swimmer-i18n-check types --out src/i18n/message-contracts.ts --check && node tools/check-messages.ts",
     "messages:generate": "node tools/gen-messages.ts",
     "generate:og-assets": "node tools/generate-og-assets.ts",
     "assets:upload": "node tools/assets-upload.ts"

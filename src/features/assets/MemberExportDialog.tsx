@@ -171,14 +171,9 @@ export function MemberExportDialog({
         label={t("assets.exportFormat")}
         disabled={busy}
         onSelect={(id) => setFormat(id as ExportFormat)}
-        options={["zip", "sheet", "model"].map((id) => ({
+        options={(["zip", "sheet", "model"] as const).map((id) => ({
           id,
-          label: t(
-            `assets.format.${id}` as
-              | "assets.format.zip"
-              | "assets.format.sheet"
-              | "assets.format.model",
-          ),
+          label: t(`assets.format.${id}`),
         }))}
       />
       <p className="sp-small mt-5 text-muted-foreground">
@@ -197,8 +192,8 @@ export function MemberExportDialog({
             onSelect={(id) => setLabels(id as SheetLabels)}
             options={[
               { id: "none", label: t("assets.labels.none") },
-              { id: "zh", label: "中文" },
-              { id: "en", label: "English" },
+              { id: "zh", label: t("common.languageName.zh") },
+              { id: "en", label: t("common.languageName.en") },
             ]}
           />
           <GameSegmentedControl
