@@ -2,7 +2,7 @@ import { strToU8 } from "fflate";
 import type { Actor } from "../../content/actors/index.ts";
 import type { ActorAssets, AssetItem } from "./asset-types.ts";
 import type { ExportTarget } from "../../content/tools.ts";
-import { LEGACY_MEMBER_LICENSE_RULES } from "../../content/license.ts";
+import { LICENSE, LICENSE_RULES } from "../../content/license.ts";
 import { listSeries } from "./asset-series.ts";
 import { SITE } from "../../content/site.ts";
 import { characterProfile } from "./asset-profile.ts";
@@ -121,14 +121,31 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
   files["README-for-AI.txt"] = strToU8(
     `${actor.slug} — ${actor.nameEn}\nAnimated character; never a real-person likeness.\n\n${descriptions.join("\n")}\n\nConsult character.json and LICENSE.txt.\n`,
   );
-  files["LICENSE.txt"] = strToU8(
-    LEGACY_MEMBER_LICENSE_RULES.map(
-      (rule) => `${rule.head[input.locale]}\n${rule.body[input.locale]}`,
-    ).join("\n\n") + `\n\n${SITE.url}\n`,
-  );
+  files["LICENSE.txt"] = strToU8(licenseText(input.locale));
   ensureActive(signal);
   return {
     blob: zipBlob(files, signal),
     filename: `${actor.slug}_assets_${new Date().toISOString().slice(0, 10).replaceAll("-", "")}.zip`,
   };
+}
+
+/** The current License v1.0, the same terms the license page and starter pack show. */
+function licenseText(locale: "en" | "zh"): string {
+  const zh = locale === "zh";
+  const rules = (list: readonly (readonly string[])[]) =>
+    list
+      .map(
+        ([enHead, enBody, zhHead, zhBody]) => `- ${zh ? zhHead : enHead}: ${zh ? zhBody : enBody}`,
+      )
+      .join("\n");
+  return (
+    [
+      `${LICENSE.title[locale]} v${LICENSE.version}`,
+      LICENSE.description[locale],
+      `${zh ? "可以" : "You can"}\n${rules(LICENSE_RULES.can)}`,
+      `${zh ? "不可以" : "You can't"}\n${rules(LICENSE_RULES.cannot)}`,
+      `${zh ? "署名" : "Credit"}: ${LICENSE.credit[locale]}`,
+      `${SITE.url}/${locale}/license`,
+    ].join("\n\n") + "\n"
+  );
 }
