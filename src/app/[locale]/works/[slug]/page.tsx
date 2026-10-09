@@ -35,13 +35,8 @@ export default async function WorkPage({ params }: Props) {
         ariaLabel={t("common.breadcrumb")}
         items={[{ label: t("nav.works"), href: "/works" }, { label: work.title[locale] }]}
       />
-      <section className="grid items-start gap-8 lg:grid-cols-12">
-        <div className="sp-sweep sp-panel relative aspect-video lg:col-span-7">
-          <GameBadge tone="neutral" className="absolute top-4 left-4">
-            {t("works.keyArt")}
-          </GameBadge>
-        </div>
-        <div className="lg:col-span-5">
+      <section className="max-w-2xl">
+        <div>
           <div className="flex items-center gap-3">
             <GameBadge tone="neutral">{WORK_STATUS_LABEL[work.status][locale]}</GameBadge>
           </div>
@@ -85,9 +80,9 @@ export default async function WorkPage({ params }: Props) {
           })}
         </div>
       </section>
-      <section className="sp-section">
-        <h2 className="sp-title">{t("works.episodes")}</h2>
-        {work.episodes?.length ? (
+      {work.episodes?.length ? (
+        <section className="sp-section">
+          <h2 className="sp-title">{t("works.episodes")}</h2>
           <div className="mt-6 space-y-3">
             {work.episodes.map((ep) => (
               <div
@@ -99,22 +94,8 @@ export default async function WorkPage({ params }: Props) {
               </div>
             ))}
           </div>
-        ) : (
-          <p className="sp-lead mt-6">{t("works.episodesEmpty")}</p>
-        )}
-      </section>
-      <section className="sp-section grid gap-6 lg:grid-cols-2">
-        <div className="sp-sweep sp-panel aspect-video">
-          <GameBadge tone="neutral" className="m-4">
-            {t("works.trailer")}
-          </GameBadge>
-        </div>
-        <div className="sp-sweep sp-panel aspect-video">
-          <GameBadge tone="neutral" className="m-4">
-            {t("works.stills")}
-          </GameBadge>
-        </div>
-      </section>
+        </section>
+      ) : null}
     </div>
   );
 }

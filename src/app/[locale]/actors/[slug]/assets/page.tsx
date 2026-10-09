@@ -49,6 +49,7 @@ export default async function AssetsPage({ params }: Props) {
   const msg = (key: string) => t(key as Key, {} as never);
   const name = locale === "zh" ? actor.nameCn : actor.nameEn;
   const isNewFace = actor.status === "new-face";
+  const hasVideo = assets.items.some((item) => item.kind === "video" || item.series === "video");
   const imageSeries = listSeries().filter(
     (s) =>
       !["voice", "video"].includes(s.id) &&
@@ -107,9 +108,9 @@ export default async function AssetsPage({ params }: Props) {
               </SeriesJumpButton>
             ))}
             <SeriesJumpButton id="series-voice">{t("assets.series.voice")}</SeriesJumpButton>
-            {isNewFace ? null : (
+            {hasVideo ? (
               <SeriesJumpButton id="series-video">{t("assets.series.video")}</SeriesJumpButton>
-            )}
+            ) : null}
             <SeriesJumpButton id="series-how-to">{t("assets.series.howTo")}</SeriesJumpButton>
             <SeriesJumpButton id="series-text">{t("assets.series.text")}</SeriesJumpButton>
             <SeriesJumpButton id="series-rules">{t("assets.series.rules")}</SeriesJumpButton>
@@ -137,7 +138,6 @@ export default async function AssetsPage({ params }: Props) {
               </li>
             ))}
           </ol>
-          <p className="sp-small mt-6 text-muted-foreground">{t("assets.howTo.credit")}</p>
         </section>
         <section id="series-text" className="sp-section scroll-mt-40">
           <h2 className="sp-title">{t("assets.series.text")}</h2>

@@ -24,9 +24,7 @@ export default async function CastPage({ params }: { params: Promise<{ locale: A
       <p className="sp-label">{locale === "zh" ? "选角单" : "Cast"}</p>
       <h1 className="sp-display-xl mt-3">{locale === "zh" ? "我的选角单" : "Your cast"}</h1>
       <p className="sp-lead mt-5">
-        {locale === "zh"
-          ? "挑好你项目要用的演员，一次全部下载。"
-          : "Pick the actors for your project, then download them all at once."}
+        {locale === "zh" ? "选好演员，一次下载。" : "Choose actors and download them together."}
       </p>
       <CastBoard
         actors={ACTORS}

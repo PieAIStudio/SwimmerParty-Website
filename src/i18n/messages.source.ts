@@ -169,8 +169,8 @@ export const messages = {
     zh: "为什么每次都是同一个人",
   },
   "home.methodNote": {
-    en: "Most AI characters change from shot to shot. Ours come with a locked identity pack: the same reference images, voice and character prompt we use in our own films.",
-    zh: "大多数 AI 角色换个镜头就变脸。我们的演员都带着一套锁定的身份资料：和我们自己拍片时用的同一套参考图、声音和角色提示词。",
+    en: "Each actor comes with reference images, a voice and a character prompt.",
+    zh: "每位演员都有参考图、声音和角色提示词。",
   },
   "home.pipeline.0.step": {
     en: "01",
@@ -181,8 +181,8 @@ export const messages = {
     zh: "立人设",
   },
   "home.pipeline.0.body": {
-    en: "Decide how this person thinks before deciding what they look like. Build it the other way round and the character dies by the third film.",
-    zh: "先定这个人怎么想事，再定他长什么样。反过来做出来的角色，第三条片子就演不下去了。",
+    en: "Decide who they are before deciding how they look.",
+    zh: "先想清楚这个人是谁，再决定长什么样。",
   },
   "home.pipeline.1.step": {
     en: "02",
@@ -193,8 +193,8 @@ export const messages = {
     zh: "先定人设",
   },
   "home.pipeline.1.body": {
-    en: "Who they are, where they’re from, how they talk. The look follows the person.",
-    zh: "先定这个人是谁、从哪来、怎么说话，长相跟着人走。",
+    en: "The look follows the person.",
+    zh: "长相跟着人物走。",
   },
   "home.pipeline.2.step": {
     en: "03",
@@ -205,8 +205,8 @@ export const messages = {
     zh: "真实比例",
   },
   "home.pipeline.2.body": {
-    en: "Height, build and adult proportions are fixed before any styling.",
-    zh: "身高、体型和成年人的比例先定死，再做造型。",
+    en: "Set the height and build before styling.",
+    zh: "先定身高和体型，再做造型。",
   },
   "home.pipeline.3.step": {
     en: "04",
@@ -217,8 +217,8 @@ export const messages = {
     zh: "身份资料包",
   },
   "home.pipeline.3.body": {
-    en: "Turnarounds, faces, expressions, wardrobe and voice, all checked against each other.",
-    zh: "转面、面部、表情、服装和声音，彼此对照检查。",
+    en: "Reference images, expressions, wardrobe and voice stay in sync.",
+    zh: "参考图、表情、服装和声音保持一致。",
   },
   "home.kitLabel": {
     en: "Open kit",
@@ -229,8 +229,8 @@ export const messages = {
     zh: "把他们领走，做点东西",
   },
   "home.kitNote": {
-    en: "An actor becomes worth something by being used. So we hand you the same character seed we use ourselves — paste it into any model and you get this person, not a lookalike. Free, no permission needed.",
-    zh: "一个演员是靠被用起来才值钱的。所以我们把自己在用的那份角色种子直接给你——粘进任何模型，出来的是这个人，不是一个像他的人。免费，不用问。",
+    en: "We give you the same character prompt we use ourselves. Paste it into a model and make something. Free, no permission needed.",
+    zh: "我们把自己在用的角色提示词直接给你。粘进模型就能开始做，免费，不用问。",
   },
   "home.kitCta": {
     en: "Open the kit",
@@ -366,27 +366,27 @@ export const messages = {
   },
   "roster.buildingTitle": {
     en: "In development",
-    zh: "在产线上",
+    zh: "制作中",
   },
   "roster.buildingNote": {
-    en: "Character locked, white-model stage. They move to castable the day the plate is delivered.",
-    zh: "人设已定，白膜阶段。定妆板交付后自动转入可出演。",
+    en: "New actors are added here as they take shape.",
+    zh: "新演员会在这里逐步加入。",
   },
   "actor.inDevelopment": {
     en: "In development",
     zh: "制作中",
   },
   "actor.noPlate": {
-    en: "No plate delivered",
-    zh: "尚未交付定妆板",
+    en: "No full set yet",
+    zh: "全套资料还没齐",
   },
   "actor.noPlateBody": {
-    en: "This actor is still at the white-model stage. The plate, expression set and wardrobe replace this frame on delivery.",
-    zh: "这个演员还在白膜阶段。定妆板、表情组和造型交付后此处自动替换。",
+    en: "More reference images will appear here as they are ready.",
+    zh: "更多参考图会陆续放在这里。",
   },
   "actor.seedEnNote": {
-    en: "The seed is written in English on purpose: image models follow English far more reliably than Chinese, whoever you are. Paste it as it is.",
-    zh: "种子提示词是故意用英文写的：不管你是谁，图像模型对英文的服从度都明显更高。原样粘贴就行。",
+    en: "Paste the prompt as it is.",
+    zh: "提示词原样粘贴即可。",
   },
   "works.metaTitle": {
     en: "Works",
@@ -409,8 +409,8 @@ export const messages = {
     zh: "拍什么。",
   },
   "works.intro": {
-    en: "Productions starring our own actors. Each one shows its real status.",
-    zh: "由我们自己的演员出演的作品，每部都写明真实进度。",
+    en: "Productions starring our own actors.",
+    zh: "由我们自己的演员出演的作品。",
   },
   "works.slateTitle": {
     en: "What we are making",
@@ -613,8 +613,8 @@ export const messages = {
     zh: "专门造新面孔。",
   },
   "studio.intro": {
-    en: "SWIMMER PARTY is an AI actor project by Pie AI Studio. We design original animated actors, give each one a consistent identity, and cast them in our own films first. Then we open them up to everyone.",
-    zh: "SWIMMER PARTY 是 Pie AI Studio 旗下的 AI 演员项目。我们设计原创动画演员，给每个人一套始终如一的身份资料，先用在自己的片子里，再开放给所有人。",
+    en: "SWIMMER PARTY is an AI actor project by Pie AI Studio. We design original animated actors and open them to everyone.",
+    zh: "SWIMMER PARTY 是 Pie AI Studio 旗下的 AI 演员项目。我们设计原创动画演员，也把他们开放给所有人使用。",
   },
   "studio.beliefsLabel": {
     en: "What we believe",
@@ -623,10 +623,6 @@ export const messages = {
   "studio.beliefsTitle": {
     en: "Four things we hold to",
     zh: "我们坚持的四件事",
-  },
-  "studio.beliefsNote": {
-    en: "These four decide what everyone on the roster looks like, how they talk, and when they get cut.",
-    zh: "这四条决定了名册上每一个人长什么样、怎么说话、什么时候被淘汰。",
   },
   "studio.beliefs.0.n": {
     en: "01",
@@ -685,8 +681,8 @@ export const messages = {
     zh: "让 AI 造福普通人",
   },
   "studio.missionBody": {
-    en: "When the AI wave arrived, we chose to build for ordinary people. Free actors anyone can cast are one step. We keep going, one film at a time.",
-    zh: "AI 浪潮来的时候，我们定下一个目标：让 AI 造福普通人。人人都能免费用的演员是其中一步，我们一部片一部片地往前走。",
+    en: "When the AI wave arrived, we set our direction and have kept walking. Free actors anyone can cast are the first step.",
+    zh: "AI 浪潮来的时候，我们就定下了方向，一直朝这儿走。人人都能免费用的演员，是第一步。",
   },
   "studio.missionLine": {
     en: "Making a film used to take a crew. Now it takes a story. Bring yours.",
@@ -744,17 +740,9 @@ export const messages = {
     en: "Three ways in",
     zh: "三条路",
   },
-  "casting.routes.0.n": {
-    en: "01",
-    zh: "01",
-  },
   "casting.routes.0.title": {
     en: "License a roster actor",
     zh: "授权出演",
-  },
-  "casting.routes.0.sub": {
-    en: "Licensed performance",
-    zh: "用现成的人",
   },
   "casting.routes.0.body": {
     en: "Use someone already on the roster. Character, expression set and performance range exist today — this is the fast route.",
@@ -772,21 +760,13 @@ export const messages = {
     en: "A recurring social character",
     zh: "社媒常驻角色",
   },
-  "casting.routes.1.n": {
-    en: "02",
-    zh: "02",
-  },
   "casting.routes.1.title": {
     en: "Commission an actor",
     zh: "定制演员",
   },
-  "casting.routes.1.sub": {
-    en: "Built for you",
-    zh: "为你造一个",
-  },
   "casting.routes.1.body": {
-    en: "We build a new one for you down the whole line: brief, white model, plate, performance sign-off. Delivered with the full specification sheet.",
-    zh: "为你造一个新的。走完整条产线：人设 → 白膜 → 定妆 → 表演验收，交付时附完整规格书。",
+    en: "We design a new actor just for your brand or film. Only you can use them.",
+    zh: "专门为你的品牌或片子设计一位新演员，只给你用。",
   },
   "casting.routes.1.good.0": {
     en: "A brand-owned spokesperson",
@@ -800,17 +780,9 @@ export const messages = {
     en: "Projects that need exclusivity",
     zh: "需要独占的项目",
   },
-  "casting.routes.2.n": {
-    en: "03",
-    zh: "03",
-  },
   "casting.routes.2.title": {
     en: "Co-produce",
     zh: "联合出品",
-  },
-  "casting.routes.2.sub": {
-    en: "Joint production",
-    zh: "一起做",
   },
   "casting.routes.2.body": {
     en: "We bring the actors and the production, you bring the subject, the channel or the money. The film belongs to both of us; the character stays on the roster and keeps working.",
@@ -873,8 +845,8 @@ export const messages = {
     zh: "名册上",
   },
   "notFound.body": {
-    en: "This one is not on the roster. Maybe we have not built them yet.",
-    zh: "这个人不在名册上。也许还没造出来。",
+    en: "This one is not on the roster.",
+    zh: "这个人不在名册上。",
   },
   "notFound.cta": {
     en: "Back to roster",
@@ -917,8 +889,8 @@ export const messages = {
     zh: "物料包",
   },
   "assets.intro": {
-    en: "Everything you can take: images, voice, video and text.",
-    zh: "这里是可以拿走的全部资料：图片、声音、视频和文字。",
+    en: "Download the references you need.",
+    zh: "下载你需要的参考资料。",
   },
   "assets.progress": {
     en: "Core set {done}/{total}",
@@ -1045,8 +1017,8 @@ export const messages = {
     zh: "更多表情",
   },
   "assets.pending": {
-    en: "Coming later",
-    zh: "规划中",
+    en: "Not available yet",
+    zh: "暂未提供",
   },
   "assets.legacy": {
     en: "Legacy",
@@ -1118,8 +1090,8 @@ export const messages = {
     zh: "用 Swimmer 账号登录",
   },
   "assets.signInBenefits.0": {
-    en: "Starter packs, full packs and your own selection",
-    zh: "懒人包、全部资产和自选打包",
+    en: "Starter packs, full packs and custom downloads",
+    zh: "懒人包、完整资产和自选下载",
   },
   "assets.signInBenefits.1": { en: "Post your work, like and vote", zh: "发作品、点赞、投票" },
   "assets.signInBenefits.2": { en: "4K character sheets", zh: "4K 角色设定图" },
@@ -1133,8 +1105,8 @@ export const messages = {
     zh: "登录后继续",
   },
   "assets.signInBody": {
-    en: "Free with a Swimmer account, the one account for every Swim In AI project.",
-    zh: "用 Swimmer 账号登录，免费。这是 Swim In AI 所有项目通用的账号。",
+    en: "One Swimmer account unlocks downloads without waiting.",
+    zh: "登录一个 Swimmer 账号，下载不用等待。",
   },
   "assets.notNow": {
     en: "Not now",
@@ -1489,8 +1461,8 @@ export const messages = {
     zh: "有版本号",
   },
   "home.pipeline.4.body": {
-    en: "Every update gets a version number and a short note, so you always know what changed.",
-    zh: "每次更新都有版本号和一句说明，改了什么一看就知道。",
+    en: "Every update has a version and a short note.",
+    zh: "每次更新都有版本号和简短说明。",
   },
   "home.updatesLabel": {
     en: "Updates",
@@ -1561,8 +1533,8 @@ export const messages = {
     zh: "版本记录",
   },
   "actor.versionNote": {
-    en: "First number: a new look. Second: new material. Third: fixes. Versions starting with 0 are new faces still being cast.",
-    zh: "第一位变了是换了形象，第二位是加了内容，第三位是修正。0 开头的是新面孔，还在试镜阶段。",
+    en: "First number: a new look. Second: more material. Third: fixes.",
+    zh: "第一位是换了形象，第二位是加了内容，第三位是修正。",
   },
   "assets.breadcrumb": {
     en: "Asset library",
@@ -1585,12 +1557,12 @@ export const messages = {
     zh: "使用规则",
   },
   "assets.voiceNote": {
-    en: "The self-introduction is also a clean reference for voice-cloning tools.",
-    zh: "自我介绍同时是一段干净的参考音，可以直接给声音克隆工具用。",
+    en: "A clean voice reference.",
+    zh: "一段干净的参考音。",
   },
   "assets.videoNote": {
-    en: "Short clips for reference and editing. All coming later.",
-    zh: "用于参考和剪辑的短片，陆续上线。",
+    en: "Short clips for reference and editing.",
+    zh: "用于参考和剪辑的短片。",
   },
   "assets.voiceReference": {
     en: "Reference",
@@ -1680,10 +1652,6 @@ export const messages = {
     en: "In your image or video model, upload the photo, paste the prompt and describe your scene.",
     zh: "在你常用的图像或视频模型里上传这张图，粘贴提示词，再写你想要的场景。",
   },
-  "assets.howTo.credit": {
-    en: "Credit the actor by name. The rules are at the bottom of this page.",
-    zh: "署名请写演员名字，规则在本页最下面。",
-  },
   "assets.characterPrompt": {
     en: "{name} · Character prompt",
     zh: "{name} · 角色提示词",
@@ -1725,8 +1693,8 @@ export const messages = {
     zh: "自我介绍",
   },
   "assets.newFaceNote": {
-    en: "So far: one casting photo and one voice. More comes when {name} is cast.",
-    zh: "目前有一张试镜照和一段声音。{name}被选进项目后，再补齐其他资料。",
+    en: "One casting photo and one voice so far.",
+    zh: "目前有一张试镜照和一段声音。",
   },
   "assets.voice.introAlt": {
     en: "Second-language intro",
@@ -1827,22 +1795,6 @@ export const messages = {
   "works.episodes": {
     en: "Episodes",
     zh: "分集",
-  },
-  "works.episodesEmpty": {
-    en: "Episode details coming soon.",
-    zh: "分集信息尚未公布。",
-  },
-  "works.trailer": {
-    en: "Trailer · Not released yet",
-    zh: "预告片 · 尚未发布",
-  },
-  "works.stills": {
-    en: "Stills · Not released yet",
-    zh: "剧照 · 尚未发布",
-  },
-  "works.keyArt": {
-    en: "Key art · Not released yet",
-    zh: "主视觉 · 尚未发布",
   },
   "footer.claim": {
     en: "An open roster of animated AI actors.",

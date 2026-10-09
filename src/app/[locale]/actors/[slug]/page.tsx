@@ -21,7 +21,6 @@ import { GameBadge } from "@pieai/swimmer-ui-kit";
 import { localizedAlternates } from "@/i18n/metadata";
 import { WORKS } from "@/content/works";
 import { CastAddButton } from "@/features/cast";
-import { COMMUNITY_ENABLED } from "@/content/features";
 import { ActorSample } from "@/features/samples";
 type Props = { params: Promise<{ locale: AppLocale; slug: string }> };
 export function generateStaticParams() {
@@ -56,8 +55,8 @@ export default async function ActorPage({ params }: Props) {
   const description =
     actor.status === "new-face"
       ? locale === "zh"
-        ? `现在有一张照片和一段声音。${COMMUNITY_ENABLED ? "最受欢迎的新面孔会先补齐全套资料。" : "被选进项目后再补齐全套资料。"}`
-        : `One photo and one voice so far. ${COMMUNITY_ENABLED ? "The most wanted new faces get their full identity packs first." : `More comes when ${name} is cast.`}`
+        ? "目前只有一张照片和一段声音。"
+        : "One photo and one voice so far."
       : null;
   const credits = WORKS.flatMap((work) =>
     work.cast.filter((credit) => credit.actor === actor.slug).map((credit) => ({ work, credit })),

@@ -55,7 +55,6 @@ export interface MessageContracts {
   readonly "assets.howTo.1": {  };
   readonly "assets.howTo.2": {  };
   readonly "assets.howTo.3": {  };
-  readonly "assets.howTo.credit": {  };
   readonly "assets.howTo.newFace1": {  };
   readonly "assets.howTo.newFace3": {  };
   readonly "assets.imageViewer": {  };
@@ -70,7 +69,7 @@ export interface MessageContracts {
   readonly "assets.mockAccount": {  };
   readonly "assets.model": {  };
   readonly "assets.navigation": {  };
-  readonly "assets.newFaceNote": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "assets.newFaceNote": {  };
   readonly "assets.next": {  };
   readonly "assets.noSeed": {  };
   readonly "assets.none": {  };
@@ -222,22 +221,16 @@ export interface MessageContracts {
   readonly "casting.routes.0.good.0": {  };
   readonly "casting.routes.0.good.1": {  };
   readonly "casting.routes.0.good.2": {  };
-  readonly "casting.routes.0.n": {  };
-  readonly "casting.routes.0.sub": {  };
   readonly "casting.routes.0.title": {  };
   readonly "casting.routes.1.body": {  };
   readonly "casting.routes.1.good.0": {  };
   readonly "casting.routes.1.good.1": {  };
   readonly "casting.routes.1.good.2": {  };
-  readonly "casting.routes.1.n": {  };
-  readonly "casting.routes.1.sub": {  };
   readonly "casting.routes.1.title": {  };
   readonly "casting.routes.2.body": {  };
   readonly "casting.routes.2.good.0": {  };
   readonly "casting.routes.2.good.1": {  };
   readonly "casting.routes.2.good.2": {  };
-  readonly "casting.routes.2.n": {  };
-  readonly "casting.routes.2.sub": {  };
   readonly "casting.routes.2.title": {  };
   readonly "casting.routesLabel": {  };
   readonly "casting.routesTitle": {  };
@@ -457,7 +450,6 @@ export interface MessageContracts {
   readonly "studio.beliefs.3.n": {  };
   readonly "studio.beliefs.3.title": {  };
   readonly "studio.beliefsLabel": {  };
-  readonly "studio.beliefsNote": {  };
   readonly "studio.beliefsTitle": {  };
   readonly "studio.eyebrow": {  };
   readonly "studio.heroLines.0": {  };
@@ -478,12 +470,10 @@ export interface MessageContracts {
   readonly "works.castTitle": {  };
   readonly "works.emptyFan": {  };
   readonly "works.episodes": {  };
-  readonly "works.episodesEmpty": {  };
   readonly "works.eyebrow": {  };
   readonly "works.heroLines.0": {  };
   readonly "works.heroLines.1": {  };
   readonly "works.intro": {  };
-  readonly "works.keyArt": {  };
   readonly "works.madeByYou": {  };
   readonly "works.metaDescription": {  };
   readonly "works.metaTitle": {  };
@@ -494,7 +484,5 @@ export interface MessageContracts {
   readonly "works.roleTbd": {  };
   readonly "works.slateTitle": {  };
   readonly "works.starring": {  };
-  readonly "works.stills": {  };
   readonly "works.submit": {  };
-  readonly "works.trailer": {  };
 }

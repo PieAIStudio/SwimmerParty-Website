@@ -77,8 +77,8 @@ export const WORKS: Work[] = [
     format: { en: "AI sitcom with superpowers", zh: "带超能力的 AI 情景喜剧" },
     cast: [{ actor: "tang-yunqiu" }, { actor: "misha-luo" }],
     logline: {
-      en: "An AI sitcom with superpowers. More soon.",
-      zh: "一部带超能力的 AI 情景喜剧。更多信息稍后公布。",
+      en: "An AI sitcom with superpowers.",
+      zh: "一部带超能力的 AI 情景喜剧。",
     },
   },
 ];

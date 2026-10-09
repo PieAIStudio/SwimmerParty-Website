@@ -10,8 +10,8 @@ export const SITE = {
     zh: "我们制作并授权原创 AI 演员。",
   } satisfies L,
   description: {
-    en: "SWIMMER PARTY is a synthetic talent house. We design, build and license original AI actors — full character specifications, expression sets and performance range, ready to cast.",
-    zh: "SWIMMER PARTY 是一间合成演员工厂。我们设计、制造并授权原创 AI 演员——完整人设规格、表情组与表演区间，可直接选角。",
+    en: "SWIMMER PARTY makes and licenses original animated AI actors.",
+    zh: "SWIMMER PARTY 制作并授权原创 AI 动画演员。",
   } satisfies L,
   /** Canonical production origin. The translate proxy is derived from it. */
   url: "https://swimmerparty.swiminai.com",

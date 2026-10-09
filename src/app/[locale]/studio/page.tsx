@@ -34,11 +34,7 @@ export default async function StudioPage({ params }: Props) {
         {t("studio.intro")}
       </PageIntro>
       <section className="sp-section">
-        <SectionHead
-          label={t("studio.beliefsLabel")}
-          title={t("studio.beliefsTitle")}
-          note={t("studio.beliefsNote")}
-        />
+        <SectionHead label={t("studio.beliefsLabel")} title={t("studio.beliefsTitle")} />
         <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-2">
           {([0, 1, 2, 3] as const).map((index) => (
             <article className="sp-card bg-card" key={index}>
@@ -81,7 +77,6 @@ export default async function StudioPage({ params }: Props) {
             <article key={index} className="sp-card bg-card">
               <p className="sp-code">{String(position + 1).padStart(2, "0")}</p>
               <h3 className="sp-subtitle mt-4">{msg(`casting.routes.${index}.title`)}</h3>
-              <p className="sp-label mt-2">{msg(`casting.routes.${index}.sub`)}</p>
               <p className="mt-4 text-muted-foreground">{msg(`casting.routes.${index}.body`)}</p>
             </article>
           ))}
