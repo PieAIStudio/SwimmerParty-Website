@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-08-20
-last_reviewed: 2026-10-08
+last_reviewed: 2026-10-09
 domain: meta
 tags:
   - current-work
@@ -17,12 +17,14 @@ related: []
 
 # Current Work
 
-第四轮已在 `main` 完成并发布部署 `dpl_GPdF7Pkg2rdYbY3RPPPXi8rT777e`：分享卡片自动带演员图，档案页和资产库页手机速度已复测，生产依赖 high/critical 已清零。联系邮箱保持 `pieai@hotmail.com`。正式站 `https://swimmerparty.swiminai.com` 已运行第四轮部署；SP-13 唐韵秋和 SP-03 罗米沙各有 63 张图片，私有 Blob、游客限速、Swimmer AuthKit 和 Public PKCE client 已配置。
+首次完整发布已上线（2026-10-09，部署 `dpl_HkmX7Wp6RkfEW8M8CUWU5xcComvE`，正式站 `https://swimmerparty.swiminai.com`）：第五到第 7.5 轮全部完成；99 位演员的原图和声音从私有 Blob 签名下载；懒人包和选角包在浏览器里打包；署名标纯白、纯黑两种，和图片共用游客下载额度；PostHog 埋点已开。社区功能在生产关闭，等 SwimmerBackend v2，见[社区后端需求](../swimmer-party-community-backend.md)。
 
-现行设计见 [DESIGN.md](../../../DESIGN.md)，目录入口见 [architecture.md](../architecture.md)，发布前置条件见 [release.md](../release.md)。资产契约仍为[活动 spec](../../specs/active/actor-asset-library.md)。第三轮证据写入 `.devspace-reports/site-round-3/REPORT.md`；第四轮证据写入 `.devspace-reports/site-round-4/REPORT.md`。
+现行设计见 [DESIGN.md](../../../DESIGN.md)，目录入口见 [architecture.md](../architecture.md)，发布步骤见 [release.md](../release.md)，资产契约见[活动 spec](../../specs/active/actor-asset-library.md)。
 
-已排第五轮：[网站结构、看大图、可点元素规则、版本号、作品页与推广占位](../../plans/active/2026-10-07-site-round-5.md)。出图会话留下的张强、陈伟按第六轮 5.4 节并入，其余候选清理掉。紧接着做[第六轮：演员身份与存档、声音视频、95 位新面孔、角色设定图、面向全球的文案](../../plans/active/2026-10-08-site-round-6.md)，全站文字以[文案稿](../../plans/active/2026-10-08-site-copy.md)为准。之后是[第七轮：署名即可商用、下载重构、作品社区、新面孔投票、选角单、埋点、隐私与条款](../../plans/active/2026-10-08-site-round-7.md)（文字见[第七轮文案稿](../../plans/active/2026-10-08-site-copy-round-7.md)，覆盖第三版同位置），第七轮之后先做[第 7.5 轮打磨](../../plans/active/2026-10-09-site-round-7-5-polish.md)（统一弹窗、讲清是谁、去掉空格子、补齐文字），最后是[第八轮深度重构](../../plans/active/2026-10-08-site-round-8-deep-refactor.md)。
+下一步：
 
-并行测试：汤米·布兰尼根全套资产，由网站侧 Codex 下单、MediaFactory 生产，见[制作单](../../../media-pack/notes/handoffs/2026-10-08-tommy-brannigan-full-pack.md)。
+1. [第八轮深度重构](../../plans/active/2026-10-08-site-round-8-deep-refactor.md)：在 `.worktrees/site-round-8` 里做，对外行为不变，做完再发布一次。第五到 7.5 轮的计划和文案稿由第八轮归档。
+2. 社区 v1.1：“泳者”页签，作品只收外部平台链接；先由 SwimmerBackend 交付 v2 接口。
+3. Owner 在正式站用真实账号登录一次，验收懒人包下载。
 
-下一步：Owner 在正式站完成真实账号登录与 ZIP 验收；品牌邮箱、Search Console/Bing sitemap 提交和新演员留待后续改版，不挡当前发布。后续媒介仍按附录 D 的“规划中”显示，不用假素材填补。
+并行：编排器在 `media-pack/` 交付五位全套演员（严琳、包满、雷乐、范一鸣、马乐）和新面孔比例修正，交付后按 [release.md](../release.md) 上传素材。
