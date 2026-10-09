@@ -2,11 +2,11 @@
 id: PLAN-ACTORS-AND-LAUNCH
 title: 两位演员上线与正式发布
 type: plan
-status: active
+status: completed
 canonical: true
 owner: ai-assisted
 created: 2026-10-05
-last_reviewed: 2026-10-05
+last_reviewed: 2026-10-09
 domain: product
 tags:
   - assets

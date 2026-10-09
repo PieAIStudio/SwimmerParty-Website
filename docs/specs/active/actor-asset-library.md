@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-10-03
-last_reviewed: 2026-10-05
+last_reviewed: 2026-10-09
 domain: product
 tags:
   - assets
@@ -97,15 +97,15 @@ related:
 
 ## 4. 数据与多语言
 
-- 演员档案留在 `src/content/actors/<slug>/profile.ts`（`L = { en, zh }` 与双语规格行），新增可选
+- 演员档案从生产资料生成到 `src/content/actors/<slug>/profile.ts`（`L = { en, zh }` 与双语规格行），新增可选
   `heightCm`（身高刻度用）；移除 `plate`、`views`、`accent`。
 - 词表：`src/content/asset-series.json`（key、尺寸、必交、构图、英文指导），类型与
   读取函数在 `src/features/assets/asset-series.ts`。
-- 造型注册放在 `src/content/actors/<slug>/looks.ts`；资产清单只由入库脚本生成，不手改。每项记录
+- 造型注册在 `media-pack/actors/<slug>.json`；资料生成器仅拥有清单 looks，入库工具拥有 items，不手工维护生成副本。每项记录
   `slot`、`series`、`key`、`look`、`conformance`（`v1` / `legacy`）、`version`、
   `width`、`height`、`bytes`、`sha256`、`sourceSha256`、`bbox`、`format`、`object`（母版对象键）、`preview`、`thumb`。
 - 所有界面文字（系列名、格位名、按钮、提示）进 I18nKit 目录，源头是
-  `src/i18n/messages.source.ts`；`@pieai/swimmer-i18n-kit` 升到 0.2.0。
+  `src/i18n/messages.source.ts`；安装版本以 package.json 为准。
 - 给模型的文字（种子、表演指导、参考包说明）以英文为准，不随界面语言变。
 - 图上永远没有字；"给人看"的拼图可选加中文或英文标签，由浏览器在导出时画上。
 
@@ -117,7 +117,7 @@ related:
 4. 放进 `media-pack/library/staging/<code>/`（不进 Git），在交接单
    `media-pack/notes/handoffs/` 留下批次记录，再运行 `pnpm assets:ingest <code>`。
 
-何姐（SP-13）、戴尔（SP-03）现有角色表不符合规范，只作设计参考，资产先空着。
+生产角色名不等于演员身份。实际交付和公开状态分别以生产资料及资产清单为准；已发布资产不可因旧计划重新置空。
 
 ## 6. 存储与分发
 
@@ -125,15 +125,8 @@ related:
 - 母版放 **Vercel Blob 私有存储**，用 Owner 已有的 Vercel Pro 会员，不新开服务。
   下载 API 校验身份与限速后，用 Vercel Signed URLs 签出短时效链接，文件由 Vercel CDN
   直接发给用户，不经过网站函数。
-- 费用（2026-09 Vercel 文档，iad1 区）：存储 $0.023/GB·月，下载流量 $0.05/GB，
-  先从 Pro 每月额度里扣。估算：每套基础包约 85 MB，全站母版约 1 GB；每月 1000 次
-  整包下载约 85 GB ≈ $4。
 - 开发与测试用本地存储适配器（`.assets-local/`），不连云。
-- 不选 Supabase Storage：它的下载流量额度（Pro 每月 250 GB）是整个组织共享的，
-  University、Directing 等产品都在用；资产下载一旦暴涨，默认的花费上限会让整个组织
-  受限，连累其他产品。加存储桶还要走 SwimmerBackend 的注册与门禁。
-- 不选额外的 Cloudflare 对象存储：下载流量免费，但要再开一个服务。只有下载量大到每月几 TB 时才
-  值得迁移；存储走适配器，到时只换一个实现。
+  存储取舍见 [当前决定](../../reference/decisions.md)，历史估价只留在 Git，不作为现行费用承诺。
 
 ## 7. 访问分级与引流
 
@@ -146,9 +139,8 @@ related:
 - 限速：Vercel WAF（`@vercel/firewall`），只对游客按 IP 计数；它是引导不是防盗。
   界面倒计时 + 登录邀请，不显示错误页。窗口秒数是一个常量。
 - 登录：账号中心 `accounts.swiminai.com` 的 SSO（AuthKit `createNodeAuth` 的 `sso`）。
-- 登录提示只列出真正接受 Swimmer 账号的产品（2026-10-03：University、Directing；
-  Break 未接入不列）。受内容诚实规则约束。
-- v1 不建数据库；漏斗统计用 Vercel Web Analytics 自定义事件。
+- 登录提示只描述已提供能力，不把其他产品的未验证状态当作承诺。
+- 当前社区不接生产数据库；产品事件只走 PostHog，白名单见 src/features/analytics/events.ts。
 
 ## 8. 导出
 

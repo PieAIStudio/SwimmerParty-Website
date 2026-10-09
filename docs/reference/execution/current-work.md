@@ -17,14 +17,10 @@ related: []
 
 # Current Work
 
-首次完整发布已上线（2026-10-09，部署 `dpl_HkmX7Wp6RkfEW8M8CUWU5xcComvE`，正式站 `https://swimmerparty.swiminai.com`）：第五到第 7.5 轮全部完成；99 位演员的原图和声音从私有 Blob 签名下载；懒人包和选角包在浏览器里打包；署名标纯白、纯黑两种，和图片共用游客下载额度；PostHog 埋点已开。社区功能在生产关闭，等 SwimmerBackend v2，见[社区后端需求](../swimmer-party-community-backend.md)。
+第八轮在 refactor/site-round-8 独立工作树重构，当前为本地验收阶段，尚未提交 PR、合并或发布。执行入口：[第八轮计划](../../plans/active/2026-10-08-site-round-8-deep-refactor.md)。完成证据汇总到 PR，不在这里维护第二份逐块报告。
 
-现行设计见 [DESIGN.md](../../../DESIGN.md)，目录入口见 [architecture.md](../architecture.md)，发布步骤见 [release.md](../release.md)，资产契约见[活动 spec](../../specs/active/actor-asset-library.md)。
+此前第五到 7.5 轮已完成的发布记录见 [7.5 轮](../../plans/completed/2026-10-09-site-round-7-5-polish.md)。历史部署记录 dpl_HkmX7Wp6RkfEW8M8CUWU5xcComvE 不代表本轮候选已上线。
 
-下一步：
+仍待处理：社区须等待 [SwimmerBackend v2](../swimmer-party-community-backend.md)；Owner 仍需在正式站用真实账号验收懒人包；旧会员 ZIP 与网页授权不一致的取舍见 [decisions.md](../decisions.md)。
 
-1. [第八轮深度重构](../../plans/active/2026-10-08-site-round-8-deep-refactor.md)：在 `.worktrees/site-round-8` 里做，对外行为不变，做完再发布一次。第五到 7.5 轮的计划和文案稿由第八轮归档。
-2. 社区 v1.1：“泳者”页签，作品只收外部平台链接；先由 SwimmerBackend 交付 v2 接口。
-3. Owner 在正式站用真实账号登录一次，验收懒人包下载。
-
-并行：编排器在 `media-pack/` 交付五位全套演员（严琳、包满、雷乐、范一鸣、马乐）和新面孔比例修正，交付后按 [release.md](../release.md) 上传素材。
+并行：主目录的 media-pack 正在制作/交付严琳、包满、雷乐、范一鸣、马乐及新面孔比例修正。本重构不接管或清理其未提交素材。真实素材上传和下一次发布另按 [release.md](../release.md) 获得授权。

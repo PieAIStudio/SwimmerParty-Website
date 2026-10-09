@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-09T10:44:39.599Z
+generated_at: 2026-10-09T13:08:01.024Z
 generator_version: doc-gov@0.14.2
 docs_count: 34
 docs:
@@ -46,50 +46,8 @@ docs:
     canonical: true
     last_reviewed: 2026-09-10
     pinned: true
-  - id: PLAN-SITE-ROUND-5
-    path: docs/plans/active/2026-10-07-site-round-5.md
-    type: plan
-    status: active
-    canonical: true
-    last_reviewed: 2026-10-07
-    pinned: false
-  - id: PLAN-SITE-COPY-ROUND-7
-    path: docs/plans/active/2026-10-08-site-copy-round-7.md
-    type: plan
-    status: active
-    canonical: true
-    last_reviewed: 2026-10-08
-    pinned: false
-  - id: PLAN-SITE-COPY-V3
-    path: docs/plans/active/2026-10-08-site-copy.md
-    type: plan
-    status: active
-    canonical: true
-    last_reviewed: 2026-10-08
-    pinned: false
-  - id: PLAN-SITE-ROUND-6
-    path: docs/plans/active/2026-10-08-site-round-6.md
-    type: plan
-    status: active
-    canonical: true
-    last_reviewed: 2026-10-08
-    pinned: false
-  - id: PLAN-SITE-ROUND-7
-    path: docs/plans/active/2026-10-08-site-round-7.md
-    type: plan
-    status: active
-    canonical: true
-    last_reviewed: 2026-10-08
-    pinned: false
   - id: PLAN-SITE-ROUND-8-DEEP-REFACTOR
     path: docs/plans/active/2026-10-08-site-round-8-deep-refactor.md
-    type: plan
-    status: active
-    canonical: true
-    last_reviewed: 2026-10-09
-    pinned: false
-  - id: PLAN-SITE-ROUND-7-5-POLISH
-    path: docs/plans/active/2026-10-09-site-round-7-5-polish.md
     type: plan
     status: active
     canonical: true
@@ -112,9 +70,9 @@ docs:
   - id: PLAN-ACTORS-AND-LAUNCH
     path: docs/plans/completed/2026-10-05-actors-and-launch.md
     type: plan
-    status: active
+    status: completed
     canonical: true
-    last_reviewed: 2026-10-05
+    last_reviewed: 2026-10-09
     pinned: false
   - id: PLAN-SITE-ROUND-2
     path: docs/plans/completed/2026-10-05-site-round-2.md
@@ -137,12 +95,54 @@ docs:
     canonical: true
     last_reviewed: 2026-10-06
     pinned: false
+  - id: PLAN-SITE-ROUND-5
+    path: docs/plans/completed/2026-10-07-site-round-5.md
+    type: plan
+    status: completed
+    canonical: true
+    last_reviewed: 2026-10-09
+    pinned: false
+  - id: PLAN-SITE-COPY-ROUND-7
+    path: docs/plans/completed/2026-10-08-site-copy-round-7.md
+    type: plan
+    status: completed
+    canonical: true
+    last_reviewed: 2026-10-09
+    pinned: false
+  - id: PLAN-SITE-COPY-V3
+    path: docs/plans/completed/2026-10-08-site-copy.md
+    type: plan
+    status: completed
+    canonical: true
+    last_reviewed: 2026-10-09
+    pinned: false
+  - id: PLAN-SITE-ROUND-6
+    path: docs/plans/completed/2026-10-08-site-round-6.md
+    type: plan
+    status: completed
+    canonical: true
+    last_reviewed: 2026-10-09
+    pinned: false
+  - id: PLAN-SITE-ROUND-7
+    path: docs/plans/completed/2026-10-08-site-round-7.md
+    type: plan
+    status: completed
+    canonical: true
+    last_reviewed: 2026-10-09
+    pinned: false
+  - id: PLAN-SITE-ROUND-7-5-POLISH
+    path: docs/plans/completed/2026-10-09-site-round-7-5-polish.md
+    type: plan
+    status: completed
+    canonical: true
+    last_reviewed: 2026-10-09
+    pinned: false
   - id: POLICY-PROJECT-BEST-PRACTICE
     path: docs/policy/best-practice-for-this-project.md
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-10-05
+    last_reviewed: 2026-10-09
     pinned: true
   - id: POLICY-SHARED-AI-IN-THE-LOOP
     path: docs/policy/shared-rules/ai-in-the-loop.md
@@ -205,7 +205,7 @@ docs:
     type: reference
     status: active
     canonical: true
-    last_reviewed: 2026-10-04
+    last_reviewed: 2026-10-09
     pinned: false
   - id: REF-CURRENT-WORK
     path: docs/reference/execution/current-work.md
@@ -240,5 +240,5 @@ docs:
     type: spec
     status: active
     canonical: true
-    last_reviewed: 2026-10-05
+    last_reviewed: 2026-10-09
     pinned: false

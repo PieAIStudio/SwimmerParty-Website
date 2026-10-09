@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-08-20
-last_reviewed: 2026-10-04
+last_reviewed: 2026-10-09
 domain: meta
 tags:
   - navigation
@@ -16,17 +16,16 @@ related: []
 
 # Documentation Map
 
-AI 入口是根目录 `AGENTS.md`；此页列出当前项目文档，不复制治理规则。
+AI 从根目录 AGENTS.md 按任务路由，不在开工时阅读历史计划。
 
-| 文档                                                                    | 角色                         |
-| ----------------------------------------------------------------------- | ---------------------------- |
-| [架构](architecture.md)                                                 | 目录、依赖方向与常见改动入口 |
-| [上线手册](release.md)                                                  | 发布前置条件、步骤与回滚     |
-| [当前工作](execution/current-work.md)                                   | 当前状态和下一步             |
-| [项目规则](../policy/best-practice-for-this-project.md)                 | 内容诚实、产品边界与验证     |
-| [并入家族 ADR](../adr/2026-10-03-join-swimmer-family.md)                | 已采纳决定与取舍理由         |
-| [资产库 spec](../specs/active/actor-asset-library.md)                   | 现行资产契约                 |
-| [健康重构计划](../plans/completed/2026-10-04-healthy-site-refactor.md)  | 本轮执行与审阅入口           |
-| [家族重建记录](../plans/completed/2026-10-03-swimmer-family-rebuild.md) | 历史批准与实现出处           |
+| 入口                                                    | 只回答什么                             |
+| ------------------------------------------------------- | -------------------------------------- |
+| [架构](architecture.md)                                 | 目录、依赖、事实归属                   |
+| [验证](verification.md)                                 | 新克隆、必要门禁、成本和证据边界       |
+| [发布](release.md)                                      | 明确授权后的安装、上传、候选验证与回滚 |
+| [当前决定](decisions.md)                                | 为什么这样选择、什么情况下重评         |
+| [当前工作](execution/current-work.md)                   | 尚未结束的工作、并行事项、Owner 验收   |
+| [项目规则](../policy/best-practice-for-this-project.md) | 内容诚实、共享组件、产品边界           |
+| [资产规范](../specs/active/actor-asset-library.md)      | 母版和用户导出的合同                   |
 
-根目录 `README.md` 面向使用者，`DESIGN.md` 是现行设计来源。`docs/governance/` 与 `docs/policy/shared-rules/` 由 PGS 管理，按 AGENTS 路由按需阅读。`src/content/` 是产品内容，`brainstorms/` 是原始创作材料；它们不属于受治理文档。自动生成的完整索引为 `docs/governance/MANIFEST.yml`。
+README.md 面向使用者，DESIGN.md 管现行视觉，tools/README.md 管工具及生成物，演员数据说明管生产投影。MANIFEST 是生成索引，不手编第二份全文件目录。PGS 规则按 AGENTS 条件阅读；已完成计划和原始创作材料保留证据，不代表现行状态。
