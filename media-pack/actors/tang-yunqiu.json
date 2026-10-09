@@ -1,0 +1,194 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "code": "SP-13",
+  "slug": "tang-yunqiu",
+  "kind": "actor",
+  "name": {
+    "zh": "唐韵秋",
+    "en": "Tang Yunqiu"
+  },
+  "status": {
+    "siteProfile": "src/content/actors/tang-yunqiu/profile.ts",
+    "delivered": 63,
+    "published": true
+  },
+  "facts": {
+    "zh": [
+      "重庆人",
+      "43 岁",
+      "身高 163 cm",
+      "嘴唇偏厚",
+      "深棕色及肩微卷披发，带几缕白发",
+      "艺名\"韵秋\"取\"秋日风韵\"之意"
+    ],
+    "en": [
+      "From Chongqing",
+      "43 years old",
+      "163 cm tall",
+      "Noticeably full lips",
+      "Dark brown shoulder-length waves worn down, a few fine grey strands"
+    ]
+  },
+  "identity": "The same 43-year-old Chinese woman from Chongqing as the reference: 163 cm, slim-average build, gentle smile lines, faint crow's feet, noticeably full lips, dark brown shoulder-length waves worn down with a few fine grey strands. Do not make her younger or rounder-faced.",
+  "stylization": "Character stylization (A2, pushed): she must read instantly as an animated 3D feature-film character, never as a real woman. Noticeably enlarged expressive eyes with clear irises and soft catchlights; gently simplified, softly exaggerated facial shapes; smooth stylized skin shading with soft subsurface scattering and no pores; hair sculpted into clean grouped clumps. Realistic adult head-to-body proportions, about 7 heads tall; normal head size.",
+  "styleOrder": "Use style/aesthetic.md verbatim, then style/character-rules.md, then this actor stylization block.",
+  "proportions": {
+    "headsTall": 7,
+    "heightCm": 163
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/staging/SP-13/SP-13__face__front__v1.png",
+    "body": "library/staging/SP-13/SP-13__turnaround__front__v1.png"
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "Oatmeal fine-knit short-sleeved crew-neck top, plain, no logo; high-waisted straight dark-navy trousers; clean white leather low-top sneakers; no jewelry.",
+      "note": "Identity pack outfit (turnaround, face, expression, pose, detail series). Not a wardrobe look on the site."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal style",
+        "zh": "个人风格"
+      },
+      "prompt": "Personal style: soft camel fine-knit long cardigan worn open; ivory silk blouse with a soft collar, tucked in; high-waisted soft charcoal-grey wide-leg trousers; tan leather loafers; small plain gold stud earrings. Her own dark brown shoulder-length waves worn down.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Close-up",
+            "zh": "近景"
+          },
+          "direction": "close-up"
+        },
+        {
+          "key": "earring",
+          "label": {
+            "en": "Hair-tuck close-up",
+            "zh": "拨发近景"
+          },
+          "direction": "hair-tuck close-up"
+        },
+        {
+          "key": "walk-coffee",
+          "label": {
+            "en": "Walking with coffee",
+            "zh": "拿咖啡走路"
+          },
+          "direction": "walking with coffee"
+        },
+        {
+          "key": "sit-laugh",
+          "label": {
+            "en": "Seated laugh",
+            "zh": "坐着大笑"
+          },
+          "direction": "seated laugh"
+        }
+      ],
+      "anchors": {
+        "body": "library/staging/SP-13/SP-13__wardrobe-personal__front__v1.png"
+      }
+    },
+    {
+      "id": "maid",
+      "kind": "role",
+      "label": {
+        "en": "Journey to the East · He Jie as the maid",
+        "zh": "《东游记》何姐（演女佣）"
+      },
+      "prompt": "Role look (He Jie playing the maid): perfectly neat, glossy, heavily hair-sprayed bun with a large white lace maid headpiece; short-drama glam makeup with slightly too-long false lashes, slightly too-red lipstick and two round rosy blush spots; deep navy knee-length maid dress with puffed short sleeves, oversized white lace collar, layered white ruffled apron with an extra-large bow at the back, white cuffs, dark grey flat shoes.",
+      "role": {
+        "work": "journey-to-the-east",
+        "siteWork": "W-01",
+        "id": "he-jie"
+      },
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Shy close-up",
+            "zh": "捂嘴害羞近景"
+          },
+          "direction": "shy close-up"
+        },
+        {
+          "key": "tray",
+          "label": {
+            "en": "Serving tray",
+            "zh": "端托盘"
+          },
+          "direction": "serving tray"
+        },
+        {
+          "key": "duster",
+          "label": {
+            "en": "Eavesdropping with a duster",
+            "zh": "鸡毛掸子偷听"
+          },
+          "direction": "eavesdropping with a duster"
+        },
+        {
+          "key": "on-set-break",
+          "label": {
+            "en": "On-set break",
+            "zh": "片场休息"
+          },
+          "direction": "on-set break"
+        }
+      ],
+      "anchors": {
+        "body": "library/staging/SP-13/SP-13__wardrobe-maid__front__v1.png"
+      }
+    }
+  ],
+  "roles": [
+    {
+      "work": "journey-to-the-east",
+      "role": "he-jie"
+    }
+  ],
+  "routes": {
+    "chatgpt-web": {
+      "chat": {
+        "project": "Claude",
+        "title": "Generate Character Image",
+        "conversationId": "6ac211e8-20b4-83ea-a39d-4bd65b028ca5"
+      },
+      "note": "Identity carries over only inside this one chat. Open it by clicking the sidebar, never by URL. The Owner may move it into project Pics-A and rename it to \"SP-13 唐韵秋\"; update this entry when that happens."
+    }
+  },
+  "officialSamples": {
+    "postId": "official-sample-tang-yunqiu",
+    "approvedOn": "2026-10-09",
+    "tools": [
+      "ChatGPT",
+      "Grok"
+    ],
+    "media": [
+      {
+        "kind": "image",
+        "source": "library/samples/tang-yunqiu/tang-yunqiu__sample__image-01__v1.png",
+        "public": "/media/works/samples/tang-yunqiu/image-01.webp"
+      },
+      {
+        "kind": "image",
+        "source": "library/samples/tang-yunqiu/tang-yunqiu__sample__image-02__v1.png",
+        "public": "/media/works/samples/tang-yunqiu/image-02.webp"
+      },
+      {
+        "kind": "video",
+        "source": "library/samples/tang-yunqiu/tang-yunqiu__sample__video-01__v1.mp4",
+        "public": "/media/works/samples/tang-yunqiu/video-01.mp4"
+      }
+    ]
+  }
+}

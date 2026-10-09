@@ -5,6 +5,7 @@ import type { Actor } from "@/content/actors";
 import { ActorCardClient } from "./ActorCardClient";
 import { GameButton, GameSegmentedControl, GameSelect } from "@pieai/swimmer-ui-kit";
 import { VoteButton } from "@/features/community";
+import { COMMUNITY_ENABLED } from "@/content/features";
 import { CastAddButton } from "@/features/cast";
 export function ActorFilters({ actors }: { actors: Actor[] }) {
   const { t } = useSiteI18n();
@@ -117,7 +118,7 @@ export function ActorFilters({ actors }: { actors: Actor[] }) {
                 {group.map((actor) => (
                   <div key={actor.slug}>
                     <ActorCardClient actor={actor} />
-                    {actor.status === "new-face" ? (
+                    {COMMUNITY_ENABLED && actor.status === "new-face" ? (
                       <VoteButton
                         slug={actor.slug}
                         name={locale === "zh" ? actor.nameCn : actor.nameEn}

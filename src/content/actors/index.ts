@@ -30,7 +30,7 @@ const newFaces: Actor[] = NEW_FACE_DATA.map((entry) => ({
     ),
   ],
   note: entry.tagline,
-  promptSeed: null,
+  promptSeed: `3D feature-animation character, the same character as the reference image: ${entry.look}. Realistic adult body proportions, about 7 heads tall. Clearly stylized and visibly animated, never photoreal.`,
   version: "0.1.0",
   versionDate: "2026-10-08",
   versionNote: {

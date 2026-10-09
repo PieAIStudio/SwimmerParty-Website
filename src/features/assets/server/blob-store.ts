@@ -1,32 +1,65 @@
-import type { issueSignedToken, presignUrl, put, IssuedSignedToken } from "@vercel/blob";
+import type {
+  BlobNotFoundError,
+  head,
+  issueSignedToken,
+  presignUrl,
+  put,
+  IssuedSignedToken,
+} from "@vercel/blob";
 import { objectPath, type AssetStore } from "./asset-store.ts";
 import { SIGNED_DOWNLOAD_SECONDS } from "../downloads.ts";
 
 export type BlobSdk = {
+  BlobNotFoundError: typeof BlobNotFoundError;
+  head: typeof head;
   issueSignedToken: typeof issueSignedToken;
   presignUrl: typeof presignUrl;
   put: typeof put;
 };
+const VOICE_OBJECT = /^voice\/[a-z0-9-]+\/[a-z0-9_-]+\.(mp3|wav)$/;
+const CONTENT_TYPES = {
+  png: "image/png",
+  webp: "image/webp",
+  mp3: "audio/mpeg",
+  wav: "audio/wav",
+} as const;
+/** Image masters follow the asset-store key rules; voice masters live under voice/<slug>/. */
+export function privateObjectType(object: string): string {
+  if (!VOICE_OBJECT.test(object)) objectPath(".", object);
+  return CONTENT_TYPES[object.slice(object.lastIndexOf(".") + 1) as keyof typeof CONTENT_TYPES];
+}
 /** SDK 2.8.0 contract checked 2026-10-03 against Vercel's signed-URL documentation.
  * This module has no eager SDK import, credential read or network side effect.
  */
 export function blobAssetStore(
   sdk: BlobSdk,
   now = Date.now,
-): AssetStore & { sign: (object: string) => Promise<string> } {
+): AssetStore & {
+  sign: (object: string) => Promise<string>;
+  exists: (object: string) => Promise<number | null>;
+} {
   const tokens = new Map<string, Promise<IssuedSignedToken>>();
   return {
     async put(object, bytes) {
-      objectPath(".", object);
       await sdk.put(object, Buffer.from(bytes), {
         access: "private",
-        contentType: object.endsWith(".png") ? "image/png" : "image/webp",
+        contentType: privateObjectType(object),
         addRandomSuffix: false,
         allowOverwrite: true,
       });
     },
+    /** Stored size, or null when the object is absent. */
+    async exists(object) {
+      privateObjectType(object);
+      try {
+        return (await sdk.head(object)).size;
+      } catch (error) {
+        if (error instanceof sdk.BlobNotFoundError) return null;
+        throw error;
+      }
+    },
     async sign(object) {
-      objectPath(".", object);
+      privateObjectType(object);
       let pending = tokens.get(object);
       if (pending && (await pending).validUntil <= now() + (SIGNED_DOWNLOAD_SECONDS + 10) * 1000) {
         tokens.delete(object);

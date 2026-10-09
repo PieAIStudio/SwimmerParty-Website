@@ -3,7 +3,13 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { ACTORS, getActor, STATUS_LABEL } from "@/content/actors";
-import { getActorAssets, firstImage, slotLabelKey, StarterPackButton } from "@/features/assets";
+import {
+  getActorAssets,
+  firstImage,
+  slotLabelKey,
+  StarterPackButton,
+  starterSlots,
+} from "@/features/assets";
 import { ImageLightbox } from "@/features/assets";
 import { VoiceTile } from "@/features/assets";
 import { Breadcrumbs } from "@/site/Breadcrumbs";
@@ -15,6 +21,8 @@ import { GameBadge } from "@pieai/swimmer-ui-kit";
 import { localizedAlternates } from "@/i18n/metadata";
 import { WORKS } from "@/content/works";
 import { CastAddButton } from "@/features/cast";
+import { COMMUNITY_ENABLED } from "@/content/features";
+import { ActorSample } from "@/features/samples";
 type Props = { params: Promise<{ locale: AppLocale; slug: string }> };
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => ACTORS.map((actor) => ({ locale, slug: actor.slug })));
@@ -48,8 +56,8 @@ export default async function ActorPage({ params }: Props) {
   const description =
     actor.status === "new-face"
       ? locale === "zh"
-        ? `${name}是 SWIMMER PARTY 的新面孔，${actor.age} 岁，来自${origin}。现在有一张照片和一段声音；最受欢迎的新面孔会先补齐全套资料。`
-        : `${name} is a new face at SWIMMER PARTY: ${actor.age}, from ${origin}. One photo and one voice so far. The most wanted new faces get their full identity packs first.`
+        ? `${name}是 SWIMMER PARTY 的新面孔，${actor.age} 岁，来自${origin}。现在有一张照片和一段声音；${COMMUNITY_ENABLED ? "最受欢迎的新面孔会先补齐全套资料。" : "被选进项目后再补齐全套资料。"}`
+        : `${name} is a new face at SWIMMER PARTY: ${actor.age}, from ${origin}. One photo and one voice so far. ${COMMUNITY_ENABLED ? "The most wanted new faces get their full identity packs first." : `More comes when ${name} is cast.`}`
       : actor.note[locale];
   const credits = WORKS.flatMap((work) =>
     work.cast.filter((credit) => credit.actor === actor.slug).map((credit) => ({ work, credit })),
@@ -109,9 +117,17 @@ export default async function ActorPage({ params }: Props) {
             </div>
           ) : null}
           <div className="mt-8 flex flex-wrap gap-4">
-            <StarterPackButton slug={actor.slug} />
+            <StarterPackButton
+              actor={{
+                slug: actor.slug,
+                nameEn: actor.nameEn,
+                nameCn: actor.nameCn,
+                promptSeed: actor.promptSeed,
+                slots: starterSlots(assets.items),
+              }}
+            />
             <CastAddButton slug={actor.slug} locale={locale} name={name} />
-            <TextLink href="/cast">{t("actor.workWithUs")}</TextLink>
+            <TextLink href="/license#credit">{t("actor.workWithUs")}</TextLink>
             <ShareButton />
           </div>
         </div>
@@ -129,6 +145,7 @@ export default async function ActorPage({ params }: Props) {
             ))}
         </div>
       </section>
+      <ActorSample slug={actor.slug} />
       <section className="sp-section">
         <h2 className="sp-title">{t("actor.appearances")}</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2">

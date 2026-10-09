@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useSiteI18n } from "@/i18n/client";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
 import type { AssetItem } from "./asset-types";
+import { assetFilename } from "./downloads";
+import { saveBlob } from "@/lib/browser-files";
 export function VoiceTile({
   item,
   label,
@@ -14,6 +16,12 @@ export function VoiceTile({
 }) {
   const { t } = useSiteI18n();
   const [show, setShow] = useState(false);
+  // Fetch then save, so the file gets the actor's name wherever the audio is stored.
+  async function download(voice: AssetItem) {
+    const response = await fetch(voice.previewUrl ?? voice.preview);
+    if (response.ok)
+      saveBlob(await response.blob(), assetFilename(voice.object.split("/")[1] ?? "voice", voice));
+  }
   return (
     <article data-voice-slot={item?.slot} className="sp-card bg-card">
       {" "}
@@ -54,13 +62,13 @@ export function VoiceTile({
               ) : null}
             </>
           ) : null}
-          <a
-            className="sp-small mt-4 inline-block font-semibold underline underline-offset-4"
-            href={item.previewUrl ?? item.preview}
-            download
+          <button
+            type="button"
+            className="sp-small mt-4 block font-semibold underline underline-offset-4"
+            onClick={() => void download(item)}
           >
             {t("assets.downloadWav")}
-          </a>
+          </button>
         </>
       ) : (
         <p className="sp-small mt-5 text-muted-foreground">{t("assets.pending")}</p>

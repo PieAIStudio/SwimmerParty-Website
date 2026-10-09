@@ -43,7 +43,6 @@ export default async function WorkPage({ params }: Props) {
         </div>
         <div className="lg:col-span-5">
           <div className="flex items-center gap-3">
-            <span className="sp-code">{work.code}</span>
             <GameBadge tone="neutral">{WORK_STATUS_LABEL[work.status][locale]}</GameBadge>
           </div>
           <h1 className="sp-display-lg mt-5">{work.title[locale]}</h1>

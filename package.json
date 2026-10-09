@@ -28,7 +28,7 @@
     "check:i18n": "swimmer-i18n-check check && swimmer-i18n-check types --out src/i18n/message-contracts.ts --check",
     "messages:generate": "node tools/gen-messages.ts",
     "generate:og-assets": "node tools/generate-og-assets.ts",
-    "assets:packs": "node tools/assets-packs.ts"
+    "assets:upload": "node tools/assets-upload.ts"
   },
   "dependencies": {
     "@pieai/swimmer-backend-client": "0.7.2",

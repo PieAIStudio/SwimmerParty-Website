@@ -4,6 +4,7 @@ export { AssetLibrarySections } from "./AssetLibrarySections";
 export { StarterPackButton } from "./StarterPackButton";
 export { SeriesJumpButton } from "./SeriesJumpButton";
 export { getActorAssets, firstImage } from "./assets";
+export { starterSlots } from "./starter-pack";
 export { getKitManifest } from "./kit-assets";
 export { listSeries, slotLabelKey, ASSET_FRAMES } from "./asset-series";
 export { AssetProgress } from "./AssetProgress";

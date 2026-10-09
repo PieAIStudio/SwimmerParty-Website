@@ -6,7 +6,7 @@ import { KIT_RULES } from "../../content/kit.ts";
 import { listSeries } from "./asset-series.ts";
 import { SITE } from "../../content/site.ts";
 import { characterProfile } from "./asset-profile.ts";
-import { assetFilename, MAX_BUNDLE_ITEMS } from "./downloads.ts";
+import { assetFilename, MAX_BUNDLE_ITEMS, SignInRequired } from "./downloads.ts";
 import { fetchImageBlob } from "../../lib/browser-files.ts";
 import { selectModelAssets, veoPlan } from "./export-plan.ts";
 import { createSheetPainter, sheetBlob, type SheetOptions } from "./render-sheet.ts";
@@ -23,7 +23,7 @@ export type ExportRequest = {
   labels: Record<string, { en: string; zh: string }>;
   signal: AbortSignal;
 };
-export class SignInRequired extends Error {}
+export { SignInRequired };
 function ensureActive(signal: AbortSignal) {
   signal.throwIfAborted();
 }

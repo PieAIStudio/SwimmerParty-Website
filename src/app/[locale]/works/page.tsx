@@ -8,6 +8,8 @@ import { Link } from "@/i18n/navigation";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
 import { localizedAlternates } from "@/i18n/metadata";
 import { CommunityFeed } from "@/features/community";
+import { OfficialSamplesSection } from "@/features/samples";
+import { COMMUNITY_ENABLED } from "@/content/features";
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -41,8 +43,7 @@ export default async function WorksPage({ params }: Props) {
               href={`/works/${work.slug}`}
               className="sp-card block bg-card hover:bg-muted"
             >
-              <div className="flex items-center justify-between">
-                <span className="sp-code">{work.code}</span>
+              <div className="flex items-center justify-end">
                 <GameBadge tone="neutral">{WORK_STATUS_LABEL[work.status][locale]}</GameBadge>
               </div>
               <h2 className="sp-subtitle mt-5">{work.title[locale]}</h2>
@@ -67,11 +68,14 @@ export default async function WorksPage({ params }: Props) {
           ))}
         </div>
       </section>
-      <section className="sp-section">
-        <h2 className="sp-title">{t("works.madeByYou")}</h2>
-        <p className="sp-lead mt-6">{t("works.emptyFan")}</p>
-        <CommunityFeed locale={locale} />
-      </section>
+      <OfficialSamplesSection />
+      {COMMUNITY_ENABLED ? (
+        <section className="sp-section">
+          <h2 className="sp-title">{t("works.madeByYou")}</h2>
+          <p className="sp-lead mt-6">{t("works.emptyFan")}</p>
+          <CommunityFeed locale={locale} />
+        </section>
+      ) : null}
     </div>
   );
 }

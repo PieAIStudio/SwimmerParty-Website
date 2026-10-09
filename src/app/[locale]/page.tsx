@@ -39,7 +39,7 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
             <GameButton variant="primary" href="/actors" linkComponent={Link}>
               {t("home.ctaAssets")}
             </GameButton>
-            <TextLink href="/casting">{t("home.ctaBook")}</TextLink>
+            <TextLink href="/license#credit">{t("home.ctaBook")}</TextLink>
           </div>
         </div>
         <div className="flex gap-3 overflow-x-auto pb-2 lg:col-span-6 lg:grid lg:grid-cols-2 lg:gap-4 lg:overflow-visible">

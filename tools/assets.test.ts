@@ -120,8 +120,8 @@ test("role looks point to the matching work role", () => {
 
 test("published look copies match the media-pack production descriptions", async () => {
   const sources = [
-    ["SP-13", "../media-pack/cast/SP-13.json", tangLooks],
-    ["SP-03", "../media-pack/cast/SP-03.json", mishaLooks],
+    ["SP-13", "../media-pack/actors/tang-yunqiu.json", tangLooks],
+    ["SP-03", "../media-pack/actors/misha-luo.json", mishaLooks],
   ] as const;
   for (const [code, file, siteLooks] of sources) {
     const pack = JSON.parse(await readFile(new URL(file, import.meta.url), "utf8")) as {

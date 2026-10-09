@@ -48,10 +48,12 @@ export default async function AssetsPage({ params }: Props) {
   const { t } = await getSiteI18n();
   const msg = (key: string) => t(key as Key, {} as never);
   const name = locale === "zh" ? actor.nameCn : actor.nameEn;
+  const isNewFace = actor.status === "new-face";
   const imageSeries = listSeries().filter(
     (s) =>
       !["voice", "video"].includes(s.id) &&
-      (s.required || assets.items.some((i) => i.series === s.id)),
+      (s.required || assets.items.some((i) => i.series === s.id)) &&
+      (!isNewFace || assets.items.some((i) => i.series === s.id)),
   );
   return (
     <div className="sp-container overflow-x-clip pb-24">
@@ -73,7 +75,7 @@ export default async function AssetsPage({ params }: Props) {
                   actor.portrait ??
                   "/media/placeholder.svg"
                 }
-                alt={actor.status === "new-face" ? `${name} · ${t("assets.castingPhoto")}` : name}
+                alt={isNewFace ? `${name} · ${t("assets.castingPhoto")}` : name}
                 width={941}
                 height={1672}
                 className="h-full w-full object-contain"
@@ -105,7 +107,9 @@ export default async function AssetsPage({ params }: Props) {
               </SeriesJumpButton>
             ))}
             <SeriesJumpButton id="series-voice">{t("assets.series.voice")}</SeriesJumpButton>
-            <SeriesJumpButton id="series-video">{t("assets.series.video")}</SeriesJumpButton>
+            {isNewFace ? null : (
+              <SeriesJumpButton id="series-video">{t("assets.series.video")}</SeriesJumpButton>
+            )}
             <SeriesJumpButton id="series-how-to">{t("assets.series.howTo")}</SeriesJumpButton>
             <SeriesJumpButton id="series-text">{t("assets.series.text")}</SeriesJumpButton>
             <SeriesJumpButton id="series-rules">{t("assets.series.rules")}</SeriesJumpButton>
@@ -116,7 +120,7 @@ export default async function AssetsPage({ params }: Props) {
           assets={assets}
           locale={locale}
           actorName={name}
-          isNewFace={actor.status === "new-face"}
+          isNewFace={isNewFace}
         />
         <section id="series-how-to" className="sp-section scroll-mt-40">
           <h2 className="sp-title">{t("assets.series.howTo")}</h2>
@@ -124,7 +128,12 @@ export default async function AssetsPage({ params }: Props) {
             {[1, 2, 3].map((i) => (
               <li key={i} className="sp-card bg-card">
                 <span className="sp-code">{String(i).padStart(2, "0")}</span>
-                <p className="mt-4">{t(`assets.howTo.${i}` as Key, {} as never)}</p>
+                <p className="mt-4">
+                  {t(
+                    `assets.howTo.${isNewFace && i !== 2 ? `newFace${i}` : i}` as Key,
+                    {} as never,
+                  )}
+                </p>
               </li>
             ))}
           </ol>

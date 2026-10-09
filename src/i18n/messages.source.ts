@@ -153,8 +153,8 @@ export const messages = {
     zh: "认识他们",
   },
   "home.rosterNote": {
-    en: "From Chongqing to Kingston, aged 20 to 75. New faces keep joining.",
-    zh: "从重庆到金斯敦，从 20 岁到 75 岁。新面孔还在不断加入。",
+    en: "From Chongqing to Kingston, aged 20 to 73. New faces keep joining.",
+    zh: "从重庆到金斯敦，从 20 岁到 73 岁。新面孔还在不断加入。",
   },
   "home.rosterMore": {
     en: "See all actors →",
@@ -285,8 +285,8 @@ export const messages = {
     zh: "我们的片子",
   },
   "home.worksNote": {
-    en: "Our own films first. Then everything you make with them.",
-    zh: "先是我们自己的片，然后是大家用他们做的一切。",
+    en: "Our own films, plus samples anyone can make from the free starter packs.",
+    zh: "我们自己的片子，还有用免费懒人包就能做出来的样片。",
   },
   "home.worksCta": {
     en: "See all works →",
@@ -393,8 +393,8 @@ export const messages = {
     zh: "作品",
   },
   "works.metaDescription": {
-    en: "Films and series starring SWIMMER PARTY’s AI actors, plus work made by the community.",
-    zh: "SWIMMER PARTY 的 AI 演员出演的影片和剧集，以及大家用他们做的作品。",
+    en: "Films and series starring SWIMMER PARTY’s AI actors, plus samples made from the free starter packs.",
+    zh: "SWIMMER PARTY 的 AI 演员出演的影片和剧集，以及用免费懒人包做的样片。",
   },
   "works.eyebrow": {
     en: "Works",
@@ -1645,8 +1645,8 @@ export const messages = {
     zh: "收起台词",
   },
   "assets.downloadWav": {
-    en: "Download WAV",
-    zh: "下载 WAV",
+    en: "Download audio",
+    zh: "下载音频",
   },
   "assets.downloadVoice": {
     en: "Download {slot} (WAV)",
@@ -1711,6 +1711,14 @@ export const messages = {
   "assets.howTo.3": {
     en: "In your image or video model, upload both images, paste the prompt and describe your scene.",
     zh: "在你常用的图像或视频模型里上传这两张图，粘贴提示词，再写你想要的场景。",
+  },
+  "assets.howTo.newFace1": {
+    en: "Download the full-body casting photo.",
+    zh: "下载这张全身试镜照。",
+  },
+  "assets.howTo.newFace3": {
+    en: "In your image or video model, upload the photo, paste the prompt and describe your scene.",
+    zh: "在你常用的图像或视频模型里上传这张图，粘贴提示词，再写你想要的场景。",
   },
   "assets.howTo.credit": {
     en: "Credit the actor by name. The rules are at the bottom of this page.",
@@ -1931,4 +1939,33 @@ export const messages = {
   "community.approve": { en: "Approve", zh: "通过" },
   "community.hide": { en: "Hide", zh: "隐藏" },
   "community.reviewEmpty": { en: "Nothing to review.", zh: "没有待审核的。" },
+  "samples.worksTitle": { en: "Same actor, different tools", zh: "同一个演员，不同工具" },
+  "samples.actorTitle": { en: "Same {name}, different tools", zh: "同一个{name}，不同工具" },
+  "samples.description": {
+    en: "Made by us from the free starter pack and one prompt, in tools anyone can use.",
+    zh: "我们只用免费懒人包和同一段提示词，在大家都能用的工具里做的。",
+  },
+  "samples.official": { en: "By SWIMMER PARTY", zh: "SWIMMER PARTY 出品" },
+  "samples.madeWith": { en: "Made with", zh: "用的工具" },
+  "samples.howMade": { en: "How it was made", zh: "怎么做的" },
+  "samples.step1": {
+    en: "Download {name}’s starter pack.",
+    zh: "下载{name}的懒人包。",
+  },
+  "samples.step2": {
+    en: "In ChatGPT, upload the full-body front and the front face, paste the character prompt and describe a scene.",
+    zh: "在 ChatGPT 里上传正面全身和正面头像，粘贴角色提示词，再写一个场景。",
+  },
+  "samples.step3": {
+    en: "In Grok, use one of those images as the first frame and describe one simple movement.",
+    zh: "在 Grok 里用其中一张图当第一帧，写一个简单的动作。",
+  },
+  "samples.sceneAlt": {
+    en: "{name} in a scene made with {tool}",
+    zh: "{name}在用 {tool} 做的场景里",
+  },
+  "samples.videoLabel": {
+    en: "{name} · short video made with Grok",
+    zh: "{name} · 用 Grok 做的短视频",
+  },
 } as const;

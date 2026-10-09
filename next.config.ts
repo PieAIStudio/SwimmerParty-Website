@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
     "/api/**": [
       "./.assets-local/**",
       "./assets-inbox/**",
+      "./media-pack/**",
       "./.devspace-reports/**",
       "./e2e/**",
       "./tools/**",

@@ -1,0 +1,189 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "code": "SP-03",
+  "slug": "misha-luo",
+  "kind": "actor",
+  "name": {
+    "zh": "罗米沙",
+    "en": "Misha Luo"
+  },
+  "status": {
+    "siteProfile": "src/content/actors/misha-luo/profile.ts",
+    "delivered": 63,
+    "published": true
+  },
+  "facts": {
+    "zh": [
+      "俄罗斯血统，在重庆长大",
+      "二十八九岁",
+      "\"米沙\"是俄语名\"米哈伊尔\"的昵称，\"罗\"是重庆常见姓"
+    ],
+    "en": [
+      "Of Russian descent, grew up in Chongqing",
+      "Late twenties"
+    ]
+  },
+  "identity": "The same man as the reference: Russian descent, late twenties, grew up in Chongqing; long narrow face, prominent slightly crooked nose, ears that stick out a little, heavy brows, deep-set grey-blue eyes, uneven light stubble, thin lips, tousled light-brown hair overdue for a cut. Slim-average build, about 7.5 heads tall; not lanky, not elongated.",
+  "stylization": "Character stylization (A2): 3D feature-animation human with realistic adult proportions — real head-to-body ratio, normal head size, natural neck and shoulders. Face: an ordinary, real-looking person of their ethnicity with distinctive, imperfect features, gently exaggerated from life. Not idealized, not model-like, not glamorous. CG rendering of the face only: slightly enlarged expressive eyes with clear irises and soft catchlights; smooth, simplified skin shading with soft subsurface scattering and no pores; hair sculpted into clean grouped clumps. Clothing, fabrics and accessories: realistic materials, true-to-life fit and detail, clean and well kept. Unmistakably CG at first glance; never photoreal.",
+  "styleOrder": "Use style/aesthetic.md verbatim, then style/character-rules.md, then this actor stylization block.",
+  "proportions": {
+    "headsTall": 7.5,
+    "heightCm": null,
+    "heightNote": "Prompts used about 180 cm as a generation hint; not an Owner-confirmed fact, not shown on the site."
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/staging/SP-03/SP-03__face__front__v1.png",
+    "body": "library/staging/SP-03/SP-03__turnaround__front__v1.png"
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "Heather-grey fitted cotton crew-neck T-shirt, plain, no logo; straight dark-indigo jeans; clean white canvas low-top sneakers; no jewelry, no accessories.",
+      "note": "Identity pack outfit (turnaround, face, expression, pose, detail series). Not a wardrobe look on the site."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal style",
+        "zh": "个人风格"
+      },
+      "prompt": "Personal style: faded olive-green cotton bomber jacket worn open; plain white crew-neck T-shirt; mid-blue straight jeans; clean white low-top sneakers. His own tousled light-brown hair.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Close-up",
+            "zh": "近景"
+          },
+          "direction": "close-up"
+        },
+        {
+          "key": "side-glance",
+          "label": {
+            "en": "Side-glance close-up",
+            "zh": "侧目近景"
+          },
+          "direction": "side-glance close-up"
+        },
+        {
+          "key": "walk-pockets",
+          "label": {
+            "en": "Walking, hands in pockets",
+            "zh": "插兜走路"
+          },
+          "direction": "walking, hands in pockets"
+        },
+        {
+          "key": "noodles",
+          "label": {
+            "en": "Eating noodles",
+            "zh": "吃面"
+          },
+          "direction": "eating noodles"
+        }
+      ],
+      "anchors": {
+        "body": "library/staging/SP-03/SP-03__wardrobe-personal__front__v1.png"
+      }
+    },
+    {
+      "id": "ceo",
+      "kind": "role",
+      "label": {
+        "en": "Journey to the East · Dai Er as the CEO",
+        "zh": "《东游记》戴尔（演霸总）"
+      },
+      "prompt": "Role look (Dai Er playing the CEO): his own tousled light-brown hair combed back with too much gel, ends still sticking up; slim glossy deep royal-blue suit with shiny black satin lapels, white shirt, wide shiny silver tie, white pocket square stuffed in carelessly, pointed glossy black-brown shoes. Too flashy and trying too hard — funny, not cool. Unbranded.",
+      "role": {
+        "work": "journey-to-the-east",
+        "siteWork": "W-01",
+        "id": "dai-er"
+      },
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Smirk close-up",
+            "zh": "歪嘴笑近景"
+          },
+          "direction": "smirk close-up"
+        },
+        {
+          "key": "sky-gaze",
+          "label": {
+            "en": "Gazing skyward",
+            "zh": "仰望天空"
+          },
+          "direction": "gazing skyward"
+        },
+        {
+          "key": "tie-watch",
+          "label": {
+            "en": "Tie and watch",
+            "zh": "扯领带看表"
+          },
+          "direction": "tie and watch"
+        },
+        {
+          "key": "on-set-break",
+          "label": {
+            "en": "On-set break",
+            "zh": "片场休息"
+          },
+          "direction": "on-set break"
+        }
+      ],
+      "anchors": {
+        "body": "library/staging/SP-03/SP-03__wardrobe-ceo__front__v1.png"
+      }
+    }
+  ],
+  "roles": [
+    {
+      "work": "journey-to-the-east",
+      "role": "dai-er"
+    }
+  ],
+  "routes": {
+    "chatgpt-web": {
+      "chat": {
+        "project": "Claude",
+        "title": "Generate Portrait Image",
+        "conversationId": "6ac20b9c-5ce4-83ea-b00d-d4b92000c43b"
+      },
+      "note": "Identity carries over only inside this one chat. Open it by clicking the sidebar, never by URL. The Owner may move it into project Pics-A and rename it to \"SP-03 罗米沙\"; update this entry when that happens."
+    }
+  },
+  "officialSamples": {
+    "postId": "official-sample-misha-luo",
+    "approvedOn": "2026-10-09",
+    "tools": [
+      "ChatGPT",
+      "Grok"
+    ],
+    "media": [
+      {
+        "kind": "image",
+        "source": "library/samples/misha-luo/misha-luo__sample__image-01__v1.png",
+        "public": "/media/works/samples/misha-luo/image-01.webp"
+      },
+      {
+        "kind": "image",
+        "source": "library/samples/misha-luo/misha-luo__sample__image-02__v1.png",
+        "public": "/media/works/samples/misha-luo/image-02.webp"
+      },
+      {
+        "kind": "video",
+        "source": "library/samples/misha-luo/misha-luo__sample__video-01__v1.mp4",
+        "public": "/media/works/samples/misha-luo/video-01.mp4"
+      }
+    ]
+  }
+}

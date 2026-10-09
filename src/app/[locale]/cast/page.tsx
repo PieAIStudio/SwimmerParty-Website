@@ -1,5 +1,6 @@
 import { ACTORS } from "@/content/actors";
 import { CastBoard } from "@/features/cast";
+import { getActorAssets, starterSlots } from "@/features/assets";
 import { setSiteLocale } from "@/i18n/server";
 import type { AppLocale } from "@/i18n/routing";
 import type { Metadata } from "next";
@@ -27,7 +28,13 @@ export default async function CastPage({ params }: { params: Promise<{ locale: A
           ? "挑好你项目要用的演员，一次全部下载。"
           : "Pick the actors for your project, then download them all at once."}
       </p>
-      <CastBoard actors={ACTORS} locale={locale} />
+      <CastBoard
+        actors={ACTORS}
+        starterSlots={Object.fromEntries(
+          ACTORS.map((actor) => [actor.slug, starterSlots(getActorAssets(actor.slug).items)]),
+        )}
+        locale={locale}
+      />
     </div>
   );
 }

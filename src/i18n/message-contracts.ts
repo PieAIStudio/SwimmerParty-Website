@@ -56,6 +56,8 @@ export interface MessageContracts {
   readonly "assets.howTo.2": {  };
   readonly "assets.howTo.3": {  };
   readonly "assets.howTo.credit": {  };
+  readonly "assets.howTo.newFace1": {  };
+  readonly "assets.howTo.newFace3": {  };
   readonly "assets.imageViewer": {  };
   readonly "assets.intro": {  };
   readonly "assets.labels": {  };
@@ -427,6 +429,17 @@ export interface MessageContracts {
   readonly "roster.newFacesTitle": {  };
   readonly "roster.noResults": {  };
   readonly "roster.search": {  };
+  readonly "samples.actorTitle": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "samples.description": {  };
+  readonly "samples.howMade": {  };
+  readonly "samples.madeWith": {  };
+  readonly "samples.official": {  };
+  readonly "samples.sceneAlt": { readonly "name": string | number | bigint | boolean | null | undefined | Date; readonly "tool": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "samples.step1": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "samples.step2": {  };
+  readonly "samples.step3": {  };
+  readonly "samples.videoLabel": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "samples.worksTitle": {  };
   readonly "status.active": {  };
   readonly "status.concept": {  };
   readonly "status.in-development": {  };

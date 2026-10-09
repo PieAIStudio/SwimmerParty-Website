@@ -7,7 +7,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { runtimeModes, HttpError } from "../src/lib/server/runtime-mode.ts";
 import { signLocalObject, verifyLocalObject, readLocalObject } from "../src/features/assets/server/local-downloads.ts";
 import { memoryGuestLimiter, vercelGuestLimiter } from "../src/features/assets/server/guest-limiter.ts";
-import { blobAssetStore, type BlobSdk } from "../src/features/assets/server/blob-store.ts";
+import { blobAssetStore, privateObjectType, type BlobSdk } from "../src/features/assets/server/blob-store.ts";
+import { starterSlots } from "../src/features/assets/starter-pack.ts";
 import { accountUser, swimmerAccountConfig } from "../src/features/account/server/account.ts";
 import { requireSameOrigin } from "../src/lib/server/api.ts";
 import download from "../src/features/assets/server/download.ts";
@@ -176,4 +177,14 @@ test("Swimmer config uses the maintained SSO contract and never a browser-suppli
   assert.equal(config.sso?.clientId, "public-fixture-client");
   assert.equal(config.basePath, "/api/auth");
   assert.throws(() => swimmerAccountConfig({}), /account-not-configured/);
+});
+
+test("private keys cover casting photos and voices; starter slots follow the manifest", () => {
+  assert.equal(privateObjectType("agnes-lefevre/CC-073.png"), "image/png");
+  assert.equal(privateObjectType("voice/agnes-lefevre/candidate-1.mp3"), "audio/mpeg");
+  assert.equal(privateObjectType("voice/tang-yunqiu/tang-yunqiu__voice__intro__v1.wav"), "audio/wav");
+  for (const bad of ["voice/../secret.mp3", "voice/a/b/c.mp3", "agnes-lefevre/CC-73.png", "agnes-lefevre/CC-073.webp"])
+    assert.throws(() => privateObjectType(bad), /Invalid/);
+  assert.deepEqual(starterSlots([{ slot: "face.front" }, { slot: "voice.intro" }, { slot: "turnaround.front" }]), ["turnaround.front", "face.front"]);
+  assert.deepEqual(starterSlots([{ slot: "turnaround.front" }]), ["turnaround.front"]);
 });

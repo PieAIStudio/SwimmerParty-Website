@@ -3,6 +3,7 @@ export const GUEST_DOWNLOAD_WINDOW_SECONDS = 30;
 export const SIGNED_DOWNLOAD_SECONDS = 120;
 export const MAX_BUNDLE_ITEMS = 64;
 export const GUEST_COOLDOWN_KEY = "sp-guest-cooldown-until";
+export class SignInRequired extends Error {}
 export function assetFilename(
   slug: string,
   item: Pick<AssetItem, "series" | "key" | "look" | "format">,

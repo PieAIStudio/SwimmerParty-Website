@@ -91,5 +91,30 @@
       "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00/c/6ac621d1-8b40-83ea-b81c-024414267bba",
       "note": "Dedicated owner-selected identity pack chat. Only original approved face.front and turnaround.front anchors are identity authority."
     }
+  },
+  "officialSamples": {
+    "postId": "official-sample-chen-wei",
+    "approvedOn": "2026-10-09",
+    "tools": [
+      "ChatGPT",
+      "Grok"
+    ],
+    "media": [
+      {
+        "kind": "image",
+        "source": "library/samples/chen-wei/chen-wei__sample__image-01__v1.png",
+        "public": "/media/works/samples/chen-wei/image-01.webp"
+      },
+      {
+        "kind": "image",
+        "source": "library/samples/chen-wei/chen-wei__sample__image-02__v1.png",
+        "public": "/media/works/samples/chen-wei/image-02.webp"
+      },
+      {
+        "kind": "video",
+        "source": "library/samples/chen-wei/chen-wei__sample__video-01__v1.mp4",
+        "public": "/media/works/samples/chen-wei/video-01.mp4"
+      }
+    ]
   }
 }

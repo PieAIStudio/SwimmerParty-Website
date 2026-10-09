@@ -49,7 +49,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         )}
       </h1>
       <p className="sp-lead mt-6 max-w-3xl">{l(LICENSE.intro, locale)}</p>
-      <section className="mt-16">
+      <section id="credit" className="mt-16 scroll-mt-24">
         <h2 className="sp-display-md">{locale === "zh" ? "怎么署名" : "How to credit"}</h2>
         <p className="mt-3 max-w-2xl">
           {locale === "zh"

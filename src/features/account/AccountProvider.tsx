@@ -17,6 +17,7 @@ type EventName =
   | "guest_download"
   | "member_download"
   | "bundle_download"
+  | "starter_download"
   | "sign_in_prompt"
   | "sign_in_start";
 type Account = {

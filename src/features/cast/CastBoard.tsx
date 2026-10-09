@@ -2,9 +2,22 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import type { Actor } from "@/content/actors";
-import { GameButton } from "@pieai/swimmer-ui-kit";
-export function CastBoard({ actors, locale }: { actors: Actor[]; locale: "en" | "zh" }) {
+import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
+import { useAccount } from "@/features/account";
+import { starterPack, SignInRequired } from "@/features/assets/client";
+import { saveBlob } from "@/lib/browser-files";
+export function CastBoard({
+  actors,
+  starterSlots,
+  locale,
+}: {
+  actors: Actor[];
+  starterSlots: Record<string, string[]>;
+  locale: "en" | "zh";
+}) {
+  const account = useAccount();
   const [downloading, setDownloading] = useState(false);
+  const [failed, setFailed] = useState(false);
   const [slugs, setSlugs] = useState<string[]>(() => {
     if (typeof window === "undefined") return [];
     const p = new URLSearchParams(location.search).get("a");
@@ -21,17 +34,21 @@ export function CastBoard({ actors, locale }: { actors: Actor[]; locale: "en" | 
     await navigator.clipboard?.writeText(value);
   }
   async function downloadPack() {
+    if (!account.user) {
+      await account.signIn();
+      return;
+    }
     setDownloading(true);
+    setFailed(false);
     try {
-      const response = await fetch(`/api/cast/pack?slugs=${encodeURIComponent(slugs.join(","))}`);
-      if (!response.ok) return;
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "swimmer-party-cast.zip";
-      link.click();
-      URL.revokeObjectURL(url);
+      const { blob, filename } = await starterPack(
+        cast.map((a) => ({ ...a, slots: starterSlots[a.slug] ?? [] })),
+      );
+      saveBlob(blob, filename);
+      account.event("starter_download", { format: "cast" });
+    } catch (error) {
+      if (error instanceof SignInRequired) await account.signIn();
+      else setFailed(true);
     } finally {
       setDownloading(false);
     }
@@ -67,9 +84,6 @@ export function CastBoard({ actors, locale }: { actors: Actor[]; locale: "en" | 
       </div>
       <section className="mt-8">
         <h2 className="sp-title">{locale === "zh" ? "合影" : "Lineup"}</h2>
-        <p className="sp-small mt-2">
-          {locale === "zh" ? "按真实身高并排站。" : "Side by side at true height."}
-        </p>
         <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {cast.map((a) => (
             <article key={a.slug} className="sp-panel p-4">
@@ -103,8 +117,8 @@ export function CastBoard({ actors, locale }: { actors: Actor[]; locale: "en" | 
       ) : null}
       <p className="sp-small mt-8 text-muted-foreground">
         {locale === "zh"
-          ? "一张所有人按真实身高并排站的 4K 合影、每位演员的懒人包，和一份合并好的署名。"
-          : "A 4K lineup of everyone at true height, each actor’s starter pack, and one credit line for all."}
+          ? "每位演员的懒人包，和一份合并好的署名。"
+          : "Each actor’s starter pack, plus one credit line for all."}
       </p>
       <GameButton
         className="mt-4"
@@ -120,6 +134,13 @@ export function CastBoard({ actors, locale }: { actors: Actor[]; locale: "en" | 
             ? "下载选角包"
             : "Download cast pack"}
       </GameButton>
+      {failed ? (
+        <div className="mt-4">
+          <GameToast tone="danger">
+            {locale === "zh" ? "出了点问题，请再试一次。" : "Something went wrong. Try again."}
+          </GameToast>
+        </div>
+      ) : null}
     </div>
   );
 }
