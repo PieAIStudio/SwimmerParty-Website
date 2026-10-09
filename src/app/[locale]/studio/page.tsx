@@ -39,7 +39,7 @@ export default async function StudioPage({ params }: Props) {
           note={t("studio.beliefsNote")}
         />
         <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-2">
-          {([0, 1, 2, 3] as const).map((index) => (
+          {([0, 1, 2] as const).map((index) => (
             <article className="sp-card bg-card" key={index}>
               <p className="sp-code text-muted-foreground">{t(`studio.beliefs.${index}.n`)}</p>
               <h3 className="sp-subtitle mt-4">{t(`studio.beliefs.${index}.title`)}</h3>
@@ -77,9 +77,9 @@ export default async function StudioPage({ params }: Props) {
           }
         />
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          {[1, 2].map((index) => (
+          {[1, 2].map((index, position) => (
             <article key={index} className="sp-card bg-card">
-              <p className="sp-code">{msg(`casting.routes.${index}.n`)}</p>
+              <p className="sp-code">{String(position + 1).padStart(2, "0")}</p>
               <h3 className="sp-subtitle mt-4">{msg(`casting.routes.${index}.title`)}</h3>
               <p className="sp-label mt-2">{msg(`casting.routes.${index}.sub`)}</p>
               <p className="mt-4 text-muted-foreground">{msg(`casting.routes.${index}.body`)}</p>
@@ -92,7 +92,7 @@ export default async function StudioPage({ params }: Props) {
             : "Just want to use an actor, even for paid work? You don’t need us. It’s free. Credit Swim In AI."}
         </p>
         <TextLink href="mailto:pieai@hotmail.com" className="mt-6">
-          {locale === "zh" ? "找我们合作 →" : "Work with us →"}
+          {locale === "zh" ? "找我们合作" : "Work with us"}
         </TextLink>
       </section>
     </div>

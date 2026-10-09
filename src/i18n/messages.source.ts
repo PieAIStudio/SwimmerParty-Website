@@ -53,8 +53,8 @@ export const messages = {
     zh: "链接已复制",
   },
   "common.next": {
-    en: "Next: {name} →",
-    zh: "下一位：{name} →",
+    en: "Next: {name}",
+    zh: "下一位：{name}",
   },
   "common.backToRoster": {
     en: "Roster",
@@ -121,8 +121,8 @@ export const messages = {
     zh: "免费领取演员资产",
   },
   "home.ctaBook": {
-    en: "How to credit →",
-    zh: "怎么署名 →",
+    en: "How to credit",
+    zh: "怎么署名",
   },
   "home.statRoster": {
     en: "On roster",
@@ -157,8 +157,8 @@ export const messages = {
     zh: "从重庆到金斯敦，从 20 岁到 73 岁。新面孔还在不断加入。",
   },
   "home.rosterMore": {
-    en: "See all actors →",
-    zh: "看全部演员 →",
+    en: "See all actors",
+    zh: "看全部演员",
   },
   "home.methodLabel": {
     en: "Why it works",
@@ -289,8 +289,8 @@ export const messages = {
     zh: "我们自己的片子，还有用免费懒人包就能做出来的样片。",
   },
   "home.worksCta": {
-    en: "See all works →",
-    zh: "看全部作品 →",
+    en: "See all works",
+    zh: "看全部作品",
   },
   "home.castingTitle.0": {
     en: "Use our",
@@ -313,8 +313,8 @@ export const messages = {
     zh: "我们为品牌和影片定制专属演员，只给你用。也可以和我们一起做片。",
   },
   "home.customCta": {
-    en: "Work with us →",
-    zh: "找我们合作 →",
+    en: "Work with us",
+    zh: "找我们合作",
   },
   "home.castingTitle.1": {
     en: "Actors.",
@@ -689,52 +689,40 @@ export const messages = {
     zh: "我们按需要选用当下的图像、声音和视频模型。所有内容都经过人工审看才会上线。",
   },
   "studio.stack.0.name": {
-    en: "Swimmer UI Kit",
-    zh: "Swimmer UI Kit",
+    en: "ChatGPT",
+    zh: "ChatGPT",
   },
   "studio.stack.0.role": {
-    en: "Brand UI",
-    zh: "品牌 UI 库",
+    en: "Images",
+    zh: "图片",
   },
   "studio.stack.0.note": {
-    en: "One source for buttons, panels and tokens",
-    zh: "按钮、面板、token 的唯一来源",
+    en: "Turnarounds, faces, expressions and scenes",
+    zh: "转面、脸部、表情和场景",
   },
   "studio.stack.1.name": {
-    en: "React Three Fiber",
-    zh: "React Three Fiber",
+    en: "MiniMax",
+    zh: "MiniMax",
   },
   "studio.stack.1.role": {
-    en: "Realtime 3D",
-    zh: "实时 3D",
+    en: "Voices",
+    zh: "声音",
   },
   "studio.stack.1.note": {
-    en: "The white-model stage",
-    zh: "角色规格展示",
+    en: "Each actor’s voice and lines",
+    zh: "每位演员的声音和台词",
   },
   "studio.stack.2.name": {
-    en: "Next.js",
-    zh: "Next.js",
+    en: "Grok",
+    zh: "Grok",
   },
   "studio.stack.2.role": {
-    en: "Content & SEO",
-    zh: "内容与 SEO",
+    en: "Video",
+    zh: "视频",
   },
   "studio.stack.2.note": {
-    en: "So the roster can actually be found",
-    zh: "让名册被搜得到",
-  },
-  "studio.stack.3.name": {
-    en: "PGS",
-    zh: "PGS",
-  },
-  "studio.stack.3.role": {
-    en: "Governance",
-    zh: "治理",
-  },
-  "studio.stack.3.note": {
-    en: "Versions, boundaries and delivery discipline",
-    zh: "版本、边界与交付纪律",
+    en: "Short clips that start from our own images",
+    zh: "从我们自己的图片出发的短视频",
   },
   "studio.outroLines.0": {
     en: "Want an actor",
@@ -749,8 +737,8 @@ export const messages = {
     zh: "我们为品牌和影片定制专属演员，只给你用。也可以和我们一起做片。",
   },
   "studio.outroCta": {
-    en: "Work with us →",
-    zh: "找我们合作 →",
+    en: "Work with us",
+    zh: "找我们合作",
   },
   "casting.metaTitle": {
     en: "Casting",
@@ -1577,8 +1565,8 @@ export const messages = {
     zh: "领取懒人包",
   },
   "actor.workWithUs": {
-    en: "How to credit →",
-    zh: "怎么署名 →",
+    en: "How to credit",
+    zh: "怎么署名",
   },
   "actor.referenceImages": {
     en: "Reference images",

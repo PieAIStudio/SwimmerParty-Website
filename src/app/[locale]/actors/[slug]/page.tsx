@@ -172,7 +172,7 @@ export default async function ActorPage({ params }: Props) {
             <div>
               <p className="sp-lead">{t("actor.noCredits", { name })}</p>
               <TextLink href={`/actors/${actor.slug}/assets`} className="mt-4">
-                {t("actor.openLibrary")} →
+                {t("actor.openLibrary")}
               </TextLink>
             </div>
           )}

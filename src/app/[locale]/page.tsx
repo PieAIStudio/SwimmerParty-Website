@@ -104,7 +104,7 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
         <h2 className="sp-display-lg mt-4">{t("home.stanceTitle")}</h2>
         <p className="sp-lead mt-6 max-w-[48rem] text-muted-foreground">{t("home.stanceBody")}</p>
         <TextLink href="/license" className="mt-6">
-          {locale === "zh" ? "我们的承诺 →" : "Our promises →"}
+          {locale === "zh" ? "我们的承诺" : "Our promises"}
         </TextLink>
       </section>
       <section className="sp-section sp-panel bg-card p-7 lg:p-12">
@@ -122,7 +122,7 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
           }
         />
         <TextLink href="/license" className="mt-6">
-          {locale === "zh" ? "看怎么署名 →" : "See how to credit →"}
+          {locale === "zh" ? "看怎么署名" : "See how to credit"}
         </TextLink>
       </section>
       <section className="sp-section">
