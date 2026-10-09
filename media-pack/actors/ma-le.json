@@ -8,9 +8,9 @@
   },
   "status": {
     "siteProfile": "src/content/actors/ma-le/profile.ts",
-    "delivered": 0,
-    "published": false,
-    "version": "0.1.0",
+    "delivered": 55,
+    "published": true,
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "facts": {
@@ -34,12 +34,12 @@
     "headsTall": 7.5,
     "heightCm": 175,
     "headHeightCm": "约 23 cm",
-    "heightNote": "2026-10-09 new-face proportion-fix brief; new audition image required before full pack."
+    "heightNote": "2026-10-09 Owner-selected fresh-2 candidate-3; approved body proportion anchor for the full pack."
   },
   "anchorVersion": 1,
   "anchors": {
     "face": "library/claude-casting-2026-10-07/final/CC-072.png",
-    "body": null
+    "body": "library/actors/ma-le/evidence/fresh-2/ma-le__fresh-2__candidate-3.png"
   },
   "looks": [
     {
@@ -50,16 +50,59 @@
         "en": "Casting basics"
       },
       "prompt": "mustard-yellow plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos.",
-      "note": "Provisional audition look. Owner must select the new full-body audition image before full pack production."
+      "note": "Owner-selected identity anchor; approved for full pack production."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal style",
+        "zh": "个人风格"
+      },
+      "prompt": "Personal style: light sage-green short-sleeve leaf-print camp-collar shirt worn open over a plain white T-shirt; off-white knee-length shorts; clean white low-top sneakers. His curly permed black hair remains his signature feature.",
+      "extras": [
+        {
+          "key": "noodle-slurp",
+          "label": {
+            "en": "Slurping rice noodles",
+            "zh": "嗦米粉"
+          },
+          "direction": "holding a bowl and slurping rice noodles"
+        },
+        {
+          "key": "skateboard",
+          "label": {
+            "en": "Carrying a skateboard",
+            "zh": "抱滑板"
+          },
+          "direction": "carrying a skateboard under one arm"
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "肖像"
+          },
+          "direction": "head-and-shoulders portrait"
+        },
+        {
+          "key": "peace-sign",
+          "label": {
+            "en": "Peace sign",
+            "zh": "比耶"
+          },
+          "direction": "head tilted, peace sign, one-sided smile"
+        }
+      ]
     }
   ],
   "roles": [],
   "proposals": {
     "approval": "owner-confirmed-facts-provisional-identity",
-    "appearance": "Provisional until Owner selects new audition image",
+    "appearance": "owner-selected fresh-2 candidate-3; approved for full identity pack",
     "roleLook": null,
-    "phase": "audition-pending-owner",
-    "note": "Old CC image is face reference only; do not use it as body or proportion anchor. New audition image from 2026-10-09 proportion-fix trial becomes the identity anchor only after Owner approval.",
+    "phase": "full-pack-approved",
+    "note": "Owner-selected face identity and corrected proportion candidate-3. Earlier proportion-failed audition and replacement outputs remain in evidence/rejected/ and are not used as the body anchor.",
     "signatureFeatures": [
       "a lean face, curly permed black hair, a one-sided smile that starts at one corner of the mouth, and bright playful eyes"
     ]
@@ -69,5 +112,69 @@
       "chat": null,
       "note": "Create one dedicated character chat in Pics-A for the audition trial; use the old CC image only as face reference and enforce the specified adult proportions."
     }
+  },
+  "officialSamples": {
+    "postId": "official-sample-ma-le",
+    "approvedOn": "2026-10-09",
+    "tools": [
+      "ChatGPT",
+      "Grok"
+    ],
+    "media": [
+      {
+        "kind": "image",
+        "source": "library/samples/ma-le/ma-le__sample__image-01__v1.png",
+        "public": "/media/works/samples/ma-le/image-01.webp"
+      },
+      {
+        "kind": "image",
+        "source": "library/samples/ma-le/ma-le__sample__image-02__v1.png",
+        "public": "/media/works/samples/ma-le/image-02.webp"
+      },
+      {
+        "kind": "video",
+        "source": "library/samples/ma-le/ma-le__sample__video-01__v1.mp4",
+        "public": "/media/works/samples/ma-le/video-01.mp4"
+      }
+    ]
+  },
+  "demographics": {
+    "age": 24,
+    "gender": "male",
+    "origin": {
+      "en": "Nanning, Guangxi",
+      "zh": "广西南宁"
+    },
+    "voiceLanguage": "zh"
+  },
+  "release": {
+    "date": "2026-10-09",
+    "note": {
+      "en": "First release: 55 images and 6 voice clips.",
+      "zh": "首次上线：55 张图片和 6 段声音。"
+    }
+  },
+  "website": {
+    "published": true,
+    "order": 5,
+    "status": "active",
+    "tagline": {
+      "en": "His smile starts on one side. Short permed curls.",
+      "zh": "一边嘴角先笑，头发烫成小卷。"
+    },
+    "introduction": {
+      "en": "Ma Le is an AI actor at SWIMMER PARTY. He is from Nanning, Guangxi, 24 years old and 175 cm tall. His lean face, curly permed black hair and one-sided smile are his signature features.",
+      "zh": "马乐是 SWIMMER PARTY 的 AI 演员，来自广西南宁，24 岁，身高 175 厘米。瘦长的脸、卷烫黑发和一边先扬起的嘴角是他鲜明的特征。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ],
+    "exportPrompt": "3D feature-animation man of East Asian appearance, 24, from Nanning, Guangxi, 175 cm, slim and long-limbed; lean face, curly permed black hair, one-sided smile that starts at one corner of the mouth, bright playful eyes; realistic adult proportions, about 7 heads tall. Unmistakably CG, never photoreal."
   }
 }

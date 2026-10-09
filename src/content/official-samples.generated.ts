@@ -60,4 +60,15 @@ export const OFFICIAL_SAMPLES: OfficialSample[] = [
     video: "/media/works/samples/yan-lin/video-01.mp4",
     approvedOn: "2026-10-09",
   },
+  {
+    slug: "ma-le",
+    tools: ["ChatGPT", "Grok"],
+    images: [
+      "/media/works/samples/ma-le/image-01.webp",
+      "/media/works/samples/ma-le/image-02.webp",
+    ],
+    poster: "/media/works/samples/ma-le/image-01.webp",
+    video: "/media/works/samples/ma-le/video-01.mp4",
+    approvedOn: "2026-10-09",
+  },
 ];

@@ -5,4 +5,5 @@ import { profile as actor1 } from "./misha-luo/profile.ts";
 import { profile as actor2 } from "./zhang-qiang/profile.ts";
 import { profile as actor3 } from "./chen-wei/profile.ts";
 import { profile as actor4 } from "./yan-lin/profile.ts";
-export const ACTIVE_ACTORS: Actor[] = [actor0, actor1, actor2, actor3, actor4];
+import { profile as actor5 } from "./ma-le/profile.ts";
+export const ACTIVE_ACTORS: Actor[] = [actor0, actor1, actor2, actor3, actor4, actor5];
