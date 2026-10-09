@@ -101,3 +101,13 @@ SWIMMER PARTY 展示原创合成演员与真实交付素材。先遵守 `docs/po
 | 明确获准发布          | `docs/reference/release.md` 是唯一操作步骤；普通改动/PR 不进入此流程      |
 
 历史计划只用于追溯批准和证据，不是开工必读。不存在的真实原件不能用测试夹具替代；未提交的并行制作资料不属于当前任务。
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
