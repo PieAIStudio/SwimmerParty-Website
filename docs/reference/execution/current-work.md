@@ -17,7 +17,7 @@ related: []
 
 # Current Work
 
-第八轮在 refactor/site-round-8 独立工作树重构，当前为本地验收阶段，尚未提交 PR、合并或发布。执行入口：[第八轮计划](../../plans/active/2026-10-08-site-round-8-deep-refactor.md)。完成证据汇总到 PR，不在这里维护第二份逐块报告。
+第八轮重构的实现与本地验收已收敛到 refactor/site-round-8，交付为同名 PR，等待本机审阅和真实素材复核；尚未合并或发布。[第八轮记录](../../plans/completed/2026-10-08-site-round-8-deep-refactor.md) 已归档。逐块证据、独立 AI 演练与保留例外只汇总在 PR，不在这里复制报告。
 
 此前第五到 7.5 轮已完成的发布记录见 [7.5 轮](../../plans/completed/2026-10-09-site-round-7-5-polish.md)。历史部署记录 dpl_HkmX7Wp6RkfEW8M8CUWU5xcComvE 不代表本轮候选已上线。
 

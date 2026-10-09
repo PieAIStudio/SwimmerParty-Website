@@ -2,7 +2,7 @@
 id: PLAN-SITE-ROUND-8-DEEP-REFACTOR
 title: 网站第八轮：最深度的重构（代码、数据、文档、对 AI 友好）
 type: plan
-status: active
+status: completed
 canonical: true
 owner: ai-assisted
 created: 2026-10-08
@@ -65,8 +65,8 @@ Owner 用网页版 Codex 执行：它在 GitHub 上的全新克隆里工作，�
 
 报告写在 PR 描述里（第 9 节），每一块一行。不写"完成"而没有证据。
 
-| 块 | 状态 | 证据（命令输出摘要、提交号、前后对比） | 回退方法 |
-| -- | ---- | -------------------------------------- | -------- |
+| 块  | 状态 | 证据（命令输出摘要、提交号、前后对比） | 回退方法 |
+| --- | ---- | -------------------------------------- | -------- |
 
 Claude 会逐条核对证据；过去出现过"写了完成但没做"的情况。
 
@@ -80,19 +80,19 @@ Claude 会逐条核对证据；过去出现过"写了完成但没做"的情况�
 
 ## 2. 对外契约（这些不能变）
 
-| 契约 | 现在的样子 | 谁在用 |
-| ---- | ---------- | ------ |
-| 网址 | `/en`、`/zh` 下全部页面；`/casting`、`/pact` 和 `he-jie`、`dai-er` 的永久跳转 | 用户收藏、搜索引擎、外部链接 |
-| API | `/api/assets/[slug]/[slot]/download`、`/api/assets/[slug]/bundle`、`/api/voice/[slug]/[slot]`、`/api/auth/*`、`/api/community/*`（生产返回 503） | 网站前端 |
-| 下载文件名 | `<slug>__<series>__<key>.<ext>`；懒人包 `<slug>_starter.zip`、选角包 `swimmer-party-cast.zip` 的文件结构；署名标文件名 | 用户 |
-| Blob 对象键 | `<slug>/<sha16>/<slug>__…__vN.png`、新面孔 `<slug>/CC-xxx.png`、`voice/<slug>/<file>` | 线上下载 |
-| 资料格式 | `character.json`、演员 `assets.json` 清单结构 | 会员导出、MediaFactory |
-| 项目包格式 | `media-pack/` 的结构和 `media-pack/actors/<slug>.json` 字段 | MediaFactory、编排器 |
-| 授权 | License v1.0 的条款和署名写法 | 用户 |
-| 埋点 | PostHog 事件名白名单、`app=swimmerparty`、不用 cookie | 产品分析 |
-| 登录 | cookie `__Host-swimmerparty-session`、SSO 回调路径 | SwimmerBackend 账号中心 |
-| 开关和环境变量 | `ASSET_STORE`、`ACCOUNT_MODE`、`GUEST_LIMITER`、`NEXT_PUBLIC_COMMUNITY_ENABLED`、`NEXT_PUBLIC_POSTHOG_*`、`SWIMMER_*` | 部署 |
-| 发布工具 | `tools/assets-upload.ts` 的用法（见 `release.md`） | 发布 |
+| 契约           | 现在的样子                                                                                                                                       | 谁在用                       |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| 网址           | `/en`、`/zh` 下全部页面；`/casting`、`/pact` 和 `he-jie`、`dai-er` 的永久跳转                                                                    | 用户收藏、搜索引擎、外部链接 |
+| API            | `/api/assets/[slug]/[slot]/download`、`/api/assets/[slug]/bundle`、`/api/voice/[slug]/[slot]`、`/api/auth/*`、`/api/community/*`（生产返回 503） | 网站前端                     |
+| 下载文件名     | `<slug>__<series>__<key>.<ext>`；懒人包 `<slug>_starter.zip`、选角包 `swimmer-party-cast.zip` 的文件结构；署名标文件名                           | 用户                         |
+| Blob 对象键    | `<slug>/<sha16>/<slug>__…__vN.png`、新面孔 `<slug>/CC-xxx.png`、`voice/<slug>/<file>`                                                            | 线上下载                     |
+| 资料格式       | `character.json`、演员 `assets.json` 清单结构                                                                                                    | 会员导出、MediaFactory       |
+| 项目包格式     | `media-pack/` 的结构和 `media-pack/actors/<slug>.json` 字段                                                                                      | MediaFactory、编排器         |
+| 授权           | License v1.0 的条款和署名写法                                                                                                                    | 用户                         |
+| 埋点           | PostHog 事件名白名单、`app=swimmerparty`、不用 cookie                                                                                            | 产品分析                     |
+| 登录           | cookie `__Host-swimmerparty-session`、SSO 回调路径                                                                                               | SwimmerBackend 账号中心      |
+| 开关和环境变量 | `ASSET_STORE`、`ACCOUNT_MODE`、`GUEST_LIMITER`、`NEXT_PUBLIC_COMMUNITY_ENABLED`、`NEXT_PUBLIC_POSTHOG_*`、`SWIMMER_*`                            | 部署                         |
+| 发布工具       | `tools/assets-upload.ts` 的用法（见 `release.md`）                                                                                               | 发布                         |
 
 ## 3. 先给验证定价
 
@@ -106,19 +106,19 @@ Claude 会逐条核对证据；过去出现过"写了完成但没做"的情况�
 
 ## 4. 地图（写进报告，重构以它为依据）
 
-| 类 | 列什么 |
-| -- | ------ |
-| 路由 | 全部页面、API、跳转、sitemap、hreflang |
-| 代码 | 模块、依赖方向、没人引用的文件和导出 |
-| 数据 | 每个事实放在哪（第 5.1 节） |
-| 依赖 | `package.json` 每个包的用途、使用位置，没用的、重复的 |
-| 工具 | `tools/` 下 26 个文件各做什么、谁调用、还用不用 |
-| 环境变量 | 在哪读、哪个环境有（只列名字） |
-| 文案 | 没有页面使用的键；页面里绕开文案源的中英文写法 |
-| 样式 | 没用的 CSS、绕开设计令牌的写法 |
-| 公开文件 | `public/` 里没被引用的文件 |
-| 测试 | 每个测试保护哪条契约；重复的、过时的 |
-| 文档 | 每份文档的角色（真相、决策、导航、证据）和处置 |
+| 类       | 列什么                                                |
+| -------- | ----------------------------------------------------- |
+| 路由     | 全部页面、API、跳转、sitemap、hreflang                |
+| 代码     | 模块、依赖方向、没人引用的文件和导出                  |
+| 数据     | 每个事实放在哪（第 5.1 节）                           |
+| 依赖     | `package.json` 每个包的用途、使用位置，没用的、重复的 |
+| 工具     | `tools/` 下 26 个文件各做什么、谁调用、还用不用       |
+| 环境变量 | 在哪读、哪个环境有（只列名字）                        |
+| 文案     | 没有页面使用的键；页面里绕开文案源的中英文写法        |
+| 样式     | 没用的 CSS、绕开设计令牌的写法                        |
+| 公开文件 | `public/` 里没被引用的文件                            |
+| 测试     | 每个测试保护哪条契约；重复的、过时的                  |
+| 文档     | 每份文档的角色（真相、决策、导航、证据）和处置        |
 
 `knip` 这类工具可以用 `pnpm dlx` 临时跑，不加进依赖；它的结论只是线索，要核实。
 
@@ -176,14 +176,14 @@ tools/          按用途分子目录：assets/、site/、release/、test/，加
 
 逐项列出，决定"保留 / 跳转 / 退役"：
 
-| 项 | 默认处置 |
-| -- | -------- |
-| `/casting`、`/pact`、`he-jie`、`dai-er` 跳转 | 保留（可能有外部链接） |
-| 旧 `SP-xx` Blob 对象 | 保留，永不删；只删代码里对它们的支持 |
-| `.assets-local/`（本地母版库，里面的哈希已经和清单对不上） | 确认入库工具是否还写它。还写，就在文档里写清它和 `media-pack/library/` 的分工；不写了，就从工具和文档里退役（目录本身由 Owner 决定是否删除，不要自己删） |
-| `media-pack/library/packs/`（旧的服务端懒人包输出，已不再使用） | 在报告里提出，由 Owner 决定是否删除；这是被忽略的本地文件，不要自己删 |
-| 没用的依赖 | 删掉；剩下的钉死版本 |
-| 没用的环境变量名 | 从代码和文档里删掉；平台上的值由发布会话处理 |
+| 项                                                              | 默认处置                                                                                                                                                 |
+| --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/casting`、`/pact`、`he-jie`、`dai-er` 跳转                    | 保留（可能有外部链接）                                                                                                                                   |
+| 旧 `SP-xx` Blob 对象                                            | 保留，永不删；只删代码里对它们的支持                                                                                                                     |
+| `.assets-local/`（本地母版库，里面的哈希已经和清单对不上）      | 确认入库工具是否还写它。还写，就在文档里写清它和 `media-pack/library/` 的分工；不写了，就从工具和文档里退役（目录本身由 Owner 决定是否删除，不要自己删） |
+| `media-pack/library/packs/`（旧的服务端懒人包输出，已不再使用） | 在报告里提出，由 Owner 决定是否删除；这是被忽略的本地文件，不要自己删                                                                                    |
+| 没用的依赖                                                      | 删掉；剩下的钉死版本                                                                                                                                     |
+| 没用的环境变量名                                                | 从代码和文档里删掉；平台上的值由发布会话处理                                                                                                             |
 
 ### 5.4 测试
 
@@ -247,6 +247,7 @@ tools/          按用途分子目录：assets/、site/、release/、test/，加
   3. 加一个埋点事件。
 
   记录它在哪里犹豫、读错了什么，回头修文档或结构，直到三件事都顺利。三件事的改动不提交。
+
 - **扫描为零**：没用的文件、导出、依赖、文案键、公开文件；页面里的中英文写法。有例外的写明理由。
 - **唯一来源**：第 5.1 节每项都有一致性检查兜底。
 - **对外契约**：第 2 节每一行都有证据，证明没变。最有效的证据是本地构建前后的对比：

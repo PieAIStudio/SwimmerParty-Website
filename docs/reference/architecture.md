@@ -37,7 +37,7 @@ related:
 | src/lib、src/config                       | 无业务知识的浏览器/服务器工具；运行模式唯一入口 config/server.ts                                       |
 | tools                                     | 按 assets / site / release / test 分组；完整归属见 [工具清单](../../tools/README.md)                   |
 
-依赖是路由 → feature/site → content、contracts、i18n、lib。跨 feature 只用实际需要的公开入口；同 feature 内直接导入实现。纯查询和合同入口是有意保留的例外：避免浏览器和无 Next 的 Node 测试误载 server-only barrel，不为凑统一形式添加空入口。
+功能的公开导出文件叫 `index.ts`（不是 index.tsx）；具体组件名和文件在各功能 README。依赖是路由 → feature/site → content、contracts、i18n、lib。跨 feature 只用实际需要的公开入口；同 feature 内直接导入实现。纯查询和合同入口是有意保留的例外：避免浏览器和无 Next 的 Node 测试误载 server-only barrel，不为凑统一形式添加空入口。
 
 边界检查随 lint 运行：覆盖相对/别名/动态导入、内容含行为、反向依赖、跨 feature 私有引用、循环、浏览器传递导入服务器代码及厚 API 入口。文件存储只从 server 进入；服务器能力没有顶层网络副作用。
 

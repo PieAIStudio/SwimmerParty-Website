@@ -45,3 +45,5 @@
 | analytics | 外部白名单、规范化与不发送个人/自由文本 |
 
 `pnpm dlx knip` 的三项明确配置不是死代码豁免：两个 release CLI 由人调用；libphonenumber-js 是 AuthKit 的隐式运行时依赖并在 Next tracing 指定；ffprobe 是制作侧外部可执行程序，不是 npm 包。其余无消费者文件/导出/依赖应为零。
+
+公开文件有一个明确留存例外：`public/media/assets/yan-lin/turnaround.front.large.webp` 没有当前清单消费者，但它已经是公开网址，且本轮不能改变外部下载/引用。保留原字节，不为清零删除已有 URL；是否退役须另查外部使用并获授权。其余公开预览、样片、署名示意图和构建 OG 均有清单、页面或生成器消费者。

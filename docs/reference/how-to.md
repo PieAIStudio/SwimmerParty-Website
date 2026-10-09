@@ -36,7 +36,7 @@ pinned: false
 
 ## 改一句文案
 
-1. 用页面文字或键定位 `src/i18n/messages.source.ts`；同时改英文与中文，不改生成目录。结构化身份/授权文字按[架构](architecture.md)回到其源。
+1. 用页面文字或键定位 `src/i18n/messages.source.ts`；同时改英文与中文，不改生成目录。首页组件入口是 `src/features/home/index.ts`，实现是 `HomeView.tsx`，不用猜 index.tsx。结构化身份/授权文字按[架构](architecture.md)回到其源。
 2. `pnpm messages:generate` 同步目录与 ICU 合同；删除键前先确认有限动态消费者。
 3. `pnpm check:i18n` 和 `pnpm check`；改格式参数时检查实际渲染值，不添加临时默认文案遮住缺译。
 
@@ -55,7 +55,7 @@ pinned: false
 ## 加一个埋点事件
 
 1. 修改 `src/features/analytics/events.ts` 的 `POSTHOG_EVENTS` 白名单，确认不含身份、自由文本、完整 URL 等数据；类型由白名单推导。
-2. 在实际交互处使用现有事件通道；需要内部别名时在同一文件的 `normalizeEvent` 映射，不写第二张外部白名单。
+2. 正式产品事件在实际交互处使用现有事件通道；需要内部别名时在同一文件的 `normalizeEvent` 映射。仅做维护演练时，不新建 UI 或真实发送点：用下一步的事件合同调用现有 normalizeEvent，验证白名单和过滤即可。
 3. 更新 `tools/test/analytics.test.ts` 的批准事件合同，运行 `node --test tools/test/analytics.test.ts` 和 `pnpm check`。本地验证不发送 PostHog 请求。
 
 ## 发布

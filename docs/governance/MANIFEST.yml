@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-09T13:14:47.932Z
+generated_at: 2026-10-09T13:33:00.677Z
 generator_version: doc-gov@0.14.2
 docs_count: 35
 docs:
@@ -46,13 +46,6 @@ docs:
     canonical: true
     last_reviewed: 2026-09-10
     pinned: true
-  - id: PLAN-SITE-ROUND-8-DEEP-REFACTOR
-    path: docs/plans/active/2026-10-08-site-round-8-deep-refactor.md
-    type: plan
-    status: active
-    canonical: true
-    last_reviewed: 2026-10-09
-    pinned: false
   - id: PLAN-SWIMMER-FAMILY-REBUILD
     path: docs/plans/completed/2026-10-03-swimmer-family-rebuild.md
     type: plan
@@ -125,6 +118,13 @@ docs:
     pinned: false
   - id: PLAN-SITE-ROUND-7
     path: docs/plans/completed/2026-10-08-site-round-7.md
+    type: plan
+    status: completed
+    canonical: true
+    last_reviewed: 2026-10-09
+    pinned: false
+  - id: PLAN-SITE-ROUND-8-DEEP-REFACTOR
+    path: docs/plans/completed/2026-10-08-site-round-8-deep-refactor.md
     type: plan
     status: completed
     canonical: true

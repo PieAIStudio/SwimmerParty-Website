@@ -35,7 +35,7 @@ Playwright global setup 自动生成几何图片与静音 WAV/MP3；工具测试
 
 ## 测量记录（2026-10-09）
 
-环境：macOS arm64、10 逻辑核、Node 24.19.0、pnpm 11.22.0、5 个 Playwright worker。安装复用了本机内容缓存，不是冷网络安装。首块修复 core-js 脚本声明、真实录音依赖及无素材声音 404 后，check 为 12.78 秒，verify 连续两次为 75.69 / 67.94 秒，docs 为 6.52 秒，UI 为 4.02 秒。
+环境：macOS arm64、10 逻辑核、Node 24.19.0、pnpm 11.22.0、5 个 Playwright worker。安装复用了本机内容缓存，不是冷网络安装。首块修复 core-js 脚本声明、真实录音依赖及无素材声音 404 后，check 为 12.78 秒，verify 连续两次为 75.69 / 67.94 秒，docs 为 4.90 秒（b1-docs-aligned），UI 为 4.02 秒。
 
 第六块的单构建 verify 为 69.75 秒，81 项工具合同、20 项浏览器测试通过；测试范围与基线不同，不能仅按秒数宣称性能改善。后续交付测量和逐块日志见 PR 及 `.devspace-reports/site-round-8/`。成本随机器负载变化，不是验收阈值。
 
