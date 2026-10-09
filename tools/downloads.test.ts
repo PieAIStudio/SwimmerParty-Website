@@ -170,6 +170,37 @@ test("API validates method, actor, slots, duplicates and guest bundles", async (
   });
 });
 
+test("public credit marks use the same guest download window", async () => {
+  await withModes({}, async () => {
+    const first = response();
+    await download(
+      request({
+        query: { slug: "public", slot: "swim-in-ai-white" },
+        headers: { host: "example.test" },
+        socket: { remoteAddress: "credit-test-ip" } as NextApiRequest["socket"],
+      }),
+      first.res,
+    );
+    assert.equal(first.value.code, 200);
+    assert.deepEqual(first.value.body, {
+      url: "http://example.test/downloads/swim-in-ai-white.png",
+      filename: "swim-in-ai-white.png",
+      cooldown: 30,
+    });
+    const second = response();
+    await download(
+      request({
+        query: { slug: "public", slot: "swim-in-ai-black" },
+        headers: { host: "example.test" },
+        socket: { remoteAddress: "credit-test-ip" } as NextApiRequest["socket"],
+      }),
+      second.res,
+    );
+    assert.equal(second.value.code, 429);
+    assert.equal(second.headers.get("retry-after"), 30);
+  });
+});
+
 test("Swimmer config uses the maintained SSO contract and never a browser-supplied issuer", () => {
   const config = swimmerAccountConfig({ NODE_ENV: "production", SWIMMER_COOKIE_PASSWORD: "x".repeat(32), SWIMMER_BACKEND_URL: "https://backend.example", SWIMMER_PUBLISHABLE_KEY: "fixture-public-key", SWIMMER_OAUTH_CLIENT_ID: "public-fixture-client", SWIMMER_ACCOUNT_URL: "https://account.example" });
   assert.equal(config.origin, "https://swimmerparty.swiminai.com");

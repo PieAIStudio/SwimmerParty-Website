@@ -13,11 +13,12 @@ import type { Actor } from "@/content/actors";
 import type { ActorAssets, AssetItem } from "@/features/assets/asset-types";
 import { useSiteI18n } from "@/i18n/client";
 import { characterProfile } from "@/features/assets/asset-profile";
-import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
+import { saveBlob } from "@/lib/browser-files";
 import { GUEST_COOLDOWN_KEY, GUEST_DOWNLOAD_WINDOW_SECONDS } from "@/features/assets/downloads";
 import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { useAccount } from "@/features/account";
 import { MemberExportDialog } from "./MemberExportDialog";
+import { downloadAsset, GuestDownloadCooldownError } from "./download-client";
 
 type Selection = {
   selected: ReadonlySet<string>;
@@ -149,27 +150,19 @@ export function AssetSelectionProvider({
     const controller = new AbortController();
     request.current = controller;
     try {
-      const response = await fetch(`/api/assets/${actor.slug}/${item.slot}/download`, {
+      const result = await downloadAsset({
+        endpoint: `/api/assets/${actor.slug}/${item.slot}/download`,
         signal: controller.signal,
-        cache: "no-store",
+        account,
       });
-      if (response.status === 429) {
-        cooldown(Number(response.headers.get("Retry-After")) || GUEST_DOWNLOAD_WINDOW_SECONDS);
+      if (controller.signal.aborted) return;
+      if (result.cooldown) cooldown(result.cooldown);
+      if (!result.cooldown) setNotice("started");
+    } catch (error) {
+      if (error instanceof GuestDownloadCooldownError) {
+        cooldown(error.retryAfter);
         return;
       }
-      if (!response.ok) throw new Error("Download request failed");
-      const result = (await response.json()) as {
-        url: string;
-        filename: string;
-        cooldown?: number;
-      };
-      if (result.cooldown) cooldown(result.cooldown);
-      const blob = await fetchImageBlob(result.url, controller.signal);
-      if (controller.signal.aborted) return;
-      saveBlob(blob, result.filename);
-      account.event(result.cooldown ? "guest_download" : "member_download");
-      if (!result.cooldown) setNotice("started");
-    } catch {
       if (!controller.signal.aborted) setNotice("failed");
     } finally {
       inFlight.current = false;

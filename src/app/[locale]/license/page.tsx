@@ -12,6 +12,7 @@ import type { AppLocale } from "@/i18n/routing";
 import { localizedAlternates } from "@/i18n/metadata";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
 import { CopyButton } from "@/site/CopyButton";
+import { CreditMarkDownload } from "@/features/assets";
 const l = (x: { en: string; zh: string }, locale: AppLocale) => x[locale];
 export async function generateMetadata({
   params,
@@ -115,19 +116,42 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-display-md">{locale === "zh" ? "署名素材包" : "Credit kit"}</h2>
+        <h2 className="sp-display-md">{locale === "zh" ? "署名标" : "Credit mark"}</h2>
         <p className="mt-3">
           {locale === "zh"
-            ? "做好的“Swim In AI”字样，白色和黑色两版，透明 PNG 和 SVG，按 1080p 和 4K 准备好了。拖进去就行，不用登录。"
-            : "Ready-made “Swim In AI” text marks in white and black, transparent PNG and SVG, sized for 1080p and 4K. Drop it in and you’re done. No sign-in needed."}
+            ? "纯白和纯黑两种，透明背景，直接拖进剪辑或修图软件就能用。"
+            : "Pure white or pure black, on a transparent background. Drop it into any editor."}
         </p>
-        <a
-          className="sp-link mt-5 inline-block"
-          href="/downloads/swim-in-ai-credit-kit.zip"
-          download
-        >
-          {locale === "zh" ? "下载署名素材包" : "Download credit kit"}
-        </a>
+        <div className="mt-6 grid gap-5 md:grid-cols-2">
+          <article className="sp-panel p-4">
+            <div className="flex aspect-[3/1] items-center justify-center rounded-[var(--game-ui-radius-card)] bg-[#1f2326] p-5">
+              <Image
+                src="/downloads/swim-in-ai-white.png"
+                alt="Swim In AI"
+                width={2000}
+                height={500}
+                className="h-auto w-full"
+              />
+            </div>
+            <CreditMarkDownload endpoint="/api/assets/public/swim-in-ai-white/download">
+              {locale === "zh" ? "下载纯白" : "Download white"}
+            </CreditMarkDownload>
+          </article>
+          <article className="sp-panel p-4">
+            <div className="flex aspect-[3/1] items-center justify-center rounded-[var(--game-ui-radius-card)] bg-[#fffdf8] p-5">
+              <Image
+                src="/downloads/swim-in-ai-black.png"
+                alt="Swim In AI"
+                width={2000}
+                height={500}
+                className="h-auto w-full"
+              />
+            </div>
+            <CreditMarkDownload endpoint="/api/assets/public/swim-in-ai-black/download">
+              {locale === "zh" ? "下载纯黑" : "Download black"}
+            </CreditMarkDownload>
+          </article>
+        </div>
       </section>
       <section className="mt-16">
         <h2 className="sp-display-md">{locale === "zh" ? "可以" : "You can"}</h2>
