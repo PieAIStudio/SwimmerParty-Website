@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-09T01:59:41.787Z
+generated_at: 2026-10-09T03:58:04.813Z
 generator_version: doc-gov@0.14.2
 docs_count: 34
 docs:
@@ -191,14 +191,14 @@ docs:
     type: reference
     status: active
     canonical: true
-    last_reviewed: 2026-10-04
+    last_reviewed: 2026-10-09
     pinned: false
   - id: REF-DECISIONS
     path: docs/reference/decisions.md
     type: reference
     status: active
     canonical: true
-    last_reviewed: 2026-10-08
+    last_reviewed: 2026-10-09
     pinned: false
   - id: REF-DOCUMENTATION-MAP
     path: docs/reference/documentation-map.md
@@ -219,7 +219,7 @@ docs:
     type: reference
     status: active
     canonical: true
-    last_reviewed: 2026-10-04
+    last_reviewed: 2026-10-09
     pinned: false
   - id: REQ-SWIMMER-PARTY-COMMUNITY
     path: docs/reference/swimmer-party-community-backend.md

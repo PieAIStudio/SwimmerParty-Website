@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-10-04
-last_reviewed: 2026-10-04
+last_reviewed: 2026-10-09
 domain: release
 tags:
   - release
@@ -24,19 +24,22 @@ UIKit `3.0.0-rc.1`、AuthKit `0.8.0-rc.1` 当前按精确版本安装；正式�
 
 ## 环境变量与安装权限
 
-| 名字                      | 用途                                                      |
-| ------------------------- | --------------------------------------------------------- |
-| `ASSET_STORE`             | 发布设为 `blob`，私有母版存储                             |
-| `ACCOUNT_MODE`            | 发布设为 `swimmer`，禁止模拟身份                          |
-| `GUEST_LIMITER`           | 发布设为 `vercel`，禁止内存限速                           |
-| `BLOB_READ_WRITE_TOKEN`   | 平台注入的私有 Blob 权限；也可由 SDK 使用平台支持的 OIDC  |
-| `SWIMMER_ORIGIN`          | 当前部署的已登记 HTTPS origin                             |
-| `SWIMMER_BACKEND_URL`     | 账号后端的 HTTPS origin                                   |
-| `SWIMMER_PUBLISHABLE_KEY` | 后端 publishable key                                      |
-| `SWIMMER_ACCOUNT_URL`     | 账号中心入口                                              |
-| `SWIMMER_OAUTH_CLIENT_ID` | 已登记的 public PKCE 客户端标识                           |
-| `SWIMMER_COOKIE_PASSWORD` | 会话加密密码，至少 32 字符                                |
-| `NODE_AUTH_TOKEN`         | 拟用于构建时读取 GitHub Packages 的令牌；见下面未验证事项 |
+| 名字                            | 用途                                                      |
+| ------------------------------- | --------------------------------------------------------- |
+| `ASSET_STORE`                   | 发布设为 `blob`，私有母版存储                             |
+| `ACCOUNT_MODE`                  | 发布设为 `swimmer`，禁止模拟身份                          |
+| `GUEST_LIMITER`                 | 发布设为 `vercel`，禁止内存限速                           |
+| `BLOB_READ_WRITE_TOKEN`         | 平台注入的私有 Blob 权限；也可由 SDK 使用平台支持的 OIDC  |
+| `SWIMMER_ORIGIN`                | 当前部署的已登记 HTTPS origin                             |
+| `SWIMMER_BACKEND_URL`           | 账号后端的 HTTPS origin                                   |
+| `SWIMMER_PUBLISHABLE_KEY`       | 后端 publishable key                                      |
+| `SWIMMER_ACCOUNT_URL`           | 账号中心入口                                              |
+| `SWIMMER_OAUTH_CLIENT_ID`       | 已登记的 public PKCE 客户端标识                           |
+| `SWIMMER_COOKIE_PASSWORD`       | 会话加密密码，至少 32 字符                                |
+| `NEXT_PUBLIC_POSTHOG_KEY`       | PostHog 项目 key（浏览器可见）；取自共享的 PostHog 文件   |
+| `NEXT_PUBLIC_POSTHOG_HOST`      | PostHog 地址；与 key 同一来源                             |
+| `NEXT_PUBLIC_COMMUNITY_ENABLED` | 社区开关；后端 v2 上线前生产不设置（即关闭）              |
+| `NODE_AUTH_TOKEN`               | 拟用于构建时读取 GitHub Packages 的令牌；见下面未验证事项 |
 
 变量值只由授权人员放入环境或平台配置，不写进 Git、日志或截图。项目 `.npmrc` 只保存 registry 映射。
 现有用户级安装配置已成功读取 AuthKit，隔离 worktree 也已通过离线 frozen install；这不证明 Vercel 已具备读取权限。
@@ -47,6 +50,7 @@ UIKit `3.0.0-rc.1`、AuthKit `0.8.0-rc.1` 当前按精确版本安装；正式�
 
 1. 在已绑定的 Vercel `swimmerparty` 项目 Storage 中创建 **private** Blob，连接目标环境并注入权限。不要创建 public 母版桶。
 2. 制作方按[资产 spec](../specs/active/actor-asset-library.md)把母版放到 `media-pack/library/staging/SP-XX/`，并在 `media-pack/notes/handoffs/` 留交接单。先跑 `pnpm assets:ingest SP-XX --dry-run`，再在授权环境执行 `ASSET_STORE=blob ACCOUNT_MODE=swimmer GUEST_LIMITER=vercel pnpm assets:ingest SP-XX`。模式由环境变量选择，没有 `--blob` 参数。旧规格才加 `--legacy`。保留公开预览和清单的同次提交，母版不得在同一对象键下换字节。
+   上线前把清单引用的全部原件传到私有 Blob：先 `vercel env pull --environment=production .vercel/.env.production.local`，再 `node --env-file=.vercel/.env.production.local tools/assets-upload.ts --dry-run`，确认后去掉 `--dry-run` 执行。工具按 sha256 在 `.assets-local` 和 `media-pack/library` 找原件，已存在的跳过，大小不符立即停止，不覆盖也不删除。懒人包和选角包不在存储里放 ZIP，由浏览器取签名原图现场打包。
 3. 在项目 Firewall 中登记供 `checkRateLimit` 调用的规则 `guest-asset-download`，按 IP 每 30 秒 1 次。只有游客请求调用它；规则缺失时 API 应返回私有 503，不能自动降级。
    该规则必须是 `@vercel/firewall` 的 Rate limit ID 条件；发布前运行 `vercel firewall rules inspect guest-asset-download` 核对。
 4. 将以下请求交给 SwimmerBackend 的负责会话：产品 SWIMMER PARTY、public OAuth PKCE 客户端、origin `https://swimmerparty.swiminai.com`、精确回调 `https://swimmerparty.swiminai.com/api/auth/sso-callback`、scope `openid email profile`。不得登记通配回调或附加权限。账号中心的授权页与 `/account` 管理页必须实际挂载。取得客户端标识后配置环境；本手册不代替该团队的登记流程。
@@ -61,6 +65,6 @@ UIKit `3.0.0-rc.1`、AuthKit `0.8.0-rc.1` 当前按精确版本安装；正式�
 
 ## 冒烟与回滚
 
-检查中英首页、名册、档案和资产页；canonical/OG/sitemap/robots 指向正式域名；游客下载保留文件名，第二次得到 429 与倒计时；SSO 登录后回到原路径及查询参数；会员 ZIP、3840×2160 拼图、模型包与退出均正常。检查私有签名链接有效期、跨域取图、过期拒绝和移动端下载。线上服务尚未验收，不能用本地模拟结果替代。
+检查中英首页、名册、档案和资产页；canonical/OG/sitemap/robots 指向正式域名；游客下载保留文件名，第二次得到 429 与倒计时；SSO 登录后回到原路径及查询参数；会员 ZIP、3840×2160 拼图、模型包与退出均正常；懒人包、选角包能下载，声音能播放和下载，新面孔试镜照能下载。检查私有签名链接有效期、跨域取图、过期拒绝和移动端下载。线上服务尚未验收，不能用本地模拟结果替代。
 
 失败时停止 promote；已上线的回归由授权发布会话 promote 上一个已验收部署。保留其 URL、提交、配置和检查记录，不用重新构建未知源码代替回滚。
