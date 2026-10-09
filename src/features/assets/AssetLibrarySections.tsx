@@ -14,11 +14,14 @@ export async function AssetLibrarySections({
   locale,
   actorName,
   isNewFace,
+  skipVoiceSlot,
 }: {
   assets: ActorAssets;
   locale: AppLocale;
   actorName: string;
   isNewFace?: boolean;
+  /** A voice already played elsewhere on the page. */
+  skipVoiceSlot?: string;
 }) {
   const { t } = await getSiteI18n();
   const msg = (key: string) => t(key as DynamicKey, {} as never);
@@ -29,6 +32,10 @@ export async function AssetLibrarySections({
       !["voice", "video"].includes(series.id) &&
       (series.required || assets.items.some((item) => item.series === series.id)) &&
       (!isNewFace || assets.items.some((item) => item.series === series.id)),
+  );
+  // Only delivered clips: no "coming later" tiles.
+  const voiceSlots = slotsOf("voice").filter(
+    (slot) => delivered.has(slot.slot) && slot.slot !== skipVoiceSlot,
   );
   const grid = (slots: ResolvedSlot[], fullBody: boolean) => (
     <div
@@ -124,19 +131,11 @@ export async function AssetLibrarySections({
           </section>
         );
       })}
-      <section id="series-voice" className="sp-section scroll-mt-40">
-        <h2 className="sp-title">{t("assets.series.voice")}</h2>
-        {isNewFace ? (
-          <p className="sp-small mt-3 max-w-2xl text-muted-foreground">{t("assets.newFaceNote")}</p>
-        ) : null}
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {slotsOf("voice")
-            .filter(
-              (slot) =>
-                (!isNewFace || delivered.has(slot.slot)) &&
-                (!slot.key.startsWith("role-") || delivered.has(slot.slot)),
-            )
-            .map((slot) => {
+      {voiceSlots.length ? (
+        <section id="series-voice" className="sp-section scroll-mt-40">
+          <h2 className="sp-title">{t("assets.series.voice")}</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {voiceSlots.map((slot) => {
               const item = delivered.get(slot.slot);
               const label = msg(
                 `assets.voice.${slot.key.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase())}`,
@@ -150,8 +149,9 @@ export async function AssetLibrarySections({
                 />
               );
             })}
-        </div>
-      </section>
+          </div>
+        </section>
+      ) : null}
       {hasVideo ? (
         <section id="series-video" className="sp-section scroll-mt-40">
           <h2 className="sp-title">{t("assets.series.video")}</h2>

@@ -5,7 +5,6 @@ const pages = [
   "/en",
   "/en/actors",
   "/en/actors/tang-yunqiu",
-  "/en/actors/tang-yunqiu/assets",
   "/en/license",
   "/en/works",
   "/en/cast",
@@ -24,7 +23,7 @@ for (const path of pages) {
 }
 
 test("sign-in guidance dialog has no serious accessibility violations", async ({ page }) => {
-  await page.goto("/en/actors/tang-yunqiu/assets");
+  await page.goto("/en/actors/tang-yunqiu");
   const checkbox = page.locator('[data-asset-slot="face.front"] input').first();
   if (await checkbox.count()) await checkbox.check({ force: true });
   await page.getByRole("button", { name: /download selected/i }).click();

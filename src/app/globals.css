@@ -252,6 +252,17 @@
     background: var(--game-ui-bg);
   }
 
+  /* Tile labels stay on one line; a long name truncates instead of stacking characters. */
+  [data-asset-slot] .game-ui-checkbox {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  [data-asset-slot] .game-ui-checkbox-label {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .sp-asset-frame[data-selected="true"] {
     outline: 3px solid var(--game-ui-text);
     outline-offset: 2px;

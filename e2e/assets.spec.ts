@@ -1,14 +1,15 @@
 import { test, expect } from "@playwright/test";
-test("asset library renders image and voice sections", async ({ page }) => {
-  await page.goto("/en/actors/tang-yunqiu/assets");
-  await expect(page.getByRole("heading", { name: /Tang Yunqiu/i })).toBeVisible();
+test("actor page holds the whole asset library", async ({ page }) => {
+  await page.goto("/en/actors/tang-yunqiu");
+  await expect(page.getByRole("heading", { level: 1, name: /Tang Yunqiu/i })).toBeVisible();
   await expect(page.locator("[data-asset-slot]").first()).toBeVisible();
   await expect(page.locator("[data-voice-slot]").first()).toBeVisible();
+  await expect(page.locator("#series-rules")).toBeVisible();
 });
-test("new face asset route is available", async ({ page }) => {
+test("old asset library links land on the actor page", async ({ page }) => {
   await page.goto("/en/actors/agnes-lefevre/assets");
-  await expect(page).toHaveURL(/agnes-lefevre\/assets/);
-  await expect(page.getByRole("heading").first()).toBeVisible();
+  await expect(page).toHaveURL(/\/en\/actors\/agnes-lefevre#assets$/);
+  await expect(page.locator('[data-asset-slot="turnaround.front"]')).toBeVisible();
 });
 
 test("actor hero uses the large source and voice preview is playable", async ({

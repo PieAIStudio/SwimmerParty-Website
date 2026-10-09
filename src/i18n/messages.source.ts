@@ -788,10 +788,6 @@ export const messages = {
     en: "Why",
     zh: "为什么",
   },
-  "assets.metaTitle": {
-    en: "{name} · Asset library",
-    zh: "{name} · 资产库",
-  },
   "assets.back": {
     en: "Open kit",
     zh: "物料包",
@@ -823,10 +819,6 @@ export const messages = {
   "assets.series.detail": {
     en: "Details",
     zh: "细节",
-  },
-  "assets.series.text": {
-    en: "Text",
-    zh: "文字资料",
   },
   "assets.series.more": {
     en: "More materials",
@@ -968,7 +960,7 @@ export const messages = {
     en: "Download selected",
     zh: "下载所选",
   },
-  "assets.download": { en: "Download", zh: "下载" },
+  "assets.download": { en: "Download all", zh: "下载全部" },
   "assets.selectFirst": {
     en: "Select the images you want first.",
     zh: "先勾选要下载的图。",
@@ -1404,10 +1396,6 @@ export const messages = {
     en: "How to credit",
     zh: "怎么署名",
   },
-  "actor.referenceImages": {
-    en: "Reference images",
-    zh: "参考图",
-  },
   "actor.roleTbd": {
     en: "Role to be announced",
     zh: "角色待定",
@@ -1427,10 +1415,6 @@ export const messages = {
   "actor.versionNote": {
     en: "First number: a new look. Second: more material. Third: fixes.",
     zh: "第一位是换了形象，第二位是加了内容，第三位是修正。",
-  },
-  "assets.breadcrumb": {
-    en: "Asset library",
-    zh: "资产库",
   },
   "assets.series.voice": {
     en: "Voice",
@@ -1579,10 +1563,6 @@ export const messages = {
   "assets.voice.intro": {
     en: "Self-introduction",
     zh: "自我介绍",
-  },
-  "assets.newFaceNote": {
-    en: "One casting photo and one voice so far.",
-    zh: "目前有一张试镜照和一段声音。",
   },
   "assets.voice.introAlt": {
     en: "Second-language intro",

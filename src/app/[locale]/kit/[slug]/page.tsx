@@ -6,5 +6,5 @@ export default async function KitActorPage({
 }) {
   const { locale, slug } = await params;
   const next = slug === "he-jie" ? "tang-yunqiu" : slug === "dai-er" ? "misha-luo" : slug;
-  permanentRedirect(`/${locale}/actors/${next}/assets`);
+  permanentRedirect(`/${locale}/actors/${next}#assets`);
 }

@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const paths = [
     ...PAGES,
-    ...ACTORS.flatMap((actor) => [`/actors/${actor.slug}`, `/actors/${actor.slug}/assets`]),
+    ...ACTORS.map((actor) => `/actors/${actor.slug}`),
     ...WORKS.map((work) => `/works/${work.slug}`),
   ];
   return routing.locales.flatMap((locale) =>

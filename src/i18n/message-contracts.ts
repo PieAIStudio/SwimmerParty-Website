@@ -7,7 +7,6 @@ export interface MessageContracts {
   readonly "actor.noPlate": {  };
   readonly "actor.noPlateBody": {  };
   readonly "actor.openLibrary": {  };
-  readonly "actor.referenceImages": {  };
   readonly "actor.roleTbd": {  };
   readonly "actor.seedEnNote": {  };
   readonly "actor.versionHistory": {  };
@@ -19,7 +18,6 @@ export interface MessageContracts {
   readonly "assets.background.dark": {  };
   readonly "assets.background.light": {  };
   readonly "assets.background.white": {  };
-  readonly "assets.breadcrumb": {  };
   readonly "assets.can": {  };
   readonly "assets.cancel": {  };
   readonly "assets.castingPhoto": {  };
@@ -64,11 +62,9 @@ export interface MessageContracts {
   readonly "assets.legacyNote": {  };
   readonly "assets.loadFailed": {  };
   readonly "assets.loading": {  };
-  readonly "assets.metaTitle": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.mockAccount": {  };
   readonly "assets.model": {  };
   readonly "assets.navigation": {  };
-  readonly "assets.newFaceNote": {  };
   readonly "assets.next": {  };
   readonly "assets.noSeed": {  };
   readonly "assets.none": {  };
@@ -105,7 +101,6 @@ export interface MessageContracts {
   readonly "assets.series.pose": {  };
   readonly "assets.series.rules": {  };
   readonly "assets.series.sheet": {  };
-  readonly "assets.series.text": {  };
   readonly "assets.series.turnaround": {  };
   readonly "assets.series.video": {  };
   readonly "assets.series.voice": {  };
