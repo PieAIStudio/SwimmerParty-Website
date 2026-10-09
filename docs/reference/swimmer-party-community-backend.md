@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: ai-assisted
 created: 2026-10-08
-last_reviewed: 2026-10-08
+last_reviewed: 2026-10-09
 domain: engineering
 tags:
   - swimmer-backend
@@ -27,6 +27,20 @@ pinned: false
 - 第一条作品在 `trusted_authors` 之外时为 `pending`；Owner 通过后加入 `trusted_authors`，后续作品直接 published。
 - 注销覆盖：删除该用户的 posts、post_media 索引、reactions、votes、reports；Blob 文件由网站清理任务按索引删除。
 - Owner RPC 只接受服务端 `OWNER_ACCOUNT_IDS` 中的账号。
+
+## 现状与第二版需求（2026-10-09）
+
+第一版已在 SwimmerBackend `main` 提交（`93ade1a`、`deeb433`、`7329a82`），只做了本地重放验收，没有进 staging 和生产。它只有写入 RPC：`create_post(p_title, p_body)`、`add_media`、`react`（post/media）、`report_post` 和 `owner_approve_author`（service_role 加 `app.owner_account_ids` GUC）。网站的作品墙、点赞、举报和新面孔投票因此在生产关闭（`NEXT_PUBLIC_COMMUNITY_ENABLED` 未设置）。
+
+打开开关前，第二版还需要：
+
+1. **读取**：已发布作品列表（按时间或点赞，分页，带点赞数和作者显示名）和单个作品详情；作者能看到自己待审的作品。
+2. **作品信息**：`kind`（image/video/audio/game/other）、演员 slug 列表、工具、做法说明、Blob 媒体对象键，以及署名和权利两项确认。
+3. **新面孔投票**：每个账号对每位演员一票，可撤回；按演员读票数。
+4. **删除**：作者删除自己的作品，连同点赞、举报和媒体索引。
+5. **审核**：Owner 读待审和被举报隐藏的列表，执行通过或隐藏；Owner 名单放表里，不靠 GUC。
+
+网站侧随后补：用用户 JWT 调这些 RPC 的适配器、媒体上传到私有 Blob、打开开关，并把首页和作品页文案改回“也展示大家的作品”。
 
 ## 交付和迁出
 
