@@ -333,8 +333,8 @@ export const messages = {
     zh: "演员",
   },
   "roster.metaDescription": {
-    en: "Every SWIMMER PARTY AI actor: ready to cast, new faces and in development. Free to use, even commercially. Just credit Swim In AI.",
-    zh: "SWIMMER PARTY 的全部 AI 演员：可出演、新面孔和制作中。商用也免费，署上 Swim In AI 就好。",
+    en: "Every SWIMMER PARTY AI actor, ready to cast or new. Free to use, even commercially. Just credit Swim In AI.",
+    zh: "SWIMMER PARTY 的全部 AI 演员，可出演的和新面孔。商用也免费，署上 Swim In AI 就好。",
   },
   "roster.eyebrow": {
     en: "Meet them",
@@ -349,8 +349,8 @@ export const messages = {
     zh: "演员。",
   },
   "roster.intro": {
-    en: "{castable} ready to cast, {newFaces} new faces, {building} in development. Every actor comes with free reference assets.",
-    zh: "{castable} 位可以直接出演，{newFaces} 位新面孔，{building} 位还在制作中。每位演员都有免费参考资料。",
+    en: "{castable} ready to cast and {newFaces} new faces. Every actor comes with free reference assets.",
+    zh: "{castable} 位可以直接出演，{newFaces} 位新面孔。每位演员都有免费参考资料。",
   },
   "roster.castableLabel": {
     en: "Castable",
@@ -676,53 +676,25 @@ export const messages = {
     en: "Every actor gets tested in comedy. If the timing works, the character works.",
     zh: "每位演员都要在喜剧里过一遍。节奏对了，角色就立住了。",
   },
-  "studio.stackLabel": {
-    en: "How we use AI",
-    zh: "我们怎么用 AI",
+  "studio.missionLabel": {
+    en: "Why we do this",
+    zh: "我们为什么做这件事",
   },
-  "studio.stackTitle": {
-    en: "Made with AI, checked by people",
-    zh: "AI 来做，人来把关",
+  "studio.missionTitle": {
+    en: "AI for ordinary people",
+    zh: "让 AI 造福普通人",
   },
-  "studio.stackNote": {
-    en: "We use current image, voice and video models, chosen for each job. Nothing goes on the site until a person has reviewed it.",
-    zh: "我们按需要选用当下的图像、声音和视频模型。所有内容都经过人工审看才会上线。",
+  "studio.missionBody": {
+    en: "When the AI wave arrived, we chose to build for ordinary people. Free actors anyone can cast are one step. We keep going, one film at a time.",
+    zh: "AI 浪潮来的时候，我们定下一个目标：让 AI 造福普通人。人人都能免费用的演员是其中一步，我们一部片一部片地往前走。",
   },
-  "studio.stack.0.name": {
-    en: "ChatGPT",
-    zh: "ChatGPT",
+  "studio.missionLine": {
+    en: "Making a film used to take a crew. Now it takes a story. Bring yours.",
+    zh: "以前拍片要一个剧组，现在只要一个故事。带上你的故事来。",
   },
-  "studio.stack.0.role": {
-    en: "Images",
-    zh: "图片",
-  },
-  "studio.stack.0.note": {
-    en: "Turnarounds, faces, expressions and scenes",
-    zh: "转面、脸部、表情和场景",
-  },
-  "studio.stack.1.name": {
-    en: "MiniMax",
-    zh: "MiniMax",
-  },
-  "studio.stack.1.role": {
-    en: "Voices",
-    zh: "声音",
-  },
-  "studio.stack.1.note": {
-    en: "Each actor’s voice and lines",
-    zh: "每位演员的声音和台词",
-  },
-  "studio.stack.2.name": {
-    en: "Grok",
-    zh: "Grok",
-  },
-  "studio.stack.2.role": {
-    en: "Video",
-    zh: "视频",
-  },
-  "studio.stack.2.note": {
-    en: "Short clips that start from our own images",
-    zh: "从我们自己的图片出发的短视频",
+  "studio.missionLink": {
+    en: "See what we’ve released at SwimInAI.com",
+    zh: "去 SwimInAI.com 看我们已经发布的作品",
   },
   "studio.outroLines.0": {
     en: "Want an actor",
@@ -1717,8 +1689,8 @@ export const messages = {
     zh: "{name} · 角色提示词",
   },
   "assets.characterPromptNote": {
-    en: "Written in English on purpose: image models follow English most reliably. Paste it as is.",
-    zh: "故意用英文写：图像模型对英文的执行最稳定。原样粘贴即可。",
+    en: "Paste it as is.",
+    zh: "原样粘贴即可。",
   },
   "assets.rulesTitle": {
     en: "One rule: credit Swim In AI.",

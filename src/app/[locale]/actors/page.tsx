@@ -26,7 +26,6 @@ export default async function ActorsPage({ params }: { params: Promise<{ locale:
   const counts = {
     castable: ACTORS.filter((a) => a.status === "active").length,
     newFaces: ACTORS.filter((a) => a.status === "new-face").length,
-    building: ACTORS.filter((a) => a.status === "in-development").length,
   };
   return (
     <div className="sp-container">

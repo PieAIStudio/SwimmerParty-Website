@@ -52,13 +52,13 @@ export default async function ActorPage({ params }: Props) {
   const next = ACTORS[(ACTORS.indexOf(actor) + 1) % ACTORS.length];
   const voice = assets.items.find((i) => i.kind === "voice" && i.key === "intro");
   const frontLabel = actor.status === "new-face" ? t("assets.castingPhoto") : name;
-  const origin = actor.spec.find((row) => row.id === "origin")?.value[locale] ?? "";
+  // The info table and appearances already say who they are; new faces only add what's next.
   const description =
     actor.status === "new-face"
       ? locale === "zh"
-        ? `${name}是 SWIMMER PARTY 的新面孔，${actor.age} 岁，来自${origin}。现在有一张照片和一段声音；${COMMUNITY_ENABLED ? "最受欢迎的新面孔会先补齐全套资料。" : "被选进项目后再补齐全套资料。"}`
-        : `${name} is a new face at SWIMMER PARTY: ${actor.age}, from ${origin}. One photo and one voice so far. ${COMMUNITY_ENABLED ? "The most wanted new faces get their full identity packs first." : `More comes when ${name} is cast.`}`
-      : actor.note[locale];
+        ? `现在有一张照片和一段声音。${COMMUNITY_ENABLED ? "最受欢迎的新面孔会先补齐全套资料。" : "被选进项目后再补齐全套资料。"}`
+        : `One photo and one voice so far. ${COMMUNITY_ENABLED ? "The most wanted new faces get their full identity packs first." : `More comes when ${name} is cast.`}`
+      : null;
   const credits = WORKS.flatMap((work) =>
     work.cast.filter((credit) => credit.actor === actor.slug).map((credit) => ({ work, credit })),
   );
@@ -107,7 +107,7 @@ export default async function ActorPage({ params }: Props) {
               </div>
             ))}
           </dl>
-          <p className="mt-6">{description}</p>
+          {description ? <p className="mt-6">{description}</p> : null}
           {voice ? (
             <div className="mt-8">
               <h2 className="sp-subtitle">{t("actor.voiceTitle", { name })}</h2>

@@ -191,24 +191,25 @@ export const LICENSE_WHERE = [
     sizeZh: "小字就行",
   },
 ] as const;
+// Pictures come from tools/generate-license-examples.ts as <image>.<locale>.webp.
 export const LICENSE_EXAMPLES = [
   {
-    image: "/media/assets/tang-yunqiu/turnaround.front.webp",
+    image: "/media/license/opening",
     en: "Opening shot: small credit under the title",
     zh: "开头：片名下面一行小字",
   },
   {
-    image: "/media/assets/misha-luo/turnaround.front.webp",
+    image: "/media/license/end-credits",
     en: "End credits: one line in the cast list",
     zh: "片尾：演员表里一行",
   },
   {
-    image: "/media/assets/tang-yunqiu/face.front.webp",
+    image: "/media/license/image",
     en: "Image: bottom corner",
     zh: "图片：右下角",
   },
   {
-    image: "/media/assets/misha-luo/face.front.webp",
+    image: "/media/license/game",
     en: "Game: credits screen",
     zh: "游戏：制作人员名单",
   },

@@ -5,6 +5,7 @@ import { localizedAlternates } from "@/i18n/metadata";
 import { PageIntro } from "@/site/PageIntro";
 import { SectionHead } from "@/site/SectionHead";
 import { TextLink } from "@/site/TextLink";
+import { GameIcon } from "@pieai/swimmer-ui-kit";
 import type { MessageContracts } from "@/i18n/message-contracts";
 type Key = Extract<keyof MessageContracts, string>;
 
@@ -50,21 +51,20 @@ export default async function StudioPage({ params }: Props) {
       </section>
       <section className="sp-section">
         <SectionHead
-          label={t("studio.stackLabel")}
-          title={t("studio.stackTitle")}
-          note={t("studio.stackNote")}
+          label={t("studio.missionLabel")}
+          title={t("studio.missionTitle")}
+          note={t("studio.missionBody")}
         />
-        <dl className="mt-8 space-y-8 lg:mt-10">
-          {([0, 1, 2] as const).map((index) => (
-            <div key={index} className="grid gap-2 lg:grid-cols-3">
-              <dt className="sp-subtitle">{t(`studio.stack.${index}.name`)}</dt>
-              <dd className="lg:col-span-2">
-                <p className="sp-label">{t(`studio.stack.${index}.role`)}</p>
-                <p className="mt-2 text-muted-foreground">{t(`studio.stack.${index}.note`)}</p>
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <p className="sp-lead mt-6 max-w-2xl">{t("studio.missionLine")}</p>
+        <a
+          href="https://www.swiminai.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="sp-link mt-6"
+        >
+          {t("studio.missionLink")}
+          <GameIcon icon="arrow-right" />
+        </a>
       </section>
       <section className="sp-section" id="work-with-us">
         <SectionHead

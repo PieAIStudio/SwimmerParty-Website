@@ -101,11 +101,11 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
           {LICENSE_EXAMPLES.map((item) => (
             <figure key={item.en} className="sp-panel overflow-hidden">
               <Image
-                src={item.image}
+                src={`${item.image}.${locale}.webp`}
                 alt=""
-                width={941}
-                height={1672}
-                className="aspect-[4/3] w-full object-cover"
+                width={960}
+                height={540}
+                className="aspect-video w-full object-cover"
               />
               <figcaption className="p-4 sp-small">
                 {locale === "zh" ? item.zh : item.en}
