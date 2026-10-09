@@ -23,7 +23,5 @@ pnpm docs:check
 - [资产契约](docs/specs/active/actor-asset-library.md)：母版格式、入库和导出。
 - [上线手册](docs/reference/release.md)：环境、登记、预览、发布及回滚；发布需要明确授权。
 - [当前工作](docs/reference/execution/current-work.md)：本地完成情况与未验证事项。
-
-双语界面文案编辑 `src/i18n/messages.source.ts`，运行 `pnpm messages:generate`。
-`pnpm assets:todo SP-03` 生成缺图清单；入库前先运行 `pnpm assets:ingest SP-XX --dry-run`。
-`brainstorms/` 保留原始创作材料，不代表现行事实。
+  常见维护按 [操作配方](docs/reference/how-to.md) 进行；演员与样片改生产源，界面文案改成对消息源，再运行生成器。工具用途及生成物边界见 [tools/README.md](tools/README.md)。
+  `brainstorms/` 与已完成计划保留原始材料和取舍，不代表现行事实。

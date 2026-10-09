@@ -83,31 +83,21 @@ upstream repository first.
 
 ## Document Convergence
 
-When creating docs, changing documented truth, or completing a feature/phase,
-read `docs/policy/shared-rules/document-convergence.md` and reconcile the affected
-facts and references. Preserve decision rationale and original evidence; do not
-turn routine development into a whole-repository cleanup.
+When documented truth changes or work completes, read `docs/policy/shared-rules/document-convergence.md`; reconcile current sources and links while preserving original decisions and evidence.
 
-## Website Release Entry
+## Task Router
 
-Only after an explicit website release request and the relevant local gates:
+SWIMMER PARTY 展示原创合成演员与真实交付素材。先遵守 `docs/policy/best-practice-for-this-project.md`，再按任务只读需要的入口：
 
-1. Use a clean, committed candidate. Run required manual Actions acceptance for
-   that exact commit, if the project requires it; failure blocks publication.
-2. Confirm Vercel binding to `swimmerparty` (`pie-0f420159`); use
-   `vercel link --project swimmerparty --scope pie-0f420159` if unbound.
-3. Create a production-configured candidate with
-   `vercel deploy --prod --skip-domain --yes --scope pie-0f420159`.
-   This is paid release work; it must not run during ordinary edit/push.
-4. Verify the returned deployment URL with the project's smoke checks, then
-   `vercel promote <verified-deployment-url> --scope pie-0f420159`.
-   Promote that artifact; do not rebuild, guess a URL, or promote after failure.
+| 任务                  | 去哪里                                                                    |
+| --------------------- | ------------------------------------------------------------------------- |
+| 定位代码和事实        | `docs/reference/architecture.md`，然后对应 feature 的 README              |
+| 常见修改              | `docs/reference/how-to.md`；晋升流程使用其中链接的项目技能                |
+| 改演员/造型/版本/样片 | `src/content/actors/README.md`；改生产源，不改生成物                      |
+| 改界面文案            | `src/i18n/messages.source.ts`；生成命令和检查见 how-to                    |
+| 改视觉                | `DESIGN.md`；共享组件以 UIKit 为准                                        |
+| 验证、工具和生成物    | `docs/reference/verification.md`、`tools/README.md`                       |
+| 查当前任务/既有决定   | `docs/reference/execution/current-work.md`、`docs/reference/decisions.md` |
+| 明确获准发布          | `docs/reference/release.md` 是唯一操作步骤；普通改动/PR 不进入此流程      |
 
-Existing package publishing or backend migration gates remain separate.
-
-## Project Maintenance
-
-SWIMMER PARTY 展示原创合成演员与真实交付的资产。目录入口见
-`docs/reference/architecture.md`；现行设计见 `DESIGN.md`。
-修改文案编辑 `src/i18n/messages.source.ts`，运行 `pnpm messages:generate`。
-日常快速验证用 `pnpm check`，阶段验收用 `pnpm verify`；文档改动加跑 `pnpm docs:check`。
+历史计划只用于追溯批准和证据，不是开工必读。不存在的真实原件不能用测试夹具替代；未提交的并行制作资料不属于当前任务。

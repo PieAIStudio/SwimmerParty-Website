@@ -1,29 +1,47 @@
 # 网站工具
 
-日常验证不接触真实素材或云服务。`pnpm data:generate` 更新网站资料，`pnpm data:check` 核对生成物；二者不生成母版，也不上传。
+从仓库根目录运行。命令名以 package.json 为准；本页是工具、生成物及测试的归属清单。日常验证不接触真实素材或云服务。
 
-## 生成物归属与可验证范围
+## 目录与调用者
 
-| 生成物                         | 唯一源                                                 | 生成器                          | 一致性证据或明确限制                                                                                                |
-| ------------------------------ | ------------------------------------------------------ | ------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| 两种语言目录与消息契约         | `src/i18n/messages.source.ts`                          | `gen-messages.ts`               | `pnpm check:i18n` 逐键和契约检查；运行时消费者检查                                                                  |
-| 演员档案、名单与版本           | `media-pack/actors/*.json`、casting JSON               | `generate-actor-data.ts`        | `pnpm data:check` 逐字漂移；夹具晋升、反例和未发布隔离测试                                                          |
-| `assets.json.looks`            | 生产造型与 `website.visibleLooks`                      | 同上，只拥有 looks 字段         | 逐值漂移；其他字段保持原样                                                                                          |
-| 样片元数据                     | 生产 `officialSamples`                                 | 同上                            | 逐字核对；公开地址与文件可用性检查                                                                                  |
-| OG JPEG                        | 已提交的 `public/media/assets/*/turnaround.front.webp` | `generate-og-assets.ts`         | 每次构建重生成并 `--check` 逐字节比较；合成夹具漂移测试                                                             |
-| 新面孔预览、缩略图、图片清单   | casting 记录和批准 PNG                                 | `generate-new-face-assets.ts`   | 夹具验证算法、哈希、尺寸与保留录音；实际 PNG 被忽略，新克隆不能核对原件字节                                         |
-| 大图和模糊占位                 | 已提交 WebP                                            | `generate-asset-derivatives.ts` | 夹具验证输出路径、可重复性和母版键不变；已有大图可能来自旧批准批次，本轮不重写公开文件                              |
-| 正式演员预览、清单、原件对象键 | 批准原件与资产规范                                     | `assets-ingest.ts`              | 合成原件的事务、尺寸、哈希、路径保护测试；真实原件新克隆不可用                                                      |
-| 声音清单                       | 批准录音、正式演员 `lines.json`、casting 自我介绍      | `generate-voice-manifests.ts`   | 公开声音的路由、格式、转写来源检查；夹具验证哈希与失败不覆盖。音频字节/时长需要未提交录音与 ffprobe，未实测真实录音 |
-| 授权页示意图                   | 构图、`LICENSE` 署名和批准样片原图                     | `generate-license-examples.ts`  | 格式/尺寸/引用检查；缺少原图或字体时，不认证源到位图的新鲜度                                                        |
-| 黑白署名 PNG                   | `LICENSE.credit`、SVG 方案                             | `credit-kit.ts`                 | SVG 署名来源、PNG/透明通道检查；位图依赖系统字体，不能声称跨机器逐字节可复现                                        |
+| 目录 | 工具与用途 |
+| --- | --- |
+| `site/` | `generate-actor-data.ts` / `actor-data.ts` 由 data:generate / data:check 调用；`gen-messages.ts` 由 messages:generate 调用；`check-messages.ts` / `message-analysis.ts` 由 check:i18n 调用；`check-boundaries.ts` / `boundary-analysis.ts` 由 lint 调用；`check-generated-media.ts` 由 data:check 调用；`generate-og-assets.ts` 由 build 调用。 |
+| `assets/` | `assets-ingest.ts` / `assets-todo.ts` 由同名 package 命令调用；`assets-common.ts` / `file-transaction.ts` / `generated-media-common.ts` 是其共享文件操作。真实媒体生成入口见下表，不进入日常检查。 |
+| `release/` | `shots.ts` 本地截图；`compare-shots.ts` 对比两组截图。手工 CLI：`node tools/release/shots.ts <目录>`、`node tools/release/compare-shots.ts <前> <后>`。输出仅放忽略的报告目录，不发布。 |
+| `test/` | test:tools 自动发现合同测试；fixtures 中只有合成图、静音、批准词表和请求/生产记录夹具。 |
+| `assets-upload.ts` | 保留原路径的发布 CLI；只能按 release.md 的明确授权执行，先 dry-run。不删除旧对象、不修改现有同键字节。 |
 
-`generated-media.test.ts` 只用几何图片与静音验证算法；`actor-data.test.ts` 用虚构演员验证晋升。已提交公开素材不能因本轮重构而重新编码。原件转换入口要求 `--generate-media`，缺少任一必要源会在写入前停止；`generate-og-assets.ts` 只处理已提交的公开预览。
+## 生成物与一致性
 
-## 有意区分的事实
+| 生成物 | 唯一源 → 生成器 | 检查与限制 |
+| --- | --- | --- |
+| 消息目录、ICU 合同 | messages.source.ts → site/gen-messages.ts | check:i18n、目录一致性与有限动态消费者检查 |
+| 演员 profile、名单、版本和样片元数据 | media-pack/actors 与 casting → site/generate-actor-data.ts | data:check 逐字核对；晋升、未发布隔离与身份保持测试 |
+| 清单 looks | 生产造型与 website.visibleLooks → 同上 | 逐值核对，items/扩展字段原样保留 |
+| OG JPEG | 已提交公开预览 → site/generate-og-assets.ts | 每次 build 生成并逐字节 --check |
+| 正式演员预览、原件键和清单 items | 批准原件 → assets/assets-ingest.ts | 合成夹具检验尺寸、哈希、格式与入库；真实原件新克隆不可用 |
+| 新面孔预览与缩略图 | casting 记录和批准 PNG → assets/generate-new-face-assets.ts | 合成夹具检查算法/哈希/尺寸/录音保留；真实母版不可用 |
+| 大图、模糊占位 | 公开 WebP → assets/generate-asset-derivatives.ts | 夹具检验路径和可重复性；已有批准图不因重构重编码 |
+| 声音清单 | 批准录音/转写 → assets/generate-voice-manifests.ts | 路由、格式、转写来源；真实字节、时长还需要未提交录音及 ffprobe |
+| 公开样片文件 | 批准样片原件 → assets/generate-official-samples.ts | 资料投影与公开引用；原件转换不是普通测试 |
+| 授权示意图 | 批准图、构图、LICENSE → assets/generate-license-examples.ts | 引用、格式、尺寸；缺原图或字体时不认证实际源到位图新鲜度 |
+| 黑白署名 PNG | LICENSE.credit、SVG 方案 → assets/credit-kit.ts | 署名、PNG/透明通道；依赖字体，不能承诺跨机器相同位图 |
+| 浏览器原件夹具 | 合成图与静音 → test/fixtures/prepare-downloads.ts | Playwright global setup 生成；不能交付 |
+| 文档 MANIFEST | 治理文档 → pnpm doc-gov scan | docs:check；不手改清单 |
 
-`src/content/tools.ts` 是可选创作工具与模型导出策略的唯一配置入口；社区标签与模型输入限制是不同用途，不混成同一个可选列表。样片 `officialSamples.tools` 记录实际用过什么，不是产品选项。
+原件生成工具要求 --generate-media；缺源即停止。公开引用/格式检查不等于真实原件重生成。现行授权与旧会员 ZIP 文本均在 content/license.ts，但其语义差异需 Owner 决定，见 decisions.md。
 
-现行授权、起步包摘要及旧会员 ZIP 原样文字均在 `src/content/license.ts`。旧会员 ZIP 与现行 v1.0 的冲突是明确保留的对外兼容例外，是否更换需 Owner 决定。
+## 测试保护什么
 
-目录分工在结构块统一收敛；当前文件名即有效入口。`tools/assets-upload.ts` 是必须保留的发布 CLI。
+| 文件组（test/） | 合同 |
+| --- | --- |
+| actor-data、roster | 生产投影、晋升、唯一身份、片单引用、全部可交付的隔离夹具 |
+| assets、generated-media | 规格词表、入库与生成路径；不读取私有制作库 |
+| account、downloads | 会话、签名、游客窗口、响应/对象键和部署模式 |
+| exports | 图片挑选、拼图排版、文件名；实际 ZIP/登录/懒人包由 e2e/exports 补足 |
+| community、community-moderation | 原型状态、审核和非 mock 503 |
+| messages、boundaries、metadata | 单一文案源、有限消费者、依赖方向、canonical/sitemap |
+| analytics | 外部白名单、规范化与不发送个人/自由文本 |
+
+`pnpm dlx knip` 的三项明确配置不是死代码豁免：两个 release CLI 由人调用；libphonenumber-js 是 AuthKit 的隐式运行时依赖并在 Next tracing 指定；ffprobe 是制作侧外部可执行程序，不是 npm 包。其余无消费者文件/导出/依赖应为零。
