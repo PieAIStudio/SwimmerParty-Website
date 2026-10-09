@@ -31,13 +31,13 @@ test("actor hero uses the large source and voice preview is playable", async ({
   const durations = await page.evaluate(async () => {
     const audio = new AudioContext();
     try {
-      const durations: number[] = [];
+      const decodedDurations: number[] = [];
       for (const url of ["/api/voice/tang-yunqiu/intro", "/api/voice/lin-xiaoman/intro"]) {
         const response = await fetch(url);
         const decoded = await audio.decodeAudioData(await response.arrayBuffer());
-        durations.push(decoded.duration);
+        decodedDurations.push(decoded.duration);
       }
-      return durations;
+      return decodedDurations;
     } finally {
       await audio.close();
     }

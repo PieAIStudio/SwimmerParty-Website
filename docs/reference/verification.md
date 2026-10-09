@@ -45,6 +45,6 @@ Playwright global setup 自动生成几何图片与静音 WAV/MP3；工具测试
 
 第八轮对跟踪文件与 235 个可达历史提交做了脱敏密钥扫描，未发现泄漏；这不是无漏洞保证，也不改写历史。本地生产模式的 10 个社区请求全部为私有 no-store 的 503，dev-assets 为私有 no-store 的 404；没有调用真实服务。
 
-本地 Next 响应未设置 CSP、CSP-Report-Only、X-Content-Type-Options、X-Frame-Options、Referrer-Policy、HSTS 或 Permissions-Policy。托管平台可能另加响应头，本轮没有检查线上。新增策略可能影响媒体、登录或嵌入，不在本次保持行为的重构中擅自添加；发布前由 Owner 决定后续加固。
+`next.config.ts` 对全部响应设置 X-Content-Type-Options、Referrer-Policy 和 Permissions-Policy（2026-10-09）。CSP 和 X-Frame-Options 没有设置：它们可能影响媒体、登录或别人嵌入，要加需单独验证。HSTS 由 Vercel 提供。
 
 AuthKit phone parser 已进入 API tracing，真实媒体库未进入；trace 路径匹配已安装版本，不在 next.config 复制第二个版本号。
