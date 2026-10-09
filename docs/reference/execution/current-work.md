@@ -17,10 +17,19 @@ related: []
 
 # Current Work
 
-第八轮重构的实现与本地验收已收敛到 refactor/site-round-8，交付为同名 PR，等待本机审阅和真实素材复核；尚未合并或发布。[第八轮记录](../../plans/completed/2026-10-08-site-round-8-deep-refactor.md) 已归档。逐块证据、独立 AI 演练与保留例外只汇总在 PR，不在这里复制报告。
+2026-10-10 已上线 `dpl_BBUv7BMaX6riixQkPMQ5fxdYXHCj`（提交 213d165）：
 
-此前第五到 7.5 轮已完成的发布记录见 [7.5 轮](../../plans/completed/2026-10-09-site-round-7-5-polish.md)。历史部署记录 dpl_HkmX7Wp6RkfEW8M8CUWU5xcComvE 不代表本轮候选已上线。
+- 第八轮重构（[记录](../../plans/completed/2026-10-08-site-round-8-deep-refactor.md)，PR #1 已合并）；
+- 严琳、马乐成为第五、第六位正式演员，新面孔 93 位；
+- 首页加入两组官方样片；
+- 会员 ZIP 改附 License v1.0；
+- 安全响应头。
 
-仍待处理：社区须等待 [SwimmerBackend v2](../swimmer-party-community-backend.md)；Owner 仍需在正式站用真实账号验收懒人包；旧会员 ZIP 与网页授权不一致的取舍见 [decisions.md](../decisions.md)。
+上线前在本机用真实素材跑过 `pnpm verify`，候选版冒烟全部通过后才切到正式域名。
 
-并行：主目录的 media-pack 正在制作/交付严琳、包满、雷乐、范一鸣、马乐及新面孔比例修正。本重构不接管或清理其未提交素材。真实素材上传和下一次发布另按 [release.md](../release.md) 获得授权。
+仍待处理：
+
+- Owner 在正式站用真实账号登录，验收懒人包下载；
+- 社区和“泳者”页签等待 [SwimmerBackend v2](../swimmer-party-community-backend.md)。
+
+并行：`media-pack/` 里包满、雷乐、范一鸣及新面孔比例修正仍在制作，属于其他会话，不在这里接管。
