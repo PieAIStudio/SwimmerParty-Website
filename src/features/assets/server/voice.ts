@@ -21,7 +21,11 @@ export default privateApi("GET", async (req, res, modes) => {
     return;
   }
   // New-face voices stay in the casting folder locally; delivered voices sit under their slug.
-  const library = path.join(/* turbopackIgnore: true */ process.cwd(), "media-pack/library/voice");
+  // An explicit local asset root isolates tests from real recordings. Without it,
+  // preserve the production-workbench layout; Blob mode above is unchanged.
+  const library = process.env.ASSET_LOCAL_ROOT
+    ? path.resolve(/* turbopackIgnore: true */ process.env.ASSET_LOCAL_ROOT, "voice")
+    : path.join(/* turbopackIgnore: true */ process.cwd(), "media-pack/library/voice");
   const object = item.object.replace(/^voice\//, "");
   const candidates = [
     path.join(library, "new-faces", actor.slug, path.basename(object)),

@@ -1,5 +1,7 @@
 allowBuilds:
   "@tailwindcss/oxide": true
+  # core-js only prints a funding notice; no build output is required.
+  core-js: false
   lefthook: true
   sharp: true
 minimumReleaseAgeExclude:

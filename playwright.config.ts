@@ -31,7 +31,8 @@ export default defineConfig({
       NEXT_TELEMETRY_DISABLED: "1",
     },
     url: `http://127.0.0.1:${PORT}`,
-    reuseExistingServer: !process.env.CI,
+    // A passing run must serve this checkout, never another session's server.
+    reuseExistingServer: false,
     timeout: 180_000,
   },
 });

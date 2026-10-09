@@ -23,17 +23,26 @@ test("works use actor slugs", () => {
   );
 });
 
-test("every actor has a local asset manifest and new faces have image plus voice source", async () => {
-  const { readdir, access } = await import("node:fs/promises");
+test("every actor has a manifest and isolated image/voice download fixtures", async (t) => {
+  const { access, mkdtemp, readFile, rm } = await import("node:fs/promises");
   const { join } = await import("node:path");
+  const { tmpdir } = await import("node:os");
+  const { prepareDownloadFixtures } = await import("./fixtures/prepare-downloads.ts");
+  const { getActorAssets } = await import("../src/features/assets/assets.ts");
+  const root = await mkdtemp(join(tmpdir(), "swimmer-download-fixtures-"));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  await prepareDownloadFixtures(root);
   for (const actor of ACTORS) {
     await access(join(process.cwd(), "src/content/actors", actor.slug, "assets.json"));
+    for (const item of getActorAssets(actor.slug).items) {
+      const bytes = await readFile(join(root, item.object));
+      assert.ok(bytes.length > 0);
+      if (item.kind === "voice") {
+        if (item.format === "wav") assert.equal(bytes.toString("ascii", 0, 4), "RIFF");
+        else assert.equal(bytes.readUInt16BE(0) & 0xffe0, 0xffe0);
+      }
+    }
   }
-  const newFaceDirs = await readdir(join(process.cwd(), "src/content/actors"));
-  assert.ok(newFaceDirs.includes("lin-xiaoman"));
-  await access(
-    join(process.cwd(), "media-pack/library/voice/new-faces/lin-xiaoman/candidate-1.mp3"),
-  );
 });
 
 test("voice manifests match round six delivery counts", async () => {
