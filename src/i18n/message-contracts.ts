@@ -478,9 +478,6 @@ export interface MessageContracts {
   readonly "studio.stack.2.name": {  };
   readonly "studio.stack.2.note": {  };
   readonly "studio.stack.2.role": {  };
-  readonly "studio.stack.3.name": {  };
-  readonly "studio.stack.3.note": {  };
-  readonly "studio.stack.3.role": {  };
   readonly "studio.stackLabel": {  };
   readonly "studio.stackNote": {  };
   readonly "studio.stackTitle": {  };

@@ -39,7 +39,7 @@ export default async function StudioPage({ params }: Props) {
           note={t("studio.beliefsNote")}
         />
         <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-2">
-          {([0, 1, 2] as const).map((index) => (
+          {([0, 1, 2, 3] as const).map((index) => (
             <article className="sp-card bg-card" key={index}>
               <p className="sp-code text-muted-foreground">{t(`studio.beliefs.${index}.n`)}</p>
               <h3 className="sp-subtitle mt-4">{t(`studio.beliefs.${index}.title`)}</h3>
@@ -55,7 +55,7 @@ export default async function StudioPage({ params }: Props) {
           note={t("studio.stackNote")}
         />
         <dl className="mt-8 space-y-8 lg:mt-10">
-          {([0, 1, 2, 3] as const).map((index) => (
+          {([0, 1, 2] as const).map((index) => (
             <div key={index} className="grid gap-2 lg:grid-cols-3">
               <dt className="sp-subtitle">{t(`studio.stack.${index}.name`)}</dt>
               <dd className="lg:col-span-2">
