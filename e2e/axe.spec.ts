@@ -18,7 +18,10 @@ test("sign-in guidance dialog has no serious accessibility violations", async ({
   await page.goto("/en/actors/tang-yunqiu");
   const checkbox = page.locator('[data-asset-slot="face.front"] input').first();
   await checkbox.check({ force: true });
-  await page.getByRole("button", { name: /download selected/i }).click();
+  const downloadSelected = page.getByRole("button", { name: /download selected/i });
+  // aria-busy turns "false" once the page is interactive and the session is known.
+  await expect(downloadSelected).toHaveAttribute("aria-busy", "false", { timeout: 15_000 });
+  await downloadSelected.click();
   await expect(page.getByRole("dialog")).toBeVisible();
   const result = await new AxeBuilder({ page }).analyze();
   expect(

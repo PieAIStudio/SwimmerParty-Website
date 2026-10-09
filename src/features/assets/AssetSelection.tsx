@@ -24,7 +24,7 @@ type Selection = {
   selected: ReadonlySet<string>;
   change: (slots: string[], add: boolean) => void;
   downloadOne: (item: AssetItem) => Promise<void>;
-  requestPack: () => void;
+  requestPack: () => Promise<void>;
   requestStarter: () => void;
   remaining: number;
   busy: boolean;
@@ -186,6 +186,7 @@ export function AssetSelectionProvider({
     showInvite();
   }
   async function signIn() {
+    if (busy || account.busy) return;
     try {
       await account.signIn();
     } catch {
@@ -199,15 +200,17 @@ export function AssetSelectionProvider({
         change,
         downloadOne,
         remaining: account.user ? 0 : remaining,
-        busy: busy || account.busy || account.loading,
+        busy: busy || account.busy,
         modalOpen: invite || pack,
         sourceRef,
-        requestPack: () => {
+        requestPack: async () => {
           if (!selected.size) {
             setNotice("selectFirst");
             return;
           }
-          if (account.user) setPack(true);
+          // A click during the first session check waits for it rather than guessing "guest".
+          const { user } = await account.whenReady();
+          if (user) setPack(true);
           else showInvite();
         },
         requestStarter,
@@ -244,11 +247,7 @@ export function AssetSelectionProvider({
               ))}
             </ul>
             <div className="mt-7 flex flex-col items-start gap-3">
-              <GameButton
-                variant="primary"
-                disabled={busy || account.busy || account.loading}
-                onClick={signIn}
-              >
+              <GameButton variant="primary" aria-busy={busy || account.busy} onClick={signIn}>
                 {t("assets.signIn")}
               </GameButton>
               <button
@@ -309,6 +308,7 @@ export function AssetSelectionProvider({
 export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
   const { t } = useSiteI18n();
   const { selected, change, requestPack, requestStarter, busy, sourceRef } = useAssetSelection();
+  const account = useAccount();
   // On phones the bar only appears once something is picked; the hero already offers the full pack.
   if (mobile && !selected.size) return null;
   const size = mobile ? "sm" : undefined;
@@ -343,10 +343,11 @@ export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
         variant="primary"
         size={size}
         data-download-selected
-        disabled={busy}
+        aria-busy={busy || account.loading}
         onClick={(event) => {
+          if (busy) return;
           sourceRef.current = event.currentTarget;
-          requestPack();
+          void requestPack();
         }}
       >
         {t("assets.downloadSelected")}

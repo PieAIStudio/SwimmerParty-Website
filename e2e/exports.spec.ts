@@ -6,11 +6,15 @@ test("selection survives local sign-in and downloads a member ZIP", async ({ pag
   await page.goto("/en/actors/tang-yunqiu");
   const checkbox = page.locator('[data-asset-slot="face.front"] input').first();
   await checkbox.check({ force: true });
-  await page.getByRole("button", { name: /download selected/i }).click();
+  const downloadSelected = page.getByRole("button", { name: /download selected/i });
+  // aria-busy turns "false" once the page is interactive and the session is known.
+  await expect(downloadSelected).toHaveAttribute("aria-busy", "false", { timeout: 15_000 });
+  await downloadSelected.click();
   await page.getByRole("dialog").getByRole("button", { name: "Sign in with Swimmer" }).click();
   await expect(page.locator("[data-account-menu]").first()).toBeVisible();
   await expect(checkbox).toBeChecked();
-  await page.getByRole("button", { name: /download selected/i }).click();
+  await expect(downloadSelected).toHaveAttribute("aria-busy", "false", { timeout: 15_000 });
+  await downloadSelected.click();
   const result = await downloadFrom(
     page,
     page.getByRole("dialog").getByRole("button", { name: "Start download" }),

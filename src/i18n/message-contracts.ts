@@ -92,6 +92,7 @@ export interface MessageContracts {
   readonly "assets.signInTitle": {  };
   readonly "assets.signOut": {  };
   readonly "assets.signedIn": {  };
+  readonly "assets.signingIn": {  };
   readonly "assets.slot.detail.hairBack": {  };
   readonly "assets.slot.detail.hands": {  };
   readonly "assets.slot.detail.prop": {  };

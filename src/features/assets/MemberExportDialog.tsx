@@ -254,7 +254,8 @@ export function MemberExportDialog({
         <GameButton onClick={cancel}>{t("assets.cancel")}</GameButton>
         <GameButton
           variant="primary"
-          disabled={busy || Boolean(unavailableVeo)}
+          disabled={Boolean(unavailableVeo)}
+          aria-busy={busy}
           onClick={() => void start()}
         >
           {t(busy ? "assets.preparing" : "assets.start")}

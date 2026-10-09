@@ -443,6 +443,7 @@ export const messages = {
     en: "Sign in with Swimmer",
     zh: "用泳者账号登录",
   },
+  "assets.signingIn": { en: "Opening…", zh: "正在前往…" },
   "assets.signInBenefits.0": {
     en: "Starter packs, full packs and custom downloads",
     zh: "懒人包、完整资产和自选下载",

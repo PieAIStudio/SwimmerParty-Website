@@ -112,6 +112,7 @@
   "assets.noSeed": "Not released yet.",
   "assets.guestCooldown": "Wait {seconds}s, or sign in",
   "assets.signIn": "Sign in with Swimmer",
+  "assets.signingIn": "Opening…",
   "assets.signInBenefits.0": "Starter packs, full packs and custom downloads",
   "assets.signInBenefits.1": "Post your work, like and vote",
   "assets.signInBenefits.2": "4K character sheets",

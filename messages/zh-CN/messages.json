@@ -112,6 +112,7 @@
   "assets.noSeed": "尚未发布。",
   "assets.guestCooldown": "再等 {seconds} 秒，或者登录",
   "assets.signIn": "用泳者账号登录",
+  "assets.signingIn": "正在前往…",
   "assets.signInBenefits.0": "懒人包、完整资产和自选下载",
   "assets.signInBenefits.1": "发作品、点赞、投票",
   "assets.signInBenefits.2": "4K 角色设定图",

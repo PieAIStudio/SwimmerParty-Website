@@ -12,8 +12,12 @@ export function StarterPackButton({ actor }: { actor: StarterActor }) {
   const { t } = useSiteI18n();
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
+  // Signed-out guests are sent to sign in; say so while the page leaves.
+  const leaving = !account.user && account.busy;
   async function start() {
-    if (!account.user) {
+    if (busy) return;
+    const { user } = await account.whenReady();
+    if (!user) {
       await account.signIn();
       return;
     }
@@ -34,10 +38,12 @@ export function StarterPackButton({ actor }: { actor: StarterActor }) {
     <>
       <GameButton
         variant="primary"
-        disabled={busy || !actor.slots.length}
+        disabled={!actor.slots.length}
+        aria-busy={busy || leaving || account.loading}
+        {...(account.user ? {} : account.signInIntent)}
         onClick={() => void start()}
       >
-        {busy ? t("assets.loading") : t("actor.openLibrary")}
+        {busy ? t("assets.loading") : leaving ? t("assets.signingIn") : t("actor.openLibrary")}
       </GameButton>
       {failed ? <GameToast tone="danger">{t("assets.failed")}</GameToast> : null}
     </>

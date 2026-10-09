@@ -62,7 +62,9 @@ export function CastBoard({
     await navigator.clipboard?.writeText(value);
   }
   async function downloadPack() {
-    if (!account.user) {
+    if (downloading) return;
+    const { user } = await account.whenReady();
+    if (!user) {
       await account.signIn();
       return;
     }
@@ -95,7 +97,11 @@ export function CastBoard({
     <div>
       <p className="sp-small mt-8">{t("cast.count", { count: cast.length })}</p>
       <div className="mt-4 flex flex-wrap gap-3">
-        <GameButton variant="primary" onClick={() => void downloadPack()} disabled={downloading}>
+        <GameButton
+          variant="primary"
+          onClick={() => void downloadPack()}
+          aria-busy={downloading || account.loading}
+        >
           {downloading ? t("cast.downloading") : t("cast.downloadPack")}
         </GameButton>
         <GameButton

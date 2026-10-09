@@ -25,6 +25,10 @@ type Account = {
   mode: "mock" | "swimmer" | null;
   loading: boolean;
   busy: boolean;
+  /** Spread on a sign-in button: starts sign-in on hover, focus or press so the click goes straight out. */
+  signInIntent: { onPointerEnter: () => void; onFocus: () => void; onPointerDown: () => void };
+  /** The session once its first check finishes; use it before acting on `user`. */
+  whenReady: () => Promise<{ user: { id: string } | null; mode: "mock" | "swimmer" | null }>;
   signIn: () => Promise<void>;
   signOut: () => Promise<void>;
   event: (name: EventName, data?: { format: string }) => void;
@@ -48,8 +52,16 @@ export function AccountProvider({
     mode: "mock" | "swimmer" | null;
   }>({ user: null, mode: null });
   const [loading, setLoading] = useState(true);
+  // Lets a click made before the session check finishes wait for it instead of being lost.
+  const current = useRef(session);
+  const [sessionReady] = useState(() => {
+    let resolve = () => {};
+    const promise = new Promise<void>((done) => (resolve = done));
+    return { promise, resolve };
+  });
   const [busy, setBusy] = useState(false);
   const pending = useRef(false);
+  const prepared = useRef<{ at: number; path: string; url: Promise<string> } | null>(null);
   const event = useCallback(
     (name: EventName, data?: { format: string }) => {
       // Next production builds also run locally: NODE_ENV alone must not enable telemetry.
@@ -65,29 +77,74 @@ export function AccountProvider({
         if (!response.ok) throw new Error("Account unavailable");
         const value = await response.json();
         if (!["mock", "swimmer"].includes(value.mode)) throw new Error("Invalid account mode");
-        setSession({ user: value.user?.id ? { id: value.user.id } : null, mode: value.mode });
+        current.current = { user: value.user?.id ? { id: value.user.id } : null, mode: value.mode };
+        setSession(current.current);
       })
       .catch(() => {
-        if (!controller.signal.aborted) setSession({ user: null, mode: null });
+        if (controller.signal.aborted) return;
+        current.current = { user: null, mode: null };
+        setSession(current.current);
       })
       .finally(() => {
-        if (!controller.signal.aborted) setLoading(false);
+        if (controller.signal.aborted) return;
+        setLoading(false);
+        sessionReady.resolve();
       });
     return () => controller.abort();
-  }, [pathname]);
+  }, [pathname, sessionReady]);
+  // A bfcache "back" restores this page mid-redirect; let the button work again.
+  useEffect(() => {
+    const restore = (pageEvent: PageTransitionEvent) => {
+      if (!pageEvent.persisted) return;
+      pending.current = false;
+      prepared.current = null;
+      setBusy(false);
+    };
+    addEventListener("pageshow", restore);
+    return () => removeEventListener("pageshow", restore);
+  }, []);
+  function prepare(): Promise<string> {
+    const path = location.pathname + location.search + location.hash;
+    const ready = prepared.current;
+    if (ready && ready.path === path && Date.now() - ready.at < 60_000) return ready.url;
+    const url = fetch("/api/auth/sso-start", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ redirectPath: path }),
+    }).then(async (response) => {
+      if (!response.ok) throw new Error("Account action failed");
+      const result = (await response.json()) as { status: string; url: string };
+      if (result.status !== "redirect" || !result.url.startsWith("https://"))
+        throw new Error("Invalid account redirect");
+      return result.url;
+    });
+    url.catch(() => {
+      if (prepared.current?.url === url) prepared.current = null;
+    });
+    prepared.current = { at: Date.now(), path, url };
+    return url;
+  }
+  function prepareSignIn() {
+    if (session.mode === "swimmer" && !session.user && !pending.current)
+      void prepare().catch(() => {});
+  }
   async function action(signIn: boolean) {
-    if (pending.current || loading) return;
-    if (!session.mode) throw new Error("Account unavailable");
+    if (pending.current) return;
     pending.current = true;
     setBusy(true);
+    let leaving = false;
     try {
+      await sessionReady.promise;
+      const { mode } = current.current;
+      if (!mode) throw new Error("Account unavailable");
       if (signIn) event("sign_in_start");
-      const route =
-        session.mode === "mock"
-          ? `mock/${signIn ? "sign-in" : "sign-out"}`
-          : signIn
-            ? "sso-start"
-            : "sign-out";
+      if (mode === "swimmer" && signIn) {
+        const url = await prepare();
+        leaving = true;
+        location.assign(url);
+        return;
+      }
+      const route = mode === "mock" ? `mock/${signIn ? "sign-in" : "sign-out"}` : "sign-out";
       const response = await fetch(`/api/auth/${route}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -98,15 +155,14 @@ export function AccountProvider({
         ),
       });
       if (!response.ok) throw new Error("Account action failed");
-      if (session.mode === "swimmer" && signIn) {
-        const result = (await response.json()) as { status: string; url: string };
-        if (result.status !== "redirect" || !result.url.startsWith("https://"))
-          throw new Error("Invalid account redirect");
-        location.assign(result.url);
-      } else location.reload();
+      leaving = true;
+      location.reload();
     } finally {
-      pending.current = false;
-      setBusy(false);
+      // While the page is leaving, stay busy so the button keeps saying so.
+      if (!leaving) {
+        pending.current = false;
+        setBusy(false);
+      }
     }
   }
   return (
@@ -116,6 +172,15 @@ export function AccountProvider({
         loading,
         busy,
         event,
+        signInIntent: {
+          onPointerEnter: prepareSignIn,
+          onFocus: prepareSignIn,
+          onPointerDown: prepareSignIn,
+        },
+        whenReady: async () => {
+          await sessionReady.promise;
+          return current.current;
+        },
         signIn: () => action(true),
         signOut: () => action(false),
       }}
@@ -134,10 +199,12 @@ export function AccountMenu() {
       <GameButton
         variant="primary"
         size="sm"
-        disabled={account.loading || account.busy || !account.mode}
+        disabled={!account.loading && !account.mode}
+        aria-busy={account.busy || account.loading}
+        {...account.signInIntent}
         onClick={() => void account.signIn().catch(() => setError(true))}
       >
-        {t("assets.signIn")}
+        {account.busy ? t("assets.signingIn") : t("assets.signIn")}
       </GameButton>
     );
   return (
