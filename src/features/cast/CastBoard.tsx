@@ -1,11 +1,30 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import type { Actor } from "@/content/actors";
 import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
+import { TextLink } from "@/site/TextLink";
 import { useAccount } from "@/features/account";
 import { starterPack, SignInRequired } from "@/features/assets/client";
 import { saveBlob } from "@/lib/browser-files";
+const CAST_EVENT = "sp-cast-change";
+function readCast(): string {
+  const shared = new URLSearchParams(location.search).get("a");
+  if (shared !== null) return shared;
+  try {
+    return localStorage.getItem("sp-cast") ?? "";
+  } catch {
+    return "";
+  }
+}
+function subscribeCast(callback: () => void) {
+  window.addEventListener("storage", callback);
+  window.addEventListener(CAST_EVENT, callback);
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener(CAST_EVENT, callback);
+  };
+}
 export function CastBoard({
   actors,
   starterSlots,
@@ -18,17 +37,23 @@ export function CastBoard({
   const account = useAccount();
   const [downloading, setDownloading] = useState(false);
   const [failed, setFailed] = useState(false);
-  const [slugs, setSlugs] = useState<string[]>(() => {
-    if (typeof window === "undefined") return [];
-    const p = new URLSearchParams(location.search).get("a");
-    const saved = localStorage.getItem("sp-cast");
-    return (p ?? saved ?? "").split(",").filter(Boolean).slice(0, 12);
-  });
-  const cast = useMemo(() => actors.filter((a) => slugs.includes(a.slug)), [actors, slugs]);
+  // The shared link wins over the saved cast; the server renders nothing until the browser reads it.
+  const raw = useSyncExternalStore(subscribeCast, readCast, () => null);
+  const slugs = useMemo(
+    () => (raw === null ? null : raw.split(",").filter(Boolean).slice(0, 12)),
+    [raw],
+  );
+  const cast = useMemo(() => actors.filter((a) => slugs?.includes(a.slug)), [actors, slugs]);
   const names = cast.map((a) => (locale === "zh" ? a.nameCn : a.nameEn)).join(", ");
   function save(next: string[]) {
-    setSlugs(next);
-    localStorage.setItem("sp-cast", next.join(","));
+    try {
+      localStorage.setItem("sp-cast", next.join(","));
+    } catch {}
+    // Once edited, the saved cast is the truth, so drop a shared ?a= from the address.
+    const url = new URL(location.href);
+    url.searchParams.delete("a");
+    history.replaceState(history.state, "", url);
+    window.dispatchEvent(new Event(CAST_EVENT));
   }
   async function copy(value: string) {
     await navigator.clipboard?.writeText(value);
@@ -53,6 +78,16 @@ export function CastBoard({
       setDownloading(false);
     }
   }
+  if (slugs === null) return null;
+  if (cast.length === 0)
+    return (
+      <div className="mt-8">
+        <p className="sp-lead">{locale === "zh" ? "选角单是空的。" : "Your cast is empty."}</p>
+        <TextLink href="/actors" className="mt-6">
+          {locale === "zh" ? "去挑演员" : "Pick actors"}
+        </TextLink>
+      </div>
+    );
   return (
     <div>
       <p className="sp-small mt-8">
@@ -61,14 +96,20 @@ export function CastBoard({
           : `${cast.length} actors · up to 12`}
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
+        <GameButton variant="primary" onClick={() => void downloadPack()} disabled={downloading}>
+          {downloading
+            ? locale === "zh"
+              ? "下载中…"
+              : "Downloading…"
+            : locale === "zh"
+              ? "下载选角包"
+              : "Download cast pack"}
+        </GameButton>
         <GameButton
           variant="secondary"
           onClick={() => void copy(`${location.origin}/cast?a=${slugs.join(",")}`)}
         >
           {locale === "zh" ? "分享选角单" : "Share cast"}
-        </GameButton>
-        <GameButton variant="secondary" onClick={() => void copy(names)}>
-          {locale === "zh" ? "复制名单" : "Copy names"}
         </GameButton>
         <GameButton
           variant="secondary"
@@ -76,64 +117,12 @@ export function CastBoard({
             void copy(`${locale === "zh" ? "署名：" : "Credit: "}${names} · Swim In AI`)
           }
         >
-          {locale === "zh" ? `署名：${names} · Swim In AI` : `Credit: ${names} · Swim In AI`}
+          {locale === "zh" ? "复制署名" : "Copy credit"}
         </GameButton>
         <GameButton variant="ghost" onClick={() => save([])}>
           {locale === "zh" ? "清空" : "Clear cast"}
         </GameButton>
       </div>
-      <section className="mt-8">
-        <h2 className="sp-title">{locale === "zh" ? "合影" : "Lineup"}</h2>
-        <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {cast.map((a) => (
-            <article key={a.slug} className="sp-panel p-4">
-              <div className="aspect-[3/4] overflow-hidden rounded-xl bg-muted">
-                <Image
-                  src={a.portrait ?? "/media/placeholder.svg"}
-                  alt=""
-                  width={240}
-                  height={320}
-                  className="h-full w-full object-contain"
-                />
-              </div>
-              <h3 className="mt-3 font-semibold">{locale === "zh" ? a.nameCn : a.nameEn}</h3>
-              <GameButton
-                className="mt-3"
-                variant="ghost"
-                onClick={() => save(slugs.filter((s) => s !== a.slug))}
-              >
-                {locale === "zh" ? "移出" : "Remove"}
-              </GameButton>
-            </article>
-          ))}
-        </div>
-      </section>
-      {cast.length === 0 ? (
-        <p className="sp-lead mt-8">
-          {locale === "zh"
-            ? "选角单是空的。在演员页或演员列表里点“加入选角单”。"
-            : "Your cast is empty. Add actors from their pages or the roster."}
-        </p>
-      ) : null}
-      <p className="sp-small mt-8 text-muted-foreground">
-        {locale === "zh"
-          ? "每位演员的懒人包，和一份合并好的署名。"
-          : "Each actor’s starter pack, plus one credit line for all."}
-      </p>
-      <GameButton
-        className="mt-4"
-        variant="primary"
-        onClick={() => void downloadPack()}
-        disabled={downloading || cast.length === 0}
-      >
-        {downloading
-          ? locale === "zh"
-            ? "下载中…"
-            : "Downloading…"
-          : locale === "zh"
-            ? "下载选角包"
-            : "Download cast pack"}
-      </GameButton>
       {failed ? (
         <div className="mt-4">
           <GameToast tone="danger">
@@ -141,6 +130,29 @@ export function CastBoard({
           </GameToast>
         </div>
       ) : null}
+      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {cast.map((a) => (
+          <article key={a.slug} className="sp-panel p-4">
+            <div className="aspect-[3/4] overflow-hidden rounded-xl bg-muted">
+              <Image
+                src={a.portrait ?? "/media/placeholder.svg"}
+                alt=""
+                width={240}
+                height={320}
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <h3 className="mt-3 font-semibold">{locale === "zh" ? a.nameCn : a.nameEn}</h3>
+            <GameButton
+              className="mt-3"
+              variant="ghost"
+              onClick={() => save(slugs.filter((s) => s !== a.slug))}
+            >
+              {locale === "zh" ? "移出" : "Remove"}
+            </GameButton>
+          </article>
+        ))}
+      </div>
     </div>
   );
 }
