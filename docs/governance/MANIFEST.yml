@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-08T17:13:47.882Z
+generated_at: 2026-10-09T01:59:41.787Z
 generator_version: doc-gov@0.14.2
 docs_count: 34
 docs:
@@ -86,7 +86,7 @@ docs:
     type: plan
     status: active
     canonical: true
-    last_reviewed: 2026-10-08
+    last_reviewed: 2026-10-09
     pinned: false
   - id: PLAN-SITE-ROUND-7-5-POLISH
     path: docs/plans/active/2026-10-09-site-round-7-5-polish.md

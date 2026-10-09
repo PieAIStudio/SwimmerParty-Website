@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: ai-assisted
 created: 2026-10-08
-last_reviewed: 2026-10-08
+last_reviewed: 2026-10-09
 domain: product
 tags:
   - refactor
@@ -30,7 +30,11 @@ Owner 2026-10-08 的要求：
 - 该删的删，不被过去拖累。老的 API 和外部接口该退役就退役，换成最干净、解耦的做法；
 - **重构几轮都可以**。
 
-**时间**：放在最后，[第五](2026-10-07-site-round-5.md)、[六](2026-10-08-site-round-6.md)、[七轮](2026-10-08-site-round-7.md)都完成并发布之后再开始。这样重构的是最终形态，不会刚整理完又被新功能弄乱。
+**时间**（Owner 2026-10-09 改定）：第五到第 7.5 轮的本地工作全部完成、仓库收拾干净以后开始，**在首次发布之前做**。发布放在第八轮之后，一次完成，这样上线的就是清理干净的版本。
+
+- 第 0 节说的"对外行为"，以本地当前行为为准。
+- 需要云端的事（SwimmerBackend 生产迁移、Blob、部署）都留到发布时做。社区的后端接口在重构时保持清楚的适配层：本地用模拟实现，以后换成真实后端不需要再改结构。
+- 指挥会话会一直往 `media-pack/actors/` 加演员资料、往 `media-pack/library/` 交付素材。第 3.1 节统一演员资料来源时，以 `media-pack/actors/<slug>.json` 为唯一来源，字段保持向后兼容；不动 `library/` 和 `notes/handoffs/`。
 
 **方法**：按 `ai-human-friendly-refactor` 技能（`~/.claude/skills/ai-human-friendly-refactor/`，Codex 侧同名技能）的循环做：
 
