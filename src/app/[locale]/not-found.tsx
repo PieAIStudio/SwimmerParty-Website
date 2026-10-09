@@ -10,9 +10,6 @@ export default async function NotFound() {
         <h1 className="sp-display-lg mt-4">
           {t("notFound.lines.0")} {t("notFound.lines.1")}
         </h1>
-        <p className="sp-lead mx-auto mt-6 max-w-[36rem] text-muted-foreground">
-          {t("notFound.body")}
-        </p>
         <TextLink href="/actors" className="mt-8">
           {t("notFound.cta")}
         </TextLink>

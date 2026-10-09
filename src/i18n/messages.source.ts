@@ -160,66 +160,6 @@ export const messages = {
     en: "See all actors",
     zh: "看全部演员",
   },
-  "home.methodLabel": {
-    en: "Why it works",
-    zh: "为什么靠得住",
-  },
-  "home.methodTitle": {
-    en: "Why they stay the same",
-    zh: "为什么每次都是同一个人",
-  },
-  "home.methodNote": {
-    en: "Each actor comes with reference images, a voice and a character prompt.",
-    zh: "每位演员都有参考图、声音和角色提示词。",
-  },
-  "home.pipeline.0.step": {
-    en: "01",
-    zh: "01",
-  },
-  "home.pipeline.0.title": {
-    en: "Casting brief",
-    zh: "立人设",
-  },
-  "home.pipeline.0.body": {
-    en: "Decide who they are before deciding how they look.",
-    zh: "先想清楚这个人是谁，再决定长什么样。",
-  },
-  "home.pipeline.1.step": {
-    en: "02",
-    zh: "02",
-  },
-  "home.pipeline.1.title": {
-    en: "Character first",
-    zh: "先定人设",
-  },
-  "home.pipeline.1.body": {
-    en: "The look follows the person.",
-    zh: "长相跟着人物走。",
-  },
-  "home.pipeline.2.step": {
-    en: "03",
-    zh: "03",
-  },
-  "home.pipeline.2.title": {
-    en: "Real proportions",
-    zh: "真实比例",
-  },
-  "home.pipeline.2.body": {
-    en: "Set the height and build before styling.",
-    zh: "先定身高和体型，再做造型。",
-  },
-  "home.pipeline.3.step": {
-    en: "04",
-    zh: "04",
-  },
-  "home.pipeline.3.title": {
-    en: "Identity pack",
-    zh: "身份资料包",
-  },
-  "home.pipeline.3.body": {
-    en: "Reference images, expressions, wardrobe and voice stay in sync.",
-    zh: "参考图、表情、服装和声音保持一致。",
-  },
   "home.kitLabel": {
     en: "Open kit",
     zh: "开放物料",
@@ -252,30 +192,6 @@ export const messages = {
     en: "Read the pact",
     zh: "读契约",
   },
-  "home.stanceLabel": {
-    en: "Our stance",
-    zh: "我们的立场",
-  },
-  "home.stanceTitle.0": {
-    en: "Not a",
-    zh: "他们都",
-  },
-  "home.stanceTitle.1": {
-    en: "Real person.",
-    zh: "不是真人",
-  },
-  "home.stanceTitle.2": {
-    en: "On purpose.",
-    zh: "这是故意的",
-  },
-  "home.stanceBody": {
-    en: "Every actor here is animated, and you can tell at a glance. We don’t make photoreal people and we never copy a real one. AI should add new faces to the screen, not take work from the people already on it.",
-    zh: "这里的每位演员都是动画角色，一眼就看得出来。我们不做写实的人，也不复制任何真人。AI 应该给银幕添新面孔，而不是抢已经在银幕上的人的饭碗。",
-  },
-  "home.stanceCta": {
-    en: "Free License · Privacy · Terms",
-    zh: "免费商用 · 隐私 · 条款",
-  },
   "home.worksLabel": {
     en: "Works",
     zh: "作品",
@@ -283,10 +199,6 @@ export const messages = {
   "home.worksTitle": {
     en: "Our films",
     zh: "我们的片子",
-  },
-  "home.worksNote": {
-    en: "Our own films, plus samples anyone can make from the free starter packs.",
-    zh: "我们自己的片子，还有用免费懒人包就能做出来的样片。",
   },
   "home.worksCta": {
     en: "See all works",
@@ -841,12 +753,8 @@ export const messages = {
     zh: "不在",
   },
   "notFound.lines.1": {
-    en: "The roster.",
+    en: "the roster.",
     zh: "名册上",
-  },
-  "notFound.body": {
-    en: "This one is not on the roster.",
-    zh: "这个人不在名册上。",
   },
   "notFound.cta": {
     en: "Back to roster",
@@ -887,10 +795,6 @@ export const messages = {
   "assets.back": {
     en: "Open kit",
     zh: "物料包",
-  },
-  "assets.intro": {
-    en: "Download the references you need.",
-    zh: "下载你需要的参考资料。",
   },
   "assets.progress": {
     en: "Core set {done}/{total}",
@@ -1087,7 +991,7 @@ export const messages = {
   },
   "assets.signIn": {
     en: "Sign in with Swimmer",
-    zh: "用 Swimmer 账号登录",
+    zh: "用泳者账号登录",
   },
   "assets.signInBenefits.0": {
     en: "Starter packs, full packs and custom downloads",
@@ -1106,7 +1010,7 @@ export const messages = {
   },
   "assets.signInBody": {
     en: "One Swimmer account unlocks downloads without waiting.",
-    zh: "登录一个 Swimmer 账号，下载不用等待。",
+    zh: "登录泳者账号，下载不用等待。",
   },
   "assets.notNow": {
     en: "Not now",
@@ -1452,18 +1356,6 @@ export const messages = {
     en: "Voices",
     zh: "段声音",
   },
-  "home.stanceTitle": {
-    en: "Not a real person. On purpose.",
-    zh: "他们不是真人，这是故意的。",
-  },
-  "home.pipeline.4.title": {
-    en: "Versioned",
-    zh: "有版本号",
-  },
-  "home.pipeline.4.body": {
-    en: "Every update has a version and a short note.",
-    zh: "每次更新都有版本号和简短说明。",
-  },
   "home.updatesLabel": {
     en: "Updates",
     zh: "更新",
@@ -1555,10 +1447,6 @@ export const messages = {
   "assets.series.rules": {
     en: "Rules of use",
     zh: "使用规则",
-  },
-  "assets.voiceNote": {
-    en: "A clean voice reference.",
-    zh: "一段干净的参考音。",
   },
   "assets.videoNote": {
     en: "Short clips for reference and editing.",
@@ -1854,8 +1742,8 @@ export const messages = {
   "samples.worksTitle": { en: "Same actor, different tools", zh: "同一个演员，不同工具" },
   "samples.actorTitle": { en: "Same {name}, different tools", zh: "同一个{name}，不同工具" },
   "samples.description": {
-    en: "Made by us from the free starter pack and one prompt, in tools anyone can use.",
-    zh: "我们只用免费懒人包和同一段提示词，在大家都能用的工具里做的。",
+    en: "Made from the free starter pack and one prompt.",
+    zh: "只用免费懒人包和一段提示词做的。",
   },
   "samples.official": { en: "By SWIMMER PARTY", zh: "SWIMMER PARTY 出品" },
   "samples.madeWith": { en: "Made with", zh: "用的工具" },

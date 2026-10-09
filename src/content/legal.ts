@@ -37,13 +37,13 @@ export const PRIVACY = {
       "Your account",
       "When you sign in with your Swimmer account, we receive your account ID and your public display name.",
       "你的账号",
-      "用 Swimmer 账号登录后，我们会收到你的账号 ID 和公开显示名。",
+      "用泳者账号登录后，我们会收到你的账号 ID 和公开显示名。",
     ],
     [
       "What you post",
-      "Files, titles, descriptions and recipes you post are public in Works, with your display name. You can delete any post at any time.",
+      "Links, titles, descriptions and recipes you post are public, with your display name. You can delete any post at any time.",
       "你发布的内容",
-      "你发布的文件、标题、简介和做法，会带着你的显示名公开出现在“作品”里。你随时可以删除。",
+      "你发布的链接、标题、简介和做法，会带着你的显示名公开展示。你随时可以删除。",
     ],
     [
       "Cookies",
@@ -53,21 +53,21 @@ export const PRIVACY = {
     ],
     [
       "Where it’s stored",
-      "The site runs on Vercel. Accounts, posts, likes and votes are stored in our Supabase database. Files are stored with Vercel Blob. Servers are in the United States.",
+      "The site runs on Vercel. Accounts, posts, likes and votes are stored in our Supabase database. Actor files are stored with Vercel Blob. Servers are in the United States.",
       "存在哪里",
-      "网站运行在 Vercel 上。账号、作品、点赞和投票存在我们的 Supabase 数据库里，文件存在 Vercel Blob。服务器在美国。",
+      "网站运行在 Vercel 上。账号、作品、点赞和投票存在我们的 Supabase 数据库里，演员素材存在 Vercel Blob。服务器在美国。",
     ],
   ],
 } as const;
 export const TERMS = {
   title: { en: "Terms of Use", zh: "使用条款" },
   description: {
-    en: "The rules for using SWIMMER PARTY, its actors and Works.",
-    zh: "使用 SWIMMER PARTY、演员和“作品”区的规则。",
+    en: "The rules for using SWIMMER PARTY and its actors.",
+    zh: "使用 SWIMMER PARTY 和演员的规则。",
   },
   intro: {
-    en: "Plain words, because you should be able to read them. If something here conflicts with the law where you live, the law wins.",
-    zh: "用大白话写，因为你应该看得懂。如果这里和你当地的法律冲突，以法律为准。",
+    en: "If something here conflicts with the law where you live, the law wins.",
+    zh: "如果这里和你当地的法律冲突，以法律为准。",
   },
   rows: [
     [
@@ -86,7 +86,7 @@ export const TERMS = {
       "Your account",
       "Keep your Swimmer account secure. You’re responsible for what happens under it.",
       "你的账号",
-      "保管好你的 Swimmer 账号，账号下发生的事由你负责。",
+      "保管好你的泳者账号，账号下发生的事由你负责。",
     ],
     [
       "What you post",

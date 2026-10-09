@@ -48,7 +48,7 @@ export default async function WorksPage({ params }: Props) {
               </div>
               <h2 className="sp-subtitle mt-5">{work.title[locale]}</h2>
               <p className="sp-small mt-2 text-muted-foreground">{work.format[locale]}</p>
-              <p className="mt-6">{work.logline[locale]}</p>
+              {work.logline ? <p className="mt-6">{work.logline[locale]}</p> : null}
               <p className="sp-small mt-6">
                 <span className="text-muted-foreground">{t("works.starring")} </span>
                 {work.cast.map((credit, index) => {

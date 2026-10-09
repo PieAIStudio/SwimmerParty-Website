@@ -24,8 +24,8 @@ export const LICENSE = {
     {
       en: "Your work stays yours",
       zh: "作品永远是你的",
-      bodyEn: "What you make is yours. If you post it in Works, we always show who made it.",
-      bodyZh: "你做的东西归你。发到“作品”里，我们永远写明是谁做的。",
+      bodyEn: "What you make is yours. Anything you post here always shows who made it.",
+      bodyZh: "你做的东西归你。你在这里发布的作品，我们永远写明是谁做的。",
     },
     {
       en: "We don’t sell or train on your work",
@@ -235,9 +235,9 @@ export const LICENSE_FAQ = [
   ],
   [
     "Do I have to tell you?",
-    "No. But we’d love to see it. Post it in Works.",
+    "No. But we’d love to see it.",
     "要告诉你们吗？",
-    "不用。但我们很想看，发到“作品”里吧。",
+    "不用。但我们很想看。",
   ],
   [
     "Can someone else use the same actor?",

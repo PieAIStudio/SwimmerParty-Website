@@ -13,7 +13,7 @@ export type Work = {
   status: WorkStatus;
   format: L;
   cast: { actor: string; role?: WorkRole }[];
-  logline: L;
+  logline?: L;
   episodes?: { id: string; title: L; status: WorkStatus }[];
 };
 export const WORKS: Work[] = [
@@ -76,9 +76,5 @@ export const WORKS: Work[] = [
     status: "development",
     format: { en: "AI sitcom with superpowers", zh: "带超能力的 AI 情景喜剧" },
     cast: [{ actor: "tang-yunqiu" }, { actor: "misha-luo" }],
-    logline: {
-      en: "An AI sitcom with superpowers.",
-      zh: "一部带超能力的 AI 情景喜剧。",
-    },
   },
 ];

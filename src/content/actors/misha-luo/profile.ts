@@ -32,8 +32,8 @@ export const profile: Actor = {
   version: "1.1.0",
   versionDate: "2026-10-08",
   versionNote: {
-    en: "Voice added: 7 clips. The self-introduction doubles as a voice reference.",
-    zh: "加入声音：7 段。自我介绍可以直接当参考音用。",
+    en: "Voice added: 7 clips.",
+    zh: "加入声音：7 段。",
   },
   versionHistory: [
     {

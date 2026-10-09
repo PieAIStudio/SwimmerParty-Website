@@ -95,7 +95,6 @@ export default async function AssetsPage({ params }: Props) {
               </div>
             </div>
           </div>
-          <p className="sp-lead mt-6 max-w-3xl text-muted-foreground">{t("assets.intro")}</p>
         </header>
         <div className="sp-library-toolbar sticky top-16 z-20 flex min-h-16 items-center gap-4 border-b border-border py-2">
           <nav

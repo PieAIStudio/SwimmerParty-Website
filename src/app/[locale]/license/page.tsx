@@ -51,7 +51,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
       </h1>
       <p className="sp-lead mt-6 max-w-3xl">{l(LICENSE.intro, locale)}</p>
       <section id="credit" className="mt-16 scroll-mt-24">
-        <h2 className="sp-display-md">{locale === "zh" ? "怎么署名" : "How to credit"}</h2>
+        <h2 className="sp-title">{locale === "zh" ? "怎么署名" : "How to credit"}</h2>
         <p className="mt-3 max-w-2xl">
           {locale === "zh"
             ? "下面任选一种都算。“Swim In AI”这几个字始终写英文，前后的话用什么语言都行。"
@@ -77,7 +77,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-display-md">{locale === "zh" ? "放在哪" : "Where it goes"}</h2>
+        <h2 className="sp-title">{locale === "zh" ? "放在哪" : "Where it goes"}</h2>
         <div className="mt-6 overflow-x-auto sp-panel">
           <table className="w-full min-w-[720px] text-left text-sm">
             <thead>
@@ -116,7 +116,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-display-md">{locale === "zh" ? "署名标" : "Credit mark"}</h2>
+        <h2 className="sp-title">{locale === "zh" ? "署名标" : "Credit mark"}</h2>
         <p className="mt-3">
           {locale === "zh"
             ? "纯白和纯黑两种，透明背景，直接拖进剪辑或修图软件就能用。"
@@ -154,7 +154,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-display-md">{locale === "zh" ? "可以" : "You can"}</h2>
+        <h2 className="sp-title">{locale === "zh" ? "可以" : "You can"}</h2>
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           {LICENSE_RULES.can.map(([enTitle, enBody, zhTitle, zhBody]) => (
             <article key={enTitle} className="sp-panel p-5">
@@ -165,7 +165,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-display-md">{locale === "zh" ? "不可以" : "You can’t"}</h2>
+        <h2 className="sp-title">{locale === "zh" ? "不可以" : "You can’t"}</h2>
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           {LICENSE_RULES.cannot.map(([enTitle, enBody, zhTitle, zhBody]) => (
             <article key={enTitle} className="sp-panel p-5">
@@ -176,7 +176,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-display-md">{locale === "zh" ? "常见问题" : "Questions people ask"}</h2>
+        <h2 className="sp-title">{locale === "zh" ? "常见问题" : "Questions people ask"}</h2>
         <div className="mt-6 grid gap-3">
           {LICENSE_FAQ.map(([enQ, enA, zhQ, zhA]) => (
             <details key={enQ} className="sp-panel p-4">
@@ -187,12 +187,7 @@ export default async function LicensePage({ params }: { params: Promise<{ locale
         </div>
       </section>
       <section className="mt-16">
-        <h2 className="sp-display-md">{locale === "zh" ? "我们的承诺" : "Our promises"}</h2>
-        <p className="mt-3">
-          {locale === "zh"
-            ? "规矩是双向的。这是我们对你的承诺。"
-            : "Rules go both ways. Here’s what we promise you."}
-        </p>
+        <h2 className="sp-title">{locale === "zh" ? "我们的承诺" : "Our promises"}</h2>
         <div className="mt-6 space-y-4">
           {LICENSE.promises.map((x) => (
             <article key={x.en} className="sp-panel p-5">

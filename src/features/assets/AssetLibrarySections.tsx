@@ -126,9 +126,9 @@ export async function AssetLibrarySections({
       })}
       <section id="series-voice" className="sp-section scroll-mt-40">
         <h2 className="sp-title">{t("assets.series.voice")}</h2>
-        <p className="sp-small mt-3 max-w-2xl text-muted-foreground">
-          {isNewFace ? t("assets.newFaceNote") : t("assets.voiceNote")}
-        </p>
+        {isNewFace ? (
+          <p className="sp-small mt-3 max-w-2xl text-muted-foreground">{t("assets.newFaceNote")}</p>
+        ) : null}
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {slotsOf("voice")
             .filter(

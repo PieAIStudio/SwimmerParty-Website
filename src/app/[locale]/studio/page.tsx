@@ -81,11 +81,6 @@ export default async function StudioPage({ params }: Props) {
             </article>
           ))}
         </div>
-        <p className="mt-8 text-muted-foreground">
-          {locale === "zh"
-            ? "只是想用某位演员，哪怕是赚钱的项目？不用找我们，直接免费用，署上 Swim In AI。"
-            : "Just want to use an actor, even for paid work? You don’t need us. It’s free. Credit Swim In AI."}
-        </p>
         <TextLink href="mailto:pieai@hotmail.com" className="mt-6">
           {locale === "zh" ? "找我们合作" : "Work with us"}
         </TextLink>

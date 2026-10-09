@@ -100,14 +100,6 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
         </TextLink>
       </section>
       <section className="sp-section sp-panel bg-card p-7 lg:p-12">
-        <p className="sp-label text-muted-foreground">{t("home.stanceLabel")}</p>
-        <h2 className="sp-display-lg mt-4">{t("home.stanceTitle")}</h2>
-        <p className="sp-lead mt-6 max-w-[48rem] text-muted-foreground">{t("home.stanceBody")}</p>
-        <TextLink href="/license" className="mt-6">
-          {locale === "zh" ? "我们的承诺" : "Our promises"}
-        </TextLink>
-      </section>
-      <section className="sp-section sp-panel bg-card p-7 lg:p-12">
         <SectionHead
           label={locale === "zh" ? "商用也免费" : "Free, even commercially"}
           title={
@@ -117,31 +109,13 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
           }
           note={
             locale === "zh"
-              ? "电影、广告、YouTube、游戏、漫画、周边，都行。不收钱，不填表，不用问。在开头和片尾字幕里放一行小字“Swim In AI”，就这么简单。"
-              : "Films, ads, YouTube, games, comics, merch. No fee, no forms, no asking. Put “Swim In AI” in small text at the start and in the credits. That’s the whole deal."
+              ? "不收钱，不填表，不用问。署上“Swim In AI”就行。"
+              : "No fee, no forms, no asking. Just credit “Swim In AI”."
           }
         />
         <TextLink href="/license" className="mt-6">
           {locale === "zh" ? "看怎么署名" : "See how to credit"}
         </TextLink>
-      </section>
-      <section className="sp-section">
-        <SectionHead
-          label={t("home.methodLabel")}
-          title={t("home.methodTitle")}
-          note={t("home.methodNote")}
-        />
-        <div className="mt-8 grid gap-6 lg:grid-cols-4">
-          {[1, 2, 3, 4].map((i) => (
-            <article key={i}>
-              <p className="sp-code">{String(i).padStart(2, "0")}</p>
-              <h3 className="sp-subtitle mt-4">{msg(`home.pipeline.${i}.title`)}</h3>
-              <p className="sp-small mt-3 text-muted-foreground">
-                {msg(`home.pipeline.${i}.body`)}
-              </p>
-            </article>
-          ))}
-        </div>
       </section>
       <section className="sp-section">
         <SectionHead label={t("home.updatesLabel")} title={t("home.updatesTitle")} />
@@ -164,11 +138,7 @@ export default async function Home({ params }: { params: Promise<{ locale: AppLo
         </div>
       </section>
       <section className="sp-section">
-        <SectionHead
-          label={t("home.worksLabel")}
-          title={t("home.worksTitle")}
-          note={t("home.worksNote")}
-        />
+        <SectionHead label={t("home.worksLabel")} title={t("home.worksTitle")} />
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {WORKS.map((work) => (
             <Link
