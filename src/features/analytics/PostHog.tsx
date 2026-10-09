@@ -4,8 +4,9 @@ import { usePathname } from "next/navigation";
 import type { PostHog as PostHogClient } from "posthog-js";
 import { normalizeEvent, pageKind } from "./events";
 
-// Matches the privacy page: no cookies (memory persistence), no autocapture, no
-// session recording, and only allow-listed events. Off when no key is configured.
+// Matches the privacy page: no cookies (memory persistence), no session recording and
+// no free-text properties. Extra collectors follow the shared PostHog project settings.
+// Off when no key is configured.
 const PRIVACY_OPTIONS = {
   persistence: "memory",
   autocapture: false,

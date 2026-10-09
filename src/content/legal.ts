@@ -23,9 +23,9 @@ export const PRIVACY = {
     ],
     [
       "Counting visits",
-      "We count visits and clicks with PostHog, without cookies, to learn what’s useful: which actors people open, what gets downloaded, which voices get played. We never send your posts, your email or what you type.",
+      "We use PostHog, without cookies, to see how the site is used. We don’t collect sensitive information such as your email, your posts or what you type.",
       "访问统计",
-      "我们用 PostHog 统计访问和点击，不用 cookie，只为知道什么有用：大家看了哪些演员、下载了什么、听了哪些声音。不会发送你的作品、邮箱或你输入的文字。",
+      "我们用 PostHog 了解网站的使用情况，不用 cookie。不采集敏感信息，比如你的邮箱、作品或输入的文字。",
     ],
     [
       "Download limit",
@@ -47,9 +47,9 @@ export const PRIVACY = {
     ],
     [
       "Cookies",
-      "Only the one the site needs: one cookie to keep you signed in.",
+      "Only what the site needs: one to keep you signed in and one to remember your language.",
       "Cookie",
-      "只用网站必需的一个 cookie：保持登录。",
+      "只用网站必需的 cookie：一个保持登录，一个记住语言。",
     ],
     [
       "Where it’s stored",
