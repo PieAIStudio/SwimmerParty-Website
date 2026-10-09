@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       "./src/content/actors/*/assets.json",
       // AuthKit's phone surface is an externalized ESM dependency under pnpm.
       // Keep its parser beside the API function for production SSO routes.
-      "./node_modules/.pnpm/libphonenumber-js@1.13.14/node_modules/libphonenumber-js/**",
+      "./node_modules/.pnpm/libphonenumber-js@*/node_modules/libphonenumber-js/**",
     ],
   },
   // Local originals and test evidence are never deployment artifacts.

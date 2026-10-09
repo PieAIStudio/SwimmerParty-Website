@@ -2,6 +2,7 @@
 import { useSiteI18n } from "@/i18n/client";
 import { useMemo, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
+import { Mannequin } from "@/site/Mannequin";
 import type { Actor } from "@/content/actors";
 import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { Link } from "@/i18n/navigation";
@@ -122,13 +123,17 @@ export function CastBoard({
         {cast.map((a) => (
           <article key={a.slug} className="sp-panel p-4">
             <div className="aspect-[3/4] overflow-hidden rounded-xl bg-muted">
-              <Image
-                src={a.portrait ?? "/media/placeholder.svg"}
-                alt=""
-                width={240}
-                height={320}
-                className="h-full w-full object-contain"
-              />
+              {a.portrait ? (
+                <Image
+                  src={a.portrait}
+                  alt=""
+                  width={240}
+                  height={320}
+                  className="h-full w-full object-contain"
+                />
+              ) : (
+                <Mannequin className="h-full w-full" />
+              )}
             </div>
             <h3 className="mt-3 font-semibold">{locale === "zh" ? a.nameCn : a.nameEn}</h3>
             <GameButton
