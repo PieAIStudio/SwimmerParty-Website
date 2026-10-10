@@ -43,4 +43,6 @@ related: []
 
 2026-10-10 统一账号面板：同日第四次上线 `dpl_7oFnTJAxsE9LygGXLRnXUnBo95Gg`（提交 b80e289；回滚目标 `dpl_722szQPi2jK4UC8yDWhvVzJQ5jgn`）。页签为“本站 / 全部产品 / 账号”（英文 Site / Products / Account），一行放下。登录后的头像与名字由 UIKit 3.1.0 `GameAccountMenu` 显示；“全部产品”来自账号中心 `products.json`（5 分钟缓存，失败即无产品页签）；“怎么用”的“?”提示改为换行并靠右，手机不显示；处理中的按钮改用 UIKit `pending`。名字目前取邮箱本地名、头像为首字母：邮箱验证码登录本来没有名字和头像，等账号中心提供“设置昵称和头像”时，再让会话接口改用 AuthKit 0.9 的资料字段。决定与边界见 [decisions.md](../decisions.md) 的同日条目；真实账号中心登录与产品列表由 Owner 验收。验证记录：`pnpm check`（101 项工具测试、442 个文案键）、全量 Playwright 44 项（含新增 9 项账号面板测试，全部通过）、`pnpm docs:check` 与 `swimmer-ui-check` 通过；截图在本机 `.devspace-reports/account-menu/`，不入库。
 
+2026-10-10 演员页“?”帮助说明卡：同日第五次上线 `dpl_2c196WCgd566ysc9x2YzuBdqdphP`（提交 e8e0dfb；回滚目标 `dpl_7oFnTJAxsE9LygGXLRnXUnBo95Gg`）。“?”改用 UIKit 3.2.1 `GameHelpCard`：懒人包 / 设定图 / 选角单三个页签，各配一段循环演示（`public/help/<locale>/`，由 `tools/help-clips` 复录），底部链接到“怎么用”。同批：领取懒人包成功后显示“已开始下载”，英文选角单数量改为不随单复数变化的写法，英文设定图页预设按钮在 1024 宽不再重叠。UIKit 3.2.1 修了服务端传入触发器时个别演员页渲染失败的问题，并让页签保持一行。验证记录：`pnpm verify`（108 项工具测试、52 项浏览器测试）、docs:check、swimmer-ui-check 通过；候选冒烟中英演员页（含曾失败的 zhang-qiang、chen-wei、misha-luo）、设定图页、怎么用、选角单与演示文件均 200。截图在本机 `.devspace-reports/help-card/`，不入库。
+
 并行：`media-pack/` 里包满、雷乐、范一鸣及新面孔比例修正仍在制作，属于其他会话，不在这里接管。
