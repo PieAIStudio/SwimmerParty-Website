@@ -20,22 +20,23 @@ related:
 
 按业务找实现，按事实找唯一源。现行视觉见 [DESIGN.md](../../DESIGN.md)，取舍理由见 [decisions.md](decisions.md)。
 
-| 目录                                      | 职责与入口                                                                                             |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| src/app                                   | 页面、metadata、sitemap、重定向的薄组合层；不存业务副本                                                |
-| src/pages/api                             | URL 保持不变的 Node API 薄转发入口                                                                     |
-| src/features/actors                       | 名册、筛选、档案；index 是页面组合入口，queries 是纯查询入口                                           |
-| src/features/assets                       | 资产浏览、选图、语音、签名下载、ZIP/拼图；index、client、queries、contracts、server/index 分别限定能力 |
-| src/features/account                      | 浏览器账号状态；server/index 调用逐请求的 AuthKit                                                      |
-| src/features/community                    | UI 与 mock 领域存储分离；server/index 为 API。非 mock 环境在访问账号/存储前统一返回 503                |
-| src/features/home、studio、license、works | 各自页面视图，路由只交给它们所需数据                                                                   |
-| src/features/cast、samples、analytics     | 选角单与选角包、官方样片、允许的产品事件                                                               |
-| src/site                                  | 全站布局和视觉原语；通过 props 组合业务，不反向导入 feature                                            |
-| src/content                               | 纯产品数据；演员和样片来自生产资料投影，不含查询函数                                                   |
-| src/contracts                             | Zod 边界及其推导类型；不依赖产品实现                                                                   |
-| src/i18n                                  | 成对文案源、生成契约、ICU 与语言路由                                                                   |
-| src/lib、src/config                       | 无业务知识的浏览器/服务器工具；运行模式唯一入口 config/server.ts                                       |
-| tools                                     | 按 assets / site / release / test 分组；完整归属见 [工具清单](../../tools/README.md)                   |
+| 目录                                             | 职责与入口                                                                                                    |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| src/app                                          | 页面、metadata、sitemap、重定向的薄组合层；不存业务副本                                                       |
+| src/pages/api                                    | URL 保持不变的 Node API 薄转发入口                                                                            |
+| src/features/actors                              | 名册、筛选、档案；index 是页面组合入口，queries 是纯查询入口                                                  |
+| src/features/assets                              | 资产浏览、选图、语音、签名下载、ZIP/拼图；index、client、queries、contracts、server/index 分别限定能力        |
+| src/features/account                             | 浏览器账号状态；server/index 调用逐请求的 AuthKit                                                             |
+| src/features/community                           | UI 与 mock 领域存储分离；server/index 为 API。非 mock 环境在访问账号/存储前统一返回 503                       |
+| src/features/home、studio、license、works、guide | 各自页面视图，路由只交给它们所需数据                                                                          |
+| src/features/sheet                               | 角色设定图页；预设、挑图和网址状态是纯函数，拼图与签名下载复用 assets 的 client 入口，上限在 assets/contracts |
+| src/features/cast、samples、analytics            | 选角单与选角包、官方样片、允许的产品事件                                                                      |
+| src/site                                         | 全站布局和视觉原语；通过 props 组合业务，不反向导入 feature                                                   |
+| src/content                                      | 纯产品数据；演员和样片来自生产资料投影，不含查询函数                                                          |
+| src/contracts                                    | Zod 边界及其推导类型；不依赖产品实现                                                                          |
+| src/i18n                                         | 成对文案源、生成契约、ICU 与语言路由                                                                          |
+| src/lib、src/config                              | 无业务知识的浏览器/服务器工具；运行模式唯一入口 config/server.ts                                              |
+| tools                                            | 按 assets / site / release / test 分组；完整归属见 [工具清单](../../tools/README.md)                          |
 
 功能的公开导出文件叫 `index.ts`（不是 index.tsx）；具体组件名和文件在各功能 README。依赖是路由 → feature/site → content、contracts、i18n、lib。跨 feature 只用实际需要的公开入口；同 feature 内直接导入实现。纯查询和合同入口是有意保留的例外：避免浏览器和无 Next 的 Node 测试误载 server-only barrel，不为凑统一形式添加空入口。
 
