@@ -10,6 +10,7 @@ import { assetFilename, MAX_BUNDLE_ITEMS, SignInRequired } from "./downloads.ts"
 import { zipBlob } from "../../lib/browser-files.ts";
 import { loadSignedImages } from "./signed-images.ts";
 import { selectModelAssets, veoPlan } from "./export-plan.ts";
+import { isFullBodySeries } from "./contracts.ts";
 import { createSheetPainter, sheetBlob, type SheetOptions } from "./render-sheet.ts";
 
 export type ExportFormat = "zip" | "sheet" | "model";
@@ -19,7 +20,8 @@ export type ExportRequest = {
   selected: AssetItem[];
   format: ExportFormat;
   target: ExportTarget;
-  sheet: SheetOptions;
+  /** Only the one-sheet format reads these; originals and model packs ignore them. */
+  sheet?: SheetOptions;
   locale: "zh" | "en";
   labels: Record<string, { en: string; zh: string }>;
   signal: AbortSignal;
@@ -54,7 +56,7 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
   async function sheet(set: AssetItem[], options: SheetOptions): Promise<Blob> {
     const painter = createSheetPainter(
       set.map((item) => ({
-        fullBody: ["turnaround", "wardrobe", "pose"].includes(item.series),
+        fullBody: isFullBodySeries(item.series),
         labels: input.labels[item.slot] ?? { en: item.key, zh: item.key },
       })),
       options,
@@ -80,7 +82,10 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
     }
   }
   if (input.format === "sheet")
-    return { blob: await sheet(items, input.sheet), filename: `${actor.slug}_sheet.png` };
+    return {
+      blob: await sheet(items, input.sheet ?? { labels: "none", background: "grey" }),
+      filename: `${actor.slug}_sheet.png`,
+    };
   const files: Record<string, Uint8Array> = {};
   const descriptions: string[] = [];
   async function add(filename: string, blob: Blob, description: string) {
@@ -130,7 +135,7 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
 }
 
 /** The current License v1.0, the same terms the license page and starter pack show. */
-function licenseText(locale: "en" | "zh"): string {
+export function licenseText(locale: "en" | "zh"): string {
   const zh = locale === "zh";
   const rules = (list: readonly (readonly string[])[]) =>
     list

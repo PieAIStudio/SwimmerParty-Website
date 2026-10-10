@@ -476,8 +476,8 @@ export const messages = {
     zh: "退出",
   },
   "assets.dialogTitle": {
-    en: "Character sheet",
-    zh: "角色设定图",
+    en: "Download selected",
+    zh: "下载所选",
   },
   "assets.format.zip": {
     en: "Originals",
@@ -486,14 +486,6 @@ export const messages = {
   "assets.format.zipNote": {
     en: "One transparent PNG per image, with the profile and terms of use.",
     zh: "每张一个透明背景 PNG，附角色资料和使用说明。",
-  },
-  "assets.format.sheet": {
-    en: "One sheet",
-    zh: "拼成一张",
-  },
-  "assets.format.sheetNote": {
-    en: "For tools that take a single reference image.",
-    zh: "给只收一张参考图的工具。",
   },
   "assets.format.model": {
     en: "For a model",
@@ -1261,4 +1253,208 @@ export const messages = {
   "community.kind.game": { en: "Game · 游戏", zh: "Game · 游戏" },
   "community.actorSlugLabel": { en: "Actor slug", zh: "Actor slug" },
   "common.breadcrumbFallback": { en: "当前位置", zh: "当前位置" },
+  "sheet.action": {
+    en: "Character sheet",
+    zh: "做设定图",
+  },
+  "sheet.crumb": {
+    en: "Character sheet",
+    zh: "设定图",
+  },
+  "sheet.title": {
+    en: "{name} · Character sheet",
+    zh: "{name} · 角色设定图",
+  },
+  "sheet.metaTitle": {
+    en: "{name} character sheet",
+    zh: "{name} 的角色设定图",
+  },
+  "sheet.lead": {
+    en: "Pick a few images and combine them into one reference, so an AI tool knows {name} at a glance.",
+    zh: "挑几张图，拼成一张参考图，AI 工具一次就能认出{name}。",
+  },
+  "sheet.pick": {
+    en: "Images",
+    zh: "选图",
+  },
+  "sheet.preset.recommended": {
+    en: "Recommended",
+    zh: "推荐",
+  },
+  "sheet.preset.turnaround": {
+    en: "Turnaround",
+    zh: "转面",
+  },
+  "sheet.preset.expressions": {
+    en: "Expressions",
+    zh: "表情",
+  },
+  "sheet.preset.wardrobe": {
+    en: "Wardrobe",
+    zh: "服装",
+  },
+  "sheet.preset.custom": {
+    en: "Custom",
+    zh: "自选",
+  },
+  "sheet.count": {
+    en: "{count} selected, up to {max}",
+    zh: "已选 {count} 张，最多 {max} 张",
+  },
+  "sheet.limit": {
+    en: "One sheet holds up to 16 images, at most 8 of them full-body.",
+    zh: "一张图最多放 16 张，其中全身最多 8 张。",
+  },
+  "sheet.style": {
+    en: "Style",
+    zh: "样式",
+  },
+  "sheet.extras": {
+    en: "Include",
+    zh: "一起打包",
+  },
+  "sheet.withVoice": {
+    en: "Voice ({count} clips)",
+    zh: "声音（{count} 段）",
+  },
+  "sheet.withVideo": {
+    en: "Video ({count} clips)",
+    zh: "视频（{count} 段）",
+  },
+  "sheet.withPrompt": {
+    en: "Prompt and profile",
+    zh: "提示词和角色资料",
+  },
+  "sheet.download": {
+    en: "Download sheet",
+    zh: "下载设定图",
+  },
+  "sheet.downloadZip": {
+    en: "Download sheet and files",
+    zh: "下载设定图和附件",
+  },
+  "assets.makeSheet": {
+    en: "Make a character sheet from these",
+    zh: "用所选做设定图",
+  },
+  "guide.helpLabel": {
+    en: "How it works",
+    zh: "怎么用",
+  },
+  "guide.tip": {
+    en: "Starter pack: two key images and a prompt, ready to shoot. Character sheet: combine the images you pick into one reference, with voice and video if you like. Cast: put several actors together and download them at once. Click for the full guide.",
+    zh: "懒人包：两张关键图加提示词，下载就能开拍。设定图：挑几张图拼成一张参考图，可附声音和视频。选角单：几位演员放一起，一次下载。点问号看详细说明。",
+  },
+  "guide.metaTitle": {
+    en: "How it works",
+    zh: "怎么用",
+  },
+  "guide.footer": {
+    en: "How it works",
+    zh: "怎么用",
+  },
+  "guide.title": {
+    en: "Three ways to get an actor",
+    zh: "三种拿法，挑一种就行",
+  },
+  "guide.lead": {
+    en: "Every actor is free for commercial use. Not sure which to pick? Start with the starter pack.",
+    zh: "每位演员都可以免费商用。不确定选哪种，就先领懒人包。",
+  },
+  "guide.starter.title": {
+    en: "Starter pack · fastest start",
+    zh: "懒人包 · 最快开拍",
+  },
+  "guide.starter.for": {
+    en: "For: your first try, when you want a result now.",
+    zh: "适合：第一次用，想马上做出东西。",
+  },
+  "guide.starter.has": {
+    en: "Inside: full-body front, face front, the character prompt and a short guide.",
+    zh: "里面有：全身正面、脸部正面、角色提示词和使用说明。",
+  },
+  "guide.starter.where": {
+    en: 'Where: "Get starter pack" on any actor page.',
+    zh: "在哪：演员页的「领取懒人包」。",
+  },
+  "guide.sheet.title": {
+    en: "Character sheet · one image says it all",
+    zh: "设定图 · 一张图说清楚",
+  },
+  "guide.sheet.for": {
+    en: "For: tools that take one reference image, or when you want to choose angles, expressions and outfits.",
+    zh: "适合：工具只收一张参考图，或者你想自己挑角度、表情和服装。",
+  },
+  "guide.sheet.has": {
+    en: "Inside: one 4K image made from your picks, with voice, video and prompt if you like.",
+    zh: "里面有：你挑的图拼成的一张 4K 图，可以附上声音、视频和提示词。",
+  },
+  "guide.sheet.where": {
+    en: 'Where: "Character sheet" on any actor page.',
+    zh: "在哪：演员页的「做设定图」。",
+  },
+  "guide.cast.title": {
+    en: "Cast · several actors, one story",
+    zh: "选角单 · 一部戏好几位演员",
+  },
+  "guide.cast.for": {
+    en: "For: stories that need more than one actor.",
+    zh: "适合：一个故事里要用好几位演员。",
+  },
+  "guide.cast.has": {
+    en: "Inside: every actor's starter pack in one file, with the credit line.",
+    zh: "里面有：每位演员的懒人包，合成一个文件，附署名。",
+  },
+  "guide.cast.where": {
+    en: 'Where: "Add to cast" on actor pages, then download from "Your cast".',
+    zh: "在哪：演员页点「加入选角单」，再到「我的选角单」一次下载。",
+  },
+  "guide.more.title": {
+    en: "Need something else",
+    zh: "还想要别的",
+  },
+  "guide.more.single": {
+    en: "One image: open any image and download it. No account needed; wait 30 seconds between images.",
+    zh: "单张：点开任意一张图就能下载。不登录也能下，每两张之间等 30 秒。",
+  },
+  "guide.more.selected": {
+    en: 'Your own selection: tick images in an actor\'s library and choose "Download selected" — as originals, or packed for GPT Image, Veo or Seedance.',
+    zh: "自选打包：在演员页的素材库里勾选图片，点「下载所选」，可以原图打包，也可以按 GPT Image、Veo、Seedance 的要求打包。",
+  },
+  "guide.after.title": {
+    en: "After you download",
+    zh: "下载以后",
+  },
+  "guide.after.1": {
+    en: "Upload the images to your image or video tool.",
+    zh: "把图片上传到你常用的图像或视频工具。",
+  },
+  "guide.after.2": {
+    en: "Paste the character prompt.",
+    zh: "粘贴角色提示词。",
+  },
+  "guide.after.3": {
+    en: "Describe your scene.",
+    zh: "写你想要的场景。",
+  },
+  "guide.account.title": {
+    en: "Do I need an account",
+    zh: "要登录吗",
+  },
+  "guide.account.body": {
+    en: "Not to browse, preview or download single images. Packs need a free Swimmer account — sign in with your email and skip the wait.",
+    zh: "浏览、预览和单张下载都不用。打包下载需要泳者账号，免费，用邮箱就能登录，登录后下载不用等。",
+  },
+  "guide.license.title": {
+    en: "Can I use it commercially",
+    zh: "能商用吗",
+  },
+  "guide.license.body": {
+    en: 'Yes, free for commercial use. The only condition is the credit "Actor name · Swim In AI".',
+    zh: "可以，免费商用。唯一的要求是署名「演员名 · Swim In AI」。",
+  },
+  "guide.browse": {
+    en: "Browse actors",
+    zh: "去挑演员",
+  },
 } as const;

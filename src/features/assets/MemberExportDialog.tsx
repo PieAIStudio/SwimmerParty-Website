@@ -4,31 +4,20 @@ import { useEffect, useRef, useState, type RefObject } from "react";
 import type { Actor } from "@/content/actors";
 import type { ActorAssets, AssetItem } from "@/features/assets/asset-types";
 import { EXPORT_TARGETS, type ExportTarget } from "@/content/tools";
-import { slotLabelKey } from "@/features/assets/asset-series";
 import { useSiteI18n, useSiteLocale } from "@/i18n/client";
-import { siteI18n } from "@/i18n/catalog";
 import { exportPack, SignInRequired, type ExportFormat } from "@/features/assets/export-packs";
-import {
-  renderSheet,
-  type SheetBackground,
-  type SheetLabels,
-  type SheetImage,
-} from "@/features/assets/render-sheet";
-import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { veoPlan } from "@/features/assets/export-plan";
+import { sheetHref } from "@/features/assets/contracts";
+import { labelsFor } from "@/features/assets/item-labels";
+import { saveBlob } from "@/lib/browser-files";
+import { TextLink } from "@/site/TextLink";
 import { GameButton, GameSegmentedControl, GameSelect, GameToast } from "@pieai/swimmer-ui-kit";
 import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { useAccount } from "@/features/account";
 
-const translators = { en: siteI18n.translator("en"), zh: siteI18n.translator("zh-CN") };
-function labelsFor(item: AssetItem, assets: ActorAssets) {
-  const extra = assets.looks
-    .find((look) => look.id === item.look)
-    ?.extras.find((entry) => entry.key === item.key);
-  if (extra) return { en: extra.label.en, zh: extra.label.zh };
-  const key = slotLabelKey(item.series, item.key);
-  return { en: translators.en.t(key), zh: translators.zh.t(key) };
-}
+// The one-sheet format lives on its own page; this dialog keeps originals and model packs.
+type DialogFormat = Exclude<ExportFormat, "sheet">;
+
 function fileSize(bytes: number) {
   if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`;
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
@@ -53,54 +42,15 @@ export function MemberExportDialog({
   const { t } = useSiteI18n();
   const locale = useSiteLocale();
   const account = useAccount();
-  const [format, setFormat] = useState<ExportFormat>("zip");
-  const [labels, setLabels] = useState<SheetLabels>("none");
-  const [background, setBackground] = useState<SheetBackground>("grey");
+  const [format, setFormat] = useState<DialogFormat>("zip");
   const [target, setTarget] = useState<ExportTarget>("gpt-image");
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
-  const [previewKey, setPreviewKey] = useState<string | null>(null);
   const controller = useRef<AbortController | null>(null);
-  const canvas = useRef<HTMLCanvasElement>(null);
-  const selectedKey = selected.map((item) => item.slot).join("|");
-  const selectedRef = useRef(selected);
-  useEffect(() => {
-    selectedRef.current = selected;
-  }, [selected]);
-  const renderKey = `${selectedKey}:${labels}:${background}`;
-  const previewReady = format !== "sheet" || previewKey === renderKey;
   const limit = EXPORT_TARGETS.find((model) => model.id === target)!.limit;
   const unavailableVeo = format === "model" && target === "veo" && !veoPlan(selected, assets.items);
   const selectedBytes = selected.reduce((total, item) => total + item.bytes, 0);
   useEffect(() => () => controller.current?.abort(), []);
-  useEffect(() => {
-    if (format !== "sheet") return;
-    const abort = new AbortController();
-    const images: SheetImage[] = [];
-    void (async () => {
-      try {
-        for (const item of selectedRef.current) {
-          const blob = await fetchImageBlob(item.thumb, abort.signal);
-          const bitmap = await createImageBitmap(blob);
-          images.push({
-            source: bitmap,
-            width: bitmap.width,
-            height: bitmap.height,
-            fullBody: ["turnaround", "wardrobe", "pose"].includes(item.series),
-            labels: labelsFor(item, assets),
-          });
-          abort.signal.throwIfAborted();
-        }
-        if (canvas.current) renderSheet(images, { labels, background }, canvas.current, true);
-        setPreviewKey(renderKey);
-      } catch {
-        if (!abort.signal.aborted) setFailed(true);
-      } finally {
-        for (const image of images) (image.source as ImageBitmap).close();
-      }
-    })();
-    return () => abort.abort();
-  }, [assets, format, selectedKey, labels, background, renderKey]);
   function cancel() {
     controller.current?.abort();
     onClose();
@@ -118,7 +68,6 @@ export function MemberExportDialog({
         selected,
         format,
         target,
-        sheet: { labels, background },
         locale,
         labels: Object.fromEntries(
           assets.items.map((item) => [item.slot, labelsFor(item, assets)]),
@@ -157,10 +106,6 @@ export function MemberExportDialog({
             <span className="shrink-0 text-muted-foreground">{fileSize(selectedBytes)} · ZIP</span>
           </li>
           <li className="flex justify-between gap-4">
-            <span>{t("assets.format.sheetNote")}</span>
-            <span className="shrink-0 text-muted-foreground">4K · PNG</span>
-          </li>
-          <li className="flex justify-between gap-4">
             <span>{t("assets.format.modelNote")}</span>
             <span className="shrink-0 text-muted-foreground">{fileSize(selectedBytes)} · ZIP</span>
           </li>
@@ -170,8 +115,8 @@ export function MemberExportDialog({
         activeId={format}
         label={t("assets.exportFormat")}
         disabled={busy}
-        onSelect={(id) => setFormat(id as ExportFormat)}
-        options={(["zip", "sheet", "model"] as const).map((id) => ({
+        onSelect={(id) => setFormat(id as DialogFormat)}
+        options={(["zip", "model"] as const).map((id) => ({
           id,
           label: t(`assets.format.${id}`),
         }))}
@@ -183,38 +128,9 @@ export function MemberExportDialog({
             : `assets.format.${format}Note`,
         )}
       </p>
-      {format === "sheet" ? (
-        <div className="mt-6 space-y-5">
-          <GameSegmentedControl
-            activeId={labels}
-            label={t("assets.labels")}
-            disabled={busy}
-            onSelect={(id) => setLabels(id as SheetLabels)}
-            options={[
-              { id: "none", label: t("assets.labels.none") },
-              { id: "zh", label: t("common.languageName.zh") },
-              { id: "en", label: t("common.languageName.en") },
-            ]}
-          />
-          <GameSegmentedControl
-            activeId={background}
-            label={t("assets.background")}
-            disabled={busy}
-            onSelect={(id) => setBackground(id as SheetBackground)}
-            options={[
-              { id: "grey", label: t("assets.background.light") },
-              { id: "white", label: t("assets.background.white") },
-              { id: "dark", label: t("assets.background.dark") },
-            ]}
-          />
-          <canvas
-            ref={canvas}
-            className="w-full rounded-[var(--game-ui-radius-card)]"
-            aria-label={t("assets.preview")}
-            data-preview-ready={previewReady}
-          />
-        </div>
-      ) : null}
+      <p className="sp-small mt-4">
+        <TextLink href={sheetHref(actor.slug, selected)}>{t("assets.makeSheet")}</TextLink>
+      </p>
       {format === "model" ? (
         <div className="mt-6 space-y-4">
           <div>

@@ -15,6 +15,7 @@ import { firstImage, getActorAssets } from "@/features/assets/queries";
 import { listSeries, starterSlots } from "@/features/assets/contracts";
 import { CastAddButton } from "@/features/cast/client";
 import { ActorSample } from "@/features/samples";
+import { canMakeSheet } from "@/features/sheet";
 import { seriesLabelKey } from "@/i18n/asset-labels";
 import { Link } from "@/i18n/navigation";
 import { type AppLocale } from "@/i18n/routing";
@@ -24,7 +25,7 @@ import { CopyBlock } from "@/site/CopyBlock";
 import { ShareButton } from "@/site/ShareButton";
 import { TextLink } from "@/site/TextLink";
 import { VersionBadge } from "@/site/VersionBadge";
-import { GameBadge } from "@pieai/swimmer-ui-kit";
+import { GameBadge, GameButton, GameIconButton, GameTooltip } from "@pieai/swimmer-ui-kit";
 export async function ActorDossier({ actor, locale }: { actor: Actor; locale: AppLocale }) {
   const slug = actor.slug;
   const { t } = await getSiteI18n(locale);
@@ -87,7 +88,7 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
               </span>
             </h1>
             <p className="sp-lead mt-6">{actor.tagline[locale]}</p>
-            <div className="mt-6 flex flex-wrap items-start gap-4">
+            <div className="mt-6 flex flex-wrap items-center gap-4">
               <StarterPackButton
                 actor={{
                   slug: actor.slug,
@@ -97,7 +98,22 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
                   slots: starterSlots(assets.items),
                 }}
               />
+              {canMakeSheet(assets.items) ? (
+                <GameButton variant="secondary" href={`/actors/${slug}/sheet`} linkComponent={Link}>
+                  {t("sheet.action")}
+                </GameButton>
+              ) : null}
               <CastAddButton slug={actor.slug} locale={locale} name={name} />
+              <GameTooltip label={t("guide.tip")}>
+                <GameIconButton
+                  href="/guide"
+                  linkComponent={Link}
+                  label={t("guide.helpLabel")}
+                  size="sm"
+                >
+                  ?
+                </GameIconButton>
+              </GameTooltip>
             </div>
             <dl className="mt-4 divide-y divide-border">
               {actor.spec.map((row) => (
