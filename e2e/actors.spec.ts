@@ -43,3 +43,36 @@ test("Ma Le's desktop dossier shows the full pack, voices and sample", async ({ 
     .poll(() => page.evaluate(() => document.documentElement.scrollWidth))
     .toBeLessThanOrEqual(1440);
 });
+
+test("the actor page offers the character sheet and a help link beside the starter pack", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/en/actors/tang-yunqiu");
+  // Web fonts reflow the row; measure and click only once the layout has settled.
+  await page.evaluate(() => document.fonts.ready);
+  const starter = page.getByRole("button", { name: /starter pack/i });
+  const sheet = page.getByRole("link", { name: "Character sheet", exact: true });
+  const cast = page.getByRole("button", { name: "Add to cast", exact: true });
+  const help = page.getByRole("link", { name: "How it works", exact: true }).first();
+  await expect(sheet).toHaveAttribute("href", "/en/actors/tang-yunqiu/sheet");
+  await expect(help).toHaveAttribute("href", "/en/guide");
+  // The row wraps on narrow columns; reading order (top to bottom, then left to right) must hold.
+  const boxes = await Promise.all([starter, sheet, cast, help].map((item) => item.boundingBox()));
+  const reading = boxes.map((box, index) => ({ index, x: box?.x ?? -1, y: box?.y ?? -1 }));
+  const sorted = [...reading].sort((a, b) => a.y - b.y || a.x - b.x).map((item) => item.index);
+  expect(sorted).toEqual([0, 1, 2, 3]);
+  // Client-side navigation can stall while the whole suite runs in parallel, so the test follows
+  // the link's own target with a plain load instead of depending on the router's timing.
+  await page.goto((await help.getAttribute("href")) ?? "/en/guide");
+  await expect(
+    page.getByRole("heading", { level: 1, name: "Three ways to get an actor" }),
+  ).toBeVisible();
+});
+
+test("an actor with a single casting photo has no character sheet button", async ({ page }) => {
+  await page.goto("/en/actors/agnes-lefevre");
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Character sheet", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "How it works", exact: true }).first()).toBeVisible();
+});

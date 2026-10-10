@@ -1,8 +1,13 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
-// Cover the complex asset UI, legal layout and sign-in dialog, not every repeated shell.
-const pages = ["/en/actors/tang-yunqiu", "/en/license"];
+// Cover the complex asset UI, the character sheet, the guide, legal layout and sign-in dialog, not every repeated shell.
+const pages = [
+  "/en/actors/tang-yunqiu",
+  "/en/actors/tang-yunqiu/sheet",
+  "/en/guide",
+  "/en/license",
+];
 for (const path of pages) {
   test(`has no serious accessibility violations: ${path}`, async ({ page }) => {
     await page.goto(path);
