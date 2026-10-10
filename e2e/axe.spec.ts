@@ -24,8 +24,8 @@ test("sign-in guidance dialog has no serious accessibility violations", async ({
   const checkbox = page.locator('[data-asset-slot="face.front"] input').first();
   await checkbox.check({ force: true });
   const downloadSelected = page.getByRole("button", { name: /download selected/i });
-  // aria-busy turns "false" once the page is interactive and the session is known.
-  await expect(downloadSelected).toHaveAttribute("aria-busy", "false", { timeout: 15_000 });
+  // aria-busy clears once the page is interactive and the session is known.
+  await expect(downloadSelected).not.toHaveAttribute("aria-busy", "true", { timeout: 15_000 });
   await downloadSelected.click();
   await expect(page.getByRole("dialog")).toBeVisible();
   const result = await new AxeBuilder({ page }).analyze();

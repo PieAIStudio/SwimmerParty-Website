@@ -104,16 +104,18 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
                 </GameButton>
               ) : null}
               <CastAddButton slug={actor.slug} locale={locale} name={name} />
-              <GameTooltip label={t("guide.tip")}>
-                <GameIconButton
-                  href="/guide"
-                  linkComponent={Link}
-                  label={t("guide.helpLabel")}
-                  size="sm"
-                >
-                  ?
-                </GameIconButton>
-              </GameTooltip>
+              <span className="sp-help-tip">
+                <GameTooltip label={t("guide.tip")} align="end" placement="bottom">
+                  <GameIconButton
+                    href="/guide"
+                    linkComponent={Link}
+                    label={t("guide.helpLabel")}
+                    size="sm"
+                  >
+                    ?
+                  </GameIconButton>
+                </GameTooltip>
+              </span>
             </div>
             <dl className="mt-4 divide-y divide-border">
               {actor.spec.map((row) => (

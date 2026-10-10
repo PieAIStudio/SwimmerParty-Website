@@ -58,7 +58,7 @@ test("a signed-out download starts sign-in and the picks survive the round trip"
 }) => {
   await page.goto(`${sheet}?preset=custom&slots=turnaround.front,face.front`);
   const download = page.getByRole("button", { name: "Download sheet", exact: true });
-  await expect(download).toHaveAttribute("aria-busy", "false", { timeout: 15_000 });
+  await expect(download).not.toHaveAttribute("aria-busy", "true", { timeout: 15_000 });
   await download.click();
   await expect(page.locator("[data-account-menu]").first()).toBeVisible({ timeout: 15_000 });
   await expect(page).toHaveURL(/preset=custom&slots=turnaround\.front,face\.front$/);
@@ -70,7 +70,7 @@ test("a signed-in member downloads the sheet as a PNG", async ({ page, context }
   await page.goto(`${sheet}?preset=custom&slots=turnaround.front,face.front`);
   await expect(page.locator(ready)).toHaveCount(1, { timeout: 15_000 });
   const download = page.getByRole("button", { name: "Download sheet", exact: true });
-  await expect(download).toHaveAttribute("aria-busy", "false", { timeout: 15_000 });
+  await expect(download).not.toHaveAttribute("aria-busy", "true", { timeout: 15_000 });
   const result = await downloadFrom(page, download);
   expect(result.name).toBe("tang-yunqiu_sheet.png");
   expect(result.bytes.subarray(1, 4).toString()).toBe("PNG");
@@ -84,7 +84,7 @@ test("ticking voice and prompt adds a ZIP with the clips under voice/ and the pr
   await page.goto(`${sheet}?preset=custom&slots=turnaround.front,face.front&voice=1&prompt=1`);
   await expect(page.locator(ready)).toHaveCount(1, { timeout: 15_000 });
   const download = page.getByRole("button", { name: "Download sheet and files", exact: true });
-  await expect(download).toHaveAttribute("aria-busy", "false", { timeout: 15_000 });
+  await expect(download).not.toHaveAttribute("aria-busy", "true", { timeout: 15_000 });
   const result = await downloadFrom(page, download);
   expect(result.name).toBe("tang-yunqiu_sheet.zip");
   const files = unzipSync(result.bytes);

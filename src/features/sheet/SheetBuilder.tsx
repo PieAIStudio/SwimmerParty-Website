@@ -290,7 +290,7 @@ export function SheetBuilder({
           <GameButton
             variant="primary"
             className="w-full lg:w-auto"
-            aria-busy={busy}
+            pending={busy}
             {...(account.user ? {} : account.signInIntent)}
             onClick={() => void download()}
           >

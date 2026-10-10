@@ -39,7 +39,7 @@ export function StarterPackButton({ actor }: { actor: StarterActor }) {
       <GameButton
         variant="primary"
         disabled={!actor.slots.length}
-        aria-busy={busy || leaving || account.loading}
+        pending={busy || leaving || account.loading}
         {...(account.user ? {} : account.signInIntent)}
         onClick={() => void start()}
       >

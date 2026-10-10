@@ -171,7 +171,7 @@ export function MemberExportDialog({
         <GameButton
           variant="primary"
           disabled={Boolean(unavailableVeo)}
-          aria-busy={busy}
+          pending={busy}
           onClick={() => void start()}
         >
           {t(busy ? "assets.preparing" : "assets.start")}

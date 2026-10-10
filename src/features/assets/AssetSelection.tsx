@@ -247,7 +247,7 @@ export function AssetSelectionProvider({
               ))}
             </ul>
             <div className="mt-7 flex flex-col items-start gap-3">
-              <GameButton variant="primary" aria-busy={busy || account.busy} onClick={signIn}>
+              <GameButton variant="primary" pending={busy || account.busy} onClick={signIn}>
                 {t("assets.signIn")}
               </GameButton>
               <button
@@ -343,7 +343,7 @@ export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
         variant="primary"
         size={size}
         data-download-selected
-        aria-busy={busy || account.loading}
+        pending={busy || account.loading}
         onClick={(event) => {
           if (busy) return;
           sourceRef.current = event.currentTarget;
