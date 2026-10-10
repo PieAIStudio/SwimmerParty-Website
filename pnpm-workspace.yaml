@@ -7,7 +7,7 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - "@pieai/doc-gov"
   - "@pieai/pro-gov"
-  - '@pieai/swimmer-ui-kit@3.0.0-rc.1 || 3.1.0'
+  - '@pieai/swimmer-ui-kit@3.2.0'
   - "@pieaistudio/swimmer-auth-kit@0.8.0-rc.1"
   - '@oxfmt/binding-android-arm-eabi@0.72.0'
   - '@oxfmt/binding-android-arm64@0.72.0'

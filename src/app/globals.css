@@ -296,12 +296,6 @@
   }
 }
 
-/* UIKit 3.1.0 gives the selected account-menu tab no paint attribute, so its label
- * inherits the ink colour on the ink fill. Keep the label on the token it should use. */
-.game-ui-account-menu-panel .game-ui-tab[aria-selected="true"] {
-  color: var(--game-ui-control-on-text);
-}
-
 @media (min-width: 640px) {
   :root {
     --sp-gutter: 32px;
