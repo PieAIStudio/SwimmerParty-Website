@@ -25,30 +25,32 @@ export async function GuideView({ locale }: { locale: AppLocale }) {
           ))}
         </div>
       </section>
-      <section className="sp-section">
-        <h2 className="sp-title">{t("guide.more.title")}</h2>
-        <div className="mt-6 max-w-3xl space-y-4">
-          <p>{t("guide.more.single")}</p>
-          <p>{t("guide.more.selected")}</p>
+      <section className="sp-section grid gap-x-12 gap-y-10 md:grid-cols-2">
+        <div>
+          <h2 className="sp-subtitle">{t("guide.more.title")}</h2>
+          <div className="mt-4 space-y-3">
+            <p>{t("guide.more.single")}</p>
+            <p>{t("guide.more.selected")}</p>
+          </div>
         </div>
-      </section>
-      <section className="sp-section">
-        <h2 className="sp-title">{t("guide.after.title")}</h2>
-        <ol className="mt-6 max-w-3xl list-decimal space-y-3 pl-6">
-          {AFTER.map((key) => (
-            <li key={key}>{t(key)}</li>
-          ))}
-        </ol>
-      </section>
-      <section className="sp-section">
-        <h2 className="sp-title">{t("guide.account.title")}</h2>
-        <p className="mt-6 max-w-3xl">{t("guide.account.body")}</p>
-      </section>
-      <section className="sp-section">
-        <h2 className="sp-title">{t("guide.license.title")}</h2>
-        <p className="mt-6 max-w-3xl">{t("guide.license.body")}</p>
-        <div className="mt-6">
-          <TextLink href="/license#credit">{t("license.creditTitle")}</TextLink>
+        <div>
+          <h2 className="sp-subtitle">{t("guide.after.title")}</h2>
+          <ol className="mt-4 list-decimal space-y-2 pl-6">
+            {AFTER.map((key) => (
+              <li key={key}>{t(key)}</li>
+            ))}
+          </ol>
+        </div>
+        <div>
+          <h2 className="sp-subtitle">{t("guide.account.title")}</h2>
+          <p className="mt-4">{t("guide.account.body")}</p>
+        </div>
+        <div>
+          <h2 className="sp-subtitle">{t("guide.license.title")}</h2>
+          <p className="mt-4">{t("guide.license.body")}</p>
+          <div className="mt-4">
+            <TextLink href="/license#credit">{t("license.creditTitle")}</TextLink>
+          </div>
         </div>
       </section>
       <TextLink href="/actors" className="mb-24">
