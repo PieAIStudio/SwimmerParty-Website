@@ -388,7 +388,7 @@
   "sheet.action": "做设定图",
   "sheet.crumb": "设定图",
   "sheet.title": "{name} · 角色设定图",
-  "sheet.metaTitle": "{name} 的角色设定图",
+  "sheet.metaTitle": "{name}的角色设定图",
   "sheet.lead": "挑几张图，拼成一张参考图，AI 工具一次就能认出{name}。",
   "sheet.pick": "选图",
   "sheet.preset.recommended": "推荐",

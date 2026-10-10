@@ -1267,7 +1267,7 @@ export const messages = {
   },
   "sheet.metaTitle": {
     en: "{name} character sheet",
-    zh: "{name} 的角色设定图",
+    zh: "{name}的角色设定图",
   },
   "sheet.lead": {
     en: "Pick a few images and combine them into one reference, so an AI tool knows {name} at a glance.",

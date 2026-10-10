@@ -282,7 +282,7 @@ export function SheetBuilder({
             data-preview-ready={previewKey === renderKey}
           />
         </div>
-        <div className="fixed inset-x-0 bottom-0 z-30 flex flex-col gap-3 border-t border-border bg-background px-4 pt-3 pb-[max(12px,env(safe-area-inset-bottom))] lg:static lg:mt-6 lg:border-0 lg:bg-transparent lg:p-0">
+        <div className="fixed inset-x-0 bottom-0 z-30 flex flex-col gap-3 border-t border-border bg-background px-4 pt-3 pb-[max(12px,env(safe-area-inset-bottom))] lg:static lg:mt-6 lg:items-start lg:border-0 lg:bg-transparent lg:p-0">
           {needPick ? <GameToast tone="info">{t("assets.selectFirst")}</GameToast> : null}
           {failed || previewFailed ? (
             <GameToast tone="danger">{t("assets.failed")}</GameToast>
@@ -322,9 +322,14 @@ export function SheetBuilder({
                     const checked = selected.has(item.slot);
                     return (
                       <li key={item.slot} data-asset-slot={item.slot}>
-                        <span
-                          className="sp-asset-frame block overflow-hidden rounded-[var(--game-ui-radius-card)]"
+                        {/* Pointer shortcut for the checkbox below, which stays the accessible control. */}
+                        <button
+                          type="button"
+                          tabIndex={-1}
+                          aria-hidden="true"
+                          className="sp-asset-frame block w-full cursor-pointer overflow-hidden rounded-[var(--game-ui-radius-card)]"
                           data-selected={checked}
+                          onClick={() => tick(item.slot, !checked)}
                         >
                           <Image
                             src={item.thumb}
@@ -334,7 +339,7 @@ export function SheetBuilder({
                             sizes="(min-width: 1280px) 9rem, 30vw"
                             className="h-auto w-full"
                           />
-                        </span>
+                        </button>
                         <div className="mt-2 flex min-h-11 items-center">
                           <GameCheckbox
                             checked={checked}
