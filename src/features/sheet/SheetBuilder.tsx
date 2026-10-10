@@ -41,10 +41,14 @@ import { sheetBundleFiles, sheetReadme, type SheetMedia } from "./sheet-bundle";
 
 const SHEET_EVENT = "sp-sheet-change";
 
-/** Option labels stay on one line; without this, CJK text breaks between characters in narrow columns. */
+/**
+ * Option labels stay on one line (CJK text would otherwise break between characters), and each option
+ * is sized by its label so the control wraps onto a second row instead of overlapping the labels. The
+ * flex override is important because UIKit's option rule is unlayered and would otherwise win.
+ */
 function Segments(props: ComponentProps<typeof GameSegmentedControl>) {
   return (
-    <div className="[&_.game-ui-segmented-option]:whitespace-nowrap">
+    <div className="[&_.game-ui-segmented-option]:!flex-[0_1_auto] [&_.game-ui-segmented-option]:whitespace-nowrap">
       <GameSegmentedControl {...props} />
     </div>
   );

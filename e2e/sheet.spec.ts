@@ -113,3 +113,29 @@ test("the sheet page keeps its controls reachable on a phone without sideways sc
     .poll(() => page.evaluate(() => document.documentElement.scrollWidth))
     .toBeLessThanOrEqual(390);
 });
+
+test("the preset control wraps its English labels instead of overlapping them", async ({
+  page,
+}) => {
+  for (const width of [1024, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto(sheet);
+    await expect(page.locator(ready)).toBeVisible({ timeout: 15_000 });
+    const layout = await page.evaluate(() => {
+      const group = document.querySelector(".game-ui-segmented") as HTMLElement;
+      const boxes = [...group.querySelectorAll(".game-ui-segmented-option")].map((option) =>
+        option.getBoundingClientRect(),
+      );
+      const overlapping = boxes.some((a, i) =>
+        boxes.some((b, j) => {
+          if (j <= i) return false;
+          const ox = Math.min(a.right, b.right) - Math.max(a.left, b.left);
+          const oy = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+          return ox > 1 && oy > 1;
+        }),
+      );
+      return { overlapping, overflow: group.scrollWidth - group.clientWidth };
+    });
+    expect(layout).toEqual({ overlapping: false, overflow: 0 });
+  }
+});
