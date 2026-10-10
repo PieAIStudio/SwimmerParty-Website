@@ -1,1 +1,2 @@
-export { CastAddButton } from "./CastBoard.tsx";
+export { CastAddButton } from "./CastAddButton.tsx";
+export { useCastCount } from "./store.ts";

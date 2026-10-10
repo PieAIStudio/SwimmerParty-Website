@@ -9,7 +9,7 @@ import { Link } from "@/i18n/navigation";
 import { useAccount } from "@/features/account";
 import { starterPack, SignInRequired } from "@/features/assets/client";
 import { saveBlob } from "@/lib/browser-files";
-const CAST_EVENT = "sp-cast-change";
+import { CAST_EVENT, subscribeCast } from "./store.ts";
 function readCast(): string {
   const shared = new URLSearchParams(location.search).get("a");
   if (shared !== null) return shared;
@@ -18,14 +18,6 @@ function readCast(): string {
   } catch {
     return "";
   }
-}
-function subscribeCast(callback: () => void) {
-  window.addEventListener("storage", callback);
-  window.addEventListener(CAST_EVENT, callback);
-  return () => {
-    window.removeEventListener("storage", callback);
-    window.removeEventListener(CAST_EVENT, callback);
-  };
 }
 export function CastBoard({
   actors,
@@ -100,7 +92,7 @@ export function CastBoard({
         <GameButton
           variant="primary"
           onClick={() => void downloadPack()}
-          aria-busy={downloading || account.loading}
+          pending={downloading || account.loading}
         >
           {downloading ? t("cast.downloading") : t("cast.downloadPack")}
         </GameButton>
@@ -153,21 +145,5 @@ export function CastBoard({
         ))}
       </div>
     </div>
-  );
-}
-export function CastAddButton({ slug }: { slug: string; locale: "en" | "zh"; name?: string }) {
-  const { t } = useSiteI18n();
-  const [added, setAdded] = useState(false);
-  function add() {
-    const saved = (localStorage.getItem("sp-cast") ?? "").split(",").filter(Boolean);
-    if (!saved.includes(slug) && saved.length < 12) {
-      localStorage.setItem("sp-cast", [...saved, slug].join(","));
-      setAdded(true);
-    }
-  }
-  return (
-    <GameButton variant="ghost" onClick={add}>
-      {added ? t("cast.added") : t("cast.add")}
-    </GameButton>
   );
 }
