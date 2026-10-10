@@ -123,7 +123,7 @@ test("the site tab lists the cast with its count, and the guide", async ({ page,
   await page.getByRole("button", ACCOUNT_TRIGGER).click();
   const panel = page.locator(".game-ui-account-menu-panel");
   await expect(panel.getByRole("link", { name: "Your cast" })).toHaveAttribute("href", "/en/cast");
-  await expect(panel.getByText("0 actors", { exact: true })).toBeVisible();
+  await expect(panel.getByText("Actors: 0", { exact: true })).toBeVisible();
   await expect(panel.getByRole("link", { name: "How it works" })).toHaveAttribute(
     "href",
     "/en/guide",

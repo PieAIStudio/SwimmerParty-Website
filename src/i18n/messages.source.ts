@@ -500,7 +500,7 @@ export const messages = {
     zh: "我的选角单",
   },
   "account.castCount": {
-    en: "{count} actors",
+    en: "Actors: {count}",
     zh: "{count} 位演员",
   },
   "assets.dialogTitle": {
@@ -1213,7 +1213,7 @@ export const messages = {
   "roster.filters.chinese": { en: "Chinese", zh: "中文" },
   "cast.empty": { en: "Your cast is empty.", zh: "选角单是空的。" },
   "cast.pickActors": { en: "Pick actors", zh: "去挑演员" },
-  "cast.count": { en: "{count} actors · up to 12", zh: "{count} 位演员 · 最多 12 位" },
+  "cast.count": { en: "{count} in your cast · up to 12", zh: "{count} 位演员 · 最多 12 位" },
   "cast.downloading": { en: "Downloading…", zh: "下载中…" },
   "cast.downloadPack": { en: "Download cast pack", zh: "下载选角包" },
   "cast.share": { en: "Share cast", zh: "分享选角单" },
