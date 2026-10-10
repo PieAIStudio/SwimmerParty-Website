@@ -39,6 +39,6 @@ related: []
 - UIKit 液体按压加强和 `pending` 状态：已在 SwimmerUIKit 本地做候选，npm 发布要等 Owner 恢复 `@pieai/swimmer-ui-kit` 的发布权限；
 - 社区和“泳者”页签等待 [SwimmerBackend v2](../swimmer-party-community-backend.md)。
 
-2026-10-10 角色设定图独立成页（`/actors/<slug>/sheet`）与“怎么用”页、演员页“?”入口已合入 main，尚未部署；上线须走 release.md 的授权流程。
+2026-10-10 角色设定图独立成页（`/actors/<slug>/sheet`）与“怎么用”页、演员页“?”入口：同日第三次上线 `dpl_722szQPi2jK4UC8yDWhvVzJQ5jgn`（提交 39e05e2）。发布前 `pnpm verify`（93 项工具测试、35 项浏览器测试）、docs:check、swimmer-ui-check 通过；候选冒烟中英首页、名册、演员页、设定图页、怎么用、选角单、sitemap、robots 均 200，canonical 指向正式域名；上线后 SSO 发起仍返回跳转。登录后的 4K 设定图与附件 ZIP 需 Owner 真实账号验收。回滚目标：`dpl_4HbMbjvt5t6C7AWX3F1xcUfWbHcU`。
 
 并行：`media-pack/` 里包满、雷乐、范一鸣及新面孔比例修正仍在制作，属于其他会话，不在这里接管。
