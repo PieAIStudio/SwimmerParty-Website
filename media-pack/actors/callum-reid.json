@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "slug": "callum-reid",
+  "kind": "actor",
+  "name": {
+    "zh": "卡勒姆·里德",
+    "en": "Callum Reid"
+  },
+  "status": {
+    "siteProfile": "src/content/actors/callum-reid/profile.ts",
+    "delivered": 0,
+    "published": false,
+    "version": "0.1.0",
+    "preparedOn": "2026-10-09"
+  },
+  "demographics": {
+    "age": 35,
+    "gender": "male",
+    "origin": {
+      "zh": "英国阿伯丁",
+      "en": "Aberdeen, Scotland"
+    },
+    "voiceLanguage": "en"
+  },
+  "facts": {
+    "zh": [
+      "英国阿伯丁，35 岁",
+      "身高 188 cm",
+      "188 cm、壮硕宽脸、光头、浓密棕色大胡子；保留熊一样的块头，但不能做成巨人或九头身。"
+    ],
+    "en": [
+      "Aberdeen, Scotland, man, about 35",
+      "About 188 cm",
+      "White man, about 35, burly, about 188 cm; shaved head, full bushy brown beard, broad face"
+    ]
+  },
+  "identity": "The same fictional White man as the casting reference: about 35 years old, burly, about 188 cm, realistic adult proportions about 7.5 heads tall (within 7.3–7.7), never a large head. Signature features: shaved head, full bushy brown beard, broad face. Keep these features recognizable in every angle, expression and wardrobe.",
+  "stylization": "Character stylization (A2, pushed): realistic adult body proportions at the actor-specific height and target range; normal head size, natural neck, torso, pelvis and leg lengths; never a large head, long neck, shortened torso or elongated fashion-model legs. Simplified 3D feature-animation facial planes, smooth stylized skin shading with no pores, and clean grouped hair clumps; never photoreal or a generic face.",
+  "proportions": {
+    "headsTall": 7.5,
+    "headsTallRange": [
+      7.3,
+      7.7
+    ],
+    "heightCm": 188,
+    "frameGuide": {
+      "occupancy": "0.86–0.94",
+      "topMargin": "0.04–0.10",
+      "bottomMargin": "0.04–0.10"
+    }
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/claude-casting-2026-10-07/final/CC-009.png",
+    "body": null
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "black plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "owner-confirmed-facts-provisional-identity",
+    "appearance": "Provisional until Owner selects a proportion-corrected audition image",
+    "phase": "audition-pending-owner"
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": null
+    }
+  }
+}

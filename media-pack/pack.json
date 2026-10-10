@@ -30,8 +30,8 @@
     }
   },
   "cast": [
-    "cast/SP-13.json",
-    "cast/SP-03.json",
+    "actors/tang-yunqiu.json",
+    "actors/misha-luo.json",
     "actors/zhang-qiang.json",
     "actors/chen-wei.json",
     "actors/tommy-brannigan.json",
@@ -39,12 +39,81 @@
     "actors/bao-man.json",
     "actors/lei-le.json",
     "actors/fan-yiming.json",
-    "actors/ma-le.json"
+    "actors/ma-le.json",
+    "actors/wei-qinghe.json",
+    "actors/hu-guifen.json",
+    "actors/qin-lie.json",
+    "actors/jiang-yifan.json",
+    "actors/pang-tiezhu.json",
+    "actors/xia-zhiyao.json",
+    "actors/du-shouren.json",
+    "actors/callum-reid.json",
+    "actors/annika-brandt.json",
+    "actors/ibrahima-ndiaye.json",
+    "actors/chang-shulan.json",
+    "actors/qi-changfeng.json",
+    "actors/feng-ye.json",
+    "actors/miriam-adler.json",
+    "actors/zawadi-mwangi.json"
   ],
   "works": [
     "works/journey-to-the-east.json"
   ],
   "checks": "checks.md",
+  "fullPack": {
+    "summary": "Default actor identity pack: 55 PNG + 6 WAV + 1 sample video. A work order may add, drop or rename slots; slot keys come from ../src/content/asset-series.json.",
+    "images": {
+      "turnaround": [
+        "front",
+        "three-quarter",
+        "side",
+        "back",
+        "back-three-quarter-left",
+        "back-three-quarter-right"
+      ],
+      "face": [
+        "front",
+        "three-quarter",
+        "side",
+        "three-quarter-left",
+        "side-right",
+        "up",
+        "down"
+      ],
+      "expression": "all 26 keys of the expression series",
+      "wardrobe-personal": [
+        "front",
+        "three-quarter",
+        "side",
+        "back",
+        "portrait",
+        "+3 actor-specific extras named in the work order"
+      ],
+      "pose": [
+        "walk",
+        "run",
+        "sit",
+        "point",
+        "arms-crossed",
+        "phone"
+      ],
+      "detail": [
+        "hands",
+        "hair-back"
+      ]
+    },
+    "look": "Every series except wardrobe-personal uses the casting-basics look; wardrobe-personal uses the actor's personal look.",
+    "voices": [
+      "intro",
+      "intro-alt",
+      "chat",
+      "happy",
+      "angry",
+      "sad"
+    ],
+    "video": "1 sample clip (routes: MediaFactory docs/reference/routes/grok-cli.md)",
+    "proportion": "Full-body anchors are measured with MediaFactory .agents/skills/mf-actor-pack/references/proportion-review.md (skull crown, never the hair top)."
+  },
   "library": {
     "root": "library/",
     "staging": "library/staging/{code}/",
@@ -61,7 +130,7 @@
   },
   "delivery": {
     "to": "library/staging/{code}/",
-    "handoff": "notes/handoffs/{date}-{topic}.md",
+    "handoff": "notes/handoffs/{date}-{slug}.md — one file per actor per order, updated in place; run logs stay in the MediaFactory run; move to notes/history/ when the order is done.",
     "handoffMustList": [
       "new or replaced files",
       "new looks: id, bilingual label, English prompt, extra slot keys with bilingual labels, work and role",
@@ -76,16 +145,14 @@
       "projectInstructions": "style/chatgpt-project-instructions.md",
       "model": "5.6 Pro (GPT-5.6 Sol, thinking effort at max)",
       "thinkingEffort": "max",
-      "chatPerCharacter": true,
-      "existingChats": "See routes.chatgpt-web.chat in each cast file. They currently live in ChatGPT project 'Claude'.",
-      "newCharacters": "Start one new chat per character in Pics-A. For scenes with several actors, upload each actor's anchors.face and anchors.body first and say 'identity only'."
+      "existingChats": "routes.chatgpt-web.chat in each actor file. Older SP-03/SP-13 chats live in the ChatGPT project 'Claude'.",
+      "newCharacters": "One chat per actor in Pics-A, reused for every batch of that actor. Upload the actor's anchors.face (and anchors.body once approved) first and say 'identity only'.",
+      "batch": "Up to 10 separate PNGs per message for one actor and one approved identity (IMAGE 1 OF N ...). Unapproved identities: 2-3 candidates per message. Fill only missing or duplicate slots in the same chat."
     }
   },
   "notes": {
     "actorsAndRoles": "notes/actors-and-roles.md",
     "looks": "notes/journey-to-the-east-looks.md",
-    "progress": "notes/asset-progress.md",
-    "mediaPlaceholders": "notes/website-media-placeholders.md",
     "history": "notes/history/"
   }
 }

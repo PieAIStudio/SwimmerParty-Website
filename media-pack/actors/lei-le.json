@@ -39,7 +39,7 @@
   "anchorVersion": 1,
   "anchors": {
     "face": "library/claude-casting-2026-10-07/final/CC-012.png",
-    "body": null
+    "body": "library/staging/lei-le/lei-le__body-anchor__front__v1.png"
   },
   "looks": [
     {
@@ -56,10 +56,10 @@
   "roles": [],
   "proposals": {
     "approval": "owner-confirmed-facts-provisional-identity",
-    "appearance": "Provisional until Owner selects new audition image",
+    "appearance": "Owner-selected fresh-3 candidate 2; body anchor frozen pending full-pack acceptance",
     "roleLook": null,
-    "phase": "audition-pending-owner",
-    "note": "Old CC image is face reference only; do not use it as body or proportion anchor. New audition image from 2026-10-09 proportion-fix trial becomes the identity anchor only after Owner approval.",
+    "phase": "full-pack-in-progress",
+    "note": "Owner selected replacement-fresh-3 candidate 2 on 2026-10-09. Candidate 1 remains unselected alternate; candidate 3 rejected. Full pack production may proceed; website publish remains downstream.",
     "signatureFeatures": [
       "a broad round face, a black buzz cut, small eyes, and a booming open-mouthed laugh"
     ]

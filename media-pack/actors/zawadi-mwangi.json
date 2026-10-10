@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "slug": "zawadi-mwangi",
+  "kind": "actor",
+  "name": {
+    "zh": "扎瓦迪·姆旺吉",
+    "en": "Zawadi Mwangi"
+  },
+  "status": {
+    "siteProfile": "src/content/actors/zawadi-mwangi/profile.ts",
+    "delivered": 0,
+    "published": false,
+    "version": "0.1.0",
+    "preparedOn": "2026-10-10"
+  },
+  "demographics": {
+    "age": 29,
+    "gender": "female",
+    "origin": {
+      "zh": "肯尼亚内罗毕",
+      "en": "Nairobi, Kenya"
+    },
+    "voiceLanguage": "en"
+  },
+  "facts": {
+    "zh": [
+      "肯尼亚内罗毕，29 岁",
+      "身高 178 cm"
+    ],
+    "en": [
+      "Nairobi, Kenya, woman, about 29",
+      "About 178 cm",
+      "Black woman, about 29, tall and athletic, about 178 cm; shaved head, a sharp jaw, big expressive eyes"
+    ]
+  },
+  "identity": "The same fictional Black woman as the casting reference: about 29 years old, tall and athletic, about 178 cm, realistic adult proportions about 7.4 heads tall (within 7.2–7.6), never a large head. Signature features: shaved head, a sharp jaw, big expressive eyes. Keep these features recognizable in every angle, expression and wardrobe.",
+  "stylization": "Character stylization (A2, pushed): realistic adult body proportions at the actor-specific height and target range; normal head size, natural neck, torso, pelvis and leg lengths; never a large head, long neck, shortened torso or elongated fashion-model legs. Simplified 3D feature-animation facial planes, smooth stylized skin shading with no pores, and clean grouped hair clumps; never photoreal or a generic face.",
+  "proportions": {
+    "headsTall": 7.4,
+    "headsTallRange": [
+      7.2,
+      7.6
+    ],
+    "heightCm": 178,
+    "frameGuide": {
+      "occupancy": "0.86–0.94",
+      "topMargin": "0.04–0.10",
+      "bottomMargin": "0.04–0.10"
+    }
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/claude-casting-2026-10-07/final/CC-035.png",
+    "body": null
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "sage-green plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "owner-confirmed-facts-provisional-identity",
+    "appearance": "Provisional until Owner selects a proportion-corrected audition image",
+    "phase": "audition-pending-owner"
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": null
+    }
+  }
+}

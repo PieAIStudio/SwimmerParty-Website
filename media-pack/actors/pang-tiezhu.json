@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "slug": "pang-tiezhu",
+  "kind": "actor",
+  "name": {
+    "zh": "庞铁柱",
+    "en": "Pang Tiezhu"
+  },
+  "status": {
+    "siteProfile": "src/content/actors/pang-tiezhu/profile.ts",
+    "delivered": 0,
+    "published": false,
+    "version": "0.1.0",
+    "preparedOn": "2026-10-09"
+  },
+  "demographics": {
+    "age": 57,
+    "gender": "male",
+    "origin": {
+      "zh": "河北唐山",
+      "en": "Tangshan, Hebei"
+    },
+    "voiceLanguage": "zh"
+  },
+  "facts": {
+    "zh": [
+      "河北唐山，57 岁",
+      "身高 176 cm",
+      "宽肩、略歪门牙、花白鬓角、轻胡茬；保留中年劳动者体态，不做健美或巨人比例。"
+    ],
+    "en": [
+      "Tangshan, Hebei, man, about 57",
+      "About 176 cm",
+      "East Asian (Chinese) man, about 57, broad, about 176 cm; a slightly crooked front tooth, crew cut greying at the temples, light stubble"
+    ]
+  },
+  "identity": "The same fictional East Asian (Chinese) man as the casting reference: about 57 years old, broad, about 176 cm, realistic adult proportions about 7.25 heads tall (within 7.1–7.4), never a large head. Signature features: a slightly crooked front tooth, crew cut greying at the temples, light stubble. Keep these features recognizable in every angle, expression and wardrobe.",
+  "stylization": "Character stylization (A2, pushed): realistic adult body proportions at the actor-specific height and target range; normal head size, natural neck, torso, pelvis and leg lengths; never a large head, long neck, shortened torso or elongated fashion-model legs. Simplified 3D feature-animation facial planes, smooth stylized skin shading with no pores, and clean grouped hair clumps; never photoreal or a generic face.",
+  "proportions": {
+    "headsTall": 7.25,
+    "headsTallRange": [
+      7.1,
+      7.4
+    ],
+    "heightCm": 176,
+    "frameGuide": {
+      "occupancy": "0.86–0.94",
+      "topMargin": "0.04–0.10",
+      "bottomMargin": "0.04–0.10"
+    }
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/claude-casting-2026-10-07/final/CC-057.png",
+    "body": null
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "rust-orange plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "owner-confirmed-facts-provisional-identity",
+    "appearance": "Provisional until Owner selects a proportion-corrected audition image",
+    "phase": "audition-pending-owner"
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": null
+    }
+  }
+}

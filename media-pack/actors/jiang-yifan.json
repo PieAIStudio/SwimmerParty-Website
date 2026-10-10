@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "slug": "jiang-yifan",
+  "kind": "actor",
+  "name": {
+    "zh": "江一帆",
+    "en": "Jiang Yifan"
+  },
+  "status": {
+    "siteProfile": "src/content/actors/jiang-yifan/profile.ts",
+    "delivered": 0,
+    "published": false,
+    "version": "0.1.0",
+    "preparedOn": "2026-10-09"
+  },
+  "demographics": {
+    "age": 20,
+    "gender": "female",
+    "origin": {
+      "zh": "山东青岛",
+      "en": "Qingdao, Shandong"
+    },
+    "voiceLanguage": "zh"
+  },
+  "facts": {
+    "zh": [
+      "山东青岛，20 岁",
+      "身高 168 cm",
+      "运动型、浓眉、轻微歪鼻、短款 tomboy undercut；保留运动感，不能拉成长腿模特。"
+    ],
+    "en": [
+      "Qingdao, Shandong, woman, about 20",
+      "About 168 cm",
+      "East Asian (Chinese) woman, about 20, athletic and sporty, about 168 cm; strong dark eyebrows, a slightly crooked nose, short tomboy undercut"
+    ]
+  },
+  "identity": "The same fictional East Asian (Chinese) woman as the casting reference: about 20 years old, athletic and sporty, about 168 cm, realistic adult proportions about 7.25 heads tall (within 7.1–7.4), never a large head. Signature features: strong dark eyebrows, a slightly crooked nose, short tomboy undercut. Keep these features recognizable in every angle, expression and wardrobe.",
+  "stylization": "Character stylization (A2, pushed): realistic adult body proportions at the actor-specific height and target range; normal head size, natural neck, torso, pelvis and leg lengths; never a large head, long neck, shortened torso or elongated fashion-model legs. Simplified 3D feature-animation facial planes, smooth stylized skin shading with no pores, and clean grouped hair clumps; never photoreal or a generic face.",
+  "proportions": {
+    "headsTall": 7.25,
+    "headsTallRange": [
+      7.1,
+      7.4
+    ],
+    "heightCm": 168,
+    "frameGuide": {
+      "occupancy": "0.86–0.94",
+      "topMargin": "0.04–0.10",
+      "bottomMargin": "0.04–0.10"
+    }
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/claude-casting-2026-10-07/final/CC-041.png",
+    "body": null
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "heather-grey plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "owner-confirmed-facts-provisional-identity",
+    "appearance": "Provisional until Owner selects a proportion-corrected audition image",
+    "phase": "audition-pending-owner"
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": null
+    }
+  }
+}
