@@ -53,7 +53,7 @@ export async function WorksView({ locale }: { locale: AppLocale }) {
       </section>
       <OfficialSamplesSection />
       {COMMUNITY_ENABLED ? (
-        <section className="sp-section">
+        <section className="sp-section" id="community">
           <h2 className="sp-title">{t("works.madeByYou")}</h2>
           <p className="sp-lead mt-6">{t("works.emptyFan")}</p>
           <CommunityFeed locale={locale} />

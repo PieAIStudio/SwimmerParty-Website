@@ -10,8 +10,16 @@ import {
   type ReactNode,
 } from "react";
 import { usePathname } from "next/navigation";
-import { useSiteI18n } from "@/i18n/client";
-import { GameBadge, GameButton, GameToast } from "@pieai/swimmer-ui-kit";
+import { useSiteI18n, useSiteLocale } from "@/i18n/client";
+import { SITE } from "@/content/site";
+import { COMMUNITY_ENABLED } from "@/content/features";
+import { TextLink } from "@/site/TextLink";
+import { useCastCount } from "@/features/cast/client";
+import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
+import { GameAccountMenu, type GameAccountProduct } from "@pieai/swimmer-ui-kit/liquid-presence";
+import { planArrival } from "./arrival.ts";
+import { fetchProducts } from "./products.ts";
+import type { AccountProfile } from "./profile.ts";
 
 type EventName =
   | "guest_download"
@@ -20,15 +28,22 @@ type EventName =
   | "starter_download"
   | "sign_in_prompt"
   | "sign_in_start";
+type Session = {
+  user: { id: string } | null;
+  mode: "mock" | "swimmer" | null;
+  profile: AccountProfile | null;
+};
 type Account = {
   user: { id: string } | null;
+  /** The signed-in person for the header; null when signed out. */
+  profile: AccountProfile | null;
   mode: "mock" | "swimmer" | null;
   loading: boolean;
   busy: boolean;
   /** Spread on a sign-in button: starts sign-in on hover, focus or press so the click goes straight out. */
   signInIntent: { onPointerEnter: () => void; onFocus: () => void; onPointerDown: () => void };
   /** The session once its first check finishes; use it before acting on `user`. */
-  whenReady: () => Promise<{ user: { id: string } | null; mode: "mock" | "swimmer" | null }>;
+  whenReady: () => Promise<Session>;
   signIn: () => Promise<void>;
   signOut: () => Promise<void>;
   event: (name: EventName, data?: { format: string }) => void;
@@ -39,6 +54,19 @@ export function useAccount(): Account {
   if (!value) throw new Error("Account requires its provider");
   return value;
 }
+
+function profileFrom(raw: unknown): AccountProfile | null {
+  if (!raw || typeof raw !== "object") return null;
+  const value = raw as Partial<Record<keyof AccountProfile, unknown>>;
+  if (typeof value.id !== "string" || !value.id) return null;
+  return {
+    id: value.id,
+    name: typeof value.name === "string" && value.name ? value.name : "Swimmer",
+    email: typeof value.email === "string" ? value.email : null,
+    avatarUrl: typeof value.avatarUrl === "string" ? value.avatarUrl : null,
+  };
+}
+
 export function AccountProvider({
   children,
   analytics = false,
@@ -47,10 +75,7 @@ export function AccountProvider({
   analytics?: boolean;
 }) {
   const pathname = usePathname();
-  const [session, setSession] = useState<{
-    user: { id: string } | null;
-    mode: "mock" | "swimmer" | null;
-  }>({ user: null, mode: null });
+  const [session, setSession] = useState<Session>({ user: null, mode: null, profile: null });
   const [loading, setLoading] = useState(true);
   // Lets a click made before the session check finishes wait for it instead of being lost.
   const current = useRef(session);
@@ -62,6 +87,8 @@ export function AccountProvider({
   const [busy, setBusy] = useState(false);
   const pending = useRef(false);
   const prepared = useRef<{ at: number; path: string; url: Promise<string> } | null>(null);
+  // The first finished session check decides the cross-product arrival, once per page load.
+  const arrival = useRef<"waiting" | "done">("waiting");
   const event = useCallback(
     (name: EventName, data?: { format: string }) => {
       // Next production builds also run locally: NODE_ENV alone must not enable telemetry.
@@ -77,12 +104,13 @@ export function AccountProvider({
         if (!response.ok) throw new Error("Account unavailable");
         const value = await response.json();
         if (!["mock", "swimmer"].includes(value.mode)) throw new Error("Invalid account mode");
-        current.current = { user: value.user?.id ? { id: value.user.id } : null, mode: value.mode };
+        const profile = profileFrom(value.user);
+        current.current = { user: profile ? { id: profile.id } : null, mode: value.mode, profile };
         setSession(current.current);
       })
       .catch(() => {
         if (controller.signal.aborted) return;
-        current.current = { user: null, mode: null };
+        current.current = { user: null, mode: null, profile: null };
         setSession(current.current);
       })
       .finally(() => {
@@ -103,7 +131,7 @@ export function AccountProvider({
     addEventListener("pageshow", restore);
     return () => removeEventListener("pageshow", restore);
   }, []);
-  function prepare(): Promise<string> {
+  const prepare = useCallback((): Promise<string> => {
     const path = location.pathname + location.search + location.hash;
     const ready = prepared.current;
     if (ready && ready.path === path && Date.now() - ready.at < 60_000) return ready.url;
@@ -123,48 +151,65 @@ export function AccountProvider({
     });
     prepared.current = { at: Date.now(), path, url };
     return url;
-  }
+  }, []);
   function prepareSignIn() {
     if (session.mode === "swimmer" && !session.user && !pending.current)
       void prepare().catch(() => {});
   }
-  async function action(signIn: boolean) {
-    if (pending.current) return;
-    pending.current = true;
-    setBusy(true);
-    let leaving = false;
-    try {
-      await sessionReady.promise;
-      const { mode } = current.current;
-      if (!mode) throw new Error("Account unavailable");
-      if (signIn) event("sign_in_start");
-      if (mode === "swimmer" && signIn) {
-        const url = await prepare();
+  const action = useCallback(
+    async (signIn: boolean) => {
+      if (pending.current) return;
+      pending.current = true;
+      setBusy(true);
+      let leaving = false;
+      try {
+        await sessionReady.promise;
+        const { mode } = current.current;
+        if (!mode) throw new Error("Account unavailable");
+        if (signIn) event("sign_in_start");
+        if (mode === "swimmer" && signIn) {
+          const url = await prepare();
+          leaving = true;
+          location.assign(url);
+          return;
+        }
+        const route = mode === "mock" ? `mock/${signIn ? "sign-in" : "sign-out"}` : "sign-out";
+        const response = await fetch(`/api/auth/${route}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(
+            signIn
+              ? { redirectPath: location.pathname + location.search + location.hash }
+              : { scope: "local" },
+          ),
+        });
+        if (!response.ok) throw new Error("Account action failed");
         leaving = true;
-        location.assign(url);
-        return;
+        location.reload();
+      } finally {
+        // While the page is leaving, stay busy so the button keeps saying so.
+        if (!leaving) {
+          pending.current = false;
+          setBusy(false);
+        }
       }
-      const route = mode === "mock" ? `mock/${signIn ? "sign-in" : "sign-out"}` : "sign-out";
-      const response = await fetch(`/api/auth/${route}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(
-          signIn
-            ? { redirectPath: location.pathname + location.search + location.hash }
-            : { scope: "local" },
-        ),
-      });
-      if (!response.ok) throw new Error("Account action failed");
-      leaving = true;
-      location.reload();
-    } finally {
-      // While the page is leaving, stay busy so the button keeps saying so.
-      if (!leaving) {
-        pending.current = false;
-        setBusy(false);
-      }
-    }
-  }
+    },
+    [event, prepare, sessionReady],
+  );
+  // Runs once per page load, after the first session check. Mock accounts never start a sign-in.
+  useEffect(() => {
+    if (loading || arrival.current === "done") return;
+    arrival.current = "done";
+    const plan = planArrival({
+      search: location.search,
+      mode: session.mode,
+      signedIn: session.user !== null,
+    });
+    if (plan.search === null) return;
+    history.replaceState(history.state, "", location.pathname + plan.search + location.hash);
+    if (plan.startSignIn) void action(true).catch(() => {});
+    // The `arrival` guard above keeps this to a single attempt per page load.
+  }, [loading, session, action]);
   return (
     <AccountContext.Provider
       value={{
@@ -190,17 +235,50 @@ export function AccountProvider({
   );
 }
 
+/** Runs `task` when the browser is quiet, or after a short delay where idle callbacks are missing. */
+function whenIdle(task: () => void): () => void {
+  if (typeof window.requestIdleCallback === "function") {
+    const id = window.requestIdleCallback(task, { timeout: 3_000 });
+    return () => window.cancelIdleCallback(id);
+  }
+  const id = window.setTimeout(task, 1_500);
+  return () => window.clearTimeout(id);
+}
+
+/** Product list for the signed-in menu only; signed-out visitors never request it. */
+function useProducts(enabled: boolean): GameAccountProduct[] {
+  const locale = useSiteLocale();
+  const [products, setProducts] = useState<GameAccountProduct[]>([]);
+  useEffect(() => {
+    if (!enabled) return;
+    let live = true;
+    const cancel = whenIdle(() => {
+      void fetchProducts(locale).then((list) => {
+        if (live) setProducts(list);
+      });
+    });
+    return () => {
+      live = false;
+      cancel();
+    };
+  }, [enabled, locale]);
+  return products;
+}
+
 export function AccountMenu() {
   const account = useAccount();
   const { t } = useSiteI18n();
+  const castCount = useCastCount();
+  const products = useProducts(account.profile !== null);
   const [error, setError] = useState(false);
-  if (!account.user)
+  const profile = account.profile;
+  if (!profile)
     return (
       <GameButton
         variant="primary"
         size="sm"
         disabled={!account.loading && !account.mode}
-        aria-busy={account.busy || account.loading}
+        pending={account.busy || account.loading}
         {...account.signInIntent}
         onClick={() => void account.signIn().catch(() => setError(true))}
       >
@@ -208,25 +286,44 @@ export function AccountMenu() {
       </GameButton>
     );
   return (
-    <details className="relative" data-account-menu>
-      <summary
-        className="cursor-pointer whitespace-nowrap"
-        title={account.mode === "mock" ? t("assets.mockAccount") : undefined}
-      >
-        <GameBadge tone="success">{t("assets.signedIn")}</GameBadge>
-      </summary>
-      <div className="sp-card absolute right-0 z-50 mt-3 min-w-40 bg-background">
-        {account.mode === "mock" ? (
-          <p className="sp-small mb-3">{t("assets.mockAccount")}</p>
-        ) : null}
-        <GameButton
-          disabled={account.busy}
-          onClick={() => void account.signOut().catch(() => setError(true))}
-        >
-          {t("assets.signOut")}
-        </GameButton>
-        {error ? <GameToast tone="danger">{t("assets.failed")}</GameToast> : null}
-      </div>
-    </details>
+    <div data-account-menu className="relative">
+      <GameAccountMenu
+        user={{
+          name: profile.name,
+          email: profile.email ?? undefined,
+          avatarUrl: profile.avatarUrl ?? undefined,
+        }}
+        labels={{
+          trigger: t("account.menuLabel", { name: profile.name }),
+          siteTab: SITE.name,
+          productsTab: t("account.productsTab"),
+          accountTab: t("account.accountTab"),
+          current: t("account.current"),
+          manage: t("account.manage"),
+          signOut: t("account.signOut"),
+        }}
+        site={
+          <ul className="grid gap-4">
+            <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <TextLink href="/cast">{t("account.cast")}</TextLink>
+              <span className="sp-small">{t("account.castCount", { count: castCount })}</span>
+            </li>
+            {COMMUNITY_ENABLED ? (
+              <li>
+                <TextLink href="/works#community">{t("community.openForm")}</TextLink>
+              </li>
+            ) : null}
+            <li>
+              <TextLink href="/guide">{t("guide.helpLabel")}</TextLink>
+            </li>
+          </ul>
+        }
+        products={products}
+        accountHref={`${SITE.accountUrl}/account`}
+        onSignOut={() => account.signOut().catch(() => setError(true))}
+        signingOut={account.busy}
+      />
+      {error ? <GameToast tone="danger">{t("assets.failed")}</GameToast> : null}
+    </div>
   );
 }

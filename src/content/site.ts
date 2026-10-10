@@ -15,6 +15,8 @@ export const SITE = {
   } satisfies L,
   /** Canonical production origin. The translate proxy is derived from it. */
   url: "https://swimmerparty.swiminai.com",
+  /** Account center shared by every SWIM IN AI product (public origin, not a secret). */
+  accountUrl: "https://accounts.swiminai.com",
   founded: "2026",
   /** Owner's personal inbox until the brand mailbox is set up (Owner, 2026-10-06). */
   contact: "pieai@hotmail.com",

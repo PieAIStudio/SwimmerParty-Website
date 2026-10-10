@@ -467,13 +467,37 @@ export const messages = {
     en: "Not now",
     zh: "以后再说",
   },
-  "assets.signedIn": {
-    en: "Signed in",
-    zh: "已登录",
+  "account.menuLabel": {
+    en: "Account: {name}",
+    zh: "账号：{name}",
   },
-  "assets.signOut": {
+  "account.productsTab": {
+    en: "All products",
+    zh: "全部产品",
+  },
+  "account.accountTab": {
+    en: "Account",
+    zh: "账号",
+  },
+  "account.current": {
+    en: "Current",
+    zh: "当前",
+  },
+  "account.manage": {
+    en: "Account and security",
+    zh: "管理账号与安全",
+  },
+  "account.signOut": {
     en: "Sign out",
-    zh: "退出",
+    zh: "退出登录",
+  },
+  "account.cast": {
+    en: "Your cast",
+    zh: "我的选角单",
+  },
+  "account.castCount": {
+    en: "{count} actors",
+    zh: "{count} 位演员",
   },
   "assets.dialogTitle": {
     en: "Download selected",
@@ -558,10 +582,6 @@ export const messages = {
   "assets.preview": {
     en: "Sheet preview",
     zh: "拼图预览",
-  },
-  "assets.mockAccount": {
-    en: "Local test account",
-    zh: "本地模拟账号",
   },
   "assets.originalsLegacy": {
     en: "The original files, including older WebP images, with the profile and terms of use.",
@@ -1342,8 +1362,8 @@ export const messages = {
     zh: "怎么用",
   },
   "guide.tip": {
-    en: "Starter pack: two key images and a prompt, ready to shoot. Character sheet: combine the images you pick into one reference, with voice and video if you like. Cast: put several actors together and download them at once. Click for the full guide.",
-    zh: "懒人包：两张关键图加提示词，下载就能开拍。设定图：挑几张图拼成一张参考图，可附声音和视频。选角单：几位演员放一起，一次下载。点问号看详细说明。",
+    en: "Starter pack: two key images and a prompt, ready to shoot.\nCharacter sheet: combine the images you pick into one reference, with voice and video if you like.\nCast: put several actors together and download them at once.\nClick for the full guide.",
+    zh: "懒人包：两张关键图加提示词，下载就能开拍。\n设定图：挑几张图拼成一张参考图，可附声音和视频。\n选角单：几位演员放一起，一次下载。\n点问号看详细说明。",
   },
   "guide.metaTitle": {
     en: "How it works",
