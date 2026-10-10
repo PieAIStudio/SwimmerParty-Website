@@ -1410,7 +1410,7 @@ export const messages = {
     zh: "几位演员，一次带走",
   },
   "help.cast.body": {
-    en: "Add actors to your cast,\nthen download them together from Your cast.",
+    en: "Add actors to your cast,\nthen download them all at once.",
     zh: "把演员加进选角单，\n再到「我的选角单」一次下载全组。",
   },
   "help.cast.alt": {
