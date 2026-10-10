@@ -34,6 +34,7 @@ export async function SiteFooter() {
                 {t(`nav.${item.key}`)}
               </TextLink>
             ))}
+            <TextLink href="/guide">{t("guide.footer")}</TextLink>
           </div>
           <p className="sp-small mt-10 text-muted-foreground">
             {t("footer.rights", { year: new Date().getFullYear() })}

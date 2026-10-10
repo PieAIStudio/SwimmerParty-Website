@@ -3,7 +3,17 @@ import { ACTORS } from "@/content/actors";
 import { WORKS } from "@/content/works";
 import { LOCALE_HTML_LANG, routing } from "@/i18n/routing";
 import { SITE } from "@/content/site";
-const PAGES = ["", "/actors", "/works", "/license", "/studio", "/privacy", "/terms", "/cast"];
+const PAGES = [
+  "",
+  "/actors",
+  "/works",
+  "/license",
+  "/studio",
+  "/privacy",
+  "/terms",
+  "/cast",
+  "/guide",
+];
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const paths = [
