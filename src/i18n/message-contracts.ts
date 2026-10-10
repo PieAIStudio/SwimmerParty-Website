@@ -8,6 +8,7 @@ export interface MessageContracts {
   readonly "account.menuLabel": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "account.productsTab": {  };
   readonly "account.signOut": {  };
+  readonly "account.siteTab": {  };
   readonly "actor.appearanceRole": { readonly "role": string | number | bigint | boolean | null | undefined | Date; };
   readonly "actor.appearances": {  };
   readonly "actor.newFaceDescription": {  };

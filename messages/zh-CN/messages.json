@@ -122,6 +122,7 @@
   "assets.signInBody": "登录泳者账号，下载不用等待。",
   "assets.notNow": "以后再说",
   "account.menuLabel": "账号：{name}",
+  "account.siteTab": "本站",
   "account.productsTab": "全部产品",
   "account.accountTab": "账号",
   "account.current": "当前",

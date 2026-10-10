@@ -78,11 +78,11 @@ test("the open panel has three tabs; products show Current and only real links",
   await page.goto("/en/guide");
   await page.getByRole("button", ACCOUNT_TRIGGER).click();
   const panel = page.locator(".game-ui-account-menu-panel");
-  await expect(page.getByRole("tab", { name: "SWIMMER PARTY" })).toBeVisible();
-  await expect(page.getByRole("tab", { name: "All products" })).toBeVisible();
+  await expect(page.getByRole("tab", { name: "Site" })).toBeVisible();
+  await expect(page.getByRole("tab", { name: "Products" })).toBeVisible();
   await expect(page.getByRole("tab", { name: "Account" })).toBeVisible();
 
-  await page.getByRole("tab", { name: "All products" }).click();
+  await page.getByRole("tab", { name: "Products" }).click();
   await expect(panel.getByText("Current", { exact: true })).toBeVisible();
   // The current product is not a link; a product without clientId keeps its plain URL.
   await expect(panel.getByRole("link", { name: /Fixture tools/ })).toHaveAttribute(

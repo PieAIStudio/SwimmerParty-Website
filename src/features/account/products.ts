@@ -78,7 +78,8 @@ export function createProductSource(
 
 async function loadProductsJson(): Promise<unknown> {
   const response = await fetch(`${SITE.accountUrl}/products.json`, {
-    cache: "force-cache",
+    // The center sends max-age=300; the default cache mode honours it, force-cache would not.
+    cache: "default",
     credentials: "omit",
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });

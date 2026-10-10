@@ -471,8 +471,12 @@ export const messages = {
     en: "Account: {name}",
     zh: "账号：{name}",
   },
+  "account.siteTab": {
+    en: "Site",
+    zh: "本站",
+  },
   "account.productsTab": {
-    en: "All products",
+    en: "Products",
     zh: "全部产品",
   },
   "account.accountTab": {

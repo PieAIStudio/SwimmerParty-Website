@@ -295,7 +295,7 @@ export function AccountMenu() {
         }}
         labels={{
           trigger: t("account.menuLabel", { name: profile.name }),
-          siteTab: SITE.name,
+          siteTab: t("account.siteTab"),
           productsTab: t("account.productsTab"),
           accountTab: t("account.accountTab"),
           current: t("account.current"),
