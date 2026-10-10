@@ -11,14 +11,14 @@
 
 | 路径 | 内容 | 进 Git |
 | ---- | ---- | ------ |
-| `pack.json` | 总入口：风格、演员、作品、检查、交付、出图路线 | 是 |
+| `pack.json` | 总入口：风格、演员、作品、检查、全套格位（`fullPack`）、交付、出图路线 | 是 |
 | `style/aesthetic.md` | Owner 的美学原文，每条出图提示词都要逐字包含 | 是 |
 | `style/character-rules.md` | 人物通用规则：成人比例、脸部 CG 化、衣服写实 | 是 |
 | `style/chatgpt-project-instructions.md` | ChatGPT 项目说明的英文正文 | 是 |
 | `actors/<slug>.json`、`casting/` | 正式演员与新面孔的生产事实、身份、造型、版本、批准网站字段；入口由 pack.json 声明 | 是 |
 | `works/<id>.json` | 每部作品：剧本位置、已定角色、剧本里出现但还没定造型的人物 | 是 |
 | `checks.md` | 验收标准：每批图怎么判断合格 | 是 |
-| `notes/` | 设定、造型方案、进度；`history/` 是早期试验记录；`handoffs/` 是交接单 | 是 |
+| `notes/` | 设定和造型方案；`handoffs/` 只放进行中的制作单和每位演员一份交接；做完的移到 `history/` | 是 |
 | `library/staging/<code>/` | 检查合格、按规范命名的定稿图 | **否** |
 | `library/rejects/`、`overviews/`、`trials/` | 废图、总览联系表、早期试验图 | **否** |
 
@@ -26,7 +26,7 @@
 
 ## 一批新图从出图到上线
 
-1. **MediaFactory**：按 `pack.json` 出图、检查，把合格的图放进 `library/staging/<code>/`，在 `notes/handoffs/` 写交接单。
+1. **MediaFactory**：按 `pack.json` 出图、检查，把合格的图放进制作单指定的 staging，在 `notes/handoffs/<日期>-<slug>.md` 写交接（每位演员每张单一个文件，原地更新；运行日志留在 MediaFactory 的 run 里）。
 2. **Owner**：看总览图，确认。
 3. **网站会话**：按 [演员数据归属](../src/content/actors/README.md) 更新批准的生产字段，运行 `pnpm data:generate`；交付图片按资产规范入库，再按 `docs/reference/release.md` 另行获得发布授权。生成档案和 looks 不手工同步。
 ## 改这个包
