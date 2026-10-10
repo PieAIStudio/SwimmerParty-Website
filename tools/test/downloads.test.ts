@@ -291,7 +291,12 @@ test("mock cookie is exact, sign-in is same-origin, and sign-out removes it", as
         response().res,
         "mock",
       ),
-      { id: "local-mock-member" },
+      {
+        id: "local-mock-member",
+        name: "Local member",
+        email: "member@example.test",
+        avatarUrl: null,
+      },
     );
     const out = response();
     await auth(request({ method: "POST", query: { action: ["mock", "sign-in"] } }), out.res);

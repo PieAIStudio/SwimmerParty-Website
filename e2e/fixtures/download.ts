@@ -6,7 +6,15 @@ export async function localMember(context: BrowserContext) {
   const response = await context.request.post("/api/auth/mock/sign-in");
   expect(response.ok()).toBe(true);
   const session = await context.request.get("/api/auth/session");
-  expect(await session.json()).toEqual({ user: { id: "local-mock-member" }, mode: "mock" });
+  expect(await session.json()).toEqual({
+    user: {
+      id: "local-mock-member",
+      name: "Local member",
+      email: "member@example.test",
+      avatarUrl: null,
+    },
+    mode: "mock",
+  });
 }
 
 export async function downloadFrom(page: Page, trigger: Locator) {

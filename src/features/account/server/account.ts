@@ -3,6 +3,7 @@ import { createAuthClient } from "@pieai/swimmer-backend-client";
 import type { createNodeAuth, NodeAuthConfig } from "@pieaistudio/swimmer-auth-kit/server";
 import { SITE } from "../../../content/site.ts";
 import { HttpError } from "../../../lib/server/api.ts";
+import { accountProfile, type AccountProfile } from "../profile.ts";
 
 export function swimmerAccountConfig(
   env: Readonly<Record<string, string | undefined>> = process.env,
@@ -53,15 +54,20 @@ export async function accountUser(
   response: ServerResponse,
   mode: "mock" | "swimmer",
   dependencies: AccountDependencies = {},
-): Promise<{ id: string } | null> {
+): Promise<AccountProfile | null> {
   if (mode === "mock")
     return /(?:^|;\s*)sp_mock_member=1(?:;|$)/.test(request.headers.cookie ?? "")
-      ? { id: "local-mock-member" }
+      ? {
+          id: "local-mock-member",
+          name: "Local member",
+          email: "member@example.test",
+          avatarUrl: null,
+        }
       : null;
   // An anonymous request has no session to verify. Avoid invoking the SSO
   // cookie reader in that case; the authenticated path below still verifies
   // every present grant with AuthKit on every request.
   if (!request.headers.cookie && !dependencies.createNodeAuth) return null;
   const user = await (await swimmerAccount(request, response, dependencies)).verifiedUser();
-  return user && user.is_anonymous === false ? { id: user.id } : null;
+  return user && user.is_anonymous === false ? accountProfile(user) : null;
 }

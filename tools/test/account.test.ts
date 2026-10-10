@@ -34,10 +34,12 @@ test("each protected request constructs and verifies an independent account adap
   const response = {} as ServerResponse;
   const first = { headers: {} } as IncomingMessage;
   const second = { headers: {} } as IncomingMessage;
-  assert.deepEqual(
-    await accountUser(first, response, "swimmer", { env, createNodeAuth: factory }),
-    { id: "user-1" },
-  );
+  assert.deepEqual(await accountUser(first, response, "swimmer", { env, createNodeAuth: factory }), {
+    id: "user-1",
+    name: "Swimmer",
+    email: null,
+    avatarUrl: null,
+  });
   assert.equal(
     await accountUser(second, response, "swimmer", { env, createNodeAuth: factory }),
     null,
