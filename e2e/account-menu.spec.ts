@@ -196,24 +196,3 @@ test("a swimmer arrival starts exactly one sign-in, returning to the cleaned pat
   await page.waitForTimeout(500);
   expect(starts.length).toBe(1);
 });
-
-test("the help tip stays inside the viewport, and phones do not show it", async ({ page }) => {
-  for (const width of [1440, 1024]) {
-    await page.setViewportSize({ width, height: 900 });
-    await page.goto("/en/actors/tang-yunqiu");
-    // Let the session check finish so the page has settled before pointing at the help icon.
-    await expect(page.getByRole("button", SIGN_IN).first()).toBeVisible();
-    const help = page.locator("main").getByRole("link", { name: "How it works" });
-    await help.scrollIntoViewIfNeeded();
-    await help.hover();
-    const tip = page.getByRole("tooltip").filter({ hasText: "Starter pack" });
-    await expect(tip).toHaveCSS("opacity", "1");
-    const box = await tip.boundingBox();
-    expect(box).not.toBeNull();
-    expect(box!.x).toBeGreaterThanOrEqual(0);
-    expect(box!.x + box!.width).toBeLessThanOrEqual(width);
-  }
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/en/actors/tang-yunqiu");
-  await expect(page.getByRole("tooltip").filter({ hasText: "Starter pack" })).toBeHidden();
-});

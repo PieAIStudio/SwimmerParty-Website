@@ -1365,9 +1365,57 @@ export const messages = {
     en: "How it works",
     zh: "怎么用",
   },
-  "guide.tip": {
-    en: "Starter pack: two key images and a prompt, ready to shoot.\nCharacter sheet: combine the images you pick into one reference, with voice and video if you like.\nCast: put several actors together and download them at once.\nClick for the full guide.",
-    zh: "懒人包：两张关键图加提示词，下载就能开拍。\n设定图：挑几张图拼成一张参考图，可附声音和视频。\n选角单：几位演员放一起，一次下载。\n点问号看详细说明。",
+  "help.fullGuide": {
+    en: "Full guide",
+    zh: "看完整说明",
+  },
+  "help.starter.label": {
+    en: "Starter pack",
+    zh: "懒人包",
+  },
+  "help.starter.title": {
+    en: "Two images and a prompt, ready to shoot",
+    zh: "两张图加提示词，马上开拍",
+  },
+  "help.starter.body": {
+    en: "Full-body front, face front and the character prompt.\nUpload them to your AI tool and go.",
+    zh: "全身正面、脸部正面和角色提示词。\n下载后上传到你的 AI 工具就能用。",
+  },
+  "help.starter.alt": {
+    en: "Clicking Get the starter pack starts the download",
+    zh: "点「领取懒人包」，开始下载",
+  },
+  "help.sheet.label": {
+    en: "Sheet",
+    zh: "设定图",
+  },
+  "help.sheet.title": {
+    en: "Pick a few, combine them into one reference",
+    zh: "挑几张，拼成一张参考图",
+  },
+  "help.sheet.body": {
+    en: "Choose angles, expressions and outfits for one 4K image.\nAdd voice and video if you like.",
+    zh: "选角度、表情和服装，拼成一张 4K 图。\n可以附上声音和视频。",
+  },
+  "help.sheet.alt": {
+    en: "Ticking images on the sheet page updates the preview",
+    zh: "在设定图页勾选图片，预览随之更新",
+  },
+  "help.cast.label": {
+    en: "Cast",
+    zh: "选角单",
+  },
+  "help.cast.title": {
+    en: "Several actors, one download",
+    zh: "几位演员，一次带走",
+  },
+  "help.cast.body": {
+    en: "Add actors to your cast,\nthen download them together from Your cast.",
+    zh: "把演员加进选角单，\n再到「我的选角单」一次下载全组。",
+  },
+  "help.cast.alt": {
+    en: "After Add to cast, the actor appears in Your cast",
+    zh: "加入选角单后，在我的选角单里看到演员",
   },
   "guide.metaTitle": {
     en: "How it works",

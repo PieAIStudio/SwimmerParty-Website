@@ -288,14 +288,6 @@
   height: 100%;
 }
 
-/* The "?" tip is a hover hint. On phones a tap opens the guide, and the 280px bubble
- * anchored to a button near the left edge would leave the viewport, so it stays hidden there. */
-@media (max-width: 639px) {
-  .sp-help-tip [role="tooltip"] {
-    display: none;
-  }
-}
-
 @media (min-width: 640px) {
   :root {
     --sp-gutter: 32px;

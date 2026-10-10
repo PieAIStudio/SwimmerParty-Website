@@ -25,11 +25,50 @@ import { CopyBlock } from "@/site/CopyBlock";
 import { ShareButton } from "@/site/ShareButton";
 import { TextLink } from "@/site/TextLink";
 import { VersionBadge } from "@/site/VersionBadge";
-import { GameBadge, GameButton, GameIconButton, GameTooltip } from "@pieai/swimmer-ui-kit";
+import { GameBadge, GameButton } from "@pieai/swimmer-ui-kit";
+import { ActorHelpCard } from "./ActorHelpCard";
+
+/** One looping clip per topic and locale; tools/help-clips records each file. */
+function helpClip(locale: AppLocale, topic: "starter" | "sheet" | "cast", alt: string) {
+  return {
+    kind: "video" as const,
+    sources: [
+      { src: `/help/${locale}/${topic}.webm`, type: "video/webm" as const },
+      { src: `/help/${locale}/${topic}.mp4`, type: "video/mp4" as const },
+    ],
+    poster: `/help/${locale}/${topic}-poster.webp`,
+    alt,
+    width: 640,
+    height: 400,
+  };
+}
 export async function ActorDossier({ actor, locale }: { actor: Actor; locale: AppLocale }) {
   const slug = actor.slug;
   const { t } = await getSiteI18n(locale);
   const name = locale === "zh" ? actor.nameCn : actor.nameEn;
+  const helpTopics = [
+    {
+      id: "starter",
+      label: t("help.starter.label"),
+      title: t("help.starter.title"),
+      body: t("help.starter.body"),
+      media: helpClip(locale, "starter", t("help.starter.alt")),
+    },
+    {
+      id: "sheet",
+      label: t("help.sheet.label"),
+      title: t("help.sheet.title"),
+      body: t("help.sheet.body"),
+      media: helpClip(locale, "sheet", t("help.sheet.alt")),
+    },
+    {
+      id: "cast",
+      label: t("help.cast.label"),
+      title: t("help.cast.title"),
+      body: t("help.cast.body"),
+      media: helpClip(locale, "cast", t("help.cast.alt")),
+    },
+  ];
   const alternate = locale === "zh" ? actor.nameEn : actor.nameCn;
   const assets = getActorAssets(slug);
   const front = firstImage(slug, ["turnaround.front"]);
@@ -104,18 +143,11 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
                 </GameButton>
               ) : null}
               <CastAddButton slug={actor.slug} locale={locale} name={name} />
-              <span className="sp-help-tip">
-                <GameTooltip label={t("guide.tip")} align="end" placement="bottom">
-                  <GameIconButton
-                    href="/guide"
-                    linkComponent={Link}
-                    label={t("guide.helpLabel")}
-                    size="sm"
-                  >
-                    ?
-                  </GameIconButton>
-                </GameTooltip>
-              </span>
+              <ActorHelpCard
+                label={t("guide.helpLabel")}
+                topics={helpTopics}
+                link={{ href: `/${locale}/guide`, label: t("help.fullGuide") }}
+              />
             </div>
             <dl className="mt-4 divide-y divide-border">
               {actor.spec.map((row) => (
