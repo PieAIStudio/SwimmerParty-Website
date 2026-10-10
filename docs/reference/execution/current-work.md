@@ -41,6 +41,6 @@ related: []
 
 2026-10-10 角色设定图独立成页（`/actors/<slug>/sheet`）与“怎么用”页、演员页“?”入口：同日第三次上线 `dpl_722szQPi2jK4UC8yDWhvVzJQ5jgn`（提交 39e05e2）。发布前 `pnpm verify`（93 项工具测试、35 项浏览器测试）、docs:check、swimmer-ui-check 通过；候选冒烟中英首页、名册、演员页、设定图页、怎么用、选角单、sitemap、robots 均 200，canonical 指向正式域名；上线后 SSO 发起仍返回跳转。登录后的 4K 设定图与附件 ZIP 需 Owner 真实账号验收。回滚目标：`dpl_4HbMbjvt5t6C7AWX3F1xcUfWbHcU`。
 
-2026-10-10 统一账号面板（已推送到 main，未部署）：登录后的头像与名字由 UIKit 3.1.0 `GameAccountMenu` 显示；“全部产品”来自账号中心 `products.json`（5 分钟缓存，失败即无产品页签）；“怎么用”的“?”提示改为换行并靠右，手机不显示；处理中的按钮改用 UIKit `pending`。名字目前取邮箱本地名，等 AuthKit 0.9 提供 `user_metadata` 再显示头像与显示名。决定与边界见 [decisions.md](../decisions.md) 的同日条目；真实账号中心登录与产品列表由 Owner 验收。验证记录：`pnpm check`（101 项工具测试、442 个文案键）、全量 Playwright 44 项（含新增 9 项账号面板测试，全部通过）、`pnpm docs:check` 与 `swimmer-ui-check` 通过；截图在本机 `.devspace-reports/account-menu/`，不入库。
+2026-10-10 统一账号面板：同日第四次上线 `dpl_7oFnTJAxsE9LygGXLRnXUnBo95Gg`（提交 b80e289；回滚目标 `dpl_722szQPi2jK4UC8yDWhvVzJQ5jgn`）。页签为“本站 / 全部产品 / 账号”（英文 Site / Products / Account），一行放下。登录后的头像与名字由 UIKit 3.1.0 `GameAccountMenu` 显示；“全部产品”来自账号中心 `products.json`（5 分钟缓存，失败即无产品页签）；“怎么用”的“?”提示改为换行并靠右，手机不显示；处理中的按钮改用 UIKit `pending`。名字目前取邮箱本地名、头像为首字母：邮箱验证码登录本来没有名字和头像，等账号中心提供“设置昵称和头像”时，再让会话接口改用 AuthKit 0.9 的资料字段。决定与边界见 [decisions.md](../decisions.md) 的同日条目；真实账号中心登录与产品列表由 Owner 验收。验证记录：`pnpm check`（101 项工具测试、442 个文案键）、全量 Playwright 44 项（含新增 9 项账号面板测试，全部通过）、`pnpm docs:check` 与 `swimmer-ui-check` 通过；截图在本机 `.devspace-reports/account-menu/`，不入库。
 
 并行：`media-pack/` 里包满、雷乐、范一鸣及新面孔比例修正仍在制作，属于其他会话，不在这里接管。
