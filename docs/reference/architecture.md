@@ -26,7 +26,7 @@ related:
 | src/pages/api                                    | URL 保持不变的 Node API 薄转发入口                                                                            |
 | src/features/actors                              | 名册、筛选、档案；index 是页面组合入口，queries 是纯查询入口                                                  |
 | src/features/assets                              | 资产浏览、选图、语音、签名下载、ZIP/拼图；index、client、queries、contracts、server/index 分别限定能力        |
-| src/features/account                             | 浏览器账号状态；server/index 调用逐请求的 AuthKit                                                             |
+| src/features/account                             | 浏览器账号状态、统一账号面板与产品目录；server/index 调用逐请求的 AuthKit                                     |
 | src/features/community                           | UI 与 mock 领域存储分离；server/index 为 API。非 mock 环境在访问账号/存储前统一返回 503                       |
 | src/features/home、studio、license、works、guide | 各自页面视图，路由只交给它们所需数据                                                                          |
 | src/features/sheet                               | 角色设定图页；预设、挑图和网址状态是纯函数，拼图与签名下载复用 assets 的 client 入口，上限在 assets/contracts |
