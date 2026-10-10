@@ -14,7 +14,7 @@ Claude 写，2026-10-09，**替换** `2026-10-09-trio-full-packs.md`（那份作
 
 ## 0. 共同部分
 
-- **格式照汤米的制作单**（`2026-10-08-tommy-brannigan-full-pack.md`）：55 张图的格位表、命名、尺寸、透明底、交付位置、交付说明、运行日志、验收。
+- **格位与规格**：55 张图的格位表见 `media-pack/pack.json` 的 `fullPack`；命名、尺寸、透明底和交付位置见 `pack.json` 与 `checks.md`。（原汤米制作单已移到 `notes/history/handoffs-2026-10/`。）
 - **声音 6 段**：intro、intro-alt（英文）、chat、happy、angry、sad。
 - **流程**：照 MediaFactory 的 `docs/reference/ordering-from-another-project.md`。**一次只做一位**，顺序：严琳 → 包满 → 雷乐 → 范一鸣 → 马乐。
 - **汤米留下的教训**，必须做到：
@@ -227,3 +227,36 @@ Claude 写，2026-10-09，**替换** `2026-10-09-trio-full-packs.md`（那份作
 - 新照片定稿后：
   - 网站上这五位的试镜照换成新照片（版本仍是 0.1.0）；
   - 全套做完、Owner 点头后升到 1.0.0。版本说明用第七轮文案稿第 15 节的通用写法。
+
+## 8. 精简执行规则
+
+五位演员可以并行，但每位演员只允许一个活动 session。每个 session 只做一位演员，使用独立 run、浏览器标签、输出目录和文件前缀；Pics-A 的共享 composer 同一时间只允许一个 session 操作，其他 session 排队，不抢占。
+
+模型设置必须分开记录：
+
+- MediaFactory Codex session：`gpt-6.1-sol`，`medium`；
+- 网页端 ChatGPT 出图：制作单指定的 `gpt-5.6-sol / 5.6 Pro`；
+- 前者只负责编排、测量、验收和记账，不能修改后者。
+
+本轮演员安排：
+
+- 严琳：保留现有 run 和已完成的 20 张图，继续补缺，不重新开 session；
+- 包满、雷乐、范一鸣、马乐：旧 run 只保留证据，重新开 fresh session；先读本制作单和 actor JSON，再从比例试镜开始。
+
+## 9. 一条演员交付链
+
+`读取事实 → 测量旧照 → 比例试镜 → Owner 选锚点 → 55 张图 → 6 段声音 → Grok 样片 → 审看页`
+
+- 比例试镜不合格：保存拒收证据，自动进入同一演员的 replacement session；不要把不合格身体图当参考。
+- 少出图：查询原任务，只补确认缺口；不重复未知请求。
+- composer 忙或模型暂时不可用：排队、等待或开独立 replacement；不把可恢复故障当作任务结束。
+- 只有预算超限、声贝超过 3,000、音色槽满、外部结果未知、事实缺失或准备发布时才停下来问 Owner。
+- Owner 点头前不入库、不改演员状态、不发布；每位演员的审看页必须包含图片、声音、视频和验收数字。
+
+## 10. 比例验收口径
+
+> 2026-10-10 更正：本节原先把“发型最高连续点”当头顶，会把发髻、蓬松发算进头高，系统性地把头身比量小（例：米丽娅姆 5.5 → 实际约 6.3）。该口径作废。现行口径只在 MediaFactory `.agents/skills/mf-actor-pack/references/proportion-review.md`：头骨顶由眼线和下巴推算（含张嘴、俯仰、年龄修正），发型顶只作显示。
+
+目标：严琳 165 cm / 7.25；包满 172 cm / 7.4；雷乐 170 cm / 7.0；范一鸣 168 cm / 7.0；马乐 175 cm / 7.5。
+
+每个 replacement 在交接记录里写 `parent actor`、`replacement index`、累计消息/图片/费用和失败原因；这样换 session 不会丢账，也不会因为一次 trial 上限把演员任务永久停掉。
