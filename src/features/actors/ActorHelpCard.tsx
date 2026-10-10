@@ -4,8 +4,8 @@ import { GameHelpCard, GameIconButton, type GameHelpCardTopic } from "@pieai/swi
 import { Link } from "@/i18n/navigation";
 
 /**
- * The "?" beside the CTA row. Its trigger is built in this client component: passing a trigger
- * built by the server component crashed server rendering for some actors (zhang-qiang, chen-wei).
+ * The "?" beside the CTA row. UIKit 3.2.1 also accepts a server-built trigger; this client component
+ * keeps the original element, so the card's ARIA attributes stay on the link.
  */
 export function ActorHelpCard({
   label,

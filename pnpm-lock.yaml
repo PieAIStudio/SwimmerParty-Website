@@ -15,8 +15,8 @@ importers:
         specifier: 0.2.0
         version: 0.2.0(react@19.2.7)
       '@pieai/swimmer-ui-kit':
-        specifier: 3.2.0
-        version: 3.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 3.2.1
+        version: 3.2.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@pieaistudio/swimmer-auth-kit':
         specifier: 0.8.0-rc.1
         version: 0.8.0-rc.1(@supabase/ssr@0.12.0(@supabase/supabase-js@2.110.3))(@supabase/supabase-js@2.110.3)(react@19.2.7)
@@ -806,8 +806,8 @@ packages:
       react:
         optional: true
 
-  '@pieai/swimmer-ui-kit@3.2.0':
-    resolution: {integrity: sha512-iZSC1yRFvqg9Uju6dTQd0HVwy94Rc+lkLMoSl6PRV5UMYMxNSioTJnlqWgM3+9q307mPECp+h2cJgnmISjHnQQ==}
+  '@pieai/swimmer-ui-kit@3.2.1':
+    resolution: {integrity: sha512-725MGXbMxsA5qbKpROnyh4JRRrQjb4CvIOXo2mMmyLiKVN2hujnjfTgtgxXAPo1PzlIP4oFHRz+BQ2GSGR4gng==}
     engines: {node: '>=24 <25'}
     hasBin: true
     peerDependencies:
@@ -3383,7 +3383,7 @@ snapshots:
     optionalDependencies:
       react: 19.2.7
 
-  '@pieai/swimmer-ui-kit@3.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@pieai/swimmer-ui-kit@3.2.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@floating-ui/react': 0.27.20(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       react: 19.2.7
