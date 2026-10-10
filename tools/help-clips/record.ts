@@ -17,7 +17,7 @@
  */
 import { chromium, type CDPSession, type Page } from "@playwright/test";
 import { execFile } from "node:child_process";
-import { mkdir, rm, stat, writeFile } from "node:fs/promises";
+import { mkdir, rename, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 import sharp from "sharp";
@@ -33,7 +33,16 @@ const FPS = 25;
 const FRAME_MS = 1000 / FPS;
 const SIZE = { width: 640, height: 400 };
 const SHEET_VIEWPORT = { width: 1024, height: 640 };
-const CAST_VIEWPORT = { width: 1024, height: 640 };
+/** Actor-page clips: 400x250 CSS px at 2x, so the CTA labels are 1.6x their size in the 640x400 frame. */
+const TIGHT = { width: 400, height: 250 };
+/** The /cast end: 640x400 CSS px, so the heading is large and the top of the first card shows. */
+const CAST_END = { width: 640, height: 400 };
+/** Header hidden on the actor page and /cast, so the content fills the short frame. */
+const HIDE_HEADER = "header{display:none!important}";
+/** Where the starter button sits in the frame; the badges and name sit above the frame. */
+const ACTOR_FRAME_Y = 8;
+/** Half a second of crossfade from the toast frame back to the calm first frame, for a seamless loop. */
+const FADE_FRAMES = 12;
 const CAP_BYTES = 300 * 1024;
 const ACTOR = "tang-yunqiu";
 const LOCALES = ["zh", "en"] as const;
@@ -56,6 +65,7 @@ function copy(locale: Locale) {
     addToCast: messages["cast.add"][locale],
     inCast: messages["cast.added"][locale],
     actorName: locale === "zh" ? actor.nameCn : actor.nameEn,
+    started: messages["assets.started"][locale],
     status: STATUS_LABEL[actor.status][locale],
   };
 }
@@ -88,7 +98,9 @@ async function startSampler(page: Page, dir: string): Promise<Sampler> {
       if (wait > 0) await sleep(wait);
       if (!running || !writing || !latest) continue;
       written++;
-      await writeFile(path.join(dir, `f${String(written).padStart(5, "0")}.jpg`), latest);
+      // Every frame is normalised to the 640x400 output, so clips cut between sizes still encode.
+      const jpeg = await sharp(latest).resize(SIZE.width, SIZE.height, { fit: "fill" }).jpeg({ quality: 95 }).toBuffer();
+      await writeFile(path.join(dir, `f${String(written).padStart(5, "0")}.jpg`), jpeg);
     }
   })();
   return {
@@ -189,12 +201,13 @@ type Scene = {
 
 const SCENES: Record<Topic, Scene> = {
   starter: {
-    viewport: SIZE,
+    viewport: TIGHT,
     path: (locale) => `/${locale}/actors/${ACTOR}`,
     ready: async (page, locale) => {
+      await page.addStyleTag({ content: HIDE_HEADER });
       const button = page.getByRole("button", { name: copy(locale).starter }).first();
       await button.waitFor({ state: "visible", timeout: 30_000 });
-      await frameAt(button, 282);
+      await frameAt(button, ACTOR_FRAME_Y);
     },
     setup: async (page) => {
       // Hold the signed-bundle request so the pending state stays on screen for a moment.
@@ -210,9 +223,9 @@ const SCENES: Record<Topic, Scene> = {
       await sleep(250);
       await press(page);
       await stepOff(page, cursor);
-      await sleep(1200);
-      await glide(page, cursor, PARK, 500);
-      await sleep(700);
+      // The notice appears once the bundle is signed and zipped; hold it on screen before the loop.
+      await page.getByText(copy(locale).started, { exact: true }).first().waitFor({ timeout: 8000 });
+      await sleep(2200);
     },
   },
   sheet: {
@@ -263,14 +276,15 @@ const SCENES: Record<Topic, Scene> = {
     },
   },
   cast: {
-    // The actor page uses the starter clip's 640x400 framing. /cast is shown at 1024x640 (about 0.63 in the frame)
-    // so its heading and the top half of the first card portrait fit; the cut is a paused span of the sampler.
-    viewport: SIZE,
+    // The actor page uses the starter clip's close framing at 400x250. The cut is a paused span of the sampler;
+    // /cast is then shown at 640x400, so its heading is large and the top of the first card portrait is in frame.
+    viewport: TIGHT,
     path: (locale) => `/${locale}/actors/${ACTOR}`,
     ready: async (page, locale) => {
-      const button = page.getByRole("button", { name: copy(locale).addToCast }).first();
+      await page.addStyleTag({ content: HIDE_HEADER });
+      const button = page.getByRole("button", { name: copy(locale).starter }).first();
       await button.waitFor({ state: "visible", timeout: 30_000 });
-      await frameAt(button, 282);
+      await frameAt(button, ACTOR_FRAME_Y);
     },
     play: async (page, cursor, locale, sampler) => {
       const { addToCast, inCast, actorName } = copy(locale);
@@ -282,23 +296,44 @@ const SCENES: Record<Topic, Scene> = {
       await stepOff(page, cursor);
       await sleep(900);
       sampler.pause();
-      await page.setViewportSize(CAST_VIEWPORT);
+      await page.setViewportSize(CAST_END);
       await page.goto(`${BASE}/${locale}/cast`, { waitUntil: "load" });
+      await page.addStyleTag({ content: HIDE_HEADER });
       const listed = page.getByText(actorName, { exact: true }).first();
       await listed.waitFor({ timeout: 30_000 });
       await page.evaluate(() => document.fonts.ready);
-      // Heading at the top under the header, with the card portrait's top half below it.
+      // Heading near the top of the frame, with the top of the card portrait below it.
       await page.evaluate(() => {
         const heading = document.querySelector("h1");
         if (!heading) throw new Error("No cast heading");
-        window.scrollTo({ top: heading.getBoundingClientRect().top + window.scrollY - 80, behavior: "instant" });
+        window.scrollTo({ top: heading.getBoundingClientRect().top + window.scrollY - 20, behavior: "instant" });
       });
       await sleep(300);
       sampler.resume();
-      await sleep(1300);
+      await sleep(1000);
     },
   },
 };
+
+/** Appends a crossfade from the last recorded frame back to the calm first frame, so the loop is seamless. */
+async function appendFade(dir: string, last: number) {
+  const tmp = path.join(dir, "fade");
+  await mkdir(tmp, { recursive: true });
+  const seconds = FADE_FRAMES / FPS;
+  const pad = (n: number) => String(n).padStart(5, "0");
+  await run("ffmpeg", [
+    "-y", "-loglevel", "error",
+    "-loop", "1", "-framerate", String(FPS), "-t", String(seconds), "-i", path.join(dir, `f${pad(last)}.jpg`),
+    "-loop", "1", "-framerate", String(FPS), "-t", String(seconds), "-i", path.join(dir, "f00001.jpg"),
+    "-filter_complex", `xfade=transition=fade:duration=${seconds}:offset=0`,
+    "-r", String(FPS), "-frames:v", String(FADE_FRAMES), "-q:v", "2",
+    path.join(tmp, "x%03d.jpg"),
+  ]);
+  for (let i = 1; i <= FADE_FRAMES; i++)
+    await rename(path.join(tmp, `x${String(i).padStart(3, "0")}.jpg`), path.join(dir, `f${pad(last + i)}.jpg`));
+  await rm(tmp, { recursive: true, force: true });
+  return last + FADE_FRAMES;
+}
 
 /** webm (VP9) and mp4 (H.264, faststart, no audio). Each steps its CRF until the file fits the cap. */
 async function encode(frames: string, base: string) {
@@ -357,7 +392,8 @@ async function recordOne(locale: Locale, topic: Topic) {
     await mkdir(frames, { recursive: true });
     const sampler = await startSampler(page, frames);
     await scene.play(page, cursor, locale, sampler);
-    const count = await sampler.stop();
+    let count = await sampler.stop();
+    if (topic === "starter") count = await appendFade(frames, count);
     const base = path.join(OUT_DIR, locale, topic);
     await mkdir(path.dirname(base), { recursive: true });
     await encode(frames, base);
