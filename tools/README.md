@@ -11,6 +11,7 @@
 | `release/` | `shots.ts` 本地截图；`compare-shots.ts` 对比两组截图。手工 CLI：`node tools/release/shots.ts <目录>`、`node tools/release/compare-shots.ts <前> <后>`。输出仅放忽略的报告目录，不发布。 |
 | `test/` | test:tools 自动发现合同测试；fixtures 中只有合成图、静音、批准词表和请求/生产记录夹具。 |
 | `assets-upload.ts` | 保留原路径的发布 CLI；只能按 release.md 的明确授权执行，先 dry-run。不删除旧对象、不修改现有同键字节。 |
+| `help-clips/` | `record.ts` 录制演员页“?”帮助卡的三段循环演示（starter、sheet、cast；zh、en），输出 `public/help/<locale>/`。手工 CLI，不进入日常检查：先用 `ACCOUNT_MODE=mock ASSET_STORE=local GUEST_LIMITER=memory ASSET_LOCAL_ROOT=e2e/fixtures/assets-store pnpm build && pnpm start -p 3100` 启动生产构建，再 `node tools/help-clips/record.ts [--locale zh,en] [--topic starter,sheet,cast]`。需要 ffmpeg；按 Chromium 截屏帧采样，下载被丢弃，不读取私有素材。 |
 
 ## 生成物与一致性
 
@@ -43,6 +44,7 @@
 | community、community-moderation | 原型状态、审核和非 mock 503 |
 | messages、boundaries、metadata | 单一文案源、有限消费者、依赖方向、canonical/sitemap |
 | analytics | 外部白名单、规范化与不发送个人/自由文本 |
+| help-clips | 帮助卡演示文件存在、容器签名、每个文件不超过 300 KB，并且 `public/help` 只含约定的文件 |
 
 `pnpm dlx knip` 的三项明确配置不是死代码豁免：两个 release CLI 由人调用；libphonenumber-js 是 AuthKit 的隐式运行时依赖并在 Next tracing 指定；ffprobe 是制作侧外部可执行程序，不是 npm 包。其余无消费者文件/导出/依赖应为零。
 
