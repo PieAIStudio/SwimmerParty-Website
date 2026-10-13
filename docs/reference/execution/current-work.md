@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-08-20
-last_reviewed: 2026-10-10
+last_reviewed: 2026-10-13
 domain: meta
 tags:
   - current-work
@@ -16,6 +16,8 @@ related: []
 ---
 
 # Current Work
+
+当前网站改进按[创作社区实施方案](../../plans/active/2026-10-13-creator-community.md)推进；阶段状态、Owner 决定与检查证据只记在方案内。下列发布记录保留当时的版本与验收数字，不代表当前依赖或测试总数。
 
 2026-10-10 已上线 `dpl_BBUv7BMaX6riixQkPMQ5fxdYXHCj`（提交 213d165）：
 

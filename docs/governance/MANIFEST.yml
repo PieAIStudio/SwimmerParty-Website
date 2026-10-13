@@ -1,8 +1,8 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-10T08:43:17.711Z
+generated_at: 2026-10-13T07:59:22.579Z
 generator_version: doc-gov@0.14.2
-docs_count: 35
+docs_count: 36
 docs:
   - id: ADR-2026-10-03-JOIN-SWIMMER-FAMILY
     path: docs/adr/2026-10-03-join-swimmer-family.md
@@ -46,6 +46,13 @@ docs:
     canonical: true
     last_reviewed: 2026-09-10
     pinned: true
+  - id: PLAN-CREATOR-COMMUNITY-NEXT-STAGE
+    path: docs/plans/active/2026-10-13-creator-community.md
+    type: plan
+    status: active
+    canonical: true
+    last_reviewed: 2026-10-13
+    pinned: false
   - id: PLAN-SWIMMER-FAMILY-REBUILD
     path: docs/plans/completed/2026-10-03-swimmer-family-rebuild.md
     type: plan
@@ -212,7 +219,7 @@ docs:
     type: reference
     status: active
     canonical: true
-    last_reviewed: 2026-10-10
+    last_reviewed: 2026-10-13
     pinned: true
   - id: REF-HOW-TO
     path: docs/reference/how-to.md
