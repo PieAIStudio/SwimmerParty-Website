@@ -24,6 +24,8 @@ const refreshSlugs = new Set([
 for (const actor of ACTORS.filter((a) => a.status === "active" && refreshSlugs.has(a.slug))) {
   for (const [locale, width] of [
     ["en", 390],
+    ["en", 1440],
+    ["zh", 390],
     ["zh", 1440],
   ] as const) {
     test(`A6 imported pack ${actor.slug} ${locale} ${width}`, async ({ page, request }) => {

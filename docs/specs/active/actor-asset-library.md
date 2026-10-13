@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-10-03
-last_reviewed: 2026-10-13
+last_reviewed: 2026-10-14
 domain: product
 tags:
   - assets
@@ -102,7 +102,7 @@ related:
 - 词表：`src/content/asset-series.json`（key、尺寸、必交、构图、英文指导），类型与
   读取函数在 `src/features/assets/asset-series.ts`。
 - 造型注册在 `media-pack/actors/<slug>.json`；资料生成器仅拥有清单 looks，入库工具拥有 items，不手工维护生成副本。每项记录
-  `slot`、`series`、`key`、`look`、`conformance`（`v1` / `legacy`）、`version`、
+  `slot`、`series`、`key`、`look`、`conformance`（`v1` / `legacy` / `source-original`）、`version`、
   `width`、`height`、`bytes`、`sha256`、`sourceSha256`、`bbox`、`format`、`object`（母版对象键）、`preview`、`thumb`。
 - 所有界面文字（系列名、格位名、按钮、提示）进 I18nKit 目录，源头是
   `src/i18n/messages.source.ts`；安装版本以 package.json 为准。
@@ -114,14 +114,15 @@ related:
 1. 锁脸：出 `face.front` 与 `turnaround.front`，Owner 认可后定为锚点 v1。
 2. `pnpm assets:todo <code>` 列出缺的格位，每格附可直接粘贴的英文出图提示词。
 3. 以锚点为参考图逐格生成（一张张做或批量做都可以），与锚点并排验收，不过就重出。
-4. 放进 `media-pack/library/staging/<code>/`（不进 Git），在交接单
-   `media-pack/notes/handoffs/` 留下批次记录，再运行 `pnpm assets:ingest <code>`。
+4. 制作交付保持只读，网站复制到 `assets-inbox/<code>/`（不进 Git），来源与批次记录可在 `media-pack/notes/handoffs/` 追溯。先运行 `ASSET_STORE=local pnpm assets:ingest <code> --dry-run`，再去掉 `--dry-run` 入库。
+
+Owner 明确授权按交付原样导入的候选使用同一工具的 `--source-originals`：生产记录 `assetDelivery` 固定全部图片/声音的原路径、格位、版本、字节数及 SHA；来源不符、缺项、重复或多余文件必须停止。此模式保留 PNG 原始画布和背景，记录 `source-original` 与实际检查数据，不声称通过原有 v1 尺寸/透明标准，不暗中裁切、扩边或修图。标准入库断言仍保留；主观未验收项在发布候选预览里单独列出。
 
 生产角色名不等于演员身份。实际交付和公开状态分别以生产资料及资产清单为准；已发布资产不可因旧计划重新置空。
 
 ## 6. 存储与分发
 
-- 预览（长边 1024 与 384 的透明 WebP）随站点发布，公开。
+- 页面 preview 和 thumb 使用长边不超过 1024 / 384 的 WebP；首图可另有现有大图变体，均随站公开。source-original 预览保留交付图的透明情况，不把不透明源宣称为透明素材；PNG、WAV/MP3 原件不进 Git。
 - 母版放 **Vercel Blob 私有存储**，用 Owner 已有的 Vercel Pro 会员，不新开服务。
   下载 API 校验身份与限速后，用 Vercel Signed URLs 签出短时效链接，文件由 Vercel CDN
   直接发给用户，不经过网站函数。

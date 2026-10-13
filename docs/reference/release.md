@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-10-04
-last_reviewed: 2026-10-13
+last_reviewed: 2026-10-14
 domain: release
 tags:
   - release
@@ -46,8 +46,8 @@ related:
 ## 存储、限速与账号登记
 
 1. 在已绑定的 Vercel `swimmerparty` 项目 Storage 中创建 **private** Blob，连接目标环境并注入权限。不要创建 public 母版桶。
-2. 制作方按[资产 spec](../specs/active/actor-asset-library.md)把母版放到 `media-pack/library/staging/SP-XX/`，并在 `media-pack/notes/handoffs/` 留交接单。先跑 `pnpm assets:ingest <slug-or-production-code> --dry-run`，再在授权环境执行 `ASSET_STORE=blob ACCOUNT_MODE=swimmer GUEST_LIMITER=vercel pnpm assets:ingest <slug-or-production-code>`。模式由环境变量选择，没有 `--blob` 参数。已退役 --legacy；新入库只接受当前规格。保留公开预览和清单的同次提交，母版不得在同一对象键下换字节。
-   上线前把清单引用的全部原件传到私有 Blob：先 `vercel env pull --environment=production .vercel/.env.production.local`，再 `node --env-file=.vercel/.env.production.local tools/assets-upload.ts --dry-run`，确认后去掉 `--dry-run` 执行。工具按 sha256 在 `.assets-local` 和 `media-pack/library` 找原件，已存在的跳过，大小不符立即停止，不覆盖也不删除。懒人包和选角包不在存储里放 ZIP，由浏览器取签名原图现场打包。
+2. 制作方按[资产 spec](../specs/active/actor-asset-library.md)交付只读母版与来源记录；网站复制到 `assets-inbox/<slug-or-production-code>/`，不移动制作原件。先跑 `ASSET_STORE=local pnpm assets:ingest <slug-or-production-code> --dry-run`，再去掉 `--dry-run` 做本地入库。标准 v1 校验不放宽；经 Owner 授权保留交付原始画布的候选另加 `--source-originals`，必须与生产记录 `assetDelivery` 的格位、路径、版本、字节数和 SHA 精确相符，不能冒充 v1 合规。图片、声音、样片的命令和源路径只在[工具入口](../../tools/README.md)维护。公开小图与清单同次提交，原件只在忽略的 `.assets-local`，同对象键不得换字节。
+   本地检查全过、rebase 正常推送之后，才上传清单引用的原件到既有私有 Blob。凭据先遵守 portfolio `.secrets/README.md`，复用本项目已有平台缓存；需要刷新时在已确认绑定的本检出执行 `vercel env pull --environment=production .vercel/.env.production.local`，不创建新凭据。运行 `node --env-file=.vercel/.env.production.local tools/assets-upload.ts --dry-run --report .devspace-reports/blob-dry-run.json`，报告实际待传数量与字节，再去掉 `--dry-run` 并使用不同回执路径正式上传。可在命令中指定演员 slug 以分批；`--source-root <只读目录>` 可重复使用，按 SHA 找现有交付，不能换源。已存在且大小相符的对象跳过，大小不符立即停止；新增对象逐个回读，并重新分页列出核对总数量、字节及旧对象保留，不覆盖、不删除。转换和上传还须遵守本次 Owner 的 SLOTS/负载约束。懒人包和选角包不在存储里放 ZIP，由浏览器取签名原图现场打包。
 3. 在项目 Firewall 中登记供 `checkRateLimit` 调用的规则 `guest-asset-download`，按 IP 每 30 秒 1 次。只有游客请求调用它；规则缺失时 API 应返回私有 503，不能自动降级。
    该规则必须是 `@vercel/firewall` 的 Rate limit ID 条件；发布前运行 `vercel firewall rules inspect guest-asset-download` 核对。
 4. 将以下请求交给 SwimmerBackend 的负责会话：产品 SWIMMER PARTY、public OAuth PKCE 客户端、origin `https://swimmerparty.swiminai.com`、精确回调 `https://swimmerparty.swiminai.com/api/auth/sso-callback`、scope `openid email profile`。不得登记通配回调或附加权限。账号中心的授权页与 `/account` 管理页必须实际挂载。取得客户端标识后配置环境；本手册不代替该团队的登记流程。

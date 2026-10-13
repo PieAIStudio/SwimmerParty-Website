@@ -33,7 +33,29 @@
 
 原件生成工具要求 --generate-media；缺源即停止。公开引用/格式检查不等于真实原件重生成。现行授权与旧会员 ZIP 文本均在 content/license.ts，但其语义差异需 Owner 决定，见 decisions.md。
 
-A6 媒体入口：`pnpm assets:samples <slug...> --generate-media [--dry-run]`、`pnpm assets:voices <slug...> --generate-media`。前者按 `officialSamples` 的 Root 记录和源 SHA 投影单一 sampleId，可关联双演员但只写一份媒体；新片24fps静音、720短边/1280长边以内，海报取实际帧。转换工具接受调度环境 `SWIMMER_MEDIA_BLOCKING_LOCK` / `SWIMMER_MEDIA_MAX_LOAD`，在每项转换前检查，不轮询、不删除别人的锁。
+## 已授权媒体导入
+
+制作原件和 MediaFactory run 只读。图片复制到 `assets-inbox/<slug-or-code>/`，生产 `assetDelivery` 固定原路径、格位、版本、大小和 SHA。标准入库仍严格检查原有 v1 规格；Owner 授权保留原始画布的交付，使用同一 CLI 的显式 `--source-originals`，不会重画、裁切或声称 v1 合规。
+
+```bash
+pnpm data:generate
+ASSET_STORE=local pnpm assets:ingest <slug-or-code> --source-originals --dry-run
+ASSET_STORE=local pnpm assets:ingest <slug-or-code> --source-originals
+pnpm assets:voices <slug...> --generate-media --dry-run
+pnpm assets:voices <slug...> --generate-media
+pnpm assets:samples <slug...> --generate-media --dry-run
+pnpm assets:samples <slug...> --generate-media
+pnpm data:generate
+pnpm data:check
+```
+
+声音优先读取 `assetDelivery.voices` 的明确来源并保留原字节，改字节必须使用新对象键；未配置显式交付的旧资料仍走 `media-pack/library/voice/{new-faces/}<slug>`。本地网站预览优先读 `.assets-local/voice`，再读旧制作库；设置 `ASSET_LOCAL_ROOT` 时严格只读该隔离目录，不回退到真实原件。
+
+样片按 `officialSamples` 的 Root 记录和源 SHA 投影单一 sampleId，可关联双演员但只写一份媒体；新片24fps静音、720短边/1280长边以内，码率不超过已有 video-01 区间，海报取实际帧。转换工具接受调度环境 `SWIMMER_MEDIA_BLOCKING_LOCK` / `SWIMMER_MEDIA_MAX_LOAD`，每项转换前检查，不轮询、不删除别人的锁。图片 `--dry-run` 也要解码和生成联系表，属于媒体重活，不得绕过调度约束。
+
+检查和正常推送后才上传原件。现有 `tools/assets-upload.ts` / `pnpm assets:upload` 接受 `--dry-run`、可选演员 slug、可重复的 `--source-root <只读目录>`、`--report .devspace-reports/<file>.json`。先查远端，缺失对象才找本地源；dry-run 报精确待传文件数和字节数。实际上传串行、只新增，逐个回读后再分页列出核对总数、总大小和旧对象未变。失败保留收据，再次 dry-run 只会选择仍缺的对象；不创建新凭据、不删除、不覆盖。凭据与正式发布唯一按 [release.md](../docs/reference/release.md) 执行。
+
+生成 profile、清单 looks、样片数据只用 `data:generate`；没有可编辑的独立 `looks.ts`。OG JPEG 是可再生派生物，生成器会剔除其输出目录中已无站点源图的演员 JPEG，其他文件和制作原件不动。
 
 ## 测试保护什么
 
@@ -49,6 +71,10 @@ A6 媒体入口：`pnpm assets:samples <slug...> --generate-media [--dry-run]`�
 | help-clips                      | 帮助卡演示文件存在、容器签名、每个文件不超过 300 KB，并且 `public/help` 只含约定的文件 |
 
 `pnpm dlx knip` 的三项明确配置不是死代码豁免：两个 release CLI 和 help-clips/record.ts 由人按上表调用；libphonenumber-js 是 AuthKit 的隐式运行时依赖并在 Next tracing 指定；ffprobe 和 ffmpeg 是制作侧外部可执行程序，不是 npm 包；样片有界转码实际调用这两者，knip 的 binary 登记只声明外部工具，不豁免代码或依赖。其余无消费者文件/导出/依赖应为零。
+
+`assets-upload.test.ts` 覆盖 dry-run 字节数、去重/分页、缺失/篡改源、新增后回读与不可覆盖；`source-originals` / `source-voices` 覆盖明确交付固定值和不可变原件，`voice-local-sources` 验证本地读取与隔离边界，`og-retirement` 防止退役演员的旧派生图被重新发布。所有工具合同均使用临时合成夹具，不调用真实 Blob。
+
+手动 `docs-check` Actions 仍只由 workflow_dispatch 启动，不随推送或部署自动触发。GitHub Packages 安装使用 Actions 自带短时 GITHUB_TOKEN，仅 contents/packages read 权限；没有复制本机 token 或新增长期凭据。实际远端通过结果是独立发布证据，不能由本地通过替代。
 
 `@supabase/ssr` 和 `@supabase/supabase-js` 是现装 AuthKit 的 peerDependencies；不能仅因本站没有直接 import 就删掉。
 

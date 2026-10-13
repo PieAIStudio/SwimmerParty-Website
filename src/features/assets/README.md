@@ -8,4 +8,5 @@
 - 服务端能力只在 server；local/Blob 原件与签名不进入客户端依赖图。
 - `signed-images.ts` 只在对象身份通过、实际响应完整取回及大小检查通过后报告文件计数；多演员取回量累加。PackProgress 只组合 UIKit GameProgress，不用计时百分比。文件取齐仍显示准备最终下载，不冒充渲染/ZIP已完成；取消或失败不生成成功事件。
 - 首次成功保存发送 guidance/client 的本地提示事件。懒人包、多选包、选角包、设定图均保留取消与错误，不修改请求合同、签名、文件内容或账号逻辑。
+- `source-original` 资产保留制作交付的原始画布与字节；预览不等于规格认证，导出文案也不将其称为透明 v1。来源固定值在生产 `assetDelivery`，导入和上传命令见 tools/README.md；账户、游客额度及签名合同不因原件更新而改变。
 - 验证：工具 assets、downloads、exports、generated-media 测试；浏览器 assets、downloads、exports、site 测试。夹具不是真实素材。

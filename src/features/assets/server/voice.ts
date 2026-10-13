@@ -20,17 +20,19 @@ export default privateApi("GET", async (req, res, modes) => {
     res.redirect(302, await (await configuredBlobStore()).sign(item.object));
     return;
   }
-  // New-face voices stay in the casting folder locally; delivered voices sit under their slug.
-  // An explicit local asset root isolates tests from real recordings. Without it,
-  // preserve the production-workbench layout; Blob mode above is unchanged.
-  const library = process.env.ASSET_LOCAL_ROOT
-    ? path.resolve(/* turbopackIgnore: true */ process.env.ASSET_LOCAL_ROOT, "voice")
-    : path.join(/* turbopackIgnore: true */ process.cwd(), "media-pack/library/voice");
+  // An explicit root is a strict isolation boundary, with no production-library fallback.
+  // Ordinary local preview first uses imported private masters, then the legacy workbench.
+  const libraries = process.env.ASSET_LOCAL_ROOT
+    ? [path.resolve(/* turbopackIgnore: true */ process.env.ASSET_LOCAL_ROOT, "voice")]
+    : [
+        path.join(/* turbopackIgnore: true */ process.cwd(), ".assets-local/voice"),
+        path.join(/* turbopackIgnore: true */ process.cwd(), "media-pack/library/voice"),
+      ];
   const object = item.object.replace(/^voice\//, "");
-  const candidates = [
-    path.join(library, "new-faces", actor.slug, path.basename(object)),
+  const candidates = libraries.flatMap((library) => [
     path.join(library, object),
-  ];
+    path.join(library, "new-faces", actor.slug, path.basename(object)),
+  ]);
   for (const file of candidates) {
     const bytes = await readFile(/* turbopackIgnore: true */ file).catch(() => null);
     if (!bytes) continue;
