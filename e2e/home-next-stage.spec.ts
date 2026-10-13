@@ -31,7 +31,17 @@ for (const locale of ["en", "zh"] as const) {
         .locator(`[data-home-section="${section}"] [data-actor-card]`)
         .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-actor-card")));
     expect(await listed("ready")).toEqual(ready.slice(0, 4).map((actor) => actor.slug));
-    expect(await listed("new-faces")).toEqual(faces.slice(0, 2).map((actor) => actor.slug));
+    const selectedFaces = await listed("new-faces");
+    expect(selectedFaces).toHaveLength(Math.min(2, faces.length));
+    expect(new Set(selectedFaces).size).toBe(selectedFaces.length);
+    for (const slug of selectedFaces) expect(faces.some((actor) => actor.slug === slug)).toBe(true);
+    if (new Set(faces.map((actor) => actor.voiceLanguage).filter(Boolean)).size > 1) {
+      expect(
+        new Set(
+          selectedFaces.map((slug) => faces.find((actor) => actor.slug === slug)?.voiceLanguage),
+        ).size,
+      ).toBe(2);
+    }
     for (const work of WORKS)
       await expect(page.locator("main").getByText(work.title[locale], { exact: true })).toHaveCount(
         0,

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import { ACTORS } from "@/content/actors";
-import { ActorFilters } from "@/features/actors";
-import { PageIntro } from "@/site/PageIntro";
+import { ActorFilters, makeActorFacets } from "@/features/actors";
+import { getActorAssets } from "@/features/assets/queries";
+import { OFFICIAL_SAMPLES } from "@/content/official-samples.generated";
+import { WORKS } from "@/content/works";
 import { localizedAlternates } from "@/i18n/metadata";
 export async function generateMetadata({
   params,
@@ -19,23 +21,36 @@ export async function generateMetadata({
     alternates: localizedAlternates(locale, "/actors"),
   };
 }
-export default async function ActorsPage({ params }: { params: Promise<{ locale: AppLocale }> }) {
+export default async function ActorsPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   const { locale } = await params;
   setSiteLocale(locale);
   const { t } = await getSiteI18n();
+  const search = new URLSearchParams();
+  for (const [key, value] of Object.entries(await searchParams)) {
+    for (const entry of typeof value === "string" ? [value] : (value ?? []))
+      search.append(key, entry);
+  }
+  const media = Object.fromEntries(
+    ACTORS.map((actor) => [actor.slug, getActorAssets(actor.slug).items]),
+  );
+  const facets = makeActorFacets(ACTORS, media, OFFICIAL_SAMPLES, WORKS);
   const counts = {
     castable: ACTORS.filter((a) => a.status === "active").length,
     newFaces: ACTORS.filter((a) => a.status === "new-face").length,
   };
   return (
     <div className="sp-container">
-      <PageIntro
-        eyebrow={t("roster.eyebrow")}
-        lines={[t("roster.heroLines.0"), t("roster.heroLines.1")]}
-      >
-        {t("roster.intro", counts)}
-      </PageIntro>
-      <ActorFilters actors={ACTORS} />
+      <header className="py-6">
+        <h1 className="sp-title">{t("roster.metaTitle")}</h1>
+        <p className="sp-small mt-2 text-muted-foreground">{t("roster.intro", counts)}</p>
+      </header>
+      <ActorFilters actors={ACTORS} facets={facets} initialSearch={search.toString()} />
     </div>
   );
 }

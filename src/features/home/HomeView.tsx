@@ -10,7 +10,10 @@ import { selectHomeContent } from "./home-catalog";
 
 export async function HomeView({ locale }: { locale: AppLocale }) {
   const { t } = await getSiteI18n(locale);
-  const { ready, newFaces, hero, featured, updates } = selectHomeContent(ACTORS, OFFICIAL_SAMPLES);
+  const { ready, newFaces, featuredFaces, hero, featured, updates } = selectHomeContent(
+    ACTORS,
+    OFFICIAL_SAMPLES,
+  );
   return (
     <div className="sp-container">
       <section
@@ -74,7 +77,7 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
           <h2 className="sp-title">{t("roster.newFacesTitle")}</h2>
           <p className="sp-small mt-3 text-muted-foreground">{t("home.newFacesNote")}</p>
           <div className="mt-6 grid max-w-[36rem] grid-cols-2 gap-6">
-            {newFaces.slice(0, 2).map((actor) => (
+            {featuredFaces.map((actor) => (
               <ActorCard key={actor.slug} actor={actor} />
             ))}
           </div>
