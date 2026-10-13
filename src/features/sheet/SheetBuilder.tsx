@@ -9,6 +9,7 @@ import {
   type ComponentProps,
 } from "react";
 import Image from "next/image";
+import { DownloadTerms } from "@/site/DownloadTerms";
 import type { Actor } from "@/content/actors";
 import type { ActorAssets, AssetItem } from "@/features/assets/asset-types";
 import {
@@ -300,6 +301,7 @@ export function SheetBuilder({
           >
             {busy ? t("assets.preparing") : t(extras ? "sheet.downloadZip" : "sheet.download")}
           </GameButton>
+          <DownloadTerms />
         </div>
       </div>
       <div className="min-w-0 space-y-12 lg:col-span-5">

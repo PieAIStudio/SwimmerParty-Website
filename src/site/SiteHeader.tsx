@@ -5,7 +5,7 @@ import { useSiteLocale, useSiteI18n } from "@/i18n/client";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageMenu } from "./LanguageMenu";
 import { ThemeToggle } from "./ThemeToggle";
-import { NAV, SECONDARY_NAV, SITE } from "@/content/site";
+import { NAV, SITE } from "@/content/site";
 import { GameIconButton } from "@pieai/swimmer-ui-kit";
 import { GameIcon } from "@pieai/swimmer-ui-kit";
 
@@ -28,7 +28,6 @@ function HeaderContent({ accountMenu }: { accountMenu: ReactNode }) {
     if (!open || !panel) return;
     const overflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    panel.showModal();
     const desktop = window.matchMedia("(min-width: 1024px)");
     const closeOnDesktop = () => {
       if (desktop.matches) setOpen(false);
@@ -42,7 +41,10 @@ function HeaderContent({ accountMenu }: { accountMenu: ReactNode }) {
     };
   }, [open]);
 
-  const current = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  const current = (href: string) => {
+    const path = href.split("#")[0];
+    return pathname === path || pathname.startsWith(`${path}/`);
+  };
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-[var(--sp-header)] backdrop-blur-[12px]">
       <div className="sp-container flex h-16 items-center gap-6">
@@ -82,7 +84,11 @@ function HeaderContent({ accountMenu }: { accountMenu: ReactNode }) {
               label={t("common.menu")}
               aria-expanded={open}
               aria-controls="site-menu"
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                // Reveal the dialog before mounting controls that measure their liquid surface.
+                dialog.current?.showModal();
+                setOpen(true);
+              }}
             >
               <GameIcon icon="menu" />
             </GameIconButton>
@@ -116,7 +122,7 @@ function HeaderContent({ accountMenu }: { accountMenu: ReactNode }) {
             aria-label={t("common.mainNav")}
             className="flex flex-1 flex-col items-start gap-5 py-8"
           >
-            {[...NAV, ...SECONDARY_NAV].map((item) => (
+            {NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -128,9 +134,11 @@ function HeaderContent({ accountMenu }: { accountMenu: ReactNode }) {
               </Link>
             ))}
           </nav>
-          <div className="flex items-center justify-between gap-3 pb-8">
-            <LanguageMenu variant="panel" />
-            {accountMenu}
+          <div className="flex flex-wrap items-center justify-between gap-3 pb-8">
+            <div className="min-w-0">
+              <LanguageMenu variant="panel" />
+            </div>
+            <div className="shrink-0">{open ? accountMenu : null}</div>
           </div>
         </div>
       </dialog>

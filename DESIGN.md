@@ -32,6 +32,8 @@ UIKit 3.0 的 `grey` 风格是唯一控件风格，明暗为 `light` / `dark`。
 容器、间距、圆角与断点以 src/app/globals.css 的布局类为准。卡片安静，状态标签统一使用 UIKit GameBadge，不用颜色单独传递含义。
 `SectionHead` 按眉标、标题、说明排列，不加编号和装饰线。
 
+主导航在手机、平板、桌面共用 `src/content/site.ts`：Actors / Samples / Learn / Your cast；Samples 直达既有 `/works#samples`，Learn 目前直达 `/guide`。License / Studio / Privacy / Terms 在页脚，社区未验收前不进入导航。下载动作旁始终显示可点开的署名摘要，不依赖气泡。
+
 控件直接从 `@pieai/swimmer-ui-kit` 具名导入，不复制或改造 UIKit 的轮廓、阴影、按压形变。
 普通操作用 secondary `GameButton`；单张下载、主题、菜单、关闭用带 label 的
 `GameIconButton`。勾选、分段选择、模型下拉、提示和真实进度分别用 `GameCheckbox`、`GameSegmentedControl`、`GameSelect`、`LiquidPopover`、`GameToast`、`GameProgress`；图标统一用 `GameIcon`。

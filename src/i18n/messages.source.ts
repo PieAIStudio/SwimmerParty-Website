@@ -58,6 +58,9 @@ export const messages = {
     en: "Next: {name}",
     zh: "下一位：{name}",
   },
+  "nav.samples": { en: "Samples", zh: "样片" },
+  "nav.learn": { en: "Learn", zh: "学着做" },
+  "nav.cast": { en: "Your cast", zh: "我的选角单" },
   "nav.works": {
     en: "Works",
     zh: "作品",

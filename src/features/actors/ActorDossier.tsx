@@ -22,6 +22,7 @@ import { type AppLocale } from "@/i18n/routing";
 import { getSiteI18n } from "@/i18n/server";
 import { Breadcrumbs } from "@/site/Breadcrumbs";
 import { CopyBlock } from "@/site/CopyBlock";
+import { DownloadTerms } from "@/site/DownloadTerms";
 import { ShareButton } from "@/site/ShareButton";
 import { TextLink } from "@/site/TextLink";
 import { VersionBadge } from "@/site/VersionBadge";
@@ -152,6 +153,7 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
                 link={{ href: `/${locale}/guide`, label: t("help.fullGuide") }}
               />
             </div>
+            <DownloadTerms className="mt-3" />
             <dl className="mt-4 divide-y divide-border">
               {actor.spec.map((row) => (
                 <div

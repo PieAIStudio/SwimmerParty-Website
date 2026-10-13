@@ -1,4 +1,5 @@
 "use client";
+import { DownloadTerms } from "@/site/DownloadTerms";
 import { COMMUNITY_ENABLED } from "@/content/features";
 import {
   createContext,
@@ -315,7 +316,11 @@ export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
   const size = mobile ? "sm" : undefined;
   return (
     <div
-      className={mobile ? "sp-selection-mobile" : "hidden shrink-0 items-center gap-3 md:flex"}
+      className={
+        mobile
+          ? "sp-selection-mobile flex-wrap"
+          : "hidden shrink-0 flex-wrap items-center gap-3 md:flex"
+      }
       data-selection-bar={mobile ? "mobile" : "desktop"}
     >
       <span className="sp-small whitespace-nowrap">
@@ -353,6 +358,7 @@ export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
       >
         {t("assets.downloadSelected")}
       </GameButton>
+      <DownloadTerms className="w-full" />
     </div>
   );
 }

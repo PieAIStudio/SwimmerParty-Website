@@ -338,8 +338,11 @@ export interface MessageContracts {
   readonly "license.whereSize": {  };
   readonly "license.whereTitle": {  };
   readonly "nav.actors": {  };
+  readonly "nav.cast": {  };
+  readonly "nav.learn": {  };
   readonly "nav.license": {  };
   readonly "nav.privacy": {  };
+  readonly "nav.samples": {  };
   readonly "nav.studio": {  };
   readonly "nav.terms": {  };
   readonly "nav.works": {  };

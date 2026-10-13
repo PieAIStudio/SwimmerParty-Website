@@ -3,6 +3,7 @@ import { useSiteI18n } from "@/i18n/client";
 import { useMemo, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import { Mannequin } from "@/site/Mannequin";
+import { DownloadTerms } from "@/site/DownloadTerms";
 import type { Actor } from "@/content/actors";
 import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { Link } from "@/i18n/navigation";
@@ -121,6 +122,7 @@ export function CastBoard({
           {t("cast.clear")}
         </GameButton>
       </div>
+      <DownloadTerms className="mt-3" />
       {failed ? (
         <div className="mt-4">
           <GameToast tone="danger">{t("cast.failed")}</GameToast>

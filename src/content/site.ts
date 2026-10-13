@@ -24,12 +24,14 @@ export const SITE = {
 
 export const NAV = [
   { href: "/actors", key: "actors" },
-  { href: "/works", key: "works" },
-  { href: "/license", key: "license" },
-  { href: "/studio", key: "studio" },
+  { href: "/works#samples", key: "samples" },
+  { href: "/guide", key: "learn" },
+  { href: "/cast", key: "cast" },
 ] as const;
 
 export const SECONDARY_NAV = [
+  { href: "/license", key: "license" },
+  { href: "/studio", key: "studio" },
   { href: "/privacy", key: "privacy" },
   { href: "/terms", key: "terms" },
 ] as const;
