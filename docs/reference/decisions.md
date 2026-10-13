@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: ai-assisted
 created: 2026-10-08
-last_reviewed: 2026-10-09
+last_reviewed: 2026-10-13
 domain: product
 tags:
   - decisions
@@ -28,7 +28,7 @@ pinned: false
 | Pages API 维持薄转发                             | 当前 AuthKit 需要 Node 请求/响应；不为统一目录加适配层。原生支持到位后才重评                                                                                                                                                                                                                                                                                           |
 | Blob 已发布原件不删除，不在同键替换字节          | 外部签名下载依赖现有对象；包括 126 个旧 SP 命名对象。历史错误目录的派生副本可在有哈希/重生成证据后删除，不能据此清理云存储                                                                                                                                                                                                                                             |
 | 本地原件两个目录暂不合并                         | .assets-local 是运行/入库缓存，media-pack/library 是制作库；只解除日常检查依赖，不擅自删除 Owner 的未发布素材                                                                                                                                                                                                                                                          |
-| 社区保持关闭，所有非 mock API 返回 503           | SwimmerBackend v2 的读取、作品、投票、删除和审核边界未交付；见后端需求。禁止静默回退内存成功                                                                                                                                                                                                                                                                           |
+| 社区保持关闭，所有非 mock API 返回 503           | SwimmerBackend v3 已定稿，但 B2 实现和 C 组接入仍须验收；见 [v3 消费入口](swimmer-party-community-backend.md)。禁止静默回退内存成功                                                                                                                                                                                                                                    |
 | 分析只走 PostHog，白名单与去个人信息过滤保留     | 实现唯一源 features/analytics/events.ts；本地/测试不联网。事件别名是内部调用合同，不等于新外部事件                                                                                                                                                                                                                                                                     |
 | 2026-10-10 角色设定图独立成页                    | 原先藏在“下载所选”弹窗的“拼成一张”里，Owner 找不到。独立页有地方放预设、挑图、声音视频和提示词；选择状态写进网址，登录往返后仍在。弹窗保留原图与按模型打包，并链接到该页。权威源 features/sheet                                                                                                                                                                        |
 | 2026-10-10 “怎么用”页与演员页“?”入口             | 懒人包、设定图和选角单的区别靠按钮文字说不清。页面只放事实与链接，入口在演员页 CTA 行与页脚；文案唯一源 src/i18n/messages.source.ts                                                                                                                                                                                                                                    |

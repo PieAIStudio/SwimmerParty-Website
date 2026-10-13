@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-10-04
-last_reviewed: 2026-10-09
+last_reviewed: 2026-10-13
 domain: release
 tags:
   - release
@@ -24,21 +24,21 @@ related:
 
 ## 环境变量与安装权限
 
-| 名字                            | 用途                                                     |
-| ------------------------------- | -------------------------------------------------------- |
-| `ASSET_STORE`                   | 发布设为 `blob`，私有母版存储                            |
-| `ACCOUNT_MODE`                  | 发布设为 `swimmer`，禁止模拟身份                         |
-| `GUEST_LIMITER`                 | 发布设为 `vercel`，禁止内存限速                          |
-| `BLOB_READ_WRITE_TOKEN`         | 平台注入的私有 Blob 权限；也可由 SDK 使用平台支持的 OIDC |
-| `SWIMMER_ORIGIN`                | 当前部署的已登记 HTTPS origin                            |
-| `SWIMMER_BACKEND_URL`           | 账号后端的 HTTPS origin                                  |
-| `SWIMMER_PUBLISHABLE_KEY`       | 后端 publishable key                                     |
-| `SWIMMER_ACCOUNT_URL`           | 账号中心入口                                             |
-| `SWIMMER_OAUTH_CLIENT_ID`       | 已登记的 public PKCE 客户端标识                          |
-| `SWIMMER_COOKIE_PASSWORD`       | 会话加密密码，至少 32 字符                               |
-| `NEXT_PUBLIC_POSTHOG_KEY`       | PostHog 项目 key（浏览器可见）；取自共享的 PostHog 文件  |
-| `NEXT_PUBLIC_POSTHOG_HOST`      | PostHog 地址；与 key 同一来源                            |
-| `NEXT_PUBLIC_COMMUNITY_ENABLED` | 社区开关；后端 v2 上线前生产不设置（即关闭）             |
+| 名字                            | 用途                                                                   |
+| ------------------------------- | ---------------------------------------------------------------------- |
+| `ASSET_STORE`                   | 发布设为 `blob`，私有母版存储                                          |
+| `ACCOUNT_MODE`                  | 发布设为 `swimmer`，禁止模拟身份                                       |
+| `GUEST_LIMITER`                 | 发布设为 `vercel`，禁止内存限速                                        |
+| `BLOB_READ_WRITE_TOKEN`         | 平台注入的私有 Blob 权限；也可由 SDK 使用平台支持的 OIDC               |
+| `SWIMMER_ORIGIN`                | 当前部署的已登记 HTTPS origin                                          |
+| `SWIMMER_BACKEND_URL`           | 账号后端的 HTTPS origin                                                |
+| `SWIMMER_PUBLISHABLE_KEY`       | 后端 publishable key                                                   |
+| `SWIMMER_ACCOUNT_URL`           | 账号中心入口                                                           |
+| `SWIMMER_OAUTH_CLIENT_ID`       | 已登记的 public PKCE 客户端标识                                        |
+| `SWIMMER_COOKIE_PASSWORD`       | 会话加密密码，至少 32 字符                                             |
+| `NEXT_PUBLIC_POSTHOG_KEY`       | PostHog 项目 key（浏览器可见）；取自共享的 PostHog 文件                |
+| `NEXT_PUBLIC_POSTHOG_HOST`      | PostHog 地址；与 key 同一来源                                          |
+| `NEXT_PUBLIC_COMMUNITY_ENABLED` | 社区开关；后端 v3、C 组验收及 Owner 发布授权齐备前生产不设置（即关闭） |
 
 变量值只由授权人员放入环境或平台配置，不写进 Git、日志或截图。项目 `.npmrc` 只保存 registry 映射。
 安装使用已有用户级 registry 配置。全新环境先以只读 packages 权限运行 pnpm install --frozen-lockfile；值不写入项目、日志或截图。本站采用本地 prebuilt 发布，不再要求 Vercel 云构建临时配置私有 npm。

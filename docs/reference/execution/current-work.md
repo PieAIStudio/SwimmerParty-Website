@@ -19,6 +19,8 @@ related: []
 
 当前网站改进按[创作社区实施方案](../../plans/active/2026-10-13-creator-community.md)推进；阶段状态、Owner 决定与检查证据只记在方案内。下列发布记录保留当时的版本与验收数字，不代表当前依赖或测试总数。
 
+2026-10-13 knip 基线核对：干净 `origin/main`（`d84d3dd`，隔离检出前后均 clean）用 `pnpm dlx knip` 6.41.0 检出 7 项；A1 后只剩 `src/features/account/arrival.ts` 的 `SSO_ARRIVAL_PARAM`、`products.ts` 的 `CURRENT_PRODUCT_ID` 两项。记为**既有、归 Avatar 的 AuthKit 升级一起清**；A1 未新增问题，不碰账号目录、不加忽略规则。Owner 已澄清 knip 不在推送门禁中，此基线不阻塞 A1；实际门禁仍须通过。原始对比收据：`.devspace-reports/next-stage/knip-baseline/receipt.json`。
+
 2026-10-10 已上线 `dpl_BBUv7BMaX6riixQkPMQ5fxdYXHCj`（提交 213d165）：
 
 - 第八轮重构（[记录](../../plans/completed/2026-10-08-site-round-8-deep-refactor.md)，PR #1 已合并）；
@@ -38,7 +40,7 @@ related: []
 仍待处理：
 
 - Owner 在正式站用真实账号登录，验收懒人包下载；
-- 社区和“泳者”页签等待后端实现；原 [v2 需求](../swimmer-party-community-backend.md) 由当前创作社区方案的 Owner 决定与 B 组合同更新接续。
+- 社区和“泳者”页签等待 B2/C 组实现与验收；[v3 消费入口](../swimmer-party-community-backend.md) 已同步后端定稿，合同代码与功能开关未改。
 
 2026-10-10 角色设定图独立成页（`/actors/<slug>/sheet`）与“怎么用”页、演员页“?”入口：同日第三次上线 `dpl_722szQPi2jK4UC8yDWhvVzJQ5jgn`（提交 39e05e2）。发布前 `pnpm verify`（93 项工具测试、35 项浏览器测试）、docs:check、swimmer-ui-check 通过；候选冒烟中英首页、名册、演员页、设定图页、怎么用、选角单、sitemap、robots 均 200，canonical 指向正式域名；上线后 SSO 发起仍返回跳转。登录后的 4K 设定图与附件 ZIP 需 Owner 真实账号验收。回滚目标：`dpl_4HbMbjvt5t6C7AWX3F1xcUfWbHcU`。
 

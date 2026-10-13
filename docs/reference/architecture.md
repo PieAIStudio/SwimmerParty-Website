@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: ai-assisted
 created: 2026-10-04
-last_reviewed: 2026-10-09
+last_reviewed: 2026-10-13
 domain: engineering
 tags:
   - architecture
@@ -50,4 +50,4 @@ related:
 
 生产身份、造型、版本、样片 → media-pack；网站展示覆盖 → 同一记录的 website；生成器 → profile、名单、样片及清单 looks。清单 items 仍由素材交付工具拥有。详情见 [演员数据](../../src/content/actors/README.md)。公开网址、对象键和下载名称不随目录变化。
 
-社区现在只有本地原型；后端 v2 的必要接口见 [后端需求](swimmer-party-community-backend.md)。静态检查与 mock 通过不能当作生产可用证据。
+网站社区现在只有本地原型；已定稿的后端 v3 合同与消费边界见 [v3 消费入口](swimmer-party-community-backend.md)。文档同步不代表 B2 实现或 C 组接入，静态检查与 mock 通过不能当作生产可用证据。
