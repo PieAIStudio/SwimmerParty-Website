@@ -1,8 +1,10 @@
+import { WORKS, WORK_STATUS_LABEL } from "@/content/works";
+import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n } from "@/i18n/server";
 import { PageIntro } from "@/site/PageIntro";
 import { SectionHead } from "@/site/SectionHead";
-import { GameButton, GameIcon } from "@pieai/swimmer-ui-kit";
+import { GameBadge, GameButton, GameIcon } from "@pieai/swimmer-ui-kit";
 export async function StudioView({ locale }: { locale: AppLocale }) {
   const { t } = await getSiteI18n(locale);
   return (
@@ -13,6 +15,24 @@ export async function StudioView({ locale }: { locale: AppLocale }) {
       >
         {t("studio.intro")}
       </PageIntro>
+      <section className="sp-section" id="projects" data-studio-projects>
+        <h2 className="sp-title">{t("studio.projectsTitle")}</h2>
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          {WORKS.map((work) => (
+            <Link
+              key={work.slug}
+              data-project={work.slug}
+              href={`/works/${work.slug}`}
+              className="sp-card block bg-card hover:bg-muted"
+            >
+              <GameBadge tone="neutral">{WORK_STATUS_LABEL[work.status][locale]}</GameBadge>
+              <h3 className="sp-subtitle mt-4">{work.title[locale]}</h3>
+              <p className="sp-small mt-2 text-muted-foreground">{work.format[locale]}</p>
+              {work.logline ? <p className="mt-4">{work.logline[locale]}</p> : null}
+            </Link>
+          ))}
+        </div>
+      </section>
       <section className="sp-section">
         <SectionHead label={t("studio.beliefsLabel")} title={t("studio.beliefsTitle")} />
         <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-2">

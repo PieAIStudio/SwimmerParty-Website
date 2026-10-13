@@ -3,6 +3,8 @@ import AxeBuilder from "@axe-core/playwright";
 
 // Cover the complex asset UI, the character sheet, the guide, legal layout and sign-in dialog, not every repeated shell.
 const pages = [
+  "/en",
+  "/zh",
   "/en/actors/tang-yunqiu",
   "/en/actors/tang-yunqiu/sheet",
   "/en/guide",

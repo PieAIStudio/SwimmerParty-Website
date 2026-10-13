@@ -27,7 +27,11 @@ export async function SiteFooter() {
           >
             {SITE.contact}
           </a>
-          <p className="sp-small mt-2 text-muted-foreground">{t("footer.contactNote")}</p>
+          <p className="sp-small mt-2 text-muted-foreground">
+            <Link href="/studio#work-with-us" className="underline underline-offset-4">
+              {t("footer.contactNote")}
+            </Link>
+          </p>
           <div className="mt-6 flex flex-wrap gap-4">
             {SECONDARY_NAV.map((item) => (
               <TextLink key={item.href} href={item.href}>

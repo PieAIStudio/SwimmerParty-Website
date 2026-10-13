@@ -70,77 +70,24 @@ export const messages = {
     en: "SWIMMER PARTY — AI actors who stay the same",
     zh: "SWIMMER PARTY——每次都是同一个人的 AI 演员",
   },
-  "home.heroLines.0": {
-    en: "AI actors",
-    zh: "AI 演员，",
-  },
-  "home.heroLines.1": {
-    en: "who stay",
-    zh: "每次都是，",
-  },
-  "home.heroLines.2": {
-    en: "the same.",
-    zh: "同一个人。",
-  },
+  "home.heroLines.0": { en: "AI actors.", zh: "用 AI 演员，" },
+  "home.heroLines.1": { en: "Your next story.", zh: "演你的故事。" },
   "home.heroBody": {
-    en: "{count} original animated actors, each with images, a voice and a character prompt. Use them in films, ads, games, anything, even when you get paid.",
-    zh: "{count} 位原创动画演员，每人都有图片、声音和角色提示词。拍片、做广告、做游戏都行，赚钱也行。",
+    en: "Free reference assets. Make something with the tools you love.",
+    zh: "免费参考素材，用你喜欢的工具开演。",
   },
-  "home.ctaAssets": {
-    en: "Get free actor assets",
-    zh: "免费领取演员资产",
+  "home.ctaAssets": { en: "Choose an actor", zh: "去挑演员" },
+  "home.readyCount": { en: "{count} ready to cast", zh: "{count} 位可用演员" },
+  "home.newFaceCount": {
+    en: "{count, plural, one {# new face} other {# new faces}}",
+    zh: "{count, plural, other {# 位新面孔}}",
   },
-  "home.ctaBook": {
-    en: "How to credit",
-    zh: "怎么署名",
-  },
-  "home.rosterLabel": {
-    en: "The roster",
-    zh: "演员名单",
-  },
-  "home.rosterTitle": {
-    en: "Meet the actors",
-    zh: "认识他们",
-  },
-  "home.rosterNote": {
-    en: "From Chongqing to Kingston, aged 20 to 73. New faces keep joining.",
-    zh: "从重庆到金斯敦，从 20 岁到 73 岁。新面孔还在不断加入。",
-  },
-  "home.rosterMore": {
-    en: "See all actors",
-    zh: "看全部演员",
-  },
-  "home.worksLabel": {
-    en: "Works",
-    zh: "作品",
-  },
-  "home.worksTitle": {
-    en: "Our films",
-    zh: "我们的片子",
-  },
-  "home.worksCta": {
-    en: "See all works",
-    zh: "看全部作品",
-  },
-  "home.customLabel": {
-    en: "Work with us",
-    zh: "找我们合作",
-  },
-  "home.customTitle.0": {
-    en: "Want an actor",
-    zh: "想要一位",
-  },
-  "home.customTitle.1": {
-    en: "of your own?",
-    zh: "专属演员？",
-  },
-  "home.customBody": {
-    en: "We design custom actors for brands and films, built only for you. Or make something with us.",
-    zh: "我们为品牌和影片定制专属演员，只给你用。也可以和我们一起做片。",
-  },
-  "home.customCta": {
-    en: "Work with us",
-    zh: "找我们合作",
+  "home.samplesTitle": { en: "Official samples", zh: "官方样片" },
+  "home.rosterTitle": { en: "Ready to cast", zh: "可用演员" },
+  "home.rosterMore": { en: "See all actors", zh: "看全部演员" },
+  "home.newFacesNote": {
+    en: "A first look, not a full starter pack.",
+    zh: "先认识一下，素材尚未齐全。",
   },
   "roster.metaTitle": {
     en: "Actors",
@@ -198,6 +145,7 @@ export const messages = {
     en: "Productions starring our own actors.",
     zh: "由我们自己的演员出演的作品。",
   },
+  "studio.projectsTitle": { en: "Studio projects", zh: "工作室项目" },
   "studio.metaTitle": {
     en: "Studio",
     zh: "工作室",
@@ -803,22 +751,6 @@ export const messages = {
     en: "Actors",
     zh: "演员",
   },
-  "home.statActors": {
-    en: "Actors",
-    zh: "位演员",
-  },
-  "home.statImages": {
-    en: "Free images",
-    zh: "张免费图片",
-  },
-  "home.statVoices": {
-    en: "Voices",
-    zh: "段声音",
-  },
-  "home.updatesLabel": {
-    en: "Updates",
-    zh: "更新",
-  },
   "home.updatesTitle": {
     en: "Recently added",
     zh: "最近更新",
@@ -1161,15 +1093,6 @@ export const messages = {
   "home.licenseBadge": {
     en: "Free for commercial use · Credit Swim In AI",
     zh: "商用免费 · 署名 Swim In AI",
-  },
-  "home.licenseLabel": { en: "Free, even commercially", zh: "商用也免费" },
-  "home.licenseTitle": {
-    en: "Use them anywhere. Even when you get paid.",
-    zh: "用在哪都行，赚钱也行。",
-  },
-  "home.licenseNote": {
-    en: "No fee, no forms, no asking. Just credit “Swim In AI”.",
-    zh: "不收钱，不填表，不用问。署上“Swim In AI”就行。",
   },
   "home.licenseCta": { en: "See how to credit", zh: "看怎么署名" },
   "cast.title": { en: "Your cast", zh: "我的选角单" },

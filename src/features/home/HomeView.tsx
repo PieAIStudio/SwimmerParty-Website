@@ -1,164 +1,153 @@
-import { ACTORS } from "@/content/actors";
-import { latestActors } from "@/features/actors/queries";
-import { WORKS } from "@/content/works";
+import { ACTORS, type Actor } from "@/content/actors";
+import { OFFICIAL_SAMPLES, type OfficialSample } from "@/content/official-samples.generated";
 import { ActorCard } from "@/features/actors";
-import { getActorAssets } from "@/features/assets/queries";
-import { OfficialSamplesSection } from "@/features/samples";
 import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n } from "@/i18n/server";
-import { SectionHead } from "@/site/SectionHead";
 import { TextLink } from "@/site/TextLink";
 import { GameButton } from "@pieai/swimmer-ui-kit";
-import Image from "next/image";
+import { selectHomeContent } from "./home-catalog";
+
 export async function HomeView({ locale }: { locale: AppLocale }) {
   const { t } = await getSiteI18n(locale);
-  const newest = latestActors(5);
-  const items = ACTORS.flatMap((actor) => getActorAssets(actor.slug).items);
-  const count = (kind: string) => items.filter((item) => item.kind === kind).length;
+  const { ready, newFaces, hero, featured, updates } = selectHomeContent(ACTORS, OFFICIAL_SAMPLES);
   return (
     <div className="sp-container">
-      <section className="grid items-center gap-10 py-12 lg:min-h-[82vh] lg:grid-cols-12">
-        <div className="lg:col-span-6">
-          <p className="mt-4 inline-flex rounded-full border border-border px-3 py-1 text-sm font-semibold">
-            {t("home.licenseBadge")}
-          </p>
-          <h1 className="sp-display-xl mt-6">
-            {(["home.heroLines.0", "home.heroLines.1", "home.heroLines.2"] as const).map(
-              (key, i) => (
-                <span className="block" key={i}>
-                  {t(key)}
-                </span>
-              ),
-            )}
+      <section
+        data-home-section="hero"
+        className="grid items-center gap-7 py-8 lg:grid-cols-12 lg:gap-16 lg:py-14"
+      >
+        <div className="lg:col-span-7">
+          <h1 className="sp-display-xl">
+            <span className="block">{t("home.heroLines.0")}</span>
+            <span className="block">{t("home.heroLines.1")}</span>
           </h1>
-          <p className="sp-lead mt-6 max-w-[32rem] text-muted-foreground">
-            {t("home.heroBody", { count: ACTORS.length })}
+          <p className="sp-lead mt-5 max-w-[28rem] text-muted-foreground">{t("home.heroBody")}</p>
+          <p className="sp-small mt-4 flex flex-wrap gap-x-4 gap-y-1 text-muted-foreground">
+            <span data-ready-count={ready.length}>
+              {t("home.readyCount", { count: ready.length })}
+            </span>
+            <span data-new-face-count={newFaces.length}>
+              {t("home.newFaceCount", { count: newFaces.length })}
+            </span>
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-6">
-            <GameButton variant="primary" href="/actors" linkComponent={Link}>
-              {t("home.ctaAssets")}
-            </GameButton>
-            <TextLink href="/license#credit">{t("home.ctaBook")}</TextLink>
-          </div>
+          <GameButton className="mt-6" variant="primary" href="/actors" linkComponent={Link}>
+            {t("home.ctaAssets")}
+          </GameButton>
         </div>
-        <div className="flex gap-3 overflow-x-auto pb-2 lg:col-span-6 lg:grid lg:grid-cols-2 lg:gap-4 lg:overflow-visible">
-          {ACTORS.slice(0, 4).map((actor) => (
-            <Link
-              data-card
-              key={actor.slug}
-              href={`/actors/${actor.slug}`}
-              className="group min-w-[118px] flex-1 lg:min-w-0"
-            >
-              <div className="sp-sweep sp-panel aspect-[3/5] lg:aspect-[3/5]">
-                {actor.portrait ? (
-                  <Image
-                    src={actor.portrait}
-                    alt={locale === "zh" ? actor.nameCn : actor.nameEn}
-                    width={941}
-                    height={1672}
-                    className="h-full w-full object-contain"
-                  />
-                ) : null}
-              </div>
-              <p className="mt-3 font-display text-xl font-bold group-hover:underline">
-                {locale === "zh" ? actor.nameCn : actor.nameEn}
-              </p>
-            </Link>
+        <div className="lg:col-span-5">
+          {hero ? (
+            <SamplePreview entry={hero} locale={locale} hero />
+          ) : ready[0] ? (
+            <div className="mx-auto max-w-48">
+              <ActorCard actor={ready[0]} />
+            </div>
+          ) : null}
+        </div>
+      </section>
+      {featured.length ? (
+        <section data-home-section="samples" id="samples" className="sp-section scroll-mt-24">
+          <h2 className="sp-title">{t("home.samplesTitle")}</h2>
+          <div className="mt-6 grid grid-cols-2 gap-4 lg:gap-8">
+            {featured.map((entry) => (
+              <SamplePreview key={entry.sample.video} entry={entry} locale={locale} />
+            ))}
+          </div>
+          <TextLink href="/works#samples" className="mt-6">
+            {t("samples.seeAll")}
+          </TextLink>
+        </section>
+      ) : null}
+      <section data-home-section="ready" className="sp-section">
+        <h2 className="sp-title">{t("home.rosterTitle")}</h2>
+        <div className="mt-6 grid grid-cols-2 gap-6 lg:grid-cols-4">
+          {ready.slice(0, 4).map((actor) => (
+            <ActorCard key={actor.slug} actor={actor} />
           ))}
         </div>
-      </section>
-      <section className="grid grid-cols-3 gap-6 py-10">
-        <div>
-          <p className="font-display text-[2.5rem] font-bold">{ACTORS.length}</p>
-          <p className="sp-small mt-1 text-muted-foreground">{t("home.statActors")}</p>
-        </div>
-        <div>
-          <p className="font-display text-[2.5rem] font-bold">{count("image")}</p>
-          <p className="sp-small mt-1 text-muted-foreground">{t("home.statImages")}</p>
-        </div>
-        <div>
-          <p className="font-display text-[2.5rem] font-bold">{count("voice")}</p>
-          <p className="sp-small mt-1 text-muted-foreground">{t("home.statVoices")}</p>
-        </div>
-      </section>
-      <OfficialSamplesSection limit={2} />
-      <section className="sp-section">
-        <SectionHead
-          label={t("home.rosterLabel")}
-          title={t("home.rosterTitle")}
-          note={t("home.rosterNote")}
-        />
-        <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-          {ACTORS.slice(0, 4)
-            .concat(ACTORS.slice(4, 8))
-            .map((actor) => (
-              <ActorCard key={actor.slug} actor={actor} />
-            ))}
-        </div>
-        <TextLink href="/actors" className="mt-8">
+        <TextLink href="/actors" className="mt-6">
           {t("home.rosterMore")}
         </TextLink>
       </section>
-      <section className="sp-section sp-panel bg-card p-7 lg:p-12">
-        <SectionHead
-          label={t("home.licenseLabel")}
-          title={t("home.licenseTitle")}
-          note={t("home.licenseNote")}
-        />
-        <TextLink href="/license" className="mt-6">
-          {t("home.licenseCta")}
-        </TextLink>
+      {newFaces.length ? (
+        <section data-home-section="new-faces" className="sp-section">
+          <h2 className="sp-title">{t("roster.newFacesTitle")}</h2>
+          <p className="sp-small mt-3 text-muted-foreground">{t("home.newFacesNote")}</p>
+          <div className="mt-6 grid max-w-[36rem] grid-cols-2 gap-6">
+            {newFaces.slice(0, 2).map((actor) => (
+              <ActorCard key={actor.slug} actor={actor} />
+            ))}
+          </div>
+        </section>
+      ) : null}
+      <section
+        data-home-section="credit"
+        className="flex flex-wrap items-center justify-between gap-4 border-y border-border py-6"
+      >
+        <p className="sp-small">{t("home.licenseBadge")}</p>
+        <TextLink href="/license#credit">{t("home.licenseCta")}</TextLink>
       </section>
-      <section className="sp-section">
-        <SectionHead label={t("home.updatesLabel")} title={t("home.updatesTitle")} />
-        <div className="mt-6 divide-y divide-border">
-          {newest.map((actor) => (
-            <Link
-              data-card
-              key={actor.slug}
-              href={`/actors/${actor.slug}`}
-              className="flex items-center justify-between gap-4 py-4 hover:underline"
-            >
-              <span>
-                {actor.versionDate} · {locale === "zh" ? actor.nameCn : actor.nameEn}
-              </span>
-              <span className="sp-small">
-                v{actor.version} · {actor.versionNote?.[locale]}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-      <section className="sp-section">
-        <SectionHead label={t("home.worksLabel")} title={t("home.worksTitle")} />
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {WORKS.map((work) => (
-            <Link
-              data-card
-              key={work.slug}
-              href={`/works/${work.slug}`}
-              className="sp-card bg-card"
-            >
-              <p className="sp-subtitle">{work.title[locale]}</p>
-              <p className="sp-small mt-2 text-muted-foreground">{work.format[locale]}</p>
-            </Link>
-          ))}
-        </div>
-        <TextLink href="/works" className="mt-8">
-          {t("home.worksCta")}
-        </TextLink>
-      </section>
-      <section className="sp-section sp-panel bg-card p-7 lg:p-12" id="work-with-us">
-        <SectionHead
-          label={t("home.customLabel")}
-          title={`${t("home.customTitle.0")} ${t("home.customTitle.1")}`}
-        />
-        <p className="sp-lead mt-6 max-w-2xl text-muted-foreground">{t("home.customBody")}</p>
-        <TextLink href="/studio#work-with-us" className="mt-6">
-          {t("home.customCta")}
-        </TextLink>
-      </section>
+      {updates.length ? (
+        <section data-home-section="updates" className="sp-section">
+          <h2 className="sp-title">{t("home.updatesTitle")}</h2>
+          <div className="mt-6 divide-y divide-border">
+            {updates.map((actor) => (
+              <Link
+                key={actor.slug}
+                href={`/actors/${actor.slug}`}
+                className="block py-4 hover:underline"
+              >
+                <span className="sp-small text-muted-foreground">
+                  <time dateTime={actor.versionDate}>{actor.versionDate}</time> ·{" "}
+                  {locale === "zh" ? actor.nameCn : actor.nameEn}
+                </span>
+                <p className="mt-1">{actor.versionNote?.[locale]}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
     </div>
+  );
+}
+
+/** Compact homepage composition; actor/works pages keep the full existing recipe. */
+async function SamplePreview({
+  entry: { actor, sample },
+  locale,
+  hero = false,
+}: {
+  entry: { actor: Actor; sample: OfficialSample };
+  locale: AppLocale;
+  hero?: boolean;
+}) {
+  const { t } = await getSiteI18n(locale);
+  const name = locale === "zh" ? actor.nameCn : actor.nameEn;
+  return (
+    <figure data-official-sample={sample.slug} className="min-w-0">
+      <video
+        src={sample.video}
+        poster={sample.poster}
+        controls
+        muted
+        playsInline
+        preload="none"
+        aria-label={t("samples.videoLabel", { name })}
+        className={
+          hero
+            ? "aspect-video w-full rounded-[var(--game-ui-radius-card)] bg-muted object-contain lg:aspect-[9/14] lg:max-h-[460px]"
+            : "aspect-9/16 max-h-[420px] w-full rounded-[var(--game-ui-radius-card)] bg-muted object-contain"
+        }
+      />
+      <figcaption className="sp-small mt-3 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+        <Link href={`/actors/${actor.slug}`} className="font-semibold hover:underline">
+          {name}
+        </Link>
+        <span className="text-muted-foreground">{sample.tools.join(" · ")}</span>
+        {hero ? (
+          <span className="w-full text-muted-foreground">{t("samples.official")}</span>
+        ) : null}
+      </figcaption>
+    </figure>
   );
 }

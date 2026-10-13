@@ -3,6 +3,8 @@
 负责首页视图，不拥有演员数据或通用控件。
 
 - 入口：`index.ts`（不是 index.tsx）导出 `HomeView.tsx`；路由负责 locale 与 metadata。
-- 内容来自演员查询和成对消息源。首页改字走 how-to 的文案配方，不编辑生成目录。
-- 合同：中英文首页、既有 CTA 链接、顺序和文字意思。
-- 验证：`e2e/smoke.spec.ts`、`site.spec.ts`、消息检查与 HTML 文本快照。
+- `home-catalog.ts` 从已发布演员和现有官方样片投影中选片、分组、读取真实更新；不拥有生产记录，不建立 A6 的 sampleId 合同。
+- 顺序：定位/真实样片/去挑演员 → 精选样片 → 可用演员 → 新面孔 → 一行署名 → 真实更新；合作入口归页脚，制作中片单归 Studio。
+- 数字为全部 active/new-face 数，卡片为各组精选；没有样片时只显示实际演员，无演员则不伪造卡片。视频按需播放，首屏缩小画幅但不裁切原片。
+- 首页改字走 how-to 的成对文案源与生成流程；不改授权页或权利范围。
+- 验证：`tools/test/home.test.ts`、`e2e/home-next-stage.spec.ts`，含中英/明暗/390 与 1440 截图、首屏主操作、实播及文字预算；基线和截图在 `.devspace-reports/next-stage/a2/`。
