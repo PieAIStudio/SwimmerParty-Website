@@ -7,6 +7,7 @@ import { getSiteI18n } from "@/i18n/server";
 import { TextLink } from "@/site/TextLink";
 import { GameButton } from "@pieai/swimmer-ui-kit";
 import { selectHomeContent } from "./home-catalog";
+import { SampleVideo } from "@/features/samples/client";
 
 export async function HomeView({ locale }: { locale: AppLocale }) {
   const { t } = await getSiteI18n(locale);
@@ -53,7 +54,7 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
           <h2 className="sp-title">{t("home.samplesTitle")}</h2>
           <div className="mt-6 grid grid-cols-2 gap-4 lg:gap-8">
             {featured.map((entry) => (
-              <SamplePreview key={entry.sample.video} entry={entry} locale={locale} />
+              <SamplePreview key={entry.sample.sampleId} entry={entry} locale={locale} />
             ))}
           </div>
           <TextLink href="/works#samples" className="mt-6">
@@ -127,15 +128,11 @@ async function SamplePreview({
   const { t } = await getSiteI18n(locale);
   const name = locale === "zh" ? actor.nameCn : actor.nameEn;
   return (
-    <figure data-official-sample={sample.slug} className="min-w-0">
-      <video
+    <figure data-official-sample={sample.slug} data-sample-id={sample.sampleId} className="min-w-0">
+      <SampleVideo
         src={sample.video}
         poster={sample.poster}
-        controls
-        muted
-        playsInline
-        preload="none"
-        aria-label={t("samples.videoLabel", { name })}
+        label={t("samples.videoLabel", { name })}
         className={
           hero
             ? "aspect-video w-full rounded-[var(--game-ui-radius-card)] bg-muted object-contain lg:aspect-[9/14] lg:max-h-[460px]"

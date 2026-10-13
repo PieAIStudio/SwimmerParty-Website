@@ -167,31 +167,119 @@
       "note": "Identity carries over only inside this one chat. Open it by clicking the sidebar, never by URL. The Owner may move it into project Pics-A and rename it to \"SP-13 唐韵秋\"; update this entry when that happens."
     }
   },
-  "officialSamples": {
-    "postId": "official-sample-tang-yunqiu",
-    "approvedOn": "2026-10-09",
-    "tools": [
-      "ChatGPT",
-      "Grok"
-    ],
-    "media": [
-      {
-        "kind": "image",
-        "source": "library/samples/tang-yunqiu/tang-yunqiu__sample__image-01__v1.png",
-        "public": "/media/works/samples/tang-yunqiu/image-01.webp"
+  "officialSamples": [
+    {
+      "postId": "official-sample-tang-yunqiu",
+      "approvedOn": "2026-10-09",
+      "tools": [
+        "ChatGPT",
+        "Grok"
+      ],
+      "media": [
+        {
+          "kind": "image",
+          "source": "library/samples/tang-yunqiu/tang-yunqiu__sample__image-01__v1.png",
+          "public": "/media/works/samples/tang-yunqiu/image-01.webp"
+        },
+        {
+          "kind": "image",
+          "source": "library/samples/tang-yunqiu/tang-yunqiu__sample__image-02__v1.png",
+          "public": "/media/works/samples/tang-yunqiu/image-02.webp"
+        },
+        {
+          "kind": "video",
+          "source": "library/samples/tang-yunqiu/tang-yunqiu__sample__video-01__v1.mp4",
+          "public": "/media/works/samples/tang-yunqiu/video-01.mp4"
+        }
+      ]
+    },
+    {
+      "sampleId": "tang-yunqiu-grok-02-20261013",
+      "actorSlugs": [
+        "tang-yunqiu"
+      ],
+      "label": "action",
+      "approvedOn": "2026-10-13",
+      "tools": [
+        "Grok"
+      ],
+      "approval": {
+        "rootStatus": "passed-action-and-identity-scope-with-age-detail-limitation",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true,
+        "limitations": "12 sampled frames show full turn, wide side steps and multiple hops with visible travel; head/torso/leg structure stays natural and face recognizably matches approved reference. Wavy brown hair, eye/nose/lip relationship and camel/ivory/charcoal outfit remain consistent. Fine smile-line/age cues soften versus reference; retain limitation, no claim that age expression is exact."
       },
-      {
-        "kind": "image",
-        "source": "library/samples/tang-yunqiu/tang-yunqiu__sample__image-02__v1.png",
-        "public": "/media/works/samples/tang-yunqiu/image-02.webp"
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/tang-yunqiu-grok-02-20261013/source.mp4",
+          "sourceSha256": "eb8689bb1f7ce4c059aea97ffe2efe968fa6eff7c740d27cb4ff3712a8402004",
+          "public": "/media/works/samples/tang-yunqiu-grok-02-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    },
+    {
+      "sampleId": "tang-yunqiu-misha-luo-grok-03-20261013",
+      "actorSlugs": [
+        "tang-yunqiu",
+        "misha-luo"
+      ],
+      "label": "two-actors",
+      "approvedOn": "2026-10-13",
+      "tools": [
+        "Grok"
+      ],
+      "approval": {
+        "rootStatus": "passed-requested-motion-identity-and-body-scope-with-recorded-limitations",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true,
+        "limitations": "Direct12-frame inspection versus previously reviewed shared frozen firstframe: Tang left/Misha right stay distinct with stable faces/outfits/adult head-body proportions; both walking and exchange glances; feet mostly visible. Age/nose/stubble details softened; no exact facial microdetail claim."
       },
-      {
-        "kind": "video",
-        "source": "library/samples/tang-yunqiu/tang-yunqiu__sample__video-01__v1.mp4",
-        "public": "/media/works/samples/tang-yunqiu/video-01.mp4"
-      }
-    ]
-  },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/tang-yunqiu-misha-luo-grok-03-20261013/source.mp4",
+          "sourceSha256": "2d49e3a1b88249e52888ff28541962448077596ccb2b4d2ff0afc7457ed076e4",
+          "public": "/media/works/samples/tang-yunqiu-misha-luo-grok-03-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    },
+    {
+      "sampleId": "tang-yunqiu-misha-luo-google-vids-04-20261013",
+      "actorSlugs": [
+        "tang-yunqiu",
+        "misha-luo"
+      ],
+      "label": "two-actors",
+      "approvedOn": "2026-10-13",
+      "tools": [
+        "Google Vids"
+      ],
+      "approval": {
+        "rootStatus": "passed-ensemble-motion-and-body-scope-with-recorded-limitations",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true,
+        "limitations": "Independent direct review at0.1/3/5.8 sec versus frozen firstframe: sunset riverside and two-person blocking retained; shorter Tang left and taller Misha right, distinct faces/clothes/limbs, sustained walking and glances; head/shoulder/torso/leg balance stable. No face blending or body fusion observed in reviewed frames."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/tang-yunqiu-misha-luo-google-vids-04-20261013/source.mp4",
+          "sourceSha256": "aa66b832922c84d4f4b88a36369df77235db0cd4c151ea9e48ff719c122960bd",
+          "public": "/media/works/samples/tang-yunqiu-misha-luo-google-vids-04-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ],
   "demographics": {
     "age": 43,
     "gender": "female",

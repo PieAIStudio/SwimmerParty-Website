@@ -16,6 +16,8 @@
     "test:e2e": "playwright test",
     "assets:ingest": "node tools/assets/assets-ingest.ts",
     "assets:todo": "node tools/assets/assets-todo.ts",
+    "assets:samples": "node tools/assets/generate-official-samples.ts",
+    "assets:voices": "node tools/assets/generate-voice-manifests.ts",
     "test:tools": "node --test tools/test/*.test.ts",
     "doc-gov": "doc-gov",
     "pro-gov": "pro-gov",

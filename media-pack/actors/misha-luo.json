@@ -162,31 +162,61 @@
       "note": "Identity carries over only inside this one chat. Open it by clicking the sidebar, never by URL. The Owner may move it into project Pics-A and rename it to \"SP-03 罗米沙\"; update this entry when that happens."
     }
   },
-  "officialSamples": {
-    "postId": "official-sample-misha-luo",
-    "approvedOn": "2026-10-09",
-    "tools": [
-      "ChatGPT",
-      "Grok"
-    ],
-    "media": [
-      {
-        "kind": "image",
-        "source": "library/samples/misha-luo/misha-luo__sample__image-01__v1.png",
-        "public": "/media/works/samples/misha-luo/image-01.webp"
+  "officialSamples": [
+    {
+      "postId": "official-sample-misha-luo",
+      "approvedOn": "2026-10-09",
+      "tools": [
+        "ChatGPT",
+        "Grok"
+      ],
+      "media": [
+        {
+          "kind": "image",
+          "source": "library/samples/misha-luo/misha-luo__sample__image-01__v1.png",
+          "public": "/media/works/samples/misha-luo/image-01.webp"
+        },
+        {
+          "kind": "image",
+          "source": "library/samples/misha-luo/misha-luo__sample__image-02__v1.png",
+          "public": "/media/works/samples/misha-luo/image-02.webp"
+        },
+        {
+          "kind": "video",
+          "source": "library/samples/misha-luo/misha-luo__sample__video-01__v1.mp4",
+          "public": "/media/works/samples/misha-luo/video-01.mp4"
+        }
+      ]
+    },
+    {
+      "sampleId": "misha-luo-grok-02-20261013",
+      "actorSlugs": [
+        "misha-luo"
+      ],
+      "label": "action",
+      "approvedOn": "2026-10-13",
+      "tools": [
+        "Grok"
+      ],
+      "approval": {
+        "rootStatus": "passed-requested-motion-identity-and-body-scope-with-recorded-limitations",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true,
+        "limitations": "Direct12-frame inspection versus approved original complete body: clear sustained run, stride, step/low-stair leap and landing; brown tousled hair and long nose recognizable; adult torso/leg relationship remains stable. Nasal cartoon emphasis stronger; opening rear shoe cropped and fast-motion blur recorded."
       },
-      {
-        "kind": "image",
-        "source": "library/samples/misha-luo/misha-luo__sample__image-02__v1.png",
-        "public": "/media/works/samples/misha-luo/image-02.webp"
-      },
-      {
-        "kind": "video",
-        "source": "library/samples/misha-luo/misha-luo__sample__video-01__v1.mp4",
-        "public": "/media/works/samples/misha-luo/video-01.mp4"
-      }
-    ]
-  },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/misha-luo-grok-02-20261013/source.mp4",
+          "sourceSha256": "197b5295955294562ef75226ebb304eeb814f6ed103ba9a66a59b58b875c9a86",
+          "public": "/media/works/samples/misha-luo-grok-02-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ],
   "demographics": {
     "age": 28,
     "gender": "male",

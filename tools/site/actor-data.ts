@@ -1,6 +1,7 @@
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { z } from "zod";
+import { projectOfficialSamples } from "./sample-data.ts";
 import {
   actorSchema,
   castingSchema,
@@ -186,27 +187,10 @@ export function projectActorData(production: unknown[], castingInput: unknown) {
       `media-pack/casting/${entry.slug}`,
     ),
   );
-  const samples = published
-    .filter((a) => a.officialSamples)
-    .map((a) => {
-      const s = a.officialSamples!;
-      const images = s.media.filter((m) => m.kind === "image").map((m) => m.public);
-      const videos = s.media.filter((m) => m.kind === "video");
-      if (![1, 2].includes(images.length) || videos.length !== 1)
-        throw new Error(`${a.slug}: officialSamples must list one or two images and one video`);
-      unique(
-        s.media.map((m) => m.public),
-        `${a.slug}: officialSamples.media.public`,
-      );
-      return {
-        slug: a.slug,
-        tools: s.tools,
-        images,
-        poster: images[0]!,
-        video: videos[0].public,
-        approvedOn: s.approvedOn,
-      };
-    });
+  const samples = projectOfficialSamples(
+    published,
+    [...active, ...newcomers].map((a) => a.slug),
+  );
   return {
     active,
     newFaces,

@@ -92,31 +92,90 @@
       "note": "Create one dedicated character chat after the identity proposal is approved."
     }
   },
-  "officialSamples": {
-    "postId": "official-sample-zhang-qiang",
-    "approvedOn": "2026-10-09",
-    "tools": [
-      "ChatGPT",
-      "Grok"
-    ],
-    "media": [
-      {
-        "kind": "image",
-        "source": "library/samples/zhang-qiang/zhang-qiang__sample__image-01__v1.png",
-        "public": "/media/works/samples/zhang-qiang/image-01.webp"
+  "officialSamples": [
+    {
+      "postId": "official-sample-zhang-qiang",
+      "approvedOn": "2026-10-09",
+      "tools": [
+        "ChatGPT",
+        "Grok"
+      ],
+      "media": [
+        {
+          "kind": "image",
+          "source": "library/samples/zhang-qiang/zhang-qiang__sample__image-01__v1.png",
+          "public": "/media/works/samples/zhang-qiang/image-01.webp"
+        },
+        {
+          "kind": "image",
+          "source": "library/samples/zhang-qiang/zhang-qiang__sample__image-02__v1.png",
+          "public": "/media/works/samples/zhang-qiang/image-02.webp"
+        },
+        {
+          "kind": "video",
+          "source": "library/samples/zhang-qiang/zhang-qiang__sample__video-01__v1.mp4",
+          "public": "/media/works/samples/zhang-qiang/video-01.mp4"
+        }
+      ]
+    },
+    {
+      "sampleId": "zhang-qiang-grok-02-20261013",
+      "actorSlugs": [
+        "zhang-qiang"
+      ],
+      "label": "action",
+      "approvedOn": "2026-10-13",
+      "tools": [
+        "Grok"
+      ],
+      "approval": {
+        "rootStatus": "passed-requested-motion-identity-and-head-body-scope-with-recorded-limitations",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true,
+        "limitations": "Direct12-frame motion strip versus complete body: sustained run, wide stride, step leap and continued running. Tall slim torso/legs and normal head scale retained; blue-grey shirt, black pants/white shoes and swept short hair recognizable. Face fatigue/age cues softened and arms somewhat fuller; exact microdetail/age fidelity not asserted."
       },
-      {
-        "kind": "image",
-        "source": "library/samples/zhang-qiang/zhang-qiang__sample__image-02__v1.png",
-        "public": "/media/works/samples/zhang-qiang/image-02.webp"
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/zhang-qiang-grok-02-20261013/source.mp4",
+          "sourceSha256": "fade03357ca55687b45c953d022b96c312c3e3f42bd199e3d83c66772db42e96",
+          "public": "/media/works/samples/zhang-qiang-grok-02-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    },
+    {
+      "sampleId": "zhang-qiang-chen-wei-grok-03-20261013",
+      "actorSlugs": [
+        "zhang-qiang",
+        "chen-wei"
+      ],
+      "label": "two-actors",
+      "approvedOn": "2026-10-13",
+      "tools": [
+        "Grok"
+      ],
+      "approval": {
+        "rootStatus": "passed-ensemble-proportion-identity-and-body-scope-with-late-push-in-crop-limitation",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true,
+        "limitations": "两位演员仍可区分：张强保持清瘦修长，陈伟保持更宽厚的躯干和体型；双人尺度与Owner提供的身高设定视觉上相容。Grok03与Vids04的0.1/中/末帧中未见头、肩、躯干、胯腿随运动变形或身份混合。两条末段推镜裁到小腿/脚，记录为构图限制。"
       },
-      {
-        "kind": "video",
-        "source": "library/samples/zhang-qiang/zhang-qiang__sample__video-01__v1.mp4",
-        "public": "/media/works/samples/zhang-qiang/video-01.mp4"
-      }
-    ]
-  },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/zhang-qiang-chen-wei-grok-03-20261013/source.mp4",
+          "sourceSha256": "956ca3f8be5beaad17cd0ec5cecf4d87224a9c90b21d71ffe25ddc3a69db390a",
+          "public": "/media/works/samples/zhang-qiang-chen-wei-grok-03-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ],
   "demographics": {
     "age": 41,
     "gender": "male",

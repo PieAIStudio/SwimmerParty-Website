@@ -35,7 +35,7 @@ export async function checkGeneratedMedia(root = process.cwd()) {
     if (actor.portrait) references.add(actor.portrait);
   }
   for (const sample of data.samples)
-    for (const url of [...sample.images, sample.video]) references.add(url);
+    for (const url of [...sample.images, sample.poster, sample.video]) if (url) references.add(url);
   for (const url of references) {
     const bytes = await readFile(publicFile(root, url));
     if (!bytes.length) throw new Error(`Empty generated media: ${url}`);

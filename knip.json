@@ -6,5 +6,5 @@
     "tools/help-clips/record.ts"
   ],
   "ignoreDependencies": ["libphonenumber-js"],
-  "ignoreBinaries": ["ffprobe"]
+  "ignoreBinaries": ["ffprobe", "ffmpeg"]
 }

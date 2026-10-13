@@ -12,6 +12,9 @@ const ready = {
 const face = { ...ready, slug: "new", status: "new-face" as const };
 const sample = (slug: string, video = "/fixtures/sample.mp4"): OfficialSample => ({
   slug,
+  sampleId: video,
+  actorSlugs: [slug],
+  label: "solo",
   video,
   poster: "",
   images: [],

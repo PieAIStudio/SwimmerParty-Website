@@ -113,31 +113,61 @@
       "note": "Create one dedicated character chat in Pics-A for the audition trial; use the old CC image only as face reference and enforce the specified adult proportions."
     }
   },
-  "officialSamples": {
-    "postId": "official-sample-ma-le",
-    "approvedOn": "2026-10-09",
-    "tools": [
-      "ChatGPT",
-      "Grok"
-    ],
-    "media": [
-      {
-        "kind": "image",
-        "source": "library/samples/ma-le/ma-le__sample__image-01__v1.png",
-        "public": "/media/works/samples/ma-le/image-01.webp"
+  "officialSamples": [
+    {
+      "postId": "official-sample-ma-le",
+      "approvedOn": "2026-10-09",
+      "tools": [
+        "ChatGPT",
+        "Grok"
+      ],
+      "media": [
+        {
+          "kind": "image",
+          "source": "library/samples/ma-le/ma-le__sample__image-01__v1.png",
+          "public": "/media/works/samples/ma-le/image-01.webp"
+        },
+        {
+          "kind": "image",
+          "source": "library/samples/ma-le/ma-le__sample__image-02__v1.png",
+          "public": "/media/works/samples/ma-le/image-02.webp"
+        },
+        {
+          "kind": "video",
+          "source": "library/samples/ma-le/ma-le__sample__video-01__v1.mp4",
+          "public": "/media/works/samples/ma-le/video-01.mp4"
+        }
+      ]
+    },
+    {
+      "sampleId": "ma-le-grok-02-20261013",
+      "actorSlugs": [
+        "ma-le"
+      ],
+      "label": "action",
+      "approvedOn": "2026-10-13",
+      "tools": [
+        "Grok"
+      ],
+      "approval": {
+        "rootStatus": "passed-head-body-and-large-action-scope-with-recorded-limitations",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true,
+        "limitations": "Direct12-frame visual review against complete-body anchor: pinned opening preserves adult head-to-shoulder/torso/leg balance; wide strides, extended arms, turn and raised knee clearly visible, no previous pronounced large-head short-body drift. Full shoes mostly visible; fast-motion face/eyes simplify. Exact headsTall not numerically certified."
       },
-      {
-        "kind": "image",
-        "source": "library/samples/ma-le/ma-le__sample__image-02__v1.png",
-        "public": "/media/works/samples/ma-le/image-02.webp"
-      },
-      {
-        "kind": "video",
-        "source": "library/samples/ma-le/ma-le__sample__video-01__v1.mp4",
-        "public": "/media/works/samples/ma-le/video-01.mp4"
-      }
-    ]
-  },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/ma-le-grok-02-20261013/source.mp4",
+          "sourceSha256": "1ae31462f3b58a701846ce7781301bd99b21c446c52c9e6c650083a40d0a268b",
+          "public": "/media/works/samples/ma-le-grok-02-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ],
   "demographics": {
     "age": 24,
     "gender": "male",

@@ -245,8 +245,10 @@ test("A1 all five funnel steps emit locally, with no analytics network request o
   await expect
     .poll(async () => (await events(page)).filter((event) => event.name === "actor_viewed").length)
     .toBe(1);
-  const video = page.locator("[data-actor-sample] video");
-  await video.scrollIntoViewIfNeeded();
+  const sample = page.locator("[data-actor-sample] [data-sample-id]").first();
+  const video = sample.locator("video");
+  await sample.getByRole("button", { name: /Play sample/ }).click();
+  await expect(video).toHaveAttribute("src", /\.mp4$/);
   await video.evaluate(async (element: HTMLVideoElement) => {
     element.muted = true;
     await element.play();

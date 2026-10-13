@@ -61,7 +61,7 @@ export function actorFilterSearch(filters: ActorFilterState, current = ""): stri
 export function makeActorFacets(
   actors: readonly Actor[],
   media: Record<string, readonly { kind: string }[]>,
-  samples: readonly { slug: string; video: string }[],
+  samples: readonly { slug: string; actorSlugs?: readonly string[]; video: string }[],
   works: readonly Work[],
 ): Record<string, ActorFacets> {
   return Object.fromEntries(
@@ -92,7 +92,10 @@ export function makeActorFacets(
           voice: items.some((item) => item.kind === "voice"),
           video:
             items.some((item) => item.kind === "video") ||
-            samples.some((sample) => sample.slug === actor.slug && Boolean(sample.video)),
+            samples.some(
+              (sample) =>
+                (sample.actorSlugs ?? [sample.slug]).includes(actor.slug) && Boolean(sample.video),
+            ),
         },
       ];
     }),

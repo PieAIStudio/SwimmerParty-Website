@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { productionSamplesSchema } from "./samples.ts";
 
 const localizedSchema = z.object({ en: z.string(), zh: z.string() });
 const actorStatusSchema = z.enum(["active", "new-face", "in-development", "concept"]);
@@ -82,19 +83,7 @@ export const publishedActorSchema = z.looseObject({
   release: releaseSchema,
   website: websiteSchema,
   looks: z.array(z.unknown()),
-  officialSamples: z
-    .looseObject({
-      approvedOn: dateSchema,
-      tools: z.array(z.string()).nonempty(),
-      media: z.array(
-        z.looseObject({
-          kind: z.enum(["image", "video"]),
-          source: z.string(),
-          public: z.string().startsWith("/media/"),
-        }),
-      ),
-    })
-    .optional(),
+  officialSamples: productionSamplesSchema.optional(),
 });
 export const productionLookSchema = lookSchema
   .extend({

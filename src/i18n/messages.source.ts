@@ -1017,32 +1017,18 @@ export const messages = {
     zh: "审核队列暂时不可用，请稍后重试。",
   },
   "community.reviewRetry": { en: "Try again", zh: "重试" },
+  "samples.play": { en: "Play sample", zh: "播放样片" },
+  "samples.playFailed": {
+    en: "This sample could not be loaded. Try again later.",
+    zh: "样片暂时无法加载，请稍后重试。",
+  },
+  "samples.label.solo": { en: "Solo", zh: "单人" },
+  "samples.label.action": { en: "Action", zh: "动作" },
+  "samples.label.two-actors": { en: "Two actors", zh: "双人" },
   "samples.worksTitle": { en: "Same actor, different tools", zh: "同一个演员，不同工具" },
   "samples.actorTitle": { en: "Same {name}, different tools", zh: "同一个{name}，不同工具" },
-  "samples.description": {
-    en: "Real examples made with our actor references.",
-    zh: "用演员参考素材做出的真实样片。",
-  },
   "samples.official": { en: "By SWIMMER PARTY", zh: "SWIMMER PARTY 出品" },
   "samples.seeAll": { en: "See all samples", zh: "看全部样片" },
-  "samples.madeWith": { en: "Made with", zh: "用的工具" },
-  "samples.howMade": { en: "How it was made", zh: "怎么做的" },
-  "samples.step1": {
-    en: "Download {name}’s starter pack.",
-    zh: "下载{name}的懒人包。",
-  },
-  "samples.step2": {
-    en: "In ChatGPT, upload the full-body front and the front face, paste the character prompt and describe a scene.",
-    zh: "在 ChatGPT 里上传正面全身和正面头像，粘贴角色提示词，再写一个场景。",
-  },
-  "samples.step3": {
-    en: "In Grok, use one of those images as the first frame and describe one simple movement.",
-    zh: "在 Grok 里用其中一张图当第一帧，写一个简单的动作。",
-  },
-  "samples.sceneAlt": {
-    en: "{name} in a scene made with {tool}",
-    zh: "{name}在用 {tool} 做的场景里",
-  },
   "samples.videoLabel": {
     en: "{name} · short video made with Grok",
     zh: "{name} · 用 Grok 做的短视频",

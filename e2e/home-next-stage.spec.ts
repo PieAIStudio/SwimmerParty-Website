@@ -117,24 +117,25 @@ test("A2 home plays only approved clips on demand, without duplicated hero cards
 }) => {
   await page.goto("/en");
   const videos = page.locator("main video");
-  const sources = await videos.evaluateAll((nodes) =>
-    nodes.map((node) => node.getAttribute("src")),
-  );
+  const sources = await page
+    .locator("main [data-sample-id]")
+    .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-sample-id")));
   expect(sources.length).toBe(3);
   expect(new Set(sources).size).toBe(sources.length);
   for (const src of sources)
-    expect(OFFICIAL_SAMPLES.some((sample) => sample.video === src)).toBe(true);
+    expect(OFFICIAL_SAMPLES.some((sample) => sample.sampleId === src)).toBe(true);
   for (const video of await videos.all()) {
     await expect(video).toHaveAttribute("preload", "none");
+    await expect(video).not.toHaveAttribute("src");
     expect(
       await video.evaluate((node: HTMLVideoElement) => node.paused && !node.autoplay && !node.loop),
     ).toBe(true);
   }
   const hero = page.locator('[data-home-section="hero"] video');
-  await hero.evaluate(async (video: HTMLVideoElement) => {
-    video.muted = true;
-    await video.play();
-  });
+  await page
+    .locator('[data-home-section="hero"]')
+    .getByRole("button", { name: /Play sample/ })
+    .click();
   await expect
     .poll(() => hero.evaluate((video: HTMLVideoElement) => video.currentTime))
     .toBeGreaterThan(0);

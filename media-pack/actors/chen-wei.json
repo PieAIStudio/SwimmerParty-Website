@@ -92,31 +92,90 @@
       "note": "Dedicated owner-selected identity pack chat. Only original approved face.front and turnaround.front anchors are identity authority."
     }
   },
-  "officialSamples": {
-    "postId": "official-sample-chen-wei",
-    "approvedOn": "2026-10-09",
-    "tools": [
-      "ChatGPT",
-      "Grok"
-    ],
-    "media": [
-      {
-        "kind": "image",
-        "source": "library/samples/chen-wei/chen-wei__sample__image-01__v1.png",
-        "public": "/media/works/samples/chen-wei/image-01.webp"
+  "officialSamples": [
+    {
+      "postId": "official-sample-chen-wei",
+      "approvedOn": "2026-10-09",
+      "tools": [
+        "ChatGPT",
+        "Grok"
+      ],
+      "media": [
+        {
+          "kind": "image",
+          "source": "library/samples/chen-wei/chen-wei__sample__image-01__v1.png",
+          "public": "/media/works/samples/chen-wei/image-01.webp"
+        },
+        {
+          "kind": "image",
+          "source": "library/samples/chen-wei/chen-wei__sample__image-02__v1.png",
+          "public": "/media/works/samples/chen-wei/image-02.webp"
+        },
+        {
+          "kind": "video",
+          "source": "library/samples/chen-wei/chen-wei__sample__video-01__v1.mp4",
+          "public": "/media/works/samples/chen-wei/video-01.mp4"
+        }
+      ]
+    },
+    {
+      "sampleId": "chen-wei-grok-02-20261013",
+      "actorSlugs": [
+        "chen-wei"
+      ],
+      "label": "action",
+      "approvedOn": "2026-10-13",
+      "tools": [
+        "Grok"
+      ],
+      "approval": {
+        "rootStatus": "passed-requested-motion-identity-and-head-body-scope-with-recorded-limitations",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true,
+        "limitations": "Direct12-frame inspection versus complete body: clear wide lateral strides, lunges, arm swings and full turn; stocky adult build, round face, grey-green tee and white shoes retained. Head scale not visibly growing in motion. Eyes less half-closed and facial hair subdued; hand/foot approach frame boundary during large gestures, no exact facial microdetail claim."
       },
-      {
-        "kind": "image",
-        "source": "library/samples/chen-wei/chen-wei__sample__image-02__v1.png",
-        "public": "/media/works/samples/chen-wei/image-02.webp"
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/chen-wei-grok-02-20261013/source.mp4",
+          "sourceSha256": "7119a25d7eea6c29d311bc3809207534f72135ead478082e8919076f72d2751f",
+          "public": "/media/works/samples/chen-wei-grok-02-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    },
+    {
+      "sampleId": "chen-wei-zhang-qiang-google-vids-04-20261013",
+      "actorSlugs": [
+        "chen-wei",
+        "zhang-qiang"
+      ],
+      "label": "two-actors",
+      "approvedOn": "2026-10-13",
+      "tools": [
+        "Google Vids"
+      ],
+      "approval": {
+        "rootStatus": "passed-ensemble-proportion-identity-and-body-scope-with-late-push-in-crop-limitation",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true,
+        "limitations": "两位演员仍可区分：张强保持清瘦修长，陈伟保持更宽厚的躯干和体型；双人尺度与Owner提供的身高设定视觉上相容。Grok03与Vids04的0.1/中/末帧中未见头、肩、躯干、胯腿随运动变形或身份混合。两条末段推镜裁到小腿/脚，记录为构图限制。"
       },
-      {
-        "kind": "video",
-        "source": "library/samples/chen-wei/chen-wei__sample__video-01__v1.mp4",
-        "public": "/media/works/samples/chen-wei/video-01.mp4"
-      }
-    ]
-  },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/chen-wei-zhang-qiang-google-vids-04-20261013/source.mp4",
+          "sourceSha256": "8a41c60b05932197889cc7a8cf61722099404de074942df1384847a4be25245e",
+          "public": "/media/works/samples/chen-wei-zhang-qiang-google-vids-04-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ],
   "demographics": {
     "age": 46,
     "gender": "male",

@@ -7,8 +7,12 @@ export function publicFile(root: string, url: string) {
     throw new Error(`Invalid public media path: ${url}`);
   return path.join(root, "public", url);
 }
-export function sourceFile(root: string, relative: string) {
-  const base = path.resolve(root, "media-pack");
+export function sourceFile(
+  root: string,
+  relative: string,
+  sourceRoot: "media-pack" | "assets-inbox" = "media-pack",
+) {
+  const base = path.resolve(root, sourceRoot);
   const target = path.resolve(base, relative);
   if (!target.startsWith(base + path.sep))
     throw new Error(`Source escapes media-pack: ${relative}`);

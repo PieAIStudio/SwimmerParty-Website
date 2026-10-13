@@ -20,7 +20,7 @@ export async function generatedActorFiles(root = process.cwd()): Promise<Record<
   files["src/content/actors/new-face-profiles.generated.ts"] =
     `${header}import type { Actor } from "./shared.ts";\nexport const NEW_FACE_ACTORS: Actor[] = ${JSON.stringify(data.newcomers, null, 2)};\n`;
   files["src/content/official-samples.generated.ts"] =
-    `${header}export type OfficialSample = {slug:string;tools:string[];images:string[];poster:string;video:string;approvedOn:string};\nexport const OFFICIAL_SAMPLES: OfficialSample[] = ${JSON.stringify(data.samples, null, 2)};\n`;
+    `${header}import type { OfficialSample } from "../contracts/samples.ts";\nexport type { OfficialSample } from "../contracts/samples.ts";\nexport const OFFICIAL_SAMPLES: OfficialSample[] = ${JSON.stringify(data.samples, null, 2)};\n`;
   for (const [file, source] of Object.entries(files)) {
     files[file] = execFileSync(
       path.resolve("node_modules/.bin/oxfmt"),
