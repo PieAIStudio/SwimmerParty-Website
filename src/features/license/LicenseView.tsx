@@ -24,7 +24,7 @@ export async function LicenseView({ locale }: { locale: AppLocale }) {
           {t("license.heroLines.1")}
         </>
       </h1>
-      <p className="sp-lead mt-6 max-w-3xl">{l(LICENSE.intro, locale)}</p>
+      <p className="sp-lead mt-6 max-w-3xl">{t("license.intro")}</p>
       <section id="credit" className="mt-16 scroll-mt-24">
         <h2 className="sp-title">{t("license.creditTitle")}</h2>
         <p className="mt-3 max-w-2xl">{t("license.creditNote")}</p>
@@ -42,7 +42,12 @@ export async function LicenseView({ locale }: { locale: AppLocale }) {
       </section>
       <section className="mt-16">
         <h2 className="sp-title">{t("license.whereTitle")}</h2>
-        <div className="mt-6 overflow-x-auto sp-panel">
+        <section
+          className="mt-6 overflow-x-auto sp-panel"
+          aria-label={t("license.whereTitle")}
+          // oxlint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- Keyboard users must focus this overflow region to scroll the unchanged table.
+          tabIndex={0}
+        >
           <table className="w-full min-w-[720px] text-left text-sm">
             <thead>
               <tr className="border-b border-border">
@@ -61,7 +66,7 @@ export async function LicenseView({ locale }: { locale: AppLocale }) {
               ))}
             </tbody>
           </table>
-        </div>
+        </section>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {LICENSE_EXAMPLES.map((item) => (
             <figure key={item.en} className="sp-panel overflow-hidden">

@@ -369,8 +369,10 @@ export interface MessageContracts {
   readonly "license.faqTitle": {  };
   readonly "license.heroLines.0": {  };
   readonly "license.heroLines.1": {  };
+  readonly "license.intro": {  };
   readonly "license.markNote": {  };
   readonly "license.markTitle": {  };
+  readonly "license.metaDescription": {  };
   readonly "license.promisesTitle": {  };
   readonly "license.whereMade": {  };
   readonly "license.wherePlacement": {  };

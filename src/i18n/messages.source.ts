@@ -1167,7 +1167,18 @@ export const messages = {
   "community.delete": { en: "Delete", zh: "删除" },
   "community.signInToVote": { en: "Sign in to vote", zh: "登录后投票" },
   "community.voteLabel": { en: "Want more of {name}", zh: "想看更多{name}" },
-  "license.heroLines.0": { en: "Use them anywhere.", zh: "随便用，" },
+  "license.heroLines.0": {
+    en: "Free for personal and commercial projects.",
+    zh: "个人创作、商用都免费。",
+  },
+  "license.metaDescription": {
+    en: "Use SWIMMER PARTY’s animated actors in personal and commercial projects for free. Credit Swim In AI and follow the usage rules below.",
+    zh: "SWIMMER PARTY 的动画演员可免费用于个人创作和商业项目。署名 Swim In AI，并遵守下列使用规则。",
+  },
+  "license.intro": {
+    en: "Use our animated actors in films, ads, games, comics, music or merch under the rules below. No license fee or permission request. Credit Swim In AI where people can read it. Downloading packs requires a free Swimmer account.",
+    zh: "动画演员可用于电影、广告、游戏、漫画、音乐和周边，具体规则见下方。无需支付许可费或申请许可；请在清晰可见处署名 Swim In AI。下载整包需要免费泳者账号。",
+  },
   "license.heroLines.1": { en: "Credit Swim In AI.", zh: "署上 Swim In AI。" },
   "common.languageName.zh": { en: "中文", zh: "中文" },
   "common.languageName.en": { en: "English", zh: "English" },
