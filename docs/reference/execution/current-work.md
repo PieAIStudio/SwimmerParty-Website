@@ -19,9 +19,9 @@ related: []
 
 当前网站改进按[创作社区实施方案](../../plans/active/2026-10-13-creator-community.md)推进；阶段状态、Owner 决定与检查证据只记在方案内。下列发布记录保留当时的版本与验收数字，不代表当前依赖或测试总数。
 
-2026-10-13 knip 基线核对：干净 `origin/main`（`d84d3dd`，隔离检出前后均 clean）用 `pnpm dlx knip` 6.41.0 检出 7 项；A1 后只剩 `src/features/account/arrival.ts` 的 `SSO_ARRIVAL_PARAM`、`products.ts` 的 `CURRENT_PRODUCT_ID` 两项。记为**既有、归 Avatar 的 AuthKit 升级一起清**；A1 未新增问题，不碰账号目录、不加忽略规则。Owner 已澄清 knip 不在推送门禁中，此基线不阻塞 A1；实际门禁仍须通过。原始对比收据：`.devspace-reports/next-stage/knip-baseline/receipt.json`。
+2026-10-13 knip 基线核对：干净 `origin/main`（`d84d3dd`，隔离检出前后均 clean）用 `pnpm dlx knip` 6.41.0 检出 7 项；A1 后只剩 `src/features/account/arrival.ts` 的 `SSO_ARRIVAL_PARAM`、`products.ts` 的 `CURRENT_PRODUCT_ID` 两项。当时记为**既有、归 Avatar 的 AuthKit 升级一起清**；A1 未新增问题，不碰账号目录、不加忽略规则。Owner 已澄清 knip 不在推送门禁中，此基线不阻塞 A1；实际门禁仍须通过。原始对比收据：`.devspace-reports/next-stage/knip-baseline/receipt.json`。
 
-## SPEC-0002 一张脸：账号资料接入（本地候选，未发布）
+## SPEC-0002 一张脸：账号资料接入（整合门禁通过，待 Owner 批准发布）
 
 2026-10-13 Owner 将 SWIMMER PARTY 的共享头像接入交给头像线；SSO 线继续负责 Directing。
 从 `origin/main` 的 `d84d3dd` 新建 `.worktrees/authkit-avatar`，原检出的制作资料与生成物不纳入本次改动。
@@ -36,7 +36,9 @@ related: []
 撤销夹具缺少原生 `x-supabase-api-version` 响应头，已按 SDK 合同补全，不放松撤销断言；恢复执行后该项通过。另补齐测试请求的 Next API 字段以通过类型检查，不改变产品代码。
 2026-10-13 15:56 恢复：冻结安装及供应链校验通过（609 项锁文件记录）；账号窄回归 **17/17**，完整 `pnpm check` 的工具测试 **114/114**，类型、lint、格式、455 个文案键与生成物检查通过；文档 **35** 份、**61** 个本地链接、零警告，UI 检查零原始颜色值。
 此前重型检查曾因共享锁及负载等待：15:56 为 Visual，16:03 为 Regression，当时 1 分钟负载 **47.56**；16:45–17:45 的 60 分钟等待也未取得第一把锁。这些等待不计为通过，未抢占他人锁。
-2026-10-13 19:36 按更新的 SLOTS 规则原子取得非 University 专用 `long-job-2.lock`，开跑 1 分钟负载 **20.81**；首次完整 `pnpm verify --workers=2` **通过：114 项工具测试、54/54 项浏览器测试，零失败/跳过/重试**，源码前后哈希一致，19:39 结束即释放第二把锁。手机英文及桌面中文的合成头像截图已查看；仅移除 `arrival.ts` 的 `SSO_ARRIVAL_PARAM` 和 `products.ts` 的 `CURRENT_PRODUCT_ID` 两个未用 export，常量与行为保留。证据：`.devspace-reports/authkit-avatar/verify-before-rebase-20261013-193645/{receipt.json,verify.log}`。接下来提交并 rebase 含 A1/A2 的最新 main，整合后须独立完整验证，不能用本轮旧基线代替。
+2026-10-13 19:36 按更新的 SLOTS 规则原子取得非 University 专用 `long-job-2.lock`，开跑 1 分钟负载 **20.81**；首次完整 `pnpm verify --workers=2` **通过：114 项工具测试、54/54 项浏览器测试，零失败/跳过/重试**，源码前后哈希一致，19:39 结束即释放第二把锁。手机英文及桌面中文的合成头像截图已查看；仅移除 `arrival.ts` 的 `SSO_ARRIVAL_PARAM` 和 `products.ts` 的 `CURRENT_PRODUCT_ID` 两个未用 export，常量与行为保留。证据：`.devspace-reports/authkit-avatar/verify-before-rebase-20261013-193645/{receipt.json,verify.log}`。随后先提交 `624440d`，再 rebase 到含 A1 `b9276c4`、v3 文档同步和 A2 `31d3f30` 的最新 main，得到 **d141cf7**。仅有三份文档冲突：保留两线 current-work、v3 社区决定与账号说明，MANIFEST 由 doc-gov 重生成；网站功能及制作素材未由头像线改写。
+
+**整合后的独立完整验收通过：**19:47:25 以 1 分钟负载 **13.51** 取得第二把锁，对干净提交 **d141cf75aede31427c499a161c0a280c487239fb** 重新冻结安装，运行完整 `pnpm verify --workers=2`，**133/133 工具测试、96/96 浏览器测试，零失败/跳过/重试**；包含 A1/A2 原用例与共享头像手机/桌面刷新、清除回归。文案 446 键、类型/lint/格式/生成物、文档 **36** 份/**67** 个本地链接/零警告、UI 及 `git diff --check` 通过。**`pnpm dlx knip@6.41.0` 零问题、exit 0**，上述两个 export 已在本批清除，没有增加忽略规则。运行期间全部跟踪文件哈希一致，结束时工作树干净，截图已查看；19:50:53 释放第二把锁，本机测试监听已退出。证据：`.devspace-reports/authkit-avatar/verify-rebased-20261013-194725/` 的 `receipt.json`、`source-hashes.json`、`verify.log`、`docs.log`、`ui.log`、`knip.log` 与两张菜单截图。本段收尾只改文档，运行源码、依赖与测试保持该已验证提交一致；推送须回读 main。
 只读发布预检确认目标为 `pie-0f420159/swimmerparty`、当前正式部署 **dpl_2c196WCgd566ysc9x2YzuBdqdphP**（未来本次发布的回滚目标），`guest-asset-download` 防火墙规则仍启用，1 次/30 秒/IP。本次尚无新部署，候选及真实发布验收均待完成。
 证据保留在 `.devspace-reports/authkit-avatar/`：`resume-install-frozen.log`、`resume-adapter-green.log`、`resume-check-fixed.log`、`resume-source-pre-browser.json`、`resume-release-readonly.json`；原失败日志不覆盖。本段不宣称已上线。
 本地两账号仅是内存传输与合成 grant，不是托管双账号验收，不创建真实用户、不发送邮件。
@@ -44,7 +46,7 @@ related: []
 
 ### 本轮交付边界与发布前清单
 
-2026-10-13 Owner 最新指令为使用第二把锁完成本地门禁、提交、rebase 最新 main 和推送；**正式发布必须再次获得 Owner 点头**。本轮不创建 Vercel 候选、不推广、不改 Auth 或存储配置。两次只读诊断被 OpenAI“无法确定安全状态”拦下，各原样重试一次成功；未换工具或改写被拦操作规避检查。
+2026-10-13 Owner 最新指令为使用第二把锁完成本地门禁、提交、rebase 最新 main 和推送；**正式发布必须再次获得 Owner 点头**。本轮不创建 Vercel 候选、不推广、不改 Auth 或存储配置。两次只读诊断和一条协作消息被 OpenAI“无法确定安全状态”拦下，均原样重试一次成功；文件编辑、提交和 rebase 未遇到该拦截，未换工具或改写被拦操作规避检查。
 
 - 发布批准前：完整 `pnpm verify --workers=2`、文档、UI、差异检查均须通过，保留精确源码与日志；推送后核对远端 main 和工作树。
 - Owner 批准后：重新核对 `pie-0f420159/swimmerparty`、当前正式部署与回滚目标、无其他部署、生产环境元数据及原防火墙规则；完成 [release.md](../release.md) 要求的精确提交 Actions 验收。旧回执不代替这些新检查。
