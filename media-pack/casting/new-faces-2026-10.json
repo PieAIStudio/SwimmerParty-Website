@@ -78,31 +78,6 @@
    "image": "library/claude-casting-2026-10-07/final/CC-011.png"
   },
   {
-   "slug": "chang-shulan",
-   "source": "CC-016",
-   "nameZh": "常淑兰",
-   "nameEn": "Chang Shulan",
-   "gender": "female",
-   "group": "east-asian",
-   "age": 62,
-   "heightCm": 152,
-   "origin": {
-    "zh": "山西太原",
-    "en": "Taiyuan, Shanxi"
-   },
-   "tagline": {
-    "zh": "下巴方，脾气硬，心最软。",
-    "en": "Square jaw, hard temper, soft heart."
-   },
-   "voice": {
-    "language": "zh",
-    "brief": "62岁山西女性，普通话带山西口音，声音略沙、有力，说话干脆利落，带点严厉，但尾音有温度。",
-    "introLine": "我叫常淑兰，太原人，六十二了。年轻时在纺织厂当过车间主任，嗓门是那时候练出来的。我这人脾气是硬了点，可谁家有事我第一个到。演婆婆、演奶奶、演居委会主任，我都行。"
-   },
-   "look": "East Asian (Chinese) woman, about 62, small and sturdy, about 152 cm; strong square jaw, deep smile lines, salt-and-pepper short cropped hair; navy top",
-   "image": "library/claude-casting-2026-10-07/final/CC-016.png"
-  },
-  {
    "slug": "cheng-xiaolu",
    "source": "CC-021",
    "nameZh": "程小鹿",
@@ -526,31 +501,6 @@
    },
    "look": "East Asian (Chinese) man, about 33, average build, about 172 cm; round face, small eyes, a slightly receding hairline; navy top",
    "image": "library/claude-casting-2026-10-07/final/CC-007.png"
-  },
-  {
-   "slug": "lei-le",
-   "source": "CC-012",
-   "nameZh": "雷乐",
-   "nameEn": "Lei Le",
-   "gender": "male",
-   "group": "east-asian",
-   "age": 46,
-   "heightCm": 170,
-   "origin": {
-    "zh": "湖北武汉",
-    "en": "Wuhan, Hubei"
-   },
-   "tagline": {
-    "zh": "啤酒肚，寸头，笑起来震天响。",
-    "en": "Beer belly, buzz cut and a laugh you can hear down the street."
-   },
-   "voice": {
-    "language": "zh",
-    "brief": "46岁武汉男人，普通话带浓武汉口音，声音洪亮粗犷，豪爽，急脾气，但很热心。",
-    "introLine": "我叫雷乐，武汉的，四十六。名字里有个乐，所以我一天到晚乐呵呵的，笑起来整条街都听得到。你看我这个肚子，都是热干面跟啤酒喂出来的。以前开过出租车，满武汉没有我不熟的路。演司机、演大排档老板，那是本色出演！"
-   },
-   "look": "East Asian (Chinese) man, about 46, heavyset with a pot belly, about 170 cm; broad face, double chin, very short buzz cut; heather-grey top",
-   "image": "library/claude-casting-2026-10-07/final/CC-012.png"
   },
   {
    "slug": "gu-wenyuan",

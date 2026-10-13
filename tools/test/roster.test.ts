@@ -20,7 +20,8 @@ test("published roster counts and Ma Le delivery stay current", () => {
   const active = ACTORS.filter((actor) => actor.status === "active");
   const newFaces = ACTORS.filter((actor) => actor.status === "new-face");
   assert.equal(active.length, 21);
-  assert.equal(newFaces.length, 78);
+  assert.equal(newFaces.length, 76);
+  assert.ok(!ACTORS.some((actor) => ["lei-le", "chang-shulan"].includes(actor.slug)));
   assert.deepEqual(
     active.slice(0, 6).map((actor) => actor.slug),
     ["tang-yunqiu", "misha-luo", "zhang-qiang", "chen-wei", "yan-lin", "ma-le"],
