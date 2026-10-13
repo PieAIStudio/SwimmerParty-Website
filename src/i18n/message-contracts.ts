@@ -191,7 +191,6 @@ export interface MessageContracts {
   readonly "casting.routes.1.title": {  };
   readonly "casting.routes.2.body": {  };
   readonly "casting.routes.2.title": {  };
-  readonly "common.authored": {  };
   readonly "common.breadcrumb": {  };
   readonly "common.breadcrumbFallback": {  };
   readonly "common.close": {  };
@@ -246,6 +245,7 @@ export interface MessageContracts {
   readonly "community.toolPlaceholder": {  };
   readonly "community.voteLabel": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "community.waiting": {  };
+  readonly "downloads.accountRequired": {  };
   readonly "footer.claim": {  };
   readonly "footer.contact": {  };
   readonly "footer.contactNote": {  };

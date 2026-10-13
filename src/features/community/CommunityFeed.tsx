@@ -1,13 +1,12 @@
 "use client";
 import { useSiteI18n } from "@/i18n/client";
 import { useEffect, useState } from "react";
-import { GameButton } from "@pieai/swimmer-ui-kit";
+import { GameButton, GameSelect } from "@pieai/swimmer-ui-kit";
+import { ACTORS } from "@/content/actors";
 import type { CommunityPost } from "./types";
 import { communityPostResponseSchema, communityPostsResponseSchema } from "@/contracts/community";
 import { Link } from "@/i18n/navigation";
-export function CommunityFeed({ locale: _locale }: { locale: "en" | "zh" }) {
-  // Retain the existing locale prop; authored copy follows the site provider.
-  void _locale;
+export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
   const { t } = useSiteI18n();
   const [posts, setPosts] = useState<CommunityPost[]>([]);
   const [open, setOpen] = useState(false);
@@ -81,12 +80,16 @@ export function CommunityFeed({ locale: _locale }: { locale: "en" | "zh" }) {
               <option value="audio">{t("community.kind.audio")}</option>
               <option value="game">{t("community.kind.game")}</option>
             </select>
-            <input
-              value={actor}
-              onChange={(e) => setActor(e.target.value)}
-              aria-label={t("community.actorSlugLabel")}
-              className="rounded border border-border bg-background p-3"
-            />
+            <label className="grid min-w-0 flex-1 gap-2">
+              <span className="sp-label">{t("community.actorSlugLabel")}</span>
+              <GameSelect value={actor} onChange={(e) => setActor(e.target.value)}>
+                {ACTORS.map((option) => (
+                  <option key={option.slug} value={option.slug}>
+                    {locale === "zh" ? option.nameCn : option.nameEn}
+                  </option>
+                ))}
+              </GameSelect>
+            </label>
           </div>
           <textarea
             value={description}

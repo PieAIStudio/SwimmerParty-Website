@@ -14,8 +14,8 @@ export function LanguageMenu({ variant = "rail" }: { variant?: "rail" | "panel" 
   const pathname = usePathname();
   const router = useRouter();
   const options = [
-    { id: "zh", label: t("common.languageName.zh"), meta: t("common.authored") },
-    { id: "en", label: t("common.languageName.en"), meta: t("common.authored") },
+    { id: "zh", label: t("common.languageName.zh"), meta: "" },
+    { id: "en", label: t("common.languageName.en"), meta: "" },
     ...MACHINE_LOCALES.map((machine) => ({
       id: machine.code,
       label: machine.label,
@@ -27,7 +27,7 @@ export function LanguageMenu({ variant = "rail" }: { variant?: "rail" | "panel" 
       router.push(`${localePath(pathname, id)}${window.location.search}${window.location.hash}`);
       return;
     }
-    const englishPath = `/en${pathname === "/" ? "" : pathname}`;
+    const englishPath = `/en${pathname === "/" ? "" : pathname}${window.location.search}${window.location.hash}`;
     window.open(machineTranslateUrl(SITE.url, englishPath, id), "_blank", "noopener,noreferrer");
   }
   return (

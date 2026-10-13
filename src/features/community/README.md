@@ -6,4 +6,5 @@
 - server/adapter.ts 定义存储边界，memory.ts 实现本地状态；页面不直接访问存储。
 - 合同：既有 `/api/community/*` 请求/响应。server/route.ts 在非 mock/部署环境统一拒绝为 503，不能回退内存或把本地成功当线上成功。
 - 正式依赖：[后端需求](../../../docs/reference/swimmer-party-community-backend.md)。开关值不代表后端已经交付。
+- 原型投稿的演员选择来自已发布 ACTORS 目录；不让访客手填内部 slug。输入/输出 v3 重建及生产上传仍等 C 组，不由文案修改提前接入。
 - 验证：`tools/test/community.test.ts`、`community-moderation.test.ts` 与部署守卫证据。

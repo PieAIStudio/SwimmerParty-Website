@@ -11,6 +11,9 @@ export function DownloadTerms({ className = "" }: { className?: string }) {
       <Link href="/license#credit" className="underline underline-offset-4">
         {t("home.licenseBadge")}
       </Link>
+      <span className="mt-1 block" data-download-account>
+        {t("downloads.accountRequired")}
+      </span>
     </p>
   );
 }

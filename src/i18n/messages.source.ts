@@ -34,14 +34,11 @@ export const messages = {
     en: "Language",
     zh: "语言",
   },
-  "common.authored": {
-    en: "Authored",
-    zh: "人工撰写",
+  "downloads.accountRequired": {
+    en: "Packs require a free Swimmer account.",
+    zh: "整包下载需要免费泳者账号。",
   },
-  "common.machine": {
-    en: "Machine translated",
-    zh: "机器翻译",
-  },
+  "common.machine": { en: "Auto-translated · new tab", zh: "自动翻译 · 新标签页" },
   "common.mainNav": {
     en: "Main navigation",
     zh: "主导航",
@@ -69,10 +66,7 @@ export const messages = {
     en: "Studio",
     zh: "工作室",
   },
-  "home.metaTitle": {
-    en: "SWIMMER PARTY — AI actors who stay the same",
-    zh: "SWIMMER PARTY——每次都是同一个人的 AI 演员",
-  },
+  "home.metaTitle": { en: "SWIMMER PARTY — Original AI actors", zh: "SWIMMER PARTY——原创 AI 演员" },
   "home.heroLines.0": { en: "AI actors.", zh: "用 AI 演员，" },
   "home.heroLines.1": { en: "Your next story.", zh: "演你的故事。" },
   "home.heroBody": {
@@ -113,8 +107,8 @@ export const messages = {
     zh: "演员。",
   },
   "roster.intro": {
-    en: "{castable} ready to cast and {newFaces} new faces. Every actor comes with free reference assets.",
-    zh: "{castable} 位可以直接出演，{newFaces} 位新面孔。每位演员都有免费参考资料。",
+    en: "{castable} ready to cast. {newFaces} new faces with a first look.",
+    zh: "{castable} 位可用演员，{newFaces} 位新面孔。",
   },
   "roster.castableTitle": {
     en: "Ready to cast",
@@ -124,29 +118,17 @@ export const messages = {
     en: "In development",
     zh: "制作中",
   },
-  "works.metaTitle": {
-    en: "Works",
-    zh: "作品",
-  },
+  "works.metaTitle": { en: "Samples and studio projects", zh: "样片与工作室项目" },
   "works.metaDescription": {
-    en: "Films and series starring SWIMMER PARTY’s AI actors, plus samples made from the free starter packs.",
-    zh: "SWIMMER PARTY 的 AI 演员出演的影片和剧集，以及用免费懒人包做的样片。",
+    en: "Watch real samples made with our AI actors, and see the studio’s projects in development.",
+    zh: "看 AI 演员的真实样片，以及工作室开发中的项目。",
   },
-  "works.eyebrow": {
-    en: "Works",
-    zh: "作品",
-  },
-  "works.heroLines.0": {
-    en: "What we’re",
-    zh: "我们在",
-  },
-  "works.heroLines.1": {
-    en: "making.",
-    zh: "拍什么。",
-  },
+  "works.eyebrow": { en: "Samples", zh: "样片" },
+  "works.heroLines.0": { en: "See the actors", zh: "看看演员" },
+  "works.heroLines.1": { en: "in a story.", zh: "怎么演。" },
   "works.intro": {
-    en: "Productions starring our own actors.",
-    zh: "由我们自己的演员出演的作品。",
+    en: "Watch a sample, then open its actor’s reference pack.",
+    zh: "看一段样片，再打开演员的参考素材。",
   },
   "studio.projectsTitle": { en: "Studio projects", zh: "工作室项目" },
   "studio.metaTitle": {
@@ -170,28 +152,19 @@ export const messages = {
     zh: "专门造新面孔。",
   },
   "studio.intro": {
-    en: "SWIMMER PARTY is an AI actor project by Pie AI Studio. We design original animated actors and open them to everyone.",
-    zh: "SWIMMER PARTY 是 Pie AI Studio 旗下的 AI 演员项目。我们设计原创动画演员，也把他们开放给所有人使用。",
+    en: "We make original animated actors and share their reference packs.",
+    zh: "我们制作原创动画演员，并开放参考素材。",
   },
-  "studio.beliefsLabel": {
-    en: "What we believe",
-    zh: "我们相信什么",
-  },
-  "studio.beliefsTitle": {
-    en: "Four things we hold to",
-    zh: "我们坚持的四件事",
-  },
+  "studio.beliefsLabel": { en: "Our approach", zh: "制作方式" },
+  "studio.beliefsTitle": { en: "Built for your stories", zh: "为你的故事准备" },
   "studio.beliefs.0.n": {
     en: "01",
     zh: "01",
   },
-  "studio.beliefs.0.title": {
-    en: "A face isn’t a character",
-    zh: "一张脸不是一个角色",
-  },
+  "studio.beliefs.0.title": { en: "More than a portrait", zh: "不止一张肖像" },
   "studio.beliefs.0.body": {
-    en: "Anyone can generate a good face. Keeping it the same person in shot fifty is the real work.",
-    zh: "生成一张好看的脸谁都会。难的是第五十个镜头里，他还是同一个人。",
+    en: "Reference views, expressions and actor notes give you a starting point.",
+    zh: "转面、表情和演员设定，帮你开始创作。",
   },
   "studio.beliefs.1.n": {
     en: "02",
@@ -202,8 +175,8 @@ export const messages = {
     zh: "做动画，不做写实",
   },
   "studio.beliefs.1.body": {
-    en: "Our actors are clearly animated. That keeps us honest and leaves human actors’ work to humans.",
-    zh: "我们的演员一眼就是动画角色。这样诚实，也不抢真人演员的饭碗。",
+    en: "Original animated designs, not copies of real people.",
+    zh: "原创动画形象，不复制真人。",
   },
   "studio.beliefs.2.n": {
     en: "03",
@@ -214,8 +187,8 @@ export const messages = {
     zh: "默认开放",
   },
   "studio.beliefs.2.body": {
-    en: "Free for anyone, even for paid work. The more people make things with them, the more they become real characters.",
-    zh: "谁都可以免费用，赚钱也行。用他们做东西的人越多，他们就越像真正的角色。",
+    en: "Free for personal and commercial projects. Credit Swim In AI and follow the license.",
+    zh: "个人创作和商用都免费；请署名 Swim In AI 并遵守授权规则。",
   },
   "studio.beliefs.3.n": {
     en: "04",
@@ -226,8 +199,8 @@ export const messages = {
     zh: "喜剧是最难的考试",
   },
   "studio.beliefs.3.body": {
-    en: "Every actor gets tested in comedy. If the timing works, the character works.",
-    zh: "每位演员都要在喜剧里过一遍。节奏对了，角色就立住了。",
+    en: "See their timing and personality in the published samples.",
+    zh: "从已发布的样片里看节奏和性格。",
   },
   "studio.missionLabel": {
     en: "Why we do this",
@@ -238,13 +211,10 @@ export const messages = {
     zh: "让 AI 造福普通人",
   },
   "studio.missionBody": {
-    en: "When the AI wave arrived, we set our direction and have kept walking. Free actors anyone can cast are the first step.",
-    zh: "AI 浪潮来的时候，我们就定下了方向，一直朝这儿走。人人都能免费用的演员，是第一步。",
+    en: "Free actor references are one way we make creative tools more accessible.",
+    zh: "开放演员参考素材，让创作更容易起步。",
   },
-  "studio.missionLine": {
-    en: "Making a film used to take a crew. Now it takes a story. Bring yours.",
-    zh: "以前拍片要一个剧组，现在只要一个故事。带上你的故事来。",
-  },
+  "studio.missionLine": { en: "Bring a story. Choose your tools.", zh: "带上故事，选好工具。" },
   "studio.missionLink": {
     en: "See what we’ve released at SwimInAI.com",
     zh: "去 SwimInAI.com 看我们已经发布的作品",
@@ -265,10 +235,7 @@ export const messages = {
     en: "We bring the actors and the production, you bring the subject, the channel or the money. The film belongs to both of us; the character stays on the roster and keeps working.",
     zh: "我们出演员和制作，你出题材、渠道或资金。片子归双方，角色留在名册上继续演。",
   },
-  "notFound.eyebrow": {
-    en: "404 — no such talent",
-    zh: "404 — 查无此人",
-  },
+  "notFound.eyebrow": { en: "404 — Actor not found", zh: "404 — 没有这位演员" },
   "notFound.lines.0": {
     en: "Not on",
     zh: "不在",
@@ -406,13 +373,10 @@ export const messages = {
     en: "By signing in you agree to our Terms of Use and Privacy Policy.",
     zh: "登录即表示同意《使用条款》和《隐私政策》。",
   },
-  "assets.signInTitle": {
-    en: "Sign in to keep going",
-    zh: "登录后继续",
-  },
+  "assets.signInTitle": { en: "Sign in to download packs", zh: "登录后下载整包" },
   "assets.signInBody": {
-    en: "One Swimmer account unlocks downloads without waiting.",
-    zh: "登录泳者账号，下载不用等待。",
+    en: "Packs and character sheets need a free Swimmer account. Single images do not.",
+    zh: "整包和设定图需要免费泳者账号，单张图片不用登录。",
   },
   "assets.notNow": {
     en: "Not now",
@@ -1057,8 +1021,8 @@ export const messages = {
   "samples.worksTitle": { en: "Same actor, different tools", zh: "同一个演员，不同工具" },
   "samples.actorTitle": { en: "Same {name}, different tools", zh: "同一个{name}，不同工具" },
   "samples.description": {
-    en: "Made from the free starter pack and one prompt.",
-    zh: "只用免费懒人包和一段提示词做的。",
+    en: "Real examples made with our actor references.",
+    zh: "用演员参考素材做出的真实样片。",
   },
   "samples.official": { en: "By SWIMMER PARTY", zh: "SWIMMER PARTY 出品" },
   "samples.seeAll": { en: "See all samples", zh: "看全部样片" },
@@ -1164,10 +1128,7 @@ export const messages = {
   "cast.remove": { en: "Remove", zh: "移出" },
   "cast.added": { en: "In your cast", zh: "已在选角单" },
   "cast.add": { en: "Add to cast", zh: "加入选角单" },
-  "community.intro": {
-    en: "Our own productions first. Then everything you make with our actors: images, videos, voices, games.",
-    zh: "先是我们自己的作品，然后是大家用我们演员做的一切：图片、视频、声音、游戏。",
-  },
+  "community.intro": { en: "Made with our actors.", zh: "用本站演员做的作品。" },
   "community.openForm": { en: "Post your work", zh: "发布作品" },
   "community.titleLabel": { en: "Title", zh: "标题" },
   "community.descriptionPlaceholder": { en: "Description (optional)", zh: "简介（可选）" },
@@ -1211,11 +1172,11 @@ export const messages = {
   "license.heroLines.1": { en: "Credit Swim In AI.", zh: "署上 Swim In AI。" },
   "common.languageName.zh": { en: "中文", zh: "中文" },
   "common.languageName.en": { en: "English", zh: "English" },
-  "community.kind.image": { en: "Image · 图片", zh: "Image · 图片" },
-  "community.kind.video": { en: "Video · 视频", zh: "Video · 视频" },
-  "community.kind.audio": { en: "Audio · 声音", zh: "Audio · 声音" },
-  "community.kind.game": { en: "Game · 游戏", zh: "Game · 游戏" },
-  "community.actorSlugLabel": { en: "Actor slug", zh: "Actor slug" },
+  "community.kind.image": { en: "Image", zh: "图片" },
+  "community.kind.video": { en: "Video", zh: "视频" },
+  "community.kind.audio": { en: "Audio", zh: "声音" },
+  "community.kind.game": { en: "Game", zh: "游戏" },
+  "community.actorSlugLabel": { en: "Actor", zh: "演员" },
   "common.breadcrumbFallback": { en: "Breadcrumb", zh: "当前位置" },
   "sheet.action": {
     en: "Character sheet",
@@ -1234,8 +1195,8 @@ export const messages = {
     zh: "{name}的角色设定图",
   },
   "sheet.lead": {
-    en: "Pick a few images and combine them into one reference, so an AI tool knows {name} at a glance.",
-    zh: "挑几张图，拼成一张参考图，AI 工具一次就能认出{name}。",
+    en: "Choose reference images of {name} and combine them into one sheet.",
+    zh: "挑选{name}的参考图，拼成一张设定图。",
   },
   "sheet.pick": {
     en: "Images",
