@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/qi-changfeng/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-10"
   },
   "demographics": {
@@ -51,7 +51,7 @@
   "anchorVersion": 1,
   "anchors": {
     "face": "library/claude-casting-2026-10-07/final/CC-047.png",
-    "body": null
+    "body": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/replacement-downloads/replacement-1.png"
   },
   "looks": [
     {
@@ -62,17 +62,619 @@
         "en": "Casting basics"
       },
       "prompt": "sage-green plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied qi-changfeng personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "hat-detail",
+          "label": {
+            "en": "Hat detail",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / hat-detail reference image."
+        },
+        {
+          "key": "overshirt-detail",
+          "label": {
+            "en": "Overshirt detail",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / overshirt-detail reference image."
+        },
+        {
+          "key": "rear-three-quarter",
+          "label": {
+            "en": "Rear three quarter",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / rear-three-quarter reference image."
+        }
+      ]
     }
   ],
   "roles": [],
   "proposals": {
     "approval": "owner-confirmed-facts-provisional-identity",
     "appearance": "Provisional until Owner selects a proportion-corrected audition image",
-    "phase": "audition-pending-owner"
+    "phase": "body-anchor-owner-approved"
   },
   "routes": {
     "chatgpt-web": {
-      "chat": null
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00-pics-a/c/6ac92cac-9bd8-83ea-a01d-f2df6ace3ff4"
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/handoff.json"
+    ],
+    "images": [
+      {
+        "slot": "turnaround.front",
+        "source": "qi-changfeng/qi-changfeng__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-1/qi-changfeng__turnaround__front__v1.png",
+        "sha256": "c1c220037c93c452c172d1bd7576c42f84c7166a27154aee22d872c2ac9a5f75",
+        "bytes": 860235,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "qi-changfeng/qi-changfeng__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-1/qi-changfeng__turnaround__three-quarter__v1.png",
+        "sha256": "9c4803c43125c58d904242d895946a18b3b26a73553cbc12ca0e7dff285cabc5",
+        "bytes": 756767,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "qi-changfeng/qi-changfeng__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-1/qi-changfeng__turnaround__side__v1.png",
+        "sha256": "50c2065734d8764bf46247009f85083660869d9efe0e0d710768999b10932133",
+        "bytes": 529725,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "qi-changfeng/qi-changfeng__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-1/qi-changfeng__turnaround__back__v1.png",
+        "sha256": "812b6d40cbb7aad197d532af0e41eeb61877ed0247c3d86593443e10c4ad2389",
+        "bytes": 863563,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "qi-changfeng/qi-changfeng__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-1/qi-changfeng__turnaround__back-three-quarter-right__v1.png",
+        "sha256": "5c5b9f1e7664e9905544c7098336f0010c7ef3651b3a9b9019f4a605a84f6f24",
+        "bytes": 817010,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "qi-changfeng/qi-changfeng__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-1/qi-changfeng__turnaround__back-three-quarter-left__v1.png",
+        "sha256": "f733f3e7eba4b87fc5fe3264c2b271f667353a4257a18add44cc55c1b8dd81fb",
+        "bytes": 792768,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "qi-changfeng/qi-changfeng__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-1/qi-changfeng__face__front__v1.png",
+        "sha256": "4402d3eb2ba98798c059ab1cdc12757f32f6c6c750bd286dcb6cdace3e0a12c0",
+        "bytes": 1984766,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "qi-changfeng/qi-changfeng__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-1/qi-changfeng__face__three-quarter-left__v1.png",
+        "sha256": "a7f07c5b9d0c2d3fa79aa8551169468424bb36781f7f8eafc38eccf9203e0ba7",
+        "bytes": 1806931,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "qi-changfeng/qi-changfeng__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-2/qi-changfeng__face__side__v1.png",
+        "sha256": "b6e04ba6fd7d2de9ddfe2e8c1766fe355708f06f908db21724a6568274d9557a",
+        "bytes": 2004925,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "qi-changfeng/qi-changfeng__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-1/qi-changfeng__face__three-quarter__v1.png",
+        "sha256": "bd6764b3f37e4ce67e409f8a3f56a3185afe4b9133f5ace8b2c2575cb12e8e89",
+        "bytes": 2004208,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "qi-changfeng/qi-changfeng__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-1/qi-changfeng__face__side__v1.png",
+        "sha256": "d224dde7bc1478128240948f028b837b19f8f04fd77ddc9157a29e0e9502564f",
+        "bytes": 1922836,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "qi-changfeng/qi-changfeng__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-2/qi-changfeng__face__up__v1.png",
+        "sha256": "43c198c8d4b0004d03bc618aa5d8a28957d0e197f88949f27a9f3732893f4c0f",
+        "bytes": 1745685,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "qi-changfeng/qi-changfeng__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-2/qi-changfeng__face__down__v1.png",
+        "sha256": "faf267e0f19aa380af3f454745c4a5a8940fd39dccf23095ed6e5e38fd5afa67",
+        "bytes": 1902731,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "qi-changfeng/qi-changfeng__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-10/qi-changfeng__expression__neutral__v1.png",
+        "sha256": "20e178f99bf61ab0bb25fa76d7aa9da3a04ae193f9af1423354d9b593b6b65b6",
+        "bytes": 1950221,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "qi-changfeng/qi-changfeng__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-2/qi-changfeng__expression__smile__v1.png",
+        "sha256": "1316aa2f0aba023534d54a82781c9050ac9c04cf39b9aa9fe990f66a618bac24",
+        "bytes": 1718216,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "qi-changfeng/qi-changfeng__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-2/qi-changfeng__expression__laugh__v1.png",
+        "sha256": "e75ac37ffddaa32c7ec029a80cafab8f97fc51b1bded9c969ac9d7e465e50a9b",
+        "bytes": 1939881,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "qi-changfeng/qi-changfeng__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-2/qi-changfeng__expression__sad__v1.png",
+        "sha256": "0d7bc1594a8d75aa3afc445ce71db5a7cff9ee21388f9eeb281341f57340308a",
+        "bytes": 1978899,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "qi-changfeng/qi-changfeng__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-2/qi-changfeng__expression__cry__v1.png",
+        "sha256": "3113fb8689977285ab96f13d559b2f3197245ed1084c69f01babc0a53be75245",
+        "bytes": 1857067,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "qi-changfeng/qi-changfeng__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-2/qi-changfeng__expression__annoyed__v1.png",
+        "sha256": "085d08bd80b38059085e4c71e65c3b054a3c872be3b09c1c31f5e34d2a8609e1",
+        "bytes": 1922851,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "qi-changfeng/qi-changfeng__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-2/qi-changfeng__expression__angry__v1.png",
+        "sha256": "30a5c062ca0e0156006a9fd4b93232a64be8cf069412ecee38b388195f5b7056",
+        "bytes": 2002947,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "qi-changfeng/qi-changfeng__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-3/qi-changfeng__expression__surprised__v1.png",
+        "sha256": "05f7529438c07bcccd166ad9bd62ba9db12cb410f07523e99bb887a6417000a4",
+        "bytes": 1968867,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "qi-changfeng/qi-changfeng__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-3/qi-changfeng__expression__scared__v1.png",
+        "sha256": "b289de4b7be60b7c9e164d7947b483daede0dce93d0874ee811b85f0594a7bf9",
+        "bytes": 1670229,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "qi-changfeng/qi-changfeng__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-3/qi-changfeng__expression__disgusted__v1.png",
+        "sha256": "7bed56321c50e0dedc3fe67d07c478eff9a4fdb789f2ee20bb2e96184c7d89fd",
+        "bytes": 1751700,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "qi-changfeng/qi-changfeng__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-3/qi-changfeng__expression__embarrassed__v1.png",
+        "sha256": "7331372a742e84eff930987c49da4cffd220e323412b726052d5aa3e06ba8509",
+        "bytes": 1919403,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "qi-changfeng/qi-changfeng__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-3/qi-changfeng__expression__tired__v1.png",
+        "sha256": "4050ebaea320417e9033d7fe17d56fe96c2acbe6eb14460f163dec7aa4b599c7",
+        "bytes": 1645979,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "qi-changfeng/qi-changfeng__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-3/qi-changfeng__expression__speaking__v1.png",
+        "sha256": "0043e62abb7fe7464b7ab83c01a2ff287ec6796dd3a040e72d5e0a681bb525c8",
+        "bytes": 1866067,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "qi-changfeng/qi-changfeng__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-3/qi-changfeng__expression__eyes-closed__v1.png",
+        "sha256": "cf077d21049da3b8cd36c7b48b239bf807d929b20bda7b7e921d4004079365cb",
+        "bytes": 1779635,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "qi-changfeng/qi-changfeng__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-3/qi-changfeng__expression__worried__v1.png",
+        "sha256": "2b78e96b0a2c69bfb699f10c754ffce104a001b0eacdede857ff9c7181521cdc",
+        "bytes": 1718761,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "qi-changfeng/qi-changfeng__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-3/qi-changfeng__expression__skeptical__v1.png",
+        "sha256": "f9aa0a1e4cab6093862e3037be7623546cc98b2ea951cbd2114c2851c2b1311d",
+        "bytes": 1810863,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "qi-changfeng/qi-changfeng__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-3/qi-changfeng__expression__smug__v1.png",
+        "sha256": "3a18e45c32903c23b15c93933b0043bdcda5ff5c4b25c1126273a2ec8fdffdbc",
+        "bytes": 1962755,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "qi-changfeng/qi-changfeng__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-4/qi-changfeng__expression__contempt__v1.png",
+        "sha256": "8e3317837e0ec322e1c29010417b9329fdb1e1c0aab10627fd52e4a1c1962406",
+        "bytes": 2084395,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "qi-changfeng/qi-changfeng__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-4/qi-changfeng__expression__confused__v1.png",
+        "sha256": "07c328c3001bcf62d12c70c12dbf7bcb7fdf62ac84d1f13c50b7dc5a44a80881",
+        "bytes": 1678061,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "qi-changfeng/qi-changfeng__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-4/qi-changfeng__expression__thinking__v1.png",
+        "sha256": "ad7bd6ca9434bcdf78a2339ad1fe2d75734a71b25fd35e1b71f71c416b1ceeb1",
+        "bytes": 2043669,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "qi-changfeng/qi-changfeng__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-4/qi-changfeng__expression__determined__v1.png",
+        "sha256": "961594b392b3bbc9a96f9f6e78039327075e544386f3a93d18055fb926a401bc",
+        "bytes": 1797501,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "qi-changfeng/qi-changfeng__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-4/qi-changfeng__expression__shy__v1.png",
+        "sha256": "1754c659182c0515d4748a2ccca5c735ec8e56172e4d8418c4927ff7f18fc46b",
+        "bytes": 1947920,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "qi-changfeng/qi-changfeng__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-4/qi-changfeng__expression__pain__v1.png",
+        "sha256": "effd3dcf766871febdd3945232a94f836c5509d65b76d18aae1dd05277256973",
+        "bytes": 1708091,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "qi-changfeng/qi-changfeng__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-4/qi-changfeng__expression__sleepy__v1.png",
+        "sha256": "6063bbb0aa3bf755d9e1241a582f2bc02b5f685805589ba086f9878c3608bda1",
+        "bytes": 1882776,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "qi-changfeng/qi-changfeng__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-4/qi-changfeng__expression__awkward-smile__v1.png",
+        "sha256": "97cad00720021fe0aef1f0656204a2d3e847fd2983555040ebe72aa70a78c232",
+        "bytes": 1851629,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "qi-changfeng/qi-changfeng__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-10/qi-changfeng__expression__deadpan__v1.png",
+        "sha256": "a95b334edc3d2072a9dbd53bb884138120c804651b6153ba3b1ce7ec077d4506",
+        "bytes": 2028099,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "qi-changfeng/qi-changfeng__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-7/qi-changfeng__wardrobe-personal__front__v1.png",
+        "sha256": "9207f4ae0725df06e8822cd22de1a394c6b9c817e5d1db76cc773f468faf3421",
+        "bytes": 914617,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "qi-changfeng/qi-changfeng__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-7/qi-changfeng__wardrobe-personal__three-quarter__v1.png",
+        "sha256": "3562355fcaeae0ff486764da3db8edbf8ab4845bf865e007a26ae8d1299ab0ca",
+        "bytes": 868657,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "qi-changfeng/qi-changfeng__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-7/qi-changfeng__wardrobe-personal__side__v1.png",
+        "sha256": "93b9d80d09752cc8bdf4cede2b1734a2e77bb82a31067680ce3a4f516e32a4d6",
+        "bytes": 646874,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "qi-changfeng/qi-changfeng__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-7/qi-changfeng__wardrobe-personal__back__v1.png",
+        "sha256": "2ced0738510b6eb2545986a06d6eff7d7e74f753135aea5c740298e46afaa702",
+        "bytes": 941848,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "qi-changfeng/qi-changfeng__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-7/qi-changfeng__wardrobe-personal__portrait__v1.png",
+        "sha256": "b43edae4ce803abc751680f2629cc9de5edc39032fcc0aa43f329e1832628f70",
+        "bytes": 2182932,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.hat-detail",
+        "source": "qi-changfeng/qi-changfeng__wardrobe-personal__hat-detail__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-8/qi-changfeng__wardrobe-personal__hat-detail__v1.png",
+        "sha256": "71f21adac3062a540e31bb041f9db7f2226db3e94f96f42ba15011281833f436",
+        "bytes": 2314515,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.overshirt-detail",
+        "source": "qi-changfeng/qi-changfeng__wardrobe-personal__overshirt-detail__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-8/qi-changfeng__wardrobe-personal__overshirt-detail__v1.png",
+        "sha256": "8864df5df58aef2f3a804fe6b2d1af3350c059bb822a1032b3df090f35550e89",
+        "bytes": 1801281,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.rear-three-quarter",
+        "source": "qi-changfeng/qi-changfeng__wardrobe-personal__rear-three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-8/qi-changfeng__wardrobe-personal__rear-three-quarter__v1.png",
+        "sha256": "0f0346e2a588bcb75602ccf70f3142eaf2dfd0606c4e486b06b886a9a295862b",
+        "bytes": 851708,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "qi-changfeng/qi-changfeng__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-9/qi-changfeng__pose__walk__v1.png",
+        "sha256": "b27b422b6c7db27f06a6edd131c5d4efd9e3bc7a92195dad5ec7508583bdd859",
+        "bytes": 744075,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "qi-changfeng/qi-changfeng__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-9/qi-changfeng__pose__run__v1.png",
+        "sha256": "bd2c6a4436d22792d7f7c1edc4f62e76b817718e1d68983c66d198da2990428c",
+        "bytes": 785431,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "qi-changfeng/qi-changfeng__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-9/qi-changfeng__pose__sit__v1.png",
+        "sha256": "ffa28b8ff440f25e83dbb046534920635bbf9c298b347ac47e1f0ac9c38f5fd9",
+        "bytes": 1035984,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "qi-changfeng/qi-changfeng__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-9/qi-changfeng__pose__point__v1.png",
+        "sha256": "356760d5ed5cd1b250f175eb06d358c2318b930d37740447d02a604df156a5b1",
+        "bytes": 703471,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "qi-changfeng/qi-changfeng__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-9/qi-changfeng__pose__arms-crossed__v1.png",
+        "sha256": "6e69343300391ed6a682d884325e0fe45d9c6fe475c0246d3909b27fadc78fce",
+        "bytes": 712758,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "qi-changfeng/qi-changfeng__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-10/qi-changfeng__pose__phone__v1.png",
+        "sha256": "0e7159a1692fc7c79f7d4ffd287de020b03db570607c5a34785dc64cc5875898",
+        "bytes": 802294,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "qi-changfeng/qi-changfeng__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-10/qi-changfeng__detail__hands__v1.png",
+        "sha256": "f37a5e886a02d773620144dd7a80a6b28f475d39fd3aeb1fc1bf0b7e3e8de8f9",
+        "bytes": 1379446,
+        "version": 1
+      },
+      {
+        "slot": "detail.hair-back",
+        "source": "qi-changfeng/qi-changfeng__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/approved-pack/batch-10/qi-changfeng__detail__hair-back__v1.png",
+        "sha256": "890abe3b4a1ab15790a60f0fb7e57f699e9cbbf0d918a69d41375706e2c3438d",
+        "bytes": 2091933,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/qi-changfeng/qi-changfeng__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/voice/qi-changfeng__voice__intro__v1.wav",
+        "sha256": "cf5e6582a19bd887f807e131670cf7f0d276522c09620646b29bac20fd97d1cb",
+        "bytes": 1247148,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/qi-changfeng/qi-changfeng__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/voice/qi-changfeng__voice__intro-alt__v1.wav",
+        "sha256": "1f99ab610b3c962951f00c1ea3a9267c26a5d0dfce9442b96e906c2529206970",
+        "bytes": 1067502,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/qi-changfeng/qi-changfeng__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/voice/qi-changfeng__voice__chat__v1.wav",
+        "sha256": "47bf38f03f1f91cb7b012edd63cf9846bbf0011ea144804f4904f09e5c31362c",
+        "bytes": 947248,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/qi-changfeng/qi-changfeng__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/voice/qi-changfeng__voice__happy__v1.wav",
+        "sha256": "0e83d7c2f889a5fee43b7553909f6777f22de51750186d5a424597406a4f662a",
+        "bytes": 674552,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/qi-changfeng/qi-changfeng__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/voice/qi-changfeng__voice__angry__v1.wav",
+        "sha256": "06e855ca27d57375ed0d039e31af4736edea9d2656755cb7a4f4646d600a8c1e",
+        "bytes": 671580,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/qi-changfeng/qi-changfeng__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/qi-changfeng-20261010/voice/qi-changfeng__voice__sad__v1.wav",
+        "sha256": "41f1f7c9a561638a488104f075827fd9ba7f56e475ad6c3f56033b9fd6e1e89e",
+        "bytes": 826132,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 102,
+    "status": "active",
+    "tagline": {
+      "zh": "高瘦，脸颊凹，喉结很明显。",
+      "en": "Tall and gaunt, hollow cheeks, a prominent Adam's apple."
+    },
+    "introduction": {
+      "en": "East Asian (Chinese) man, about 42, tall and lanky, about 185 cm; hollow cheeks, a prominent Adam's apple, short crew cut; sage-green top",
+      "zh": "高瘦，脸颊凹，喉结很明显。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "qi-changfeng-callum-reid-google-vids-04-20261013",
+      "actorSlugs": [
+        "qi-changfeng",
+        "callum-reid"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Google Vids"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-requested-ensemble-motion-identity-and-head-body-scope-with-document-export-and-framing-limitations",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/qi-changfeng-callum-reid-google-vids-04-20261013/source.mp4",
+          "sourceSha256": "f07f4fac941fcfc57462f72454e8db013a81c3a44fd4bd97bbb0baa7bace3de0",
+          "public": "/media/works/samples/qi-changfeng-callum-reid-google-vids-04-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }

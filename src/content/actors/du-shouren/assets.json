@@ -1,6 +1,50 @@
 {
   "slug": "du-shouren",
-  "looks": [],
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied du-shouren personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "jump-rope",
+          "label": {
+            "en": "Jump rope",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / jump-rope reference image."
+        },
+        {
+          "key": "mug-of-tea",
+          "label": {
+            "en": "Mug of tea",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / mug-of-tea reference image."
+        },
+        {
+          "key": "hand-wraps",
+          "label": {
+            "en": "Hand wraps",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / hand-wraps reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "kind": "image",
@@ -8,25 +52,1595 @@
       "series": "turnaround",
       "key": "front",
       "look": null,
-      "conformance": "v1",
-      "version": 0.1,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1361594,
+      "sha256": "b02dce7435802e74ccece26df5999b28336ff3b9a9b0dc0cb80aaa1ba34ed2b9",
+      "sourceSha256": "b02dce7435802e74ccece26df5999b28336ff3b9a9b0dc0cb80aaa1ba34ed2b9",
+      "bbox": {
+        "left": 0.2623697916666667,
+        "top": 0.016493055555555556,
+        "right": 0.7200520833333334,
+        "bottom": 0.9852430555555556
+      },
+      "format": "png",
+      "object": "du-shouren/b02dce7435802e74/du-shouren__turnaround__front__v1.png",
+      "preview": "/media/assets/du-shouren/turnaround.front.webp",
+      "thumb": "/media/assets/du-shouren/turnaround.front.thumb.webp",
+      "large": "/media/assets/du-shouren/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7206078988534433,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1245641,
+      "sha256": "97a0f336d735651f1a3bf5c02f96b15adc47e75569ee4e0248d19700d16604ad",
+      "sourceSha256": "97a0f336d735651f1a3bf5c02f96b15adc47e75569ee4e0248d19700d16604ad",
+      "bbox": {
+        "left": 0.2955729166666667,
+        "top": 0.021701388888888888,
+        "right": 0.7389322916666666,
+        "bottom": 0.9756944444444444
+      },
+      "format": "png",
+      "object": "du-shouren/97a0f336d735651f/du-shouren__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/du-shouren/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/du-shouren/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7572408605504919,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 873859,
+      "sha256": "d7a5cbe092b5f4bbe05a50befe6c8dcceffd4667b18c264d8bd1f6fb181b7bf5",
+      "sourceSha256": "d7a5cbe092b5f4bbe05a50befe6c8dcceffd4667b18c264d8bd1f6fb181b7bf5",
+      "bbox": {
+        "left": 0.3684895833333333,
+        "top": 0.020399305555555556,
+        "right": 0.6634114583333334,
+        "bottom": 0.9717881944444444
+      },
+      "format": "png",
+      "object": "du-shouren/d7a5cbe092b5f4bb/du-shouren__turnaround__side__v1.png",
+      "preview": "/media/assets/du-shouren/turnaround.side.webp",
+      "thumb": "/media/assets/du-shouren/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8321914672851562,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1365672,
+      "sha256": "baa099b963d00f43c83aedf4670f65fc984c3a3ae21d7d1f4af5716fb7f33e5a",
+      "sourceSha256": "baa099b963d00f43c83aedf4670f65fc984c3a3ae21d7d1f4af5716fb7f33e5a",
+      "bbox": {
+        "left": 0.2688802083333333,
+        "top": 0.031684027777777776,
+        "right": 0.7233072916666666,
+        "bottom": 0.9722222222222222
+      },
+      "format": "png",
+      "object": "du-shouren/baa099b963d00f43/du-shouren__turnaround__back__v1.png",
+      "preview": "/media/assets/du-shouren/turnaround.back.webp",
+      "thumb": "/media/assets/du-shouren/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7335035536024306,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1308703,
+      "sha256": "622a13666b6c51fad5cc280644c065b8d077d7535996bc90c5a911409340aeb6",
+      "sourceSha256": "622a13666b6c51fad5cc280644c065b8d077d7535996bc90c5a911409340aeb6",
+      "bbox": {
+        "left": 0.3111979166666667,
+        "top": 0.023003472222222224,
+        "right": 0.7434895833333334,
+        "bottom": 0.9696180555555556
+      },
+      "format": "png",
+      "object": "du-shouren/622a13666b6c51fa/du-shouren__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/du-shouren/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/du-shouren/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7543722082067419,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
       "width": 941,
       "height": 1672,
-      "bytes": 934952,
-      "sha256": "00156bb92c9f7cf7f302f54b243b9c521babbf9184c6e0ef7a77a94e84ff3bb7",
-      "sourceSha256": "00156bb92c9f7cf7f302f54b243b9c521babbf9184c6e0ef7a77a94e84ff3bb7",
+      "bytes": 850539,
+      "sha256": "b60f5c5b2875e942dff97e955c6b02da5581ada5d8d20ad3932b05df087a9866",
+      "sourceSha256": "b60f5c5b2875e942dff97e955c6b02da5581ada5d8d20ad3932b05df087a9866",
       "bbox": {
         "left": 0,
-        "top": 0,
+        "top": 0.011363636363636364,
+        "right": 0.9808714133900106,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/b60f5c5b2875e942/du-shouren__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/du-shouren/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/du-shouren/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7136406856189842,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3030362,
+      "sha256": "2b0d11063039d2f2ca21bdb8f31308a6ea72467f9434b9b01c10674aa23ea60d",
+      "sourceSha256": "2b0d11063039d2f2ca21bdb8f31308a6ea72467f9434b9b01c10674aa23ea60d",
+      "bbox": {
+        "left": 0,
+        "top": 0.042708333333333334,
         "right": 1,
         "bottom": 1
       },
       "format": "png",
-      "object": "du-shouren/CC-087.png",
-      "preview": "/media/assets/du-shouren/turnaround.front.webp",
-      "large": "/media/assets/du-shouren/turnaround.front.large.webp",
-      "thumb": "/media/assets/du-shouren/turnaround.front.thumb.webp",
-      "blur": "data:image/webp;base64,UklGRpABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSLkAAAABgGPb2rHnPLFttplBMgLPwVal0rbVsU6ZMiu9bdtJ5W+tp3jfQUREgBA21e6BALhRr1qAm92iWmoLwVcr7gggBJY+3ZQEIuBKt/79aSeuCH7H5tgPEUIOHcdxdgJN4O6l6s2Wt4laflC9XwwzsXOvqg/T4SZx9+fv73czEgHXKj091EoAwf9radEJR4z77fyYhtoen6M1Gmm7PvUXaBIuRq6GsjTZZnchVVPswKfOUK2zE6rjyC4FAABWUDggsAAAADAEAJ0BKgwAFQA/AWqsTyslpCIwCAFgIAlsALTpi5Cl8g2bUdpAoR6bAADNbRBbfcNu9nhM9rC/AroKS71TcCNfUJOfKMNZ+OpMX33vIKtfI8+zzF4+rR9kSiG82qwRMqhRkyUlMSqaRvSUdQtFBB3UVDOCFyCn/jlj/sHC+FMYeNRP9sfhdCg/0uGZJVYenXs9p8U/5mqOvV3Y5ufnSsfNMfle+m9nTATAgKSvhgAA"
+      "object": "du-shouren/2b0d11063039d2f2/du-shouren__face__front__v1.png",
+      "preview": "/media/assets/du-shouren/face.front.webp",
+      "thumb": "/media/assets/du-shouren/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4930563693576389,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1977886,
+      "sha256": "5d48c4facc1ce84d339f4ea7a7c049622a6e5976e79d8d39986ac057276398c0",
+      "sourceSha256": "5d48c4facc1ce84d339f4ea7a7c049622a6e5976e79d8d39986ac057276398c0",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/5d48c4facc1ce84d/du-shouren__face__three-quarter__v1.png",
+      "preview": "/media/assets/du-shouren/face.three-quarter.webp",
+      "thumb": "/media/assets/du-shouren/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.35604810620890937,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2970308,
+      "sha256": "60306af6ea78eb103e0605d749627d2f7197dfdb78bc53535357c6547a2cc4f8",
+      "sourceSha256": "60306af6ea78eb103e0605d749627d2f7197dfdb78bc53535357c6547a2cc4f8",
+      "bbox": {
+        "left": 0.090625,
+        "top": 0.026041666666666668,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/60306af6ea78eb10/du-shouren__face__side__v1.png",
+      "preview": "/media/assets/du-shouren/face.side.webp",
+      "thumb": "/media/assets/du-shouren/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.46617133246527775,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2965240,
+      "sha256": "d63681bd0792c952405479a4e2cc22975a3b95abe4ac0a4ad984291d037b6d0e",
+      "sourceSha256": "d63681bd0792c952405479a4e2cc22975a3b95abe4ac0a4ad984291d037b6d0e",
+      "bbox": {
+        "left": 0,
+        "top": 0.0484375,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/d63681bd0792c952/du-shouren__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/du-shouren/face.three-quarter-left.webp",
+      "thumb": "/media/assets/du-shouren/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4967727322048611,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2863852,
+      "sha256": "930fdff932aba381c8a39f9389bbc3814021948b6ce3b90b92a36b8e80c9fd8d",
+      "sourceSha256": "930fdff932aba381c8a39f9389bbc3814021948b6ce3b90b92a36b8e80c9fd8d",
+      "bbox": {
+        "left": 0.07447916666666667,
+        "top": 0.030729166666666665,
+        "right": 0.8265625,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/930fdff932aba381/du-shouren__face__side-right__v1.png",
+      "preview": "/media/assets/du-shouren/face.side-right.webp",
+      "thumb": "/media/assets/du-shouren/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5389873589409723,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2890895,
+      "sha256": "8615c96b92a8bd494c301afea47b7daf78153012b98a23ea2296aa8681a8b837",
+      "sourceSha256": "8615c96b92a8bd494c301afea47b7daf78153012b98a23ea2296aa8681a8b837",
+      "bbox": {
+        "left": 0,
+        "top": 0.0453125,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/8615c96b92a8bd49/du-shouren__face__up__v1.png",
+      "preview": "/media/assets/du-shouren/face.up.webp",
+      "thumb": "/media/assets/du-shouren/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.50059814453125,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3121171,
+      "sha256": "51b27a48e9ec1b09e7c469497292d248b50c48d0e670800799499b6cf402044d",
+      "sourceSha256": "51b27a48e9ec1b09e7c469497292d248b50c48d0e670800799499b6cf402044d",
+      "bbox": {
+        "left": 0,
+        "top": 0.027604166666666666,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/51b27a48e9ec1b09/du-shouren__face__down__v1.png",
+      "preview": "/media/assets/du-shouren/face.down.webp",
+      "thumb": "/media/assets/du-shouren/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4617963324652778,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2996416,
+      "sha256": "82951ecb7d362ac88abdf82088e4e2a69a20a00a77f088dcca97ef02e3f5a5b4",
+      "sourceSha256": "82951ecb7d362ac88abdf82088e4e2a69a20a00a77f088dcca97ef02e3f5a5b4",
+      "bbox": {
+        "left": 0,
+        "top": 0.0484375,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/82951ecb7d362ac8/du-shouren__expression__neutral__v1.png",
+      "preview": "/media/assets/du-shouren/expression.neutral.webp",
+      "thumb": "/media/assets/du-shouren/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5082687717013888,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2855814,
+      "sha256": "4142f3286143648c0f76ae2b49f2bdf0db872c54a747f4b8647954c580bfc5b4",
+      "sourceSha256": "4142f3286143648c0f76ae2b49f2bdf0db872c54a747f4b8647954c580bfc5b4",
+      "bbox": {
+        "left": 0,
+        "top": 0.028645833333333332,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/4142f3286143648c/du-shouren__expression__smile__v1.png",
+      "preview": "/media/assets/du-shouren/expression.smile.webp",
+      "thumb": "/media/assets/du-shouren/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49085557725694445,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3252510,
+      "sha256": "61e9081eb83144240ee14ef2b27598f35375b3bc65e171d7a4cb7da2ca493bc3",
+      "sourceSha256": "61e9081eb83144240ee14ef2b27598f35375b3bc65e171d7a4cb7da2ca493bc3",
+      "bbox": {
+        "left": 0,
+        "top": 0.01875,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/61e9081eb8314424/du-shouren__expression__laugh__v1.png",
+      "preview": "/media/assets/du-shouren/expression.laugh.webp",
+      "thumb": "/media/assets/du-shouren/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4664748806423611,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3193367,
+      "sha256": "2761284363973728cc1e47de80ab4d0db77e68ea0b6b78b0c6a204df38b85cac",
+      "sourceSha256": "2761284363973728cc1e47de80ab4d0db77e68ea0b6b78b0c6a204df38b85cac",
+      "bbox": {
+        "left": 0,
+        "top": 0.025,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/2761284363973728/du-shouren__expression__sad__v1.png",
+      "preview": "/media/assets/du-shouren/expression.sad.webp",
+      "thumb": "/media/assets/du-shouren/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.47003879123263886,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3030536,
+      "sha256": "3db5e18f68c400d1361302013dc944a5accaf6d7f82b4bd0ab344d2c8d09657d",
+      "sourceSha256": "3db5e18f68c400d1361302013dc944a5accaf6d7f82b4bd0ab344d2c8d09657d",
+      "bbox": {
+        "left": 0,
+        "top": 0.030729166666666665,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/3db5e18f68c400d1/du-shouren__expression__cry__v1.png",
+      "preview": "/media/assets/du-shouren/expression.cry.webp",
+      "thumb": "/media/assets/du-shouren/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4786029730902778,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2918613,
+      "sha256": "472778a9d53a26413f956d594dd1d662f7b4f2cec0854755ed007faf620229a7",
+      "sourceSha256": "472778a9d53a26413f956d594dd1d662f7b4f2cec0854755ed007faf620229a7",
+      "bbox": {
+        "left": 0,
+        "top": 0.028645833333333332,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/472778a9d53a2641/du-shouren__expression__annoyed__v1.png",
+      "preview": "/media/assets/du-shouren/expression.annoyed.webp",
+      "thumb": "/media/assets/du-shouren/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.47443956163194445,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3106334,
+      "sha256": "8dbfda8a903f0596b7051cb186915fc46ad47f5bf2c4b46647ab3511f3188f22",
+      "sourceSha256": "8dbfda8a903f0596b7051cb186915fc46ad47f5bf2c4b46647ab3511f3188f22",
+      "bbox": {
+        "left": 0,
+        "top": 0.03177083333333333,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/8dbfda8a903f0596/du-shouren__expression__angry__v1.png",
+      "preview": "/media/assets/du-shouren/expression.angry.webp",
+      "thumb": "/media/assets/du-shouren/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4660107421875,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2959956,
+      "sha256": "6beaef6971496eeaa84b5eda2f9dbbc5483df2f5e0e725bbcabb3dae2d5bce81",
+      "sourceSha256": "6beaef6971496eeaa84b5eda2f9dbbc5483df2f5e0e725bbcabb3dae2d5bce81",
+      "bbox": {
+        "left": 0,
+        "top": 0.03229166666666667,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/6beaef6971496eea/du-shouren__expression__surprised__v1.png",
+      "preview": "/media/assets/du-shouren/expression.surprised.webp",
+      "thumb": "/media/assets/du-shouren/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4813362630208333,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2907066,
+      "sha256": "bd6e90e4c0f944b30d5d2e16c8def0f09073ab568421a587d172aaae8432c117",
+      "sourceSha256": "bd6e90e4c0f944b30d5d2e16c8def0f09073ab568421a587d172aaae8432c117",
+      "bbox": {
+        "left": 0,
+        "top": 0.03333333333333333,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/bd6e90e4c0f944b3/du-shouren__expression__scared__v1.png",
+      "preview": "/media/assets/du-shouren/expression.scared.webp",
+      "thumb": "/media/assets/du-shouren/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4903415256076389,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2919424,
+      "sha256": "1fb650c20824b1beb2cd1050ed3ad2a83ec1ca290979bfc8763da0f874251dd6",
+      "sourceSha256": "1fb650c20824b1beb2cd1050ed3ad2a83ec1ca290979bfc8763da0f874251dd6",
+      "bbox": {
+        "left": 0,
+        "top": 0.034895833333333334,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/1fb650c20824b1be/du-shouren__expression__disgusted__v1.png",
+      "preview": "/media/assets/du-shouren/expression.disgusted.webp",
+      "thumb": "/media/assets/du-shouren/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49216010199652777,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3228337,
+      "sha256": "2983000d1668a2bfe658df2790282ee61199e3bedb8b6f5f07223cba1e95bb38",
+      "sourceSha256": "2983000d1668a2bfe658df2790282ee61199e3bedb8b6f5f07223cba1e95bb38",
+      "bbox": {
+        "left": 0,
+        "top": 0.03958333333333333,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/2983000d1668a2bf/du-shouren__expression__embarrassed__v1.png",
+      "preview": "/media/assets/du-shouren/expression.embarrassed.webp",
+      "thumb": "/media/assets/du-shouren/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.41637586805555554,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2801906,
+      "sha256": "1278fb938c643729a7cbad772dbb039faca198c3b9ab791a131a072f8a552c85",
+      "sourceSha256": "1278fb938c643729a7cbad772dbb039faca198c3b9ab791a131a072f8a552c85",
+      "bbox": {
+        "left": 0,
+        "top": 0.03802083333333333,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/1278fb938c643729/du-shouren__expression__tired__v1.png",
+      "preview": "/media/assets/du-shouren/expression.tired.webp",
+      "thumb": "/media/assets/du-shouren/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4907489691840278,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3031837,
+      "sha256": "b5ef4d404277d21b91c036e100b0a32d8edda799175e59775e54bc3ca3dcfa9f",
+      "sourceSha256": "b5ef4d404277d21b91c036e100b0a32d8edda799175e59775e54bc3ca3dcfa9f",
+      "bbox": {
+        "left": 0,
+        "top": 0.03333333333333333,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/b5ef4d404277d21b/du-shouren__expression__speaking__v1.png",
+      "preview": "/media/assets/du-shouren/expression.speaking.webp",
+      "thumb": "/media/assets/du-shouren/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.47900851779513887,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2998938,
+      "sha256": "531b67e28d2f72f3bdea1b5a351e794bb97e15b9d169d3c8a20b00cbc9f31804",
+      "sourceSha256": "531b67e28d2f72f3bdea1b5a351e794bb97e15b9d169d3c8a20b00cbc9f31804",
+      "bbox": {
+        "left": 0,
+        "top": 0.044270833333333336,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/531b67e28d2f72f3/du-shouren__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/du-shouren/expression.eyes-closed.webp",
+      "thumb": "/media/assets/du-shouren/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5042418077256945,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2879956,
+      "sha256": "b8232d710029a67c8208d70a76c22e424e8cc58e7184f2f76edb37503e2c1185",
+      "sourceSha256": "b8232d710029a67c8208d70a76c22e424e8cc58e7184f2f76edb37503e2c1185",
+      "bbox": {
+        "left": 0,
+        "top": 0.04583333333333333,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/b8232d710029a67c/du-shouren__expression__worried__v1.png",
+      "preview": "/media/assets/du-shouren/expression.worried.webp",
+      "thumb": "/media/assets/du-shouren/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49964599609375,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2914786,
+      "sha256": "8ef413dcfac4b75dfe6a216327d17b224db2e5469a2e7508cd8986b2f5bbc0a9",
+      "sourceSha256": "8ef413dcfac4b75dfe6a216327d17b224db2e5469a2e7508cd8986b2f5bbc0a9",
+      "bbox": {
+        "left": 0,
+        "top": 0.046875,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/8ef413dcfac4b75d/du-shouren__expression__skeptical__v1.png",
+      "preview": "/media/assets/du-shouren/expression.skeptical.webp",
+      "thumb": "/media/assets/du-shouren/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5021744791666667,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2929276,
+      "sha256": "264abf9ef47d89866aaa11171dae2c429df1fbda150d362cb758e9bd2ce097a8",
+      "sourceSha256": "264abf9ef47d89866aaa11171dae2c429df1fbda150d362cb758e9bd2ce097a8",
+      "bbox": {
+        "left": 0,
+        "top": 0.0421875,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/264abf9ef47d8986/du-shouren__expression__smug__v1.png",
+      "preview": "/media/assets/du-shouren/expression.smug.webp",
+      "thumb": "/media/assets/du-shouren/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49939832899305553,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2942051,
+      "sha256": "2f720eca942d992ee023835b11131a23fab3127a81a6468cc3b0c47d0ad37a56",
+      "sourceSha256": "2f720eca942d992ee023835b11131a23fab3127a81a6468cc3b0c47d0ad37a56",
+      "bbox": {
+        "left": 0,
+        "top": 0.03854166666666667,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/2f720eca942d992e/du-shouren__expression__contempt__v1.png",
+      "preview": "/media/assets/du-shouren/expression.contempt.webp",
+      "thumb": "/media/assets/du-shouren/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49643744574652776,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2760724,
+      "sha256": "af9d4b01b27b1a0f4d2a9c0831b53d8905f3f3ceae3e989ae1a1a43e20582e9d",
+      "sourceSha256": "af9d4b01b27b1a0f4d2a9c0831b53d8905f3f3ceae3e989ae1a1a43e20582e9d",
+      "bbox": {
+        "left": 0,
+        "top": 0.058854166666666666,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/af9d4b01b27b1a0f/du-shouren__expression__confused__v1.png",
+      "preview": "/media/assets/du-shouren/expression.confused.webp",
+      "thumb": "/media/assets/du-shouren/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5022355143229167,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2824335,
+      "sha256": "7a1dfb59cbae4d76586afe1c55ec0cc159884605fd6dd8142f68ed71e2264f91",
+      "sourceSha256": "7a1dfb59cbae4d76586afe1c55ec0cc159884605fd6dd8142f68ed71e2264f91",
+      "bbox": {
+        "left": 0,
+        "top": 0.04583333333333333,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/7a1dfb59cbae4d76/du-shouren__expression__thinking__v1.png",
+      "preview": "/media/assets/du-shouren/expression.thinking.webp",
+      "thumb": "/media/assets/du-shouren/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.500263671875,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2984292,
+      "sha256": "877527c90aa0a52faa41dd2c44aedc583e6b981db3df6ba44570176308913285",
+      "sourceSha256": "877527c90aa0a52faa41dd2c44aedc583e6b981db3df6ba44570176308913285",
+      "bbox": {
+        "left": 0,
+        "top": 0.04114583333333333,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/877527c90aa0a52f/du-shouren__expression__determined__v1.png",
+      "preview": "/media/assets/du-shouren/expression.determined.webp",
+      "thumb": "/media/assets/du-shouren/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49276421440972223,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2938577,
+      "sha256": "ee6655732e77b0e61d9da10c1f05b9f764c0049bf3e7751f23f93c1c6224eae3",
+      "sourceSha256": "ee6655732e77b0e61d9da10c1f05b9f764c0049bf3e7751f23f93c1c6224eae3",
+      "bbox": {
+        "left": 0,
+        "top": 0.035416666666666666,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/ee6655732e77b0e6/du-shouren__expression__shy__v1.png",
+      "preview": "/media/assets/du-shouren/expression.shy.webp",
+      "thumb": "/media/assets/du-shouren/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.48007134331597223,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2772148,
+      "sha256": "9727a8c1658ba3a672174d807a80a6ee5de2f716e991d8b09231175c3d2aa479",
+      "sourceSha256": "9727a8c1658ba3a672174d807a80a6ee5de2f716e991d8b09231175c3d2aa479",
+      "bbox": {
+        "left": 0,
+        "top": 0.046875,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/9727a8c1658ba3a6/du-shouren__expression__pain__v1.png",
+      "preview": "/media/assets/du-shouren/expression.pain.webp",
+      "thumb": "/media/assets/du-shouren/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4985579427083333,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2778470,
+      "sha256": "62acb70708b4181015230fde31ac0db77096eaf67bf0dcf91495e64c8fc64974",
+      "sourceSha256": "62acb70708b4181015230fde31ac0db77096eaf67bf0dcf91495e64c8fc64974",
+      "bbox": {
+        "left": 0,
+        "top": 0.030729166666666665,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/62acb70708b41810/du-shouren__expression__sleepy__v1.png",
+      "preview": "/media/assets/du-shouren/expression.sleepy.webp",
+      "thumb": "/media/assets/du-shouren/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49136583116319443,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2668759,
+      "sha256": "5ac06e919b59f5b5a83a78d18a2d6b9959c7b435a8879324c994aa9a45b1f476",
+      "sourceSha256": "5ac06e919b59f5b5a83a78d18a2d6b9959c7b435a8879324c994aa9a45b1f476",
+      "bbox": {
+        "left": 0,
+        "top": 0.06354166666666666,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/5ac06e919b59f5b5/du-shouren__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/du-shouren/expression.awkward-smile.webp",
+      "thumb": "/media/assets/du-shouren/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5177948676215278,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2718765,
+      "sha256": "71cc4c9267b92887783b7d413ab8ce2412ac4ba5cc06fb62107396b9a92a136e",
+      "sourceSha256": "71cc4c9267b92887783b7d413ab8ce2412ac4ba5cc06fb62107396b9a92a136e",
+      "bbox": {
+        "left": 0,
+        "top": 0.03854166666666667,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/71cc4c9267b92887/du-shouren__expression__deadpan__v1.png",
+      "preview": "/media/assets/du-shouren/expression.deadpan.webp",
+      "thumb": "/media/assets/du-shouren/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5016495768229167,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1386919,
+      "sha256": "a18a7516570f9c26c8650a219952191b4ec620b78bfe4a4770aec9fc7b3a51f5",
+      "sourceSha256": "a18a7516570f9c26c8650a219952191b4ec620b78bfe4a4770aec9fc7b3a51f5",
+      "bbox": {
+        "left": 0.2701822916666667,
+        "top": 0.025173611111111112,
+        "right": 0.7291666666666666,
+        "bottom": 0.9835069444444444
+      },
+      "format": "png",
+      "object": "du-shouren/a18a7516570f9c26/du-shouren__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/du-shouren/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/du-shouren/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7263940881799769,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1245915,
+      "sha256": "ac2217e6c74bea793ce088ddd8d3853ba0857f172b63b21c65fd46ad4fd631de",
+      "sourceSha256": "ac2217e6c74bea793ce088ddd8d3853ba0857f172b63b21c65fd46ad4fd631de",
+      "bbox": {
+        "left": 0.3170572916666667,
+        "top": 0.017361111111111112,
+        "right": 0.7623697916666666,
+        "bottom": 0.9809027777777778
+      },
+      "format": "png",
+      "object": "du-shouren/ac2217e6c74bea79/du-shouren__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/du-shouren/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/du-shouren/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7582691333912037,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 919213,
+      "sha256": "ee984dd08f8ab7b30a7b28869f20d837fe54e62eabd3058b8ddc7ef5e26fdc63",
+      "sourceSha256": "ee984dd08f8ab7b30a7b28869f20d837fe54e62eabd3058b8ddc7ef5e26fdc63",
+      "bbox": {
+        "left": 0.3470052083333333,
+        "top": 0.026475694444444444,
+        "right": 0.6184895833333334,
+        "bottom": 0.9709201388888888
+      },
+      "format": "png",
+      "object": "du-shouren/ee984dd08f8ab7b3/du-shouren__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/du-shouren/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/du-shouren/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8351898193359375,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1344241,
+      "sha256": "317072a3b943a20164bce25e739face58adba3258f7e6de7ba9bc75e2f2ef87a",
+      "sourceSha256": "317072a3b943a20164bce25e739face58adba3258f7e6de7ba9bc75e2f2ef87a",
+      "bbox": {
+        "left": 0.2630208333333333,
+        "top": 0.023003472222222224,
+        "right": 0.7298177083333334,
+        "bottom": 0.9743923611111112
+      },
+      "format": "png",
+      "object": "du-shouren/317072a3b943a201/du-shouren__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/du-shouren/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/du-shouren/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7274102105034722,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.jump-rope",
+      "series": "wardrobe",
+      "key": "jump-rope",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1508034,
+      "sha256": "02beaceb1725e567aac4735f5a373ad47032787ac3e6ac00901a523cf5643831",
+      "sourceSha256": "02beaceb1725e567aac4735f5a373ad47032787ac3e6ac00901a523cf5643831",
+      "bbox": {
+        "left": 0.09700520833333333,
+        "top": 0.021267361111111112,
+        "right": 0.9153645833333334,
+        "bottom": 0.9561631944444444
+      },
+      "format": "png",
+      "object": "du-shouren/02beaceb1725e567/du-shouren__wardrobe-personal__jump-rope__v1.png",
+      "preview": "/media/assets/du-shouren/wardrobe.personal.jump-rope.webp",
+      "thumb": "/media/assets/du-shouren/wardrobe.personal.jump-rope.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7404906661422165,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.mug-of-tea",
+      "series": "wardrobe",
+      "key": "mug-of-tea",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1144060,
+      "sha256": "be361eeee5f87d831e21b9b7144a60781db722a9de08611b490de65282986235",
+      "sourceSha256": "be361eeee5f87d831e21b9b7144a60781db722a9de08611b490de65282986235",
+      "bbox": {
+        "left": 0.2805989583333333,
+        "top": 0.026909722222222224,
+        "right": 0.7350260416666666,
+        "bottom": 0.9761284722222222
+      },
+      "format": "png",
+      "object": "du-shouren/be361eeee5f87d83/du-shouren__wardrobe-personal__mug-of-tea__v1.png",
+      "preview": "/media/assets/du-shouren/wardrobe.personal.mug-of-tea.webp",
+      "thumb": "/media/assets/du-shouren/wardrobe.personal.mug-of-tea.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7673967149522569,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.hand-wraps",
+      "series": "wardrobe",
+      "key": "hand-wraps",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1285262,
+      "sha256": "f1f891a8a32b5fac1a1887e74a32899c2b89c275542a03922f2e979b47cf1f78",
+      "sourceSha256": "f1f891a8a32b5fac1a1887e74a32899c2b89c275542a03922f2e979b47cf1f78",
+      "bbox": {
+        "left": 0.2981770833333333,
+        "top": 0.015190972222222222,
+        "right": 0.7766927083333334,
+        "bottom": 0.9826388888888888
+      },
+      "format": "png",
+      "object": "du-shouren/f1f891a8a32b5fac/du-shouren__wardrobe-personal__hand-wraps__v1.png",
+      "preview": "/media/assets/du-shouren/wardrobe.personal.hand-wraps.webp",
+      "thumb": "/media/assets/du-shouren/wardrobe.personal.hand-wraps.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7525549994574653,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 3065711,
+      "sha256": "d3c9b87ffff7288b96c24abd592309586a8bce87c240bf5f40dd68c6d4960d66",
+      "sourceSha256": "d3c9b87ffff7288b96c24abd592309586a8bce87c240bf5f40dd68c6d4960d66",
+      "bbox": {
+        "left": 0,
+        "top": 0.0837673611111111,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/d3c9b87ffff7288b/du-shouren__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/du-shouren/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/du-shouren/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.39651771827980326,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1362176,
+      "sha256": "466d2c0888821b0f82322bb18ea98d76e0c7c3d3ec22ce17c762ddf323e6a083",
+      "sourceSha256": "466d2c0888821b0f82322bb18ea98d76e0c7c3d3ec22ce17c762ddf323e6a083",
+      "bbox": {
+        "left": 0.2565104166666667,
+        "top": 0.017361111111111112,
+        "right": 0.8092447916666666,
+        "bottom": 0.9735243055555556
+      },
+      "format": "png",
+      "object": "du-shouren/466d2c0888821b0f/du-shouren__pose__walk__v1.png",
+      "preview": "/media/assets/du-shouren/pose.walk.webp",
+      "thumb": "/media/assets/du-shouren/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7425260190610532,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1410490,
+      "sha256": "b7e44ee365f4f56fffe9d6dbed218614739751979dd5bfd6a0204f243dd0dda7",
+      "sourceSha256": "b7e44ee365f4f56fffe9d6dbed218614739751979dd5bfd6a0204f243dd0dda7",
+      "bbox": {
+        "left": 0.18684895833333334,
+        "top": 0.021701388888888888,
+        "right": 0.8333333333333334,
+        "bottom": 0.9565972222222222
+      },
+      "format": "png",
+      "object": "du-shouren/b7e44ee365f4f56f/du-shouren__pose__run__v1.png",
+      "preview": "/media/assets/du-shouren/pose.run.webp",
+      "thumb": "/media/assets/du-shouren/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7437611332646122,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1849288,
+      "sha256": "5a3c670817a0a8c146b4224773c776142f7d2e958ac8ba7be8e5941c9e58d08c",
+      "sourceSha256": "5a3c670817a0a8c146b4224773c776142f7d2e958ac8ba7be8e5941c9e58d08c",
+      "bbox": {
+        "left": 0.21549479166666666,
+        "top": 0.021701388888888888,
+        "right": 0.8684895833333334,
+        "bottom": 0.9626736111111112
+      },
+      "format": "png",
+      "object": "du-shouren/5a3c670817a0a8c1/du-shouren__pose__sit__v1.png",
+      "preview": "/media/assets/du-shouren/pose.sit.webp",
+      "thumb": "/media/assets/du-shouren/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6602966873734085,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1234869,
+      "sha256": "3305cc24303348436bac3b9464399d6b327ce5e51eb392fab01a3ee6a910f077",
+      "sourceSha256": "3305cc24303348436bac3b9464399d6b327ce5e51eb392fab01a3ee6a910f077",
+      "bbox": {
+        "left": 0.2955729166666667,
+        "top": 0.029079861111111112,
+        "right": 0.7337239583333334,
+        "bottom": 0.9813368055555556
+      },
+      "format": "png",
+      "object": "du-shouren/3305cc2430334843/du-shouren__pose__point__v1.png",
+      "preview": "/media/assets/du-shouren/pose.point.webp",
+      "thumb": "/media/assets/du-shouren/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7661511456524884,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1183607,
+      "sha256": "40e38c41c83121c2f25353e8ed488291120b659986ec7549059084db9090dd58",
+      "sourceSha256": "40e38c41c83121c2f25353e8ed488291120b659986ec7549059084db9090dd58",
+      "bbox": {
+        "left": 0.3157552083333333,
+        "top": 0.022569444444444444,
+        "right": 0.7408854166666666,
+        "bottom": 0.9782986111111112
+      },
+      "format": "png",
+      "object": "du-shouren/40e38c41c83121c2/du-shouren__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/du-shouren/pose.arms-crossed.webp",
+      "thumb": "/media/assets/du-shouren/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7730161878797743,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1271818,
+      "sha256": "2ccf2b1bf2142b40a7faf64a53310d5abeaf042f8370a85d31678830d8075969",
+      "sourceSha256": "2ccf2b1bf2142b40a7faf64a53310d5abeaf042f8370a85d31678830d8075969",
+      "bbox": {
+        "left": 0.3014322916666667,
+        "top": 0.025173611111111112,
+        "right": 0.7591145833333334,
+        "bottom": 0.9826388888888888
+      },
+      "format": "png",
+      "object": "du-shouren/2ccf2b1bf2142b40/du-shouren__pose__phone__v1.png",
+      "preview": "/media/assets/du-shouren/pose.phone.webp",
+      "thumb": "/media/assets/du-shouren/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7503879688404225,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2880255,
+      "sha256": "ba20ac8bfd777274ff24db2008b043d78f565603ca883c083c7521fc249cee0f",
+      "sourceSha256": "ba20ac8bfd777274ff24db2008b043d78f565603ca883c083c7521fc249cee0f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 0.9307291666666667
+      },
+      "format": "png",
+      "object": "du-shouren/ba20ac8bfd777274/du-shouren__detail__hands__v1.png",
+      "preview": "/media/assets/du-shouren/detail.hands.webp",
+      "thumb": "/media/assets/du-shouren/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.47049994574652776,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3274909,
+      "sha256": "d17282b7224665860c502a2b023c4e5b6a0206bd22ca6b8accc82e5f8a73b213",
+      "sourceSha256": "d17282b7224665860c502a2b023c4e5b6a0206bd22ca6b8accc82e5f8a73b213",
+      "bbox": {
+        "left": 0,
+        "top": 0.03802083333333333,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "du-shouren/d17282b722466586/du-shouren__detail__hair-back__v1.png",
+      "preview": "/media/assets/du-shouren/detail.hair-back.webp",
+      "thumb": "/media/assets/du-shouren/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49791151258680555,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
     },
     {
       "kind": "voice",
@@ -34,28 +1648,155 @@
       "series": "voice",
       "key": "intro",
       "look": null,
-      "conformance": "v1",
+      "conformance": "source-original",
       "version": 1,
       "width": 0,
       "height": 0,
-      "bytes": 338100,
-      "sha256": "80102d46239572fbe16ed9dc7035c5bbb1ef806a07cdbccc3bad5c3c125824b0",
-      "sourceSha256": "80102d46239572fbe16ed9dc7035c5bbb1ef806a07cdbccc3bad5c3c125824b0",
+      "bytes": 1051730,
+      "sha256": "3bb60280cb58b9e2bdc065222c7abe3b3143e358e5623e3d69b9d6c4b635c193",
+      "sourceSha256": "3bb60280cb58b9e2bdc065222c7abe3b3143e358e5623e3d69b9d6c4b635c193",
       "bbox": {
         "left": 0,
         "top": 0,
         "right": 0,
         "bottom": 0
       },
-      "format": "mp3",
-      "object": "voice/du-shouren/candidate-1.mp3",
+      "format": "wav",
+      "object": "voice/du-shouren/du-shouren__voice__intro__v1__3bb60280cb58b9e2.wav",
       "preview": "/api/voice/du-shouren/intro",
       "thumb": "/api/voice/du-shouren/intro",
       "previewUrl": "/api/voice/du-shouren/intro",
-      "durationSec": 28,
-      "transcript": {
-        "text": "我叫杜守仁，洛阳人，七十二了。家里三代都是开中药铺的，我从小闻着药香长大。说话慢，你们莫嫌弃。我适合演老大夫、老先生，或者在关键时候点醒年轻人的那个老人。"
-      }
+      "durationSec": 16.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 636658,
+      "sha256": "e8c80e72c97ea6179c66e708e80df1ead43c93c64eb18bd8fcaee5afa8e5fc17",
+      "sourceSha256": "e8c80e72c97ea6179c66e708e80df1ead43c93c64eb18bd8fcaee5afa8e5fc17",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/du-shouren/du-shouren__voice__chat__v1__e8c80e72c97ea617.wav",
+      "preview": "/api/voice/du-shouren/chat",
+      "thumb": "/api/voice/du-shouren/chat",
+      "previewUrl": "/api/voice/du-shouren/chat",
+      "durationSec": 9.9
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 523716,
+      "sha256": "fbc7ffbedf5b18402e66d415f0416db32fcbddeb2cdb07937d28a17f1ea0d448",
+      "sourceSha256": "fbc7ffbedf5b18402e66d415f0416db32fcbddeb2cdb07937d28a17f1ea0d448",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/du-shouren/du-shouren__voice__happy__v1__fbc7ffbedf5b1840.wav",
+      "preview": "/api/voice/du-shouren/happy",
+      "thumb": "/api/voice/du-shouren/happy",
+      "previewUrl": "/api/voice/du-shouren/happy",
+      "durationSec": 8.2
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 517772,
+      "sha256": "f516289591f587aaebfef4e9f449d02a5150f30e73a44470d3a000da2b53a8bc",
+      "sourceSha256": "f516289591f587aaebfef4e9f449d02a5150f30e73a44470d3a000da2b53a8bc",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/du-shouren/du-shouren__voice__angry__v1__f516289591f587aa.wav",
+      "preview": "/api/voice/du-shouren/angry",
+      "thumb": "/api/voice/du-shouren/angry",
+      "previewUrl": "/api/voice/du-shouren/angry",
+      "durationSec": 8.1
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 765204,
+      "sha256": "d6ee0fbbaa4d38dc3c53929ba130bef59d77b6db0a30be035197b57cd5b51b7b",
+      "sourceSha256": "d6ee0fbbaa4d38dc3c53929ba130bef59d77b6db0a30be035197b57cd5b51b7b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/du-shouren/du-shouren__voice__sad__v1__d6ee0fbbaa4d38dc.wav",
+      "preview": "/api/voice/du-shouren/sad",
+      "thumb": "/api/voice/du-shouren/sad",
+      "previewUrl": "/api/voice/du-shouren/sad",
+      "durationSec": 11.9
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1083106,
+      "sha256": "f966bec824be6d7dd9781a985e4dec0b6b225e8305a184608c3e0e8a492b07bc",
+      "sourceSha256": "f966bec824be6d7dd9781a985e4dec0b6b225e8305a184608c3e0e8a492b07bc",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/du-shouren/du-shouren__voice__intro-alt__v1__f966bec824be6d7d.wav",
+      "preview": "/api/voice/du-shouren/intro-alt",
+      "thumb": "/api/voice/du-shouren/intro-alt",
+      "previewUrl": "/api/voice/du-shouren/intro-alt",
+      "durationSec": 16.9
     }
   ]
 }

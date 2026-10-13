@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/bao-man/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "facts": {
@@ -51,6 +51,49 @@
       },
       "prompt": "navy plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos.",
       "note": "Provisional audition look. Owner must select the new full-body audition image before full pack production."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied bao-man personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "bike-bell",
+          "label": {
+            "en": "Bike bell",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / bike-bell reference image."
+        },
+        {
+          "key": "folding-fan",
+          "label": {
+            "en": "Folding fan",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / folding-fan reference image."
+        },
+        {
+          "key": "jianbing",
+          "label": {
+            "en": "Jianbing",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / jianbing reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        }
+      ]
     }
   ],
   "roles": [],
@@ -69,5 +112,572 @@
       "chat": null,
       "note": "Create one dedicated character chat in Pics-A for the audition trial; use the old CC image only as face reference and enforce the specified adult proportions."
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-baoman-fresh1-full-pack-20261010/delivery-verification.json"
+    ],
+    "images": [
+      {
+        "slot": "detail.hair-back",
+        "source": "bao-man/bao-man__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__detail__hair-back__v1.png",
+        "sha256": "173d991b51131e928be59aa26310d1ce11dbcd5aab1b281d610270226d7a38b1",
+        "bytes": 2132914,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "bao-man/bao-man__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__detail__hands__v1.png",
+        "sha256": "705b800bb26c11454982b9ea990a7dea281c9e3c629fa2c5cc336358435a929c",
+        "bytes": 1062565,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "bao-man/bao-man__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__angry__v1.png",
+        "sha256": "66fe2a651a5771cff749baaa795761ed577a9bf2bfdc24dbfeb52d4ad7d6ac6a",
+        "bytes": 1982821,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "bao-man/bao-man__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__annoyed__v1.png",
+        "sha256": "ded8aea072e89b9faa0c70548bde9af7fa1fde8e3095b1554ae5975109bba5c5",
+        "bytes": 2110743,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "bao-man/bao-man__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__awkward-smile__v1.png",
+        "sha256": "d2d4a2b78e84fec8b75bbbd7ffec9bd74a1ea3c2581dc2510b8175da18f1da80",
+        "bytes": 1789832,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "bao-man/bao-man__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__confused__v1.png",
+        "sha256": "490224c6705303fca565cd122ba85a89feb09d9be8c2008a6df1abf2573712c2",
+        "bytes": 1876722,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "bao-man/bao-man__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__contempt__v1.png",
+        "sha256": "1edf9e49074be7fa49e6a18b7f3842407ed440089e17297d747e12e8ba081d3b",
+        "bytes": 1559078,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "bao-man/bao-man__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__cry__v1.png",
+        "sha256": "a8bd8e066596a30ed749c9fefe478db645a8f4ee9e00c2fd4aba118291d828da",
+        "bytes": 1991649,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "bao-man/bao-man__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__deadpan__v1.png",
+        "sha256": "55b4e53c67ea5aca994d3d8bc9d9fc68fb493fd743eb50ac0dd9da25eea721fa",
+        "bytes": 1793487,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "bao-man/bao-man__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__determined__v1.png",
+        "sha256": "7c408a0cef1096bac9573bd426f8ae59b1b50a4c7a02bda0bed316a116a97578",
+        "bytes": 1793661,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "bao-man/bao-man__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__disgusted__v1.png",
+        "sha256": "e55b968ee1cf61af6ff5e94643df5b2972b3a292f411b2145f057490d96e6e5d",
+        "bytes": 2120542,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "bao-man/bao-man__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__embarrassed__v1.png",
+        "sha256": "295a13d95bb4ee054edddc2e9458b1074aa345a11568a7c516bd195b4516546a",
+        "bytes": 1876337,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "bao-man/bao-man__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__eyes-closed__v1.png",
+        "sha256": "26b70f52a6420a624ce393777e25b214cfe477e6e6cd8ba29ce9303b9687c91b",
+        "bytes": 1979160,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "bao-man/bao-man__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__laugh__v1.png",
+        "sha256": "7f6752c2e584342891ae7c6b061326aa1f7ce952658e72ba571fa5d73559885d",
+        "bytes": 2016271,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "bao-man/bao-man__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__neutral__v1.png",
+        "sha256": "784cb3d8e3da044f3f4a0b4e4235b8ccca0874a9e5f20c359ed5e0ad152f3d31",
+        "bytes": 1836980,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "bao-man/bao-man__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__pain__v1.png",
+        "sha256": "99d0fe0a3fdc5c5165af4c4495e90e7aeb13bf48d092a1303322ead09ad8e2cf",
+        "bytes": 1989031,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "bao-man/bao-man__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__sad__v1.png",
+        "sha256": "4b5603a19905c153b10b295ad875aa22c5b2dfec416e3f0518890aba60d93a8a",
+        "bytes": 1965649,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "bao-man/bao-man__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__scared__v1.png",
+        "sha256": "c5eecbdc99ba8714e192a2617dc97a692277bf8e20c7f42f110a44583ed36ba2",
+        "bytes": 1962569,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "bao-man/bao-man__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__shy__v1.png",
+        "sha256": "cb68e2f0c3188980b844dc2a707e4154f877de092da02da915bc481c5cdb3d42",
+        "bytes": 1978734,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "bao-man/bao-man__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__skeptical__v1.png",
+        "sha256": "00d91aff2c34b9b782edeff255b8594bc94395f2689dfd28ecfeadc2e71a6dbb",
+        "bytes": 1775559,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "bao-man/bao-man__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__sleepy__v1.png",
+        "sha256": "6c493d3844e248f8ecaed4716a87bf1cb0999e8872f304fbb9f1cd176bd30d6e",
+        "bytes": 1855808,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "bao-man/bao-man__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__smile__v1.png",
+        "sha256": "06682eafb57f58a097733b1317ac6a75d2bf5b334ddc7a17c23a60bbcb79407c",
+        "bytes": 1984100,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "bao-man/bao-man__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__smug__v1.png",
+        "sha256": "e7772b2a492748755821d136116a8d05edf6cdd5dad44f5a077fd20435f83e9c",
+        "bytes": 1836219,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "bao-man/bao-man__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__speaking__v1.png",
+        "sha256": "964fcecea6f5c01bf9fe56ddf4371b7cfa21290dfd6d23215b463b4d21388d0f",
+        "bytes": 2008084,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "bao-man/bao-man__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__surprised__v1.png",
+        "sha256": "2f3273f06cc4e7b3db51fede7c2a3e60af218fc2c675fb7376aedb6bcf523ec9",
+        "bytes": 1915130,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "bao-man/bao-man__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__thinking__v1.png",
+        "sha256": "c5ed1a267388bcb2e3615c64276c0ca0a449b1fd83d3f90502af5fc1949858b0",
+        "bytes": 1911357,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "bao-man/bao-man__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__tired__v1.png",
+        "sha256": "a8623731e0de3245dd6f8138ef7338a98f08c833b1c3f165fd8ceab437e96b2d",
+        "bytes": 1843995,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "bao-man/bao-man__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__expression__worried__v1.png",
+        "sha256": "95ec384c9bb5e9b98476ff1b30f4e1f092ca0a2aea3f130bd62ddbfa58985741",
+        "bytes": 1898564,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "bao-man/bao-man__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__face__down__v1.png",
+        "sha256": "78b3375d51f6f9bb11ddfa615b4305caf64d1ea1e07b63e38d347011af00333e",
+        "bytes": 1836764,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "bao-man/bao-man__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__face__front__v1.png",
+        "sha256": "6a0e9a51ed5fac043405a05b7772993f1cb6d1b1bd91739b625a3fbbf9d2611f",
+        "bytes": 1790402,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "bao-man/bao-man__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__face__side-right__v1.png",
+        "sha256": "d606416341331f7aef510bb3b9d5013a5ca811fcf7cbe5e3e9244971515353d8",
+        "bytes": 1885244,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "bao-man/bao-man__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__face__side__v1.png",
+        "sha256": "9b3a11faf0a12bb10ead84b44f2cdbac01290347feba016864c0fe4fafd62a14",
+        "bytes": 1806615,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "bao-man/bao-man__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__face__three-quarter-left__v1.png",
+        "sha256": "396ef72f921e46d47bb768d54919d33aeb6d304ea8c7f16017d531464e1aa235",
+        "bytes": 1901977,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "bao-man/bao-man__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__face__three-quarter__v1.png",
+        "sha256": "4c7332f5f8f84d749e5bcc43e1d722769ab0c6b57c7c395f9a3369f17911cff4",
+        "bytes": 1787271,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "bao-man/bao-man__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__face__up__v1.png",
+        "sha256": "ee299467650e50e989704b269be4b34ea2c032aa87967f5506de3ae4378cac78",
+        "bytes": 1747876,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "bao-man/bao-man__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__pose__arms-crossed__v1.png",
+        "sha256": "3dd0ed94ce1be67da29926e242c58dc470a4559a4d14231f478e889b6e3920dd",
+        "bytes": 865436,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "bao-man/bao-man__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__pose__phone__v1.png",
+        "sha256": "49352c5d078f5f9267cf69bbd54235d3066aa25388c9b7045a92854ce420b483",
+        "bytes": 1057371,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "bao-man/bao-man__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__pose__point__v1.png",
+        "sha256": "5cce8c23161db22ae440a6466a07bdab51477e5c9517abf3b1c130532e6ce035",
+        "bytes": 1005698,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "bao-man/bao-man__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__pose__run__v1.png",
+        "sha256": "7f87331ac7977b13c56bf29bab3549af7e142e755c4fa8cb0b682e982097de14",
+        "bytes": 1015960,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "bao-man/bao-man__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__pose__sit__v1.png",
+        "sha256": "8233e9365cf0643e8e3363ce1b37a257d53db3655327f17fbb97b2b0c8dc6013",
+        "bytes": 1168271,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "bao-man/bao-man__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__pose__walk__v1.png",
+        "sha256": "0a9ce7d47e55fcf22f9ada4adb254dae63299bdc6bffa2056f492997aee3284e",
+        "bytes": 996457,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "bao-man/bao-man__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__turnaround__back-three-quarter-left__v1.png",
+        "sha256": "7a12bae5a7db482a856e629d86d1aae2737ae13a4f11425aff6559559df6b50b",
+        "bytes": 928915,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "bao-man/bao-man__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__turnaround__back-three-quarter-right__v1.png",
+        "sha256": "80b0e8a3a212ec97f6d8794e57e3aeec385fc5c1796f569cada3bc23404990e6",
+        "bytes": 932684,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "bao-man/bao-man__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__turnaround__back__v1.png",
+        "sha256": "bd848d2279c8691a7251209acbaabebcf40530cc05e995768bd3962fdb99b030",
+        "bytes": 1000772,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.front",
+        "source": "bao-man/bao-man__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__turnaround__front__v1.png",
+        "sha256": "efd551b49fc67ec15392bf1b7ae32b7265d3a476a62a2da129976a3d3ad4672c",
+        "bytes": 1076523,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "bao-man/bao-man__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__turnaround__side__v1.png",
+        "sha256": "bd0c07830c43426ba19c6fddcf3e6dd145032e28083c070ce8dee331a7ccb93c",
+        "bytes": 633208,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "bao-man/bao-man__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__turnaround__three-quarter__v1.png",
+        "sha256": "38c649cd148b8cc970e2e543beb0080240eb1ba03c977e3b4c94e555e3d629b2",
+        "bytes": 1000016,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "bao-man/bao-man__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__wardrobe-personal__back__v1.png",
+        "sha256": "46e22f08e222d77f9b415fd7cd1962a580617f56654dfc5c057d659f6230e2aa",
+        "bytes": 1102742,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.bike-bell",
+        "source": "bao-man/bao-man__wardrobe-personal__bike-bell__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__wardrobe-personal__bike-bell__v1.png",
+        "sha256": "3b7a92e560c0591061457c0eabf8f8b07b619c42afc3a75910e1e2f417a10940",
+        "bytes": 1477197,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.folding-fan",
+        "source": "bao-man/bao-man__wardrobe-personal__folding-fan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__wardrobe-personal__folding-fan__v1.png",
+        "sha256": "b4008638fc278c78d360707a04d1bed464b2b7d0b10ffc4920bb0295183208c6",
+        "bytes": 1230470,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "bao-man/bao-man__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__wardrobe-personal__front__v1.png",
+        "sha256": "8d7b7eac9f5dcbee733974bf862321d55fac7f87e2a57899ed93d988f7e7a911",
+        "bytes": 1115855,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.jianbing",
+        "source": "bao-man/bao-man__wardrobe-personal__jianbing__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__wardrobe-personal__jianbing__v1.png",
+        "sha256": "3172ff27689bdadcbbc535238a0d9be70cbea9eab423c49c0203d661ba4c7d65",
+        "bytes": 1076234,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "bao-man/bao-man__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__wardrobe-personal__portrait__v1.png",
+        "sha256": "50f7e02d88720c32b409ba984c9d70696fd259594fd44347e3777673a70daea8",
+        "bytes": 2090055,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "bao-man/bao-man__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__wardrobe-personal__side__v1.png",
+        "sha256": "a91950717fe8adb6dd17dfa06bb0df6edd2a29d124934501a1017297efd31262",
+        "bytes": 727273,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "bao-man/bao-man__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__wardrobe-personal__three-quarter__v1.png",
+        "sha256": "5387ed46f9f3d0132a0d32fe8e40a4bf4435c01511d6caa07615c3c13650f720",
+        "bytes": 1002185,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "angry",
+        "source": "voices/bao-man/bao-man__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__angry__v1.wav",
+        "sha256": "2bd53e031d9595575ee9629d046fc597cc1667ab229f7411c49c0a177184e7a3",
+        "bytes": 856598,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/bao-man/bao-man__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__chat__v1.wav",
+        "sha256": "71e4680148ed2b140af6fd0c110b9620d484e46f51330a1baa1d41ea9f5253f1",
+        "bytes": 1100770,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/bao-man/bao-man__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__happy__v1.wav",
+        "sha256": "9fc480c1c7f5c81fe36a2be83c7f0f92b8f764d75b0c8d6f25df261aadf8b699",
+        "bytes": 793440,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/bao-man/bao-man__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__intro-alt__v1.wav",
+        "sha256": "c9a310ef60e262e7f860937e07b3af35d013060effdccbbc4e7d5f5067ecab75",
+        "bytes": 1301390,
+        "version": 1
+      },
+      {
+        "slot": "intro",
+        "source": "voices/bao-man/bao-man__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__intro__v1.wav",
+        "sha256": "c08bab70c164cbacc16d77b5287517e1ef24d2c7fc6f31398aeff485b22d308c",
+        "bytes": 1367520,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/bao-man/bao-man__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/bao-man/staging/bao-man__sad__v1.wav",
+        "sha256": "b64607c376e70c9cee21c6347645136ad0a5ed9a3498eccb561b7430cb4f7056",
+        "bytes": 894492,
+        "version": 1
+      }
+    ]
+  },
+  "demographics": {
+    "age": 33,
+    "gender": "male",
+    "origin": {
+      "zh": "天津",
+      "en": "Tianjin"
+    },
+    "voiceLanguage": "zh"
+  },
+  "website": {
+    "published": true,
+    "order": 100,
+    "status": "active",
+    "tagline": {
+      "zh": "圆脸小眼，发际线往后跑，一张嘴就是相声。",
+      "en": "Round face, small eyes, retreating hairline. Every sentence sounds like a punchline."
+    },
+    "introduction": {
+      "en": "East Asian (Chinese) man, about 33, average build, about 172 cm; round face, small eyes, a slightly receding hairline; navy top",
+      "zh": "圆脸小眼，发际线往后跑，一张嘴就是相声。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "bao-man-grok-02-20261013",
+      "actorSlugs": [
+        "bao-man"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-head-body-and-large-action-scope-with-recorded-limitations",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/bao-man-grok-02-20261013/source.mp4",
+          "sourceSha256": "bb9c92f7b87c90cbc8d89d5ce72287a6b697f6d8e30dfb10156143a9cc215e4c",
+          "public": "/media/works/samples/bao-man-grok-02-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }

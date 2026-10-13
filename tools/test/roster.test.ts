@@ -19,9 +19,16 @@ test("works use actor slugs", () => {
 test("published roster counts and Ma Le delivery stay current", () => {
   const active = ACTORS.filter((actor) => actor.status === "active");
   const newFaces = ACTORS.filter((actor) => actor.status === "new-face");
-  assert.equal(active.length, 6);
-  assert.equal(newFaces.length, 93);
-  assert.deepEqual(active.slice(-2).map((actor) => actor.slug), ["yan-lin", "ma-le"]);
+  assert.equal(active.length, 11);
+  assert.equal(newFaces.length, 88);
+  assert.deepEqual(
+    active.slice(0, 6).map((actor) => actor.slug),
+    ["tang-yunqiu", "misha-luo", "zhang-qiang", "chen-wei", "yan-lin", "ma-le"],
+  );
+  assert.deepEqual(
+    active.slice(6).map((actor) => actor.slug),
+    ["bao-man", "du-shouren", "qi-changfeng", "fan-yiming", "zawadi-mwangi"],
+  );
 
   const maLe = getActorAssets("ma-le").items;
   assert.equal(maLe.filter((item) => item.kind === "image").length, 55);

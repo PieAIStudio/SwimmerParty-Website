@@ -138,7 +138,9 @@ export function MemberExportDialog({
         {t(
           format === "zip" && selected.some((item) => item.conformance === "legacy")
             ? "assets.originalsLegacy"
-            : `assets.format.${format}Note`,
+            : format === "zip" && selected.some((item) => item.conformance === "source-original")
+              ? "assets.originalsSource"
+              : `assets.format.${format}Note`,
         )}
       </p>
       <p className="sp-small mt-4">

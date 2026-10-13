@@ -155,6 +155,7 @@
   "assets.failed": "Something went wrong. Try again.",
   "assets.exportFormat": "Download format",
   "assets.preview": "Sheet preview",
+  "assets.originalsSource": "Original PNG files with their supplied dimensions and backgrounds, plus the profile and terms of use.",
   "assets.originalsLegacy": "The original files, including older WebP images, with the profile and terms of use.",
   "assets.veoMissing": "This pack needs a front view, turnaround views and at least one expression. The expression set is not delivered yet.",
   "assets.seedanceUnverified": "The nine-image limit follows the production plan; official confirmation is pending.",

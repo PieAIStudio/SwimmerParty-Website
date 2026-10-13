@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/fan-yiming/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "facts": {
@@ -51,6 +51,49 @@
       },
       "prompt": "light-blue plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos.",
       "note": "Provisional audition look. Owner must select the new full-body audition image before full pack production."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied fan-yiming personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "bow",
+          "label": {
+            "en": "Bow",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / bow reference image."
+        },
+        {
+          "key": "microphone",
+          "label": {
+            "en": "Microphone",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / microphone reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "thumbs-up",
+          "label": {
+            "en": "Thumbs up",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / thumbs-up reference image."
+        }
+      ]
     }
   ],
   "roles": [],
@@ -69,5 +112,572 @@
       "chat": null,
       "note": "Create one dedicated character chat in Pics-A for the audition trial; use the old CC image only as face reference and enforce the specified adult proportions."
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0r7ci3-197779fc/voice-handoff.json"
+    ],
+    "images": [
+      {
+        "slot": "detail.hair-back",
+        "source": "fan-yiming/fan-yiming__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__detail__hair-back__v1.png",
+        "sha256": "ec8482d2a98a525b536a69feb5bad47cfead24d29fd7b2d69488c540af3a6bb8",
+        "bytes": 2209666,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "fan-yiming/fan-yiming__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__detail__hands__v1.png",
+        "sha256": "9dba4f1ceeaa12925ea6bb06e3792c2345cfacf198a90662d241fa9a641fb4ea",
+        "bytes": 943429,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "fan-yiming/fan-yiming__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__angry__v1.png",
+        "sha256": "204a269f1a1afd53b0a5f588f09fbd2666c2c4ab06902065e0eaaf2ea23717fb",
+        "bytes": 2260781,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "fan-yiming/fan-yiming__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__annoyed__v1.png",
+        "sha256": "40c271e77b9a948bb1a38bcc6d83bde974f4e4af0027e40a4a7a3d07a2bea15e",
+        "bytes": 2114303,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "fan-yiming/fan-yiming__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__awkward-smile__v1.png",
+        "sha256": "4b5ac0fb624c89a68aabe95d6729aecb3d54d87973ffa11bc7e9ca3189ae6edc",
+        "bytes": 1942152,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "fan-yiming/fan-yiming__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__confused__v1.png",
+        "sha256": "cba37ae48838bdbc5ec1298f0be33e0d95e82b8f003469da7cd7a52607e6e8a0",
+        "bytes": 2027978,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "fan-yiming/fan-yiming__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__contempt__v1.png",
+        "sha256": "f726d8adc8d734905c8d7f853e98094c1bc78c9c759e83f48e810a7f850a03ae",
+        "bytes": 2181905,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "fan-yiming/fan-yiming__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__cry__v1.png",
+        "sha256": "e99fad778ee33b399d10eedb8f27b02e6b51691c117912fafba9a1e7a8161144",
+        "bytes": 2258547,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "fan-yiming/fan-yiming__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__deadpan__v1.png",
+        "sha256": "7a2ad0f1fd18a4a7e89c5c5c92abea8de88fc23c192ecb0fe54deb9f697a2307",
+        "bytes": 2150488,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "fan-yiming/fan-yiming__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__determined__v1.png",
+        "sha256": "2ac2bb517d9fa56d0ad67ecfe2876e819b7701e5f8bff8ac19500db8dc50d104",
+        "bytes": 2065286,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "fan-yiming/fan-yiming__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__disgusted__v1.png",
+        "sha256": "aa6d8e505e7ded33f7d6234d453948e13cbd7353f6281fb9750e024e430b8ad5",
+        "bytes": 2040528,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "fan-yiming/fan-yiming__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__embarrassed__v1.png",
+        "sha256": "8f5b920c863c13d3751e546f5ba90fcc7431b08b800ec5386046f36d4e148c0a",
+        "bytes": 2171148,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "fan-yiming/fan-yiming__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__eyes-closed__v1.png",
+        "sha256": "ddc2a562d200bb2b1769abdd1edfe367b311f22b4c557cf6a17ac4d8fa29e848",
+        "bytes": 2037477,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "fan-yiming/fan-yiming__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__laugh__v1.png",
+        "sha256": "f68f1358b5ec9627f03c26ebef9f89df732cac9adf99885ee020bd0ede94a859",
+        "bytes": 2137681,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "fan-yiming/fan-yiming__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__neutral__v1.png",
+        "sha256": "f70d71c5f186fe94ea127f58d4de05084bef8fbfba9876c2d2a1ab52012dbb2c",
+        "bytes": 2158747,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "fan-yiming/fan-yiming__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__pain__v1.png",
+        "sha256": "341828222c0022290291d11453b5e5cab62994118e32ba6ec20da9f0cc9c1cc3",
+        "bytes": 1954631,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "fan-yiming/fan-yiming__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__sad__v1.png",
+        "sha256": "418b3bbeb9074700cf46182f0c1c802c16e1c248908b14cd0c095afcd2eada9c",
+        "bytes": 1966544,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "fan-yiming/fan-yiming__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__scared__v1.png",
+        "sha256": "ac2971b91d53eec0c6bf9bd03fefaa772013e5fde8ea97e0f302ff8086ecf5f8",
+        "bytes": 2095507,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "fan-yiming/fan-yiming__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__shy__v1.png",
+        "sha256": "ede82892c328ecca17496d5b4cbd3cb3cd4d8d5311bfc33339e1075f44560806",
+        "bytes": 1980469,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "fan-yiming/fan-yiming__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__skeptical__v1.png",
+        "sha256": "d9b8439a49bd872300f190178bf1691a23860ee7a785e860a570fe29e4b5a86a",
+        "bytes": 2174445,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "fan-yiming/fan-yiming__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__sleepy__v1.png",
+        "sha256": "d41503a95d2fd819c3cb2cd04ff5245aec5577cccabd475227274e45fc32359d",
+        "bytes": 1874016,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "fan-yiming/fan-yiming__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__smile__v1.png",
+        "sha256": "8cbddcb5f83480bd6880bddeb3df730c6cebdb16a3d824283dc63bf76b33fead",
+        "bytes": 2221762,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "fan-yiming/fan-yiming__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__smug__v1.png",
+        "sha256": "1b30beed33c3e82967f19a951105827c21c53d007657f16cf93ab3f4fe11cfd8",
+        "bytes": 2245631,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "fan-yiming/fan-yiming__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__speaking__v1.png",
+        "sha256": "f04d9ab5c50f34e1167b3c6721c7cd09473e799b0eca3b34236f9dd8ee252c8c",
+        "bytes": 2102047,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "fan-yiming/fan-yiming__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__surprised__v1.png",
+        "sha256": "8aa36a13681438c068e6b1cc2815ab9f06368d75ba1952a49992a5b1f1894ce9",
+        "bytes": 2069909,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "fan-yiming/fan-yiming__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__thinking__v1.png",
+        "sha256": "8b7b0f6c4be1d800c3e264ffc4b767afad2ad6d4fd06df53280bc3d10ba3c378",
+        "bytes": 1717950,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "fan-yiming/fan-yiming__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__tired__v1.png",
+        "sha256": "e7162389895608d5a99c708f7c94373f80c6a26d5c1451c7a70955cec8e9749e",
+        "bytes": 2060830,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "fan-yiming/fan-yiming__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__expression__worried__v1.png",
+        "sha256": "67b23f0253fb9c0f8b3d9817f984cc42441227d55c770dafbb5d9384615c03c7",
+        "bytes": 2215108,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "fan-yiming/fan-yiming__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__face__down__v1.png",
+        "sha256": "0a326459bb00951139d9fcba6be5b60c2f341a389e8243c23bab91ea1396440a",
+        "bytes": 1923254,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "fan-yiming/fan-yiming__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__face__front__v1.png",
+        "sha256": "f31a3dff60251e468018c0f1aca1e4e078bc268f8f8d33ba97950e3614af2ed3",
+        "bytes": 2045770,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "fan-yiming/fan-yiming__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__face__side-right__v1.png",
+        "sha256": "ccab59cba546894edf985b51d17d4611ff766eebe51d750b8515cc988033514d",
+        "bytes": 2083303,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "fan-yiming/fan-yiming__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__face__side__v1.png",
+        "sha256": "3b6dcdd00f38ed74c6bd3a1c48a19a83d152730fbf1f4699d4c72d00434bf27d",
+        "bytes": 2093725,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "fan-yiming/fan-yiming__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__face__three-quarter-left__v1.png",
+        "sha256": "ee2b05ee4ce143eb4ec44e6eac74a1448be3d6a0e563a9550ab25b613cff812a",
+        "bytes": 2094931,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "fan-yiming/fan-yiming__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__face__three-quarter__v1.png",
+        "sha256": "324d8353c8961b3036917b59422f36fdb71e911e7a2020f1d81f507b3a99468b",
+        "bytes": 2034787,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "fan-yiming/fan-yiming__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__face__up__v1.png",
+        "sha256": "8902146c842d2eb8e8a2c37aa0b6d7ea66176b8a0cbb8e16054648105240531c",
+        "bytes": 1973955,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "fan-yiming/fan-yiming__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__pose__arms-crossed__v1.png",
+        "sha256": "ae7f47482c7a06cb24af2281a64f511c6b61cba1aa0717edd92413b053c30232",
+        "bytes": 854426,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "fan-yiming/fan-yiming__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__pose__phone__v1.png",
+        "sha256": "99bf59f9d7186ffc8e6aaefc485d9cf60dae04b840893ad76589493cc2533647",
+        "bytes": 993702,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "fan-yiming/fan-yiming__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__pose__point__v1.png",
+        "sha256": "67abc49fa25f2624b89f4c192a4eb82ee46478b5e3fd55b94929e1dc7bc8430e",
+        "bytes": 865641,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "fan-yiming/fan-yiming__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__pose__run__v1.png",
+        "sha256": "d7be5048b424c4683617e2d6518e8102dadce297f4b83b705cf39584b3ea3c1b",
+        "bytes": 941221,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "fan-yiming/fan-yiming__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__pose__sit__v1.png",
+        "sha256": "3a0ab846117ca5f087ccfb586fab8d388200774dd0d7e5517201861f9a919126",
+        "bytes": 1206054,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "fan-yiming/fan-yiming__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__pose__walk__v1.png",
+        "sha256": "a67338e4c92394cdc0e3f62466c5aaf9b71cf27ca4c0f49fb718539d8841be58",
+        "bytes": 918582,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "fan-yiming/fan-yiming__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__turnaround__back-three-quarter-left__v1.png",
+        "sha256": "e2340f93b7b05119932464df674227a533f15aceb092029defece75686ea86a6",
+        "bytes": 959647,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "fan-yiming/fan-yiming__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__turnaround__back-three-quarter-right__v1.png",
+        "sha256": "ceecfc5c60335a5525a2d17346e1525df8652e85e84160a4a62ce99ed589ed13",
+        "bytes": 999354,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "fan-yiming/fan-yiming__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__turnaround__back__v1.png",
+        "sha256": "c427945275285b56958ff85020f007324f7dcaee618dd48aa62e62f6e7b582fa",
+        "bytes": 1052911,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.front",
+        "source": "fan-yiming/fan-yiming__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__turnaround__front__v1.png",
+        "sha256": "43a046ab5c37e504c3180f4fa67cd2d4228d3f1cba2d21b2451a018359edd252",
+        "bytes": 1029068,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "fan-yiming/fan-yiming__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__turnaround__side__v1.png",
+        "sha256": "04ddd44956e2b38a13e278963e3dcee8af532e214ee176af546adb2d85cd25ba",
+        "bytes": 618303,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "fan-yiming/fan-yiming__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__turnaround__three-quarter__v1.png",
+        "sha256": "69e8d7fd39ee8e76afa9049c1cee435c43962ab0b5d0751c83d36e775e8e5ad0",
+        "bytes": 838668,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "fan-yiming/fan-yiming__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__wardrobe-personal__back__v1.png",
+        "sha256": "e45d4a551befa3b0c124c66dce8e6354874a1e572bf73b9af531e4e1dcbf65f2",
+        "bytes": 1016120,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.bow",
+        "source": "fan-yiming/fan-yiming__wardrobe-personal__bow__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__wardrobe-personal__bow__v1.png",
+        "sha256": "b0da25ac07b6a50fa6c7806eb40b18703195cdce3d4d5e85fc657ec3cb0d269e",
+        "bytes": 970071,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "fan-yiming/fan-yiming__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__wardrobe-personal__front__v1.png",
+        "sha256": "2c84c969edb6d56c3c77f502f8958268dd7b42d465c9ba1d60fb0d93c17603e3",
+        "bytes": 1054534,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.microphone",
+        "source": "fan-yiming/fan-yiming__wardrobe-personal__microphone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__wardrobe-personal__microphone__v1.png",
+        "sha256": "c6cae32785334540c07d4770360a3e6242c52ed64c5f752099eed65e9f2655e4",
+        "bytes": 978985,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "fan-yiming/fan-yiming__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__wardrobe-personal__portrait__v1.png",
+        "sha256": "9b3100dd05951aebd9dcb70185a714eb2fc21e82198bcfbe0fd8d2414431a6e5",
+        "bytes": 1938590,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "fan-yiming/fan-yiming__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__wardrobe-personal__side__v1.png",
+        "sha256": "5b9e098ff0d3fe54ece35e0ab93c8c1f79e7fe66f59038a6d56df15180c553a8",
+        "bytes": 743169,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "fan-yiming/fan-yiming__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__wardrobe-personal__three-quarter__v1.png",
+        "sha256": "16f118aa4f75093133098506b325f605927da3865bcfef842e539784db78982f",
+        "bytes": 863420,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.thumbs-up",
+        "source": "fan-yiming/fan-yiming__wardrobe-personal__thumbs-up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/fan-yiming__wardrobe-personal__thumbs-up__v1.png",
+        "sha256": "6aa9ca3d33085d3eb700e301a42da0ae43bc29c4ad7b3899afc66e844702ee61",
+        "bytes": 951053,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/fan-yiming/fan-yiming__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/voice/fan-yiming__voice__intro__v1.wav",
+        "sha256": "ad7ce46e1c3b546ec68fc5f2c29712db7613375a979801039161e78786c0c92a",
+        "bytes": 1067332,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/fan-yiming/fan-yiming__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/voice/fan-yiming__voice__intro-alt__v1.wav",
+        "sha256": "9d896d634a74bb38fe383a29c6fdd3bd9712971f89858a4fcbb880a005d69a6c",
+        "bytes": 1116542,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/fan-yiming/fan-yiming__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/voice/fan-yiming__voice__chat__v1.wav",
+        "sha256": "596ec9e8144bd0cd1d2b5f5ad876678705c157c063f6d1b30bfdc6be058c20aa",
+        "bytes": 842052,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/fan-yiming/fan-yiming__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/voice/fan-yiming__voice__happy__v1.wav",
+        "sha256": "9659c251fe7129b2bb17b4ca7dced4214e95eb1eab664a3078e9bb5ce269bf48",
+        "bytes": 588222,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/fan-yiming/fan-yiming__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/voice/fan-yiming__voice__angry__v1.wav",
+        "sha256": "880a6ecd3860934994808a57fb497abe2f092fa66d1d44dc3b55d0aa9aad0114",
+        "bytes": 695576,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/fan-yiming/fan-yiming__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/fan-yiming/staging/voice/fan-yiming__voice__sad__v1.wav",
+        "sha256": "6250c15245ab2937042767ace9d7d5affaa4f6b4cbc22b16e08683a75c951a2c",
+        "bytes": 765204,
+        "version": 1
+      }
+    ]
+  },
+  "demographics": {
+    "age": 36,
+    "gender": "male",
+    "origin": {
+      "zh": "江苏无锡",
+      "en": "Wuxi, Jiangsu"
+    },
+    "voiceLanguage": "zh"
+  },
+  "website": {
+    "published": true,
+    "order": 103,
+    "status": "active",
+    "tagline": {
+      "zh": "圆脸，侧分卷发，留着一小撮山羊胡。",
+      "en": "Round face, side-parted waves and a neat little goatee."
+    },
+    "introduction": {
+      "en": "East Asian (Chinese) man, about 36, chubby, about 168 cm; round face, short wavy hair with a side part, a neat goatee; light-blue top",
+      "zh": "圆脸，侧分卷发，留着一小撮山羊胡。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "fan-yiming-grok-02-20261013",
+      "actorSlugs": [
+        "fan-yiming"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-requested-motion-identity-and-head-body-scope-with-recorded-limitations",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/fan-yiming-grok-02-20261013/source.mp4",
+          "sourceSha256": "94090f9b4ceae8000c852aa73ec7ac4a1303dd45ce023f810aa841a5194c0d5d",
+          "public": "/media/works/samples/fan-yiming-grok-02-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }

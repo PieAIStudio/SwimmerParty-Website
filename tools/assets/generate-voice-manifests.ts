@@ -8,6 +8,9 @@ import { slotsOf } from "../../src/features/assets/asset-series.ts";
 import { loadActorProjection } from "../site/actor-data.ts";
 import { requireSources, requireMediaOptIn } from "./generated-media-common.ts";
 import { writeTransaction } from "./file-transaction.ts";
+import { loadAssetDelivery, verifyOriginalSource } from "./source-originals.ts";
+import { sourceFile } from "./generated-media-common.ts";
+import { checkMediaWorkSlot } from "./media-work-guard.ts";
 
 type DurationProbe = (file: string) => number | Promise<number>;
 const durationOf: DurationProbe = (file) =>
@@ -32,6 +35,7 @@ export async function generateVoiceManifests(
   root = process.cwd(),
   requested: readonly string[] = [],
   probe: DurationProbe = durationOf,
+  dryRun = false,
 ) {
   const data = await loadActorProjection(root);
   const unknown = requested.filter((slug) => !data.actors.some((actor) => actor.slug === slug));
@@ -44,6 +48,71 @@ export async function generateVoiceManifests(
     const manifestPath = path.join(root, "src/content/actors", actor.slug, "assets.json");
     const manifest = actorAssetsSchema.parse(JSON.parse(await readFile(manifestPath, "utf8")));
     if (manifest.slug !== actor.slug) throw new Error(`Manifest slug mismatch: ${manifestPath}`);
+    const delivery = await loadAssetDelivery(root, actor.slug);
+    if (delivery) {
+      for (const pin of delivery.voices) {
+        checkMediaWorkSlot();
+        const file = sourceFile(root, pin.source, "assets-inbox");
+        const bytes = await readFile(file);
+        verifyOriginalSource(bytes, pin);
+        const format =
+          path.extname(file).toLowerCase() === ".wav"
+            ? "wav"
+            : path.extname(file).toLowerCase() === ".mp3"
+              ? "mp3"
+              : null;
+        if (
+          !format ||
+          (format === "wav" &&
+            (bytes.toString("ascii", 0, 4) !== "RIFF" || bytes.toString("ascii", 8, 12) !== "WAVE"))
+        )
+          throw new Error(`Invalid voice source format: ${file}`);
+        const duration = await probe(file);
+        if (!Number.isFinite(duration) || duration <= 0)
+          throw new Error(`Invalid voice duration: ${file}`);
+        const object = `voice/${actor.slug}/${actor.slug}__voice__${pin.slot}__v${pin.version}__${pin.sha256.slice(0, 16)}.${format}`;
+        const local = path.join(root, ".assets-local", object);
+        const existingBytes = await readFile(local).catch((error: NodeJS.ErrnoException) => {
+          if (error.code !== "ENOENT") throw error;
+          return null;
+        });
+        if (existingBytes && !existingBytes.equals(bytes))
+          throw new Error(`Immutable voice source changed: ${object}`);
+        const url = `/api/voice/${actor.slug}/${pin.slot}`;
+        const item: AssetItem = {
+          kind: "voice",
+          slot: `voice.${pin.slot}`,
+          series: "voice",
+          key: pin.slot,
+          look: null,
+          conformance: "source-original",
+          version: pin.version,
+          width: 0,
+          height: 0,
+          bytes: bytes.length,
+          sha256: pin.sha256,
+          sourceSha256: pin.sha256,
+          bbox: { left: 0, top: 0, right: 0, bottom: 0 },
+          format,
+          object,
+          preview: url,
+          thumb: url,
+          previewUrl: url,
+          durationSec: Math.round(duration * 10) / 10,
+          ...(pin.transcript ? { transcript: { text: pin.transcript } } : {}),
+        };
+        const index = manifest.items.findIndex((current) => current.slot === item.slot);
+        if (index === -1) manifest.items.push(item);
+        else manifest.items[index] = item;
+        if (!existingBytes) changes.push({ path: local, bytes });
+        count++;
+      }
+      changes.push({
+        path: manifestPath,
+        bytes: Buffer.from(`${JSON.stringify(manifest, null, 2)}\n`),
+      });
+      continue;
+    }
     const voiceRoot = path.join(
       root,
       "media-pack/library/voice",
@@ -132,13 +201,16 @@ export async function generateVoiceManifests(
       bytes: Buffer.from(`${JSON.stringify(manifest, null, 2)}\n`),
     });
   }
-  await writeTransaction(changes);
+  if (!dryRun) await writeTransaction(changes);
   return count;
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   requireMediaOptIn();
-  const slugs = process.argv.slice(2).filter((value) => value !== "--generate-media");
+  const args = process.argv.slice(2);
+  if (args.some((arg) => arg.startsWith("--") && !["--generate-media", "--dry-run"].includes(arg)))
+    throw new Error("Unknown voice option");
+  const slugs = args.filter((value) => !value.startsWith("--"));
   process.stdout.write(
-    `generated ${await generateVoiceManifests(process.cwd(), slugs)} voice entries\n`,
+    `${args.includes("--dry-run") ? "validated" : "generated"} ${await generateVoiceManifests(process.cwd(), slugs, durationOf, args.includes("--dry-run"))} voice entries\n`,
   );
 }

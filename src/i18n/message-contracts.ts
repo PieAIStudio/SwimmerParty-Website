@@ -65,6 +65,7 @@ export interface MessageContracts {
   readonly "assets.noSeed": {  };
   readonly "assets.notNow": {  };
   readonly "assets.originalsLegacy": {  };
+  readonly "assets.originalsSource": {  };
   readonly "assets.overLimit": { readonly "count": string | number | bigint | boolean | null | undefined | Date; readonly "limit": string | number | bigint | boolean | null | undefined | Date; };
   readonly "assets.pending": {  };
   readonly "assets.preparing": {  };

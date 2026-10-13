@@ -1,6 +1,61 @@
 {
   "slug": "zawadi-mwangi",
-  "looks": [],
+  "looks": [
+    {
+      "id": "club-training",
+      "kind": "personal",
+      "label": {
+        "en": "Club training",
+        "zh": "训练造型"
+      },
+      "prompt": "Use the supplied zawadi-mwangi club-training reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied club-training / portrait reference image."
+        }
+      ]
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied zawadi-mwangi personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "extra-1",
+          "label": {
+            "en": "Extra 1",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / extra-1 reference image."
+        },
+        {
+          "key": "extra-2",
+          "label": {
+            "en": "Extra 2",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / extra-2 reference image."
+        },
+        {
+          "key": "extra-3",
+          "label": {
+            "en": "Extra 3",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / extra-3 reference image."
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "kind": "image",
@@ -8,13 +63,188 @@
       "series": "turnaround",
       "key": "front",
       "look": null,
-      "conformance": "v1",
-      "version": 0.1,
+      "conformance": "source-original",
+      "version": 1,
       "width": 941,
       "height": 1672,
-      "bytes": 872005,
-      "sha256": "574ab7d66413fb965e1f8edbfb541a1f295f2f16e37483fec378ef3bb3dba057",
-      "sourceSha256": "574ab7d66413fb965e1f8edbfb541a1f295f2f16e37483fec378ef3bb3dba057",
+      "bytes": 799930,
+      "sha256": "3789759bb599a7836b324760381fb91218a34e7479363be84597bba82618ef09",
+      "sourceSha256": "3789759bb599a7836b324760381fb91218a34e7479363be84597bba82618ef09",
+      "bbox": {
+        "left": 0.03294367693942614,
+        "top": 0.010167464114832535,
+        "right": 0.9659936238044633,
+        "bottom": 0.9892344497607656
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/3789759bb599a783/zawadi-mwangi__turnaround__front__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/turnaround.front.webp",
+      "thumb": "/media/assets/zawadi-mwangi/turnaround.front.thumb.webp",
+      "large": "/media/assets/zawadi-mwangi/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7092646782156822,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 792252,
+      "sha256": "e2ff7ab54500ab454bc95b6499d925444e1ca9b12afd80c7ae9f2e830c85ad14",
+      "sourceSha256": "e2ff7ab54500ab454bc95b6499d925444e1ca9b12afd80c7ae9f2e830c85ad14",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.012559808612440191,
+        "right": 0.9574920297555791,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/e2ff7ab54500ab45/zawadi-mwangi__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/zawadi-mwangi/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.715114608809726,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 524301,
+      "sha256": "181cd79dc666a8f53bb19db4ebff725f746124a68c416cda6288fbc182781887",
+      "sourceSha256": "181cd79dc666a8f53bb19db4ebff725f746124a68c416cda6288fbc182781887",
+      "bbox": {
+        "left": 0,
+        "top": 0.028110047846889953,
+        "right": 0.9787460148777896,
+        "bottom": 0.9754784688995215
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/181cd79dc666a8f5/zawadi-mwangi__turnaround__side__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/turnaround.side.webp",
+      "thumb": "/media/assets/zawadi-mwangi/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8247626723072777,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 766110,
+      "sha256": "cbc46e6b6f906c679451c0465b439cd20feab67b08b7af53a0319887de5cb540",
+      "sourceSha256": "cbc46e6b6f906c679451c0465b439cd20feab67b08b7af53a0319887de5cb540",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.04066985645933014,
+        "right": 0.9766206163655685,
+        "bottom": 0.9354066985645934
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/cbc46e6b6f906c67/zawadi-mwangi__turnaround__back__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/turnaround.back.webp",
+      "thumb": "/media/assets/zawadi-mwangi/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7313773395908862,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 833037,
+      "sha256": "d496762352912086546cfa99c18e4f1ed9dceb8b105b78b2dc90e52c48fca27d",
+      "sourceSha256": "d496762352912086546cfa99c18e4f1ed9dceb8b105b78b2dc90e52c48fca27d",
+      "bbox": {
+        "left": 0.04357066950053135,
+        "top": 0.02930622009569378,
+        "right": 0.8990435706695006,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/d496762352912086/zawadi-mwangi__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/zawadi-mwangi/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.712190914684063,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 823219,
+      "sha256": "bfd1bd271a520b359878af249bc7179502566ba7c73491985b3328b30fbea028",
+      "sourceSha256": "bfd1bd271a520b359878af249bc7179502566ba7c73491985b3328b30fbea028",
+      "bbox": {
+        "left": 0.030818278427205102,
+        "top": 0.028708133971291867,
+        "right": 0.9851222104144527,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/bfd1bd271a520b35/zawadi-mwangi__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/zawadi-mwangi/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7146690632484022,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1870876,
+      "sha256": "b7c826462659ac7d722a84585b17d9c94356745a7e6c4697436132ad3c7043c4",
+      "sourceSha256": "b7c826462659ac7d722a84585b17d9c94356745a7e6c4697436132ad3c7043c4",
       "bbox": {
         "left": 0,
         "top": 0,
@@ -22,11 +252,1406 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "zawadi-mwangi/CC-035.png",
-      "preview": "/media/assets/zawadi-mwangi/turnaround.front.webp",
-      "large": "/media/assets/zawadi-mwangi/turnaround.front.large.webp",
-      "thumb": "/media/assets/zawadi-mwangi/turnaround.front.thumb.webp",
-      "blur": "data:image/webp;base64,UklGRoABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSMoAAAABkGPbtmlbc+9zn237pbYz26yCKmDbiIzIiGwrNVPb7/2/gn0LERETADAotiWBQ+TwoC0GuQzaVwPgciCzP5iykQkScuj3j9IgCR309Un5kAEcXQ+/H7fVkMCgMLFOv9ODABj0Tq7/0+W+OhiD+dLbf3oYMwXjcFj5eH57nXIE53CYp63970lHcDCEU0c3BYEBHI6Ul0ue4IILZURTBCRAQgzFOlMmZEIGxVhSBSQhiSJVqV7gCPznhbtGee73hpgcBRciSgCfdmUwVlA4IJAAAACQBACdASoMABUAPwFqrE6rJiQiMAgBYCAJaAC1CE3J/jeBcDBZy0RwP57Q6GAA/UnnroR6p+3pHs+sz2cLae+wAhq/hLVk3h7raL2S3dXd2xo17s3bn8VchAQm+ANxmOYt1GJomnKJAJ9luyW6vMbgZ9vxOkgNYVP431z6G/A9sUi/On2RVX37L6mW9YgAAAA="
+      "object": "zawadi-mwangi/b7c826462659ac7d/zawadi-mwangi__face__front__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/face.front.webp",
+      "thumb": "/media/assets/zawadi-mwangi/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3938889708088209,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1691604,
+      "sha256": "f512d7dd6bc96ab36dff09443289fe90088572fff037f0576a6ff8f885d60b15",
+      "sourceSha256": "f512d7dd6bc96ab36dff09443289fe90088572fff037f0576a6ff8f885d60b15",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/f512d7dd6bc96ab3/zawadi-mwangi__face__three-quarter__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/face.three-quarter.webp",
+      "thumb": "/media/assets/zawadi-mwangi/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4156094758197784,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1802594,
+      "sha256": "8185a154d69d0f90aa921ef535d24825753771ca882387cdcc5d481eea3a3361",
+      "sourceSha256": "8185a154d69d0f90aa921ef535d24825753771ca882387cdcc5d481eea3a3361",
+      "bbox": {
+        "left": 0.036131774707757705,
+        "top": 0.010167464114832535,
+        "right": 0.9829968119022316,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/8185a154d69d0f90/zawadi-mwangi__face__side__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/face.side.webp",
+      "thumb": "/media/assets/zawadi-mwangi/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4089815883540365,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1889181,
+      "sha256": "06e850cc0a6d618ea81f1e63782c4fef3cd5fad90b57049910d3ec1aab747ad7",
+      "sourceSha256": "06e850cc0a6d618ea81f1e63782c4fef3cd5fad90b57049910d3ec1aab747ad7",
+      "bbox": {
+        "left": 0,
+        "top": 0.0017942583732057417,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/06e850cc0a6d618e/zawadi-mwangi__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/face.three-quarter-left.webp",
+      "thumb": "/media/assets/zawadi-mwangi/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.38403739277669585,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1522485,
+      "sha256": "e8456639facf99b984a3bf13a009aec23e6632311430d78a6fa19b53b07c82d7",
+      "sourceSha256": "e8456639facf99b984a3bf13a009aec23e6632311430d78a6fa19b53b07c82d7",
+      "bbox": {
+        "left": 0,
+        "top": 0.011961722488038277,
+        "right": 0.9787460148777896,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/e8456639facf99b9/zawadi-mwangi__face__side-right__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/face.side-right.webp",
+      "thumb": "/media/assets/zawadi-mwangi/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4420047135033991,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1605377,
+      "sha256": "696bdde2b8907b93087bd4aee15089e8d83aefeb6948c4cbdf7975b6199b96b7",
+      "sourceSha256": "696bdde2b8907b93087bd4aee15089e8d83aefeb6948c4cbdf7975b6199b96b7",
+      "bbox": {
+        "left": 0,
+        "top": 0.06638755980861244,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/696bdde2b8907b93/zawadi-mwangi__face__up__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/face.up.webp",
+      "thumb": "/media/assets/zawadi-mwangi/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.43379358211004276,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1794122,
+      "sha256": "66430fcfca45600a4aa5f21d04283ea708b4d77ad8bb39ca450f51d0f89ccee3",
+      "sourceSha256": "66430fcfca45600a4aa5f21d04283ea708b4d77ad8bb39ca450f51d0f89ccee3",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/66430fcfca45600a/zawadi-mwangi__face__down__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/face.down.webp",
+      "thumb": "/media/assets/zawadi-mwangi/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.38540962225871894,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1642769,
+      "sha256": "ccbf2547cea3da20e5c31ffee5ce3e7f9fec60e4ca98e47dd67688647a300f3c",
+      "sourceSha256": "ccbf2547cea3da20e5c31ffee5ce3e7f9fec60e4ca98e47dd67688647a300f3c",
+      "bbox": {
+        "left": 0,
+        "top": 0.04844497607655503,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/ccbf2547cea3da20/zawadi-mwangi__expression__neutral__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.neutral.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.38201623031591153,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1787175,
+      "sha256": "3d678249367fd0331c11758ca3ecc6214907d4f890df995ae913d43c24e6b726",
+      "sourceSha256": "3d678249367fd0331c11758ca3ecc6214907d4f890df995ae913d43c24e6b726",
+      "bbox": {
+        "left": 0,
+        "top": 0.009569377990430622,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/3d678249367fd033/zawadi-mwangi__expression__smile__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.smile.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3782872491343323,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1673085,
+      "sha256": "21930106b036f8e5ec7f07d0a6ce8bbc325eeb9a6bc2fb27e814af06302f48a5",
+      "sourceSha256": "21930106b036f8e5ec7f07d0a6ce8bbc325eeb9a6bc2fb27e814af06302f48a5",
+      "bbox": {
+        "left": 0,
+        "top": 0.10047846889952153,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/21930106b036f8e5/zawadi-mwangi__expression__laugh__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.laugh.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.38656066792427884,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1746765,
+      "sha256": "4c4572841ec12e52602cc969b7f0d15df77d6eb85084f54db7028da5464ff3ee",
+      "sourceSha256": "4c4572841ec12e52602cc969b7f0d15df77d6eb85084f54db7028da5464ff3ee",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/4c4572841ec12e52/zawadi-mwangi__expression__sad__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.sad.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.391674590301471,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1288451,
+      "sha256": "4097033788aad4a2f1e95de0075d232e2eb44d28265fa93fdcb94865a3dda0bf",
+      "sourceSha256": "4097033788aad4a2f1e95de0075d232e2eb44d28265fa93fdcb94865a3dda0bf",
+      "bbox": {
+        "left": 0,
+        "top": 0.02452153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/4097033788aad4a2/zawadi-mwangi__expression__cry__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.cry.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5443276520448063,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1358199,
+      "sha256": "56d3a1c9b92e2ec81dba4c94bd0d6d9413b6f9f1af3e746b1a34dd618ae34d88",
+      "sourceSha256": "56d3a1c9b92e2ec81dba4c94bd0d6d9413b6f9f1af3e746b1a34dd618ae34d88",
+      "bbox": {
+        "left": 0,
+        "top": 0.10047846889952153,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/56d3a1c9b92e2ec8/zawadi-mwangi__expression__annoyed__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.annoyed.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5162341294255831,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1340821,
+      "sha256": "94cd822f54481bf0a4cabb1d4b093954cc0ad1ba63a646754186de147d8c8522",
+      "sourceSha256": "94cd822f54481bf0a4cabb1d4b093954cc0ad1ba63a646754186de147d8c8522",
+      "bbox": {
+        "left": 0,
+        "top": 0.1590909090909091,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/94cd822f54481bf0/zawadi-mwangi__expression__angry__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.angry.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5129417956058149,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1403709,
+      "sha256": "b34b8abf5fcb730ec793ffbd738a955a1c767c1d5b5675e9de4cb62e42f171ba",
+      "sourceSha256": "b34b8abf5fcb730ec793ffbd738a955a1c767c1d5b5675e9de4cb62e42f171ba",
+      "bbox": {
+        "left": 0,
+        "top": 0.1854066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/b34b8abf5fcb730e/zawadi-mwangi__expression__surprised__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.surprised.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5293907529910662,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1280328,
+      "sha256": "27128b0a408285238c20b8af4d9eca12a1153999f5d978a18e4ef0afd7b5f3c0",
+      "sourceSha256": "27128b0a408285238c20b8af4d9eca12a1153999f5d978a18e4ef0afd7b5f3c0",
+      "bbox": {
+        "left": 0,
+        "top": 0.1423444976076555,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/27128b0a40828523/zawadi-mwangi__expression__scared__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.scared.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5126240027660689,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1448627,
+      "sha256": "13396ac9ac23f770ebffbd16b5b5924fea422ebfe828a6e8a04636e596e51a88",
+      "sourceSha256": "13396ac9ac23f770ebffbd16b5b5924fea422ebfe828a6e8a04636e596e51a88",
+      "bbox": {
+        "left": 0,
+        "top": 0.03289473684210526,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/13396ac9ac23f770/zawadi-mwangi__expression__disgusted__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.disgusted.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4801271425593256,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1768256,
+      "sha256": "3c42b48ce856c62607cb572c3c77e9dcf7fd684efd9613de6c018f47a79263e9",
+      "sourceSha256": "3c42b48ce856c62607cb572c3c77e9dcf7fd684efd9613de6c018f47a79263e9",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/3c42b48ce856c626/zawadi-mwangi__expression__embarrassed__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.embarrassed.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3836166350568722,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1305211,
+      "sha256": "b667f080acf0e9f351bea7aab2043ab9384a0329f58b2e4b66f29fe0afcb52e5",
+      "sourceSha256": "b667f080acf0e9f351bea7aab2043ab9384a0329f58b2e4b66f29fe0afcb52e5",
+      "bbox": {
+        "left": 0.019128586609989374,
+        "top": 0.01375598086124402,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/b667f080acf0e9f3/zawadi-mwangi__expression__tired__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.tired.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5515866760902837,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1220830,
+      "sha256": "a466c69d21b53fd409da0236e759d008b2898a8027b96b49d1b28ba94fa928d9",
+      "sourceSha256": "a466c69d21b53fd409da0236e759d008b2898a8027b96b49d1b28ba94fa928d9",
+      "bbox": {
+        "left": 0,
+        "top": 0.19138755980861244,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/a466c69d21b53fd4/zawadi-mwangi__expression__speaking__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.speaking.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5225048177394506,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1938570,
+      "sha256": "6a1d493fc8730877d6af54779f9fa504f3c7a54e415a4b9061d6531a936329f4",
+      "sourceSha256": "6a1d493fc8730877d6af54779f9fa504f3c7a54e415a4b9061d6531a936329f4",
+      "bbox": {
+        "left": 0,
+        "top": 0.02452153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/6a1d493fc8730877/zawadi-mwangi__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.eyes-closed.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4057248473323198,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1751051,
+      "sha256": "f4c648f68fd62fdf56f97a4755f28bb3edbbe510fba75aa906264c59a652467e",
+      "sourceSha256": "f4c648f68fd62fdf56f97a4755f28bb3edbbe510fba75aa906264c59a652467e",
+      "bbox": {
+        "left": 0,
+        "top": 0.009569377990430622,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/f4c648f68fd62fdf/zawadi-mwangi__expression__worried__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.worried.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.41604802993862783,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1696982,
+      "sha256": "86ff3457148360a3a66891002823b29e60e86e4f66cc5ba1aeadc0f2e0188288",
+      "sourceSha256": "86ff3457148360a3a66891002823b29e60e86e4f66cc5ba1aeadc0f2e0188288",
+      "bbox": {
+        "left": 0,
+        "top": 0.06638755980861244,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/86ff3457148360a3/zawadi-mwangi__expression__skeptical__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.skeptical.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4379604818247919,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1238229,
+      "sha256": "aaa0dfb26aae7550f8b39c5e93e15f152cae75fea00556ab4cc882c2cd87e5e4",
+      "sourceSha256": "aaa0dfb26aae7550f8b39c5e93e15f152cae75fea00556ab4cc882c2cd87e5e4",
+      "bbox": {
+        "left": 0,
+        "top": 0.15789473684210525,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/aaa0dfb26aae7550/zawadi-mwangi__expression__smug__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.smug.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5081011750708042,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1206126,
+      "sha256": "cad191f23319dadc39fd1aa15a3da7d1c8eaaba4584720360c465742edbdd259",
+      "sourceSha256": "cad191f23319dadc39fd1aa15a3da7d1c8eaaba4584720360c465742edbdd259",
+      "bbox": {
+        "left": 0,
+        "top": 0.01854066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/cad191f23319dadc/zawadi-mwangi__expression__contempt__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.contempt.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.510055601035242,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1201804,
+      "sha256": "c305978dba342deead2c9849e82eece461dbe742b79fcebe9e780488d27a7d7c",
+      "sourceSha256": "c305978dba342deead2c9849e82eece461dbe742b79fcebe9e780488d27a7d7c",
+      "bbox": {
+        "left": 0,
+        "top": 0.04007177033492823,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/c305978dba342dee/zawadi-mwangi__expression__confused__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.confused.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5083573160996395,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1165547,
+      "sha256": "7ff02f6e8cbb1922dace4a30b1b2fab74ca182f64d1c2a78347459075bba0486",
+      "sourceSha256": "7ff02f6e8cbb1922dace4a30b1b2fab74ca182f64d1c2a78347459075bba0486",
+      "bbox": {
+        "left": 0.03719447396386823,
+        "top": 0.03588516746411483,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/7ff02f6e8cbb1922/zawadi-mwangi__expression__thinking__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.thinking.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5727021035343648,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1188997,
+      "sha256": "6cbe1353734601ce87edc3027ae46c2ae6e857aeed08a760c157d4fa3625f280",
+      "sourceSha256": "6cbe1353734601ce87edc3027ae46c2ae6e857aeed08a760c157d4fa3625f280",
+      "bbox": {
+        "left": 0,
+        "top": 0.04129263913824058,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/6cbe1353734601ce/zawadi-mwangi__expression__determined__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.determined.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5037035482453379,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1376499,
+      "sha256": "87a1b124f2226b0cda8aa8a119b635c3170298809413ede3c3bc31f12d80dacb",
+      "sourceSha256": "87a1b124f2226b0cda8aa8a119b635c3170298809413ede3c3bc31f12d80dacb",
+      "bbox": {
+        "left": 0.025504782146652496,
+        "top": 0.07416267942583732,
+        "right": 0.9989373007438895,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/87a1b124f2226b0c/zawadi-mwangi__expression__shy__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.shy.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5138265308716676,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1144775,
+      "sha256": "4fac32220563c64513a014c71756fe12923f8cfcb21295f5486d066944c7555b",
+      "sourceSha256": "4fac32220563c64513a014c71756fe12923f8cfcb21295f5486d066944c7555b",
+      "bbox": {
+        "left": 0,
+        "top": 0.12746858168761221,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/4fac32220563c645/zawadi-mwangi__expression__pain__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.pain.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5242477952647241,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1341613,
+      "sha256": "0c987b143dd8eeb0e4856e90a1ac7efaadd028bdec84cbf68d286bb3a98489b5",
+      "sourceSha256": "0c987b143dd8eeb0e4856e90a1ac7efaadd028bdec84cbf68d286bb3a98489b5",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/0c987b143dd8eeb0/zawadi-mwangi__expression__sleepy__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.sleepy.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5209215738118361,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1241877,
+      "sha256": "e0ab9937b3c20e98558b3767553ee844b8162136d72a1e651ba37d33207ccc96",
+      "sourceSha256": "e0ab9937b3c20e98558b3767553ee844b8162136d72a1e651ba37d33207ccc96",
+      "bbox": {
+        "left": 0,
+        "top": 0.046052631578947366,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/e0ab9937b3c20e98/zawadi-mwangi__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.awkward-smile.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5585825676644515,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1222962,
+      "sha256": "6a5aa1be187d8560a7d1fa93e4024dc927a6e63486e613371d0de455dece03c8",
+      "sourceSha256": "6a5aa1be187d8560a7d1fa93e4024dc927a6e63486e613371d0de455dece03c8",
+      "bbox": {
+        "left": 0,
+        "top": 0.0029904306220095694,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/6a5aa1be187d8560/zawadi-mwangi__expression__deadpan__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/expression.deadpan.webp",
+      "thumb": "/media/assets/zawadi-mwangi/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.567171236951426,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.club-training.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "club-training",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 829891,
+      "sha256": "885fa84d9942eae7d6a62971ba77931125464915066d0bdd27217301f6bf2467",
+      "sourceSha256": "885fa84d9942eae7d6a62971ba77931125464915066d0bdd27217301f6bf2467",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 0.9766206163655685,
+        "bottom": 0.986244019138756
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/885fa84d9942eae7/zawadi-mwangi__wardrobe-club-training__front__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/wardrobe.club-training.front.webp",
+      "thumb": "/media/assets/zawadi-mwangi/wardrobe.club-training.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7096434872806594,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.club-training.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "club-training",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 588626,
+      "sha256": "2fdd058231df419a81b8831dc84f96bb4c0df3eb036d6f534cf8f214fa3babaa",
+      "sourceSha256": "2fdd058231df419a81b8831dc84f96bb4c0df3eb036d6f534cf8f214fa3babaa",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.05206463195691203,
+        "right": 0.8799149840595112,
+        "bottom": 0.9443447037701975
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/2fdd058231df419a/zawadi-mwangi__wardrobe-club-training__three-quarter__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/wardrobe.club-training.three-quarter.webp",
+      "thumb": "/media/assets/zawadi-mwangi/wardrobe.club-training.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.784499726852585,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.club-training.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "club-training",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 388392,
+      "sha256": "3b92ae6e1e5d489e126924a01da62c0032291c5144f0d11b7feb7eaa68ba0465",
+      "sourceSha256": "3b92ae6e1e5d489e126924a01da62c0032291c5144f0d11b7feb7eaa68ba0465",
+      "bbox": {
+        "left": 0.07863974495217853,
+        "top": 0.08019150209455415,
+        "right": 0.8129649309245484,
+        "bottom": 0.9245960502692998
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/3b92ae6e1e5d489e/zawadi-mwangi__wardrobe-club-training__side__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/wardrobe.club-training.side.webp",
+      "thumb": "/media/assets/zawadi-mwangi/wardrobe.club-training.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8670353997777934,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.club-training.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "club-training",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 701329,
+      "sha256": "89ad45abb66c7cad0239389e4cae03001a36365320f30b10068125f2af0283f9",
+      "sourceSha256": "89ad45abb66c7cad0239389e4cae03001a36365320f30b10068125f2af0283f9",
+      "bbox": {
+        "left": 0.028692879914984058,
+        "top": 0.04784688995215311,
+        "right": 0.9617428267800212,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/89ad45abb66c7cad/zawadi-mwangi__wardrobe-club-training__back__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/wardrobe.club-training.back.webp",
+      "thumb": "/media/assets/zawadi-mwangi/wardrobe.club-training.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.752647214355084,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.club-training.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "club-training",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1577472,
+      "sha256": "b1d721d0dbe0dfc202944056c42f73faaa4bbfafa9276e2e1500616415f2ba73",
+      "sourceSha256": "b1d721d0dbe0dfc202944056c42f73faaa4bbfafa9276e2e1500616415f2ba73",
+      "bbox": {
+        "left": 0,
+        "top": 0.020933014354066987,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/b1d721d0dbe0dfc2/zawadi-mwangi__wardrobe-club-training__portrait__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/wardrobe.club-training.portrait.webp",
+      "thumb": "/media/assets/zawadi-mwangi/wardrobe.club-training.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4198106971612201,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-1",
+      "series": "wardrobe",
+      "key": "extra-1",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 520234,
+      "sha256": "aec7b6c9f6643e48e3702b4016a16ab4cab87e5854810005012e0564d627d649",
+      "sourceSha256": "aec7b6c9f6643e48e3702b4016a16ab4cab87e5854810005012e0564d627d649",
+      "bbox": {
+        "left": 0.04357066950053135,
+        "top": 0.09748803827751196,
+        "right": 0.8575982996811902,
+        "bottom": 0.8672248803827751
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/aec7b6c9f6643e48/zawadi-mwangi__wardrobe-personal__extra-1__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/wardrobe.personal.extra-1.webp",
+      "thumb": "/media/assets/zawadi-mwangi/wardrobe.personal.extra-1.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8245402173194555,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-2",
+      "series": "wardrobe",
+      "key": "extra-2",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 558958,
+      "sha256": "b28f06e14a015b53fee5d9c31b2777bd0cbfec2694cd031c4a8ae02b9afa6db6",
+      "sourceSha256": "b28f06e14a015b53fee5d9c31b2777bd0cbfec2694cd031c4a8ae02b9afa6db6",
+      "bbox": {
+        "left": 0.0021253985122210413,
+        "top": 0.05143540669856459,
+        "right": 0.8905419766206164,
+        "bottom": 0.8869617224880383
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/b28f06e14a015b53/zawadi-mwangi__wardrobe-personal__extra-2__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/wardrobe.personal.extra-2.webp",
+      "thumb": "/media/assets/zawadi-mwangi/wardrobe.personal.extra-2.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8077010103269961,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-3",
+      "series": "wardrobe",
+      "key": "extra-3",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 583686,
+      "sha256": "2c908ac66fcf9be33ce680fe715fc8b6cb31ac0d3cba36437ead36b649d0f8ca",
+      "sourceSha256": "2c908ac66fcf9be33ce680fe715fc8b6cb31ac0d3cba36437ead36b649d0f8ca",
+      "bbox": {
+        "left": 0.14665249734325186,
+        "top": 0.16925837320574164,
+        "right": 0.8852284803400637,
+        "bottom": 0.9168660287081339
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/2c908ac66fcf9be3/zawadi-mwangi__wardrobe-personal__extra-3__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/wardrobe.personal.extra-3.webp",
+      "thumb": "/media/assets/zawadi-mwangi/wardrobe.personal.extra-3.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.793079361770284,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1399323,
+      "sha256": "3b7f26c18f7097dde48f83df5a4db4379b808038e6808c6aa12c5d286770f80d",
+      "sourceSha256": "3b7f26c18f7097dde48f83df5a4db4379b808038e6808c6aa12c5d286770f80d",
+      "bbox": {
+        "left": 0.0478515625,
+        "top": 0.016276041666666668,
+        "right": 0.970703125,
+        "bottom": 0.98828125
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/3b7f26c18f7097dd/zawadi-mwangi__pose__walk__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/pose.walk.webp",
+      "thumb": "/media/assets/zawadi-mwangi/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7557589213053385,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1285661,
+      "sha256": "e0a7b9da1ba7b6e214db0b5cb96f6878e21b339823d895758012cd8f44889bc9",
+      "sourceSha256": "e0a7b9da1ba7b6e214db0b5cb96f6878e21b339823d895758012cd8f44889bc9",
+      "bbox": {
+        "left": 0.0478515625,
+        "top": 0.016927083333333332,
+        "right": 0.955078125,
+        "bottom": 0.984375
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/e0a7b9da1ba7b6e2/zawadi-mwangi__pose__run__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/pose.run.webp",
+      "thumb": "/media/assets/zawadi-mwangi/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7928663889567057,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1625013,
+      "sha256": "1db111bbe39ce90e293c9fc76844925cd585ba5f9d909aee985fc8057b952e58",
+      "sourceSha256": "1db111bbe39ce90e293c9fc76844925cd585ba5f9d909aee985fc8057b952e58",
+      "bbox": {
+        "left": 0,
+        "top": 0.020833333333333332,
+        "right": 0.984375,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/1db111bbe39ce90e/zawadi-mwangi__pose__sit__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/pose.sit.webp",
+      "thumb": "/media/assets/zawadi-mwangi/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6759745279947916,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1323063,
+      "sha256": "ff68d8a2ea41bafdc420106e8a9336a8bbb1a1d546e5989ab2af05f1f1d15cd6",
+      "sourceSha256": "ff68d8a2ea41bafdc420106e8a9336a8bbb1a1d546e5989ab2af05f1f1d15cd6",
+      "bbox": {
+        "left": 0,
+        "top": 0.021484375,
+        "right": 0.97265625,
+        "bottom": 0.9713541666666666
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/ff68d8a2ea41bafd/zawadi-mwangi__pose__point__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/pose.point.webp",
+      "thumb": "/media/assets/zawadi-mwangi/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7824923197428385,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1316556,
+      "sha256": "9cf637f36e07a10e560179ac70d95a9a3ccc11210370637f3fd1338a928ca8e6",
+      "sourceSha256": "9cf637f36e07a10e560179ac70d95a9a3ccc11210370637f3fd1338a928ca8e6",
+      "bbox": {
+        "left": 0.0615234375,
+        "top": 0.01953125,
+        "right": 0.962890625,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/9cf637f36e07a10e/zawadi-mwangi__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/pose.arms-crossed.webp",
+      "thumb": "/media/assets/zawadi-mwangi/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7640158335367838,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1358030,
+      "sha256": "914bfcf9bbfc9c5fac5ebc6ad4aea250131ce71c52de6433353b23b1282c38c9",
+      "sourceSha256": "914bfcf9bbfc9c5fac5ebc6ad4aea250131ce71c52de6433353b23b1282c38c9",
+      "bbox": {
+        "left": 0.0400390625,
+        "top": 0.01171875,
+        "right": 0.986328125,
+        "bottom": 0.98046875
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/914bfcf9bbfc9c5f/zawadi-mwangi__pose__phone__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/pose.phone.webp",
+      "thumb": "/media/assets/zawadi-mwangi/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7407175699869791,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1194519,
+      "sha256": "482032db204da89bd128c02a2085ef650d757f3f28d7e5bd777b125ea9c04bf2",
+      "sourceSha256": "482032db204da89bd128c02a2085ef650d757f3f28d7e5bd777b125ea9c04bf2",
+      "bbox": {
+        "left": 0.0215311004784689,
+        "top": 0.024720893141945772,
+        "right": 0.9848484848484849,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/482032db204da89b/zawadi-mwangi__detail__hands__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/detail.hands.webp",
+      "thumb": "/media/assets/zawadi-mwangi/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6243516759129955,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 916725,
+      "sha256": "ecb08209ed017376ea2a39d0122afb99b04501e31c374d127a78fbcb0e54dd3f",
+      "sourceSha256": "ecb08209ed017376ea2a39d0122afb99b04501e31c374d127a78fbcb0e54dd3f",
+      "bbox": {
+        "left": 0,
+        "top": 0.007177033492822967,
+        "right": 0.9872408293460925,
+        "bottom": 0.9840510366826156
+      },
+      "format": "png",
+      "object": "zawadi-mwangi/ecb08209ed017376/zawadi-mwangi__detail__hair-back__v1.png",
+      "preview": "/media/assets/zawadi-mwangi/detail.hair-back.webp",
+      "thumb": "/media/assets/zawadi-mwangi/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7059731029763767,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
     },
     {
       "kind": "voice",
@@ -34,28 +1659,155 @@
       "series": "voice",
       "key": "intro",
       "look": null,
-      "conformance": "v1",
+      "conformance": "source-original",
       "version": 1,
       "width": 0,
       "height": 0,
-      "bytes": 230532,
-      "sha256": "3e03ed684a9934a45dd723dea92bf5731ef3a6011f5a77db3137d4b66eb2c1b5",
-      "sourceSha256": "3e03ed684a9934a45dd723dea92bf5731ef3a6011f5a77db3137d4b66eb2c1b5",
+      "bytes": 1552398,
+      "sha256": "c3b59912efc75b4818ce39bec44e556f7d94845291e7d4c6df1abf512c5152ed",
+      "sourceSha256": "c3b59912efc75b4818ce39bec44e556f7d94845291e7d4c6df1abf512c5152ed",
       "bbox": {
         "left": 0,
         "top": 0,
         "right": 0,
         "bottom": 0
       },
-      "format": "mp3",
-      "object": "voice/zawadi-mwangi/candidate-1.mp3",
+      "format": "wav",
+      "object": "voice/zawadi-mwangi/zawadi-mwangi__voice__intro__v1__c3b59912efc75b48.wav",
       "preview": "/api/voice/zawadi-mwangi/intro",
       "thumb": "/api/voice/zawadi-mwangi/intro",
       "previewUrl": "/api/voice/zawadi-mwangi/intro",
-      "durationSec": 19,
-      "transcript": {
-        "text": "Hello, I'm Zawadi Mwangi, twenty-nine, from Nairobi in Kenya. I ran the eight hundred metres for my country, so I know how to keep going when it hurts. I shaved my head before a race once and kept it. I'd love to play an athlete, a pilot, or a warrior in a story people remember."
-      }
+      "durationSec": 17.6
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1693518,
+      "sha256": "e35ef612c89a6ad9f9898cf1c9408a94bbd9030443dfe450689848cdec33549f",
+      "sourceSha256": "e35ef612c89a6ad9f9898cf1c9408a94bbd9030443dfe450689848cdec33549f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/zawadi-mwangi/zawadi-mwangi__voice__intro-alt__v1__e35ef612c89a6ad9.wav",
+      "preview": "/api/voice/zawadi-mwangi/intro-alt",
+      "thumb": "/api/voice/zawadi-mwangi/intro-alt",
+      "previewUrl": "/api/voice/zawadi-mwangi/intro-alt",
+      "durationSec": 19.2
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 889134,
+      "sha256": "42e0bb851ad69e36993f46cb7c2fd6d4786dd2f66c2427850520a8fdf1007c86",
+      "sourceSha256": "42e0bb851ad69e36993f46cb7c2fd6d4786dd2f66c2427850520a8fdf1007c86",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/zawadi-mwangi/zawadi-mwangi__voice__chat__v1__42e0bb851ad69e36.wav",
+      "preview": "/api/voice/zawadi-mwangi/chat",
+      "thumb": "/api/voice/zawadi-mwangi/chat",
+      "previewUrl": "/api/voice/zawadi-mwangi/chat",
+      "durationSec": 10.1
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 917358,
+      "sha256": "ddbafa9fb027d51f72ed993a03bf04b807b30927aaa38e8ae3a3d740b281deb6",
+      "sourceSha256": "ddbafa9fb027d51f72ed993a03bf04b807b30927aaa38e8ae3a3d740b281deb6",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/zawadi-mwangi/zawadi-mwangi__voice__happy__v1__ddbafa9fb027d51f.wav",
+      "preview": "/api/voice/zawadi-mwangi/happy",
+      "thumb": "/api/voice/zawadi-mwangi/happy",
+      "previewUrl": "/api/voice/zawadi-mwangi/happy",
+      "durationSec": 10.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 917358,
+      "sha256": "4738a07fd8627f4daf9b779b600149d241b94a7b3148e654eebcb0ce80dc51c9",
+      "sourceSha256": "4738a07fd8627f4daf9b779b600149d241b94a7b3148e654eebcb0ce80dc51c9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/zawadi-mwangi/zawadi-mwangi__voice__angry__v1__4738a07fd8627f4d.wav",
+      "preview": "/api/voice/zawadi-mwangi/angry",
+      "thumb": "/api/voice/zawadi-mwangi/angry",
+      "previewUrl": "/api/voice/zawadi-mwangi/angry",
+      "durationSec": 10.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 931470,
+      "sha256": "3d1b499ff6a07b82c6b293fad53a44ac317976734a342b0abbf61a8d7afc73d1",
+      "sourceSha256": "3d1b499ff6a07b82c6b293fad53a44ac317976734a342b0abbf61a8d7afc73d1",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/zawadi-mwangi/zawadi-mwangi__voice__sad__v1__3d1b499ff6a07b82.wav",
+      "preview": "/api/voice/zawadi-mwangi/sad",
+      "thumb": "/api/voice/zawadi-mwangi/sad",
+      "previewUrl": "/api/voice/zawadi-mwangi/sad",
+      "durationSec": 10.6
     }
   ]
 }

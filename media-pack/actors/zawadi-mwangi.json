@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/zawadi-mwangi/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-10"
   },
   "demographics": {
@@ -62,6 +62,60 @@
         "en": "Casting basics"
       },
       "prompt": "sage-green plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "club-training",
+      "kind": "personal",
+      "label": {
+        "en": "Club training",
+        "zh": "训练造型"
+      },
+      "prompt": "Use the supplied zawadi-mwangi club-training reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied club-training / portrait reference image."
+        }
+      ]
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied zawadi-mwangi personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "extra-1",
+          "label": {
+            "en": "Extra 1",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / extra-1 reference image."
+        },
+        {
+          "key": "extra-2",
+          "label": {
+            "en": "Extra 2",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / extra-2 reference image."
+        },
+        {
+          "key": "extra-3",
+          "label": {
+            "en": "Extra 3",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / extra-3 reference image."
+        }
+      ]
     }
   ],
   "roles": [],
@@ -74,5 +128,537 @@
     "chatgpt-web": {
       "chat": null
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/technical-handoff-20261013.json",
+      "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json"
+    ],
+    "images": [
+      {
+        "slot": "turnaround.front",
+        "source": "zawadi-mwangi/zawadi-mwangi__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/01-turnaround-front.png",
+        "sha256": "3789759bb599a7836b324760381fb91218a34e7479363be84597bba82618ef09",
+        "bytes": 799930,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "zawadi-mwangi/zawadi-mwangi__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/02-turnaround-three-quarter.png",
+        "sha256": "e2ff7ab54500ab454bc95b6499d925444e1ca9b12afd80c7ae9f2e830c85ad14",
+        "bytes": 792252,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "zawadi-mwangi/zawadi-mwangi__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/03-turnaround-side.png",
+        "sha256": "181cd79dc666a8f53bb19db4ebff725f746124a68c416cda6288fbc182781887",
+        "bytes": 524301,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "zawadi-mwangi/zawadi-mwangi__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/04-turnaround-back.png",
+        "sha256": "cbc46e6b6f906c679451c0465b439cd20feab67b08b7af53a0319887de5cb540",
+        "bytes": 766110,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "zawadi-mwangi/zawadi-mwangi__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/05-turnaround-back-three-quarter-left.png",
+        "sha256": "d496762352912086546cfa99c18e4f1ed9dceb8b105b78b2dc90e52c48fca27d",
+        "bytes": 833037,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "zawadi-mwangi/zawadi-mwangi__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/06-turnaround-back-three-quarter-right.png",
+        "sha256": "bfd1bd271a520b359878af249bc7179502566ba7c73491985b3328b30fbea028",
+        "bytes": 823219,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "zawadi-mwangi/zawadi-mwangi__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/07-face-front.png",
+        "sha256": "b7c826462659ac7d722a84585b17d9c94356745a7e6c4697436132ad3c7043c4",
+        "bytes": 1870876,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "zawadi-mwangi/zawadi-mwangi__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/08-face-three-quarter.png",
+        "sha256": "f512d7dd6bc96ab36dff09443289fe90088572fff037f0576a6ff8f885d60b15",
+        "bytes": 1691604,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "zawadi-mwangi/zawadi-mwangi__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/09-face-side.png",
+        "sha256": "8185a154d69d0f90aa921ef535d24825753771ca882387cdcc5d481eea3a3361",
+        "bytes": 1802594,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "zawadi-mwangi/zawadi-mwangi__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/10-face-three-quarter-left.png",
+        "sha256": "06e850cc0a6d618ea81f1e63782c4fef3cd5fad90b57049910d3ec1aab747ad7",
+        "bytes": 1889181,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "zawadi-mwangi/zawadi-mwangi__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/11-face-side-right.png",
+        "sha256": "e8456639facf99b984a3bf13a009aec23e6632311430d78a6fa19b53b07c82d7",
+        "bytes": 1522485,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "zawadi-mwangi/zawadi-mwangi__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/12-face-up.png",
+        "sha256": "696bdde2b8907b93087bd4aee15089e8d83aefeb6948c4cbdf7975b6199b96b7",
+        "bytes": 1605377,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "zawadi-mwangi/zawadi-mwangi__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/13-face-down.png",
+        "sha256": "66430fcfca45600a4aa5f21d04283ea708b4d77ad8bb39ca450f51d0f89ccee3",
+        "bytes": 1794122,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/14-expression-neutral.png",
+        "sha256": "ccbf2547cea3da20e5c31ffee5ce3e7f9fec60e4ca98e47dd67688647a300f3c",
+        "bytes": 1642769,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/15-expression-smile.png",
+        "sha256": "3d678249367fd0331c11758ca3ecc6214907d4f890df995ae913d43c24e6b726",
+        "bytes": 1787175,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/16-expression-laugh.png",
+        "sha256": "21930106b036f8e5ec7f07d0a6ce8bbc325eeb9a6bc2fb27e814af06302f48a5",
+        "bytes": 1673085,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/17-expression-sad.png",
+        "sha256": "4c4572841ec12e52602cc969b7f0d15df77d6eb85084f54db7028da5464ff3ee",
+        "bytes": 1746765,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/18-expression-cry.png",
+        "sha256": "4097033788aad4a2f1e95de0075d232e2eb44d28265fa93fdcb94865a3dda0bf",
+        "bytes": 1288451,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/19-expression-annoyed.png",
+        "sha256": "56d3a1c9b92e2ec81dba4c94bd0d6d9413b6f9f1af3e746b1a34dd618ae34d88",
+        "bytes": 1358199,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/20-expression-angry.png",
+        "sha256": "94cd822f54481bf0a4cabb1d4b093954cc0ad1ba63a646754186de147d8c8522",
+        "bytes": 1340821,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/21-expression-surprised.png",
+        "sha256": "b34b8abf5fcb730ec793ffbd738a955a1c767c1d5b5675e9de4cb62e42f171ba",
+        "bytes": 1403709,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/22-expression-scared.png",
+        "sha256": "27128b0a408285238c20b8af4d9eca12a1153999f5d978a18e4ef0afd7b5f3c0",
+        "bytes": 1280328,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/23-expression-disgusted.png",
+        "sha256": "13396ac9ac23f770ebffbd16b5b5924fea422ebfe828a6e8a04636e596e51a88",
+        "bytes": 1448627,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/24-expression-embarrassed.png",
+        "sha256": "3c42b48ce856c62607cb572c3c77e9dcf7fd684efd9613de6c018f47a79263e9",
+        "bytes": 1768256,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/25-expression-tired.png",
+        "sha256": "b667f080acf0e9f351bea7aab2043ab9384a0329f58b2e4b66f29fe0afcb52e5",
+        "bytes": 1305211,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/26-expression-speaking.png",
+        "sha256": "a466c69d21b53fd409da0236e759d008b2898a8027b96b49d1b28ba94fa928d9",
+        "bytes": 1220830,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/27-expression-eyes-closed.png",
+        "sha256": "6a1d493fc8730877d6af54779f9fa504f3c7a54e415a4b9061d6531a936329f4",
+        "bytes": 1938570,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/28-expression-worried.png",
+        "sha256": "f4c648f68fd62fdf56f97a4755f28bb3edbbe510fba75aa906264c59a652467e",
+        "bytes": 1751051,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/29-expression-skeptical.png",
+        "sha256": "86ff3457148360a3a66891002823b29e60e86e4f66cc5ba1aeadc0f2e0188288",
+        "bytes": 1696982,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/30-expression-smug.png",
+        "sha256": "aaa0dfb26aae7550f8b39c5e93e15f152cae75fea00556ab4cc882c2cd87e5e4",
+        "bytes": 1238229,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/31-expression-contempt.png",
+        "sha256": "cad191f23319dadc39fd1aa15a3da7d1c8eaaba4584720360c465742edbdd259",
+        "bytes": 1206126,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/32-expression-confused.png",
+        "sha256": "c305978dba342deead2c9849e82eece461dbe742b79fcebe9e780488d27a7d7c",
+        "bytes": 1201804,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/33-expression-thinking.png",
+        "sha256": "7ff02f6e8cbb1922dace4a30b1b2fab74ca182f64d1c2a78347459075bba0486",
+        "bytes": 1165547,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/34-expression-determined.png",
+        "sha256": "6cbe1353734601ce87edc3027ae46c2ae6e857aeed08a760c157d4fa3625f280",
+        "bytes": 1188997,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/35-expression-shy.png",
+        "sha256": "87a1b124f2226b0cda8aa8a119b635c3170298809413ede3c3bc31f12d80dacb",
+        "bytes": 1376499,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/36-expression-pain.png",
+        "sha256": "4fac32220563c64513a014c71756fe12923f8cfcb21295f5486d066944c7555b",
+        "bytes": 1144775,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/37-expression-sleepy.png",
+        "sha256": "0c987b143dd8eeb0e4856e90a1ac7efaadd028bdec84cbf68d286bb3a98489b5",
+        "bytes": 1341613,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/38-expression-awkward-smile.png",
+        "sha256": "e0ab9937b3c20e98558b3767553ee844b8162136d72a1e651ba37d33207ccc96",
+        "bytes": 1241877,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "zawadi-mwangi/zawadi-mwangi__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/39-expression-deadpan.png",
+        "sha256": "6a5aa1be187d8560a7d1fa93e4024dc927a6e63486e613371d0de455dece03c8",
+        "bytes": 1222962,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.club-training.front",
+        "source": "zawadi-mwangi/zawadi-mwangi__wardrobe-club-training__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/40-wardrobe-club-training-front.png",
+        "sha256": "885fa84d9942eae7d6a62971ba77931125464915066d0bdd27217301f6bf2467",
+        "bytes": 829891,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.club-training.three-quarter",
+        "source": "zawadi-mwangi/zawadi-mwangi__wardrobe-club-training__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/41-wardrobe-club-training-three-quarter.png",
+        "sha256": "2fdd058231df419a81b8831dc84f96bb4c0df3eb036d6f534cf8f214fa3babaa",
+        "bytes": 588626,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.club-training.side",
+        "source": "zawadi-mwangi/zawadi-mwangi__wardrobe-club-training__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/42-wardrobe-club-training-side.png",
+        "sha256": "3b92ae6e1e5d489e126924a01da62c0032291c5144f0d11b7feb7eaa68ba0465",
+        "bytes": 388392,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.club-training.back",
+        "source": "zawadi-mwangi/zawadi-mwangi__wardrobe-club-training__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/43-wardrobe-club-training-back.png",
+        "sha256": "89ad45abb66c7cad0239389e4cae03001a36365320f30b10068125f2af0283f9",
+        "bytes": 701329,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.club-training.portrait",
+        "source": "zawadi-mwangi/zawadi-mwangi__wardrobe-club-training__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/44-wardrobe-club-training-codex-replacement.png",
+        "sha256": "b1d721d0dbe0dfc202944056c42f73faaa4bbfafa9276e2e1500616415f2ba73",
+        "bytes": 1577472,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-1",
+        "source": "zawadi-mwangi/zawadi-mwangi__wardrobe-personal__extra-1__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/45-wardrobe-personal-extra-1.png",
+        "sha256": "aec7b6c9f6643e48e3702b4016a16ab4cab87e5854810005012e0564d627d649",
+        "bytes": 520234,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-2",
+        "source": "zawadi-mwangi/zawadi-mwangi__wardrobe-personal__extra-2__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/slot-46-attempt-5.png",
+        "sha256": "b28f06e14a015b53fee5d9c31b2777bd0cbfec2694cd031c4a8ae02b9afa6db6",
+        "bytes": 558958,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-3",
+        "source": "zawadi-mwangi/zawadi-mwangi__wardrobe-personal__extra-3__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/slot-47-local-reframe.png",
+        "sha256": "2c908ac66fcf9be33ce680fe715fc8b6cb31ac0d3cba36437ead36b649d0f8ca",
+        "bytes": 583686,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "zawadi-mwangi/zawadi-mwangi__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/48-pose-walk-codex-replacement.png",
+        "sha256": "3b7f26c18f7097dde48f83df5a4db4379b808038e6808c6aa12c5d286770f80d",
+        "bytes": 1399323,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "zawadi-mwangi/zawadi-mwangi__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/49-pose-run-codex-replacement.png",
+        "sha256": "e0a7b9da1ba7b6e214db0b5cb96f6878e21b339823d895758012cd8f44889bc9",
+        "bytes": 1285661,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "zawadi-mwangi/zawadi-mwangi__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/50-pose-sit-codex-replacement.png",
+        "sha256": "1db111bbe39ce90e293c9fc76844925cd585ba5f9d909aee985fc8057b952e58",
+        "bytes": 1625013,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "zawadi-mwangi/zawadi-mwangi__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/51-pose-point-codex-image-v2.png",
+        "sha256": "ff68d8a2ea41bafdc420106e8a9336a8bbb1a1d546e5989ab2af05f1f1d15cd6",
+        "bytes": 1323063,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "zawadi-mwangi/zawadi-mwangi__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/52-pose-arms-crossed-codex-image.png",
+        "sha256": "9cf637f36e07a10e560179ac70d95a9a3ccc11210370637f3fd1338a928ca8e6",
+        "bytes": 1316556,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "zawadi-mwangi/zawadi-mwangi__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/53-pose-phone-codex-image.png",
+        "sha256": "914bfcf9bbfc9c5fac5ebc6ad4aea250131ce71c52de6433353b23b1282c38c9",
+        "bytes": 1358030,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "zawadi-mwangi/zawadi-mwangi__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/54-detail-hands-codex-image.png",
+        "sha256": "482032db204da89bd128c02a2085ef650d757f3f28d7e5bd777b125ea9c04bf2",
+        "bytes": 1194519,
+        "version": 1
+      },
+      {
+        "slot": "detail.hair-back",
+        "source": "zawadi-mwangi/zawadi-mwangi__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/full-pack/55-detail-hair-back-codex-image.png",
+        "sha256": "ecb08209ed017376ea2a39d0122afb99b04501e31c374d127a78fbcb0e54dd3f",
+        "bytes": 916725,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/zawadi-mwangi/zawadi-mwangi__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/voice/local-voice/technical-variant-v1-20261012/selected-candidate-a/zawadi-mwangi__voice__intro__v1.wav",
+        "sha256": "c3b59912efc75b4818ce39bec44e556f7d94845291e7d4c6df1abf512c5152ed",
+        "bytes": 1552398,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/zawadi-mwangi/zawadi-mwangi__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/voice/local-voice/technical-variant-v1-20261012/selected-candidate-a/zawadi-mwangi__voice__intro-alt__v1.wav",
+        "sha256": "e35ef612c89a6ad9f9898cf1c9408a94bbd9030443dfe450689848cdec33549f",
+        "bytes": 1693518,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/zawadi-mwangi/zawadi-mwangi__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/voice/local-voice/technical-variant-v1-20261012/selected-candidate-a/zawadi-mwangi__voice__chat__v1.wav",
+        "sha256": "42e0bb851ad69e36993f46cb7c2fd6d4786dd2f66c2427850520a8fdf1007c86",
+        "bytes": 889134,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/zawadi-mwangi/zawadi-mwangi__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/voice/local-voice/technical-variant-v1-20261012/selected-candidate-a/zawadi-mwangi__voice__happy__v1.wav",
+        "sha256": "ddbafa9fb027d51f72ed993a03bf04b807b30927aaa38e8ae3a3d740b281deb6",
+        "bytes": 917358,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/zawadi-mwangi/zawadi-mwangi__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/voice/local-voice/technical-variant-v1-20261012/selected-candidate-a/zawadi-mwangi__voice__angry__v1.wav",
+        "sha256": "4738a07fd8627f4daf9b779b600149d241b94a7b3148e654eebcb0ce80dc51c9",
+        "bytes": 917358,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/zawadi-mwangi/zawadi-mwangi__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/staging/actors/zawadi-mwangi-20261010/voice/local-voice/technical-variant-v1-20261012/selected-candidate-a/zawadi-mwangi__voice__sad__v1.wav",
+        "sha256": "3d1b499ff6a07b82c6b293fad53a44ac317976734a342b0abbf61a8d7afc73d1",
+        "bytes": 931470,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 104,
+    "status": "active",
+    "tagline": {
+      "zh": "高个子，光头，下颌线锋利，眼睛很大。",
+      "en": "Tall, shaved head, a sharp jaw and big expressive eyes."
+    },
+    "introduction": {
+      "en": "Black woman, about 29, tall and athletic, about 178 cm; shaved head, a sharp jaw, big expressive eyes; sage-green top",
+      "zh": "高个子，光头，下颌线锋利，眼睛很大。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "club-training",
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": []
 }

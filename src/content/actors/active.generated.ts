@@ -6,4 +6,21 @@ import { profile as actor2 } from "./zhang-qiang/profile.ts";
 import { profile as actor3 } from "./chen-wei/profile.ts";
 import { profile as actor4 } from "./yan-lin/profile.ts";
 import { profile as actor5 } from "./ma-le/profile.ts";
-export const ACTIVE_ACTORS: Actor[] = [actor0, actor1, actor2, actor3, actor4, actor5];
+import { profile as actor6 } from "./bao-man/profile.ts";
+import { profile as actor7 } from "./du-shouren/profile.ts";
+import { profile as actor8 } from "./qi-changfeng/profile.ts";
+import { profile as actor9 } from "./fan-yiming/profile.ts";
+import { profile as actor10 } from "./zawadi-mwangi/profile.ts";
+export const ACTIVE_ACTORS: Actor[] = [
+  actor0,
+  actor1,
+  actor2,
+  actor3,
+  actor4,
+  actor5,
+  actor6,
+  actor7,
+  actor8,
+  actor9,
+  actor10,
+];

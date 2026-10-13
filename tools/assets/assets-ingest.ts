@@ -17,13 +17,17 @@ import { localAssetStore, type AssetStore } from "../../src/features/assets/serv
 import { configuredBlobStore } from "../../src/features/assets/server/blob-store.ts";
 import { runtimeModes } from "../../src/config/server.ts";
 import { actorByCode, isMain, reportError, writeTransaction } from "./assets-common.ts";
+import { loadAssetDelivery, prepareSourceOriginal } from "./source-originals.ts";
+import type { AssetDelivery } from "../../src/contracts/asset-delivery.ts";
+import { checkMediaWorkSlot } from "./media-work-guard.ts";
 
 export type IngestOptions = {
   root?: string;
   dryRun?: boolean;
+  sourceOriginals?: boolean;
   store?: AssetStore;
 };
-type Prepared = { item: AssetItem; source: Buffer; preview: Buffer; thumb: Buffer };
+type Prepared = { item: AssetItem; source: Buffer; preview: Buffer; thumb: Buffer; large?: Buffer };
 
 async function writeDryRunReport(
   root: string,
@@ -101,7 +105,9 @@ async function prepare(
   code: string,
   manifest: ActorAssets,
   root: string,
+  delivery: AssetDelivery | null = null,
 ): Promise<Prepared> {
+  checkMediaWorkSlot();
   const match = /^([a-z0-9-]+|SP-\d{2,4})__([a-z0-9-]+)__([a-z0-9-]+)__v(\d+)\.(png|webp)$/.exec(
     file,
   );
@@ -149,6 +155,18 @@ async function prepare(
     throw new Error("Input must be a regular file, not a directory or symbolic link");
   const source = await readFile(sourcePath);
   const sourceSha256 = createHash("sha256").update(source).digest("hex");
+  if (delivery) {
+    const pin = delivery.images.find((item) => item.slot === slot.slot);
+    if (!pin || pin.source !== `${code}/${file}` || pin.version !== version || format !== "png")
+      throw new Error(`No exact production source pin for ${slot.slot}`);
+    return prepareSourceOriginal(source, pin, {
+      slug: manifest.slug,
+      group,
+      series: series.id,
+      key,
+      look,
+    });
+  }
   const originalImage = sharp(source, { limitInputPixels: 40_000_000 });
   const image = originalImage.clone();
   const metadata = await image.metadata();
@@ -261,15 +279,24 @@ export async function ingest(code: string, options: IngestOptions = {}) {
   const root = path.resolve(options.root ?? process.cwd());
   const actor = actorByCode(code);
   const current = getActorAssets(actor.slug, root);
+  const delivery = options.sourceOriginals ? await loadAssetDelivery(root, actor.slug) : null;
+  if (options.sourceOriginals && !delivery)
+    throw new Error("Source-original import requires explicit production assetDelivery pins");
   const files = (await readdir(path.join(root, "assets-inbox", code)))
     .filter((file) => !["TODO.md", ".DS_Store"].includes(file))
     .sort();
   if (!files.length) throw new Error(`No input images in assets-inbox/${code}`);
+  if (
+    delivery &&
+    (files.length !== delivery.images.length ||
+      delivery.images.some((pin) => !files.includes(path.basename(pin.source))))
+  )
+    throw new Error("Inbox and pinned image set differ; nothing written");
   const prepared: Prepared[] = [];
   const errors: Error[] = [];
   for (const file of files) {
     try {
-      prepared.push(await prepare(file, code, current, root));
+      prepared.push(await prepare(file, code, current, root, delivery));
     } catch (error) {
       errors.push(new Error(`${file}: ${error instanceof Error ? error.message : String(error)}`));
     }
@@ -283,7 +310,11 @@ export async function ingest(code: string, options: IngestOptions = {}) {
   const previousVersions = new Set(
     current.items
       .filter(
-        (item) => item.conformance === "v1" && Number.isInteger(item.version) && item.version >= 1,
+        (item) =>
+          item.kind === "image" &&
+          item.conformance !== "legacy" &&
+          Number.isInteger(item.version) &&
+          item.version >= 1,
       )
       .map((item) => item.version),
   );
@@ -296,7 +327,9 @@ export async function ingest(code: string, options: IngestOptions = {}) {
     errors.push(new Error(`Use v${previous}, or upgrade the entire batch to v${previous + 1}`));
   if (errors.length) throw new AggregateError(errors, "Asset validation failed; nothing written");
   const upgraded = previous !== undefined && version === previous + 1;
-  const items = upgraded ? [] : current.items.filter((item) => !seen.has(item.slot));
+  const items = upgraded
+    ? current.items.filter((item) => item.kind !== "image")
+    : current.items.filter((item) => !seen.has(item.slot));
   items.push(...prepared.map(({ item }) => item));
   const order = assetSlotOrder(current.looks);
   items.sort((a, b) => order.indexOf(a.slot) - order.indexOf(b.slot));
@@ -307,11 +340,17 @@ export async function ingest(code: string, options: IngestOptions = {}) {
     (runtimeModes().store === "blob"
       ? await configuredBlobStore()
       : localAssetStore(path.resolve(root, process.env.ASSET_LOCAL_ROOT ?? ".assets-local")));
-  for (const item of prepared) await store.put(item.item.object, item.source);
+  for (const item of prepared) {
+    checkMediaWorkSlot();
+    await store.put(item.item.object, item.source);
+  }
   await writeTransaction([
-    ...prepared.flatMap(({ item, preview, thumb }) => [
+    ...prepared.flatMap(({ item, preview, thumb, large }) => [
       { path: path.join(root, "public", item.preview), bytes: preview },
       { path: path.join(root, "public", item.thumb), bytes: thumb },
+      ...(large && item.large
+        ? [{ path: path.join(root, "public", item.large), bytes: large }]
+        : []),
     ]),
     {
       path: path.join(root, "src/content/actors", actor.slug, "assets.json"),
@@ -331,8 +370,11 @@ if (isMain(import.meta.url)) {
         codes.push(
           ...(await import("../../src/content/actors/index.ts")).ACTORS.map((actor) => actor.slug),
         );
-      if (!codes.length || [...flags].some((flag) => !["--dry-run", "--all"].includes(flag)))
-        throw new Error("Expected <code>... [--all] [--dry-run]");
+      if (
+        !codes.length ||
+        [...flags].some((flag) => !["--dry-run", "--all", "--source-originals"].includes(flag))
+      )
+        throw new Error("Expected <code>... [--all] [--dry-run] [--source-originals]");
       const uniqueCodes = [...new Set(codes)];
       const results: { code: string; result: Awaited<ReturnType<typeof ingest>> }[] = [];
       const errors: Error[] = [];
@@ -340,6 +382,7 @@ if (isMain(import.meta.url)) {
         try {
           const result = await ingest(code, {
             dryRun: flags.has("--dry-run"),
+            sourceOriginals: flags.has("--source-originals"),
           });
           results.push({ code, result });
           console.log(

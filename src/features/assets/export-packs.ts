@@ -118,7 +118,7 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
       await add(
         assetFilename(actor.slug, item),
         blobs.get(item.slot)!,
-        `${item.series}: ${slot?.direction ?? item.key}.${item.conformance === "legacy" ? " Legacy opaque-background original, not a transparent v1 asset." : " Transparent original."}`,
+        `${item.series}: ${slot?.direction ?? item.key}.${item.conformance === "legacy" ? " Legacy opaque-background original, not a transparent v1 asset." : item.conformance === "source-original" ? " Source original, with its supplied canvas and background unchanged." : " Transparent original."}`,
       );
     }
   files["character.json"] = strToU8(

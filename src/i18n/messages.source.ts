@@ -501,6 +501,10 @@ export const messages = {
     en: "Sheet preview",
     zh: "拼图预览",
   },
+  "assets.originalsSource": {
+    en: "Original PNG files with their supplied dimensions and backgrounds, plus the profile and terms of use.",
+    zh: "保留原图尺寸和背景的 PNG 原件，附角色资料和使用说明。",
+  },
   "assets.originalsLegacy": {
     en: "The original files, including older WebP images, with the profile and terms of use.",
     zh: "保留原始文件，包括旧规格 WebP，附角色资料和使用说明。",

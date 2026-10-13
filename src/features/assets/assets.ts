@@ -33,7 +33,7 @@ export function getActorAssets(slug: string, root = process.cwd()): ActorAssets 
     if (
       !order.includes(item.slot) ||
       seen.has(item.slot) ||
-      !["v1", "legacy"].includes(item.conformance)
+      !["v1", "legacy", "source-original"].includes(item.conformance)
     ) {
       throw new Error(`Invalid or duplicate asset slot: ${slug}/${item.slot}`);
     }

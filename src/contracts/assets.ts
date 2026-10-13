@@ -2,7 +2,7 @@ import { z } from "zod";
 import { lookSchema, slugSchema } from "./actors.ts";
 
 const assetKindSchema = z.enum(["image", "voice", "video"]);
-const assetConformanceSchema = z.enum(["v1", "legacy"]);
+const assetConformanceSchema = z.enum(["v1", "legacy", "source-original"]);
 const hashSchema = z.string().regex(/^[a-f0-9]{64}$/);
 const assetItemSchema = z.looseObject({
   kind: assetKindSchema,

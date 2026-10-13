@@ -1,6 +1,50 @@
 {
   "slug": "bao-man",
-  "looks": [],
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied bao-man personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "bike-bell",
+          "label": {
+            "en": "Bike bell",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / bike-bell reference image."
+        },
+        {
+          "key": "folding-fan",
+          "label": {
+            "en": "Folding fan",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / folding-fan reference image."
+        },
+        {
+          "key": "jianbing",
+          "label": {
+            "en": "Jianbing",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / jianbing reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "kind": "image",
@@ -8,13 +52,275 @@
       "series": "turnaround",
       "key": "front",
       "look": null,
-      "conformance": "v1",
-      "version": 0.1,
+      "conformance": "source-original",
+      "version": 1,
       "width": 941,
       "height": 1672,
-      "bytes": 1021063,
-      "sha256": "e1a0cf4187881d650a53166adab176ce95c948344198c8c18d889fbc90acf754",
-      "sourceSha256": "e1a0cf4187881d650a53166adab176ce95c948344198c8c18d889fbc90acf754",
+      "bytes": 1076523,
+      "sha256": "efd551b49fc67ec15392bf1b7ae32b7265d3a476a62a2da129976a3d3ad4672c",
+      "sourceSha256": "efd551b49fc67ec15392bf1b7ae32b7265d3a476a62a2da129976a3d3ad4672c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9787460148777896,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "bao-man/efd551b49fc67ec1/bao-man__turnaround__front__v1.png",
+      "preview": "/media/assets/bao-man/turnaround.front.webp",
+      "thumb": "/media/assets/bao-man/turnaround.front.thumb.webp",
+      "large": "/media/assets/bao-man/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6066830563027218,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1000016,
+      "sha256": "38c649cd148b8cc970e2e543beb0080240eb1ba03c977e3b4c94e555e3d629b2",
+      "sourceSha256": "38c649cd148b8cc970e2e543beb0080240eb1ba03c977e3b4c94e555e3d629b2",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.019138755980861243,
+        "right": 0.9766206163655685,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "bao-man/38c649cd148b8cc9/bao-man__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/bao-man/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/bao-man/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6534837722264312,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 633208,
+      "sha256": "bd0c07830c43426ba19c6fddcf3e6dd145032e28083c070ce8dee331a7ccb93c",
+      "sourceSha256": "bd0c07830c43426ba19c6fddcf3e6dd145032e28083c070ce8dee331a7ccb93c",
+      "bbox": {
+        "left": 0.07013815090329437,
+        "top": 0.019736842105263157,
+        "right": 0.9851222104144527,
+        "bottom": 0.9605263157894737
+      },
+      "format": "png",
+      "object": "bao-man/bd0c07830c43426b/bao-man__turnaround__side__v1.png",
+      "preview": "/media/assets/bao-man/turnaround.side.webp",
+      "thumb": "/media/assets/bao-man/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.787170957293727,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1000772,
+      "sha256": "bd848d2279c8691a7251209acbaabebcf40530cc05e995768bd3962fdb99b030",
+      "sourceSha256": "bd848d2279c8691a7251209acbaabebcf40530cc05e995768bd3962fdb99b030",
+      "bbox": {
+        "left": 0.10414452709883103,
+        "top": 0.019736842105263157,
+        "right": 0.9872476089266737,
+        "bottom": 0.9677033492822966
+      },
+      "format": "png",
+      "object": "bao-man/bd848d2279c8691a/bao-man__turnaround__back__v1.png",
+      "preview": "/media/assets/bao-man/turnaround.back.webp",
+      "thumb": "/media/assets/bao-man/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6496283094946331,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 928915,
+      "sha256": "7a12bae5a7db482a856e629d86d1aae2737ae13a4f11425aff6559559df6b50b",
+      "sourceSha256": "7a12bae5a7db482a856e629d86d1aae2737ae13a4f11425aff6559559df6b50b",
+      "bbox": {
+        "left": 0,
+        "top": 0.03409090909090909,
+        "right": 0.9851222104144527,
+        "bottom": 0.9575358851674641
+      },
+      "format": "png",
+      "object": "bao-man/7a12bae5a7db482a/bao-man__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/bao-man/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/bao-man/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6730826922392447,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 932684,
+      "sha256": "80b0e8a3a212ec97f6d8794e57e3aeec385fc5c1796f569cada3bc23404990e6",
+      "sourceSha256": "80b0e8a3a212ec97f6d8794e57e3aeec385fc5c1796f569cada3bc23404990e6",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 0.9851222104144527,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/80b0e8a3a212ec97/bao-man__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/bao-man/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/bao-man/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6673211080546502,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1790402,
+      "sha256": "6a0e9a51ed5fac043405a05b7772993f1cb6d1b1bd91739b625a3fbbf9d2611f",
+      "sourceSha256": "6a0e9a51ed5fac043405a05b7772993f1cb6d1b1bd91739b625a3fbbf9d2611f",
+      "bbox": {
+        "left": 0,
+        "top": 0.04366028708133971,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/6a0e9a51ed5fac04/bao-man__face__front__v1.png",
+      "preview": "/media/assets/bao-man/face.front.webp",
+      "thumb": "/media/assets/bao-man/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.40547633333163846,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1787271,
+      "sha256": "4c7332f5f8f84d749e5bcc43e1d722769ab0c6b57c7c395f9a3369f17911cff4",
+      "sourceSha256": "4c7332f5f8f84d749e5bcc43e1d722769ab0c6b57c7c395f9a3369f17911cff4",
+      "bbox": {
+        "left": 0,
+        "top": 0.019736842105263157,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/4c7332f5f8f84d74/bao-man__face__three-quarter__v1.png",
+      "preview": "/media/assets/bao-man/face.three-quarter.webp",
+      "thumb": "/media/assets/bao-man/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4189253263096879,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1806615,
+      "sha256": "9b3a11faf0a12bb10ead84b44f2cdbac01290347feba016864c0fe4fafd62a14",
+      "sourceSha256": "9b3a11faf0a12bb10ead84b44f2cdbac01290347feba016864c0fe4fafd62a14",
+      "bbox": {
+        "left": 0,
+        "top": 0.03409090909090909,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/9b3a11faf0a12bb1/bao-man__face__side__v1.png",
+      "preview": "/media/assets/bao-man/face.side.webp",
+      "thumb": "/media/assets/bao-man/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3913777717891483,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1901977,
+      "sha256": "396ef72f921e46d47bb768d54919d33aeb6d304ea8c7f16017d531464e1aa235",
+      "sourceSha256": "396ef72f921e46d47bb768d54919d33aeb6d304ea8c7f16017d531464e1aa235",
       "bbox": {
         "left": 0,
         "top": 0,
@@ -22,11 +328,1319 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "bao-man/CC-007.png",
-      "preview": "/media/assets/bao-man/turnaround.front.webp",
-      "large": "/media/assets/bao-man/turnaround.front.large.webp",
-      "thumb": "/media/assets/bao-man/turnaround.front.thumb.webp",
-      "blur": "data:image/webp;base64,UklGRoYBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSMUAAAAJgGPb2rHnPM8f2za6vw7mYLtKnQGwZp0BpE+XSq3tdEZl+/34zyEiJgDEiu/dW8JXGZhaqEQ9kEF0MNS09byIAeS/vPU7ZiRoBLHS5/vDtW8u1xKlrugbvnJqUCEbS8QiHbEo2X5WfTgpwRhSnwXCXuOxlKPbePOffHWACoFqQCstsNh4iXh5Cnvdhf/AzGRgZZ3R2cA/Fqes7XAGICRzuE2yXwYfd+QjADHc3eJrccffHZZfxdfp41UTf4LhovOZpoUkAABWUDggmgAAAHAEAJ0BKgwAFQA/AWisTqslpCIwCAFgIAlsALUITGCoEY5rn3hQd2silhkAAP54Mna7gesIGPdwfX8kA01ySuVMTd2JvAoyWAAPIWiH6qr//JdK+dbHtpCfmHUUh4n78i0COVhLlLtirRnlcsp0Mgbv7KTxqMlI3iC3jCYG+c9e00mUO6ki8wbnrwvM3MPGljNfdf5oHAAAAAA="
+      "object": "bao-man/396ef72f921e46d4/bao-man__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/bao-man/face.three-quarter-left.webp",
+      "thumb": "/media/assets/bao-man/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3336322704645877,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1885244,
+      "sha256": "d606416341331f7aef510bb3b9d5013a5ca811fcf7cbe5e3e9244971515353d8",
+      "sourceSha256": "d606416341331f7aef510bb3b9d5013a5ca811fcf7cbe5e3e9244971515353d8",
+      "bbox": {
+        "left": 0,
+        "top": 0.12320574162679426,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/d606416341331f7a/bao-man__face__side-right__v1.png",
+      "preview": "/media/assets/bao-man/face.side-right.webp",
+      "thumb": "/media/assets/bao-man/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.394037697857822,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1747876,
+      "sha256": "ee299467650e50e989704b269be4b34ea2c032aa87967f5506de3ae4378cac78",
+      "sourceSha256": "ee299467650e50e989704b269be4b34ea2c032aa87967f5506de3ae4378cac78",
+      "bbox": {
+        "left": 0,
+        "top": 0.04126794258373206,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/ee299467650e50e9/bao-man__face__up__v1.png",
+      "preview": "/media/assets/bao-man/face.up.webp",
+      "thumb": "/media/assets/bao-man/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3891837300235421,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1836764,
+      "sha256": "78b3375d51f6f9bb11ddfa615b4305caf64d1ea1e07b63e38d347011af00333e",
+      "sourceSha256": "78b3375d51f6f9bb11ddfa615b4305caf64d1ea1e07b63e38d347011af00333e",
+      "bbox": {
+        "left": 0,
+        "top": 0.022129186602870814,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/78b3375d51f6f9bb/bao-man__face__down__v1.png",
+      "preview": "/media/assets/bao-man/face.down.webp",
+      "thumb": "/media/assets/bao-man/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3562769170535265,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1836980,
+      "sha256": "784cb3d8e3da044f3f4a0b4e4235b8ccca0874a9e5f20c359ed5e0ad152f3d31",
+      "sourceSha256": "784cb3d8e3da044f3f4a0b4e4235b8ccca0874a9e5f20c359ed5e0ad152f3d31",
+      "bbox": {
+        "left": 0,
+        "top": 0.08253588516746412,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/784cb3d8e3da044f/bao-man__expression__neutral__v1.png",
+      "preview": "/media/assets/bao-man/expression.neutral.webp",
+      "thumb": "/media/assets/bao-man/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3886466601243714,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1984100,
+      "sha256": "06682eafb57f58a097733b1317ac6a75d2bf5b334ddc7a17c23a60bbcb79407c",
+      "sourceSha256": "06682eafb57f58a097733b1317ac6a75d2bf5b334ddc7a17c23a60bbcb79407c",
+      "bbox": {
+        "left": 0,
+        "top": 0.13935406698564592,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/06682eafb57f58a0/bao-man__expression__smile__v1.png",
+      "preview": "/media/assets/bao-man/expression.smile.webp",
+      "thumb": "/media/assets/bao-man/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.37328010515129484,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2016271,
+      "sha256": "7f6752c2e584342891ae7c6b061326aa1f7ce952658e72ba571fa5d73559885d",
+      "sourceSha256": "7f6752c2e584342891ae7c6b061326aa1f7ce952658e72ba571fa5d73559885d",
+      "bbox": {
+        "left": 0,
+        "top": 0.028110047846889953,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/7f6752c2e5843428/bao-man__expression__laugh__v1.png",
+      "preview": "/media/assets/bao-man/expression.laugh.webp",
+      "thumb": "/media/assets/bao-man/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3536824563098404,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1965649,
+      "sha256": "4b5603a19905c153b10b295ad875aa22c5b2dfec416e3f0518890aba60d93a8a",
+      "sourceSha256": "4b5603a19905c153b10b295ad875aa22c5b2dfec416e3f0518890aba60d93a8a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/4b5603a19905c153/bao-man__expression__sad__v1.png",
+      "preview": "/media/assets/bao-man/expression.sad.webp",
+      "thumb": "/media/assets/bao-man/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.33781696657836263,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1991649,
+      "sha256": "a8bd8e066596a30ed749c9fefe478db645a8f4ee9e00c2fd4aba118291d828da",
+      "sourceSha256": "a8bd8e066596a30ed749c9fefe478db645a8f4ee9e00c2fd4aba118291d828da",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/a8bd8e066596a30e/bao-man__expression__cry__v1.png",
+      "preview": "/media/assets/bao-man/expression.cry.webp",
+      "thumb": "/media/assets/bao-man/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31460474197763755,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2110743,
+      "sha256": "ded8aea072e89b9faa0c70548bde9af7fa1fde8e3095b1554ae5975109bba5c5",
+      "sourceSha256": "ded8aea072e89b9faa0c70548bde9af7fa1fde8e3095b1554ae5975109bba5c5",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/ded8aea072e89b9f/bao-man__expression__annoyed__v1.png",
+      "preview": "/media/assets/bao-man/expression.annoyed.webp",
+      "thumb": "/media/assets/bao-man/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34189996898341884,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1982821,
+      "sha256": "66fe2a651a5771cff749baaa795761ed577a9bf2bfdc24dbfeb52d4ad7d6ac6a",
+      "sourceSha256": "66fe2a651a5771cff749baaa795761ed577a9bf2bfdc24dbfeb52d4ad7d6ac6a",
+      "bbox": {
+        "left": 0,
+        "top": 0.08014354066985646,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/66fe2a651a5771cf/bao-man__expression__angry__v1.png",
+      "preview": "/media/assets/bao-man/expression.angry.webp",
+      "thumb": "/media/assets/bao-man/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34933505026211553,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1915130,
+      "sha256": "2f3273f06cc4e7b3db51fede7c2a3e60af218fc2c675fb7376aedb6bcf523ec9",
+      "sourceSha256": "2f3273f06cc4e7b3db51fede7c2a3e60af218fc2c675fb7376aedb6bcf523ec9",
+      "bbox": {
+        "left": 0,
+        "top": 0.04844497607655503,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/2f3273f06cc4e7b3/bao-man__expression__surprised__v1.png",
+      "preview": "/media/assets/bao-man/expression.surprised.webp",
+      "thumb": "/media/assets/bao-man/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.329310923429722,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1962569,
+      "sha256": "c5eecbdc99ba8714e192a2617dc97a692277bf8e20c7f42f110a44583ed36ba2",
+      "sourceSha256": "c5eecbdc99ba8714e192a2617dc97a692277bf8e20c7f42f110a44583ed36ba2",
+      "bbox": {
+        "left": 0,
+        "top": 0.07236842105263158,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/c5eecbdc99ba8714/bao-man__expression__scared__v1.png",
+      "preview": "/media/assets/bao-man/expression.scared.webp",
+      "thumb": "/media/assets/bao-man/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3572639816137775,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2120542,
+      "sha256": "e55b968ee1cf61af6ff5e94643df5b2972b3a292f411b2145f057490d96e6e5d",
+      "sourceSha256": "e55b968ee1cf61af6ff5e94643df5b2972b3a292f411b2145f057490d96e6e5d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/e55b968ee1cf61af/bao-man__expression__disgusted__v1.png",
+      "preview": "/media/assets/bao-man/expression.disgusted.webp",
+      "thumb": "/media/assets/bao-man/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31139757663892126,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1876337,
+      "sha256": "295a13d95bb4ee054edddc2e9458b1074aa345a11568a7c516bd195b4516546a",
+      "sourceSha256": "295a13d95bb4ee054edddc2e9458b1074aa345a11568a7c516bd195b4516546a",
+      "bbox": {
+        "left": 0,
+        "top": 0.09389952153110048,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/295a13d95bb4ee05/bao-man__expression__embarrassed__v1.png",
+      "preview": "/media/assets/bao-man/expression.embarrassed.webp",
+      "thumb": "/media/assets/bao-man/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3647982142584749,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1843995,
+      "sha256": "a8623731e0de3245dd6f8138ef7338a98f08c833b1c3f165fd8ceab437e96b2d",
+      "sourceSha256": "a8623731e0de3245dd6f8138ef7338a98f08c833b1c3f165fd8ceab437e96b2d",
+      "bbox": {
+        "left": 0,
+        "top": 0.022129186602870814,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/a8623731e0de3245/bao-man__expression__tired__v1.png",
+      "preview": "/media/assets/bao-man/expression.tired.webp",
+      "thumb": "/media/assets/bao-man/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3377171796266824,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2008084,
+      "sha256": "964fcecea6f5c01bf9fe56ddf4371b7cfa21290dfd6d23215b463b4d21388d0f",
+      "sourceSha256": "964fcecea6f5c01bf9fe56ddf4371b7cfa21290dfd6d23215b463b4d21388d0f",
+      "bbox": {
+        "left": 0,
+        "top": 0.0029904306220095694,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/964fcecea6f5c01b/bao-man__expression__speaking__v1.png",
+      "preview": "/media/assets/bao-man/expression.speaking.webp",
+      "thumb": "/media/assets/bao-man/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3221745674203865,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1979160,
+      "sha256": "26b70f52a6420a624ce393777e25b214cfe477e6e6cd8ba29ce9303b9687c91b",
+      "sourceSha256": "26b70f52a6420a624ce393777e25b214cfe477e6e6cd8ba29ce9303b9687c91b",
+      "bbox": {
+        "left": 0,
+        "top": 0.049641148325358854,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/26b70f52a6420a62/bao-man__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/bao-man/expression.eyes-closed.webp",
+      "thumb": "/media/assets/bao-man/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3259868103259792,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1898564,
+      "sha256": "95ec384c9bb5e9b98476ff1b30f4e1f092ca0a2aea3f130bd62ddbfa58985741",
+      "sourceSha256": "95ec384c9bb5e9b98476ff1b30f4e1f092ca0a2aea3f130bd62ddbfa58985741",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/95ec384c9bb5e9b9/bao-man__expression__worried__v1.png",
+      "preview": "/media/assets/bao-man/expression.worried.webp",
+      "thumb": "/media/assets/bao-man/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3190061728081192,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1775559,
+      "sha256": "00d91aff2c34b9b782edeff255b8594bc94395f2689dfd28ecfeadc2e71a6dbb",
+      "sourceSha256": "00d91aff2c34b9b782edeff255b8594bc94395f2689dfd28ecfeadc2e71a6dbb",
+      "bbox": {
+        "left": 0,
+        "top": 0.05801435406698564,
+        "right": 1,
+        "bottom": 0.965311004784689
+      },
+      "format": "png",
+      "object": "bao-man/00d91aff2c34b9b7/bao-man__expression__skeptical__v1.png",
+      "preview": "/media/assets/bao-man/expression.skeptical.webp",
+      "thumb": "/media/assets/bao-man/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.41022797187152016,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1836219,
+      "sha256": "e7772b2a492748755821d136116a8d05edf6cdd5dad44f5a077fd20435f83e9c",
+      "sourceSha256": "e7772b2a492748755821d136116a8d05edf6cdd5dad44f5a077fd20435f83e9c",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/e7772b2a49274875/bao-man__expression__smug__v1.png",
+      "preview": "/media/assets/bao-man/expression.smug.webp",
+      "thumb": "/media/assets/bao-man/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3660706567888178,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1559078,
+      "sha256": "1edf9e49074be7fa49e6a18b7f3842407ed440089e17297d747e12e8ba081d3b",
+      "sourceSha256": "1edf9e49074be7fa49e6a18b7f3842407ed440089e17297d747e12e8ba081d3b",
+      "bbox": {
+        "left": 0,
+        "top": 0.0867224880382775,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/1edf9e49074be7fa/bao-man__expression__contempt__v1.png",
+      "preview": "/media/assets/bao-man/expression.contempt.webp",
+      "thumb": "/media/assets/bao-man/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.46564722960914023,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1876722,
+      "sha256": "490224c6705303fca565cd122ba85a89feb09d9be8c2008a6df1abf2573712c2",
+      "sourceSha256": "490224c6705303fca565cd122ba85a89feb09d9be8c2008a6df1abf2573712c2",
+      "bbox": {
+        "left": 0,
+        "top": 0.019138755980861243,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/490224c6705303fc/bao-man__expression__confused__v1.png",
+      "preview": "/media/assets/bao-man/expression.confused.webp",
+      "thumb": "/media/assets/bao-man/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4003929190670619,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1911357,
+      "sha256": "c5ed1a267388bcb2e3615c64276c0ca0a449b1fd83d3f90502af5fc1949858b0",
+      "sourceSha256": "c5ed1a267388bcb2e3615c64276c0ca0a449b1fd83d3f90502af5fc1949858b0",
+      "bbox": {
+        "left": 0,
+        "top": 0.15370813397129188,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/c5ed1a267388bcb2/bao-man__expression__thinking__v1.png",
+      "preview": "/media/assets/bao-man/expression.thinking.webp",
+      "thumb": "/media/assets/bao-man/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3724938856657633,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1793661,
+      "sha256": "7c408a0cef1096bac9573bd426f8ae59b1b50a4c7a02bda0bed316a116a97578",
+      "sourceSha256": "7c408a0cef1096bac9573bd426f8ae59b1b50a4c7a02bda0bed316a116a97578",
+      "bbox": {
+        "left": 0,
+        "top": 0.02930622009569378,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/7c408a0cef1096ba/bao-man__expression__determined__v1.png",
+      "preview": "/media/assets/bao-man/expression.determined.webp",
+      "thumb": "/media/assets/bao-man/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34885963217385557,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1978734,
+      "sha256": "cb68e2f0c3188980b844dc2a707e4154f877de092da02da915bc481c5cdb3d42",
+      "sourceSha256": "cb68e2f0c3188980b844dc2a707e4154f877de092da02da915bc481c5cdb3d42",
+      "bbox": {
+        "left": 0,
+        "top": 0.06160287081339713,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/cb68e2f0c3188980/bao-man__expression__shy__v1.png",
+      "preview": "/media/assets/bao-man/expression.shy.webp",
+      "thumb": "/media/assets/bao-man/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3543885919997559,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1989031,
+      "sha256": "99d0fe0a3fdc5c5165af4c4495e90e7aeb13bf48d092a1303322ead09ad8e2cf",
+      "sourceSha256": "99d0fe0a3fdc5c5165af4c4495e90e7aeb13bf48d092a1303322ead09ad8e2cf",
+      "bbox": {
+        "left": 0,
+        "top": 0.09090909090909091,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/99d0fe0a3fdc5c51/bao-man__expression__pain__v1.png",
+      "preview": "/media/assets/bao-man/expression.pain.webp",
+      "thumb": "/media/assets/bao-man/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.38420455181040225,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1855808,
+      "sha256": "6c493d3844e248f8ecaed4716a87bf1cb0999e8872f304fbb9f1cd176bd30d6e",
+      "sourceSha256": "6c493d3844e248f8ecaed4716a87bf1cb0999e8872f304fbb9f1cd176bd30d6e",
+      "bbox": {
+        "left": 0,
+        "top": 0.03409090909090909,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/6c493d3844e248f8/bao-man__expression__sleepy__v1.png",
+      "preview": "/media/assets/bao-man/expression.sleepy.webp",
+      "thumb": "/media/assets/bao-man/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3797319353838175,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1789832,
+      "sha256": "d2d4a2b78e84fec8b75bbbd7ffec9bd74a1ea3c2581dc2510b8175da18f1da80",
+      "sourceSha256": "d2d4a2b78e84fec8b75bbbd7ffec9bd74a1ea3c2581dc2510b8175da18f1da80",
+      "bbox": {
+        "left": 0,
+        "top": 0.08971291866028708,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/d2d4a2b78e84fec8/bao-man__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/bao-man/expression.awkward-smile.webp",
+      "thumb": "/media/assets/bao-man/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.40453820886870834,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1793487,
+      "sha256": "55b4e53c67ea5aca994d3d8bc9d9fc68fb493fd743eb50ac0dd9da25eea721fa",
+      "sourceSha256": "55b4e53c67ea5aca994d3d8bc9d9fc68fb493fd743eb50ac0dd9da25eea721fa",
+      "bbox": {
+        "left": 0,
+        "top": 0.08971291866028708,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/55b4e53c67ea5aca/bao-man__expression__deadpan__v1.png",
+      "preview": "/media/assets/bao-man/expression.deadpan.webp",
+      "thumb": "/media/assets/bao-man/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.39529488633185705,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1115855,
+      "sha256": "8d7b7eac9f5dcbee733974bf862321d55fac7f87e2a57899ed93d988f7e7a911",
+      "sourceSha256": "8d7b7eac9f5dcbee733974bf862321d55fac7f87e2a57899ed93d988f7e7a911",
+      "bbox": {
+        "left": 0.061636556854410204,
+        "top": 0.012559808612440191,
+        "right": 0.9829968119022316,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "bao-man/8d7b7eac9f5dcbee/bao-man__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/bao-man/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/bao-man/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6243485246785208,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1002185,
+      "sha256": "5387ed46f9f3d0132a0d32fe8e40a4bf4435c01511d6caa07615c3c13650f720",
+      "sourceSha256": "5387ed46f9f3d0132a0d32fe8e40a4bf4435c01511d6caa07615c3c13650f720",
+      "bbox": {
+        "left": 0.04144527098831031,
+        "top": 0.028708133971291867,
+        "right": 0.9351753453772582,
+        "bottom": 0.9868421052631579
+      },
+      "format": "png",
+      "object": "bao-man/5387ed46f9f3d013/bao-man__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/bao-man/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/bao-man/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6807421352628019,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 727273,
+      "sha256": "a91950717fe8adb6dd17dfa06bb0df6edd2a29d124934501a1017297efd31262",
+      "sourceSha256": "a91950717fe8adb6dd17dfa06bb0df6edd2a29d124934501a1017297efd31262",
+      "bbox": {
+        "left": 0,
+        "top": 0.037679425837320576,
+        "right": 0.9436769394261424,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/a91950717fe8adb6/bao-man__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/bao-man/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/bao-man/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.756025987827263,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1102742,
+      "sha256": "46e22f08e222d77f9b415fd7cd1962a580617f56654dfc5c057d659f6230e2aa",
+      "sourceSha256": "46e22f08e222d77f9b415fd7cd1962a580617f56654dfc5c057d659f6230e2aa",
+      "bbox": {
+        "left": 0,
+        "top": 0.004186602870813397,
+        "right": 0.9808714133900106,
+        "bottom": 0.9844497607655502
+      },
+      "format": "png",
+      "object": "bao-man/46e22f08e222d77f/bao-man__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/bao-man/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/bao-man/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6328081700725584,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.bike-bell",
+      "series": "wardrobe",
+      "key": "bike-bell",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1477197,
+      "sha256": "3b7a92e560c0591061457c0eabf8f8b07b619c42afc3a75910e1e2f417a10940",
+      "sourceSha256": "3b7a92e560c0591061457c0eabf8f8b07b619c42afc3a75910e1e2f417a10940",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 0.9744952178533475,
+        "bottom": 0.9617224880382775
+      },
+      "format": "png",
+      "object": "bao-man/3b7a92e560c05910/bao-man__wardrobe-personal__bike-bell__v1.png",
+      "preview": "/media/assets/bao-man/wardrobe.personal.bike-bell.webp",
+      "thumb": "/media/assets/bao-man/wardrobe.personal.bike-bell.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5683438925300887,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.folding-fan",
+      "series": "wardrobe",
+      "key": "folding-fan",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1230470,
+      "sha256": "b4008638fc278c78d360707a04d1bed464b2b7d0b10ffc4920bb0295183208c6",
+      "sourceSha256": "b4008638fc278c78d360707a04d1bed464b2b7d0b10ffc4920bb0295183208c6",
+      "bbox": {
+        "left": 0.05526036131774708,
+        "top": 0.013157894736842105,
+        "right": 0.9160467587672688,
+        "bottom": 0.9952153110047847
+      },
+      "format": "png",
+      "object": "bao-man/b4008638fc278c78/bao-man__wardrobe-personal__folding-fan__v1.png",
+      "preview": "/media/assets/bao-man/wardrobe.personal.folding-fan.webp",
+      "thumb": "/media/assets/bao-man/wardrobe.personal.folding-fan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6096486990832313,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.jianbing",
+      "series": "wardrobe",
+      "key": "jianbing",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1076234,
+      "sha256": "3172ff27689bdadcbbc535238a0d9be70cbea9eab423c49c0203d661ba4c7d65",
+      "sourceSha256": "3172ff27689bdadcbbc535238a0d9be70cbea9eab423c49c0203d661ba4c7d65",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9787460148777896,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/3172ff27689bdadc/bao-man__wardrobe-personal__jianbing__v1.png",
+      "preview": "/media/assets/bao-man/wardrobe.personal.jianbing.webp",
+      "thumb": "/media/assets/bao-man/wardrobe.personal.jianbing.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6513119759596072,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2090055,
+      "sha256": "50f7e02d88720c32b409ba984c9d70696fd259594fd44347e3777673a70daea8",
+      "sourceSha256": "50f7e02d88720c32b409ba984c9d70696fd259594fd44347e3777673a70daea8",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/50f7e02d88720c32/bao-man__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/bao-man/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/bao-man/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32917745043702873,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 996457,
+      "sha256": "0a9ce7d47e55fcf22f9ada4adb254dae63299bdc6bffa2056f492997aee3284e",
+      "sourceSha256": "0a9ce7d47e55fcf22f9ada4adb254dae63299bdc6bffa2056f492997aee3284e",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 0.9500531349628055,
+        "bottom": 0.9772727272727273
+      },
+      "format": "png",
+      "object": "bao-man/0a9ce7d47e55fcf2/bao-man__pose__walk__v1.png",
+      "preview": "/media/assets/bao-man/pose.walk.webp",
+      "thumb": "/media/assets/bao-man/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6549507039746986,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1015960,
+      "sha256": "7f87331ac7977b13c56bf29bab3549af7e142e755c4fa8cb0b682e982097de14",
+      "sourceSha256": "7f87331ac7977b13c56bf29bab3549af7e142e755c4fa8cb0b682e982097de14",
+      "bbox": {
+        "left": 0.028692879914984058,
+        "top": 0.031698564593301434,
+        "right": 0.9723698193411264,
+        "bottom": 0.9796650717703349
+      },
+      "format": "png",
+      "object": "bao-man/7f87331ac7977b13/bao-man__pose__run__v1.png",
+      "preview": "/media/assets/bao-man/pose.run.webp",
+      "thumb": "/media/assets/bao-man/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6481982417157762,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1168271,
+      "sha256": "8233e9365cf0643e8e3363ce1b37a257d53db3655327f17fbb97b2b0c8dc6013",
+      "sourceSha256": "8233e9365cf0643e8e3363ce1b37a257d53db3655327f17fbb97b2b0c8dc6013",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 0.9617428267800212,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/8233e9365cf0643e/bao-man__pose__sit__v1.png",
+      "preview": "/media/assets/bao-man/pose.sit.webp",
+      "thumb": "/media/assets/bao-man/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.600557917109458,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1005698,
+      "sha256": "5cce8c23161db22ae440a6466a07bdab51477e5c9517abf3b1c130532e6ce035",
+      "sourceSha256": "5cce8c23161db22ae440a6466a07bdab51477e5c9517abf3b1c130532e6ce035",
+      "bbox": {
+        "left": 0,
+        "top": 0.028708133971291867,
+        "right": 0.9787460148777896,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/5cce8c23161db22a/bao-man__pose__point__v1.png",
+      "preview": "/media/assets/bao-man/pose.point.webp",
+      "thumb": "/media/assets/bao-man/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6256616446923511,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 865436,
+      "sha256": "3dd0ed94ce1be67da29926e242c58dc470a4559a4d14231f478e889b6e3920dd",
+      "sourceSha256": "3dd0ed94ce1be67da29926e242c58dc470a4559a4d14231f478e889b6e3920dd",
+      "bbox": {
+        "left": 0,
+        "top": 0.038875598086124404,
+        "right": 0.9808714133900106,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "bao-man/3dd0ed94ce1be67d/bao-man__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/bao-man/pose.arms-crossed.webp",
+      "thumb": "/media/assets/bao-man/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6869187568961046,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1057371,
+      "sha256": "49352c5d078f5f9267cf69bbd54235d3066aa25388c9b7045a92854ce420b483",
+      "sourceSha256": "49352c5d078f5f9267cf69bbd54235d3066aa25388c9b7045a92854ce420b483",
+      "bbox": {
+        "left": 0,
+        "top": 0.03708133971291866,
+        "right": 0.9436769394261424,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "bao-man/49352c5d078f5f92/bao-man__pose__phone__v1.png",
+      "preview": "/media/assets/bao-man/pose.phone.webp",
+      "thumb": "/media/assets/bao-man/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6330935480426504,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1062565,
+      "sha256": "705b800bb26c11454982b9ea990a7dea281c9e3c629fa2c5cc336358435a929c",
+      "sourceSha256": "705b800bb26c11454982b9ea990a7dea281c9e3c629fa2c5cc336358435a929c",
+      "bbox": {
+        "left": 0.012752391073326248,
+        "top": 0.01854066985645933,
+        "right": 0.9989373007438895,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/705b800bb26c1145/bao-man__detail__hands__v1.png",
+      "preview": "/media/assets/bao-man/detail.hands.webp",
+      "thumb": "/media/assets/bao-man/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6351750911429864,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2132914,
+      "sha256": "173d991b51131e928be59aa26310d1ce11dbcd5aab1b281d610270226d7a38b1",
+      "sourceSha256": "173d991b51131e928be59aa26310d1ce11dbcd5aab1b281d610270226d7a38b1",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "bao-man/173d991b51131e92/bao-man__detail__hair-back__v1.png",
+      "preview": "/media/assets/bao-man/detail.hair-back.webp",
+      "thumb": "/media/assets/bao-man/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32879737020069255,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
     },
     {
       "kind": "voice",
@@ -34,28 +1648,155 @@
       "series": "voice",
       "key": "intro",
       "look": null,
-      "conformance": "v1",
+      "conformance": "source-original",
       "version": 1,
       "width": 0,
       "height": 0,
-      "bytes": 252996,
-      "sha256": "b9b59f78d7511dc54cc8a3afd1ee7dcc0e2f81004b40e61a6cf936a5ea332519",
-      "sourceSha256": "b9b59f78d7511dc54cc8a3afd1ee7dcc0e2f81004b40e61a6cf936a5ea332519",
+      "bytes": 1367520,
+      "sha256": "c08bab70c164cbacc16d77b5287517e1ef24d2c7fc6f31398aeff485b22d308c",
+      "sourceSha256": "c08bab70c164cbacc16d77b5287517e1ef24d2c7fc6f31398aeff485b22d308c",
       "bbox": {
         "left": 0,
         "top": 0,
         "right": 0,
         "bottom": 0
       },
-      "format": "mp3",
-      "object": "voice/bao-man/candidate-1.mp3",
+      "format": "wav",
+      "object": "voice/bao-man/bao-man__voice__intro__v1__c08bab70c164cbac.wav",
       "preview": "/api/voice/bao-man/intro",
       "thumb": "/api/voice/bao-man/intro",
       "previewUrl": "/api/voice/bao-man/intro",
-      "durationSec": 20.9,
-      "transcript": {
-        "text": "嘿，各位好，我叫包满，天津卫的，三十三了。我爷爷说“满”字好，饭碗满、口袋满，啥都满。结果就我这脑门儿最满，满得发亮，省电。我打小听相声长大，演个嘴贫的、演个老实人吃亏的，都行！"
-      }
+      "durationSec": 21.3
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 856598,
+      "sha256": "2bd53e031d9595575ee9629d046fc597cc1667ab229f7411c49c0a177184e7a3",
+      "sourceSha256": "2bd53e031d9595575ee9629d046fc597cc1667ab229f7411c49c0a177184e7a3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/bao-man/bao-man__voice__angry__v1__2bd53e031d959557.wav",
+      "preview": "/api/voice/bao-man/angry",
+      "thumb": "/api/voice/bao-man/angry",
+      "previewUrl": "/api/voice/bao-man/angry",
+      "durationSec": 13.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1100770,
+      "sha256": "71e4680148ed2b140af6fd0c110b9620d484e46f51330a1baa1d41ea9f5253f1",
+      "sourceSha256": "71e4680148ed2b140af6fd0c110b9620d484e46f51330a1baa1d41ea9f5253f1",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/bao-man/bao-man__voice__chat__v1__71e4680148ed2b14.wav",
+      "preview": "/api/voice/bao-man/chat",
+      "thumb": "/api/voice/bao-man/chat",
+      "previewUrl": "/api/voice/bao-man/chat",
+      "durationSec": 17.2
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 793440,
+      "sha256": "9fc480c1c7f5c81fe36a2be83c7f0f92b8f764d75b0c8d6f25df261aadf8b699",
+      "sourceSha256": "9fc480c1c7f5c81fe36a2be83c7f0f92b8f764d75b0c8d6f25df261aadf8b699",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/bao-man/bao-man__voice__happy__v1__9fc480c1c7f5c81f.wav",
+      "preview": "/api/voice/bao-man/happy",
+      "thumb": "/api/voice/bao-man/happy",
+      "previewUrl": "/api/voice/bao-man/happy",
+      "durationSec": 12.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1301390,
+      "sha256": "c9a310ef60e262e7f860937e07b3af35d013060effdccbbc4e7d5f5067ecab75",
+      "sourceSha256": "c9a310ef60e262e7f860937e07b3af35d013060effdccbbc4e7d5f5067ecab75",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/bao-man/bao-man__voice__intro-alt__v1__c9a310ef60e262e7.wav",
+      "preview": "/api/voice/bao-man/intro-alt",
+      "thumb": "/api/voice/bao-man/intro-alt",
+      "previewUrl": "/api/voice/bao-man/intro-alt",
+      "durationSec": 20.3
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 894492,
+      "sha256": "b64607c376e70c9cee21c6347645136ad0a5ed9a3498eccb561b7430cb4f7056",
+      "sourceSha256": "b64607c376e70c9cee21c6347645136ad0a5ed9a3498eccb561b7430cb4f7056",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/bao-man/bao-man__voice__sad__v1__b64607c376e70c9c.wav",
+      "preview": "/api/voice/bao-man/sad",
+      "thumb": "/api/voice/bao-man/sad",
+      "previewUrl": "/api/voice/bao-man/sad",
+      "durationSec": 13.9
     }
   ]
 }

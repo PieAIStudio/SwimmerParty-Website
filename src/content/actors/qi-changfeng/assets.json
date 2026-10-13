@@ -1,6 +1,50 @@
 {
   "slug": "qi-changfeng",
-  "looks": [],
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied qi-changfeng personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "hat-detail",
+          "label": {
+            "en": "Hat detail",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / hat-detail reference image."
+        },
+        {
+          "key": "overshirt-detail",
+          "label": {
+            "en": "Overshirt detail",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / overshirt-detail reference image."
+        },
+        {
+          "key": "rear-three-quarter",
+          "label": {
+            "en": "Rear three quarter",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / rear-three-quarter reference image."
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "kind": "image",
@@ -8,13 +52,362 @@
       "series": "turnaround",
       "key": "front",
       "look": null,
-      "conformance": "v1",
-      "version": 0.1,
+      "conformance": "source-original",
+      "version": 1,
       "width": 941,
       "height": 1672,
-      "bytes": 827684,
-      "sha256": "a95aacf6a351a69f48960195aadcf39af2ed92205e40e9e6207bee29b603df4c",
-      "sourceSha256": "a95aacf6a351a69f48960195aadcf39af2ed92205e40e9e6207bee29b603df4c",
+      "bytes": 860235,
+      "sha256": "c1c220037c93c452c172d1bd7576c42f84c7166a27154aee22d872c2ac9a5f75",
+      "sourceSha256": "c1c220037c93c452c172d1bd7576c42f84c7166a27154aee22d872c2ac9a5f75",
+      "bbox": {
+        "left": 0,
+        "top": 0.009569377990430622,
+        "right": 0.9702444208289054,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "qi-changfeng/c1c220037c93c452/qi-changfeng__turnaround__front__v1.png",
+      "preview": "/media/assets/qi-changfeng/turnaround.front.webp",
+      "thumb": "/media/assets/qi-changfeng/turnaround.front.thumb.webp",
+      "large": "/media/assets/qi-changfeng/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6866403703684871,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 756767,
+      "sha256": "9c4803c43125c58d904242d895946a18b3b26a73553cbc12ca0e7dff285cabc5",
+      "sourceSha256": "9c4803c43125c58d904242d895946a18b3b26a73553cbc12ca0e7dff285cabc5",
+      "bbox": {
+        "left": 0.04357066950053135,
+        "top": 0.0029904306220095694,
+        "right": 0.9096705632306057,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "qi-changfeng/9c4803c43125c58d/qi-changfeng__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/qi-changfeng/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/qi-changfeng/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7280977174847079,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 529725,
+      "sha256": "50c2065734d8764bf46247009f85083660869d9efe0e0d710768999b10932133",
+      "sourceSha256": "50c2065734d8764bf46247009f85083660869d9efe0e0d710768999b10932133",
+      "bbox": {
+        "left": 0.07226354941551541,
+        "top": 0.008373205741626795,
+        "right": 0.9054197662061636,
+        "bottom": 0.9826555023923444
+      },
+      "format": "png",
+      "object": "qi-changfeng/50c2065734d8764b/qi-changfeng__turnaround__side__v1.png",
+      "preview": "/media/assets/qi-changfeng/turnaround.side.webp",
+      "thumb": "/media/assets/qi-changfeng/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8132522156516787,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 863563,
+      "sha256": "812b6d40cbb7aad197d532af0e41eeb61877ed0247c3d86593443e10c4ad2389",
+      "sourceSha256": "812b6d40cbb7aad197d532af0e41eeb61877ed0247c3d86593443e10c4ad2389",
+      "bbox": {
+        "left": 0.022316684378320937,
+        "top": 0.008373205741626795,
+        "right": 0.9723698193411264,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/812b6d40cbb7aad1/qi-changfeng__turnaround__back__v1.png",
+      "preview": "/media/assets/qi-changfeng/turnaround.back.webp",
+      "thumb": "/media/assets/qi-changfeng/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6947847652654968,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 817010,
+      "sha256": "5c5b9f1e7664e9905544c7098336f0010c7ef3651b3a9b9019f4a605a84f6f24",
+      "sourceSha256": "5c5b9f1e7664e9905544c7098336f0010c7ef3651b3a9b9019f4a605a84f6f24",
+      "bbox": {
+        "left": 0.03294367693942614,
+        "top": 0.008971291866028708,
+        "right": 0.9744952178533475,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/5c5b9f1e7664e990/qi-changfeng__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/qi-changfeng/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/qi-changfeng/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7140455536968205,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 792768,
+      "sha256": "f733f3e7eba4b87fc5fe3264c2b271f667353a4257a18add44cc55c1b8dd81fb",
+      "sourceSha256": "f733f3e7eba4b87fc5fe3264c2b271f667353a4257a18add44cc55c1b8dd81fb",
+      "bbox": {
+        "left": 0,
+        "top": 0.009569377990430622,
+        "right": 0.9617428267800212,
+        "bottom": 0.9808612440191388
+      },
+      "format": "png",
+      "object": "qi-changfeng/f733f3e7eba4b87f/qi-changfeng__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/qi-changfeng/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/qi-changfeng/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7122722696510381,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1984766,
+      "sha256": "4402d3eb2ba98798c059ab1cdc12757f32f6c6c750bd286dcb6cdace3e0a12c0",
+      "sourceSha256": "4402d3eb2ba98798c059ab1cdc12757f32f6c6c750bd286dcb6cdace3e0a12c0",
+      "bbox": {
+        "left": 0,
+        "top": 0.02332535885167464,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/4402d3eb2ba98798/qi-changfeng__face__front__v1.png",
+      "preview": "/media/assets/qi-changfeng/face.front.webp",
+      "thumb": "/media/assets/qi-changfeng/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3676170367470216,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1806931,
+      "sha256": "a7f07c5b9d0c2d3fa79aa8551169468424bb36781f7f8eafc38eccf9203e0ba7",
+      "sourceSha256": "a7f07c5b9d0c2d3fa79aa8551169468424bb36781f7f8eafc38eccf9203e0ba7",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/a7f07c5b9d0c2d3f/qi-changfeng__face__three-quarter__v1.png",
+      "preview": "/media/assets/qi-changfeng/face.three-quarter.webp",
+      "thumb": "/media/assets/qi-changfeng/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3689320635178905,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2004925,
+      "sha256": "b6e04ba6fd7d2de9ddfe2e8c1766fe355708f06f908db21724a6568274d9557a",
+      "sourceSha256": "b6e04ba6fd7d2de9ddfe2e8c1766fe355708f06f908db21724a6568274d9557a",
+      "bbox": {
+        "left": 0,
+        "top": 0.0029904306220095694,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/b6e04ba6fd7d2de9/qi-changfeng__face__side__v1.png",
+      "preview": "/media/assets/qi-changfeng/face.side.webp",
+      "thumb": "/media/assets/qi-changfeng/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.38650155845608614,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2004208,
+      "sha256": "bd6764b3f37e4ce67e409f8a3f56a3185afe4b9133f5ace8b2c2575cb12e8e89",
+      "sourceSha256": "bd6764b3f37e4ce67e409f8a3f56a3185afe4b9133f5ace8b2c2575cb12e8e89",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/bd6764b3f37e4ce6/qi-changfeng__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/qi-changfeng/face.three-quarter-left.webp",
+      "thumb": "/media/assets/qi-changfeng/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.35018037921583983,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1922836,
+      "sha256": "d224dde7bc1478128240948f028b837b19f8f04fd77ddc9157a29e0e9502564f",
+      "sourceSha256": "d224dde7bc1478128240948f028b837b19f8f04fd77ddc9157a29e0e9502564f",
+      "bbox": {
+        "left": 0,
+        "top": 0.02452153110047847,
+        "right": 0.9681190223166843,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/d224dde7bc147812/qi-changfeng__face__side-right__v1.png",
+      "preview": "/media/assets/qi-changfeng/face.side-right.webp",
+      "thumb": "/media/assets/qi-changfeng/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.37077907550249406,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1745685,
+      "sha256": "43c198c8d4b0004d03bc618aa5d8a28957d0e197f88949f27a9f3732893f4c0f",
+      "sourceSha256": "43c198c8d4b0004d03bc618aa5d8a28957d0e197f88949f27a9f3732893f4c0f",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/43c198c8d4b0004d/qi-changfeng__face__up__v1.png",
+      "preview": "/media/assets/qi-changfeng/face.up.webp",
+      "thumb": "/media/assets/qi-changfeng/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4193149403312164,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1902731,
+      "sha256": "faf267e0f19aa380af3f454745c4a5a8940fd39dccf23095ed6e5e38fd5afa67",
+      "sourceSha256": "faf267e0f19aa380af3f454745c4a5a8940fd39dccf23095ed6e5e38fd5afa67",
       "bbox": {
         "left": 0,
         "top": 0,
@@ -22,11 +415,1232 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "qi-changfeng/CC-047.png",
-      "preview": "/media/assets/qi-changfeng/turnaround.front.webp",
-      "large": "/media/assets/qi-changfeng/turnaround.front.large.webp",
-      "thumb": "/media/assets/qi-changfeng/turnaround.front.thumb.webp",
-      "blur": "data:image/webp;base64,UklGRmYBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSLYAAAAJgFtt2/Lkfr4o7hO4u8MG9LTULMQELODeUVG6u7sTT97YEBExASArXA2NJ2SA6BgbriGvcXS68egsB75eHxCAs8Ht4andThyIyY54om0CgVGGRCUGjv07r+/gEkGChpC4byAJKBQHXjwA7qwQqu+9IKyvJhSqHY2BKbVVeHjmXTABTD9fX/7OkDf+f38qsBz8X4clAZTjLbW/gkrypmL6ogjlWEwfVJFXfJwm/AhEy8Xm92wPBlZQOCCKAAAAkAMAnQEqDAAVAD8BaqxPKyYkIjAIAWAgCWYAnQGLfBR/r14TbADwPWX/exkF037lYvkE9TYN+AsPeC57Ge9S+SWuX8sk9hv/nwzbL1dYlG0cf40z59t1W35ARpSbol0/CP9/8TEk2sAIiyVX3mohmq/QgR3h95D4pf/+Tx/zupRn2xP//lYCBSAA"
+      "object": "qi-changfeng/faf267e0f19aa380/qi-changfeng__face__down__v1.png",
+      "preview": "/media/assets/qi-changfeng/face.down.webp",
+      "thumb": "/media/assets/qi-changfeng/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.36697064611097835,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1950221,
+      "sha256": "20e178f99bf61ab0bb25fa76d7aa9da3a04ae193f9af1423354d9b593b6b65b6",
+      "sourceSha256": "20e178f99bf61ab0bb25fa76d7aa9da3a04ae193f9af1423354d9b593b6b65b6",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/20e178f99bf61ab0/qi-changfeng__expression__neutral__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.neutral.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3531695386664904,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1718216,
+      "sha256": "1316aa2f0aba023534d54a82781c9050ac9c04cf39b9aa9fe990f66a618bac24",
+      "sourceSha256": "1316aa2f0aba023534d54a82781c9050ac9c04cf39b9aa9fe990f66a618bac24",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/1316aa2f0aba0235/qi-changfeng__expression__smile__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.smile.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4125357834737554,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1939881,
+      "sha256": "e75ac37ffddaa32c7ec029a80cafab8f97fc51b1bded9c969ac9d7e465e50a9b",
+      "sourceSha256": "e75ac37ffddaa32c7ec029a80cafab8f97fc51b1bded9c969ac9d7e465e50a9b",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/e75ac37ffddaa32c/qi-changfeng__expression__laugh__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.laugh.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3823810564959399,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1978899,
+      "sha256": "0d7bc1594a8d75aa3afc445ce71db5a7cff9ee21388f9eeb281341f57340308a",
+      "sourceSha256": "0d7bc1594a8d75aa3afc445ce71db5a7cff9ee21388f9eeb281341f57340308a",
+      "bbox": {
+        "left": 0,
+        "top": 0.019138755980861243,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/0d7bc1594a8d75aa/qi-changfeng__expression__sad__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.sad.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.359904204526387,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1857067,
+      "sha256": "3113fb8689977285ab96f13d559b2f3197245ed1084c69f01babc0a53be75245",
+      "sourceSha256": "3113fb8689977285ab96f13d559b2f3197245ed1084c69f01babc0a53be75245",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/3113fb8689977285/qi-changfeng__expression__cry__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.cry.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.37295913438315137,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1922851,
+      "sha256": "085d08bd80b38059085e4c71e65c3b054a3c872be3b09c1c31f5e34d2a8609e1",
+      "sourceSha256": "085d08bd80b38059085e4c71e65c3b054a3c872be3b09c1c31f5e34d2a8609e1",
+      "bbox": {
+        "left": 0,
+        "top": 0.004186602870813397,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/085d08bd80b38059/qi-changfeng__expression__annoyed__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.annoyed.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3943408722269397,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2002947,
+      "sha256": "30a5c062ca0e0156006a9fd4b93232a64be8cf069412ecee38b388195f5b7056",
+      "sourceSha256": "30a5c062ca0e0156006a9fd4b93232a64be8cf069412ecee38b388195f5b7056",
+      "bbox": {
+        "left": 0,
+        "top": 0.016148325358851676,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/30a5c062ca0e0156/qi-changfeng__expression__angry__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.angry.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3666611158850658,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1968867,
+      "sha256": "05f7529438c07bcccd166ad9bd62ba9db12cb410f07523e99bb887a6417000a4",
+      "sourceSha256": "05f7529438c07bcccd166ad9bd62ba9db12cb410f07523e99bb887a6417000a4",
+      "bbox": {
+        "left": 0,
+        "top": 0.019736842105263157,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/05f7529438c07bcc/qi-changfeng__expression__surprised__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.surprised.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3836242620850261,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1670229,
+      "sha256": "b289de4b7be60b7c9e164d7947b483daede0dce93d0874ee811b85f0594a7bf9",
+      "sourceSha256": "b289de4b7be60b7c9e164d7947b483daede0dce93d0874ee811b85f0594a7bf9",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/b289de4b7be60b7c/qi-changfeng__expression__scared__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.scared.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4234081121071445,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1751700,
+      "sha256": "7bed56321c50e0dedc3fe67d07c478eff9a4fdb789f2ee20bb2e96184c7d89fd",
+      "sourceSha256": "7bed56321c50e0dedc3fe67d07c478eff9a4fdb789f2ee20bb2e96184c7d89fd",
+      "bbox": {
+        "left": 0,
+        "top": 0.008971291866028708,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/7bed56321c50e0de/qi-changfeng__expression__disgusted__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.disgusted.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3987435742287803,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1919403,
+      "sha256": "7331372a742e84eff930987c49da4cffd220e323412b726052d5aa3e06ba8509",
+      "sourceSha256": "7331372a742e84eff930987c49da4cffd220e323412b726052d5aa3e06ba8509",
+      "bbox": {
+        "left": 0,
+        "top": 0.04724880382775119,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/7331372a742e84ef/qi-changfeng__expression__embarrassed__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.embarrassed.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3329229568462747,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1645979,
+      "sha256": "4050ebaea320417e9033d7fe17d56fe96c2acbe6eb14460f163dec7aa4b599c7",
+      "sourceSha256": "4050ebaea320417e9033d7fe17d56fe96c2acbe6eb14460f163dec7aa4b599c7",
+      "bbox": {
+        "left": 0,
+        "top": 0.07117224880382775,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/4050ebaea320417e/qi-changfeng__expression__tired__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.tired.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44843684057985755,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1866067,
+      "sha256": "0043e62abb7fe7464b7ab83c01a2ff287ec6796dd3a040e72d5e0a681bb525c8",
+      "sourceSha256": "0043e62abb7fe7464b7ab83c01a2ff287ec6796dd3a040e72d5e0a681bb525c8",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/0043e62abb7fe746/qi-changfeng__expression__speaking__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.speaking.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4038829200331521,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1779635,
+      "sha256": "cf077d21049da3b8cd36c7b48b239bf807d929b20bda7b7e921d4004079365cb",
+      "sourceSha256": "cf077d21049da3b8cd36c7b48b239bf807d929b20bda7b7e921d4004079365cb",
+      "bbox": {
+        "left": 0,
+        "top": 0.011961722488038277,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/cf077d21049da3b8/qi-changfeng__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.eyes-closed.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.40882523427688144,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1718761,
+      "sha256": "2b78e96b0a2c69bfb699f10c754ffce104a001b0eacdede857ff9c7181521cdc",
+      "sourceSha256": "2b78e96b0a2c69bfb699f10c754ffce104a001b0eacdede857ff9c7181521cdc",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/2b78e96b0a2c69bf/qi-changfeng__expression__worried__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.worried.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.41552049382464956,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1810863,
+      "sha256": "f9aa0a1e4cab6093862e3037be7623546cc98b2ea951cbd2114c2851c2b1311d",
+      "sourceSha256": "f9aa0a1e4cab6093862e3037be7623546cc98b2ea951cbd2114c2851c2b1311d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/f9aa0a1e4cab6093/qi-changfeng__expression__skeptical__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.skeptical.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4012217227931194,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1962755,
+      "sha256": "3a18e45c32903c23b15c93933b0043bdcda5ff5c4b25c1126273a2ec8fdffdbc",
+      "sourceSha256": "3a18e45c32903c23b15c93933b0043bdcda5ff5c4b25c1126273a2ec8fdffdbc",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/3a18e45c32903c23/qi-changfeng__expression__smug__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.smug.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.36942845593357365,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2084395,
+      "sha256": "8e3317837e0ec322e1c29010417b9329fdb1e1c0aab10627fd52e4a1c1962406",
+      "sourceSha256": "8e3317837e0ec322e1c29010417b9329fdb1e1c0aab10627fd52e4a1c1962406",
+      "bbox": {
+        "left": 0,
+        "top": 0.03289473684210526,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/8e3317837e0ec322/qi-changfeng__expression__contempt__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.contempt.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3652958778455171,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1678061,
+      "sha256": "07c328c3001bcf62d12c70c12dbf7bcb7fdf62ac84d1f13c50b7dc5a44a80881",
+      "sourceSha256": "07c328c3001bcf62d12c70c12dbf7bcb7fdf62ac84d1f13c50b7dc5a44a80881",
+      "bbox": {
+        "left": 0,
+        "top": 0.02930622009569378,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/07c328c3001bcf62/qi-changfeng__expression__confused__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.confused.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4258582949015859,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2043669,
+      "sha256": "ad7bd6ca9434bcdf78a2339ad1fe2d75734a71b25fd35e1b71f71c416b1ceeb1",
+      "sourceSha256": "ad7bd6ca9434bcdf78a2339ad1fe2d75734a71b25fd35e1b71f71c416b1ceeb1",
+      "bbox": {
+        "left": 0,
+        "top": 0.039473684210526314,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/ad7bd6ca9434bcdf/qi-changfeng__expression__thinking__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.thinking.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3512049433311808,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1797501,
+      "sha256": "961594b392b3bbc9a96f9f6e78039327075e544386f3a93d18055fb926a401bc",
+      "sourceSha256": "961594b392b3bbc9a96f9f6e78039327075e544386f3a93d18055fb926a401bc",
+      "bbox": {
+        "left": 0,
+        "top": 0.02332535885167464,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/961594b392b3bbc9/qi-changfeng__expression__determined__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.determined.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3811079783799175,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1947920,
+      "sha256": "1754c659182c0515d4748a2ccca5c735ec8e56172e4d8418c4927ff7f18fc46b",
+      "sourceSha256": "1754c659182c0515d4748a2ccca5c735ec8e56172e4d8418c4927ff7f18fc46b",
+      "bbox": {
+        "left": 0,
+        "top": 0.05741626794258373,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/1754c659182c0515/qi-changfeng__expression__shy__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.shy.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3720540603755549,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1708091,
+      "sha256": "effd3dcf766871febdd3945232a94f836c5509d65b76d18aae1dd05277256973",
+      "sourceSha256": "effd3dcf766871febdd3945232a94f836c5509d65b76d18aae1dd05277256973",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/effd3dcf766871fe/qi-changfeng__expression__pain__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.pain.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4204176814851349,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1882776,
+      "sha256": "6063bbb0aa3bf755d9e1241a582f2bc02b5f685805589ba086f9878c3608bda1",
+      "sourceSha256": "6063bbb0aa3bf755d9e1241a582f2bc02b5f685805589ba086f9878c3608bda1",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/6063bbb0aa3bf755/qi-changfeng__expression__sleepy__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.sleepy.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3834526539515633,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1851629,
+      "sha256": "97cad00720021fe0aef1f0656204a2d3e847fd2983555040ebe72aa70a78c232",
+      "sourceSha256": "97cad00720021fe0aef1f0656204a2d3e847fd2983555040ebe72aa70a78c232",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/97cad00720021fe0/qi-changfeng__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.awkward-smile.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3853962749594496,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2028099,
+      "sha256": "a95b334edc3d2072a9dbd53bb884138120c804651b6153ba3b1ce7ec077d4506",
+      "sourceSha256": "a95b334edc3d2072a9dbd53bb884138120c804651b6153ba3b1ce7ec077d4506",
+      "bbox": {
+        "left": 0,
+        "top": 0.02452153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/a95b334edc3d2072/qi-changfeng__expression__deadpan__v1.png",
+      "preview": "/media/assets/qi-changfeng/expression.deadpan.webp",
+      "thumb": "/media/assets/qi-changfeng/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3632092500597451,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 914617,
+      "sha256": "9207f4ae0725df06e8822cd22de1a394c6b9c817e5d1db76cc773f468faf3421",
+      "sourceSha256": "9207f4ae0725df06e8822cd22de1a394c6b9c817e5d1db76cc773f468faf3421",
+      "bbox": {
+        "left": 0.1392136025504782,
+        "top": 0.008971291866028708,
+        "right": 0.7577045696068013,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "qi-changfeng/9207f4ae0725df06/qi-changfeng__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/qi-changfeng/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/qi-changfeng/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6836804478590932,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 868657,
+      "sha256": "3562355fcaeae0ff486764da3db8edbf8ab4845bf865e007a26ae8d1299ab0ca",
+      "sourceSha256": "3562355fcaeae0ff486764da3db8edbf8ab4845bf865e007a26ae8d1299ab0ca",
+      "bbox": {
+        "left": 0,
+        "top": 0.0005980861244019139,
+        "right": 0.9500531349628055,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "qi-changfeng/3562355fcaeae0ff/qi-changfeng__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/qi-changfeng/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/qi-changfeng/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7057270083236301,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 646874,
+      "sha256": "93b9d80d09752cc8bdf4cede2b1734a2e77bb82a31067680ce3a4f516e32a4d6",
+      "sourceSha256": "93b9d80d09752cc8bdf4cede2b1734a2e77bb82a31067680ce3a4f516e32a4d6",
+      "bbox": {
+        "left": 0.05951115834218916,
+        "top": 0,
+        "right": 0.9766206163655685,
+        "bottom": 0.9838516746411483
+      },
+      "format": "png",
+      "object": "qi-changfeng/93b9d80d09752cc8/qi-changfeng__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/qi-changfeng/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/qi-changfeng/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7892950846345891,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 941848,
+      "sha256": "2ced0738510b6eb2545986a06d6eff7d7e74f753135aea5c740298e46afaa702",
+      "sourceSha256": "2ced0738510b6eb2545986a06d6eff7d7e74f753135aea5c740298e46afaa702",
+      "bbox": {
+        "left": 0.025504782146652496,
+        "top": 0.01076555023923445,
+        "right": 0.9851222104144527,
+        "bottom": 0.9844497607655502
+      },
+      "format": "png",
+      "object": "qi-changfeng/2ced0738510b6eb2/qi-changfeng__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/qi-changfeng/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/qi-changfeng/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6895570730516757,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2182932,
+      "sha256": "b43edae4ce803abc751680f2629cc9de5edc39032fcc0aa43f329e1832628f70",
+      "sourceSha256": "b43edae4ce803abc751680f2629cc9de5edc39032fcc0aa43f329e1832628f70",
+      "bbox": {
+        "left": 0,
+        "top": 0.019138755980861243,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/b43edae4ce803abc/qi-changfeng__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/qi-changfeng/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/qi-changfeng/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.33957308981079887,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.hat-detail",
+      "series": "wardrobe",
+      "key": "hat-detail",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2314515,
+      "sha256": "71f21adac3062a540e31bb041f9db7f2226db3e94f96f42ba15011281833f436",
+      "sourceSha256": "71f21adac3062a540e31bb041f9db7f2226db3e94f96f42ba15011281833f436",
+      "bbox": {
+        "left": 0,
+        "top": 0.0023923444976076554,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/71f21adac3062a54/qi-changfeng__wardrobe-personal__hat-detail__v1.png",
+      "preview": "/media/assets/qi-changfeng/wardrobe.personal.hat-detail.webp",
+      "thumb": "/media/assets/qi-changfeng/wardrobe.personal.hat-detail.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34532196228180345,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.overshirt-detail",
+      "series": "wardrobe",
+      "key": "overshirt-detail",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1801281,
+      "sha256": "8864df5df58aef2f3a804fe6b2d1af3350c059bb822a1032b3df090f35550e89",
+      "sourceSha256": "8864df5df58aef2f3a804fe6b2d1af3350c059bb822a1032b3df090f35550e89",
+      "bbox": {
+        "left": 0.057385759829968117,
+        "top": 0.011363636363636364,
+        "right": 0.9787460148777896,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/8864df5df58aef2f/qi-changfeng__wardrobe-personal__overshirt-detail__v1.png",
+      "preview": "/media/assets/qi-changfeng/wardrobe.personal.overshirt-detail.webp",
+      "thumb": "/media/assets/qi-changfeng/wardrobe.personal.overshirt-detail.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3943478636694141,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.rear-three-quarter",
+      "series": "wardrobe",
+      "key": "rear-three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 851708,
+      "sha256": "0f0346e2a588bcb75602ccf70f3142eaf2dfd0606c4e486b06b886a9a295862b",
+      "sourceSha256": "0f0346e2a588bcb75602ccf70f3142eaf2dfd0606c4e486b06b886a9a295862b",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.007177033492822967,
+        "right": 0.9681190223166843,
+        "bottom": 0.9814593301435407
+      },
+      "format": "png",
+      "object": "qi-changfeng/0f0346e2a588bcb7/qi-changfeng__wardrobe-personal__rear-three-quarter__v1.png",
+      "preview": "/media/assets/qi-changfeng/wardrobe.personal.rear-three-quarter.webp",
+      "thumb": "/media/assets/qi-changfeng/wardrobe.personal.rear-three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7250558044226594,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 744075,
+      "sha256": "b27b422b6c7db27f06a6edd131c5d4efd9e3bc7a92195dad5ec7508583bdd859",
+      "sourceSha256": "b27b422b6c7db27f06a6edd131c5d4efd9e3bc7a92195dad5ec7508583bdd859",
+      "bbox": {
+        "left": 0,
+        "top": 0.004186602870813397,
+        "right": 0.9766206163655685,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/b27b422b6c7db27f/qi-changfeng__pose__walk__v1.png",
+      "preview": "/media/assets/qi-changfeng/pose.walk.webp",
+      "thumb": "/media/assets/qi-changfeng/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7409975644356762,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 785431,
+      "sha256": "bd2c6a4436d22792d7f7c1edc4f62e76b817718e1d68983c66d198da2990428c",
+      "sourceSha256": "bd2c6a4436d22792d7f7c1edc4f62e76b817718e1d68983c66d198da2990428c",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.00777511961722488,
+        "right": 0.9287991498405951,
+        "bottom": 0.9730861244019139
+      },
+      "format": "png",
+      "object": "qi-changfeng/bd2c6a4436d22792/qi-changfeng__pose__run__v1.png",
+      "preview": "/media/assets/qi-changfeng/pose.run.webp",
+      "thumb": "/media/assets/qi-changfeng/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7359039808002278,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1035984,
+      "sha256": "ffa28b8ff440f25e83dbb046534920635bbf9c298b347ac47e1f0ac9c38f5fd9",
+      "sourceSha256": "ffa28b8ff440f25e83dbb046534920635bbf9c298b347ac47e1f0ac9c38f5fd9",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 0.9787460148777896,
+        "bottom": 0.972488038277512
+      },
+      "format": "png",
+      "object": "qi-changfeng/ffa28b8ff440f25e/qi-changfeng__pose__sit__v1.png",
+      "preview": "/media/assets/qi-changfeng/pose.sit.webp",
+      "thumb": "/media/assets/qi-changfeng/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6450787872008298,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 703471,
+      "sha256": "356760d5ed5cd1b250f175eb06d358c2318b930d37740447d02a604df156a5b1",
+      "sourceSha256": "356760d5ed5cd1b250f175eb06d358c2318b930d37740447d02a604df156a5b1",
+      "bbox": {
+        "left": 0.2603613177470776,
+        "top": 0.0029904306220095694,
+        "right": 0.9776833156216791,
+        "bottom": 0.9892344497607656
+      },
+      "format": "png",
+      "object": "qi-changfeng/356760d5ed5cd1b2/qi-changfeng__pose__point__v1.png",
+      "preview": "/media/assets/qi-changfeng/pose.point.webp",
+      "thumb": "/media/assets/qi-changfeng/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7412899338482425,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 712758,
+      "sha256": "6e69343300391ed6a682d884325e0fe45d9c6fe475c0246d3909b27fadc78fce",
+      "sourceSha256": "6e69343300391ed6a682d884325e0fe45d9c6fe475c0246d3909b27fadc78fce",
+      "bbox": {
+        "left": 0,
+        "top": 0.0029904306220095694,
+        "right": 0.9617428267800212,
+        "bottom": 0.9880382775119617
+      },
+      "format": "png",
+      "object": "qi-changfeng/6e69343300391ed6/qi-changfeng__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/qi-changfeng/pose.arms-crossed.webp",
+      "thumb": "/media/assets/qi-changfeng/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7473197351895825,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 802294,
+      "sha256": "0e7159a1692fc7c79f7d4ffd287de020b03db570607c5a34785dc64cc5875898",
+      "sourceSha256": "0e7159a1692fc7c79f7d4ffd287de020b03db570607c5a34785dc64cc5875898",
+      "bbox": {
+        "left": 0.07013815090329437,
+        "top": 0.010167464114832535,
+        "right": 0.9872476089266737,
+        "bottom": 0.9844497607655502
+      },
+      "format": "png",
+      "object": "qi-changfeng/0e7159a1692fc7c7/qi-changfeng__pose__phone__v1.png",
+      "preview": "/media/assets/qi-changfeng/pose.phone.webp",
+      "thumb": "/media/assets/qi-changfeng/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7124680300403216,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1379446,
+      "sha256": "f37a5e886a02d773620144dd7a80a6b28f475d39fd3aeb1fc1bf0b7e3e8de8f9",
+      "sourceSha256": "f37a5e886a02d773620144dd7a80a6b28f475d39fd3aeb1fc1bf0b7e3e8de8f9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/f37a5e886a02d773/qi-changfeng__detail__hands__v1.png",
+      "preview": "/media/assets/qi-changfeng/detail.hands.webp",
+      "thumb": "/media/assets/qi-changfeng/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5248812725950709,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2091933,
+      "sha256": "890abe3b4a1ab15790a60f0fb7e57f699e9cbbf0d918a69d41375706e2c3438d",
+      "sourceSha256": "890abe3b4a1ab15790a60f0fb7e57f699e9cbbf0d918a69d41375706e2c3438d",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qi-changfeng/890abe3b4a1ab157/qi-changfeng__detail__hair-back__v1.png",
+      "preview": "/media/assets/qi-changfeng/detail.hair-back.webp",
+      "thumb": "/media/assets/qi-changfeng/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3768133259435905,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
     },
     {
       "kind": "voice",
@@ -34,28 +1648,155 @@
       "series": "voice",
       "key": "intro",
       "look": null,
-      "conformance": "v1",
+      "conformance": "source-original",
       "version": 1,
       "width": 0,
       "height": 0,
-      "bytes": 252132,
-      "sha256": "431711c85d90dd76042102e8e4138afd2380ae641dacd97ff649ab0cd581945c",
-      "sourceSha256": "431711c85d90dd76042102e8e4138afd2380ae641dacd97ff649ab0cd581945c",
+      "bytes": 1247148,
+      "sha256": "cf5e6582a19bd887f807e131670cf7f0d276522c09620646b29bac20fd97d1cb",
+      "sourceSha256": "cf5e6582a19bd887f807e131670cf7f0d276522c09620646b29bac20fd97d1cb",
       "bbox": {
         "left": 0,
         "top": 0,
         "right": 0,
         "bottom": 0
       },
-      "format": "mp3",
-      "object": "voice/qi-changfeng/candidate-1.mp3",
+      "format": "wav",
+      "object": "voice/qi-changfeng/qi-changfeng__voice__intro__v1__cf5e6582a19bd887.wav",
       "preview": "/api/voice/qi-changfeng/intro",
       "thumb": "/api/voice/qi-changfeng/intro",
       "previewUrl": "/api/voice/qi-changfeng/intro",
-      "durationSec": 20.8,
-      "transcript": {
-        "text": "我叫祁长风，兰州人，四十二。话不多，见谅。在西北跑了十几年长途货车，一个人开夜路，习惯了安静。我觉得我适合演那种不说话的人，比如守夜的人、送信的人，或者一个藏着过去的男人。"
-      }
+      "durationSec": 19.5
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1067502,
+      "sha256": "1f99ab610b3c962951f00c1ea3a9267c26a5d0dfce9442b96e906c2529206970",
+      "sourceSha256": "1f99ab610b3c962951f00c1ea3a9267c26a5d0dfce9442b96e906c2529206970",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/qi-changfeng/qi-changfeng__voice__intro-alt__v1__1f99ab610b3c9629.wav",
+      "preview": "/api/voice/qi-changfeng/intro-alt",
+      "thumb": "/api/voice/qi-changfeng/intro-alt",
+      "previewUrl": "/api/voice/qi-changfeng/intro-alt",
+      "durationSec": 16.6
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 947248,
+      "sha256": "47bf38f03f1f91cb7b012edd63cf9846bbf0011ea144804f4904f09e5c31362c",
+      "sourceSha256": "47bf38f03f1f91cb7b012edd63cf9846bbf0011ea144804f4904f09e5c31362c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/qi-changfeng/qi-changfeng__voice__chat__v1__47bf38f03f1f91cb.wav",
+      "preview": "/api/voice/qi-changfeng/chat",
+      "thumb": "/api/voice/qi-changfeng/chat",
+      "previewUrl": "/api/voice/qi-changfeng/chat",
+      "durationSec": 14.8
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 674552,
+      "sha256": "0e83d7c2f889a5fee43b7553909f6777f22de51750186d5a424597406a4f662a",
+      "sourceSha256": "0e83d7c2f889a5fee43b7553909f6777f22de51750186d5a424597406a4f662a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/qi-changfeng/qi-changfeng__voice__happy__v1__0e83d7c2f889a5fe.wav",
+      "preview": "/api/voice/qi-changfeng/happy",
+      "thumb": "/api/voice/qi-changfeng/happy",
+      "previewUrl": "/api/voice/qi-changfeng/happy",
+      "durationSec": 10.5
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 671580,
+      "sha256": "06e855ca27d57375ed0d039e31af4736edea9d2656755cb7a4f4646d600a8c1e",
+      "sourceSha256": "06e855ca27d57375ed0d039e31af4736edea9d2656755cb7a4f4646d600a8c1e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/qi-changfeng/qi-changfeng__voice__angry__v1__06e855ca27d57375.wav",
+      "preview": "/api/voice/qi-changfeng/angry",
+      "thumb": "/api/voice/qi-changfeng/angry",
+      "previewUrl": "/api/voice/qi-changfeng/angry",
+      "durationSec": 10.5
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 826132,
+      "sha256": "41f1f7c9a561638a488104f075827fd9ba7f56e475ad6c3f56033b9fd6e1e89e",
+      "sourceSha256": "41f1f7c9a561638a488104f075827fd9ba7f56e475ad6c3f56033b9fd6e1e89e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/qi-changfeng/qi-changfeng__voice__sad__v1__41f1f7c9a561638a.wav",
+      "preview": "/api/voice/qi-changfeng/sad",
+      "thumb": "/api/voice/qi-changfeng/sad",
+      "previewUrl": "/api/voice/qi-changfeng/sad",
+      "durationSec": 12.9
     }
   ]
 }

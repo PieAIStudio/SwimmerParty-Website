@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/du-shouren/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "demographics": {
@@ -63,6 +63,49 @@
         "en": "Casting basics"
       },
       "prompt": "navy plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied du-shouren personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "jump-rope",
+          "label": {
+            "en": "Jump rope",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / jump-rope reference image."
+        },
+        {
+          "key": "mug-of-tea",
+          "label": {
+            "en": "Mug of tea",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / mug-of-tea reference image."
+        },
+        {
+          "key": "hand-wraps",
+          "label": {
+            "en": "Hand wraps",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / hand-wraps reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        }
+      ]
     }
   ],
   "roles": [],
@@ -75,5 +118,564 @@
     "chatgpt-web": {
       "chat": null
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z63vp-33e83d31/du-shouren-handoff.md",
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z63vp-33e83d31/voice/selection.json"
+    ],
+    "images": [
+      {
+        "slot": "turnaround.front",
+        "source": "du-shouren/du-shouren__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__turnaround__front__v1.png",
+        "sha256": "b02dce7435802e74ccece26df5999b28336ff3b9a9b0dc0cb80aaa1ba34ed2b9",
+        "bytes": 1361594,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "du-shouren/du-shouren__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__speaking__v1.png",
+        "sha256": "b5ef4d404277d21b91c036e100b0a32d8edda799175e59775e54bc3ca3dcfa9f",
+        "bytes": 3031837,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "du-shouren/du-shouren__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__wardrobe-personal__side__v1.png",
+        "sha256": "ee984dd08f8ab7b30a7b28869f20d837fe54e62eabd3058b8ddc7ef5e26fdc63",
+        "bytes": 919213,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "du-shouren/du-shouren__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__face__three-quarter-left__v1.png",
+        "sha256": "d63681bd0792c952405479a4e2cc22975a3b95abe4ac0a4ad984291d037b6d0e",
+        "bytes": 2965240,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "du-shouren/du-shouren__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__disgusted__v1.png",
+        "sha256": "1fb650c20824b1beb2cd1050ed3ad2a83ec1ca290979bfc8763da0f874251dd6",
+        "bytes": 2919424,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "du-shouren/du-shouren__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__awkward-smile__v1.png",
+        "sha256": "5ac06e919b59f5b5a83a78d18a2d6b9959c7b435a8879324c994aa9a45b1f476",
+        "bytes": 2668759,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "du-shouren/du-shouren__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__cry__v1.png",
+        "sha256": "3db5e18f68c400d1361302013dc944a5accaf6d7f82b4bd0ab344d2c8d09657d",
+        "bytes": 3030536,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "du-shouren/du-shouren__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__shy__v1.png",
+        "sha256": "ee6655732e77b0e61d9da10c1f05b9f764c0049bf3e7751f23f93c1c6224eae3",
+        "bytes": 2938577,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "du-shouren/du-shouren__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__turnaround__back-three-quarter-right__v2.png",
+        "sha256": "b60f5c5b2875e942dff97e955c6b02da5581ada5d8d20ad3932b05df087a9866",
+        "bytes": 850539,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "du-shouren/du-shouren__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__contempt__v1.png",
+        "sha256": "2f720eca942d992ee023835b11131a23fab3127a81a6468cc3b0c47d0ad37a56",
+        "bytes": 2942051,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "du-shouren/du-shouren__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__embarrassed__v1.png",
+        "sha256": "2983000d1668a2bfe658df2790282ee61199e3bedb8b6f5f07223cba1e95bb38",
+        "bytes": 3228337,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "du-shouren/du-shouren__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__scared__v1.png",
+        "sha256": "bd6e90e4c0f944b30d5d2e16c8def0f09073ab568421a587d172aaae8432c117",
+        "bytes": 2907066,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "du-shouren/du-shouren__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__face__down__v1.png",
+        "sha256": "51b27a48e9ec1b09e7c469497292d248b50c48d0e670800799499b6cf402044d",
+        "bytes": 3121171,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "du-shouren/du-shouren__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__detail__hands__v1.png",
+        "sha256": "ba20ac8bfd777274ff24db2008b043d78f565603ca883c083c7521fc249cee0f",
+        "bytes": 2880255,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "du-shouren/du-shouren__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__surprised__v1.png",
+        "sha256": "6beaef6971496eeaa84b5eda2f9dbbc5483df2f5e0e725bbcabb3dae2d5bce81",
+        "bytes": 2959956,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "du-shouren/du-shouren__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__wardrobe-personal__back__v1.png",
+        "sha256": "317072a3b943a20164bce25e739face58adba3258f7e6de7ba9bc75e2f2ef87a",
+        "bytes": 1344241,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "du-shouren/du-shouren__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__face__front__v1.png",
+        "sha256": "2b0d11063039d2f2ca21bdb8f31308a6ea72467f9434b9b01c10674aa23ea60d",
+        "bytes": 3030362,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "du-shouren/du-shouren__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__thinking__v1.png",
+        "sha256": "7a1dfb59cbae4d76586afe1c55ec0cc159884605fd6dd8142f68ed71e2264f91",
+        "bytes": 2824335,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.jump-rope",
+        "source": "du-shouren/du-shouren__wardrobe-personal__jump-rope__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__wardrobe-personal__jump-rope__v1.png",
+        "sha256": "02beaceb1725e567aac4735f5a373ad47032787ac3e6ac00901a523cf5643831",
+        "bytes": 1508034,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "du-shouren/du-shouren__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__pose__phone__v1.png",
+        "sha256": "2ccf2b1bf2142b40a7faf64a53310d5abeaf042f8370a85d31678830d8075969",
+        "bytes": 1271818,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "du-shouren/du-shouren__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__pain__v1.png",
+        "sha256": "9727a8c1658ba3a672174d807a80a6ee5de2f716e991d8b09231175c3d2aa479",
+        "bytes": 2772148,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "du-shouren/du-shouren__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__tired__v1.png",
+        "sha256": "1278fb938c643729a7cbad772dbb039faca198c3b9ab791a131a072f8a552c85",
+        "bytes": 2801906,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "du-shouren/du-shouren__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__neutral__v1.png",
+        "sha256": "82951ecb7d362ac88abdf82088e4e2a69a20a00a77f088dcca97ef02e3f5a5b4",
+        "bytes": 2996416,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "du-shouren/du-shouren__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__skeptical__v1.png",
+        "sha256": "8ef413dcfac4b75dfe6a216327d17b224db2e5469a2e7508cd8986b2f5bbc0a9",
+        "bytes": 2914786,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "du-shouren/du-shouren__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__determined__v1.png",
+        "sha256": "877527c90aa0a52faa41dd2c44aedc583e6b981db3df6ba44570176308913285",
+        "bytes": 2984292,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.mug-of-tea",
+        "source": "du-shouren/du-shouren__wardrobe-personal__mug-of-tea__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__wardrobe-personal__mug-of-tea__v1.png",
+        "sha256": "be361eeee5f87d831e21b9b7144a60781db722a9de08611b490de65282986235",
+        "bytes": 1144060,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "du-shouren/du-shouren__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__face__three-quarter__v2.png",
+        "sha256": "5d48c4facc1ce84d339f4ea7a7c049622a6e5976e79d8d39986ac057276398c0",
+        "bytes": 1977886,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "du-shouren/du-shouren__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__face__side-right__v1.png",
+        "sha256": "930fdff932aba381c8a39f9389bbc3814021948b6ce3b90b92a36b8e80c9fd8d",
+        "bytes": 2863852,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "du-shouren/du-shouren__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__sleepy__v1.png",
+        "sha256": "62acb70708b4181015230fde31ac0db77096eaf67bf0dcf91495e64c8fc64974",
+        "bytes": 2778470,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "du-shouren/du-shouren__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__smug__v1.png",
+        "sha256": "264abf9ef47d89866aaa11171dae2c429df1fbda150d362cb758e9bd2ce097a8",
+        "bytes": 2929276,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "du-shouren/du-shouren__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__smile__v1.png",
+        "sha256": "4142f3286143648c0f76ae2b49f2bdf0db872c54a747f4b8647954c580bfc5b4",
+        "bytes": 2855814,
+        "version": 1
+      },
+      {
+        "slot": "detail.hair-back",
+        "source": "du-shouren/du-shouren__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__detail__hair-back__v1.png",
+        "sha256": "d17282b7224665860c502a2b023c4e5b6a0206bd22ca6b8accc82e5f8a73b213",
+        "bytes": 3274909,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "du-shouren/du-shouren__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__face__up__v1.png",
+        "sha256": "8615c96b92a8bd494c301afea47b7daf78153012b98a23ea2296aa8681a8b837",
+        "bytes": 2890895,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "du-shouren/du-shouren__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__eyes-closed__v1.png",
+        "sha256": "531b67e28d2f72f3bdea1b5a351e794bb97e15b9d169d3c8a20b00cbc9f31804",
+        "bytes": 2998938,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "du-shouren/du-shouren__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__worried__v1.png",
+        "sha256": "b8232d710029a67c8208d70a76c22e424e8cc58e7184f2f76edb37503e2c1185",
+        "bytes": 2879956,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "du-shouren/du-shouren__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__turnaround__three-quarter__v1.png",
+        "sha256": "97a0f336d735651f1a3bf5c02f96b15adc47e75569ee4e0248d19700d16604ad",
+        "bytes": 1245641,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "du-shouren/du-shouren__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__pose__run__v1.png",
+        "sha256": "b7e44ee365f4f56fffe9d6dbed218614739751979dd5bfd6a0204f243dd0dda7",
+        "bytes": 1410490,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.hand-wraps",
+        "source": "du-shouren/du-shouren__wardrobe-personal__hand-wraps__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__wardrobe-personal__hand-wraps__v1.png",
+        "sha256": "f1f891a8a32b5fac1a1887e74a32899c2b89c275542a03922f2e979b47cf1f78",
+        "bytes": 1285262,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "du-shouren/du-shouren__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__sad__v1.png",
+        "sha256": "2761284363973728cc1e47de80ab4d0db77e68ea0b6b78b0c6a204df38b85cac",
+        "bytes": 3193367,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "du-shouren/du-shouren__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__turnaround__back__v1.png",
+        "sha256": "baa099b963d00f43c83aedf4670f65fc984c3a3ae21d7d1f4af5716fb7f33e5a",
+        "bytes": 1365672,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "du-shouren/du-shouren__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__pose__walk__v1.png",
+        "sha256": "466d2c0888821b0f82322bb18ea98d76e0c7c3d3ec22ce17c762ddf323e6a083",
+        "bytes": 1362176,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "du-shouren/du-shouren__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__face__side__v1.png",
+        "sha256": "60306af6ea78eb103e0605d749627d2f7197dfdb78bc53535357c6547a2cc4f8",
+        "bytes": 2970308,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "du-shouren/du-shouren__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__wardrobe-personal__three-quarter__v1.png",
+        "sha256": "ac2217e6c74bea793ce088ddd8d3853ba0857f172b63b21c65fd46ad4fd631de",
+        "bytes": 1245915,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "du-shouren/du-shouren__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__confused__v1.png",
+        "sha256": "af9d4b01b27b1a0f4d2a9c0831b53d8905f3f3ceae3e989ae1a1a43e20582e9d",
+        "bytes": 2760724,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "du-shouren/du-shouren__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__pose__arms-crossed__v1.png",
+        "sha256": "40e38c41c83121c2f25353e8ed488291120b659986ec7549059084db9090dd58",
+        "bytes": 1183607,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "du-shouren/du-shouren__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__laugh__v1.png",
+        "sha256": "61e9081eb83144240ee14ef2b27598f35375b3bc65e171d7a4cb7da2ca493bc3",
+        "bytes": 3252510,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "du-shouren/du-shouren__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__pose__point__v1.png",
+        "sha256": "3305cc24303348436bac3b9464399d6b327ce5e51eb392fab01a3ee6a910f077",
+        "bytes": 1234869,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "du-shouren/du-shouren__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__wardrobe-personal__portrait__v1.png",
+        "sha256": "d3c9b87ffff7288b96c24abd592309586a8bce87c240bf5f40dd68c6d4960d66",
+        "bytes": 3065711,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "du-shouren/du-shouren__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__deadpan__v1.png",
+        "sha256": "71cc4c9267b92887783b7d413ab8ce2412ac4ba5cc06fb62107396b9a92a136e",
+        "bytes": 2718765,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "du-shouren/du-shouren__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__turnaround__side__v1.png",
+        "sha256": "d7a5cbe092b5f4bbe05a50befe6c8dcceffd4667b18c264d8bd1f6fb181b7bf5",
+        "bytes": 873859,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "du-shouren/du-shouren__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__annoyed__v1.png",
+        "sha256": "472778a9d53a26413f956d594dd1d662f7b4f2cec0854755ed007faf620229a7",
+        "bytes": 2918613,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "du-shouren/du-shouren__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__pose__sit__v1.png",
+        "sha256": "5a3c670817a0a8c146b4224773c776142f7d2e958ac8ba7be8e5941c9e58d08c",
+        "bytes": 1849288,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "du-shouren/du-shouren__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__wardrobe-personal__front__v1.png",
+        "sha256": "a18a7516570f9c26c8650a219952191b4ec620b78bfe4a4770aec9fc7b3a51f5",
+        "bytes": 1386919,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "du-shouren/du-shouren__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__expression__angry__v1.png",
+        "sha256": "8dbfda8a903f0596b7051cb186915fc46ad47f5bf2c4b46647ab3511f3188f22",
+        "bytes": 3106334,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "du-shouren/du-shouren__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/du-shouren/du-shouren__turnaround__back-three-quarter-left__v1.png",
+        "sha256": "622a13666b6c51fad5cc280644c065b8d077d7535996bc90c5a911409340aeb6",
+        "bytes": 1308703,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/du-shouren/du-shouren__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z63vp-33e83d31/voice/formal-v2/du-shouren__voice__intro__v2.wav",
+        "sha256": "3bb60280cb58b9e2bdc065222c7abe3b3143e358e5623e3d69b9d6c4b635c193",
+        "bytes": 1051730,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/du-shouren/du-shouren__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z63vp-33e83d31/voice/formal-v2/du-shouren__voice__chat__v2.wav",
+        "sha256": "e8c80e72c97ea6179c66e708e80df1ead43c93c64eb18bd8fcaee5afa8e5fc17",
+        "bytes": 636658,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/du-shouren/du-shouren__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z63vp-33e83d31/voice/formal-v2/du-shouren__voice__happy__v2.wav",
+        "sha256": "fbc7ffbedf5b18402e66d415f0416db32fcbddeb2cdb07937d28a17f1ea0d448",
+        "bytes": 523716,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/du-shouren/du-shouren__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z63vp-33e83d31/voice/formal-v2/du-shouren__voice__angry__v2.wav",
+        "sha256": "f516289591f587aaebfef4e9f449d02a5150f30e73a44470d3a000da2b53a8bc",
+        "bytes": 517772,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/du-shouren/du-shouren__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z63vp-33e83d31/voice/formal-v2/du-shouren__voice__sad__v2.wav",
+        "sha256": "d6ee0fbbaa4d38dc3c53929ba130bef59d77b6db0a30be035197b57cd5b51b7b",
+        "bytes": 765204,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/du-shouren/du-shouren__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z63vp-33e83d31/voice/english-intro-v3/du-shouren__voice__intro-alt__v3.wav",
+        "sha256": "f966bec824be6d7dd9781a985e4dec0b6b225e8305a184608c3e0e8a492b07bc",
+        "bytes": 1083106,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 101,
+    "status": "active",
+    "tagline": {
+      "zh": "白短发，瘦长脸，下巴一颗痣，眼睛总带笑。",
+      "en": "Short white hair, a lean face, a mole on the chin and kind eyes."
+    },
+    "introduction": {
+      "en": "East Asian (Chinese) man, about 72, lean, about 162 cm; short white hair, a lean face, kind eyes, a small mole on his chin; navy top",
+      "zh": "白短发，瘦长脸，下巴一颗痣，眼睛总带笑。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "du-shouren-grok-02-20261013",
+      "actorSlugs": [
+        "du-shouren"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-requested-motion-identity-and-head-body-scope-with-recorded-limitations",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/du-shouren-grok-02-20261013/source.mp4",
+          "sourceSha256": "f07737d395494cb995e6fc76c6b10b0ee82312b49cc429b5c3f46f4aaaa2118b",
+          "public": "/media/works/samples/du-shouren-grok-02-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }

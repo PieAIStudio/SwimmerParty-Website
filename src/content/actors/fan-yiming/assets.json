@@ -1,6 +1,50 @@
 {
   "slug": "fan-yiming",
-  "looks": [],
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied fan-yiming personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "bow",
+          "label": {
+            "en": "Bow",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / bow reference image."
+        },
+        {
+          "key": "microphone",
+          "label": {
+            "en": "Microphone",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / microphone reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "thumbs-up",
+          "label": {
+            "en": "Thumbs up",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / thumbs-up reference image."
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "kind": "image",
@@ -8,13 +52,246 @@
       "series": "turnaround",
       "key": "front",
       "look": null,
-      "conformance": "v1",
-      "version": 0.1,
+      "conformance": "source-original",
+      "version": 1,
       "width": 941,
       "height": 1672,
-      "bytes": 1112445,
-      "sha256": "80749bf84f85e5ee648321d075061d676483bb7bffc1adc26414837dbf5bbb35",
-      "sourceSha256": "80749bf84f85e5ee648321d075061d676483bb7bffc1adc26414837dbf5bbb35",
+      "bytes": 1029068,
+      "sha256": "43a046ab5c37e504c3180f4fa67cd2d4228d3f1cba2d21b2451a018359edd252",
+      "sourceSha256": "43a046ab5c37e504c3180f4fa67cd2d4228d3f1cba2d21b2451a018359edd252",
+      "bbox": {
+        "left": 0,
+        "top": 0.023923444976076555,
+        "right": 0.9989373007438895,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "fan-yiming/43a046ab5c37e504/fan-yiming__turnaround__front__v1.png",
+      "preview": "/media/assets/fan-yiming/turnaround.front.webp",
+      "thumb": "/media/assets/fan-yiming/turnaround.front.thumb.webp",
+      "large": "/media/assets/fan-yiming/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6238959876747225,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 838668,
+      "sha256": "69e8d7fd39ee8e76afa9049c1cee435c43962ab0b5d0751c83d36e775e8e5ad0",
+      "sourceSha256": "69e8d7fd39ee8e76afa9049c1cee435c43962ab0b5d0751c83d36e775e8e5ad0",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.014952153110047847,
+        "right": 0.9829968119022316,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/69e8d7fd39ee8e76/fan-yiming__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/fan-yiming/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/fan-yiming/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6906083317655554,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 618303,
+      "sha256": "04ddd44956e2b38a13e278963e3dcee8af532e214ee176af546adb2d85cd25ba",
+      "sourceSha256": "04ddd44956e2b38a13e278963e3dcee8af532e214ee176af546adb2d85cd25ba",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.020933014354066987,
+        "right": 0.922422954303932,
+        "bottom": 0.9629186602870813
+      },
+      "format": "png",
+      "object": "fan-yiming/04ddd44956e2b38a/fan-yiming__turnaround__side__v1.png",
+      "preview": "/media/assets/fan-yiming/turnaround.side.webp",
+      "thumb": "/media/assets/fan-yiming/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7845555222226177,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1052911,
+      "sha256": "c427945275285b56958ff85020f007324f7dcaee618dd48aa62e62f6e7b582fa",
+      "sourceSha256": "c427945275285b56958ff85020f007324f7dcaee618dd48aa62e62f6e7b582fa",
+      "bbox": {
+        "left": 0,
+        "top": 0.025119617224880382,
+        "right": 0.9968119022316685,
+        "bottom": 0.9844497607655502
+      },
+      "format": "png",
+      "object": "fan-yiming/c427945275285b56/fan-yiming__turnaround__back__v1.png",
+      "preview": "/media/assets/fan-yiming/turnaround.back.webp",
+      "thumb": "/media/assets/fan-yiming/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6225949437888025,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 959647,
+      "sha256": "e2340f93b7b05119932464df674227a533f15aceb092029defece75686ea86a6",
+      "sourceSha256": "e2340f93b7b05119932464df674227a533f15aceb092029defece75686ea86a6",
+      "bbox": {
+        "left": 0,
+        "top": 0.02452153110047847,
+        "right": 0.9851222104144527,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/e2340f93b7b05119/fan-yiming__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/fan-yiming/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/fan-yiming/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6555360783855106,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 999354,
+      "sha256": "ceecfc5c60335a5525a2d17346e1525df8652e85e84160a4a62ce99ed589ed13",
+      "sourceSha256": "ceecfc5c60335a5525a2d17346e1525df8652e85e84160a4a62ce99ed589ed13",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 0.9936238044633369,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/ceecfc5c60335a55/fan-yiming__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/fan-yiming/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/fan-yiming/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6375045126583244,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2045770,
+      "sha256": "f31a3dff60251e468018c0f1aca1e4e078bc268f8f8d33ba97950e3614af2ed3",
+      "sourceSha256": "f31a3dff60251e468018c0f1aca1e4e078bc268f8f8d33ba97950e3614af2ed3",
+      "bbox": {
+        "left": 0,
+        "top": 0.031698564593301434,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/f31a3dff60251e46/fan-yiming__face__front__v1.png",
+      "preview": "/media/assets/fan-yiming/face.front.webp",
+      "thumb": "/media/assets/fan-yiming/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3472242702205228,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2034787,
+      "sha256": "324d8353c8961b3036917b59422f36fdb71e911e7a2020f1d81f507b3a99468b",
+      "sourceSha256": "324d8353c8961b3036917b59422f36fdb71e911e7a2020f1d81f507b3a99468b",
+      "bbox": {
+        "left": 0,
+        "top": 0.038875598086124404,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/324d8353c8961b30/fan-yiming__face__three-quarter__v1.png",
+      "preview": "/media/assets/fan-yiming/face.three-quarter.webp",
+      "thumb": "/media/assets/fan-yiming/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3279177196202757,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2093725,
+      "sha256": "3b6dcdd00f38ed74c6bd3a1c48a19a83d152730fbf1f4699d4c72d00434bf27d",
+      "sourceSha256": "3b6dcdd00f38ed74c6bd3a1c48a19a83d152730fbf1f4699d4c72d00434bf27d",
       "bbox": {
         "left": 0,
         "top": 0,
@@ -22,11 +299,1348 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "fan-yiming/CC-052.png",
-      "preview": "/media/assets/fan-yiming/turnaround.front.webp",
-      "large": "/media/assets/fan-yiming/turnaround.front.large.webp",
-      "thumb": "/media/assets/fan-yiming/turnaround.front.thumb.webp",
-      "blur": "data:image/webp;base64,UklGRpABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSMcAAAAJgGPb2rHnPN/3/bFtO727v8o07DYVe3ME5gDSqnLSOa1tfe8TDSIiJgBEvW2LA18AoqFj3u4KbP5+PChJCKD267S8rKKAuDnpeOrzXMHS8q1K12pZK1ILqgPfRF6Dq8CQhAU2GRjw3HyKmBs/wD/i3k+N31WUL5j9Q9s1HB4beNc8RCj4/ETYc9Avwo4RtbvGOdlloVVAOGJ7gxNsRXlma4lPACGEh1PiUQCbpyuC/3vj/pYPBJQQLi9esnEFl5TRXW0PL0QAAFZQOCCiAAAAsAMAnQEqDAAVAD8BaqxPKyWkIjAIAWAgCWwAADkxPS5C+svPkegA/jNINrgQxOOFk25H5EJe62sJj4a0M5zlMs2VCKyuGTCevOYus0S8XXzZ3kQMnCYUfPyxQY9zwjuGY0vsi4X3e4hNwDsIpDykRBQGu/b3pdOe26X2AAyo6hncgbJnCusY2KTOZz16h5m9to25vSQvkz/7fArLegPHAAAA"
+      "object": "fan-yiming/3b6dcdd00f38ed74/fan-yiming__face__side__v1.png",
+      "preview": "/media/assets/fan-yiming/face.side.webp",
+      "thumb": "/media/assets/fan-yiming/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3162248498746625,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2094931,
+      "sha256": "ee2b05ee4ce143eb4ec44e6eac74a1448be3d6a0e563a9550ab25b613cff812a",
+      "sourceSha256": "ee2b05ee4ce143eb4ec44e6eac74a1448be3d6a0e563a9550ab25b613cff812a",
+      "bbox": {
+        "left": 0,
+        "top": 0.07236842105263158,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/ee2b05ee4ce143eb/fan-yiming__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/fan-yiming/face.three-quarter-left.webp",
+      "thumb": "/media/assets/fan-yiming/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32390018254020714,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2083303,
+      "sha256": "ccab59cba546894edf985b51d17d4611ff766eebe51d750b8515cc988033514d",
+      "sourceSha256": "ccab59cba546894edf985b51d17d4611ff766eebe51d750b8515cc988033514d",
+      "bbox": {
+        "left": 0,
+        "top": 0.004186602870813397,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/ccab59cba546894e/fan-yiming__face__side-right__v1.png",
+      "preview": "/media/assets/fan-yiming/face.side-right.webp",
+      "thumb": "/media/assets/fan-yiming/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29989347584011716,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1973955,
+      "sha256": "8902146c842d2eb8e8a2c37aa0b6d7ea66176b8a0cbb8e16054648105240531c",
+      "sourceSha256": "8902146c842d2eb8e8a2c37aa0b6d7ea66176b8a0cbb8e16054648105240531c",
+      "bbox": {
+        "left": 0,
+        "top": 0.020933014354066987,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/8902146c842d2eb8/fan-yiming__face__up__v1.png",
+      "preview": "/media/assets/fan-yiming/face.up.webp",
+      "thumb": "/media/assets/fan-yiming/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.358090242997117,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1923254,
+      "sha256": "0a326459bb00951139d9fcba6be5b60c2f341a389e8243c23bab91ea1396440a",
+      "sourceSha256": "0a326459bb00951139d9fcba6be5b60c2f341a389e8243c23bab91ea1396440a",
+      "bbox": {
+        "left": 0,
+        "top": 0.1417464114832536,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/0a326459bb009511/fan-yiming__face__down__v1.png",
+      "preview": "/media/assets/fan-yiming/face.down.webp",
+      "thumb": "/media/assets/fan-yiming/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3563309418362833,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2158747,
+      "sha256": "f70d71c5f186fe94ea127f58d4de05084bef8fbfba9876c2d2a1ab52012dbb2c",
+      "sourceSha256": "f70d71c5f186fe94ea127f58d4de05084bef8fbfba9876c2d2a1ab52012dbb2c",
+      "bbox": {
+        "left": 0,
+        "top": 0.11303827751196172,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/f70d71c5f186fe94/fan-yiming__expression__neutral__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.neutral.webp",
+      "thumb": "/media/assets/fan-yiming/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34544844383202233,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2221762,
+      "sha256": "8cbddcb5f83480bd6880bddeb3df730c6cebdb16a3d824283dc63bf76b33fead",
+      "sourceSha256": "8cbddcb5f83480bd6880bddeb3df730c6cebdb16a3d824283dc63bf76b33fead",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/8cbddcb5f83480bd/fan-yiming__expression__smile__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.smile.webp",
+      "thumb": "/media/assets/fan-yiming/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31976251976671466,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2137681,
+      "sha256": "f68f1358b5ec9627f03c26ebef9f89df732cac9adf99885ee020bd0ede94a859",
+      "sourceSha256": "f68f1358b5ec9627f03c26ebef9f89df732cac9adf99885ee020bd0ede94a859",
+      "bbox": {
+        "left": 0,
+        "top": 0.0011961722488038277,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/f68f1358b5ec9627/fan-yiming__expression__laugh__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.laugh.webp",
+      "thumb": "/media/assets/fan-yiming/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34404507065170414,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1966544,
+      "sha256": "418b3bbeb9074700cf46182f0c1c802c16e1c248908b14cd0c095afcd2eada9c",
+      "sourceSha256": "418b3bbeb9074700cf46182f0c1c802c16e1c248908b14cd0c095afcd2eada9c",
+      "bbox": {
+        "left": 0,
+        "top": 0.03229665071770335,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/418b3bbeb9074700/fan-yiming__expression__sad__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.sad.webp",
+      "thumb": "/media/assets/fan-yiming/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.33110518180292775,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2258547,
+      "sha256": "e99fad778ee33b399d10eedb8f27b02e6b51691c117912fafba9a1e7a8161144",
+      "sourceSha256": "e99fad778ee33b399d10eedb8f27b02e6b51691c117912fafba9a1e7a8161144",
+      "bbox": {
+        "left": 0,
+        "top": 0.016148325358851676,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/e99fad778ee33b39/fan-yiming__expression__cry__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.cry.webp",
+      "thumb": "/media/assets/fan-yiming/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2637286506770259,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2114303,
+      "sha256": "40c271e77b9a948bb1a38bcc6d83bde974f4e4af0027e40a4a7a3d07a2bea15e",
+      "sourceSha256": "40c271e77b9a948bb1a38bcc6d83bde974f4e4af0027e40a4a7a3d07a2bea15e",
+      "bbox": {
+        "left": 0,
+        "top": 0.10526315789473684,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/40c271e77b9a948b/fan-yiming__expression__annoyed__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.annoyed.webp",
+      "thumb": "/media/assets/fan-yiming/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3116823190233336,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2260781,
+      "sha256": "204a269f1a1afd53b0a5f588f09fbd2666c2c4ab06902065e0eaaf2ea23717fb",
+      "sourceSha256": "204a269f1a1afd53b0a5f588f09fbd2666c2c4ab06902065e0eaaf2ea23717fb",
+      "bbox": {
+        "left": 0,
+        "top": 0.02452153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/204a269f1a1afd53/fan-yiming__expression__angry__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.angry.webp",
+      "thumb": "/media/assets/fan-yiming/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.28403942665087023,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2069909,
+      "sha256": "8aa36a13681438c068e6b1cc2815ab9f06368d75ba1952a49992a5b1f1894ce9",
+      "sourceSha256": "8aa36a13681438c068e6b1cc2815ab9f06368d75ba1952a49992a5b1f1894ce9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/8aa36a13681438c0/fan-yiming__expression__surprised__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.surprised.webp",
+      "thumb": "/media/assets/fan-yiming/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3104060629789138,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2095507,
+      "sha256": "ac2971b91d53eec0c6bf9bd03fefaa772013e5fde8ea97e0f302ff8086ecf5f8",
+      "sourceSha256": "ac2971b91d53eec0c6bf9bd03fefaa772013e5fde8ea97e0f302ff8086ecf5f8",
+      "bbox": {
+        "left": 0,
+        "top": 0.0430622009569378,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/ac2971b91d53eec0/fan-yiming__expression__scared__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.scared.webp",
+      "thumb": "/media/assets/fan-yiming/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31452656493906006,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2040528,
+      "sha256": "aa6d8e505e7ded33f7d6234d453948e13cbd7353f6281fb9750e024e430b8ad5",
+      "sourceSha256": "aa6d8e505e7ded33f7d6234d453948e13cbd7353f6281fb9750e024e430b8ad5",
+      "bbox": {
+        "left": 0,
+        "top": 0.026913875598086126,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/aa6d8e505e7ded33/fan-yiming__expression__disgusted__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.disgusted.webp",
+      "thumb": "/media/assets/fan-yiming/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3184487641672048,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2171148,
+      "sha256": "8f5b920c863c13d3751e546f5ba90fcc7431b08b800ec5386046f36d4e148c0a",
+      "sourceSha256": "8f5b920c863c13d3751e546f5ba90fcc7431b08b800ec5386046f36d4e148c0a",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/8f5b920c863c13d3/fan-yiming__expression__embarrassed__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.embarrassed.webp",
+      "thumb": "/media/assets/fan-yiming/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29156730343877274,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2060830,
+      "sha256": "e7162389895608d5a99c708f7c94373f80c6a26d5c1451c7a70955cec8e9749e",
+      "sourceSha256": "e7162389895608d5a99c708f7c94373f80c6a26d5c1451c7a70955cec8e9749e",
+      "bbox": {
+        "left": 0,
+        "top": 0.1255980861244019,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/e7162389895608d5/fan-yiming__expression__tired__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.tired.webp",
+      "thumb": "/media/assets/fan-yiming/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.33171534405524,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2102047,
+      "sha256": "f04d9ab5c50f34e1167b3c6721c7cd09473e799b0eca3b34236f9dd8ee252c8c",
+      "sourceSha256": "f04d9ab5c50f34e1167b3c6721c7cd09473e799b0eca3b34236f9dd8ee252c8c",
+      "bbox": {
+        "left": 0,
+        "top": 0.05801435406698564,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/f04d9ab5c50f34e1/fan-yiming__expression__speaking__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.speaking.webp",
+      "thumb": "/media/assets/fan-yiming/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31314480167184455,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2037477,
+      "sha256": "ddc2a562d200bb2b1769abdd1edfe367b311f22b4c557cf6a17ac4d8fa29e848",
+      "sourceSha256": "ddc2a562d200bb2b1769abdd1edfe367b311f22b4c557cf6a17ac4d8fa29e848",
+      "bbox": {
+        "left": 0,
+        "top": 0.10885167464114832,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/ddc2a562d200bb2b/fan-yiming__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.eyes-closed.webp",
+      "thumb": "/media/assets/fan-yiming/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34352325480884127,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2215108,
+      "sha256": "67b23f0253fb9c0f8b3d9817f984cc42441227d55c770dafbb5d9384615c03c7",
+      "sourceSha256": "67b23f0253fb9c0f8b3d9817f984cc42441227d55c770dafbb5d9384615c03c7",
+      "bbox": {
+        "left": 0,
+        "top": 0.0023923444976076554,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/67b23f0253fb9c0f/fan-yiming__expression__worried__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.worried.webp",
+      "thumb": "/media/assets/fan-yiming/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.28426633073844887,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2174445,
+      "sha256": "d9b8439a49bd872300f190178bf1691a23860ee7a785e860a570fe29e4b5a86a",
+      "sourceSha256": "d9b8439a49bd872300f190178bf1691a23860ee7a785e860a570fe29e4b5a86a",
+      "bbox": {
+        "left": 0,
+        "top": 0.02930622009569378,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/d9b8439a49bd8723/fan-yiming__expression__skeptical__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.skeptical.webp",
+      "thumb": "/media/assets/fan-yiming/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2575507578723642,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2245631,
+      "sha256": "1b30beed33c3e82967f19a951105827c21c53d007657f16cf93ab3f4fe11cfd8",
+      "sourceSha256": "1b30beed33c3e82967f19a951105827c21c53d007657f16cf93ab3f4fe11cfd8",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/1b30beed33c3e829/fan-yiming__expression__smug__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.smug.webp",
+      "thumb": "/media/assets/fan-yiming/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2754075375376902,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2181905,
+      "sha256": "f726d8adc8d734905c8d7f853e98094c1bc78c9c759e83f48e810a7f850a03ae",
+      "sourceSha256": "f726d8adc8d734905c8d7f853e98094c1bc78c9c759e83f48e810a7f850a03ae",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/f726d8adc8d73490/fan-yiming__expression__contempt__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.contempt.webp",
+      "thumb": "/media/assets/fan-yiming/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2445600221692285,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2027978,
+      "sha256": "cba37ae48838bdbc5ec1298f0be33e0d95e82b8f003469da7cd7a52607e6e8a0",
+      "sourceSha256": "cba37ae48838bdbc5ec1298f0be33e0d95e82b8f003469da7cd7a52607e6e8a0",
+      "bbox": {
+        "left": 0,
+        "top": 0.02930622009569378,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/cba37ae48838bdbc/fan-yiming__expression__confused__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.confused.webp",
+      "thumb": "/media/assets/fan-yiming/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3550445164209916,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1717950,
+      "sha256": "8b7b0f6c4be1d800c3e264ffc4b767afad2ad6d4fd06df53280bc3d10ba3c378",
+      "sourceSha256": "8b7b0f6c4be1d800c3e264ffc4b767afad2ad6d4fd06df53280bc3d10ba3c378",
+      "bbox": {
+        "left": 0,
+        "top": 0.037679425837320576,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/8b7b0f6c4be1d800/fan-yiming__expression__thinking__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.thinking.webp",
+      "thumb": "/media/assets/fan-yiming/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.38612719849086535,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2065286,
+      "sha256": "2ac2bb517d9fa56d0ad67ecfe2876e819b7701e5f8bff8ac19500db8dc50d104",
+      "sourceSha256": "2ac2bb517d9fa56d0ad67ecfe2876e819b7701e5f8bff8ac19500db8dc50d104",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/2ac2bb517d9fa56d/fan-yiming__expression__determined__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.determined.webp",
+      "thumb": "/media/assets/fan-yiming/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3118405798575271,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1980469,
+      "sha256": "ede82892c328ecca17496d5b4cbd3cb3cd4d8d5311bfc33339e1075f44560806",
+      "sourceSha256": "ede82892c328ecca17496d5b4cbd3cb3cd4d8d5311bfc33339e1075f44560806",
+      "bbox": {
+        "left": 0,
+        "top": 0.08014354066985646,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/ede82892c328ecca/fan-yiming__expression__shy__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.shy.webp",
+      "thumb": "/media/assets/fan-yiming/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34222411767995975,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1954631,
+      "sha256": "341828222c0022290291d11453b5e5cab62994118e32ba6ec20da9f0cc9c1cc3",
+      "sourceSha256": "341828222c0022290291d11453b5e5cab62994118e32ba6ec20da9f0cc9c1cc3",
+      "bbox": {
+        "left": 0,
+        "top": 0.019138755980861243,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/341828222c002229/fan-yiming__expression__pain__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.pain.webp",
+      "thumb": "/media/assets/fan-yiming/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31457169152230396,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1874016,
+      "sha256": "d41503a95d2fd819c3cb2cd04ff5245aec5577cccabd475227274e45fc32359d",
+      "sourceSha256": "d41503a95d2fd819c3cb2cd04ff5245aec5577cccabd475227274e45fc32359d",
+      "bbox": {
+        "left": 0,
+        "top": 0.01854066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/d41503a95d2fd819/fan-yiming__expression__sleepy__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.sleepy.webp",
+      "thumb": "/media/assets/fan-yiming/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3514998550864651,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1942152,
+      "sha256": "4b5ac0fb624c89a68aabe95d6729aecb3d54d87973ffa11bc7e9ca3189ae6edc",
+      "sourceSha256": "4b5ac0fb624c89a68aabe95d6729aecb3d54d87973ffa11bc7e9ca3189ae6edc",
+      "bbox": {
+        "left": 0,
+        "top": 0.03110047846889952,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/4b5ac0fb624c89a6/fan-yiming__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.awkward-smile.webp",
+      "thumb": "/media/assets/fan-yiming/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34458849640766975,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2150488,
+      "sha256": "7a2ad0f1fd18a4a7e89c5c5c92abea8de88fc23c192ecb0fe54deb9f697a2307",
+      "sourceSha256": "7a2ad0f1fd18a4a7e89c5c5c92abea8de88fc23c192ecb0fe54deb9f697a2307",
+      "bbox": {
+        "left": 0,
+        "top": 0.0645933014354067,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/7a2ad0f1fd18a4a7/fan-yiming__expression__deadpan__v1.png",
+      "preview": "/media/assets/fan-yiming/expression.deadpan.webp",
+      "thumb": "/media/assets/fan-yiming/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29318741133579773,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1054534,
+      "sha256": "2c84c969edb6d56c3c77f502f8958268dd7b42d465c9ba1d60fb0d93c17603e3",
+      "sourceSha256": "2c84c969edb6d56c3c77f502f8958268dd7b42d465c9ba1d60fb0d93c17603e3",
+      "bbox": {
+        "left": 0,
+        "top": 0.023923444976076555,
+        "right": 0.9851222104144527,
+        "bottom": 0.9808612440191388
+      },
+      "format": "png",
+      "object": "fan-yiming/2c84c969edb6d56c/fan-yiming__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/fan-yiming/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/fan-yiming/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6118166818359783,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 863420,
+      "sha256": "16f118aa4f75093133098506b325f605927da3865bcfef842e539784db78982f",
+      "sourceSha256": "16f118aa4f75093133098506b325f605927da3865bcfef842e539784db78982f",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.025119617224880382,
+        "right": 0.9787460148777896,
+        "bottom": 0.9832535885167464
+      },
+      "format": "png",
+      "object": "fan-yiming/16f118aa4f750931/fan-yiming__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/fan-yiming/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/fan-yiming/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6869600699652716,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 743169,
+      "sha256": "5b9e098ff0d3fe54ece35e0ab93c8c1f79e7fe66f59038a6d56df15180c553a8",
+      "sourceSha256": "5b9e098ff0d3fe54ece35e0ab93c8c1f79e7fe66f59038a6d56df15180c553a8",
+      "bbox": {
+        "left": 0.07863974495217853,
+        "top": 0.0215311004784689,
+        "right": 0.9351753453772582,
+        "bottom": 0.9599282296650717
+      },
+      "format": "png",
+      "object": "fan-yiming/5b9e098ff0d3fe54/fan-yiming__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/fan-yiming/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/fan-yiming/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7521177714840671,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1016120,
+      "sha256": "e45d4a551befa3b0c124c66dce8e6354874a1e572bf73b9af531e4e1dcbf65f2",
+      "sourceSha256": "e45d4a551befa3b0c124c66dce8e6354874a1e572bf73b9af531e4e1dcbf65f2",
+      "bbox": {
+        "left": 0,
+        "top": 0.009569377990430622,
+        "right": 0.9351753453772582,
+        "bottom": 0.9641148325358851
+      },
+      "format": "png",
+      "object": "fan-yiming/e45d4a551befa3b0/fan-yiming__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/fan-yiming/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/fan-yiming/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6243631431491491,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.bow",
+      "series": "wardrobe",
+      "key": "bow",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 970071,
+      "sha256": "b0da25ac07b6a50fa6c7806eb40b18703195cdce3d4d5e85fc657ec3cb0d269e",
+      "sourceSha256": "b0da25ac07b6a50fa6c7806eb40b18703195cdce3d4d5e85fc657ec3cb0d269e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9330499468650372,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "fan-yiming/b0da25ac07b6a50f/fan-yiming__wardrobe-personal__bow__v1.png",
+      "preview": "/media/assets/fan-yiming/wardrobe.personal.bow.webp",
+      "thumb": "/media/assets/fan-yiming/wardrobe.personal.bow.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6670064931433017,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.microphone",
+      "series": "wardrobe",
+      "key": "microphone",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 978985,
+      "sha256": "c6cae32785334540c07d4770360a3e6242c52ed64c5f752099eed65e9f2655e4",
+      "sourceSha256": "c6cae32785334540c07d4770360a3e6242c52ed64c5f752099eed65e9f2655e4",
+      "bbox": {
+        "left": 0,
+        "top": 0.019736842105263157,
+        "right": 0.9787460148777896,
+        "bottom": 0.9659090909090909
+      },
+      "format": "png",
+      "object": "fan-yiming/c6cae32785334540/fan-yiming__wardrobe-personal__microphone__v1.png",
+      "preview": "/media/assets/fan-yiming/wardrobe.personal.microphone.webp",
+      "thumb": "/media/assets/fan-yiming/wardrobe.personal.microphone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6549437125322242,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1938590,
+      "sha256": "9b3100dd05951aebd9dcb70185a714eb2fc21e82198bcfbe0fd8d2414431a6e5",
+      "sourceSha256": "9b3100dd05951aebd9dcb70185a714eb2fc21e82198bcfbe0fd8d2414431a6e5",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/9b3100dd05951aeb/fan-yiming__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/fan-yiming/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/fan-yiming/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31934176204689096,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.thumbs-up",
+      "series": "wardrobe",
+      "key": "thumbs-up",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 951053,
+      "sha256": "6aa9ca3d33085d3eb700e301a42da0ae43bc29c4ad7b3899afc66e844702ee61",
+      "sourceSha256": "6aa9ca3d33085d3eb700e301a42da0ae43bc29c4ad7b3899afc66e844702ee61",
+      "bbox": {
+        "left": 0.07863974495217853,
+        "top": 0.02332535885167464,
+        "right": 0.9851222104144527,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "fan-yiming/6aa9ca3d33085d3e/fan-yiming__wardrobe-personal__thumbs-up__v1.png",
+      "preview": "/media/assets/fan-yiming/wardrobe.personal.thumbs-up.webp",
+      "thumb": "/media/assets/fan-yiming/wardrobe.personal.thumbs-up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.66982340887481,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 918582,
+      "sha256": "a67338e4c92394cdc0e3f62466c5aaf9b71cf27ca4c0f49fb718539d8841be58",
+      "sourceSha256": "a67338e4c92394cdc0e3f62466c5aaf9b71cf27ca4c0f49fb718539d8841be58",
+      "bbox": {
+        "left": 0.04357066950053135,
+        "top": 0.02631578947368421,
+        "right": 0.9893730074388948,
+        "bottom": 0.9850478468899522
+      },
+      "format": "png",
+      "object": "fan-yiming/a67338e4c92394cd/fan-yiming__pose__walk__v1.png",
+      "preview": "/media/assets/fan-yiming/pose.walk.webp",
+      "thumb": "/media/assets/fan-yiming/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6806061199273907,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 941221,
+      "sha256": "d7be5048b424c4683617e2d6518e8102dadce297f4b83b705cf39584b3ea3c1b",
+      "sourceSha256": "d7be5048b424c4683617e2d6518e8102dadce297f4b83b705cf39584b3ea3c1b",
+      "bbox": {
+        "left": 0.07013815090329437,
+        "top": 0.01854066985645933,
+        "right": 0.9808714133900106,
+        "bottom": 0.9521531100478469
+      },
+      "format": "png",
+      "object": "fan-yiming/d7be5048b424c468/fan-yiming__pose__run__v1.png",
+      "preview": "/media/assets/fan-yiming/pose.run.webp",
+      "thumb": "/media/assets/fan-yiming/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6943341350187371,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1206054,
+      "sha256": "3a0ab846117ca5f087ccfb586fab8d388200774dd0d7e5517201861f9a919126",
+      "sourceSha256": "3a0ab846117ca5f087ccfb586fab8d388200774dd0d7e5517201861f9a919126",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 0.9787460148777896,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/3a0ab846117ca5f0/fan-yiming__pose__sit__v1.png",
+      "preview": "/media/assets/fan-yiming/pose.sit.webp",
+      "thumb": "/media/assets/fan-yiming/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.583611931722844,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 865641,
+      "sha256": "67abc49fa25f2624b89f4c192a4eb82ee46478b5e3fd55b94929e1dc7bc8430e",
+      "sourceSha256": "67abc49fa25f2624b89f4c192a4eb82ee46478b5e3fd55b94929e1dc7bc8430e",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 0.9851222104144527,
+        "bottom": 0.9850478468899522
+      },
+      "format": "png",
+      "object": "fan-yiming/67abc49fa25f2624/fan-yiming__pose__point__v1.png",
+      "preview": "/media/assets/fan-yiming/pose.point.webp",
+      "thumb": "/media/assets/fan-yiming/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6925958081853266,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 854426,
+      "sha256": "ae7f47482c7a06cb24af2281a64f511c6b61cba1aa0717edd92413b053c30232",
+      "sourceSha256": "ae7f47482c7a06cb24af2281a64f511c6b61cba1aa0717edd92413b053c30232",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.01674641148325359,
+        "right": 0.9851222104144527,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "fan-yiming/ae7f47482c7a06cb/fan-yiming__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/fan-yiming/pose.arms-crossed.webp",
+      "thumb": "/media/assets/fan-yiming/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6854727994752604,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 993702,
+      "sha256": "99bf59f9d7186ffc8e6aaefc485d9cf60dae04b840893ad76589493cc2533647",
+      "sourceSha256": "99bf59f9d7186ffc8e6aaefc485d9cf60dae04b840893ad76589493cc2533647",
+      "bbox": {
+        "left": 0.018065887353878853,
+        "top": 0.01375598086124402,
+        "right": 0.9787460148777896,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/99bf59f9d7186ffc/fan-yiming__pose__phone__v1.png",
+      "preview": "/media/assets/fan-yiming/pose.phone.webp",
+      "thumb": "/media/assets/fan-yiming/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6370195607848721,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 943429,
+      "sha256": "9dba4f1ceeaa12925ea6bb06e3792c2345cfacf198a90662d241fa9a641fb4ea",
+      "sourceSha256": "9dba4f1ceeaa12925ea6bb06e3792c2345cfacf198a90662d241fa9a641fb4ea",
+      "bbox": {
+        "left": 0,
+        "top": 0.031698564593301434,
+        "right": 1,
+        "bottom": 0.9760765550239234
+      },
+      "format": "png",
+      "object": "fan-yiming/9dba4f1ceeaa1292/fan-yiming__detail__hands__v1.png",
+      "preview": "/media/assets/fan-yiming/detail.hands.webp",
+      "thumb": "/media/assets/fan-yiming/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6626972222363463,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2209666,
+      "sha256": "ec8482d2a98a525b536a69feb5bad47cfead24d29fd7b2d69488c540af3a6bb8",
+      "sourceSha256": "ec8482d2a98a525b536a69feb5bad47cfead24d29fd7b2d69488c540af3a6bb8",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "fan-yiming/ec8482d2a98a525b/fan-yiming__detail__hair-back__v1.png",
+      "preview": "/media/assets/fan-yiming/detail.hair-back.webp",
+      "thumb": "/media/assets/fan-yiming/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3282977998566119,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
     },
     {
       "kind": "voice",
@@ -34,28 +1648,155 @@
       "series": "voice",
       "key": "intro",
       "look": null,
-      "conformance": "v1",
+      "conformance": "source-original",
       "version": 1,
       "width": 0,
       "height": 0,
-      "bytes": 244788,
-      "sha256": "18bd871667686a92d9428499ef9fc968201ec556036b4c8857f4e95cd24e97ff",
-      "sourceSha256": "18bd871667686a92d9428499ef9fc968201ec556036b4c8857f4e95cd24e97ff",
+      "bytes": 1067332,
+      "sha256": "ad7ce46e1c3b546ec68fc5f2c29712db7613375a979801039161e78786c0c92a",
+      "sourceSha256": "ad7ce46e1c3b546ec68fc5f2c29712db7613375a979801039161e78786c0c92a",
       "bbox": {
         "left": 0,
         "top": 0,
         "right": 0,
         "bottom": 0
       },
-      "format": "mp3",
-      "object": "voice/fan-yiming/candidate-1.mp3",
+      "format": "wav",
+      "object": "voice/fan-yiming/fan-yiming__voice__intro__v1__ad7ce46e1c3b546e.wav",
       "preview": "/api/voice/fan-yiming/intro",
       "thumb": "/api/voice/fan-yiming/intro",
       "previewUrl": "/api/voice/fan-yiming/intro",
-      "durationSec": 20.2,
-      "transcript": {
-        "text": "大家好，我是范一鸣，无锡人，三十六岁。以前在婚庆公司当过主持人，三百多场婚礼，台下的人哭我也跟着哭。这撮小胡子是我的标志。我适合演热心的主持人、爱面子的小老板，或者暖心的大哥。"
-      }
+      "durationSec": 16.6
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1116542,
+      "sha256": "9d896d634a74bb38fe383a29c6fdd3bd9712971f89858a4fcbb880a005d69a6c",
+      "sourceSha256": "9d896d634a74bb38fe383a29c6fdd3bd9712971f89858a4fcbb880a005d69a6c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/fan-yiming/fan-yiming__voice__intro-alt__v1__9d896d634a74bb38.wav",
+      "preview": "/api/voice/fan-yiming/intro-alt",
+      "thumb": "/api/voice/fan-yiming/intro-alt",
+      "previewUrl": "/api/voice/fan-yiming/intro-alt",
+      "durationSec": 17.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 842052,
+      "sha256": "596ec9e8144bd0cd1d2b5f5ad876678705c157c063f6d1b30bfdc6be058c20aa",
+      "sourceSha256": "596ec9e8144bd0cd1d2b5f5ad876678705c157c063f6d1b30bfdc6be058c20aa",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/fan-yiming/fan-yiming__voice__chat__v1__596ec9e8144bd0cd.wav",
+      "preview": "/api/voice/fan-yiming/chat",
+      "thumb": "/api/voice/fan-yiming/chat",
+      "previewUrl": "/api/voice/fan-yiming/chat",
+      "durationSec": 13.1
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 588222,
+      "sha256": "9659c251fe7129b2bb17b4ca7dced4214e95eb1eab664a3078e9bb5ce269bf48",
+      "sourceSha256": "9659c251fe7129b2bb17b4ca7dced4214e95eb1eab664a3078e9bb5ce269bf48",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/fan-yiming/fan-yiming__voice__happy__v1__9659c251fe7129b2.wav",
+      "preview": "/api/voice/fan-yiming/happy",
+      "thumb": "/api/voice/fan-yiming/happy",
+      "previewUrl": "/api/voice/fan-yiming/happy",
+      "durationSec": 9.2
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 695576,
+      "sha256": "880a6ecd3860934994808a57fb497abe2f092fa66d1d44dc3b55d0aa9aad0114",
+      "sourceSha256": "880a6ecd3860934994808a57fb497abe2f092fa66d1d44dc3b55d0aa9aad0114",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/fan-yiming/fan-yiming__voice__angry__v1__880a6ecd38609349.wav",
+      "preview": "/api/voice/fan-yiming/angry",
+      "thumb": "/api/voice/fan-yiming/angry",
+      "previewUrl": "/api/voice/fan-yiming/angry",
+      "durationSec": 10.8
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 765204,
+      "sha256": "6250c15245ab2937042767ace9d7d5affaa4f6b4cbc22b16e08683a75c951a2c",
+      "sourceSha256": "6250c15245ab2937042767ace9d7d5affaa4f6b4cbc22b16e08683a75c951a2c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/fan-yiming/fan-yiming__voice__sad__v1__6250c15245ab2937.wav",
+      "preview": "/api/voice/fan-yiming/sad",
+      "thumb": "/api/voice/fan-yiming/sad",
+      "previewUrl": "/api/voice/fan-yiming/sad",
+      "durationSec": 11.9
     }
   ]
 }
