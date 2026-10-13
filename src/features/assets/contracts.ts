@@ -1,5 +1,8 @@
 /** Shared public contracts and pure catalog functions; no I/O or UI. */
 
+/** Actual fetched files only, never an estimated percent for rendering/ZIP creation. */
+export type AssetFetchProgress = { completed: number; total: number };
+
 export { listSeries } from "./asset-series.ts";
 export { starterSlots } from "./starter-pack.ts";
 

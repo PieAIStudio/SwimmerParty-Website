@@ -1325,6 +1325,55 @@ export const messages = {
     en: "How it works",
     zh: "怎么用",
   },
+  "firstUse.label": { en: "Optional first-use help", zh: "可选的首次操作说明" },
+  "firstUse.dismiss": { en: "Dismiss tips", zh: "不再提示" },
+  "firstUse.download.title": { en: "First download tips", zh: "第一次下载，接下来怎么用" },
+  "firstUse.download.body": {
+    en: "Keep your reference images and prompt together.\nThe guide shows three ways to prepare assets for your next scene.",
+    zh: "把参考图和提示词保存在一起。\n指南里有三种准备素材的方法。",
+  },
+  "firstUse.cast.title": { en: "First cast tips", zh: "第一次组队，看看选角单" },
+  "firstUse.cast.body": {
+    en: "Your cast stays in this browser.\nOpen Your cast to check the group, share it or download a cast pack.",
+    zh: "选角单保存在当前浏览器。\n打开我的选角单，可核对、分享或下载整组素材。",
+  },
+  "firstUse.post.title": { en: "First submission tips", zh: "第一次投稿，先核对这些" },
+  "firstUse.post.body": {
+    en: "Select only actors used in your work and confirm your rights.\nSubmission status, media checks and review are different steps.",
+    zh: "只选择作品实际使用的演员，并核对权利。\n提交、媒体检查和审核是不同的步骤。",
+  },
+  "firstUse.vote.title": { en: "First vote tips", zh: "第一次投票，看看规则" },
+  "firstUse.vote.body": {
+    en: "A vote asks for more assets for an actor.\nIt does not unlock unmade files or promise a release date.",
+    zh: "投票表达你希望演员补齐素材。\n不会解锁未制作文件，也不代表承诺上线日期。",
+  },
+  "firstUse.vote.condition": {
+    en: "A free Swimmer account is required to vote.",
+    zh: "投票需要免费泳者账号。",
+  },
+  "firstUse.vote.saved": { en: "Vote choice saved.", zh: "投票选择已保存。" },
+  "firstUse.post.condition": {
+    en: "Local prototype: sign in and select an actor used in your work. Your first submission needs review. File uploads are not available here yet; live limits will come from the backend when uploads launch.",
+    zh: "本地原型：需要登录并选择作品实际使用的演员，首帖需审核。此处尚不能上传文件；上传开放后，限制以实际后端返回为准。",
+  },
+  "firstUse.post.saved": {
+    en: "Submission received. Check its review status before treating it as published.",
+    zh: "已收到投稿。请核对审核状态，不代表已经公开。",
+  },
+  "firstUse.actionFailed": {
+    en: "That action did not complete. Try again.",
+    zh: "操作未完成，请重试。",
+  },
+  "downloads.authorizing": { en: "Checking download access…", zh: "正在核对下载权限……" },
+  "downloads.fetching": { en: "Reference files fetched", zh: "已取回的参考文件" },
+  "downloads.filesProgress": {
+    en: "{completed} / {total} files",
+    zh: "{completed} / {total} 个文件",
+  },
+  "downloads.assembling": {
+    en: "Files fetched. Preparing the final download…",
+    zh: "文件已取回，正在准备最终下载……",
+  },
   "learn.workflowPreview": { en: "Site workflow preview", zh: "本站操作预览" },
   "learn.start.starter": { en: "Start with one actor", zh: "从一位演员开始" },
   "learn.start.sheet": { en: "Make a character sheet", zh: "做一张设定图" },

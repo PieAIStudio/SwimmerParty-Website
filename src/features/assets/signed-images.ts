@@ -1,6 +1,7 @@
 import { signedBundleSchema } from "../../contracts/downloads.ts";
 import { fetchImageBlob } from "../../lib/browser-files.ts";
 import { SignInRequired } from "./downloads.ts";
+import type { AssetFetchProgress } from "./contracts.ts";
 
 type ExpectedImage = { slot: string; filename?: string };
 /** One authorization/identity/transport path for starter, cast and member exports. */
@@ -11,10 +12,12 @@ export async function loadSignedImages(
     signal,
     authorizationError = "Bundle authorization failed",
     maxBytes,
+    onProgress,
   }: {
     signal?: AbortSignal;
     authorizationError?: string;
     maxBytes?: number;
+    onProgress?: (progress: AssetFetchProgress) => void;
   } = {},
 ): Promise<{ slot: string; filename: string; blob: Blob }[]> {
   signal?.throwIfAborted();
@@ -41,12 +44,16 @@ export async function loadSignedImages(
   });
   const images: { slot: string; filename: string; blob: Blob }[] = [];
   let bytes = 0;
+  signal?.throwIfAborted();
+  onProgress?.({ completed: 0, total: signed.length });
   for (const item of signed) {
     signal?.throwIfAborted();
     const blob = await fetchImageBlob(item.url, signal);
+    signal?.throwIfAborted();
     bytes += blob.size;
     if (maxBytes !== undefined && bytes > maxBytes) throw new Error("Choose a smaller export");
     images.push({ slot: item.slot, filename: item.filename, blob });
+    onProgress?.({ completed: images.length, total: signed.length });
   }
   signal?.throwIfAborted();
   return images;

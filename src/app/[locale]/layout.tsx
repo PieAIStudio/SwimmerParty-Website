@@ -12,6 +12,7 @@ import { SITE } from "@/content/site";
 import { STANCE_LINE } from "@/content/doctrine";
 import { localizedAlternates } from "@/i18n/metadata";
 import { PostHog } from "@/features/analytics";
+import { FirstUseGuidance } from "@/features/guidance";
 // oxlint-disable-next-line no-unassigned-import -- Root stylesheet initialization.
 import "../globals.css";
 
@@ -104,6 +105,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <main id="main">{children}</main>
             <SiteFooter />
             <PostHog />
+            <FirstUseGuidance />
           </AccountProvider>
         </SiteI18nProvider>
       </body>

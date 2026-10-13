@@ -16,6 +16,7 @@ import {
   assetFilename,
   characterProfile,
   exportPack,
+  PackProgress,
   labelsFor,
   licenseText,
   renderSheet,
@@ -29,8 +30,10 @@ import {
   isFullBodySeries,
   listSeries,
   SHEET_MAX_IMAGES,
+  type AssetFetchProgress,
 } from "@/features/assets/contracts";
 import { useAccount } from "@/features/account";
+import { announceFirstUse } from "@/features/guidance/client";
 import { seriesLabelKey } from "@/i18n/asset-labels";
 import { useSiteI18n } from "@/i18n/client";
 import type { AppLocale } from "@/i18n/routing";
@@ -114,6 +117,7 @@ export function SheetBuilder({
   }
   const [limited, setLimited] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [progress, setProgress] = useState<AssetFetchProgress | null>(null);
   const [failed, setFailed] = useState(false);
   const [needPick, setNeedPick] = useState(false);
   const [previewKey, setPreviewKey] = useState<string | null>(null);
@@ -202,6 +206,8 @@ export function SheetBuilder({
     const abort = new AbortController();
     controller.current = abort;
     setBusy(true);
+    setProgress(null);
+    const mediaCount = (sheet.voice ? voices.length : 0) + (sheet.video ? videos.length : 0);
     try {
       const { user } = await account.whenReady();
       if (!user) {
@@ -218,9 +224,11 @@ export function SheetBuilder({
         locale,
         labels: labelMap,
         signal: abort.signal,
+        onProgress: ({ completed, total }) => setProgress({ completed, total: total + mediaCount }),
       });
       if (!extras) {
         saveBlob(sheetFile.blob, sheetFile.filename);
+        announceFirstUse("download");
         account.event("bundle_download", { format: "sheet" });
         return;
       }
@@ -239,6 +247,11 @@ export function SheetBuilder({
             name: assetFilename(actor.slug, item),
             bytes: new Uint8Array(await response.arrayBuffer()),
           });
+          abort.signal.throwIfAborted();
+          setProgress({
+            completed: picked.length + media.length,
+            total: picked.length + mediaCount,
+          });
         }
       const zip = zipBlob(
         sheetBundleFiles({
@@ -255,13 +268,14 @@ export function SheetBuilder({
         abort.signal,
       );
       saveBlob(zip, `${actor.slug}_sheet.zip`);
+      announceFirstUse("download");
       account.event("bundle_download", { format: "sheet-zip" });
     } catch (error) {
       if (error instanceof SignInRequired) await account.signIn();
       else if (!abort.signal.aborted) setFailed(true);
     } finally {
       controller.current = null;
-      if (!abort.signal.aborted) setBusy(false);
+      setBusy(false);
     }
   }
 
@@ -301,6 +315,14 @@ export function SheetBuilder({
           >
             {busy ? t("assets.preparing") : t(extras ? "sheet.downloadZip" : "sheet.download")}
           </GameButton>
+          {busy ? (
+            <>
+              <PackProgress progress={progress} />
+              <GameButton onClick={() => controller.current?.abort()}>
+                {t("assets.cancel")}
+              </GameButton>
+            </>
+          ) : null}
           <DownloadTerms />
         </div>
       </div>

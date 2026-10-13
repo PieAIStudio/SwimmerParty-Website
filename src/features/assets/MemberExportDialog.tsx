@@ -15,6 +15,9 @@ import { GameButton, GameSegmentedControl, GameSelect, GameToast } from "@pieai/
 import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { useAccount } from "@/features/account";
 import { trackProductEvent } from "@/features/analytics/client";
+import { announceFirstUse } from "@/features/guidance/client";
+import { PackProgress } from "./PackProgress";
+import type { AssetFetchProgress } from "./contracts";
 
 // The one-sheet format lives on its own page; this dialog keeps originals and model packs.
 type DialogFormat = Exclude<ExportFormat, "sheet">;
@@ -46,6 +49,7 @@ export function MemberExportDialog({
   const [format, setFormat] = useState<DialogFormat>("zip");
   const [target, setTarget] = useState<ExportTarget>("gpt-image");
   const [busy, setBusy] = useState(false);
+  const [progress, setProgress] = useState<AssetFetchProgress | null>(null);
   const [failed, setFailed] = useState(false);
   const controller = useRef<AbortController | null>(null);
   const limit = EXPORT_TARGETS.find((model) => model.id === target)!.limit;
@@ -66,6 +70,7 @@ export function MemberExportDialog({
     const abort = new AbortController();
     controller.current = abort;
     setBusy(true);
+    setProgress(null);
     setFailed(false);
     try {
       const result = await exportPack({
@@ -79,9 +84,11 @@ export function MemberExportDialog({
           assets.items.map((item) => [item.slot, labelsFor(item, assets)]),
         ),
         signal: abort.signal,
+        onProgress: setProgress,
       });
       abort.signal.throwIfAborted();
       saveBlob(result.blob, result.filename);
+      announceFirstUse("download");
       account.event("bundle_download", { format: format === "model" ? target : format });
       onSuccess();
     } catch (error) {
@@ -165,6 +172,11 @@ export function MemberExportDialog({
           {unavailableVeo ? (
             <output className="sp-small block">{t("assets.veoMissing")}</output>
           ) : null}
+        </div>
+      ) : null}
+      {busy ? (
+        <div className="mt-5">
+          <PackProgress progress={progress} />
         </div>
       ) : null}
       {failed ? (

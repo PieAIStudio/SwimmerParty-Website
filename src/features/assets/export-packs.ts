@@ -10,7 +10,7 @@ import { assetFilename, MAX_BUNDLE_ITEMS, SignInRequired } from "./downloads.ts"
 import { zipBlob } from "../../lib/browser-files.ts";
 import { loadSignedImages } from "./signed-images.ts";
 import { selectModelAssets, veoPlan } from "./export-plan.ts";
-import { isFullBodySeries } from "./contracts.ts";
+import { isFullBodySeries, type AssetFetchProgress } from "./contracts.ts";
 import { createSheetPainter, sheetBlob, type SheetOptions } from "./render-sheet.ts";
 
 export type ExportFormat = "zip" | "sheet" | "model";
@@ -25,6 +25,7 @@ export type ExportRequest = {
   locale: "zh" | "en";
   labels: Record<string, { en: string; zh: string }>;
   signal: AbortSignal;
+  onProgress?: (progress: AssetFetchProgress) => void;
 };
 export { SignInRequired };
 function ensureActive(signal: AbortSignal) {
@@ -49,7 +50,7 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
   const images = await loadSignedImages(
     actor.slug,
     items.map((item) => ({ slot: item.slot, filename: assetFilename(actor.slug, item) })),
-    { signal, maxBytes: 256 * 1024 * 1024 },
+    { signal, maxBytes: 256 * 1024 * 1024, onProgress: input.onProgress },
   );
   const blobs = new Map(images.map((item) => [item.slot, item.blob]));
   ensureActive(signal);

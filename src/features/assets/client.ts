@@ -1,4 +1,5 @@
 export { starterPack } from "./starter-pack.ts";
+export { PackProgress } from "./PackProgress";
 export { SignInRequired, assetFilename } from "./downloads.ts";
 export { exportPack, licenseText } from "./export-packs.ts";
 export {

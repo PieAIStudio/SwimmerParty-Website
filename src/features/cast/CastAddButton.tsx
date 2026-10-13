@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useSiteI18n } from "@/i18n/client";
 import { GameButton } from "@pieai/swimmer-ui-kit";
+import { announceFirstUse } from "@/features/guidance/client";
 import { readSavedCast, writeSavedCast } from "./store.ts";
 
 export function CastAddButton({ slug }: { slug: string; locale: "en" | "zh"; name?: string }) {
@@ -13,6 +14,7 @@ export function CastAddButton({ slug }: { slug: string; locale: "en" | "zh"; nam
     if (!saved.includes(slug) && saved.length < 12) {
       writeSavedCast([...saved, slug]);
       setAdded(true);
+      announceFirstUse("cast");
     }
   }
   return (

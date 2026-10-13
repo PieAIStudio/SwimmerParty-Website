@@ -1,6 +1,6 @@
 "use client";
 import { useSiteI18n } from "@/i18n/client";
-import { useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import { Mannequin } from "@/site/Mannequin";
 import { DownloadTerms } from "@/site/DownloadTerms";
@@ -9,7 +9,9 @@ import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { Link } from "@/i18n/navigation";
 import { useAccount } from "@/features/account";
 import { trackProductEvent } from "@/features/analytics/client";
-import { starterPack, SignInRequired } from "@/features/assets/client";
+import { starterPack, SignInRequired, PackProgress } from "@/features/assets/client";
+import type { AssetFetchProgress } from "@/features/assets/contracts";
+import { announceFirstUse } from "@/features/guidance/client";
 import { saveBlob } from "@/lib/browser-files";
 import { CAST_EVENT, subscribeCast } from "./store.ts";
 function readCast(): string {
@@ -34,6 +36,9 @@ export function CastBoard({
   const account = useAccount();
   const [downloading, setDownloading] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [progress, setProgress] = useState<AssetFetchProgress | null>(null);
+  const request = useRef<AbortController | null>(null);
+  useEffect(() => () => request.current?.abort(), []);
   // The shared link wins over the saved cast; the server renders nothing until the browser reads it.
   const raw = useSyncExternalStore(subscribeCast, readCast, () => null);
   const slugs = useMemo(
@@ -60,28 +65,45 @@ export function CastBoard({
     await navigator.clipboard?.writeText(value);
   }
   async function downloadPack() {
-    if (downloading) return;
+    if (downloading || request.current) return;
     trackProductEvent("download_started", { kind: "cast", count: cast.length });
     const { user } = await account.whenReady();
     if (!user) {
       trackProductEvent("sign_in_prompt_shown", { trigger: "cast" });
-      await account.signIn();
+      try {
+        await account.signIn();
+      } catch {
+        setFailed(true);
+      }
       return;
     }
     setDownloading(true);
     setFailed(false);
+    setProgress(null);
+    const controller = new AbortController();
+    request.current = controller;
     try {
       const { blob, filename } = await starterPack(
         cast.map((a) => ({ ...a, slots: starterSlots[a.slug] ?? [] })),
+        controller.signal,
+        setProgress,
       );
+      controller.signal.throwIfAborted();
       saveBlob(blob, filename);
+      announceFirstUse("download");
       account.event("starter_download", { format: "cast" });
     } catch (error) {
+      if (controller.signal.aborted) return;
       if (error instanceof SignInRequired) {
         trackProductEvent("sign_in_prompt_shown", { trigger: "cast" });
-        await account.signIn();
+        try {
+          await account.signIn();
+        } catch {
+          setFailed(true);
+        }
       } else setFailed(true);
     } finally {
+      request.current = null;
       setDownloading(false);
     }
   }
@@ -123,6 +145,12 @@ export function CastBoard({
         </GameButton>
       </div>
       <DownloadTerms className="mt-3" />
+      {downloading ? (
+        <div className="mt-4 space-y-3">
+          <PackProgress progress={progress} />
+          <GameButton onClick={() => request.current?.abort()}>{t("assets.cancel")}</GameButton>
+        </div>
+      ) : null}
       {failed ? (
         <div className="mt-4">
           <GameToast tone="danger">{t("cast.failed")}</GameToast>

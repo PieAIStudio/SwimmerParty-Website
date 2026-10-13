@@ -3,6 +3,7 @@ import { SITE } from "../../content/site.ts";
 import { LICENSE, STARTER_LICENSE } from "../../content/license.ts";
 import { zipBlob } from "../../lib/browser-files.ts";
 import { loadSignedImages } from "./signed-images.ts";
+import type { AssetFetchProgress } from "./contracts.ts";
 
 /** The references every tool needs first. New faces have only the full-body front. */
 const STARTER_SLOTS = ["turnaround.front", "face.front"];
@@ -36,13 +37,19 @@ ${STARTER_LICENSE.zh}${SITE.url}/zh/license
 `;
 }
 
-async function actorFiles(actor: StarterActor, prefix: string, signal?: AbortSignal) {
+async function actorFiles(
+  actor: StarterActor,
+  prefix: string,
+  signal?: AbortSignal,
+  onProgress?: (progress: AssetFetchProgress) => void,
+) {
   const images = await loadSignedImages(
     actor.slug,
     actor.slots.map((slot) => ({ slot })),
     {
       signal,
       authorizationError: "Starter pack authorization failed",
+      onProgress,
     },
   );
   const files: Record<string, Uint8Array> = {};
@@ -57,11 +64,22 @@ async function actorFiles(actor: StarterActor, prefix: string, signal?: AbortSig
 export async function starterPack(
   actors: StarterActor[],
   signal?: AbortSignal,
+  onProgress?: (progress: AssetFetchProgress) => void,
 ): Promise<{ blob: Blob; filename: string }> {
   const single = actors.length === 1;
   const files: Record<string, Uint8Array> = {};
-  for (const actor of actors)
-    Object.assign(files, await actorFiles(actor, single ? "" : `${actor.slug}/`, signal));
+  let completed = 0;
+  const total = actors.reduce((count, actor) => count + actor.slots.length, 0);
+  for (const actor of actors) {
+    const offset = completed;
+    Object.assign(
+      files,
+      await actorFiles(actor, single ? "" : `${actor.slug}/`, signal, (progress) =>
+        onProgress?.({ completed: offset + progress.completed, total }),
+      ),
+    );
+    completed += actor.slots.length;
+  }
   if (!single) {
     files["cast.json"] = strToU8(
       JSON.stringify(

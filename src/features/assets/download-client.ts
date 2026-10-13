@@ -1,6 +1,7 @@
 import { signedDownloadSchema } from "../../contracts/downloads.ts";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { trackProductEvent } from "@/features/analytics/client";
+import { announceFirstUse } from "@/features/guidance/client";
 
 export type AssetDownloadAccount = {
   user: { id: string } | null;
@@ -33,6 +34,7 @@ export async function downloadAsset({
   const blob = await fetchImageBlob(result.url, signal);
   if (signal.aborted) return result;
   saveBlob(blob, result.filename);
+  announceFirstUse("download");
   account.event(result.cooldown ? "guest_download" : "member_download");
   return result;
 }

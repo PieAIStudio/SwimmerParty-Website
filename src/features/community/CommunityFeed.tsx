@@ -1,15 +1,18 @@
 "use client";
 import { useSiteI18n } from "@/i18n/client";
 import { useEffect, useState } from "react";
-import { GameButton, GameSelect } from "@pieai/swimmer-ui-kit";
+import { GameButton, GameSelect, GameToast } from "@pieai/swimmer-ui-kit";
 import { ACTORS } from "@/content/actors";
 import type { CommunityPost } from "./types";
 import { communityPostResponseSchema, communityPostsResponseSchema } from "@/contracts/community";
 import { Link } from "@/i18n/navigation";
+import { announceFirstUse } from "@/features/guidance/client";
 export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
   const { t } = useSiteI18n();
   const [posts, setPosts] = useState<CommunityPost[]>([]);
   const [open, setOpen] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [notice, setNotice] = useState<"signin" | "failed" | "submitted" | null>(null);
   const [title, setTitle] = useState("");
   const [kind, setKind] = useState("image");
   const [actor, setActor] = useState("tang-yunqiu");
@@ -29,35 +32,72 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
   }, []);
   async function submit(e: React.FormEvent) {
     e.preventDefault();
-    const r = await fetch("/api/community/posts", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        title,
-        kind,
-        actorSlugs: [actor],
-        description,
-        recipe,
-        tool: tool || undefined,
-        creditConfirmed,
-        rightsConfirmed,
-      }),
-    });
-    if (r.ok) {
-      const result = communityPostResponseSchema.parse(await r.json());
-      setPosts((current) => [result.post, ...current]);
-      setTitle("");
-      setOpen(false);
+    if (busy) return;
+    setBusy(true);
+    setNotice(null);
+    try {
+      const r = await fetch("/api/community/posts", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          title,
+          kind,
+          actorSlugs: [actor],
+          description,
+          recipe,
+          tool: tool || undefined,
+          creditConfirmed,
+          rightsConfirmed,
+        }),
+      });
+      if (r.status === 401) {
+        setNotice("signin");
+        return;
+      }
+      if (!r.ok) throw new Error("Submission failed");
+      if (r.ok) {
+        const result = communityPostResponseSchema.parse(await r.json());
+        setPosts((current) => [result.post, ...current]);
+        setTitle("");
+        setOpen(false);
+        setNotice("submitted");
+      }
+    } catch {
+      setNotice("failed");
+    } finally {
+      setBusy(false);
     }
   }
   return (
     <div>
       <div className="flex items-center justify-between gap-4">
         <p className="sp-lead">{t("community.intro")}</p>
-        <GameButton variant="secondary" onClick={() => setOpen((v) => !v)}>
+        <GameButton
+          variant="secondary"
+          onClick={() => {
+            if (!open) announceFirstUse("post");
+            setOpen((v) => !v);
+          }}
+        >
           {t("community.openForm")}
         </GameButton>
       </div>
+      <p className="sp-small mt-3 text-muted-foreground" data-submission-conditions>
+        {t("firstUse.post.condition")}
+      </p>
+      {notice ? (
+        <div className="mt-3">
+          <GameToast tone={notice === "submitted" ? "success" : "danger"}>
+            {t(
+              notice === "signin"
+                ? "community.signIn"
+                : notice === "submitted"
+                  ? "firstUse.post.saved"
+                  : "firstUse.actionFailed",
+            )}
+          </GameToast>
+        </div>
+      ) : null}
       {open ? (
         <form onSubmit={submit} className="sp-panel mt-6 grid gap-4 p-5">
           <label className="grid gap-2">
@@ -129,6 +169,7 @@ export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
             type="submit"
             variant="primary"
             disabled={!creditConfirmed || !rightsConfirmed}
+            pending={busy}
           >
             {t("community.submit")}
           </GameButton>
