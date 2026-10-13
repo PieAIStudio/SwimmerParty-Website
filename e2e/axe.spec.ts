@@ -8,6 +8,8 @@ const pages = [
   "/en/actors/tang-yunqiu",
   "/en/actors/tang-yunqiu/sheet",
   "/en/guide",
+  "/en/guide/tools/gemini",
+  "/zh/guide/tools/veo",
   "/en/license",
 ];
 for (const path of pages) {

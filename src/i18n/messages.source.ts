@@ -1325,13 +1325,45 @@ export const messages = {
     en: "How it works",
     zh: "怎么用",
   },
+  "learn.workflowPreview": { en: "Site workflow preview", zh: "本站操作预览" },
+  "learn.start.starter": { en: "Start with one actor", zh: "从一位演员开始" },
+  "learn.start.sheet": { en: "Make a character sheet", zh: "做一张设定图" },
+  "learn.start.cast": { en: "Open your cast", zh: "打开选角单" },
+  "learn.toolsTitle": { en: "Next: choose your tool", zh: "下一步，选你的工具" },
+  "learn.draft": { en: "Draft · not reproduced", zh: "草稿 · 尚未实测复现" },
+  "learn.draftNotice": {
+    en: "These tool workflows are drafts based on official documentation. We have not yet generated and reviewed a result for each recipe. They are not verified tutorials or a promise of matching results.",
+    zh: "这些工具流程是依据官方资料整理的草稿，尚未逐篇生成并验收结果。它们不是已实测教程，也不保证得到相同结果。",
+  },
+  "learn.readDraft": { en: "Read the draft", zh: "查看流程草稿" },
+  "learn.sourceChecked": { en: "Official sources checked:", zh: "官方资料核对日期：" },
+  "learn.reproductionPending": { en: "Hands-on reproduction: pending", zh: "实际生成复现：待完成" },
+  "learn.before": { en: "Before you start", zh: "开始前要知道" },
+  "learn.steps": { en: "The workflow", zh: "操作流程" },
+  "learn.inputPreview": {
+    en: "Reference image to upload — not an output from this tool.",
+    zh: "要上传的参考图，不是该工具的生成结果。",
+  },
+  "learn.getReference": { en: "Get the reference image", zh: "领取参考图" },
+  "learn.prompt": { en: "Prompt to try", zh: "可尝试的提示词" },
+  "learn.checkResult": { en: "Check the result", zh: "检查结果" },
+  "learn.noOutput": {
+    en: "No verified output for this draft yet. We will add one only after a recorded hands-on run.",
+    zh: "此草稿尚无经过验收的生成结果，完成有记录的实际操作后才会补上。",
+  },
+  "learn.openTool": { en: "Open the tool ↗", zh: "打开工具 ↗" },
+  "learn.externalCost": {
+    en: "Opens another site. Its account, usage limits and charges are separate from Swimmer.",
+    zh: "将打开其他网站，其账号、使用额度和费用与泳者账号分开。",
+  },
+  "learn.sources": { en: "Official references", zh: "官方参考资料" },
   "guide.title": {
     en: "Three ways to get an actor",
     zh: "三种拿法，挑一种就行",
   },
   "guide.lead": {
-    en: "Every actor is free for commercial use. Not sure which to pick? Start with the starter pack.",
-    zh: "每位演员都可以免费商用。不确定选哪种，就先领懒人包。",
+    en: "Pick a result: one actor, one reference sheet, or a whole cast. Prepare your assets here, then choose an image or video tool.",
+    zh: "先选一个目标：一位演员、一张设定图，或一组选角。备好素材，再选图像或视频工具。",
   },
   "guide.starter.title": {
     en: "Starter pack · fastest start",
@@ -1422,8 +1454,8 @@ export const messages = {
     zh: "能商用吗",
   },
   "guide.license.body": {
-    en: 'Yes, free for commercial use. The only condition is the credit "Actor name · Swim In AI".',
-    zh: "可以，免费商用。唯一的要求是署名「演员名 · Swim In AI」。",
+    en: 'Free for commercial use under the usage rules. Credit "Actor name · Swim In AI" and read the full license before publishing.',
+    zh: "遵守使用规则即可免费商用。请署名「演员名 · Swim In AI」，发布前阅读完整授权。",
   },
   "guide.browse": {
     en: "Browse actors",
