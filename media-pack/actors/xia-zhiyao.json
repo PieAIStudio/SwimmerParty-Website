@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/xia-zhiyao/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "demographics": {
@@ -52,7 +52,7 @@
   "anchorVersion": 1,
   "anchors": {
     "face": "library/claude-casting-2026-10-07/final/CC-071.png",
-    "body": null
+    "body": "staging/actors/xia-zhiyao-20261011/selected-body-anchor.png"
   },
   "looks": [
     {
@@ -63,17 +63,647 @@
         "en": "Casting basics"
       },
       "prompt": "cream plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied xia-zhiyao personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "extra-1",
+          "label": {
+            "en": "Extra 1",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / extra-1 reference image."
+        },
+        {
+          "key": "extra-2",
+          "label": {
+            "en": "Extra 2",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / extra-2 reference image."
+        },
+        {
+          "key": "extra-3",
+          "label": {
+            "en": "Extra 3",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / extra-3 reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        }
+      ]
     }
   ],
   "roles": [],
   "proposals": {
     "approval": "owner-confirmed-facts-provisional-identity",
-    "appearance": "Provisional until Owner selects a proportion-corrected audition image",
-    "phase": "audition-pending-owner"
+    "appearance": "Owner-supervised body anchor selected from replacement-6 v3 candidate-3; transparent-canvas normalization documented in MediaFactory run",
+    "phase": "body-anchor-selected"
   },
   "routes": {
     "chatgpt-web": {
-      "chat": null
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00-pics-a/c/6ac92d90-addc-83ea-a219-a572bd8491bd"
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/technical-staging-manifest.json",
+      "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json"
+    ],
+    "images": [
+      {
+        "slot": "detail.hair-back",
+        "source": "xia-zhiyao/xia-zhiyao__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/detail-hair-back-v1-original.png",
+        "sha256": "a6b9c0d4b85112e78fa87f2e9910195eba22d740be08a1b1596b00cc70f167ed",
+        "bytes": 1737534,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "xia-zhiyao/xia-zhiyao__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/detail-hands-v1-original.png",
+        "sha256": "da2c25236097e748b540ced0a93cd0ef3107480bcdceabdb3e9d1b2356c38dbe",
+        "bytes": 1221578,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "xia-zhiyao/xia-zhiyao__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/expression-angry-imagegen-v3-original.png",
+        "sha256": "da0ca50a312557139e850b2f936e6e73e1aa4334d306d8ff46fd3a7859d835f8",
+        "bytes": 2160343,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "xia-zhiyao/xia-zhiyao__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-02/image-9.png",
+        "sha256": "04b89d6f2bb27953a8225aa244044d29776b43566518b1a34fe6a24f50440a06",
+        "bytes": 2257347,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "xia-zhiyao/xia-zhiyao__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-04/image-38.png",
+        "sha256": "1fe2f585af558f1b09f5b0c2de0c6bed92c1f9d8130751106868e5c90dc93de6",
+        "bytes": 1964762,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "xia-zhiyao/xia-zhiyao__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-04/image-32.png",
+        "sha256": "ce076a88d4718abd34906f58d88564c2594ab4c420f4c52b1b09a34cb4485080",
+        "bytes": 2022467,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "xia-zhiyao/xia-zhiyao__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-04/image-31.png",
+        "sha256": "d648bd61978a513c74f34d733435831689ac5554bf4ff2af51a7b2413069dfd6",
+        "bytes": 2012536,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "xia-zhiyao/xia-zhiyao__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-02/image-8.png",
+        "sha256": "0d6df103c57a5dfd47b63a2c1f977f0ba7ebc90ff048d8e9033f0fec8dd0780b",
+        "bytes": 2148685,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "xia-zhiyao/xia-zhiyao__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-04/image-39.png",
+        "sha256": "b40931b0391e9388c1de1e4d5077fd87da1979caf6d4efef997518eba29dbe24",
+        "bytes": 2040417,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "xia-zhiyao/xia-zhiyao__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-04/image-34.png",
+        "sha256": "a5723aa2aac95c10e3ed180ab2ae8aa5c24cc943c174feafa9011fd406f6f58a",
+        "bytes": 2125206,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "xia-zhiyao/xia-zhiyao__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-03/image-23.png",
+        "sha256": "220e4e3c2735993599c689a604a6d24c28e2cd1c4964dca74d3976cb48a92dad",
+        "bytes": 2138387,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "xia-zhiyao/xia-zhiyao__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-03/image-24.png",
+        "sha256": "a0e6ecb9b2bd5836df4c99ae39d790b40709b3b0c2507c0500251c9f0e56d2ff",
+        "bytes": 2168122,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "xia-zhiyao/xia-zhiyao__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-03/image-27.png",
+        "sha256": "cfe060fa5da56468abac72d221e64721ff42248cef8610b9afbd249ddafa2a9c",
+        "bytes": 2077102,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "xia-zhiyao/xia-zhiyao__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-02/image-6.png",
+        "sha256": "275352e50ec10fdbc79a85a04ad9ad4a3db214ffa906fae27e2830dbd4ff54f4",
+        "bytes": 2075214,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "xia-zhiyao/xia-zhiyao__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-02/image-4.png",
+        "sha256": "d9aa61f92b3f7b000b285c1e790324cf59eee5f7cd20098e0d2dbd2e94049757",
+        "bytes": 2149252,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "xia-zhiyao/xia-zhiyao__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-04/image-36.png",
+        "sha256": "d3ab8d0bf204d1899c8448f263015a783b3eaadeba772cceaf8a4832431b3121",
+        "bytes": 2028299,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "xia-zhiyao/xia-zhiyao__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-02/image-7.png",
+        "sha256": "01a42c5e91cb3591c539ac2aa17f6420bde18bebb59af2c9fad46c8513b446d8",
+        "bytes": 2110623,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "xia-zhiyao/xia-zhiyao__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-03/image-22.png",
+        "sha256": "1b508fe020122393b1ee20673d05571a0cd99c8be73f47e9872fc7f423b77224",
+        "bytes": 2113535,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "xia-zhiyao/xia-zhiyao__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-04/image-35.png",
+        "sha256": "e3776788db50d00b107d6c9ce00f3c5bd86af92906d9b079ef9f309762b30002",
+        "bytes": 2053452,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "xia-zhiyao/xia-zhiyao__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-03/image-29.png",
+        "sha256": "835f462f13515cfa74bd2c1ba5323c839f6e151ef42bffc1606ba33fbcc2afe7",
+        "bytes": 2065139,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "xia-zhiyao/xia-zhiyao__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-04/image-37.png",
+        "sha256": "67dd752b9e495ba1315229db5ac51865d4879e7a0767ce0befc7953244008a59",
+        "bytes": 1937545,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "xia-zhiyao/xia-zhiyao__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-02/image-5.png",
+        "sha256": "98d3c85f1501403139d05a25d572b14a0edf46fa389e80ca61e4c05027c7fdf7",
+        "bytes": 2033994,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "xia-zhiyao/xia-zhiyao__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-03/image-30.png",
+        "sha256": "8754ecb9c852482fb523bc081b48a909e5e983f8efe192da51407db7f2bc9042",
+        "bytes": 2098253,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "xia-zhiyao/xia-zhiyao__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-03/image-26.png",
+        "sha256": "4a388c746f97730a4a8c1c033b0b245faaa113d8abc927e5e6d738446bdfc440",
+        "bytes": 2053771,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "xia-zhiyao/xia-zhiyao__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-03/image-21.png",
+        "sha256": "b147997bb24687d190456ab28738684f7ea79b310c3fe8a1decd7f5769c1170c",
+        "bytes": 2173333,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "xia-zhiyao/xia-zhiyao__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-04/image-33.png",
+        "sha256": "8cf7370dbcb3f00f815861596ab9b0e85b6692cb55658e113e260088968df9c1",
+        "bytes": 2089396,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "xia-zhiyao/xia-zhiyao__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-03/image-25.png",
+        "sha256": "e6541151c955d04fede7ef9577cbac3da5384548771d8cbb567d4485eb3c6690",
+        "bytes": 2074076,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "xia-zhiyao/xia-zhiyao__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-03/image-28.png",
+        "sha256": "25f5b12c4cb4f827684c15991f3ad381a3091f57ae19525966af8b34a931cf8f",
+        "bytes": 2181155,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "xia-zhiyao/xia-zhiyao__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-02/image-3.png",
+        "sha256": "308083c100cd7910255d37dce329575fcffa13196d1957f583fd1a6c710b6349",
+        "bytes": 2136964,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "xia-zhiyao/xia-zhiyao__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/face-front-v1-original.png",
+        "sha256": "9c4576046b6fafc051ac4eaa7a206d41e1a76988bbd04847690ec884307ad721",
+        "bytes": 2172713,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "xia-zhiyao/xia-zhiyao__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/face-side-v1-original.png",
+        "sha256": "ad20eb55accc3bb6e67295e34783ec11cba27e64c6723f649b66c65d7f3506b4",
+        "bytes": 2160748,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "xia-zhiyao/xia-zhiyao__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-02/image-1.png",
+        "sha256": "dfeba7df1ba97d7f9312e9227c99c81c6f2c6920d96156e65ba7000589718f71",
+        "bytes": 2097614,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "xia-zhiyao/xia-zhiyao__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/face-three-quarter-v2-original.png",
+        "sha256": "6ba3bdbee196c85d412d3b144ee14e5fd0b6a7bc85336e6a2b95fc151fe9e4fb",
+        "bytes": 2112371,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "xia-zhiyao/xia-zhiyao__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/face-three-quarter-left-v1-original.png",
+        "sha256": "8f664753d24af1769ae2dad5cf6074610817df40dde4dc00a2f9022fd23d4696",
+        "bytes": 2377989,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "xia-zhiyao/xia-zhiyao__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-02/image-2.png",
+        "sha256": "314d1dd309fb476e86f8f6402342b338cf99872c431a712f751c73c3a2dd920b",
+        "bytes": 2063064,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "xia-zhiyao/xia-zhiyao__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/pose-arms-crossed-v2-original.png",
+        "sha256": "46d7f9d4b35ad585634d60383862fa22722ef5f13b0660297ef56eb40c79db4a",
+        "bytes": 719238,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "xia-zhiyao/xia-zhiyao__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/pose-phone-v2-original.png",
+        "sha256": "2adde98695550240ee20708f1eba4ef723b6ff9d0625de0a98bc86fe4c9b8453",
+        "bytes": 682282,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "xia-zhiyao/xia-zhiyao__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/pose-point-v2-original.png",
+        "sha256": "47cd90e6d14756d6b53983d1c7dd3af2b498ce0632f6dab6eaf45502ad12113e",
+        "bytes": 684101,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "xia-zhiyao/xia-zhiyao__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/pose-run-v5-original.png",
+        "sha256": "89fc8746aa2825faabe301dfaa453041f3044cff6c8164d460bf2f893dea0202",
+        "bytes": 749823,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "xia-zhiyao/xia-zhiyao__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/pose-sit-v2-original.png",
+        "sha256": "20caf0a5dc2ee6575ff10b84b4f80d986ba52f0b031c38618bcb202ef4693d64",
+        "bytes": 831066,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "xia-zhiyao/xia-zhiyao__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-05/image-45.png",
+        "sha256": "896ccef2947a7baf9f14a4d33681e926856d626cb1ba732a53b6c9f68ee7492c",
+        "bytes": 836364,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "xia-zhiyao/xia-zhiyao__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-01/image-4.png",
+        "sha256": "6f741de45c7ab2880cbc8250690cf208b5a0876512e24f0b9334fc56ca6d7ad7",
+        "bytes": 720407,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "xia-zhiyao/xia-zhiyao__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-01/image-6.png",
+        "sha256": "25318a8d599dd64644394c8fd1ab6ff67929f163133e43efbaf440bf7c1ead67",
+        "bytes": 730174,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "xia-zhiyao/xia-zhiyao__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-01/image-5.png",
+        "sha256": "31ca20c5ae155ab9d54b7ed118a6291db4cdbdb96a53ef2d28e496ba16f6c1ad",
+        "bytes": 804698,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.front",
+        "source": "xia-zhiyao/xia-zhiyao__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/turnaround-front-v2-original.png",
+        "sha256": "147a2c419f316d0af341c84af3906eb0fbf849e6b871412d4dbe4c54882b5a61",
+        "bytes": 664784,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "xia-zhiyao/xia-zhiyao__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-01/image-3.png",
+        "sha256": "f9ef0870b027f3d325a4c915f911c9288dbae1086eb708d91ed28b2bc24c7032",
+        "bytes": 507554,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "xia-zhiyao/xia-zhiyao__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-01/image-2.png",
+        "sha256": "4c4fb5329da2111c40700cb2a0613bb79d44d3671c5685c59dcbb6b23cb0430e",
+        "bytes": 757042,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "xia-zhiyao/xia-zhiyao__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-05/image-44.png",
+        "sha256": "fe7510e598d96b6b9cb57f81c1a5e72f6bf50232d7311bc5166edd9c1cee6334",
+        "bytes": 966704,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-1",
+        "source": "xia-zhiyao/xia-zhiyao__wardrobe-personal__extra-1__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/wardrobe-personal-extra-1-v2-original.png",
+        "sha256": "749886f97e4b5531f4c218a1869578d3428605f6d76d67e33f34d652265cde4f",
+        "bytes": 729773,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-2",
+        "source": "xia-zhiyao/xia-zhiyao__wardrobe-personal__extra-2__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/wardrobe-personal-extra-2-v2-original.png",
+        "sha256": "5bb1da3c556e23bf0812e0f7bf686ce5d187828bc6062638022770cd08aa1c6a",
+        "bytes": 741818,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-3",
+        "source": "xia-zhiyao/xia-zhiyao__wardrobe-personal__extra-3__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/wardrobe-personal-extra-3-v3-original.png",
+        "sha256": "03b61a14b33a6a5e1a58b702a6c512ba11783fd3ecf0e349eb41bfd2d6673b55",
+        "bytes": 724514,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "xia-zhiyao/xia-zhiyao__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/wardrobe-personal-front-imagegen-v3-original.png",
+        "sha256": "95d1d85d3e57d3d06fc86e23e1608183ceb2cd4fd243c40399ce33a94d5a188a",
+        "bytes": 804846,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "xia-zhiyao/xia-zhiyao__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/wardrobe-personal-portrait-v1-original.png",
+        "sha256": "860f0f030f5cecd1a9000766d0399b26872342ce537ee0d5099d59cb61e16970",
+        "bytes": 2154138,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "xia-zhiyao/xia-zhiyao__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../codex-image/wardrobe-personal-side-imagegen-v1-original.png",
+        "sha256": "ca9a1aca945d6bb8db684472389325a9a16ead294af02942b9ec379998fa3a1c",
+        "bytes": 558241,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "xia-zhiyao/xia-zhiyao__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/../full-pack-batch-05/image-41.png",
+        "sha256": "52d75b5c27c9ac75974a8c317ca2c627506aa6e3f223b7ee259f4a6880a411e2",
+        "bytes": 750178,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/xia-zhiyao/xia-zhiyao__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/voice/audition/intro.wav",
+        "sha256": "14362a5585e88cfc04e505ba78d759ae69b782cfcb19b4ad23722d72b83d273d",
+        "bytes": 1453614,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/xia-zhiyao/xia-zhiyao__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/voice/audition/intro-alt.wav",
+        "sha256": "dc964aa886614279da71fbc5d97ddb998e14521fc246ae6266150ea2fdb5c789",
+        "bytes": 1439502,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/xia-zhiyao/xia-zhiyao__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/voice/audition/chat.wav",
+        "sha256": "f3ef9fc00910e64deeaaa233b66bf1a32da80ad9d5787cf79fec9d9eb7669be1",
+        "bytes": 1665294,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/xia-zhiyao/xia-zhiyao__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/voice/audition/happy.wav",
+        "sha256": "8be1876e6413f7e0d6192b2fe68ed1f9c940157eb65f20e47156126c91e59b59",
+        "bytes": 1227822,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/xia-zhiyao/xia-zhiyao__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/voice/audition/angry.wav",
+        "sha256": "fe7c8647fb18bc43560f03408e48042ce8ccc3aefb69fcb08c37518351301b7a",
+        "bytes": 1114926,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/xia-zhiyao/xia-zhiyao__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/xia-zhiyao-20261011/technical-handoff-20261013/voice/audition/sad.wav",
+        "sha256": "3ef808aa079f6166a62da53b2dbee72a676d5140cfeb336b23a6daa63bb4f47c",
+        "bytes": 1411278,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 110,
+    "status": "active",
+    "tagline": {
+      "zh": "两边眉毛不一样高，看起来总在想事情。",
+      "en": "One brow sits higher, so she always looks like she's thinking."
+    },
+    "introduction": {
+      "en": "East Asian (Chinese) woman, about 29, tall and slim, about 170 cm; uneven eyebrows (her left one higher), a small mole on one cheek, long wavy hair; cream top",
+      "zh": "两边眉毛不一样高，看起来总在想事情。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "xia-zhiyao-grok-solo-20261013",
+      "actorSlugs": [
+        "xia-zhiyao"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-root-physical-and-prior-semantic",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json",
+        "evidenceSha256": "869a1028ff40850f7a08d05e9ea668eadd75ed70d0bf5d7cf78cf1dcf55a384b",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/xia-zhiyao-grok-solo-20261013/source.mp4",
+          "sourceSha256": "ad4d686e0bb8d5f9fea1eca4d521488f08856c3707c8b2b8cecbaefd57f86f56",
+          "public": "/media/works/samples/xia-zhiyao-grok-solo-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    },
+    {
+      "sampleId": "xia-zhiyao-wei-qinghe-google-vids-04-20261013",
+      "actorSlugs": [
+        "xia-zhiyao",
+        "wei-qinghe"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Google Vids"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-requested-ensemble-motion-identity-and-head-body-scope-with-document-export-framing-limitation",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-additional-video-qa-20261013.json",
+        "evidenceSha256": "a66ba0f4f41952d3a99ca02f3b81907a49a75d61540bced24d0cc4eb3d0477db",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/xia-zhiyao-wei-qinghe-google-vids-04-20261013/source.mp4",
+          "sourceSha256": "19af1b1ea1316db553e4caf0f01f8c909ba236a7bf80dc0fb1faa8fa4689e6db",
+          "public": "/media/works/samples/xia-zhiyao-wei-qinghe-google-vids-04-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }

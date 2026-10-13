@@ -1,6 +1,50 @@
 {
   "slug": "qin-lie",
-  "looks": [],
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied qin-lie personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "extra-hands-in-pockets",
+          "label": {
+            "en": "Extra hands in pockets",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / extra-hands-in-pockets reference image."
+        },
+        {
+          "key": "extra-seated-drape",
+          "label": {
+            "en": "Extra seated drape",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / extra-seated-drape reference image."
+        },
+        {
+          "key": "extra-walking-drape",
+          "label": {
+            "en": "Extra walking drape",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / extra-walking-drape reference image."
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "kind": "image",
@@ -8,13 +52,217 @@
       "series": "turnaround",
       "key": "front",
       "look": null,
-      "conformance": "v1",
-      "version": 0.1,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1314894,
+      "sha256": "957580657162fdf59160bff4074ccc0132399c04ccfe85e9aba7247397cc0f30",
+      "sourceSha256": "957580657162fdf59160bff4074ccc0132399c04ccfe85e9aba7247397cc0f30",
+      "bbox": {
+        "left": 0.0244140625,
+        "top": 0.044921875,
+        "right": 0.982421875,
+        "bottom": 0.9505208333333334
+      },
+      "format": "png",
+      "object": "qin-lie/957580657162fdf5/qin-lie__turnaround__front__v1.png",
+      "preview": "/media/assets/qin-lie/turnaround.front.webp",
+      "thumb": "/media/assets/qin-lie/turnaround.front.thumb.webp",
+      "large": "/media/assets/qin-lie/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.744195302327474,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
       "width": 941,
       "height": 1672,
-      "bytes": 970365,
-      "sha256": "d695fc2bc28f52af6d8ae7b1f0cd8f6007e81dc6e1fcdb4dc2144760f95ba4f2",
-      "sourceSha256": "d695fc2bc28f52af6d8ae7b1f0cd8f6007e81dc6e1fcdb4dc2144760f95ba4f2",
+      "bytes": 920945,
+      "sha256": "8648e8fe32f4a8b8befa36d876634aa0db45d431259f78e2be00790fe031336c",
+      "sourceSha256": "8648e8fe32f4a8b8befa36d876634aa0db45d431259f78e2be00790fe031336c",
+      "bbox": {
+        "left": 0.13283740701381508,
+        "top": 0.019736842105263157,
+        "right": 0.9851222104144527,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "qin-lie/8648e8fe32f4a8b8/qin-lie__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/qin-lie/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/qin-lie/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6676617819788578,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1135275,
+      "sha256": "741d3953bc25016a37935d1f6af2306e33363e62196077618aeca9b1ff32671a",
+      "sourceSha256": "741d3953bc25016a37935d1f6af2306e33363e62196077618aeca9b1ff32671a",
+      "bbox": {
+        "left": 0.0478515625,
+        "top": 0.027994791666666668,
+        "right": 0.98046875,
+        "bottom": 0.9674479166666666
+      },
+      "format": "png",
+      "object": "qin-lie/741d3953bc25016a/qin-lie__turnaround__side__v1.png",
+      "preview": "/media/assets/qin-lie/turnaround.side.webp",
+      "thumb": "/media/assets/qin-lie/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8373845418294271,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1355245,
+      "sha256": "9cf3601dbdd93ec8ba5f9d2b942a5686c26dce53d35cd22dc21336706a72a75c",
+      "sourceSha256": "9cf3601dbdd93ec8ba5f9d2b942a5686c26dce53d35cd22dc21336706a72a75c",
+      "bbox": {
+        "left": 0.0322265625,
+        "top": 0.018229166666666668,
+        "right": 0.970703125,
+        "bottom": 0.9700520833333334
+      },
+      "format": "png",
+      "object": "qin-lie/9cf3601dbdd93ec8/qin-lie__turnaround__back__v1.png",
+      "preview": "/media/assets/qin-lie/turnaround.back.webp",
+      "thumb": "/media/assets/qin-lie/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7192579905192057,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1361074,
+      "sha256": "7044ef57fbd74831f2e99ad9f2a3278bdd7a8cc757a790a7dd5e8b3011ec9f9e",
+      "sourceSha256": "7044ef57fbd74831f2e99ad9f2a3278bdd7a8cc757a790a7dd5e8b3011ec9f9e",
+      "bbox": {
+        "left": 0,
+        "top": 0.031901041666666664,
+        "right": 0.947265625,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/7044ef57fbd74831/qin-lie__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/qin-lie/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/qin-lie/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7290833791097006,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1391051,
+      "sha256": "c634ca67875a0d408e617026d1e094acc5a85a92b945f2f41d2d189a14cb24e6",
+      "sourceSha256": "c634ca67875a0d408e617026d1e094acc5a85a92b945f2f41d2d189a14cb24e6",
+      "bbox": {
+        "left": 0,
+        "top": 0.013671875,
+        "right": 0.986328125,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/c634ca67875a0d40/qin-lie__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/qin-lie/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/qin-lie/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7282568613688151,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1425404,
+      "sha256": "82ededfdf85e28ece2dcc1146a368af4ad9231abbb177e9f6d01ee67f20231fa",
+      "sourceSha256": "82ededfdf85e28ece2dcc1146a368af4ad9231abbb177e9f6d01ee67f20231fa",
+      "bbox": {
+        "left": 0,
+        "top": 0.01594896331738437,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/82ededfdf85e28ec/qin-lie__face__front__v1.png",
+      "preview": "/media/assets/qin-lie/face.front.webp",
+      "thumb": "/media/assets/qin-lie/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4740066237799806,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1444967,
+      "sha256": "d1965a71d57b854bc5004f66e3dd62ab5a10af755a96b4b80a19b19b08c2a9af",
+      "sourceSha256": "d1965a71d57b854bc5004f66e3dd62ab5a10af755a96b4b80a19b19b08c2a9af",
       "bbox": {
         "left": 0,
         "top": 0,
@@ -22,11 +270,1377 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "qin-lie/CC-022.png",
-      "preview": "/media/assets/qin-lie/turnaround.front.webp",
-      "large": "/media/assets/qin-lie/turnaround.front.large.webp",
-      "thumb": "/media/assets/qin-lie/turnaround.front.thumb.webp",
-      "blur": "data:image/webp;base64,UklGRowBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSMwAAAABgJtt27HnfvH/sdOqS2fbqWxzAWuBdDZaewGnSjawVTmp+N7REBExAYCAfWcxBP4qpPDWCeKPhN/ruet/Au4Hx57/qeYrw5sOC6CQTvP5+cUMKI1mvn19vbEVWmPk5pi8PJuAEtgZWyW3R3chgI36I/KkZQMQGCp7NnysG4CQmFx5NOZxdQxSIqaPe3scDoOEQjZ7hpgHBUhEsbSYaX8UMpjkzypoQKOG8d5s/a+ZEVZ2Qf3nhbspSAhYt+8tWH3yhZQInE8HApZKIAFWUDggmgAAANADAJ0BKgwAFQA/AWqsTysmJCIwCAFgIAlsAAPjMRkdACNnOKTwgAD+zF6ly7LzJvusbwnyOhgh/OgxZsd/X+IPIGmhGMbvj7/PFNS9MjDncaS1o6Xqed/dhUlXvB88ABPxW8ZJIep54hgT/xX99+/0sJvtP5xXsokDlrAwa9ZDXeQdmQ+y2ov8SIVq8iI/7bL/+NH12YgAAAA="
+      "object": "qin-lie/d1965a71d57b854b/qin-lie__face__three-quarter__v1.png",
+      "preview": "/media/assets/qin-lie/face.three-quarter.webp",
+      "thumb": "/media/assets/qin-lie/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.46484741649687505,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1544342,
+      "sha256": "733d8190b2d14cc7d37ed8c2fff1dcd93c917ea3b28249f596ecb4132e5426d8",
+      "sourceSha256": "733d8190b2d14cc7d37ed8c2fff1dcd93c917ea3b28249f596ecb4132e5426d8",
+      "bbox": {
+        "left": 0,
+        "top": 0.013556618819776715,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/733d8190b2d14cc7/qin-lie__face__side__v1.png",
+      "preview": "/media/assets/qin-lie/face.side.webp",
+      "thumb": "/media/assets/qin-lie/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4382810731337551,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1524886,
+      "sha256": "8ef198c5d6167bc2c7779e388341ac47a2684f12220a44bf3eb015b5253a04f3",
+      "sourceSha256": "8ef198c5d6167bc2c7779e388341ac47a2684f12220a44bf3eb015b5253a04f3",
+      "bbox": {
+        "left": 0,
+        "top": 0.019936204146730464,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/8ef198c5d6167bc2/qin-lie__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/qin-lie/face.three-quarter-left.webp",
+      "thumb": "/media/assets/qin-lie/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4415929631240636,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1545627,
+      "sha256": "3fd891b357faacd4947d91af060a8660ca3db1bd587ec15cca1b480f46298aeb",
+      "sourceSha256": "3fd891b357faacd4947d91af060a8660ca3db1bd587ec15cca1b480f46298aeb",
+      "bbox": {
+        "left": 0,
+        "top": 0.015151515151515152,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/3fd891b357faacd4/qin-lie__face__side-right__v1.png",
+      "preview": "/media/assets/qin-lie/face.side-right.webp",
+      "thumb": "/media/assets/qin-lie/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4442167838037896,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1440668,
+      "sha256": "d9d7ccd0244f2b4d4ce23c820d9f49c6d2021338d2ef2e65003cd207f82ff4d5",
+      "sourceSha256": "d9d7ccd0244f2b4d4ce23c820d9f49c6d2021338d2ef2e65003cd207f82ff4d5",
+      "bbox": {
+        "left": 0,
+        "top": 0.023125996810207338,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/d9d7ccd0244f2b4d/qin-lie__face__up__v1.png",
+      "preview": "/media/assets/qin-lie/face.up.webp",
+      "thumb": "/media/assets/qin-lie/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4587069384349666,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1535856,
+      "sha256": "c1dc6b66c9161cd8f3aa146d386a10951a0d83fa1ad301fb0b70bc7c62f4f156",
+      "sourceSha256": "c1dc6b66c9161cd8f3aa146d386a10951a0d83fa1ad301fb0b70bc7c62f4f156",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/c1dc6b66c9161cd8/qin-lie__face__down__v1.png",
+      "preview": "/media/assets/qin-lie/face.down.webp",
+      "thumb": "/media/assets/qin-lie/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4389106374752308,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1481170,
+      "sha256": "a7c4904c1f7d6121aaa820e8496c3660eb64c4ed39708fbfe9e702f3fb73216c",
+      "sourceSha256": "a7c4904c1f7d6121aaa820e8496c3660eb64c4ed39708fbfe9e702f3fb73216c",
+      "bbox": {
+        "left": 0,
+        "top": 0.018341307814992026,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/a7c4904c1f7d6121/qin-lie__expression__neutral__v1.png",
+      "preview": "/media/assets/qin-lie/expression.neutral.webp",
+      "thumb": "/media/assets/qin-lie/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4468634977322965,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1494896,
+      "sha256": "b2cf0c9072c06645cfb48b101bf216acefadd01bd994c75175091ee6a65388fd",
+      "sourceSha256": "b2cf0c9072c06645cfb48b101bf216acefadd01bd994c75175091ee6a65388fd",
+      "bbox": {
+        "left": 0,
+        "top": 0.013556618819776715,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/b2cf0c9072c06645/qin-lie__expression__smile__v1.png",
+      "preview": "/media/assets/qin-lie/expression.smile.webp",
+      "thumb": "/media/assets/qin-lie/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45422049759748073,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1441188,
+      "sha256": "3356f2bd4e8d1c598feab33e07e45a26043b0f889192ff8c384bf7ce1290704b",
+      "sourceSha256": "3356f2bd4e8d1c598feab33e07e45a26043b0f889192ff8c384bf7ce1290704b",
+      "bbox": {
+        "left": 0,
+        "top": 0.018341307814992026,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/3356f2bd4e8d1c59/qin-lie__expression__laugh__v1.png",
+      "preview": "/media/assets/qin-lie/expression.laugh.webp",
+      "thumb": "/media/assets/qin-lie/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4464584144135894,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1487646,
+      "sha256": "805bce9d5a27626aaba565103ea7603e1c611012af4eb54747e5202c98020e2f",
+      "sourceSha256": "805bce9d5a27626aaba565103ea7603e1c611012af4eb54747e5202c98020e2f",
+      "bbox": {
+        "left": 0,
+        "top": 0.007177033492822967,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/805bce9d5a27626a/qin-lie__expression__sad__v1.png",
+      "preview": "/media/assets/qin-lie/expression.sad.webp",
+      "thumb": "/media/assets/qin-lie/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.46180388625616525,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1510558,
+      "sha256": "f7e54395a2cfc22b70c0d36a5899a4a2e7ec0e0072c3db23341fe41902dcce07",
+      "sourceSha256": "f7e54395a2cfc22b70c0d36a5899a4a2e7ec0e0072c3db23341fe41902dcce07",
+      "bbox": {
+        "left": 0,
+        "top": 0.019936204146730464,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/f7e54395a2cfc22b/qin-lie__expression__cry__v1.png",
+      "preview": "/media/assets/qin-lie/expression.cry.webp",
+      "thumb": "/media/assets/qin-lie/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44794393189004117,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1488783,
+      "sha256": "d861d2b479af0e0534491c767058ed406fe6b54cd53053488ce80b4da0b3c31d",
+      "sourceSha256": "d861d2b479af0e0534491c767058ed406fe6b54cd53053488ce80b4da0b3c31d",
+      "bbox": {
+        "left": 0,
+        "top": 0.0023923444976076554,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/d861d2b479af0e05/qin-lie__expression__annoyed__v1.png",
+      "preview": "/media/assets/qin-lie/expression.annoyed.webp",
+      "thumb": "/media/assets/qin-lie/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4574643437650237,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1566979,
+      "sha256": "43638d7b50ce31b682c1788103a4340f213c01b2d1c61856796ac3d76b2d3f9e",
+      "sourceSha256": "43638d7b50ce31b682c1788103a4340f213c01b2d1c61856796ac3d76b2d3f9e",
+      "bbox": {
+        "left": 0,
+        "top": 0.014354066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/43638d7b50ce31b6/qin-lie__expression__angry__v1.png",
+      "preview": "/media/assets/qin-lie/expression.angry.webp",
+      "thumb": "/media/assets/qin-lie/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4292471427953674,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1430572,
+      "sha256": "acce7b1acd93b7a70d82d428fc55b155fad0fe470d19470ff3e10821cc6ce65e",
+      "sourceSha256": "acce7b1acd93b7a70d82d428fc55b155fad0fe470d19470ff3e10821cc6ce65e",
+      "bbox": {
+        "left": 0,
+        "top": 0.023125996810207338,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/acce7b1acd93b7a7/qin-lie__expression__surprised__v1.png",
+      "preview": "/media/assets/qin-lie/expression.surprised.webp",
+      "thumb": "/media/assets/qin-lie/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.46465536757654613,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1569429,
+      "sha256": "8fedb04346020a7c851d7a8681a59fa1a7f7c9d5c473035a6e16bc02100ed660",
+      "sourceSha256": "8fedb04346020a7c851d7a8681a59fa1a7f7c9d5c473035a6e16bc02100ed660",
+      "bbox": {
+        "left": 0,
+        "top": 0.011164274322169059,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/8fedb04346020a7c/qin-lie__expression__scared__v1.png",
+      "preview": "/media/assets/qin-lie/expression.scared.webp",
+      "thumb": "/media/assets/qin-lie/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4326849456539711,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1473831,
+      "sha256": "5bedb7422f8ba414c9eece5f60807038ab7f6f2ea828e2c21de0517751435411",
+      "sourceSha256": "5bedb7422f8ba414c9eece5f60807038ab7f6f2ea828e2c21de0517751435411",
+      "bbox": {
+        "left": 0,
+        "top": 0.01036682615629984,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/5bedb7422f8ba414/qin-lie__expression__disgusted__v1.png",
+      "preview": "/media/assets/qin-lie/expression.disgusted.webp",
+      "thumb": "/media/assets/qin-lie/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4481448837404516,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1613201,
+      "sha256": "cadf8c705f5eafe694f529208aa627438ea44a4cf89edb365ca881027fed4a4b",
+      "sourceSha256": "cadf8c705f5eafe694f529208aa627438ea44a4cf89edb365ca881027fed4a4b",
+      "bbox": {
+        "left": 0,
+        "top": 0.007177033492822967,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/cadf8c705f5eafe6/qin-lie__expression__embarrassed__v1.png",
+      "preview": "/media/assets/qin-lie/expression.embarrassed.webp",
+      "thumb": "/media/assets/qin-lie/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.41984437678217584,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1587880,
+      "sha256": "d2f0b7a1c9d11012366f3926179d0e500fcdb75fb6d9a4cade34a011712cbe31",
+      "sourceSha256": "d2f0b7a1c9d11012366f3926179d0e500fcdb75fb6d9a4cade34a011712cbe31",
+      "bbox": {
+        "left": 0,
+        "top": 0.02631578947368421,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/d2f0b7a1c9d11012/qin-lie__expression__tired__v1.png",
+      "preview": "/media/assets/qin-lie/expression.tired.webp",
+      "thumb": "/media/assets/qin-lie/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4527127227958253,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1472319,
+      "sha256": "06367fa6f25aa012f09d48d1c380b2c782e94f543a7010fb6a90768c00cf3b71",
+      "sourceSha256": "06367fa6f25aa012f09d48d1c380b2c782e94f543a7010fb6a90768c00cf3b71",
+      "bbox": {
+        "left": 0,
+        "top": 0.005582137161084529,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/06367fa6f25aa012/qin-lie__expression__speaking__v1.png",
+      "preview": "/media/assets/qin-lie/expression.speaking.webp",
+      "thumb": "/media/assets/qin-lie/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45574607825929914,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1435210,
+      "sha256": "97edc417e048862ca14e6ddb0ef7f5c0dbe4ea9c5dd313121d5643050ad30e27",
+      "sourceSha256": "97edc417e048862ca14e6ddb0ef7f5c0dbe4ea9c5dd313121d5643050ad30e27",
+      "bbox": {
+        "left": 0,
+        "top": 0.003189792663476874,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/97edc417e048862c/qin-lie__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/qin-lie/expression.eyes-closed.webp",
+      "thumb": "/media/assets/qin-lie/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.46463438209849695,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1449124,
+      "sha256": "dee4019b39743c23e9a0a6b4ac08224745568586b259c14ff99159a022ef5264",
+      "sourceSha256": "dee4019b39743c23e9a0a6b4ac08224745568586b259c14ff99159a022ef5264",
+      "bbox": {
+        "left": 0,
+        "top": 0.018341307814992026,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/dee4019b39743c23/qin-lie__expression__worried__v1.png",
+      "preview": "/media/assets/qin-lie/expression.worried.webp",
+      "thumb": "/media/assets/qin-lie/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.46730208150505304,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1454443,
+      "sha256": "fffc21907e605d902a20b180d14aed0548cfce170514313054e1514c8d298719",
+      "sourceSha256": "fffc21907e605d902a20b180d14aed0548cfce170514313054e1514c8d298719",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/fffc21907e605d90/qin-lie__expression__skeptical__v1.png",
+      "preview": "/media/assets/qin-lie/expression.skeptical.webp",
+      "thumb": "/media/assets/qin-lie/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44120314197121047,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1510260,
+      "sha256": "6b8c74a8fc967dc54452fb396b47fb5840311182b2fb825cb3ef06ab74501b17",
+      "sourceSha256": "6b8c74a8fc967dc54452fb396b47fb5840311182b2fb825cb3ef06ab74501b17",
+      "bbox": {
+        "left": 0,
+        "top": 0.027910685805422646,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/6b8c74a8fc967dc5/qin-lie__expression__smug__v1.png",
+      "preview": "/media/assets/qin-lie/expression.smug.webp",
+      "thumb": "/media/assets/qin-lie/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4497900180347926,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1427889,
+      "sha256": "863fa67da1830dc81bac215bf2796fe35cf9d96b548f87436376c4f70c34b254",
+      "sourceSha256": "863fa67da1830dc81bac215bf2796fe35cf9d96b548f87436376c4f70c34b254",
+      "bbox": {
+        "left": 0,
+        "top": 0.008771929824561403,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/863fa67da1830dc8/qin-lie__expression__contempt__v1.png",
+      "preview": "/media/assets/qin-lie/expression.contempt.webp",
+      "thumb": "/media/assets/qin-lie/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4547031635926121,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1466904,
+      "sha256": "2231fa33033bb223c49b1bc1ee0cddf02b60ec0f83bea8f31e098ae4cdbb7c93",
+      "sourceSha256": "2231fa33033bb223c49b1bc1ee0cddf02b60ec0f83bea8f31e098ae4cdbb7c93",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/2231fa33033bb223/qin-lie__expression__confused__v1.png",
+      "preview": "/media/assets/qin-lie/expression.confused.webp",
+      "thumb": "/media/assets/qin-lie/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45775814045771235,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1544140,
+      "sha256": "e9736b95c0953d55ec630266c1efb3782bb09586e3fc48d9a0f8faad4ff0a88d",
+      "sourceSha256": "e9736b95c0953d55ec630266c1efb3782bb09586e3fc48d9a0f8faad4ff0a88d",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/e9736b95c0953d55/qin-lie__expression__thinking__v1.png",
+      "preview": "/media/assets/qin-lie/expression.thinking.webp",
+      "thumb": "/media/assets/qin-lie/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44440628902980955,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1464987,
+      "sha256": "d57038b42c5de1ea222c0b7cd7cbe0bbb49152cc1cb675b54ca3d682698ccad0",
+      "sourceSha256": "d57038b42c5de1ea222c0b7cd7cbe0bbb49152cc1cb675b54ca3d682698ccad0",
+      "bbox": {
+        "left": 0,
+        "top": 0.029505582137161084,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/d57038b42c5de1ea/qin-lie__expression__determined__v1.png",
+      "preview": "/media/assets/qin-lie/expression.determined.webp",
+      "thumb": "/media/assets/qin-lie/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45632349686744045,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1489407,
+      "sha256": "b1442ab9eb4bb1d9cc5bb9e41c9f0b4e0e1143c6dec59da2b02bb72a77acd942",
+      "sourceSha256": "b1442ab9eb4bb1d9cc5bb9e41c9f0b4e0e1143c6dec59da2b02bb72a77acd942",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/b1442ab9eb4bb1d9/qin-lie__expression__shy__v1.png",
+      "preview": "/media/assets/qin-lie/expression.shy.webp",
+      "thumb": "/media/assets/qin-lie/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4342346914117249,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1566434,
+      "sha256": "334e82c4042d5e3d06cf0940e519b096d7704c3f2497745f7bdfbe7773d5bb9d",
+      "sourceSha256": "334e82c4042d5e3d06cf0940e519b096d7704c3f2497745f7bdfbe7773d5bb9d",
+      "bbox": {
+        "left": 0,
+        "top": 0.023125996810207338,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/334e82c4042d5e3d/qin-lie__expression__pain__v1.png",
+      "preview": "/media/assets/qin-lie/expression.pain.webp",
+      "thumb": "/media/assets/qin-lie/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44807683991768604,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1446679,
+      "sha256": "cb37f2a15d52cf12da6bd3d105fd462c08e0ac94242198043524a1adfafb5dae",
+      "sourceSha256": "cb37f2a15d52cf12da6bd3d105fd462c08e0ac94242198043524a1adfafb5dae",
+      "bbox": {
+        "left": 0,
+        "top": 0.015151515151515152,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/cb37f2a15d52cf12/qin-lie__expression__sleepy__v1.png",
+      "preview": "/media/assets/qin-lie/expression.sleepy.webp",
+      "thumb": "/media/assets/qin-lie/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45384212306901806,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1458436,
+      "sha256": "b65fe9ab883ef0263c11bf7621c9da6c987bddcdddcdd7abdab4b313e2f495f0",
+      "sourceSha256": "b65fe9ab883ef0263c11bf7621c9da6c987bddcdddcdd7abdab4b313e2f495f0",
+      "bbox": {
+        "left": 0,
+        "top": 0.003189792663476874,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/b65fe9ab883ef026/qin-lie__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/qin-lie/expression.awkward-smile.webp",
+      "thumb": "/media/assets/qin-lie/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45117760328034817,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1490288,
+      "sha256": "53356cb64bb4d3077e1a6ca456be0e28dc583c25d24d272632c98190db0fc4ef",
+      "sourceSha256": "53356cb64bb4d3077e1a6ca456be0e28dc583c25d24d272632c98190db0fc4ef",
+      "bbox": {
+        "left": 0,
+        "top": 0.008771929824561403,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/53356cb64bb4d307/qin-lie__expression__deadpan__v1.png",
+      "preview": "/media/assets/qin-lie/expression.deadpan.webp",
+      "thumb": "/media/assets/qin-lie/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45853714683984137,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 942,
+      "height": 1670,
+      "bytes": 922570,
+      "sha256": "26935bba5dd471ebbbe5c5f4f6a136ca6b86e28557691c7a08f623121102da49",
+      "sourceSha256": "26935bba5dd471ebbbe5c5f4f6a136ca6b86e28557691c7a08f623121102da49",
+      "bbox": {
+        "left": 0.16454352441613587,
+        "top": 0.06646706586826347,
+        "right": 0.9416135881104034,
+        "bottom": 0.9532934131736527
+      },
+      "format": "png",
+      "object": "qin-lie/26935bba5dd471eb/qin-lie__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/qin-lie/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/qin-lie/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6674218442096699,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 948,
+      "height": 1659,
+      "bytes": 808397,
+      "sha256": "d6e9fd7309212a6cb8b0cc1a5ca8e88504ada4c4053c984912525326b85be5ad",
+      "sourceSha256": "d6e9fd7309212a6cb8b0cc1a5ca8e88504ada4c4053c984912525326b85be5ad",
+      "bbox": {
+        "left": 0.22151898734177214,
+        "top": 0.0433996383363472,
+        "right": 0.9831223628691983,
+        "bottom": 0.9602169981916817
+      },
+      "format": "png",
+      "object": "qin-lie/d6e9fd7309212a6c/qin-lie__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/qin-lie/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/qin-lie/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7001873173560403,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 615935,
+      "sha256": "5c32b5f51904d3ab9878a6095c315ed050cdd766fc461c877123ecfe191198ee",
+      "sourceSha256": "5c32b5f51904d3ab9878a6095c315ed050cdd766fc461c877123ecfe191198ee",
+      "bbox": {
+        "left": 0,
+        "top": 0.04904306220095694,
+        "right": 0.9638682252922423,
+        "bottom": 0.9545454545454546
+      },
+      "format": "png",
+      "object": "qin-lie/5c32b5f51904d3ab/qin-lie__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/qin-lie/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/qin-lie/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7780217014374405,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 913366,
+      "sha256": "2bd0c007a993b9e9f5761a31f8ea335c4a249910729ba570ccd2b09cc42b9c73",
+      "sourceSha256": "2bd0c007a993b9e9f5761a31f8ea335c4a249910729ba570ccd2b09cc42b9c73",
+      "bbox": {
+        "left": 0.07863974495217853,
+        "top": 0.041866028708133975,
+        "right": 0.9681190223166843,
+        "bottom": 0.9617224880382775
+      },
+      "format": "png",
+      "object": "qin-lie/2bd0c007a993b9e9/qin-lie__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/qin-lie/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/qin-lie/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6531748775861981,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 948,
+      "height": 1660,
+      "bytes": 1993077,
+      "sha256": "598eec179dca4abdaf95c835386331a68bd70b99bf49422bc4f7ab47a249b499",
+      "sourceSha256": "598eec179dca4abdaf95c835386331a68bd70b99bf49422bc4f7ab47a249b499",
+      "bbox": {
+        "left": 0,
+        "top": 0.07951807228915662,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/598eec179dca4abd/qin-lie__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/qin-lie/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/qin-lie/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3399026485689594,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-hands-in-pockets",
+      "series": "wardrobe",
+      "key": "extra-hands-in-pockets",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 774392,
+      "sha256": "d04435c6818dae7b88e0941a63ac2ad2d45a02fc0388c3478ba28b62479e645b",
+      "sourceSha256": "d04435c6818dae7b88e0941a63ac2ad2d45a02fc0388c3478ba28b62479e645b",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.03289473684210526,
+        "right": 0.9787460148777896,
+        "bottom": 0.9407894736842105
+      },
+      "format": "png",
+      "object": "qin-lie/d04435c6818dae7b/qin-lie__wardrobe-personal__extra-hands-in-pockets__v1.png",
+      "preview": "/media/assets/qin-lie/wardrobe.personal.extra-hands-in-pockets.webp",
+      "thumb": "/media/assets/qin-lie/wardrobe.personal.extra-hands-in-pockets.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7169056892545342,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-seated-drape",
+      "series": "wardrobe",
+      "key": "extra-seated-drape",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1175334,
+      "sha256": "7738f7b66397178ad91129b1680bd561a12dbd484024e15e0dfd0b17a877f6bd",
+      "sourceSha256": "7738f7b66397178ad91129b1680bd561a12dbd484024e15e0dfd0b17a877f6bd",
+      "bbox": {
+        "left": 0.0021253985122210413,
+        "top": 0.03349282296650718,
+        "right": 0.9851222104144527,
+        "bottom": 0.9868421052631579
+      },
+      "format": "png",
+      "object": "qin-lie/7738f7b66397178a/qin-lie__wardrobe-personal__extra-seated-drape__v1.png",
+      "preview": "/media/assets/qin-lie/wardrobe.personal.extra-seated-drape.webp",
+      "thumb": "/media/assets/qin-lie/wardrobe.personal.extra-seated-drape.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5763821446186231,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-walking-drape",
+      "series": "wardrobe",
+      "key": "extra-walking-drape",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 779920,
+      "sha256": "c08983f62bae1ab77f5e74596fecfce28b6d36beefe4f9fb9620c320d9915df6",
+      "sourceSha256": "c08983f62bae1ab77f5e74596fecfce28b6d36beefe4f9fb9620c320d9915df6",
+      "bbox": {
+        "left": 0.2104144527098831,
+        "top": 0.03409090909090909,
+        "right": 0.9596174282678002,
+        "bottom": 0.93122009569378
+      },
+      "format": "png",
+      "object": "qin-lie/c08983f62bae1ab7/qin-lie__wardrobe-personal__extra-walking-drape__v1.png",
+      "preview": "/media/assets/qin-lie/wardrobe.personal.extra-walking-drape.webp",
+      "thumb": "/media/assets/qin-lie/wardrobe.personal.extra-walking-drape.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7229386685242718,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 885404,
+      "sha256": "b150391788586b4d4c84833aefb764c1a3dfdd25b4288e341d3226ed3fe2b7d6",
+      "sourceSha256": "b150391788586b4d4c84833aefb764c1a3dfdd25b4288e341d3226ed3fe2b7d6",
+      "bbox": {
+        "left": 0,
+        "top": 0.008373205741626795,
+        "right": 0.9521785334750266,
+        "bottom": 0.9814593301435407
+      },
+      "format": "png",
+      "object": "qin-lie/b150391788586b4d/qin-lie__pose__walk__v1.png",
+      "preview": "/media/assets/qin-lie/pose.walk.webp",
+      "thumb": "/media/assets/qin-lie/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.672421683132573,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 895559,
+      "sha256": "2c838c17248890184cf23903cfe8bfe0859913a9bab08396fced5094e5ed392d",
+      "sourceSha256": "2c838c17248890184cf23903cfe8bfe0859913a9bab08396fced5094e5ed392d",
+      "bbox": {
+        "left": 0.04675876726886291,
+        "top": 0.011363636363636364,
+        "right": 0.9829968119022316,
+        "bottom": 0.972488038277512
+      },
+      "format": "png",
+      "object": "qin-lie/2c838c1724889018/qin-lie__pose__run__v1.png",
+      "preview": "/media/assets/qin-lie/pose.run.webp",
+      "thumb": "/media/assets/qin-lie/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6708486085758305,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1191469,
+      "sha256": "8922a0c995a64aa63620a92adf0a3049932a5cfe0b6d2e7e971e6fff6cbbe995",
+      "sourceSha256": "8922a0c995a64aa63620a92adf0a3049932a5cfe0b6d2e7e971e6fff6cbbe995",
+      "bbox": {
+        "left": 0,
+        "top": 0.020933014354066987,
+        "right": 0.9436769394261424,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "qin-lie/8922a0c995a64aa6/qin-lie__pose__sit__v1.png",
+      "preview": "/media/assets/qin-lie/pose.sit.webp",
+      "thumb": "/media/assets/qin-lie/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5564838637507691,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 804251,
+      "sha256": "fd937c4c94d89bb029a86b259f2ab3cc8b5a6a18448b664024c4701825e12217",
+      "sourceSha256": "fd937c4c94d89bb029a86b259f2ab3cc8b5a6a18448b664024c4701825e12217",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.017942583732057416,
+        "right": 0.9787460148777896,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "qin-lie/fd937c4c94d89bb0/qin-lie__pose__point__v1.png",
+      "preview": "/media/assets/qin-lie/pose.point.webp",
+      "thumb": "/media/assets/qin-lie/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6961620794329558,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 773642,
+      "sha256": "4dcf8d3e240be157ba4b9eeb789568e90a590f5c5a33fb1bdf2ca5784cc7ce8e",
+      "sourceSha256": "4dcf8d3e240be157ba4b9eeb789568e90a590f5c5a33fb1bdf2ca5784cc7ce8e",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.011961722488038277,
+        "right": 0.8533475026567482,
+        "bottom": 0.9832535885167464
+      },
+      "format": "png",
+      "object": "qin-lie/4dcf8d3e240be157/qin-lie__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/qin-lie/pose.arms-crossed.webp",
+      "thumb": "/media/assets/qin-lie/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.705295445647255,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 852572,
+      "sha256": "ffbd3c86c842dc8300c351cb3818794c0ff8340f99d5d07c9fc5cb38be86c78a",
+      "sourceSha256": "ffbd3c86c842dc8300c351cb3818794c0ff8340f99d5d07c9fc5cb38be86c78a",
+      "bbox": {
+        "left": 0,
+        "top": 0.020933014354066987,
+        "right": 0.9744952178533475,
+        "bottom": 0.972488038277512
+      },
+      "format": "png",
+      "object": "qin-lie/ffbd3c86c842dc83/qin-lie__pose__phone__v1.png",
+      "preview": "/media/assets/qin-lie/pose.phone.webp",
+      "thumb": "/media/assets/qin-lie/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6699346363687211,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1004870,
+      "sha256": "45fa6819cefed60fddb09cfb22fbb8d5e0297998f3daea9642b83dc357f94934",
+      "sourceSha256": "45fa6819cefed60fddb09cfb22fbb8d5e0297998f3daea9642b83dc357f94934",
+      "bbox": {
+        "left": 0.003188097768331562,
+        "top": 0.011370436864153202,
+        "right": 0.9574920297555791,
+        "bottom": 0.9808497905445841
+      },
+      "format": "png",
+      "object": "qin-lie/45fa6819cefed60f/qin-lie__detail__hands__v1.png",
+      "preview": "/media/assets/qin-lie/detail.hands.webp",
+      "thumb": "/media/assets/qin-lie/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6282848441024643,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1145,
+      "height": 1374,
+      "bytes": 1546187,
+      "sha256": "d6eb32b33e618ede3bb0fbbe7eb8c8beb8c6d0294022337bfa9b20f4a5cb6f01",
+      "sourceSha256": "d6eb32b33e618ede3bb0fbbe7eb8c8beb8c6d0294022337bfa9b20f4a5cb6f01",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "qin-lie/d6eb32b33e618ede/qin-lie__detail__hair-back__v1.png",
+      "preview": "/media/assets/qin-lie/detail.hair-back.webp",
+      "thumb": "/media/assets/qin-lie/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45877907235432835,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
     },
     {
       "kind": "voice",
@@ -34,28 +1648,155 @@
       "series": "voice",
       "key": "intro",
       "look": null,
-      "conformance": "v1",
+      "conformance": "source-original",
       "version": 1,
       "width": 0,
       "height": 0,
-      "bytes": 202020,
-      "sha256": "59988f2fa4a583b39bc6db06598b8f34536791f9c021c7d8ee579c7c54459201",
-      "sourceSha256": "59988f2fa4a583b39bc6db06598b8f34536791f9c021c7d8ee579c7c54459201",
+      "bytes": 1520646,
+      "sha256": "e19235a598a9b82fbba595a663181884d838e300036d9e70285585116f1429a4",
+      "sourceSha256": "e19235a598a9b82fbba595a663181884d838e300036d9e70285585116f1429a4",
       "bbox": {
         "left": 0,
         "top": 0,
         "right": 0,
         "bottom": 0
       },
-      "format": "mp3",
-      "object": "voice/qin-lie/candidate-1.mp3",
+      "format": "wav",
+      "object": "voice/qin-lie/qin-lie__voice__intro__v1__e19235a598a9b82f.wav",
       "preview": "/api/voice/qin-lie/intro",
       "thumb": "/api/voice/qin-lie/intro",
       "previewUrl": "/api/voice/qin-lie/intro",
-      "durationSec": 16.6,
-      "transcript": {
-        "text": "我叫秦烈，西安人，二十八岁。练了十年散打，所以看着有点凶，其实我挺好说话的。动作戏是我的强项，打戏我自己上。我也想试试那种外表硬、心里软的角色，比如一个照顾妹妹的哥哥。"
-      }
+      "durationSec": 17.2
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1499478,
+      "sha256": "9606935019c0b0594240601037324eed252acb791c0081c815a80732d66f9c1c",
+      "sourceSha256": "9606935019c0b0594240601037324eed252acb791c0081c815a80732d66f9c1c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/qin-lie/qin-lie__voice__intro-alt__v1__9606935019c0b059.wav",
+      "preview": "/api/voice/qin-lie/intro-alt",
+      "thumb": "/api/voice/qin-lie/intro-alt",
+      "previewUrl": "/api/voice/qin-lie/intro-alt",
+      "durationSec": 17
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1192542,
+      "sha256": "b535fca76e86e79b53587cb7150d3ce84ef7d9ea7f520432916a4ecd50aae758",
+      "sourceSha256": "b535fca76e86e79b53587cb7150d3ce84ef7d9ea7f520432916a4ecd50aae758",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/qin-lie/qin-lie__voice__chat__v1__b535fca76e86e79b.wav",
+      "preview": "/api/voice/qin-lie/chat",
+      "thumb": "/api/voice/qin-lie/chat",
+      "previewUrl": "/api/voice/qin-lie/chat",
+      "durationSec": 13.5
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1199598,
+      "sha256": "7e72c59a751d27c2245b2e74607ec239bdc3d92b076fa9920778f5ba77aea119",
+      "sourceSha256": "7e72c59a751d27c2245b2e74607ec239bdc3d92b076fa9920778f5ba77aea119",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/qin-lie/qin-lie__voice__happy__v1__7e72c59a751d27c2.wav",
+      "preview": "/api/voice/qin-lie/happy",
+      "thumb": "/api/voice/qin-lie/happy",
+      "previewUrl": "/api/voice/qin-lie/happy",
+      "durationSec": 13.6
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1143150,
+      "sha256": "3ac753dffd8432f9e5767f209ac3f47a3572af382ea05e2185e5b6108dc9bfa2",
+      "sourceSha256": "3ac753dffd8432f9e5767f209ac3f47a3572af382ea05e2185e5b6108dc9bfa2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/qin-lie/qin-lie__voice__angry__v1__3ac753dffd8432f9.wav",
+      "preview": "/api/voice/qin-lie/angry",
+      "thumb": "/api/voice/qin-lie/angry",
+      "previewUrl": "/api/voice/qin-lie/angry",
+      "durationSec": 13
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1206654,
+      "sha256": "438524aa63e50d9c82e5df918dfe45f8d9ac72dd140230f96c818ea5e9e7c016",
+      "sourceSha256": "438524aa63e50d9c82e5df918dfe45f8d9ac72dd140230f96c818ea5e9e7c016",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/qin-lie/qin-lie__voice__sad__v1__438524aa63e50d9c.wav",
+      "preview": "/api/voice/qin-lie/sad",
+      "thumb": "/api/voice/qin-lie/sad",
+      "previewUrl": "/api/voice/qin-lie/sad",
+      "durationSec": 13.7
     }
   ]
 }

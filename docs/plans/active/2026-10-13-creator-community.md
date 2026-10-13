@@ -374,6 +374,10 @@ Owner 最终范围（2026-10-14 04:10）：22位是原盘点名单，不凑样�
 
 批3准备：五位各55图、6声音，选入Miriam/Pang/Ibra/Annika/Jiang各一条Root通过的实际视频；Pang的Vids测试片明确排除。来源与SHA、主检出Annika/Jiang生产字段的吸收清单在 `actor-refresh/batch-3-prepared.json` 和 `batch-3-sample-selection.json`；Root通过的返工、provisional和声音版本待看项仍保留，未把技术通过当Owner批准。
 
+批3已推 `560a015`：275张图、30段声音逐字节符合原件固定值，5条Root通过样片；完整179/179工具与172/172浏览器通过，文档/UIKit/knip通过。A6累计新增或修改文件81,078,717字节。05:00已成功的转换没有因隧道断连重跑；05:41启动干净候选检查，05:46释放第二锁，等Directing短发布后正常推送。原始结果见 `actor-refresh/batch-3-{media-01,integrity-final,verify-01,push}.json`。Annika/Jiang生产字段吸收明细在prepared收据，主检出不动。
+
+批4按当前已定位交付导入夏知遥、卡勒姆、卫青禾、秦烈、冯野：每位55图6声音。卫青禾的新定位修正了旧盘点“46张”的来源缺口，仍作为待看，不以55张当视觉验收；卡勒姆返工片待看。秦烈/冯野原有“2条”是同一片的有声原件与静音版，不作为两个样片；五位选6个独立Root通过视频，其中夏知遥双人片关联既有演员。证据、原件字节和吸收的夏知遥字段见 `actor-refresh/batch-4-prepared.json`、`batch-4-sample-selection.json`。
+
 ### 证据归属
 
 原稿 SHA-256：`f0856b345c1b80e6f7658be6cfbca72777246e49d615dfd2fbba00eab044791e`。本机完整原稿快照：`.devspace-reports/next-stage/approved-plan-source.md`。检查只使用本工作区与隔离夹具，不把静态/本地 mock 结果当作真实服务或制作交付验收。

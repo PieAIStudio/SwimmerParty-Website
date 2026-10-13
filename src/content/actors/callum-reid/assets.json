@@ -1,6 +1,50 @@
 {
   "slug": "callum-reid",
-  "looks": [],
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied callum-reid personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "run-extra-cockpit-operator",
+          "label": {
+            "en": "Run extra cockpit operator",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / run-extra-cockpit-operator reference image."
+        },
+        {
+          "key": "run-extra-maintenance-tech",
+          "label": {
+            "en": "Run extra maintenance tech",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / run-extra-maintenance-tech reference image."
+        },
+        {
+          "key": "run-extra-emergency-egress",
+          "label": {
+            "en": "Run extra emergency egress",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / run-extra-emergency-egress reference image."
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "kind": "image",
@@ -8,13 +52,217 @@
       "series": "turnaround",
       "key": "front",
       "look": null,
-      "conformance": "v1",
-      "version": 0.1,
-      "width": 941,
-      "height": 1672,
-      "bytes": 1084783,
-      "sha256": "f6a6c70f4ab5cd7c5d53a779587a3cca5e5e0b02c9dd0e5571991a953a57770b",
-      "sourceSha256": "f6a6c70f4ab5cd7c5d53a779587a3cca5e5e0b02c9dd0e5571991a953a57770b",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 2008217,
+      "sha256": "9c892ffa9c0eb949f003ec6b7d89047dd973b996d1719e309dc96d0fcd251644",
+      "sourceSha256": "9c892ffa9c0eb949f003ec6b7d89047dd973b996d1719e309dc96d0fcd251644",
+      "bbox": {
+        "left": 0,
+        "top": 0.005642361111111111,
+        "right": 0.97265625,
+        "bottom": 0.9817708333333334
+      },
+      "format": "png",
+      "object": "callum-reid/9c892ffa9c0eb949/callum-reid__turnaround__front__v1.png",
+      "preview": "/media/assets/callum-reid/turnaround.front.webp",
+      "thumb": "/media/assets/callum-reid/turnaround.front.thumb.webp",
+      "large": "/media/assets/callum-reid/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6103235880533854,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1615558,
+      "sha256": "516da2bad3663e621f82ef5f3f20e7108f785dfa4cdf93c84a9690dca885d04e",
+      "sourceSha256": "516da2bad3663e621f82ef5f3f20e7108f785dfa4cdf93c84a9690dca885d04e",
+      "bbox": {
+        "left": 0.031901041666666664,
+        "top": 0.013020833333333334,
+        "right": 0.94140625,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/516da2bad3663e62/callum-reid__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/callum-reid/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/callum-reid/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6987991333007812,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1175467,
+      "sha256": "fcee0a873a8069433a1fe47c3318e524b3202f8da78698b3b2f68f9e4e524339",
+      "sourceSha256": "fcee0a873a8069433a1fe47c3318e524b3202f8da78698b3b2f68f9e4e524339",
+      "bbox": {
+        "left": 0.031901041666666664,
+        "top": 0.023871527777777776,
+        "right": 0.908203125,
+        "bottom": 0.9722222222222222
+      },
+      "format": "png",
+      "object": "callum-reid/fcee0a873a806943/callum-reid__turnaround__side__v1.png",
+      "preview": "/media/assets/callum-reid/turnaround.side.webp",
+      "thumb": "/media/assets/callum-reid/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7877485487196181,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1871397,
+      "sha256": "e7aee3d3621e560a361ccd0cc07e857e4fa0eb2ea850e83c791699ed5ad8959b",
+      "sourceSha256": "e7aee3d3621e560a361ccd0cc07e857e4fa0eb2ea850e83c791699ed5ad8959b",
+      "bbox": {
+        "left": 0,
+        "top": 0.012152777777777778,
+        "right": 0.9765625,
+        "bottom": 0.9661458333333334
+      },
+      "format": "png",
+      "object": "callum-reid/e7aee3d3621e560a/callum-reid__turnaround__back__v1.png",
+      "preview": "/media/assets/callum-reid/turnaround.back.webp",
+      "thumb": "/media/assets/callum-reid/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6275736490885416,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1892836,
+      "sha256": "ddcb406785c962eda29739549ea32d8341728a070a2a69b085a11f634746c8b7",
+      "sourceSha256": "ddcb406785c962eda29739549ea32d8341728a070a2a69b085a11f634746c8b7",
+      "bbox": {
+        "left": 0,
+        "top": 0.014322916666666666,
+        "right": 0.986328125,
+        "bottom": 0.984375
+      },
+      "format": "png",
+      "object": "callum-reid/ddcb406785c962ed/callum-reid__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/callum-reid/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/callum-reid/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6373895715784144,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1878193,
+      "sha256": "d8c82521d68a21c654e349d5d500e2b28e87f7f95d2ba851f3a77aaf0f4d4cd0",
+      "sourceSha256": "d8c82521d68a21c654e349d5d500e2b28e87f7f95d2ba851f3a77aaf0f4d4cd0",
+      "bbox": {
+        "left": 0,
+        "top": 0.016927083333333332,
+        "right": 0.98828125,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/d8c82521d68a21c6/callum-reid__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/callum-reid/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/callum-reid/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6432017573603878,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2767697,
+      "sha256": "364dfc6308c19504eb78e0ef92c19816044ff1973c05d2145fc2b705b5a17af4",
+      "sourceSha256": "364dfc6308c19504eb78e0ef92c19816044ff1973c05d2145fc2b705b5a17af4",
+      "bbox": {
+        "left": 0,
+        "top": 0.016666666666666666,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/364dfc6308c19504/callum-reid__face__front__v1.png",
+      "preview": "/media/assets/callum-reid/face.front.webp",
+      "thumb": "/media/assets/callum-reid/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44726236979166667,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1685828,
+      "sha256": "7eb9aeb995be66aa50a685e5dc9bb27e60136a7e901303a87bcd140024d5efb6",
+      "sourceSha256": "7eb9aeb995be66aa50a685e5dc9bb27e60136a7e901303a87bcd140024d5efb6",
       "bbox": {
         "left": 0,
         "top": 0,
@@ -22,11 +270,1377 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "callum-reid/CC-009.png",
-      "preview": "/media/assets/callum-reid/turnaround.front.webp",
-      "large": "/media/assets/callum-reid/turnaround.front.large.webp",
-      "thumb": "/media/assets/callum-reid/turnaround.front.thumb.webp",
-      "blur": "data:image/webp;base64,UklGRpABAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSNIAAAABkHLb1rHtotd136/tZNtWe5MbE6vdWNltRdvR+tBs2/d3PkVEAIruVQ0FoPD98DMc7Z+O+7dXbv8pghflx5AXCp2sz/Lzp7zJQNMZls+G8Vl60VGH8t0wvssGYPN04anIo+375hD/q+uZyLP+r5GQcrvyu2H8qLqOg4T5Gvn2TRqnIyH8ZFI+vpf5c3+wLBiR9Q2ZKjEFE2qlukbaMPlXJZmp0vp/jwQ6yQAaaMyKh8XPLQDFwhdzbh/9v3ELFu4ACofHk9BjuKN08vcjwHerFB1WUDggmAAAAPADAJ0BKgwAFQA/AWisTqslpCIwCAFgIAlAF2AEXXIQYbE35p5X+8AA/qFj5vXasBPmRlYs0lHHPxfkvuuJSC+tJLt8Unt5Xcfi+CbJV0PziCdK8t257KT7E3wcZVJiZ4LNcAKq9ZO7333ofBc9ASh/9usfneXdSBa/56YffOC+EjuFct3L9WCApf2HMJfqX+P1PwgPEAAA"
+      "object": "callum-reid/7eb9aeb995be66aa/callum-reid__face__three-quarter__v1.png",
+      "preview": "/media/assets/callum-reid/face.three-quarter.webp",
+      "thumb": "/media/assets/callum-reid/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4236084084359078,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2745001,
+      "sha256": "42d84630cfcf33d1814937b5a94fe626578d92b3064c34357183e1fbb0c0475f",
+      "sourceSha256": "42d84630cfcf33d1814937b5a94fe626578d92b3064c34357183e1fbb0c0475f",
+      "bbox": {
+        "left": 0,
+        "top": 0.003125,
+        "right": 0.9859375,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/42d84630cfcf33d1/callum-reid__face__side__v1.png",
+      "preview": "/media/assets/callum-reid/face.side.webp",
+      "thumb": "/media/assets/callum-reid/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4972108289930556,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3027356,
+      "sha256": "5f08d6c054d25611005a0998436766a93265b968c99c3303f25205ca035c8580",
+      "sourceSha256": "5f08d6c054d25611005a0998436766a93265b968c99c3303f25205ca035c8580",
+      "bbox": {
+        "left": 0,
+        "top": 0.003125,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/5f08d6c054d25611/callum-reid__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/callum-reid/face.three-quarter-left.webp",
+      "thumb": "/media/assets/callum-reid/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4337027994791667,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3179450,
+      "sha256": "894e481dba237d960a4df165ed0664bc60a2b6fe0930f978e36667731a90ac05",
+      "sourceSha256": "894e481dba237d960a4df165ed0664bc60a2b6fe0930f978e36667731a90ac05",
+      "bbox": {
+        "left": 0,
+        "top": 0.003125,
+        "right": 0.984375,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/894e481dba237d96/callum-reid__face__side-right__v1.png",
+      "preview": "/media/assets/callum-reid/face.side-right.webp",
+      "thumb": "/media/assets/callum-reid/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4306515842013889,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2799039,
+      "sha256": "e29a89ab0302c5a2bb0580f6bbeb3000d60edc609a9ba19e5c52ca54d4317b25",
+      "sourceSha256": "e29a89ab0302c5a2bb0580f6bbeb3000d60edc609a9ba19e5c52ca54d4317b25",
+      "bbox": {
+        "left": 0,
+        "top": 0.058333333333333334,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/e29a89ab0302c5a2/callum-reid__face__up__v1.png",
+      "preview": "/media/assets/callum-reid/face.up.webp",
+      "thumb": "/media/assets/callum-reid/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49240614149305556,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2870150,
+      "sha256": "5eb494e60859fb5415f1a9753d3dcfd575923f4ff8e46c8d6ea8f2c0f8ce2743",
+      "sourceSha256": "5eb494e60859fb5415f1a9753d3dcfd575923f4ff8e46c8d6ea8f2c0f8ce2743",
+      "bbox": {
+        "left": 0,
+        "top": 0.0390625,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/5eb494e60859fb54/callum-reid__face__down__v1.png",
+      "preview": "/media/assets/callum-reid/face.down.webp",
+      "thumb": "/media/assets/callum-reid/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4352411566840278,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2711909,
+      "sha256": "f9c0974e811559b4546995e33bef153cfc468bb8e6bde917fc9980d63bf865b4",
+      "sourceSha256": "f9c0974e811559b4546995e33bef153cfc468bb8e6bde917fc9980d63bf865b4",
+      "bbox": {
+        "left": 0,
+        "top": 0.00625,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/f9c0974e811559b4/callum-reid__expression__neutral__v1.png",
+      "preview": "/media/assets/callum-reid/expression.neutral.webp",
+      "thumb": "/media/assets/callum-reid/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49094075520833336,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2933771,
+      "sha256": "640682f8818a8906eb184170c9773a50547dbe17dcfc1eebd90b84a4b37cb40c",
+      "sourceSha256": "640682f8818a8906eb184170c9773a50547dbe17dcfc1eebd90b84a4b37cb40c",
+      "bbox": {
+        "left": 0,
+        "top": 0.0359375,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/640682f8818a8906/callum-reid__expression__smile__v1.png",
+      "preview": "/media/assets/callum-reid/expression.smile.webp",
+      "thumb": "/media/assets/callum-reid/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44763834635416666,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2850346,
+      "sha256": "4604e257551f12b75bf32b55f2403f6d5819dd0c13f0adba5f0ce0c93e110add",
+      "sourceSha256": "4604e257551f12b75bf32b55f2403f6d5819dd0c13f0adba5f0ce0c93e110add",
+      "bbox": {
+        "left": 0,
+        "top": 0.0046875,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/4604e257551f12b7/callum-reid__expression__laugh__v1.png",
+      "preview": "/media/assets/callum-reid/expression.laugh.webp",
+      "thumb": "/media/assets/callum-reid/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44519883897569446,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3173047,
+      "sha256": "05da27eac70bd30dd71bc814ca9254f6b089002e43935d736296c41363562b7a",
+      "sourceSha256": "05da27eac70bd30dd71bc814ca9254f6b089002e43935d736296c41363562b7a",
+      "bbox": {
+        "left": 0,
+        "top": 0.003125,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/05da27eac70bd30d/callum-reid__expression__sad__v1.png",
+      "preview": "/media/assets/callum-reid/expression.sad.webp",
+      "thumb": "/media/assets/callum-reid/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44269666883680553,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3228013,
+      "sha256": "df8e04df854251437f4790e5d7774fed92d869c43ae02fdad8c44f346314f3dc",
+      "sourceSha256": "df8e04df854251437f4790e5d7774fed92d869c43ae02fdad8c44f346314f3dc",
+      "bbox": {
+        "left": 0,
+        "top": 0.015104166666666667,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/df8e04df85425143/callum-reid__expression__cry__v1.png",
+      "preview": "/media/assets/callum-reid/expression.cry.webp",
+      "thumb": "/media/assets/callum-reid/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.43532850477430557,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3013065,
+      "sha256": "2d526478964d22b08e85a54994a28ace98d7a141c5e11089053ae41a973fec92",
+      "sourceSha256": "2d526478964d22b08e85a54994a28ace98d7a141c5e11089053ae41a973fec92",
+      "bbox": {
+        "left": 0,
+        "top": 0.06927083333333334,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/2d526478964d22b0/callum-reid__expression__annoyed__v1.png",
+      "preview": "/media/assets/callum-reid/expression.annoyed.webp",
+      "thumb": "/media/assets/callum-reid/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4374606662326389,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3122939,
+      "sha256": "cb4056559a8b55c18114f1e4910e9b459a1f76ac61d442847ec194793793a0d5",
+      "sourceSha256": "cb4056559a8b55c18114f1e4910e9b459a1f76ac61d442847ec194793793a0d5",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/cb4056559a8b55c1/callum-reid__expression__angry__v1.png",
+      "preview": "/media/assets/callum-reid/expression.angry.webp",
+      "thumb": "/media/assets/callum-reid/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.40881510416666667,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2725698,
+      "sha256": "ecccc04b61dd228298a59ff115fead1d0dd4bb70dfd42eb2fbaea26b1654c221",
+      "sourceSha256": "ecccc04b61dd228298a59ff115fead1d0dd4bb70dfd42eb2fbaea26b1654c221",
+      "bbox": {
+        "left": 0,
+        "top": 0.07760416666666667,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/ecccc04b61dd2282/callum-reid__expression__surprised__v1.png",
+      "preview": "/media/assets/callum-reid/expression.surprised.webp",
+      "thumb": "/media/assets/callum-reid/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4907942708333333,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3055315,
+      "sha256": "be42c2926628fbe24396df8adc5e5bc6f64bb7bd4fe0c167ca3fc0a150cede1d",
+      "sourceSha256": "be42c2926628fbe24396df8adc5e5bc6f64bb7bd4fe0c167ca3fc0a150cede1d",
+      "bbox": {
+        "left": 0,
+        "top": 0.018229166666666668,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/be42c2926628fbe2/callum-reid__expression__scared__v1.png",
+      "preview": "/media/assets/callum-reid/expression.scared.webp",
+      "thumb": "/media/assets/callum-reid/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45959554036458333,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2947596,
+      "sha256": "68486c6827a64e6d6f9e0305c7a959ac8aa87feed71f82e0da573e804c97e5d3",
+      "sourceSha256": "68486c6827a64e6d6f9e0305c7a959ac8aa87feed71f82e0da573e804c97e5d3",
+      "bbox": {
+        "left": 0,
+        "top": 0.015625,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/68486c6827a64e6d/callum-reid__expression__disgusted__v1.png",
+      "preview": "/media/assets/callum-reid/expression.disgusted.webp",
+      "thumb": "/media/assets/callum-reid/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4542428927951389,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3089802,
+      "sha256": "c930446dfbb5307eba1c282902efc8935cc79126e1f3a1edb55a8428f58bf55f",
+      "sourceSha256": "c930446dfbb5307eba1c282902efc8935cc79126e1f3a1edb55a8428f58bf55f",
+      "bbox": {
+        "left": 0,
+        "top": 0.014583333333333334,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/c930446dfbb5307e/callum-reid__expression__embarrassed__v1.png",
+      "preview": "/media/assets/callum-reid/expression.embarrassed.webp",
+      "thumb": "/media/assets/callum-reid/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4221074761284722,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2764212,
+      "sha256": "c19191ecc5e5c6f4cf537ea603836f080e66b688cc32c8c1035c837f80473ebf",
+      "sourceSha256": "c19191ecc5e5c6f4cf537ea603836f080e66b688cc32c8c1035c837f80473ebf",
+      "bbox": {
+        "left": 0,
+        "top": 0.0375,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/c19191ecc5e5c6f4/callum-reid__expression__tired__v1.png",
+      "preview": "/media/assets/callum-reid/expression.tired.webp",
+      "thumb": "/media/assets/callum-reid/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45953287760416667,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3022121,
+      "sha256": "27f4befa2716d4baf7de44a3604906bb95ab0cfc4c4e822cc96c0e6d7d2b1f11",
+      "sourceSha256": "27f4befa2716d4baf7de44a3604906bb95ab0cfc4c4e822cc96c0e6d7d2b1f11",
+      "bbox": {
+        "left": 0,
+        "top": 0.03125,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/27f4befa2716d4ba/callum-reid__expression__speaking__v1.png",
+      "preview": "/media/assets/callum-reid/expression.speaking.webp",
+      "thumb": "/media/assets/callum-reid/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.42540554470486114,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2883343,
+      "sha256": "ab6e5bf9fe962fdcb3133938baacbe62a0cc5382ebfb0a747973a6f9befde24c",
+      "sourceSha256": "ab6e5bf9fe962fdcb3133938baacbe62a0cc5382ebfb0a747973a6f9befde24c",
+      "bbox": {
+        "left": 0,
+        "top": 0.0375,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/ab6e5bf9fe962fdc/callum-reid__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/callum-reid/expression.eyes-closed.webp",
+      "thumb": "/media/assets/callum-reid/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4596343315972222,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2915280,
+      "sha256": "8ab2e497c5e3fb5b58ac8305edd574fcef489bcc8bd543b14b47b1ac3ff976d0",
+      "sourceSha256": "8ab2e497c5e3fb5b58ac8305edd574fcef489bcc8bd543b14b47b1ac3ff976d0",
+      "bbox": {
+        "left": 0,
+        "top": 0.015625,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/8ab2e497c5e3fb5b/callum-reid__expression__worried__v1.png",
+      "preview": "/media/assets/callum-reid/expression.worried.webp",
+      "thumb": "/media/assets/callum-reid/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45737250434027776,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2965921,
+      "sha256": "284a912300df7df0163c7b6f7227f33e6d9611138c0171f4aaf41bacf98e9a43",
+      "sourceSha256": "284a912300df7df0163c7b6f7227f33e6d9611138c0171f4aaf41bacf98e9a43",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/284a912300df7df0/callum-reid__expression__skeptical__v1.png",
+      "preview": "/media/assets/callum-reid/expression.skeptical.webp",
+      "thumb": "/media/assets/callum-reid/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.46470052083333335,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3025692,
+      "sha256": "d8cf32262170325da4634af89c6b177ee3b2282836bba7842d4c0602e856eeb1",
+      "sourceSha256": "d8cf32262170325da4634af89c6b177ee3b2282836bba7842d4c0602e856eeb1",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/d8cf32262170325d/callum-reid__expression__smug__v1.png",
+      "preview": "/media/assets/callum-reid/expression.smug.webp",
+      "thumb": "/media/assets/callum-reid/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4490671115451389,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2616178,
+      "sha256": "b71830b97b25776650b90a7f1de2b9eb22f0c1bd3d83e92c16f792be53dbcb3f",
+      "sourceSha256": "b71830b97b25776650b90a7f1de2b9eb22f0c1bd3d83e92c16f792be53dbcb3f",
+      "bbox": {
+        "left": 0,
+        "top": 0.026041666666666668,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/b71830b97b257766/callum-reid__expression__contempt__v1.png",
+      "preview": "/media/assets/callum-reid/expression.contempt.webp",
+      "thumb": "/media/assets/callum-reid/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.47502332899305555,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2799899,
+      "sha256": "a91a1cd9cbcbd483543c52587fa77df8390bdb4f7de9923cb8ce02fc3e21858f",
+      "sourceSha256": "a91a1cd9cbcbd483543c52587fa77df8390bdb4f7de9923cb8ce02fc3e21858f",
+      "bbox": {
+        "left": 0,
+        "top": 0.016666666666666666,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/a91a1cd9cbcbd483/callum-reid__expression__confused__v1.png",
+      "preview": "/media/assets/callum-reid/expression.confused.webp",
+      "thumb": "/media/assets/callum-reid/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4439537217881944,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2721414,
+      "sha256": "50b5778aa0ec972db8595021c21ef7c2d45aeda7ec22f894b580ce5e042fb579",
+      "sourceSha256": "50b5778aa0ec972db8595021c21ef7c2d45aeda7ec22f894b580ce5e042fb579",
+      "bbox": {
+        "left": 0,
+        "top": 0.03125,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/50b5778aa0ec972d/callum-reid__expression__thinking__v1.png",
+      "preview": "/media/assets/callum-reid/expression.thinking.webp",
+      "thumb": "/media/assets/callum-reid/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.48282362196180556,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2984103,
+      "sha256": "05f6c218e377c133d09e8bd3de0c04cb69ccb3551abf2a8c7ac8aad6e86a5f4c",
+      "sourceSha256": "05f6c218e377c133d09e8bd3de0c04cb69ccb3551abf2a8c7ac8aad6e86a5f4c",
+      "bbox": {
+        "left": 0,
+        "top": 0.027604166666666666,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/05f6c218e377c133/callum-reid__expression__determined__v1.png",
+      "preview": "/media/assets/callum-reid/expression.determined.webp",
+      "thumb": "/media/assets/callum-reid/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.43851888020833335,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2919555,
+      "sha256": "5f3a7bd38af428a6ac47309c7d276b61fdcdad4d569b9ed2f18cfe9346e8f6f8",
+      "sourceSha256": "5f3a7bd38af428a6ac47309c7d276b61fdcdad4d569b9ed2f18cfe9346e8f6f8",
+      "bbox": {
+        "left": 0,
+        "top": 0.041666666666666664,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/5f3a7bd38af428a6/callum-reid__expression__shy__v1.png",
+      "preview": "/media/assets/callum-reid/expression.shy.webp",
+      "thumb": "/media/assets/callum-reid/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4612548828125,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3141956,
+      "sha256": "5c1967ca54a8328918bf01d6d4e33799fdb9fea81a5d4c964ed0f2c10bae7a6f",
+      "sourceSha256": "5c1967ca54a8328918bf01d6d4e33799fdb9fea81a5d4c964ed0f2c10bae7a6f",
+      "bbox": {
+        "left": 0,
+        "top": 0.015104166666666667,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/5c1967ca54a83289/callum-reid__expression__pain__v1.png",
+      "preview": "/media/assets/callum-reid/expression.pain.webp",
+      "thumb": "/media/assets/callum-reid/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.43864339192708335,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2903237,
+      "sha256": "64e81c244ab3598095725f18d04af62c30a9fef8abd0569144f76ae2bdd7cd10",
+      "sourceSha256": "64e81c244ab3598095725f18d04af62c30a9fef8abd0569144f76ae2bdd7cd10",
+      "bbox": {
+        "left": 0,
+        "top": 0.07239583333333334,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/64e81c244ab35980/callum-reid__expression__sleepy__v1.png",
+      "preview": "/media/assets/callum-reid/expression.sleepy.webp",
+      "thumb": "/media/assets/callum-reid/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45729112413194445,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2969040,
+      "sha256": "35be6385232eb537acbc837fb3754f272f68798a9527e6474ba402299cb1fcc1",
+      "sourceSha256": "35be6385232eb537acbc837fb3754f272f68798a9527e6474ba402299cb1fcc1",
+      "bbox": {
+        "left": 0,
+        "top": 0.019791666666666666,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/35be6385232eb537/callum-reid__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/callum-reid/expression.awkward-smile.webp",
+      "thumb": "/media/assets/callum-reid/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.43658311631944446,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3023102,
+      "sha256": "f117ab3f193f9e3dcf42379a782a4be8803f7003af4406d216a2332a1514bd1e",
+      "sourceSha256": "f117ab3f193f9e3dcf42379a782a4be8803f7003af4406d216a2332a1514bd1e",
+      "bbox": {
+        "left": 0,
+        "top": 0.003125,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/f117ab3f193f9e3d/callum-reid__expression__deadpan__v1.png",
+      "preview": "/media/assets/callum-reid/expression.deadpan.webp",
+      "thumb": "/media/assets/callum-reid/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44033989800347223,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1574670,
+      "sha256": "d70a18a95d30ec456ea7cf7b20f87cea2390b6b0e889a8ec69c0be08bcb8f587",
+      "sourceSha256": "d70a18a95d30ec456ea7cf7b20f87cea2390b6b0e889a8ec69c0be08bcb8f587",
+      "bbox": {
+        "left": 0,
+        "top": 0.015625,
+        "right": 0.986328125,
+        "bottom": 0.9837239583333334
+      },
+      "format": "png",
+      "object": "callum-reid/d70a18a95d30ec45/callum-reid__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/callum-reid/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/callum-reid/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7075424194335938,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1478775,
+      "sha256": "fdf22aa079ac97479fb5aa2f88c1ad89c0eec43999aa75fa8bd44740cd5c5e0a",
+      "sourceSha256": "fdf22aa079ac97479fb5aa2f88c1ad89c0eec43999aa75fa8bd44740cd5c5e0a",
+      "bbox": {
+        "left": 0.0322265625,
+        "top": 0.024739583333333332,
+        "right": 0.96875,
+        "bottom": 0.984375
+      },
+      "format": "png",
+      "object": "callum-reid/fdf22aa079ac9747/callum-reid__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/callum-reid/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/callum-reid/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7199611663818359,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1260345,
+      "sha256": "905ff99cc8e77ca4dd43a174e1313c669882bc05be8d6300e3c33bf36305b278",
+      "sourceSha256": "905ff99cc8e77ca4dd43a174e1313c669882bc05be8d6300e3c33bf36305b278",
+      "bbox": {
+        "left": 0,
+        "top": 0.05078125,
+        "right": 0.947265625,
+        "bottom": 0.9583333333333334
+      },
+      "format": "png",
+      "object": "callum-reid/905ff99cc8e77ca4/callum-reid__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/callum-reid/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/callum-reid/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8134174346923828,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1551825,
+      "sha256": "b45800d58367bd5d9305765a6e8badcc718c67d7b76d74e57e153f9dd5ac92c4",
+      "sourceSha256": "b45800d58367bd5d9305765a6e8badcc718c67d7b76d74e57e153f9dd5ac92c4",
+      "bbox": {
+        "left": 0,
+        "top": 0.048828125,
+        "right": 0.986328125,
+        "bottom": 0.9791666666666666
+      },
+      "format": "png",
+      "object": "callum-reid/b45800d58367bd5d/callum-reid__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/callum-reid/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/callum-reid/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6891034444173177,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1597446,
+      "sha256": "34678ecd871cd885a483617b9a0448aadf7244014b862827625157136c450489",
+      "sourceSha256": "34678ecd871cd885a483617b9a0448aadf7244014b862827625157136c450489",
+      "bbox": {
+        "left": 0.0888671875,
+        "top": 0.025390625,
+        "right": 0.94140625,
+        "bottom": 0.96875
+      },
+      "format": "png",
+      "object": "callum-reid/34678ecd871cd885/callum-reid__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/callum-reid/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/callum-reid/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7069238026936849,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.run-extra-cockpit-operator",
+      "series": "wardrobe",
+      "key": "run-extra-cockpit-operator",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2084249,
+      "sha256": "ff010e9831e9b6a0e884dc436c76ca0f9e04d88b467be0cd72f3a83a5a73dfef",
+      "sourceSha256": "ff010e9831e9b6a0e884dc436c76ca0f9e04d88b467be0cd72f3a83a5a73dfef",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/ff010e9831e9b6a0/callum-reid__wardrobe-personal__run-extra-cockpit-operator__v1.png",
+      "preview": "/media/assets/callum-reid/wardrobe.personal.run-extra-cockpit-operator.webp",
+      "thumb": "/media/assets/callum-reid/wardrobe.personal.run-extra-cockpit-operator.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4447746276855469,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.run-extra-maintenance-tech",
+      "series": "wardrobe",
+      "key": "run-extra-maintenance-tech",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1712328,
+      "sha256": "eb4761bf0e28317b434494997aead629083412db52636c41993ed971741be9c4",
+      "sourceSha256": "eb4761bf0e28317b434494997aead629083412db52636c41993ed971741be9c4",
+      "bbox": {
+        "left": 0.046875,
+        "top": 0.031901041666666664,
+        "right": 0.962890625,
+        "bottom": 0.9778645833333334
+      },
+      "format": "png",
+      "object": "callum-reid/eb4761bf0e28317b/callum-reid__wardrobe-personal__run-extra-maintenance-tech__v1.png",
+      "preview": "/media/assets/callum-reid/wardrobe.personal.run-extra-maintenance-tech.webp",
+      "thumb": "/media/assets/callum-reid/wardrobe.personal.run-extra-maintenance-tech.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6892795562744141,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.run-extra-emergency-egress",
+      "series": "wardrobe",
+      "key": "run-extra-emergency-egress",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1693106,
+      "sha256": "4341ce34842a945f836cf00a83bb521748ab6581f204b0bb7a3657ea6206fa16",
+      "sourceSha256": "4341ce34842a945f836cf00a83bb521748ab6581f204b0bb7a3657ea6206fa16",
+      "bbox": {
+        "left": 0.0322265625,
+        "top": 0.012369791666666666,
+        "right": 0.96484375,
+        "bottom": 0.9544270833333334
+      },
+      "format": "png",
+      "object": "callum-reid/4341ce34842a945f/callum-reid__wardrobe-personal__run-extra-emergency-egress__v1.png",
+      "preview": "/media/assets/callum-reid/wardrobe.personal.run-extra-emergency-egress.webp",
+      "thumb": "/media/assets/callum-reid/wardrobe.personal.run-extra-emergency-egress.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7121613820393881,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1732111,
+      "sha256": "10016ddbea2f28f3b8047116ecfe3224eebf6e38a97b3d8cc6844abb9e22419e",
+      "sourceSha256": "10016ddbea2f28f3b8047116ecfe3224eebf6e38a97b3d8cc6844abb9e22419e",
+      "bbox": {
+        "left": 0.031901041666666664,
+        "top": 0.028645833333333332,
+        "right": 0.970703125,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/10016ddbea2f28f3/callum-reid__pose__walk__v1.png",
+      "preview": "/media/assets/callum-reid/pose.walk.webp",
+      "thumb": "/media/assets/callum-reid/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6838689733434606,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1706641,
+      "sha256": "89671700d8df2b2ab138276ab0791c5ae42d52cb50749bc292e75ee5688ee1d6",
+      "sourceSha256": "89671700d8df2b2ab138276ab0791c5ae42d52cb50749bc292e75ee5688ee1d6",
+      "bbox": {
+        "left": 0,
+        "top": 0.013020833333333334,
+        "right": 0.9973958333333334,
+        "bottom": 0.9700520833333334
+      },
+      "format": "png",
+      "object": "callum-reid/89671700d8df2b2a/callum-reid__pose__run__v1.png",
+      "preview": "/media/assets/callum-reid/pose.run.webp",
+      "thumb": "/media/assets/callum-reid/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6833812572337963,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1896438,
+      "sha256": "076d44d60f2003c1f981cd3c89ecc69f3a58b800da86e8b26c79cdcd24744a48",
+      "sourceSha256": "076d44d60f2003c1f981cd3c89ecc69f3a58b800da86e8b26c79cdcd24744a48",
+      "bbox": {
+        "left": 0,
+        "top": 0.013454861111111112,
+        "right": 0.96484375,
+        "bottom": 0.9748263888888888
+      },
+      "format": "png",
+      "object": "callum-reid/076d44d60f2003c1/callum-reid__pose__sit__v1.png",
+      "preview": "/media/assets/callum-reid/pose.sit.webp",
+      "thumb": "/media/assets/callum-reid/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6438609935619213,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1629881,
+      "sha256": "aa1dfd05cddec5cd771c380790e1ecda3dbdb1b362b732e56005765109c535e4",
+      "sourceSha256": "aa1dfd05cddec5cd771c380790e1ecda3dbdb1b362b732e56005765109c535e4",
+      "bbox": {
+        "left": 0,
+        "top": 0.031684027777777776,
+        "right": 0.9993489583333334,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/aa1dfd05cddec5cd/callum-reid__pose__point__v1.png",
+      "preview": "/media/assets/callum-reid/pose.point.webp",
+      "thumb": "/media/assets/callum-reid/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6974388405128762,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1509543,
+      "sha256": "4bfffd4675c66e15a716e56ac2dc05b7c941c0faff0f4339e86c28ad98daa713",
+      "sourceSha256": "4bfffd4675c66e15a716e56ac2dc05b7c941c0faff0f4339e86c28ad98daa713",
+      "bbox": {
+        "left": 0,
+        "top": 0.022569444444444444,
+        "right": 0.986328125,
+        "bottom": 0.9700520833333334
+      },
+      "format": "png",
+      "object": "callum-reid/4bfffd4675c66e15/callum-reid__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/callum-reid/pose.arms-crossed.webp",
+      "thumb": "/media/assets/callum-reid/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7211091783311632,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1536,
+      "height": 2304,
+      "bytes": 1862376,
+      "sha256": "f30017fd8eb42c92e477e46345ca274f97625894b721ed4468b9c6abc307cfa1",
+      "sourceSha256": "f30017fd8eb42c92e477e46345ca274f97625894b721ed4468b9c6abc307cfa1",
+      "bbox": {
+        "left": 0,
+        "top": 0.024739583333333332,
+        "right": 0.986328125,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/f30017fd8eb42c92/callum-reid__pose__phone__v1.png",
+      "preview": "/media/assets/callum-reid/pose.phone.webp",
+      "thumb": "/media/assets/callum-reid/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.652151037145544,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 3416953,
+      "sha256": "d7d9a56b94d3baa36bce8b86657f156550fbf68df91f40b5b3747ee1411b5876",
+      "sourceSha256": "d7d9a56b94d3baa36bce8b86657f156550fbf68df91f40b5b3747ee1411b5876",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/d7d9a56b94d3baa3/callum-reid__detail__hands__v1.png",
+      "preview": "/media/assets/callum-reid/detail.hands.webp",
+      "thumb": "/media/assets/callum-reid/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3659475368923611,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1920,
+      "height": 1920,
+      "bytes": 2872129,
+      "sha256": "b75f9b0c3869a33bbed9132d150d4a6fc8c929453fa7f5b4a95e0bb9cdc75c6d",
+      "sourceSha256": "b75f9b0c3869a33bbed9132d150d4a6fc8c929453fa7f5b4a95e0bb9cdc75c6d",
+      "bbox": {
+        "left": 0,
+        "top": 0.007291666666666667,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "callum-reid/b75f9b0c3869a33b/callum-reid__detail__hair-back__v1.png",
+      "preview": "/media/assets/callum-reid/detail.hair-back.webp",
+      "thumb": "/media/assets/callum-reid/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4430121527777778,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
     },
     {
       "kind": "voice",
@@ -34,28 +1648,155 @@
       "series": "voice",
       "key": "intro",
       "look": null,
-      "conformance": "v1",
+      "conformance": "source-original",
       "version": 1,
       "width": 0,
       "height": 0,
-      "bytes": 218004,
-      "sha256": "602f8504ceff53c245bf62de1b69522f35f715e295882124ced3e0fc997feaa3",
-      "sourceSha256": "602f8504ceff53c245bf62de1b69522f35f715e295882124ced3e0fc997feaa3",
+      "bytes": 1578858,
+      "sha256": "c7fc25aeff5a12fce3752ca8265f2ad37fe4f44ea1075b50a512a089b5501a9f",
+      "sourceSha256": "c7fc25aeff5a12fce3752ca8265f2ad37fe4f44ea1075b50a512a089b5501a9f",
       "bbox": {
         "left": 0,
         "top": 0,
         "right": 0,
         "bottom": 0
       },
-      "format": "mp3",
-      "object": "voice/callum-reid/candidate-1.mp3",
+      "format": "wav",
+      "object": "voice/callum-reid/callum-reid__voice__intro__v1__c7fc25aeff5a12fc.wav",
       "preview": "/api/voice/callum-reid/intro",
       "thumb": "/api/voice/callum-reid/intro",
       "previewUrl": "/api/voice/callum-reid/intro",
-      "durationSec": 18,
-      "transcript": {
-        "text": "Alright, I'm Callum Reid, thirty-five, from Aberdeen. I worked on the oil rigs out in the North Sea for ten years, so I'm used to wind, noise, and very bad coffee. I look scary, but I cry at dog films. Give me a bodyguard, a blacksmith, or a big soft giant."
-      }
+      "durationSec": 17.9
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1728798,
+      "sha256": "8dc3682df33124e7dd485d59a3fe42299160915aa7dc5b4f92a6549900e8c1ee",
+      "sourceSha256": "8dc3682df33124e7dd485d59a3fe42299160915aa7dc5b4f92a6549900e8c1ee",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/callum-reid/callum-reid__voice__intro-alt__v1__8dc3682df33124e7.wav",
+      "preview": "/api/voice/callum-reid/intro-alt",
+      "thumb": "/api/voice/callum-reid/intro-alt",
+      "previewUrl": "/api/voice/callum-reid/intro-alt",
+      "durationSec": 19.6
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1030254,
+      "sha256": "f52081629b69265e9af7bc126d2d0b522a13231802d095c1e9e16bf74f630bfc",
+      "sourceSha256": "f52081629b69265e9af7bc126d2d0b522a13231802d095c1e9e16bf74f630bfc",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/callum-reid/callum-reid__voice__chat__v1__f52081629b69265e.wav",
+      "preview": "/api/voice/callum-reid/chat",
+      "thumb": "/api/voice/callum-reid/chat",
+      "previewUrl": "/api/voice/callum-reid/chat",
+      "durationSec": 11.7
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1266630,
+      "sha256": "14eec96986a66b197e8a5be9879dfc5edb472ef366d18b205e9ff40f9728996b",
+      "sourceSha256": "14eec96986a66b197e8a5be9879dfc5edb472ef366d18b205e9ff40f9728996b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/callum-reid/callum-reid__voice__happy__v1__14eec96986a66b19.wav",
+      "preview": "/api/voice/callum-reid/happy",
+      "thumb": "/api/voice/callum-reid/happy",
+      "previewUrl": "/api/voice/callum-reid/happy",
+      "durationSec": 14.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1009086,
+      "sha256": "45af6e21236b815aff17a65855b379c9275b5ab2a48a9184d8a7857aa5b8f8de",
+      "sourceSha256": "45af6e21236b815aff17a65855b379c9275b5ab2a48a9184d8a7857aa5b8f8de",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/callum-reid/callum-reid__voice__angry__v1__45af6e21236b815a.wav",
+      "preview": "/api/voice/callum-reid/angry",
+      "thumb": "/api/voice/callum-reid/angry",
+      "previewUrl": "/api/voice/callum-reid/angry",
+      "durationSec": 11.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1132566,
+      "sha256": "809a575c9d1ac6c55aaa36d871b34c632c489b91108082e6e9bbae137cb75ee8",
+      "sourceSha256": "809a575c9d1ac6c55aaa36d871b34c632c489b91108082e6e9bbae137cb75ee8",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/callum-reid/callum-reid__voice__sad__v1__809a575c9d1ac6c5.wav",
+      "preview": "/api/voice/callum-reid/sad",
+      "thumb": "/api/voice/callum-reid/sad",
+      "previewUrl": "/api/voice/callum-reid/sad",
+      "durationSec": 12.8
     }
   ]
 }

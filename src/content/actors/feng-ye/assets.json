@@ -1,6 +1,50 @@
 {
   "slug": "feng-ye",
-  "looks": [],
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied feng-ye personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "extra-cozy-knit",
+          "label": {
+            "en": "Extra cozy knit",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / extra-cozy-knit reference image."
+        },
+        {
+          "key": "extra-outdoor-shell",
+          "label": {
+            "en": "Extra outdoor shell",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / extra-outdoor-shell reference image."
+        },
+        {
+          "key": "extra-urban-jacket",
+          "label": {
+            "en": "Extra urban jacket",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / extra-urban-jacket reference image."
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "kind": "image",
@@ -8,13 +52,594 @@
       "series": "turnaround",
       "key": "front",
       "look": null,
-      "conformance": "v1",
-      "version": 0.1,
+      "conformance": "source-original",
+      "version": 1,
       "width": 941,
       "height": 1672,
-      "bytes": 991580,
-      "sha256": "0a86a94ff70f494dc0cc9f87568276b26399f11ff07d8d2841af28cb491ba202",
-      "sourceSha256": "0a86a94ff70f494dc0cc9f87568276b26399f11ff07d8d2841af28cb491ba202",
+      "bytes": 819791,
+      "sha256": "c41174447ef7b5b56adb8d33dba04838020c5324efade96e5015ec50a777f95d",
+      "sourceSha256": "c41174447ef7b5b56adb8d33dba04838020c5324efade96e5015ec50a777f95d",
+      "bbox": {
+        "left": 0.061636556854410204,
+        "top": 0.03827751196172249,
+        "right": 0.8639744952178533,
+        "bottom": 0.9497607655502392
+      },
+      "format": "png",
+      "object": "feng-ye/c41174447ef7b5b5/feng-ye__turnaround__front__v1.png",
+      "preview": "/media/assets/feng-ye/turnaround.front.webp",
+      "thumb": "/media/assets/feng-ye/turnaround.front.thumb.webp",
+      "large": "/media/assets/feng-ye/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7163495517849788,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1389253,
+      "sha256": "4365fe445f1c43a435b2d21f0bfed79aa8f91779b871aa3bb38bab405bc93bef",
+      "sourceSha256": "4365fe445f1c43a435b2d21f0bfed79aa8f91779b871aa3bb38bab405bc93bef",
+      "bbox": {
+        "left": 0.0693359375,
+        "top": 0.01171875,
+        "right": 0.919921875,
+        "bottom": 0.98046875
+      },
+      "format": "png",
+      "object": "feng-ye/4365fe445f1c43a4/feng-ye__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/feng-ye/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/feng-ye/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7546895345052084,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1209970,
+      "sha256": "c41f83a2ba27c5659d4e7dabd4507e389bac5acd98fa7bff5ddee692925d2092",
+      "sourceSha256": "c41f83a2ba27c5659d4e7dabd4507e389bac5acd98fa7bff5ddee692925d2092",
+      "bbox": {
+        "left": 0,
+        "top": 0.009765625,
+        "right": 0.958984375,
+        "bottom": 0.98046875
+      },
+      "format": "png",
+      "object": "feng-ye/c41f83a2ba27c565/feng-ye__turnaround__side__v1.png",
+      "preview": "/media/assets/feng-ye/turnaround.side.webp",
+      "thumb": "/media/assets/feng-ye/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8243172963460287,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1506555,
+      "sha256": "1642c8de36589e9611f06e2226cc70ec8d3e83c90b65b72af029322fc83c16a4",
+      "sourceSha256": "1642c8de36589e9611f06e2226cc70ec8d3e83c90b65b72af029322fc83c16a4",
+      "bbox": {
+        "left": 0.0224609375,
+        "top": 0.009114583333333334,
+        "right": 0.9814453125,
+        "bottom": 0.994140625
+      },
+      "format": "png",
+      "object": "feng-ye/1642c8de36589e96/feng-ye__turnaround__back__v1.png",
+      "preview": "/media/assets/feng-ye/turnaround.back.webp",
+      "thumb": "/media/assets/feng-ye/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7201061248779297,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1471762,
+      "sha256": "c97cf1f4b109901d1e49b188364d31c79870cc72e8fb195226cb2a6a6176bd3b",
+      "sourceSha256": "c97cf1f4b109901d1e49b188364d31c79870cc72e8fb195226cb2a6a6176bd3b",
+      "bbox": {
+        "left": 0.0400390625,
+        "top": 0.010416666666666666,
+        "right": 0.98828125,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/c97cf1f4b109901d/feng-ye__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/feng-ye/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/feng-ye/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7336813608805338,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1493015,
+      "sha256": "6b253043555f5b7fbcfc7c1d9b9ffad5c8e8e6d44122cf529e8b5d7307b7215a",
+      "sourceSha256": "6b253043555f5b7fbcfc7c1d9b9ffad5c8e8e6d44122cf529e8b5d7307b7215a",
+      "bbox": {
+        "left": 0.0478515625,
+        "top": 0.010416666666666666,
+        "right": 0.986328125,
+        "bottom": 0.9700520833333334
+      },
+      "format": "png",
+      "object": "feng-ye/6b253043555f5b7f/feng-ye__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/feng-ye/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/feng-ye/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7277304331461588,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1483822,
+      "sha256": "f16b12311a8d214adc619d0daddb605fc1b2d2ce032e23135f0c0ca670d1a0b0",
+      "sourceSha256": "f16b12311a8d214adc619d0daddb605fc1b2d2ce032e23135f0c0ca670d1a0b0",
+      "bbox": {
+        "left": 0,
+        "top": 0.02631578947368421,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/f16b12311a8d214a/feng-ye__face__front__v1.png",
+      "preview": "/media/assets/feng-ye/face.front.webp",
+      "thumb": "/media/assets/feng-ye/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5058536765285695,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1544618,
+      "sha256": "aeb5c535bd4e1cfef50e270965d7e20a63dfcc72040f2cc07bd152941fd8af40",
+      "sourceSha256": "aeb5c535bd4e1cfef50e270965d7e20a63dfcc72040f2cc07bd152941fd8af40",
+      "bbox": {
+        "left": 0,
+        "top": 0.014354066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/aeb5c535bd4e1cfe/feng-ye__face__three-quarter__v1.png",
+      "preview": "/media/assets/feng-ye/face.three-quarter.webp",
+      "thumb": "/media/assets/feng-ye/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4872967906208903,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1447177,
+      "sha256": "fe1220ccbf5b180cdca3580dca483d6ce25e1786d0d82e247f2e313edd480d0b",
+      "sourceSha256": "fe1220ccbf5b180cdca3580dca483d6ce25e1786d0d82e247f2e313edd480d0b",
+      "bbox": {
+        "left": 0,
+        "top": 0.015151515151515152,
+        "right": 0.9744816586921851,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/fe1220ccbf5b180c/feng-ye__face__side__v1.png",
+      "preview": "/media/assets/feng-ye/face.side.webp",
+      "thumb": "/media/assets/feng-ye/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.529854068257493,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1615704,
+      "sha256": "58c00096356ed33e63d917189248b0953e984015070acfac9f3dfd87cda6f565",
+      "sourceSha256": "58c00096356ed33e63d917189248b0953e984015070acfac9f3dfd87cda6f565",
+      "bbox": {
+        "left": 0,
+        "top": 0.019936204146730464,
+        "right": 0.9864433811802232,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/58c00096356ed33e/feng-ye__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/feng-ye/face.three-quarter-left.webp",
+      "thumb": "/media/assets/feng-ye/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4951669808129138,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1482296,
+      "sha256": "2c905db824266acb59d98156a62ffc68491aa370e1e61e5946fe997eacec770a",
+      "sourceSha256": "2c905db824266acb59d98156a62ffc68491aa370e1e61e5946fe997eacec770a",
+      "bbox": {
+        "left": 0.0342902711323764,
+        "top": 0.019936204146730464,
+        "right": 0.9665071770334929,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/2c905db824266acb/feng-ye__face__side-right__v1.png",
+      "preview": "/media/assets/feng-ye/face.side-right.webp",
+      "thumb": "/media/assets/feng-ye/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.55496986994091,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1621933,
+      "sha256": "bd34bef0474f893f8605cf2b218c5592b00d43374a8a552657c1d594e9720436",
+      "sourceSha256": "bd34bef0474f893f8605cf2b218c5592b00d43374a8a552657c1d594e9720436",
+      "bbox": {
+        "left": 0,
+        "top": 0.014354066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/bd34bef0474f893f/feng-ye__face__up__v1.png",
+      "preview": "/media/assets/feng-ye/face.up.webp",
+      "thumb": "/media/assets/feng-ye/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4768651002597112,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1633127,
+      "sha256": "bcef2ceda381c2cfb570d1eaa940f5502346f2a098ba84d9676cfd1dc58554c5",
+      "sourceSha256": "bcef2ceda381c2cfb570d1eaa940f5502346f2a098ba84d9676cfd1dc58554c5",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/bcef2ceda381c2cf/feng-ye__face__down__v1.png",
+      "preview": "/media/assets/feng-ye/face.down.webp",
+      "thumb": "/media/assets/feng-ye/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4803620440109989,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1611987,
+      "sha256": "9d0ef1afa5d18425d2e14b1b0775706914798fd8104ddd0195ae8ad21b95be17",
+      "sourceSha256": "9d0ef1afa5d18425d2e14b1b0775706914798fd8104ddd0195ae8ad21b95be17",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/9d0ef1afa5d18425/feng-ye__expression__neutral__v1.png",
+      "preview": "/media/assets/feng-ye/expression.neutral.webp",
+      "thumb": "/media/assets/feng-ye/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49729541702596347,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1584083,
+      "sha256": "1694e9ab698ac872d7a191e51e69a82dc18f8442a06e3f6d4ccf4f60e467c7e8",
+      "sourceSha256": "1694e9ab698ac872d7a191e51e69a82dc18f8442a06e3f6d4ccf4f60e467c7e8",
+      "bbox": {
+        "left": 0,
+        "top": 0.015151515151515152,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/1694e9ab698ac872/feng-ye__expression__smile__v1.png",
+      "preview": "/media/assets/feng-ye/expression.smile.webp",
+      "thumb": "/media/assets/feng-ye/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4912840314502364,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1605308,
+      "sha256": "095a63c4861cfd748d1c5e752ecc4e4a054ab4a32ce7e536ca958bd69452003d",
+      "sourceSha256": "095a63c4861cfd748d1c5e752ecc4e4a054ab4a32ce7e536ca958bd69452003d",
+      "bbox": {
+        "left": 0,
+        "top": 0.011961722488038277,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/095a63c4861cfd74/feng-ye__expression__laugh__v1.png",
+      "preview": "/media/assets/feng-ye/expression.laugh.webp",
+      "thumb": "/media/assets/feng-ye/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4757846661019665,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1604939,
+      "sha256": "eb8adab034d9b4165291a30e3271c62ebcd866a4d9750b29749a89b66b1db67f",
+      "sourceSha256": "eb8adab034d9b4165291a30e3271c62ebcd866a4d9750b29749a89b66b1db67f",
+      "bbox": {
+        "left": 0,
+        "top": 0.013556618819776715,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/eb8adab034d9b416/feng-ye__expression__sad__v1.png",
+      "preview": "/media/assets/feng-ye/expression.sad.webp",
+      "thumb": "/media/assets/feng-ye/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4902035972924918,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1662196,
+      "sha256": "7f6193e694d827a714603f95cf9ce6b7bfdc50722ed3c3e3a79e9e6272069b49",
+      "sourceSha256": "7f6193e694d827a714603f95cf9ce6b7bfdc50722ed3c3e3a79e9e6272069b49",
+      "bbox": {
+        "left": 0,
+        "top": 0.009569377990430622,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/7f6193e694d827a7/feng-ye__expression__cry__v1.png",
+      "preview": "/media/assets/feng-ye/expression.cry.webp",
+      "thumb": "/media/assets/feng-ye/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4704855149327574,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1581167,
+      "sha256": "280d2b21d6c2896036cfde071a6885941166aa0ed796d362ffb15c838f4e1968",
+      "sourceSha256": "280d2b21d6c2896036cfde071a6885941166aa0ed796d362ffb15c838f4e1968",
+      "bbox": {
+        "left": 0,
+        "top": 0.013556618819776715,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/280d2b21d6c28960/feng-ye__expression__annoyed__v1.png",
+      "preview": "/media/assets/feng-ye/expression.annoyed.webp",
+      "thumb": "/media/assets/feng-ye/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4925393445917243,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1644553,
+      "sha256": "1e60697bcbde76b91b06ebca9b0cc74a0e585c91447cc05d78a8007dd53a6165",
+      "sourceSha256": "1e60697bcbde76b91b06ebca9b0cc74a0e585c91447cc05d78a8007dd53a6165",
+      "bbox": {
+        "left": 0,
+        "top": 0.003987240829346092,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/1e60697bcbde76b9/feng-ye__expression__angry__v1.png",
+      "preview": "/media/assets/feng-ye/expression.angry.webp",
+      "thumb": "/media/assets/feng-ye/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.471591386033592,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1675014,
+      "sha256": "ac4d1e299c7fe73a004a3ef7dcf7d176e2fc1f66ef8f1da7430a50ac0de758d6",
+      "sourceSha256": "ac4d1e299c7fe73a004a3ef7dcf7d176e2fc1f66ef8f1da7430a50ac0de758d6",
       "bbox": {
         "left": 0,
         "top": 0,
@@ -22,11 +647,1000 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "feng-ye/CC-081.png",
-      "preview": "/media/assets/feng-ye/turnaround.front.webp",
-      "large": "/media/assets/feng-ye/turnaround.front.large.webp",
-      "thumb": "/media/assets/feng-ye/turnaround.front.thumb.webp",
-      "blur": "data:image/webp;base64,UklGRooBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSMQAAAABkGNr27FX1/t8MQfgyrZLs81KlYlkpbMGYLV2KputbTvH5ym+DCIiAgz+I62eGAAHKlQLsWyLUn2PR2wDG1OIAYS4vseH3mAEDKP657d2Ixg8d+xlAYPr6p3+fR0GhLCrB/3/dOCNEVJ3v/7r57a/nbH1++//9+kgxKLk5c+vP7/PoxGDS7MenmotgEWWToxoDhYIYdpSr9nfA7SqTMtxAIOPNmdq5Xcv7QnUDsR2emyRH/0Y2/mumrkNMAhRc4kUbsUjVlA4IKAAAABQBACdASoMABUAPwForE6rJaQiMAgBYCAJbAC7AYv+z2P7/NAZkOGN82kgAP4ytYd8h5qG7qokHKEfhF+Aowm1mwyXCzKKjWWp7/299vP0+zK+wGx8oa6SeDglj6OCbFlkP4hQI75GbvYIE/YY0xpt+0xHeRYPju9fqzbTAkpnfapOowYe/31qpo2szhskvsAR7aBf1IYA/Jn/4NhFVwAA"
+      "object": "feng-ye/ac4d1e299c7fe73a/feng-ye__expression__surprised__v1.png",
+      "preview": "/media/assets/feng-ye/expression.surprised.webp",
+      "thumb": "/media/assets/feng-ye/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4819054305329803,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1773249,
+      "sha256": "dc2a9f8cd8e9a17e6aee99350cfb03284d21a5a4465166b9b596d1409a9c0d3d",
+      "sourceSha256": "dc2a9f8cd8e9a17e6aee99350cfb03284d21a5a4465166b9b596d1409a9c0d3d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/dc2a9f8cd8e9a17e/feng-ye__expression__scared__v1.png",
+      "preview": "/media/assets/feng-ye/expression.scared.webp",
+      "thumb": "/media/assets/feng-ye/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4578249124333234,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1683451,
+      "sha256": "cae3ae5c93d5815dca9c44fc7a3ea82e7ee4e2e17237c0bc6792e0f037bc81c7",
+      "sourceSha256": "cae3ae5c93d5815dca9c44fc7a3ea82e7ee4e2e17237c0bc6792e0f037bc81c7",
+      "bbox": {
+        "left": 0,
+        "top": 0.018341307814992026,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/cae3ae5c93d5815d/feng-ye__expression__disgusted__v1.png",
+      "preview": "/media/assets/feng-ye/expression.disgusted.webp",
+      "thumb": "/media/assets/feng-ye/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4835200404956134,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1607807,
+      "sha256": "b0ca2062d9b6b0b55da477a93b8c5b40aaf6e4796c79d71578cf60b9fc5f4127",
+      "sourceSha256": "b0ca2062d9b6b0b55da477a93b8c5b40aaf6e4796c79d71578cf60b9fc5f4127",
+      "bbox": {
+        "left": 0,
+        "top": 0.018341307814992026,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/b0ca2062d9b6b0b5/feng-ye__expression__embarrassed__v1.png",
+      "preview": "/media/assets/feng-ye/expression.embarrassed.webp",
+      "thumb": "/media/assets/feng-ye/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.48414388152489385,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1603133,
+      "sha256": "5614347287cc1ece46d60ba450acd82fd076247294421fa5dd0c6fa95080d2f2",
+      "sourceSha256": "5614347287cc1ece46d60ba450acd82fd076247294421fa5dd0c6fa95080d2f2",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/5614347287cc1ece/feng-ye__expression__tired__v1.png",
+      "preview": "/media/assets/feng-ye/expression.tired.webp",
+      "thumb": "/media/assets/feng-ye/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4888751529396203,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1547340,
+      "sha256": "e844bf5963c481d3f153681fe0d4146227f371d550b19ac76cf7fc7cce20b9fd",
+      "sourceSha256": "e844bf5963c481d3f153681fe0d4146227f371d550b19ac76cf7fc7cce20b9fd",
+      "bbox": {
+        "left": 0,
+        "top": 0.0215311004784689,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/e844bf5963c481d3/feng-ye__expression__speaking__v1.png",
+      "preview": "/media/assets/feng-ye/expression.speaking.webp",
+      "thumb": "/media/assets/feng-ye/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4968229258080681,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1584922,
+      "sha256": "715f2847236ea275e3b8581f3b517db60c2ebf47d4eebb0ae6b3655fcbe152b0",
+      "sourceSha256": "715f2847236ea275e3b8581f3b517db60c2ebf47d4eebb0ae6b3655fcbe152b0",
+      "bbox": {
+        "left": 0,
+        "top": 0.013556618819776715,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/715f2847236ea275/feng-ye__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/feng-ye/expression.eyes-closed.webp",
+      "thumb": "/media/assets/feng-ye/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49415077493647125,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1598756,
+      "sha256": "361bffc123332c23936e0604ff4431a7ded6a8edf95120c5b83ac4852c75fc5d",
+      "sourceSha256": "361bffc123332c23936e0604ff4431a7ded6a8edf95120c5b83ac4852c75fc5d",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/361bffc123332c23/feng-ye__expression__worried__v1.png",
+      "preview": "/media/assets/feng-ye/expression.worried.webp",
+      "thumb": "/media/assets/feng-ye/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49298449109579806,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1949771,
+      "sha256": "b6f9531d3c15f8c9fd436e1ccf6e4b41fdcd2653465e632116ae13446274e98f",
+      "sourceSha256": "b6f9531d3c15f8c9fd436e1ccf6e4b41fdcd2653465e632116ae13446274e98f",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/b6f9531d3c15f8c9/feng-ye__expression__skeptical__v1.png",
+      "preview": "/media/assets/feng-ye/expression.skeptical.webp",
+      "thumb": "/media/assets/feng-ye/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3653473602855559,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1516486,
+      "sha256": "938c79e9e4a94e99fc3a2c58eb246e089cdd39baba7400c3861d6d7a4e9f4d59",
+      "sourceSha256": "938c79e9e4a94e99fc3a2c58eb246e089cdd39baba7400c3861d6d7a4e9f4d59",
+      "bbox": {
+        "left": 0,
+        "top": 0.046052631578947366,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/938c79e9e4a94e99/feng-ye__expression__smug__v1.png",
+      "preview": "/media/assets/feng-ye/expression.smug.webp",
+      "thumb": "/media/assets/feng-ye/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4144666927680519,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1549354,
+      "sha256": "495e67133b4db9b88a295c7b9ad7fdceb5d9f05143c565fa18b81fea20ed19f6",
+      "sourceSha256": "495e67133b4db9b88a295c7b9ad7fdceb5d9f05143c565fa18b81fea20ed19f6",
+      "bbox": {
+        "left": 0,
+        "top": 0.0215311004784689,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/495e67133b4db9b8/feng-ye__expression__contempt__v1.png",
+      "preview": "/media/assets/feng-ye/expression.contempt.webp",
+      "thumb": "/media/assets/feng-ye/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49443694054623294,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1571716,
+      "sha256": "6bf1c96dd91e3be77e6097adf2e65d98e59335f92962d112e6283519e7c12f13",
+      "sourceSha256": "6bf1c96dd91e3be77e6097adf2e65d98e59335f92962d112e6283519e7c12f13",
+      "bbox": {
+        "left": 0,
+        "top": 0.022328548644338118,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/6bf1c96dd91e3be7/feng-ye__expression__confused__v1.png",
+      "preview": "/media/assets/feng-ye/expression.confused.webp",
+      "thumb": "/media/assets/feng-ye/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4929145395023008,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1542116,
+      "sha256": "2fb6e194797da821a64283406d4eb62d14f0d3bed5de5873d722be5d8e7824ac",
+      "sourceSha256": "2fb6e194797da821a64283406d4eb62d14f0d3bed5de5873d722be5d8e7824ac",
+      "bbox": {
+        "left": 0,
+        "top": 0.022328548644338118,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/2fb6e194797da821/feng-ye__expression__thinking__v1.png",
+      "preview": "/media/assets/feng-ye/expression.thinking.webp",
+      "thumb": "/media/assets/feng-ye/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5012355995105933,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1641111,
+      "sha256": "6f95af58348e217f6619b029c9a3f5b3c17a14411ee11f755761443f66d59676",
+      "sourceSha256": "6f95af58348e217f6619b029c9a3f5b3c17a14411ee11f755761443f66d59676",
+      "bbox": {
+        "left": 0,
+        "top": 0.011961722488038277,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/6f95af58348e217f/feng-ye__expression__determined__v1.png",
+      "preview": "/media/assets/feng-ye/expression.determined.webp",
+      "thumb": "/media/assets/feng-ye/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4932134235836074,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1628722,
+      "sha256": "bfd50863f364795b706c31466db81fec3048ab9e26dd2b5700867956ad511270",
+      "sourceSha256": "bfd50863f364795b706c31466db81fec3048ab9e26dd2b5700867956ad511270",
+      "bbox": {
+        "left": 0,
+        "top": 0.0215311004784689,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/bfd50863f364795b/feng-ye__expression__shy__v1.png",
+      "preview": "/media/assets/feng-ye/expression.shy.webp",
+      "thumb": "/media/assets/feng-ye/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4812580603313416,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1663843,
+      "sha256": "560422f67644ffd255378542f09e472200de34e7c4303149ad2c7ba9139ce92d",
+      "sourceSha256": "560422f67644ffd255378542f09e472200de34e7c4303149ad2c7ba9139ce92d",
+      "bbox": {
+        "left": 0,
+        "top": 0.015151515151515152,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/560422f67644ffd2/feng-ye__expression__pain__v1.png",
+      "preview": "/media/assets/feng-ye/expression.pain.webp",
+      "thumb": "/media/assets/feng-ye/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4850818688013349,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1537465,
+      "sha256": "a8116d6353ac25f8da5d094939e747696081814c635d0db7b399d7ec12bda23e",
+      "sourceSha256": "a8116d6353ac25f8da5d094939e747696081814c635d0db7b399d7ec12bda23e",
+      "bbox": {
+        "left": 0,
+        "top": 0.018341307814992026,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/a8116d6353ac25f8/feng-ye__expression__sleepy__v1.png",
+      "preview": "/media/assets/feng-ye/expression.sleepy.webp",
+      "thumb": "/media/assets/feng-ye/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.48253372302730146,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1576952,
+      "sha256": "5df054be880b5971ec3593f8b8fedd521e43e619b5e8d51423a0e095bb40adb8",
+      "sourceSha256": "5df054be880b5971ec3593f8b8fedd521e43e619b5e8d51423a0e095bb40adb8",
+      "bbox": {
+        "left": 0,
+        "top": 0.013556618819776715,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/5df054be880b5971/feng-ye__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/feng-ye/expression.awkward-smile.webp",
+      "thumb": "/media/assets/feng-ye/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4929189909673415,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1609013,
+      "sha256": "cc602f3022b726a4e341eca79758cb51e0dd1538b922598764922d67b8b1a869",
+      "sourceSha256": "cc602f3022b726a4e341eca79758cb51e0dd1538b922598764922d67b8b1a869",
+      "bbox": {
+        "left": 0,
+        "top": 0.0215311004784689,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/cc602f3022b726a4/feng-ye__expression__deadpan__v1.png",
+      "preview": "/media/assets/feng-ye/expression.deadpan.webp",
+      "thumb": "/media/assets/feng-ye/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5031452780130695,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1596882,
+      "sha256": "d34719864a96410cbd73c8e585f48fd2720e3da5ea53918bf162b6f79809954a",
+      "sourceSha256": "d34719864a96410cbd73c8e585f48fd2720e3da5ea53918bf162b6f79809954a",
+      "bbox": {
+        "left": 0.0498046875,
+        "top": 0.009765625,
+        "right": 0.92578125,
+        "bottom": 0.98046875
+      },
+      "format": "png",
+      "object": "feng-ye/d34719864a96410c/feng-ye__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/feng-ye/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/feng-ye/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6963799794514974,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1549631,
+      "sha256": "55d397bc1a785e267acde6d37df98d88e0acb322c872b769db4dfdde8c881cd7",
+      "sourceSha256": "55d397bc1a785e267acde6d37df98d88e0acb322c872b769db4dfdde8c881cd7",
+      "bbox": {
+        "left": 0,
+        "top": 0.009114583333333334,
+        "right": 0.97265625,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/55d397bc1a785e26/feng-ye__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/feng-ye/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/feng-ye/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7196261088053385,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1299416,
+      "sha256": "1724e990024e0f6e7c1daed96d4ac3c4bd06dc1a5f5e02a329d0aad0c3bc89da",
+      "sourceSha256": "1724e990024e0f6e7c1daed96d4ac3c4bd06dc1a5f5e02a329d0aad0c3bc89da",
+      "bbox": {
+        "left": 0,
+        "top": 0.01171875,
+        "right": 0.9375,
+        "bottom": 0.9778645833333334
+      },
+      "format": "png",
+      "object": "feng-ye/1724e990024e0f6e/feng-ye__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/feng-ye/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/feng-ye/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8161328633626302,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1638004,
+      "sha256": "43cb67618e2ac09ab4ffc7a2be82412be2ffa6a131a019fa71e893e48ccb1c1f",
+      "sourceSha256": "43cb67618e2ac09ab4ffc7a2be82412be2ffa6a131a019fa71e893e48ccb1c1f",
+      "bbox": {
+        "left": 0.0263671875,
+        "top": 0.009765625,
+        "right": 0.9609375,
+        "bottom": 0.984375
+      },
+      "format": "png",
+      "object": "feng-ye/43cb67618e2ac09a/feng-ye__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/feng-ye/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/feng-ye/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7054424285888672,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1185829,
+      "sha256": "e67e20498bf5db4ea773fcae2dcabeab84f8ad9b7c65eb4a5a98f7cf20d6db66",
+      "sourceSha256": "e67e20498bf5db4ea773fcae2dcabeab84f8ad9b7c65eb4a5a98f7cf20d6db66",
+      "bbox": {
+        "left": 0,
+        "top": 0.008971291866028708,
+        "right": 0.9160467587672688,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "feng-ye/e67e20498bf5db4e/feng-ye__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/feng-ye/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/feng-ye/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6458357697451047,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-cozy-knit",
+      "series": "wardrobe",
+      "key": "extra-cozy-knit",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1761588,
+      "sha256": "43eb82ab8080f451de5a4b3300253e0f45140ffecdae9ee2ed3f163070d8d010",
+      "sourceSha256": "43eb82ab8080f451de5a4b3300253e0f45140ffecdae9ee2ed3f163070d8d010",
+      "bbox": {
+        "left": 0,
+        "top": 0.014322916666666666,
+        "right": 0.98046875,
+        "bottom": 0.98046875
+      },
+      "format": "png",
+      "object": "feng-ye/43eb82ab8080f451/feng-ye__wardrobe-personal__extra-cozy-knit__v1.png",
+      "preview": "/media/assets/feng-ye/wardrobe.personal.extra-cozy-knit.webp",
+      "thumb": "/media/assets/feng-ye/wardrobe.personal.extra-cozy-knit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7066186269124349,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-outdoor-shell",
+      "series": "wardrobe",
+      "key": "extra-outdoor-shell",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1556781,
+      "sha256": "3c50e76a1de9a2e9fbc8336a33477a39bdbd3c7e612bfec070147d7b3401b46e",
+      "sourceSha256": "3c50e76a1de9a2e9fbc8336a33477a39bdbd3c7e612bfec070147d7b3401b46e",
+      "bbox": {
+        "left": 0.0537109375,
+        "top": 0.009765625,
+        "right": 0.986328125,
+        "bottom": 0.9830729166666666
+      },
+      "format": "png",
+      "object": "feng-ye/3c50e76a1de9a2e9/feng-ye__wardrobe-personal__extra-outdoor-shell__v1.png",
+      "preview": "/media/assets/feng-ye/wardrobe.personal.extra-outdoor-shell.webp",
+      "thumb": "/media/assets/feng-ye/wardrobe.personal.extra-outdoor-shell.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6993376413981119,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-urban-jacket",
+      "series": "wardrobe",
+      "key": "extra-urban-jacket",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1659380,
+      "sha256": "fd985dc5b6e292ed814106b8d09f62b4178e2b26b62904ccc00855d1e0251cbb",
+      "sourceSha256": "fd985dc5b6e292ed814106b8d09f62b4178e2b26b62904ccc00855d1e0251cbb",
+      "bbox": {
+        "left": 0.0244140625,
+        "top": 0.007161458333333333,
+        "right": 0.974609375,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/fd985dc5b6e292ed/feng-ye__wardrobe-personal__extra-urban-jacket__v1.png",
+      "preview": "/media/assets/feng-ye/wardrobe.personal.extra-urban-jacket.webp",
+      "thumb": "/media/assets/feng-ye/wardrobe.personal.extra-urban-jacket.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7007656097412109,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1411085,
+      "sha256": "7cc973d8414fd8f7387f81c29698fe61b58c70e58ec6cfd11bc06f2209b3e22d",
+      "sourceSha256": "7cc973d8414fd8f7387f81c29698fe61b58c70e58ec6cfd11bc06f2209b3e22d",
+      "bbox": {
+        "left": 0.0791015625,
+        "top": 0.011067708333333334,
+        "right": 0.884765625,
+        "bottom": 0.9765625
+      },
+      "format": "png",
+      "object": "feng-ye/7cc973d8414fd8f7/feng-ye__pose__walk__v1.png",
+      "preview": "/media/assets/feng-ye/pose.walk.webp",
+      "thumb": "/media/assets/feng-ye/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7523606618245443,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1369285,
+      "sha256": "839876a594e46e3805b31cbca75c8af00811f88ed7b2fadb40270d05f0c2416d",
+      "sourceSha256": "839876a594e46e3805b31cbca75c8af00811f88ed7b2fadb40270d05f0c2416d",
+      "bbox": {
+        "left": 0,
+        "top": 0.009114583333333334,
+        "right": 0.986328125,
+        "bottom": 0.98046875
+      },
+      "format": "png",
+      "object": "feng-ye/839876a594e46e38/feng-ye__pose__run__v1.png",
+      "preview": "/media/assets/feng-ye/pose.run.webp",
+      "thumb": "/media/assets/feng-ye/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7790667215983073,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1579942,
+      "sha256": "c9d751b82c38fc5d1c8dcb5e1d3b7d0f8d94fa756150cb06b422ebccc7eb73ee",
+      "sourceSha256": "c9d751b82c38fc5d1c8dcb5e1d3b7d0f8d94fa756150cb06b422ebccc7eb73ee",
+      "bbox": {
+        "left": 0.0322265625,
+        "top": 0.041015625,
+        "right": 0.96484375,
+        "bottom": 0.9921875
+      },
+      "format": "png",
+      "object": "feng-ye/c9d751b82c38fc5d/feng-ye__pose__sit__v1.png",
+      "preview": "/media/assets/feng-ye/pose.sit.webp",
+      "thumb": "/media/assets/feng-ye/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6879310607910156,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1535012,
+      "sha256": "1ca15a8c2d07d1d70a9dd5e8070ac34255b5954f909fab5894fed770e6644b07",
+      "sourceSha256": "1ca15a8c2d07d1d70a9dd5e8070ac34255b5954f909fab5894fed770e6644b07",
+      "bbox": {
+        "left": 0.0302734375,
+        "top": 0.016276041666666668,
+        "right": 0.986328125,
+        "bottom": 0.9811197916666666
+      },
+      "format": "png",
+      "object": "feng-ye/1ca15a8c2d07d1d7/feng-ye__pose__point__v1.png",
+      "preview": "/media/assets/feng-ye/pose.point.webp",
+      "thumb": "/media/assets/feng-ye/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7185039520263672,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1427277,
+      "sha256": "98191aa005c9a716d45b6034b3440439f05f6144c809abb126e892ac537aa10e",
+      "sourceSha256": "98191aa005c9a716d45b6034b3440439f05f6144c809abb126e892ac537aa10e",
+      "bbox": {
+        "left": 0.0244140625,
+        "top": 0.014973958333333334,
+        "right": 0.970703125,
+        "bottom": 0.96875
+      },
+      "format": "png",
+      "object": "feng-ye/98191aa005c9a716/feng-ye__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/feng-ye/pose.arms-crossed.webp",
+      "thumb": "/media/assets/feng-ye/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7504266103108724,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1354595,
+      "sha256": "5e29e2f3cac4c60178e898bdc518a9e1063cbea15f6940609be2835d0e5b2761",
+      "sourceSha256": "5e29e2f3cac4c60178e898bdc518a9e1063cbea15f6940609be2835d0e5b2761",
+      "bbox": {
+        "left": 0.0361328125,
+        "top": 0.043619791666666664,
+        "right": 0.955078125,
+        "bottom": 0.9505208333333334
+      },
+      "format": "png",
+      "object": "feng-ye/5e29e2f3cac4c601/feng-ye__pose__phone__v1.png",
+      "preview": "/media/assets/feng-ye/pose.phone.webp",
+      "thumb": "/media/assets/feng-ye/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7638708750406901,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1526008,
+      "sha256": "164a8a80b8e143fd9040f295aed6d4c37a494334b3e5da0ae66891b10f9aea6c",
+      "sourceSha256": "164a8a80b8e143fd9040f295aed6d4c37a494334b3e5da0ae66891b10f9aea6c",
+      "bbox": {
+        "left": 0,
+        "top": 0.003189792663476874,
+        "right": 0.981658692185008,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/164a8a80b8e143fd/feng-ye__detail__hands__v1.png",
+      "preview": "/media/assets/feng-ye/detail.hands.webp",
+      "thumb": "/media/assets/feng-ye/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.46700383334732365,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1786014,
+      "sha256": "08b114ef454108886160bc181dc7c2ab3b29835d043170cf3eee161d6b761702",
+      "sourceSha256": "08b114ef454108886160bc181dc7c2ab3b29835d043170cf3eee161d6b761702",
+      "bbox": {
+        "left": 0,
+        "top": 0.017543859649122806,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "feng-ye/08b114ef45410888/feng-ye__detail__hair-back__v1.png",
+      "preview": "/media/assets/feng-ye/detail.hair-back.webp",
+      "thumb": "/media/assets/feng-ye/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.48352194826634515,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
     },
     {
       "kind": "voice",
@@ -34,28 +1648,155 @@
       "series": "voice",
       "key": "intro",
       "look": null,
-      "conformance": "v1",
+      "conformance": "source-original",
       "version": 1,
       "width": 0,
       "height": 0,
-      "bytes": 246084,
-      "sha256": "3622e454846dc563e0d42e7ed09aa9a3c74eca60ca9729cd3ab1e7fbcf558f1f",
-      "sourceSha256": "3622e454846dc563e0d42e7ed09aa9a3c74eca60ca9729cd3ab1e7fbcf558f1f",
+      "bytes": 1552398,
+      "sha256": "6cba4b56d21e4491cc258af96dd534dedb3c37a2a90a5be255c3e3546dddbded",
+      "sourceSha256": "6cba4b56d21e4491cc258af96dd534dedb3c37a2a90a5be255c3e3546dddbded",
       "bbox": {
         "left": 0,
         "top": 0,
         "right": 0,
         "bottom": 0
       },
-      "format": "mp3",
-      "object": "voice/feng-ye/candidate-1.mp3",
+      "format": "wav",
+      "object": "voice/feng-ye/feng-ye__voice__intro__v1__6cba4b56d21e4491.wav",
       "preview": "/api/voice/feng-ye/intro",
       "thumb": "/api/voice/feng-ye/intro",
       "previewUrl": "/api/voice/feng-ye/intro",
-      "durationSec": 20.3,
-      "transcript": {
-        "text": "我叫冯野，呼和浩特人，三十六岁。名字里这个野字，是我爸起的，说希望我像草原上的风。我会骑马，也爱开车跑长途。我想演那种独来独往、靠自己闯出来的女人，向导、赛车手、牧场主，都行。"
-      }
+      "durationSec": 17.6
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1383054,
+      "sha256": "ebe7bb7433c58f6060fb685a7b4dcd9b47cb52b1cb4eea466fc39f78fcc8398c",
+      "sourceSha256": "ebe7bb7433c58f6060fb685a7b4dcd9b47cb52b1cb4eea466fc39f78fcc8398c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/feng-ye/feng-ye__voice__intro-alt__v1__ebe7bb7433c58f60.wav",
+      "preview": "/api/voice/feng-ye/intro-alt",
+      "thumb": "/api/voice/feng-ye/intro-alt",
+      "previewUrl": "/api/voice/feng-ye/intro-alt",
+      "durationSec": 15.7
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1143150,
+      "sha256": "462751f10fdbeaba68f20a6893884f6177a57afe9647ec51723951a942af33b4",
+      "sourceSha256": "462751f10fdbeaba68f20a6893884f6177a57afe9647ec51723951a942af33b4",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/feng-ye/feng-ye__voice__chat__v1__462751f10fdbeaba.wav",
+      "preview": "/api/voice/feng-ye/chat",
+      "thumb": "/api/voice/feng-ye/chat",
+      "previewUrl": "/api/voice/feng-ye/chat",
+      "durationSec": 13
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 945582,
+      "sha256": "9e087dc0fe403c27519e7a31477bac4b12494eed4bb43d87be9c5edc8c6cfad3",
+      "sourceSha256": "9e087dc0fe403c27519e7a31477bac4b12494eed4bb43d87be9c5edc8c6cfad3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/feng-ye/feng-ye__voice__happy__v1__9e087dc0fe403c27.wav",
+      "preview": "/api/voice/feng-ye/happy",
+      "thumb": "/api/voice/feng-ye/happy",
+      "previewUrl": "/api/voice/feng-ye/happy",
+      "durationSec": 10.7
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1002030,
+      "sha256": "2126c506aa382655a8ff70b8b425f328ecf2c570cc9a88a5f69eb7128dc801a7",
+      "sourceSha256": "2126c506aa382655a8ff70b8b425f328ecf2c570cc9a88a5f69eb7128dc801a7",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/feng-ye/feng-ye__voice__angry__v1__2126c506aa382655.wav",
+      "preview": "/api/voice/feng-ye/angry",
+      "thumb": "/api/voice/feng-ye/angry",
+      "previewUrl": "/api/voice/feng-ye/angry",
+      "durationSec": 11.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1002030,
+      "sha256": "9e3c0a75662592c9256712cf4f530b081f6a67478174c56b859c72d92d480a1d",
+      "sourceSha256": "9e3c0a75662592c9256712cf4f530b081f6a67478174c56b859c72d92d480a1d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/feng-ye/feng-ye__voice__sad__v1__9e3c0a75662592c9.wav",
+      "preview": "/api/voice/feng-ye/sad",
+      "thumb": "/api/voice/feng-ye/sad",
+      "previewUrl": "/api/voice/feng-ye/sad",
+      "durationSec": 11.4
     }
   ]
 }

@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/callum-reid/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "demographics": {
@@ -63,6 +63,49 @@
         "en": "Casting basics"
       },
       "prompt": "black plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied callum-reid personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "run-extra-cockpit-operator",
+          "label": {
+            "en": "Run extra cockpit operator",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / run-extra-cockpit-operator reference image."
+        },
+        {
+          "key": "run-extra-maintenance-tech",
+          "label": {
+            "en": "Run extra maintenance tech",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / run-extra-maintenance-tech reference image."
+        },
+        {
+          "key": "run-extra-emergency-egress",
+          "label": {
+            "en": "Run extra emergency egress",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / run-extra-emergency-egress reference image."
+        }
+      ]
     }
   ],
   "roles": [],
@@ -75,5 +118,564 @@
     "chatgpt-web": {
       "chat": null
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-owner-video-revision-1/manifest.json",
+      "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json"
+    ],
+    "images": [
+      {
+        "slot": "turnaround.front",
+        "source": "callum-reid/callum-reid__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__turnaround__front__v1.png",
+        "sha256": "9c892ffa9c0eb949f003ec6b7d89047dd973b996d1719e309dc96d0fcd251644",
+        "bytes": 2008217,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "callum-reid/callum-reid__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__turnaround__three-quarter__v1.png",
+        "sha256": "516da2bad3663e621f82ef5f3f20e7108f785dfa4cdf93c84a9690dca885d04e",
+        "bytes": 1615558,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "callum-reid/callum-reid__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__turnaround__side__v1.png",
+        "sha256": "fcee0a873a8069433a1fe47c3318e524b3202f8da78698b3b2f68f9e4e524339",
+        "bytes": 1175467,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "callum-reid/callum-reid__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__turnaround__back__v1.png",
+        "sha256": "e7aee3d3621e560a361ccd0cc07e857e4fa0eb2ea850e83c791699ed5ad8959b",
+        "bytes": 1871397,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "callum-reid/callum-reid__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__turnaround__back-three-quarter-left__v1.png",
+        "sha256": "ddcb406785c962eda29739549ea32d8341728a070a2a69b085a11f634746c8b7",
+        "bytes": 1892836,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "callum-reid/callum-reid__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__turnaround__back-three-quarter-right__v1.png",
+        "sha256": "d8c82521d68a21c654e349d5d500e2b28e87f7f95d2ba851f3a77aaf0f4d4cd0",
+        "bytes": 1878193,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "callum-reid/callum-reid__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__face__front__v1.png",
+        "sha256": "364dfc6308c19504eb78e0ef92c19816044ff1973c05d2145fc2b705b5a17af4",
+        "bytes": 2767697,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "callum-reid/callum-reid__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__face__three-quarter__v2.png",
+        "sha256": "7eb9aeb995be66aa50a685e5dc9bb27e60136a7e901303a87bcd140024d5efb6",
+        "bytes": 1685828,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "callum-reid/callum-reid__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__face__side__v1.png",
+        "sha256": "42d84630cfcf33d1814937b5a94fe626578d92b3064c34357183e1fbb0c0475f",
+        "bytes": 2745001,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "callum-reid/callum-reid__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__face__three-quarter-left__v1.png",
+        "sha256": "5f08d6c054d25611005a0998436766a93265b968c99c3303f25205ca035c8580",
+        "bytes": 3027356,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "callum-reid/callum-reid__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__face__side-right__v1.png",
+        "sha256": "894e481dba237d960a4df165ed0664bc60a2b6fe0930f978e36667731a90ac05",
+        "bytes": 3179450,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "callum-reid/callum-reid__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__face__up__v1.png",
+        "sha256": "e29a89ab0302c5a2bb0580f6bbeb3000d60edc609a9ba19e5c52ca54d4317b25",
+        "bytes": 2799039,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "callum-reid/callum-reid__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__face__down__v1.png",
+        "sha256": "5eb494e60859fb5415f1a9753d3dcfd575923f4ff8e46c8d6ea8f2c0f8ce2743",
+        "bytes": 2870150,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "callum-reid/callum-reid__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__neutral__v1.png",
+        "sha256": "f9c0974e811559b4546995e33bef153cfc468bb8e6bde917fc9980d63bf865b4",
+        "bytes": 2711909,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "callum-reid/callum-reid__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__smile__v1.png",
+        "sha256": "640682f8818a8906eb184170c9773a50547dbe17dcfc1eebd90b84a4b37cb40c",
+        "bytes": 2933771,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "callum-reid/callum-reid__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__laugh__v1.png",
+        "sha256": "4604e257551f12b75bf32b55f2403f6d5819dd0c13f0adba5f0ce0c93e110add",
+        "bytes": 2850346,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "callum-reid/callum-reid__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__sad__v1.png",
+        "sha256": "05da27eac70bd30dd71bc814ca9254f6b089002e43935d736296c41363562b7a",
+        "bytes": 3173047,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "callum-reid/callum-reid__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__cry__v1.png",
+        "sha256": "df8e04df854251437f4790e5d7774fed92d869c43ae02fdad8c44f346314f3dc",
+        "bytes": 3228013,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "callum-reid/callum-reid__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__annoyed__v1.png",
+        "sha256": "2d526478964d22b08e85a54994a28ace98d7a141c5e11089053ae41a973fec92",
+        "bytes": 3013065,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "callum-reid/callum-reid__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__angry__v1.png",
+        "sha256": "cb4056559a8b55c18114f1e4910e9b459a1f76ac61d442847ec194793793a0d5",
+        "bytes": 3122939,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "callum-reid/callum-reid__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__surprised__v1.png",
+        "sha256": "ecccc04b61dd228298a59ff115fead1d0dd4bb70dfd42eb2fbaea26b1654c221",
+        "bytes": 2725698,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "callum-reid/callum-reid__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__scared__v1.png",
+        "sha256": "be42c2926628fbe24396df8adc5e5bc6f64bb7bd4fe0c167ca3fc0a150cede1d",
+        "bytes": 3055315,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "callum-reid/callum-reid__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__disgusted__v1.png",
+        "sha256": "68486c6827a64e6d6f9e0305c7a959ac8aa87feed71f82e0da573e804c97e5d3",
+        "bytes": 2947596,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "callum-reid/callum-reid__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__embarrassed__v1.png",
+        "sha256": "c930446dfbb5307eba1c282902efc8935cc79126e1f3a1edb55a8428f58bf55f",
+        "bytes": 3089802,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "callum-reid/callum-reid__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__tired__v1.png",
+        "sha256": "c19191ecc5e5c6f4cf537ea603836f080e66b688cc32c8c1035c837f80473ebf",
+        "bytes": 2764212,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "callum-reid/callum-reid__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__speaking__v1.png",
+        "sha256": "27f4befa2716d4baf7de44a3604906bb95ab0cfc4c4e822cc96c0e6d7d2b1f11",
+        "bytes": 3022121,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "callum-reid/callum-reid__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__eyes-closed__v1.png",
+        "sha256": "ab6e5bf9fe962fdcb3133938baacbe62a0cc5382ebfb0a747973a6f9befde24c",
+        "bytes": 2883343,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "callum-reid/callum-reid__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__worried__v1.png",
+        "sha256": "8ab2e497c5e3fb5b58ac8305edd574fcef489bcc8bd543b14b47b1ac3ff976d0",
+        "bytes": 2915280,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "callum-reid/callum-reid__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__skeptical__v1.png",
+        "sha256": "284a912300df7df0163c7b6f7227f33e6d9611138c0171f4aaf41bacf98e9a43",
+        "bytes": 2965921,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "callum-reid/callum-reid__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__smug__v1.png",
+        "sha256": "d8cf32262170325da4634af89c6b177ee3b2282836bba7842d4c0602e856eeb1",
+        "bytes": 3025692,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "callum-reid/callum-reid__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__contempt__v1.png",
+        "sha256": "b71830b97b25776650b90a7f1de2b9eb22f0c1bd3d83e92c16f792be53dbcb3f",
+        "bytes": 2616178,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "callum-reid/callum-reid__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__confused__v1.png",
+        "sha256": "a91a1cd9cbcbd483543c52587fa77df8390bdb4f7de9923cb8ce02fc3e21858f",
+        "bytes": 2799899,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "callum-reid/callum-reid__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__thinking__v1.png",
+        "sha256": "50b5778aa0ec972db8595021c21ef7c2d45aeda7ec22f894b580ce5e042fb579",
+        "bytes": 2721414,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "callum-reid/callum-reid__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__determined__v1.png",
+        "sha256": "05f6c218e377c133d09e8bd3de0c04cb69ccb3551abf2a8c7ac8aad6e86a5f4c",
+        "bytes": 2984103,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "callum-reid/callum-reid__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__shy__v1.png",
+        "sha256": "5f3a7bd38af428a6ac47309c7d276b61fdcdad4d569b9ed2f18cfe9346e8f6f8",
+        "bytes": 2919555,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "callum-reid/callum-reid__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__pain__v1.png",
+        "sha256": "5c1967ca54a8328918bf01d6d4e33799fdb9fea81a5d4c964ed0f2c10bae7a6f",
+        "bytes": 3141956,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "callum-reid/callum-reid__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__sleepy__v1.png",
+        "sha256": "64e81c244ab3598095725f18d04af62c30a9fef8abd0569144f76ae2bdd7cd10",
+        "bytes": 2903237,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "callum-reid/callum-reid__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__awkward-smile__v1.png",
+        "sha256": "35be6385232eb537acbc837fb3754f272f68798a9527e6474ba402299cb1fcc1",
+        "bytes": 2969040,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "callum-reid/callum-reid__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__expression__deadpan__v1.png",
+        "sha256": "f117ab3f193f9e3dcf42379a782a4be8803f7003af4406d216a2332a1514bd1e",
+        "bytes": 3023102,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "callum-reid/callum-reid__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__wardrobe-personal__front__v1.png",
+        "sha256": "d70a18a95d30ec456ea7cf7b20f87cea2390b6b0e889a8ec69c0be08bcb8f587",
+        "bytes": 1574670,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "callum-reid/callum-reid__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__wardrobe-personal__three-quarter__v1.png",
+        "sha256": "fdf22aa079ac97479fb5aa2f88c1ad89c0eec43999aa75fa8bd44740cd5c5e0a",
+        "bytes": 1478775,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "callum-reid/callum-reid__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__wardrobe-personal__side__v1.png",
+        "sha256": "905ff99cc8e77ca4dd43a174e1313c669882bc05be8d6300e3c33bf36305b278",
+        "bytes": 1260345,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "callum-reid/callum-reid__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__wardrobe-personal__back__v1.png",
+        "sha256": "b45800d58367bd5d9305765a6e8badcc718c67d7b76d74e57e153f9dd5ac92c4",
+        "bytes": 1551825,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "callum-reid/callum-reid__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__wardrobe-personal__portrait__v1.png",
+        "sha256": "34678ecd871cd885a483617b9a0448aadf7244014b862827625157136c450489",
+        "bytes": 1597446,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "callum-reid/callum-reid__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__pose__walk__v1.png",
+        "sha256": "10016ddbea2f28f3b8047116ecfe3224eebf6e38a97b3d8cc6844abb9e22419e",
+        "bytes": 1732111,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "callum-reid/callum-reid__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__pose__run__v1.png",
+        "sha256": "89671700d8df2b2ab138276ab0791c5ae42d52cb50749bc292e75ee5688ee1d6",
+        "bytes": 1706641,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "callum-reid/callum-reid__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__pose__sit__v1.png",
+        "sha256": "076d44d60f2003c1f981cd3c89ecc69f3a58b800da86e8b26c79cdcd24744a48",
+        "bytes": 1896438,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "callum-reid/callum-reid__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__pose__point__v1.png",
+        "sha256": "aa1dfd05cddec5cd771c380790e1ecda3dbdb1b362b732e56005765109c535e4",
+        "bytes": 1629881,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "callum-reid/callum-reid__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__pose__arms-crossed__v1.png",
+        "sha256": "4bfffd4675c66e15a716e56ac2dc05b7c941c0faff0f4339e86c28ad98daa713",
+        "bytes": 1509543,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "callum-reid/callum-reid__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__pose__phone__v1.png",
+        "sha256": "f30017fd8eb42c92e477e46345ca274f97625894b721ed4468b9c6abc307cfa1",
+        "bytes": 1862376,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "callum-reid/callum-reid__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__detail__hands__v1.png",
+        "sha256": "d7d9a56b94d3baa36bce8b86657f156550fbf68df91f40b5b3747ee1411b5876",
+        "bytes": 3416953,
+        "version": 1
+      },
+      {
+        "slot": "detail.hair-back",
+        "source": "callum-reid/callum-reid__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__detail__hair-back__v1.png",
+        "sha256": "b75f9b0c3869a33bbed9132d150d4a6fc8c929453fa7f5b4a95e0bb9cdc75c6d",
+        "bytes": 2872129,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.run-extra-cockpit-operator",
+        "source": "callum-reid/callum-reid__wardrobe-personal__run-extra-cockpit-operator__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__wardrobe-personal__cockpit-operator__v2.png",
+        "sha256": "ff010e9831e9b6a0e884dc436c76ca0f9e04d88b467be0cd72f3a83a5a73dfef",
+        "bytes": 2084249,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.run-extra-maintenance-tech",
+        "source": "callum-reid/callum-reid__wardrobe-personal__run-extra-maintenance-tech__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__wardrobe-personal__maintenance-tech__v1.png",
+        "sha256": "eb4761bf0e28317b434494997aead629083412db52636c41993ed971741be9c4",
+        "bytes": 1712328,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.run-extra-emergency-egress",
+        "source": "callum-reid/callum-reid__wardrobe-personal__run-extra-emergency-egress__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/images/callum-reid__wardrobe-personal__emergency-egress__v1.png",
+        "sha256": "4341ce34842a945f836cf00a83bb521748ab6581f204b0bb7a3657ea6206fa16",
+        "bytes": 1693106,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/callum-reid/callum-reid__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/audio/selected/intro.wav",
+        "sha256": "c7fc25aeff5a12fce3752ca8265f2ad37fe4f44ea1075b50a512a089b5501a9f",
+        "bytes": 1578858,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/callum-reid/callum-reid__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/audio/selected/intro-alt.wav",
+        "sha256": "8dc3682df33124e7dd485d59a3fe42299160915aa7dc5b4f92a6549900e8c1ee",
+        "bytes": 1728798,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/callum-reid/callum-reid__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/audio/selected/chat.wav",
+        "sha256": "f52081629b69265e9af7bc126d2d0b522a13231802d095c1e9e16bf74f630bfc",
+        "bytes": 1030254,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/callum-reid/callum-reid__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/audio/selected/happy.wav",
+        "sha256": "14eec96986a66b197e8a5be9879dfc5edb472ef366d18b205e9ff40f9728996b",
+        "bytes": 1266630,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/callum-reid/callum-reid__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/audio/selected/angry.wav",
+        "sha256": "45af6e21236b815aff17a65855b379c9275b5ab2a48a9184d8a7857aa5b8f8de",
+        "bytes": 1009086,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/callum-reid/callum-reid__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-callum-reid-full-20261009/handoff/cc-009-final-technical-staging-package-2026-10-13-variant-b/assets/audio/selected/sad.wav",
+        "sha256": "809a575c9d1ac6c55aaa36d871b34c632c489b91108082e6e9bbae137cb75ee8",
+        "bytes": 1132566,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 111,
+    "status": "active",
+    "tagline": {
+      "zh": "光头，大胡子，熊一样的块头。",
+      "en": "Shaved head, big bushy beard and the build of a bear."
+    },
+    "introduction": {
+      "en": "White man, about 35, burly, about 188 cm; shaved head, full bushy brown beard, broad face; black top",
+      "zh": "光头，大胡子，熊一样的块头。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "callum-reid-grok-solo-20261013",
+      "actorSlugs": [
+        "callum-reid"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-root-physical-and-prior-semantic",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json",
+        "evidenceSha256": "869a1028ff40850f7a08d05e9ea668eadd75ed70d0bf5d7cf78cf1dcf55a384b",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/callum-reid-grok-solo-20261013/source.mp4",
+          "sourceSha256": "dbc1aad9bf92f8ba1737cb65b53a04af47ae27f166e72202e74713d86d5ecdb5",
+          "public": "/media/works/samples/callum-reid-grok-solo-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }

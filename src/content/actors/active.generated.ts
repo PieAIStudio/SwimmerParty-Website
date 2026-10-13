@@ -16,6 +16,11 @@ import { profile as actor12 } from "./pang-tiezhu/profile.ts";
 import { profile as actor13 } from "./ibrahima-ndiaye/profile.ts";
 import { profile as actor14 } from "./annika-brandt/profile.ts";
 import { profile as actor15 } from "./jiang-yifan/profile.ts";
+import { profile as actor16 } from "./xia-zhiyao/profile.ts";
+import { profile as actor17 } from "./callum-reid/profile.ts";
+import { profile as actor18 } from "./wei-qinghe/profile.ts";
+import { profile as actor19 } from "./qin-lie/profile.ts";
+import { profile as actor20 } from "./feng-ye/profile.ts";
 export const ACTIVE_ACTORS: Actor[] = [
   actor0,
   actor1,
@@ -33,4 +38,9 @@ export const ACTIVE_ACTORS: Actor[] = [
   actor13,
   actor14,
   actor15,
+  actor16,
+  actor17,
+  actor18,
+  actor19,
+  actor20,
 ];

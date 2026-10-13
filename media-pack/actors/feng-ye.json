@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/feng-ye/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-10"
   },
   "demographics": {
@@ -62,6 +62,49 @@
         "en": "Casting basics"
       },
       "prompt": "rust-orange plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied feng-ye personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "extra-cozy-knit",
+          "label": {
+            "en": "Extra cozy knit",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / extra-cozy-knit reference image."
+        },
+        {
+          "key": "extra-outdoor-shell",
+          "label": {
+            "en": "Extra outdoor shell",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / extra-outdoor-shell reference image."
+        },
+        {
+          "key": "extra-urban-jacket",
+          "label": {
+            "en": "Extra urban jacket",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / extra-urban-jacket reference image."
+        }
+      ]
     }
   ],
   "roles": [],
@@ -74,5 +117,564 @@
     "chatgpt-web": {
       "chat": null
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/manifest.json",
+      "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json"
+    ],
+    "images": [
+      {
+        "slot": "turnaround.front",
+        "source": "feng-ye/feng-ye__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-01-turnaround-front.png",
+        "sha256": "c41174447ef7b5b56adb8d33dba04838020c5324efade96e5015ec50a777f95d",
+        "bytes": 819791,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "feng-ye/feng-ye__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-02-turnaround-three-quarter.png",
+        "sha256": "4365fe445f1c43a435b2d21f0bfed79aa8f91779b871aa3bb38bab405bc93bef",
+        "bytes": 1389253,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "feng-ye/feng-ye__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-03-turnaround-side.png",
+        "sha256": "c41f83a2ba27c5659d4e7dabd4507e389bac5acd98fa7bff5ddee692925d2092",
+        "bytes": 1209970,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "feng-ye/feng-ye__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-04-turnaround-back.png",
+        "sha256": "1642c8de36589e9611f06e2226cc70ec8d3e83c90b65b72af029322fc83c16a4",
+        "bytes": 1506555,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "feng-ye/feng-ye__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-05-turnaround-back-three-quarter-left.png",
+        "sha256": "c97cf1f4b109901d1e49b188364d31c79870cc72e8fb195226cb2a6a6176bd3b",
+        "bytes": 1471762,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "feng-ye/feng-ye__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-06-turnaround-back-three-quarter-right.png",
+        "sha256": "6b253043555f5b7fbcfc7c1d9b9ffad5c8e8e6d44122cf529e8b5d7307b7215a",
+        "bytes": 1493015,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "feng-ye/feng-ye__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-07-face-front.png",
+        "sha256": "f16b12311a8d214adc619d0daddb605fc1b2d2ce032e23135f0c0ca670d1a0b0",
+        "bytes": 1483822,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "feng-ye/feng-ye__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-08-face-three-quarter.png",
+        "sha256": "aeb5c535bd4e1cfef50e270965d7e20a63dfcc72040f2cc07bd152941fd8af40",
+        "bytes": 1544618,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "feng-ye/feng-ye__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-09-face-side.png",
+        "sha256": "fe1220ccbf5b180cdca3580dca483d6ce25e1786d0d82e247f2e313edd480d0b",
+        "bytes": 1447177,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "feng-ye/feng-ye__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-10-face-three-quarter-left.png",
+        "sha256": "58c00096356ed33e63d917189248b0953e984015070acfac9f3dfd87cda6f565",
+        "bytes": 1615704,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "feng-ye/feng-ye__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-11-face-side-right.png",
+        "sha256": "2c905db824266acb59d98156a62ffc68491aa370e1e61e5946fe997eacec770a",
+        "bytes": 1482296,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "feng-ye/feng-ye__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-12-face-up.png",
+        "sha256": "bd34bef0474f893f8605cf2b218c5592b00d43374a8a552657c1d594e9720436",
+        "bytes": 1621933,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "feng-ye/feng-ye__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-13-face-down.png",
+        "sha256": "bcef2ceda381c2cfb570d1eaa940f5502346f2a098ba84d9676cfd1dc58554c5",
+        "bytes": 1633127,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "feng-ye/feng-ye__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-14-expression-neutral.png",
+        "sha256": "9d0ef1afa5d18425d2e14b1b0775706914798fd8104ddd0195ae8ad21b95be17",
+        "bytes": 1611987,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "feng-ye/feng-ye__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-15-expression-smile.png",
+        "sha256": "1694e9ab698ac872d7a191e51e69a82dc18f8442a06e3f6d4ccf4f60e467c7e8",
+        "bytes": 1584083,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "feng-ye/feng-ye__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-16-expression-laugh.png",
+        "sha256": "095a63c4861cfd748d1c5e752ecc4e4a054ab4a32ce7e536ca958bd69452003d",
+        "bytes": 1605308,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "feng-ye/feng-ye__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-17-expression-sad.png",
+        "sha256": "eb8adab034d9b4165291a30e3271c62ebcd866a4d9750b29749a89b66b1db67f",
+        "bytes": 1604939,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "feng-ye/feng-ye__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-18-expression-cry.png",
+        "sha256": "7f6193e694d827a714603f95cf9ce6b7bfdc50722ed3c3e3a79e9e6272069b49",
+        "bytes": 1662196,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "feng-ye/feng-ye__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-19-expression-annoyed.png",
+        "sha256": "280d2b21d6c2896036cfde071a6885941166aa0ed796d362ffb15c838f4e1968",
+        "bytes": 1581167,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "feng-ye/feng-ye__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-20-expression-angry.png",
+        "sha256": "1e60697bcbde76b91b06ebca9b0cc74a0e585c91447cc05d78a8007dd53a6165",
+        "bytes": 1644553,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "feng-ye/feng-ye__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-21-expression-surprised.png",
+        "sha256": "ac4d1e299c7fe73a004a3ef7dcf7d176e2fc1f66ef8f1da7430a50ac0de758d6",
+        "bytes": 1675014,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "feng-ye/feng-ye__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-22-expression-scared.png",
+        "sha256": "dc2a9f8cd8e9a17e6aee99350cfb03284d21a5a4465166b9b596d1409a9c0d3d",
+        "bytes": 1773249,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "feng-ye/feng-ye__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-23-expression-disgusted.png",
+        "sha256": "cae3ae5c93d5815dca9c44fc7a3ea82e7ee4e2e17237c0bc6792e0f037bc81c7",
+        "bytes": 1683451,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "feng-ye/feng-ye__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-24-expression-embarrassed.png",
+        "sha256": "b0ca2062d9b6b0b55da477a93b8c5b40aaf6e4796c79d71578cf60b9fc5f4127",
+        "bytes": 1607807,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "feng-ye/feng-ye__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-25-expression-tired.png",
+        "sha256": "5614347287cc1ece46d60ba450acd82fd076247294421fa5dd0c6fa95080d2f2",
+        "bytes": 1603133,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "feng-ye/feng-ye__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-26-expression-speaking.png",
+        "sha256": "e844bf5963c481d3f153681fe0d4146227f371d550b19ac76cf7fc7cce20b9fd",
+        "bytes": 1547340,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "feng-ye/feng-ye__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-27-expression-eyes-closed.png",
+        "sha256": "715f2847236ea275e3b8581f3b517db60c2ebf47d4eebb0ae6b3655fcbe152b0",
+        "bytes": 1584922,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "feng-ye/feng-ye__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-28-expression-worried.png",
+        "sha256": "361bffc123332c23936e0604ff4431a7ded6a8edf95120c5b83ac4852c75fc5d",
+        "bytes": 1598756,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "feng-ye/feng-ye__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-29-expression-skeptical.png",
+        "sha256": "b6f9531d3c15f8c9fd436e1ccf6e4b41fdcd2653465e632116ae13446274e98f",
+        "bytes": 1949771,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "feng-ye/feng-ye__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-30-expression-smug.png",
+        "sha256": "938c79e9e4a94e99fc3a2c58eb246e089cdd39baba7400c3861d6d7a4e9f4d59",
+        "bytes": 1516486,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "feng-ye/feng-ye__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-31-expression-contempt.png",
+        "sha256": "495e67133b4db9b88a295c7b9ad7fdceb5d9f05143c565fa18b81fea20ed19f6",
+        "bytes": 1549354,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "feng-ye/feng-ye__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-32-expression-confused.png",
+        "sha256": "6bf1c96dd91e3be77e6097adf2e65d98e59335f92962d112e6283519e7c12f13",
+        "bytes": 1571716,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "feng-ye/feng-ye__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-33-expression-thinking.png",
+        "sha256": "2fb6e194797da821a64283406d4eb62d14f0d3bed5de5873d722be5d8e7824ac",
+        "bytes": 1542116,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "feng-ye/feng-ye__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-34-expression-determined.png",
+        "sha256": "6f95af58348e217f6619b029c9a3f5b3c17a14411ee11f755761443f66d59676",
+        "bytes": 1641111,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "feng-ye/feng-ye__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-35-expression-shy.png",
+        "sha256": "bfd50863f364795b706c31466db81fec3048ab9e26dd2b5700867956ad511270",
+        "bytes": 1628722,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "feng-ye/feng-ye__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-36-expression-pain.png",
+        "sha256": "560422f67644ffd255378542f09e472200de34e7c4303149ad2c7ba9139ce92d",
+        "bytes": 1663843,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "feng-ye/feng-ye__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-37-expression-sleepy.png",
+        "sha256": "a8116d6353ac25f8da5d094939e747696081814c635d0db7b399d7ec12bda23e",
+        "bytes": 1537465,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "feng-ye/feng-ye__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-38-expression-awkward-smile.png",
+        "sha256": "5df054be880b5971ec3593f8b8fedd521e43e619b5e8d51423a0e095bb40adb8",
+        "bytes": 1576952,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "feng-ye/feng-ye__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-39-expression-deadpan.png",
+        "sha256": "cc602f3022b726a4e341eca79758cb51e0dd1538b922598764922d67b8b1a869",
+        "bytes": 1609013,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "feng-ye/feng-ye__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-40-wardrobe-personal-front.png",
+        "sha256": "d34719864a96410cbd73c8e585f48fd2720e3da5ea53918bf162b6f79809954a",
+        "bytes": 1596882,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "feng-ye/feng-ye__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-41-wardrobe-personal-three-quarter.png",
+        "sha256": "55d397bc1a785e267acde6d37df98d88e0acb322c872b769db4dfdde8c881cd7",
+        "bytes": 1549631,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "feng-ye/feng-ye__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-42-wardrobe-personal-side.png",
+        "sha256": "1724e990024e0f6e7c1daed96d4ac3c4bd06dc1a5f5e02a329d0aad0c3bc89da",
+        "bytes": 1299416,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "feng-ye/feng-ye__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-43-wardrobe-personal-back.png",
+        "sha256": "43cb67618e2ac09ab4ffc7a2be82412be2ffa6a131a019fa71e893e48ccb1c1f",
+        "bytes": 1638004,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "feng-ye/feng-ye__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-44-wardrobe-personal-portrait.png",
+        "sha256": "e67e20498bf5db4ea773fcae2dcabeab84f8ad9b7c65eb4a5a98f7cf20d6db66",
+        "bytes": 1185829,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-cozy-knit",
+        "source": "feng-ye/feng-ye__wardrobe-personal__extra-cozy-knit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-45-wardrobe-personal-extra-cozy-knit.png",
+        "sha256": "43eb82ab8080f451de5a4b3300253e0f45140ffecdae9ee2ed3f163070d8d010",
+        "bytes": 1761588,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-outdoor-shell",
+        "source": "feng-ye/feng-ye__wardrobe-personal__extra-outdoor-shell__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-46-wardrobe-personal-extra-outdoor-shell.png",
+        "sha256": "3c50e76a1de9a2e9fbc8336a33477a39bdbd3c7e612bfec070147d7b3401b46e",
+        "bytes": 1556781,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-urban-jacket",
+        "source": "feng-ye/feng-ye__wardrobe-personal__extra-urban-jacket__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-47-wardrobe-personal-extra-urban-jacket.png",
+        "sha256": "fd985dc5b6e292ed814106b8d09f62b4178e2b26b62904ccc00855d1e0251cbb",
+        "bytes": 1659380,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "feng-ye/feng-ye__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-48-pose-walk.png",
+        "sha256": "7cc973d8414fd8f7387f81c29698fe61b58c70e58ec6cfd11bc06f2209b3e22d",
+        "bytes": 1411085,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "feng-ye/feng-ye__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-49-pose-run.png",
+        "sha256": "839876a594e46e3805b31cbca75c8af00811f88ed7b2fadb40270d05f0c2416d",
+        "bytes": 1369285,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "feng-ye/feng-ye__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-50-pose-sit.png",
+        "sha256": "c9d751b82c38fc5d1c8dcb5e1d3b7d0f8d94fa756150cb06b422ebccc7eb73ee",
+        "bytes": 1579942,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "feng-ye/feng-ye__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-51-pose-point.png",
+        "sha256": "1ca15a8c2d07d1d70a9dd5e8070ac34255b5954f909fab5894fed770e6644b07",
+        "bytes": 1535012,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "feng-ye/feng-ye__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-52-pose-arms-crossed.png",
+        "sha256": "98191aa005c9a716d45b6034b3440439f05f6144c809abb126e892ac537aa10e",
+        "bytes": 1427277,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "feng-ye/feng-ye__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-53-pose-phone.png",
+        "sha256": "5e29e2f3cac4c60178e898bdc518a9e1063cbea15f6940609be2835d0e5b2761",
+        "bytes": 1354595,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "feng-ye/feng-ye__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-54-detail-hands.png",
+        "sha256": "164a8a80b8e143fd9040f295aed6d4c37a494334b3e5da0ae66891b10f9aea6c",
+        "bytes": 1526008,
+        "version": 1
+      },
+      {
+        "slot": "detail.hair-back",
+        "source": "feng-ye/feng-ye__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/images/IMAGE-55-detail-hair-back.png",
+        "sha256": "08b114ef454108886160bc181dc7c2ab3b29835d043170cf3eee161d6b761702",
+        "bytes": 1786014,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/feng-ye/feng-ye__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/audio/processed/intro.wav",
+        "sha256": "6cba4b56d21e4491cc258af96dd534dedb3c37a2a90a5be255c3e3546dddbded",
+        "bytes": 1552398,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/feng-ye/feng-ye__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/audio/processed/intro-alt.wav",
+        "sha256": "ebe7bb7433c58f6060fb685a7b4dcd9b47cb52b1cb4eea466fc39f78fcc8398c",
+        "bytes": 1383054,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/feng-ye/feng-ye__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/audio/processed/chat.wav",
+        "sha256": "462751f10fdbeaba68f20a6893884f6177a57afe9647ec51723951a942af33b4",
+        "bytes": 1143150,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/feng-ye/feng-ye__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/audio/processed/happy.wav",
+        "sha256": "9e087dc0fe403c27519e7a31477bac4b12494eed4bb43d87be9c5edc8c6cfad3",
+        "bytes": 945582,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/feng-ye/feng-ye__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/audio/processed/angry.wav",
+        "sha256": "2126c506aa382655a8ff70b8b425f328ecf2c570cc9a88a5f69eb7128dc801a7",
+        "bytes": 1002030,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/feng-ye/feng-ye__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19ym0u-8d38fffb/handoff/actor-pack-current-2026-10-13/audio/processed/sad.wav",
+        "sha256": "9e3c0a75662592c9256712cf4f530b081f6a67478174c56b859c72d92d480a1d",
+        "bytes": 1002030,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 114,
+    "status": "active",
+    "tagline": {
+      "zh": "颧骨高，下颌宽，短得利落的头发。",
+      "en": "High cheekbones, a wide jaw and a sharp pixie crop."
+    },
+    "introduction": {
+      "en": "East Asian (Chinese) woman, about 36, average build, about 162 cm; strong cheekbones, a wide jaw, very short pixie crop; rust-orange top",
+      "zh": "颧骨高，下颌宽，短得利落的头发。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "feng-ye-grok-solo-20261013",
+      "actorSlugs": [
+        "feng-ye"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-root-physical-and-prior-semantic",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json",
+        "evidenceSha256": "869a1028ff40850f7a08d05e9ea668eadd75ed70d0bf5d7cf78cf1dcf55a384b",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/feng-ye-grok-solo-20261013/source.mp4",
+          "sourceSha256": "92ee72c1c9255c9d73b41c566c170d392cc70fcd8f7cbb4492d660ecce0a4ca7",
+          "public": "/media/works/samples/feng-ye-grok-solo-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }

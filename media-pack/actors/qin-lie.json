@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/qin-lie/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "demographics": {
@@ -63,6 +63,49 @@
         "en": "Casting basics"
       },
       "prompt": "black plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied qin-lie personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "extra-hands-in-pockets",
+          "label": {
+            "en": "Extra hands in pockets",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / extra-hands-in-pockets reference image."
+        },
+        {
+          "key": "extra-seated-drape",
+          "label": {
+            "en": "Extra seated drape",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / extra-seated-drape reference image."
+        },
+        {
+          "key": "extra-walking-drape",
+          "label": {
+            "en": "Extra walking drape",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / extra-walking-drape reference image."
+        }
+      ]
     }
   ],
   "roles": [],
@@ -75,5 +118,564 @@
     "chatgpt-web": {
       "chat": null
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/manifest.json",
+      "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json"
+    ],
+    "images": [
+      {
+        "slot": "turnaround.front",
+        "source": "qin-lie/qin-lie__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/turnaround.front.png",
+        "sha256": "957580657162fdf59160bff4074ccc0132399c04ccfe85e9aba7247397cc0f30",
+        "bytes": 1314894,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "qin-lie/qin-lie__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/turnaround.three-quarter.png",
+        "sha256": "8648e8fe32f4a8b8befa36d876634aa0db45d431259f78e2be00790fe031336c",
+        "bytes": 920945,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "qin-lie/qin-lie__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/turnaround.side.png",
+        "sha256": "741d3953bc25016a37935d1f6af2306e33363e62196077618aeca9b1ff32671a",
+        "bytes": 1135275,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "qin-lie/qin-lie__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/turnaround.back.png",
+        "sha256": "9cf3601dbdd93ec8ba5f9d2b942a5686c26dce53d35cd22dc21336706a72a75c",
+        "bytes": 1355245,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "qin-lie/qin-lie__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/turnaround.back-three-quarter-left.png",
+        "sha256": "7044ef57fbd74831f2e99ad9f2a3278bdd7a8cc757a790a7dd5e8b3011ec9f9e",
+        "bytes": 1361074,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "qin-lie/qin-lie__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/turnaround.back-three-quarter-right.png",
+        "sha256": "c634ca67875a0d408e617026d1e094acc5a85a92b945f2f41d2d189a14cb24e6",
+        "bytes": 1391051,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "qin-lie/qin-lie__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/face.front.png",
+        "sha256": "82ededfdf85e28ece2dcc1146a368af4ad9231abbb177e9f6d01ee67f20231fa",
+        "bytes": 1425404,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "qin-lie/qin-lie__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/face.three-quarter.png",
+        "sha256": "d1965a71d57b854bc5004f66e3dd62ab5a10af755a96b4b80a19b19b08c2a9af",
+        "bytes": 1444967,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "qin-lie/qin-lie__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/face.side.png",
+        "sha256": "733d8190b2d14cc7d37ed8c2fff1dcd93c917ea3b28249f596ecb4132e5426d8",
+        "bytes": 1544342,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "qin-lie/qin-lie__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/face.three-quarter-left.png",
+        "sha256": "8ef198c5d6167bc2c7779e388341ac47a2684f12220a44bf3eb015b5253a04f3",
+        "bytes": 1524886,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "qin-lie/qin-lie__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/face.side-right.png",
+        "sha256": "3fd891b357faacd4947d91af060a8660ca3db1bd587ec15cca1b480f46298aeb",
+        "bytes": 1545627,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "qin-lie/qin-lie__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/face.up.png",
+        "sha256": "d9d7ccd0244f2b4d4ce23c820d9f49c6d2021338d2ef2e65003cd207f82ff4d5",
+        "bytes": 1440668,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "qin-lie/qin-lie__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/face.down.png",
+        "sha256": "c1dc6b66c9161cd8f3aa146d386a10951a0d83fa1ad301fb0b70bc7c62f4f156",
+        "bytes": 1535856,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "qin-lie/qin-lie__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.neutral.png",
+        "sha256": "a7c4904c1f7d6121aaa820e8496c3660eb64c4ed39708fbfe9e702f3fb73216c",
+        "bytes": 1481170,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "qin-lie/qin-lie__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.smile.png",
+        "sha256": "b2cf0c9072c06645cfb48b101bf216acefadd01bd994c75175091ee6a65388fd",
+        "bytes": 1494896,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "qin-lie/qin-lie__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.laugh.png",
+        "sha256": "3356f2bd4e8d1c598feab33e07e45a26043b0f889192ff8c384bf7ce1290704b",
+        "bytes": 1441188,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "qin-lie/qin-lie__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.sad.png",
+        "sha256": "805bce9d5a27626aaba565103ea7603e1c611012af4eb54747e5202c98020e2f",
+        "bytes": 1487646,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "qin-lie/qin-lie__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.cry.png",
+        "sha256": "f7e54395a2cfc22b70c0d36a5899a4a2e7ec0e0072c3db23341fe41902dcce07",
+        "bytes": 1510558,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "qin-lie/qin-lie__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.angry.png",
+        "sha256": "43638d7b50ce31b682c1788103a4340f213c01b2d1c61856796ac3d76b2d3f9e",
+        "bytes": 1566979,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "qin-lie/qin-lie__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.surprised.png",
+        "sha256": "acce7b1acd93b7a70d82d428fc55b155fad0fe470d19470ff3e10821cc6ce65e",
+        "bytes": 1430572,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "qin-lie/qin-lie__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.scared.png",
+        "sha256": "8fedb04346020a7c851d7a8681a59fa1a7f7c9d5c473035a6e16bc02100ed660",
+        "bytes": 1569429,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "qin-lie/qin-lie__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.speaking.png",
+        "sha256": "06367fa6f25aa012f09d48d1c380b2c782e94f543a7010fb6a90768c00cf3b71",
+        "bytes": 1472319,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "qin-lie/qin-lie__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.annoyed.png",
+        "sha256": "d861d2b479af0e0534491c767058ed406fe6b54cd53053488ce80b4da0b3c31d",
+        "bytes": 1488783,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "qin-lie/qin-lie__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.disgusted.png",
+        "sha256": "5bedb7422f8ba414c9eece5f60807038ab7f6f2ea828e2c21de0517751435411",
+        "bytes": 1473831,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "qin-lie/qin-lie__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.eyes-closed.png",
+        "sha256": "97edc417e048862ca14e6ddb0ef7f5c0dbe4ea9c5dd313121d5643050ad30e27",
+        "bytes": 1435210,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "qin-lie/qin-lie__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.worried.png",
+        "sha256": "dee4019b39743c23e9a0a6b4ac08224745568586b259c14ff99159a022ef5264",
+        "bytes": 1449124,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "qin-lie/qin-lie__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.skeptical.png",
+        "sha256": "fffc21907e605d902a20b180d14aed0548cfce170514313054e1514c8d298719",
+        "bytes": 1454443,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "qin-lie/qin-lie__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.smug.png",
+        "sha256": "6b8c74a8fc967dc54452fb396b47fb5840311182b2fb825cb3ef06ab74501b17",
+        "bytes": 1510260,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "qin-lie/qin-lie__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.contempt.png",
+        "sha256": "863fa67da1830dc81bac215bf2796fe35cf9d96b548f87436376c4f70c34b254",
+        "bytes": 1427889,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "qin-lie/qin-lie__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.confused.png",
+        "sha256": "2231fa33033bb223c49b1bc1ee0cddf02b60ec0f83bea8f31e098ae4cdbb7c93",
+        "bytes": 1466904,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "qin-lie/qin-lie__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.embarrassed.png",
+        "sha256": "cadf8c705f5eafe694f529208aa627438ea44a4cf89edb365ca881027fed4a4b",
+        "bytes": 1613201,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "qin-lie/qin-lie__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.tired.png",
+        "sha256": "d2f0b7a1c9d11012366f3926179d0e500fcdb75fb6d9a4cade34a011712cbe31",
+        "bytes": 1587880,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "qin-lie/qin-lie__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.thinking.png",
+        "sha256": "e9736b95c0953d55ec630266c1efb3782bb09586e3fc48d9a0f8faad4ff0a88d",
+        "bytes": 1544140,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "qin-lie/qin-lie__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.determined.png",
+        "sha256": "d57038b42c5de1ea222c0b7cd7cbe0bbb49152cc1cb675b54ca3d682698ccad0",
+        "bytes": 1464987,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "qin-lie/qin-lie__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.shy.png",
+        "sha256": "b1442ab9eb4bb1d9cc5bb9e41c9f0b4e0e1143c6dec59da2b02bb72a77acd942",
+        "bytes": 1489407,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "qin-lie/qin-lie__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.pain.png",
+        "sha256": "334e82c4042d5e3d06cf0940e519b096d7704c3f2497745f7bdfbe7773d5bb9d",
+        "bytes": 1566434,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "qin-lie/qin-lie__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.sleepy.png",
+        "sha256": "cb37f2a15d52cf12da6bd3d105fd462c08e0ac94242198043524a1adfafb5dae",
+        "bytes": 1446679,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "qin-lie/qin-lie__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.awkward-smile.png",
+        "sha256": "b65fe9ab883ef0263c11bf7621c9da6c987bddcdddcdd7abdab4b313e2f495f0",
+        "bytes": 1458436,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "qin-lie/qin-lie__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/expression.deadpan.png",
+        "sha256": "53356cb64bb4d3077e1a6ca456be0e28dc583c25d24d272632c98190db0fc4ef",
+        "bytes": 1490288,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "qin-lie/qin-lie__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/wardrobe-personal.front.png",
+        "sha256": "26935bba5dd471ebbbe5c5f4f6a136ca6b86e28557691c7a08f623121102da49",
+        "bytes": 922570,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "qin-lie/qin-lie__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/wardrobe-personal.three-quarter.png",
+        "sha256": "d6e9fd7309212a6cb8b0cc1a5ca8e88504ada4c4053c984912525326b85be5ad",
+        "bytes": 808397,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "qin-lie/qin-lie__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/wardrobe-personal.side.png",
+        "sha256": "5c32b5f51904d3ab9878a6095c315ed050cdd766fc461c877123ecfe191198ee",
+        "bytes": 615935,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "qin-lie/qin-lie__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/wardrobe-personal.back.png",
+        "sha256": "2bd0c007a993b9e9f5761a31f8ea335c4a249910729ba570ccd2b09cc42b9c73",
+        "bytes": 913366,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "qin-lie/qin-lie__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/wardrobe-personal.portrait.png",
+        "sha256": "598eec179dca4abdaf95c835386331a68bd70b99bf49422bc4f7ab47a249b499",
+        "bytes": 1993077,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-hands-in-pockets",
+        "source": "qin-lie/qin-lie__wardrobe-personal__extra-hands-in-pockets__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/wardrobe-personal.extra-hands-in-pockets.png",
+        "sha256": "d04435c6818dae7b88e0941a63ac2ad2d45a02fc0388c3478ba28b62479e645b",
+        "bytes": 774392,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-seated-drape",
+        "source": "qin-lie/qin-lie__wardrobe-personal__extra-seated-drape__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/wardrobe-personal.extra-seated-drape.png",
+        "sha256": "7738f7b66397178ad91129b1680bd561a12dbd484024e15e0dfd0b17a877f6bd",
+        "bytes": 1175334,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-walking-drape",
+        "source": "qin-lie/qin-lie__wardrobe-personal__extra-walking-drape__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/wardrobe-personal.extra-walking-drape.png",
+        "sha256": "c08983f62bae1ab77f5e74596fecfce28b6d36beefe4f9fb9620c320d9915df6",
+        "bytes": 779920,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "qin-lie/qin-lie__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/pose.walk.png",
+        "sha256": "b150391788586b4d4c84833aefb764c1a3dfdd25b4288e341d3226ed3fe2b7d6",
+        "bytes": 885404,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "qin-lie/qin-lie__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/pose.run.png",
+        "sha256": "2c838c17248890184cf23903cfe8bfe0859913a9bab08396fced5094e5ed392d",
+        "bytes": 895559,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "qin-lie/qin-lie__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/pose.sit.png",
+        "sha256": "8922a0c995a64aa63620a92adf0a3049932a5cfe0b6d2e7e971e6fff6cbbe995",
+        "bytes": 1191469,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "qin-lie/qin-lie__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/pose.point.png",
+        "sha256": "fd937c4c94d89bb029a86b259f2ab3cc8b5a6a18448b664024c4701825e12217",
+        "bytes": 804251,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "qin-lie/qin-lie__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/pose.arms-crossed.png",
+        "sha256": "4dcf8d3e240be157ba4b9eeb789568e90a590f5c5a33fb1bdf2ca5784cc7ce8e",
+        "bytes": 773642,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "qin-lie/qin-lie__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/pose.phone.png",
+        "sha256": "ffbd3c86c842dc8300c351cb3818794c0ff8340f99d5d07c9fc5cb38be86c78a",
+        "bytes": 852572,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "qin-lie/qin-lie__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/detail.hands.png",
+        "sha256": "45fa6819cefed60fddb09cfb22fbb8d5e0297998f3daea9642b83dc357f94934",
+        "bytes": 1004870,
+        "version": 1
+      },
+      {
+        "slot": "detail.hair-back",
+        "source": "qin-lie/qin-lie__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/images/detail.hair-back.png",
+        "sha256": "d6eb32b33e618ede3bb0fbbe7eb8c8beb8c6d0294022337bfa9b20f4a5cb6f01",
+        "bytes": 1546187,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/qin-lie/qin-lie__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/audio/intro.wav",
+        "sha256": "e19235a598a9b82fbba595a663181884d838e300036d9e70285585116f1429a4",
+        "bytes": 1520646,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/qin-lie/qin-lie__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/audio/intro-alt.wav",
+        "sha256": "9606935019c0b0594240601037324eed252acb791c0081c815a80732d66f9c1c",
+        "bytes": 1499478,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/qin-lie/qin-lie__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/audio/chat.wav",
+        "sha256": "b535fca76e86e79b53587cb7150d3ce84ef7d9ea7f520432916a4ecd50aae758",
+        "bytes": 1192542,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/qin-lie/qin-lie__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/audio/happy.wav",
+        "sha256": "7e72c59a751d27c2245b2e74607ec239bdc3d92b076fa9920778f5ba77aea119",
+        "bytes": 1199598,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/qin-lie/qin-lie__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/audio/angry.wav",
+        "sha256": "3ac753dffd8432f9e5767f209ac3f47a3572af382ea05e2185e5b6108dc9bfa2",
+        "bytes": 1143150,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/qin-lie/qin-lie__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z6mdb-63f3b258/staging/qin-lie-playable-handoff-20261013/assets/audio/sad.wav",
+        "sha256": "438524aa63e50d9c82e5df918dfe45f8d9ac72dd140230f96c818ea5e9e7c016",
+        "bytes": 1206654,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 113,
+    "status": "active",
+    "tagline": {
+      "zh": "方下巴，浓眉，一身腱子肉。",
+      "en": "Square jaw, heavy brows and solid muscle."
+    },
+    "introduction": {
+      "en": "East Asian (Chinese) man, about 28, muscular and broad, about 178 cm; square jaw, thick eyebrows, short spiky hair; black top",
+      "zh": "方下巴，浓眉，一身腱子肉。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "qin-lie-grok-solo-20261013",
+      "actorSlugs": [
+        "qin-lie"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-root-physical-and-prior-semantic",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json",
+        "evidenceSha256": "869a1028ff40850f7a08d05e9ea668eadd75ed70d0bf5d7cf78cf1dcf55a384b",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/qin-lie-grok-solo-20261013/source.mp4",
+          "sourceSha256": "9b0770fcb41af5f417b2f5c219790956f2672ef2d76d7e6dd3cebda10c07f583",
+          "public": "/media/works/samples/qin-lie-grok-solo-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }
