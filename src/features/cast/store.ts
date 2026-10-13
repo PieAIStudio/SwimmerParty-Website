@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { trackProductEvent } from "@/features/analytics/client";
 
 /** Saved cast in localStorage; shared links and the header count both read it through here. */
 export const CAST_EVENT = "sp-cast-change";
@@ -15,10 +16,16 @@ export function readSavedCast(): string[] {
 }
 
 export function writeSavedCast(next: string[]) {
+  const previous = readSavedCast();
   try {
     localStorage.setItem(STORAGE_KEY, next.join(","));
   } catch {}
   window.dispatchEvent(new Event(CAST_EVENT));
+  if (previous.join(",") !== next.join(","))
+    trackProductEvent("cast_changed", {
+      action: next.length > previous.length ? "add" : next.length ? "remove" : "clear",
+      count: next.length,
+    });
 }
 
 export function subscribeCast(callback: () => void) {

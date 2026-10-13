@@ -91,7 +91,10 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
     work.cast.filter((credit) => credit.actor === actor.slug).map((credit) => ({ work, credit })),
   );
   return (
-    <div className="sp-container overflow-x-clip [overflow-clip-margin:8px] pb-24">
+    <div
+      data-actor-dossier={slug}
+      className="sp-container overflow-x-clip [overflow-clip-margin:8px] pb-24"
+    >
       <AssetSelectionProvider actor={actor} assets={assets}>
         <Breadcrumbs
           ariaLabel={t("common.breadcrumb")}

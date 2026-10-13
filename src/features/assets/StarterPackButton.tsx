@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { useAccount } from "@/features/account";
+import { trackProductEvent } from "@/features/analytics/client";
 import { useSiteI18n } from "@/i18n/client";
 import { saveBlob } from "@/lib/browser-files";
 import { SignInRequired } from "./downloads";
@@ -22,8 +23,10 @@ export function StarterPackButton({ actor }: { actor: StarterActor }) {
   const leaving = !account.user && account.busy;
   async function start() {
     if (busy) return;
+    trackProductEvent("download_started", { kind: "starter", slug: actor.slug });
     const { user } = await account.whenReady();
     if (!user) {
+      trackProductEvent("sign_in_prompt_shown", { trigger: "starter" });
       await account.signIn();
       return;
     }
@@ -35,8 +38,10 @@ export function StarterPackButton({ actor }: { actor: StarterActor }) {
       account.event("starter_download", { format: "starter" });
       setNotice("started");
     } catch (error) {
-      if (error instanceof SignInRequired) await account.signIn();
-      else setNotice("failed");
+      if (error instanceof SignInRequired) {
+        trackProductEvent("sign_in_prompt_shown", { trigger: "starter" });
+        await account.signIn();
+      } else setNotice("failed");
     } finally {
       setBusy(false);
     }

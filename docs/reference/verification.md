@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: ai-assisted
 created: 2026-10-08
-last_reviewed: 2026-10-09
+last_reviewed: 2026-10-13
 domain: engineering
 tags:
   - verification
@@ -24,6 +24,8 @@ pinned: false
 | `pnpm dlx knip`                  | 清理及交付        | 无消费者代码/依赖；显式的手工工具和隐式依赖例外见 tools/README.md  |
 
 单个问题先跑相关工具测试或 Playwright 文件，不反复用整套门禁定位同一失败；修好后再做一次整体验证。命令定义只在 package.json，测试职责在 tools/README.md。
+
+Playwright 默认最多 2 个 worker；并行 worktree 可用 `PLAYWRIGHT_PORT` 指定空闲端口，仍禁止复用其他检出的服务。共享 Mac 上的重型检查还须遵守 Owner 指定的 SLOTS 锁和负载规则；`pnpm verify` 只启动本检出的一次构建。
 
 ## 全新检出
 

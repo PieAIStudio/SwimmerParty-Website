@@ -1,5 +1,6 @@
 import { signedDownloadSchema } from "../../contracts/downloads.ts";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
+import { trackProductEvent } from "@/features/analytics/client";
 
 export type AssetDownloadAccount = {
   user: { id: string } | null;
@@ -21,6 +22,7 @@ export async function downloadAsset({
   signal: AbortSignal;
   account: AssetDownloadAccount;
 }): Promise<{ cooldown?: number }> {
+  trackProductEvent("download_started", { kind: "single", signed_in: Boolean(account.user) });
   const response = await fetch(endpoint, { signal, cache: "no-store" });
   if (response.status === 429) {
     const retryAfter = Number(response.headers.get("Retry-After"));

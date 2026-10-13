@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-10-03
-last_reviewed: 2026-10-09
+last_reviewed: 2026-10-13
 domain: product
 tags:
   - assets
@@ -165,4 +165,4 @@ related:
 ## 待定
 
 1. Seedance、可灵的官方参考图上限。
-2. 真实 SSO、Blob、WAF 与移动实机验收。品牌依赖已锁定 UIKit `3.0.0-rc.1` / AuthKit `0.8.0-rc.1`；正式域名是 `https://swimmerparty.swiminai.com`，上线操作见 [release.md](../../reference/release.md)。
+2. 真实 SSO、Blob、WAF 与移动实机验收。品牌依赖版本以 [package.json](../../../package.json) 与锁文件为准，不在本规格里保留过期版本副本；正式域名是 `https://swimmerparty.swiminai.com`，上线操作见 [release.md](../../reference/release.md)。

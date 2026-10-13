@@ -1,6 +1,8 @@
 const POSTHOG_EVENTS = new Set([
   "page_viewed",
   "actor_viewed",
+  "sample_viewed",
+  "download_started",
   "voice_played",
   "asset_downloaded",
   "sign_in_prompt_shown",

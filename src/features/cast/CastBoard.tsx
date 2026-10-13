@@ -7,6 +7,7 @@ import type { Actor } from "@/content/actors";
 import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { Link } from "@/i18n/navigation";
 import { useAccount } from "@/features/account";
+import { trackProductEvent } from "@/features/analytics/client";
 import { starterPack, SignInRequired } from "@/features/assets/client";
 import { saveBlob } from "@/lib/browser-files";
 import { CAST_EVENT, subscribeCast } from "./store.ts";
@@ -49,14 +50,20 @@ export function CastBoard({
     url.searchParams.delete("a");
     history.replaceState(history.state, "", url);
     window.dispatchEvent(new Event(CAST_EVENT));
+    trackProductEvent("cast_changed", {
+      action: next.length ? "remove" : "clear",
+      count: next.length,
+    });
   }
   async function copy(value: string) {
     await navigator.clipboard?.writeText(value);
   }
   async function downloadPack() {
     if (downloading) return;
+    trackProductEvent("download_started", { kind: "cast", count: cast.length });
     const { user } = await account.whenReady();
     if (!user) {
+      trackProductEvent("sign_in_prompt_shown", { trigger: "cast" });
       await account.signIn();
       return;
     }
@@ -69,8 +76,10 @@ export function CastBoard({
       saveBlob(blob, filename);
       account.event("starter_download", { format: "cast" });
     } catch (error) {
-      if (error instanceof SignInRequired) await account.signIn();
-      else setFailed(true);
+      if (error instanceof SignInRequired) {
+        trackProductEvent("sign_in_prompt_shown", { trigger: "cast" });
+        await account.signIn();
+      } else setFailed(true);
     } finally {
       setDownloading(false);
     }

@@ -1,6 +1,6 @@
 export { starterPack } from "./starter-pack.ts";
 export { SignInRequired, assetFilename } from "./downloads.ts";
-export { exportPack, licenseText, type ExportFormat } from "./export-packs.ts";
+export { exportPack, licenseText } from "./export-packs.ts";
 export {
   renderSheet,
   type SheetBackground,

@@ -21,7 +21,7 @@ for (const locale of ["zh", "en"]) {
 }
 
 for (const width of [1280, 390]) {
-  test(`language menu preserves authored locale ${width}`, async ({ page }) => {
+  test(`language menu preserves authored locale ${width}`, async ({ page, context }) => {
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
     await page.setViewportSize({ width, height: 850 });
@@ -32,6 +32,12 @@ for (const width of [1280, 390]) {
     await page.getByRole("menuitemradio", { name: /中文/ }).click();
     await expect(page.locator("html")).toHaveAttribute("lang", "zh-Hans");
     await expect(page).toHaveURL(/\/zh\/actors\?ref=menu-check$/);
+    await expect
+      .poll(
+        async () =>
+          (await context.cookies()).find((cookie) => cookie.name === "NEXT_LOCALE")?.value,
+      )
+      .toBe("zh");
     expect(errors).toEqual([]);
     await page.screenshot({ path: `/tmp/SwimmerParty-Website-i18n-${width}.png`, fullPage: false });
   });

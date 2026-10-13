@@ -17,6 +17,7 @@ import { saveBlob } from "@/lib/browser-files";
 import { GUEST_COOLDOWN_KEY, GUEST_DOWNLOAD_WINDOW_SECONDS } from "@/features/assets/downloads";
 import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { useAccount } from "@/features/account";
+import { trackProductEvent } from "@/features/analytics/client";
 import { MemberExportDialog } from "./MemberExportDialog";
 import { downloadAsset, GuestDownloadCooldownError } from "./download-client";
 
@@ -170,7 +171,7 @@ export function AssetSelectionProvider({
     }
   }
   function showInvite() {
-    account.event("sign_in_prompt");
+    trackProductEvent("sign_in_prompt_shown", { trigger: "pack" });
     setInvite(true);
   }
   function requestStarter() {

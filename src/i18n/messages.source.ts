@@ -1105,6 +1105,20 @@ export const messages = {
   "community.approve": { en: "Approve", zh: "通过" },
   "community.hide": { en: "Hide", zh: "隐藏" },
   "community.reviewEmpty": { en: "Nothing to review.", zh: "没有待审核的。" },
+  "community.reviewLoading": { en: "Checking review access…", zh: "正在确认审核权限…" },
+  "community.reviewSignIn": {
+    en: "Sign in with the owner account to review submissions.",
+    zh: "请用 Owner 账号登录后审核投稿。",
+  },
+  "community.reviewForbidden": {
+    en: "This account does not have review access.",
+    zh: "这个账号没有审核权限。",
+  },
+  "community.reviewUnavailable": {
+    en: "The review queue is unavailable. Try again later.",
+    zh: "审核队列暂时不可用，请稍后重试。",
+  },
+  "community.reviewRetry": { en: "Try again", zh: "重试" },
   "samples.worksTitle": { en: "Same actor, different tools", zh: "同一个演员，不同工具" },
   "samples.actorTitle": { en: "Same {name}, different tools", zh: "同一个{name}，不同工具" },
   "samples.description": {
@@ -1276,7 +1290,7 @@ export const messages = {
   "community.kind.audio": { en: "Audio · 声音", zh: "Audio · 声音" },
   "community.kind.game": { en: "Game · 游戏", zh: "Game · 游戏" },
   "community.actorSlugLabel": { en: "Actor slug", zh: "Actor slug" },
-  "common.breadcrumbFallback": { en: "当前位置", zh: "当前位置" },
+  "common.breadcrumbFallback": { en: "Breadcrumb", zh: "当前位置" },
   "sheet.action": {
     en: "Character sheet",
     zh: "做设定图",

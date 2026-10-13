@@ -2,6 +2,19 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { isApprovedEvent, normalizeEvent, pageKind } from "../../src/features/analytics/events.ts";
 
+test("the creator funnel includes sample playback and download starts", () => {
+  for (const name of [
+    "sample_viewed",
+    "actor_viewed",
+    "download_started",
+    "cast_changed",
+    "sign_in_prompt_shown",
+  ]) {
+    assert.equal(isApprovedEvent(name), true, name);
+    assert.equal(normalizeEvent(name)?.name, name);
+  }
+});
+
 test("PostHog accepts only the approved event vocabulary", () => {
   assert.equal(isApprovedEvent("asset_downloaded"), true);
   assert.equal(isApprovedEvent("bundle_download"), false);

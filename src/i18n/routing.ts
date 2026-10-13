@@ -9,7 +9,7 @@
  */
 export const routing = {
   locales: ["zh", "en"],
-  defaultLocale: "zh",
+  defaultLocale: "en",
   localePrefix: "always",
 } as const;
 
@@ -54,12 +54,16 @@ export const MACHINE_LOCALES = [
  */
 export function machineTranslateUrl(siteUrl: string, pathname: string, target: string): string {
   const host = new URL(siteUrl).host.replaceAll("-", "--").replaceAll(".", "-");
-  const params = new URLSearchParams({
-    _x_tr_sl: "en",
-    _x_tr_tl: target,
-    _x_tr_hl: target,
-  });
-  return `https://${host}.translate.goog${pathname}?${params.toString()}`;
+  // Preserve page state without allowing the path to replace the trusted proxy origin.
+  const source = new URL(pathname, siteUrl);
+  const url = new URL(`https://${host}.translate.goog`);
+  url.pathname = source.pathname;
+  url.search = source.search;
+  url.hash = source.hash;
+  url.searchParams.set("_x_tr_sl", "en");
+  url.searchParams.set("_x_tr_tl", target);
+  url.searchParams.set("_x_tr_hl", target);
+  return url.toString();
 }
 
 export function hasLocale<T extends string>(locales: readonly T[], value: unknown): value is T {

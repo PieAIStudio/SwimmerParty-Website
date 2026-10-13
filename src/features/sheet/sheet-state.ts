@@ -9,8 +9,8 @@ import {
   type SheetPreset,
 } from "./sheet-presets.ts";
 
-export const SHEET_LABEL_CHOICES: readonly SheetLabels[] = ["none", "zh", "en"];
-export const SHEET_BACKGROUND_CHOICES: readonly SheetBackground[] = ["grey", "white", "dark"];
+const SHEET_LABEL_CHOICES: readonly SheetLabels[] = ["none", "zh", "en"];
+const SHEET_BACKGROUND_CHOICES: readonly SheetBackground[] = ["grey", "white", "dark"];
 
 export type SheetState = {
   preset: SheetPreset;

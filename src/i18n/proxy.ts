@@ -1,6 +1,15 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { canonicalLocale } from "@pieai/swimmer-i18n-kit";
-import { catalogLocale, hasLocale, localePath, routing, type AppLocale } from "./routing";
+import { SITE } from "@/content/site";
+import {
+  catalogLocale,
+  hasLocale,
+  localePath,
+  machineTranslateUrl,
+  MACHINE_LOCALES,
+  routing,
+  type AppLocale,
+} from "./routing";
 
 function preferredLocale(cookie: string | undefined, acceptLanguage: string | null): AppLocale {
   if (hasLocale(routing.locales, cookie)) return cookie;
@@ -32,13 +41,28 @@ export function routeLocaleRequest(request: NextRequest) {
     const headers = new Headers(request.headers);
     headers.set("x-site-locale", segment);
     const response = NextResponse.next({ request: { headers } });
+    // Next strips Flight/prefetch headers before Proxy. Only a document navigation
+    // writes here; committed client navigations persist their locale in the provider.
     if (
-      !request.headers.has("next-router-prefetch") &&
-      request.headers.get("purpose") !== "prefetch"
+      request.headers.get("sec-fetch-dest") === "document" &&
+      request.headers.get("purpose") !== "prefetch" &&
+      !request.headers.get("sec-purpose")?.includes("prefetch")
     ) {
       response.cookies.set("NEXT_LOCALE", segment, { path: "/", sameSite: "lax" });
     }
     return response;
+  }
+  // An explicit machine-locale prefix wins over a previously saved authored locale.
+  const machineLocale = MACHINE_LOCALES.find(({ code }) => code === segment);
+  if (machineLocale) {
+    const path = request.nextUrl.pathname.slice(segment.length + 1) || "/";
+    return NextResponse.redirect(
+      machineTranslateUrl(
+        SITE.url,
+        localePath(path, "en") + request.nextUrl.search,
+        machineLocale.code,
+      ),
+    );
   }
   const locale = preferredLocale(
     request.cookies.get("NEXT_LOCALE")?.value,

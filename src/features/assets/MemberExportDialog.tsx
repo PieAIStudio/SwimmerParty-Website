@@ -14,6 +14,7 @@ import { TextLink } from "@/site/TextLink";
 import { GameButton, GameSegmentedControl, GameSelect, GameToast } from "@pieai/swimmer-ui-kit";
 import { LiquidPopover } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { useAccount } from "@/features/account";
+import { trackProductEvent } from "@/features/analytics/client";
 
 // The one-sheet format lives on its own page; this dialog keeps originals and model packs.
 type DialogFormat = Exclude<ExportFormat, "sheet">;
@@ -57,6 +58,11 @@ export function MemberExportDialog({
   }
   async function start() {
     if (controller.current || unavailableVeo) return;
+    trackProductEvent("download_started", {
+      kind: "selection",
+      format: format === "model" ? target : format,
+      count: selected.length,
+    });
     const abort = new AbortController();
     controller.current = abort;
     setBusy(true);

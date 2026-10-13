@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-13T07:59:22.579Z
+generated_at: 2026-10-13T08:26:03.246Z
 generator_version: doc-gov@0.14.2
 docs_count: 36
 docs:
@@ -247,12 +247,12 @@ docs:
     type: reference
     status: active
     canonical: true
-    last_reviewed: 2026-10-09
+    last_reviewed: 2026-10-13
     pinned: false
   - id: SPEC-ACTOR-ASSET-LIBRARY
     path: docs/specs/active/actor-asset-library.md
     type: spec
     status: active
     canonical: true
-    last_reviewed: 2026-10-09
+    last_reviewed: 2026-10-13
     pinned: false

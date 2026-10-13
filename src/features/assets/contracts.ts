@@ -5,7 +5,7 @@ export { starterSlots } from "./starter-pack.ts";
 
 /** One sheet holds at most 16 images, and at most 8 of them full-body. */
 export const SHEET_MAX_IMAGES = 16;
-export const SHEET_MAX_FULL_BODY = 8;
+const SHEET_MAX_FULL_BODY = 8;
 
 const FULL_BODY_SERIES = ["turnaround", "wardrobe", "pose"];
 export function isFullBodySeries(series: string): boolean {

@@ -231,7 +231,12 @@ export interface MessageContracts {
   readonly "community.report": {  };
   readonly "community.reported": {  };
   readonly "community.reviewEmpty": {  };
+  readonly "community.reviewForbidden": {  };
+  readonly "community.reviewLoading": {  };
+  readonly "community.reviewRetry": {  };
+  readonly "community.reviewSignIn": {  };
   readonly "community.reviewTitle": {  };
+  readonly "community.reviewUnavailable": {  };
   readonly "community.rightsConfirmation": {  };
   readonly "community.signIn": {  };
   readonly "community.signInToVote": {  };
