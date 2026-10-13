@@ -47,6 +47,74 @@ async function serveProducts(page: Page) {
   return hits;
 }
 
+// Canonical AuthKit response paired with an explicitly local image fixture.
+// This verifies the browser contract only, not hosted account/SSO acceptance.
+for (const { locale, width, nickname, menu } of [
+  { locale: "zh", width: 1280, nickname: "粉色机器人", menu: "" },
+  { locale: "en", width: 390, nickname: "Pink robot", menu: "Menu" },
+]) {
+  test(`shared avatar: ${locale} ${width} displays the canonical nickname and image, then refreshes or clears them`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 844 });
+    const image = `https://portraits.example.test/profile-avatar-portrait/v1/${"a".repeat(64)}.svg`;
+    let profile: { id: string; name: string; email: string; avatarUrl: string } | null = {
+      id: "synthetic-owner",
+      name: nickname,
+      email: "synthetic@example.test",
+      avatarUrl: image,
+    };
+    await serveProducts(page);
+    await page.route("https://portraits.example.test/**", (route) =>
+      route.fulfill({
+        contentType: "image/svg+xml",
+        body: '<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96"><rect x="12" y="12" width="72" height="72" rx="8" fill="pink"/><circle cx="32" cy="40" r="6"/><circle cx="64" cy="40" r="6"/></svg>',
+      }),
+    );
+    await page.route("**/api/auth/session", (route) =>
+      route.fulfill({
+        contentType: "application/json",
+        headers: { "cache-control": "private, no-store" },
+        body: JSON.stringify(
+          profile
+            ? {
+                user: { id: profile.id, email: profile.email, is_anonymous: false },
+                profile,
+              }
+            : { user: null },
+        ),
+      }),
+    );
+    await page.goto(`/${locale}/guide`);
+    if (menu) await page.getByRole("button", { name: menu, exact: true }).click();
+    const trigger = page.locator(".game-ui-account-menu-trigger:visible");
+    await expect(trigger).toHaveAttribute("aria-label", new RegExp(nickname));
+    await expect(trigger.locator("img")).toHaveAttribute("src", image);
+    await expect
+      .poll(() => trigger.locator("img").evaluate((img) => (img as HTMLImageElement).naturalWidth))
+      .toBe(96);
+    await page.screenshot({
+      path: `.devspace-reports/authkit-avatar/menu-${locale}-${width}.png`,
+      fullPage: true,
+    });
+    profile = {
+      ...profile!,
+      name: `${nickname} 2`,
+      avatarUrl: image.replace("a".repeat(64), "b".repeat(64)),
+    };
+    await page.reload();
+    if (menu) await page.getByRole("button", { name: menu, exact: true }).click();
+    await expect(trigger).toHaveAttribute("aria-label", new RegExp(`${nickname} 2`));
+    await expect(trigger.locator("img")).toHaveAttribute("src", profile.avatarUrl);
+    profile = null;
+    await page.reload();
+    if (menu) await page.getByRole("button", { name: menu, exact: true }).click();
+    await expect(page.locator(".game-ui-account-menu-trigger")).toHaveCount(0);
+    const label = locale === "en" ? "Sign in with Swimmer" : "用泳者账号登录";
+    await expect(page.getByRole("button", { name: label, exact: true }).first()).toBeVisible();
+  });
+}
+
 test("signed in, the header shows the avatar and name", async ({ page, context }) => {
   await localMember(context);
   await serveProducts(page);

@@ -20,6 +20,7 @@ import { GameAccountMenu, type GameAccountProduct } from "@pieai/swimmer-ui-kit/
 import { planArrival } from "./arrival.ts";
 import { fetchProducts } from "./products.ts";
 import type { AccountProfile } from "./profile.ts";
+import { accountSession, type AccountSession as Session } from "./session.ts";
 
 type EventName =
   | "guest_download"
@@ -28,11 +29,6 @@ type EventName =
   | "starter_download"
   | "sign_in_prompt"
   | "sign_in_start";
-type Session = {
-  user: { id: string } | null;
-  mode: "mock" | "swimmer" | null;
-  profile: AccountProfile | null;
-};
 type Account = {
   user: { id: string } | null;
   /** The signed-in person for the header; null when signed out. */
@@ -53,18 +49,6 @@ export function useAccount(): Account {
   const value = useContext(AccountContext);
   if (!value) throw new Error("Account requires its provider");
   return value;
-}
-
-function profileFrom(raw: unknown): AccountProfile | null {
-  if (!raw || typeof raw !== "object") return null;
-  const value = raw as Partial<Record<keyof AccountProfile, unknown>>;
-  if (typeof value.id !== "string" || !value.id) return null;
-  return {
-    id: value.id,
-    name: typeof value.name === "string" && value.name ? value.name : "Swimmer",
-    email: typeof value.email === "string" ? value.email : null,
-    avatarUrl: typeof value.avatarUrl === "string" ? value.avatarUrl : null,
-  };
 }
 
 export function AccountProvider({
@@ -102,10 +86,7 @@ export function AccountProvider({
     void fetch("/api/auth/session", { cache: "no-store", signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error("Account unavailable");
-        const value = await response.json();
-        if (!["mock", "swimmer"].includes(value.mode)) throw new Error("Invalid account mode");
-        const profile = profileFrom(value.user);
-        current.current = { user: profile ? { id: profile.id } : null, mode: value.mode, profile };
+        current.current = accountSession(await response.json());
         setSession(current.current);
       })
       .catch(() => {

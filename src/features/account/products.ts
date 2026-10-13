@@ -3,7 +3,7 @@ import type { GameAccountProduct } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { SITE } from "../../content/site.ts";
 
 /** The product that renders this header; it is the current tab, never a link. */
-export const CURRENT_PRODUCT_ID = "swimmerparty";
+const CURRENT_PRODUCT_ID = "swimmerparty";
 const CACHE_MS = 5 * 60_000;
 const TIMEOUT_MS = 8_000;
 

@@ -18,8 +18,8 @@ importers:
         specifier: 3.2.1
         version: 3.2.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@pieaistudio/swimmer-auth-kit':
-        specifier: 0.8.0-rc.1
-        version: 0.8.0-rc.1(@supabase/ssr@0.12.0(@supabase/supabase-js@2.110.3))(@supabase/supabase-js@2.110.3)(react@19.2.7)
+        specifier: 0.9.1
+        version: 0.9.1(@supabase/ssr@0.12.0(@supabase/supabase-js@2.110.3))(@supabase/supabase-js@2.110.3)(react@19.2.7)
       '@supabase/ssr':
         specifier: 0.12.0
         version: 0.12.0(@supabase/supabase-js@2.110.3)
@@ -814,8 +814,8 @@ packages:
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
 
-  '@pieaistudio/swimmer-auth-kit@0.8.0-rc.1':
-    resolution: {integrity: sha512-OSU9y9F5h3YUJ/JQXreSs8RhkJ65xc6bBbrfKJU+XPHYSpL8xbr+bFeSAYzgUDpk1XaJl5WnpLOKz73HSnzEtQ==, tarball: https://npm.pkg.github.com/download/@pieaistudio/swimmer-auth-kit/0.8.0-rc.1/30608516d037325d01a3a8fa1fe9576a29ff2ebc}
+  '@pieaistudio/swimmer-auth-kit@0.9.1':
+    resolution: {integrity: sha512-5WhosHivpo9fRNFAY3mljrxfLuZB+lo9w3Yz0Vy4UkdQWaeiF85yD/dq6cFasxhwWRWCE0jM8Zchit6CQPfltw==, tarball: https://npm.pkg.github.com/download/@pieaistudio/swimmer-auth-kit/0.9.1/bbf8d47010948b33b94f4ceb69323bc1f8520b1b}
     engines: {node: '>=24 <25'}
     peerDependencies:
       '@supabase/ssr': ^0.12.0
@@ -3389,7 +3389,7 @@ snapshots:
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
 
-  '@pieaistudio/swimmer-auth-kit@0.8.0-rc.1(@supabase/ssr@0.12.0(@supabase/supabase-js@2.110.3))(@supabase/supabase-js@2.110.3)(react@19.2.7)':
+  '@pieaistudio/swimmer-auth-kit@0.9.1(@supabase/ssr@0.12.0(@supabase/supabase-js@2.110.3))(@supabase/supabase-js@2.110.3)(react@19.2.7)':
     dependencies:
       '@supabase/ssr': 0.12.0(@supabase/supabase-js@2.110.3)
       '@supabase/supabase-js': 2.110.3

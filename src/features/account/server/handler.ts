@@ -14,7 +14,10 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
     const { account } = runtimeModes();
     stage = "route";
     const action = Array.isArray(req.query.action) ? req.query.action.join("/") : "";
-    if (action === "session" && req.method === "GET") {
+    // Swimmer mode delegates session reads to AuthKit below: its separately
+    // verified `profile` carries display facts; `verifiedUser()` deliberately
+    // carries only identity. Do not derive the menu from that stripped identity.
+    if (account === "mock" && action === "session" && req.method === "GET") {
       if (req.headers["sec-fetch-site"] === "cross-site")
         throw new HttpError(403, "cross-site-request");
       stage = "account-user";

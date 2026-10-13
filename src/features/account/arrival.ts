@@ -1,5 +1,5 @@
 /** Cross-product arrival: a SWIM IN AI product link carries `swimmer_sso=1`. Pure, so it can be tested without a browser. */
-export const SSO_ARRIVAL_PARAM = "swimmer_sso=1";
+const SSO_ARRIVAL_PARAM = "swimmer_sso=1";
 
 /** Removes exactly `swimmer_sso=1` from a raw query string and keeps every other part as written.
  * Returns null when the marker is absent, otherwise the cleaned query ("" when nothing is left). */
