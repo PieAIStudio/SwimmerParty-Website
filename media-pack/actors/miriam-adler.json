@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/miriam-adler/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-10"
   },
   "demographics": {
@@ -62,6 +62,49 @@
         "en": "Casting basics"
       },
       "prompt": "burgundy plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied miriam-adler personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "rainy-city-layer",
+          "label": {
+            "en": "Rainy city layer",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / rainy-city-layer reference image."
+        },
+        {
+          "key": "evening-cultural",
+          "label": {
+            "en": "Evening cultural",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / evening-cultural reference image."
+        },
+        {
+          "key": "weekend-walking",
+          "label": {
+            "en": "Weekend walking",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / weekend-walking reference image."
+        }
+      ]
     }
   ],
   "roles": [],
@@ -74,5 +117,564 @@
     "chatgpt-web": {
       "chat": null
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/handoff/full-pack-review-audit.json",
+      "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json"
+    ],
+    "images": [
+      {
+        "slot": "turnaround.front",
+        "source": "miriam-adler/miriam-adler__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__turnaround__front__v2.png",
+        "sha256": "7f9f048d7054acd927d18f222169b30ebec36f35194cd621ad57745dbf3349d2",
+        "bytes": 1231393,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "miriam-adler/miriam-adler__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__turnaround__three-quarter__v1.png",
+        "sha256": "4b00c77c6575c049b7969b6a1eca3dc4e8ce83f0b227d72aa4fc8e045351bffe",
+        "bytes": 1296770,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "miriam-adler/miriam-adler__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__turnaround__side__v1.png",
+        "sha256": "aecab3dcb3a82d42f7383de99463a9ad63a5170a51b931842d2f4298bed7c09f",
+        "bytes": 1093763,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "miriam-adler/miriam-adler__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__turnaround__back__v1.png",
+        "sha256": "05e75bbfb6e630639e255c704436fe255c55f173d9f4acc8bc8c2c574525ded4",
+        "bytes": 1283639,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "miriam-adler/miriam-adler__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__turnaround__back-three-quarter-left__v2.png",
+        "sha256": "0287605bb4a5026510c8660a5003e47b76ebbfa0f1dde7c0154881f264649aaa",
+        "bytes": 1331176,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "miriam-adler/miriam-adler__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__turnaround__back-three-quarter-right__v1.png",
+        "sha256": "0bd853670fdfa2d509c98b2489f129c22ac7efad6bbf9f8366c929d6d1a7ab0c",
+        "bytes": 1349183,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "miriam-adler/miriam-adler__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__face__front__v1.png",
+        "sha256": "41b314043863ee92573716bfa8e1d9ceccb1f9a5fc0768da911981265b62b5d7",
+        "bytes": 1341978,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "miriam-adler/miriam-adler__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__face__three-quarter__v1.png",
+        "sha256": "70f2407291839a667adc39213e5807a5a82944637fbfbb38549ac84b8174d8b7",
+        "bytes": 1267359,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "miriam-adler/miriam-adler__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__face__side__v1.png",
+        "sha256": "3d270bd03602d51a477853a202602cfb19f02552eaf8779b788688232fac4fc5",
+        "bytes": 1308089,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "miriam-adler/miriam-adler__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__face__three-quarter-left__v1.png",
+        "sha256": "ca59460881d9f7ba5509654748b293a7f23e76d7a02f38b14dc874cb5f46f7ee",
+        "bytes": 1400755,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "miriam-adler/miriam-adler__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__face__side-right__v1.png",
+        "sha256": "838927389994d661df42e94d935b728ad67ef6643d34e4623f07344f5ce7c59c",
+        "bytes": 1357144,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "miriam-adler/miriam-adler__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__face__up__v1.png",
+        "sha256": "1aa4699f1fabd7d5131b7f586be7bce67f7419f21117485cc92a4bea3935da0d",
+        "bytes": 1421505,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "miriam-adler/miriam-adler__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__face__down__v1.png",
+        "sha256": "51ff8a7af30091718ea518d95576839feaced176b49acf4b591a8f0070cc6edc",
+        "bytes": 1468743,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "miriam-adler/miriam-adler__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__neutral__v1.png",
+        "sha256": "2e246eb7e160f650a1f785bc1c8b0dd346dbba833c5330056f78118f50ad630d",
+        "bytes": 1327818,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "miriam-adler/miriam-adler__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__smile__v1.png",
+        "sha256": "b16ab8709b2e3ec4f2f3a20935991f6be4cf07548a33f23342f68e6cd8e853d6",
+        "bytes": 1354372,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "miriam-adler/miriam-adler__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__laugh__v1.png",
+        "sha256": "ca51f4ab7a6e86544bdf10e1210a562a30b6dfa36a8af8a7931a4f40f8502458",
+        "bytes": 1411873,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "miriam-adler/miriam-adler__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__sad__v1.png",
+        "sha256": "6a4eaa83576bb8640fb6bdb046d017951fa712b2d10ee00ace91a8ee003cc5a7",
+        "bytes": 1341439,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "miriam-adler/miriam-adler__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__cry__v1.png",
+        "sha256": "df897096bc1958f66b5d30734b147fb4e89fabb7a336c49b433a0d5bfb81282d",
+        "bytes": 1428144,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "miriam-adler/miriam-adler__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__annoyed__v1.png",
+        "sha256": "6083c0026c70e9a2dffe6ed36e9526b8558b6b26ff9ec594f8e3b30ac6590d3b",
+        "bytes": 1339221,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "miriam-adler/miriam-adler__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__angry__v1.png",
+        "sha256": "dcedce030e4c03742d6cc44f0aa6a643242660ee2d604633241c9903d4c9d77b",
+        "bytes": 1524880,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "miriam-adler/miriam-adler__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__surprised__v1.png",
+        "sha256": "49d7b5f09b453532985270f9d00dd628a312debc8b2d93ab70f2673e8b33252f",
+        "bytes": 1407142,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "miriam-adler/miriam-adler__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__scared__v1.png",
+        "sha256": "27fd8f07f8889531cdc060da3af03d215f25748197883af46758bfe16dabf9d7",
+        "bytes": 1560687,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "miriam-adler/miriam-adler__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__disgusted__v1.png",
+        "sha256": "0a6fb8449abc3cd3a8abdbc0c2b21acf78cced38c3b627860a2dedf9a660f491",
+        "bytes": 1405057,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "miriam-adler/miriam-adler__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__embarrassed__v1.png",
+        "sha256": "0c550147d2568416b8ce3cb6516a13331a14545fbd4a05df998e63c74cdbf289",
+        "bytes": 1574433,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "miriam-adler/miriam-adler__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__tired__v1.png",
+        "sha256": "943f62d967c68868d9815327bd8bdaddb915a1cc743a16ae5727b7d1d2745ffc",
+        "bytes": 1459095,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "miriam-adler/miriam-adler__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__speaking__v1.png",
+        "sha256": "992688e6574508c72eab38daf2633f782d1a77ef465034d314bebfc54a20a2d3",
+        "bytes": 1418073,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "miriam-adler/miriam-adler__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__eyes-closed__v1.png",
+        "sha256": "7c192fa8ae568825b9947682d3e40b5d5f70628bff43fbab661ab51a6c5862a6",
+        "bytes": 1387197,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "miriam-adler/miriam-adler__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__worried__v1.png",
+        "sha256": "d583db043668e0f58bd62a10008d1c7b2f8005ec72b8945d637c1e0f4c41659d",
+        "bytes": 1422147,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "miriam-adler/miriam-adler__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__skeptical__v1.png",
+        "sha256": "9554ebaee95ac245dd20baee396ce200d5b7dcac6151f826f713eb27a03a888e",
+        "bytes": 1274802,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "miriam-adler/miriam-adler__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__smug__v1.png",
+        "sha256": "36fb3bde1f072cb2f9465e2971a28cbdf352e1e0659633e18bbfb23277b27991",
+        "bytes": 1269146,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "miriam-adler/miriam-adler__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__contempt__v1.png",
+        "sha256": "6237db07e61a0123d4564e58fe87c398fefecf0d4c4b809d62adb8bb5df01f80",
+        "bytes": 1303348,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "miriam-adler/miriam-adler__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__confused__v1.png",
+        "sha256": "0c6d7d4079ed3f78b6471a0465856a367d7a135058b4ce152f5009b0b9adfc2d",
+        "bytes": 1308917,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "miriam-adler/miriam-adler__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__thinking__v1.png",
+        "sha256": "e9eea0fcca18d408e4c99546bbc1a2020fbf6b05e9eaf4ad4c38f2fba4ba5e0c",
+        "bytes": 1240537,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "miriam-adler/miriam-adler__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__determined__v1.png",
+        "sha256": "9177ed04624c3aaca2386f1a887a76bab949389303db4d2969d5cc7f80983acd",
+        "bytes": 1315370,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "miriam-adler/miriam-adler__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__shy__v1.png",
+        "sha256": "895e04fd6cb5be91d909afe3bbdc24e4e022aec13f7b49c1f13b403ca93bd2bd",
+        "bytes": 1295143,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "miriam-adler/miriam-adler__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__pain__v1.png",
+        "sha256": "717fd98ee0cec2de7af0383f56eefbc7f48dbd9c94f8d2f6782c6e65bcac3b9f",
+        "bytes": 1385329,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "miriam-adler/miriam-adler__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__sleepy__v1.png",
+        "sha256": "2a355b4a089f1faf490fe08474502832a995a7649162e844a057c5040089b70c",
+        "bytes": 1367699,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "miriam-adler/miriam-adler__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__awkward-smile__v1.png",
+        "sha256": "eee3dc6482b82fd7c30048cdcd73578508aa2037255d955bcca4f6c9c8ef0006",
+        "bytes": 1257478,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "miriam-adler/miriam-adler__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__expression__deadpan__v1.png",
+        "sha256": "19aca90f3921c6d2e58f899c16bdf56715977274faa2ba4834b5247c4435fd46",
+        "bytes": 1306671,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "miriam-adler/miriam-adler__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__wardrobe-personal__front__v1.png",
+        "sha256": "388bc1f49a3200707e939fd9709dc46839487900fad98040cff1419789bb1cff",
+        "bytes": 1372411,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "miriam-adler/miriam-adler__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__wardrobe-personal__three-quarter__v1.png",
+        "sha256": "d6bbdc24e5ceafb55d4ac301418f83f5161b6f5ac31139fe4d093022ae4ade91",
+        "bytes": 1376319,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "miriam-adler/miriam-adler__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__wardrobe-personal__side__v1.png",
+        "sha256": "4e05209c3228e4444bab70c3d80a3da40d3719f6d9242ef11bb03ea567744ce9",
+        "bytes": 1196392,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "miriam-adler/miriam-adler__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__wardrobe-personal__back__v1.png",
+        "sha256": "6c549fd225f0da5bc5995787d05ff08a32211f7d19285634016ea2f590f5383a",
+        "bytes": 1419997,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "miriam-adler/miriam-adler__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__wardrobe-personal__portrait__v1.png",
+        "sha256": "f4ff4daef7155869a1ce64977af7ae0bf08fd7a9159db2a737540473f04ce8bd",
+        "bytes": 2305811,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.rainy-city-layer",
+        "source": "miriam-adler/miriam-adler__wardrobe-personal__rainy-city-layer__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__wardrobe-personal__rainy-city-layer__v1.png",
+        "sha256": "7630df677ba289fa27d438da0a7055ca2ecad8b760a5927a36cc665e052dbac8",
+        "bytes": 1403674,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.evening-cultural",
+        "source": "miriam-adler/miriam-adler__wardrobe-personal__evening-cultural__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__wardrobe-personal__evening-cultural__v1.png",
+        "sha256": "11ac43bb6a5c788ae113731bf87c122f94e2a498810d32b10a95e6aa17242492",
+        "bytes": 1373261,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.weekend-walking",
+        "source": "miriam-adler/miriam-adler__wardrobe-personal__weekend-walking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__wardrobe-personal__weekend-walking__v1.png",
+        "sha256": "b208db98f3dc790d884a28511aa8ea6802079ce8e19cc73e7a2a22be6d2af653",
+        "bytes": 1528342,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "miriam-adler/miriam-adler__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__pose__walk__v1.png",
+        "sha256": "d3a51e7d0e6af0a4f0589d43778f514e550cdbe71da70824e2c7608cfa3e1eef",
+        "bytes": 1437183,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "miriam-adler/miriam-adler__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__pose__run__v1.png",
+        "sha256": "aee9f0a9c4676f49cee19e15962acc7ec8fc0aeb452ea81bc7ddbf133a8a64cd",
+        "bytes": 1413453,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "miriam-adler/miriam-adler__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__pose__sit__v1.png",
+        "sha256": "e7a4b10521d59305d0236b171cde4b720f73f9f73afed87c47e64e54498d8ba9",
+        "bytes": 1515351,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "miriam-adler/miriam-adler__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__pose__point__v1.png",
+        "sha256": "95b2478817ec4cc54b9461902d28b3d41d5926e1cb7436019fdb118d892255b9",
+        "bytes": 1460339,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "miriam-adler/miriam-adler__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__pose__arms-crossed__v1.png",
+        "sha256": "0b0477f64967461d5f33581b82ead48b1ee45a09e65efdd659c3d3091ce06b32",
+        "bytes": 1350839,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "miriam-adler/miriam-adler__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__pose__phone__v1.png",
+        "sha256": "baab19325478530b61bdb00a13e7177891e39f3e22e077a79c88dd6bf29d27e0",
+        "bytes": 1428053,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "miriam-adler/miriam-adler__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__detail__hands__v1.png",
+        "sha256": "93d03a174af345a77a82605bb8cf3debc93e9ef22d99b74ce818a47520a49793",
+        "bytes": 1232081,
+        "version": 1
+      },
+      {
+        "slot": "detail.hair-back",
+        "source": "miriam-adler/miriam-adler__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/codex-image/accepted/miriam-adler__detail__hair-back__v1.png",
+        "sha256": "87cf1d39ab3df31ab7545ad16b81f2f980e7d8c5e60364a9eae0ecba2fae277c",
+        "bytes": 1540639,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/miriam-adler/miriam-adler__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/voice/miriam/cosyvoice3-six-slot-v1/processed-44k1/repair-1-intro.wav",
+        "sha256": "36e94ec8fbce55a5f24c3fb068fe76c55a930e8390dab24e4120ff778f2c784c",
+        "bytes": 1711158,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/miriam-adler/miriam-adler__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/voice/miriam/cosyvoice3-six-slot-v1/processed-44k1/intro-alt.wav",
+        "sha256": "e8e50bb1d19e3f04709ead47bbc3ba9a3addc7665f861312d97ec4ae22ac57f3",
+        "bytes": 1658238,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/miriam-adler/miriam-adler__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/voice/miriam/cosyvoice3-six-slot-v1/processed-44k1/chat.wav",
+        "sha256": "c23bdcbc37f67fcc353a89e28bb7db12b6386d9f0cbe6958bc716a36b5cc15f6",
+        "bytes": 949110,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/miriam-adler/miriam-adler__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/voice/miriam/cosyvoice3-six-slot-v1/processed-44k1/happy.wav",
+        "sha256": "722b24fbb7e1296d878e9d99f073dfc47412472557119e004da4579f0ee5384f",
+        "bytes": 1044366,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/miriam-adler/miriam-adler__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/voice/miriam/cosyvoice3-six-slot-v1/processed-44k1/angry.wav",
+        "sha256": "cfebee6988461a20a02b1fceef476515c5a12f5b909c780da6c4423bed8c21c0",
+        "bytes": 882078,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/miriam-adler/miriam-adler__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv19xpw6-6cbc0c62/staging/voice/miriam/cosyvoice3-six-slot-v1/processed-44k1/sad.wav",
+        "sha256": "85f00edfd7a3100d0c9536cf46d1082e31c6105997305f952f5f8ecbe02ddcb7",
+        "bytes": 1340718,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 105,
+    "status": "active",
+    "tagline": {
+      "zh": "高瘦，鹰钩鼻，眼窝深，深色头发盘起。",
+      "en": "Tall and slim, a hooked nose, deep-set eyes and dark hair pinned up."
+    },
+    "introduction": {
+      "en": "White woman, about 50, tall and slim, about 174 cm; hooked nose, deep-set eyes, dark hair pinned up in a twist; burgundy top",
+      "zh": "高瘦，鹰钩鼻，眼窝深，深色头发盘起。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "miriam-adler-grok-solo-20261013",
+      "actorSlugs": [
+        "miriam-adler"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-root-physical-and-prior-semantic",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json",
+        "evidenceSha256": "869a1028ff40850f7a08d05e9ea668eadd75ed70d0bf5d7cf78cf1dcf55a384b",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/miriam-adler-grok-solo-20261013/source.mp4",
+          "sourceSha256": "c14bf571b2b016f8b5e53a49ce35ce521223fb6ded9728a3a8afb6022c2b8458",
+          "public": "/media/works/samples/miriam-adler-grok-solo-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }

@@ -1,6 +1,50 @@
 {
   "slug": "annika-brandt",
-  "looks": [],
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied annika-brandt personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "extra-1",
+          "label": {
+            "en": "Extra 1",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / extra-1 reference image."
+        },
+        {
+          "key": "extra-2",
+          "label": {
+            "en": "Extra 2",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / extra-2 reference image."
+        },
+        {
+          "key": "extra-3",
+          "label": {
+            "en": "Extra 3",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / extra-3 reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "kind": "image",
@@ -8,13 +52,536 @@
       "series": "turnaround",
       "key": "front",
       "look": null,
-      "conformance": "v1",
-      "version": 0.1,
+      "conformance": "source-original",
+      "version": 1,
       "width": 941,
       "height": 1672,
-      "bytes": 825209,
-      "sha256": "cfc527e925db6a868e121bbbb1200374619642581f2ce8e7218b4b4f4b935b6a",
-      "sourceSha256": "cfc527e925db6a868e121bbbb1200374619642581f2ce8e7218b4b4f4b935b6a",
+      "bytes": 840744,
+      "sha256": "7cce034e8335dfe3da20b81a64b60825bb22974e93f3e78ce61036ff2d7a87a1",
+      "sourceSha256": "7cce034e8335dfe3da20b81a64b60825bb22974e93f3e78ce61036ff2d7a87a1",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.010167464114832535,
+        "right": 0.9808714133900106,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/7cce034e8335dfe3/annika-brandt__turnaround__front__v1.png",
+      "preview": "/media/assets/annika-brandt/turnaround.front.webp",
+      "thumb": "/media/assets/annika-brandt/turnaround.front.thumb.webp",
+      "large": "/media/assets/annika-brandt/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6895189379109061,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 836228,
+      "sha256": "035bbc8f32dc87a7d467eb22a7920db9e28a7a0421ad4196f61c1c8d2f7dea3b",
+      "sourceSha256": "035bbc8f32dc87a7d467eb22a7920db9e28a7a0421ad4196f61c1c8d2f7dea3b",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 0.9936238044633369,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "annika-brandt/035bbc8f32dc87a7/annika-brandt__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/annika-brandt/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/annika-brandt/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7012969761375712,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 532585,
+      "sha256": "d9b9c45c752dacbbc98528a652a00c1c434ee81071844f9b4e7889762cf21b7c",
+      "sourceSha256": "d9b9c45c752dacbbc98528a652a00c1c434ee81071844f9b4e7889762cf21b7c",
+      "bbox": {
+        "left": 0.04357066950053135,
+        "top": 0.016148325358851676,
+        "right": 0.9574920297555791,
+        "bottom": 0.9545454545454546
+      },
+      "format": "png",
+      "object": "annika-brandt/d9b9c45c752dacbb/annika-brandt__turnaround__side__v1.png",
+      "preview": "/media/assets/annika-brandt/turnaround.side.webp",
+      "thumb": "/media/assets/annika-brandt/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8196684530861498,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 852910,
+      "sha256": "da6cc8b9299163657a3184c9d9de6722fa7f03d8837093fb2846df932ec272fb",
+      "sourceSha256": "da6cc8b9299163657a3184c9d9de6722fa7f03d8837093fb2846df932ec272fb",
+      "bbox": {
+        "left": 0,
+        "top": 0.01854066985645933,
+        "right": 0.9787460148777896,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "annika-brandt/da6cc8b929916365/annika-brandt__turnaround__back__v1.png",
+      "preview": "/media/assets/annika-brandt/turnaround.back.webp",
+      "thumb": "/media/assets/annika-brandt/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6982194702774713,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 834217,
+      "sha256": "321b9c95f6fd3713ca9fa17cba1d9e86fd52b7c41b294d292e59f4177539c905",
+      "sourceSha256": "321b9c95f6fd3713ca9fa17cba1d9e86fd52b7c41b294d292e59f4177539c905",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 0.9500531349628055,
+        "bottom": 0.97188995215311
+      },
+      "format": "png",
+      "object": "annika-brandt/321b9c95f6fd3713/annika-brandt__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/annika-brandt/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/annika-brandt/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7053259537598706,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 875965,
+      "sha256": "f94fe0daf46df8d7c20fb29e6051d6244451b1b91be20bfb11283acd11ee4406",
+      "sourceSha256": "f94fe0daf46df8d7c20fb29e6051d6244451b1b91be20bfb11283acd11ee4406",
+      "bbox": {
+        "left": 0,
+        "top": 0.008971291866028708,
+        "right": 0.9596174282678002,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/f94fe0daf46df8d7/annika-brandt__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/annika-brandt/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/annika-brandt/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6898716879630241,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1845162,
+      "sha256": "f74578f70e45f86f2121aee8922033b37fb6053fcbfae26f82cf65f494413f92",
+      "sourceSha256": "f74578f70e45f86f2121aee8922033b37fb6053fcbfae26f82cf65f494413f92",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/f74578f70e45f86f/annika-brandt__face__front__v1.png",
+      "preview": "/media/assets/annika-brandt/face.front.webp",
+      "thumb": "/media/assets/annika-brandt/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34815222531258105,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2001671,
+      "sha256": "f33cf4e170b79ba5914e509979e048b76845a31c4e81cebb80f518da3c27f36d",
+      "sourceSha256": "f33cf4e170b79ba5914e509979e048b76845a31c4e81cebb80f518da3c27f36d",
+      "bbox": {
+        "left": 0.019128586609989374,
+        "top": 0.010167464114832535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/f33cf4e170b79ba5/annika-brandt__face__three-quarter__v1.png",
+      "preview": "/media/assets/annika-brandt/face.three-quarter.webp",
+      "thumb": "/media/assets/annika-brandt/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.33170390351300916,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2030761,
+      "sha256": "6e2ad31e8e62aa5e1718e678f4f8eb34982cba317b62ccc9c6228cba1edea82b",
+      "sourceSha256": "6e2ad31e8e62aa5e1718e678f4f8eb34982cba317b62ccc9c6228cba1edea82b",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 0.9808714133900106,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/6e2ad31e8e62aa5e/annika-brandt__face__side__v1.png",
+      "preview": "/media/assets/annika-brandt/face.side.webp",
+      "thumb": "/media/assets/annika-brandt/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3446062928066955,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1987714,
+      "sha256": "96cb5df79b9bc2e76589299c5301b7721549205d17ef954fe5c9de6bfb284c3b",
+      "sourceSha256": "96cb5df79b9bc2e76589299c5301b7721549205d17ef954fe5c9de6bfb284c3b",
+      "bbox": {
+        "left": 0,
+        "top": 0.06279904306220095,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/96cb5df79b9bc2e7/annika-brandt__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/annika-brandt/face.three-quarter-left.webp",
+      "thumb": "/media/assets/annika-brandt/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3550070168659016,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1950604,
+      "sha256": "2542eddb4466958e76dc8f8dedb2f9da717e247b8e9b03061cb8ff7986136f40",
+      "sourceSha256": "2542eddb4466958e76dc8f8dedb2f9da717e247b8e9b03061cb8ff7986136f40",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9989373007438895,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/2542eddb4466958e/annika-brandt__face__side-right__v1.png",
+      "preview": "/media/assets/annika-brandt/face.side-right.webp",
+      "thumb": "/media/assets/annika-brandt/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3746269112061382,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2000528,
+      "sha256": "c36a4f417eb208db86cc8d2a93e14c78d855b5eb6e17b421835d9b35c23db244",
+      "sourceSha256": "c36a4f417eb208db86cc8d2a93e14c78d855b5eb6e17b421835d9b35c23db244",
+      "bbox": {
+        "left": 0,
+        "top": 0.061004784688995214,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/c36a4f417eb208db/annika-brandt__face__up__v1.png",
+      "preview": "/media/assets/annika-brandt/face.up.webp",
+      "thumb": "/media/assets/annika-brandt/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3126687479979051,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1871176,
+      "sha256": "4f6e11e9bbe4fc42f8dd1979543ea2e59cbc9a76032ac977219fdfdd86a3ebc8",
+      "sourceSha256": "4f6e11e9bbe4fc42f8dd1979543ea2e59cbc9a76032ac977219fdfdd86a3ebc8",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/4f6e11e9bbe4fc42/annika-brandt__face__down__v1.png",
+      "preview": "/media/assets/annika-brandt/face.down.webp",
+      "thumb": "/media/assets/annika-brandt/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.38115882523427685,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1712970,
+      "sha256": "b027bfa68dd1a03725feb7f02f4567de337cf7f78d1abef961c33dea11bc8e1f",
+      "sourceSha256": "b027bfa68dd1a03725feb7f02f4567de337cf7f78d1abef961c33dea11bc8e1f",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/b027bfa68dd1a037/annika-brandt__expression__neutral__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.neutral.webp",
+      "thumb": "/media/assets/annika-brandt/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4326539769867137,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2050186,
+      "sha256": "55b7c1ab1dffc9864248528b2aaad770af08441805c34130147b34551e1d5616",
+      "sourceSha256": "55b7c1ab1dffc9864248528b2aaad770af08441805c34130147b34551e1d5616",
+      "bbox": {
+        "left": 0,
+        "top": 0.01854066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/55b7c1ab1dffc986/annika-brandt__expression__smile__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.smile.webp",
+      "thumb": "/media/assets/annika-brandt/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.300618043514738,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2115711,
+      "sha256": "1a84582c2696f85cf222c156ae37a9cbdec08315e4b3d85d9f193036a2192e95",
+      "sourceSha256": "1a84582c2696f85cf222c156ae37a9cbdec08315e4b3d85d9f193036a2192e95",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/1a84582c2696f85c/annika-brandt__expression__laugh__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.laugh.webp",
+      "thumb": "/media/assets/annika-brandt/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2879470074083867,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2286290,
+      "sha256": "911c91422b726d1cfa4f853c84d4015056b5a2994f02b4b5f2bd7184d6c46a01",
+      "sourceSha256": "911c91422b726d1cfa4f853c84d4015056b5a2994f02b4b5f2bd7184d6c46a01",
+      "bbox": {
+        "left": 0,
+        "top": 0.004186602870813397,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/911c91422b726d1c/annika-brandt__expression__sad__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.sad.webp",
+      "thumb": "/media/assets/annika-brandt/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2704696723937174,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2065848,
+      "sha256": "226fe4f31220ae62d8674577ef5a19696f9dff7ba16f33459334c74fb65151df",
+      "sourceSha256": "226fe4f31220ae62d8674577ef5a19696f9dff7ba16f33459334c74fb65151df",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/226fe4f31220ae62/annika-brandt__expression__cry__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.cry.webp",
+      "thumb": "/media/assets/annika-brandt/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29536365670237813,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1997126,
+      "sha256": "103860686647fad7ae112a8a5502e9fd61f2ec08e01af854582da20e9171ba18",
+      "sourceSha256": "103860686647fad7ae112a8a5502e9fd61f2ec08e01af854582da20e9171ba18",
       "bbox": {
         "left": 0,
         "top": 0,
@@ -22,11 +589,1058 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "annika-brandt/CC-063.png",
-      "preview": "/media/assets/annika-brandt/turnaround.front.webp",
-      "large": "/media/assets/annika-brandt/turnaround.front.large.webp",
-      "thumb": "/media/assets/annika-brandt/turnaround.front.thumb.webp",
-      "blur": "data:image/webp;base64,UklGRnoBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSLUAAAAJgKRt27Hlet4/27ZrZmvUuKPVGLNm2kPjFmDXBmzb1vd/T3gXERETAMYtHhjrx6p0NvWWY/4Ju3x+Y1XaJu83UUA0dbQqciReBTw0t/gHt9ZiAMTrdb4Va8yB+3UWh4BLUaZvQGoe+u/bIPKJIvgm8O1IMi7g3HF6yh2CGu1iY5VhBJQb3V3hHQVwvm5XCEX++fk/b5Jn80HOiLc5OBckYf24NTz52nzuD1lOQv+Zvjl6Z/ECAFZQOCCeAAAAsAMAnQEqDAAVAD8BaqxOqyYkIjAIAWAgCUAKpHt8gl0+mdEs/kAAyRhoHYLmqUM2+BWc0JeMufDSttNuIe8W7kTO9S6pZRfHLTcLV7mfJqZqeapFo4tRexp6wS6nIo2IrUd9yj9zf4IETY7LV/x486OBa1nfD30p9/UMC+ZvgfnQaz2ml5Pgbmvd/ZPeBf48GorPjvYx82wE3gsIAAA="
+      "object": "annika-brandt/103860686647fad7/annika-brandt__expression__annoyed__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.annoyed.webp",
+      "thumb": "/media/assets/annika-brandt/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3173371248137734,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2112581,
+      "sha256": "6e724555d69fc43df768ecdf44253b75cab191061591db1ee42c2c26e83f53de",
+      "sourceSha256": "6e724555d69fc43df768ecdf44253b75cab191061591db1ee42c2c26e83f53de",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/6e724555d69fc43d/annika-brandt__expression__angry__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.angry.webp",
+      "thumb": "/media/assets/annika-brandt/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.28856225434613486,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1888294,
+      "sha256": "b231f271966f1a4a34142517890d9cf3f8d9c73625ef1ceab8f580fe09a44ff5",
+      "sourceSha256": "b231f271966f1a4a34142517890d9cf3f8d9c73625ef1ceab8f580fe09a44ff5",
+      "bbox": {
+        "left": 0,
+        "top": 0.12440191387559808,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/b231f271966f1a4a/annika-brandt__expression__surprised__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.surprised.webp",
+      "thumb": "/media/assets/annika-brandt/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3579351600913209,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1982769,
+      "sha256": "8c37c3741c0e9d20172a37cd1399899723bb1e36aa8a1253bc3beed9e147521b",
+      "sourceSha256": "8c37c3741c0e9d20172a37cd1399899723bb1e36aa8a1253bc3beed9e147521b",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/8c37c3741c0e9d20/annika-brandt__expression__scared__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.scared.webp",
+      "thumb": "/media/assets/annika-brandt/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31205731457423386,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1900731,
+      "sha256": "0bd94f5f53435bd3d693c10fcfb48180c0ca69d7dbf0e92c2db0e7396df160aa",
+      "sourceSha256": "0bd94f5f53435bd3d693c10fcfb48180c0ca69d7dbf0e92c2db0e7396df160aa",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/0bd94f5f53435bd3/annika-brandt__expression__disgusted__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.disgusted.webp",
+      "thumb": "/media/assets/annika-brandt/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.35388075904184185,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1945795,
+      "sha256": "0e2e80e838f6648699a7cf2790fe5fe2b275f1f9c322fc0ea20cc699d58c6303",
+      "sourceSha256": "0e2e80e838f6648699a7cf2790fe5fe2b275f1f9c322fc0ea20cc699d58c6303",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/0e2e80e838f66486/annika-brandt__expression__embarrassed__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.embarrassed.webp",
+      "thumb": "/media/assets/annika-brandt/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.337276083165115,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2064614,
+      "sha256": "c5deaf273b9c0c6706ae4ce39a66dcaaaae975991504239b32aa8cee69c1eabd",
+      "sourceSha256": "c5deaf273b9c0c6706ae4ce39a66dcaaaae975991504239b32aa8cee69c1eabd",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/c5deaf273b9c0c67/annika-brandt__expression__tired__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.tired.webp",
+      "thumb": "/media/assets/annika-brandt/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3095734457387794,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2158246,
+      "sha256": "21dd079b110fb1182df7633623a19b188a5f880c3971aa159b2115a8910610cf",
+      "sourceSha256": "21dd079b110fb1182df7633623a19b188a5f880c3971aa159b2115a8910610cf",
+      "bbox": {
+        "left": 0,
+        "top": 0.0011961722488038277,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/21dd079b110fb118/annika-brandt__expression__speaking__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.speaking.webp",
+      "thumb": "/media/assets/annika-brandt/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2842078568559356,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2071127,
+      "sha256": "69198007257efb4ec6812f137ed5b27218d082e040c6657bbebdec6d2699b968",
+      "sourceSha256": "69198007257efb4ec6812f137ed5b27218d082e040c6657bbebdec6d2699b968",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/69198007257efb4e/annika-brandt__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.eyes-closed.webp",
+      "thumb": "/media/assets/annika-brandt/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3140727567639028,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1953228,
+      "sha256": "1c0ebe69a7ab4ea6ed45b098e970353bed98d6015324996118652e8bccc2b5c3",
+      "sourceSha256": "1c0ebe69a7ab4ea6ed45b098e970353bed98d6015324996118652e8bccc2b5c3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/1c0ebe69a7ab4ea6/annika-brandt__expression__worried__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.worried.webp",
+      "thumb": "/media/assets/annika-brandt/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34458531847927226,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2018998,
+      "sha256": "b5712658174e56c9d138c91294301d856a0b0b325416cd702e3dbe59301fe402",
+      "sourceSha256": "b5712658174e56c9d138c91294301d856a0b0b325416cd702e3dbe59301fe402",
+      "bbox": {
+        "left": 0,
+        "top": 0.023923444976076555,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/b5712658174e56c9/annika-brandt__expression__skeptical__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.skeptical.webp",
+      "thumb": "/media/assets/annika-brandt/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3411620540095287,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2008402,
+      "sha256": "c9a58d95e35ba4aa62bfba1910f9cbe89ef473d88e661bc7c1e461f38e049012",
+      "sourceSha256": "c9a58d95e35ba4aa62bfba1910f9cbe89ef473d88e661bc7c1e461f38e049012",
+      "bbox": {
+        "left": 0,
+        "top": 0.004784688995215311,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/c9a58d95e35ba4aa/annika-brandt__expression__smug__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.smug.webp",
+      "thumb": "/media/assets/annika-brandt/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3225838845979793,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1921881,
+      "sha256": "972ed3f9fec9d990723d178b3db9174553f22997322df2ebeab5a60d1c3056df",
+      "sourceSha256": "972ed3f9fec9d990723d178b3db9174553f22997322df2ebeab5a60d1c3056df",
+      "bbox": {
+        "left": 0,
+        "top": 0.0011961722488038277,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/972ed3f9fec9d990/annika-brandt__expression__contempt__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.contempt.webp",
+      "thumb": "/media/assets/annika-brandt/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3502274125561222,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2039336,
+      "sha256": "699308b024bfa7752a17eae5ab8ee7f54718492fd6ffcebca56fe2463fc8c584",
+      "sourceSha256": "699308b024bfa7752a17eae5ab8ee7f54718492fd6ffcebca56fe2463fc8c584",
+      "bbox": {
+        "left": 0,
+        "top": 0.03349282296650718,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/699308b024bfa775/annika-brandt__expression__confused__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.confused.webp",
+      "thumb": "/media/assets/annika-brandt/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31462698747641976,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1974022,
+      "sha256": "2472999b925390d68e0a4f98e7d2efc431f3d78abbf3f58a62beb4183c1fa9a7",
+      "sourceSha256": "2472999b925390d68e0a4f98e7d2efc431f3d78abbf3f58a62beb4183c1fa9a7",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/2472999b925390d6/annika-brandt__expression__thinking__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.thinking.webp",
+      "thumb": "/media/assets/annika-brandt/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32913613736786174,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2058557,
+      "sha256": "096be9ce13d174291b3ba0e4dea87bddf3b97fb34d6147d69c625200ea3ff168",
+      "sourceSha256": "096be9ce13d174291b3ba0e4dea87bddf3b97fb34d6147d69c625200ea3ff168",
+      "bbox": {
+        "left": 0,
+        "top": 0.03289473684210526,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/096be9ce13d17429/annika-brandt__expression__determined__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.determined.webp",
+      "thumb": "/media/assets/annika-brandt/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.329746299620174,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2026118,
+      "sha256": "8c17e3e2cfa797a63d17c3a81a8e810c901acad911718e1709ee2f766f178391",
+      "sourceSha256": "8c17e3e2cfa797a63d17c3a81a8e810c901acad911718e1709ee2f766f178391",
+      "bbox": {
+        "left": 0,
+        "top": 0.026913875598086126,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/8c17e3e2cfa797a6/annika-brandt__expression__shy__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.shy.webp",
+      "thumb": "/media/assets/annika-brandt/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.309445057431522,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2010188,
+      "sha256": "d7f53477ff564d07304358f14683b42e55279082634bf505b45c5b15ae9bf2fd",
+      "sourceSha256": "d7f53477ff564d07304358f14683b42e55279082634bf505b45c5b15ae9bf2fd",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/d7f53477ff564d07/annika-brandt__expression__pain__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.pain.webp",
+      "thumb": "/media/assets/annika-brandt/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3399474497760196,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1979937,
+      "sha256": "d6b1b1815ae51ffbbb6daf3e7d220d49a5e589832ca156fd298f3076968ec28f",
+      "sourceSha256": "d6b1b1815ae51ffbbb6daf3e7d220d49a5e589832ca156fd298f3076968ec28f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/d6b1b1815ae51ffb/annika-brandt__expression__sleepy__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.sleepy.webp",
+      "thumb": "/media/assets/annika-brandt/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31519138755980863,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2002765,
+      "sha256": "9c8b4defed3a2359ef092c25d625510fb5cad46d800842bb4aa7c50083aeb312",
+      "sourceSha256": "9c8b4defed3a2359ef092c25d625510fb5cad46d800842bb4aa7c50083aeb312",
+      "bbox": {
+        "left": 0,
+        "top": 0.0017942583732057417,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/9c8b4defed3a2359/annika-brandt__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.awkward-smile.webp",
+      "thumb": "/media/assets/annika-brandt/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3324341914587454,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2082750,
+      "sha256": "1586bd95ccc84c9dcbb86a1a5c370da678a93f9546303d9fc8dd63a27f115fa6",
+      "sourceSha256": "1586bd95ccc84c9dcbb86a1a5c370da678a93f9546303d9fc8dd63a27f115fa6",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/1586bd95ccc84c9d/annika-brandt__expression__deadpan__v1.png",
+      "preview": "/media/assets/annika-brandt/expression.deadpan.webp",
+      "thumb": "/media/assets/annika-brandt/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3138096242925931,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 939844,
+      "sha256": "ea4dcf407a0259ca864abaa8f192bb2af2f14192b797f0feca73cfedb20e107b",
+      "sourceSha256": "ea4dcf407a0259ca864abaa8f192bb2af2f14192b797f0feca73cfedb20e107b",
+      "bbox": {
+        "left": 0,
+        "top": 0.013157894736842105,
+        "right": 0.9829968119022316,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/ea4dcf407a0259ca/annika-brandt__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/annika-brandt/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/annika-brandt/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6785989403515551,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 855505,
+      "sha256": "4becd30852d9c8ff4283cadab27663cc517106c6e9256b1be21e4970bc0f633a",
+      "sourceSha256": "4becd30852d9c8ff4283cadab27663cc517106c6e9256b1be21e4970bc0f633a",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 0.9808714133900106,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "annika-brandt/4becd30852d9c8ff/annika-brandt__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/annika-brandt/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/annika-brandt/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7072943626092572,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 722790,
+      "sha256": "865e920c57fc95bc5436f726ef1cf01ff27128d1321a942fe241412c44fca6f4",
+      "sourceSha256": "865e920c57fc95bc5436f726ef1cf01ff27128d1321a942fe241412c44fca6f4",
+      "bbox": {
+        "left": 0.0765143464399575,
+        "top": 0,
+        "right": 0.9702444208289054,
+        "bottom": 0.9784688995215312
+      },
+      "format": "png",
+      "object": "annika-brandt/865e920c57fc95bc/annika-brandt__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/annika-brandt/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/annika-brandt/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7758098632728087,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 879420,
+      "sha256": "9c1d27fe30226b0f745ef48c8b553e28ec773371eae20afcb872c9a281f17dd5",
+      "sourceSha256": "9c1d27fe30226b0f745ef48c8b553e28ec773371eae20afcb872c9a281f17dd5",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.022129186602870814,
+        "right": 0.9808714133900106,
+        "bottom": 0.9796650717703349
+      },
+      "format": "png",
+      "object": "annika-brandt/9c1d27fe30226b0f/annika-brandt__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/annika-brandt/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/annika-brandt/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6930063965342784,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-1",
+      "series": "wardrobe",
+      "key": "extra-1",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1387102,
+      "sha256": "2513cdb9c4808a9d7ad31f3ac9c98f9ba09acd3c06c295e5bd41d3c93289071d",
+      "sourceSha256": "2513cdb9c4808a9d7ad31f3ac9c98f9ba09acd3c06c295e5bd41d3c93289071d",
+      "bbox": {
+        "left": 0,
+        "top": 0.01854066985645933,
+        "right": 0.9883103081827843,
+        "bottom": 0.9916267942583732
+      },
+      "format": "png",
+      "object": "annika-brandt/2513cdb9c4808a9d/annika-brandt__wardrobe-personal__extra-1__v1.png",
+      "preview": "/media/assets/annika-brandt/wardrobe.personal.extra-1.webp",
+      "thumb": "/media/assets/annika-brandt/wardrobe.personal.extra-1.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.52081670217472,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-2",
+      "series": "wardrobe",
+      "key": "extra-2",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 898095,
+      "sha256": "48d7e592c4214d1b295895b7b9aa37762e336f74568e274d9e4ac5d997e386ac",
+      "sourceSha256": "48d7e592c4214d1b295895b7b9aa37762e336f74568e274d9e4ac5d997e386ac",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 0.9617428267800212,
+        "bottom": 0.9886363636363636
+      },
+      "format": "png",
+      "object": "annika-brandt/48d7e592c4214d1b/annika-brandt__wardrobe-personal__extra-2__v1.png",
+      "preview": "/media/assets/annika-brandt/wardrobe.personal.extra-2.webp",
+      "thumb": "/media/assets/annika-brandt/wardrobe.personal.extra-2.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7113004591470948,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.extra-3",
+      "series": "wardrobe",
+      "key": "extra-3",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1615050,
+      "sha256": "93b58128a86daeeb53c0f0e38c52744eadd41996d8f4054dcf45920ecbb38e89",
+      "sourceSha256": "93b58128a86daeeb53c0f0e38c52744eadd41996d8f4054dcf45920ecbb38e89",
+      "bbox": {
+        "left": 0.015940488841657812,
+        "top": 0.010167464114832535,
+        "right": 0.9914984059511158,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/93b58128a86daeeb/annika-brandt__wardrobe-personal__extra-3__v1.png",
+      "preview": "/media/assets/annika-brandt/wardrobe.personal.extra-3.webp",
+      "thumb": "/media/assets/annika-brandt/wardrobe.personal.extra-3.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.523060955209006,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2315238,
+      "sha256": "50c0e7b6adf9ee1651b8a45b155bf3c7ad49a7ee435fabd76bcc2eefa4ea0475",
+      "sourceSha256": "50c0e7b6adf9ee1651b8a45b155bf3c7ad49a7ee435fabd76bcc2eefa4ea0475",
+      "bbox": {
+        "left": 0,
+        "top": 0.016148325358851676,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/50c0e7b6adf9ee16/annika-brandt__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/annika-brandt/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/annika-brandt/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2706253908851929,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 812114,
+      "sha256": "9dd3b32ba0dfe6db34cf1eb8dcbbd933caaa41c48c07af69c5d07281678fb419",
+      "sourceSha256": "9dd3b32ba0dfe6db34cf1eb8dcbbd933caaa41c48c07af69c5d07281678fb419",
+      "bbox": {
+        "left": 0.19766206163655686,
+        "top": 0.00777511961722488,
+        "right": 0.9766206163655685,
+        "bottom": 0.9700956937799043
+      },
+      "format": "png",
+      "object": "annika-brandt/9dd3b32ba0dfe6db/annika-brandt__pose__walk__v1.png",
+      "preview": "/media/assets/annika-brandt/pose.walk.webp",
+      "thumb": "/media/assets/annika-brandt/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7238017938770218,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 860061,
+      "sha256": "b51ecc477f2975cf55487f267e50650d2db974e6e185e8a0d64df7cb3df760b9",
+      "sourceSha256": "b51ecc477f2975cf55487f267e50650d2db974e6e185e8a0d64df7cb3df760b9",
+      "bbox": {
+        "left": 0.048884165781083955,
+        "top": 0.008971291866028708,
+        "right": 0.9744952178533475,
+        "bottom": 0.9617224880382775
+      },
+      "format": "png",
+      "object": "annika-brandt/b51ecc477f2975cf/annika-brandt__pose__run__v1.png",
+      "preview": "/media/assets/annika-brandt/pose.run.webp",
+      "thumb": "/media/assets/annika-brandt/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7161665031092851,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1054086,
+      "sha256": "a78cbf5a0adfae1f2312e10154b412d7266e7310b305724df425653b02725d0d",
+      "sourceSha256": "a78cbf5a0adfae1f2312e10154b412d7266e7310b305724df425653b02725d0d",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.019736842105263157,
+        "right": 0.9808714133900106,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/a78cbf5a0adfae1f/annika-brandt__pose__sit__v1.png",
+      "preview": "/media/assets/annika-brandt/pose.sit.webp",
+      "thumb": "/media/assets/annika-brandt/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6274628945080313,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 860884,
+      "sha256": "3a4b65218ee8b93374edbb233f233dfd778acb8c31eecfc9c832c5785115d849",
+      "sourceSha256": "3a4b65218ee8b93374edbb233f233dfd778acb8c31eecfc9c832c5785115d849",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.008373205741626795,
+        "right": 0.9851222104144527,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "annika-brandt/3a4b65218ee8b933/annika-brandt__pose__point__v1.png",
+      "preview": "/media/assets/annika-brandt/pose.point.webp",
+      "thumb": "/media/assets/annika-brandt/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6929625411223934,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 749665,
+      "sha256": "35b04a057bb836b9e298c68417ff73e035671be70c1fab03d113b729377eede6",
+      "sourceSha256": "35b04a057bb836b9e298c68417ff73e035671be70c1fab03d113b729377eede6",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.010167464114832535,
+        "right": 0.9744952178533475,
+        "bottom": 0.9736842105263158
+      },
+      "format": "png",
+      "object": "annika-brandt/35b04a057bb836b9/annika-brandt__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/annika-brandt/pose.arms-crossed.webp",
+      "thumb": "/media/assets/annika-brandt/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7232882406479924,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 675374,
+      "sha256": "8807c29b382fccf64ecc2cc957787d7be6057b30a7174e0b4716ca93d0a0eec0",
+      "sourceSha256": "8807c29b382fccf64ecc2cc957787d7be6057b30a7174e0b4716ca93d0a0eec0",
+      "bbox": {
+        "left": 0.1126461211477152,
+        "top": 0.05801435406698564,
+        "right": 0.8639744952178533,
+        "bottom": 0.9617224880382775
+      },
+      "format": "png",
+      "object": "annika-brandt/8807c29b382fccf6/annika-brandt__pose__phone__v1.png",
+      "preview": "/media/assets/annika-brandt/pose.phone.webp",
+      "thumb": "/media/assets/annika-brandt/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7518285799998983,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1153439,
+      "sha256": "00628e473256f6bff5ce86f2250720f951f1f65719fd26c682256888e343f340",
+      "sourceSha256": "00628e473256f6bff5ce86f2250720f951f1f65719fd26c682256888e343f340",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 1,
+        "bottom": 0.9868421052631579
+      },
+      "format": "png",
+      "object": "annika-brandt/00628e473256f6bf/annika-brandt__detail__hands__v1.png",
+      "preview": "/media/assets/annika-brandt/detail.hands.webp",
+      "thumb": "/media/assets/annika-brandt/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.585897497826297,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2414077,
+      "sha256": "cbf62e78e01d6ee224f3f71b9dc2ef74bdbd2843c36494e804285d4262ff1283",
+      "sourceSha256": "cbf62e78e01d6ee224f3f71b9dc2ef74bdbd2843c36494e804285d4262ff1283",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "annika-brandt/cbf62e78e01d6ee2/annika-brandt__detail__hair-back__v1.png",
+      "preview": "/media/assets/annika-brandt/detail.hair-back.webp",
+      "thumb": "/media/assets/annika-brandt/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31668946300637113,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
     },
     {
       "kind": "voice",
@@ -34,28 +1648,155 @@
       "series": "voice",
       "key": "intro",
       "look": null,
-      "conformance": "v1",
+      "conformance": "source-original",
       "version": 1,
       "width": 0,
       "height": 0,
-      "bytes": 226212,
-      "sha256": "dd70c6e18e635ffc88d6c078a77e9d11b0b7f93c08528bcd35a46a7c6af80bc0",
-      "sourceSha256": "dd70c6e18e635ffc88d6c078a77e9d11b0b7f93c08528bcd35a46a7c6af80bc0",
+      "bytes": 1693518,
+      "sha256": "07b9fd74a89fe34882c78721731046c532e7c78bf869272c8448955f3e712622",
+      "sourceSha256": "07b9fd74a89fe34882c78721731046c532e7c78bf869272c8448955f3e712622",
       "bbox": {
         "left": 0,
         "top": 0,
         "right": 0,
         "bottom": 0
       },
-      "format": "mp3",
-      "object": "voice/annika-brandt/candidate-1.mp3",
+      "format": "wav",
+      "object": "voice/annika-brandt/annika-brandt__voice__intro__v1__07b9fd74a89fe348.wav",
       "preview": "/api/voice/annika-brandt/intro",
       "thumb": "/api/voice/annika-brandt/intro",
       "previewUrl": "/api/voice/annika-brandt/intro",
-      "durationSec": 18.7,
-      "transcript": {
-        "text": "Hi, I'm Annika Brandt, twenty-six, from Hamburg. I study marine biology, so if you need someone to talk about octopuses for an hour, I'm here. My hair does whatever it wants. I'd like to play the nerdy one, the scientist, or the girl who finds the clue nobody saw."
-      }
+      "durationSec": 19.2
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1326606,
+      "sha256": "476d7a8437dcc3f3f2b447a5e8ca84e02f59b883691441212dbe9a7578187f5c",
+      "sourceSha256": "476d7a8437dcc3f3f2b447a5e8ca84e02f59b883691441212dbe9a7578187f5c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/annika-brandt/annika-brandt__voice__intro-alt__v1__476d7a8437dcc3f3.wav",
+      "preview": "/api/voice/annika-brandt/intro-alt",
+      "thumb": "/api/voice/annika-brandt/intro-alt",
+      "previewUrl": "/api/voice/annika-brandt/intro-alt",
+      "durationSec": 15
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 889134,
+      "sha256": "5c03af37234ad7ffc7208d02d94382337ccad07300b735a1cf57c308eceddbb0",
+      "sourceSha256": "5c03af37234ad7ffc7208d02d94382337ccad07300b735a1cf57c308eceddbb0",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/annika-brandt/annika-brandt__voice__chat__v1__5c03af37234ad7ff.wav",
+      "preview": "/api/voice/annika-brandt/chat",
+      "thumb": "/api/voice/annika-brandt/chat",
+      "previewUrl": "/api/voice/annika-brandt/chat",
+      "durationSec": 10.1
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 889134,
+      "sha256": "bed46fa62b57e8a2a19d67b4730966cb344a45262d024c469b66c0591cf5f7c9",
+      "sourceSha256": "bed46fa62b57e8a2a19d67b4730966cb344a45262d024c469b66c0591cf5f7c9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/annika-brandt/annika-brandt__voice__happy__v1__bed46fa62b57e8a2.wav",
+      "preview": "/api/voice/annika-brandt/happy",
+      "thumb": "/api/voice/annika-brandt/happy",
+      "previewUrl": "/api/voice/annika-brandt/happy",
+      "durationSec": 10.1
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1157262,
+      "sha256": "79826ba6a82408dff51e2b916673054aea65b61e79be8ec4dcedc068a80fb21b",
+      "sourceSha256": "79826ba6a82408dff51e2b916673054aea65b61e79be8ec4dcedc068a80fb21b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/annika-brandt/annika-brandt__voice__angry__v1__79826ba6a82408df.wav",
+      "preview": "/api/voice/annika-brandt/angry",
+      "thumb": "/api/voice/annika-brandt/angry",
+      "previewUrl": "/api/voice/annika-brandt/angry",
+      "durationSec": 13.1
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 903246,
+      "sha256": "3858f067d8835b9a18a0c783cd456487688b8095b823bc13cf7c4dd46e7b8289",
+      "sourceSha256": "3858f067d8835b9a18a0c783cd456487688b8095b823bc13cf7c4dd46e7b8289",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/annika-brandt/annika-brandt__voice__sad__v1__3858f067d8835b9a.wav",
+      "preview": "/api/voice/annika-brandt/sad",
+      "thumb": "/api/voice/annika-brandt/sad",
+      "previewUrl": "/api/voice/annika-brandt/sad",
+      "durationSec": 10.2
     }
   ]
 }

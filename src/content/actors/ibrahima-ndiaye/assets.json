@@ -1,6 +1,50 @@
 {
   "slug": "ibrahima-ndiaye",
-  "looks": [],
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied ibrahima-ndiaye personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "actor-extra-1",
+          "label": {
+            "en": "Actor extra 1",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / actor-extra-1 reference image."
+        },
+        {
+          "key": "actor-extra-2",
+          "label": {
+            "en": "Actor extra 2",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / actor-extra-2 reference image."
+        },
+        {
+          "key": "actor-extra-3",
+          "label": {
+            "en": "Actor extra 3",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / actor-extra-3 reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "kind": "image",
@@ -8,13 +52,710 @@
       "series": "turnaround",
       "key": "front",
       "look": null,
-      "conformance": "v1",
-      "version": 0.1,
+      "conformance": "source-original",
+      "version": 1,
       "width": 941,
       "height": 1672,
-      "bytes": 872321,
-      "sha256": "2c00e57babc0222f8b11231beaac4943e7b2d6be2a885fa56c2993d21069d355",
-      "sourceSha256": "2c00e57babc0222f8b11231beaac4943e7b2d6be2a885fa56c2993d21069d355",
+      "bytes": 848646,
+      "sha256": "78d016c67414fded5c6116a7772f22873cf1151ddb10a36b4fe5560c245c8b34",
+      "sourceSha256": "78d016c67414fded5c6116a7772f22873cf1151ddb10a36b4fe5560c245c8b34",
+      "bbox": {
+        "left": 0.04675876726886291,
+        "top": 0.03827751196172249,
+        "right": 0.9702444208289054,
+        "bottom": 0.9808612440191388
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/78d016c67414fded/ibrahima-ndiaye__turnaround__front__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/turnaround.front.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/turnaround.front.thumb.webp",
+      "large": "/media/assets/ibrahima-ndiaye/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6972146093181946,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 770588,
+      "sha256": "9e9f7dd9e0f607496c3916a8eb55c66a59407ba5021d301af55611d59f7e53bb",
+      "sourceSha256": "9e9f7dd9e0f607496c3916a8eb55c66a59407ba5021d301af55611d59f7e53bb",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.022129186602870814,
+        "right": 0.9500531349628055,
+        "bottom": 0.9880382775119617
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/9e9f7dd9e0f60749/ibrahima-ndiaye__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7262144771163732,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 513080,
+      "sha256": "f3ddb3dca4f04224c54597a1ca023263cb06895133cdafe7834334c6865fd566",
+      "sourceSha256": "f3ddb3dca4f04224c54597a1ca023263cb06895133cdafe7834334c6865fd566",
+      "bbox": {
+        "left": 0.09564293304994687,
+        "top": 0.022727272727272728,
+        "right": 0.9617428267800212,
+        "bottom": 0.9629186602870813
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/f3ddb3dca4f04224/ibrahima-ndiaye__turnaround__side__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/turnaround.side.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8193989647580452,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 886529,
+      "sha256": "a9abeacbf6100a21485fa41bbe456922f1a638c31537c8e63ac4b44f4e1dfb7a",
+      "sourceSha256": "a9abeacbf6100a21485fa41bbe456922f1a638c31537c8e63ac4b44f4e1dfb7a",
+      "bbox": {
+        "left": 0.039319872476089264,
+        "top": 0.014354066985645933,
+        "right": 0.9139213602550478,
+        "bottom": 0.9730861244019139
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/a9abeacbf6100a21/ibrahima-ndiaye__turnaround__back__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/turnaround.back.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6807306947205711,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 800735,
+      "sha256": "35275ae2a069c4163ae9b38e606a1458514842e22dbf06354d76c5deb4e96c06",
+      "sourceSha256": "35275ae2a069c4163ae9b38e606a1458514842e22dbf06354d76c5deb4e96c06",
+      "bbox": {
+        "left": 0.061636556854410204,
+        "top": 0.008971291866028708,
+        "right": 0.9681190223166843,
+        "bottom": 0.972488038277512
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/35275ae2a069c416/ibrahima-ndiaye__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7157343048472307,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 706523,
+      "sha256": "678344b296df433dae31eeb1c5cf9d2a2d3fec5db324db710d32c8489f78f81a",
+      "sourceSha256": "678344b296df433dae31eeb1c5cf9d2a2d3fec5db324db710d32c8489f78f81a",
+      "bbox": {
+        "left": 0.11052072263549416,
+        "top": 0.05143540669856459,
+        "right": 0.944739638682253,
+        "bottom": 0.9712918660287081
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/678344b296df433d/ibrahima-ndiaye__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7365338462086043,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1335086,
+      "sha256": "e1f66c0ad481d2ccb34850f98d85f99993469c3e1c3e1952c365a1641f35ef91",
+      "sourceSha256": "e1f66c0ad481d2ccb34850f98d85f99993469c3e1c3e1952c365a1641f35ef91",
+      "bbox": {
+        "left": 0,
+        "top": 0.018341307814992026,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/e1f66c0ad481d2cc/ibrahima-ndiaye__face__front__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/face.front.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5493336792757594,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1741483,
+      "sha256": "7b6c8e5aa1f7ab8f4aa43aea1d2c296e2f07beb533e1e206b2dcd94c7e801d4d",
+      "sourceSha256": "7b6c8e5aa1f7ab8f4aa43aea1d2c296e2f07beb533e1e206b2dcd94c7e801d4d",
+      "bbox": {
+        "left": 0,
+        "top": 0.051834130781499205,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/7b6c8e5aa1f7ab8f/ibrahima-ndiaye__face__three-quarter__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/face.three-quarter.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49448463481452654,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2183798,
+      "sha256": "0fe603aa4547b34a3265314147d8419d00c1366d7798e30846bf70e28eed6625",
+      "sourceSha256": "0fe603aa4547b34a3265314147d8419d00c1366d7798e30846bf70e28eed6625",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/0fe603aa4547b34a/ibrahima-ndiaye__face__side__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/face.side.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3323324977500267,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1524138,
+      "sha256": "f07081b642e526a91f327e2c4e67be75c9988bd7900e871c6404b9b4752fba96",
+      "sourceSha256": "f07081b642e526a91f327e2c4e67be75c9988bd7900e871c6404b9b4752fba96",
+      "bbox": {
+        "left": 0,
+        "top": 0.0023923444976076554,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/f07081b642e526a9/ibrahima-ndiaye__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/face.three-quarter-left.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4633002144334302,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1472328,
+      "sha256": "4c37cedcc74f26f4c96291a0a02373adce2b2c9ad87d48b636574262017c8531",
+      "sourceSha256": "4c37cedcc74f26f4c96291a0a02373adce2b2c9ad87d48b636574262017c8531",
+      "bbox": {
+        "left": 0,
+        "top": 0.049441786283891544,
+        "right": 0.9904306220095693,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/4c37cedcc74f26f4/ibrahima-ndiaye__face__side-right__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/face.side-right.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5293758537274025,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1975142,
+      "sha256": "1778bf2d49d0afe0312385ed50a9aee4f7cc26183b0bbb3ca89396a8605c878e",
+      "sourceSha256": "1778bf2d49d0afe0312385ed50a9aee4f7cc26183b0bbb3ca89396a8605c878e",
+      "bbox": {
+        "left": 0,
+        "top": 0.08492822966507177,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/1778bf2d49d0afe0/ibrahima-ndiaye__face__up__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/face.up.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.40591679420752635,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1869776,
+      "sha256": "bf9913d44b247d15605a6ca6edb211358bd516361afd8ce4a22fae04be97a983",
+      "sourceSha256": "bf9913d44b247d15605a6ca6edb211358bd516361afd8ce4a22fae04be97a983",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 1,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/bf9913d44b247d15/ibrahima-ndiaye__face__down__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/face.down.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.42748920775516225,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2283409,
+      "sha256": "1a32d74981be19e117554810b1e122dbd93c10137b5d036208f5debd5fb8e952",
+      "sourceSha256": "1a32d74981be19e117554810b1e122dbd93c10137b5d036208f5debd5fb8e952",
+      "bbox": {
+        "left": 0,
+        "top": 0.05203349282296651,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/1a32d74981be19e1/ibrahima-ndiaye__expression__neutral__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.neutral.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3573637685654577,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2109139,
+      "sha256": "d7111421734343180ee9b02d3a7603b9adb6dcb287d971ba6206769857540dd5",
+      "sourceSha256": "d7111421734343180ee9b02d3a7603b9adb6dcb287d971ba6206769857540dd5",
+      "bbox": {
+        "left": 0,
+        "top": 0.05083732057416268,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/d711142173434318/ibrahima-ndiaye__expression__smile__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.smile.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3675858930487265,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2001144,
+      "sha256": "bc5374cae3168f0afcba1295c3fd0c688064a87c444a255cb106a1ea2f945fb3",
+      "sourceSha256": "bc5374cae3168f0afcba1295c3fd0c688064a87c444a255cb106a1ea2f945fb3",
+      "bbox": {
+        "left": 0,
+        "top": 0.06758373205741627,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/bc5374cae3168f0a/ibrahima-ndiaye__expression__laugh__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.laugh.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.37836415500155085,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2001720,
+      "sha256": "6499cbf10073e3dc150b5194d4a865671e3cf70ee42605233857dbd6171e6b27",
+      "sourceSha256": "6499cbf10073e3dc150b5194d4a865671e3cf70ee42605233857dbd6171e6b27",
+      "bbox": {
+        "left": 0,
+        "top": 0.09389952153110048,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/6499cbf10073e3dc/ibrahima-ndiaye__expression__sad__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.sad.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.37650760923175486,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2123572,
+      "sha256": "5852ff0bcd28cf8fe5c2151bb8e5ac262a8c80d1e52728628891b07092ad5226",
+      "sourceSha256": "5852ff0bcd28cf8fe5c2151bb8e5ac262a8c80d1e52728628891b07092ad5226",
+      "bbox": {
+        "left": 0,
+        "top": 0.0215311004784689,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/5852ff0bcd28cf8f/ibrahima-ndiaye__expression__cry__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.cry.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34625945115905404,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2245109,
+      "sha256": "2be1b2392066060f5fd5d3abab5e80eaf570f3c50df28e9ffc4c7ebb361f1c48",
+      "sourceSha256": "2be1b2392066060f5fd5d3abab5e80eaf570f3c50df28e9ffc4c7ebb361f1c48",
+      "bbox": {
+        "left": 0,
+        "top": 0.06339712918660287,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/2be1b2392066060f/ibrahima-ndiaye__expression__annoyed__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.annoyed.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34431265222277024,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1509092,
+      "sha256": "e5b238bb6517e53c92af76addc4c8d2d235bcfd691364bfa37d7b53914629940",
+      "sourceSha256": "e5b238bb6517e53c92af76addc4c8d2d235bcfd691364bfa37d7b53914629940",
+      "bbox": {
+        "left": 0,
+        "top": 0.044657097288676235,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/e5b238bb6517e53c/ibrahima-ndiaye__expression__angry__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.angry.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4875206357200817,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2016910,
+      "sha256": "de962f7d0abf1a8f453fa117670eced845dd54a50b699a6c099f19c0fcd2d0e9",
+      "sourceSha256": "de962f7d0abf1a8f453fa117670eced845dd54a50b699a6c099f19c0fcd2d0e9",
+      "bbox": {
+        "left": 0,
+        "top": 0.017344497607655503,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/de962f7d0abf1a8f/ibrahima-ndiaye__expression__surprised__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.surprised.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3807634909416329,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2023891,
+      "sha256": "2191a161d97f0120fb2f657acf672a13882358f383f8e6198002d571ad954621",
+      "sourceSha256": "2191a161d97f0120fb2f657acf672a13882358f383f8e6198002d571ad954621",
+      "bbox": {
+        "left": 0,
+        "top": 0.08253588516746412,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/2191a161d97f0120/ibrahima-ndiaye__expression__scared__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.scared.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.36761767233270115,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1936949,
+      "sha256": "d96033b8f59fb41c2b7e4fed3b7994f5d6438eeb9b511befee27d5b2800733ed",
+      "sourceSha256": "d96033b8f59fb41c2b7e4fed3b7994f5d6438eeb9b511befee27d5b2800733ed",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/d96033b8f59fb41c/ibrahima-ndiaye__expression__disgusted__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.disgusted.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3787366082097331,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2037887,
+      "sha256": "9c5da2214b68f7e0cf86462a1ce7bab545a7e899dfd80e0c4e605dfcba167ebc",
+      "sourceSha256": "9c5da2214b68f7e0cf86462a1ce7bab545a7e899dfd80e0c4e605dfcba167ebc",
+      "bbox": {
+        "left": 0,
+        "top": 0.09090909090909091,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/9c5da2214b68f7e0/ibrahima-ndiaye__expression__embarrassed__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.embarrassed.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3959285652543105,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1840077,
+      "sha256": "978a5c78c22ec0298da84f499e29d56eb28f0e2373ed8af66cadc0ec7ffb5612",
+      "sourceSha256": "978a5c78c22ec0298da84f499e29d56eb28f0e2373ed8af66cadc0ec7ffb5612",
       "bbox": {
         "left": 0,
         "top": 0,
@@ -22,11 +763,884 @@
         "bottom": 1
       },
       "format": "png",
-      "object": "ibrahima-ndiaye/CC-070.png",
-      "preview": "/media/assets/ibrahima-ndiaye/turnaround.front.webp",
-      "large": "/media/assets/ibrahima-ndiaye/turnaround.front.large.webp",
-      "thumb": "/media/assets/ibrahima-ndiaye/turnaround.front.thumb.webp",
-      "blur": "data:image/webp;base64,UklGRoIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSMUAAAABgGLb2rLlPO+POzQnuVf3BANwS9phAJCc6s4E3Inu0NwhsWhuT3j/QUTEBIDA1AiCbYj9vPPEqeB47MNhCYFt/+d1fggCa/rzo+04EAJe9OdLVwAh8OpB/x+XxYraXVKd3g1CDIWHG6rrJykYQ1rfpepxbzJiSO15Vr1zlnT0c3H2d5yIAbdanZrUegMI7p/NTRqGWN5vZRkaj7GCtCRSi3BYwVriqjW4WCFaxmuLM/eHck5bLUPefxHr84hVXOdK1nAQAgBWUDgglgAAADAEAJ0BKgwAFQA/AWisTqslpCIwCAFgIAlsALsBi+DtClo8S4J75b6kgAD+n3fgxQGaZxzoM61fttBV8o1mMf5SpXh7R+WU89rkxSGhRPmnhQJiTIyIUuP/RwFyejQs/wBXjtn0QB/0xjuAqrq8kwvTppI92pS/oqd26DfhPL/9xOf7RXbFe1pQf1t8dez//pdBewAAAA=="
+      "object": "ibrahima-ndiaye/978a5c78c22ec029/ibrahima-ndiaye__expression__tired__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.tired.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3859981745979285,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1681500,
+      "sha256": "5923e3acd19edd01e77e0a63432f434bcc90fd391fba6d7ff0673a282d6d2572",
+      "sourceSha256": "5923e3acd19edd01e77e0a63432f434bcc90fd391fba6d7ff0673a282d6d2572",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/5923e3acd19edd01/ibrahima-ndiaye__expression__speaking__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.speaking.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3874504878755676,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2058623,
+      "sha256": "72f814617449ca1fff2e15b8e58d7805f63aad000ce9b55868e7c5bc26ce0eeb",
+      "sourceSha256": "72f814617449ca1fff2e15b8e58d7805f63aad000ce9b55868e7c5bc26ce0eeb",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/72f814617449ca1f/ibrahima-ndiaye__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.eyes-closed.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3914241695437512,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1891505,
+      "sha256": "5158f4ecc5af0da06db1df472c4d5c03c23d99da675060af2ba10078b3c333df",
+      "sourceSha256": "5158f4ecc5af0da06db1df472c4d5c03c23d99da675060af2ba10078b3c333df",
+      "bbox": {
+        "left": 0,
+        "top": 0.038875598086124404,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/5158f4ecc5af0da0/ibrahima-ndiaye__expression__worried__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.worried.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.40655428664405674,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2046711,
+      "sha256": "6c413457aeb92723e954b1f2690cfa2e95df9e6cfbbab17d0471ca9953eeb188",
+      "sourceSha256": "6c413457aeb92723e954b1f2690cfa2e95df9e6cfbbab17d0471ca9953eeb188",
+      "bbox": {
+        "left": 0,
+        "top": 0.049641148325358854,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/6c413457aeb92723/ibrahima-ndiaye__expression__skeptical__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.skeptical.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3883962393666516,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 940,
+      "height": 1672,
+      "bytes": 1404286,
+      "sha256": "a0cdb49893d2a6fdbd224a0a47cda70027eb1ca48af358bc154622f316df50f9",
+      "sourceSha256": "a0cdb49893d2a6fdbd224a0a47cda70027eb1ca48af358bc154622f316df50f9",
+      "bbox": {
+        "left": 0,
+        "top": 0.020933014354066987,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/a0cdb49893d2a6fd/ibrahima-ndiaye__expression__smug__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.smug.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.522743815534969,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2037657,
+      "sha256": "a1153db7c6a91f2e39dd808530fc4b6dcaec7a2429f1c5728f5beb0066ffbfe8",
+      "sourceSha256": "a1153db7c6a91f2e39dd808530fc4b6dcaec7a2429f1c5728f5beb0066ffbfe8",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/a1153db7c6a91f2e/ibrahima-ndiaye__expression__contempt__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.contempt.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3706170011542236,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2222162,
+      "sha256": "afdc04a7f77758ef91730557b7a3b437803eb720c4d575fb474eed5323301d17",
+      "sourceSha256": "afdc04a7f77758ef91730557b7a3b437803eb720c4d575fb474eed5323301d17",
+      "bbox": {
+        "left": 0,
+        "top": 0.061004784688995214,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/afdc04a7f77758ef/ibrahima-ndiaye__expression__confused__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.confused.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3797459182687663,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2067876,
+      "sha256": "750566ac9eddd507a2f037c5119e35feb5bd8a47d1b51d5a0c3c27de27d0d41c",
+      "sourceSha256": "750566ac9eddd507a2f037c5119e35feb5bd8a47d1b51d5a0c3c27de27d0d41c",
+      "bbox": {
+        "left": 0,
+        "top": 0.019736842105263157,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/750566ac9eddd507/ibrahima-ndiaye__expression__thinking__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.thinking.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3797236727699841,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2090527,
+      "sha256": "cf9c7c039ebe227ead77a045945d07f4065c2bb68280b1638b5d01b5fa4cb3eb",
+      "sourceSha256": "cf9c7c039ebe227ead77a045945d07f4065c2bb68280b1638b5d01b5fa4cb3eb",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/cf9c7c039ebe227e/ibrahima-ndiaye__expression__determined__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.determined.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.33259944373541334,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2088603,
+      "sha256": "be0b83b0348bd2e0570d19d2ac8ecdff3b24f5538c56610564f5770297e979a9",
+      "sourceSha256": "be0b83b0348bd2e0570d19d2ac8ecdff3b24f5538c56610564f5770297e979a9",
+      "bbox": {
+        "left": 0,
+        "top": 0.09988038277511961,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/be0b83b0348bd2e0/ibrahima-ndiaye__expression__shy__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.shy.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3705299259161332,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2203687,
+      "sha256": "bae91e5ebd7704e785e6b5e63138814eaeb4ac121c54f9f1007ae24f2673598b",
+      "sourceSha256": "bae91e5ebd7704e785e6b5e63138814eaeb4ac121c54f9f1007ae24f2673598b",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/bae91e5ebd7704e7/ibrahima-ndiaye__expression__pain__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.pain.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3502795305818406,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1999793,
+      "sha256": "8ba40357615c8f1c0357829f0052b45b4582d901849583aa622f325246225dbc",
+      "sourceSha256": "8ba40357615c8f1c0357829f0052b45b4582d901849583aa622f325246225dbc",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/8ba40357615c8f1c/ibrahima-ndiaye__expression__sleepy__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.sleepy.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3795558781505982,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2176808,
+      "sha256": "22d7d1d8a8fb872abdd8f0c747b5655dedcc8c53086b3cabf2268c3c2c0656f5",
+      "sourceSha256": "22d7d1d8a8fb872abdd8f0c747b5655dedcc8c53086b3cabf2268c3c2c0656f5",
+      "bbox": {
+        "left": 0,
+        "top": 0.06160287081339713,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/22d7d1d8a8fb872a/ibrahima-ndiaye__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.awkward-smile.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.35056554413761193,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2083738,
+      "sha256": "73286d0b5ce1f33c5a8464b2d5d2043a11354a3ddf708fb2e9e29a334df76de4",
+      "sourceSha256": "73286d0b5ce1f33c5a8464b2d5d2043a11354a3ddf708fb2e9e29a334df76de4",
+      "bbox": {
+        "left": 0,
+        "top": 0.08433014354066985,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/73286d0b5ce1f33c/ibrahima-ndiaye__expression__deadpan__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/expression.deadpan.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3703011150715161,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 775840,
+      "sha256": "eeba2b4a274660e08188dc62f853fbee2d1cff3b7eeb829b6b499d553c28eaff",
+      "sourceSha256": "eeba2b4a274660e08188dc62f853fbee2d1cff3b7eeb829b6b499d553c28eaff",
+      "bbox": {
+        "left": 0.11902231668437832,
+        "top": 0.05801435406698564,
+        "right": 0.8575982996811902,
+        "bottom": 0.9623205741626795
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/eeba2b4a274660e0/ibrahima-ndiaye__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7050818888589457,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 745548,
+      "sha256": "14904356d327e6b3f2cfcaf52dc5c2a0536131ac9c30bafc3e486c9935ae5af4",
+      "sourceSha256": "14904356d327e6b3f2cfcaf52dc5c2a0536131ac9c30bafc3e486c9935ae5af4",
+      "bbox": {
+        "left": 0.12114771519659936,
+        "top": 0.0430622009569378,
+        "right": 0.8405951115834219,
+        "bottom": 0.9665071770334929
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/14904356d327e6b3/ibrahima-ndiaye__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7119176128418815,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 547887,
+      "sha256": "bd71010e0541ffea634df0ee20d6d73ce76a6b3fbc76cde2152d241bec5d2657",
+      "sourceSha256": "bd71010e0541ffea634df0ee20d6d73ce76a6b3fbc76cde2152d241bec5d2657",
+      "bbox": {
+        "left": 0.061636556854410204,
+        "top": 0.028110047846889953,
+        "right": 0.9394261424017003,
+        "bottom": 0.9533492822966507
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/bd71010e0541ffea/ibrahima-ndiaye__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8128282800034576,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 811414,
+      "sha256": "1ad28ae477163df5dfbf8436516b011fda9d2836913a9ee25c9fe1d38caf234d",
+      "sourceSha256": "1ad28ae477163df5dfbf8436516b011fda9d2836913a9ee25c9fe1d38caf234d",
+      "bbox": {
+        "left": 0.0871413390010627,
+        "top": 0.031698564593301434,
+        "right": 0.9798087141339001,
+        "bottom": 0.9868421052631579
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/1ad28ae477163df5/ibrahima-ndiaye__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.695874159120146,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.actor-extra-1",
+      "series": "wardrobe",
+      "key": "actor-extra-1",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 780216,
+      "sha256": "30d405bf2da2322d2c2e7c44a2520b7cb6fef23008f102d0068683bc7ea68fd1",
+      "sourceSha256": "30d405bf2da2322d2c2e7c44a2520b7cb6fef23008f102d0068683bc7ea68fd1",
+      "bbox": {
+        "left": 0.07013815090329437,
+        "top": 0.06279904306220095,
+        "right": 0.9054197662061636,
+        "bottom": 0.9539473684210527
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/30d405bf2da2322d/ibrahima-ndiaye__wardrobe-personal__actor-extra-1__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/wardrobe.personal.actor-extra-1.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/wardrobe.personal.actor-extra-1.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7080360910972243,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.actor-extra-2",
+      "series": "wardrobe",
+      "key": "actor-extra-2",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 817799,
+      "sha256": "14d97ae58df4cea1b87b954b002b72c71fd6bf5299493fffbd93ba5187a49af1",
+      "sourceSha256": "14d97ae58df4cea1b87b954b002b72c71fd6bf5299493fffbd93ba5187a49af1",
+      "bbox": {
+        "left": 0.04357066950053135,
+        "top": 0.019138755980861243,
+        "right": 0.9851222104144527,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/14d97ae58df4cea1/ibrahima-ndiaye__wardrobe-personal__actor-extra-2__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/wardrobe.personal.actor-extra-2.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/wardrobe.personal.actor-extra-2.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7187882940371894,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.actor-extra-3",
+      "series": "wardrobe",
+      "key": "actor-extra-3",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 793265,
+      "sha256": "d6aeec05679702faa8c130acd7b3d40ae22f61e466f0785617a8d8862f36d480",
+      "sourceSha256": "d6aeec05679702faa8c130acd7b3d40ae22f61e466f0785617a8d8862f36d480",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.028110047846889953,
+        "right": 0.9702444208289054,
+        "bottom": 0.9665071770334929
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/d6aeec05679702fa/ibrahima-ndiaye__wardrobe-personal__actor-extra-3__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/wardrobe.personal.actor-extra-3.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/wardrobe.personal.actor-extra-3.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7225674864874485,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1906572,
+      "sha256": "1ec15c221665edd3205554b4739c7ea2cf1e8293dcfa5841c7b31ad4d08677ac",
+      "sourceSha256": "1ec15c221665edd3205554b4739c7ea2cf1e8293dcfa5841c7b31ad4d08677ac",
+      "bbox": {
+        "left": 0,
+        "top": 0.0029904306220095694,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/1ec15c221665edd3/ibrahima-ndiaye__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3838606999577971,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 789881,
+      "sha256": "7388ddab7b83d88e8ff82ca33116ff15f0f6cda1b785cbeaa430b1addd8618ce",
+      "sourceSha256": "7388ddab7b83d88e8ff82ca33116ff15f0f6cda1b785cbeaa430b1addd8618ce",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.011961722488038277,
+        "right": 0.8724760892667375,
+        "bottom": 0.9617224880382775
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/7388ddab7b83d88e/ibrahima-ndiaye__pose__walk__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/pose.walk.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7239670461536897,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 768054,
+      "sha256": "7fd0e112dafd19a27f14a3ddd5954527080de17d6a3441a83fa0b2049ad7fb43",
+      "sourceSha256": "7fd0e112dafd19a27f14a3ddd5954527080de17d6a3441a83fa0b2049ad7fb43",
+      "bbox": {
+        "left": 0,
+        "top": 0.008373205741626795,
+        "right": 0.9766206163655685,
+        "bottom": 0.9623205741626795
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/7fd0e112dafd19a2/ibrahima-ndiaye__pose__run__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/pose.run.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7442822712272905,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1129783,
+      "sha256": "89429bb675b2043e93dc2811781e45aeec931bd0bfa2c4c3819e37dbfd435743",
+      "sourceSha256": "89429bb675b2043e93dc2811781e45aeec931bd0bfa2c4c3819e37dbfd435743",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.04126794258373206,
+        "right": 0.9351753453772582,
+        "bottom": 0.9617224880382775
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/89429bb675b2043e/ibrahima-ndiaye__pose__sit__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/pose.sit.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6124592589579446,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 813776,
+      "sha256": "be457b4879f03abc828eda5e0644b8de3c14a68f42cd3de3ee831ca705d3e6b0",
+      "sourceSha256": "be457b4879f03abc828eda5e0644b8de3c14a68f42cd3de3ee831ca705d3e6b0",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.008373205741626795,
+        "right": 0.9851222104144527,
+        "bottom": 0.9844497607655502
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/be457b4879f03abc/ibrahima-ndiaye__pose__point__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/pose.point.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7063765768880709,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 784945,
+      "sha256": "3f5981b5a11c61a01137f8590f9b71f26292ffaff380b2f5f429c92b866eb552",
+      "sourceSha256": "3f5981b5a11c61a01137f8590f9b71f26292ffaff380b2f5f429c92b866eb552",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.009569377990430622,
+        "right": 0.9798087141339001,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/3f5981b5a11c61a0/ibrahima-ndiaye__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/pose.arms-crossed.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7188308782777153,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 767522,
+      "sha256": "ec9362bbff80dae1cca1382981a787fa8e509faecd3afa0157e92ab06638fe22",
+      "sourceSha256": "ec9362bbff80dae1cca1382981a787fa8e509faecd3afa0157e92ab06638fe22",
+      "bbox": {
+        "left": 0.061636556854410204,
+        "top": 0.046052631578947366,
+        "right": 0.9394261424017003,
+        "bottom": 0.944377990430622
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/ec9362bbff80dae1/ibrahima-ndiaye__pose__phone__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/pose.phone.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7260867243947953,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1965866,
+      "sha256": "96ce79ef49477e3a7a127675fb313676f315fe9ce6d3510660518222e869cf0b",
+      "sourceSha256": "96ce79ef49477e3a7a127675fb313676f315fe9ce6d3510660518222e869cf0b",
+      "bbox": {
+        "left": 0.01381509032943677,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/96ce79ef49477e3a/ibrahima-ndiaye__detail__hands__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/detail.hands.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3478706608565661,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2397649,
+      "sha256": "e7a8bc8cb6e74ef29bb980d877b9f081242674df3f99b1dcb4eca10cf48bca56",
+      "sourceSha256": "e7a8bc8cb6e74ef29bb980d877b9f081242674df3f99b1dcb4eca10cf48bca56",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "ibrahima-ndiaye/e7a8bc8cb6e74ef2/ibrahima-ndiaye__detail__hair-back__v1.png",
+      "preview": "/media/assets/ibrahima-ndiaye/detail.hair-back.webp",
+      "thumb": "/media/assets/ibrahima-ndiaye/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3371940926124605,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
     },
     {
       "kind": "voice",
@@ -34,28 +1648,155 @@
       "series": "voice",
       "key": "intro",
       "look": null,
-      "conformance": "v1",
+      "conformance": "source-original",
       "version": 1,
       "width": 0,
       "height": 0,
-      "bytes": 400740,
-      "sha256": "bd77f8b8b2cdf4251f7b2ba44d29daed25671b4cd826dbf35e28028cb76523ac",
-      "sourceSha256": "bd77f8b8b2cdf4251f7b2ba44d29daed25671b4cd826dbf35e28028cb76523ac",
+      "bytes": 1700574,
+      "sha256": "02fc5930fb61e18e9e6583957c537536e3a0c726756e5c1198caa6ad02c00089",
+      "sourceSha256": "02fc5930fb61e18e9e6583957c537536e3a0c726756e5c1198caa6ad02c00089",
       "bbox": {
         "left": 0,
         "top": 0,
         "right": 0,
         "bottom": 0
       },
-      "format": "mp3",
-      "object": "voice/ibrahima-ndiaye/candidate-1.mp3",
+      "format": "wav",
+      "object": "voice/ibrahima-ndiaye/ibrahima-ndiaye__voice__intro__v1__02fc5930fb61e18e.wav",
       "preview": "/api/voice/ibrahima-ndiaye/intro",
       "thumb": "/api/voice/ibrahima-ndiaye/intro",
       "previewUrl": "/api/voice/ibrahima-ndiaye/intro",
-      "durationSec": 33.2,
-      "transcript": {
-        "text": "Good evening. I am Ibrahima Ndiaye, forty-five, from Dakar, Senegal. I was a jazz saxophonist in Paris for fifteen years before I came home. I like good suits and quiet rooms. I would be a fine diplomat, a mysterious stranger, or a man who walks in and changes everything."
-      }
+      "durationSec": 19.3
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1467726,
+      "sha256": "a9ec84ba931e9638452588bd867dc41f3dfb4380a5ebda80de0067f0b386ee49",
+      "sourceSha256": "a9ec84ba931e9638452588bd867dc41f3dfb4380a5ebda80de0067f0b386ee49",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/ibrahima-ndiaye/ibrahima-ndiaye__voice__intro-alt__v1__a9ec84ba931e9638.wav",
+      "preview": "/api/voice/ibrahima-ndiaye/intro-alt",
+      "thumb": "/api/voice/ibrahima-ndiaye/intro-alt",
+      "previewUrl": "/api/voice/ibrahima-ndiaye/intro-alt",
+      "durationSec": 16.6
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1160790,
+      "sha256": "d5ed475a85942156983a1fb943f2a850e6d301b30c15d8ed76bd687ce143d490",
+      "sourceSha256": "d5ed475a85942156983a1fb943f2a850e6d301b30c15d8ed76bd687ce143d490",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/ibrahima-ndiaye/ibrahima-ndiaye__voice__chat__v1__d5ed475a85942156.wav",
+      "preview": "/api/voice/ibrahima-ndiaye/chat",
+      "thumb": "/api/voice/ibrahima-ndiaye/chat",
+      "previewUrl": "/api/voice/ibrahima-ndiaye/chat",
+      "durationSec": 13.2
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1002030,
+      "sha256": "a2dabaa21e157622681fdbf67d40ca930dd3a11d2d4b81ae4c9b255637abbad0",
+      "sourceSha256": "a2dabaa21e157622681fdbf67d40ca930dd3a11d2d4b81ae4c9b255637abbad0",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/ibrahima-ndiaye/ibrahima-ndiaye__voice__happy__v1__a2dabaa21e157622.wav",
+      "preview": "/api/voice/ibrahima-ndiaye/happy",
+      "thumb": "/api/voice/ibrahima-ndiaye/happy",
+      "previewUrl": "/api/voice/ibrahima-ndiaye/happy",
+      "durationSec": 11.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 917358,
+      "sha256": "69fb35e0f676d2049ac14ee4512601870b14f15e70d8de7579e304acf82a686e",
+      "sourceSha256": "69fb35e0f676d2049ac14ee4512601870b14f15e70d8de7579e304acf82a686e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/ibrahima-ndiaye/ibrahima-ndiaye__voice__angry__v1__69fb35e0f676d204.wav",
+      "preview": "/api/voice/ibrahima-ndiaye/angry",
+      "thumb": "/api/voice/ibrahima-ndiaye/angry",
+      "previewUrl": "/api/voice/ibrahima-ndiaye/angry",
+      "durationSec": 10.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1100814,
+      "sha256": "1158ec9c7edc4481e96dfd92d531199bf1ef2df24640a721832f8fa2be60a3ec",
+      "sourceSha256": "1158ec9c7edc4481e96dfd92d531199bf1ef2df24640a721832f8fa2be60a3ec",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/ibrahima-ndiaye/ibrahima-ndiaye__voice__sad__v1__1158ec9c7edc4481.wav",
+      "preview": "/api/voice/ibrahima-ndiaye/sad",
+      "thumb": "/api/voice/ibrahima-ndiaye/sad",
+      "previewUrl": "/api/voice/ibrahima-ndiaye/sad",
+      "durationSec": 12.5
     }
   ]
 }

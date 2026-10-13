@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/annika-brandt/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "demographics": {
@@ -49,10 +49,10 @@
       "bottomMargin": "0.04–0.10"
     }
   },
-  "anchorVersion": 1,
+  "anchorVersion": 2,
   "anchors": {
     "face": "library/claude-casting-2026-10-07/final/CC-063.png",
-    "body": null
+    "body": "library/staging/annika-brandt/annika-brandt__body-anchor__v1.png"
   },
   "looks": [
     {
@@ -63,17 +63,619 @@
         "en": "Casting basics"
       },
       "prompt": "light-blue plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied annika-brandt personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "extra-1",
+          "label": {
+            "en": "Extra 1",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / extra-1 reference image."
+        },
+        {
+          "key": "extra-2",
+          "label": {
+            "en": "Extra 2",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / extra-2 reference image."
+        },
+        {
+          "key": "extra-3",
+          "label": {
+            "en": "Extra 3",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / extra-3 reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        }
+      ]
     }
   ],
   "roles": [],
   "proposals": {
     "approval": "owner-confirmed-facts-provisional-identity",
-    "appearance": "Provisional until Owner selects a proportion-corrected audition image",
-    "phase": "audition-pending-owner"
+    "appearance": "supervisor-selected-provisional-body-anchor-from-Pics-A-recovery; v3 measurement review ratio 7.215 (range 6.745–7.762), frame pass 0.904 occupancy / 4.9% top / 4.7% bottom; 55 PNG full-pack staged 2026-10-11; voice/video pending capability",
+    "phase": "full-pack-images-complete-voice-video-waiting-capability"
   },
   "routes": {
     "chatgpt-web": {
-      "chat": null
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00-pics-a/c/6ac99dc8-215c-83ea-b836-c7d79bc46f98"
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-annika-replacement-15-20261010/full-pack/qa/current-55-slot-selection-20261013.json",
+      "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json"
+    ],
+    "images": [
+      {
+        "slot": "detail.hair-back",
+        "source": "annika-brandt/annika-brandt__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/detail-hair-back.png",
+        "sha256": "cbf62e78e01d6ee224f3f71b9dc2ef74bdbd2843c36494e804285d4262ff1283",
+        "bytes": 2414077,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "annika-brandt/annika-brandt__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/detail-hands.png",
+        "sha256": "00628e473256f6bff5ce86f2250720f951f1f65719fd26c682256888e343f340",
+        "bytes": 1153439,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "annika-brandt/annika-brandt__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-angry.png",
+        "sha256": "6e724555d69fc43df768ecdf44253b75cab191061591db1ee42c2c26e83f53de",
+        "bytes": 2112581,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "annika-brandt/annika-brandt__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-annoyed.png",
+        "sha256": "103860686647fad7ae112a8a5502e9fd61f2ec08e01af854582da20e9171ba18",
+        "bytes": 1997126,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "annika-brandt/annika-brandt__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-awkward-smile.png",
+        "sha256": "9c8b4defed3a2359ef092c25d625510fb5cad46d800842bb4aa7c50083aeb312",
+        "bytes": 2002765,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "annika-brandt/annika-brandt__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-confused.png",
+        "sha256": "699308b024bfa7752a17eae5ab8ee7f54718492fd6ffcebca56fe2463fc8c584",
+        "bytes": 2039336,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "annika-brandt/annika-brandt__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-contempt.png",
+        "sha256": "972ed3f9fec9d990723d178b3db9174553f22997322df2ebeab5a60d1c3056df",
+        "bytes": 1921881,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "annika-brandt/annika-brandt__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-cry.png",
+        "sha256": "226fe4f31220ae62d8674577ef5a19696f9dff7ba16f33459334c74fb65151df",
+        "bytes": 2065848,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "annika-brandt/annika-brandt__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-deadpan.png",
+        "sha256": "1586bd95ccc84c9dcbb86a1a5c370da678a93f9546303d9fc8dd63a27f115fa6",
+        "bytes": 2082750,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "annika-brandt/annika-brandt__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-determined.png",
+        "sha256": "096be9ce13d174291b3ba0e4dea87bddf3b97fb34d6147d69c625200ea3ff168",
+        "bytes": 2058557,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "annika-brandt/annika-brandt__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-disgusted.png",
+        "sha256": "0bd94f5f53435bd3d693c10fcfb48180c0ca69d7dbf0e92c2db0e7396df160aa",
+        "bytes": 1900731,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "annika-brandt/annika-brandt__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-embarrassed.png",
+        "sha256": "0e2e80e838f6648699a7cf2790fe5fe2b275f1f9c322fc0ea20cc699d58c6303",
+        "bytes": 1945795,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "annika-brandt/annika-brandt__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-eyes-closed.png",
+        "sha256": "69198007257efb4ec6812f137ed5b27218d082e040c6657bbebdec6d2699b968",
+        "bytes": 2071127,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "annika-brandt/annika-brandt__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-laugh.png",
+        "sha256": "1a84582c2696f85cf222c156ae37a9cbdec08315e4b3d85d9f193036a2192e95",
+        "bytes": 2115711,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "annika-brandt/annika-brandt__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__expression__neutral__v2.png",
+        "sha256": "b027bfa68dd1a03725feb7f02f4567de337cf7f78d1abef961c33dea11bc8e1f",
+        "bytes": 1712970,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "annika-brandt/annika-brandt__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-pain.png",
+        "sha256": "d7f53477ff564d07304358f14683b42e55279082634bf505b45c5b15ae9bf2fd",
+        "bytes": 2010188,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "annika-brandt/annika-brandt__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-sad.png",
+        "sha256": "911c91422b726d1cfa4f853c84d4015056b5a2994f02b4b5f2bd7184d6c46a01",
+        "bytes": 2286290,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "annika-brandt/annika-brandt__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-scared.png",
+        "sha256": "8c37c3741c0e9d20172a37cd1399899723bb1e36aa8a1253bc3beed9e147521b",
+        "bytes": 1982769,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "annika-brandt/annika-brandt__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-shy.png",
+        "sha256": "8c17e3e2cfa797a63d17c3a81a8e810c901acad911718e1709ee2f766f178391",
+        "bytes": 2026118,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "annika-brandt/annika-brandt__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-skeptical.png",
+        "sha256": "b5712658174e56c9d138c91294301d856a0b0b325416cd702e3dbe59301fe402",
+        "bytes": 2018998,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "annika-brandt/annika-brandt__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-sleepy.png",
+        "sha256": "d6b1b1815ae51ffbbb6daf3e7d220d49a5e589832ca156fd298f3076968ec28f",
+        "bytes": 1979937,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "annika-brandt/annika-brandt__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-smile.png",
+        "sha256": "55b7c1ab1dffc9864248528b2aaad770af08441805c34130147b34551e1d5616",
+        "bytes": 2050186,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "annika-brandt/annika-brandt__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-smug.png",
+        "sha256": "c9a58d95e35ba4aa62bfba1910f9cbe89ef473d88e661bc7c1e461f38e049012",
+        "bytes": 2008402,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "annika-brandt/annika-brandt__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-speaking.png",
+        "sha256": "21dd079b110fb1182df7633623a19b188a5f880c3971aa159b2115a8910610cf",
+        "bytes": 2158246,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "annika-brandt/annika-brandt__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-surprised.png",
+        "sha256": "b231f271966f1a4a34142517890d9cf3f8d9c73625ef1ceab8f580fe09a44ff5",
+        "bytes": 1888294,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "annika-brandt/annika-brandt__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-thinking.png",
+        "sha256": "2472999b925390d68e0a4f98e7d2efc431f3d78abbf3f58a62beb4183c1fa9a7",
+        "bytes": 1974022,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "annika-brandt/annika-brandt__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-tired.png",
+        "sha256": "c5deaf273b9c0c6706ae4ce39a66dcaaaae975991504239b32aa8cee69c1eabd",
+        "bytes": 2064614,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "annika-brandt/annika-brandt__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/expression-worried.png",
+        "sha256": "1c0ebe69a7ab4ea6ed45b098e970353bed98d6015324996118652e8bccc2b5c3",
+        "bytes": 1953228,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "annika-brandt/annika-brandt__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/face-down.png",
+        "sha256": "4f6e11e9bbe4fc42f8dd1979543ea2e59cbc9a76032ac977219fdfdd86a3ebc8",
+        "bytes": 1871176,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "annika-brandt/annika-brandt__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/face-front.png",
+        "sha256": "f74578f70e45f86f2121aee8922033b37fb6053fcbfae26f82cf65f494413f92",
+        "bytes": 1845162,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "annika-brandt/annika-brandt__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/face-side.png",
+        "sha256": "6e2ad31e8e62aa5e1718e678f4f8eb34982cba317b62ccc9c6228cba1edea82b",
+        "bytes": 2030761,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "annika-brandt/annika-brandt__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/face-side-right.png",
+        "sha256": "2542eddb4466958e76dc8f8dedb2f9da717e247b8e9b03061cb8ff7986136f40",
+        "bytes": 1950604,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "annika-brandt/annika-brandt__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__face__three-quarter__v2.png",
+        "sha256": "f33cf4e170b79ba5914e509979e048b76845a31c4e81cebb80f518da3c27f36d",
+        "bytes": 2001671,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "annika-brandt/annika-brandt__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__face__three-quarter-left__v2.png",
+        "sha256": "96cb5df79b9bc2e76589299c5301b7721549205d17ef954fe5c9de6bfb284c3b",
+        "bytes": 1987714,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "annika-brandt/annika-brandt__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/face-up.png",
+        "sha256": "c36a4f417eb208db86cc8d2a93e14c78d855b5eb6e17b421835d9b35c23db244",
+        "bytes": 2000528,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "annika-brandt/annika-brandt__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/pose-arms-crossed.png",
+        "sha256": "35b04a057bb836b9e298c68417ff73e035671be70c1fab03d113b729377eede6",
+        "bytes": 749665,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "annika-brandt/annika-brandt__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__pose__phone__v2.png",
+        "sha256": "8807c29b382fccf64ecc2cc957787d7be6057b30a7174e0b4716ca93d0a0eec0",
+        "bytes": 675374,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "annika-brandt/annika-brandt__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/pose-point.png",
+        "sha256": "3a4b65218ee8b93374edbb233f233dfd778acb8c31eecfc9c832c5785115d849",
+        "bytes": 860884,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "annika-brandt/annika-brandt__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__pose__run__v2.png",
+        "sha256": "b51ecc477f2975cf55487f267e50650d2db974e6e185e8a0d64df7cb3df760b9",
+        "bytes": 860061,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "annika-brandt/annika-brandt__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__pose__sit__v2.png",
+        "sha256": "a78cbf5a0adfae1f2312e10154b412d7266e7310b305724df425653b02725d0d",
+        "bytes": 1054086,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "annika-brandt/annika-brandt__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__pose__walk__v2.png",
+        "sha256": "9dd3b32ba0dfe6db34cf1eb8dcbbd933caaa41c48c07af69c5d07281678fb419",
+        "bytes": 812114,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "annika-brandt/annika-brandt__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/turnaround-back.png",
+        "sha256": "da6cc8b9299163657a3184c9d9de6722fa7f03d8837093fb2846df932ec272fb",
+        "bytes": 852910,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "annika-brandt/annika-brandt__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__turnaround__back-three-quarter-left__v2.png",
+        "sha256": "321b9c95f6fd3713ca9fa17cba1d9e86fd52b7c41b294d292e59f4177539c905",
+        "bytes": 834217,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "annika-brandt/annika-brandt__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__turnaround__back-three-quarter-right__v2.png",
+        "sha256": "f94fe0daf46df8d7c20fb29e6051d6244451b1b91be20bfb11283acd11ee4406",
+        "bytes": 875965,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.front",
+        "source": "annika-brandt/annika-brandt__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/turnaround-front.png",
+        "sha256": "7cce034e8335dfe3da20b81a64b60825bb22974e93f3e78ce61036ff2d7a87a1",
+        "bytes": 840744,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "annika-brandt/annika-brandt__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/turnaround-side.png",
+        "sha256": "d9b9c45c752dacbbc98528a652a00c1c434ee81071844f9b4e7889762cf21b7c",
+        "bytes": 532585,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "annika-brandt/annika-brandt__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__turnaround__three-quarter__v2.png",
+        "sha256": "035bbc8f32dc87a7d467eb22a7920db9e28a7a0421ad4196f61c1c8d2f7dea3b",
+        "bytes": 836228,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "annika-brandt/annika-brandt__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/wardrobe-personal-back.png",
+        "sha256": "9c1d27fe30226b0f745ef48c8b553e28ec773371eae20afcb872c9a281f17dd5",
+        "bytes": 879420,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-1",
+        "source": "annika-brandt/annika-brandt__wardrobe-personal__extra-1__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/wardrobe-personal-extra-1.png",
+        "sha256": "2513cdb9c4808a9d7ad31f3ac9c98f9ba09acd3c06c295e5bd41d3c93289071d",
+        "bytes": 1387102,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-2",
+        "source": "annika-brandt/annika-brandt__wardrobe-personal__extra-2__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/wardrobe-personal-extra-2.png",
+        "sha256": "48d7e592c4214d1b295895b7b9aa37762e336f74568e274d9e4ac5d997e386ac",
+        "bytes": 898095,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-3",
+        "source": "annika-brandt/annika-brandt__wardrobe-personal__extra-3__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/wardrobe-personal-extra-3.png",
+        "sha256": "93b58128a86daeeb53c0f0e38c52744eadd41996d8f4054dcf45920ecbb38e89",
+        "bytes": 1615050,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "annika-brandt/annika-brandt__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__wardrobe-personal__front__v1.png",
+        "sha256": "ea4dcf407a0259ca864abaa8f192bb2af2f14192b797f0feca73cfedb20e107b",
+        "bytes": 939844,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "annika-brandt/annika-brandt__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/wardrobe-personal-portrait.png",
+        "sha256": "50c0e7b6adf9ee1651b8a45b155bf3c7ad49a7ee435fabd76bcc2eefa4ea0475",
+        "bytes": 2315238,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "annika-brandt/annika-brandt__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__wardrobe-personal__side__v1.png",
+        "sha256": "865e920c57fc95bc5436f726ef1cf01ff27128d1321a942fe241412c44fca6f4",
+        "bytes": 722790,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "annika-brandt/annika-brandt__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/images/annika-brandt__wardrobe-personal__three-quarter__v1.png",
+        "sha256": "4becd30852d9c8ff4283cadab27663cc517106c6e9256b1be21e4970bc0f633a",
+        "bytes": 855505,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/annika-brandt/annika-brandt__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/voice/candidates/voxcpm2-20261013/annika-intro-v2.wav",
+        "sha256": "07b9fd74a89fe34882c78721731046c532e7c78bf869272c8448955f3e712622",
+        "bytes": 1693518,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/annika-brandt/annika-brandt__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/voice/candidates/voxcpm2-20261013/annika-intro-alt-v1.wav",
+        "sha256": "476d7a8437dcc3f3f2b447a5e8ca84e02f59b883691441212dbe9a7578187f5c",
+        "bytes": 1326606,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/annika-brandt/annika-brandt__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/voice/candidates/voxcpm2-20261013/annika-chat-v1.wav",
+        "sha256": "5c03af37234ad7ffc7208d02d94382337ccad07300b735a1cf57c308eceddbb0",
+        "bytes": 889134,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/annika-brandt/annika-brandt__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/voice/candidates/voxcpm2-20261013/annika-happy-v1.wav",
+        "sha256": "bed46fa62b57e8a2a19d67b4730966cb344a45262d024c469b66c0591cf5f7c9",
+        "bytes": 889134,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/annika-brandt/annika-brandt__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/voice/candidates/voxcpm2-20261013/annika-angry-v2.wav",
+        "sha256": "79826ba6a82408dff51e2b916673054aea65b61e79be8ec4dcedc068a80fb21b",
+        "bytes": 1157262,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/annika-brandt/annika-brandt__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/annika-brandt/voice/candidates/voxcpm2-20261013/annika-sad-v1.wav",
+        "sha256": "3858f067d8835b9a18a0c783cd456487688b8095b823bc13cf7c4dd46e7b8289",
+        "bytes": 903246,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 108,
+    "status": "active",
+    "tagline": {
+      "zh": "淡淡的雀斑，翘鼻子，毛躁的深金色发髻。",
+      "en": "Light freckles, an upturned nose and a frizzy dark-blonde bun."
+    },
+    "introduction": {
+      "en": "White woman, about 26, average build, about 164 cm; light freckles, an upturned nose, frizzy dark-blonde hair in a low bun; light-blue top",
+      "zh": "淡淡的雀斑，翘鼻子，毛躁的深金色发髻。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "annika-brandt-grok-solo-20261013",
+      "actorSlugs": [
+        "annika-brandt"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-root-physical-and-prior-semantic",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json",
+        "evidenceSha256": "869a1028ff40850f7a08d05e9ea668eadd75ed70d0bf5d7cf78cf1dcf55a384b",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/annika-brandt-grok-solo-20261013/source.mp4",
+          "sourceSha256": "d6b2a2a71649cc708661e12b727e25c7d102b40c791947093b3273556c1e2b14",
+          "public": "/media/works/samples/annika-brandt-grok-solo-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }

@@ -370,6 +370,10 @@ Owner 最终范围（2026-10-14 04:10）：22位是原盘点名单，不凑样�
 
 批2接续：在首次提交前撤回雷乐生产JSON、清单与未跟踪的生成档案；已复制的导入材料移入忽略的报告隔离目录，制作原件不动。回执 `actor-refresh/lei-le-exclusion-20261014.json`。新增 source-original 模式仍走 assets:ingest，但仅接受生产记录精确固定的来源、字节数和SHA，保留交付PNG原始画布及背景，不冒充原有v1尺寸/透明标准；既有标准入库断言不放宽。批次转换、检查、体积和最终推送身份在对应回执登记。
 
+批2已推 `d4a4a4d`：五位各55 PNG、6 WAV，共491,455,925字节原件，均逐字节符合来源固定值；新增4独立合格样片，扎瓦迪0条。179/179工具、162/162浏览器及文档/UIKit/knip通过；A6累计新增或修改文件48,132,772字节。04:44负载5.61转换，04:46释放锁；04:52负载5.59启动完整verify，04:56结束释放锁。回执 `actor-refresh/batch-2-{media-01,integrity,verify-01,push}.json`，十张演员截图在 `actor-refresh/actors/`。本批吸收祁长风生产记录的anchors/proposals/routes，不动主检出。未上传、未部署。
+
+批3准备：五位各55图、6声音，选入Miriam/Pang/Ibra/Annika/Jiang各一条Root通过的实际视频；Pang的Vids测试片明确排除。来源与SHA、主检出Annika/Jiang生产字段的吸收清单在 `actor-refresh/batch-3-prepared.json` 和 `batch-3-sample-selection.json`；Root通过的返工、provisional和声音版本待看项仍保留，未把技术通过当Owner批准。
+
 ### 证据归属
 
 原稿 SHA-256：`f0856b345c1b80e6f7658be6cfbca72777246e49d615dfd2fbba00eab044791e`。本机完整原稿快照：`.devspace-reports/next-stage/approved-plan-source.md`。检查只使用本工作区与隔离夹具，不把静态/本地 mock 结果当作真实服务或制作交付验收。

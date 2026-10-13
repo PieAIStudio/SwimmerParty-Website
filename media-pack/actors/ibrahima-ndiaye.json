@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/ibrahima-ndiaye/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "demographics": {
@@ -63,6 +63,49 @@
         "en": "Casting basics"
       },
       "prompt": "sage-green plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied ibrahima-ndiaye personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "actor-extra-1",
+          "label": {
+            "en": "Actor extra 1",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / actor-extra-1 reference image."
+        },
+        {
+          "key": "actor-extra-2",
+          "label": {
+            "en": "Actor extra 2",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / actor-extra-2 reference image."
+        },
+        {
+          "key": "actor-extra-3",
+          "label": {
+            "en": "Actor extra 3",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / actor-extra-3 reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        }
+      ]
     }
   ],
   "roles": [],
@@ -75,5 +118,564 @@
     "chatgpt-web": {
       "chat": null
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/complete-staging-bundle-20261013.json",
+      "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json"
+    ],
+    "images": [
+      {
+        "slot": "turnaround.front",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/turnaround__front__v1.png",
+        "sha256": "78d016c67414fded5c6116a7772f22873cf1151ddb10a36b4fe5560c245c8b34",
+        "bytes": 848646,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/turnaround__three-quarter__v1.png",
+        "sha256": "9e9f7dd9e0f607496c3916a8eb55c66a59407ba5021d301af55611d59f7e53bb",
+        "bytes": 770588,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/turnaround__side__v1.png",
+        "sha256": "f3ddb3dca4f04224c54597a1ca023263cb06895133cdafe7834334c6865fd566",
+        "bytes": 513080,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/turnaround__back__v1.png",
+        "sha256": "a9abeacbf6100a21485fa41bbe456922f1a638c31537c8e63ac4b44f4e1dfb7a",
+        "bytes": 886529,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/turnaround__back-three-quarter-left__v1.png",
+        "sha256": "35275ae2a069c4163ae9b38e606a1458514842e22dbf06354d76c5deb4e96c06",
+        "bytes": 800735,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/face__three-quarter__codex-image__v2.png",
+        "sha256": "7b6c8e5aa1f7ab8f4aa43aea1d2c296e2f07beb533e1e206b2dcd94c7e801d4d",
+        "bytes": 1741483,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/face__side__v1.png",
+        "sha256": "0fe603aa4547b34a3265314147d8419d00c1366d7798e30846bf70e28eed6625",
+        "bytes": 2183798,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/face__up__v1.png",
+        "sha256": "1778bf2d49d0afe0312385ed50a9aee4f7cc26183b0bbb3ca89396a8605c878e",
+        "bytes": 1975142,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/face__down__v1.png",
+        "sha256": "bf9913d44b247d15605a6ca6edb211358bd516361afd8ce4a22fae04be97a983",
+        "bytes": 1869776,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__annoyed__v1.png",
+        "sha256": "2be1b2392066060f5fd5d3abab5e80eaf570f3c50df28e9ffc4c7ebb361f1c48",
+        "bytes": 2245109,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__cry__v1.png",
+        "sha256": "5852ff0bcd28cf8fe5c2151bb8e5ac262a8c80d1e52728628891b07092ad5226",
+        "bytes": 2123572,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__laugh__v1.png",
+        "sha256": "bc5374cae3168f0afcba1295c3fd0c688064a87c444a255cb106a1ea2f945fb3",
+        "bytes": 2001144,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__neutral__v1.png",
+        "sha256": "1a32d74981be19e117554810b1e122dbd93c10137b5d036208f5debd5fb8e952",
+        "bytes": 2283409,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__sad__v1.png",
+        "sha256": "6499cbf10073e3dc150b5194d4a865671e3cf70ee42605233857dbd6171e6b27",
+        "bytes": 2001720,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__smile__v1.png",
+        "sha256": "d7111421734343180ee9b02d3a7603b9adb6dcb287d971ba6206769857540dd5",
+        "bytes": 2109139,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__disgusted__v1.png",
+        "sha256": "d96033b8f59fb41c2b7e4fed3b7994f5d6438eeb9b511befee27d5b2800733ed",
+        "bytes": 1936949,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__embarrassed__v1.png",
+        "sha256": "9c5da2214b68f7e0cf86462a1ce7bab545a7e899dfd80e0c4e605dfcba167ebc",
+        "bytes": 2037887,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__scared__v1.png",
+        "sha256": "2191a161d97f0120fb2f657acf672a13882358f383f8e6198002d571ad954621",
+        "bytes": 2023891,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__surprised__v1.png",
+        "sha256": "de962f7d0abf1a8f453fa117670eced845dd54a50b699a6c099f19c0fcd2d0e9",
+        "bytes": 2016910,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__eyes-closed__v1.png",
+        "sha256": "72f814617449ca1fff2e15b8e58d7805f63aad000ce9b55868e7c5bc26ce0eeb",
+        "bytes": 2058623,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__skeptical__v1.png",
+        "sha256": "6c413457aeb92723e954b1f2690cfa2e95df9e6cfbbab17d0471ca9953eeb188",
+        "bytes": 2046711,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__speaking__v1.png",
+        "sha256": "5923e3acd19edd01e77e0a63432f434bcc90fd391fba6d7ff0673a282d6d2572",
+        "bytes": 1681500,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__tired__v1.png",
+        "sha256": "978a5c78c22ec0298da84f499e29d56eb28f0e2373ed8af66cadc0ec7ffb5612",
+        "bytes": 1840077,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__worried__v1.png",
+        "sha256": "5158f4ecc5af0da06db1df472c4d5c03c23d99da675060af2ba10078b3c333df",
+        "bytes": 1891505,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__confused__v1.png",
+        "sha256": "afdc04a7f77758ef91730557b7a3b437803eb720c4d575fb474eed5323301d17",
+        "bytes": 2222162,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__contempt__v1.png",
+        "sha256": "a1153db7c6a91f2e39dd808530fc4b6dcaec7a2429f1c5728f5beb0066ffbfe8",
+        "bytes": 2037657,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__determined__v1.png",
+        "sha256": "cf9c7c039ebe227ead77a045945d07f4065c2bb68280b1638b5d01b5fa4cb3eb",
+        "bytes": 2090527,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__thinking__v1.png",
+        "sha256": "750566ac9eddd507a2f037c5119e35feb5bd8a47d1b51d5a0c3c27de27d0d41c",
+        "bytes": 2067876,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__awkward-smile__v1.png",
+        "sha256": "22d7d1d8a8fb872abdd8f0c747b5655dedcc8c53086b3cabf2268c3c2c0656f5",
+        "bytes": 2176808,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__deadpan__v1.png",
+        "sha256": "73286d0b5ce1f33c5a8464b2d5d2043a11354a3ddf708fb2e9e29a334df76de4",
+        "bytes": 2083738,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__pain__v1.png",
+        "sha256": "bae91e5ebd7704e785e6b5e63138814eaeb4ac121c54f9f1007ae24f2673598b",
+        "bytes": 2203687,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__shy__v1.png",
+        "sha256": "be0b83b0348bd2e0570d19d2ac8ecdff3b24f5538c56610564f5770297e979a9",
+        "bytes": 2088603,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__sleepy__v1.png",
+        "sha256": "8ba40357615c8f1c0357829f0052b45b4582d901849583aa622f325246225dbc",
+        "bytes": 1999793,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/pose__walk__v1.png",
+        "sha256": "7388ddab7b83d88e8ff82ca33116ff15f0f6cda1b785cbeaa430b1addd8618ce",
+        "bytes": 789881,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/pose__run__v1.png",
+        "sha256": "7fd0e112dafd19a27f14a3ddd5954527080de17d6a3441a83fa0b2049ad7fb43",
+        "bytes": 768054,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/pose__point__v1.png",
+        "sha256": "be457b4879f03abc828eda5e0644b8de3c14a68f42cd3de3ee831ca705d3e6b0",
+        "bytes": 813776,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/pose__arms-crossed__v1.png",
+        "sha256": "3f5981b5a11c61a01137f8590f9b71f26292ffaff380b2f5f429c92b866eb552",
+        "bytes": 784945,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/detail__hands__codex-image__v2.png",
+        "sha256": "96ce79ef49477e3a7a127675fb313676f315fe9ce6d3510660518222e869cf0b",
+        "bytes": 1965866,
+        "version": 1
+      },
+      {
+        "slot": "detail.hair-back",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/detail__hair-back__v1.png",
+        "sha256": "e7a8bc8cb6e74ef29bb980d877b9f081242674df3f99b1dcb4eca10cf48bca56",
+        "bytes": 2397649,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__smug__codex-image__v2.png",
+        "sha256": "a0cdb49893d2a6fdbd224a0a47cda70027eb1ca48af358bc154622f316df50f9",
+        "bytes": 1404286,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/face__front__codex-image__v3.png",
+        "sha256": "e1f66c0ad481d2ccb34850f98d85f99993469c3e1c3e1952c365a1641f35ef91",
+        "bytes": 1335086,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/provisional/turnaround__back-three-quarter-right__codex-image__v4.png",
+        "sha256": "678344b296df433dae31eeb1c5cf9d2a2d3fec5db324db710d32c8489f78f81a",
+        "bytes": 706523,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/provisional/pose__sit__codex-image__v6.png",
+        "sha256": "89429bb675b2043e93dc2811781e45aeec931bd0bfa2c4c3819e37dbfd435743",
+        "bytes": 1129783,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/provisional/pose__phone__codex-image__v5.png",
+        "sha256": "ec9362bbff80dae1cca1382981a787fa8e509faecd3afa0157e92ab06638fe22",
+        "bytes": 767522,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/face__three-quarter-left__codex-image__v1.png",
+        "sha256": "f07081b642e526a91f327e2c4e67be75c9988bd7900e871c6404b9b4752fba96",
+        "bytes": 1524138,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/face__side-right__codex-image__v1.png",
+        "sha256": "4c37cedcc74f26f4c96291a0a02373adce2b2c9ad87d48b636574262017c8531",
+        "bytes": 1472328,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/accepted/expression__angry__codex-image__v1.png",
+        "sha256": "e5b238bb6517e53c92af76addc4c8d2d235bcfd691364bfa37d7b53914629940",
+        "bytes": 1509092,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/provisional/wardrobe_personal__front__codex-image__v4.png",
+        "sha256": "eeba2b4a274660e08188dc62f853fbee2d1cff3b7eeb829b6b499d553c28eaff",
+        "bytes": 775840,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/provisional/wardrobe_personal__side__codex-image__v2.png",
+        "sha256": "bd71010e0541ffea634df0ee20d6d73ce76a6b3fbc76cde2152d241bec5d2657",
+        "bytes": 547887,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/provisional/wardrobe_personal__back__codex-image__v2.png",
+        "sha256": "1ad28ae477163df5dfbf8436516b011fda9d2836913a9ee25c9fe1d38caf234d",
+        "bytes": 811414,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.actor-extra-1",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__wardrobe-personal__actor-extra-1__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/provisional/wardrobe_personal__actor-extra-1__codex-image__v2.png",
+        "sha256": "30d405bf2da2322d2c2e7c44a2520b7cb6fef23008f102d0068683bc7ea68fd1",
+        "bytes": 780216,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.actor-extra-2",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__wardrobe-personal__actor-extra-2__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/provisional/wardrobe_personal__actor-extra-2__codex-image__v2.png",
+        "sha256": "14d97ae58df4cea1b87b954b002b72c71fd6bf5299493fffbd93ba5187a49af1",
+        "bytes": 817799,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.actor-extra-3",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__wardrobe-personal__actor-extra-3__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/provisional/wardrobe_personal__actor-extra-3__codex-image__v2.png",
+        "sha256": "d6aeec05679702faa8c130acd7b3d40ae22f61e466f0785617a8d8862f36d480",
+        "bytes": 793265,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/provisional/wardrobe_personal__three-quarter__codex-image__v8.png",
+        "sha256": "14904356d327e6b3f2cfcaf52dc5c2a0536131ac9c30bafc3e486c9935ae5af4",
+        "bytes": 745548,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "ibrahima-ndiaye/ibrahima-ndiaye__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/provisional/wardrobe_personal__portrait__codex-image__v1.png",
+        "sha256": "1ec15c221665edd3205554b4739c7ea2cf1e8293dcfa5841c7b31ad4d08677ac",
+        "bytes": 1906572,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/ibrahima-ndiaye/ibrahima-ndiaye__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/voice/cosyvoice3-six-slot-20261013/ibrahima-ndiaye__voice__intro__cosyvoice3-v1.wav",
+        "sha256": "02fc5930fb61e18e9e6583957c537536e3a0c726756e5c1198caa6ad02c00089",
+        "bytes": 1700574,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/ibrahima-ndiaye/ibrahima-ndiaye__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/voice/cosyvoice3-six-slot-20261013/ibrahima-ndiaye__voice__intro-alt__cosyvoice3-v1.wav",
+        "sha256": "a9ec84ba931e9638452588bd867dc41f3dfb4380a5ebda80de0067f0b386ee49",
+        "bytes": 1467726,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/ibrahima-ndiaye/ibrahima-ndiaye__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/voice/cosyvoice3-six-slot-20261013/ibrahima-ndiaye__voice__chat__cosyvoice3-v1.wav",
+        "sha256": "d5ed475a85942156983a1fb943f2a850e6d301b30c15d8ed76bd687ce143d490",
+        "bytes": 1160790,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/ibrahima-ndiaye/ibrahima-ndiaye__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/voice/cosyvoice3-six-slot-20261013/ibrahima-ndiaye__voice__happy__cosyvoice3-v1.wav",
+        "sha256": "a2dabaa21e157622681fdbf67d40ca930dd3a11d2d4b81ae4c9b255637abbad0",
+        "bytes": 1002030,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/ibrahima-ndiaye/ibrahima-ndiaye__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/voice/cosyvoice3-six-slot-20261013/ibrahima-ndiaye__voice__angry__cosyvoice3-v1.wav",
+        "sha256": "69fb35e0f676d2049ac14ee4512601870b14f15e70d8de7579e304acf82a686e",
+        "bytes": 917358,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/ibrahima-ndiaye/ibrahima-ndiaye__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv0z898h-12923cd7/full-pack/staging/voice/cosyvoice3-six-slot-20261013/ibrahima-ndiaye__voice__sad__cosyvoice3-v1.wav",
+        "sha256": "1158ec9c7edc4481e96dfd92d531199bf1ef2df24640a721832f8fa2be60a3ec",
+        "bytes": 1100814,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 107,
+    "status": "active",
+    "tagline": {
+      "zh": "高瘦，颧骨锋利，光头，一字小胡子。",
+      "en": "Tall and slim, sharp cheekbones, a shaved head and a thin mustache."
+    },
+    "introduction": {
+      "en": "Black man, about 45, tall and slim, about 190 cm; very dark skin, sharp cheekbones, shaved head, a thin mustache; sage-green top",
+      "zh": "高瘦，颧骨锋利，光头，一字小胡子。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "ibrahima-ndiaye-grok-solo-20261013",
+      "actorSlugs": [
+        "ibrahima-ndiaye"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-root-physical-and-prior-semantic",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json",
+        "evidenceSha256": "869a1028ff40850f7a08d05e9ea668eadd75ed70d0bf5d7cf78cf1dcf55a384b",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/ibrahima-ndiaye-grok-solo-20261013/source.mp4",
+          "sourceSha256": "4ce32828b42e58cbbcbfa1f9977270f41443ae7f4da6e7bda3b203903c7553e2",
+          "public": "/media/works/samples/ibrahima-ndiaye-grok-solo-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }

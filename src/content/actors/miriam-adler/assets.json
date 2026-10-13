@@ -1,6 +1,50 @@
 {
   "slug": "miriam-adler",
-  "looks": [],
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied miriam-adler personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "rainy-city-layer",
+          "label": {
+            "en": "Rainy city layer",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / rainy-city-layer reference image."
+        },
+        {
+          "key": "evening-cultural",
+          "label": {
+            "en": "Evening cultural",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / evening-cultural reference image."
+        },
+        {
+          "key": "weekend-walking",
+          "label": {
+            "en": "Weekend walking",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / weekend-walking reference image."
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "kind": "image",
@@ -8,25 +52,1595 @@
       "series": "turnaround",
       "key": "front",
       "look": null,
-      "conformance": "v1",
-      "version": 0.1,
-      "width": 941,
-      "height": 1672,
-      "bytes": 777198,
-      "sha256": "d09ef789e8ff97ea1e5d4e426c814e84e46cae71c58a52afec156776d43ab36d",
-      "sourceSha256": "d09ef789e8ff97ea1e5d4e426c814e84e46cae71c58a52afec156776d43ab36d",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1231393,
+      "sha256": "7f9f048d7054acd927d18f222169b30ebec36f35194cd621ad57745dbf3349d2",
+      "sourceSha256": "7f9f048d7054acd927d18f222169b30ebec36f35194cd621ad57745dbf3349d2",
+      "bbox": {
+        "left": 0.1103515625,
+        "top": 0.06315104166666667,
+        "right": 0.962890625,
+        "bottom": 0.9283854166666666
+      },
+      "format": "png",
+      "object": "miriam-adler/7f9f048d7054acd9/miriam-adler__turnaround__front__v1.png",
+      "preview": "/media/assets/miriam-adler/turnaround.front.webp",
+      "thumb": "/media/assets/miriam-adler/turnaround.front.thumb.webp",
+      "large": "/media/assets/miriam-adler/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8045508066813151,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1296770,
+      "sha256": "4b00c77c6575c049b7969b6a1eca3dc4e8ce83f0b227d72aa4fc8e045351bffe",
+      "sourceSha256": "4b00c77c6575c049b7969b6a1eca3dc4e8ce83f0b227d72aa4fc8e045351bffe",
+      "bbox": {
+        "left": 0.0166015625,
+        "top": 0.026692708333333332,
+        "right": 0.962890625,
+        "bottom": 0.97265625
+      },
+      "format": "png",
+      "object": "miriam-adler/4b00c77c6575c049/miriam-adler__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/miriam-adler/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/miriam-adler/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7838300069173177,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1093763,
+      "sha256": "aecab3dcb3a82d42f7383de99463a9ad63a5170a51b931842d2f4298bed7c09f",
+      "sourceSha256": "aecab3dcb3a82d42f7383de99463a9ad63a5170a51b931842d2f4298bed7c09f",
+      "bbox": {
+        "left": 0.0634765625,
+        "top": 0.01171875,
+        "right": 0.951171875,
+        "bottom": 0.9505208333333334
+      },
+      "format": "png",
+      "object": "miriam-adler/aecab3dcb3a82d42/miriam-adler__turnaround__side__v1.png",
+      "preview": "/media/assets/miriam-adler/turnaround.side.webp",
+      "thumb": "/media/assets/miriam-adler/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8599020640055338,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1283639,
+      "sha256": "05e75bbfb6e630639e255c704436fe255c55f173d9f4acc8bc8c2c574525ded4",
+      "sourceSha256": "05e75bbfb6e630639e255c704436fe255c55f173d9f4acc8bc8c2c574525ded4",
+      "bbox": {
+        "left": 0.0322265625,
+        "top": 0.020833333333333332,
+        "right": 0.94921875,
+        "bottom": 0.9602864583333334
+      },
+      "format": "png",
+      "object": "miriam-adler/05e75bbfb6e63063/miriam-adler__turnaround__back__v1.png",
+      "preview": "/media/assets/miriam-adler/turnaround.back.webp",
+      "thumb": "/media/assets/miriam-adler/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7643845876057943,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1331176,
+      "sha256": "0287605bb4a5026510c8660a5003e47b76ebbfa0f1dde7c0154881f264649aaa",
+      "sourceSha256": "0287605bb4a5026510c8660a5003e47b76ebbfa0f1dde7c0154881f264649aaa",
+      "bbox": {
+        "left": 0.0244140625,
+        "top": 0.024088541666666668,
+        "right": 0.96875,
+        "bottom": 0.9466145833333334
+      },
+      "format": "png",
+      "object": "miriam-adler/0287605bb4a50265/miriam-adler__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/miriam-adler/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/miriam-adler/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7927970886230469,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1349183,
+      "sha256": "0bd853670fdfa2d509c98b2489f129c22ac7efad6bbf9f8366c929d6d1a7ab0c",
+      "sourceSha256": "0bd853670fdfa2d509c98b2489f129c22ac7efad6bbf9f8366c929d6d1a7ab0c",
+      "bbox": {
+        "left": 0,
+        "top": 0.017578125,
+        "right": 0.986328125,
+        "bottom": 0.97265625
+      },
+      "format": "png",
+      "object": "miriam-adler/0bd853670fdfa2d5/miriam-adler__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/miriam-adler/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/miriam-adler/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7659880320231119,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1341978,
+      "sha256": "41b314043863ee92573716bfa8e1d9ceccb1f9a5fc0768da911981265b62b5d7",
+      "sourceSha256": "41b314043863ee92573716bfa8e1d9ceccb1f9a5fc0768da911981265b62b5d7",
+      "bbox": {
+        "left": 0,
+        "top": 0.013556618819776715,
+        "right": 0.9744816586921851,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/41b314043863ee92/miriam-adler__face__front__v1.png",
+      "preview": "/media/assets/miriam-adler/face.front.webp",
+      "thumb": "/media/assets/miriam-adler/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5500986953391889,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1267359,
+      "sha256": "70f2407291839a667adc39213e5807a5a82944637fbfbb38549ac84b8174d8b7",
+      "sourceSha256": "70f2407291839a667adc39213e5807a5a82944637fbfbb38549ac84b8174d8b7",
+      "bbox": {
+        "left": 0,
+        "top": 0.013556618819776715,
+        "right": 0.9824561403508771,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/70f2407291839a66/miriam-adler__face__three-quarter__v1.png",
+      "preview": "/media/assets/miriam-adler/face.three-quarter.webp",
+      "thumb": "/media/assets/miriam-adler/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5568553833474509,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1308089,
+      "sha256": "3d270bd03602d51a477853a202602cfb19f02552eaf8779b788688232fac4fc5",
+      "sourceSha256": "3d270bd03602d51a477853a202602cfb19f02552eaf8779b788688232fac4fc5",
+      "bbox": {
+        "left": 0,
+        "top": 0.01036682615629984,
+        "right": 0.9808612440191388,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/3d270bd03602d51a/miriam-adler__face__side__v1.png",
+      "preview": "/media/assets/miriam-adler/face.side.webp",
+      "thumb": "/media/assets/miriam-adler/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.562574880001221,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1400755,
+      "sha256": "ca59460881d9f7ba5509654748b293a7f23e76d7a02f38b14dc874cb5f46f7ee",
+      "sourceSha256": "ca59460881d9f7ba5509654748b293a7f23e76d7a02f38b14dc874cb5f46f7ee",
+      "bbox": {
+        "left": 0,
+        "top": 0.003189792663476874,
+        "right": 0.9665071770334929,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/ca59460881d9f7ba/miriam-adler__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/miriam-adler/face.three-quarter-left.webp",
+      "thumb": "/media/assets/miriam-adler/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5270038587842667,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1357144,
+      "sha256": "838927389994d661df42e94d935b728ad67ef6643d34e4623f07344f5ce7c59c",
+      "sourceSha256": "838927389994d661df42e94d935b728ad67ef6643d34e4623f07344f5ce7c59c",
       "bbox": {
         "left": 0,
         "top": 0,
+        "right": 0.988835725677831,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/838927389994d661/miriam-adler__face__side-right__v1.png",
+      "preview": "/media/assets/miriam-adler/face.side-right.webp",
+      "thumb": "/media/assets/miriam-adler/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5667300046549606,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1421505,
+      "sha256": "1aa4699f1fabd7d5131b7f586be7bce67f7419f21117485cc92a4bea3935da0d",
+      "sourceSha256": "1aa4699f1fabd7d5131b7f586be7bce67f7419f21117485cc92a4bea3935da0d",
+      "bbox": {
+        "left": 0,
+        "top": 0.011961722488038277,
         "right": 1,
         "bottom": 1
       },
       "format": "png",
-      "object": "miriam-adler/CC-058.png",
-      "preview": "/media/assets/miriam-adler/turnaround.front.webp",
-      "large": "/media/assets/miriam-adler/turnaround.front.large.webp",
-      "thumb": "/media/assets/miriam-adler/turnaround.front.thumb.webp",
-      "blur": "data:image/webp;base64,UklGRoIBAABXRUJQVlA4WAoAAAAQAAAACwAAFAAAQUxQSLoAAAABgKpt//nn+WK2t7z4T7O3uLRmnYOtpENQspLtaLsv2v79fn+cQ0QECOTUpA8CQJFjGHkohyT+8c6GdCCZaUUDCAI67i9rnRRFxo/xHYN0lPx9fr2kO+duv78eZKNA0/D0/f1ciQZF+//P708jEgSNxsf7fxs4+o2bHWPMOf52a8RIRgKCtdk2IxQBKCYWy4xopNPgRryRhQI03ftRRhHaqf3K463cpfyY8y4nSd8c/YsIAN2eTMK2DQlWUDggogAAABAEAJ0BKgwAFQA/AWqsTysmJCIwCAFgIAlsALsBi+qozxYRIc4Rvv3AAP53s/0m03dX2KLbVF3Q+b2+3vTa8akD3rBqhLCuJHuBW7YCMXvSYS31+bK7oJl34RpiNRMeG/YVyZrnRtpt4lmA1MliGB6C+ueQN8r9/0kh9t4gVr8fx/Fj/NEiPzF7H7Puws//TXNOXH72HrzPfYZrvLf+S6QAAA=="
+      "object": "miriam-adler/1aa4699f1fabd7d5/miriam-adler__face__up__v1.png",
+      "preview": "/media/assets/miriam-adler/face.up.webp",
+      "thumb": "/media/assets/miriam-adler/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5295354705452917,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1468743,
+      "sha256": "51ff8a7af30091718ea518d95576839feaced176b49acf4b591a8f0070cc6edc",
+      "sourceSha256": "51ff8a7af30091718ea518d95576839feaced176b49acf4b591a8f0070cc6edc",
+      "bbox": {
+        "left": 0,
+        "top": 0.0007974481658692185,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/51ff8a7af3009171/miriam-adler__face__down__v1.png",
+      "preview": "/media/assets/miriam-adler/face.down.webp",
+      "thumb": "/media/assets/miriam-adler/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5172964853775732,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1327818,
+      "sha256": "2e246eb7e160f650a1f785bc1c8b0dd346dbba833c5330056f78118f50ad630d",
+      "sourceSha256": "2e246eb7e160f650a1f785bc1c8b0dd346dbba833c5330056f78118f50ad630d",
+      "bbox": {
+        "left": 0.0215311004784689,
+        "top": 0.015151515151515152,
+        "right": 0.9752791068580542,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/2e246eb7e160f650/miriam-adler__expression__neutral__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.neutral.webp",
+      "thumb": "/media/assets/miriam-adler/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5623764718451195,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1354372,
+      "sha256": "b16ab8709b2e3ec4f2f3a20935991f6be4cf07548a33f23342f68e6cd8e853d6",
+      "sourceSha256": "b16ab8709b2e3ec4f2f3a20935991f6be4cf07548a33f23342f68e6cd8e853d6",
+      "bbox": {
+        "left": 0,
+        "top": 0.029505582137161084,
+        "right": 0.988835725677831,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/b16ab8709b2e3ec4/miriam-adler__expression__smile__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.smile.webp",
+      "thumb": "/media/assets/miriam-adler/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5527403218790778,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1411873,
+      "sha256": "ca51f4ab7a6e86544bdf10e1210a562a30b6dfa36a8af8a7931a4f40f8502458",
+      "sourceSha256": "ca51f4ab7a6e86544bdf10e1210a562a30b6dfa36a8af8a7931a4f40f8502458",
+      "bbox": {
+        "left": 0,
+        "top": 0.030303030303030304,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/ca51f4ab7a6e8654/miriam-adler__expression__laugh__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.laugh.webp",
+      "thumb": "/media/assets/miriam-adler/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.52322011349964,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1341439,
+      "sha256": "6a4eaa83576bb8640fb6bdb046d017951fa712b2d10ee00ace91a8ee003cc5a7",
+      "sourceSha256": "6a4eaa83576bb8640fb6bdb046d017951fa712b2d10ee00ace91a8ee003cc5a7",
+      "bbox": {
+        "left": 0.013556618819776715,
+        "top": 0.02631578947368421,
+        "right": 0.9784688995215312,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/6a4eaa83576bb864/miriam-adler__expression__sad__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.sad.webp",
+      "thumb": "/media/assets/miriam-adler/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5543733736254511,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1428144,
+      "sha256": "df897096bc1958f66b5d30734b147fb4e89fabb7a336c49b433a0d5bfb81282d",
+      "sourceSha256": "df897096bc1958f66b5d30734b147fb4e89fabb7a336c49b433a0d5bfb81282d",
+      "bbox": {
+        "left": 0,
+        "top": 0.024720893141945772,
+        "right": 0.9896331738437002,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/df897096bc1958f6/miriam-adler__expression__cry__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.cry.webp",
+      "thumb": "/media/assets/miriam-adler/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5339290665404994,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1339221,
+      "sha256": "6083c0026c70e9a2dffe6ed36e9526b8558b6b26ff9ec594f8e3b30ac6590d3b",
+      "sourceSha256": "6083c0026c70e9a2dffe6ed36e9526b8558b6b26ff9ec594f8e3b30ac6590d3b",
+      "bbox": {
+        "left": 0.014354066985645933,
+        "top": 0.024720893141945772,
+        "right": 0.9880382775119617,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/6083c0026c70e9a2/miriam-adler__expression__annoyed__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.annoyed.webp",
+      "thumb": "/media/assets/miriam-adler/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5519791213571118,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1524880,
+      "sha256": "dcedce030e4c03742d6cc44f0aa6a643242660ee2d604633241c9903d4c9d77b",
+      "sourceSha256": "dcedce030e4c03742d6cc44f0aa6a643242660ee2d604633241c9903d4c9d77b",
+      "bbox": {
+        "left": 0,
+        "top": 0.011164274322169059,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/dcedce030e4c0374/miriam-adler__expression__angry__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.angry.webp",
+      "thumb": "/media/assets/miriam-adler/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5059935797155641,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1407142,
+      "sha256": "49d7b5f09b453532985270f9d00dd628a312debc8b2d93ab70f2673e8b33252f",
+      "sourceSha256": "49d7b5f09b453532985270f9d00dd628a312debc8b2d93ab70f2673e8b33252f",
+      "bbox": {
+        "left": 0,
+        "top": 0.01036682615629984,
+        "right": 0.9752791068580542,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/49d7b5f09b453532/miriam-adler__expression__surprised__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.surprised.webp",
+      "thumb": "/media/assets/miriam-adler/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5438869938366286,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1560687,
+      "sha256": "27fd8f07f8889531cdc060da3af03d215f25748197883af46758bfe16dabf9d7",
+      "sourceSha256": "27fd8f07f8889531cdc060da3af03d215f25748197883af46758bfe16dabf9d7",
+      "bbox": {
+        "left": 0.027910685805422646,
+        "top": 0,
+        "right": 0.9792663476874003,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/27fd8f07f8889531/miriam-adler__expression__scared__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.scared.webp",
+      "thumb": "/media/assets/miriam-adler/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.49572722948446946,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1405057,
+      "sha256": "0a6fb8449abc3cd3a8abdbc0c2b21acf78cced38c3b627860a2dedf9a660f491",
+      "sourceSha256": "0a6fb8449abc3cd3a8abdbc0c2b21acf78cced38c3b627860a2dedf9a660f491",
+      "bbox": {
+        "left": 0,
+        "top": 0.023125996810207338,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/0a6fb8449abc3cd3/miriam-adler__expression__disgusted__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.disgusted.webp",
+      "thumb": "/media/assets/miriam-adler/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5322852040933129,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1574433,
+      "sha256": "0c550147d2568416b8ce3cb6516a13331a14545fbd4a05df998e63c74cdbf289",
+      "sourceSha256": "0c550147d2568416b8ce3cb6516a13331a14545fbd4a05df998e63c74cdbf289",
+      "bbox": {
+        "left": 0,
+        "top": 0.012759170653907496,
+        "right": 0.9585326953748007,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/0c550147d2568416/miriam-adler__expression__embarrassed__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.embarrassed.webp",
+      "thumb": "/media/assets/miriam-adler/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4947720722714427,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1459095,
+      "sha256": "943f62d967c68868d9815327bd8bdaddb915a1cc743a16ae5727b7d1d2745ffc",
+      "sourceSha256": "943f62d967c68868d9815327bd8bdaddb915a1cc743a16ae5727b7d1d2745ffc",
+      "bbox": {
+        "left": 0,
+        "top": 0.015151515151515152,
+        "right": 0.9872408293460925,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/943f62d967c68868/miriam-adler__expression__tired__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.tired.webp",
+      "thumb": "/media/assets/miriam-adler/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5281421619875409,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1418073,
+      "sha256": "992688e6574508c72eab38daf2633f782d1a77ef465034d314bebfc54a20a2d3",
+      "sourceSha256": "992688e6574508c72eab38daf2633f782d1a77ef465034d314bebfc54a20a2d3",
+      "bbox": {
+        "left": 0,
+        "top": 0.012759170653907496,
+        "right": 0.9896331738437002,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/992688e6574508c7/miriam-adler__expression__speaking__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.speaking.webp",
+      "thumb": "/media/assets/miriam-adler/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5392110477731228,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1387197,
+      "sha256": "7c192fa8ae568825b9947682d3e40b5d5f70628bff43fbab661ab51a6c5862a6",
+      "sourceSha256": "7c192fa8ae568825b9947682d3e40b5d5f70628bff43fbab661ab51a6c5862a6",
+      "bbox": {
+        "left": 0.01036682615629984,
+        "top": 0.013556618819776715,
+        "right": 0.9864433811802232,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/7c192fa8ae568825/miriam-adler__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.eyes-closed.webp",
+      "thumb": "/media/assets/miriam-adler/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5417878101081325,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1422147,
+      "sha256": "d583db043668e0f58bd62a10008d1c7b2f8005ec72b8945d637c1e0f4c41659d",
+      "sourceSha256": "d583db043668e0f58bd62a10008d1c7b2f8005ec72b8945d637c1e0f4c41659d",
+      "bbox": {
+        "left": 0.017543859649122806,
+        "top": 0.02073365231259968,
+        "right": 0.9832535885167464,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/d583db043668e0f5/miriam-adler__expression__worried__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.worried.webp",
+      "thumb": "/media/assets/miriam-adler/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5449909571667315,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1274802,
+      "sha256": "9554ebaee95ac245dd20baee396ce200d5b7dcac6151f826f713eb27a03a888e",
+      "sourceSha256": "9554ebaee95ac245dd20baee396ce200d5b7dcac6151f826f713eb27a03a888e",
+      "bbox": {
+        "left": 0,
+        "top": 0.012759170653907496,
+        "right": 0.9872408293460925,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/9554ebaee95ac245/miriam-adler__expression__skeptical__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.skeptical.webp",
+      "thumb": "/media/assets/miriam-adler/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.561865189289012,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1269146,
+      "sha256": "36fb3bde1f072cb2f9465e2971a28cbdf352e1e0659633e18bbfb23277b27991",
+      "sourceSha256": "36fb3bde1f072cb2f9465e2971a28cbdf352e1e0659633e18bbfb23277b27991",
+      "bbox": {
+        "left": 0,
+        "top": 0.011961722488038277,
+        "right": 0.9840510366826156,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/36fb3bde1f072cb2/miriam-adler__expression__smug__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.smug.webp",
+      "thumb": "/media/assets/miriam-adler/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5512452655489674,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1303348,
+      "sha256": "6237db07e61a0123d4564e58fe87c398fefecf0d4c4b809d62adb8bb5df01f80",
+      "sourceSha256": "6237db07e61a0123d4564e58fe87c398fefecf0d4c4b809d62adb8bb5df01f80",
+      "bbox": {
+        "left": 0,
+        "top": 0.013556618819776715,
+        "right": 0.9872408293460925,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/6237db07e61a0123/miriam-adler__expression__contempt__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.contempt.webp",
+      "thumb": "/media/assets/miriam-adler/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5504268319050489,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1308917,
+      "sha256": "0c6d7d4079ed3f78b6471a0465856a367d7a135058b4ce152f5009b0b9adfc2d",
+      "sourceSha256": "0c6d7d4079ed3f78b6471a0465856a367d7a135058b4ce152f5009b0b9adfc2d",
+      "bbox": {
+        "left": 0,
+        "top": 0.012759170653907496,
+        "right": 0.9856459330143541,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/0c6d7d4079ed3f78/miriam-adler__expression__confused__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.confused.webp",
+      "thumb": "/media/assets/miriam-adler/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5551555596254665,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1240537,
+      "sha256": "e9eea0fcca18d408e4c99546bbc1a2020fbf6b05e9eaf4ad4c38f2fba4ba5e0c",
+      "sourceSha256": "e9eea0fcca18d408e4c99546bbc1a2020fbf6b05e9eaf4ad4c38f2fba4ba5e0c",
+      "bbox": {
+        "left": 0.05502392344497608,
+        "top": 0.011961722488038277,
+        "right": 0.9904306220095693,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/e9eea0fcca18d408/miriam-adler__expression__thinking__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.thinking.webp",
+      "thumb": "/media/assets/miriam-adler/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5574156320190065,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1315370,
+      "sha256": "9177ed04624c3aaca2386f1a887a76bab949389303db4d2969d5cc7f80983acd",
+      "sourceSha256": "9177ed04624c3aaca2386f1a887a76bab949389303db4d2969d5cc7f80983acd",
+      "bbox": {
+        "left": 0.02631578947368421,
+        "top": 0.0007974481658692185,
+        "right": 0.937799043062201,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/9177ed04624c3aac/miriam-adler__expression__determined__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.determined.webp",
+      "thumb": "/media/assets/miriam-adler/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5521412818693101,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1295143,
+      "sha256": "895e04fd6cb5be91d909afe3bbdc24e4e022aec13f7b49c1f13b403ca93bd2bd",
+      "sourceSha256": "895e04fd6cb5be91d909afe3bbdc24e4e022aec13f7b49c1f13b403ca93bd2bd",
+      "bbox": {
+        "left": 0,
+        "top": 0.012759170653907496,
+        "right": 0.9681020733652312,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/895e04fd6cb5be91/miriam-adler__expression__shy__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.shy.webp",
+      "thumb": "/media/assets/miriam-adler/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.556202289833617,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1385329,
+      "sha256": "717fd98ee0cec2de7af0383f56eefbc7f48dbd9c94f8d2f6782c6e65bcac3b9f",
+      "sourceSha256": "717fd98ee0cec2de7af0383f56eefbc7f48dbd9c94f8d2f6782c6e65bcac3b9f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9696969696969697,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/717fd98ee0cec2de/miriam-adler__expression__pain__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.pain.webp",
+      "thumb": "/media/assets/miriam-adler/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5279424819842851,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1367699,
+      "sha256": "2a355b4a089f1faf490fe08474502832a995a7649162e844a057c5040089b70c",
+      "sourceSha256": "2a355b4a089f1faf490fe08474502832a995a7649162e844a057c5040089b70c",
+      "bbox": {
+        "left": 0,
+        "top": 0.0007974481658692185,
+        "right": 0.9370015948963317,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/2a355b4a089f1faf/miriam-adler__expression__sleepy__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.sleepy.webp",
+      "thumb": "/media/assets/miriam-adler/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.54091023557153,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1257478,
+      "sha256": "eee3dc6482b82fd7c30048cdcd73578508aa2037255d955bcca4f6c9c8ef0006",
+      "sourceSha256": "eee3dc6482b82fd7c30048cdcd73578508aa2037255d955bcca4f6c9c8ef0006",
+      "bbox": {
+        "left": 0,
+        "top": 0.006379585326953748,
+        "right": 0.9170653907496013,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/eee3dc6482b82fd7/miriam-adler__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.awkward-smile.webp",
+      "thumb": "/media/assets/miriam-adler/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5555854439636863,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1306671,
+      "sha256": "19aca90f3921c6d2e58f899c16bdf56715977274faa2ba4834b5247c4435fd46",
+      "sourceSha256": "19aca90f3921c6d2e58f899c16bdf56715977274faa2ba4834b5247c4435fd46",
+      "bbox": {
+        "left": 0.03110047846889952,
+        "top": 0,
+        "right": 0.9441786283891547,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/19aca90f3921c6d2/miriam-adler__expression__deadpan__v1.png",
+      "preview": "/media/assets/miriam-adler/expression.deadpan.webp",
+      "thumb": "/media/assets/miriam-adler/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5590289701344852,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1372411,
+      "sha256": "388bc1f49a3200707e939fd9709dc46839487900fad98040cff1419789bb1cff",
+      "sourceSha256": "388bc1f49a3200707e939fd9709dc46839487900fad98040cff1419789bb1cff",
+      "bbox": {
+        "left": 0.0322265625,
+        "top": 0.022135416666666668,
+        "right": 0.955078125,
+        "bottom": 0.984375
+      },
+      "format": "png",
+      "object": "miriam-adler/388bc1f49a320070/miriam-adler__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/miriam-adler/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/miriam-adler/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7575181325276693,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1376319,
+      "sha256": "d6bbdc24e5ceafb55d4ac301418f83f5161b6f5ac31139fe4d093022ae4ade91",
+      "sourceSha256": "d6bbdc24e5ceafb55d4ac301418f83f5161b6f5ac31139fe4d093022ae4ade91",
+      "bbox": {
+        "left": 0.0478515625,
+        "top": 0.012369791666666666,
+        "right": 0.970703125,
+        "bottom": 0.9635416666666666
+      },
+      "format": "png",
+      "object": "miriam-adler/d6bbdc24e5ceafb5/miriam-adler__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/miriam-adler/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/miriam-adler/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7676734924316406,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1196392,
+      "sha256": "4e05209c3228e4444bab70c3d80a3da40d3719f6d9242ef11bb03ea567744ce9",
+      "sourceSha256": "4e05209c3228e4444bab70c3d80a3da40d3719f6d9242ef11bb03ea567744ce9",
+      "bbox": {
+        "left": 0.0322265625,
+        "top": 0.009765625,
+        "right": 0.9736328125,
+        "bottom": 0.9830729166666666
+      },
+      "format": "png",
+      "object": "miriam-adler/4e05209c3228e444/miriam-adler__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/miriam-adler/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/miriam-adler/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8386847178141276,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1419997,
+      "sha256": "6c549fd225f0da5bc5995787d05ff08a32211f7d19285634016ea2f590f5383a",
+      "sourceSha256": "6c549fd225f0da5bc5995787d05ff08a32211f7d19285634016ea2f590f5383a",
+      "bbox": {
+        "left": 0.0537109375,
+        "top": 0.020833333333333332,
+        "right": 0.958984375,
+        "bottom": 0.9739583333333334
+      },
+      "format": "png",
+      "object": "miriam-adler/6c549fd225f0da5b/miriam-adler__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/miriam-adler/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/miriam-adler/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7527122497558594,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2305811,
+      "sha256": "f4ff4daef7155869a1ce64977af7ae0bf08fd7a9159db2a737540473f04ce8bd",
+      "sourceSha256": "f4ff4daef7155869a1ce64977af7ae0bf08fd7a9159db2a737540473f04ce8bd",
+      "bbox": {
+        "left": 0,
+        "top": 0.02452153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/f4ff4daef7155869/miriam-adler__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/miriam-adler/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/miriam-adler/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32741687810483605,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.rainy-city-layer",
+      "series": "wardrobe",
+      "key": "rainy-city-layer",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1403674,
+      "sha256": "7630df677ba289fa27d438da0a7055ca2ecad8b760a5927a36cc665e052dbac8",
+      "sourceSha256": "7630df677ba289fa27d438da0a7055ca2ecad8b760a5927a36cc665e052dbac8",
+      "bbox": {
+        "left": 0,
+        "top": 0.03125,
+        "right": 0.95703125,
+        "bottom": 0.984375
+      },
+      "format": "png",
+      "object": "miriam-adler/7630df677ba289fa/miriam-adler__wardrobe-personal__rainy-city-layer__v1.png",
+      "preview": "/media/assets/miriam-adler/wardrobe.personal.rainy-city-layer.webp",
+      "thumb": "/media/assets/miriam-adler/wardrobe.personal.rainy-city-layer.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7470817565917969,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.evening-cultural",
+      "series": "wardrobe",
+      "key": "evening-cultural",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1373261,
+      "sha256": "11ac43bb6a5c788ae113731bf87c122f94e2a498810d32b10a95e6aa17242492",
+      "sourceSha256": "11ac43bb6a5c788ae113731bf87c122f94e2a498810d32b10a95e6aa17242492",
+      "bbox": {
+        "left": 0.0478515625,
+        "top": 0.011067708333333334,
+        "right": 0.986328125,
+        "bottom": 0.9765625
+      },
+      "format": "png",
+      "object": "miriam-adler/11ac43bb6a5c788a/miriam-adler__wardrobe-personal__evening-cultural__v1.png",
+      "preview": "/media/assets/miriam-adler/wardrobe.personal.evening-cultural.webp",
+      "thumb": "/media/assets/miriam-adler/wardrobe.personal.evening-cultural.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7464599609375,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.weekend-walking",
+      "series": "wardrobe",
+      "key": "weekend-walking",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1528342,
+      "sha256": "b208db98f3dc790d884a28511aa8ea6802079ce8e19cc73e7a2a22be6d2af653",
+      "sourceSha256": "b208db98f3dc790d884a28511aa8ea6802079ce8e19cc73e7a2a22be6d2af653",
+      "bbox": {
+        "left": 0,
+        "top": 0.022786458333333332,
+        "right": 0.978515625,
+        "bottom": 0.97265625
+      },
+      "format": "png",
+      "object": "miriam-adler/b208db98f3dc790d/miriam-adler__wardrobe-personal__weekend-walking__v1.png",
+      "preview": "/media/assets/miriam-adler/wardrobe.personal.weekend-walking.webp",
+      "thumb": "/media/assets/miriam-adler/wardrobe.personal.weekend-walking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7548720041910807,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1437183,
+      "sha256": "d3a51e7d0e6af0a4f0589d43778f514e550cdbe71da70824e2c7608cfa3e1eef",
+      "sourceSha256": "d3a51e7d0e6af0a4f0589d43778f514e550cdbe71da70824e2c7608cfa3e1eef",
+      "bbox": {
+        "left": 0.0302734375,
+        "top": 0.01953125,
+        "right": 0.953125,
+        "bottom": 0.9895833333333334
+      },
+      "format": "png",
+      "object": "miriam-adler/d3a51e7d0e6af0a4/miriam-adler__pose__walk__v1.png",
+      "preview": "/media/assets/miriam-adler/pose.walk.webp",
+      "thumb": "/media/assets/miriam-adler/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7751782735188802,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1413453,
+      "sha256": "aee9f0a9c4676f49cee19e15962acc7ec8fc0aeb452ea81bc7ddbf133a8a64cd",
+      "sourceSha256": "aee9f0a9c4676f49cee19e15962acc7ec8fc0aeb452ea81bc7ddbf133a8a64cd",
+      "bbox": {
+        "left": 0.0400390625,
+        "top": 0.015625,
+        "right": 0.970703125,
+        "bottom": 0.98046875
+      },
+      "format": "png",
+      "object": "miriam-adler/aee9f0a9c4676f49/miriam-adler__pose__run__v1.png",
+      "preview": "/media/assets/miriam-adler/pose.run.webp",
+      "thumb": "/media/assets/miriam-adler/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7886149088541666,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1515351,
+      "sha256": "e7a4b10521d59305d0236b171cde4b720f73f9f73afed87c47e64e54498d8ba9",
+      "sourceSha256": "e7a4b10521d59305d0236b171cde4b720f73f9f73afed87c47e64e54498d8ba9",
+      "bbox": {
+        "left": 0,
+        "top": 0.024088541666666668,
+        "right": 0.9658203125,
+        "bottom": 0.9973958333333334
+      },
+      "format": "png",
+      "object": "miriam-adler/e7a4b10521d59305/miriam-adler__pose__sit__v1.png",
+      "preview": "/media/assets/miriam-adler/pose.sit.webp",
+      "thumb": "/media/assets/miriam-adler/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7200756072998047,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1460339,
+      "sha256": "95b2478817ec4cc54b9461902d28b3d41d5926e1cb7436019fdb118d892255b9",
+      "sourceSha256": "95b2478817ec4cc54b9461902d28b3d41d5926e1cb7436019fdb118d892255b9",
+      "bbox": {
+        "left": 0.0244140625,
+        "top": 0.009114583333333334,
+        "right": 0.974609375,
+        "bottom": 0.9895833333333334
+      },
+      "format": "png",
+      "object": "miriam-adler/95b2478817ec4cc5/miriam-adler__pose__point__v1.png",
+      "preview": "/media/assets/miriam-adler/pose.point.webp",
+      "thumb": "/media/assets/miriam-adler/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7607390085856119,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1350839,
+      "sha256": "0b0477f64967461d5f33581b82ead48b1ee45a09e65efdd659c3d3091ce06b32",
+      "sourceSha256": "0b0477f64967461d5f33581b82ead48b1ee45a09e65efdd659c3d3091ce06b32",
+      "bbox": {
+        "left": 0.0556640625,
+        "top": 0.005208333333333333,
+        "right": 0.970703125,
+        "bottom": 0.9791666666666666
+      },
+      "format": "png",
+      "object": "miriam-adler/0b0477f64967461d/miriam-adler__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/miriam-adler/pose.arms-crossed.webp",
+      "thumb": "/media/assets/miriam-adler/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7770551045735677,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1428053,
+      "sha256": "baab19325478530b61bdb00a13e7177891e39f3e22e077a79c88dd6bf29d27e0",
+      "sourceSha256": "baab19325478530b61bdb00a13e7177891e39f3e22e077a79c88dd6bf29d27e0",
+      "bbox": {
+        "left": 0.0380859375,
+        "top": 0.008463541666666666,
+        "right": 0.931640625,
+        "bottom": 0.9895833333333334
+      },
+      "format": "png",
+      "object": "miriam-adler/baab19325478530b/miriam-adler__pose__phone__v1.png",
+      "preview": "/media/assets/miriam-adler/pose.phone.webp",
+      "thumb": "/media/assets/miriam-adler/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7511711120605469,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1232081,
+      "sha256": "93d03a174af345a77a82605bb8cf3debc93e9ef22d99b74ce818a47520a49793",
+      "sourceSha256": "93d03a174af345a77a82605bb8cf3debc93e9ef22d99b74ce818a47520a49793",
+      "bbox": {
+        "left": 0,
+        "top": 0.013556618819776715,
+        "right": 0.9896331738437002,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/93d03a174af345a7/miriam-adler__detail__hands__v1.png",
+      "preview": "/media/assets/miriam-adler/detail.hands.webp",
+      "thumb": "/media/assets/miriam-adler/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.585367016933373,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1540639,
+      "sha256": "87cf1d39ab3df31ab7545ad16b81f2f980e7d8c5e60364a9eae0ecba2fae277c",
+      "sourceSha256": "87cf1d39ab3df31ab7545ad16b81f2f980e7d8c5e60364a9eae0ecba2fae277c",
+      "bbox": {
+        "left": 0,
+        "top": 0.024720893141945772,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "miriam-adler/87cf1d39ab3df31a/miriam-adler__detail__hair-back__v1.png",
+      "preview": "/media/assets/miriam-adler/detail.hair-back.webp",
+      "thumb": "/media/assets/miriam-adler/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5334146043665057,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
     },
     {
       "kind": "voice",
@@ -34,28 +1648,155 @@
       "series": "voice",
       "key": "intro",
       "look": null,
-      "conformance": "v1",
+      "conformance": "source-original",
       "version": 1,
       "width": 0,
       "height": 0,
-      "bytes": 248676,
-      "sha256": "9fbd3d19efa9a7ca2182510da0672c48d5e2a2336af9f4e726f762943aa17187",
-      "sourceSha256": "9fbd3d19efa9a7ca2182510da0672c48d5e2a2336af9f4e726f762943aa17187",
+      "bytes": 1711158,
+      "sha256": "36e94ec8fbce55a5f24c3fb068fe76c55a930e8390dab24e4120ff778f2c784c",
+      "sourceSha256": "36e94ec8fbce55a5f24c3fb068fe76c55a930e8390dab24e4120ff778f2c784c",
       "bbox": {
         "left": 0,
         "top": 0,
         "right": 0,
         "bottom": 0
       },
-      "format": "mp3",
-      "object": "voice/miriam-adler/candidate-1.mp3",
+      "format": "wav",
+      "object": "voice/miriam-adler/miriam-adler__voice__intro__v1__36e94ec8fbce55a5.wav",
       "preview": "/api/voice/miriam-adler/intro",
       "thumb": "/api/voice/miriam-adler/intro",
       "previewUrl": "/api/voice/miriam-adler/intro",
-      "durationSec": 20.5,
-      "transcript": {
-        "text": "Good evening. I am Miriam Adler, fifty, from Vienna. I spent twenty years backstage at the opera, so I know drama very well. People say I look severe. That is mostly true. I would be wonderful as a duchess, a museum director, or a villain with excellent taste."
-      }
+      "durationSec": 19.4
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1658238,
+      "sha256": "e8e50bb1d19e3f04709ead47bbc3ba9a3addc7665f861312d97ec4ae22ac57f3",
+      "sourceSha256": "e8e50bb1d19e3f04709ead47bbc3ba9a3addc7665f861312d97ec4ae22ac57f3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/miriam-adler/miriam-adler__voice__intro-alt__v1__e8e50bb1d19e3f04.wav",
+      "preview": "/api/voice/miriam-adler/intro-alt",
+      "thumb": "/api/voice/miriam-adler/intro-alt",
+      "previewUrl": "/api/voice/miriam-adler/intro-alt",
+      "durationSec": 18.8
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 949110,
+      "sha256": "c23bdcbc37f67fcc353a89e28bb7db12b6386d9f0cbe6958bc716a36b5cc15f6",
+      "sourceSha256": "c23bdcbc37f67fcc353a89e28bb7db12b6386d9f0cbe6958bc716a36b5cc15f6",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/miriam-adler/miriam-adler__voice__chat__v1__c23bdcbc37f67fcc.wav",
+      "preview": "/api/voice/miriam-adler/chat",
+      "thumb": "/api/voice/miriam-adler/chat",
+      "previewUrl": "/api/voice/miriam-adler/chat",
+      "durationSec": 10.8
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1044366,
+      "sha256": "722b24fbb7e1296d878e9d99f073dfc47412472557119e004da4579f0ee5384f",
+      "sourceSha256": "722b24fbb7e1296d878e9d99f073dfc47412472557119e004da4579f0ee5384f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/miriam-adler/miriam-adler__voice__happy__v1__722b24fbb7e1296d.wav",
+      "preview": "/api/voice/miriam-adler/happy",
+      "thumb": "/api/voice/miriam-adler/happy",
+      "previewUrl": "/api/voice/miriam-adler/happy",
+      "durationSec": 11.8
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 882078,
+      "sha256": "cfebee6988461a20a02b1fceef476515c5a12f5b909c780da6c4423bed8c21c0",
+      "sourceSha256": "cfebee6988461a20a02b1fceef476515c5a12f5b909c780da6c4423bed8c21c0",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/miriam-adler/miriam-adler__voice__angry__v1__cfebee6988461a20.wav",
+      "preview": "/api/voice/miriam-adler/angry",
+      "thumb": "/api/voice/miriam-adler/angry",
+      "previewUrl": "/api/voice/miriam-adler/angry",
+      "durationSec": 10
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1340718,
+      "sha256": "85f00edfd7a3100d0c9536cf46d1082e31c6105997305f952f5f8ecbe02ddcb7",
+      "sourceSha256": "85f00edfd7a3100d0c9536cf46d1082e31c6105997305f952f5f8ecbe02ddcb7",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/miriam-adler/miriam-adler__voice__sad__v1__85f00edfd7a3100d.wav",
+      "preview": "/api/voice/miriam-adler/sad",
+      "thumb": "/api/voice/miriam-adler/sad",
+      "previewUrl": "/api/voice/miriam-adler/sad",
+      "durationSec": 15.2
     }
   ]
 }

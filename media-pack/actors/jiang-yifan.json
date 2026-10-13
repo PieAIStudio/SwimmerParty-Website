@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/jiang-yifan/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "demographics": {
@@ -49,10 +49,10 @@
       "bottomMargin": "0.04–0.10"
     }
   },
-  "anchorVersion": 1,
+  "anchorVersion": 2,
   "anchors": {
     "face": "library/claude-casting-2026-10-07/final/CC-041.png",
-    "body": null
+    "body": "staging/actors/jiang-yifan-20261011/selected-body-anchor.png"
   },
   "looks": [
     {
@@ -63,17 +63,619 @@
         "en": "Casting basics"
       },
       "prompt": "heather-grey plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied jiang-yifan personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "bottle",
+          "label": {
+            "en": "Bottle",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / bottle reference image."
+        },
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "towel",
+          "label": {
+            "en": "Towel",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / towel reference image."
+        },
+        {
+          "key": "warmup",
+          "label": {
+            "en": "Warmup",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / warmup reference image."
+        }
+      ]
     }
   ],
   "roles": [],
   "proposals": {
     "approval": "owner-confirmed-facts-provisional-identity",
     "appearance": "Provisional until Owner selects a proportion-corrected audition image",
-    "phase": "audition-pending-owner"
+    "phase": "body-anchor-supervisor-selected-provisional"
   },
   "routes": {
     "chatgpt-web": {
-      "chat": null
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00-pics-a/c/6ac90a01-c998-83e9-84f0-92cf0099fa91"
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/technical-staging-manifest.json",
+      "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json"
+    ],
+    "images": [
+      {
+        "slot": "detail.hair-back",
+        "source": "jiang-yifan/jiang-yifan__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__detail__hair-back__v2.png",
+        "sha256": "b7f7ef943a12c7a18f0f2ffe24753fbc266f80afc032fadaae17fcf560997c7d",
+        "bytes": 1057072,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "jiang-yifan/jiang-yifan__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__detail__hands__v2.png",
+        "sha256": "88ca684720fbfae600a00397eb79d633fa18502a7224662512918e87023bc9f8",
+        "bytes": 729556,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "jiang-yifan/jiang-yifan__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__angry__v2.png",
+        "sha256": "110b788f09edf0db97399b5d0aa483a56353eb0ee810e9c0b7bcb848b8b4a9d2",
+        "bytes": 2124886,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "jiang-yifan/jiang-yifan__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__annoyed__v2.png",
+        "sha256": "1bfcf1027e93d4e573b438b5675d8a1d97652b6ac49013cc4d2dc032b3a02ac7",
+        "bytes": 782654,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "jiang-yifan/jiang-yifan__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__awkward-smile__v2.png",
+        "sha256": "e2f6d1cbf294d98011e28ba314aba29dd26871bd4368e1883ed99e273f46ff16",
+        "bytes": 715987,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "jiang-yifan/jiang-yifan__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__confused__v2.png",
+        "sha256": "443d122b79197042bcdff90f5c185fb5d5be0a6050a2738cf788de6a27e4ef8d",
+        "bytes": 784252,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "jiang-yifan/jiang-yifan__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__contempt__v2.png",
+        "sha256": "97d3a80745463a7ad7909cb487ee095a65a2170f3270350aceb4535e6837687d",
+        "bytes": 770640,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "jiang-yifan/jiang-yifan__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__cry__v2.png",
+        "sha256": "24a06ef65370fb13aa958e458f4abaa696ff68bd1a104724a47ff566e156810a",
+        "bytes": 749561,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "jiang-yifan/jiang-yifan__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__deadpan__v2.png",
+        "sha256": "45452717d652e15ed530ae5b3d8229338f1e005a1f80951fa78fb746b36137e5",
+        "bytes": 665613,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "jiang-yifan/jiang-yifan__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__determined__v2.png",
+        "sha256": "0c0c8a5dde1a42f184b2c336623e0107ccb4af14a8b812392b929185c7bc6fd8",
+        "bytes": 774964,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "jiang-yifan/jiang-yifan__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__disgusted__v2.png",
+        "sha256": "c04af602a7122321dca4faa179514846207372d5d78fd62a0b0de39f6e23a188",
+        "bytes": 738498,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "jiang-yifan/jiang-yifan__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__embarrassed__v2.png",
+        "sha256": "d05d84a1b73a0a780b8ac5bcdf647998b8db7c09e63f8bec7117cfca8089b791",
+        "bytes": 793984,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "jiang-yifan/jiang-yifan__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__eyes-closed__v2.png",
+        "sha256": "10aaee56b010a1ee06ae365711bda82e1c23661d4f1c15fcddee8eb004d4044e",
+        "bytes": 709139,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "jiang-yifan/jiang-yifan__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__laugh__v2.png",
+        "sha256": "7092cca9dd50d78b483502c3b6270530807df8578b70a08b0a1551988e806cfd",
+        "bytes": 2019132,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "jiang-yifan/jiang-yifan__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__neutral__v2.png",
+        "sha256": "9f33de48de228bc0d7550d00e18c0a3ab16e567386bd3c7855fde2e39e531d72",
+        "bytes": 727610,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "jiang-yifan/jiang-yifan__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__pain__v2.png",
+        "sha256": "828a06dd3f1df30d047e7ee66b7a8c7fe36e8bccf46d40b7f18c4afff04b6c72",
+        "bytes": 688981,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "jiang-yifan/jiang-yifan__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__sad__v2.png",
+        "sha256": "4f82f6e3857d42c6ed4d0f488d4c4b298ed498ff5f102ed49764b8a60abcd19b",
+        "bytes": 737295,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "jiang-yifan/jiang-yifan__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__scared__v2.png",
+        "sha256": "2b7a3168fcd83347b3d9b0df7309c601d3452558396c111a5f09327053245d53",
+        "bytes": 754062,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "jiang-yifan/jiang-yifan__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__shy__v2.png",
+        "sha256": "334a7fd136dc41c6774b4cd2b85ec45a2c1fba6620b71b23bd146d5a5ac932be",
+        "bytes": 657815,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "jiang-yifan/jiang-yifan__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__skeptical__v2.png",
+        "sha256": "8c3518d875b3643852e29330beefeb8b5081b221bd6e416ce41f937d4a608723",
+        "bytes": 753699,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "jiang-yifan/jiang-yifan__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__sleepy__v2.png",
+        "sha256": "5934a4da9b8a6dbfbe4ca9057c52ffdb994b37892850597644335b2924fb37d5",
+        "bytes": 991634,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "jiang-yifan/jiang-yifan__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__smile__v2.png",
+        "sha256": "b416be58d309763d83bb61113a16fe6f91f9e9cccd156995df06c18960acb324",
+        "bytes": 741719,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "jiang-yifan/jiang-yifan__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__smug__v2.png",
+        "sha256": "f65f1b482a5eba80270b65b613fcd73f4090083f8e72d47ae2192d2af450e022",
+        "bytes": 769982,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "jiang-yifan/jiang-yifan__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__speaking__v2.png",
+        "sha256": "519ced51030646f72587750d289a4940b6ed878a59c26f0be4188f7c0b83ca44",
+        "bytes": 757011,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "jiang-yifan/jiang-yifan__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__surprised__v2.png",
+        "sha256": "be86b3b18cf961bb53ad95a51c9bfcd532205b6109e06bb5ebf593fa0ae0ddc0",
+        "bytes": 762060,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "jiang-yifan/jiang-yifan__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__thinking__v2.png",
+        "sha256": "500bcd539e83046749aed71d663c5723f1535e3906cc94a87db2860cd634203d",
+        "bytes": 699996,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "jiang-yifan/jiang-yifan__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__tired__v2.png",
+        "sha256": "3b7a882c7b211f276e4eb399c09f1ef8fd9e10a1aa0d997e8fabb3e1e215514e",
+        "bytes": 1915042,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "jiang-yifan/jiang-yifan__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__expression__worried__v2.png",
+        "sha256": "e81fabd2ec88c66c3278e75fb59974bd2c039ff6071ed5ae72eb01123c084d73",
+        "bytes": 704820,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "jiang-yifan/jiang-yifan__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__face__down__v2.png",
+        "sha256": "40c5554d63c89bf4e5023146275fa1c570ad8b7332ced022e040039b84baad1f",
+        "bytes": 729766,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "jiang-yifan/jiang-yifan__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__face__front__v2.png",
+        "sha256": "745e04648fd10058994de66ebfd2a7049bc2a6fd720a0fb832c967c95467636d",
+        "bytes": 717621,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "jiang-yifan/jiang-yifan__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__face__side-right__v2.png",
+        "sha256": "83813add59f200882dbb6c8c800191ddb3630b1de2931c859e01edbe6ea38db1",
+        "bytes": 702095,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "jiang-yifan/jiang-yifan__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__face__side__v2.png",
+        "sha256": "19cededbf4ed105303f2833bed67aa0ecf160f37722f203e9e0af85566a8679b",
+        "bytes": 674979,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "jiang-yifan/jiang-yifan__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__face__three-quarter-left__v2.png",
+        "sha256": "df1ad573cf2b4e50941ee632cd848e6081f9c861ba8b832008ae966c50303387",
+        "bytes": 845797,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "jiang-yifan/jiang-yifan__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__face__three-quarter__v2.png",
+        "sha256": "53b9c3b738ec13e532a7b2109181a126e71c60f1e0535fa3f6e7acc1b0689c90",
+        "bytes": 2114805,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "jiang-yifan/jiang-yifan__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__face__up__v2.png",
+        "sha256": "96a89c6625c58298952b5616666c395cedf8b3894e66bbdfbb61df097dc7ec77",
+        "bytes": 739893,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "jiang-yifan/jiang-yifan__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__pose__arms-crossed__v2.png",
+        "sha256": "9c13fdb641c3f5dea65192be6764d68fc13f8cde79ba242dd0702af30126d3f4",
+        "bytes": 648201,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "jiang-yifan/jiang-yifan__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__pose__phone__v2.png",
+        "sha256": "bd1334c929ed1446ba7d03360b13abd879b5a1bcae693c4af99cc7575c4defe2",
+        "bytes": 1297592,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "jiang-yifan/jiang-yifan__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__pose__point__v2.png",
+        "sha256": "7fa4e9b23e315b9e2601929f789cd5a4479d2f2cea1146234ea91081a7067b69",
+        "bytes": 726285,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "jiang-yifan/jiang-yifan__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__pose__run__v2.png",
+        "sha256": "9e3097cecd929a2ef554fce8828eabde4d02b085f9bf0afc0a0bc74a7b7bdc85",
+        "bytes": 663648,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "jiang-yifan/jiang-yifan__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__pose__sit__v2.png",
+        "sha256": "7d2129c8132d2b527045193e3225df39ab24a1e615a9b4dfc3d90c0dcfb81be5",
+        "bytes": 1571778,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "jiang-yifan/jiang-yifan__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__pose__walk__v2.png",
+        "sha256": "11ac15bb3090861b843fff65cf85e1d551a2df297a891de371b18ba2af7f2fd6",
+        "bytes": 627160,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "jiang-yifan/jiang-yifan__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__turnaround__back-three-quarter-left__v2.png",
+        "sha256": "492f71e9bc487c7dc1504e72abc73370b64bbdae240c98ff4265590966d4fcfe",
+        "bytes": 634495,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "jiang-yifan/jiang-yifan__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__turnaround__back-three-quarter-right__v2.png",
+        "sha256": "c94ad716015b5216192c51ba30c38533a8a369509799f7ed17b8f8c75807ee87",
+        "bytes": 624146,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "jiang-yifan/jiang-yifan__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__turnaround__back__v2.png",
+        "sha256": "4d80d2a0a94cae84e9de138c4ff32eba007a0fe34aa916a2cc00f37b9ac87237",
+        "bytes": 681116,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.front",
+        "source": "jiang-yifan/jiang-yifan__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__turnaround__front__v2.png",
+        "sha256": "cdc4825882b6037ac82a5c9a943a1ff4e64d37e1b652927b709a56e948103c81",
+        "bytes": 713874,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "jiang-yifan/jiang-yifan__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__turnaround__side__v2.png",
+        "sha256": "e20e3f925f5aef91eb2c05911d3adf08bdb24ae42d08ee142e4eed2f6de20df0",
+        "bytes": 434690,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "jiang-yifan/jiang-yifan__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__turnaround__three-quarter__v2.png",
+        "sha256": "7d5fb9f590e09498c5f5d10d764aeee34db661b2ea206a939b3b17daccc4391c",
+        "bytes": 699373,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "jiang-yifan/jiang-yifan__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__wardrobe-personal__back__v2.png",
+        "sha256": "3bcc5feb3521befc54e4df29d7721c3c2daa014c2b2c9446201c9897ca6f9696",
+        "bytes": 780964,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.bottle",
+        "source": "jiang-yifan/jiang-yifan__wardrobe-personal__bottle__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__wardrobe-personal__bottle__v2.png",
+        "sha256": "14b27765b2a5887730fbc04486c2f23448cbdb3ff4d49d7f335259e14aa3569c",
+        "bytes": 902571,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "jiang-yifan/jiang-yifan__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__wardrobe-personal__front__v2.png",
+        "sha256": "fac7c21687da84264e3a6ace32a821de25f9ea807f56ec8a7f04d4b4306279d6",
+        "bytes": 773388,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "jiang-yifan/jiang-yifan__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__wardrobe-personal__portrait__v2.png",
+        "sha256": "a157af21bd6f2a6048cc70418b95f53e3c9feb84bd6d41e699c06412338a5415",
+        "bytes": 940605,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "jiang-yifan/jiang-yifan__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__wardrobe-personal__side__v2.png",
+        "sha256": "eb0a8c518bc127391de2a38d6cdcb6746d2d36d715415edbe3de8c14dfcf8168",
+        "bytes": 534378,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "jiang-yifan/jiang-yifan__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__wardrobe-personal__three-quarter__v2.png",
+        "sha256": "5f4bab1cdda18f28566bb4f739fb6b0b439be355044851ddb9a29930085f5259",
+        "bytes": 663086,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.towel",
+        "source": "jiang-yifan/jiang-yifan__wardrobe-personal__towel__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__wardrobe-personal__towel__v2.png",
+        "sha256": "f6f6664c148889a459c5a9ebca477155be26819f9588b0420ec9b7cf128f9907",
+        "bytes": 895206,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.warmup",
+        "source": "jiang-yifan/jiang-yifan__wardrobe-personal__warmup__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/images/jiang-yifan__wardrobe-personal__warmup__v2.png",
+        "sha256": "57fa2e4de3b6cbdcfb9a008838c595d02545e55ec08086a69ee03ab72b6e3b39",
+        "bytes": 643249,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/jiang-yifan/jiang-yifan__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/audio/intro.wav",
+        "sha256": "e76390cf2fe7a7b070a3cc0d8f4edd7c55d6ee8e96d70f15677cba1cf01bb691",
+        "bytes": 1368942,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/jiang-yifan/jiang-yifan__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/audio/intro-alt.wav",
+        "sha256": "5a3a115663511766a7d2b2b1f32ab071c2dfbeec24abf5d8d9803b6dbce93c93",
+        "bytes": 1566510,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/jiang-yifan/jiang-yifan__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/audio/chat.wav",
+        "sha256": "f35d9bfdb683e20f8167f548593cc23de9dbc1c359f566c57e7016e172a5c7a5",
+        "bytes": 1411278,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/jiang-yifan/jiang-yifan__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/audio/happy.wav",
+        "sha256": "b127f7481bb7ac5d7bdc59f3b9bbcc8ee9ebba68f604766a6b414c7aea69ddef",
+        "bytes": 1157262,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/jiang-yifan/jiang-yifan__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/audio/angry.wav",
+        "sha256": "bd460a7d3b0132190880dc6f869c5e16cc38036a7b3aaa6e5171789e315b998a",
+        "bytes": 1312494,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/jiang-yifan/jiang-yifan__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/actor-jiang-yifan-20261009/full-pack/technical-staging-20261013/audio/sad.wav",
+        "sha256": "cf367fd4bb0bd4e53fceadbca7425be42898cb53a681eb4a989e12a279f48b3f",
+        "bytes": 1368942,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 109,
+    "status": "active",
+    "tagline": {
+      "zh": "短寸头，眉毛硬，跑得比谁都快。",
+      "en": "Undercut, strong brows, faster than anyone on the lot."
+    },
+    "introduction": {
+      "en": "East Asian (Chinese) woman, about 20, athletic and sporty, about 168 cm; strong dark eyebrows, a slightly crooked nose, short tomboy undercut; heather-grey top",
+      "zh": "短寸头，眉毛硬，跑得比谁都快。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "jiang-yifan-grok-solo-20261013",
+      "actorSlugs": [
+        "jiang-yifan"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-root-physical-and-prior-semantic",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json",
+        "evidenceSha256": "869a1028ff40850f7a08d05e9ea668eadd75ed70d0bf5d7cf78cf1dcf55a384b",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/jiang-yifan-grok-solo-20261013/source.mp4",
+          "sourceSha256": "c0b0a878d5df5b98ce9093fbc78368104cf6a96088ac2b49785b7e57f0c82566",
+          "public": "/media/works/samples/jiang-yifan-grok-solo-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }

@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/pang-tiezhu/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "demographics": {
@@ -63,6 +63,49 @@
         "en": "Casting basics"
       },
       "prompt": "rust-orange plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Personal look",
+        "zh": "日常造型"
+      },
+      "prompt": "Use the supplied pang-tiezhu personal reference images as the outfit reference. Keep the original animated character and the depicted clothing.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Portrait",
+            "zh": "补充造型 1"
+          },
+          "direction": "Use the supplied personal / portrait reference image."
+        },
+        {
+          "key": "extra-1",
+          "label": {
+            "en": "Extra 1",
+            "zh": "补充造型 2"
+          },
+          "direction": "Use the supplied personal / extra-1 reference image."
+        },
+        {
+          "key": "extra-2",
+          "label": {
+            "en": "Extra 2",
+            "zh": "补充造型 3"
+          },
+          "direction": "Use the supplied personal / extra-2 reference image."
+        },
+        {
+          "key": "extra-3",
+          "label": {
+            "en": "Extra 3",
+            "zh": "补充造型 4"
+          },
+          "direction": "Use the supplied personal / extra-3 reference image."
+        }
+      ]
     }
   ],
   "roles": [],
@@ -75,5 +118,564 @@
     "chatgpt-web": {
       "chat": null
     }
-  }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-14",
+    "ownerReviewPending": true,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/manifest.json",
+      "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json"
+    ],
+    "images": [
+      {
+        "slot": "expression.angry",
+        "source": "pang-tiezhu/pang-tiezhu__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-angry.png",
+        "sha256": "3382fbb66f1ed9185e27f495616b5ca6e99aa87223526aad5fcfbd84511a2386",
+        "bytes": 2244487,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "pang-tiezhu/pang-tiezhu__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-annoyed.png",
+        "sha256": "124a2c036592d7385d66833ffb05c3680d70f489c5c1645f9bc9a2a8f25dc2c6",
+        "bytes": 1783632,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "pang-tiezhu/pang-tiezhu__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-awkward-smile.png",
+        "sha256": "ddc2e3304e6967cdd7596cf61a527cee5d4dbd32505cbbb774abf3a001c5fe1e",
+        "bytes": 2043518,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "pang-tiezhu/pang-tiezhu__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-confused.png",
+        "sha256": "4e969985ae68f73a45ada2bc68aa599cab5b8f73dc4e2edf99cfd4b5c4f67671",
+        "bytes": 2049952,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "pang-tiezhu/pang-tiezhu__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-contempt.png",
+        "sha256": "57c9708776fdf22de55a3ccb6a701fff587ed2a70f2c4311b1be4742c2c78d29",
+        "bytes": 2146704,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "pang-tiezhu/pang-tiezhu__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-cry.png",
+        "sha256": "55a40e1ac4e3497722ebf6fd856fca9d05100c3a067a185e055f106211dd6c21",
+        "bytes": 1868037,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "pang-tiezhu/pang-tiezhu__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-deadpan.png",
+        "sha256": "8d3574c05336fcf6d962f5d3819e19ae09625dd9aae7ae26881d73cf8b8c4ec3",
+        "bytes": 1947392,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "pang-tiezhu/pang-tiezhu__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-determined.png",
+        "sha256": "ec225a39c81192c14ce1e0365fe579c50d6131ef1c6861130e8920b8463fbb93",
+        "bytes": 2148293,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "pang-tiezhu/pang-tiezhu__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-disgusted.png",
+        "sha256": "ee721bfe3a03b4a74ebc097d70dc9f14d1b76f246743cf58134238a21028d39b",
+        "bytes": 2139260,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "pang-tiezhu/pang-tiezhu__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-embarrassed.png",
+        "sha256": "ea1b9332df1bdbceb987254290010017559a5fd640b947ce3c2df32763e5c8d2",
+        "bytes": 2063437,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "pang-tiezhu/pang-tiezhu__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-eyes-closed.png",
+        "sha256": "dcdc91317fd718b6c43864ee106eba44d62dbb814d39a2e2e6954b71c8c15324",
+        "bytes": 2016406,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "pang-tiezhu/pang-tiezhu__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-laugh.png",
+        "sha256": "b325336dabf37abcb2ee329df2ea428e4b4928e8d9139309603b6d08cae5a456",
+        "bytes": 2182537,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "pang-tiezhu/pang-tiezhu__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-neutral.png",
+        "sha256": "934e543ee4717093d8ec3c3fe94589b9913f7c83a2ae6626ad3e6c85c206204c",
+        "bytes": 2025785,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "pang-tiezhu/pang-tiezhu__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-pain.png",
+        "sha256": "fe025f6fc1fbabbde03de2dadd6afdbe4be8756ea9d68a3acdf4b5a379f5594b",
+        "bytes": 2124634,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "pang-tiezhu/pang-tiezhu__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-sad.png",
+        "sha256": "1c172670c22caa03381c114d082a7bc9ee6ca943c8defe94b968175c4f5711c5",
+        "bytes": 1776661,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "pang-tiezhu/pang-tiezhu__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-scared.png",
+        "sha256": "90c7bded1141ddcc996f92c243678c056d1f03b5e32a5012c3e915179a93eee3",
+        "bytes": 2297094,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "pang-tiezhu/pang-tiezhu__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-shy.png",
+        "sha256": "cb7c01206e3fb46371c7143e08998186bbf9b4d5246d56282cf76d1f6cc65fef",
+        "bytes": 2116606,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "pang-tiezhu/pang-tiezhu__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-skeptical.png",
+        "sha256": "cf697d23397f264339dead88b65457839c818316824c7044ba6ec99f1cc8a6f3",
+        "bytes": 2078500,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "pang-tiezhu/pang-tiezhu__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-sleepy.png",
+        "sha256": "6cc5dffc8548e67c37481067b614db2c16f6326cde031fda213a81acb4a1de17",
+        "bytes": 2051516,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "pang-tiezhu/pang-tiezhu__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-smile.png",
+        "sha256": "afbc46a1f0b501184a56c30caeec489a75189f62ea99eddf9f03213a0b0275cf",
+        "bytes": 2019968,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "pang-tiezhu/pang-tiezhu__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-smug.png",
+        "sha256": "b7ba91973a02e0d08cd62087a230304de776f5eaec9e01db37a446fa30d169cc",
+        "bytes": 2158536,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "pang-tiezhu/pang-tiezhu__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-speaking.png",
+        "sha256": "7865ba65497fec992a8131edfcace69751d89b8ef19fef7351681083fc2805af",
+        "bytes": 2024700,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "pang-tiezhu/pang-tiezhu__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-surprised.png",
+        "sha256": "236e048fd22845e6e6023bf53f08503b9304c2cb3ba8db9a605ec5145d7a18ff",
+        "bytes": 2058829,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "pang-tiezhu/pang-tiezhu__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-thinking.png",
+        "sha256": "43e5e3f3ff5269caaf749a8418b719a94d314e575a1883fefdae6cb1d9d65bfa",
+        "bytes": 1944979,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "pang-tiezhu/pang-tiezhu__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-tired.png",
+        "sha256": "db3a8194a53bdfd68cfa891ba8fe115f38c7b60425ee2e5fabb4f360e46d7328",
+        "bytes": 2078644,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "pang-tiezhu/pang-tiezhu__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/expression-worried.png",
+        "sha256": "3a79cc7f7d186fad56babbc82187e75ca629176045e958bbbeb545cddbdb536e",
+        "bytes": 1789646,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "pang-tiezhu/pang-tiezhu__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/face-down.png",
+        "sha256": "ccfda0a30b59e6bec1c99043387ca4a0f818e95c5a59340e5786db74cad25f38",
+        "bytes": 1997009,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "pang-tiezhu/pang-tiezhu__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/face-front.png",
+        "sha256": "7642504beb09f9ceaf9b88a4e9aef1ef7e42f0e6e8ae129820940b4442e7996e",
+        "bytes": 2149492,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "pang-tiezhu/pang-tiezhu__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/face-side.png",
+        "sha256": "a930c8264a0a7acfa9d1e54c00cdfcfa38299411f21811e902af343714cf8a48",
+        "bytes": 2137664,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "pang-tiezhu/pang-tiezhu__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/face-side-right.png",
+        "sha256": "ac5e7d811e94e0be8dbc4053bb32051f1899e09af4b7d1e7615a7cdafe309255",
+        "bytes": 2102813,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "pang-tiezhu/pang-tiezhu__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/face-three-quarter-left.png",
+        "sha256": "afa66f59aacc86832631547e3b37a31d691027cc508bb938cc6ce737ac753659",
+        "bytes": 2178983,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "pang-tiezhu/pang-tiezhu__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/face-three-quarter.png",
+        "sha256": "ce69e805744a416862693bedd0130f86bee994e278ac45ba4e4860c312c44399",
+        "bytes": 1890092,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "pang-tiezhu/pang-tiezhu__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/face-up.png",
+        "sha256": "de9fb4653c224dc0ca04bf964f734701e5545e22d9d2b440f2d8605d0b9d138b",
+        "bytes": 1814606,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "pang-tiezhu/pang-tiezhu__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/turnaround-back-three-quarter-left.png",
+        "sha256": "16b81fec8383f3b3d62ba445291c51b026b314fce87e904d729af8682d5d2081",
+        "bytes": 1082144,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "pang-tiezhu/pang-tiezhu__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/wardrobe-front.png",
+        "sha256": "ed3c999d05426b5b20b1e880123df68debeb1992d8ec52b1ac3e9f3331554f9d",
+        "bytes": 1219710,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "pang-tiezhu/pang-tiezhu__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/wardrobe-three-quarter.png",
+        "sha256": "9033b4ce8fc06a2ddcbb309cf9f900c026e16f38a13451ab5394d068c19910bc",
+        "bytes": 1079887,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "pang-tiezhu/pang-tiezhu__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/wardrobe-side.png",
+        "sha256": "9d93fd58b094ebf227b3c847045c66ae70bd63346a9e97b156166094cf8e1866",
+        "bytes": 898009,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "pang-tiezhu/pang-tiezhu__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/wardrobe-back.png",
+        "sha256": "0146a62e9448eaab4069bfb040ffe0561a8e6fc82d4e5995a77e6d307b6dc9c6",
+        "bytes": 1315669,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "pang-tiezhu/pang-tiezhu__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/wardrobe-portrait.png",
+        "sha256": "1f1dbaa1becbbdb8b167161bcfb4a9887dcea6fadb78154ada720aea00775917",
+        "bytes": 2234042,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "pang-tiezhu/pang-tiezhu__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/pose-run.png",
+        "sha256": "6b10c142dc0237d9420b9338a1b9dafb5ad3dc21dc019b790fb3bc2f0b5e1cba",
+        "bytes": 1004264,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "pang-tiezhu/pang-tiezhu__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/pose-sit.png",
+        "sha256": "6d9dd1351e8b799c141f56190ee702d4bcbbf7ca61a32f69db7b52882d077119",
+        "bytes": 1088719,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.front",
+        "source": "pang-tiezhu/pang-tiezhu__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/turnaround-front.png",
+        "sha256": "64ff195977307a7f1b2d6f7be4236bdfefdf493e53f5871aff8d98b9809c4c66",
+        "bytes": 1249309,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "pang-tiezhu/pang-tiezhu__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/turnaround-three-quarter.png",
+        "sha256": "0326cda52b5820336c6ceb14152266c8d66b27e78c3e508bb0b4c6a871521575",
+        "bytes": 1124871,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "pang-tiezhu/pang-tiezhu__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/turnaround-side.png",
+        "sha256": "585a07451cd631dfe12f614147b404c3f8e686f8ec9823d9f43bca77c28dd8cc",
+        "bytes": 755093,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "pang-tiezhu/pang-tiezhu__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/turnaround-back.png",
+        "sha256": "6f52c3e532a52bbdcec18f3be03d0f4449b555a4730cf60177c720d9e1da9108",
+        "bytes": 1237645,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "pang-tiezhu/pang-tiezhu__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/turnaround-back-three-quarter-right.png",
+        "sha256": "58f83983ba4fcd1e49a0483573ed17b576fce901885cf019f72547b2e753168a",
+        "bytes": 1101409,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-1",
+        "source": "pang-tiezhu/pang-tiezhu__wardrobe-personal__extra-1__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/wardrobe-extra-1.png",
+        "sha256": "70cc40db12453dd97f788bb2347cc20e590453097517b70a4f63f71ff5668996",
+        "bytes": 1348465,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-2",
+        "source": "pang-tiezhu/pang-tiezhu__wardrobe-personal__extra-2__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/wardrobe-extra-2.png",
+        "sha256": "39b1865353fc2dc665c872d2f556c7149f86d3aae4a8d8023bd2af69f861d8ce",
+        "bytes": 1255538,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.extra-3",
+        "source": "pang-tiezhu/pang-tiezhu__wardrobe-personal__extra-3__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/wardrobe-extra-3.png",
+        "sha256": "0f462cf53198564d6519708491286bcb47464dbbbf9d08d298083d16e7001900",
+        "bytes": 1306155,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "pang-tiezhu/pang-tiezhu__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/pose-walk.png",
+        "sha256": "6bceab1dd764a6bcd8c43ffa52b042905a856b623b51d214399030e3580683e0",
+        "bytes": 1063244,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "pang-tiezhu/pang-tiezhu__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/pose-point.png",
+        "sha256": "f1b018d412fef5b89316c415186772cc64553cc90a627c5ffdd9e8b1f0142b65",
+        "bytes": 1056861,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "pang-tiezhu/pang-tiezhu__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/pose-arms-crossed.png",
+        "sha256": "4e9e1089cda88cc938ddf3e888f916537f804f1ab8fc90721dacca738eb0d81b",
+        "bytes": 1002851,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "pang-tiezhu/pang-tiezhu__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/pose-phone.png",
+        "sha256": "eeacd094483469a2af5ce39421ef4469c1f6122bf620dbb3f54d60e86af355a0",
+        "bytes": 779256,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "pang-tiezhu/pang-tiezhu__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/detail-hands.png",
+        "sha256": "469aa8cda79d1b12cfd4525c7e176d589abf29d15ea544a6ad49836caa22461c",
+        "bytes": 2163159,
+        "version": 1
+      },
+      {
+        "slot": "detail.hair-back",
+        "source": "pang-tiezhu/pang-tiezhu__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/images/detail-hair-back.png",
+        "sha256": "de0cfbd2979b3ec65ce4c4f1704f36bfb128b5d076fa1a9199c93a589b5ad8d5",
+        "bytes": 2180385,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/pang-tiezhu/pang-tiezhu__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/audio/pang-tiezhu__voice__intro__v1.wav",
+        "sha256": "18847e2af7d3bb7cb8d22f8e7554ebed77ddff07d8cf2eff07c260802be6a46f",
+        "bytes": 1221884,
+        "version": 1
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/pang-tiezhu/pang-tiezhu__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/audio/pang-tiezhu__voice__intro-alt__v1.wav",
+        "sha256": "29abc74cb3722887dc3ac2ff48cede85d1390ee48919d769960ca46a3c70642d",
+        "bytes": 1190846,
+        "version": 1
+      },
+      {
+        "slot": "chat",
+        "source": "voices/pang-tiezhu/pang-tiezhu__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/audio/pang-tiezhu__voice__chat__v1.wav",
+        "sha256": "faf136623ed32aeec141466473efe1ff167dbe728391f7b3e1b86fdc336d07c2",
+        "bytes": 913524,
+        "version": 1
+      },
+      {
+        "slot": "happy",
+        "source": "voices/pang-tiezhu/pang-tiezhu__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/audio/pang-tiezhu__voice__happy__v1.wav",
+        "sha256": "fcbad596b6ce177b3f593449e02b5b12fcddf0132dac175bac8dc13f47b5956a",
+        "bytes": 816452,
+        "version": 1
+      },
+      {
+        "slot": "angry",
+        "source": "voices/pang-tiezhu/pang-tiezhu__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/audio/pang-tiezhu__voice__angry__v1.wav",
+        "sha256": "47ed44ba6e7fcfa100f7d72d566b512e855229b7a597cf4a291251ecfa8711cb",
+        "bytes": 849146,
+        "version": 1
+      },
+      {
+        "slot": "sad",
+        "source": "voices/pang-tiezhu/pang-tiezhu__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/staging/actors/pang-tiezhu-20261012/complete-pack-handoff-2026-10-13/assets/audio/pang-tiezhu__voice__sad__v1.wav",
+        "sha256": "fa42035685d7e74c2ce94291d248dac03425819daa9bcdde257490e88bab2e8a",
+        "bytes": 873330,
+        "version": 1
+      }
+    ]
+  },
+  "website": {
+    "published": true,
+    "order": 106,
+    "status": "active",
+    "tagline": {
+      "zh": "宽肩膀，一颗门牙有点歪，胡茬扎人。",
+      "en": "Broad shoulders, one crooked front tooth, rough stubble."
+    },
+    "introduction": {
+      "en": "East Asian (Chinese) man, about 57, broad, about 176 cm; a slightly crooked front tooth, crew cut greying at the temples, light stubble; rust-orange top",
+      "zh": "宽肩膀，一颗门牙有点歪，胡茬扎人。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-14",
+    "note": {
+      "en": "55 reference images and 6 voice clips.",
+      "zh": "55 张参考图、6 段声音。"
+    }
+  },
+  "officialSamples": [
+    {
+      "sampleId": "pang-tiezhu-grok-solo-20261013",
+      "actorSlugs": [
+        "pang-tiezhu"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-13",
+      "approval": {
+        "rootStatus": "passed-root-physical-and-prior-semantic",
+        "evidence": "/Users/yuanfei/PieAI/MediaFactory/staging/coordination/root-completion-revalidation-20261013.json",
+        "evidenceSha256": "869a1028ff40850f7a08d05e9ea668eadd75ed70d0bf5d7cf78cf1dcf55a384b",
+        "ownerReviewPending": true
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/pang-tiezhu-grok-solo-20261013/source.mp4",
+          "sourceSha256": "a4c69da5e11cd459fe203d3a051107410bfe89dc7b1e31f0b6c584b4b46be601",
+          "public": "/media/works/samples/pang-tiezhu-grok-solo-20261013/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
 }
