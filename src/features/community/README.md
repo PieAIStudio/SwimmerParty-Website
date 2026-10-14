@@ -12,3 +12,11 @@ C1/C2 消费 SwimmerBackend `sp-community@c29cbfc` 的 v3；仅代码与隔离�
 - 所有交互控件使用 UIKit；本地只保留产品排版、原生媒体语义与流程组合，没有自制通用控件。签名 URL 只在短期组件状态中，过期失效，不写本地持久存储。
 
 验收：`pnpm verify` 检查默认关闭的可发布网站；`PLAYWRIGHT_COMMUNITY=1 pnpm exec playwright test --workers=2` 使用单独的 v3 夹具场景。两轮浏览器均须遵守 SLOTS 第二锁及负载约束。规格与待接线项见[后端消费入口](../../../docs/reference/swimmer-party-community-backend.md)，阶段证据只记在既有实施方案。
+
+## C2 审核台
+
+`/{locale}/admin/review` 与社区统一默认关闭。登录只允许发起读取，真正权限由 `list_review_queue` / `get_review_detail` / 每个写RPC决定，浏览器不判断Owner名单。401/403权限拒绝会撤下私有队列/明细，Owner媒体读取显式带 `mode: review`；签名接线未验收仍503，不回退未审核原件或内存。
+
+队列按待审、隐藏、退回、已发布分页；明细展示媒体、演员版本、创作者文字稿/制作信息、两项确认、举报原因与轮次、后端历史。审核写固定已查看的revision，冲突须重新读取；approve不授予信任，restore不放行legacyV1。退回/隐藏/恢复必须有原因；撤销信任是独立写，不顺带隐藏已发布作品。暂停/恢复投稿先写原因再二次确认，不动本地构建开关，已有作品和审核读取不因此关闭。
+
+所有未知写结果保留原operationId重试，不发新的决定编号；重试完成清除过期的确认面板，失败时不沿用上次成功提示。主站关闭开关的检查与开启开关的合同夹具分别运行。`e2e/community-v3-review.spec.ts` 验证角色撤回、媒体拒绝、原因、旧revision、重复回包和手机键盘；不宣称已通过真实后端staging。

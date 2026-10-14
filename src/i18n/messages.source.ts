@@ -6,6 +6,154 @@
  * copy is outside this UI catalog; do not change its legal wording in this block.
  */
 export const messages = {
+  "c2.ownerOnly": {
+    en: "Private review desk. Every action is authorized by the backend for the current Owner.",
+    zh: "私有审核台，每次操作均由后端核验当前 Owner 权限。",
+  },
+  "c2.saved": {
+    en: "The backend confirmed this action. The current record is reloaded below.",
+    zh: "后端已确认操作，正在重读当前记录。",
+  },
+  "c2.submissionControl": {
+    en: "Submission safety switch",
+    zh: "投稿安全开关",
+  },
+  "c2.open": {
+    en: "Submissions open",
+    zh: "投稿开放",
+  },
+  "c2.paused": {
+    en: "Submissions paused",
+    zh: "投稿已暂停",
+  },
+  "c2.pauseScope": {
+    en: "Pausing blocks new submissions and upload targets. Reading, reports, review and cleanup remain available.",
+    zh: "暂停后不能新投稿或申请上传。阅读、举报、审核和清理仍可继续。",
+  },
+  "c2.pauseReason": {
+    en: "Reason for changing submissions",
+    zh: "变更投稿开关的原因",
+  },
+  "c2.pause": {
+    en: "Pause submissions",
+    zh: "紧急暂停投稿",
+  },
+  "c2.resume": {
+    en: "Resume submissions",
+    zh: "恢复投稿",
+  },
+  "c2.confirmPause": {
+    en: "Pause new submissions now? Existing published works stay visible.",
+    zh: "现在暂停新投稿？已有公开作品仍可阅读。",
+  },
+  "c2.confirmResume": {
+    en: "Resume new submissions with the current limits?",
+    zh: "按当前额度恢复新投稿？",
+  },
+  "c2.confirm": {
+    en: "Confirm change",
+    zh: "确认变更",
+  },
+  "c2.queueStatus": {
+    en: "Review queue status",
+    zh: "审核列表状态",
+  },
+  "c2.reportCount": {
+    en: "{count} reports",
+    zh: "{count} 条举报",
+  },
+  "c2.inspect": {
+    en: "Inspect media and history",
+    zh: "查看媒体和历史",
+  },
+  "c2.revision": {
+    en: "Revision {revision}",
+    zh: "第 {revision} 修订",
+  },
+  "c2.reports": {
+    en: "Report reasons",
+    zh: "举报原因",
+  },
+  "c2.round": {
+    en: "Round {round}",
+    zh: "第 {round} 轮",
+  },
+  "c2.noReports": {
+    en: "No reports in this record.",
+    zh: "本记录没有举报。",
+  },
+  "c2.history": {
+    en: "Review history",
+    zh: "审核历史",
+  },
+  "c2.noHistory": {
+    en: "No history in this record.",
+    zh: "本记录暂无历史。",
+  },
+  "c2.decision": {
+    en: "Review decision",
+    zh: "审核决定",
+  },
+  "c2.action": {
+    en: "Action for this revision",
+    zh: "对本修订的操作",
+  },
+  "c2.reason": {
+    en: "Reason shown to the author",
+    zh: "给作者看的原因",
+  },
+  "c2.approvalNotTrust": {
+    en: "Approval applies only to this revision. It does not grant trust to the author.",
+    zh: "通过只针对本修订，不会自动信任作者。",
+  },
+  "c2.approve": {
+    en: "Approve",
+    zh: "通过",
+  },
+  "c2.return": {
+    en: "Return for changes",
+    zh: "退回修改",
+  },
+  "c2.hide": {
+    en: "Hide published work",
+    zh: "隐藏公开作品",
+  },
+  "c2.restore": {
+    en: "Restore hidden work",
+    zh: "恢复隐藏作品",
+  },
+  "c2.apply": {
+    en: "Save review decision",
+    zh: "保存审核决定",
+  },
+  "c2.trust": {
+    en: "Author trust",
+    zh: "作者信任",
+  },
+  "c2.revokeHelp": {
+    en: "Revoking trust sends future submissions to review. It does not remove previously published works.",
+    zh: "撤销信任后，后续投稿需要审核；不会自动下架以前发布的作品。",
+  },
+  "c2.revokeReason": {
+    en: "Reason for revoking trust",
+    zh: "撤销信任的原因",
+  },
+  "c2.revoke": {
+    en: "Revoke author trust",
+    zh: "撤销作者信任",
+  },
+  "c2.notTrusted": {
+    en: "This author is not currently trusted.",
+    zh: "当前未信任这位作者。",
+  },
+  "c2.confirmed": {
+    en: "Confirmed",
+    zh: "已确认",
+  },
+  "c2.notConfirmed": {
+    en: "Not confirmed",
+    zh: "未确认",
+  },
   "c.resumePendingDraft": {
     en: "Return to the draft with the pending request",
     zh: "回到有待核对请求的草稿",

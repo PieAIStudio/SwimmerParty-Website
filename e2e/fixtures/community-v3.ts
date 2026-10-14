@@ -37,6 +37,10 @@ export async function installCommunityFixture(
     malformed: false,
     failCode: null as CommunityErrorCode | null,
     loseCreateOnce: false,
+    loseWriteOnce: null as string | null,
+    reviewRecords: new Map<string, OwnerPost>(),
+    trust: new Map<string, boolean>(),
+    mediaRequests: [] as { mediaId: string; mode: string }[],
     loseUploadOnce: false,
     holdUpload: null as Promise<void> | null,
     readyMedia: false,
@@ -75,11 +79,23 @@ export async function installCommunityFixture(
       json: { error: { code, retryable: false, requestId: "fixture-request" } },
     });
   function ownerPost(post: AuthorPost): OwnerPost {
-    return ownerFixture({
+    const previous =
+      state.reviewRecords.get(post.id) ??
+      ownerFixture({
+        ...post,
+        reports: post.status === "hidden" ? ownerFixture().reports : [],
+        reportCount: post.status === "hidden" ? 1 : 0,
+      });
+    const current = ownerFixture({
       ...post,
-      reports: post.status === "hidden" ? ownerFixture().reports : [],
-      reportCount: post.status === "hidden" ? 1 : 0,
+      reports: previous.reports,
+      history: previous.history,
+      reportRound: previous.reportRound,
+      reportCount: previous.reportCount,
+      authorTrusted: state.trust.get(post.author.id) ?? previous.authorTrusted,
     });
+    state.reviewRecords.set(post.id, current);
+    return current;
   }
   await page.route("**/api/community/v3/*", async (route) => {
     const url = new URL(route.request().url()),
@@ -268,6 +284,73 @@ export async function installCommunityFixture(
       case "set_actor_vote":
         output = { count: input.voted ? 2 : 1, voted: Boolean(input.voted) };
         break;
+      case "review_post": {
+        if (!post) return fail(route, "POST_UNAVAILABLE");
+        if (post.revision !== input.expectedRevision) return fail(route, "REVISION_CONFLICT");
+        const before = ownerPost(post);
+        const action = String(input.action);
+        const allowed =
+          action === "approve"
+            ? post.status === "pending" && before.submittedRevision === post.revision
+            : action === "return"
+              ? ["pending", "hidden"].includes(post.status)
+              : action === "hide"
+                ? post.status === "published"
+                : post.status === "hidden" && !before.legacyV1;
+        if (!allowed) return fail(route, "INVALID_STATE");
+        if (action !== "approve" && !String(input.reason ?? "").trim())
+          return fail(route, "INVALID_INPUT");
+        const reason = String(input.reason ?? "").trim() || null;
+        if (action === "approve" || action === "restore") {
+          post.status = "published";
+          post.publishedAt = WHEN;
+          post.returnedReason = null;
+          post.hiddenReason = null;
+          post.media.forEach((media) => {
+            if (media.processingStatus === "ready") media.reviewStatus = "approved";
+          });
+        } else if (action === "return") {
+          post.status = "returned";
+          post.returnedReason = reason;
+          post.hiddenReason = null;
+        } else {
+          post.status = "hidden";
+          post.hiddenReason = reason;
+        }
+        const reportRound =
+          before.reportRound +
+          (action === "restore" || (action === "return" && before.status === "hidden") ? 1 : 0);
+        state.reviewRecords.set(post.id, {
+          ...before,
+          reportRound,
+          reportCount: before.reports.filter((report) => report.round === reportRound).length,
+          history: [
+            ...before.history,
+            {
+              action,
+              source: "owner_manual",
+              reason,
+              postRevision: post.revision,
+              createdAt: WHEN,
+            },
+          ],
+        });
+        output = { operationId: input.operationId, post: ownerPost(post) };
+        break;
+      }
+      case "set_author_trust":
+        state.trust.set(String(input.userId), Boolean(input.trusted));
+        output = {
+          operationId: input.operationId,
+          userId: input.userId,
+          trusted: input.trusted,
+          status: input.trusted ? "trusted" : "revoked",
+        };
+        break;
+      case "set_submission_paused":
+        state.paused = input.paused === true;
+        output = { operationId: input.operationId, submissionsOpen: !state.paused };
+        break;
       case "list_review_queue":
         output = {
           posts: state.posts
@@ -296,6 +379,10 @@ export async function installCommunityFixture(
       });
     if (name === "create_upload" && state.loseUploadOnce) {
       state.loseUploadOnce = false;
+      return route.abort("connectionreset");
+    }
+    if (definition.write && name === state.loseWriteOnce) {
+      state.loseWriteOnce = null;
       return route.abort("connectionreset");
     }
     if (name === "create_draft" && state.loseCreateOnce) {
@@ -334,7 +421,10 @@ export async function installCommunityFixture(
   await page.route("**/api/community/media/*", (route) => {
     const input = route.request().postDataJSON();
     const mediaId = new URL(route.request().url()).pathname.split("/").at(-1)!;
-    if (input?.mode !== "read" || input?.mediaId !== mediaId) return fail(route, "INVALID_INPUT");
+    if (!["read", "review"].includes(input?.mode) || input?.mediaId !== mediaId)
+      return fail(route, "INVALID_INPUT");
+    if (input.mode === "review" && !state.owner) return fail(route, "OWNER_REQUIRED");
+    state.mediaRequests.push({ mediaId, mode: input.mode });
     return route.fulfill({
       json: {
         mediaId,

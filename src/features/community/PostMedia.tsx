@@ -48,9 +48,13 @@ export function VideoPreview({ video, title }: { video: VideoDescriptor; title: 
 function StoredMedia({
   item,
   transcript,
+  review,
+  onAccessDenied,
 }: {
   item: CommunityPost["media"][number];
   transcript: string | null;
+  review: boolean;
+  onAccessDenied?: () => void;
 }) {
   const { t } = useSiteI18n();
   const [source, setSource] = useState<{ url: string; expiresAt: string } | null>(null);
@@ -73,9 +77,12 @@ function StoredMedia({
         method: "POST",
         cache: "no-store",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ mediaId: item.id, mode: "read" }),
+        body: JSON.stringify({ mediaId: item.id, mode: review ? "review" : "read" }),
       });
-      if (!response.ok) throw Error();
+      if (!response.ok) {
+        if (review && [401, 403].includes(response.status)) onAccessDenied?.();
+        throw Error();
+      }
       const data = normalizeMediaAccess(await response.json(), item.id, requestedAt);
       if (Date.parse(data.expiresAt) <= Date.now() || !data.mime.startsWith(item.kind + "/"))
         throw Error();
@@ -121,14 +128,28 @@ function StoredMedia({
     </div>
   );
 }
-export function PostMedia({ post }: { post: CommunityPost | AuthorPost }) {
+export function PostMedia({
+  post,
+  review = false,
+  onAccessDenied,
+}: {
+  post: CommunityPost | AuthorPost;
+  review?: boolean;
+  onAccessDenied?: () => void;
+}) {
   return (
     <div className="my-5 grid gap-4">
       {post.video ? (
         <VideoPreview key={post.video.canonicalUrl} video={post.video} title={post.title ?? ""} />
       ) : null}
       {post.media.map((item) => (
-        <StoredMedia key={item.id} item={item} transcript={post.description} />
+        <StoredMedia
+          key={item.id}
+          item={item}
+          transcript={post.description}
+          review={review}
+          onAccessDenied={onAccessDenied}
+        />
       ))}
     </div>
   );
