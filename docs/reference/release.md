@@ -24,24 +24,34 @@ related:
 
 ## 环境变量与安装权限
 
-| 名字                            | 用途                                                                   |
-| ------------------------------- | ---------------------------------------------------------------------- |
-| `ASSET_STORE`                   | 发布设为 `blob`，私有母版存储                                          |
-| `ACCOUNT_MODE`                  | 发布设为 `swimmer`，禁止模拟身份                                       |
-| `GUEST_LIMITER`                 | 发布设为 `vercel`，禁止内存限速                                        |
-| `BLOB_READ_WRITE_TOKEN`         | 平台注入的私有 Blob 权限；也可由 SDK 使用平台支持的 OIDC               |
-| `SWIMMER_ORIGIN`                | 当前部署的已登记 HTTPS origin                                          |
-| `SWIMMER_BACKEND_URL`           | 账号后端的 HTTPS origin                                                |
-| `SWIMMER_PUBLISHABLE_KEY`       | 后端 publishable key                                                   |
-| `SWIMMER_ACCOUNT_URL`           | 账号中心入口                                                           |
-| `SWIMMER_OAUTH_CLIENT_ID`       | 已登记的 public PKCE 客户端标识                                        |
-| `SWIMMER_COOKIE_PASSWORD`       | 会话加密密码，至少 32 字符                                             |
-| `NEXT_PUBLIC_POSTHOG_KEY`       | PostHog 项目 key（浏览器可见）；取自共享的 PostHog 文件                |
-| `NEXT_PUBLIC_POSTHOG_HOST`      | PostHog 地址；与 key 同一来源                                          |
-| `NEXT_PUBLIC_COMMUNITY_ENABLED` | 社区开关；后端 v3、C 组验收及 Owner 发布授权齐备前生产不设置（即关闭） |
+| 名字                         | 用途                                                                         |
+| ---------------------------- | ---------------------------------------------------------------------------- |
+| `ASSET_STORE`                | 发布设为 `blob`，私有母版存储                                                |
+| `ACCOUNT_MODE`               | 发布设为 `swimmer`，禁止模拟身份                                             |
+| `GUEST_LIMITER`              | 发布设为 `vercel`，禁止内存限速                                              |
+| `BLOB_READ_WRITE_TOKEN`      | 平台注入的私有 Blob 权限；也可由 SDK 使用平台支持的 OIDC                     |
+| `SWIMMER_ORIGIN`             | 当前部署的已登记 HTTPS origin                                                |
+| `SWIMMER_BACKEND_URL`        | 账号后端的 HTTPS origin                                                      |
+| `SWIMMER_PUBLISHABLE_KEY`    | 后端 publishable key                                                         |
+| `SWIMMER_ACCOUNT_URL`        | 账号中心入口                                                                 |
+| `SWIMMER_OAUTH_CLIENT_ID`    | 已登记的 public PKCE 客户端标识                                              |
+| `SWIMMER_COOKIE_PASSWORD`    | 会话加密密码，至少 32 字符                                                   |
+| `NEXT_PUBLIC_POSTHOG_KEY`    | PostHog 项目 key（浏览器可见）；取自共享的 PostHog 文件                      |
+| `NEXT_PUBLIC_POSTHOG_HOST`   | PostHog 地址；与 key 同一来源                                                |
+| `NEXT_PUBLIC_COMMUNITY_MODE` | 社区发布档位：`off`（默认）/ `owner` / `on`；仅按 Owner 对本次发布的授权设置 |
 
 变量值只由授权人员放入环境或平台配置，不写进 Git、日志或截图。项目 `.npmrc` 只保存 registry 映射。
 安装使用已有用户级 registry 配置。全新环境先以只读 packages 权限运行 pnpm install --frozen-lockfile；值不写入项目、日志或截图。本站采用本地 prebuilt 发布，不再要求 Vercel 云构建临时配置私有 npm。
+
+### 社区分档发布
+
+`NEXT_PUBLIC_COMMUNITY_MODE` 构建与运行环境必须一致；切档要重新构建并发布，不能只改已构建产物的运行变量。未设置或未知值均为 `off`，已退役的布尔开关不能开启社区。
+
+- `off`：所有人没有社区入口，社区页面返回 404，业务 API 不可用，sitemap 不收社区。
+- `owner`：登录后还须由后台 `list_review_queue` 确认 Owner 权限；入口、页面/RSC 与业务 API 分别核验。游客和非 Owner 看不到入口，社区路由返回 404，sitemap 不收社区。作品为 published 不等于此档向游客开放。
+- `on`：开放公开作品和票数，投稿/互动写仍需登录，审核仍仅限后台 Owner。全开前先完成实施方案里的待办与真实验收。
+
+发布 `owner` 档前，核对正式库的 Owner 登记及权限判定；需要补写权限数据时先报告，网站发布授权不包含数据库授权写入。后台只接受已登记的正式来源，不为本机或预览域名放宽 Origin，也不伪造正式来源。真实 Owner 投稿/审核验收在正式域名进行，候选先验证匿名与非 Owner 的隔离和主站回归；不以夹具冒充真实账号验收。具体消费合同见[社区后端入口](swimmer-party-community-backend.md)，Owner 点验步骤见[实施方案](../plans/active/2026-10-13-creator-community.md)。
 
 ## 存储、限速与账号登记
 
@@ -57,9 +67,9 @@ related:
 
 1. 选择干净、已提交候选，运行 `pnpm verify`、`pnpm docs:check`、`pnpm exec swimmer-ui-check src`。按项目要求完成该精确提交的人工 Actions 验收；失败不得发布。
 2. 确认 Vercel 绑定 `swimmerparty` / `pie-0f420159`。未绑定时由获授权的发布会话执行 `vercel link --project swimmerparty --scope pie-0f420159`。
-3. 在授权的本地发布环境同步生产配置：`vercel pull --yes --environment=production --scope pie-0f420159`，然后 `vercel build --prod`。该步骤产生 .vercel/output；检查产物与源提交对应。
+3. 独立回读 Vercel production 环境的社区档位与本次授权一致，再同步生产配置：`vercel pull --yes --environment=production --scope pie-0f420159`，然后 `vercel build --prod`。该步骤产生 .vercel/output；检查产物、源提交与构建档位对应，不复用其他档位的旧产物。
 4. 上传同一个本地预构建候选：`vercel deploy --prebuilt --prod --skip-domain --yes --scope pie-0f420159`。不省略 --prebuilt，不让平台另行构建。
-5. 在返回的生产候选 URL 上完成冒烟；通过后执行 `vercel promote <verified-deployment-url> --scope pie-0f420159`。必须 promote 已验证的同一产物，不重建、不猜 URL。
+5. 在返回的生产候选 URL 上完成冒烟；候选受 Deployment Protection 保护时，使用已登录的 Vercel 浏览器或在已绑定项目内通过 `vercel curl --deployment <verified-deployment-url>` 访问，不关闭保护或修改项目保护设置。通过后执行 `vercel promote <verified-deployment-url> --scope pie-0f420159`。必须 promote 已验证的同一产物，不重建、不猜 URL；回读正式域名部署号，并在正式域名复验。
 
 ## 冒烟与回滚
 
