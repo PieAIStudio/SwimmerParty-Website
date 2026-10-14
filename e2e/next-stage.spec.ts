@@ -1,9 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 import { mkdir } from "node:fs/promises";
 import en from "../messages/en/messages.json";
-import zh from "../messages/zh-CN/messages.json";
 import { MACHINE_LOCALES } from "../src/i18n/routing";
-import { localMember } from "./fixtures/download";
 
 const REPORT = ".devspace-reports/next-stage";
 async function screenshot(page: Page, name: string) {
@@ -108,104 +106,44 @@ test("A1 fetching another locale in the browser cannot overwrite its selected la
   );
 });
 
-for (const [locale, messages, width] of [
-  ["en", en, 1440],
-  ["zh", zh, 390],
+// The v1 review surface is now closed by default. Enabled authority/error cases live in community-v3.spec.ts.
+for (const [locale, width] of [
+  ["en", 1440],
+  ["zh", 390],
 ] as const) {
-  test(`A1 review guest is noindex with no queue request or contents: ${locale}`, async ({
+  test(`C1 closed community pages are noindex and never fetch private data: ${locale}`, async ({
     page,
     request,
   }) => {
-    let queueRequests = 0;
-    await page.route("**/api/community/review", (route) => {
-      queueRequests += 1;
-      return route.fulfill({ status: 403, json: { error: "owner-required" } });
+    let calls = 0;
+    await page.route("**/api/community/**", (route) => {
+      calls++;
+      return route.abort();
     });
     await page.setViewportSize({ width, height: 900 });
-    const response = await page.goto(`/${locale}/admin/review`);
-    expect(response?.status()).toBe(200);
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
-      "content",
-      /noindex.*nofollow/,
-    );
-    await expect(page.getByText(messages["community.reviewSignIn"], { exact: true })).toBeVisible();
-    await expect(page.getByText(messages["community.reviewEmpty"], { exact: true })).toHaveCount(0);
-    await expect(
-      page.getByRole("heading", { name: messages["community.reviewTitle"] }),
-    ).toHaveCount(0);
-    expect(queueRequests).toBe(0);
-    expect((await request.get("/api/community/review")).status()).toBe(401);
-    await screenshot(page, `a1-review-guest-${locale}-${width}`);
+    for (const path of [
+      "/admin/review",
+      "/community/new",
+      "/community/mine",
+      "/works/p/33333333-3333-4333-8333-333333333333",
+    ]) {
+      const response = await page.goto(`/${locale}${path}`);
+      expect(response?.status()).toBe(404);
+      await expect(
+        page.locator(
+          "[data-review-desk], [data-community-composer], [data-my-works], [data-community-post]",
+        ),
+      ).toHaveCount(0);
+      expect(calls).toBe(0);
+    }
+    expect((await request.get("/api/community/v3/list_review_queue")).status()).toBe(503);
+    expect((await request.get("/api/community/review")).status()).toBe(503);
+    await page.goto(`/${locale}/works`);
+    await expect(page.locator("[data-community-feed]")).toHaveCount(0);
+    await expect(page.locator('a[href*="/community/new"]')).toHaveCount(0);
+    expect(calls).toBe(0);
   });
 }
-
-for (const [status, message] of [
-  [401, "community.reviewSignIn"],
-  [403, "community.reviewForbidden"],
-  [503, "community.reviewUnavailable"],
-] as const) {
-  test(`A1 refused review request is not an empty queue: ${status}`, async ({ page, context }) => {
-    await localMember(context);
-    await page.route("**/api/community/review", (route) =>
-      route.fulfill({ status, json: { error: "test-refused" } }),
-    );
-    await page.goto("/en/admin/review");
-    await expect(page.getByText(en[message], { exact: true })).toBeVisible();
-    await expect(page.getByText(en["community.reviewEmpty"], { exact: true })).toHaveCount(0);
-    await expect(page.getByRole("heading", { name: en["community.reviewTitle"] })).toHaveCount(0);
-    await screenshot(page, `a1-review-${status}`);
-  });
-}
-
-test("A1 successful owner read alone may show an empty queue; malformed data is an error", async ({
-  page,
-  context,
-}) => {
-  await localMember(context);
-  let malformed = true;
-  await page.route("**/api/community/review", (route) =>
-    route.fulfill({ json: malformed ? { invalid: [] } : { posts: [] } }),
-  );
-  await page.goto("/en/admin/review");
-  await expect(page.getByText(en["community.reviewUnavailable"], { exact: true })).toBeVisible();
-  await expect(page.getByText(en["community.reviewEmpty"], { exact: true })).toHaveCount(0);
-  malformed = false;
-  await page.getByRole("button", { name: en["community.reviewRetry"], exact: true }).click();
-  await expect(page.getByRole("heading", { name: en["community.reviewTitle"] })).toBeVisible();
-  await expect(page.getByText(en["community.reviewEmpty"], { exact: true })).toBeVisible();
-});
-
-test("A1 failed moderation never reports success or leaves private queue content visible", async ({
-  page,
-  context,
-}) => {
-  await localMember(context);
-  await page.route("**/api/community/review", (route) =>
-    route.request().method() === "POST"
-      ? route.fulfill({ status: 403, json: { error: "owner-required" } })
-      : route.fulfill({
-          json: {
-            posts: [
-              {
-                id: "a1-pending",
-                kind: "image",
-                title: "Private test submission",
-                author: "Test creator",
-                actorSlugs: ["tang-yunqiu"],
-                likes: 0,
-                createdAt: "2026-10-13T00:00:00Z",
-                status: "pending",
-              },
-            ],
-          },
-        }),
-  );
-  await page.goto("/en/admin/review");
-  await expect(page.getByRole("heading", { name: "Private test submission" })).toBeVisible();
-  await page.getByRole("button", { name: en["community.approve"], exact: true }).click();
-  await expect(page.getByText(en["community.reviewForbidden"], { exact: true })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Private test submission" })).toHaveCount(0);
-});
 
 test("A1 English breadcrumb is English", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });

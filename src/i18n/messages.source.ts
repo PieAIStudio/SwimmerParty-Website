@@ -6,6 +6,238 @@
  * copy is outside this UI catalog; do not change its legal wording in this block.
  */
 export const messages = {
+  "c.resumePendingDraft": {
+    en: "Return to the draft with the pending request",
+    zh: "回到有待核对请求的草稿",
+  },
+  "c.pendingDraftHint": {
+    en: "Another draft has an unanswered request in this tab. Reconcile that same request before changing a different work.",
+    zh: "这个标签页的另一份草稿还有未确认的请求。请先核对原请求，再修改其他作品。",
+  },
+  "c.resumeUpload": { en: "Check and resume the selected uploads", zh: "核对并继续所选上传" },
+  "c.transcript": {
+    en: "Audio transcript (optional, creator-provided)",
+    zh: "声音文字稿（可选，由创作者提供）",
+  },
+  "c.noTranscript": {
+    en: "The creator has not provided a transcript.",
+    zh: "创作者尚未提供文字稿。",
+  },
+  "c.loading": { en: "Loading…", zh: "正在读取…" },
+  "c.title": { en: "Community", zh: "泳者作品" },
+  "c.new": { en: "Share a work", zh: "投稿作品" },
+  "c.mine": { en: "My works", zh: "我的作品" },
+  "c.noPosts": { en: "No works in this view yet.", zh: "这里还没有作品。" },
+  "c.loadMore": { en: "Load more", zh: "加载更多" },
+  "c.retry": { en: "Read again", zh: "重新读取" },
+  "c.retryWrite": { en: "Check and retry the same request", zh: "核对并重试原请求" },
+  "c.uncertain": {
+    en: "The reply was lost. Your original request ID is kept; do not create another copy.",
+    zh: "没有收到完整回包。已保留原请求编号，请勿重复新建。",
+  },
+  "c.type": { en: "1 · Choose a type", zh: "1 · 选类型" },
+  "c.media": { en: "2 · Add media", zh: "2 · 放媒体" },
+  "c.preview": { en: "3 · Preview and submit", zh: "3 · 预览并发布" },
+  "c.next": { en: "Continue", zh: "下一步" },
+  "c.back": { en: "Back", zh: "上一步" },
+  "c.save": { en: "Save draft", zh: "保存草稿" },
+  "c.saved": { en: "Draft saved.", zh: "草稿已保存。" },
+  "c.edit": { en: "Edit this work", zh: "编辑作品" },
+  "c.actorSearch": { en: "Find an actor", zh: "查找演员" },
+  "c.actors": { en: "Actors and asset versions used", zh: "使用的演员和素材版本" },
+  "c.actorLimit": {
+    en: "Choose 1–16 actors. The version is saved with your work.",
+    zh: "选择 1–16 位演员，素材版本会随作品保存。",
+  },
+  "c.videoLink": { en: "Video link", zh: "视频链接" },
+  "c.videoHelp": {
+    en: "Only links from the listed platforms. No video file uploads.",
+    zh: "只收下列平台链接，不上传视频文件。",
+  },
+  "c.files": { en: "Choose media files", zh: "选择媒体文件" },
+  "c.fileLimits": {
+    en: "Up to {count} files · {mib} MiB each",
+    zh: "最多 {count} 个文件，每个 {mib} MiB",
+  },
+  "c.audioLimit": {
+    en: "Up to {seconds} seconds; the server verifies the duration.",
+    zh: "最长 {seconds} 秒，最终时长由服务端核验。",
+  },
+  "c.dailyLimits": {
+    en: "Current daily limits: {posts} submissions · {mib} MiB uploaded (UTC day).",
+    zh: "当前每日额度：{posts} 次投稿、{mib} MiB 上传，按 UTC 自然日计算。",
+  },
+  "c.metadata": {
+    en: "Images are re-encoded before upload to remove metadata. The original size must also fit the limit.",
+    zh: "图片会先重新编码、去掉元数据；原文件大小也必须符合上限。",
+  },
+  "c.preparing": { en: "Preparing media…", zh: "正在准备媒体…" },
+  "c.upload": { en: "Upload selected files", zh: "上传所选文件" },
+  "c.cancel": { en: "Cancel", zh: "取消" },
+  "c.checkStatus": { en: "Check processing status", zh: "查看处理状态" },
+  "c.transfer": {
+    en: "{loaded} / {total} bytes transferred",
+    zh: "已传输 {loaded} / {total} 字节",
+  },
+  "c.reserving": { en: "Reserving an upload…", zh: "正在申请上传…" },
+  "c.uploading": { en: "Uploading", zh: "上传中" },
+  "c.validating": {
+    en: "Uploaded; awaiting server validation. This is not publication.",
+    zh: "传输完成，等待服务端核验；还没有发布。",
+  },
+  "c.ready": { en: "Media validated", zh: "媒体核验通过" },
+  "c.mediaLocked": {
+    en: "Uploaded files stay with this draft. Read its status before retrying; use a new draft for different files.",
+    zh: "已上传文件保留在本草稿中。重试前先读状态；换文件请使用新草稿。",
+  },
+  "c.publish": { en: "Submit for publication", zh: "提交发布" },
+  "c.submitHelp": {
+    en: "First submissions need review. The returned status, not this button, decides whether a work is public.",
+    zh: "首次投稿需要审核。是否公开以服务端返回状态为准，不以点击按钮为准。",
+  },
+  "c.submitted": {
+    en: "Submission received. See the current status below.",
+    zh: "已收到投稿，请以下方当前状态为准。",
+  },
+  "c.returnReason": { en: "Review reason", zh: "审核原因" },
+  "c.openMedia": { en: "Load media preview", zh: "加载媒体预览" },
+  "c.openVideo": { en: "Load external player", zh: "加载外部播放器" },
+  "c.externalFallback": {
+    en: "Cannot play here? Open the original. Private, removed or region-restricted videos may not embed.",
+    zh: "这里无法播放？请打开原站。私密、已删除或地区受限的视频可能不能嵌入。",
+  },
+  "c.original": { en: "Open on {platform}", zh: "在 {platform} 打开" },
+  "c.playerTitle": { en: "Video for {title}", zh: "{title}的视频" },
+  "c.mediaUnavailable": {
+    en: "A media preview is not available yet. No placeholder is a delivered file.",
+    zh: "媒体预览暂不可用；占位不代表已经交付。",
+  },
+  "c.likes": { en: "Like · {count}", zh: "点赞 · {count}" },
+  "c.reportReason": { en: "Reason for reporting", zh: "举报原因" },
+  "c.reportNote": { en: "Details (optional)", zh: "补充说明（可选）" },
+  "c.confirmDelete": {
+    en: "Remove this work from public view? Physical file cleanup continues separately.",
+    zh: "确定移除这份作品？文件清理会另行继续。",
+  },
+  "c.deleted": {
+    en: "Removed from public view. File cleanup is still pending.",
+    zh: "已撤下公开内容，文件仍待清理。",
+  },
+  "c.state.draft": { en: "Draft", zh: "草稿" },
+  "c.state.processing": { en: "Processing", zh: "处理中" },
+  "c.state.pending": { en: "In review", zh: "待审" },
+  "c.state.returned": { en: "Returned", zh: "退回" },
+  "c.state.published": { en: "Published", zh: "已发布" },
+  "c.state.hidden": { en: "Hidden", zh: "已隐藏" },
+  "c.state.deleted": { en: "Deleting", zh: "清理中" },
+  "c.reason.real_person": { en: "Looks like a real person", zh: "像真实人物" },
+  "c.reason.sexual_violent": { en: "Sexual or violent content", zh: "色情或暴力内容" },
+  "c.reason.hate_harassment": { en: "Hate or harassment", zh: "仇恨或骚扰" },
+  "c.reason.not_site_actors": { en: "Not made with our actors", zh: "没有使用本站演员" },
+  "c.reason.stolen_work": { en: "Stolen work", zh: "盗用作品" },
+  "c.reason.other": { en: "Another reason", zh: "其他原因" },
+  "c.error.INVALID_INPUT": { en: "Check the fields and try again.", zh: "请检查所填内容。" },
+  "c.error.INVALID_CURSOR": {
+    en: "This page link expired. Explicitly reload the list to start again.",
+    zh: "列表游标已失效，请重新读取列表。",
+  },
+  "c.error.AUTH_REQUIRED": {
+    en: "Sign in with your Swimmer account to continue.",
+    zh: "请用泳者账号登录后继续。",
+  },
+  "c.error.OWNER_REQUIRED": {
+    en: "Only the Owner can use this review desk.",
+    zh: "只有 Owner 能使用审核台。",
+  },
+  "c.error.ORIGIN_NOT_ALLOWED": {
+    en: "This website is not enabled for community requests.",
+    zh: "此网站尚未获准调用社区服务。",
+  },
+  "c.error.METHOD_NOT_ALLOWED": {
+    en: "This request method is not supported. Reload before trying again.",
+    zh: "不支持这种请求方式，请重新加载页面后再试。",
+  },
+  "c.error.SCOPE_NOT_ALLOWED": { en: "This operation is not allowed.", zh: "这项操作没有权限。" },
+  "c.error.POST_UNAVAILABLE": {
+    en: "This work is not available to you.",
+    zh: "这份作品暂不可访问。",
+  },
+  "c.error.MEDIA_UNAVAILABLE": {
+    en: "This media is not available to you.",
+    zh: "这份媒体暂不可访问。",
+  },
+  "c.error.OPERATION_UNAVAILABLE": {
+    en: "The original request cannot be read yet. Keep its ID when retrying.",
+    zh: "暂时查不到原操作，重试时仍保留原编号。",
+  },
+  "c.error.REVISION_CONFLICT": {
+    en: "This work changed. Read the latest revision before editing again.",
+    zh: "作品已变更，请重读最新版本后再编辑。",
+  },
+  "c.error.IDEMPOTENCY_CONFLICT": {
+    en: "This request ID belongs to different content. Read the saved work before continuing.",
+    zh: "此请求编号对应不同内容，请先核对已保存作品。",
+  },
+  "c.error.INVALID_STATE": {
+    en: "This action is not available in the current state. Refresh its status.",
+    zh: "当前状态不能执行此操作，请刷新状态。",
+  },
+  "c.error.UPLOAD_EXPIRED": {
+    en: "The upload expired. Read its status before starting a new upload.",
+    zh: "上传已过期，请先核对状态再申请新上传。",
+  },
+  "c.error.FILE_TOO_LARGE": {
+    en: "The file exceeds the current size limit.",
+    zh: "文件超过当前大小上限。",
+  },
+  "c.error.POST_MEDIA_LIMIT": {
+    en: "Check the permitted number of files for this work.",
+    zh: "请检查每份作品允许的文件数量。",
+  },
+  "c.error.UNSUPPORTED_MEDIA": {
+    en: "This media format is not supported.",
+    zh: "不支持这个媒体格式。",
+  },
+  "c.error.MEDIA_INVALID": {
+    en: "The file could not be validated. Try a supported, intact file.",
+    zh: "文件核验未通过，请使用受支持且完整的文件。",
+  },
+  "c.error.AUDIO_TOO_LONG": {
+    en: "The audio exceeds the current duration limit.",
+    zh: "声音超过当前时长上限。",
+  },
+  "c.error.VIDEO_URL_UNSUPPORTED": {
+    en: "Use a supported HTTPS video link, not embed code.",
+    zh: "请填写支持的 HTTPS 视频链接，不要粘贴嵌入代码。",
+  },
+  "c.error.RIGHTS_CONFIRMATION_REQUIRED": {
+    en: "Confirm both credit and usage rights before submitting.",
+    zh: "提交前请确认署名和使用权。",
+  },
+  "c.error.POST_QUOTA_EXCEEDED": {
+    en: "Your daily submission allowance is used up.",
+    zh: "今日投稿额度已用完。",
+  },
+  "c.error.UPLOAD_QUOTA_EXCEEDED": {
+    en: "Your daily upload allowance is used up.",
+    zh: "今日上传额度已用完。",
+  },
+  "c.error.RATE_LIMITED": {
+    en: "Too many requests. Wait before trying again.",
+    zh: "请求过于频繁，请稍后再试。",
+  },
+  "c.error.SUBMISSIONS_PAUSED": {
+    en: "Submissions are paused. Reading, reports and review remain available.",
+    zh: "投稿已暂停；阅读、举报和审核仍可使用。",
+  },
+  "c.error.COMMUNITY_UNAVAILABLE": {
+    en: "Community is unavailable. No local copy was substituted.",
+    zh: "社区暂不可用，没有切换成本地替代数据。",
+  },
+  "c.error.PROCESSING_UNAVAILABLE": {
+    en: "The upload or media service is not ready. Your work has not been published.",
+    zh: "上传或媒体服务暂未就绪，作品尚未发布。",
+  },
   "common.themeLight": {
     en: "Light",
     zh: "浅色",
@@ -1004,23 +1236,7 @@ export const messages = {
   "assets.voice.roleMaid": { en: "In role: maid", zh: "角色：女佣" },
   "assets.voice.roleCeo": { en: "In role: CEO", zh: "角色：霸道总裁" },
   "community.reviewTitle": { en: "Review queue", zh: "审核队列" },
-  "community.approve": { en: "Approve", zh: "通过" },
-  "community.hide": { en: "Hide", zh: "隐藏" },
   "community.reviewEmpty": { en: "Nothing to review.", zh: "没有待审核的。" },
-  "community.reviewLoading": { en: "Checking review access…", zh: "正在确认审核权限…" },
-  "community.reviewSignIn": {
-    en: "Sign in with the owner account to review submissions.",
-    zh: "请用 Owner 账号登录后审核投稿。",
-  },
-  "community.reviewForbidden": {
-    en: "This account does not have review access.",
-    zh: "这个账号没有审核权限。",
-  },
-  "community.reviewUnavailable": {
-    en: "The review queue is unavailable. Try again later.",
-    zh: "审核队列暂时不可用，请稍后重试。",
-  },
-  "community.reviewRetry": { en: "Try again", zh: "重试" },
   "samples.play": { en: "Play sample", zh: "播放样片" },
   "samples.playFailed": {
     en: "This sample could not be loaded. Try again later.",
@@ -1137,25 +1353,11 @@ export const messages = {
     en: "I made this, and it follows the Free License rules.",
     zh: "这是我做的，并且遵守免费商用的规则。",
   },
-  "community.submit": { en: "Post", zh: "发布" },
   "community.author": { en: "by {author}", zh: "作者：{author}" },
-  "community.waiting": { en: "Waiting for review", zh: "等待审核" },
-  "community.empty": {
-    en: "Nothing here yet. Be the first: post something you made with our actors.",
-    zh: "还没有作品。来当第一个：发一个你用我们演员做的东西。",
-  },
-  "community.signIn": { en: "Sign in to join in", zh: "登录后参与" },
-  "community.like": { en: "Like", zh: "赞" },
   "community.reported": { en: "Thanks. We’ll take a look.", zh: "谢谢，我们会看一下。" },
   "community.report": { en: "Report this post", zh: "举报这个作品" },
-  "community.notFound": { en: "This post could not be found.", zh: "没有找到这个作品。" },
-  "community.deleteConfirmation": {
-    en: "Delete this post? This can’t be undone.",
-    zh: "删除这个作品？删了就找不回来了。",
-  },
   "community.starring": { en: "Starring {actors}", zh: "出演：{actors}" },
   "community.delete": { en: "Delete", zh: "删除" },
-  "community.signInToVote": { en: "Sign in to vote", zh: "登录后投票" },
   "community.voteLabel": { en: "Want more of {name}", zh: "想看更多{name}" },
   "license.heroLines.0": {
     en: "Free for personal and commercial projects.",
@@ -1175,8 +1377,6 @@ export const messages = {
   "community.kind.image": { en: "Image", zh: "图片" },
   "community.kind.video": { en: "Video", zh: "视频" },
   "community.kind.audio": { en: "Audio", zh: "声音" },
-  "community.kind.game": { en: "Game", zh: "游戏" },
-  "community.actorSlugLabel": { en: "Actor", zh: "演员" },
   "common.breadcrumbFallback": { en: "Breadcrumb", zh: "当前位置" },
   "sheet.action": {
     en: "Character sheet",
@@ -1351,19 +1551,6 @@ export const messages = {
   "firstUse.vote.condition": {
     en: "A free Swimmer account is required to vote.",
     zh: "投票需要免费泳者账号。",
-  },
-  "firstUse.vote.saved": { en: "Vote choice saved.", zh: "投票选择已保存。" },
-  "firstUse.post.condition": {
-    en: "Local prototype: sign in and select an actor used in your work. Your first submission needs review. File uploads are not available here yet; live limits will come from the backend when uploads launch.",
-    zh: "本地原型：需要登录并选择作品实际使用的演员，首帖需审核。此处尚不能上传文件；上传开放后，限制以实际后端返回为准。",
-  },
-  "firstUse.post.saved": {
-    en: "Submission received. Check its review status before treating it as published.",
-    zh: "已收到投稿。请核对审核状态，不代表已经公开。",
-  },
-  "firstUse.actionFailed": {
-    en: "That action did not complete. Try again.",
-    zh: "操作未完成，请重试。",
   },
   "downloads.authorizing": { en: "Checking download access…", zh: "正在核对下载权限……" },
   "downloads.fetching": { en: "Reference files fetched", zh: "已取回的参考文件" },

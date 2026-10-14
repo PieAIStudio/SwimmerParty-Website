@@ -1,48 +1,40 @@
 "use client";
 import { useSiteI18n } from "@/i18n/client";
-import { useEffect, useState } from "react";
-import { PostActions } from "./PostActions";
-import type { CommunityPost } from "./types";
-import { communityPostResponseSchema } from "@/contracts/community";
-import { useAccount } from "@/features/account";
 import { GameButton } from "@pieai/swimmer-ui-kit";
-export function PostDetail({ id, locale }: { id: string; locale: "en" | "zh" }) {
-  const { t } = useSiteI18n();
-  const [post, setPost] = useState<CommunityPost | null>(null);
+import { useAccount } from "@/features/account";
+import { useCommunityQuery } from "./hooks";
+import { CommunityNotice } from "./CommunityNotice";
+import { PostMedia } from "./PostMedia";
+import { PostActions } from "./PostActions";
+export function PostDetail({ id }: { id: string }) {
   const account = useAccount();
-  useEffect(() => {
-    void fetch(`/api/community/posts/${id}`)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((x: unknown) => {
-        const parsed = communityPostResponseSchema.safeParse(x);
-        setPost(parsed.success ? parsed.data.post : null);
-      });
-  }, [id]);
-  if (!post) return <p className="sp-lead mt-8">{t("community.notFound")}</p>;
-  const postId = post.id;
-  async function remove() {
-    if (!confirm(t("community.deleteConfirmation"))) return;
-    const response = await fetch(`/api/community/posts/${postId}`, { method: "DELETE" });
-    if (response.ok) setPost(null);
-  }
+  return <Detail key={`${id}:${account.user?.id ?? "guest"}`} id={id} />;
+}
+function Detail({ id }: { id: string }) {
+  const { t } = useSiteI18n();
+  const result = useCommunityQuery("get_post", { postId: id });
+  if (result.error)
+    return (
+      <>
+        <CommunityNotice error={result.error} />
+        <GameButton onClick={result.refresh}>{t("c.retry")}</GameButton>
+      </>
+    );
+  if (!result.data) return <output>{t("c.loading")}</output>;
+  const post = result.data.post;
   return (
-    <article className="sp-section">
-      <p className="sp-small text-muted-foreground">
-        {t("community.author", { author: post.author })}
-      </p>
-      <h1 className="sp-display-lg mt-4">{post.title}</h1>
-      <p className="mt-5">{post.description}</p>
-      <p className="sp-small mt-6">
+    <article className="sp-section" data-community-post={post.id}>
+      <h1 className="sp-title">{post.title}</h1>
+      <p>{t("community.author", { author: post.author.displayName })}</p>
+      <p className="mt-4 whitespace-pre-wrap break-words">{post.description}</p>
+      <p className="sp-small mt-3">
         {t("community.starring", {
-          actors: locale === "zh" ? post.actorSlugs.join("、") : post.actorSlugs.join(", "),
+          actors: post.actors.map((actor) => `${actor.slug} · ${actor.assetVersion}`).join(", "),
         })}
       </p>
-      <PostActions id={post.id} locale={locale} />
-      {account.user?.id === post.authorId ? (
-        <GameButton variant="ghost" className="mt-4" onClick={() => void remove()}>
-          {t("community.delete")}
-        </GameButton>
-      ) : null}
+      <PostMedia post={post} />
+      <p className="whitespace-pre-wrap break-words">{post.recipe}</p>
+      <PostActions key={`${post.id}:${post.viewerHasLiked}`} post={post} refresh={result.refresh} />
     </article>
   );
 }

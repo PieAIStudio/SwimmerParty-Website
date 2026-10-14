@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: ai-assisted
 created: 2026-10-08
-last_reviewed: 2026-10-13
+last_reviewed: 2026-10-14
 domain: engineering
 tags:
   - swimmer-backend
@@ -22,15 +22,10 @@ related:
 
 ## 状态与唯一合同
 
-**B1 v3 已按 Owner 拍板定稿；本页完成文档同步，不代表后端实现、staging、网站适配或生产已验收。**
-后端合同唯一来源是 `SwimmerBackend` 的 `sp-community` 分支提交 `d49cff1`，
-`docs/specs/active/swimmer-party-community.md`（`SPEC-SWIMMER-PARTY-COMMUNITY`）。
-本页保留原入口 ID，只维护网站侧消费摘要、对应章节和接入门槛，不独立定义另一套合同。
-原始文件 SHA-256：`115dd0446be128fbea7a7b185c0de611df7a6f8b7d961e40beae758b679246a7`。
+**B1 v3 的批准基线仍保留在 d49cff1；C1/C2 的可执行消费固定到 `sp-community@c29cbfcde035b5b31138f60d6a59420a171a3c96`。**
+权威规格仍为后端 `docs/specs/active/swimmer-party-community.md`（`SPEC-SWIMMER-PARTY-COMMUNITY`），本次读取该提交的规格 SHA-256：`9bb59a9f67848ace6541133ed80a685b9edbbcdd99c3a168f1ffcfb6c89fafd0`。后端只读快照与初始 Git 状态见 `.devspace-reports/next-stage/community-v3/backend-pin.json`，续读的 c29cbfc 来源与哈希见同目录 `backend-current-pin.json`；没有切换、修改或提交后端工作树。
 
-产品方向、Owner 决定和网站进度见[创作社区实施方案](../plans/active/2026-10-13-creator-community.md)。
-本次只更新文档；`src/contracts/community.ts`、社区 API、远程适配器和功能开关均不修改。
-B2 登记实际端点和 DTO 后，C1 再实现并验证映射；逻辑操作名不能当成已存在的 RPC。
+Owner 已允许前端先按该版本写类型和夹具，不等待测试环境。产品方向和每阶段检查证据见[创作社区实施方案](../plans/active/2026-10-13-creator-community.md)。本站 C1 用逐字段运行时校验消费实际 RPC，C2 做 Owner 审核；默认开关关闭，真实 staging 验收和开放社区仍属于 C3，不能把本地夹具通过写成真实服务已验收。
 
 ## 已确认范围与默认额度（后端 §2–3）
 
@@ -166,10 +161,19 @@ Owner 权限来自当前身份与受控登记，不是 service_role 本身或用
 
 ## C 组接入与验收
 
-本次仅文档。C 组在 AuthKit 正式版合入、B2 固定 staging 验收通过后进行：
-严格输入/输出模型、版本化 DTO/RPC 映射、三步投稿器、上传进度与恢复、我的作品、
-媒体预览、初始 liked/voted 状态、举报理由与 Owner 审核/撤信/暂停，再做真实全链路验收。
-先验收再开放 Community（中文“泳者”），官方示例与用户作品分开标，不以样片填充假社区。
+C1/C2 可先用固定 v3 夹具实现和检查，不等待 Owner 尚未决定的后端部署事项。正式环境不提供内存回退；页面入口、投稿、我的作品、社区详情和审核均默认关闭。`/api/community/v3/[operation]` 只映射 `contracts/community-operations.ts` 中固定操作，不开放任意 RPC 透传或 service_*。参数采用实际 public invoker RPC 的 `p_*` 名称，输出是实际 camelCase JSON。原 v1 API 统一关闭，避免旧写入绕过 revision、幂等或权利确认。
+
+本次实现与最初文档摘要之间的明确边界：
+
+- `get_limits` 公开的是有效额度、开关、kinds 与 videoPlatforms，不含 MIME 清单、条款版本或解码上限；支持 MIME 取固定版本规格，提交条款版本用本站现行 License v1.0。不能读取并不存在的响应字段。
+- public media 投影只有 `id/kind/sortOrder/altText`；author/owner 另有两种状态，没有存储路径、播放 URL 或签名。签名读取通过独立网站能力端口表达，C3 前不把端口示例说成已部署后端服务。
+- `create_upload` 只返回 uploadId/mediaId/expiresAt/status/processingStatus，`finalize_upload` 进入验证不是 ready。网站 `/api/community/transfer/[uploadId]` 与 `/api/community/media/[mediaId]` 在 B2 接线审过前返回 PROCESSING_UNAVAILABLE。测试仅注入已验证结构的签名目标/媒体响应，不让网站服务持有 service_role。
+- backend get_operation 的查询白名单不含 create_upload/finalize_upload；写入原键仍可幂等重试，上传进度查询使用 get_upload_status。删帖返回 deleting，不代表对象删除完成；现版本没有公开删除完成查询 RPC，不伪造完成回执。
+- 25个产品错误与新增2个传输错误 `ORIGIN_NOT_ALLOWED`（403）、`METHOD_NOT_ALLOWED`（405）均严格映射HTTP/中英文；未知SQL/网络错误收敛为COMMUNITY_UNAVAILABLE，不回显SQL正文、对象路径或内部身份。
+- c29cbfc的上传后顺序已对齐：网站只发 `complete_upload` 能力请求，对应后端 `swimmer-party-upload-complete`，从不直调 `finalize_upload` RPC。能力接线尚未验收时返回PROCESSING_UNAVAILABLE；原操作ID与uploadId保留，不绕过成品处理。
+- 签名器原始响应是 `{uploadId,uploadUrl,uploadUrlExpiresAt,expiresAt}`；读取原始响应是 `{mediaId,url,mime,expiresInSeconds}`。网站严格核对目标身份、期限后转为暂存UI能力，读取请求显式 `{mediaId,mode:"read"}`；缺省Owner模式不能冒充公开读取。上传HTTP固定PUT，签名有效期不超过服务端会话；读取期限从发请求时起算，不因传输延迟延长。这里只验纯映射与夹具，不调用未通过staging的边缘服务。
+
+先验收真实服务再开放 Community，官方样片与用户作品分开标，不以样片填充假社区。
 
 B2 交接必须给出确切提交、前向迁移与哈希、实际 API/RPC 映射和后端 T01–T15 证据，
 覆盖匿名/本人/他人/Owner 权限、三个媒体类型、配额、幂等/并发、修改复审、旧 URL/缓存撤权、

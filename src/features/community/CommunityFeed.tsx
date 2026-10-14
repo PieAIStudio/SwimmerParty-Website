@@ -1,194 +1,76 @@
 "use client";
+import { useState } from "react";
+import { GameButton, GameEmptyState } from "@pieai/swimmer-ui-kit";
 import { useSiteI18n } from "@/i18n/client";
-import { useEffect, useState } from "react";
-import { GameButton, GameSelect, GameToast } from "@pieai/swimmer-ui-kit";
-import { ACTORS } from "@/content/actors";
-import type { CommunityPost } from "./types";
-import { communityPostResponseSchema, communityPostsResponseSchema } from "@/contracts/community";
 import { Link } from "@/i18n/navigation";
-import { announceFirstUse } from "@/features/guidance/client";
-export function CommunityFeed({ locale }: { locale: "en" | "zh" }) {
+import { useAccount } from "@/features/account";
+import type { CommunityPost } from "@/contracts/community";
+import { CommunityNotice } from "./CommunityNotice";
+import { PostMedia } from "./PostMedia";
+import { useCommunityQuery } from "./hooks";
+export function CommunityFeed() {
+  const account = useAccount();
+  return <Feed key={account.user?.id ?? "guest"} />;
+}
+function Feed() {
   const { t } = useSiteI18n();
-  const [posts, setPosts] = useState<CommunityPost[]>([]);
-  const [open, setOpen] = useState(false);
-  const [busy, setBusy] = useState(false);
-  const [notice, setNotice] = useState<"signin" | "failed" | "submitted" | null>(null);
-  const [title, setTitle] = useState("");
-  const [kind, setKind] = useState("image");
-  const [actor, setActor] = useState("tang-yunqiu");
-  const [description, setDescription] = useState("");
-  const [recipe, setRecipe] = useState("");
-  const [tool, setTool] = useState("");
-  const [creditConfirmed, setCreditConfirmed] = useState(false);
-  const [rightsConfirmed, setRightsConfirmed] = useState(false);
-  useEffect(() => {
-    fetch("/api/community/posts")
-      .then((r) => r.json())
-      .then((x: unknown) => {
-        const parsed = communityPostsResponseSchema.safeParse(x);
-        setPosts(parsed.success ? parsed.data.posts : []);
-      })
-      .catch(() => undefined);
-  }, []);
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
-    if (busy) return;
-    setBusy(true);
-    setNotice(null);
-    try {
-      const r = await fetch("/api/community/posts", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          title,
-          kind,
-          actorSlugs: [actor],
-          description,
-          recipe,
-          tool: tool || undefined,
-          creditConfirmed,
-          rightsConfirmed,
-        }),
-      });
-      if (r.status === 401) {
-        setNotice("signin");
-        return;
-      }
-      if (!r.ok) throw new Error("Submission failed");
-      if (r.ok) {
-        const result = communityPostResponseSchema.parse(await r.json());
-        setPosts((current) => [result.post, ...current]);
-        setTitle("");
-        setOpen(false);
-        setNotice("submitted");
-      }
-    } catch {
-      setNotice("failed");
-    } finally {
-      setBusy(false);
-    }
-  }
+  const [cursor, setCursor] = useState<string | null>(null);
+  const [earlier, setEarlier] = useState<CommunityPost[]>([]);
+  const result = useCommunityQuery("list_posts", { cursor, pageSize: 20 });
+  const posts = [...earlier, ...(result.data?.posts ?? [])].filter(
+    (post, index, all) => all.findIndex((item) => item.id === post.id) === index,
+  );
   return (
-    <div>
-      <div className="flex items-center justify-between gap-4">
-        <p className="sp-lead">{t("community.intro")}</p>
-        <GameButton
-          variant="secondary"
-          onClick={() => {
-            if (!open) announceFirstUse("post");
-            setOpen((v) => !v);
-          }}
-        >
-          {t("community.openForm")}
-        </GameButton>
+    <section data-community-feed>
+      <div className="mb-6 flex flex-wrap gap-4">
+        <Link className="underline" href="/community/new">
+          {t("c.new")}
+        </Link>
+        <Link className="underline" href="/community/mine">
+          {t("c.mine")}
+        </Link>
       </div>
-      <p className="sp-small mt-3 text-muted-foreground" data-submission-conditions>
-        {t("firstUse.post.condition")}
-      </p>
-      {notice ? (
-        <div className="mt-3">
-          <GameToast tone={notice === "submitted" ? "success" : "danger"}>
-            {t(
-              notice === "signin"
-                ? "community.signIn"
-                : notice === "submitted"
-                  ? "firstUse.post.saved"
-                  : "firstUse.actionFailed",
-            )}
-          </GameToast>
-        </div>
-      ) : null}
-      {open ? (
-        <form onSubmit={submit} className="sp-panel mt-6 grid gap-4 p-5">
-          <label className="grid gap-2">
-            <span className="sp-label">{t("community.titleLabel")}</span>
-            <input
-              required
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              className="rounded border border-border bg-background p-3"
-            />
-          </label>
-          <div className="flex gap-3">
-            <select
-              value={kind}
-              onChange={(e) => setKind(e.target.value)}
-              className="rounded border border-border bg-background p-3"
-            >
-              <option value="image">{t("community.kind.image")}</option>
-              <option value="video">{t("community.kind.video")}</option>
-              <option value="audio">{t("community.kind.audio")}</option>
-              <option value="game">{t("community.kind.game")}</option>
-            </select>
-            <label className="grid min-w-0 flex-1 gap-2">
-              <span className="sp-label">{t("community.actorSlugLabel")}</span>
-              <GameSelect value={actor} onChange={(e) => setActor(e.target.value)}>
-                {ACTORS.map((option) => (
-                  <option key={option.slug} value={option.slug}>
-                    {locale === "zh" ? option.nameCn : option.nameEn}
-                  </option>
-                ))}
-              </GameSelect>
-            </label>
-          </div>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder={t("community.descriptionPlaceholder")}
-            className="rounded border border-border bg-background p-3"
-          />
-          <textarea
-            value={recipe}
-            onChange={(e) => setRecipe(e.target.value)}
-            placeholder={t("community.recipePlaceholder")}
-            className="rounded border border-border bg-background p-3"
-          />
-          <input
-            value={tool}
-            onChange={(e) => setTool(e.target.value)}
-            placeholder={t("community.toolPlaceholder")}
-            className="rounded border border-border bg-background p-3"
-          />
-          <label className="flex gap-2">
-            <input
-              type="checkbox"
-              checked={creditConfirmed}
-              onChange={(e) => setCreditConfirmed(e.target.checked)}
-            />
-            {t("community.creditConfirmation")}
-          </label>
-          <label className="flex gap-2">
-            <input
-              type="checkbox"
-              checked={rightsConfirmed}
-              onChange={(e) => setRightsConfirmed(e.target.checked)}
-            />
-            {t("community.rightsConfirmation")}
-          </label>
+      <p className="sp-lead">{t("community.intro")}</p>
+      {result.error ? (
+        <>
+          <CommunityNotice error={result.error} />
           <GameButton
-            type="submit"
-            variant="primary"
-            disabled={!creditConfirmed || !rightsConfirmed}
-            pending={busy}
+            onClick={() => {
+              setCursor(null);
+              setEarlier([]);
+              result.refresh();
+            }}
           >
-            {t("community.submit")}
+            {t("c.retry")}
           </GameButton>
-        </form>
+        </>
       ) : null}
-      <div className="mt-8 grid gap-5 md:grid-cols-2">
+      {result.loading ? <output>{t("c.loading")}</output> : null}
+      {!result.error && !result.loading && !posts.length ? (
+        <GameEmptyState title={t("c.noPosts")} />
+      ) : null}
+      <div className="mt-6 grid gap-6 md:grid-cols-2">
         {posts.map((post) => (
-          <article key={post.id} className="sp-panel p-5">
-            <Link href={`/works/p/${post.id}`} className="sp-subtitle hover:underline">
-              {post.title}
-            </Link>
-            <p className="sp-small mt-2 text-muted-foreground">
-              {t("community.author", { author: post.author })}
-            </p>
-            <p className="sp-small mt-4">{t("community.waiting")}</p>
+          <article key={post.id} className="sp-panel min-w-0 p-5">
+            <h3 className="sp-subtitle">
+              <Link href={`/works/p/${post.id}`}>{post.title}</Link>
+            </h3>
+            <p>{t("community.author", { author: post.author.displayName })}</p>
+            <PostMedia post={post} />
           </article>
         ))}
-        {!posts.length ? <p className="sp-lead">{t("community.empty")}</p> : null}
       </div>
-    </div>
+      {result.data?.hasMore ? (
+        <GameButton
+          className="mt-5"
+          onClick={() => {
+            setEarlier(posts);
+            setCursor(result.data!.nextCursor);
+          }}
+        >
+          {t("c.loadMore")}
+        </GameButton>
+      ) : null}
+    </section>
   );
 }

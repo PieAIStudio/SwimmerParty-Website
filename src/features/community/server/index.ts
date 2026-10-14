@@ -1,3 +1,10 @@
-/** Node API entry points. AuthKit's Node adapter is kept; URLs and response shapes stay stable. */
-export { posts, post } from "./posts.ts";
-export { likes, reports, review, votes } from "./actions.ts";
+export { gateway } from "./gateway.ts";
+export { unavailableCapability } from "./capabilities.ts";
+export {
+  retiredCommunityRoute as posts,
+  retiredCommunityRoute as post,
+  retiredCommunityRoute as likes,
+  retiredCommunityRoute as reports,
+  retiredCommunityRoute as review,
+  retiredCommunityRoute as votes,
+} from "./retired.ts";

@@ -1,74 +1,107 @@
 "use client";
-import { useSiteI18n } from "@/i18n/client";
 import { useState } from "react";
-import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
-import { likeResultSchema } from "@/contracts/community";
-
-export function PostActions({ id }: { id: string; locale: "en" | "zh" }) {
+import { GameButton, GameField, GameSelect, GameTextArea, GameToast } from "@pieai/swimmer-ui-kit";
+import { useSiteI18n } from "@/i18n/client";
+import { useAccount } from "@/features/account";
+import { reportReasonSchema, type CommunityPost, type ReportReason } from "@/contracts/community";
+import { callCommunity } from "./api";
+import { useCommunityAction } from "./hooks";
+import { CommunityNotice } from "./CommunityNotice";
+import { reasonMessages } from "./presentation";
+export function PostActions({ post, refresh }: { post: CommunityPost; refresh: () => void }) {
   const { t } = useSiteI18n();
-  const [liked, setLiked] = useState(false);
-  const [reported, setReported] = useState(false);
-  const [busy, setBusy] = useState(false);
-  const [notice, setNotice] = useState<"signin" | "failed" | null>(null);
+  const account = useAccount();
+  const action = useCommunityAction(`post:${post.id}`);
+  const [reporting, setReporting] = useState(false),
+    [reported, setReported] = useState(false);
+  const [reason, setReason] = useState<ReportReason>("not_site_actors"),
+    [note, setNote] = useState("");
   async function like() {
-    if (busy) return;
-    setBusy(true);
-    setNotice(null);
-    try {
-      const response = await fetch("/api/community/likes", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ postId: id, liked: !liked }),
-      });
-      if (response.status === 401) {
-        setNotice("signin");
-        return;
-      }
-      if (!response.ok) throw new Error("Like failed");
-      setLiked(likeResultSchema.parse(await response.json()).liked);
-    } catch {
-      setNotice("failed");
-    } finally {
-      setBusy(false);
-    }
-  }
-  async function report() {
-    if (busy) return;
-    setBusy(true);
-    setNotice(null);
-    try {
-      const response = await fetch("/api/community/reports", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ postId: id, reason: "Something else" }),
-      });
-      if (response.status === 401) {
-        setNotice("signin");
-        return;
-      }
-      if (!response.ok) throw new Error("Report failed");
-      setReported(true);
-    } catch {
-      setNotice("failed");
-    } finally {
-      setBusy(false);
-    }
+    const result = await action.perform((journal, signal) =>
+      journal.execute(
+        "set_like",
+        { postId: post.id, liked: !post.viewerHasLiked },
+        callCommunity,
+        signal,
+      ),
+    );
+    if (result) refresh();
   }
   return (
-    <div className="mt-8 flex flex-wrap gap-3">
-      {notice ? (
-        <div className="basis-full">
-          <GameToast tone="danger">
-            {t(notice === "signin" ? "community.signIn" : "firstUse.actionFailed")}
-          </GameToast>
-        </div>
+    <div className="my-6 grid gap-4">
+      {action.error ? <CommunityNotice error={action.error} /> : null}
+      {action.journal.snapshot() ? (
+        <GameButton
+          pending={action.busy}
+          onClick={() =>
+            void action.perform(async (journal, signal) => {
+              await journal.retry(callCommunity, signal);
+              refresh();
+            })
+          }
+        >
+          {t("c.retryWrite")}
+        </GameButton>
       ) : null}
-      <GameButton pending={busy} aria-pressed={liked} onClick={() => void like()}>
-        {t("community.like")}
-      </GameButton>
-      <GameButton pending={busy} variant="ghost" onClick={() => void report()} disabled={reported}>
-        {reported ? t("community.reported") : t("community.report")}
-      </GameButton>
+      <div className="flex flex-wrap gap-3">
+        <GameButton
+          pending={action.busy}
+          aria-pressed={post.viewerHasLiked}
+          onClick={() => void like()}
+        >
+          {t("c.likes", { count: post.likeCount })}
+        </GameButton>
+        {post.author.id !== account.user?.id ? (
+          <GameButton variant="ghost" onClick={() => setReporting((value) => !value)}>
+            {t("community.report")}
+          </GameButton>
+        ) : null}
+      </div>
+      {reported ? <GameToast tone="success">{t("community.reported")}</GameToast> : null}
+      {reporting ? (
+        <form
+          className="sp-panel grid gap-4 p-5"
+          onSubmit={(event) => {
+            event.preventDefault();
+            void action.perform(async (journal, signal) => {
+              await journal.execute(
+                "report_post",
+                { postId: post.id, reasonCode: reason, note },
+                callCommunity,
+                signal,
+              );
+              setReported(true);
+              setReporting(false);
+            });
+          }}
+        >
+          <GameField label={t("c.reportReason")}>
+            <GameSelect
+              value={reason}
+              onChange={(event) => setReason(reportReasonSchema.parse(event.target.value))}
+            >
+              {reportReasonSchema.options.map((value) => (
+                <option key={value} value={value}>
+                  {t(reasonMessages[value])}
+                </option>
+              ))}
+            </GameSelect>
+          </GameField>
+          <GameField label={t("c.reportNote")}>
+            <GameTextArea
+              value={note}
+              maxLength={2000}
+              onChange={(event) => setNote(event.target.value)}
+            />
+          </GameField>
+          <div className="flex gap-3">
+            <GameButton type="submit" pending={action.busy}>
+              {t("community.report")}
+            </GameButton>
+            <GameButton onClick={() => setReporting(false)}>{t("c.cancel")}</GameButton>
+          </div>
+        </form>
+      ) : null}
     </div>
   );
 }

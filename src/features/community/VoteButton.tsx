@@ -1,73 +1,51 @@
 "use client";
+import { GameButton } from "@pieai/swimmer-ui-kit";
 import { useSiteI18n } from "@/i18n/client";
-import { useEffect, useState } from "react";
-import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { announceFirstUse } from "@/features/guidance/client";
-import { voteCountSchema, voteResultSchema } from "@/contracts/community";
+import { useCommunityQuery, useCommunityAction } from "./hooks";
+import { CommunityNotice } from "./CommunityNotice";
+import { callCommunity } from "./api";
 export function VoteButton({ slug, name }: { slug: string; name: string; locale: "en" | "zh" }) {
   const { t } = useSiteI18n();
-  const [count, setCount] = useState<number | null>(null);
-  const [busy, setBusy] = useState(false);
-  const [notice, setNotice] = useState<"signin" | "failed" | "saved" | null>(null);
-  useEffect(() => {
-    const controller = new AbortController();
-    void fetch(`/api/community/votes?slug=${encodeURIComponent(slug)}`, {
-      signal: controller.signal,
-    })
-      .then(async (response) => {
-        if (!response.ok) throw new Error("Vote count unavailable");
-        const parsed = voteCountSchema.parse(await response.json());
-        if (!controller.signal.aborted) setCount(parsed.count);
-      })
-      .catch(() => {
-        if (!controller.signal.aborted) setNotice("failed");
-      });
-    return () => controller.abort();
-  }, [slug]);
-  async function vote() {
-    if (busy) return;
-    setBusy(true);
-    setNotice(null);
-    try {
-      const response = await fetch("/api/community/votes", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ slug }),
-      });
-      if (response.status === 401) {
-        setNotice("signin");
-        return;
-      }
-      if (!response.ok) throw new Error("Vote unavailable");
-      const result = voteResultSchema.parse(await response.json());
-      setCount(result.count);
-      setNotice("saved");
-      if (result.voted) announceFirstUse("vote");
-    } catch {
-      setNotice("failed");
-    } finally {
-      setBusy(false);
-    }
-  }
+  const votes = useCommunityQuery("get_actor_votes", { actorSlug: slug });
+  const action = useCommunityAction(`vote:${slug}`);
+  const error = action.error ?? votes.error;
   return (
     <div>
-      <p className="sp-small mb-2 text-muted-foreground">{t("firstUse.vote.condition")}</p>
-      <GameButton variant="ghost" pending={busy} onClick={() => void vote()}>
+      <p className="sp-small mb-2">{t("firstUse.vote.condition")}</p>
+      <GameButton
+        variant="ghost"
+        pending={action.busy}
+        disabled={!votes.data}
+        aria-pressed={votes.data?.voted ?? false}
+        onClick={() =>
+          void action.perform(async (journal, signal) => {
+            const saved = await journal.execute(
+              "set_actor_vote",
+              { actorSlug: slug, voted: !votes.data!.voted },
+              callCommunity,
+              signal,
+            );
+            if (saved.voted) announceFirstUse("vote");
+            votes.refresh();
+          })
+        }
+      >
         {t("community.voteLabel", { name })}
-        {count === null ? "" : ` · ${count}`}
+        {votes.data ? ` · ${votes.data.count}` : ""}
       </GameButton>
-      {notice ? (
-        <div className="mt-2">
-          <GameToast tone={notice === "saved" ? "success" : "danger"}>
-            {t(
-              notice === "signin"
-                ? "community.signInToVote"
-                : notice === "saved"
-                  ? "firstUse.vote.saved"
-                  : "firstUse.actionFailed",
-            )}
-          </GameToast>
-        </div>
+      {error ? <CommunityNotice error={error} /> : null}
+      {action.journal.snapshot() ? (
+        <GameButton
+          onClick={() =>
+            void action.perform(async (journal, signal) => {
+              await journal.retry(callCommunity, signal);
+              votes.refresh();
+            })
+          }
+        >
+          {t("c.retryWrite")}
+        </GameButton>
       ) : null}
     </div>
   );

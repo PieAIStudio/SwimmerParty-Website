@@ -1,2 +1,2 @@
-export { accountUser } from "./account.ts";
+export { accountUser, swimmerAccount } from "./account.ts";
 export { default as auth } from "./handler.ts";

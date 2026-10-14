@@ -1,41 +1,83 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { createMemoryBackend } from "../../src/features/community/server/memory.ts";
+import { communityOperations } from "../../src/contracts/community-operations.ts";
+import { createRemoteCommunity, rpcArguments } from "../../src/features/community/server/remote.ts";
+import { OP_ID, POST_ID, USER_ID, ownerFixture } from "./fixtures/community-v3.ts";
 
-test("approval trusts an author; idempotent likes, distinct reports and owner deletion affect the public feed", async () => {
-  const backend = createMemoryBackend();
-  const input = {
-    kind: "image" as const,
-    title: "Fixture",
-    author: "A",
-    authorId: "fixture-owner",
-    actorSlugs: ["tang-yunqiu"],
-  };
-  const first = await backend.addPost(input);
-  assert.equal(first.status, "pending");
-  await backend.reviewPost(first.id, "approve");
-  const second = await backend.addPost(input);
-  assert.equal(second.status, "published");
-  assert.equal((await backend.setPostLike(second.id, "u1", true))?.count, 1);
-  assert.equal((await backend.setPostLike(second.id, "u1", true))?.count, 1);
-  assert.equal((await backend.setPostLike(second.id, "u1", false))?.count, 0);
-  assert.equal((await backend.reportPost(second.id, "u1", "Something else"))?.count, 1);
-  assert.equal((await backend.reportPost(second.id, "u1", "Something else"))?.count, 1);
-  assert.equal((await backend.reportPost(second.id, "u2", "Something else"))?.hidden, false);
-  assert.equal((await backend.reportPost(second.id, "u3", "Something else"))?.hidden, true);
-  assert.equal(
-    (await backend.listPosts()).some((p) => p.id === second.id),
-    false,
+test("v3 approval never implies author trust; every Owner write has its own explicit operation", async () => {
+  const calls: string[] = [];
+  const remote = createRemoteCommunity(
+    async (name) => {
+      calls.push(name);
+      return {
+        data: { operationId: OP_ID, post: ownerFixture({ status: "published" }) },
+        error: null,
+      };
+    },
+    USER_ID,
+    "test",
   );
-  assert.equal(
-    (await backend.listReviewQueue()).some((p) => p.id === second.id),
-    true,
+  await remote("review_post", {
+    operationId: OP_ID,
+    postId: POST_ID,
+    expectedRevision: 1,
+    action: "approve",
+    reason: null,
+  });
+  assert.deepEqual(calls, ["review_post"]);
+  assert.equal(communityOperations.set_author_trust.access, "owner");
+  assert.deepEqual(
+    rpcArguments("set_author_trust", {
+      operationId: OP_ID,
+      userId: USER_ID,
+      trusted: false,
+      reason: "Review needed",
+    }),
+    { p_operation_id: OP_ID, p_user_id: USER_ID, p_trusted: false, p_reason: "Review needed" },
   );
-  await backend.reviewPost(second.id, "approve");
-  assert.equal(
-    (await backend.listPosts()).some((p) => p.id === second.id),
-    true,
+});
+test("return/hide/restore, trust revocation and submission pause require a recorded reason", () => {
+  for (const action of ["return", "hide", "restore"] as const) {
+    assert(
+      !communityOperations.review_post.input.safeParse({
+        operationId: OP_ID,
+        postId: POST_ID,
+        expectedRevision: 1,
+        action,
+        reason: null,
+      }).success,
+    );
+    assert(
+      !communityOperations.review_post.input.safeParse({
+        operationId: OP_ID,
+        postId: POST_ID,
+        expectedRevision: 1,
+        action,
+        reason: " ",
+      }).success,
+    );
+  }
+  assert(
+    !communityOperations.set_author_trust.input.safeParse({
+      operationId: OP_ID,
+      userId: USER_ID,
+      trusted: false,
+      reason: "",
+    }).success,
   );
-  assert.equal(await backend.deletePost(second.id, "wrong-owner"), false);
-  assert.equal(await backend.deletePost(second.id, input.authorId), true);
+  assert(
+    !communityOperations.set_submission_paused.input.safeParse({
+      operationId: OP_ID,
+      paused: true,
+      reason: "",
+    }).success,
+  );
+  assert.deepEqual(
+    rpcArguments("set_submission_paused", {
+      operationId: OP_ID,
+      paused: true,
+      reason: "Review capacity",
+    }),
+    { p_operation_id: OP_ID, p_paused: true, p_reason: "Review capacity" },
+  );
 });
