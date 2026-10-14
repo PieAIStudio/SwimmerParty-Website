@@ -136,6 +136,18 @@ for (const [locale, width] of [
       ).toHaveCount(0);
       expect(calls).toBe(0);
     }
+    const access = await request.get("/api/community/access", { maxRedirects: 0 });
+    expect(access.status()).toBe(200);
+    expect(await access.json()).toEqual({ mode: "off", allowed: false, owner: false });
+    for (const suffix of [
+      "community.prefetch.rsc",
+      "admin/review.prefetch.rsc",
+      "community/new.prefetch.rsc",
+    ]) {
+      const response = await request.get(`/${locale}/${suffix}`);
+      expect(response.status(), suffix).toBe(404);
+      expect(response.headers()["cache-control"]).toContain("no-store");
+    }
     expect((await request.get("/api/community/v3/list_review_queue")).status()).toBe(503);
     expect((await request.get("/api/community/review")).status()).toBe(503);
     await page.goto(`/${locale}/works`);

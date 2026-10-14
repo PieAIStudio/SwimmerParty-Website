@@ -9,14 +9,35 @@ import { NAV, SITE } from "@/content/site";
 import { GameIconButton } from "@pieai/swimmer-ui-kit";
 import { GameIcon } from "@pieai/swimmer-ui-kit";
 
-export function SiteHeader({ accountMenu }: { accountMenu: ReactNode }) {
+export function SiteHeader({
+  accountMenu,
+  communityVisible = false,
+}: {
+  accountMenu: ReactNode;
+  communityVisible?: boolean;
+}) {
   const pathname = usePathname();
   const locale = useSiteLocale();
-  return <HeaderContent key={`${locale}:${pathname}`} accountMenu={accountMenu} />;
+  return (
+    <HeaderContent
+      key={`${locale}:${pathname}`}
+      accountMenu={accountMenu}
+      communityVisible={communityVisible}
+    />
+  );
 }
 
-function HeaderContent({ accountMenu }: { accountMenu: ReactNode }) {
+function HeaderContent({
+  accountMenu,
+  communityVisible,
+}: {
+  accountMenu: ReactNode;
+  communityVisible: boolean;
+}) {
   const { t } = useSiteI18n();
+  const navigation = communityVisible
+    ? [...NAV, { href: "/community", key: "community" } as const]
+    : NAV;
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
@@ -56,7 +77,7 @@ function HeaderContent({ accountMenu }: { accountMenu: ReactNode }) {
           {SITE.name}
         </Link>
         <nav className="hidden items-center gap-5 lg:flex" aria-label={t("common.mainNav")}>
-          {NAV.map((item) => (
+          {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -122,7 +143,7 @@ function HeaderContent({ accountMenu }: { accountMenu: ReactNode }) {
             aria-label={t("common.mainNav")}
             className="flex flex-1 flex-col items-start gap-5 py-8"
           >
-            {NAV.map((item) => (
+            {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

@@ -184,7 +184,12 @@ function Editor({
       }
     });
   }
-  async function transfer(journal: WriteSession, signal: AbortSignal, saved: AuthorPost) {
+  async function transfer(
+    journal: WriteSession,
+    signal: AbortSignal,
+    saved: AuthorPost,
+    renewExpired = false,
+  ) {
     setUploadStarted(true);
     for (const [sortOrder, item] of files.entries()) {
       activeFile.current = sortOrder;
@@ -194,6 +199,7 @@ function Editor({
         ...item,
         sortOrder,
         existingUploadId: intents.current.get(sortOrder),
+        renewExpired,
         journal,
         signal,
         progress: (value) => {
@@ -263,8 +269,13 @@ function Editor({
                   setContent(fromPost(restored.data));
                 }
               } else {
-                if ("uploadId" in result && typeof result.uploadId === "string")
+                if ("uploadId" in result && typeof result.uploadId === "string") {
                   intents.current.set(activeFile.current, result.uploadId);
+                  if ("processingStatus" in result && result.processingStatus === "ready")
+                    setProgress((old) =>
+                      old ? { ...old, stage: "ready", uploadId: result.uploadId as string } : null,
+                    );
+                }
                 await readLatest(signal);
               }
             })
@@ -474,10 +485,12 @@ function Editor({
             <GameButton
               disabled={action.busy}
               onClick={() =>
-                void action.perform((journal, signal) => transfer(journal, signal, post))
+                void action.perform((journal, signal) =>
+                  transfer(journal, signal, post, action.error?.code === "UPLOAD_EXPIRED"),
+                )
               }
             >
-              {t("c.resumeUpload")}
+              {t(action.error?.code === "UPLOAD_EXPIRED" ? "c3.restartUpload" : "c.resumeUpload")}
             </GameButton>
           ) : null}
           {post ? (

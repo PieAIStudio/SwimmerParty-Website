@@ -44,6 +44,21 @@ const reason = z.string().trim().min(1).max(2000);
 /** Only these caller operations can cross the website boundary. No service_* or table access. */
 export const communityOperations = {
   get_limits: { access: "public", write: false, input: empty, output: limitsSchema },
+  // Website-only bounded aggregation of the existing get_actor_votes RPC, not an invented remote operation.
+  list_actor_votes: {
+    access: "public",
+    write: false,
+    input: empty,
+    output: z.strictObject({
+      votes: z.array(
+        z.strictObject({
+          actorSlug: actorReferenceSchema.shape.slug,
+          count: z.number().int().nonnegative(),
+        }),
+      ),
+    }),
+  },
+
   list_posts: {
     access: "public",
     write: false,

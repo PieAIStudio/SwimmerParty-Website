@@ -7,7 +7,7 @@ const COMMUNITY_TEST = process.env.PLAYWRIGHT_COMMUNITY === "1";
 export default defineConfig({
   testDir: "./e2e",
   ...(COMMUNITY_TEST
-    ? { testMatch: "**/community-v3*.spec.ts" }
+    ? { testMatch: process.env.PLAYWRIGHT_COMMUNITY_MODE === "owner" ? "**/community-v3-owner.spec.ts" : "**/community-v3*.spec.ts", testIgnore: process.env.PLAYWRIGHT_COMMUNITY_MODE === "owner" ? [] : ["**/community-v3-owner.spec.ts"] }
     : { testIgnore: "**/community-v3*.spec.ts" }),
   globalSetup: "./e2e/global-setup.ts",
   fullyParallel: true,
@@ -28,7 +28,7 @@ export default defineConfig({
       GUEST_LIMITER: "memory",
       ASSET_LOCAL_ROOT: "e2e/fixtures/assets-store",
       NEXT_TELEMETRY_DISABLED: "1",
-      NEXT_PUBLIC_COMMUNITY_ENABLED: COMMUNITY_TEST ? "1" : "0",
+      NEXT_PUBLIC_COMMUNITY_MODE: COMMUNITY_TEST ? (process.env.PLAYWRIGHT_COMMUNITY_MODE ?? "on") : "off",
       NEXT_PUBLIC_POSTHOG_KEY: "",
     },
     url: `http://127.0.0.1:${PORT}`,

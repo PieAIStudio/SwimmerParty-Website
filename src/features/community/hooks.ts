@@ -14,7 +14,10 @@ export function useCommunityQuery<K extends CommunityOperation>(
   allowed = true,
 ) {
   const account = useAccount();
-  const identity = account.user?.id ?? "guest";
+  // Aggregate counts contain no viewer-specific state. Owner rollout is still gated by its parent and the server.
+  const publicCounts = operation === "list_actor_votes";
+  const identity = publicCounts ? "public" : (account.user?.id ?? "guest");
+  const waitingIdentity = !publicCounts && account.loading;
   const serialized = JSON.stringify(input),
     key = `${identity}:${operation}:${serialized}`;
   const [version, refresh] = useState(0);
@@ -25,7 +28,7 @@ export function useCommunityQuery<K extends CommunityOperation>(
     error?: CommunityError;
   } | null>(null);
   useEffect(() => {
-    if (!allowed || account.loading) return;
+    if (!allowed || waitingIdentity) return;
     const controller = new AbortController();
     void callCommunity(operation, JSON.parse(serialized), controller.signal)
       .then((data) => {
@@ -35,7 +38,7 @@ export function useCommunityQuery<K extends CommunityOperation>(
         if (!controller.signal.aborted) setResult({ key, version, error: asCommunityError(error) });
       });
     return () => controller.abort();
-  }, [operation, serialized, key, version, allowed, account.loading]);
+  }, [operation, serialized, key, version, allowed, waitingIdentity]);
   const current = result?.key === key && result.version === version && allowed ? result : null;
   return {
     data: current?.data,

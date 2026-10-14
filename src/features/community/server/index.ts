@@ -1,5 +1,6 @@
 export { gateway } from "./gateway.ts";
-export { unavailableCapability } from "./capabilities.ts";
+export { uploadTarget, mediaPreview, access } from "./capabilities.ts";
+export { communityPageAccess } from "./page-access.ts";
 export {
   retiredCommunityRoute as posts,
   retiredCommunityRoute as post,

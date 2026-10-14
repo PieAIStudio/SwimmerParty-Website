@@ -1,4 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { IncomingMessage, ServerResponse } from "node:http";
+import { communityMode } from "../../../contracts/community-access.ts";
+import { siteOrigin } from "../../../config/server.ts";
+import { createCommunityEdge, type EdgeCall } from "./edge.ts";
 import { createClient } from "@supabase/supabase-js";
 import { swimmerAccount } from "../../account/server/index.ts";
 import { runtimeModes } from "../../../config/server.ts";
@@ -6,16 +9,17 @@ import { CommunityError } from "../errors.ts";
 import { createRemoteCommunity } from "./remote.ts";
 import type { CommunityCall } from "../../../contracts/community-operations.ts";
 
-export type CommunityContext = { call: CommunityCall; userId: string | null };
+export type CommunityContext = { call: CommunityCall; userId: string | null; edge?: EdgeCall };
 export function requireCommunityEnabled(
   env: Readonly<Record<string, string | undefined>> = process.env,
 ) {
-  if (env.NEXT_PUBLIC_COMMUNITY_ENABLED !== "1") throw new CommunityError("COMMUNITY_UNAVAILABLE");
+  if (communityMode(env.NEXT_PUBLIC_COMMUNITY_MODE) === "off")
+    throw new CommunityError("COMMUNITY_UNAVAILABLE");
 }
 /** Each request owns its verified AuthKit data client. No browser-supplied identity, service key or memory fallback. */
 export async function remoteContext(
-  req: NextApiRequest,
-  res: NextApiResponse,
+  req: IncomingMessage,
+  res: ServerResponse,
   requestId: string,
 ): Promise<CommunityContext> {
   requireCommunityEnabled();
@@ -43,6 +47,38 @@ export async function remoteContext(
       ): { abortSignal(signal: AbortSignal): PromiseLike<{ data: unknown; error: unknown }> };
     };
   };
+  const functions = client.functions as unknown as {
+    invoke(
+      name: string,
+      options: {
+        body: Record<string, unknown>;
+        headers: Record<string, string>;
+        method: "POST";
+        signal: AbortSignal;
+      },
+    ): Promise<{ data: unknown; error: unknown; response?: Response }>;
+  };
+  const edge = createCommunityEdge(
+    async (name, body, signal) => {
+      // Forward the actual validated browser origin, never disguise a preview/local request as production.
+      const origin = req.headers.origin;
+      if (
+        typeof origin !== "string" ||
+        origin !== siteOrigin() ||
+        req.headers.host !== new URL(origin).host ||
+        req.headers["sec-fetch-site"] === "cross-site"
+      )
+        throw new CommunityError("ORIGIN_NOT_ALLOWED", { requestId });
+      return functions.invoke(name, {
+        body,
+        method: "POST",
+        headers: { Origin: origin },
+        signal: signal ?? AbortSignal.timeout(20000),
+      });
+    },
+    userId,
+    requestId,
+  );
   const call = createRemoteCommunity(
     async (name, args, signal) => {
       const query = scoped.schema("swimmer_party").rpc(name, args);
@@ -50,6 +86,7 @@ export async function remoteContext(
     },
     userId,
     requestId,
+    edge,
   );
-  return { call, userId };
+  return { call, userId, edge };
 }

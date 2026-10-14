@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { COMMUNITY_ENABLED } from "@/content/features";
+import { COMMUNITY_MODE } from "@/content/features";
 import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 export default async function CommunityPostPage({ params }: Props) {
-  if (!COMMUNITY_ENABLED) notFound();
+  if (COMMUNITY_MODE === "off") notFound();
   const { locale, id } = await params;
   setSiteLocale(locale);
   const { t } = await getSiteI18n();

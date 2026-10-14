@@ -1,3 +1,4 @@
+import { COMMUNITY_MODE } from "@/content/features";
 import type { MetadataRoute } from "next";
 import { ACTORS } from "@/content/actors";
 import { WORKS } from "@/content/works";
@@ -18,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const paths = [
     ...PAGES,
+    ...(COMMUNITY_MODE === "on" ? ["/community"] : []),
     ...ACTORS.map((actor) => `/actors/${actor.slug}`),
     ...WORKS.map((work) => `/works/${work.slug}`),
   ];

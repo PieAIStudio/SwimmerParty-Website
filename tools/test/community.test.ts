@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { gateway, createCommunityGateway } from "../../src/features/community/server/gateway.ts";
-import { unavailableCapability } from "../../src/features/community/server/capabilities.ts";
+import { uploadTarget, mediaPreview } from "../../src/features/community/server/capabilities.ts";
 import { remoteContext } from "../../src/features/community/server/context.ts";
 import { retiredCommunityRoute } from "../../src/features/community/server/retired.ts";
 import { CommunityError } from "../../src/features/community/errors.ts";
@@ -9,7 +9,7 @@ import { apiRequest, apiResponse, withEnvironment } from "./fixtures/api.ts";
 import { communityErrorSchema } from "../../src/contracts/community.ts";
 import { USER_ID, POST_ID, OP_ID, publicFixture } from "./fixtures/community-v3.ts";
 const local = {
-  NEXT_PUBLIC_COMMUNITY_ENABLED: "1",
+  NEXT_PUBLIC_COMMUNITY_MODE: "on",
   VERCEL_ENV: undefined,
   ASSET_STORE: "local",
   ACCOUNT_MODE: "mock",
@@ -25,14 +25,14 @@ const headers = {
 test("closed community rejects every route/method before resolving identity or adapter", async () => {
   for (const hosted of [undefined, "production", "preview", ""])
     await withEnvironment(
-      { ...local, VERCEL_ENV: hosted, NEXT_PUBLIC_COMMUNITY_ENABLED: undefined },
+      { ...local, VERCEL_ENV: hosted, NEXT_PUBLIC_COMMUNITY_MODE: undefined },
       async () => {
         let called = false;
         const custom = createCommunityGateway(async () => {
           called = true;
           throw Error();
         });
-        for (const handler of [custom, gateway, retiredCommunityRoute, unavailableCapability])
+        for (const handler of [custom, gateway, retiredCommunityRoute, uploadTarget, mediaPreview])
           for (const method of ["GET", "POST", "DELETE", "OPTIONS"]) {
             const output = apiResponse();
             await handler(
@@ -153,14 +153,13 @@ test("guest private reads and forged Owner IDs fail; malformed private projectio
     assert(!JSON.stringify(privateResult.value.body).includes("secret"));
   });
 });
-test("unwired signing/media ports fail honestly instead of invoking a privileged service RPC", async () => {
+test("unconfigured signing/media ports fail closed instead of using a privileged service or memory", async () => {
   await withEnvironment(local, async () => {
-    const output = apiResponse();
-    await unavailableCapability(apiRequest({ headers }), output.res);
-    assert.equal(output.value.code, 503);
-    assert.equal(
-      communityErrorSchema.parse(output.value.body).error.code,
-      "PROCESSING_UNAVAILABLE",
-    );
+    for (const handler of [uploadTarget, mediaPreview]) {
+      const output = apiResponse();
+      await handler(apiRequest({ method: "POST", headers, query: { uploadId: OP_ID, mediaId: POST_ID }, body: handler === uploadTarget ? { uploadId: OP_ID } : { mediaId: POST_ID, mode: "read" } }), output.res);
+      assert.equal(output.value.code, 503);
+      assert.equal(communityErrorSchema.parse(output.value.body).error.code, "COMMUNITY_UNAVAILABLE");
+    }
   });
 });

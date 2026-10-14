@@ -5,6 +5,9 @@ import {
   type OperationInput,
 } from "../../../contracts/community-operations.ts";
 import { CommunityError, rpcError } from "../errors.ts";
+import type { EdgeCall } from "./edge.ts";
+import { collectActorVotes } from "./leaderboard.ts";
+import { ACTORS } from "../../../content/actors/index.ts";
 
 export type RpcTransport = (
   name: string,
@@ -41,6 +44,8 @@ export function rpcArguments<K extends CommunityOperation>(
       return { ...op, ...rev, p_input: p.confirmation };
     case "create_upload":
       return { ...op, ...rev, p_input: p.file };
+    case "list_actor_votes":
+      throw new CommunityError("INVALID_INPUT"); // Website aggregation, not a backend RPC.
     case "complete_upload":
       // B2's edge processor owns finalize + derived-media verification. No direct RPC shortcut.
       throw new CommunityError("PROCESSING_UNAVAILABLE");
@@ -71,6 +76,7 @@ export function createRemoteCommunity(
   transport: RpcTransport,
   userId: string | null,
   requestId: string,
+  edge?: EdgeCall,
 ): CommunityCall {
   return async (operation, input, signal) => {
     const definition = communityOperations[operation];
@@ -78,8 +84,21 @@ export function createRemoteCommunity(
       throw new CommunityError("AUTH_REQUIRED", { requestId });
     const parsed = definition.input.safeParse(input);
     if (!parsed.success) throw new CommunityError("INVALID_INPUT", { requestId });
-    if (operation === "complete_upload")
-      throw new CommunityError("PROCESSING_UNAVAILABLE", { requestId });
+    if (operation === "complete_upload") {
+      if (!edge) throw new CommunityError("PROCESSING_UNAVAILABLE", { requestId });
+      return (await edge(
+        "complete",
+        parsed.data as { uploadId: string; operationId: string },
+        signal,
+      )) as never;
+    }
+    if (operation === "list_actor_votes")
+      return (await collectActorVotes(
+        transport,
+        ACTORS.filter((actor) => actor.status === "new-face").map((actor) => actor.slug),
+        signal,
+        requestId,
+      )) as never;
     let result;
     try {
       result = await transport(operation, rpcArguments(operation, input), signal);

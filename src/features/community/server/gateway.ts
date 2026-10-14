@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { randomUUID } from "node:crypto";
+import { requireCommunityAudience } from "./access.ts";
 import {
   communityOperations,
   isCommunityOperation,
@@ -63,6 +64,7 @@ export function createCommunityGateway(resolve: Resolve = remoteContext) {
       const parsed = definition.input.safeParse(input);
       if (!parsed.success) throw new CommunityError("INVALID_INPUT");
       const context = await resolve(req, res, requestId);
+      await requireCommunityAudience(context);
       if (definition.access !== "public" && !context.userId)
         throw new CommunityError("AUTH_REQUIRED");
       const result = await context.call(operation, parsed.data as never);

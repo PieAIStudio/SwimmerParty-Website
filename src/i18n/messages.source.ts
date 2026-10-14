@@ -6,6 +6,90 @@
  * copy is outside this UI catalog; do not change its legal wording in this block.
  */
 export const messages = {
+  "nav.community": {
+    en: "Community",
+    zh: "泳者",
+  },
+  "c3.creatorWorks": {
+    en: "Creator works",
+    zh: "创作者作品",
+  },
+  "c3.withActor": {
+    en: "Made with {name}",
+    zh: "大家用 {name} 做的",
+  },
+  "c3.nextGraduation": {
+    en: "Who joins the cast next?",
+    zh: "下一位转正",
+  },
+  "c3.voteNotPromise": {
+    en: "Current votes help set production priorities. Leading or tying is not a promise of promotion or a release date.",
+    zh: "当前票数供制作排序参考。领先或并列不等于已确定转正，也不承诺交付日期。",
+  },
+  "c3.votes": {
+    en: "Votes: {count}",
+    zh: "得票：{count}",
+  },
+  "c3.tied": {
+    en: "Tied for the lead",
+    zh: "并列领先",
+  },
+  "c3.noVotes": {
+    en: "No votes yet. No next actor has been selected by this tally.",
+    zh: "还没有投票，暂不按票数推荐人选。",
+  },
+  "c3.voteRoster": {
+    en: "Meet and vote for new faces",
+    zh: "看新面孔并投票",
+  },
+  "c3.official": {
+    en: "Official example",
+    zh: "官方示例",
+  },
+  "c3.creator": {
+    en: "Creator work",
+    zh: "用户作品",
+  },
+  "c3.officialExamples": {
+    en: "Official samples — separate from community works",
+    zh: "官方样片（与用户作品分开展示）",
+  },
+  "c3.separation": {
+    en: "Works are labeled by their actual source. Official samples are not user submissions.",
+    zh: "按实际来源分别标注，官方样片不充当用户投稿。",
+  },
+  "c3.sort": {
+    en: "Show works",
+    zh: "作品排序",
+  },
+  "c3.latest": {
+    en: "Latest",
+    zh: "最新",
+  },
+  "c3.featured": {
+    en: "Featured",
+    zh: "精选",
+  },
+  "c3.kind": {
+    en: "Media type",
+    zh: "作品类型",
+  },
+  "c3.allKinds": {
+    en: "All types",
+    zh: "全部类型",
+  },
+  "c3.actor": {
+    en: "Actor used",
+    zh: "使用的演员",
+  },
+  "c3.allActors": {
+    en: "All actors",
+    zh: "全部演员",
+  },
+  "c3.restartUpload": {
+    en: "Check the expired upload and request a new one",
+    zh: "核对过期上传并重新申请",
+  },
   "c2.ownerOnly": {
     en: "Private review desk. Every action is authorized by the backend for the current Owner.",
     zh: "私有审核台，每次操作均由后端核验当前 Owner 权限。",
@@ -1332,14 +1416,6 @@ export const messages = {
   "works.starring": {
     en: "Starring",
     zh: "主演",
-  },
-  "works.madeByYou": {
-    en: "Made by you",
-    zh: "大家做的",
-  },
-  "works.emptyFan": {
-    en: "Nothing here yet. Made something with our actors? Send it and we’ll put it here.",
-    zh: "还没有作品。用我们的演员做了东西？发给我们，我们放在这里。",
   },
   "works.castTitle": {
     en: "Cast",

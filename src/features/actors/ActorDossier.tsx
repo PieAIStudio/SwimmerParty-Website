@@ -28,6 +28,7 @@ import { TextLink } from "@/site/TextLink";
 import { VersionBadge } from "@/site/VersionBadge";
 import { GameBadge, GameButton } from "@pieai/swimmer-ui-kit";
 import { ActorHelpCard } from "./ActorHelpCard";
+import { ActorCommunity } from "@/features/community/client";
 
 /** One looping clip per topic and locale; tools/help-clips records each file. */
 function helpClip(locale: AppLocale, topic: "starter" | "sheet" | "cast", alt: string) {
@@ -248,6 +249,7 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
           </div>
         </section>
         <ActorSample slug={actor.slug} />
+        <ActorCommunity slug={slug} name={name} newFace={isNewFace} />
         <section className="sp-section">
           <h2 className="sp-title">{t("actor.appearances")}</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">

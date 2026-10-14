@@ -1,1 +1,1 @@
-export { unavailableCapability as default } from "@/features/community/server";
+export { uploadTarget as default } from "@/features/community/server";

@@ -4,8 +4,7 @@ import { useSiteI18n, useSiteLocale } from "@/i18n/client";
 import type { Actor } from "@/content/actors";
 import { ActorCardClient } from "./ActorCardClient";
 import { GameButton, GameCheckbox, GameInput, GameSelect } from "@pieai/swimmer-ui-kit";
-import { VoteButton } from "@/features/community/client";
-import { COMMUNITY_ENABLED } from "@/content/features";
+import { VoteButton, useCommunityAccess } from "@/features/community/client";
 import { CastAddButton } from "@/features/cast/client";
 import {
   actorFilterSearch,
@@ -36,6 +35,7 @@ export function ActorFilters({
 }) {
   const { t } = useSiteI18n();
   const locale = useSiteLocale();
+  const community = useCommunityAccess();
   const origins = useMemo(
     () =>
       [
@@ -235,7 +235,12 @@ export function ActorFilters({
       {filtered.length ? (
         groups.map(([status, title, group]) =>
           group.length ? (
-            <section className="sp-section" data-discovery-group={status} key={status}>
+            <section
+              className="sp-section"
+              data-discovery-group={status}
+              id={status === "new-face" ? "new-faces" : undefined}
+              key={status}
+            >
               <h2 className="sp-title">{title}</h2>
               <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
                 {group.map((actor) => (
@@ -246,7 +251,7 @@ export function ActorFilters({
                     data-has-video={facets[actor.slug]?.video ?? false}
                   >
                     <ActorCardClient actor={actor} />
-                    {COMMUNITY_ENABLED && actor.status === "new-face" ? (
+                    {community.visible && actor.status === "new-face" ? (
                       <VoteButton
                         slug={actor.slug}
                         name={locale === "zh" ? actor.nameCn : actor.nameEn}

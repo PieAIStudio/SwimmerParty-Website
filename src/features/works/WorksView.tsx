@@ -1,7 +1,6 @@
 import { ACTORS } from "@/content/actors";
-import { COMMUNITY_ENABLED } from "@/content/features";
 import { WORKS, WORK_STATUS_LABEL } from "@/content/works";
-import { CommunityFeed } from "@/features/community";
+import { CommunitySection } from "@/features/community/client";
 import { OfficialSamplesSection } from "@/features/samples";
 import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
@@ -52,13 +51,7 @@ export async function WorksView({ locale }: { locale: AppLocale }) {
         </div>
       </section>
       <OfficialSamplesSection />
-      {COMMUNITY_ENABLED ? (
-        <section className="sp-section" id="community">
-          <h2 className="sp-title">{t("works.madeByYou")}</h2>
-          <p className="sp-lead mt-6">{t("works.emptyFan")}</p>
-          <CommunityFeed />
-        </section>
-      ) : null}
+      <CommunitySection />
     </div>
   );
 }

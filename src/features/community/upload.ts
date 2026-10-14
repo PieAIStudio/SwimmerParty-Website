@@ -1,4 +1,8 @@
-import { normalizeUploadTarget, type TransferTarget } from "../../contracts/community-transfer.ts";
+import {
+  normalizeUploadTarget,
+  uploadTargetResponseSchema,
+  type TransferTarget,
+} from "../../contracts/community-transfer.ts";
 import { uploadInputSchema, type UploadStatus } from "../../contracts/community.ts";
 import { callCommunity, WriteSession } from "./api.ts";
 import { CommunityError, responseError } from "./errors.ts";
@@ -57,6 +61,7 @@ export async function uploadCommunityFile(options: {
   durationMs?: number;
   sortOrder: number;
   existingUploadId?: string;
+  renewExpired?: boolean;
   journal: WriteSession;
   progress: (value: UploadProgress) => void;
   signal: AbortSignal;
@@ -69,7 +74,7 @@ export async function uploadCommunityFile(options: {
     sortOrder: options.sortOrder,
     ...(options.durationMs ? { durationMs: options.durationMs } : {}),
   });
-  const intent = options.existingUploadId
+  let intent = options.existingUploadId
     ? await callCommunity("get_upload_status", { uploadId: options.existingUploadId }, signal)
     : await options.journal.execute(
         "create_upload",
@@ -77,6 +82,19 @@ export async function uploadCommunityFile(options: {
         callCommunity,
         signal,
       );
+  if (
+    options.existingUploadId &&
+    options.renewExpired &&
+    !["completed", "finalizing"].includes(intent.status)
+  ) {
+    // Only an explicit expiry recovery starts a new intent; uncertain completion keeps its original operation ID.
+    intent = await options.journal.execute(
+      "create_upload",
+      { postId: options.postId, expectedRevision: options.revision, file: input },
+      callCommunity,
+      signal,
+    );
+  }
   if (intent.status === "expired") throw new CommunityError("UPLOAD_EXPIRED");
   if (intent.status === "failed" || intent.processingStatus === "failed")
     throw new CommunityError(intent.failureCode ?? "MEDIA_INVALID");
@@ -90,7 +108,7 @@ export async function uploadCommunityFile(options: {
     return intent;
   }
   progress({ stage: "uploading", loaded: 0, total: file.size, uploadId: intent.uploadId });
-  // This route intentionally fails closed until B2 supplies a reviewed signing adapter.
+  // The same-origin route invokes only the B2 upload-target edge function with the verified user.
   const targetResponse = await fetch(`/api/community/transfer/${intent.uploadId}`, {
     method: "POST",
     cache: "no-store",
@@ -100,7 +118,11 @@ export async function uploadCommunityFile(options: {
   });
   const targetBody: unknown = await targetResponse.json().catch(() => null);
   if (!targetResponse.ok) throw responseError(targetBody, targetResponse.status);
-  const target = normalizeUploadTarget(targetBody, intent.uploadId, file.type);
+  const rawTarget = uploadTargetResponseSchema.safeParse(targetBody);
+  if (!rawTarget.success) throw new CommunityError("PROCESSING_UNAVAILABLE");
+  if (Date.parse(rawTarget.data.uploadUrlExpiresAt) <= Date.now())
+    throw new CommunityError("UPLOAD_EXPIRED");
+  const target = normalizeUploadTarget(rawTarget.data, intent.uploadId, file.type);
   await sendUpload(
     file,
     target,

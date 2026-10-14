@@ -1,1 +1,1 @@
-export { unavailableCapability as default } from "@/features/community/server";
+export { mediaPreview as default } from "@/features/community/server";

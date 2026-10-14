@@ -200,7 +200,7 @@ test("C2 an Owner media access refusal also clears the private review view", asy
   await selectPost(page, "en", "hidden");
   state.owner = false;
   await page.getByRole("button", { name: text("c.openMedia"), exact: true }).click();
-  await expect(page.locator('[data-community-error="OWNER_REQUIRED"]')).toBeVisible();
+  await expect(page.locator('[data-community-error="MEDIA_UNAVAILABLE"]')).toBeVisible();
   await expect(page.locator("[data-review-desk]")).toHaveCount(0);
   await expect(page.getByText("Private test submission", { exact: true })).toHaveCount(0);
 });

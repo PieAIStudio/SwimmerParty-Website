@@ -18,6 +18,8 @@ test("legal and studio routes remain discoverable in the footer", () => {
 });
 test("mobile and desktop menus consume the same primary catalog", async () => {
   const source = await readFile(new URL("../../src/site/SiteHeader.tsx", import.meta.url), "utf8");
-  assert.equal((source.match(/NAV\.map/g) ?? []).length, 2);
+  assert.equal((source.match(/navigation\.map/g) ?? []).length, 2);
+  assert.match(source, /const navigation = communityVisible/);
+  assert.match(source, /communityVisible = false/);
   assert.doesNotMatch(source, /\.\.\.SECONDARY_NAV/);
 });

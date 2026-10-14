@@ -80,7 +80,7 @@ function StoredMedia({
         body: JSON.stringify({ mediaId: item.id, mode: review ? "review" : "read" }),
       });
       if (!response.ok) {
-        if (review && [401, 403].includes(response.status)) onAccessDenied?.();
+        if (review && [401, 403, 404].includes(response.status)) onAccessDenied?.();
         throw Error();
       }
       const data = normalizeMediaAccess(await response.json(), item.id, requestedAt);

@@ -22,10 +22,11 @@ related:
 
 ## 状态与唯一合同
 
-**B1 v3 的批准基线仍保留在 d49cff1；C1/C2 的可执行消费固定到 `sp-community@c29cbfcde035b5b31138f60d6a59420a171a3c96`。**
-权威规格仍为后端 `docs/specs/active/swimmer-party-community.md`（`SPEC-SWIMMER-PARTY-COMMUNITY`），本次读取该提交的规格 SHA-256：`9bb59a9f67848ace6541133ed80a685b9edbbcdd99c3a168f1ffcfb6c89fafd0`。后端只读快照与初始 Git 状态见 `.devspace-reports/next-stage/community-v3/backend-pin.json`，续读的 c29cbfc 来源与哈希见同目录 `backend-current-pin.json`；没有切换、修改或提交后端工作树。
+**C3 消费方以 Owner 在 2026-10-14 交付的后端 main `b218557` 最终合同为准。** Owner 报告 staging 运行 `38518670002` 的16步（上传、去元数据、审核、删帖、执行器、注销清理）全过；本网站线程没有读取或修改后端仓库，也没有独立重跑该云端验证。生产后端发布及网站部署由 Owner 安排。
 
-Owner 已允许前端先按该版本写类型和夹具，不等待测试环境。产品方向和每阶段检查证据见[创作社区实施方案](../plans/active/2026-10-13-creator-community.md)。本站 C1 用逐字段运行时校验消费实际 RPC，C2 做 Owner 审核；默认开关关闭，真实 staging 验收和开放社区仍属于 C3，不能把本地夹具通过写成真实服务已验收。
+权威后端规格身份仍为 `SPEC-SWIMMER-PARTY-COMMUNITY`，路径 `docs/specs/active/swimmer-party-community.md`。B1 批准基线 `d49cff1`、C1/C2 使用的 `c29cbfc` 及其规格哈希 `9bb59a9f67848ace6541133ed80a685b9edbbcdd99c3a168f1ffcfb6c89fafd0` 保留为历史；原快照在 `.devspace-reports/next-stage/community-v3/`。本次用户交付的合同边界收据在 `c3/contract-input.json`，不冒充从后端仓库重新取证。
+
+产品方向、各阶段证据及正式域名 Owner 验收步骤见[创作社区实施方案](../plans/active/2026-10-13-creator-community.md)。C3 只做网站实现、隔离传输/浏览器验证和正常推送；没有部署、生产投稿、删除真实作品或注销账号。
 
 ## 已确认范围与默认额度（后端 §2–3）
 
@@ -159,26 +160,31 @@ Owner 权限来自当前身份与受控登记，不是 service_role 本身或用
 数据库、对象、缓存的真实完成回执齐全后 handler 才能成功，共享运行器随后才能删除 Auth 身份。
 不能承诺收回第三方已经下载或自行保存的副本。
 
-## C 组接入与验收
+## C3 接入、开关与验收
 
-C1/C2 可先用固定 v3 夹具实现和检查，不等待 Owner 尚未决定的后端部署事项。正式环境不提供内存回退；页面入口、投稿、我的作品、社区详情和审核均默认关闭。`/api/community/v3/[operation]` 只映射 `contracts/community-operations.ts` 中固定操作，不开放任意 RPC 透传或 service_*。参数采用实际 public invoker RPC 的 `p_*` 名称，输出是实际 camelCase JSON。原 v1 API 统一关闭，避免旧写入绕过 revision、幂等或权利确认。
+`NEXT_PUBLIC_COMMUNITY_MODE` 是唯一社区发布档位，严格接受 `off | owner | on`，未设置、拼错和旧布尔值均为 off。原 `NEXT_PUBLIC_COMMUNITY_ENABLED` 已退役，不能用它开启。构建与运行环境必须一致；因 NEXT_PUBLIC 值编译进客户端，切档必须重新构建并按正式发布流程交付，不对已构建产物只改运行值。
 
-本次实现与最初文档摘要之间的明确边界：
+| 档位        | 入口与路由                                                                                                                                   | API 与索引                                                                                  |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| off（默认） | 所有人都没有社区入口，社区/投稿/我的作品/作品详情/审核路由404                                                                                | 社区业务API私有503，sitemap不含社区                                                         |
+| owner       | 只有当前账号经后台 `list_review_queue` 成功且严格验证回包才显示入口；Proxy 在页面/RSC渲染前重新经AuthKit验证与后台Owner核对，非Owner/故障404 | 业务API每次同样核对Owner；私有no-store，不在sitemap。通过审核的作品仍只对本档位获准者可访问 |
+| on          | 社区入口、已发布作品、公开票数可由访客浏览；投稿和互动写仍需登录；审核始终只允许后台Owner                                                    | 公开读取仍只含公开投影；`/community`加入sitemap，作者/审核/作品详情不加入                   |
 
-- `get_limits` 公开的是有效额度、开关、kinds 与 videoPlatforms，不含 MIME 清单、条款版本或解码上限；支持 MIME 取固定版本规格，提交条款版本用本站现行 License v1.0。不能读取并不存在的响应字段。
-- public media 投影只有 `id/kind/sortOrder/altText`；author/owner 另有两种状态，没有存储路径、播放 URL 或签名。签名读取通过独立网站能力端口表达，C3 前不把端口示例说成已部署后端服务。
-- `create_upload` 只返回 uploadId/mediaId/expiresAt/status/processingStatus，`finalize_upload` 进入验证不是 ready。网站 `/api/community/transfer/[uploadId]` 与 `/api/community/media/[mediaId]` 在 B2 接线审过前返回 PROCESSING_UNAVAILABLE。测试仅注入已验证结构的签名目标/媒体响应，不让网站服务持有 service_role。
-- backend get_operation 的查询白名单不含 create_upload/finalize_upload；写入原键仍可幂等重试，上传进度查询使用 get_upload_status。删帖返回 deleting，不代表对象删除完成；现版本没有公开删除完成查询 RPC，不伪造完成回执。
-- 25个产品错误与新增2个传输错误 `ORIGIN_NOT_ALLOWED`（403）、`METHOD_NOT_ALLOWED`（405）均严格映射HTTP/中英文；未知SQL/网络错误收敛为COMMUNITY_UNAVAILABLE，不回显SQL正文、对象路径或内部身份。
-- c29cbfc的上传后顺序已对齐：网站只发 `complete_upload` 能力请求，对应后端 `swimmer-party-upload-complete`，从不直调 `finalize_upload` RPC。能力接线尚未验收时返回PROCESSING_UNAVAILABLE；原操作ID与uploadId保留，不绕过成品处理。
-- 签名器原始响应是 `{uploadId,uploadUrl,uploadUrlExpiresAt,expiresAt}`；读取原始响应是 `{mediaId,url,mime,expiresInSeconds}`。网站严格核对目标身份、期限后转为暂存UI能力，读取请求显式 `{mediaId,mode:"read"}`；缺省Owner模式不能冒充公开读取。上传HTTP固定PUT，签名有效期不超过服务端会话；读取期限从发请求时起算，不因传输延迟延长。这里只验纯映射与夹具，不调用未通过staging的边缘服务。
+Node API 和 Proxy 复用已发布 AuthKit 的每请求身份验证，不解密或自造账号协议。Owner 资格不来自 cookie 文本、本地名单或请求 userId。页面访问核对产生的刷新/销毁 cookie 回传浏览器；权限和请求结果不跨请求缓存。客户端只是隐藏入口，不能代替服务端路由/API检查。
 
-先验收真实服务再开放 Community，官方样片与用户作品分开标，不以样片填充假社区。
+### 实际调用映射
 
-B2 交接必须给出确切提交、前向迁移与哈希、实际 API/RPC 映射和后端 T01–T15 证据，
-覆盖匿名/本人/他人/Owner 权限、三个媒体类型、配额、幂等/并发、修改复审、旧 URL/缓存撤权、
-删帖和到期注销。静态、mock 或 PGlite 不代替 staging 真实身份/对象/缓存证据。
-每次生产迁移、网站正式发布仍需 Owner 单独授权；普通 Git 推送不部署。
+- `create_upload` 仍是固定 RPC，发送当前作品修订、幂等编号及重编码后的真实 `bytes/mime`（声音还带实测时长）。返回 uploadId，不含任意可由前端选择的对象键。
+- 网站 `POST /api/community/transfer/{uploadId}` 转调 `POST /functions/v1/swimmer-party-upload-target`，body仅 `{uploadId}`，由 AuthKit 数据客户端带入经验证的用户 Bearer。响应严格为 `{uploadId,uploadUrl,uploadUrlExpiresAt,expiresAt}`；浏览器 PUT 到短期 uploadUrl，不传网站 cookie。上传地址最长300秒；UPLOAD_EXPIRED 后先读原状态，再由用户明确重新申请 create_upload，不把超时直接当成过期。
+- PUT后网站 `complete_upload` 操作只转调 `POST /functions/v1/swimmer-party-upload-complete`，body `{uploadId,operationId}`，重试保留相同编号，响应 `{uploadId,mediaId,status,processingStatus}`。网站不提供或调用 `finalize_upload`，不调用任何 service_* 或执行器。get_upload_status用于恢复，accepted/validating不冒充ready。
+- 网站 `POST /api/community/media/{mediaId}` 转调 `POST /functions/v1/swimmer-party-media-preview`。访客/作者显式 `{mediaId,mode:"read"}`，审核台显式 `mode:"review"`。响应 `{mediaId,url,mime,expiresInSeconds}`，只保留当前视图到期前的能力地址，不写localStorage/sessionStorage、日志或作品数据。媒体访问拒绝统一 MEDIA_UNAVAILABLE；不能从拒绝推断作品是否存在或 Owner 是否刚被撤权。私有审核预览被拒绝时保守撤下明细。
+- 边缘调用保留真实且已校验的浏览器 Origin，不把本机或临时域名伪装成正式域名。后端当前只批准正式来源，因此实际链路须在 Owner 安排的正式域名 owner 档验收；本轮本地夹具不绕过这个来源策略。
+- public media投影只有身份、类型、排序、替代文字；作者/Owner另有处理和审核状态。get_limits只消费当前真实字段，不假设它包含MIME表或条款版本。图片/声音格式为JPEG/PNG/WebP/MP3/WAV/M4A；零字节拒绝为MEDIA_INVALID，没有FILE_EMPTY；FILE_TOO_LARGE是实际字节超出申报值。27个固定错误码映射中英和HTTP，未知供应商正文不外泄。
+- `list_actor_votes` 是网站端对现有 `get_actor_votes` 的有限并发聚合，不是新增后端RPC：仅对当前新面孔、一遍最多128位、同时最多4个、15秒超时；任一失败不展示不完整排行。零票不指定人选，同票明确并列，票数只作制作参考，不承诺自动转正或交付日期。作品流使用既有list_posts的精选/最新、演员和类型参数；官方示例与用户投稿按真实official字段分标，独立官方样片不填充虚假社区。
+
+旧v1 API继续私有503。没有部署环境或本机产品路由的内存回退；测试状态机只存在于测试目录且从测试注入。配置、后台或签名失败必须显示不可用，不是空列表/成功。删除先返回deleting并撤公开性，不能据此声称对象已清完。本轮不验生产注销：生产账号注销尚未开放，后端处理器的staging结果由Owner提供。
+
+真实验收前须确认后台正式部署、网站owner档以及受控Owner身份就绪。普通Git推送不部署，不调用Actions、不改变项目Origin白名单；真实网站发布另由Owner安排。
 
 ## 历史与同步记录
 
@@ -193,4 +199,4 @@ B2 交接必须给出确切提交、前向迁移与哈希、实际 API/RPC 映�
 
 ### C2 前端消费范围
 
-审核页只消费已固定v3的Owner队列/明细和 `review_post`、`set_author_trust`、`set_submission_paused`。`review_post`保留内容revision，恢复或从隐藏退回才开始新的举报轮次；界面不自行加版本、不自动授信、不以本地角色判定代替RPC授权。`mode:review`媒体读取与公开/作者 `mode:read`明确分开；403会清除审核视图。暂停控制修改后端接受投稿状态，不打开生产构建的社区开关。真实权限/媒体成品/执行器/staging证据仍留给C3，当前只验隔离合同夹具。
+审核页只消费已固定v3的Owner队列/明细和 `review_post`、`set_author_trust`、`set_submission_paused`。`review_post`保留内容revision，恢复或从隐藏退回才开始新的举报轮次；界面不自行加版本、不自动授信、不以本地角色判定代替RPC授权。`mode:review`媒体读取与公开/作者 `mode:read`明确分开；C3现行合同将媒体访问拒绝统一为MEDIA_UNAVAILABLE，界面保守清除审核视图，不从错误猜测资源存在性或具体拒绝原因。暂停控制修改后端接受投稿状态，不打开生产构建的社区开关。Owner已提供后台staging通过记录；本站C3已完成本地合同、原生SDK与三档前端验证，真实正式域名owner链路仍在Owner安排网站发布后验收，不能用本地夹具替代。

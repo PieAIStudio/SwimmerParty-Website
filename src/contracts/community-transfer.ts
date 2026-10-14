@@ -21,14 +21,14 @@ export const mediaAccessSchema = z.strictObject({
 });
 export type TransferTarget = z.infer<typeof transferTargetSchema>;
 
-/** Exact c29cbfc edge responses; mapping is local and does not sign or contact storage. */
-const uploadTargetResponseSchema = z.strictObject({
+/** Exact b218557 edge responses supplied by Owner; no backend checkout or generated token is embedded. */
+export const uploadTargetResponseSchema = z.strictObject({
   uploadId: z.uuid(),
   uploadUrl: signedUrl,
   uploadUrlExpiresAt: z.iso.datetime({ offset: true }),
   expiresAt: z.iso.datetime({ offset: true }),
 });
-const mediaReadResponseSchema = z.strictObject({
+export const mediaReadResponseSchema = z.strictObject({
   mediaId: z.uuid(),
   url: signedUrl,
   mime: mediaAccessSchema.shape.mime,

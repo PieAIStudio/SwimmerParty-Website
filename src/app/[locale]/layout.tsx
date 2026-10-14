@@ -1,9 +1,13 @@
+import {
+  CommunityAccessProvider,
+  CommunityHeader,
+  CommunityRouteGuard,
+} from "@/features/community/client";
 import type { Metadata, Viewport } from "next";
 import { SiteI18nProvider } from "@/i18n/client";
 import { hasLocale } from "@/i18n/routing";
 import { setSiteLocale, getSiteI18n } from "@/i18n/server";
 import { notFound } from "next/navigation";
-import { SiteHeader } from "@/site/SiteHeader";
 import { SiteFooter } from "@/site/SiteFooter";
 import { AccountProvider, AccountMenu } from "@/features/account";
 import { SITE_UI_STYLE, THEME_INIT_SCRIPT } from "@/site/theme";
@@ -95,17 +99,21 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body>
         <SiteI18nProvider locale={locale}>
           <AccountProvider analytics={process.env.VERCEL_ENV === "production"}>
-            <a
-              href="#main"
-              className="sp-label sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100 focus:bg-background focus:px-4 focus:py-3 focus:text-foreground"
-            >
-              {t("common.skipToContent")}
-            </a>
-            <SiteHeader accountMenu={<AccountMenu />} />
-            <main id="main">{children}</main>
-            <SiteFooter />
-            <PostHog />
-            <FirstUseGuidance />
+            <CommunityAccessProvider>
+              <a
+                href="#main"
+                className="sp-label sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100 focus:bg-background focus:px-4 focus:py-3 focus:text-foreground"
+              >
+                {t("common.skipToContent")}
+              </a>
+              <CommunityHeader accountMenu={<AccountMenu />} />
+              <main id="main">
+                <CommunityRouteGuard>{children}</CommunityRouteGuard>
+              </main>
+              <SiteFooter />
+              <PostHog />
+              <FirstUseGuidance />
+            </CommunityAccessProvider>
           </AccountProvider>
         </SiteI18nProvider>
       </body>

@@ -60,10 +60,13 @@ function ReviewDesk() {
   const action = useCommunityAction("owner-review-desk");
   const [mediaDenied, setMediaDenied] = useState(false);
   const fatal = mediaDenied
-    ? new CommunityError("OWNER_REQUIRED")
+    ? new CommunityError("MEDIA_UNAVAILABLE")
     : [queue.error, detail.error, action.error].find(
         (error) =>
-          error && ["AUTH_REQUIRED", "OWNER_REQUIRED", "SCOPE_NOT_ALLOWED"].includes(error.code),
+          error &&
+          ["AUTH_REQUIRED", "OWNER_REQUIRED", "SCOPE_NOT_ALLOWED", "POST_UNAVAILABLE"].includes(
+            error.code,
+          ),
       );
   const frozen = action.busy || Boolean(action.journal.snapshot());
   const posts = queue.data

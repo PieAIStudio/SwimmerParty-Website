@@ -1,6 +1,6 @@
 "use client";
 import { useSiteI18n } from "@/i18n/client";
-import { GameButton } from "@pieai/swimmer-ui-kit";
+import { GameBadge, GameButton } from "@pieai/swimmer-ui-kit";
 import { useAccount } from "@/features/account";
 import { useCommunityQuery } from "./hooks";
 import { CommunityNotice } from "./CommunityNotice";
@@ -25,6 +25,7 @@ function Detail({ id }: { id: string }) {
   return (
     <article className="sp-section" data-community-post={post.id}>
       <h1 className="sp-title">{post.title}</h1>
+      <GameBadge>{t(post.official ? "c3.official" : "c3.creator")}</GameBadge>
       <p>{t("community.author", { author: post.author.displayName })}</p>
       <p className="mt-4 whitespace-pre-wrap break-words">{post.description}</p>
       <p className="sp-small mt-3">

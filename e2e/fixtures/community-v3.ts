@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import type { Page, Route } from "@playwright/test";
 import sharp from "sharp";
+import { syntheticWav } from "../../tools/test/fixtures/audio";
 import {
   communityOperations,
   isCommunityOperation,
@@ -11,6 +12,7 @@ import {
   type CommunityErrorCode,
   type OwnerPost,
 } from "../../src/contracts/community";
+import { ACTORS } from "../../src/content/actors/index";
 import { parseCommunityVideo } from "../../src/features/community/video";
 import {
   authorFixture,
@@ -44,6 +46,9 @@ export async function installCommunityFixture(
     loseUploadOnce: false,
     holdUpload: null as Promise<void> | null,
     readyMedia: false,
+    expireTargetOnce: false,
+    completeCalls: [] as { uploadId: string; operationId: string }[],
+    actorVotes: new Map<string, { count: number; voted: boolean }>(),
     uploaded: [] as Buffer[],
     calls: [] as { operation: string; input: Record<string, unknown> }[],
     posts: options.posts ?? [
@@ -57,12 +62,22 @@ export async function installCommunityFixture(
     operations: new Map<string, { input: string; output: unknown; resourceId: string | null }>(),
     uploads: new Map<
       string,
-      { postId: string; mediaId: string; status: "issued" | "finalizing"; expiresAt: string }
+      {
+        postId: string;
+        mediaId: string;
+        status: "issued" | "finalizing" | "completed";
+        expiresAt: string;
+      }
     >(),
   };
   await page.route("https://accounts.swiminai.com/products.json", (route) =>
     route.fulfill({ json: { version: 1, products: [] } }),
   );
+  await page.route("**/api/community/access", (route) => {
+    const mode = process.env.PLAYWRIGHT_COMMUNITY_MODE === "owner" ? "owner" : "on";
+    const owner = state.member && state.owner;
+    return route.fulfill({ json: { mode, allowed: mode === "on" || owner, owner } });
+  });
   await page.route("**/api/auth/session", (route) =>
     route.fulfill({
       json: {
@@ -93,6 +108,7 @@ export async function installCommunityFixture(
       reportRound: previous.reportRound,
       reportCount: previous.reportCount,
       authorTrusted: state.trust.get(post.author.id) ?? previous.authorTrusted,
+      submittedRevision: post.status === "pending" ? post.revision : previous.submittedRevision,
     });
     state.reviewRecords.set(post.id, current);
     return current;
@@ -143,15 +159,31 @@ export async function installCommunityFixture(
         };
         break;
       }
-      case "list_posts":
+      case "list_posts": {
+        const filter = (input.filter ?? {}) as { kind?: string; actorSlug?: string; sort?: string };
+        let posts = state.posts.filter(
+          (item) =>
+            item.status === "published" &&
+            (!filter.kind || item.kind === filter.kind) &&
+            (!filter.actorSlug || item.actors.some((actor) => actor.slug === filter.actorSlug)) &&
+            (filter.sort !== "featured" || ("featuredAt" in item && Boolean(item.featuredAt))),
+        );
+        posts = posts.sort(
+          (a, b) =>
+            (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "") || a.id.localeCompare(b.id),
+        );
+        const offset = input.cursor ? Number(String(input.cursor).split(":")[1]) : 0;
+        if (input.cursor && !/^fixture:[0-9]+$/.test(String(input.cursor)))
+          return fail(route, "INVALID_CURSOR");
+        const size = Number(input.pageSize ?? 20);
+        const more = offset + size < posts.length;
         output = {
-          posts: state.posts
-            .filter((item) => item.status === "published")
-            .map((item) => publicProjection(item)),
-          nextCursor: null,
-          hasMore: false,
+          posts: posts.slice(offset, offset + size).map(publicProjection),
+          nextCursor: more ? `fixture:${offset + size}` : null,
+          hasMore: more,
         };
         break;
+      }
       case "get_post":
         if (!post || post.status !== "published") return fail(route, "POST_UNAVAILABLE");
         output = { post: publicProjection(post) };
@@ -221,6 +253,8 @@ export async function installCommunityFixture(
         post.creditConfirmed = true;
         post.rightsConfirmed = true;
         post.submittedAt = WHEN;
+        if (state.reviewRecords.has(post.id))
+          state.reviewRecords.get(post.id)!.submittedRevision = post.revision;
         output = { operationId: input.operationId, post };
         break;
       }
@@ -265,8 +299,12 @@ export async function installCommunityFixture(
         const parent = state.posts.find((item) => item.id === upload.postId)!;
         const medium = parent.media.find((item) => item.id === upload.mediaId)!;
         if (name === "complete_upload") {
-          upload.status = "finalizing";
-          medium.processingStatus = "validating";
+          state.completeCalls.push({
+            uploadId: String(input.uploadId),
+            operationId: String(input.operationId),
+          });
+          upload.status = state.readyMedia ? "completed" : "finalizing";
+          medium.processingStatus = state.readyMedia ? "ready" : "validating";
         }
         output = {
           uploadId: input.uploadId,
@@ -278,12 +316,30 @@ export async function installCommunityFixture(
         };
         break;
       }
-      case "get_actor_votes":
-        output = { actorSlug: input.actorSlug, count: 2, voted: true };
+      case "list_actor_votes":
+        output = {
+          votes: ACTORS.filter((actor) => actor.status === "new-face").map((actor) => ({
+            actorSlug: actor.slug,
+            count: state.actorVotes.get(actor.slug)?.count ?? 0,
+          })),
+        };
         break;
-      case "set_actor_vote":
-        output = { count: input.voted ? 2 : 1, voted: Boolean(input.voted) };
+      case "get_actor_votes": {
+        const vote = state.actorVotes.get(String(input.actorSlug)) ?? { count: 0, voted: false };
+        output = { actorSlug: input.actorSlug, ...vote, voted: state.member && vote.voted };
         break;
+      }
+      case "set_actor_vote": {
+        const vote = state.actorVotes.get(String(input.actorSlug)) ?? { count: 0, voted: false };
+        const desired = input.voted === true;
+        const next = {
+          count: Math.max(0, vote.count + (desired === vote.voted ? 0 : desired ? 1 : -1)),
+          voted: desired,
+        };
+        state.actorVotes.set(String(input.actorSlug), next);
+        output = next;
+        break;
+      }
       case "review_post": {
         if (!post) return fail(route, "POST_UNAVAILABLE");
         if (post.revision !== input.expectedRevision) return fail(route, "REVISION_CONFLICT");
@@ -398,6 +454,10 @@ export async function installCommunityFixture(
     if (!state.member) return fail(route, "AUTH_REQUIRED");
     if (route.request().postDataJSON()?.uploadId !== id) return fail(route, "INVALID_INPUT");
     if (!state.uploads.has(id)) return fail(route, "UPLOAD_EXPIRED");
+    if (state.expireTargetOnce) {
+      state.expireTargetOnce = false;
+      return fail(route, "UPLOAD_EXPIRED");
+    }
     return route.fulfill({
       json: {
         uploadId: id,
@@ -423,19 +483,25 @@ export async function installCommunityFixture(
     const mediaId = new URL(route.request().url()).pathname.split("/").at(-1)!;
     if (!["read", "review"].includes(input?.mode) || input?.mediaId !== mediaId)
       return fail(route, "INVALID_INPUT");
-    if (input.mode === "review" && !state.owner) return fail(route, "OWNER_REQUIRED");
+    if (input.mode === "review" && !state.owner) return fail(route, "MEDIA_UNAVAILABLE");
     state.mediaRequests.push({ mediaId, mode: input.mode });
+    const medium = state.posts.flatMap((post) => post.media).find((item) => item.id === mediaId);
+    const audio = medium?.kind === "audio";
     return route.fulfill({
       json: {
         mediaId,
-        url: "https://media.fixture.invalid/post.png",
-        mime: "image/png",
+        url: audio
+          ? "https://media.fixture.invalid/post.wav"
+          : "https://media.fixture.invalid/post.png",
+        mime: audio ? "audio/wav" : "image/png",
         expiresInSeconds: 300,
       },
     });
   });
   await page.route("https://media.fixture.invalid/**", (route) =>
-    route.fulfill({ contentType: "image/png", body: png }),
+    route.request().url().endsWith(".wav")
+      ? route.fulfill({ contentType: "audio/wav", body: syntheticWav() })
+      : route.fulfill({ contentType: "image/png", body: png }),
   );
   await page.route("https://www.youtube-nocookie.com/**", (route) =>
     route.fulfill({
@@ -463,6 +529,9 @@ function publicProjection(post: AuthorPost) {
       altText: medium.altText,
     })),
     video: post.video,
+    official: post.official,
+    featuredAt: post.featuredAt,
+    publishedAt: post.publishedAt ?? WHEN,
     viewerHasLiked: post.viewerHasLiked,
     likeCount: post.likeCount,
   });

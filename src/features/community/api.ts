@@ -6,6 +6,7 @@ import {
   type WriteOperation,
 } from "../../contracts/community-operations.ts";
 import { CommunityError, responseError } from "./errors.ts";
+import { COMMUNITY_MODE } from "../../content/features.ts";
 
 export const callCommunity: CommunityCall = async (operation, input, signal) => {
   const definition = communityOperations[operation];
@@ -32,7 +33,18 @@ export const callCommunity: CommunityCall = async (operation, input, signal) => 
     throw new CommunityError("COMMUNITY_UNAVAILABLE", { uncertain: definition.write });
   }
   const body: unknown = await response.json().catch(() => null);
-  if (!response.ok) throw responseError(body, response.status);
+  if (!response.ok) {
+    const error = responseError(body, response.status);
+    if (
+      COMMUNITY_MODE === "owner" &&
+      typeof window !== "undefined" &&
+      ["AUTH_REQUIRED", "OWNER_REQUIRED", "SCOPE_NOT_ALLOWED", "POST_UNAVAILABLE"].includes(
+        error.code,
+      )
+    )
+      window.dispatchEvent(new Event("sp-community-access-change"));
+    throw error;
+  }
   const result = definition.output.safeParse(body);
   if (!result.success)
     throw new CommunityError("COMMUNITY_UNAVAILABLE", { uncertain: definition.write });

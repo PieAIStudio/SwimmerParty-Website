@@ -8,6 +8,7 @@ import { TextLink } from "@/site/TextLink";
 import { GameButton } from "@pieai/swimmer-ui-kit";
 import { selectHomeContent } from "./home-catalog";
 import { SampleVideo } from "@/features/samples/client";
+import { NextGraduation } from "@/features/community/client";
 
 export async function HomeView({ locale }: { locale: AppLocale }) {
   const { t } = await getSiteI18n(locale);
@@ -84,6 +85,7 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
           </div>
         </section>
       ) : null}
+      <NextGraduation />
       <section
         data-home-section="credit"
         className="flex flex-wrap items-center justify-between gap-4 border-y border-border py-6"
