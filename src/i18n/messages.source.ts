@@ -86,6 +86,14 @@ export const messages = {
     en: "All actors",
     zh: "全部演员",
   },
+  "c3.imageCount": {
+    en: "{count, plural, one {# image} other {# images}}",
+    zh: "{count, plural, other {# 张图片}}",
+  },
+  "c3.openWork": {
+    en: "Open work: {title}",
+    zh: "查看作品：{title}",
+  },
   "c3.restartUpload": {
     en: "Check the expired upload and request a new one",
     zh: "核对过期上传并重新申请",

@@ -19,6 +19,8 @@
   "c3.allKinds": "All types",
   "c3.actor": "Actor used",
   "c3.allActors": "All actors",
+  "c3.imageCount": "{count, plural, one {# image} other {# images}}",
+  "c3.openWork": "Open work: {title}",
   "c3.restartUpload": "Check the expired upload and request a new one",
   "c2.ownerOnly": "Private review desk. Every action is authorized by the backend for the current Owner.",
   "c2.saved": "The backend confirmed this action. The current record is reloaded below.",

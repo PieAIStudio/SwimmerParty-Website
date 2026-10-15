@@ -312,12 +312,14 @@ export interface MessageContracts {
   readonly "c3.creator": {  };
   readonly "c3.creatorWorks": {  };
   readonly "c3.featured": {  };
+  readonly "c3.imageCount": { readonly "count": number; };
   readonly "c3.kind": {  };
   readonly "c3.latest": {  };
   readonly "c3.nextGraduation": {  };
   readonly "c3.noVotes": {  };
   readonly "c3.official": {  };
   readonly "c3.officialExamples": {  };
+  readonly "c3.openWork": { readonly "title": string | number | bigint | boolean | null | undefined | Date; };
   readonly "c3.restartUpload": {  };
   readonly "c3.separation": {  };
   readonly "c3.sort": {  };

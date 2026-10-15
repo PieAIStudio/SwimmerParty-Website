@@ -2,6 +2,20 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { messages } from "../../src/i18n/messages.source.ts";
+import { createI18n } from "@pieai/swimmer-i18n-kit";
+
+test("thumbnail image counts keep both authored catalogs eligible without locale fallback", () => {
+  const source = Object.fromEntries(
+    Object.entries(messages).map(([key, value]) => [key, value.zh]),
+  );
+  const en = Object.fromEntries(Object.entries(messages).map(([key, value]) => [key, value.en]));
+  const i18n = createI18n({ sourceLocale: "zh-CN", source, catalogs: { "zh-CN": source, en } });
+  assert.equal(i18n.resolve("en"), "en");
+  assert.equal(i18n.translator("en").t("c.title"), "Community");
+  assert.equal(i18n.translator("en").t("c3.imageCount", { count: 1 }), "1 image");
+  assert.equal(i18n.translator("en").t("c3.imageCount", { count: 4 }), "4 images");
+  assert.equal(i18n.translator("zh-CN").t("c3.imageCount", { count: 4 }), "4 张图片");
+});
 
 test("message catalogs are regenerated from messages.source.ts", () => {
   for (const [language, directory] of [

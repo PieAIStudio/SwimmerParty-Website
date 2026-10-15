@@ -14,6 +14,7 @@ import { ACTORS } from "@/content/actors";
 import { communityKindSchema, type CommunityPost } from "@/contracts/community";
 import { CommunityNotice } from "./CommunityNotice";
 import { PostMedia } from "./PostMedia";
+import { FeedImagePreview } from "./FeedImagePreview";
 import { useCommunityQuery } from "./hooks";
 import { useCommunityAccess } from "./AccessProvider";
 export function CommunityFeed({ actorSlug }: { actorSlug?: string } = {}) {
@@ -147,7 +148,7 @@ function Feed({ actorSlug }: { actorSlug?: string }) {
               <Link href={`/works/p/${post.id}`}>{post.title}</Link>
             </h3>
             <p>{t("community.author", { author: post.author.displayName })}</p>
-            <PostMedia post={post} />
+            {post.kind === "image" ? <FeedImagePreview post={post} /> : <PostMedia post={post} />}
           </article>
         ))}
       </div>
