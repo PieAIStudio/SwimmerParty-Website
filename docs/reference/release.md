@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-10-04
-last_reviewed: 2026-10-14
+last_reviewed: 2026-10-15
 domain: release
 tags:
   - release
@@ -63,13 +63,35 @@ related:
 4. 将以下请求交给 SwimmerBackend 的负责会话：产品 SWIMMER PARTY、public OAuth PKCE 客户端、origin `https://swimmerparty.swiminai.com`、精确回调 `https://swimmerparty.swiminai.com/api/auth/sso-callback`、scope `openid email profile`。不得登记通配回调或附加权限。账号中心的授权页与 `/account` 管理页必须实际挂载。取得客户端标识后配置环境；本手册不代替该团队的登记流程。
 5. Cookie 为 `__Host-swimmerparty-session`，由 AuthKit 管理。已安装 AuthKit 要求 HTTPS origin；HTTP localhost 仅供 mock 模式。本地真实 SSO 验证需显式配置已登记 HTTPS origin，不能关闭 Secure 或弱化回调校验。
 
+## 社区演员目录（独立数据库授权）
+
+网站 `ACTORS` 的 `version` 与显式 `versionHistory` 是目录源；工具不默认补版本、不把未上站制作资料混入，也不重新生成媒体。`create_draft` 会检查每个演员及版本是否在正式目录启用，空目录会令合法投稿也返回 `INVALID_INPUT`。发布社区 `owner` / `on` 前必须通过目录核对，不能把“get_limits 正常”当作目录正常。
+
+从同一个干净、已验收候选执行（`<project-ref>` 必须与本次网站 `SWIMMER_BACKEND_URL` 对应；不使用隐含的 linked 默认项目）：
+
+```bash
+pnpm community:actors:sync --project-ref <project-ref> --check
+# 有差异退出 2，停止发布；先生成只读计划，交 Owner 审核全部行及 planSha256：
+pnpm community:actors:sync --project-ref <project-ref> --dry-run --report .devspace-reports/catalog-plan.json
+# 仅在另外获准写库后，使用刚审过的计划 SHA；不会随普通 push/build/Actions 自动执行：
+pnpm community:actors:sync --project-ref <project-ref> --apply --expect-plan <planSha256>
+pnpm community:actors:sync --project-ref <project-ref> --check
+```
+
+复用 Supabase CLI 已有操作员登录（按 portfolio `.secrets/README.md`）；不用新增网站环境变量，更不能向浏览器/Vercel 注入 service-role 凭据。只有操作员 CLI 可以执行；CI/Vercel 环境拒绝。查询在只读事务中；获准应用时，通过现有 Management API 连接，在有界表锁与目录快照一致性检查后，将事务角色限定为 `service_role`，只调用后端既有 `swimmer_party.service_sync_site_actor`，不直写业务表、不修改函数/迁移，不假冒任何真实用户。
+
+应用是一笔事务：新增/恢复本站演员及源中明确的版本；目录中已不在本站的演员及不再记录的版本只禁用，不删行，历史作品引用保留。任一调用或事务内核验失败整批回滚，原生 `actor_catalog/sync` 审计只记真实变化；完全一致时不写行、不重复审计，同一批准命令重跑为无操作。若目录在审批后变化且仍需写入，停止并重新出计划；回包丢失不自动重试，先只读核对是否已提交。结束另起只读查询核实整份目录，收据只在 `.devspace-reports/`，不覆盖旧收据。
+
+首次修复的正式目标是 `lgoknzuxefecikfyvpzk`。2026-10-15 只读盘点发现两表均为0行；对应网站97位演员、99个明确版本（含唐韵秋/罗米沙的1.0.0历史）。雷乐/常淑兰不在源名单，本次空库同步不为他们新增任何行。实际写入始终以当次计划为准，不能从本段历史数字推定执行成功。
+
 ## 发布顺序
 
 1. 选择干净、已提交候选，运行 `pnpm verify`、`pnpm docs:check`、`pnpm exec swimmer-ui-check src`。按项目要求完成该精确提交的人工 Actions 验收；失败不得发布。
+   发布 `owner` / `on` 时，先完成上节 `community:actors:sync --check` 门槛；有差异只读出计划、等待单独写库授权，同步并回读通过后才能继续。
 2. 确认 Vercel 绑定 `swimmerparty` / `pie-0f420159`。未绑定时由获授权的发布会话执行 `vercel link --project swimmerparty --scope pie-0f420159`。
 3. 独立回读 Vercel production 环境的社区档位与本次授权一致，再同步生产配置：`vercel pull --yes --environment=production --scope pie-0f420159`，然后 `vercel build --prod`。该步骤产生 .vercel/output；检查产物、源提交与构建档位对应，不复用其他档位的旧产物。
 4. 上传同一个本地预构建候选：`vercel deploy --prebuilt --prod --skip-domain --yes --scope pie-0f420159`。不省略 --prebuilt，不让平台另行构建。
-5. 在返回的生产候选 URL 上完成冒烟；候选受 Deployment Protection 保护时，使用已登录的 Vercel 浏览器或在已绑定项目内通过 `vercel curl --deployment <verified-deployment-url>` 访问，不关闭保护或修改项目保护设置。通过后执行 `vercel promote <verified-deployment-url> --scope pie-0f420159`。必须 promote 已验证的同一产物，不重建、不猜 URL；回读正式域名部署号，并在正式域名复验。
+5. 在返回的生产候选 URL 上完成冒烟；候选受 Deployment Protection 保护时，使用已登录的 Vercel 浏览器或在已绑定项目内通过 `vercel curl --deployment <verified-deployment-url>` 访问，不关闭保护或修改项目保护设置。社区 `owner` / `on` 在 promote 前还须对同候选再跑一次目录 `--check`；候选冒烟与目录均通过后执行 `vercel promote <verified-deployment-url> --scope pie-0f420159`。必须 promote 已验证的同一产物，不重建、不猜 URL；回读正式域名部署号，并在正式域名复验。
 
 ## 冒烟与回滚
 

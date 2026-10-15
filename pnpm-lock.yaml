@@ -63,6 +63,9 @@ importers:
       '@axe-core/playwright':
         specifier: 4.11.0
         version: 4.11.0(playwright-core@1.61.1)
+      '@electric-sql/pglite':
+        specifier: 0.5.7
+        version: 0.5.7
       '@pieai/doc-gov':
         specifier: 0.14.2
         version: 0.14.2(supports-color@7.1.0)
@@ -186,6 +189,9 @@ packages:
   '@babel/types@7.29.8':
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
+
+  '@electric-sql/pglite@0.5.7':
+    resolution: {integrity: sha512-6WBks0NFO6YUhGP03mCNkbJuVFWwrZPrzZ/vsnAPnsCD28pybdZ+yoTrlLlWFoZst3kdaju5pxIslV/jrr36nQ==}
 
   '@emnapi/runtime@1.11.3':
     resolution: {integrity: sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA==}
@@ -2956,6 +2962,8 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
+
+  '@electric-sql/pglite@0.5.7': {}
 
   '@emnapi/runtime@1.11.3':
     dependencies:

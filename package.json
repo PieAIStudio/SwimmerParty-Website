@@ -27,6 +27,7 @@
     "messages:generate": "node tools/site/gen-messages.ts",
     "generate:og-assets": "node tools/site/generate-og-assets.ts",
     "assets:upload": "node tools/assets-upload.ts",
+    "community:actors:sync": "node tools/release/sync-community-actors.ts",
     "data:generate": "node tools/site/generate-actor-data.ts",
     "data:check": "node tools/site/generate-actor-data.ts --check && node tools/site/check-generated-media.ts"
   },
@@ -51,6 +52,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.0",
+    "@electric-sql/pglite": "0.5.7",
     "@pieai/doc-gov": "0.14.2",
     "@pieai/pro-gov": "0.14.2",
     "@playwright/test": "1.61.1",

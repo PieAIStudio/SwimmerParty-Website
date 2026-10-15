@@ -13,6 +13,12 @@
 | `assets-upload.ts` | 保留原路径的发布 CLI；只能按 release.md 的明确授权执行，先 dry-run。不删除旧对象、不修改现有同键字节。                                                                                                                                                                                                                                                                                                                                                 |
 | `help-clips/`      | `record.ts` 录制演员页“?”帮助卡的三段循环演示（starter、sheet、cast；zh、en），输出 `public/help/<locale>/`。手工 CLI，不进入日常检查：先用 `ACCOUNT_MODE=mock ASSET_STORE=local GUEST_LIMITER=memory ASSET_LOCAL_ROOT=e2e/fixtures/assets-store pnpm build && pnpm start -p 3100` 启动生产构建，再 `node tools/help-clips/record.ts [--locale zh,en] [--topic starter,sheet,cast]`。需要 ffmpeg；按 Chromium 截屏帧采样，下载被丢弃，不读取私有素材。 |
 
+## 社区演员目录
+
+`pnpm community:actors:sync` 调用 `release/sync-community-actors.ts`；纯计划与事务 SQL 在 `release/community-actor-catalog.ts`。唯一目录源是网站 `ACTORS` 的当前/历史版本；默认只读，`--check` 对漂移退出2，`--apply --expect-plan` 才可能写库。使用项目已有的 Supabase CLI 操作员登录，目标必须显式给 `--project-ref`，不借用网站用户会话、不向网站部署注入后台权限。正式调用与独立批准只见 [release.md](../docs/reference/release.md)。
+
+`community-actor-catalog.test.ts` 使用开发依赖 PGlite，在内存 Postgres 中执行公开消费合同的合成服务端夹具：覆盖空目录拒绝、97演员/99版本、逐事务审核计划、一致性锁、回读、重复无操作、下架禁用而不删除、整批回滚及普通成员拒绝。它不复制私有后端实现，也不代表完整草稿校验器；原生函数对照证据仅保留在忽略的本地收据中。夹具不是产品内存后端，不进入网站运行时；不读取真实库、不创建真实作品。
+
 ## 生成物与一致性
 
 | 生成物                               | 唯一源 → 生成器                                             | 检查与限制                                                     |
@@ -70,7 +76,7 @@ pnpm data:check
 | analytics                       | 外部白名单、规范化与不发送个人/自由文本                                                |
 | help-clips                      | 帮助卡演示文件存在、容器签名、每个文件不超过 300 KB，并且 `public/help` 只含约定的文件 |
 
-`pnpm dlx knip` 的三项明确配置不是死代码豁免：两个 release CLI 和 help-clips/record.ts 由人按上表调用；libphonenumber-js 是 AuthKit 的隐式运行时依赖并在 Next tracing 指定；ffprobe 和 ffmpeg 是制作侧外部可执行程序，不是 npm 包；样片有界转码实际调用这两者，knip 的 binary 登记只声明外部工具，不豁免代码或依赖。其余无消费者文件/导出/依赖应为零。
+`pnpm dlx knip` 的三项明确配置不是死代码豁免：两个 release CLI 和 help-clips/record.ts 由人按上表调用；libphonenumber-js 是 AuthKit 的隐式运行时依赖并在 Next tracing 指定；ffprobe 和 ffmpeg 是制作侧外部可执行程序，supabase 是已有操作员 CLI，不是网站运行时 npm 依赖；样片有界转码实际调用前两者，目录同步实际通过后者执行明确项目的只读查询/获批事务。knip 的 binary 登记只声明这三个外部工具，不豁免代码、导出或依赖。其余无消费者文件/导出/依赖应为零。
 
 `assets-upload.test.ts` 覆盖 dry-run 字节数、去重/分页、缺失/篡改源、新增后回读与不可覆盖；`source-originals` / `source-voices` 覆盖明确交付固定值和不可变原件，`voice-local-sources` 验证本地读取与隔离边界，`og-retirement` 防止退役演员的旧派生图被重新发布。所有工具合同均使用临时合成夹具，不调用真实 Blob。
 
