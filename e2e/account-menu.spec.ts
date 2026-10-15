@@ -178,7 +178,7 @@ test("the account tab links to the account center and signs out", async ({ page,
   const panel = page.locator(".game-ui-account-menu-panel");
   await expect(panel.getByRole("link", { name: "Account and security" })).toHaveAttribute(
     "href",
-    "https://accounts.swiminai.com/account",
+    "https://accounts.swiminai.com/account?ui_locales=en",
   );
   await panel.getByRole("button", { name: "Sign out" }).click();
   await expect(page.getByRole("button", SIGN_IN).first()).toBeVisible({ timeout: 15_000 });
@@ -227,40 +227,47 @@ test("a product arrival marker is removed, and a mock account never starts a sig
   expect(signIns).toBe(0);
 });
 
-test("a swimmer arrival starts exactly one sign-in, returning to the cleaned path", async ({
-  page,
-}) => {
-  const starts: string[] = [];
-  await page.route("**/api/auth/session", (route) =>
-    route.fulfill({
-      status: 200,
-      contentType: "application/json",
-      headers: { "cache-control": "no-store" },
-      body: JSON.stringify({ user: null, mode: "swimmer" }),
-    }),
-  );
-  await page.route("**/api/auth/sso-start", (route) => {
-    starts.push(route.request().postData() ?? "");
-    return route.fulfill({
-      status: 200,
-      contentType: "application/json",
-      body: JSON.stringify({
-        status: "redirect",
-        url: "https://accounts.swiminai.com/oauth/authorize?fixture=1",
+for (const locale of ["en", "zh"] as const)
+  test(`a ${locale} swimmer arrival starts once and keeps its language, query and hash`, async ({
+    page,
+  }) => {
+    const native =
+      "https://backend.example.test/auth/v1/oauth/authorize?state=synthetic-state&nonce=synthetic-nonce&code_challenge=synthetic-challenge";
+    const starts: string[] = [];
+    await page.route("**/api/auth/session", (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        headers: { "cache-control": "no-store" },
+        body: JSON.stringify({ user: null, mode: "swimmer" }),
       }),
+    );
+    await page.route("**/api/auth/sso-start", (route) => {
+      starts.push(route.request().postData() ?? "");
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          status: "redirect",
+          url: native,
+        }),
+      });
     });
+    await page.route("https://accounts.swiminai.com/**", (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: "text/html",
+        body: "<!doctype html><title>Fixture</title>",
+      }),
+    );
+    await page.goto(`/${locale}/guide?swimmer_sso=1&from=cast#help`);
+    await expect.poll(() => starts.length).toBe(1);
+    expect(JSON.parse(starts[0]).redirectPath).toBe(`/${locale}/guide?from=cast#help`);
+    await page.waitForURL("https://accounts.swiminai.com/**");
+    const target = new URL(page.url());
+    expect(target.pathname).toBe("/authorize/start");
+    expect(target.searchParams.get("ui_locales")).toBe(locale);
+    expect(target.searchParams.get("authorization_url")).toBe(native);
+    await page.waitForTimeout(500);
+    expect(starts.length).toBe(1);
   });
-  await page.route("https://accounts.swiminai.com/**", (route) =>
-    route.fulfill({
-      status: 200,
-      contentType: "text/html",
-      body: "<!doctype html><title>Fixture</title>",
-    }),
-  );
-  await page.goto("/en/guide?swimmer_sso=1");
-  await expect.poll(() => starts.length).toBe(1);
-  expect(JSON.parse(starts[0]).redirectPath).toBe("/en/guide");
-  await page.waitForURL("https://accounts.swiminai.com/**");
-  await page.waitForTimeout(500);
-  expect(starts.length).toBe(1);
-});

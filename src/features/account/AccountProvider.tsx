@@ -18,6 +18,7 @@ import { useCastCount } from "@/features/cast/client";
 import { GameButton, GameToast } from "@pieai/swimmer-ui-kit";
 import { GameAccountMenu, type GameAccountProduct } from "@pieai/swimmer-ui-kit/liquid-presence";
 import { planArrival } from "./arrival.ts";
+import { localizedSignInUrl } from "./login-url.ts";
 import { fetchProducts } from "./products.ts";
 import type { AccountProfile } from "./profile.ts";
 import { accountSession, type AccountSession as Session } from "./session.ts";
@@ -59,6 +60,7 @@ export function AccountProvider({
   analytics?: boolean;
 }) {
   const pathname = usePathname();
+  const locale = useSiteLocale();
   const [session, setSession] = useState<Session>({ user: null, mode: null, profile: null });
   const [loading, setLoading] = useState(true);
   // Lets a click made before the session check finishes wait for it instead of being lost.
@@ -70,7 +72,12 @@ export function AccountProvider({
   });
   const [busy, setBusy] = useState(false);
   const pending = useRef(false);
-  const prepared = useRef<{ at: number; path: string; url: Promise<string> } | null>(null);
+  const prepared = useRef<{
+    at: number;
+    path: string;
+    locale: string;
+    url: Promise<string>;
+  } | null>(null);
   // The first finished session check decides the cross-product arrival, once per page load.
   const arrival = useRef<"waiting" | "done">("waiting");
   const event = useCallback(
@@ -115,7 +122,8 @@ export function AccountProvider({
   const prepare = useCallback((): Promise<string> => {
     const path = location.pathname + location.search + location.hash;
     const ready = prepared.current;
-    if (ready && ready.path === path && Date.now() - ready.at < 60_000) return ready.url;
+    if (ready && ready.path === path && ready.locale === locale && Date.now() - ready.at < 60_000)
+      return ready.url;
     const url = fetch("/api/auth/sso-start", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -125,14 +133,14 @@ export function AccountProvider({
       const result = (await response.json()) as { status: string; url: string };
       if (result.status !== "redirect" || !result.url.startsWith("https://"))
         throw new Error("Invalid account redirect");
-      return result.url;
+      return localizedSignInUrl(result.url, SITE.accountUrl, locale);
     });
     url.catch(() => {
       if (prepared.current?.url === url) prepared.current = null;
     });
-    prepared.current = { at: Date.now(), path, url };
+    prepared.current = { at: Date.now(), path, locale, url };
     return url;
-  }, []);
+  }, [locale]);
   function prepareSignIn() {
     if (session.mode === "swimmer" && !session.user && !pending.current)
       void prepare().catch(() => {});
@@ -248,6 +256,7 @@ function useProducts(enabled: boolean): GameAccountProduct[] {
 
 export function AccountMenu() {
   const account = useAccount();
+  const locale = useSiteLocale();
   const { t } = useSiteI18n();
   const castCount = useCastCount();
   const products = useProducts(account.profile !== null);
@@ -300,7 +309,7 @@ export function AccountMenu() {
           </ul>
         }
         products={products}
-        accountHref={`${SITE.accountUrl}/account`}
+        accountHref={`${SITE.accountUrl}/account?ui_locales=${locale}`}
         onSignOut={() => account.signOut().catch(() => setError(true))}
         signingOut={account.busy}
       />
