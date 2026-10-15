@@ -89,6 +89,21 @@ const httpsUrl = z.url().refine((value) => {
   const url = new URL(value);
   return url.protocol === "https:" && !url.username && !url.password;
 });
+/** An unsupported display avatar must not invalidate a saved work or an entire queue.
+ * Omit inline account SVG and other non-HTTPS sources instead of rendering untrusted data.
+ * Keep the identity, work, media URL and unknown-field validation strict.
+ */
+const displayAvatarUrl = z
+  .string()
+  .nullable()
+  .transform((value) => {
+    if (value === null) return null;
+    try {
+      return httpsUrl.parse(value);
+    } catch {
+      return null;
+    }
+  });
 export const videoDescriptorSchema = z.strictObject({
   platform: z.enum(["youtube", "bilibili", "vimeo"]),
   externalId: z.string().min(1).max(100),
@@ -119,7 +134,7 @@ const postShape = {
   author: z.strictObject({
     id: z.uuid(),
     displayName: z.string().min(1).max(300),
-    avatarUrl: httpsUrl.nullable(),
+    avatarUrl: displayAvatarUrl,
   }),
   media: z.array(publicMediaSchema),
   video: videoDescriptorSchema.nullable(),
