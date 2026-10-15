@@ -50,6 +50,56 @@ test("A5 filters survive clear, back, reload and a shared Chinese URL", async ({
       .evaluateAll((nodes) => nodes.map((n) => n.getAttribute("data-actor-card"))),
   ).toEqual(ids);
 });
+for (const locale of ["en", "zh"] as const)
+  test(`A5 delayed hydration cannot lose the first filter choices ${locale}`, async ({
+    page,
+  }, testInfo) => {
+    let release = () => {};
+    const ready = new Promise<void>((resolve) => {
+      release = resolve;
+    });
+    await page.route(/\/_next\/static\/.*\.js(?:\?|$)/, async (route) => {
+      await ready;
+      await route.continue();
+    });
+    try {
+      await page.goto(`/${locale}/actors?ref=hydration`, { waitUntil: "commit" });
+      const role = page.locator("#actor-role");
+      await expect(role).toBeVisible();
+      const enabledBeforeHydration = await role.isEnabled();
+      if (enabledBeforeHydration) {
+        // Diagnostic only on the broken version: a native change can be accepted before its handler exists.
+        await role.selectOption("boss");
+        await testInfo.attach("lost-pre-hydration-choice", {
+          body: JSON.stringify({
+            enabledBeforeHydration,
+            selectedValue: await role.inputValue(),
+            url: page.url(),
+          }),
+          contentType: "application/json",
+        });
+      }
+      await expect(role).toBeDisabled();
+      const controls = page.locator(
+        "[data-actor-filters] input, [data-actor-filters] select, [data-actor-filters] button",
+      );
+      for (const control of await controls.all()) await expect(control).toBeDisabled();
+      release();
+      await expect(role).toBeEnabled();
+      await role.selectOption("boss");
+      await page.locator("#actor-voice label").click();
+      await expect(page).toHaveURL(/role=boss/);
+      await expect(page).toHaveURL(/voice=1/);
+      expect(new URL(page.url()).searchParams.get("ref")).toBe("hydration");
+      await page.reload();
+      await expect(role).toHaveValue("boss");
+      await expect(page.locator("#actor-voice input")).toBeChecked();
+    } finally {
+      release();
+      await page.unrouteAll({ behavior: "wait" });
+    }
+  });
+
 test("A5 availability and zero results do not invent files", async ({ page }) => {
   await page.goto("/en/actors?video=1");
   expect(await page.locator(cards).count()).toBeGreaterThan(0);
