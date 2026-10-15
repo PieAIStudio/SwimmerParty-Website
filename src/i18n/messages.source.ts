@@ -271,6 +271,11 @@ export const messages = {
   "c.loadMore": { en: "Load more", zh: "加载更多" },
   "c.retry": { en: "Read again", zh: "重新读取" },
   "c.retryWrite": { en: "Check and retry the same request", zh: "核对并重试原请求" },
+  "c.draftInvalidHint": {
+    en: "The draft was not saved. Check the title and selected actor versions. If they are correct, ask the site maintainer to check the actor catalog sync and share the request reference below. Your inputs stay on this page; there is no need to keep reselecting files.",
+    zh: "草稿没有保存。请核对标题和所选演员的素材版本；如果内容无误，请让站点维护者检查演员目录同步，并提供下方请求编号。当前填写仍保留在本页，不必反复重新选择文件。",
+  },
+  "c.requestReference": { en: "Request reference: {id}", zh: "请求编号：{id}" },
   "c.uncertain": {
     en: "The reply was lost. Your original request ID is kept; do not create another copy.",
     zh: "没有收到完整回包。已保留原请求编号，请勿重复新建。",

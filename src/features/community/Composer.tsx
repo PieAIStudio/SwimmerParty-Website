@@ -100,6 +100,7 @@ function Editor({
   const [credit, setCredit] = useState(false),
     [rights, setRights] = useState(false);
   const [notice, setNotice] = useState<"saved" | "submitted" | null>(null);
+  const [draftFailure, setDraftFailure] = useState<CommunityError | null>(null);
   const [uploadStarted, setUploadStarted] = useState(Boolean(initial?.media.length));
   const intents = useRef(new Map<number, string>());
   const activeFile = useRef(0);
@@ -132,24 +133,31 @@ function Editor({
     window.history.replaceState(null, "", url);
   }
   async function save(journal: WriteSession, signal: AbortSignal) {
-    if (!limits.kinds.includes(content.kind)) throw new CommunityError("SCOPE_NOT_ALLOWED");
-    if (
-      content.kind === "video" &&
-      content.videoUrl &&
-      !limits.videoPlatforms.includes(parseCommunityVideo(content.videoUrl).platform)
-    )
-      throw new CommunityError("VIDEO_URL_UNSUPPORTED");
-    const current = post;
-    const response = current
-      ? await journal.execute(
-          "update_draft",
-          { postId: current.id, expectedRevision: current.revision, content },
-          callCommunity,
-          signal,
-        )
-      : await journal.execute("create_draft", { content }, callCommunity, signal);
-    keep(response.post);
-    return response.post;
+    setDraftFailure(null);
+    try {
+      if (!limits.kinds.includes(content.kind)) throw new CommunityError("SCOPE_NOT_ALLOWED");
+      if (
+        content.kind === "video" &&
+        content.videoUrl &&
+        !limits.videoPlatforms.includes(parseCommunityVideo(content.videoUrl).platform)
+      )
+        throw new CommunityError("VIDEO_URL_UNSUPPORTED");
+      const current = post;
+      const response = current
+        ? await journal.execute(
+            "update_draft",
+            { postId: current.id, expectedRevision: current.revision, content },
+            callCommunity,
+            signal,
+          )
+        : await journal.execute("create_draft", { content }, callCommunity, signal);
+      keep(response.post);
+      return response.post;
+    } catch (error) {
+      // The backend deliberately uses INVALID_INPUT for several checks; only offer a conditional diagnosis.
+      if (error instanceof CommunityError && error.code === "INVALID_INPUT") setDraftFailure(error);
+      throw error;
+    }
   }
   async function readLatest(signal: AbortSignal) {
     if (!post) return;
@@ -255,7 +263,9 @@ function Editor({
       {!limits.submissionsOpen ? (
         <CommunityNotice error={new CommunityError("SUBMISSIONS_PAUSED")} />
       ) : null}
-      {action.error ? <CommunityNotice error={action.error} /> : null}
+      {action.error ? (
+        <CommunityNotice error={action.error} draftValidation={action.error === draftFailure} />
+      ) : null}
       {action.journal.snapshot() ? (
         <GameButton
           pending={action.busy}

@@ -72,6 +72,8 @@
   "c.loadMore": "Load more",
   "c.retry": "Read again",
   "c.retryWrite": "Check and retry the same request",
+  "c.draftInvalidHint": "The draft was not saved. Check the title and selected actor versions. If they are correct, ask the site maintainer to check the actor catalog sync and share the request reference below. Your inputs stay on this page; there is no need to keep reselecting files.",
+  "c.requestReference": "Request reference: {id}",
   "c.uncertain": "The reply was lost. Your original request ID is kept; do not create another copy.",
   "c.type": "1 · Choose a type",
   "c.media": "2 · Add media",

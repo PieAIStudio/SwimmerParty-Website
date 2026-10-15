@@ -182,6 +182,7 @@ export interface MessageContracts {
   readonly "c.confirmDelete": {  };
   readonly "c.dailyLimits": { readonly "mib": string | number | bigint | boolean | null | undefined | Date; readonly "posts": string | number | bigint | boolean | null | undefined | Date; };
   readonly "c.deleted": {  };
+  readonly "c.draftInvalidHint": {  };
   readonly "c.edit": {  };
   readonly "c.error.AUDIO_TOO_LONG": {  };
   readonly "c.error.AUTH_REQUIRED": {  };
@@ -242,6 +243,7 @@ export interface MessageContracts {
   readonly "c.reason.stolen_work": {  };
   readonly "c.reportNote": {  };
   readonly "c.reportReason": {  };
+  readonly "c.requestReference": { readonly "id": string | number | bigint | boolean | null | undefined | Date; };
   readonly "c.reserving": {  };
   readonly "c.resumePendingDraft": {  };
   readonly "c.resumeUpload": {  };
