@@ -22,7 +22,7 @@ superseded_by: null
 
 # SWIMMER PARTY 创作社区实施方案
 
-2026-10-13，Claude 主笔，合并了 `claude-plan.md`、`gpt-plan.md`（GPT-6 Pro 独立评审）和 `inventory.md`（代码盘点）。执行线程以本文件为准；细节查原始交接目录 `_Temp/SwimmerParty/next-stage/` 下的另外三份。
+2026-10-13，Claude 主笔，合并了 `claude-plan.md`、`gpt-plan.md`（GPT-6 Pro 独立评审）和 `inventory.md`（代码盘点）。执行线程以本文件为准；细节查工作区交接目录 `.devspace-reports/next-stage/source-handoffs/` 下的另外三份。
 
 ## 目标
 
@@ -211,7 +211,7 @@ superseded_by: null
 
 ## 归档来源与执行边界
 
-- 本文接收 Owner 批准的 `_Temp/SwimmerParty/next-stage/final-plan.md`（2026-10-13 15:40 决定已并入）；原稿保留在交接目录，不回写。本文成为仓库内执行与进度的唯一入口。
+- 本文接收 Owner 批准的 `.devspace-reports/next-stage/source-handoffs/final-plan.md`（2026-10-13 15:40 决定已并入）；原稿保留在交接目录，不回写。本文成为仓库内执行与进度的唯一入口。
 - 原稿阶段总数写作 18，但逐项列出 A1–A8、B1–B2、C1–C3、D1–D6，共 19 项；归档只校正总数，不增减阶段。
 - 网站线程只改 `next-stage` 工作区。A 组不修改 `media-pack/`、`src/content/actors/`、`public/media/` 的生产资料，也不修改 `src/features/account/`。A6 等 Owner 通知；授权页措辞先给 Owner 前后对照。
 - 每阶段一个提交。推送前 rebase 最新 `origin/main`，通过仓库适用门禁再推 `main`；不运行部署或发布命令。
@@ -478,6 +478,16 @@ A5已用延迟客户端脚本精确复现：原控件提前可用，原生select
 有效验收按影响范围合并：原全主站未受影响201项沿用，8条原筛选与2条新增回归由 `resume-green-01` 重新覆盖；这不是一次新的211项整套复跑。小图18项、含小图的on档63项、owner档7项及276工具结果保留；631文案键、252模块、类型、两套lint、格式、UIKit与knip复核通过。八张小图截图已逐张对照查看，保留原文件哈希；手机离屏卡片的占位是懒加载预期。最终文档门禁与源码/日志指纹、无残留进程核对见 `community-thumbnails/acceptance.json` 和 `handoff.json`。
 
 本轮仍只保留工作区改动：不提交、不推送、不发布、不改三档开关，不读写后端或Blob。on发布门槛与原六步真人验收安排按上表执行；本地收尾不替代Owner本人确认。
+
+#### 授权存码与交接边界收口（2026-10-15）
+
+Owner 随后批准将已验收的12个文件按主题正常提交并推送，未授权发布。筛选就绪保护为 `110cdcb`，默认作品小图与相关测试/文案为 `3af2a36`；已 fetch、rebase 并回读 origin/main。提交前12份文件与验收收据的 SHA 全部一致，rebase 没有产品差异，复用上述有效检查并执行正常提交门禁，没有关闭门禁或重跑已通过的浏览器。新的提交与推送证据在 `.devspace-reports/next-stage/community-thumbnails/push-01.json`。
+
+交接源目录已整体迁至工作区 `.devspace-reports/next-stage/source-handoffs/`，12份文件、152137字节在移动时逐字节核对一致，旧目录不再存在；本文件及本线程的可维护交接记录已使用新路径。原始后端合同快照和历史执行日志保留原字节，路径对应关系与修改前记录另存 `.devspace-reports/next-stage/boundary-20261015/migration.json`，不改写历史证据，也不把交接/账号登记资料纳入公开 Git。
+
+遗留素材审计结论：`main-checkout-leftovers-20261014` 实测1687份文件、1289678522字节（约1.29 GB），不是可整包重新生成的缓存；部分派生媒体可依赖母版重做，但模型原始生成、拒收/试制版本和审计证据不能靠网站构建恢复。本站私有 Blob 并非整包备份：至少256份文件（392694408字节）与已上传母版清单的 SHA 相符且当前云端同键同大小，其余约0.90 GB未全部证实有可恢复的云端副本。此次只读两页云端清单、重算本地归档 SHA，原 MANIFEST 的1683份文件全部吻合；不生成、不上传、不删除，整个目录原地保留，由 Owner 决定。证据在 `boundary-20261015/leftovers-local-audit.json`、`blob-inventory.json` 和 `regeneration-evidence.json`。
+
+本轮存码与边界收口后停止：线上仍维持已发布的 owner 档，本线程不改环境、部署或 Blob。Owner 先在正式站完成第2、3、5步（三类投稿、人工审核、删除撤下），再明确决定是否切到 on；不把本地检查或此次推送当作正式链路验收。
 
 ### 证据归属
 
