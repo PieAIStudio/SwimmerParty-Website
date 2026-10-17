@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-15T06:22:47.318Z
+generated_at: 2026-10-17T06:10:29.208Z
 generator_version: doc-gov@0.14.2
 docs_count: 36
 docs:
@@ -184,7 +184,7 @@ docs:
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-09-10
+    last_reviewed: 2026-10-16
     pinned: false
   - id: POLICY-SHARED-DONORS
     path: docs/policy/shared-rules/donors.md

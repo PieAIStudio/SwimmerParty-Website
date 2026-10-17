@@ -62,6 +62,9 @@ SWIMMER PARTY 官网。它的真相只有一条：**名册上的人是产品，�
 
 ## 验证
 
+Use [Three-Stage Delivery](../governance/agents-routing/engineering-runtime-v1.1.md#three-stage-delivery) for automatic related-check selection and
+pre-release full gates. Commands below are a reference, not an every-push checklist.
+
 ```bash
 pnpm verify
 ```
