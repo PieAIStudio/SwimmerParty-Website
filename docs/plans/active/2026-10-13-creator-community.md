@@ -215,7 +215,7 @@ superseded_by: null
 - 原稿阶段总数写作 18，但逐项列出 A1–A8、B1–B2、C1–C3、D1–D6，共 19 项；归档只校正总数，不增减阶段。
 - 网站线程只改 `next-stage` 工作区。A 组不修改 `media-pack/`、`src/content/actors/`、`public/media/` 的生产资料，也不修改 `src/features/account/`。A6 等 Owner 通知；授权页措辞先给 Owner 前后对照。
 - 每阶段一个提交。推送前 rebase 最新 `origin/main`，通过仓库适用门禁再推 `main`；不运行部署或发布命令。
-- 重型检查遵守更新后的本机 `_Temp/SLOTS.md`：全机最多两把锁；University 只用 `long-job.lock`，本网站使用空闲的 `long-job-2.lock`，一分钟负载低于 30 才原子写锁开跑，终态立即释放自己的锁。Playwright 最多 2 个 worker；不终止其他线程任务。截图和原始日志留在 `.devspace-reports/next-stage/`。
+- 重型检查遵守更新后的本机 `HQ/conductor/SLOTS.md`：全机最多两把锁；University 只用 `long-job.lock`，本网站使用空闲的 `long-job-2.lock`，一分钟负载低于 30 才原子写锁开跑，终态立即释放自己的锁。Playwright 最多 2 个 worker；不终止其他线程任务。截图和原始日志留在 `.devspace-reports/next-stage/`。
 - 本轮先交付方案归档和 A1；B 组属于后端线程，社区开放、正式发布和数据库生产迁移不得以此计划代替单次授权。
 
 ## 执行进度
