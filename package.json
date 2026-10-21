@@ -53,8 +53,8 @@
   "devDependencies": {
     "@axe-core/playwright": "4.11.0",
     "@electric-sql/pglite": "0.5.7",
-    "@pieai/doc-gov": "0.14.2",
-    "@pieai/pro-gov": "0.14.2",
+    "@pieai/doc-gov": "0.16.0",
+    "@pieai/pro-gov": "0.16.0",
     "@playwright/test": "1.61.1",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "24.13.2",
