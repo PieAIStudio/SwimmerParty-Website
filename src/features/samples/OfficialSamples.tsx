@@ -19,7 +19,7 @@ async function SampleBlock({ sample }: { sample: OfficialSample }) {
     <article
       data-official-sample={sample.slug}
       data-sample-id={sample.sampleId}
-      className="min-w-0 flex-none w-[min(72vw,18rem)] sm:w-64"
+      className="min-w-0 flex-none w-[min(82vw,20rem)] sm:w-72"
     >
       <SampleVideo
         src={sample.video}
@@ -27,8 +27,10 @@ async function SampleBlock({ sample }: { sample: OfficialSample }) {
         label={`${names} · ${label}`}
         className="aspect-[9/14]"
       />
-      <p className="mt-3 font-semibold">{label}</p>
-      <p className="sp-small mt-1 text-muted-foreground">{sample.tools.join(" · ")}</p>
+      <p className="mt-3 font-semibold">{names}</p>
+      <p className="sp-small mt-1 text-muted-foreground">
+        {label} · {sample.tools.join(" · ")}
+      </p>
     </article>
   );
 }

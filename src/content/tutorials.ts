@@ -1,6 +1,6 @@
 import type { L } from "./actors/index.ts";
 
-/** Source review is not reproduction. Keep drafts noindex until an actual run has evidence. */
+/** Verification stays internal; untested tool pages remain noindex until a real reviewed run. */
 export type ToolTutorial = {
   id: string;
   tool: string;
@@ -46,8 +46,8 @@ export const TOOL_TUTORIALS: readonly ToolTutorial[] = [
     steps: [
       prepare,
       {
-        en: "In a Flow project, select Video and Frames. Upload the front-view image as the start frame. Confirm that the selected model is Veo and supports this mode.",
-        zh: "在 Flow 项目中选 Video 和 Frames，把正面图上传为首帧。确认所选模型是 Veo，且支持当前模式。",
+        en: "In Flow, start a video from your actor picture. Upload the front view as the first frame. Check that your account can use the chosen Veo model.",
+        zh: "在 Flow 里选用图片做视频，上传演员正面图当第一帧。确认你的账号能用所选 Veo 模型。",
       },
       {
         en: "Paste the motion prompt below. Choose one output and a short duration supported by the selected model. Check the displayed cost, then generate.",
@@ -84,8 +84,8 @@ export const TOOL_TUTORIALS: readonly ToolTutorial[] = [
     steps: [
       prepare,
       {
-        en: "Open Gen-4.5 in Apps, or select it in Video tool mode. Upload the reference image into the prompt area for image-to-video.",
-        zh: "在 Apps 打开 Gen-4.5，或在 Video 工具模式选它。把参考图上传到提示区域，使用图生视频。",
+        en: "In Runway, choose the video tool and add the actor picture. Choose an image-to-video model your account can use.",
+        zh: "在 Runway 打开做视频的工具，上传演员图。选你的账号能用的图生视频模型。",
       },
       {
         en: "Paste the motion prompt below. Keep the input framing and choose a short duration. Review the credit cost and generate one clip.",
@@ -156,8 +156,8 @@ export const TOOL_TUTORIALS: readonly ToolTutorial[] = [
     steps: [
       prepare,
       {
-        en: "Use V8.1 or V8.2 with the Edit model. Open the image menu in the Imagine bar, upload the reference and place it in Attach to prompt. Do not use the V7-only Omni Reference instructions for this workflow.",
-        zh: "使用 V8.1 或 V8.2 的 Edit 模型。打开 Imagine 输入栏的图片菜单，上传参考图并放到 Attach to prompt。不要把仅适用 V7 的 Omni Reference 步骤混进此流程。",
+        en: "Open Midjourney's image-editing tool. Add one actor picture as the character reference, not just as an example of its art style.",
+        zh: "打开 Midjourney 的图片编辑工具，上传一张演员图作为角色参考，不要只把它当画风参考。",
       },
       {
         en: "Paste the scene prompt below and submit after checking your settings. Keep a single reference for this first attempt, then inspect the generated options.",
@@ -198,8 +198,8 @@ export const TOOL_TUTORIALS: readonly ToolTutorial[] = [
     steps: [
       prepare,
       {
-        en: "Open Imagine and add the actor image as the starting image for a video. The exact signed-in controls still need a hands-on check for this draft; follow the current app when labels differ.",
-        zh: "打开 Imagine，把演员图作为视频的起始图。本草稿尚待实际登录核对控件；按钮名称不同时以当前应用为准。",
+        en: "Open Grok Imagine. Add the actor picture and choose to make a short video from it. The buttons may look different on your account.",
+        zh: "打开 Grok Imagine，上传演员图，选择用它做一段短视频。你的账号里按钮可能不一样。",
       },
       {
         en: "Where a motion prompt is available, use the prompt below. Choose one short clip, confirm any charge and generate. Do not treat API options as options guaranteed in the web app.",

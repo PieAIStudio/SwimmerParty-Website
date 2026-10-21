@@ -176,7 +176,10 @@ export function AssetSelectionProvider({
     setInvite(true);
   }
   function requestStarter() {
-    setState({ slug: actor.slug, slots: assets.items.map((item) => item.slot) });
+    setState({
+      slug: actor.slug,
+      slots: assets.items.filter((item) => item.kind !== "video").map((item) => item.slot),
+    });
     setPack(true);
   }
   function focusInviteFromCooldown() {
@@ -346,7 +349,7 @@ export function AssetSelectionBar({ mobile = false }: { mobile?: boolean }) {
         </GameButton>
       )}
       <GameButton
-        variant="primary"
+        variant={selected.size ? "primary" : "ghost"}
         size={size}
         data-download-selected
         pending={busy || account.loading}

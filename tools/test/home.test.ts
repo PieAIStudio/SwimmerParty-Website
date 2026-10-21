@@ -71,14 +71,20 @@ test("one approved clip produces one hero, not filler cards", () => {
   assert.equal(result.hero?.sample, clip);
   assert.deepEqual(result.featured, []);
 });
-test("featured clips follow the hero without repeating it or requiring a poster", () => {
-  const clips = [1, 2, 3, 4].map((n) => sample("ready", `/fixtures/${n}.mp4`));
-  const result = selectHomeContent([ready], clips);
+test("homepage shows one approved clip per actor and does not require posters", () => {
+  const clips = [
+    sample("ready", "/fixtures/1.mp4"),
+    sample("ready", "/fixtures/2.mp4"),
+    sample("second", "/fixtures/3.mp4"),
+    sample("third", "/fixtures/4.mp4"),
+  ];
+  const actors = [ready, { ...ready, slug: "second" }, { ...ready, slug: "third" }];
+  const result = selectHomeContent(actors, clips);
   assert.equal(result.hero?.sample, clips[0]);
-  assert.deepEqual(
-    result.featured.map((entry) => entry.sample),
-    clips.slice(1, 3),
-  );
+  assert.deepEqual(result.featured.map((entry) => entry.sample), clips.slice(2));
+  assert.deepEqual([result.hero, ...result.featured].map((entry) => entry?.actor.slug), [
+    "ready", "second", "third",
+  ]);
   assert.equal(result.hero?.sample.poster, "");
 });
 test("updates use dated production notes, not generated release claims", () => {

@@ -8,7 +8,7 @@ import { Breadcrumbs } from "@/site/Breadcrumbs";
 import { CopyBlock } from "@/site/CopyBlock";
 import { TextLink } from "@/site/TextLink";
 import { DownloadTerms } from "@/site/DownloadTerms";
-import { GameBadge, GameButton } from "@pieai/swimmer-ui-kit";
+import { GameButton } from "@pieai/swimmer-ui-kit";
 
 export async function ToolGuideView({
   tutorial,
@@ -23,17 +23,8 @@ export async function ToolGuideView({
   return (
     <div className="sp-container pb-20" data-tool-guide={tutorial.id}>
       <Breadcrumbs items={[{ label: t("nav.learn"), href: "/guide" }, { label: tutorial.tool }]} />
-      <GameBadge tone="neutral">{t("learn.draft")}</GameBadge>
       <h1 className="sp-display-lg mt-5">{tutorial.goal[locale]}</h1>
       <p className="sp-lead mt-4">{tutorial.tool}</p>
-      <p className="sp-small mt-4 max-w-3xl" data-reproduction-status>
-        {t("learn.draftNotice")}
-      </p>
-      <p className="sp-small mt-3 text-muted-foreground">
-        {t("learn.sourceChecked")}{" "}
-        <time dateTime={tutorial.sourceCheckedAt}>{tutorial.sourceCheckedAt}</time> ·{" "}
-        {t("learn.reproductionPending")}
-      </p>
       <section className="mt-8 grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <h2 className="sp-title">{t("learn.before")}</h2>

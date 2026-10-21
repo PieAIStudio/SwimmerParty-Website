@@ -12,8 +12,7 @@ async function hoverInto(page: Page, trigger: Locator) {
   await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2, { steps: 8 });
 }
 
-const helpTrigger = (page: Page) =>
-  page.locator("main").getByRole("link", { name: "How it works" });
+const helpTrigger = (page: Page) => page.locator("[data-actor-help-trigger]");
 const helpCard = (page: Page) => page.getByRole("dialog", { name: "How it works" });
 
 test("hovering the ? opens three topics, tabs change the title, and the link goes to the guide", async ({
@@ -46,7 +45,7 @@ test("the Chinese card shows the Chinese topics and links to the Chinese guide",
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/zh/actors/tang-yunqiu");
-  await hoverInto(page, page.locator("main").getByRole("link", { name: "怎么用" }));
+  await hoverInto(page, helpTrigger(page));
   const card = page.getByRole("dialog", { name: "怎么用" });
   await expect(card.getByRole("tab", { name: /^懒人包/ })).toBeVisible();
   await expect(card.getByText("两张图加提示词，马上开拍")).toBeVisible();
@@ -71,11 +70,14 @@ test("the card's clips are the recorded files for the locale", async ({ page }) 
     expect((await page.request.get(path)).status()).toBe(200);
 });
 
-test("the ? itself still opens the guide on desktop", async ({ page }) => {
+test("the ? opens help here, then the guide link navigates only if chosen", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(ACTOR);
   await helpTrigger(page).click();
-  await expect(page).toHaveURL(/\/en\/guide$/, { timeout: 15_000 });
+  await expect(helpCard(page)).toBeVisible();
+  await expect(page).toHaveURL(/\/en\/actors\/tang-yunqiu$/);
+  await helpCard(page).getByRole("link", { name: "Full guide" }).click();
+  await expect(page).toHaveURL(/\/en\/guide$/);
 });
 
 test.describe("reduced motion", () => {
@@ -93,14 +95,14 @@ test.describe("reduced motion", () => {
 
 test.describe("phone", () => {
   test.use({ viewport: { width: 390, height: 844 }, hasTouch: true });
-  test("the first tap opens the card; the second tap follows the link", async ({ page }) => {
+  test("the first tap opens the card; tapping its guide link follows it", async ({ page }) => {
     await page.goto(ACTOR);
     const trigger = helpTrigger(page);
     await trigger.scrollIntoViewIfNeeded();
     await trigger.tap();
     await expect(helpCard(page)).toBeVisible();
     await expect(page).toHaveURL(/\/en\/actors\/tang-yunqiu$/);
-    await trigger.tap();
+    await helpCard(page).getByRole("link", { name: "Full guide" }).tap();
     await expect(page).toHaveURL(/\/en\/guide$/, { timeout: 15_000 });
   });
 });

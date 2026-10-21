@@ -28,6 +28,22 @@ test("Learn starts with five unique tool workflows and separate evidence fields"
     }
   }
 });
+
+test("the internal verification list tracks every unfinished tool guide, but visitors see no draft badge", async () => {
+  const internal = JSON.parse(await readFile(
+    new URL("./fixtures/tutorial-reproduction-internal.json", import.meta.url), "utf8",
+  )) as { pending: { id: string; reproduced: boolean }[] };
+  assert.deepEqual(internal.pending.map((item) => item.id).sort(), TOOL_TUTORIALS.map((item) => item.id).sort());
+  assert.ok(internal.pending.every((item) => item.reproduced === false));
+  for (const name of ["GuideView.tsx", "ToolGuideView.tsx"]) {
+    const source = await readFile(new URL("../../src/features/guide/" + name, import.meta.url), "utf8");
+    assert.doesNotMatch(source, /learn\.draft|reproductionPending|data-reproduction-status/);
+  }
+  for (const tutorial of TOOL_TUTORIALS) {
+    assert.equal(tutorial.reproducedAt, null);
+    assert.equal(tutorial.reproductionEvidence, null);
+  }
+});
 test("tutorial sources and entry links use official HTTPS origins", () => {
   const hosts = new Set([
     "support.google.com",

@@ -22,6 +22,7 @@ export function ImageLightbox({
 }) {
   const { t } = useSiteI18n();
   const [open, setOpen] = useState(false);
+  const [imageState, setImageState] = useState<"loading" | "ready" | "failed">("loading");
   const [startIndex, setStartIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxSlides, setLightboxSlides] = useState([
@@ -56,7 +57,7 @@ export function ImageLightbox({
         data-large={item.large ?? item.preview}
         data-preview={item.preview}
         data-alt={name}
-        className="block w-full cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+        className="relative block w-full cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
         aria-label={t("assets.viewLarger", { name })}
         onClick={() => {
           const slides = collectSlides();
@@ -81,7 +82,17 @@ export function ImageLightbox({
             displayLarge ? "(min-width: 1024px) 560px, 100vw" : "(min-width: 1024px) 24vw, 50vw"
           }
           className="h-full w-full object-contain"
+          onLoad={() => setImageState("ready")}
+          onError={() => setImageState("failed")}
         />
+        {imageState !== "ready" ? (
+          <output
+            data-image-state={imageState}
+            className="sp-small absolute inset-x-2 bottom-2 rounded-lg bg-card/90 p-2 text-center text-foreground"
+          >
+            {t(imageState === "failed" ? "assets.imageFailed" : "assets.imageLoading")}
+          </output>
+        ) : null}
       </button>
       <Lightbox
         open={open}

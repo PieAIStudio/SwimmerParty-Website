@@ -130,6 +130,7 @@ for (const locale of ["en", "zh"] as const)
         "data-discovery-group",
         "active",
       );
+      if (width === 390) await page.getByRole("button", { name: m["roster.moreFilters"] }).click();
       await page.locator("#actor-origin").focus();
       await expect(page.locator("#actor-origin")).toBeFocused();
       await page.keyboard.press("Tab");

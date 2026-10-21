@@ -1,0 +1,25 @@
+{
+  "note": "Internal progress only; not served on the website. Do not mark a tool verified without real saved output and review.",
+  "pending": [
+    {
+      "id": "veo",
+      "reproduced": false
+    },
+    {
+      "id": "runway",
+      "reproduced": false
+    },
+    {
+      "id": "gemini",
+      "reproduced": false
+    },
+    {
+      "id": "midjourney",
+      "reproduced": false
+    },
+    {
+      "id": "grok",
+      "reproduced": false
+    }
+  ]
+}

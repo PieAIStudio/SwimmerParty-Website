@@ -25,7 +25,7 @@ export async function ActorCard({ actor, href }: { actor: Actor; href?: string }
         sizes="(min-width: 1200px) 252px, (min-width: 1024px) 22vw, (min-width: 640px) 29vw, 42vw"
         legacy={!item && Boolean(actor.portrait)}
         legacyLabel={t("assets.legacy")}
-        fullBody={item?.series === "turnaround"}
+        bust
         className="aspect-4/5 rounded-[var(--game-ui-radius-card)]"
       />
       {actor.status !== "active" ? (

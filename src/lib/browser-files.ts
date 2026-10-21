@@ -21,10 +21,19 @@ export function saveBlob(blob: Blob, filename: string): void {
   window.setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-export async function fetchImageBlob(url: string, signal?: AbortSignal): Promise<Blob> {
+export async function fetchMediaBlob(
+  url: string,
+  kind: "image" | "audio",
+  signal?: AbortSignal,
+): Promise<Blob> {
   const response = await fetch(url, { signal, credentials: "same-origin" });
-  if (!response.ok) throw new Error("Image download failed");
+  if (!response.ok)
+    throw new Error(kind === "image" ? "Image download failed" : "Audio download failed");
   const blob = await response.blob();
-  if (!blob.type.startsWith("image/") || !blob.size) throw new Error("Invalid image response");
+  if (!blob.size || !blob.type.startsWith(`${kind}/`))
+    throw new Error(kind === "image" ? "Invalid image response" : "Invalid audio response");
   return blob;
+}
+export function fetchImageBlob(url: string, signal?: AbortSignal): Promise<Blob> {
+  return fetchMediaBlob(url, "image", signal);
 }

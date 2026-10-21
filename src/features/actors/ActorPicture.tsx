@@ -9,6 +9,7 @@ export function ActorPicture({
   alt,
   sizes,
   fullBody = false,
+  bust = false,
   legacy = false,
   legacyLabel,
   className = "",
@@ -21,6 +22,8 @@ export function ActorPicture({
   alt: string;
   sizes: string;
   fullBody?: boolean;
+  /** Card crop: show the face and upper body, not the full-height delivery frame. */
+  bust?: boolean;
   legacy?: boolean;
   legacyLabel?: string;
   className?: string;
@@ -41,7 +44,7 @@ export function ActorPicture({
             sizes={sizes}
             priority={priority}
             quality={quality}
-            className={`sp-image ${legacy ? "object-cover" : fullBody ? "object-contain object-bottom" : "object-contain"}`}
+            className={`sp-image ${bust ? "object-cover object-[center_28%]" : legacy ? "object-cover" : fullBody ? "object-contain object-bottom" : "object-contain"}`}
           />
           {legacy && legacyLabel ? (
             <GameBadge tone="warning" className="sp-legacy-label absolute top-3 left-3">

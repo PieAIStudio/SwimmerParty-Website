@@ -18,7 +18,9 @@ for (const locale of ["en", "zh"] as const) {
       await expect(page.locator("[data-tool-steps] li")).toHaveCount(4);
       await expect(page.locator("[data-tool-access]")).toHaveText(tutorial.access[locale]);
       await expect(page.locator("[data-tutorial-prompt]")).toContainText(tutorial.prompt[locale]);
-      await expect(page.locator("[data-reproduction-status]")).toHaveText(m["learn.draftNotice"]);
+      await expect(page.locator("[data-reproduction-status]")).toHaveCount(0);
+      await expect(page.locator("main")).not.toContainText("Draft · not reproduced");
+      await expect(page.locator("main")).not.toContainText("草稿 · 尚未实测复现");
       await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
       await expect(page.getByRole("link", { name: m["learn.openTool"] })).toHaveAttribute(
         "href",
@@ -28,7 +30,7 @@ for (const locale of ["en", "zh"] as const) {
     });
   }
   for (const width of [390, 1440]) {
-    test(`A7 result-first guide and draft fit ${locale} ${width}`, async ({ page }) => {
+    test(`A7 result-first guide and tool steps fit ${locale} ${width}`, async ({ page }) => {
       await page.setViewportSize({ width, height: 844 });
       await page.goto(`/${locale}/guide`);
       await expect(page.locator("[data-learn-outcome]")).toHaveCount(3);

@@ -234,16 +234,21 @@
     background: var(--game-ui-bg);
   }
 
-  /* Tile labels stay on one line; a long name truncates instead of stacking characters. */
+  /* Never hide an asset name, even on 390px three-column face grids. */
   [data-asset-slot] .game-ui-checkbox {
     min-width: 0;
     flex: 1 1 auto;
   }
   [data-asset-slot] .game-ui-checkbox-label {
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+  [data-asset-slot] > .mt-2.flex {
+    flex-wrap: wrap;
+  }
+  [data-asset-slot] .game-ui-checkbox {
+    flex-basis: 100%;
   }
   .sp-asset-frame[data-selected="true"] {
     outline: 3px solid var(--game-ui-text);
@@ -286,6 +291,24 @@
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+/* The mobile navigation places the UIKit language control at the bottom.
+ * Open the long menu UP and keep every item inside the 390px viewport. */
+.sp-language-panel .game-ui-language-popover {
+  inset: auto auto calc(100% + 8px) 0;
+  width: min(280px, calc(100vw - 2 * var(--sp-gutter)));
+  min-width: 0;
+  max-height: min(55dvh, 450px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transform-origin: bottom left;
+}
+
+@media (max-width: 639px) {
+  [data-discovery-group] {
+    padding-block: 1.5rem 2.5rem;
+  }
 }
 
 @media (min-width: 640px) {

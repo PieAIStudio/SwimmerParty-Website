@@ -1,11 +1,11 @@
 "use client";
-import { useMemo, useSyncExternalStore } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import { useSiteI18n, useSiteLocale } from "@/i18n/client";
 import type { Actor } from "@/content/actors";
+import type { OfficialSample } from "@/content/official-samples.generated";
 import { ActorCardClient } from "./ActorCardClient";
 import { GameButton, GameCheckbox, GameInput, GameSelect } from "@pieai/swimmer-ui-kit";
 import { VoteButton, useCommunityAccess } from "@/features/community/client";
-import { CastAddButton } from "@/features/cast/client";
 import {
   actorFilterSearch,
   DEFAULT_ACTOR_FILTERS,
@@ -27,15 +27,20 @@ function subscribe(callback: () => void) {
 export function ActorFilters({
   actors,
   facets,
+  portraits,
+  samples,
   initialSearch,
 }: {
   actors: Actor[];
   facets: Record<string, ActorFacets>;
+  portraits: Record<string, string>;
+  samples: Record<string, Pick<OfficialSample, "video" | "poster" | "label" | "tools">>;
   initialSearch: string;
 }) {
   const { t } = useSiteI18n();
   const locale = useSiteLocale();
   const community = useCommunityAccess();
+  const [expanded, setExpanded] = useState(false);
   // Server-rendered controls must not accept input before their change handlers are attached.
   const interactive = useSyncExternalStore(
     subscribe,
@@ -93,6 +98,9 @@ export function ActorFilters({
       filters[key as keyof ActorFilterState] !==
       DEFAULT_ACTOR_FILTERS[key as keyof ActorFilterState],
   );
+  const advancedCount = (
+    ["look", "age", "language", "origin", "role", "height", "video"] as const
+  ).filter((key) => filters[key] !== DEFAULT_ACTOR_FILTERS[key]).length;
   const groups = [
     ["active", t("roster.castableTitle"), filtered.filter((a) => a.status === "active")],
     ["new-face", t("roster.newFacesTitle"), filtered.filter((a) => a.status === "new-face")],
@@ -122,7 +130,10 @@ export function ActorFilters({
                 onChange={(e) => change("q", e.target.value)}
               />
             </label>
-            <label className="grid gap-1" htmlFor="actor-look">
+            <label
+              className={expanded ? "grid gap-1" : "hidden gap-1 md:grid"}
+              htmlFor="actor-look"
+            >
               <span className="sp-label">{t("roster.appearance")}</span>
               <GameInput
                 id="actor-look"
@@ -134,7 +145,10 @@ export function ActorFilters({
               />
             </label>
           </div>
-          <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3">
+          <div
+            id="actor-more-filters"
+            className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3"
+          >
             <label className="grid min-w-0 gap-1" htmlFor="actor-gender">
               <span className="sp-label">{t("roster.gender")}</span>
               <GameSelect
@@ -147,7 +161,10 @@ export function ActorFilters({
                 <option value="male">{t("roster.filters.men")}</option>
               </GameSelect>
             </label>
-            <label className="grid min-w-0 gap-1" htmlFor="actor-age">
+            <label
+              className={expanded ? "grid min-w-0 gap-1" : "hidden min-w-0 gap-1 md:grid"}
+              htmlFor="actor-age"
+            >
               <span className="sp-label">{t("roster.age")}</span>
               <GameSelect
                 id="actor-age"
@@ -160,7 +177,10 @@ export function ActorFilters({
                 <option value="over45">{t("roster.filters.over45")}</option>
               </GameSelect>
             </label>
-            <label className="grid min-w-0 gap-1" htmlFor="actor-language">
+            <label
+              className={expanded ? "grid min-w-0 gap-1" : "hidden min-w-0 gap-1 md:grid"}
+              htmlFor="actor-language"
+            >
               <span className="sp-label">{t("roster.language")}</span>
               <GameSelect
                 id="actor-language"
@@ -172,7 +192,10 @@ export function ActorFilters({
                 <option value="zh">{t("roster.filters.chinese")}</option>
               </GameSelect>
             </label>
-            <label className="grid min-w-0 gap-1" htmlFor="actor-origin">
+            <label
+              className={expanded ? "grid min-w-0 gap-1" : "hidden min-w-0 gap-1 md:grid"}
+              htmlFor="actor-origin"
+            >
               <span className="sp-label">{t("roster.origin")}</span>
               <GameSelect
                 id="actor-origin"
@@ -187,7 +210,10 @@ export function ActorFilters({
                 ))}
               </GameSelect>
             </label>
-            <label className="grid min-w-0 gap-1" htmlFor="actor-role">
+            <label
+              className={expanded ? "grid min-w-0 gap-1" : "hidden min-w-0 gap-1 md:grid"}
+              htmlFor="actor-role"
+            >
               <span className="sp-label">{t("roster.role")}</span>
               <GameSelect
                 id="actor-role"
@@ -202,7 +228,10 @@ export function ActorFilters({
                 ))}
               </GameSelect>
             </label>
-            <label className="grid min-w-0 gap-1" htmlFor="actor-height">
+            <label
+              className={expanded ? "grid min-w-0 gap-1" : "hidden min-w-0 gap-1 md:grid"}
+              htmlFor="actor-height"
+            >
               <span className="sp-label">{t("roster.height")}</span>
               <GameSelect
                 id="actor-height"
@@ -224,13 +253,28 @@ export function ActorFilters({
                 onChange={(e) => change("voice", e.target.checked)}
               />
             </div>
-            <div id="actor-video">
+            <div id="actor-video" className={expanded ? undefined : "hidden md:block"}>
               <GameCheckbox
                 label={t("roster.hasVideo")}
                 checked={filters.video}
                 onChange={(e) => change("video", e.target.checked)}
               />
             </div>{" "}
+          </div>
+          <div className="mt-3 flex flex-wrap items-center gap-3 md:hidden">
+            <GameButton
+              size="sm"
+              variant="secondary"
+              aria-expanded={expanded}
+              onClick={() => setExpanded((value) => !value)}
+            >
+              {t(expanded ? "roster.lessFilters" : "roster.moreFilters")}
+            </GameButton>
+            {advancedCount ? (
+              <span className="sp-small">
+                {t("roster.filtersApplied", { count: advancedCount })}
+              </span>
+            ) : null}
           </div>
           <div className="mt-3 flex items-center justify-between gap-3">
             <output className="sp-small">
@@ -250,7 +294,7 @@ export function ActorFilters({
               key={status}
             >
               <h2 className="sp-title">{title}</h2>
-              <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+              <div className="mt-4 grid grid-cols-2 gap-4 sm:mt-8 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4">
                 {group.map((actor) => (
                   <div
                     key={actor.slug}
@@ -258,7 +302,11 @@ export function ActorFilters({
                     data-has-voice={facets[actor.slug]?.voice ?? false}
                     data-has-video={facets[actor.slug]?.video ?? false}
                   >
-                    <ActorCardClient actor={actor} />
+                    <ActorCardClient
+                      actor={actor}
+                      portrait={portraits[actor.slug]}
+                      sample={samples[actor.slug]}
+                    />
                     {community.visible && actor.status === "new-face" ? (
                       <VoteButton
                         slug={actor.slug}
@@ -266,11 +314,6 @@ export function ActorFilters({
                         locale={locale}
                       />
                     ) : null}
-                    <CastAddButton
-                      slug={actor.slug}
-                      locale={locale}
-                      name={locale === "zh" ? actor.nameCn : actor.nameEn}
-                    />
                   </div>
                 ))}
               </div>

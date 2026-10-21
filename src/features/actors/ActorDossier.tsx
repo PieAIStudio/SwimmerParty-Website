@@ -9,6 +9,7 @@ import {
   ImageLightbox,
   SeriesJumpButton,
   StarterPackButton,
+  AssetHeroActions,
   VoiceTile,
 } from "@/features/assets";
 import { firstImage, getActorAssets } from "@/features/assets/queries";
@@ -76,6 +77,14 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
   const front = firstImage(slug, ["turnaround.front"]);
   const next = ACTORS[(ACTORS.indexOf(actor) + 1) % ACTORS.length];
   const voice = assets.items.find((i) => i.kind === "voice" && i.key === "intro");
+  const images = assets.items.filter((item) => item.kind === "image");
+  const voices = assets.items.filter((item) => item.kind === "voice");
+  const starter = starterSlots(assets.items);
+  const starterBytes = assets.items
+    .filter((item) => starter.includes(item.slot))
+    .reduce((total, item) => total + item.bytes, 0);
+  const bundleBytes = [...images, ...voices].reduce((total, item) => total + item.bytes, 0);
+  const approxMb = (bytes: number) => (bytes / (1024 * 1024)).toFixed(1);
   const frontLabel = actor.status === "new-face" ? t("assets.castingPhoto") : name;
   // The info table and appearances already say who they are; new faces only add what's next.
   const description = actor.status === "new-face" ? t("actor.newFaceDescription") : null;
@@ -103,14 +112,7 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
           items={[{ label: t("nav.actors"), href: "/actors" }, { label: name }]}
         />
         <section className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="max-w-[560px] lg:col-span-7">
-            {front ? (
-              <ImageLightbox item={front} name={`${name} · ${frontLabel}`} displayLarge />
-            ) : (
-              <div className="sp-sweep sp-panel aspect-4/5" />
-            )}
-          </div>
-          <div className="min-w-0 lg:col-span-5">
+          <div className="min-w-0 lg:order-2 lg:col-span-5">
             <div className="flex flex-wrap items-center gap-3">
               <GameBadge tone={actor.status === "active" ? "success" : "neutral"}>
                 {STATUS_LABEL[actor.status][locale]}
@@ -139,7 +141,7 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
                   nameEn: actor.nameEn,
                   nameCn: actor.nameCn,
                   promptSeed: actor.promptSeed,
-                  slots: starterSlots(assets.items),
+                  slots: starter,
                 }}
               />
               {canMakeSheet(assets.items) ? (
@@ -154,7 +156,29 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
                 link={{ href: `/${locale}/guide`, label: t("help.fullGuide") }}
               />
             </div>
+            <div className="mt-3">
+              <AssetHeroActions front={front} />
+            </div>
+            {voice ? (
+              <div className="mt-5" data-actor-voice>
+                <h2 className="sp-subtitle">{t("actor.voiceTitle", { name })}</h2>
+                <div className="mt-2">
+                  <VoiceTile item={voice} label={t("assets.voice.intro")} reference />
+                </div>
+              </div>
+            ) : null}
             <DownloadTerms className="mt-3" />
+            <p className="sp-small mt-2 text-muted-foreground" data-starter-facts>
+              {t("actor.starterFacts", { count: starter.length, size: approxMb(starterBytes) })}
+            </p>
+            <p className="sp-small mt-2 text-muted-foreground" data-full-pack-facts>
+              {t("actor.fullPackFacts", {
+                images: images.length,
+                voices: voices.length,
+                size: approxMb(bundleBytes),
+              })}
+            </p>
+            <p className="sp-small mt-1 text-muted-foreground">{t("actor.guestNote")}</p>
             <dl className="mt-4 divide-y divide-border">
               {actor.spec.map((row) => (
                 <div
@@ -167,23 +191,22 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
               ))}
             </dl>
             {description ? <p className="mt-6">{description}</p> : null}
-            {voice ? (
-              <div className="mt-8">
-                <h2 className="sp-subtitle">{t("actor.voiceTitle", { name })}</h2>
-                <div className="mt-4">
-                  <VoiceTile item={voice} label={t("assets.voice.intro")} reference />
-                </div>
-              </div>
-            ) : null}
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <TextLink href="/license#credit">{t("actor.workWithUs")}</TextLink>
               <ShareButton />
             </div>
           </div>
+          <div className="max-w-[560px] lg:order-1 lg:col-span-7">
+            {front ? (
+              <ImageLightbox item={front} name={`${name} · ${frontLabel}`} displayLarge />
+            ) : (
+              <div className="sp-sweep sp-panel aspect-4/5" />
+            )}
+          </div>
         </section>
         <div
           id="assets"
-          className="sp-library-toolbar sticky top-16 z-20 mt-16 flex min-h-16 scroll-mt-16 items-center gap-4 border-b border-border py-2"
+          className="sp-library-toolbar sticky top-16 z-20 mt-10 flex min-h-16 scroll-mt-52 items-center gap-4 border-b border-border py-2"
         >
           <nav
             className="flex min-w-0 flex-1 gap-2 overflow-x-auto py-2"
@@ -212,7 +235,7 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
           isNewFace={isNewFace}
           skipVoiceSlot={voice?.slot}
         />
-        <section id="series-how-to" className="sp-section scroll-mt-40">
+        <section id="series-how-to" className="sp-section scroll-mt-52">
           <h2 className="sp-title">{t("assets.series.howTo")}</h2>
           <ol className="mt-8 grid gap-4 md:grid-cols-3">
             {(
@@ -240,7 +263,7 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
             <DownloadActorProfile actor={actor} assets={assets} />
           </div>
         </section>
-        <section id="series-rules" className="sp-section scroll-mt-40">
+        <section id="series-rules" className="sp-section scroll-mt-52">
           <h2 className="sp-title">{t("assets.rulesTitle")}</h2>
           <p className="mt-6 max-w-3xl text-lg">{t("assets.rulesBody", { name })}</p>
           <div className="mt-6 flex flex-wrap items-center gap-4">

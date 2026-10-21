@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ACTORS } from "@/content/actors";
 import { TOOL_TUTORIALS } from "@/content/tutorials";
 import { Link } from "@/i18n/navigation";
-import { GameBadge, GameButton } from "@pieai/swimmer-ui-kit";
+import { GameButton } from "@pieai/swimmer-ui-kit";
 import { DownloadTerms } from "@/site/DownloadTerms";
 import { WORKFLOW_STEPS } from "./workflows";
 import type { AppLocale } from "@/i18n/routing";
@@ -61,16 +61,15 @@ export async function GuideView({ locale }: { locale: AppLocale }) {
       </section>
       <section id="tools" className="sp-section" data-learn-tools>
         <h2 className="sp-title">{t("learn.toolsTitle")}</h2>
-        <p className="sp-small mt-4 max-w-3xl text-muted-foreground">{t("learn.draftNotice")}</p>
+        <p className="sp-small mt-4 max-w-3xl text-muted-foreground">{t("learn.toolIntro")}</p>
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {TOOL_TUTORIALS.map((tutorial) => (
             <article key={tutorial.id} className="sp-card bg-card">
-              <GameBadge tone="neutral">{t("learn.draft")}</GameBadge>
               <h3 className="sp-subtitle mt-4">{tutorial.tool}</h3>
               <p className="mt-2">{tutorial.goal[locale]}</p>
               <p className="sp-small mt-3 text-muted-foreground">{tutorial.access[locale]}</p>
               <TextLink href={`/guide/tools/${tutorial.id}`} className="mt-4">
-                {t("learn.readDraft")}
+                {t("learn.readSteps")}
               </TextLink>
             </article>
           ))}

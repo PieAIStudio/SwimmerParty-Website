@@ -40,6 +40,21 @@ export default async function ActorsPage({
     ACTORS.map((actor) => [actor.slug, getActorAssets(actor.slug).items]),
   );
   const facets = makeActorFacets(ACTORS, media, OFFICIAL_SAMPLES, WORKS);
+  const portraits = Object.fromEntries(
+    ACTORS.map((actor) => [
+      actor.slug,
+      media[actor.slug]?.find((item) => item.slot === "face.front")?.preview ??
+        media[actor.slug]?.find((item) => item.slot === "turnaround.front")?.preview ??
+        actor.portrait ??
+        "",
+    ]),
+  );
+  const samples = Object.fromEntries(
+    ACTORS.flatMap((actor) => {
+      const sample = OFFICIAL_SAMPLES.find((entry) => entry.actorSlugs.includes(actor.slug));
+      return sample ? [[actor.slug, sample]] : [];
+    }),
+  );
   const counts = {
     castable: ACTORS.filter((a) => a.status === "active").length,
     newFaces: ACTORS.filter((a) => a.status === "new-face").length,
@@ -50,7 +65,13 @@ export default async function ActorsPage({
         <h1 className="sp-title">{t("roster.metaTitle")}</h1>
         <p className="sp-small mt-2 text-muted-foreground">{t("roster.intro", counts)}</p>
       </header>
-      <ActorFilters actors={ACTORS} facets={facets} initialSearch={search.toString()} />
+      <ActorFilters
+        actors={ACTORS}
+        facets={facets}
+        portraits={portraits}
+        samples={samples}
+        initialSearch={search.toString()}
+      />
     </div>
   );
 }

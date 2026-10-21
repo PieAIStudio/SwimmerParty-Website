@@ -272,8 +272,8 @@ export const messages = {
   "c.retry": { en: "Read again", zh: "重新读取" },
   "c.retryWrite": { en: "Check and retry the same request", zh: "核对并重试原请求" },
   "c.draftInvalidHint": {
-    en: "The draft was not saved. Check the title and selected actor versions. If they are correct, ask the site maintainer to check the actor catalog sync and share the request reference below. Your inputs stay on this page; there is no need to keep reselecting files.",
-    zh: "草稿没有保存。请核对标题和所选演员的素材版本；如果内容无误，请让站点维护者检查演员目录同步，并提供下方请求编号。当前填写仍保留在本页，不必反复重新选择文件。",
+    en: "We could not save this yet. Check the title and actor version. If both look right, send us the request number below. Your files are still here.",
+    zh: "还没保存好。先看看标题和演员版本对不对。都没问题，就把下方请求编号发给我们。你选的文件还在。",
   },
   "c.requestReference": { en: "Request reference: {id}", zh: "请求编号：{id}" },
   "c.uncertain": {
@@ -476,12 +476,12 @@ export const messages = {
     zh: "投稿已暂停；阅读、举报和审核仍可使用。",
   },
   "c.error.COMMUNITY_UNAVAILABLE": {
-    en: "Community is unavailable. No local copy was substituted.",
-    zh: "社区暂不可用，没有切换成本地替代数据。",
+    en: "Community is not working right now. Try again later.",
+    zh: "社区暂时打不开，过会儿再试。",
   },
   "c.error.PROCESSING_UNAVAILABLE": {
-    en: "The upload or media service is not ready. Your work has not been published.",
-    zh: "上传或媒体服务暂未就绪，作品尚未发布。",
+    en: "The file could not upload yet. Your work is not published.",
+    zh: "文件暂时传不上去。作品还没发布。",
   },
   "common.themeLight": {
     en: "Light",
@@ -544,11 +544,11 @@ export const messages = {
     zh: "工作室",
   },
   "home.metaTitle": { en: "SWIMMER PARTY — Original AI actors", zh: "SWIMMER PARTY——原创 AI 演员" },
-  "home.heroLines.0": { en: "AI actors.", zh: "用 AI 演员，" },
-  "home.heroLines.1": { en: "Your next story.", zh: "演你的故事。" },
+  "home.heroLines.0": { en: "Pick an actor.", zh: "选一位演员，" },
+  "home.heroLines.1": { en: "Make a story.", zh: "放进你的故事。" },
   "home.heroBody": {
-    en: "Free reference assets. Make something with the tools you love.",
-    zh: "免费参考素材，用你喜欢的工具开演。",
+    en: "Use their pictures in any AI tool. They should still look like the same actor.",
+    zh: "把演员图放进任何 AI 工具，做出来还是这个人。",
   },
   "home.ctaAssets": { en: "Choose an actor", zh: "去挑演员" },
   "home.readyCount": { en: "{count} ready to cast", zh: "{count} 位可用演员" },
@@ -817,6 +817,15 @@ export const messages = {
     zh: "下载所选",
   },
   "assets.download": { en: "Download all", zh: "下载全部" },
+  "assets.audioState.idle": { en: "Press play to listen.", zh: "点播放，听听声音。" },
+  "assets.audioState.loading": { en: "Loading sound…", zh: "正在加载声音…" },
+  "assets.audioState.ready": { en: "Ready to play", zh: "可以播放了" },
+  "assets.audioState.failed": {
+    en: "Sound did not load. Try again.",
+    zh: "声音没加载出来，再试一次。",
+  },
+  "assets.imageLoading": { en: "Loading picture…", zh: "正在加载图片…" },
+  "assets.imageFailed": { en: "Picture did not load.", zh: "图片没加载出来。" },
   "assets.selectFirst": {
     en: "Select the images you want first.",
     zh: "先勾选要下载的图。",
@@ -839,8 +848,8 @@ export const messages = {
   },
   "assets.signingIn": { en: "Opening…", zh: "正在前往…" },
   "assets.signInBenefits.0": {
-    en: "Starter packs, full packs and custom downloads",
-    zh: "懒人包、完整资产和自选下载",
+    en: "Get all an actor's pictures and voice clips at once",
+    zh: "一次拿全演员的图片和声音",
   },
   "assets.signInBenefits.1": { en: "Post your work, like and vote", zh: "发作品、点赞、投票" },
   "assets.signInBenefits.2": { en: "4K character sheets", zh: "4K 角色设定图" },
@@ -1214,6 +1223,12 @@ export const messages = {
     en: "Filters",
     zh: "筛选",
   },
+  "roster.moreFilters": { en: "More filters", zh: "更多筛选" },
+  "roster.lessFilters": { en: "Fewer filters", zh: "收起筛选" },
+  "roster.filtersApplied": {
+    en: "{count} more filters in use",
+    zh: "另有 {count} 个筛选条件",
+  },
   "roster.gender": {
     en: "Gender",
     zh: "性别",
@@ -1237,6 +1252,20 @@ export const messages = {
   "actor.openLibrary": {
     en: "Get the starter pack",
     zh: "领取懒人包",
+  },
+  "actor.freeFrontDownload": { en: "Download this picture free", zh: "免费下载这张图" },
+  "actor.fullPack": { en: "Get every file", zh: "一键领取全部文件" },
+  "actor.starterFacts": {
+    en: "{count} pictures and a character prompt · about {size} MB of pictures. Free account needed.",
+    zh: "{count} 张图和角色提示词。图片约 {size} MB，需要免费账号。",
+  },
+  "actor.fullPackFacts": {
+    en: "{images} pictures, {voices} voice clips · about {size} MB of original files. A free account lets you get them together.",
+    zh: "{images} 张图、{voices} 段声音，原件约 {size} MB。免费登录后可一次拿全。",
+  },
+  "actor.guestNote": {
+    en: "One picture is free without an account. Wait 30 seconds before getting another. After signing in, you come back to this actor.",
+    zh: "单张图不用登录就能下。每下完一张，等 30 秒再下。登录后会回到这位演员。",
   },
   "actor.workWithUs": {
     en: "How to credit",
@@ -1475,6 +1504,8 @@ export const messages = {
   "community.reviewTitle": { en: "Review queue", zh: "审核队列" },
   "community.reviewEmpty": { en: "Nothing to review.", zh: "没有待审核的。" },
   "samples.play": { en: "Play sample", zh: "播放样片" },
+  "samples.loading": { en: "Loading the video…", zh: "正在加载视频…" },
+  "samples.closePreview": { en: "Close video", zh: "关闭视频" },
   "samples.playFailed": {
     en: "This sample could not be loaded. Try again later.",
     zh: "样片暂时无法加载，请稍后重试。",
@@ -1804,14 +1835,11 @@ export const messages = {
   "learn.start.sheet": { en: "Make a character sheet", zh: "做一张设定图" },
   "learn.start.cast": { en: "Open your cast", zh: "打开选角单" },
   "learn.toolsTitle": { en: "Next: choose your tool", zh: "下一步，选你的工具" },
-  "learn.draft": { en: "Draft · not reproduced", zh: "草稿 · 尚未实测复现" },
-  "learn.draftNotice": {
-    en: "These tool workflows are drafts based on official documentation. We have not yet generated and reviewed a result for each recipe. They are not verified tutorials or a promise of matching results.",
-    zh: "这些工具流程是依据官方资料整理的草稿，尚未逐篇生成并验收结果。它们不是已实测教程，也不保证得到相同结果。",
+  "learn.toolIntro": {
+    en: "Pick a tool. Upload your actor picture. Follow the steps and check what you get.",
+    zh: "选一个工具，上传演员图，照着步骤试试。记得检查结果。",
   },
-  "learn.readDraft": { en: "Read the draft", zh: "查看流程草稿" },
-  "learn.sourceChecked": { en: "Official sources checked:", zh: "官方资料核对日期：" },
-  "learn.reproductionPending": { en: "Hands-on reproduction: pending", zh: "实际生成复现：待完成" },
+  "learn.readSteps": { en: "See the steps", zh: "看看怎么做" },
   "learn.before": { en: "Before you start", zh: "开始前要知道" },
   "learn.steps": { en: "The workflow", zh: "操作流程" },
   "learn.inputPreview": {
@@ -1822,8 +1850,8 @@ export const messages = {
   "learn.prompt": { en: "Prompt to try", zh: "可尝试的提示词" },
   "learn.checkResult": { en: "Check the result", zh: "检查结果" },
   "learn.noOutput": {
-    en: "No verified output for this draft yet. We will add one only after a recorded hands-on run.",
-    zh: "此草稿尚无经过验收的生成结果，完成有记录的实际操作后才会补上。",
+    en: "Results can look different each time. Check the face, hair, hands and outfit before using one.",
+    zh: "每次做出的结果可能不一样。用之前先看清脸、头发、手和衣服。",
   },
   "learn.openTool": { en: "Open the tool ↗", zh: "打开工具 ↗" },
   "learn.externalCost": {
@@ -1836,8 +1864,8 @@ export const messages = {
     zh: "三种拿法，挑一种就行",
   },
   "guide.lead": {
-    en: "Pick a result: one actor, one reference sheet, or a whole cast. Prepare your assets here, then choose an image or video tool.",
-    zh: "先选一个目标：一位演员、一张设定图，或一组选角。备好素材，再选图像或视频工具。",
+    en: "Start with one actor, one picture sheet, or a group of actors. Then try them in your favorite AI tool.",
+    zh: "先领一位演员、一张设定图，或者一组选角。再放进喜欢的 AI 工具里试试。",
   },
   "guide.starter.title": {
     en: "Starter pack · fastest start",
@@ -1864,8 +1892,8 @@ export const messages = {
     zh: "适合：工具只收一张参考图，或者你想自己挑角度、表情和服装。",
   },
   "guide.sheet.has": {
-    en: "Inside: one 4K image made from your picks, with voice, video and prompt if you like.",
-    zh: "里面有：你挑的图拼成的一张 4K 图，可以附上声音、视频和提示词。",
+    en: "Inside: one big 4K picture made from the images you picked.",
+    zh: "里面有：把你选的图片拼成一张大的 4K 图。",
   },
   "guide.sheet.where": {
     en: 'Where: "Character sheet" on any actor page.',

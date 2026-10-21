@@ -3,6 +3,7 @@ export { AssetSelectionBar, AssetSelectionProvider, DownloadActorProfile } from 
 export { CreditMarkDownload } from "./CreditMarkDownload";
 export { AssetLibrarySections } from "./AssetLibrarySections";
 export { StarterPackButton } from "./StarterPackButton";
+export { AssetHeroActions } from "./AssetHeroActions";
 export { SeriesJumpButton } from "./SeriesJumpButton";
 export { ImageLightbox } from "./ImageLightbox";
 export { VoiceTile } from "./VoiceTile";

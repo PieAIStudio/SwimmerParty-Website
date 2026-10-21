@@ -32,7 +32,7 @@ export function LanguageMenu({ variant = "rail" }: { variant?: "rail" | "panel" 
   }
   return (
     <GameLanguageMenu
-      className={variant === "rail" ? "relative z-10" : "w-full"}
+      className={variant === "rail" ? "relative z-10" : "sp-language-panel w-full"}
       label={t("common.language")}
       currentLabel={t(active === "zh" ? "common.languageName.zh" : "common.languageName.en")}
       value={active}

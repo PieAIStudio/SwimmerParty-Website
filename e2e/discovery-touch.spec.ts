@@ -14,6 +14,7 @@ test("A5 touch and keyboard operate the shared UIKit checkbox without hidden con
   try {
     const page = await context.newPage();
     await page.goto("/en/actors?gender=female");
+    await page.getByRole("button", { name: "More filters" }).click();
     await page.locator("#actor-video label").tap();
     await expect(page.locator("#actor-video input")).toBeChecked();
     await expect(page).toHaveURL(/video=1/);

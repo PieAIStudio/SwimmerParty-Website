@@ -34,6 +34,13 @@ export function selectHomeContent<T extends HomeActor>(
     const actor = ready.find((candidate) => candidate.slug === sample.slug);
     return actor && sample.video ? [{ actor, sample }] : [];
   });
+  // Homepage: each actor appears once; their other clips live on the Samples page.
+  const shownActors = new Set<string>();
+  const uniquePlayable = playable.filter(({ actor }) => {
+    if (shownActors.has(actor.slug)) return false;
+    shownActors.add(actor.slug);
+    return true;
+  });
   const updates = actors
     .filter((actor) => actor.versionDate && actor.versionNote)
     .slice()
@@ -43,8 +50,8 @@ export function selectHomeContent<T extends HomeActor>(
     ready,
     newFaces,
     featuredFaces,
-    hero: playable[0] ?? null,
-    featured: playable.slice(1, 3),
+    hero: uniquePlayable[0] ?? null,
+    featured: uniquePlayable.slice(1, 3),
     updates,
   };
 }

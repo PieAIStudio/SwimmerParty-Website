@@ -57,7 +57,7 @@ export async function AssetLibrarySections({
             key={slot.slot}
             data-asset-slot={slot.slot}
             data-delivered="false"
-            className={`relative flex items-center justify-center overflow-hidden rounded-[var(--game-ui-radius-card)] bg-muted p-3 text-center ${fullBody ? "aspect-2/3" : "aspect-square"}`}
+            className={`relative flex items-center justify-center rounded-[var(--game-ui-radius-card)] bg-muted p-3 text-center ${fullBody ? "aspect-2/3" : "aspect-square"}`}
           >
             {fullBody ? (
               <Mannequin className="absolute inset-0 h-full w-full opacity-[0.08]" />
@@ -91,7 +91,7 @@ export async function AssetLibrarySections({
           <section
             id={`series-${series.id}`}
             key={series.id}
-            className="sp-section scroll-mt-40"
+            className="sp-section scroll-mt-52"
             data-asset-series={series.id}
           >
             <div className="flex flex-wrap items-start justify-between gap-4">
@@ -130,7 +130,7 @@ export async function AssetLibrarySections({
         );
       })}
       {voiceSlots.length ? (
-        <section id="series-voice" className="sp-section scroll-mt-40">
+        <section id="series-voice" className="sp-section scroll-mt-52">
           <h2 className="sp-title">{t("assets.series.voice")}</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {voiceSlots.map((slot) => {
@@ -149,7 +149,7 @@ export async function AssetLibrarySections({
         </section>
       ) : null}
       {hasVideo ? (
-        <section id="series-video" className="sp-section scroll-mt-40">
+        <section id="series-video" className="sp-section scroll-mt-52">
           <h2 className="sp-title">{t("assets.series.video")}</h2>
           <p className="sp-small mt-3 max-w-2xl text-muted-foreground">{t("assets.videoNote")}</p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

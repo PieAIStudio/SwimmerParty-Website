@@ -6,7 +6,7 @@ import { LICENSE, LICENSE_RULES } from "../../content/license.ts";
 import { listSeries } from "./asset-series.ts";
 import { SITE } from "../../content/site.ts";
 import { characterProfile } from "./asset-profile.ts";
-import { assetFilename, MAX_BUNDLE_ITEMS, SignInRequired } from "./downloads.ts";
+import { assetFilename, SignInRequired } from "./downloads.ts";
 import { zipBlob } from "../../lib/browser-files.ts";
 import { loadSignedImages } from "./signed-images.ts";
 import { selectModelAssets, veoPlan } from "./export-plan.ts";
@@ -34,8 +34,7 @@ function ensureActive(signal: AbortSignal) {
 
 export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; filename: string }> {
   const { actor, assets, selected, signal } = input;
-  if (!selected.length || selected.length > MAX_BUNDLE_ITEMS)
-    throw new Error("Invalid export selection");
+  if (!selected.length || selected.length > 128) throw new Error("Invalid export selection");
   const veo =
     input.format === "model" && input.target === "veo" ? veoPlan(selected, assets.items) : null;
   if (input.format === "model" && input.target === "veo" && !veo)
@@ -44,12 +43,19 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
     input.format === "model"
       ? veo
         ? veo.items
-        : selectModelAssets(selected, input.target as "gpt-image" | "seedance")
+        : selectModelAssets(
+            selected.filter((item) => item.kind === "image"),
+            input.target as "gpt-image" | "seedance",
+          )
       : selected;
   ensureActive(signal);
   const images = await loadSignedImages(
     actor.slug,
-    items.map((item) => ({ slot: item.slot, filename: assetFilename(actor.slug, item) })),
+    items.map((item) => ({
+      slot: item.slot,
+      filename: assetFilename(actor.slug, item),
+      kind: item.kind === "voice" ? ("audio" as const) : ("image" as const),
+    })),
     { signal, maxBytes: 256 * 1024 * 1024, onProgress: input.onProgress },
   );
   const blobs = new Map(images.map((item) => [item.slot, item.blob]));
@@ -92,7 +98,7 @@ export async function exportPack(input: ExportRequest): Promise<{ blob: Blob; fi
   async function add(filename: string, blob: Blob, description: string) {
     ensureActive(signal);
     files[filename] = new Uint8Array(await blob.arrayBuffer());
-    descriptions.push(`Image ${descriptions.length + 1} (${filename}): ${description}`);
+    descriptions.push(`File ${descriptions.length + 1} (${filename}): ${description}`);
   }
   if (veo) {
     await add(
