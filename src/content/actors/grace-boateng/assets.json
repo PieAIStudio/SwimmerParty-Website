@@ -1,0 +1,1826 @@
+{
+  "slug": "grace-boateng",
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Everyday wear",
+        "zh": "日常装"
+      },
+      "prompt": "Clean everyday trader outfit: plain cobalt-blue overshirt open over a white crew-neck T-shirt, straight clay-orange trousers, flat cream low-top shoes. Preserve her natural afro puff, deep brown skin and tooth gap. No earrings, jewelry, branding or text.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Everyday portrait",
+            "zh": "日常装近景"
+          },
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
+        },
+        {
+          "key": "show-sample",
+          "label": {
+            "en": "Showing a sample",
+            "zh": "展示样品"
+          },
+          "direction": "full body at a three-quarter angle, holding one small plain unlabelled fabric pouch in one hand and displaying it with the other, bright natural smile"
+        },
+        {
+          "key": "explain-price",
+          "label": {
+            "en": "Explaining an offer",
+            "zh": "介绍报价"
+          },
+          "direction": "full body at a three-quarter angle, one open palm gesturing as she speaks, the other hand holding a plain small notebook, lively convincing face"
+        },
+        {
+          "key": "livestream-phone",
+          "label": {
+            "en": "Livestream phone",
+            "zh": "直播说话"
+          },
+          "direction": "full body standing at a three-quarter angle, holding a plain unbranded phone naturally at chest height, speaking with a bright gap-toothed smile"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 979126,
+      "sha256": "54b5ed8bc7df987c73e40ee1f9baf327f6d0fc6595f25afd66351894000f5d12",
+      "sourceSha256": "54b5ed8bc7df987c73e40ee1f9baf327f6d0fc6595f25afd66351894000f5d12",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9851222104144527,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/54b5ed8bc7df987c/grace-boateng__turnaround__front__v2.png",
+      "preview": "/media/assets/grace-boateng/turnaround.front.webp",
+      "thumb": "/media/assets/grace-boateng/turnaround.front.thumb.webp",
+      "large": "/media/assets/grace-boateng/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6607224575301649,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 836672,
+      "sha256": "9b085c5372c5266cc965eeb498bc29063f282027122ec91f35c21a109bf76d77",
+      "sourceSha256": "9b085c5372c5266cc965eeb498bc29063f282027122ec91f35c21a109bf76d77",
+      "bbox": {
+        "left": 0.057385759829968117,
+        "top": 0,
+        "right": 0.9766206163655685,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "grace-boateng/9b085c5372c5266c/grace-boateng__turnaround__three-quarter__v2.png",
+      "preview": "/media/assets/grace-boateng/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/grace-boateng/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7038285138989876,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 589790,
+      "sha256": "f4f97613930ba0b54d371c084b81b2dbe28ad0b4afe612e3fec39ca4aad975bd",
+      "sourceSha256": "f4f97613930ba0b54d371c084b81b2dbe28ad0b4afe612e3fec39ca4aad975bd",
+      "bbox": {
+        "left": 0.27948990435706694,
+        "top": 0,
+        "right": 0.8703506907545164,
+        "bottom": 0.9736842105263158
+      },
+      "format": "png",
+      "object": "grace-boateng/f4f97613930ba0b5/grace-boateng__turnaround__side__v2.png",
+      "preview": "/media/assets/grace-boateng/turnaround.side.webp",
+      "thumb": "/media/assets/grace-boateng/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8016209977169763,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 942210,
+      "sha256": "54352988da6f1fe90efb607ec228c00c79eccad42cbf205e2707c6e3adf69d4f",
+      "sourceSha256": "54352988da6f1fe90efb607ec228c00c79eccad42cbf205e2707c6e3adf69d4f",
+      "bbox": {
+        "left": 0.07013815090329437,
+        "top": 0,
+        "right": 0.9543039319872476,
+        "bottom": 0.9892344497607656
+      },
+      "format": "png",
+      "object": "grace-boateng/54352988da6f1fe9/grace-boateng__turnaround__back__v2.png",
+      "preview": "/media/assets/grace-boateng/turnaround.back.webp",
+      "thumb": "/media/assets/grace-boateng/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6822071602540308,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 953385,
+      "sha256": "ff861afa0c67785b7969f8e2d3409555a7cd6020768da60795ef70a7a8c32f79",
+      "sourceSha256": "ff861afa0c67785b7969f8e2d3409555a7cd6020768da60795ef70a7a8c32f79",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9617428267800212,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/ff861afa0c67785b/grace-boateng__turnaround__back-three-quarter-left__v2.png",
+      "preview": "/media/assets/grace-boateng/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/grace-boateng/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6861363509246501,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 929225,
+      "sha256": "7a18cef28fc4d41dfcfe39d8067bab87bc9ae040ccb13f9e71845b09ec045bd1",
+      "sourceSha256": "7a18cef28fc4d41dfcfe39d8067bab87bc9ae040ccb13f9e71845b09ec045bd1",
+      "bbox": {
+        "left": 0.2263549415515409,
+        "top": 0,
+        "right": 0.9574920297555791,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "grace-boateng/7a18cef28fc4d41d/grace-boateng__turnaround__back-three-quarter-right__v2.png",
+      "preview": "/media/assets/grace-boateng/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/grace-boateng/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6860778770421367,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1188,
+      "height": 1324,
+      "bytes": 1595551,
+      "sha256": "e74345b4a242a5df674235692d397cc0f346f6d721d7519d5a3a2322319d0335",
+      "sourceSha256": "e74345b4a242a5df674235692d397cc0f346f6d721d7519d5a3a2322319d0335",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9814814814814815,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/e74345b4a242a5df/grace-boateng__face__front__v2.png",
+      "preview": "/media/assets/grace-boateng/face.front.webp",
+      "thumb": "/media/assets/grace-boateng/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44196878147029206,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1188,
+      "height": 1324,
+      "bytes": 1494298,
+      "sha256": "ff322191deb9256850613b1f507a2b21cbd115a90f4b000feb0deefed190d922",
+      "sourceSha256": "ff322191deb9256850613b1f507a2b21cbd115a90f4b000feb0deefed190d922",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9848484848484849,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/ff322191deb92568/grace-boateng__face__three-quarter__v2.png",
+      "preview": "/media/assets/grace-boateng/face.three-quarter.webp",
+      "thumb": "/media/assets/grace-boateng/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45646546024189527,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1837901,
+      "sha256": "57293a5b1ce46a9ef18a675ac890b5ba3785512e3cafd69e4c56311fe3ed11bd",
+      "sourceSha256": "57293a5b1ce46a9ef18a675ac890b5ba3785512e3cafd69e4c56311fe3ed11bd",
+      "bbox": {
+        "left": 0.04675876726886291,
+        "top": 0.028110047846889953,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/57293a5b1ce46a9e/grace-boateng__face__side__v2.png",
+      "preview": "/media/assets/grace-boateng/face.side.webp",
+      "thumb": "/media/assets/grace-boateng/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3929838968012244,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1189,
+      "height": 1323,
+      "bytes": 1625663,
+      "sha256": "51ea9cb4963327be7cf4caa94492dba35fd8932c0dd032fa84b238eb72705fbd",
+      "sourceSha256": "51ea9cb4963327be7cf4caa94492dba35fd8932c0dd032fa84b238eb72705fbd",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9991589571068125,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/51ea9cb4963327be/grace-boateng__face__three-quarter-left__v2.png",
+      "preview": "/media/assets/grace-boateng/face.three-quarter-left.webp",
+      "thumb": "/media/assets/grace-boateng/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4260508427275218,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2134886,
+      "sha256": "dac9c49c9c775f57a94590fd86919b99c7a5420ca6ca4edc13c874e41ca17e21",
+      "sourceSha256": "dac9c49c9c775f57a94590fd86919b99c7a5420ca6ca4edc13c874e41ca17e21",
+      "bbox": {
+        "left": 0,
+        "top": 0.016276041666666668,
+        "right": 0.9609375,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/dac9c49c9c775f57/grace-boateng__face__side-right__v2.png",
+      "preview": "/media/assets/grace-boateng/face.side-right.webp",
+      "thumb": "/media/assets/grace-boateng/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3738396962483724,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1943297,
+      "sha256": "80cccc80a40eae2c3666e644318ebcf58c035ba772d756b9cb465d4dafe6dc77",
+      "sourceSha256": "80cccc80a40eae2c3666e644318ebcf58c035ba772d756b9cb465d4dafe6dc77",
+      "bbox": {
+        "left": 0,
+        "top": 0.019736842105263157,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/80cccc80a40eae2c/grace-boateng__face__up__v2.png",
+      "preview": "/media/assets/grace-boateng/face.up.webp",
+      "thumb": "/media/assets/grace-boateng/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2672980998530526,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2045205,
+      "sha256": "a6a424395fb1cdf32afe55a991965d99e62dc1266cf834ccd05349601d9be80d",
+      "sourceSha256": "a6a424395fb1cdf32afe55a991965d99e62dc1266cf834ccd05349601d9be80d",
+      "bbox": {
+        "left": 0,
+        "top": 0.011961722488038277,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/a6a424395fb1cdf3/grace-boateng__face__down__v2.png",
+      "preview": "/media/assets/grace-boateng/face.down.webp",
+      "thumb": "/media/assets/grace-boateng/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2664553132420463,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1188,
+      "height": 1324,
+      "bytes": 1516127,
+      "sha256": "7184beb3ba9357a5c83478edc3b444ca899545b52d4f52aaf68471919c571e94",
+      "sourceSha256": "7184beb3ba9357a5c83478edc3b444ca899545b52d4f52aaf68471919c571e94",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9831649831649831,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/7184beb3ba9357a5/grace-boateng__expression__neutral__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.neutral.webp",
+      "thumb": "/media/assets/grace-boateng/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4391167465185592,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1188,
+      "height": 1324,
+      "bytes": 1501113,
+      "sha256": "ec3a6f7f84fcaade78fff7ae336633e66212a832856c0f3394b5c8e9cd150a02",
+      "sourceSha256": "ec3a6f7f84fcaade78fff7ae336633e66212a832856c0f3394b5c8e9cd150a02",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9882154882154882,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/ec3a6f7f84fcaade/grace-boateng__expression__smile__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.smile.webp",
+      "thumb": "/media/assets/grace-boateng/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4449066444912366,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1188,
+      "height": 1324,
+      "bytes": 1598902,
+      "sha256": "541f5a3f51fc82b2a97d80249b399aff9951db5d97eb130c443cd0d306d99c22",
+      "sourceSha256": "541f5a3f51fc82b2a97d80249b399aff9951db5d97eb130c443cd0d306d99c22",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/541f5a3f51fc82b2/grace-boateng__expression__laugh__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.laugh.webp",
+      "thumb": "/media/assets/grace-boateng/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4140168045001882,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1188,
+      "height": 1324,
+      "bytes": 1536875,
+      "sha256": "895049ba7b3071968e87bab15b53f4b05ce57ae53f52fc8d981f4d55ef65643d",
+      "sourceSha256": "895049ba7b3071968e87bab15b53f4b05ce57ae53f52fc8d981f4d55ef65643d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9747474747474747,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/895049ba7b307196/grace-boateng__expression__sad__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.sad.webp",
+      "thumb": "/media/assets/grace-boateng/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4341310893425697,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2005934,
+      "sha256": "9189a14a1e0416ba39671a0a692a2a905915e6aee55eaf7917247085c0ee3096",
+      "sourceSha256": "9189a14a1e0416ba39671a0a692a2a905915e6aee55eaf7917247085c0ee3096",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/9189a14a1e0416ba/grace-boateng__expression__cry__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.cry.webp",
+      "thumb": "/media/assets/grace-boateng/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2571903807920923,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2032736,
+      "sha256": "e0319e9eec70b74021de7f7fcb570c7c0ca010bbcbb08056fbc45667a44a2f62",
+      "sourceSha256": "e0319e9eec70b74021de7f7fcb570c7c0ca010bbcbb08056fbc45667a44a2f62",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/e0319e9eec70b740/grace-boateng__expression__annoyed__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.annoyed.webp",
+      "thumb": "/media/assets/grace-boateng/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25493023811581894,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2033080,
+      "sha256": "a3a5e9360f322643421c737245600f298fff9826d8c192b0062fc13340330898",
+      "sourceSha256": "a3a5e9360f322643421c737245600f298fff9826d8c192b0062fc13340330898",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/a3a5e9360f322643/grace-boateng__expression__angry__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.angry.webp",
+      "thumb": "/media/assets/grace-boateng/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25324720723652433,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2247697,
+      "sha256": "644eea75e7b4356f869ef1ed339c49c49b5d5b8d14acb5e0beade15d7649e6ea",
+      "sourceSha256": "644eea75e7b4356f869ef1ed339c49c49b5d5b8d14acb5e0beade15d7649e6ea",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/644eea75e7b4356f/grace-boateng__expression__surprised__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.surprised.webp",
+      "thumb": "/media/assets/grace-boateng/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3192755381266276,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2239106,
+      "sha256": "8656dda09b0c643d19c17e4b269cd71ee8de36996b8c897ea76a2b7c59009874",
+      "sourceSha256": "8656dda09b0c643d19c17e4b269cd71ee8de36996b8c897ea76a2b7c59009874",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/8656dda09b0c643d/grace-boateng__expression__scared__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.scared.webp",
+      "thumb": "/media/assets/grace-boateng/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2398541457982702,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1967560,
+      "sha256": "4ec80f04b2740512cf27a57fb35c0e3a63c09d34208633e29ab0a911c6c4e861",
+      "sourceSha256": "4ec80f04b2740512cf27a57fb35c0e3a63c09d34208633e29ab0a911c6c4e861",
+      "bbox": {
+        "left": 0,
+        "top": 0.0017942583732057417,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/4ec80f04b2740512/grace-boateng__expression__disgusted__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.disgusted.webp",
+      "thumb": "/media/assets/grace-boateng/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2722073636414483,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1188,
+      "height": 1324,
+      "bytes": 1697694,
+      "sha256": "3cb6caeb4f5d467cbd32fbf324065c6d3cad9a5cd28c738294f379bb2c5ca729",
+      "sourceSha256": "3cb6caeb4f5d467cbd32fbf324065c6d3cad9a5cd28c738294f379bb2c5ca729",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9444444444444444,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/3cb6caeb4f5d467c/grace-boateng__expression__embarrassed__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.embarrassed.webp",
+      "thumb": "/media/assets/grace-boateng/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3914046049620068,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1188,
+      "height": 1324,
+      "bytes": 1583257,
+      "sha256": "ff5363df5bd8e316068783fb4db7c6fd0a36609e10da2cf716090c54e9e3b1ab",
+      "sourceSha256": "ff5363df5bd8e316068783fb4db7c6fd0a36609e10da2cf716090c54e9e3b1ab",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9747474747474747,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/ff5363df5bd8e316/grace-boateng__expression__tired__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.tired.webp",
+      "thumb": "/media/assets/grace-boateng/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.41271730395597467,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1188,
+      "height": 1324,
+      "bytes": 1568378,
+      "sha256": "b5c8a4a48fc16b557280b60c7d9b8d00b6e374da67265c19f86944672e4d447a",
+      "sourceSha256": "b5c8a4a48fc16b557280b60c7d9b8d00b6e374da67265c19f86944672e4d447a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9646464646464646,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/b5c8a4a48fc16b55/grace-boateng__expression__speaking__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.speaking.webp",
+      "thumb": "/media/assets/grace-boateng/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4305905225467159,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1188,
+      "height": 1324,
+      "bytes": 1516338,
+      "sha256": "62b1e70cdf815f808039d5f874ad4ef37d85ee7fd02b5cfe1d916dfaab1d16b0",
+      "sourceSha256": "62b1e70cdf815f808039d5f874ad4ef37d85ee7fd02b5cfe1d916dfaab1d16b0",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9579124579124579,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/62b1e70cdf815f80/grace-boateng__expression__eyes-closed__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.eyes-closed.webp",
+      "thumb": "/media/assets/grace-boateng/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4359506444098589,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2179493,
+      "sha256": "c36b7311ce9954f579687586a163500e0d91a1ab6d640f4fa1f491f78bfcc4aa",
+      "sourceSha256": "c36b7311ce9954f579687586a163500e0d91a1ab6d640f4fa1f491f78bfcc4aa",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/c36b7311ce9954f5/grace-boateng__expression__worried__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.worried.webp",
+      "thumb": "/media/assets/grace-boateng/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2982381184895833,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1188,
+      "height": 1324,
+      "bytes": 1524332,
+      "sha256": "3b46e5bd21a1220528119cbaaf55f3a82a4806e9d28f337a679e9ce0b2634437",
+      "sourceSha256": "3b46e5bd21a1220528119cbaaf55f3a82a4806e9d28f337a679e9ce0b2634437",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9713804713804713,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/3b46e5bd21a12205/grace-boateng__expression__skeptical__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.skeptical.webp",
+      "thumb": "/media/assets/grace-boateng/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4340128373361002,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2039291,
+      "sha256": "66757247fa065ab48ef3e8545daa0ca0ad406f3c85ba1a740d4b2fbedcc79fab",
+      "sourceSha256": "66757247fa065ab48ef3e8545daa0ca0ad406f3c85ba1a740d4b2fbedcc79fab",
+      "bbox": {
+        "left": 0,
+        "top": 0.023923444976076555,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/66757247fa065ab4/grace-boateng__expression__smug__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.smug.webp",
+      "thumb": "/media/assets/grace-boateng/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.28624427337302777,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2212948,
+      "sha256": "e1a7732de33847f71fc5b86b1dd8d4a1426ac5f0061d23a5c5cb659349fe6cf3",
+      "sourceSha256": "e1a7732de33847f71fc5b86b1dd8d4a1426ac5f0061d23a5c5cb659349fe6cf3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/e1a7732de33847f7/grace-boateng__expression__contempt__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.contempt.webp",
+      "thumb": "/media/assets/grace-boateng/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30118560791015625,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1787501,
+      "sha256": "a6f394d120853ab84958e824293233082f17b9b7adced17105e8c68688bcff91",
+      "sourceSha256": "a6f394d120853ab84958e824293233082f17b9b7adced17105e8c68688bcff91",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/a6f394d120853ab8/grace-boateng__expression__confused__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.confused.webp",
+      "thumb": "/media/assets/grace-boateng/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.35340279861086393,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1155,
+      "height": 1362,
+      "bytes": 1610713,
+      "sha256": "6565d48abb72a993c6e12f330b29a0470f5dc5cd780b6d43536a1691b4ffc925",
+      "sourceSha256": "6565d48abb72a993c6e12f330b29a0470f5dc5cd780b6d43536a1691b4ffc925",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.987012987012987,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/6565d48abb72a993/grace-boateng__expression__thinking__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.thinking.webp",
+      "thumb": "/media/assets/grace-boateng/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4175188003381836,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 940,
+      "height": 1672,
+      "bytes": 1871430,
+      "sha256": "c1ab874131d617263d59f95dae740e781889a01c66aa198cb6bf8ee559db0d1e",
+      "sourceSha256": "c1ab874131d617263d59f95dae740e781889a01c66aa198cb6bf8ee559db0d1e",
+      "bbox": {
+        "left": 0,
+        "top": 0.0011961722488038277,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/c1ab874131d61726/grace-boateng__expression__determined__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.determined.webp",
+      "thumb": "/media/assets/grace-boateng/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31373689300620994,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2160066,
+      "sha256": "b25ba19210a7ec8e2b3375cdf8ac98b8ff0717c40b161409f862b792088326bf",
+      "sourceSha256": "b25ba19210a7ec8e2b3375cdf8ac98b8ff0717c40b161409f862b792088326bf",
+      "bbox": {
+        "left": 0,
+        "top": 0.046052631578947366,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/b25ba19210a7ec8e/grace-boateng__expression__shy__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.shy.webp",
+      "thumb": "/media/assets/grace-boateng/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2663504416049301,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1993869,
+      "sha256": "94ca8b4f07fc6fb0586edb78518cba7bdbaa5370836e8728eed074e420aa5917",
+      "sourceSha256": "94ca8b4f07fc6fb0586edb78518cba7bdbaa5370836e8728eed074e420aa5917",
+      "bbox": {
+        "left": 0,
+        "top": 0.016148325358851676,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/94ca8b4f07fc6fb0/grace-boateng__expression__pain__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.pain.webp",
+      "thumb": "/media/assets/grace-boateng/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2627403149454159,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1944907,
+      "sha256": "2e9f80381db2690c9235328c803e2f2cfe8bb38b13532c5bc408c7830038b492",
+      "sourceSha256": "2e9f80381db2690c9235328c803e2f2cfe8bb38b13532c5bc408c7830038b492",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/2e9f80381db2690c/grace-boateng__expression__sleepy__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.sleepy.webp",
+      "thumb": "/media/assets/grace-boateng/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2633695447681129,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1959692,
+      "sha256": "632c99bcb6ef0cdf82f81023bbef7c1cfd98678e9b318ff7c07a7edaa95dbd50",
+      "sourceSha256": "632c99bcb6ef0cdf82f81023bbef7c1cfd98678e9b318ff7c07a7edaa95dbd50",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/632c99bcb6ef0cdf/grace-boateng__expression__awkward-smile__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.awkward-smile.webp",
+      "thumb": "/media/assets/grace-boateng/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25832108771590845,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2031744,
+      "sha256": "00d2e5858e010381f5486db5df79aa385ea6aaa696bba3724fd2fb9dc4c186f4",
+      "sourceSha256": "00d2e5858e010381f5486db5df79aa385ea6aaa696bba3724fd2fb9dc4c186f4",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/00d2e5858e010381/grace-boateng__expression__deadpan__v2.png",
+      "preview": "/media/assets/grace-boateng/expression.deadpan.webp",
+      "thumb": "/media/assets/grace-boateng/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25458130157777786,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1024009,
+      "sha256": "c70acebac37590c17948891ac2f0fb85cdb94f41cf56563534726592d5028f5e",
+      "sourceSha256": "c70acebac37590c17948891ac2f0fb85cdb94f41cf56563534726592d5028f5e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9415515409139213,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/c70acebac37590c1/grace-boateng__wardrobe-personal__front__v2.png",
+      "preview": "/media/assets/grace-boateng/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/grace-boateng/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.659450014999822,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1028415,
+      "sha256": "16faa6e7d7a5b42ce371ba74298d9f96ab202de2347e5a5af5e463c141e19ba5",
+      "sourceSha256": "16faa6e7d7a5b42ce371ba74298d9f96ab202de2347e5a5af5e463c141e19ba5",
+      "bbox": {
+        "left": 0.061636556854410204,
+        "top": 0,
+        "right": 0.9681190223166843,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/16faa6e7d7a5b42c/grace-boateng__wardrobe-personal__three-quarter__v2.png",
+      "preview": "/media/assets/grace-boateng/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/grace-boateng/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6608596607375553,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 709961,
+      "sha256": "d6d950551ed9629222185f42703857e5d28eaf8239f494358539d30996e7c5e1",
+      "sourceSha256": "d6d950551ed9629222185f42703857e5d28eaf8239f494358539d30996e7c5e1",
+      "bbox": {
+        "left": 0.14771519659936239,
+        "top": 0.006578947368421052,
+        "right": 0.9160467587672688,
+        "bottom": 0.9832535885167464
+      },
+      "format": "png",
+      "object": "grace-boateng/d6d950551ed96292/grace-boateng__wardrobe-personal__side__v2.png",
+      "preview": "/media/assets/grace-boateng/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/grace-boateng/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7717719874509964,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 989317,
+      "sha256": "a1b2c4eeb2beb8c052a88bb9bf14a6f4e3f5412353fb5b9bd106935432a30780",
+      "sourceSha256": "a1b2c4eeb2beb8c052a88bb9bf14a6f4e3f5412353fb5b9bd106935432a30780",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.0029904306220095694,
+        "right": 0.9638682252922423,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "grace-boateng/a1b2c4eeb2beb8c0/grace-boateng__wardrobe-personal__back__v2.png",
+      "preview": "/media/assets/grace-boateng/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/grace-boateng/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6707666180231759,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2078408,
+      "sha256": "43e63fd59a58a57183a54e310f62cf2bef0e06a951f1bc73ce806b7f5cd349d4",
+      "sourceSha256": "43e63fd59a58a57183a54e310f62cf2bef0e06a951f1bc73ce806b7f5cd349d4",
+      "bbox": {
+        "left": 0,
+        "top": 0.006578947368421052,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/43e63fd59a58a571/grace-boateng__wardrobe-personal__portrait__v2.png",
+      "preview": "/media/assets/grace-boateng/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/grace-boateng/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.268173301333713,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.show-sample",
+      "series": "wardrobe",
+      "key": "show-sample",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1008481,
+      "sha256": "5b2c45166a248eeb00a9e96f834a56ab0c49014882b7f8b296efc2db2f65b8b6",
+      "sourceSha256": "5b2c45166a248eeb00a9e96f834a56ab0c49014882b7f8b296efc2db2f65b8b6",
+      "bbox": {
+        "left": 0.15834218916046758,
+        "top": 0.007177033492822967,
+        "right": 0.924548352816153,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/5b2c45166a248eeb/grace-boateng__wardrobe-personal__show-sample__v2.png",
+      "preview": "/media/assets/grace-boateng/wardrobe.personal.show-sample.webp",
+      "thumb": "/media/assets/grace-boateng/wardrobe.personal.show-sample.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6685630424723774,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.explain-price",
+      "series": "wardrobe",
+      "key": "explain-price",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 978485,
+      "sha256": "356e9f9aa19ce656c0ee225869d01dee9a2a468e4cb66b6d90dbc3e4f28c07c2",
+      "sourceSha256": "356e9f9aa19ce656c0ee225869d01dee9a2a468e4cb66b6d90dbc3e4f28c07c2",
+      "bbox": {
+        "left": 0,
+        "top": 0.0005980861244019139,
+        "right": 0.9851222104144527,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/356e9f9aa19ce656/grace-boateng__wardrobe-personal__explain-price__v2.png",
+      "preview": "/media/assets/grace-boateng/wardrobe.personal.explain-price.webp",
+      "thumb": "/media/assets/grace-boateng/wardrobe.personal.explain-price.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6716227519334517,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.livestream-phone",
+      "series": "wardrobe",
+      "key": "livestream-phone",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1018309,
+      "sha256": "0f0f65e538e191c46741a6fcf7ada2a1a9a36ff3cf1e2c799336dfabde0bfe90",
+      "sourceSha256": "0f0f65e538e191c46741a6fcf7ada2a1a9a36ff3cf1e2c799336dfabde0bfe90",
+      "bbox": {
+        "left": 0,
+        "top": 0.0011961722488038277,
+        "right": 0.9617428267800212,
+        "bottom": 0.9916267942583732
+      },
+      "format": "png",
+      "object": "grace-boateng/0f0f65e538e191c4/grace-boateng__wardrobe-personal__livestream-phone__v2.png",
+      "preview": "/media/assets/grace-boateng/wardrobe.personal.livestream-phone.webp",
+      "thumb": "/media/assets/grace-boateng/wardrobe.personal.livestream-phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.676052148533831,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 882492,
+      "sha256": "5f1a68b8207c7b8511c87867154b14d1f2c807a0d279eaa53856362e009a80ba",
+      "sourceSha256": "5f1a68b8207c7b8511c87867154b14d1f2c807a0d279eaa53856362e009a80ba",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0,
+        "right": 0.9415515409139213,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "grace-boateng/5f1a68b8207c7b85/grace-boateng__pose__walk__v2.png",
+      "preview": "/media/assets/grace-boateng/pose.walk.webp",
+      "thumb": "/media/assets/grace-boateng/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7096822580071084,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 924555,
+      "sha256": "795e788fae1e919a067445dab7d0b3b491bce494c4c7196b8894fe56a78b229f",
+      "sourceSha256": "795e788fae1e919a067445dab7d0b3b491bce494c4c7196b8894fe56a78b229f",
+      "bbox": {
+        "left": 0.04357066950053135,
+        "top": 0,
+        "right": 0.9394261424017003,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "grace-boateng/795e788fae1e919a/grace-boateng__pose__run__v2.png",
+      "preview": "/media/assets/grace-boateng/pose.run.webp",
+      "thumb": "/media/assets/grace-boateng/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6936368975283345,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1165401,
+      "sha256": "bad56513bb5f4aedac7eb28fcc89516629af9285ddb0f4442f0c4bc398e814b4",
+      "sourceSha256": "bad56513bb5f4aedac7eb28fcc89516629af9285ddb0f4442f0c4bc398e814b4",
+      "bbox": {
+        "left": 0,
+        "top": 0.009569377990430622,
+        "right": 0.9851222104144527,
+        "bottom": 0.9868421052631579
+      },
+      "format": "png",
+      "object": "grace-boateng/bad56513bb5f4aed/grace-boateng__pose__sit__v2.png",
+      "preview": "/media/assets/grace-boateng/pose.sit.webp",
+      "thumb": "/media/assets/grace-boateng/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6216663531110648,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 819280,
+      "sha256": "e98654632f492d5455a1c33e5a2939695e176146c77f92dd788db67e5e213fd8",
+      "sourceSha256": "e98654632f492d5455a1c33e5a2939695e176146c77f92dd788db67e5e213fd8",
+      "bbox": {
+        "left": 0.15621679064824653,
+        "top": 0.0017942583732057417,
+        "right": 0.8405951115834219,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "grace-boateng/e98654632f492d54/grace-boateng__pose__point__v2.png",
+      "preview": "/media/assets/grace-boateng/pose.point.webp",
+      "thumb": "/media/assets/grace-boateng/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7131722589731986,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 814152,
+      "sha256": "e971bd82e44157f1b1f26ff20818f5ee0ee9a4b11a74143abcabe462c5d48ff5",
+      "sourceSha256": "e971bd82e44157f1b1f26ff20818f5ee0ee9a4b11a74143abcabe462c5d48ff5",
+      "bbox": {
+        "left": 0.03294367693942614,
+        "top": 0.005980861244019139,
+        "right": 0.9681190223166843,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "grace-boateng/e971bd82e44157f1/grace-boateng__pose__arms-crossed__v2.png",
+      "preview": "/media/assets/grace-boateng/pose.arms-crossed.webp",
+      "thumb": "/media/assets/grace-boateng/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7278028057294236,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 863604,
+      "sha256": "c17a482a69e49a735f5957402e4da7fa73fabefae12674181ad2a542393610e3",
+      "sourceSha256": "c17a482a69e49a735f5957402e4da7fa73fabefae12674181ad2a542393610e3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9787460148777896,
+        "bottom": 0.9916217833632556
+      },
+      "format": "png",
+      "object": "grace-boateng/c17a482a69e49a73/grace-boateng__pose__phone__v2.png",
+      "preview": "/media/assets/grace-boateng/pose.phone.webp",
+      "thumb": "/media/assets/grace-boateng/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7032805036342279,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1211,
+      "height": 1299,
+      "bytes": 1423957,
+      "sha256": "502dd5d37f05f9e2c31d816d2c6ce189221ffbc15b4bbc6d1233ea93f629ac47",
+      "sourceSha256": "502dd5d37f05f9e2c31d816d2c6ce189221ffbc15b4bbc6d1233ea93f629ac47",
+      "bbox": {
+        "left": 0,
+        "top": 0.014626635873749037,
+        "right": 0.9867877786952931,
+        "bottom": 0.9630484988452656
+      },
+      "format": "png",
+      "object": "grace-boateng/502dd5d37f05f9e2/grace-boateng__detail__hands__v2.png",
+      "preview": "/media/assets/grace-boateng/detail.hands.webp",
+      "thumb": "/media/assets/grace-boateng/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5343721811035484,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1199,
+      "height": 1312,
+      "bytes": 1646182,
+      "sha256": "8cf1976a59bc8e5ae878edcda33c4469433366c0f69c22bd4de6fedc0fb4da3b",
+      "sourceSha256": "8cf1976a59bc8e5ae878edcda33c4469433366c0f69c22bd4de6fedc0fb4da3b",
+      "bbox": {
+        "left": 0,
+        "top": 0.009908536585365854,
+        "right": 0.9991659716430359,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "grace-boateng/8cf1976a59bc8e5a/grace-boateng__detail__hair-back__v2.png",
+      "preview": "/media/assets/grace-boateng/detail.hair-back.webp",
+      "thumb": "/media/assets/grace-boateng/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.48606053825342255,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1263496,
+      "sha256": "68d64059f7a92bd7ce1e5a0135bc5703b75cacb6d7bc54ca7308a3a4868f2123",
+      "sourceSha256": "68d64059f7a92bd7ce1e5a0135bc5703b75cacb6d7bc54ca7308a3a4868f2123",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/grace-boateng/grace-boateng__voice__intro__v1__68d64059f7a92bd7.wav",
+      "preview": "/api/voice/grace-boateng/intro",
+      "thumb": "/api/voice/grace-boateng/intro",
+      "previewUrl": "/api/voice/grace-boateng/intro",
+      "durationSec": 19.7,
+      "transcript": {
+        "text": "大家好，我叫格蕾丝·博阿滕，今年二十四。老家在加纳，我在浙江义乌长大，平时帮家里做小商品外贸。有人听我说普通话，比看我砍价还吃惊。直播间里货要讲清楚，价也得谈明白，大家下次才肯再来。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1094826,
+      "sha256": "e34ac795fee53d10dfc864d9769ceb8480f305489a162625355200d1518c0163",
+      "sourceSha256": "e34ac795fee53d10dfc864d9769ceb8480f305489a162625355200d1518c0163",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/grace-boateng/grace-boateng__voice__intro-alt__v1__e34ac795fee53d10.wav",
+      "preview": "/api/voice/grace-boateng/intro-alt",
+      "thumb": "/api/voice/grace-boateng/intro-alt",
+      "previewUrl": "/api/voice/grace-boateng/intro-alt",
+      "durationSec": 17.1,
+      "transcript": {
+        "text": "Hi, I'm Grace Boateng. I'm twenty-four, from a Ghanaian family, and I grew up in Yiwu, China. I help with our family's small-goods export business. I like a good bargain, especially on a livestream, but I want customers to understand what they're buying and come back next time."
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 774120,
+      "sha256": "956f27982e950fb5b9889923d434c883a784f3526d0079877d4a9aa6639497ee",
+      "sourceSha256": "956f27982e950fb5b9889923d434c883a784f3526d0079877d4a9aa6639497ee",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/grace-boateng/grace-boateng__voice__chat__v1__956f27982e950fb5.wav",
+      "preview": "/api/voice/grace-boateng/chat",
+      "thumb": "/api/voice/grace-boateng/chat",
+      "previewUrl": "/api/voice/grace-boateng/chat",
+      "durationSec": 12.1,
+      "transcript": {
+        "text": "你先看样品，颜色和尺寸都在这里。要得多我们再谈价，不用一上来就把数字压到底。做生意嘛，这次合适，下次还可以接着做。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 647060,
+      "sha256": "563be2937ec0c6d3a6bc2f50f1a7ff2de4369a72bb90d0beb07144c5ba6925f5",
+      "sourceSha256": "563be2937ec0c6d3a6bc2f50f1a7ff2de4369a72bb90d0beb07144c5ba6925f5",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/grace-boateng/grace-boateng__voice__happy__v1__563be2937ec0c6d3.wav",
+      "preview": "/api/voice/grace-boateng/happy",
+      "thumb": "/api/voice/grace-boateng/happy",
+      "previewUrl": "/api/voice/grace-boateng/happy",
+      "durationSec": 10.1,
+      "transcript": {
+        "text": "成交啦！今天这单谈得真舒服，规格对清楚了，交货时间也赶得上。来，先喝口水，等我把这一条记好，咱们再高兴！"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 721176,
+      "sha256": "8a2b52b9da9f8e2d6df74a0845a6bdf989a2f69d8269e5189d086c8418f6961b",
+      "sourceSha256": "8a2b52b9da9f8e2d6df74a0845a6bdf989a2f69d8269e5189d086c8418f6961b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/grace-boateng/grace-boateng__voice__angry__v1__8a2b52b9da9f8e2d.wav",
+      "preview": "/api/voice/grace-boateng/angry",
+      "thumb": "/api/voice/grace-boateng/angry",
+      "previewUrl": "/api/voice/grace-boateng/angry",
+      "durationSec": 11.2,
+      "transcript": {
+        "text": "等一下，不能拿这个替原来确认的样品。颜色差这么多，你自己看得出来。先把货停住，我们说清楚再发，不能让客人收到才发现。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 820186,
+      "sha256": "df3b0549330d5245f7332872307cd682a51a3c9261f26d642c74577486fa8e72",
+      "sourceSha256": "df3b0549330d5245f7332872307cd682a51a3c9261f26d642c74577486fa8e72",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/grace-boateng/grace-boateng__voice__sad__v1__df3b0549330d5245.wav",
+      "preview": "/api/voice/grace-boateng/sad",
+      "thumb": "/api/voice/grace-boateng/sad",
+      "previewUrl": "/api/voice/grace-boateng/sad",
+      "durationSec": 12.8,
+      "transcript": {
+        "text": "小时候总觉得市场好大，跟着家里人走，一转弯就找不到路。现在我每天在里面忙，有时收摊晚了，还是会想听见他们喊我回家。"
+      },
+      "placeholder": true
+    }
+  ]
+}

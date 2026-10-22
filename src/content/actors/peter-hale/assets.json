@@ -1,0 +1,1826 @@
+{
+  "slug": "peter-hale",
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Everyday wear",
+        "zh": "日常装"
+      },
+      "prompt": "Clean everyday pub-owner outfit: plain tan wool cardigan open over a muted blue button-up shirt, straight charcoal trousers, flat brown leather shoes. Preserve his long white hair and bushy brows. No apron, logos or jewelry.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Everyday portrait",
+            "zh": "日常装近景"
+          },
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
+        },
+        {
+          "key": "polish-glass",
+          "label": {
+            "en": "Polishing a glass",
+            "zh": "擦杯子"
+          },
+          "direction": "full body at a three-quarter angle, polishing one plain empty tumbler with a small clean cloth, relaxed thoughtful face"
+        },
+        {
+          "key": "welcome-guest",
+          "label": {
+            "en": "Welcoming a guest",
+            "zh": "招呼来客"
+          },
+          "direction": "full body at a three-quarter angle, one open hand making a modest welcoming gesture, other arm relaxed, warm understated smile"
+        },
+        {
+          "key": "quiet-seat",
+          "label": {
+            "en": "Quiet seat",
+            "zh": "安静坐姿"
+          },
+          "direction": "full body seated naturally on a plain simple stool, hands resting loosely together over his knees, calm expression"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 772385,
+      "sha256": "3893d845867bdf43ba7c30a4042cf722cdc277516699494f0c990d2b49dc5acc",
+      "sourceSha256": "3893d845867bdf43ba7c30a4042cf722cdc277516699494f0c990d2b49dc5acc",
+      "bbox": {
+        "left": 0,
+        "top": 0.02631578947368421,
+        "right": 0.9415515409139213,
+        "bottom": 0.9605263157894737
+      },
+      "format": "png",
+      "object": "peter-hale/3893d845867bdf43/peter-hale__turnaround__front__v1.png",
+      "preview": "/media/assets/peter-hale/turnaround.front.webp",
+      "thumb": "/media/assets/peter-hale/turnaround.front.thumb.webp",
+      "large": "/media/assets/peter-hale/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7437731670980174,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 747305,
+      "sha256": "348758f72762fedb99e9e832b602e2fa110062ff67f724dc8ce7f2c9e22fd846",
+      "sourceSha256": "348758f72762fedb99e9e832b602e2fa110062ff67f724dc8ce7f2c9e22fd846",
+      "bbox": {
+        "left": 0.19659936238044634,
+        "top": 0.01854066985645933,
+        "right": 0.9787460148777896,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "peter-hale/348758f72762fedb/peter-hale__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/peter-hale/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/peter-hale/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7437051594303118,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 549641,
+      "sha256": "1bc4e9e0fc6003147598c5d3ad5ef79fc5cf76b596ed30906682d65a09c84a34",
+      "sourceSha256": "1bc4e9e0fc6003147598c5d3ad5ef79fc5cf76b596ed30906682d65a09c84a34",
+      "bbox": {
+        "left": 0.1647183846971307,
+        "top": 0.008971291866028708,
+        "right": 0.9681190223166843,
+        "bottom": 0.9808612440191388
+      },
+      "format": "png",
+      "object": "peter-hale/1bc4e9e0fc600314/peter-hale__turnaround__side__v1.png",
+      "preview": "/media/assets/peter-hale/turnaround.side.webp",
+      "thumb": "/media/assets/peter-hale/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8205976793495671,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 887353,
+      "sha256": "8d5dea35c0d23afb63604fa1d497b3f61af31ff784fd0ae128acc99a5c98c314",
+      "sourceSha256": "8d5dea35c0d23afb63604fa1d497b3f61af31ff784fd0ae128acc99a5c98c314",
+      "bbox": {
+        "left": 0.09776833156216791,
+        "top": 0.017942583732057416,
+        "right": 0.9744952178533475,
+        "bottom": 0.972488038277512
+      },
+      "format": "png",
+      "object": "peter-hale/8d5dea35c0d23afb/peter-hale__turnaround__back__v1.png",
+      "preview": "/media/assets/peter-hale/turnaround.back.webp",
+      "thumb": "/media/assets/peter-hale/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6968955453070895,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 929056,
+      "sha256": "fcada79a22a21f6af2d5061cfd7a2b8315f8ebb1ef9d24fa54c0d44ea361ebc9",
+      "sourceSha256": "fcada79a22a21f6af2d5061cfd7a2b8315f8ebb1ef9d24fa54c0d44ea361ebc9",
+      "bbox": {
+        "left": 0.07863974495217853,
+        "top": 0.008971291866028708,
+        "right": 0.9702444208289054,
+        "bottom": 0.9910287081339713
+      },
+      "format": "png",
+      "object": "peter-hale/fcada79a22a21f6a/peter-hale__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/peter-hale/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/peter-hale/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6849020435350767,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 832684,
+      "sha256": "264e9f5e217b5675bf9c47bec206913b24f739b805e89d6b7dad9d204f26b8f1",
+      "sourceSha256": "264e9f5e217b5675bf9c47bec206913b24f739b805e89d6b7dad9d204f26b8f1",
+      "bbox": {
+        "left": 0.04144527098831031,
+        "top": 0.028110047846889953,
+        "right": 0.9681190223166843,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/264e9f5e217b5675/peter-hale__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/peter-hale/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/peter-hale/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7255280445825218,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2139315,
+      "sha256": "dbbe4c942257a38f1f58a7cfe43ee9cb019abb19a67bc4e874071a42f7ed5c01",
+      "sourceSha256": "dbbe4c942257a38f1f58a7cfe43ee9cb019abb19a67bc4e874071a42f7ed5c01",
+      "bbox": {
+        "left": 0,
+        "top": 0.04126794258373206,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/dbbe4c942257a38f/peter-hale__face__front__v1.png",
+      "preview": "/media/assets/peter-hale/face.front.webp",
+      "thumb": "/media/assets/peter-hale/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2717815212361887,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 2133461,
+      "sha256": "ea49fb1d8b9203bb0058b90a0281f1f352b16a204746162a9ab1e1f155059412",
+      "sourceSha256": "ea49fb1d8b9203bb0058b90a0281f1f352b16a204746162a9ab1e1f155059412",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/ea49fb1d8b9203bb/peter-hale__face__three-quarter__v1.png",
+      "preview": "/media/assets/peter-hale/face.three-quarter.webp",
+      "thumb": "/media/assets/peter-hale/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2797659136192764,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2012135,
+      "sha256": "bdf0018c087927fb21148c467826c6a24eda0606ba5e35672506f14c8b0c65a4",
+      "sourceSha256": "bdf0018c087927fb21148c467826c6a24eda0606ba5e35672506f14c8b0c65a4",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/bdf0018c087927fb/peter-hale__face__side__v1.png",
+      "preview": "/media/assets/peter-hale/face.side.webp",
+      "thumb": "/media/assets/peter-hale/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32400505417732334,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1175,
+      "height": 1339,
+      "bytes": 1657377,
+      "sha256": "9947e97ec5dbfb61274e663a0518cfab66e7e60926a9e499a3b4bd64c07c194c",
+      "sourceSha256": "9947e97ec5dbfb61274e663a0518cfab66e7e60926a9e499a3b4bd64c07c194c",
+      "bbox": {
+        "left": 0.00851063829787234,
+        "top": 0.005227781926811053,
+        "right": 0.9897872340425532,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/9947e97ec5dbfb61/peter-hale__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/peter-hale/face.three-quarter-left.webp",
+      "thumb": "/media/assets/peter-hale/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.45029730030349735,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2063342,
+      "sha256": "83035c5471c2891c55246752e4c0b218adbca75546dc1f77af4885001248aeec",
+      "sourceSha256": "83035c5471c2891c55246752e4c0b218adbca75546dc1f77af4885001248aeec",
+      "bbox": {
+        "left": 0,
+        "top": 0.01854066985645933,
+        "right": 0.9989373007438895,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/83035c5471c2891c/peter-hale__face__side-right__v1.png",
+      "preview": "/media/assets/peter-hale/face.side-right.webp",
+      "thumb": "/media/assets/peter-hale/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2977579079570242,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1986780,
+      "sha256": "a0d59e91eeac475d3471678722b21bd5943cf7d32ddb4115412cfeed7fd598f2",
+      "sourceSha256": "a0d59e91eeac475d3471678722b21bd5943cf7d32ddb4115412cfeed7fd598f2",
+      "bbox": {
+        "left": 0,
+        "top": 0.02332535885167464,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/a0d59e91eeac475d/peter-hale__face__up__v1.png",
+      "preview": "/media/assets/peter-hale/face.up.webp",
+      "thumb": "/media/assets/peter-hale/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29532806390432653,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1999014,
+      "sha256": "cf60817053ab91fb63204978327f12c902e669ba64177c2e6a6df127e8f237d3",
+      "sourceSha256": "cf60817053ab91fb63204978327f12c902e669ba64177c2e6a6df127e8f237d3",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/cf60817053ab91fb/peter-hale__face__down__v1.png",
+      "preview": "/media/assets/peter-hale/face.down.webp",
+      "thumb": "/media/assets/peter-hale/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2700482790882142,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2212080,
+      "sha256": "3a707aec0453abad9b0fddeb4d116d7f76dc8239a7b64b1a6d7c4914c0b7e887",
+      "sourceSha256": "3a707aec0453abad9b0fddeb4d116d7f76dc8239a7b64b1a6d7c4914c0b7e887",
+      "bbox": {
+        "left": 0,
+        "top": 0.0023923444976076554,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/3a707aec0453abad/peter-hale__expression__neutral__v1.png",
+      "preview": "/media/assets/peter-hale/expression.neutral.webp",
+      "thumb": "/media/assets/peter-hale/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2668182326650362,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2191050,
+      "sha256": "bf901c41985aa3ede33bba2e62c4f6d85d8bd71ae6b8f3d25c4724dcc75ced2b",
+      "sourceSha256": "bf901c41985aa3ede33bba2e62c4f6d85d8bd71ae6b8f3d25c4724dcc75ced2b",
+      "bbox": {
+        "left": 0,
+        "top": 0.07535885167464115,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/bf901c41985aa3ed/peter-hale__expression__smile__v1.png",
+      "preview": "/media/assets/peter-hale/expression.smile.webp",
+      "thumb": "/media/assets/peter-hale/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2838443018472662,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2138600,
+      "sha256": "9dbdb8e659342301c01948ffd481ff562d6266c3aedc8a0293d2c758a25c32d6",
+      "sourceSha256": "9dbdb8e659342301c01948ffd481ff562d6266c3aedc8a0293d2c758a25c32d6",
+      "bbox": {
+        "left": 0,
+        "top": 0.049641148325358854,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/9dbdb8e659342301/peter-hale__expression__laugh__v1.png",
+      "preview": "/media/assets/peter-hale/expression.laugh.webp",
+      "thumb": "/media/assets/peter-hale/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.27198236631090816,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1997331,
+      "sha256": "ca43cad4362916513379e7aaca99c9d95ef779497685c2f3c2064b0331daaefc",
+      "sourceSha256": "ca43cad4362916513379e7aaca99c9d95ef779497685c2f3c2064b0331daaefc",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/ca43cad436291651/peter-hale__expression__sad__v1.png",
+      "preview": "/media/assets/peter-hale/expression.sad.webp",
+      "thumb": "/media/assets/peter-hale/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2691489253517331,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2065215,
+      "sha256": "c33c75d0fccedd3d86231b32cdf384f75afeb364565ef32eabdd7143b504dad9",
+      "sourceSha256": "c33c75d0fccedd3d86231b32cdf384f75afeb364565ef32eabdd7143b504dad9",
+      "bbox": {
+        "left": 0,
+        "top": 0.07476076555023924,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/c33c75d0fccedd3d/peter-hale__expression__cry__v1.png",
+      "preview": "/media/assets/peter-hale/expression.cry.webp",
+      "thumb": "/media/assets/peter-hale/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2991384000528807,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1967088,
+      "sha256": "75c40b016de2392c96d1a294b32b5b70a15dca990ff37902d73f97c7f1cea2fb",
+      "sourceSha256": "75c40b016de2392c96d1a294b32b5b70a15dca990ff37902d73f97c7f1cea2fb",
+      "bbox": {
+        "left": 0,
+        "top": 0.017344497607655503,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/75c40b016de2392c/peter-hale__expression__annoyed__v1.png",
+      "preview": "/media/assets/peter-hale/expression.annoyed.webp",
+      "thumb": "/media/assets/peter-hale/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29912187482521396,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2263888,
+      "sha256": "f3b39241e5b2dbd7c55c62eff6ec7e6795c8b079794d6274e79ca432759d707a",
+      "sourceSha256": "f3b39241e5b2dbd7c55c62eff6ec7e6795c8b079794d6274e79ca432759d707a",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/f3b39241e5b2dbd7/peter-hale__expression__angry__v1.png",
+      "preview": "/media/assets/peter-hale/expression.angry.webp",
+      "thumb": "/media/assets/peter-hale/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25120189251991926,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 2187130,
+      "sha256": "34975a848634272dcac2e580d13fa8969fad845f5ce26429dd5ca6a6680b5642",
+      "sourceSha256": "34975a848634272dcac2e580d13fa8969fad845f5ce26429dd5ca6a6680b5642",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/34975a848634272d/peter-hale__expression__surprised__v1.png",
+      "preview": "/media/assets/peter-hale/expression.surprised.webp",
+      "thumb": "/media/assets/peter-hale/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2169680827722523,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2027754,
+      "sha256": "1fe50dda709afe02efd2c2c78d2bdb074d5aedaad687ab61a2eaf824422d9bc6",
+      "sourceSha256": "1fe50dda709afe02efd2c2c78d2bdb074d5aedaad687ab61a2eaf824422d9bc6",
+      "bbox": {
+        "left": 0,
+        "top": 0.01854066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/1fe50dda709afe02/peter-hale__expression__scared__v1.png",
+      "preview": "/media/assets/peter-hale/expression.scared.webp",
+      "thumb": "/media/assets/peter-hale/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25952552257854566,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2164204,
+      "sha256": "5c097b93493d0b4f283807598a911734b187484f2097bbfa8b5038bfb065fe8f",
+      "sourceSha256": "5c097b93493d0b4f283807598a911734b187484f2097bbfa8b5038bfb065fe8f",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/5c097b93493d0b4f/peter-hale__expression__disgusted__v1.png",
+      "preview": "/media/assets/peter-hale/expression.disgusted.webp",
+      "thumb": "/media/assets/peter-hale/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.26732415886591177,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2059184,
+      "sha256": "9524f6fe04aa8dffd711cea658f2a12454fbae38e43d3a46adfdc1a3f649299f",
+      "sourceSha256": "9524f6fe04aa8dffd711cea658f2a12454fbae38e43d3a46adfdc1a3f649299f",
+      "bbox": {
+        "left": 0,
+        "top": 0.022129186602870814,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/9524f6fe04aa8dff/peter-hale__expression__embarrassed__v1.png",
+      "preview": "/media/assets/peter-hale/expression.embarrassed.webp",
+      "thumb": "/media/assets/peter-hale/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.24905170616619804,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2032920,
+      "sha256": "7cea379145a81caa1a1387d28171fa93f1adf7fbd09b477b927f1a6c9de4c58d",
+      "sourceSha256": "7cea379145a81caa1a1387d28171fa93f1adf7fbd09b477b927f1a6c9de4c58d",
+      "bbox": {
+        "left": 0,
+        "top": 0.026913875598086126,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/7cea379145a81caa/peter-hale__expression__tired__v1.png",
+      "preview": "/media/assets/peter-hale/expression.tired.webp",
+      "thumb": "/media/assets/peter-hale/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25862171974230813,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1874523,
+      "sha256": "722a24ebb691631b8dc726669531127a7becadd01448d8adb26746d7c6347cf2",
+      "sourceSha256": "722a24ebb691631b8dc726669531127a7becadd01448d8adb26746d7c6347cf2",
+      "bbox": {
+        "left": 0,
+        "top": 0.020933014354066987,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/722a24ebb691631b/peter-hale__expression__speaking__v1.png",
+      "preview": "/media/assets/peter-hale/expression.speaking.webp",
+      "thumb": "/media/assets/peter-hale/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2733571381356492,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2197674,
+      "sha256": "050ac47fb786d0bce844637031270cd86f96ef5f9ce7732bf71d854af21676a3",
+      "sourceSha256": "050ac47fb786d0bce844637031270cd86f96ef5f9ce7732bf71d854af21676a3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/050ac47fb786d0bc/peter-hale__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/peter-hale/expression.eyes-closed.webp",
+      "thumb": "/media/assets/peter-hale/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30825551350911456,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 940,
+      "height": 1672,
+      "bytes": 2209046,
+      "sha256": "f839a3a1ed7326447507377ac4e08a6575b38764e8ef7400f9db7033ef53b9e6",
+      "sourceSha256": "f839a3a1ed7326447507377ac4e08a6575b38764e8ef7400f9db7033ef53b9e6",
+      "bbox": {
+        "left": 0,
+        "top": 0.019138755980861243,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/f839a3a1ed732644/peter-hale__expression__worried__v1.png",
+      "preview": "/media/assets/peter-hale/expression.worried.webp",
+      "thumb": "/media/assets/peter-hale/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25017179069530693,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2099999,
+      "sha256": "64531c3093614209b9911fac9d79f71883b4d7086ed86f77e7b62f222ea3426f",
+      "sourceSha256": "64531c3093614209b9911fac9d79f71883b4d7086ed86f77e7b62f222ea3426f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/64531c3093614209/peter-hale__expression__skeptical__v1.png",
+      "preview": "/media/assets/peter-hale/expression.skeptical.webp",
+      "thumb": "/media/assets/peter-hale/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2521158647270287,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2209022,
+      "sha256": "d222f9d913f92318d7bb1672d7967880954f6e1e58f121bdb3ef4797e279ed81",
+      "sourceSha256": "d222f9d913f92318d7bb1672d7967880954f6e1e58f121bdb3ef4797e279ed81",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/d222f9d913f92318/peter-hale__expression__smug__v1.png",
+      "preview": "/media/assets/peter-hale/expression.smug.webp",
+      "thumb": "/media/assets/peter-hale/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.22314523387010662,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1822590,
+      "sha256": "444b59f97e74ec6314bf285b0c7dab1b86bb3502e13213a5acf32da0f8da20e0",
+      "sourceSha256": "444b59f97e74ec6314bf285b0c7dab1b86bb3502e13213a5acf32da0f8da20e0",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/444b59f97e74ec63/peter-hale__expression__contempt__v1.png",
+      "preview": "/media/assets/peter-hale/expression.contempt.webp",
+      "thumb": "/media/assets/peter-hale/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.35134159425227157,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 992,
+      "height": 1586,
+      "bytes": 1840554,
+      "sha256": "e07aceae6c977d49ab6a445167e90669b5ba8b60197b7248301a468d2efecb17",
+      "sourceSha256": "e07aceae6c977d49ab6a445167e90669b5ba8b60197b7248301a468d2efecb17",
+      "bbox": {
+        "left": 0,
+        "top": 0.06494325346784363,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/e07aceae6c977d49/peter-hale__expression__confused__v1.png",
+      "preview": "/media/assets/peter-hale/expression.confused.webp",
+      "thumb": "/media/assets/peter-hale/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3205498972867429,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2170609,
+      "sha256": "0bdbe785e943c6a4f730fc5908788690b101d5a5968fc55540958d191b3db486",
+      "sourceSha256": "0bdbe785e943c6a4f730fc5908788690b101d5a5968fc55540958d191b3db486",
+      "bbox": {
+        "left": 0,
+        "top": 0.0651913875598086,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/0bdbe785e943c6a4/peter-hale__expression__thinking__v1.png",
+      "preview": "/media/assets/peter-hale/expression.thinking.webp",
+      "thumb": "/media/assets/peter-hale/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2559598869165959,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2155336,
+      "sha256": "cb17610e098caca9fa97b5b7aed5963d5d81ff4056368d4e0b1ada7993713d85",
+      "sourceSha256": "cb17610e098caca9fa97b5b7aed5963d5d81ff4056368d4e0b1ada7993713d85",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/cb17610e098caca9/peter-hale__expression__determined__v1.png",
+      "preview": "/media/assets/peter-hale/expression.determined.webp",
+      "thumb": "/media/assets/peter-hale/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2575291479592615,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2022653,
+      "sha256": "b0ca95f47b04362273047e59dfa8759cd4e9b89f8579a310fc6f3a527ff91f3e",
+      "sourceSha256": "b0ca95f47b04362273047e59dfa8759cd4e9b89f8579a310fc6f3a527ff91f3e",
+      "bbox": {
+        "left": 0,
+        "top": 0.07655502392344497,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/b0ca95f47b043622/peter-hale__expression__shy__v1.png",
+      "preview": "/media/assets/peter-hale/expression.shy.webp",
+      "thumb": "/media/assets/peter-hale/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.28103564872959136,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2136938,
+      "sha256": "cad4ac1327e726116de5a93a8c200c8c71530940c055ba9a337333ac01dd6558",
+      "sourceSha256": "cad4ac1327e726116de5a93a8c200c8c71530940c055ba9a337333ac01dd6558",
+      "bbox": {
+        "left": 0,
+        "top": 0.017344497607655503,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/cad4ac1327e72611/peter-hale__expression__pain__v1.png",
+      "preview": "/media/assets/peter-hale/expression.pain.webp",
+      "thumb": "/media/assets/peter-hale/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.26963197046814696,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1950392,
+      "sha256": "d79af72dc90c49fa55be80d3f73f8d832f2708abe3c1edb5383ea5bced055847",
+      "sourceSha256": "d79af72dc90c49fa55be80d3f73f8d832f2708abe3c1edb5383ea5bced055847",
+      "bbox": {
+        "left": 0,
+        "top": 0.060406698564593304,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/d79af72dc90c49fa/peter-hale__expression__sleepy__v1.png",
+      "preview": "/media/assets/peter-hale/expression.sleepy.webp",
+      "thumb": "/media/assets/peter-hale/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32288324545302005,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2236961,
+      "sha256": "8ad862ca136bebe3c472249a04b011dd9b09ed56bd3e84503d9ccf66fdea8ff5",
+      "sourceSha256": "8ad862ca136bebe3c472249a04b011dd9b09ed56bd3e84503d9ccf66fdea8ff5",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/8ad862ca136bebe3/peter-hale__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/peter-hale/expression.awkward-smile.webp",
+      "thumb": "/media/assets/peter-hale/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2759509632936558,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1912069,
+      "sha256": "a0d70687d3303f2fac717e1fb9c932f0998532921ff81dd04aa4b3909cab58eb",
+      "sourceSha256": "a0d70687d3303f2fac717e1fb9c932f0998532921ff81dd04aa4b3909cab58eb",
+      "bbox": {
+        "left": 0,
+        "top": 0.09090909090909091,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/a0d70687d3303f2f/peter-hale__expression__deadpan__v1.png",
+      "preview": "/media/assets/peter-hale/expression.deadpan.webp",
+      "thumb": "/media/assets/peter-hale/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3249215687271507,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1029791,
+      "sha256": "d17ea05f9c4c7f31694bb83a8c186893a77362ca482daad991fd9027fe20b291",
+      "sourceSha256": "d17ea05f9c4c7f31694bb83a8c186893a77362ca482daad991fd9027fe20b291",
+      "bbox": {
+        "left": 0.206163655685441,
+        "top": 0,
+        "right": 0.8363443145589798,
+        "bottom": 0.9808612440191388
+      },
+      "format": "png",
+      "object": "peter-hale/d17ea05f9c4c7f31/peter-hale__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/peter-hale/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/peter-hale/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6740583162572648,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 926217,
+      "sha256": "d99127ad306c6ca83d98f7aef902e092a9a743a162f74456c74cf4e5f14f989e",
+      "sourceSha256": "d99127ad306c6ca83d98f7aef902e092a9a743a162f74456c74cf4e5f14f989e",
+      "bbox": {
+        "left": 0.05526036131774708,
+        "top": 0.007779772591262717,
+        "right": 0.9681190223166843,
+        "bottom": 0.9802513464991023
+      },
+      "format": "png",
+      "object": "peter-hale/d99127ad306c6ca8/peter-hale__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/peter-hale/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/peter-hale/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7109140040358405,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 685025,
+      "sha256": "87dceb969f512743b6eae7ee702a9ee0c4f72635d894098cfd17eb2b80dc1ca8",
+      "sourceSha256": "87dceb969f512743b6eae7ee702a9ee0c4f72635d894098cfd17eb2b80dc1ca8",
+      "bbox": {
+        "left": 0.1434643995749203,
+        "top": 0.019150209455415918,
+        "right": 0.7863974495217854,
+        "bottom": 0.9814482345900658
+      },
+      "format": "png",
+      "object": "peter-hale/87dceb969f512743/peter-hale__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/peter-hale/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/peter-hale/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7931482290571613,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1093011,
+      "sha256": "5f9b0e0d354059bc1ff2430d9d2f34f2844ea71206c46208166ae18f8591bec1",
+      "sourceSha256": "5f9b0e0d354059bc1ff2430d9d2f34f2844ea71206c46208166ae18f8591bec1",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9596174282678002,
+        "bottom": 0.9736684619988031
+      },
+      "format": "png",
+      "object": "peter-hale/5f9b0e0d354059bc/peter-hale__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/peter-hale/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/peter-hale/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6739452980168671,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2349601,
+      "sha256": "5bf797a63347ec9337c00bac20cbca83769d836e06ddbc7201835afde6082c89",
+      "sourceSha256": "5bf797a63347ec9337c00bac20cbca83769d836e06ddbc7201835afde6082c89",
+      "bbox": {
+        "left": 0,
+        "top": 0.0651913875598086,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/5bf797a63347ec93/peter-hale__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/peter-hale/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/peter-hale/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.28445827761365544,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.polish-glass",
+      "series": "wardrobe",
+      "key": "polish-glass",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 963007,
+      "sha256": "8af99ca4ad423ff9337e4aec88d6e0977fabd666adbfcfe9c2b4fd9f7bcb21c6",
+      "sourceSha256": "8af99ca4ad423ff9337e4aec88d6e0977fabd666adbfcfe9c2b4fd9f7bcb21c6",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9681190223166843,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "peter-hale/8af99ca4ad423ff9/peter-hale__wardrobe-personal__polish-glass__v1.png",
+      "preview": "/media/assets/peter-hale/wardrobe.personal.polish-glass.webp",
+      "thumb": "/media/assets/peter-hale/wardrobe.personal.polish-glass.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6927750433469433,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.welcome-guest",
+      "series": "wardrobe",
+      "key": "welcome-guest",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 954447,
+      "sha256": "4f15d6dbc6c7bc15f97b9ba72f68c5deccd8b95b2dc7d25fa7fffd7bffd1cb4d",
+      "sourceSha256": "4f15d6dbc6c7bc15f97b9ba72f68c5deccd8b95b2dc7d25fa7fffd7bffd1cb4d",
+      "bbox": {
+        "left": 0,
+        "top": 0.02751196172248804,
+        "right": 0.9681190223166843,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "peter-hale/4f15d6dbc6c7bc15/peter-hale__wardrobe-personal__welcome-guest__v1.png",
+      "preview": "/media/assets/peter-hale/wardrobe.personal.welcome-guest.webp",
+      "thumb": "/media/assets/peter-hale/wardrobe.personal.welcome-guest.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7338936232959948,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.quiet-seat",
+      "series": "wardrobe",
+      "key": "quiet-seat",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1305340,
+      "sha256": "05a089146db0606e54910ab2544eba88f3040a77c8e31faf0c19ba8a896b4ef0",
+      "sourceSha256": "05a089146db0606e54910ab2544eba88f3040a77c8e31faf0c19ba8a896b4ef0",
+      "bbox": {
+        "left": 0.061636556854410204,
+        "top": 0.010167464114832535,
+        "right": 0.9851222104144527,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/05a089146db0606e/peter-hale__wardrobe-personal__quiet-seat__v1.png",
+      "preview": "/media/assets/peter-hale/wardrobe.personal.quiet-seat.webp",
+      "thumb": "/media/assets/peter-hale/wardrobe.personal.quiet-seat.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6153600719991458,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 819668,
+      "sha256": "edbfd3c0f830129e7fd54c44b1fecb54444cadea643b3161f797e99235e9c63c",
+      "sourceSha256": "edbfd3c0f830129e7fd54c44b1fecb54444cadea643b3161f797e99235e9c63c",
+      "bbox": {
+        "left": 0.04357066950053135,
+        "top": 0.0017953321364452424,
+        "right": 0.9373007438894793,
+        "bottom": 0.9724715739078397
+      },
+      "format": "png",
+      "object": "peter-hale/edbfd3c0f830129e/peter-hale__pose__walk__v1.png",
+      "preview": "/media/assets/peter-hale/pose.walk.webp",
+      "thumb": "/media/assets/peter-hale/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7290212291824466,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1671,
+      "bytes": 770770,
+      "sha256": "365e1e1f6e0a46865560965245da057641c5d61152b49fdb4524dc43591d193f",
+      "sourceSha256": "365e1e1f6e0a46865560965245da057641c5d61152b49fdb4524dc43591d193f",
+      "bbox": {
+        "left": 0,
+        "top": 0.008976660682226212,
+        "right": 0.9436769394261424,
+        "bottom": 0.9622980251346499
+      },
+      "format": "png",
+      "object": "peter-hale/365e1e1f6e0a4686/peter-hale__pose__run__v1.png",
+      "preview": "/media/assets/peter-hale/pose.run.webp",
+      "thumb": "/media/assets/peter-hale/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7420057478610872,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1121405,
+      "sha256": "80cb3c1475a411d23a82b0ccf3d7e0337e241598df4171f2717b76980cb8c445",
+      "sourceSha256": "80cb3c1475a411d23a82b0ccf3d7e0337e241598df4171f2717b76980cb8c445",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 0.9851222104144527,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "peter-hale/80cb3c1475a411d2/peter-hale__pose__sit__v1.png",
+      "preview": "/media/assets/peter-hale/pose.sit.webp",
+      "thumb": "/media/assets/peter-hale/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6210491994162781,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 785077,
+      "sha256": "3b21aa895a0210e7020f06aa1351b06f42dbdb45282728c66c372074caa65930",
+      "sourceSha256": "3b21aa895a0210e7020f06aa1351b06f42dbdb45282728c66c372074caa65930",
+      "bbox": {
+        "left": 0.039319872476089264,
+        "top": 0.006578947368421052,
+        "right": 0.9659936238044633,
+        "bottom": 0.972488038277512
+      },
+      "format": "png",
+      "object": "peter-hale/3b21aa895a0210e7/peter-hale__pose__point__v1.png",
+      "preview": "/media/assets/peter-hale/pose.point.webp",
+      "thumb": "/media/assets/peter-hale/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7513468060548434,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 784731,
+      "sha256": "9a3e55ccb3db64b08dd61d2f42354aa4c7db572c964cdec24c7732e4139c1c76",
+      "sourceSha256": "9a3e55ccb3db64b08dd61d2f42354aa4c7db572c964cdec24c7732e4139c1c76",
+      "bbox": {
+        "left": 0.1126461211477152,
+        "top": 0.004186602870813397,
+        "right": 0.9596174282678002,
+        "bottom": 0.9880382775119617
+      },
+      "format": "png",
+      "object": "peter-hale/9a3e55ccb3db64b0/peter-hale__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/peter-hale/pose.arms-crossed.webp",
+      "thumb": "/media/assets/peter-hale/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7392872033721634,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 815609,
+      "sha256": "7752e1070e0c552f1f35baa0940e8c8278b0b770e35613989c41a2beb7d15b36",
+      "sourceSha256": "7752e1070e0c552f1f35baa0940e8c8278b0b770e35613989c41a2beb7d15b36",
+      "bbox": {
+        "left": 0.039319872476089264,
+        "top": 0.008373205741626795,
+        "right": 0.9744952178533475,
+        "bottom": 0.9826555023923444
+      },
+      "format": "png",
+      "object": "peter-hale/7752e1070e0c552f/peter-hale__pose__phone__v1.png",
+      "preview": "/media/assets/peter-hale/pose.phone.webp",
+      "thumb": "/media/assets/peter-hale/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7146906731615048,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1214,
+      "height": 1295,
+      "bytes": 1355193,
+      "sha256": "b5749ebb64713c09360965764e318256b0317088d59e8976b01ba03b8c0d42f8",
+      "sourceSha256": "b5749ebb64713c09360965764e318256b0317088d59e8976b01ba03b8c0d42f8",
+      "bbox": {
+        "left": 0,
+        "top": 0.014671814671814672,
+        "right": 0.9950576606260296,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/b5749ebb64713c09/peter-hale__detail__hands__v1.png",
+      "preview": "/media/assets/peter-hale/detail.hands.webp",
+      "thumb": "/media/assets/peter-hale/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5474032045695967,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1215,
+      "height": 1295,
+      "bytes": 1974585,
+      "sha256": "069321d23711103bc51547e0b606a86ae502252ad262c8b42f3f2b5305199a71",
+      "sourceSha256": "069321d23711103bc51547e0b606a86ae502252ad262c8b42f3f2b5305199a71",
+      "bbox": {
+        "left": 0,
+        "top": 0.025482625482625483,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "peter-hale/069321d23711103b/peter-hale__detail__hair-back__v1.png",
+      "preview": "/media/assets/peter-hale/detail.hair-back.webp",
+      "thumb": "/media/assets/peter-hale/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.44902680458236016,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1258294,
+      "sha256": "1887f4ea37db5daa33709b05e6a8920656a0016f17e2dd6407e11d54c70ec499",
+      "sourceSha256": "1887f4ea37db5daa33709b05e6a8920656a0016f17e2dd6407e11d54c70ec499",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/peter-hale/peter-hale__voice__intro__v1__1887f4ea37db5daa.wav",
+      "preview": "/api/voice/peter-hale/intro",
+      "thumb": "/api/voice/peter-hale/intro",
+      "previewUrl": "/api/voice/peter-hale/intro",
+      "durationSec": 19.6,
+      "transcript": {
+        "text": "Hello, I'm Peter Hale, sixty-six, from Edinburgh. I retired from the police and opened a small pub in Chengdu. We serve whisky with rabbit heads. That pairing raises a few eyebrows, usually mine first. After a long working life, I rather enjoy a quiet bar and a good conversation."
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1180274,
+      "sha256": "14c57d37502e10564f3cdd82d0dd02e50dfaa5e92d5e218e40fc698ac1c7f71a",
+      "sourceSha256": "14c57d37502e10564f3cdd82d0dd02e50dfaa5e92d5e218e40fc698ac1c7f71a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/peter-hale/peter-hale__voice__intro-alt__v1__14c57d37502e1056.wav",
+      "preview": "/api/voice/peter-hale/intro-alt",
+      "thumb": "/api/voice/peter-hale/intro-alt",
+      "previewUrl": "/api/voice/peter-hale/intro-alt",
+      "durationSec": 18.4,
+      "transcript": {
+        "text": "你好，我叫彼得·黑尔，爱丁堡人，今年六十六岁。我以前在苏格兰当警察，退休以后来成都开了间小酒馆。我们卖威士忌，也卖兔头。第一次听的人都觉得奇怪，吃过以后，有人会再来一份。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 578700,
+      "sha256": "4092698468b3f6076deec0f7fb587888ab25bd31a1ccb50c9c5a9e7bde8d47a3",
+      "sourceSha256": "4092698468b3f6076deec0f7fb587888ab25bd31a1ccb50c9c5a9e7bde8d47a3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/peter-hale/peter-hale__voice__chat__v1__4092698468b3f607.wav",
+      "preview": "/api/voice/peter-hale/chat",
+      "thumb": "/api/voice/peter-hale/chat",
+      "previewUrl": "/api/voice/peter-hale/chat",
+      "durationSec": 9,
+      "transcript": {
+        "text": "Take that chair by the window. It's the quietest spot. There's no rush to order. Tell me what sort of evening you've had, and we'll find you something suitable."
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 673690,
+      "sha256": "85fb04642439f3a71e02ffe6b445e3cd1bb3b73f2529f42c6a1e5ca4b5934835",
+      "sourceSha256": "85fb04642439f3a71e02ffe6b445e3cd1bb3b73f2529f42c6a1e5ca4b5934835",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/peter-hale/peter-hale__voice__happy__v1__85fb04642439f3a7.wav",
+      "preview": "/api/voice/peter-hale/happy",
+      "thumb": "/api/voice/peter-hale/happy",
+      "previewUrl": "/api/voice/peter-hale/happy",
+      "durationSec": 10.5,
+      "transcript": {
+        "text": "Well, look who's come through the door! I thought you were still in Edinburgh. Give me a minute to put this glass down. It's good to see you. Really good. You're staying for supper, I hope."
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 735482,
+      "sha256": "eaa605a599dea8726339e352c3285ae6ef1b980ab99e19433800d96e0a369fe5",
+      "sourceSha256": "eaa605a599dea8726339e352c3285ae6ef1b980ab99e19433800d96e0a369fe5",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/peter-hale/peter-hale__voice__angry__v1__eaa605a599dea872.wav",
+      "preview": "/api/voice/peter-hale/angry",
+      "thumb": "/api/voice/peter-hale/angry",
+      "previewUrl": "/api/voice/peter-hale/angry",
+      "durationSec": 11.5,
+      "transcript": {
+        "text": "Put the glass on the table. We're not settling anything by shouting across the room. Take a breath, step back, and let the other person finish. You can disagree without frightening everyone else."
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 674552,
+      "sha256": "49d5123ad6c777c2e650b5880f413ff6a5ce677bffbeb62ac3a19b0b7dbaf8cb",
+      "sourceSha256": "49d5123ad6c777c2e650b5880f413ff6a5ce677bffbeb62ac3a19b0b7dbaf8cb",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/peter-hale/peter-hale__voice__sad__v1__49d5123ad6c777c2.wav",
+      "preview": "/api/voice/peter-hale/sad",
+      "thumb": "/api/voice/peter-hale/sad",
+      "previewUrl": "/api/voice/peter-hale/sad",
+      "durationSec": 10.5,
+      "transcript": {
+        "text": "I found an old photograph while clearing a drawer. Half the people in it I haven't seen for years. Funny how a small bit of paper can bring back the sound of a whole room."
+      },
+      "placeholder": true
+    }
+  ]
+}

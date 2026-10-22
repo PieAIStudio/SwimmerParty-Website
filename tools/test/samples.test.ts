@@ -43,6 +43,28 @@ test("a two-actor film has one file and is associated with both identities", () 
   assert.equal(result.video, "/media/samples/shared.mp4");
   assert.equal(result.slug, "one");
 });
+test("independent ensemble deliveries can show a co-star without duplicating that co-star's cards", () => {
+  const first = { ...clip("first"), castSlugs: ["one", "two"], label: "two-actors" as const };
+  const second = {
+    ...clip("second", ["two"]),
+    castSlugs: ["two", "one"],
+    label: "two-actors" as const,
+  };
+  const result = projectOfficialSamples(
+    [
+      { slug: "one", officialSamples: first },
+      { slug: "two", officialSamples: second },
+    ],
+    ["one", "two"],
+  );
+  assert.deepEqual(
+    result.map((s) => s.actorSlugs),
+    [["one"], ["two"]],
+  );
+  assert.deepEqual(result[0].castSlugs, ["one", "two"]);
+  assert.throws(() => project([{ ...first, castSlugs: ["two"] }]), /cast association/);
+});
+
 test("missing scene stills use an actual extracted poster, not a fabricated extra card", () => {
   const [result] = project([clip("plain")]);
   assert.deepEqual(result.images, []);

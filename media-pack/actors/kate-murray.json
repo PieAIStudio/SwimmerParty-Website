@@ -12,7 +12,7 @@
     "published": false,
     "preparedOn": "2026-10-22",
     "productionOnly": true,
-    "version": "1.0.0",
+    "version": "1.1.0",
     "siteProfile": "src/content/actors/kate-murray/profile.ts"
   },
   "demographics": {
@@ -107,7 +107,7 @@
         {
           "key": "portrait",
           "label": { "zh": "日常装近景", "en": "Everyday portrait" },
-          "direction": "Head and upper chest in the actor's personal outfit, facing the camera."
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
         },
         {
           "key": "picture-book",
@@ -139,10 +139,28 @@
   "roles": [],
   "proposals": {
     "approval": "agent-selected-under-owner-delegated-aesthetic-authority",
-    "phase": "technical-staging-complete",
+    "phase": "four-samples-complete-technical-staging",
     "appearance": "Selected trial1-A after frozen skull/eye/chin/sole line review. Median7.537 interval7.083–8.058 remainsmeasurement_review, noheadposewarnings. Originalframe_rejected1.0/2.7percent preserved; fullhair/soles intact, visibleair acceptedunderdelegatedvisualexception. Face/buzzcut/highcheekbones/longface,175cmlankyadult neck/torso/pelvis/legs, CG andalpha reviewed. Notautomaticratio/framepass.",
     "delivered": 55,
-    "voiceReviewLimitation": "RepairedChineseintroalt textverified, separate repairreview transcriptbased, acousticidentityjumpnotdirectlyassessed; samevoice3/model/settings, original6WAVdecoded. Temporaryplaceholder accepted."
+    "voiceReviewLimitation": "RepairedChineseintroalt textverified, separate repairreview transcriptbased, acousticidentityjumpnotdirectlyassessed; samevoice3/model/settings, original6WAVdecoded. Temporaryplaceholder accepted.",
+    "additionalVideoTasks": {
+      "action": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/action/task.json",
+      "ensemble": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/ensemble/task.json",
+      "vids": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/vids/task.json"
+    },
+    "sampleScope": {
+      "required": 4,
+      "accepted": 4,
+      "grokAccepted": 3,
+      "vidsAccepted": 1,
+      "missing": {},
+      "sourceExceptions": [],
+      "voiceNote": "existing six placeholder WAV unchanged; no acoustic review claim",
+      "reviewAuthority": "Owner delegated aesthetic and relative proportion review; staging only",
+      "reviewPage": "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/four-sample-review.html",
+      "updatedAt": "2026-10-22T16:25:57.794423+00:00",
+      "publication": false
+    }
   },
   "routes": {
     "chatgpt-web": {
@@ -155,15 +173,15 @@
   },
   "website": {
     "published": true,
-    "order": 118,
+    "order": 122,
     "status": "active",
     "tagline": {
-      "en": "From Glasgow to a Shanghai kindergarten, teaching English one story at a time.",
-      "zh": "格拉斯哥姑娘，在上海教孩子说英语。"
+      "en": "Looks fierce. Her pupils call her “the bald teacher”.",
+      "zh": "看着很凶，孩子们叫她「光头老师」。"
     },
     "introduction": {
-      "en": "From Glasgow to a Shanghai kindergarten, teaching English one story at a time.",
-      "zh": "格拉斯哥姑娘，在上海教孩子说英语。"
+      "en": "A buzz cut and sharp cheekbones give Kate Murray a fierce look. Originally from Glasgow, she teaches kindergarten English in Shanghai, where the children affectionately call her “the bald teacher”.",
+      "zh": "寸头，颧骨锋利，看着很凶。来自格拉斯哥，在上海教幼儿园英语，孩子们叫她「光头老师」。"
     },
     "specOrder": [
       "age",
@@ -176,516 +194,533 @@
     ]
   },
   "release": {
-    "date": "2026-10-22",
+    "date": "2026-10-23",
     "note": {
-      "en": "55 reference images, 6 placeholder voice clips and a sample video.",
-      "zh": "55 张参考图、6 段占位声音、1 段样片。"
-    }
+      "en": "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+      "zh": "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。"
+    },
+    "history": [
+      {
+        "version": "1.0.0",
+        "date": "2026-10-22",
+        "note": {
+          "en": "55 reference images, 6 placeholder voice clips and a sample video.",
+          "zh": "55 张参考图、6 段占位声音、1 段样片。"
+        }
+      }
+    ]
   },
   "assetDelivery": {
     "mode": "source-originals",
-    "candidateAuthorizedOn": "2026-10-22",
+    "candidateAuthorizedOn": "2026-10-23",
     "ownerReviewPending": false,
     "sourceEvidence": [
       "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/actors/kate-murray.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/kate-murray-slot-plan.json",
       "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/voice/frozen/handoff.json",
-      "/Users/yuanfei/PieAI/HQ/conductor/projects/SwimmerParty/next-version-20261022/BRIEF.md"
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/RESULT.md"
     ],
     "images": [
       {
-        "slot": "detail.hair-back",
-        "source": "kate-murray/kate-murray__detail__hair-back__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__detail__hair-back__v1.png",
-        "sha256": "d016463ee8b8ea7884b88f97f0c098b0382ddd6d13eb5c72c87d76487a60fbee",
-        "bytes": 2289901,
-        "version": 1
-      },
-      {
-        "slot": "detail.hands",
-        "source": "kate-murray/kate-murray__detail__hands__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__detail__hands__v1.png",
-        "sha256": "ce354f7858ede87acc276e0f3518bcbe525bc30f2f23869187a9313e54f07210",
-        "bytes": 1007902,
-        "version": 1
-      },
-      {
-        "slot": "expression.angry",
-        "source": "kate-murray/kate-murray__expression__angry__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__angry__v1.png",
-        "sha256": "3eaeb60c45d131d09fcb39c59084b18282d9323ad759e371ce6241dffefad497",
-        "bytes": 1610399,
-        "version": 1
-      },
-      {
-        "slot": "expression.annoyed",
-        "source": "kate-murray/kate-murray__expression__annoyed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__annoyed__v1.png",
-        "sha256": "fd77255986c6da1fad22320bbb094c657d629d2e759c916423e3925dc3eb32c6",
-        "bytes": 1818648,
-        "version": 1
-      },
-      {
-        "slot": "expression.awkward-smile",
-        "source": "kate-murray/kate-murray__expression__awkward-smile__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__awkward-smile__v1.png",
-        "sha256": "90b33b4c6a9623f2894a2cc946b8d4d3f5ccabeb1efa0f18002b62468b6a20bd",
-        "bytes": 1467567,
-        "version": 1
-      },
-      {
-        "slot": "expression.confused",
-        "source": "kate-murray/kate-murray__expression__confused__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__confused__v1.png",
-        "sha256": "2013f8ebdedd4596475a505e060dd677e40b2e7442c1c1b28274d82f88fcbd92",
-        "bytes": 1685156,
-        "version": 1
-      },
-      {
-        "slot": "expression.contempt",
-        "source": "kate-murray/kate-murray__expression__contempt__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__contempt__v1.png",
-        "sha256": "4ad166731f527e9c2cb9207f4e7e76683771809ba57dcdfea2955cc160fe44a3",
-        "bytes": 1467089,
-        "version": 1
-      },
-      {
-        "slot": "expression.cry",
-        "source": "kate-murray/kate-murray__expression__cry__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__cry__v1.png",
-        "sha256": "df57eaeeb79bddc12935d7d1a49c06adb9ab5f7598a18122b0bb052e85cb57f4",
-        "bytes": 1839980,
-        "version": 1
-      },
-      {
-        "slot": "expression.deadpan",
-        "source": "kate-murray/kate-murray__expression__deadpan__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__deadpan__v1.png",
-        "sha256": "4fc31904237207e753c11e666418377c7336c7fff451bc3a1379294b6b6b59f0",
-        "bytes": 1960699,
-        "version": 1
-      },
-      {
-        "slot": "expression.determined",
-        "source": "kate-murray/kate-murray__expression__determined__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__determined__v1.png",
-        "sha256": "fbe3bf5f40072941c17c8d90531619b467ecec040e688d68b0d81c0fe6074983",
-        "bytes": 1548836,
-        "version": 1
-      },
-      {
-        "slot": "expression.disgusted",
-        "source": "kate-murray/kate-murray__expression__disgusted__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__disgusted__v1.png",
-        "sha256": "af93d0e74b4fb60a1fb150f822b590e50671a6e02c68390e5a7ee94a5f59c4f3",
-        "bytes": 1483526,
-        "version": 1
-      },
-      {
-        "slot": "expression.embarrassed",
-        "source": "kate-murray/kate-murray__expression__embarrassed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__embarrassed__v1.png",
-        "sha256": "dbd32b1951f84a85417104b0a616ad05910499e3df7d6807672bda5edf73ce89",
-        "bytes": 1557324,
-        "version": 1
-      },
-      {
-        "slot": "expression.eyes-closed",
-        "source": "kate-murray/kate-murray__expression__eyes-closed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__eyes-closed__v1.png",
-        "sha256": "f2608429a1e6b5721dad25446c419d3561cf166abe0b66c08e0c501f94a9eb37",
-        "bytes": 1632692,
-        "version": 1
-      },
-      {
-        "slot": "expression.laugh",
-        "source": "kate-murray/kate-murray__expression__laugh__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__laugh__v1.png",
-        "sha256": "0804d1f0d7c0ad35cd0393d5fd41a09af5dd5622bb323d08432dddd03e012547",
-        "bytes": 1852890,
-        "version": 1
-      },
-      {
-        "slot": "expression.neutral",
-        "source": "kate-murray/kate-murray__expression__neutral__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__neutral__v1.png",
-        "sha256": "2821c2a09f2521c58606419b716b7dbf03b78847bdadac60f5cbaa2108040965",
-        "bytes": 1903951,
-        "version": 1
-      },
-      {
-        "slot": "expression.pain",
-        "source": "kate-murray/kate-murray__expression__pain__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__pain__v1.png",
-        "sha256": "79f47d185f8b6bac9be6f6dba8ae1bfa87cb359cc4a1595658b75914edcfade8",
-        "bytes": 1601500,
-        "version": 1
-      },
-      {
-        "slot": "expression.sad",
-        "source": "kate-murray/kate-murray__expression__sad__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__sad__v1.png",
-        "sha256": "5c404640221898ecbbae188b873abcc1fa407ee457b9adea65b37064bfc814a9",
-        "bytes": 1708662,
-        "version": 1
-      },
-      {
-        "slot": "expression.scared",
-        "source": "kate-murray/kate-murray__expression__scared__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__scared__v1.png",
-        "sha256": "36eb9433900bae7d48e11e1681db5add090c5504c55b69a0a73ef58823190a62",
-        "bytes": 1476333,
-        "version": 1
-      },
-      {
-        "slot": "expression.shy",
-        "source": "kate-murray/kate-murray__expression__shy__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__shy__v1.png",
-        "sha256": "6e639e13d02396941dc850699a99638bf65e55f879b578cb58ba7334a78fd823",
-        "bytes": 1449854,
-        "version": 1
-      },
-      {
-        "slot": "expression.skeptical",
-        "source": "kate-murray/kate-murray__expression__skeptical__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__skeptical__v1.png",
-        "sha256": "1cd51384d8d02bde84c871f763973471fa54d4030d29af8f451806c4ee45285f",
-        "bytes": 1539602,
-        "version": 1
-      },
-      {
-        "slot": "expression.sleepy",
-        "source": "kate-murray/kate-murray__expression__sleepy__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__sleepy__v1.png",
-        "sha256": "2c34a8a635ff19fd7b0b22c6c8d07893b67b56421361a5bf09d66ce31bfed5bc",
-        "bytes": 1421403,
-        "version": 1
-      },
-      {
-        "slot": "expression.smile",
-        "source": "kate-murray/kate-murray__expression__smile__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__smile__v1.png",
-        "sha256": "a21b3d3268d417e8a936d51060cb1e13555266f927b10cfda31239f7444d454b",
-        "bytes": 1798018,
-        "version": 1
-      },
-      {
-        "slot": "expression.smug",
-        "source": "kate-murray/kate-murray__expression__smug__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__smug__v1.png",
-        "sha256": "368f238fd701b84e5db09df241d09d7611ab07528c24053e2797fcf2ff1a62ec",
-        "bytes": 1481705,
-        "version": 1
-      },
-      {
-        "slot": "expression.speaking",
-        "source": "kate-murray/kate-murray__expression__speaking__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__speaking__v1.png",
-        "sha256": "4d962f2ef714b78db2df8b66b3be758e641c0ee895748f3180a7a30597d22851",
-        "bytes": 1472367,
-        "version": 1
-      },
-      {
-        "slot": "expression.surprised",
-        "source": "kate-murray/kate-murray__expression__surprised__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__surprised__v1.png",
-        "sha256": "6f394fc659e91097f724902af60d5b38a80ae641ea04d1ffe0c65c8c996e6bc0",
-        "bytes": 1481552,
-        "version": 1
-      },
-      {
-        "slot": "expression.thinking",
-        "source": "kate-murray/kate-murray__expression__thinking__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__thinking__v1.png",
-        "sha256": "a4d85249ea6bc5f01f751a2135d65deaa7b6d9a693de3f7912f2af88e3c7dd41",
-        "bytes": 1462837,
-        "version": 1
-      },
-      {
-        "slot": "expression.tired",
-        "source": "kate-murray/kate-murray__expression__tired__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__tired__v1.png",
-        "sha256": "4d2c08fed99f13e4e066d66d8bcc4999a66a3daf1a59f088f5111c6281a3233d",
-        "bytes": 1605453,
-        "version": 1
-      },
-      {
-        "slot": "expression.worried",
-        "source": "kate-murray/kate-murray__expression__worried__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__worried__v1.png",
-        "sha256": "6443baf20e7c278967be2de0bdcfcf0b02a707029d4a2ba85edff676e1465546",
-        "bytes": 1587232,
-        "version": 1
-      },
-      {
-        "slot": "face.down",
-        "source": "kate-murray/kate-murray__face__down__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__down__v1.png",
-        "sha256": "d9473da82d1c16173781ad979c8ae855ca757e2101c3726b3b25f9abcc00e31c",
-        "bytes": 1834615,
-        "version": 1
-      },
-      {
-        "slot": "face.front",
-        "source": "kate-murray/kate-murray__face__front__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__front__v1.png",
-        "sha256": "8df80278ce9d24af4530201fdac64e0ca3f3e28326ffa6fc89128f40d9a5584a",
-        "bytes": 2202866,
-        "version": 1
-      },
-      {
-        "slot": "face.side-right",
-        "source": "kate-murray/kate-murray__face__side-right__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__side-right__v1.png",
-        "sha256": "52c3c394a7ac11eeb5a9da29f57ff2746fc2d17a9ac52748cf3669d4abdff34a",
-        "bytes": 1791049,
-        "version": 1
-      },
-      {
-        "slot": "face.side",
-        "source": "kate-murray/kate-murray__face__side__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__side__v1.png",
-        "sha256": "8d35be6cb088f13cb66d4b933e9a6f3d6c35dc8eb3704bf509c1869c1f36bf6b",
-        "bytes": 1396873,
-        "version": 1
-      },
-      {
-        "slot": "face.three-quarter-left",
-        "source": "kate-murray/kate-murray__face__three-quarter-left__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__three-quarter-left__v1.png",
-        "sha256": "43445f6f5dc771e8ed96c9ffb308a531cffdb317e24c309a7c7a8074c75e5b5b",
-        "bytes": 1796763,
-        "version": 1
-      },
-      {
-        "slot": "face.three-quarter",
-        "source": "kate-murray/kate-murray__face__three-quarter__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__three-quarter__v1.png",
-        "sha256": "381629542509a0f5b78b044b488205aaa865fd7961dc7c44286215f1b60fa165",
-        "bytes": 1950167,
-        "version": 1
-      },
-      {
-        "slot": "face.up",
-        "source": "kate-murray/kate-murray__face__up__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__up__v1.png",
-        "sha256": "42a448de21c7818687a7e035c882bc5aee49b89744fa006dbc4a3196af1bc43a",
-        "bytes": 1741786,
-        "version": 1
-      },
-      {
-        "slot": "pose.arms-crossed",
-        "source": "kate-murray/kate-murray__pose__arms-crossed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__arms-crossed__v1.png",
-        "sha256": "461e164e365c0a08ccd24d371e87d21e923450b8f57a9f1a823215b5e4532035",
-        "bytes": 720540,
-        "version": 1
-      },
-      {
-        "slot": "pose.phone",
-        "source": "kate-murray/kate-murray__pose__phone__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__phone__v1.png",
-        "sha256": "60855285c4858bdb669ff2e7b1a8cf37990b94c32b44b4e419580b9ed6507386",
-        "bytes": 768467,
-        "version": 1
-      },
-      {
-        "slot": "pose.point",
-        "source": "kate-murray/kate-murray__pose__point__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__point__v1.png",
-        "sha256": "a05ce17944ba15891f9da82be6c33261ba590bf59fbde905e924af28575da0e6",
-        "bytes": 718465,
-        "version": 1
-      },
-      {
-        "slot": "pose.run",
-        "source": "kate-murray/kate-murray__pose__run__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__run__v1.png",
-        "sha256": "e645f0366fed28b54be3a87bcecc72f608dc90800ac5bcf5fabdec5c0eb13c35",
-        "bytes": 796264,
-        "version": 1
-      },
-      {
-        "slot": "pose.sit",
-        "source": "kate-murray/kate-murray__pose__sit__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__sit__v1.png",
-        "sha256": "444aae3cdf80818736159fa506739aec187576c39b67cfa450c2c99107a64518",
-        "bytes": 1023605,
-        "version": 1
-      },
-      {
-        "slot": "pose.walk",
-        "source": "kate-murray/kate-murray__pose__walk__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__walk__v1.png",
-        "sha256": "711dd275f25f1885468dc3d12867c84b1fce97da19b5d6897844c5b5629f794d",
-        "bytes": 788923,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.back-three-quarter-left",
-        "source": "kate-murray/kate-murray__turnaround__back-three-quarter-left__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__turnaround__back-three-quarter-left__v1.png",
-        "sha256": "67d97a73d2d91c80f48d3019426663f7ffad565fd02e2c20d3235154e647d01a",
-        "bytes": 706399,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.back-three-quarter-right",
-        "source": "kate-murray/kate-murray__turnaround__back-three-quarter-right__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__turnaround__back-three-quarter-right__v1.png",
-        "sha256": "a4471547fa7c0bd2f5e17bd14162c3736dc1f47df921ba381442a44451d44422",
-        "bytes": 717318,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.back",
-        "source": "kate-murray/kate-murray__turnaround__back__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__turnaround__back__v1.png",
-        "sha256": "7d563f8a634ab7cf9c5ea7cad5e8069a86aa499e8067a7fd244ceb95d446699b",
-        "bytes": 772555,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.front",
-        "source": "kate-murray/kate-murray__turnaround__front__v1.png",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__turnaround__front__v1.png",
+        "source": "kate-murray/kate-murray__turnaround__front__v1.png",
         "sha256": "72c73e7bd9f16e35ed69355898d5cd6a1f45412b377ff10dc4bb144c3c18df68",
         "bytes": 743069,
+        "slot": "turnaround.front",
         "version": 1
       },
       {
-        "slot": "turnaround.side",
-        "source": "kate-murray/kate-murray__turnaround__side__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__turnaround__side__v1.png",
-        "sha256": "607b90585f45ec22c4dd181e6aebfe2987591c88204bf832fe4b459c365bd155",
-        "bytes": 474491,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.three-quarter",
-        "source": "kate-murray/kate-murray__turnaround__three-quarter__v1.png",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__turnaround__three-quarter__v1.png",
+        "source": "kate-murray/kate-murray__turnaround__three-quarter__v1.png",
         "sha256": "75012e88e1aeffb41587f2948b5e688bfa839df719b08379266f8a9f8f468206",
         "bytes": 709051,
+        "slot": "turnaround.three-quarter",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.back",
-        "source": "kate-murray/kate-murray__wardrobe-personal__back__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__back__v1.png",
-        "sha256": "c1c2c720805ba5673ce50ef73eae0fa9c897e02eee3ca3e5a19e540e66bb520a",
-        "bytes": 825725,
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__turnaround__side__v1.png",
+        "source": "kate-murray/kate-murray__turnaround__side__v1.png",
+        "sha256": "607b90585f45ec22c4dd181e6aebfe2987591c88204bf832fe4b459c365bd155",
+        "bytes": 474491,
+        "slot": "turnaround.side",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.count-fingers",
-        "source": "kate-murray/kate-murray__wardrobe-personal__count-fingers__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__count-fingers__v1.png",
-        "sha256": "07213f9db916633ccddc60d92244be29009d4fb15360bb80c65de9db51abca6a",
-        "bytes": 801928,
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__turnaround__back__v1.png",
+        "source": "kate-murray/kate-murray__turnaround__back__v1.png",
+        "sha256": "7d563f8a634ab7cf9c5ea7cad5e8069a86aa499e8067a7fd244ceb95d446699b",
+        "bytes": 772555,
+        "slot": "turnaround.back",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.front",
-        "source": "kate-murray/kate-murray__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__turnaround__back-three-quarter-left__v1.png",
+        "source": "kate-murray/kate-murray__turnaround__back-three-quarter-left__v1.png",
+        "sha256": "67d97a73d2d91c80f48d3019426663f7ffad565fd02e2c20d3235154e647d01a",
+        "bytes": 706399,
+        "slot": "turnaround.back-three-quarter-left",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__turnaround__back-three-quarter-right__v1.png",
+        "source": "kate-murray/kate-murray__turnaround__back-three-quarter-right__v1.png",
+        "sha256": "a4471547fa7c0bd2f5e17bd14162c3736dc1f47df921ba381442a44451d44422",
+        "bytes": 717318,
+        "slot": "turnaround.back-three-quarter-right",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__front__v1.png",
+        "source": "kate-murray/kate-murray__face__front__v1.png",
+        "sha256": "8df80278ce9d24af4530201fdac64e0ca3f3e28326ffa6fc89128f40d9a5584a",
+        "bytes": 2202866,
+        "slot": "face.front",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__three-quarter__v1.png",
+        "source": "kate-murray/kate-murray__face__three-quarter__v1.png",
+        "sha256": "381629542509a0f5b78b044b488205aaa865fd7961dc7c44286215f1b60fa165",
+        "bytes": 1950167,
+        "slot": "face.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__side__v1.png",
+        "source": "kate-murray/kate-murray__face__side__v1.png",
+        "sha256": "8d35be6cb088f13cb66d4b933e9a6f3d6c35dc8eb3704bf509c1869c1f36bf6b",
+        "bytes": 1396873,
+        "slot": "face.side",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__three-quarter-left__v1.png",
+        "source": "kate-murray/kate-murray__face__three-quarter-left__v1.png",
+        "sha256": "43445f6f5dc771e8ed96c9ffb308a531cffdb317e24c309a7c7a8074c75e5b5b",
+        "bytes": 1796763,
+        "slot": "face.three-quarter-left",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__side-right__v1.png",
+        "source": "kate-murray/kate-murray__face__side-right__v1.png",
+        "sha256": "52c3c394a7ac11eeb5a9da29f57ff2746fc2d17a9ac52748cf3669d4abdff34a",
+        "bytes": 1791049,
+        "slot": "face.side-right",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__up__v1.png",
+        "source": "kate-murray/kate-murray__face__up__v1.png",
+        "sha256": "42a448de21c7818687a7e035c882bc5aee49b89744fa006dbc4a3196af1bc43a",
+        "bytes": 1741786,
+        "slot": "face.up",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__face__down__v1.png",
+        "source": "kate-murray/kate-murray__face__down__v1.png",
+        "sha256": "d9473da82d1c16173781ad979c8ae855ca757e2101c3726b3b25f9abcc00e31c",
+        "bytes": 1834615,
+        "slot": "face.down",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__neutral__v1.png",
+        "source": "kate-murray/kate-murray__expression__neutral__v1.png",
+        "sha256": "2821c2a09f2521c58606419b716b7dbf03b78847bdadac60f5cbaa2108040965",
+        "bytes": 1903951,
+        "slot": "expression.neutral",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__smile__v1.png",
+        "source": "kate-murray/kate-murray__expression__smile__v1.png",
+        "sha256": "a21b3d3268d417e8a936d51060cb1e13555266f927b10cfda31239f7444d454b",
+        "bytes": 1798018,
+        "slot": "expression.smile",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__laugh__v1.png",
+        "source": "kate-murray/kate-murray__expression__laugh__v1.png",
+        "sha256": "0804d1f0d7c0ad35cd0393d5fd41a09af5dd5622bb323d08432dddd03e012547",
+        "bytes": 1852890,
+        "slot": "expression.laugh",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__sad__v1.png",
+        "source": "kate-murray/kate-murray__expression__sad__v1.png",
+        "sha256": "5c404640221898ecbbae188b873abcc1fa407ee457b9adea65b37064bfc814a9",
+        "bytes": 1708662,
+        "slot": "expression.sad",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__cry__v1.png",
+        "source": "kate-murray/kate-murray__expression__cry__v1.png",
+        "sha256": "df57eaeeb79bddc12935d7d1a49c06adb9ab5f7598a18122b0bb052e85cb57f4",
+        "bytes": 1839980,
+        "slot": "expression.cry",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__annoyed__v1.png",
+        "source": "kate-murray/kate-murray__expression__annoyed__v1.png",
+        "sha256": "fd77255986c6da1fad22320bbb094c657d629d2e759c916423e3925dc3eb32c6",
+        "bytes": 1818648,
+        "slot": "expression.annoyed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__angry__v1.png",
+        "source": "kate-murray/kate-murray__expression__angry__v1.png",
+        "sha256": "3eaeb60c45d131d09fcb39c59084b18282d9323ad759e371ce6241dffefad497",
+        "bytes": 1610399,
+        "slot": "expression.angry",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__surprised__v1.png",
+        "source": "kate-murray/kate-murray__expression__surprised__v1.png",
+        "sha256": "6f394fc659e91097f724902af60d5b38a80ae641ea04d1ffe0c65c8c996e6bc0",
+        "bytes": 1481552,
+        "slot": "expression.surprised",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__scared__v1.png",
+        "source": "kate-murray/kate-murray__expression__scared__v1.png",
+        "sha256": "36eb9433900bae7d48e11e1681db5add090c5504c55b69a0a73ef58823190a62",
+        "bytes": 1476333,
+        "slot": "expression.scared",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__disgusted__v1.png",
+        "source": "kate-murray/kate-murray__expression__disgusted__v1.png",
+        "sha256": "af93d0e74b4fb60a1fb150f822b590e50671a6e02c68390e5a7ee94a5f59c4f3",
+        "bytes": 1483526,
+        "slot": "expression.disgusted",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__embarrassed__v1.png",
+        "source": "kate-murray/kate-murray__expression__embarrassed__v1.png",
+        "sha256": "dbd32b1951f84a85417104b0a616ad05910499e3df7d6807672bda5edf73ce89",
+        "bytes": 1557324,
+        "slot": "expression.embarrassed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__tired__v1.png",
+        "source": "kate-murray/kate-murray__expression__tired__v1.png",
+        "sha256": "4d2c08fed99f13e4e066d66d8bcc4999a66a3daf1a59f088f5111c6281a3233d",
+        "bytes": 1605453,
+        "slot": "expression.tired",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__speaking__v1.png",
+        "source": "kate-murray/kate-murray__expression__speaking__v1.png",
+        "sha256": "4d962f2ef714b78db2df8b66b3be758e641c0ee895748f3180a7a30597d22851",
+        "bytes": 1472367,
+        "slot": "expression.speaking",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__eyes-closed__v1.png",
+        "source": "kate-murray/kate-murray__expression__eyes-closed__v1.png",
+        "sha256": "f2608429a1e6b5721dad25446c419d3561cf166abe0b66c08e0c501f94a9eb37",
+        "bytes": 1632692,
+        "slot": "expression.eyes-closed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__worried__v1.png",
+        "source": "kate-murray/kate-murray__expression__worried__v1.png",
+        "sha256": "6443baf20e7c278967be2de0bdcfcf0b02a707029d4a2ba85edff676e1465546",
+        "bytes": 1587232,
+        "slot": "expression.worried",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__skeptical__v1.png",
+        "source": "kate-murray/kate-murray__expression__skeptical__v1.png",
+        "sha256": "1cd51384d8d02bde84c871f763973471fa54d4030d29af8f451806c4ee45285f",
+        "bytes": 1539602,
+        "slot": "expression.skeptical",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__smug__v1.png",
+        "source": "kate-murray/kate-murray__expression__smug__v1.png",
+        "sha256": "368f238fd701b84e5db09df241d09d7611ab07528c24053e2797fcf2ff1a62ec",
+        "bytes": 1481705,
+        "slot": "expression.smug",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__contempt__v1.png",
+        "source": "kate-murray/kate-murray__expression__contempt__v1.png",
+        "sha256": "4ad166731f527e9c2cb9207f4e7e76683771809ba57dcdfea2955cc160fe44a3",
+        "bytes": 1467089,
+        "slot": "expression.contempt",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__confused__v1.png",
+        "source": "kate-murray/kate-murray__expression__confused__v1.png",
+        "sha256": "2013f8ebdedd4596475a505e060dd677e40b2e7442c1c1b28274d82f88fcbd92",
+        "bytes": 1685156,
+        "slot": "expression.confused",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__thinking__v1.png",
+        "source": "kate-murray/kate-murray__expression__thinking__v1.png",
+        "sha256": "a4d85249ea6bc5f01f751a2135d65deaa7b6d9a693de3f7912f2af88e3c7dd41",
+        "bytes": 1462837,
+        "slot": "expression.thinking",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__determined__v1.png",
+        "source": "kate-murray/kate-murray__expression__determined__v1.png",
+        "sha256": "fbe3bf5f40072941c17c8d90531619b467ecec040e688d68b0d81c0fe6074983",
+        "bytes": 1548836,
+        "slot": "expression.determined",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__shy__v1.png",
+        "source": "kate-murray/kate-murray__expression__shy__v1.png",
+        "sha256": "6e639e13d02396941dc850699a99638bf65e55f879b578cb58ba7334a78fd823",
+        "bytes": 1449854,
+        "slot": "expression.shy",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__pain__v1.png",
+        "source": "kate-murray/kate-murray__expression__pain__v1.png",
+        "sha256": "79f47d185f8b6bac9be6f6dba8ae1bfa87cb359cc4a1595658b75914edcfade8",
+        "bytes": 1601500,
+        "slot": "expression.pain",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__sleepy__v1.png",
+        "source": "kate-murray/kate-murray__expression__sleepy__v1.png",
+        "sha256": "2c34a8a635ff19fd7b0b22c6c8d07893b67b56421361a5bf09d66ce31bfed5bc",
+        "bytes": 1421403,
+        "slot": "expression.sleepy",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__awkward-smile__v1.png",
+        "source": "kate-murray/kate-murray__expression__awkward-smile__v1.png",
+        "sha256": "90b33b4c6a9623f2894a2cc946b8d4d3f5ccabeb1efa0f18002b62468b6a20bd",
+        "bytes": 1467567,
+        "slot": "expression.awkward-smile",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__expression__deadpan__v1.png",
+        "source": "kate-murray/kate-murray__expression__deadpan__v1.png",
+        "sha256": "4fc31904237207e753c11e666418377c7336c7fff451bc3a1379294b6b6b59f0",
+        "bytes": 1960699,
+        "slot": "expression.deadpan",
+        "version": 1
+      },
+      {
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__front__v1.png",
+        "source": "kate-murray/kate-murray__wardrobe-personal__front__v1.png",
         "sha256": "5abe6f64c736a7202823a661878d4f9476c6a10ec3150bea81700dd320d4fc08",
         "bytes": 766077,
+        "slot": "wardrobe.personal.front",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.listen-crouch",
-        "source": "kate-murray/kate-murray__wardrobe-personal__listen-crouch__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__listen-crouch__v1.png",
-        "sha256": "9d086de854de0e4a29faf55321c3590539a03f580a589ebb1a5ab5eec2b68eff",
-        "bytes": 1256548,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.picture-book",
-        "source": "kate-murray/kate-murray__wardrobe-personal__picture-book__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__picture-book__v1.png",
-        "sha256": "ed8dac3aeb752f2639a86b02188d77b8db79cc5697341da305b9258d65eaf3fa",
-        "bytes": 808013,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.portrait",
-        "source": "kate-murray/kate-murray__wardrobe-personal__portrait__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__portrait__v1.png",
-        "sha256": "3ee474688ca70e4a6c81e57f8bc41cc1cf93ef82be694287efb631e940401992",
-        "bytes": 1844228,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.side",
-        "source": "kate-murray/kate-murray__wardrobe-personal__side__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__side__v1.png",
-        "sha256": "1ef8d9e63e76fe2e2a6957f36390553d9f5f9b16c523d812c31df8859bdf72ea",
-        "bytes": 645919,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.three-quarter",
-        "source": "kate-murray/kate-murray__wardrobe-personal__three-quarter__v1.png",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__three-quarter__v1.png",
+        "source": "kate-murray/kate-murray__wardrobe-personal__three-quarter__v1.png",
         "sha256": "25e63e40833c55e8405933a3ab5e09c40b22b20cb8ceb96e5fad59161749774e",
         "bytes": 692857,
+        "slot": "wardrobe.personal.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__side__v1.png",
+        "source": "kate-murray/kate-murray__wardrobe-personal__side__v1.png",
+        "sha256": "1ef8d9e63e76fe2e2a6957f36390553d9f5f9b16c523d812c31df8859bdf72ea",
+        "bytes": 645919,
+        "slot": "wardrobe.personal.side",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__back__v1.png",
+        "source": "kate-murray/kate-murray__wardrobe-personal__back__v1.png",
+        "sha256": "c1c2c720805ba5673ce50ef73eae0fa9c897e02eee3ca3e5a19e540e66bb520a",
+        "bytes": 825725,
+        "slot": "wardrobe.personal.back",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__portrait__v1.png",
+        "source": "kate-murray/kate-murray__wardrobe-personal__portrait__v1.png",
+        "sha256": "3ee474688ca70e4a6c81e57f8bc41cc1cf93ef82be694287efb631e940401992",
+        "bytes": 1844228,
+        "slot": "wardrobe.personal.portrait",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__picture-book__v1.png",
+        "source": "kate-murray/kate-murray__wardrobe-personal__picture-book__v1.png",
+        "sha256": "ed8dac3aeb752f2639a86b02188d77b8db79cc5697341da305b9258d65eaf3fa",
+        "bytes": 808013,
+        "slot": "wardrobe.personal.picture-book",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__count-fingers__v1.png",
+        "source": "kate-murray/kate-murray__wardrobe-personal__count-fingers__v1.png",
+        "sha256": "07213f9db916633ccddc60d92244be29009d4fb15360bb80c65de9db51abca6a",
+        "bytes": 801928,
+        "slot": "wardrobe.personal.count-fingers",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__wardrobe-personal__listen-crouch__v1.png",
+        "source": "kate-murray/kate-murray__wardrobe-personal__listen-crouch__v1.png",
+        "sha256": "9d086de854de0e4a29faf55321c3590539a03f580a589ebb1a5ab5eec2b68eff",
+        "bytes": 1256548,
+        "slot": "wardrobe.personal.listen-crouch",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__walk__v1.png",
+        "source": "kate-murray/kate-murray__pose__walk__v1.png",
+        "sha256": "711dd275f25f1885468dc3d12867c84b1fce97da19b5d6897844c5b5629f794d",
+        "bytes": 788923,
+        "slot": "pose.walk",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__run__v1.png",
+        "source": "kate-murray/kate-murray__pose__run__v1.png",
+        "sha256": "e645f0366fed28b54be3a87bcecc72f608dc90800ac5bcf5fabdec5c0eb13c35",
+        "bytes": 796264,
+        "slot": "pose.run",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__sit__v1.png",
+        "source": "kate-murray/kate-murray__pose__sit__v1.png",
+        "sha256": "444aae3cdf80818736159fa506739aec187576c39b67cfa450c2c99107a64518",
+        "bytes": 1023605,
+        "slot": "pose.sit",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__point__v1.png",
+        "source": "kate-murray/kate-murray__pose__point__v1.png",
+        "sha256": "a05ce17944ba15891f9da82be6c33261ba590bf59fbde905e924af28575da0e6",
+        "bytes": 718465,
+        "slot": "pose.point",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__arms-crossed__v1.png",
+        "source": "kate-murray/kate-murray__pose__arms-crossed__v1.png",
+        "sha256": "461e164e365c0a08ccd24d371e87d21e923450b8f57a9f1a823215b5e4532035",
+        "bytes": 720540,
+        "slot": "pose.arms-crossed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__pose__phone__v1.png",
+        "source": "kate-murray/kate-murray__pose__phone__v1.png",
+        "sha256": "60855285c4858bdb669ff2e7b1a8cf37990b94c32b44b4e419580b9ed6507386",
+        "bytes": 768467,
+        "slot": "pose.phone",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__detail__hands__v1.png",
+        "source": "kate-murray/kate-murray__detail__hands__v1.png",
+        "sha256": "ce354f7858ede87acc276e0f3518bcbe525bc30f2f23869187a9313e54f07210",
+        "bytes": 1007902,
+        "slot": "detail.hands",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/kate-murray__detail__hair-back__v1.png",
+        "source": "kate-murray/kate-murray__detail__hair-back__v1.png",
+        "sha256": "d016463ee8b8ea7884b88f97f0c098b0382ddd6d13eb5c72c87d76487a60fbee",
+        "bytes": 2289901,
+        "slot": "detail.hair-back",
         "version": 1
       }
     ],
     "voices": [
       {
-        "slot": "intro",
-        "source": "voices/kate-murray/kate-murray__voice__intro__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/voice/frozen/kate-murray__voice__intro__v1.wav",
+        "source": "voices/kate-murray/kate-murray__voice__intro__v1.wav",
         "sha256": "b178e302711175e5ca18fb61ceb22e9b5149d8adab212d80d33ce4acec085ba2",
         "bytes": 1119514,
+        "slot": "intro",
         "version": 1,
+        "placeholder": true,
         "transcript": "Hiya, I'm Kate Murray, twenty-nine, from Glasgow. The buzz cut makes me look much fiercer than I am. I teach English at a kindergarten in Shanghai. The children call me their bald teacher, which is fair enough. Five minutes into story time, they usually forget to be scared of me."
       },
       {
-        "slot": "intro-alt",
-        "source": "voices/kate-murray/kate-murray__voice__intro-alt__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/voice/frozen/kate-murray__voice__intro-alt__v1.wav",
+        "source": "voices/kate-murray/kate-murray__voice__intro-alt__v1.wav",
         "sha256": "6c60eef959c84d33ed7f8598f6c4c9709cfa6ea5599c3d72288b18f0eeff025e",
         "bytes": 1056928,
+        "slot": "intro-alt",
         "version": 1,
+        "placeholder": true,
         "transcript": "你好，我叫Kate Murray，来自格拉斯哥，今年二十九。我在上海的幼儿园教英语。头发剃得很短，看起来有点凶，其实我每天都在讲故事。孩子们叫我光头老师，我觉得这个名字挺好记的。"
       },
       {
-        "slot": "chat",
-        "source": "voices/kate-murray/kate-murray__voice__chat__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/voice/frozen/kate-murray__voice__chat__v1.wav",
+        "source": "voices/kate-murray/kate-murray__voice__chat__v1.wav",
         "sha256": "4e4bf671f780993a9976a10ccb5ee28194efe31450453e765cfef4bdf35dc38f",
         "bytes": 612138,
+        "slot": "chat",
         "version": 1,
+        "placeholder": true,
         "transcript": "All right, which animal do you think is hiding behind this page? Have a proper guess. No, it isn't me. I haven't got a tail. Come on, let's turn it over together."
       },
       {
-        "slot": "happy",
-        "source": "voices/kate-murray/kate-murray__voice__happy__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/voice/frozen/kate-murray__voice__happy__v1.wav",
+        "source": "voices/kate-murray/kate-murray__voice__happy__v1.wav",
         "sha256": "3bdb11d49b0a352ba6a272071862f8456827740dde2e2a74a3b2efed0631b424",
         "bytes": 702788,
+        "slot": "happy",
         "version": 1,
+        "placeholder": true,
         "transcript": "You remembered the whole song! Oh, that's brilliant. We practised it so many times, and today you just stood up and sang it. I'm really proud of you. Shall we do the funny verse again?"
       },
       {
-        "slot": "angry",
-        "source": "voices/kate-murray/kate-murray__voice__angry__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/voice/frozen/kate-murray__voice__angry__v1.wav",
+        "source": "voices/kate-murray/kate-murray__voice__angry__v1.wav",
         "sha256": "bd70d441ae934e5326bb3a9c05dcf98b1622e1b492ccaa8ef6d1c124d9ce57ec",
         "bytes": 580930,
+        "slot": "angry",
         "version": 1,
+        "placeholder": true,
         "transcript": "Stop there. We don't push someone because we want the toy. Put it down for a moment and tell me what happened. We'll listen to each other, one at a time."
       },
       {
-        "slot": "sad",
-        "source": "voices/kate-murray/kate-murray__voice__sad__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/voice/frozen/kate-murray__voice__sad__v1.wav",
+        "source": "voices/kate-murray/kate-murray__voice__sad__v1.wav",
         "sha256": "cfaf82e4de52dbe0acac50b998fac624b23cf41899bdbfc967dfe4fbc0c6b8ee",
         "bytes": 716164,
+        "slot": "sad",
         "version": 1,
+        "placeholder": true,
         "transcript": "One of the children left me a wee drawing before moving away. Apparently that's me with all the hair. I laughed when I saw it. Then the classroom got quiet, and I missed them more than I expected."
       }
     ]
@@ -704,9 +739,9 @@
       "approval": {
         "rootStatus": "passed-technical-staging-under-owner-delegated-review",
         "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/actors/kate-murray.json",
-        "evidenceSha256": "2a8297e5de70921b7c7679903c17dffc8e049dbd4dd69cddf511a588affb9e3f",
+        "evidenceSha256": "c10f98b5f781a07f9882f44aa149a25f62d96184b834ae5b402cfbb431b2d63f",
         "ownerReviewPending": false,
-        "authority": "2026-10-22 BRIEF explicitly authorizes publishing these four completed staging deliveries; producer limitations retained in proposals, not an automatic ratio/frame pass or personal Owner review."
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
       },
       "media": [
         {
@@ -715,9 +750,174 @@
           "source": "samples/kate-murray-grok-20261022/source.mp4",
           "sourceSha256": "e6b1b56587acac46cc336c71bde3796eb9466a3f8a85b8398d12c66854d534a1",
           "public": "/media/works/samples/kate-murray-grok-20261022/video.mp4",
-          "transcode": true
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/kate-murray-sample-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/kate-murray-sample-original.mp4",
+            "source": "samples/kate-murray-grok-20261022/platform-original.mp4",
+            "sha256": "04dffdbcd5b7e71c6cda65ccbb6293a6ce4bea99c7e9b0deeb2beddda8e1f213",
+            "bytes": 2018491
+          }
         }
       ]
+    },
+    {
+      "sampleId": "kate-murray-grok-action-20261023",
+      "actorSlugs": [
+        "kate-murray"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/action/task.json",
+        "evidenceSha256": "e255f7f47b5805736ac81b6132811f81061b2eb1cffd105da2e1082816ef5685",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/kate-murray-grok-action-20261023/source.mp4",
+          "sourceSha256": "16bbf8b513ee8edad4b6c934110eb721a084470a92896ae8163d4f452ab75c43",
+          "public": "/media/works/samples/kate-murray-grok-action-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/action/attempt-01-contained-arms/kate-murray-action-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/action/attempt-01-contained-arms/kate-murray-action-original.mp4",
+            "source": "samples/kate-murray-grok-action-20261023/platform-original.mp4",
+            "sha256": "882cec9d3a4d89d62368afe8a228f0cf34a8688d0919999fb169d03c0423c502",
+            "bytes": 1586752
+          }
+        }
+      ],
+      "productionTask": {
+        "id": "task-e0cd4fd737035a5c",
+        "sha256": "e255f7f47b5805736ac81b6132811f81061b2eb1cffd105da2e1082816ef5685",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:10:13.608Z",
+          "note": "直接查看12帧与首中尾：Kate极短浅棕发、长脸鼻形与原锚点身份保持，灰T黑裤白鞋一致；由正面向右转侧并两次迈腿后转回正面站稳，双手在躯干前自然相握。全程发顶手指鞋底完整，无融合多肢，成人头颈躯干骨盆腿段相对原身体自然；实际镜头轻微跟随并有小幅推近而非严格固定，作为有明显动作的样片接受，偏差保留。原生720x1280/6.041667秒全解码，原片与静音版已收，0.04655008美元实记，技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "kate-murray-grok-ensemble-20261023",
+      "actorSlugs": [
+        "kate-murray"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/ensemble/task.json",
+        "evidenceSha256": "3858bca6de2d7ae09a75f02839a44837afe1390d608a6e05dbab2c585794f98f",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/kate-murray-grok-ensemble-20261023/source.mp4",
+          "sourceSha256": "220dd7ee1d36df35efef215f47a2da52a68d96eacc5273f43132532060d78bc5",
+          "public": "/media/works/samples/kate-murray-grok-ensemble-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/ensemble/kate-murray-ensemble-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/ensemble/kate-murray-ensemble-original.mp4",
+            "source": "samples/kate-murray-grok-ensemble-20261023/platform-original.mp4",
+            "sha256": "517ea707d4796cf8cd1eb46bb854d723bef534bfb7c486af569e3f0886d64dae",
+            "bytes": 1937115
+          }
+        }
+      ],
+      "castSlugs": [
+        "kate-murray",
+        "grace-boateng"
+      ],
+      "productionTask": {
+        "id": "task-489c30069dd7e42e",
+        "sha256": "3858bca6de2d7ae09a75f02839a44837afe1390d608a6e05dbab2c585794f98f",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:25:24.667Z",
+          "note": "直接看12帧及原生首中尾：Kate左侧极短浅棕发长脸鼻形绿衬衫、Grace右侧宽软下颌厚颊短宽鼻蓝衬衫陶土裤身份稳定。Kate向右大步形成宽弓步并摊掌，Grace原地回应点头；步幅比日常交流夸张，但成人解剖与平衡可用，代理接受有表现力的表演并保留此差异。完整发顶手指鞋底全程留框，无融合多肢，成人头颈躯干骨盆腿段相对锚点自然，CG共享光照空间通过。原生1280x720/6.041667秒全解码，原AAC和封面保留、静音流拷贝，0.04491944美元实际费用记关联原run的Task，技术staging通过。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "kate-murray-google-vids-20261023",
+      "actorSlugs": [
+        "kate-murray"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Google Vids"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/vids/task.json",
+        "evidenceSha256": "3e110c7404b3fa0a25d6e5b4a9bc3646f993027cece9b64382eb69d763c5fbd0",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/kate-murray-google-vids-20261023/source.mp4",
+          "sourceSha256": "e7860f13ca4ef7c45e1dfb385227aa472155c8ce90cf96299e54fca67dda9ce6",
+          "public": "/media/works/samples/kate-murray-google-vids-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/vids/kate-murray-vids-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/kate-murray/video/additional-20261022/vids/kate-murray-vids-original.mp4",
+            "source": "samples/kate-murray-google-vids-20261023/platform-original.mp4",
+            "sha256": "7fbebe686a8d7bbcdb429f0f16c24b31880af035125065a897a376934d0dac78",
+            "bytes": 1294835
+          }
+        }
+      ],
+      "castSlugs": [
+        "kate-murray",
+        "grace-boateng"
+      ],
+      "productionTask": {
+        "id": "task-e35297c2355e395d",
+        "sha256": "3e110c7404b3fa0a25d6e5b4a9bc3646f993027cece9b64382eb69d763c5fbd0",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:05:15.374Z",
+          "note": "直接查看12帧与首中尾：Kate左侧极短浅棕发长脸绿衬衫、Grace右侧宽软下颌厚颊短宽鼻蓝衬衫陶土裤身份保持可辨。Kate向右迈一步并摊掌，Grace原地回应点头；两人全程完整发顶手指鞋底，成人头颈躯干骨盆腿段相对锚点自然，无融合多肢，CG光线与场景空间统一。原生1280x720/144帧6秒全解码通过，AAC48k与四角星保留，静音流拷贝；技术staging接受，费用unknown。",
+          "formalPublication": false
+        },
+        "source": "IAB publicdownloadMedia actualgeneratedvideo; not documentexport"
+      }
     }
-  ]
+  ],
+  "websitePromotion": {
+    "authorizedOn": "2026-10-23",
+    "authority": "Owner task: publish all ten under new names, second-version biographies and approved current appearance; preserve CC provenance and old URL redirects.",
+    "actorSourceSha256": "c10f98b5f781a07f9882f44aa149a25f62d96184b834ae5b402cfbb431b2d63f",
+    "slotPlanSha256": "854a32deed4d9915baaaa5e9b49ee03c0d8d888ea92924ff17905be925433056",
+    "voiceReview": "Owner-accepted temporary placeholder; no complete acoustic review claimed.",
+    "proportionReview": "Owner-delegated relative visual acceptance; original absolute measurement_review and framing exceptions retained unchanged in producer evidence.",
+    "billing": "Historical Grok unknown requests and CLI model-usage USD values remain in producer records; no verified account debit or video unit price is asserted."
+  }
 }

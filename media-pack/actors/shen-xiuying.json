@@ -1,0 +1,1049 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "code": "shen-xiuying",
+  "slug": "shen-xiuying",
+  "kind": "actor",
+  "name": {
+    "zh": "沈秀英",
+    "en": "Shen Xiuying"
+  },
+  "status": {
+    "delivered": 55,
+    "published": false,
+    "preparedOn": "2026-10-22",
+    "productionOnly": true,
+    "version": "1.0.0",
+    "siteProfile": "src/content/actors/shen-xiuying/profile.ts"
+  },
+  "demographics": {
+    "age": 71,
+    "gender": "female",
+    "origin": {
+      "zh": "江苏苏州",
+      "en": "Suzhou, Jiangsu, China"
+    },
+    "voiceLanguage": "zh"
+  },
+  "facts": {
+    "zh": [
+      "71岁，江苏苏州，身高150cm。",
+      "脸来源CC-036，旧定妆全身照仅用于认脸，不作比例参照。",
+      "开了三十年大货车的退休司机，现在天天穿旗袍去菜场。"
+    ],
+    "en": [
+      "A retired long-haul truck driver with thirty years behind the wheel; she now wears a qipao to the produce market every day."
+    ]
+  },
+  "identity": "The same original fictional East Asian Chinese woman as the attached CC-036-face-only.png, now named Shen Xiuying, 71 years old, from Suzhou, Jiangsu, China, 150 cm tall. Preserve her finely wrinkled face, small mole on the same cheek, white hair in a precise tidy bun, warm alert dark-brown eyes. A retired long-haul truck driver with thirty years behind the wheel; she now wears a qipao to the produce market every day. Use the face crop for identity only; never infer body size from the original casting body. Natural adult proportions appropriate to her height and age, target about 6.8 heads tall, target range 6.6–7.0 from hidden skull crown to chin, not hair or bun. Natural neck, torso, pelvis and limbs; neither childlike nor fashion-model elongated. Preserve her age and distinctive facial features, never beautify or de-age her.",
+  "stylization": "Character stylization (A2, pushed): 3D feature-animation adult with realistic adult body proportions at this actor's height; normal head size, natural neck, shoulders, torso, pelvis and leg lengths. Her Chinese identity must read through her facial structure rather than clothing. Preserve distinctive ordinary-person facial features, gently exaggerated from life, not a generic beauty-standard face. Slightly enlarged expressive eyes without enlarging the whole head; simplified cheek, nose and lip planes; smooth stylized skin shading with soft subsurface scattering and no pores; clean grouped hair clumps. Clothing uses realistic clean unbranded materials. Unmistakably CG at first glance, never photoreal.",
+  "proportions": {
+    "headsTall": 6.8,
+    "headsTallRange": [
+      6.6,
+      7.0
+    ],
+    "heightCm": 150,
+    "targetBasis": "Production target proposed before generation from confirmed height and age; not a measurement or a selected body. Frozen Vision review plus delegated anatomy/identity review required.",
+    "frameGuide": {
+      "occupancyMin": 0.86,
+      "occupancyMax": 0.94,
+      "topMarginMin": 0.04,
+      "topMarginMax": 0.1,
+      "bottomMarginMin": 0.04,
+      "bottomMarginMax": 0.1
+    }
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/staging/shen-xiuying/shen-xiuying__face__front__v1.png",
+    "body": "library/staging/shen-xiuying/references/selected-body-anchor.png"
+  },
+  "castingSource": {
+    "code": "CC-036",
+    "oldSlug": "qian-sumei",
+    "oldName": {
+      "zh": "钱素梅",
+      "en": "Qian Sumei"
+    },
+    "record": "casting/new-faces-2026-10.json",
+    "image": "library/claude-casting-2026-10-07/final/CC-036.png",
+    "sha256": "c2dbe1cda03c062d362fb47ad845ad8495f92151b66a4df4bce5173e0fb9a5a4",
+    "use": "face identity only; not a body-ratio reference",
+    "identityAuthority": "HQ/conductor/projects/SwimmerParty/next-10-actors-20261020.md second version and next-10-actors-run-20261021.md",
+    "faceCrop": {
+      "file": "references/CC-036-face-only.png",
+      "rectangleXYXY": [
+        280,
+        0,
+        660,
+        445
+      ],
+      "width": 380,
+      "height": 445,
+      "sha256": "0a04e910154858666985c078267895bdc9570111b9390efa780c0a59fe2711dd",
+      "operation": "pixel crop only; no repaint or retouch; source original preserved"
+    }
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "Plain clean lavender cotton crew-neck T-shirt, straight dark charcoal trousers, clean flat white low-top shoes. No logos, jewelry or accessories."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "zh": "日常装",
+        "en": "Everyday wear"
+      },
+      "prompt": "A modest clean muted teal cotton qipao with a small stand collar, short sleeves, loose practical straight fit and mid-calf hem, restrained low side vents, plain fabric without motifs; comfortable flat black cloth shoes. No jewelry, logos or ornate accessories. Preserve her meticulously pinned white bun.",
+      "approvalBasis": "Agent-selected nativefront personalimage after identity/CG/relativebodyQA; seeproposals.approvedPersonalLook",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": { "zh": "日常装近景", "en": "Everyday portrait" },
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
+        },
+        {
+          "key": "market-basket",
+          "label": {
+            "zh": "拎菜篮",
+            "en": "Market basket"
+          },
+          "direction": "full body, walking naturally at a three-quarter angle while carrying a small plain woven shopping basket with a few vegetables; no labels or environment"
+        },
+        {
+          "key": "choose-vegetables",
+          "label": {
+            "zh": "挑青菜",
+            "en": "Choosing vegetables"
+          },
+          "direction": "full body, standing at a three-quarter angle, inspecting one small bunch of leafy greens held naturally in both hands, alert practical expression"
+        },
+        {
+          "key": "seated-story",
+          "label": {
+            "zh": "坐着讲故事",
+            "en": "Seated story"
+          },
+          "direction": "full body, sitting naturally on a simple plain stool, feet supported, one hand making a modest conversational gesture, lively small smile; natural elderly adult anatomy"
+        }
+      ]
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "owner-delegated-agent-selected-trial4",
+    "phase": "four-samples-complete-technical-staging",
+    "appearance": "All3audition messages consumed. Earlier model drift outputs quarantined; correcttrial2 torso proportion rejected; correcttrial3 returned a two-person contact sheet, rejected without slicing. No body anchor selected;0/55.",
+    "delivered": 13,
+    "bodyReview": {
+      "authority": "Owner2026-10-22 reiterated agent chooses aesthetics/body proportions; agentselected, notOwnerpersonalchoice",
+      "source": "trials/trial4-native.png",
+      "sha256": "8977d7ff2299fc75fd40e290068d6243035fbc270936481acb4aa4d04b285f0c",
+      "headsTall": 7.208,
+      "range": [
+        6.736,
+        7.757
+      ],
+      "frozenStatus": "measurement_review",
+      "frozenFrame": {
+        "status": "frame_rejected",
+        "occupancy": 0.928,
+        "topMargin": 0.035,
+        "bottomMargin": 0.037,
+        "bbox": {
+          "minX": 198,
+          "minY": 59,
+          "maxX": 769,
+          "maxY": 1609
+        },
+        "target": {
+          "occupancyMin": 0.86,
+          "occupancyMax": 0.94,
+          "topMarginMin": 0.04,
+          "topMarginMax": 0.1,
+          "bottomMarginMin": 0.04,
+          "bottomMarginMax": 0.1
+        }
+      },
+      "decision": "delegated-visual-acceptance",
+      "basis": "Properalpha compositewhite/dark clean; linecrown/eye/chin/sole checked. Identity/CG preserved. Natural adult neck/shoulders/torso/pelvis/legs atconfirmedheight and age. Entirehair/hands/flatshoes visible; lowmargin consciously accepted as explicit framingexception. Frozenmeasurement_review/frame_rejected retained, notauto/Ownerpersonalpass."
+    },
+    "faceReferenceUpdate": "Use the alreadyaccepted nativeface/front as currentfaceanchor; originalCC036face/sourcepreserved. Closefaceheadbatchesattachthisonefaceonly toavoidmanysourceviewconfusion.",
+    "distinctivenessAudit": {
+      "checkedAt": "2026-10-22T11:53:15.208505+08:00",
+      "comparison": "Official live21 ready-to-cast catalog; local matching native face/body assets read-only. Diagnostic sheets in next10 receipt.",
+      "authority": "Owner requested autonomous differentiation of unfinished actors and authorized facial redesign; four completed actors exempt.",
+      "decision": "retain-v1",
+      "reason": "71-year-old150cm senior woman, lined small face and precise silver bun, anatomical-left mole; no existing comparable senior woman in live21. Preserve age instead of de-aging."
+    },
+    "ownerLatestMessageQuota": {
+      "trial": 9,
+      "fullCumulative": 70,
+      "includesAlreadyUsed": true,
+      "source": "Ownerdirectreply call_ab0a7aef4a3c4782b2d6326cdf2a24f5"
+    },
+    "imageProviderPause": {
+      "route": "chatgpt-web",
+      "status": "resolved-owner-model-change",
+      "evidence": [
+        "grace-message16-provider-limit-browser.png",
+        "peter-message10-provider-limit-browser.png"
+      ],
+      "actualMessage": "你已达到限额。请稍后重试。",
+      "observed": "2026-10-22 13:30 UTC+8",
+      "resetAt": "not displayed",
+      "scope": "Twooriginalchats bothlimited; sharedPicsAroute held toavoidunproductivecrossactorretries, no modelchange",
+      "next": "Continue separately authorized voice/sample work using selectedanchors; imagesremainincomplete, originalrunsnotreset"
+    },
+    "ownerModelOverride": {
+      "authority": "Owner本会话2026-10-22明确：后面session都用GPT6极高，不用5.6SolPro",
+      "applies": "allsubsequentChatGPTimages in originalconversation",
+      "previous": "GPT5.6SolPro5/5",
+      "verifiedCurrent": "GPT6checked,极高4/5",
+      "evidence": "shen-xiuying-gpt6-extra-high-selected-browser.png"
+    },
+    "approvedPersonalLook": {
+      "anchor": "shen-xiuying__wardrobe-personal__front__v1.png",
+      "authority": "Agent visual choice under Ownerdelegation",
+      "basis": "Nativepersonalfront approved afterrelativebodyQA, 7.238 vs7.208baseline. Usefixedfrontforlookconsistency, originalbodyanchorstaysunchanged."
+    },
+    "profileRevision": [
+      {
+        "slot": "turnaround/side",
+        "oldFile": "shen-xiuying__turnaround__side__v1.png",
+        "newFile": "shen-xiuying__turnaround__side__v2.png"
+      },
+      {
+        "slot": "face/side",
+        "oldFile": "shen-xiuying__face__side__v1.png",
+        "newFile": "shen-xiuying__face__side__v2.png"
+      },
+      {
+        "slot": "face/side-right",
+        "oldFile": "shen-xiuying__face__side-right__v1.png",
+        "newFile": "shen-xiuying__face__side-right__v2.png"
+      }
+    ],
+    "voicePlaceholderChoice": {
+      "name": "shen-xiuying",
+      "candidate": 1,
+      "cloudStatus": "saved-provisional-placeholder",
+      "acousticReview": "not-reviewed; Gemini browser attachment control unavailable after documented recovery attempts",
+      "authority": "Owner explicitly allows agent to select placeholder MiniMax voices for all future actors without further approval; no acoustic ranking claimed",
+      "candidateFiles": [
+        "voice/candidate-1.mp3",
+        "voice/candidate-2.mp3",
+        "voice/candidate-3.mp3"
+      ],
+      "balanceBefore": 65693,
+      "balanceAfter": 65693,
+      "remainingVoiceSlots": "5/10",
+      "updatedAt": "2026-10-22T15:46:51.869512"
+    },
+    "imagePackTechnicalComplete": {
+      "slots": 55,
+      "uniqueSha256": 55,
+      "fullBodyReviewed": 19,
+      "actualMessages": 43,
+      "automaticProportion": "measurement_review",
+      "authority": "Owner delegated visual acceptance",
+      "formalWebsiteWrite": false
+    },
+    "voicePlaceholderDelivery": {
+      "slots": 6,
+      "handoff": "voice/handoff/handoff.json",
+      "status": "accepted-temporary-placeholder-under-delegation",
+      "review": "ASR-only; not acoustically heard; sad small wording uncertain",
+      "beats": 746
+    },
+    "additionalVideoTasks": {
+      "action": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/action/task.json",
+      "ensemble": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/ensemble/task.json",
+      "vids": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/vids/task.json"
+    },
+    "sampleScope": {
+      "required": 4,
+      "accepted": 4,
+      "grokAccepted": 3,
+      "vidsAccepted": 1,
+      "missing": {},
+      "sourceExceptions": [],
+      "voiceNote": "existing six placeholder WAV unchanged; no acoustic review claim",
+      "reviewAuthority": "Owner delegated aesthetic and relative proportion review; staging only",
+      "reviewPage": "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/four-sample-review.html",
+      "updatedAt": "2026-10-22T16:47:36.531392+00:00",
+      "publication": false,
+      "historicalUnknownRequests": [
+        {
+          "kind": "ensemble",
+          "sessionId": "01a1638c-f0f0-7820-9b70-3106d509462b",
+          "requestId": "beecbd36-92e9-468e-aa43-08de3a7a3ad5",
+          "totalCostUsd": 0.05245316,
+          "status": "unknown retained; may duplicate charge",
+          "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/ensemble/generation-evidence.json"
+        }
+      ]
+    }
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00-pics-a/c/6ad8f78c-15a8-83e9-9a1f-363da53b6acf",
+      "project": "Pics-A",
+      "modelRequested": "GPT-5.6 Sol / Pro 5/5",
+      "host": "Codex app in-app browser",
+      "actualModelVerified": "GPT-5.6Sol Pro5/5 in actualchat, beforeandaftertrial4",
+      "actualModel": "GPT-5.6 Sol / Pro5/5 explicitly selected in established chat, verified before and after trial2 submission. Earlier trial/full provenance remains unverified and quarantined.",
+      "model": "GPT-6",
+      "thinking": "Extra High / 极高 (4/5)"
+    }
+  },
+  "website": {
+    "published": true,
+    "order": 117,
+    "status": "active",
+    "tagline": {
+      "en": "Thirty years driving trucks. Now she wears qipao to the market.",
+      "zh": "开了三十年大货车，如今穿旗袍逛菜场。"
+    },
+    "introduction": {
+      "en": "Petite, with immaculate silver hair in a bun, Shen Xiuying looks particular about every detail. She spent thirty years driving heavy trucks. Now retired, she wears qipao to the market every day.",
+      "zh": "白发盘得一丝不乱，小个子，看着就讲究。开了三十年大货车的退休司机，现在天天穿旗袍去菜场。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-23",
+    "note": {
+      "en": "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+      "zh": "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。"
+    }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-23",
+    "ownerReviewPending": false,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/actors/shen-xiuying.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/shen-xiuying-slot-plan.json",
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/voice/handoff/handoff.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/RESULT.md"
+    ],
+    "images": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__turnaround__front__v1.png",
+        "source": "shen-xiuying/shen-xiuying__turnaround__front__v1.png",
+        "sha256": "8977d7ff2299fc75fd40e290068d6243035fbc270936481acb4aa4d04b285f0c",
+        "bytes": 946685,
+        "slot": "turnaround.front",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__turnaround__three-quarter__v1.png",
+        "source": "shen-xiuying/shen-xiuying__turnaround__three-quarter__v1.png",
+        "sha256": "940134b494bc645c40c2a2764fdc4ebf53e15f38f65893d2192aaf65c7ab6ece",
+        "bytes": 759524,
+        "slot": "turnaround.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__turnaround__side__v2.png",
+        "source": "shen-xiuying/shen-xiuying__turnaround__side__v1.png",
+        "sha256": "aef24542018d1a3bf3dcf882f6fa7b8cdbd1569538cf8318c0631f2399e5d9c3",
+        "bytes": 584816,
+        "slot": "turnaround.side",
+        "version": 1,
+        "nativeRevision": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__turnaround__back__v1.png",
+        "source": "shen-xiuying/shen-xiuying__turnaround__back__v1.png",
+        "sha256": "8e2fe1d736c539831601ec02dc9e3ffed941e1d62e758fe95fe8dd3ab911701a",
+        "bytes": 931846,
+        "slot": "turnaround.back",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__turnaround__back-three-quarter-left__v1.png",
+        "source": "shen-xiuying/shen-xiuying__turnaround__back-three-quarter-left__v1.png",
+        "sha256": "4384c32cd0b6a437f1ca3ee79590a5910861634d1e73f2fffe37ab1748a87fb7",
+        "bytes": 929220,
+        "slot": "turnaround.back-three-quarter-left",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__turnaround__back-three-quarter-right__v1.png",
+        "source": "shen-xiuying/shen-xiuying__turnaround__back-three-quarter-right__v1.png",
+        "sha256": "c7223fd8cc99def249e80f2d8f62e95a6e35b4b6716cc7501ce7c0b544d72b6c",
+        "bytes": 821451,
+        "slot": "turnaround.back-three-quarter-right",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__face__front__v1.png",
+        "source": "shen-xiuying/shen-xiuying__face__front__v1.png",
+        "sha256": "10be213b8b7a24eab705136e8223cef74b3673f08818ca28b44af4bb0a2a7c33",
+        "bytes": 2194313,
+        "slot": "face.front",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__face__three-quarter__v1.png",
+        "source": "shen-xiuying/shen-xiuying__face__three-quarter__v1.png",
+        "sha256": "e5d7587a3ec288e97a3d89e8b38a316fa88b02cef3595d20659c203fdab00660",
+        "bytes": 2312126,
+        "slot": "face.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__face__side__v2.png",
+        "source": "shen-xiuying/shen-xiuying__face__side__v1.png",
+        "sha256": "e16dff3552a9858af85f5dc7fe15dffbf02a34906c71c33bda4321c1bf0d3296",
+        "bytes": 2140139,
+        "slot": "face.side",
+        "version": 1,
+        "nativeRevision": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__face__three-quarter-left__v1.png",
+        "source": "shen-xiuying/shen-xiuying__face__three-quarter-left__v1.png",
+        "sha256": "a09c4283ee044e2c4ad4a823977815803ebaa399a9a88f73cb0522a7dd8600b1",
+        "bytes": 2266219,
+        "slot": "face.three-quarter-left",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__face__side-right__v2.png",
+        "source": "shen-xiuying/shen-xiuying__face__side-right__v1.png",
+        "sha256": "b48db0e797d977b9e2f05a16f6c850926688e7209d7fc721390062aa69596318",
+        "bytes": 2148891,
+        "slot": "face.side-right",
+        "version": 1,
+        "nativeRevision": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__face__up__v1.png",
+        "source": "shen-xiuying/shen-xiuying__face__up__v1.png",
+        "sha256": "a68cf4d9bde5fa7205abdca384f25cf438429ebbb68f478f22e226fa0505a4bf",
+        "bytes": 2104053,
+        "slot": "face.up",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__face__down__v1.png",
+        "source": "shen-xiuying/shen-xiuying__face__down__v1.png",
+        "sha256": "82927fd8b732ad3e9563e8cad67b18906e0819f120e174998cb22e95370c779c",
+        "bytes": 2259632,
+        "slot": "face.down",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__neutral__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__neutral__v1.png",
+        "sha256": "629588450f525d4949bdbc8e9eb8f2d6dcd9794b709c7fc87a8848337a8f47d8",
+        "bytes": 2319721,
+        "slot": "expression.neutral",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__smile__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__smile__v1.png",
+        "sha256": "db3938c33c0bd53f399957bf6a7120d07ae9567a1ea835396843e5a31733dbdb",
+        "bytes": 2331531,
+        "slot": "expression.smile",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__laugh__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__laugh__v1.png",
+        "sha256": "0036d1b470c89f22bd9f8892557d53213b98f8b9fb20d3cbdcc85d0edd705243",
+        "bytes": 2150442,
+        "slot": "expression.laugh",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__sad__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__sad__v1.png",
+        "sha256": "2118659793c0dbcfc4cfd8cd54d086436a8b77ba40050754af557799bb3abf36",
+        "bytes": 2363122,
+        "slot": "expression.sad",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__cry__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__cry__v1.png",
+        "sha256": "4cc06d8a0c5da3e6df39902c997380b7ba2e45eb0d62cdb8c4927bcc1df3ad95",
+        "bytes": 2295302,
+        "slot": "expression.cry",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__annoyed__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__annoyed__v1.png",
+        "sha256": "54be63517063d402162c21bf4f1ce0f7eb4314bd61aca9a5bd4b335a24a91079",
+        "bytes": 2298951,
+        "slot": "expression.annoyed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__angry__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__angry__v1.png",
+        "sha256": "ba682224ee8d663d28f06afc296b736bae014fa2f17656fa047409d7de0760df",
+        "bytes": 2138689,
+        "slot": "expression.angry",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__surprised__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__surprised__v1.png",
+        "sha256": "c534824a89920b92a3394ce120647a369238afd9ad44ae9f906ada640866b832",
+        "bytes": 2190603,
+        "slot": "expression.surprised",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__scared__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__scared__v1.png",
+        "sha256": "78c0ad0ed83aaf654f08af292b75faa6f89178864b7de18332d0ee3ab2e782a3",
+        "bytes": 2296761,
+        "slot": "expression.scared",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__disgusted__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__disgusted__v1.png",
+        "sha256": "63b14d97d5b833fa6cadcff3f4365b278e04f4ce2bba8397e692c360db581f02",
+        "bytes": 2164790,
+        "slot": "expression.disgusted",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__embarrassed__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__embarrassed__v1.png",
+        "sha256": "609ac289b73540d27786e2bfba71d7c5b0e78336a1892cd3c65719df2b8b768c",
+        "bytes": 2254736,
+        "slot": "expression.embarrassed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__tired__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__tired__v1.png",
+        "sha256": "829043fdfbc71f2dbcba6112e3ff9d45da7fa59249cbdcfb0db2b4ebf860b830",
+        "bytes": 2409233,
+        "slot": "expression.tired",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__speaking__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__speaking__v1.png",
+        "sha256": "0dca157c0aa856187468ceacc9dfaf4e80cbbbc3c5100ec48d68df5d0fcff5b3",
+        "bytes": 2178869,
+        "slot": "expression.speaking",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__eyes-closed__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__eyes-closed__v1.png",
+        "sha256": "e3b83e4a4762adc6434cde3af60a8feb4ba6db728d6fb465e5e4ed5b68fa23f0",
+        "bytes": 2236388,
+        "slot": "expression.eyes-closed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__worried__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__worried__v1.png",
+        "sha256": "37b95c000ba6d639e11e370efead06d6e25a379db74baadb839e70f28004740f",
+        "bytes": 2151396,
+        "slot": "expression.worried",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__skeptical__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__skeptical__v1.png",
+        "sha256": "ed165c37dfeb26df11b162249600bf282cffd86fac0c3364d4796dfb0f7cabad",
+        "bytes": 2329664,
+        "slot": "expression.skeptical",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__smug__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__smug__v1.png",
+        "sha256": "9b23b4275515d237049c229b0f9a3d045a5b64a11ae7efaaffc98defa83bd21d",
+        "bytes": 2316165,
+        "slot": "expression.smug",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__contempt__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__contempt__v1.png",
+        "sha256": "4c0e4ba8f83a66b8c68b049216808c555ac231b85cc6c525876316f5ec2b056f",
+        "bytes": 2358685,
+        "slot": "expression.contempt",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__confused__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__confused__v1.png",
+        "sha256": "de1b402e4cb6a938f84d931384571b345f80c1286f06592a6093be3e26617ddd",
+        "bytes": 2299192,
+        "slot": "expression.confused",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__thinking__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__thinking__v1.png",
+        "sha256": "fc384481db6d82dc5ca6e6472bc75b8285a021541ea13caefe0473fc9d58ec9e",
+        "bytes": 2307322,
+        "slot": "expression.thinking",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__determined__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__determined__v1.png",
+        "sha256": "b3c2295b905bb8b8179ed08200b01eac064a1ef02f928b1c97c54701479225cc",
+        "bytes": 2305424,
+        "slot": "expression.determined",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__shy__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__shy__v1.png",
+        "sha256": "afe545fb25771930227ab22a757ad134d25c2494f57954892fc9e3301f699e53",
+        "bytes": 2065916,
+        "slot": "expression.shy",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__pain__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__pain__v1.png",
+        "sha256": "e3856b25ae71b60259e0ac419335f826c2cfa792c7b8c587b430361b1351c933",
+        "bytes": 2086612,
+        "slot": "expression.pain",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__sleepy__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__sleepy__v1.png",
+        "sha256": "f50e6e79aee95e39068e6922dde36d09699a1e996c4d8ed1b8be5ef087b37e4c",
+        "bytes": 2027886,
+        "slot": "expression.sleepy",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__awkward-smile__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__awkward-smile__v1.png",
+        "sha256": "a609ad2092738bf02e9e309b40a4da96005394210eb2a99f05a95f81043dbff6",
+        "bytes": 2180377,
+        "slot": "expression.awkward-smile",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__expression__deadpan__v1.png",
+        "source": "shen-xiuying/shen-xiuying__expression__deadpan__v1.png",
+        "sha256": "38c0559d2ade6ec6c057078bd8a049d9e85cffc502808c3bd2b0d2dd22e781bf",
+        "bytes": 2088770,
+        "slot": "expression.deadpan",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__wardrobe-personal__front__v1.png",
+        "source": "shen-xiuying/shen-xiuying__wardrobe-personal__front__v1.png",
+        "sha256": "13cf511d0e3d2723c6174a6721003f8e26e9ad3a3408f70da86a3aee4674290a",
+        "bytes": 889741,
+        "slot": "wardrobe.personal.front",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__wardrobe-personal__three-quarter__v1.png",
+        "source": "shen-xiuying/shen-xiuying__wardrobe-personal__three-quarter__v1.png",
+        "sha256": "fd2dad13753b3935994646293502b5a4faba953a1f922b1b20063d7237857aa9",
+        "bytes": 799692,
+        "slot": "wardrobe.personal.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__wardrobe-personal__side__v1.png",
+        "source": "shen-xiuying/shen-xiuying__wardrobe-personal__side__v1.png",
+        "sha256": "bcb984f0430afcc1dad72e3ef5c310ed521f21f6e4c29372410bd68b611b1671",
+        "bytes": 664507,
+        "slot": "wardrobe.personal.side",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__wardrobe-personal__back__v1.png",
+        "source": "shen-xiuying/shen-xiuying__wardrobe-personal__back__v1.png",
+        "sha256": "9503598f62a18bcbcd858173c3d088289ce17be59b48dca8683f63205a2eb3d2",
+        "bytes": 977615,
+        "slot": "wardrobe.personal.back",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__wardrobe-personal__portrait__v1.png",
+        "source": "shen-xiuying/shen-xiuying__wardrobe-personal__portrait__v1.png",
+        "sha256": "89e5bd160a37ed55b8a916edfcba26f9d5e292d049bba0c56222e954be4394a9",
+        "bytes": 2256860,
+        "slot": "wardrobe.personal.portrait",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__wardrobe-personal__market-basket__v1.png",
+        "source": "shen-xiuying/shen-xiuying__wardrobe-personal__market-basket__v1.png",
+        "sha256": "cc02feec5731c94dcacddd7a1aeb438bf15f5dbb5b035255346e1c1a4105b09d",
+        "bytes": 1093356,
+        "slot": "wardrobe.personal.market-basket",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__wardrobe-personal__choose-vegetables__v1.png",
+        "source": "shen-xiuying/shen-xiuying__wardrobe-personal__choose-vegetables__v1.png",
+        "sha256": "26ea25331c894100695d3a1b8692ca6ef1abd5bf8f0b2eb8048239f258dcca7a",
+        "bytes": 945367,
+        "slot": "wardrobe.personal.choose-vegetables",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__wardrobe-personal__seated-story__v1.png",
+        "source": "shen-xiuying/shen-xiuying__wardrobe-personal__seated-story__v1.png",
+        "sha256": "d458bf3f9366401a035a34cb1951c5aa24bec72d572d3b1f43dc9d64c1329af5",
+        "bytes": 1198816,
+        "slot": "wardrobe.personal.seated-story",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__pose__walk__v1.png",
+        "source": "shen-xiuying/shen-xiuying__pose__walk__v1.png",
+        "sha256": "129795087b065d1a01dd40f53e3ad4c2f825075d95cbe8bd7279b7da7ea6694b",
+        "bytes": 832959,
+        "slot": "pose.walk",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__pose__run__v1.png",
+        "source": "shen-xiuying/shen-xiuying__pose__run__v1.png",
+        "sha256": "1cd9813460ee720e0e90f3f9fea80c6be9fde7443fcb6033424390eb3e54cbdd",
+        "bytes": 833563,
+        "slot": "pose.run",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__pose__sit__v1.png",
+        "source": "shen-xiuying/shen-xiuying__pose__sit__v1.png",
+        "sha256": "829b7ab8a1eaf508f067cd3c22d1f917650c879a38ecd5d868bbb9b814fa2240",
+        "bytes": 1173735,
+        "slot": "pose.sit",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__pose__point__v1.png",
+        "source": "shen-xiuying/shen-xiuying__pose__point__v1.png",
+        "sha256": "7e1be1e3366bacb4f331d5072e5a9e9b9eae4509e52f4354240a317df86fc1dc",
+        "bytes": 970389,
+        "slot": "pose.point",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__pose__arms-crossed__v1.png",
+        "source": "shen-xiuying/shen-xiuying__pose__arms-crossed__v1.png",
+        "sha256": "84eb29788e2f8bfdb3146e8fcf29eef8a8c8f8c717e1f5cc6ee4b35174f9b20b",
+        "bytes": 790809,
+        "slot": "pose.arms-crossed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__pose__phone__v1.png",
+        "source": "shen-xiuying/shen-xiuying__pose__phone__v1.png",
+        "sha256": "1db465b687625dd6fa2b8c0ca678f1552136ba573d9f6d6aae6b6211c58abe7e",
+        "bytes": 865839,
+        "slot": "pose.phone",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__detail__hands__v1.png",
+        "source": "shen-xiuying/shen-xiuying__detail__hands__v1.png",
+        "sha256": "f4926bd0816deabbfbf4a35b379ffe20ccf76f4531c28b06a3b6220dcf795f44",
+        "bytes": 1328260,
+        "slot": "detail.hands",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/shen-xiuying__detail__hair-back__v1.png",
+        "source": "shen-xiuying/shen-xiuying__detail__hair-back__v1.png",
+        "sha256": "220dd96ac5c31729fa5485fd9ce7a459b15c794e147d3ebac16d1bf106aa6dcd",
+        "bytes": 2391897,
+        "slot": "detail.hair-back",
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/voice/handoff/shen-xiuying__voice__intro__v1.wav",
+        "source": "voices/shen-xiuying/shen-xiuying__voice__intro__v1.wav",
+        "sha256": "a9727f1bb9665745e98dcad1ab1a95c53981bc98e6d9b74adef868efc1d64b4a",
+        "bytes": 908610,
+        "slot": "intro",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "我叫沈秀英，苏州人，今年七十一。年轻时开了三十年大货车，天南地北都跑过。现在退休了，穿条干净旗袍去买菜，慢慢挑，也蛮好。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/voice/handoff/shen-xiuying__voice__intro-alt__v1.wav",
+        "source": "voices/shen-xiuying/shen-xiuying__voice__intro-alt__v1.wav",
+        "sha256": "84c26d89b647fea2d03b1667bbba0720e3c9108cc1cd31eb9f9a4f6292c944ec",
+        "bytes": 1163354,
+        "slot": "intro-alt",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "Hello, I'm Shen Xiuying. I'm seventy-one, from Suzhou. I drove heavy trucks for thirty years. Now I'm retired. I like to put on a clean qipao and walk to the market. No rush today. Let me choose the vegetables slowly."
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/voice/handoff/shen-xiuying__voice__chat__v1.wav",
+        "source": "voices/shen-xiuying/shen-xiuying__voice__chat__v1.wav",
+        "sha256": "a2f9ea46bfa0208b91902a841818b446465ddf23e21f51b744c50f0ebca6e2f9",
+        "bytes": 836536,
+        "slot": "chat",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "这把青菜蛮新鲜的，你看，叶子还挺着呢。帮我称一点就好，吃完再来买。篮子我自己拎得动，开了那么多年大车，这点东西算什么。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/voice/handoff/shen-xiuying__voice__happy__v1.wav",
+        "source": "voices/shen-xiuying/shen-xiuying__voice__happy__v1.wav",
+        "sha256": "d35a31daaca6aadf7981dee89add8e47539a21600ad8eddb50b8774922c4a7b8",
+        "bytes": 831334,
+        "slot": "happy",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "哎，这个颜色好看，衬得人精神。今天太阳又好，穿着出去走走。菜要买，花也看一眼，退休了嘛，总该让自己高兴一点。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/voice/handoff/shen-xiuying__voice__angry__v1.wav",
+        "source": "voices/shen-xiuying/shen-xiuying__voice__angry__v1.wav",
+        "sha256": "5e4ff56ca43ee95cadd2ebd9c235e59ed9bd6070740d730e3809c67c683ecf21",
+        "bytes": 663408,
+        "slot": "angry",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "急什么呀，车都还没停稳，你往前挤做啥？先退回来，站稳了再走。我开了三十年车，这种险可不能图省事，听见没有？"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/voice/handoff/shen-xiuying__voice__sad__v1.wav",
+        "source": "voices/shen-xiuying/shen-xiuying__voice__sad__v1.wav",
+        "sha256": "69e4f8eb7749544c12624db7d8a5a9f9e6ff211b4f06e95ddb0a8e0af870d154",
+        "bytes": 861798,
+        "slot": "sad",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "有时候起得早，还以为今天要出车呢。坐一会儿才想起来，早就退休啦。那些老路现在不知道什么样了，想想，心里还真有点舍不得。"
+      }
+    ]
+  },
+  "officialSamples": [
+    {
+      "sampleId": "shen-xiuying-grok-20261023",
+      "actorSlugs": [
+        "shen-xiuying"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/actors/shen-xiuying.json",
+        "evidenceSha256": "062e97765e8f954f0e9c31f163dc3e3c59ce6a5702288321ef69ded57fa5bec3",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/shen-xiuying-grok-20261023/source.mp4",
+          "sourceSha256": "fe303cf357ace10d88b2049391370c453c063108a029ddd2cc8a6e10846d2a99",
+          "public": "/media/works/samples/shen-xiuying-grok-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/shen-xiuying-sample-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/shen-xiuying-sample-original.mp4",
+            "source": "samples/shen-xiuying-grok-20261023/platform-original.mp4",
+            "sha256": "27fb80436db02bf6b1626b69f82c3f015062ab0058e96841c7c0dde22c1177b9",
+            "bytes": 1735317
+          }
+        }
+      ]
+    },
+    {
+      "sampleId": "shen-xiuying-grok-action-20261023",
+      "actorSlugs": [
+        "shen-xiuying"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/action/task.json",
+        "evidenceSha256": "d0df6e2b192bd7ce96d5b2d5ad5191c4ee3f005a68bd55591bd01c592c8d9962",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/shen-xiuying-grok-action-20261023/source.mp4",
+          "sourceSha256": "f4e8d701e26af6f7ae93a5f7097cd168731495c57eb8a0b5b14b4ddc34412967",
+          "public": "/media/works/samples/shen-xiuying-grok-action-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/action/attempt-01-contained-arms/shen-xiuying-action-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/action/attempt-01-contained-arms/shen-xiuying-action-original.mp4",
+            "source": "samples/shen-xiuying-grok-action-20261023/platform-original.mp4",
+            "sha256": "c999ad82eb3099276b892ceb23d5b72f21122355e923fbd68d54324cedf66a0d",
+            "bytes": 1583097
+          }
+        }
+      ],
+      "productionTask": {
+        "id": "task-e3d071109be31409",
+        "sha256": "d0df6e2b192bd7ce96d5b2d5ad5191c4ee3f005a68bd55591bd01c592c8d9962",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T12:10:54.692Z",
+          "note": "Actualnative6.041667s720x1280 fullydecoded;12motionframes plus start/mid/end inspected. Grey highbun/agedsoftface/leftcheekmole in readablefrontalviews andpurpleT identity maintained;71-year-old adultrelativehead/neck/torso/hips/legs stable. Clearbodypivot andtwo purposefulsteps withnearbodyhands, allhair/fingers/shoes keptinframe, no fusedlimbs. Naturalpace appropriateformobileelder. Ends threequarterratherthanreturnfront acceptedperformancevariation. OriginalAAC/cover retained,silentstreamcopy localAsset;historicalcompletedrunpreserved andexpenseinlinkedengineTask.",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "shen-xiuying-grok-ensemble-20261023",
+      "actorSlugs": [
+        "shen-xiuying"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/ensemble/task.json",
+        "evidenceSha256": "4a949b667205ad72ef91bbbfbceda73179904cfbe56fd436e1f64c5bdbacb89d",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/shen-xiuying-grok-ensemble-20261023/source.mp4",
+          "sourceSha256": "7b308dab70f20ebec804322aa3b7621d5bc8cb61cd95227aa6571a54cc5ea609",
+          "public": "/media/works/samples/shen-xiuying-grok-ensemble-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/ensemble/attempt-02-authorized-new-request/shen-xiuying-ensemble-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/ensemble/attempt-02-authorized-new-request/shen-xiuying-ensemble-original.mp4",
+            "source": "samples/shen-xiuying-grok-ensemble-20261023/platform-original.mp4",
+            "sha256": "2a7f8a089897e46f47d9fc13b7c7505ae01d0d3281211b1be0cf33263268a5af",
+            "bytes": 1576009
+          }
+        }
+      ],
+      "castSlugs": [
+        "shen-xiuying",
+        "ma-hong"
+      ],
+      "productionTask": {
+        "id": "task-eb0b2861ce63629b",
+        "sha256": "4a949b667205ad72ef91bbbfbceda73179904cfbe56fd436e1f64c5bdbacb89d",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:47:36.377Z",
+          "note": "直接查看12帧运动表及原生首中尾：沈秀英左侧银发髻老年皱纹青绿旗袍，马红右侧酒红卷发额记围裙身份保持；沈向右迈一步、抬手开掌交流，马红原地点头回应。全程发顶手指鞋底完整，无融合或多肢；成人头颈躯干骨盆腿段相对原锚点自然，CG共享光线与场景一致。手掌实际较竖直，接受自然交流手势；原生上下黑边继承场景原件保留。原生1280x720/6.041667秒全解码，原AAC/封面保留，静音流拷贝，本次0.03353012美元。此为Owner巡查有界授权的一次新请求；旧会话01a1638c仍结果未知，旧费用0.05245316继续保留并可能重复计费，未将其判为失败或成功。技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "shen-xiuying-google-vids-20261023",
+      "actorSlugs": [
+        "shen-xiuying"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Google Vids"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/vids/task.json",
+        "evidenceSha256": "5f8d7367950d5a94020741912f299a9878c4123f1d7b06b73498f3be694031b1",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/shen-xiuying-google-vids-20261023/source.mp4",
+          "sourceSha256": "3ad90012a0de809efa1b780dfeb9cf5073e122ae1c4a7c55997ab7c98daf7564",
+          "public": "/media/works/samples/shen-xiuying-google-vids-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/vids/shen-xiuying-vids-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/shen-xiuying/video/additional-20261022/vids/shen-xiuying-vids-original.mp4",
+            "source": "samples/shen-xiuying-google-vids-20261023/platform-original.mp4",
+            "sha256": "89f10cf1adfde289387f2dc5e012380634dab6c990e5ee33b3947934b2b38031",
+            "bytes": 1275848
+          }
+        }
+      ],
+      "castSlugs": [
+        "shen-xiuying",
+        "ma-hong"
+      ],
+      "productionTask": {
+        "id": "task-8fde151e837a7a3a",
+        "sha256": "5f8d7367950d5a94020741912f299a9878c4123f1d7b06b73498f3be694031b1",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T15:25:34.140Z",
+          "note": "已直接查看12帧运动表及原生首中尾大图：沈秀英银发髻、老年皱纹与青绿旗袍、马红酒红卷发额记围裙均可辨，二人年龄和相对成人颈躯干骨盆腿段稳定。沈向右迈一步并摊掌，马红点头；全程头发手鞋完整无融合，多人光线与空间一致；原片AAC及平台四角星保留。原生720p六秒全解码通过，接受为授权代理技术staging，费用unknown，不等于正式发布。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    }
+  ],
+  "websitePromotion": {
+    "authorizedOn": "2026-10-23",
+    "authority": "Owner task: publish all ten under new names, second-version biographies and approved current appearance; preserve CC provenance and old URL redirects.",
+    "actorSourceSha256": "062e97765e8f954f0e9c31f163dc3e3c59ce6a5702288321ef69ded57fa5bec3",
+    "slotPlanSha256": "8efb6921b2ca996923f4ab8a72a70e2e357673382a3eb59e2cd136372ae1dc92",
+    "voiceReview": "Owner-accepted temporary placeholder; no complete acoustic review claimed.",
+    "proportionReview": "Owner-delegated relative visual acceptance; original absolute measurement_review and framing exceptions retained unchanged in producer evidence.",
+    "billing": "Historical Grok unknown requests and CLI model-usage USD values remain in producer records; no verified account debit or video unit price is asserted."
+  }
+}

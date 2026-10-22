@@ -16,7 +16,7 @@
             "en": "Everyday portrait",
             "zh": "日常装近景"
           },
-          "direction": "Head and upper chest in the actor's personal outfit, facing the camera."
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
         },
         {
           "key": "read-notebook",
@@ -1669,7 +1669,8 @@
       "durationSec": 20.9,
       "transcript": {
         "text": "你好，我叫杨帆，三十岁，云南大理人。发髻和这点小胡子留习惯了，总有人问我是不是拍古装戏的。其实我是航空公司的副机长。工作时按规程来，休息时就喜欢慢慢走，看看天，不用每朵云都赶着穿过去。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1698,7 +1699,8 @@
       "durationSec": 19.8,
       "transcript": {
         "text": "Hello, I'm Yang Fan, thirty, from Dali in Yunnan. With this little bun and goatee, people often ask if I act in costume dramas. I'm actually an airline first officer. At work I follow the checklist carefully. On my days off, I enjoy a slow walk and a good view of the sky."
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1727,7 +1729,8 @@
       "durationSec": 8.8,
       "transcript": {
         "text": "今天风不大，咱们沿湖走一段吧。别急着拍照，先看一会儿。等云从山后面出来，光落下来，那个时候再拍。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1756,7 +1759,8 @@
       "durationSec": 10.4,
       "transcript": {
         "text": "听见了？今天终于把休假凑到一起了。那就不排太满，吃顿饭，走走路，能跟你们坐着聊一下午，我就很高兴。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1785,7 +1789,8 @@
       "durationSec": 9.9,
       "transcript": {
         "text": "先停一下，这一步还没核对。不能因为赶时间就跳过去。你把记录拿来，我们一项一项确认，确认完再继续。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1814,7 +1819,8 @@
       "durationSec": 11.3,
       "transcript": {
         "text": "原来常走的那条小路，现在修了新的围栏。我站在外面看了半天，才发现自己记得的样子，已经是好多年前了。"
-      }
+      },
+      "placeholder": true
     }
   ]
 }

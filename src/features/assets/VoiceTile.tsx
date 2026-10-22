@@ -34,12 +34,19 @@ export function VoiceTile({
       {" "}
       <div className="flex items-start justify-between gap-3">
         <h3 className="sp-subtitle">{label}</h3>
-        {reference && item ? (
+        {item?.placeholder ? (
+          <GameBadge>{t("assets.voicePlaceholder")}</GameBadge>
+        ) : reference && item ? (
           <GameBadge tone="success">{t("assets.voiceReference")}</GameBadge>
         ) : null}
       </div>
       {item ? (
         <>
+          {item.placeholder ? (
+            <p className="sp-small mt-3 text-muted-foreground">
+              {t("assets.voicePlaceholderNote")}
+            </p>
+          ) : null}
           <audio
             className="mt-5 w-full"
             controls

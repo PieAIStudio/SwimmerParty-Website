@@ -1,0 +1,1826 @@
+{
+  "slug": "sun-hao",
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Everyday wear",
+        "zh": "日常装"
+      },
+      "prompt": "Clean everyday outfit: plain dark-olive overshirt worn open over an off-white T-shirt, straight black jeans, flat grey low-top sneakers. Preserve his ash-blond hair. No work uniform, logos or jewelry.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Everyday portrait",
+            "zh": "日常装近景"
+          },
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
+        },
+        {
+          "key": "check-message",
+          "label": {
+            "en": "Checking a message",
+            "zh": "看消息"
+          },
+          "direction": "full body standing at a three-quarter angle, looking at a plain unbranded phone held at chest height, relaxed half-smile"
+        },
+        {
+          "key": "hands-in-pockets",
+          "label": {
+            "en": "Hands in pockets",
+            "zh": "插兜站立"
+          },
+          "direction": "full body at a three-quarter angle, standing naturally with both hands in trouser pockets and a faint half-smirk"
+        },
+        {
+          "key": "after-work",
+          "label": {
+            "en": "After work",
+            "zh": "下班休息"
+          },
+          "direction": "full body seated on a plain simple stool, shoulders relaxed, hands on knees, thoughtful expression"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 903926,
+      "sha256": "c4825914669b5f9dcedb1ab39811d89d365625e413e89a3737ebce482ce748fd",
+      "sourceSha256": "c4825914669b5f9dcedb1ab39811d89d365625e413e89a3737ebce482ce748fd",
+      "bbox": {
+        "left": 0,
+        "top": 0.007177033492822967,
+        "right": 0.9989373007438895,
+        "bottom": 0.9898325358851675
+      },
+      "format": "png",
+      "object": "sun-hao/c4825914669b5f9d/sun-hao__turnaround__front__v2.png",
+      "preview": "/media/assets/sun-hao/turnaround.front.webp",
+      "thumb": "/media/assets/sun-hao/turnaround.front.thumb.webp",
+      "large": "/media/assets/sun-hao/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6750669907306185,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 802714,
+      "sha256": "06a13c8e54a273bc6dd2d810fac7bb117881d05ba479ecf280e37885cd36a335",
+      "sourceSha256": "06a13c8e54a273bc6dd2d810fac7bb117881d05ba479ecf280e37885cd36a335",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.8087141339001063,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/06a13c8e54a273bc/sun-hao__turnaround__three-quarter__v2.png",
+      "preview": "/media/assets/sun-hao/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/sun-hao/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7086062114517285,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 945,
+      "height": 1664,
+      "bytes": 559889,
+      "sha256": "f18466b9558ed7ef4aed029203a1b891c5e9e6106487cafc3b6a926f8bc391c8",
+      "sourceSha256": "f18466b9558ed7ef4aed029203a1b891c5e9e6106487cafc3b6a926f8bc391c8",
+      "bbox": {
+        "left": 0.19576719576719576,
+        "top": 0.013822115384615384,
+        "right": 0.9597883597883597,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/f18466b9558ed7ef/sun-hao__turnaround__side__v2.png",
+      "preview": "/media/assets/sun-hao/turnaround.side.webp",
+      "thumb": "/media/assets/sun-hao/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8114659645909645,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 961635,
+      "sha256": "a4c59b3bfc8fff7ecd8215a2afbcf0b75e662863b54a3e8affd73c0ce1437b69",
+      "sourceSha256": "a4c59b3bfc8fff7ecd8215a2afbcf0b75e662863b54a3e8affd73c0ce1437b69",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 0.9851222104144527,
+        "bottom": 0.9760765550239234
+      },
+      "format": "png",
+      "object": "sun-hao/a4c59b3bfc8fff7e/sun-hao__turnaround__back__v2.png",
+      "preview": "/media/assets/sun-hao/turnaround.back.webp",
+      "thumb": "/media/assets/sun-hao/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6805717983006981,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 879693,
+      "sha256": "93265d4914efeae071eb28f214605e86f4bd9874ae8ccc4ae9e50a012006f123",
+      "sourceSha256": "93265d4914efeae071eb28f214605e86f4bd9874ae8ccc4ae9e50a012006f123",
+      "bbox": {
+        "left": 0,
+        "top": 0.004186602870813397,
+        "right": 0.9787460148777896,
+        "bottom": 0.9892344497607656
+      },
+      "format": "png",
+      "object": "sun-hao/93265d4914efeae0/sun-hao__turnaround__back-three-quarter-left__v2.png",
+      "preview": "/media/assets/sun-hao/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/sun-hao/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6944599809832764,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 965342,
+      "sha256": "a13f559887f8929bb9c597ca0a0fb9a5f01dd55eab8a9f42f55b6262f63a47a2",
+      "sourceSha256": "a13f559887f8929bb9c597ca0a0fb9a5f01dd55eab8a9f42f55b6262f63a47a2",
+      "bbox": {
+        "left": 0.03294367693942614,
+        "top": 0.008373205741626795,
+        "right": 0.9766206163655685,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/a13f559887f8929b/sun-hao__turnaround__back-three-quarter-right__v2.png",
+      "preview": "/media/assets/sun-hao/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/sun-hao/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6826635107719061,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1720620,
+      "sha256": "4832b1ba0eed90a359d88e6aa290747fe677d31419fa95dc442e84f019729f49",
+      "sourceSha256": "4832b1ba0eed90a359d88e6aa290747fe677d31419fa95dc442e84f019729f49",
+      "bbox": {
+        "left": 0,
+        "top": 0.028708133971291867,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/4832b1ba0eed90a3/sun-hao__face__front__v2.png",
+      "preview": "/media/assets/sun-hao/face.front.webp",
+      "thumb": "/media/assets/sun-hao/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3490312403073184,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1905521,
+      "sha256": "23a6c6c769d023ff64fefd1026dfd0787c627449bc08b727164c1694607d9e9d",
+      "sourceSha256": "23a6c6c769d023ff64fefd1026dfd0787c627449bc08b727164c1694607d9e9d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/23a6c6c769d023ff/sun-hao__face__three-quarter__v2.png",
+      "preview": "/media/assets/sun-hao/face.three-quarter.webp",
+      "thumb": "/media/assets/sun-hao/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2840591298069345,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1866488,
+      "sha256": "05bb75de818bb040d71b00102324aa786f7e8818a766110d30653c64f3150fc4",
+      "sourceSha256": "05bb75de818bb040d71b00102324aa786f7e8818a766110d30653c64f3150fc4",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/05bb75de818bb040/sun-hao__face__side__v2.png",
+      "preview": "/media/assets/sun-hao/face.side.webp",
+      "thumb": "/media/assets/sun-hao/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30624107002120315,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1908479,
+      "sha256": "e0ffab8cd8e678f4ae3a813b564ddc05f68cba959352cc04ce7076100cc4cc3a",
+      "sourceSha256": "e0ffab8cd8e678f4ae3a813b564ddc05f68cba959352cc04ce7076100cc4cc3a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/e0ffab8cd8e678f4/sun-hao__face__three-quarter-left__v2.png",
+      "preview": "/media/assets/sun-hao/face.three-quarter-left.webp",
+      "thumb": "/media/assets/sun-hao/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.33042319836883294,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1758199,
+      "sha256": "6d34b6b6ee191e13c99f8af4694d81f7788ae41e26d308306a3a1ac89c71395c",
+      "sourceSha256": "6d34b6b6ee191e13c99f8af4694d81f7788ae41e26d308306a3a1ac89c71395c",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 0.9511158342189161,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/6d34b6b6ee191e13/sun-hao__face__side-right__v2.png",
+      "preview": "/media/assets/sun-hao/face.side-right.webp",
+      "thumb": "/media/assets/sun-hao/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3227993481433271,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1780459,
+      "sha256": "6ac91de30093d572b60d66124083714d83bb0e1b8b0365e3b1cf9d18d7761ea1",
+      "sourceSha256": "6ac91de30093d572b60d66124083714d83bb0e1b8b0365e3b1cf9d18d7761ea1",
+      "bbox": {
+        "left": 0,
+        "top": 0.0005980861244019139,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/6ac91de30093d572/sun-hao__face__up__v2.png",
+      "preview": "/media/assets/sun-hao/face.up.webp",
+      "thumb": "/media/assets/sun-hao/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3278478051955316,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1882599,
+      "sha256": "1052fdbae1b23eda11442a47454bbbaf1a1aa9b225ada5370c9a24e288dc3ee4",
+      "sourceSha256": "1052fdbae1b23eda11442a47454bbbaf1a1aa9b225ada5370c9a24e288dc3ee4",
+      "bbox": {
+        "left": 0,
+        "top": 0.017344497607655503,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/1052fdbae1b23eda/sun-hao__face__down__v2.png",
+      "preview": "/media/assets/sun-hao/face.down.webp",
+      "thumb": "/media/assets/sun-hao/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.308299096451398,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1900904,
+      "sha256": "7bb7334b3d68bec9b6dd94addc9b36792a761c67637b2e0923f0b3e5ead8a6b0",
+      "sourceSha256": "7bb7334b3d68bec9b6dd94addc9b36792a761c67637b2e0923f0b3e5ead8a6b0",
+      "bbox": {
+        "left": 0,
+        "top": 0.016148325358851676,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/7bb7334b3d68bec9/sun-hao__expression__neutral__v2.png",
+      "preview": "/media/assets/sun-hao/expression.neutral.webp",
+      "thumb": "/media/assets/sun-hao/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3051898113073235,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1838279,
+      "sha256": "8e40f41df19151c3f1687b6e2b64e83211380a44f6b4c0b64b069777975b148c",
+      "sourceSha256": "8e40f41df19151c3f1687b6e2b64e83211380a44f6b4c0b64b069777975b148c",
+      "bbox": {
+        "left": 0,
+        "top": 0.01076555023923445,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/8e40f41df19151c3/sun-hao__expression__smile__v2.png",
+      "preview": "/media/assets/sun-hao/expression.smile.webp",
+      "thumb": "/media/assets/sun-hao/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3102274634029766,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1850633,
+      "sha256": "183eb7bca41a164b5c658e38c236506b1929e8e15302d149fed7d08062859c9b",
+      "sourceSha256": "183eb7bca41a164b5c658e38c236506b1929e8e15302d149fed7d08062859c9b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/183eb7bca41a164b/sun-hao__expression__laugh__v2.png",
+      "preview": "/media/assets/sun-hao/expression.laugh.webp",
+      "thumb": "/media/assets/sun-hao/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30766795987166257,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1787827,
+      "sha256": "a7a3f2b299fca140b47eca6245eff48200059f1d553be32144460bb8c9962c72",
+      "sourceSha256": "a7a3f2b299fca140b47eca6245eff48200059f1d553be32144460bb8c9962c72",
+      "bbox": {
+        "left": 0,
+        "top": 0.013157894736842105,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/a7a3f2b299fca140/sun-hao__expression__sad__v2.png",
+      "preview": "/media/assets/sun-hao/expression.sad.webp",
+      "thumb": "/media/assets/sun-hao/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.306333865530409,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1867367,
+      "sha256": "94e8d45be2cea8079b297c2f079e7f5bc554be6711f36099548dfff792b19e54",
+      "sourceSha256": "94e8d45be2cea8079b297c2f079e7f5bc554be6711f36099548dfff792b19e54",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/94e8d45be2cea807/sun-hao__expression__cry__v2.png",
+      "preview": "/media/assets/sun-hao/expression.cry.webp",
+      "thumb": "/media/assets/sun-hao/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30780969547818926,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1672574,
+      "sha256": "d309a38256a58bac30be8b957f93a353d65b740a7447305aab30ca982f2c623f",
+      "sourceSha256": "d309a38256a58bac30be8b957f93a353d65b740a7447305aab30ca982f2c623f",
+      "bbox": {
+        "left": 0,
+        "top": 0.10466507177033493,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/d309a38256a58bac/sun-hao__expression__annoyed__v2.png",
+      "preview": "/media/assets/sun-hao/expression.annoyed.webp",
+      "thumb": "/media/assets/sun-hao/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3485437460911481,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1907751,
+      "sha256": "0a4001e0422be4a5f121d16c3cd2ef385e0d05dd214d3c2f9e18ca5ba2168b4e",
+      "sourceSha256": "0a4001e0422be4a5f121d16c3cd2ef385e0d05dd214d3c2f9e18ca5ba2168b4e",
+      "bbox": {
+        "left": 0,
+        "top": 0.019736842105263157,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/0a4001e0422be4a5/sun-hao__expression__angry__v2.png",
+      "preview": "/media/assets/sun-hao/expression.angry.webp",
+      "thumb": "/media/assets/sun-hao/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2668563678058057,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1772145,
+      "sha256": "5fab1e863e93f8cdd347c6cf28f871e5ba1ced8ce7719f6d6d305dd67d21f84a",
+      "sourceSha256": "5fab1e863e93f8cdd347c6cf28f871e5ba1ced8ce7719f6d6d305dd67d21f84a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/5fab1e863e93f8cd/sun-hao__expression__surprised__v2.png",
+      "preview": "/media/assets/sun-hao/expression.surprised.webp",
+      "thumb": "/media/assets/sun-hao/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3257821517371828,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1844321,
+      "sha256": "61335308c48ba96ac085f6b974259d0b8108d06d11f32c4088098e3c436f2bd9",
+      "sourceSha256": "61335308c48ba96ac085f6b974259d0b8108d06d11f32c4088098e3c436f2bd9",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/61335308c48ba96a/sun-hao__expression__scared__v2.png",
+      "preview": "/media/assets/sun-hao/expression.scared.webp",
+      "thumb": "/media/assets/sun-hao/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3051205324682589,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1795567,
+      "sha256": "aae67b41a92d6b804515efeae37fe239914c6c1db5e071ea2696226914ae255c",
+      "sourceSha256": "aae67b41a92d6b804515efeae37fe239914c6c1db5e071ea2696226914ae255c",
+      "bbox": {
+        "left": 0,
+        "top": 0.004784688995215311,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/aae67b41a92d6b80/sun-hao__expression__disgusted__v2.png",
+      "preview": "/media/assets/sun-hao/expression.disgusted.webp",
+      "thumb": "/media/assets/sun-hao/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31651467694451085,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1837138,
+      "sha256": "c56f151ccbd943b7d838ba3f836d9c5fde6d43ec60c267540eefb9a6d796d8b9",
+      "sourceSha256": "c56f151ccbd943b7d838ba3f836d9c5fde6d43ec60c267540eefb9a6d796d8b9",
+      "bbox": {
+        "left": 0,
+        "top": 0.019138755980861243,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/c56f151ccbd943b7/sun-hao__expression__embarrassed__v2.png",
+      "preview": "/media/assets/sun-hao/expression.embarrassed.webp",
+      "thumb": "/media/assets/sun-hao/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3036364399066452,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1777170,
+      "sha256": "cfbb6d39e9ad8e1f91fc4522c705ed3a3c1e8559e0c2695dc5e0610fb436e1a9",
+      "sourceSha256": "cfbb6d39e9ad8e1f91fc4522c705ed3a3c1e8559e0c2695dc5e0610fb436e1a9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/cfbb6d39e9ad8e1f/sun-hao__expression__tired__v2.png",
+      "preview": "/media/assets/sun-hao/expression.tired.webp",
+      "thumb": "/media/assets/sun-hao/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32835373139640717,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1782579,
+      "sha256": "5237969b9d11ee5756b0a8c97245d496e86d85659527865e868110767f263faa",
+      "sourceSha256": "5237969b9d11ee5756b0a8c97245d496e86d85659527865e868110767f263faa",
+      "bbox": {
+        "left": 0,
+        "top": 0.020933014354066987,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/5237969b9d11ee57/sun-hao__expression__speaking__v2.png",
+      "preview": "/media/assets/sun-hao/expression.speaking.webp",
+      "thumb": "/media/assets/sun-hao/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34390841973061337,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1660496,
+      "sha256": "12de5c0f0aab41e72dfaf07003838b8f893dbcd7753b3316be5a24848398eb7b",
+      "sourceSha256": "12de5c0f0aab41e72dfaf07003838b8f893dbcd7753b3316be5a24848398eb7b",
+      "bbox": {
+        "left": 0,
+        "top": 0.07117224880382775,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/12de5c0f0aab41e7/sun-hao__expression__eyes-closed__v2.png",
+      "preview": "/media/assets/sun-hao/expression.eyes-closed.webp",
+      "thumb": "/media/assets/sun-hao/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34514463387722516,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1903781,
+      "sha256": "591e2e7400c5e2b50ea6d231fc91a95a837f070f39c504d3fb9bb47913fad2aa",
+      "sourceSha256": "591e2e7400c5e2b50ea6d231fc91a95a837f070f39c504d3fb9bb47913fad2aa",
+      "bbox": {
+        "left": 0,
+        "top": 0.05083732057416268,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/591e2e7400c5e2b5/sun-hao__expression__worried__v2.png",
+      "preview": "/media/assets/sun-hao/expression.worried.webp",
+      "thumb": "/media/assets/sun-hao/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2791746538600389,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1887349,
+      "sha256": "fcba96dff7b5fd10de9247e7bfaf002f92661dafc6dc285053bfec88f6417424",
+      "sourceSha256": "fcba96dff7b5fd10de9247e7bfaf002f92661dafc6dc285053bfec88f6417424",
+      "bbox": {
+        "left": 0,
+        "top": 0.014354066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/fcba96dff7b5fd10/sun-hao__expression__skeptical__v2.png",
+      "preview": "/media/assets/sun-hao/expression.skeptical.webp",
+      "thumb": "/media/assets/sun-hao/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3136564481438356,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1714697,
+      "sha256": "6e64ac898bcf8f422da1ff1d424dcca71ec8a9ce83ec0794d1ef42833577c6e7",
+      "sourceSha256": "6e64ac898bcf8f422da1ff1d424dcca71ec8a9ce83ec0794d1ef42833577c6e7",
+      "bbox": {
+        "left": 0,
+        "top": 0.03409090909090909,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/6e64ac898bcf8f42/sun-hao__expression__smug__v2.png",
+      "preview": "/media/assets/sun-hao/expression.smug.webp",
+      "thumb": "/media/assets/sun-hao/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3165026008166005,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1791696,
+      "sha256": "c376dd2fcd45997a976c1d6d4acc104420b69f4bf73cc611f281dce119fc3b6f",
+      "sourceSha256": "c376dd2fcd45997a976c1d6d4acc104420b69f4bf73cc611f281dce119fc3b6f",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/c376dd2fcd45997a/sun-hao__expression__contempt__v2.png",
+      "preview": "/media/assets/sun-hao/expression.contempt.webp",
+      "thumb": "/media/assets/sun-hao/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3243768717998261,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1872729,
+      "sha256": "807136f369881e41c87270b2768f8465506c5d3d79cd20fe5cc70f97ed009452",
+      "sourceSha256": "807136f369881e41c87270b2768f8465506c5d3d79cd20fe5cc70f97ed009452",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/807136f369881e41/sun-hao__expression__confused__v2.png",
+      "preview": "/media/assets/sun-hao/expression.confused.webp",
+      "thumb": "/media/assets/sun-hao/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2995216582176144,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1781665,
+      "sha256": "05050d672c8c4c18bc97f5bebe69076bb08ec1a0e9d069a834e0331472d12195",
+      "sourceSha256": "05050d672c8c4c18bc97f5bebe69076bb08ec1a0e9d069a834e0331472d12195",
+      "bbox": {
+        "left": 0,
+        "top": 0.014961101137043686,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/05050d672c8c4c18/sun-hao__expression__thinking__v2.png",
+      "preview": "/media/assets/sun-hao/expression.thinking.webp",
+      "thumb": "/media/assets/sun-hao/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.33290660011918005,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1777394,
+      "sha256": "475b0e39788cb583af6ff81084c602f6178c6f6a4c0a95029de54541ec52896b",
+      "sourceSha256": "475b0e39788cb583af6ff81084c602f6178c6f6a4c0a95029de54541ec52896b",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/475b0e39788cb583/sun-hao__expression__determined__v2.png",
+      "preview": "/media/assets/sun-hao/expression.determined.webp",
+      "thumb": "/media/assets/sun-hao/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32745310648856707,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1795301,
+      "sha256": "2600859398d032642f59b99a3a0b0c6437af523d9e2f868041412fd88a249884",
+      "sourceSha256": "2600859398d032642f59b99a3a0b0c6437af523d9e2f868041412fd88a249884",
+      "bbox": {
+        "left": 0,
+        "top": 0.04724880382775119,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/2600859398d03264/sun-hao__expression__shy__v2.png",
+      "preview": "/media/assets/sun-hao/expression.shy.webp",
+      "thumb": "/media/assets/sun-hao/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31862545698610356,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1941147,
+      "sha256": "0ae23fd4c4887380054d6e486037b7c99fa5ff06f2e5bc981d64a04a470e2afb",
+      "sourceSha256": "0ae23fd4c4887380054d6e486037b7c99fa5ff06f2e5bc981d64a04a470e2afb",
+      "bbox": {
+        "left": 0,
+        "top": 0.03349282296650718,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/0ae23fd4c4887380/sun-hao__expression__pain__v2.png",
+      "preview": "/media/assets/sun-hao/expression.pain.webp",
+      "thumb": "/media/assets/sun-hao/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.285044287610147,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1788394,
+      "sha256": "368d69a72f3574e0fb625d21e94bf002f915856d6008ccbed7d3e0702061bb3f",
+      "sourceSha256": "368d69a72f3574e0fb625d21e94bf002f915856d6008ccbed7d3e0702061bb3f",
+      "bbox": {
+        "left": 0,
+        "top": 0.019138755980861243,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/368d69a72f3574e0/sun-hao__expression__sleepy__v2.png",
+      "preview": "/media/assets/sun-hao/expression.sleepy.webp",
+      "thumb": "/media/assets/sun-hao/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32194639216144894,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1793390,
+      "sha256": "b47065f0d41a47d2966d808cae0d0ecce504886691d65cea08ed2fe86e7ed3f7",
+      "sourceSha256": "b47065f0d41a47d2966d808cae0d0ecce504886691d65cea08ed2fe86e7ed3f7",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/b47065f0d41a47d2/sun-hao__expression__awkward-smile__v2.png",
+      "preview": "/media/assets/sun-hao/expression.awkward-smile.webp",
+      "thumb": "/media/assets/sun-hao/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32421416186587615,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1705694,
+      "sha256": "53edd67cb11c000415df87dd693ee269ea0c13a3ecaf7bcc6c4b713779c5405f",
+      "sourceSha256": "53edd67cb11c000415df87dd693ee269ea0c13a3ecaf7bcc6c4b713779c5405f",
+      "bbox": {
+        "left": 0,
+        "top": 0.02332535885167464,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/53edd67cb11c0004/sun-hao__expression__deadpan__v2.png",
+      "preview": "/media/assets/sun-hao/expression.deadpan.webp",
+      "thumb": "/media/assets/sun-hao/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34716706750936854,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1017952,
+      "sha256": "ead965cd33f72f77e16f89c447bbcd02d2d2e0cc35f12640ed06a6d400dabbaa",
+      "sourceSha256": "ead965cd33f72f77e16f89c447bbcd02d2d2e0cc35f12640ed06a6d400dabbaa",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.7778958554729012,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "sun-hao/ead965cd33f72f77/sun-hao__wardrobe-personal__front__v2.png",
+      "preview": "/media/assets/sun-hao/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/sun-hao/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6620648144852519,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 837482,
+      "sha256": "59c2c481b94287c31e8a8159696ae28e42dcfdab077c69e8de5fe7c2ca3beca1",
+      "sourceSha256": "59c2c481b94287c31e8a8159696ae28e42dcfdab077c69e8de5fe7c2ca3beca1",
+      "bbox": {
+        "left": 0,
+        "top": 0.008971291866028708,
+        "right": 0.9808714133900106,
+        "bottom": 0.9844497607655502
+      },
+      "format": "png",
+      "object": "sun-hao/59c2c481b94287c3/sun-hao__wardrobe-personal__three-quarter__v2.png",
+      "preview": "/media/assets/sun-hao/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/sun-hao/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7322735153989698,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 945,
+      "height": 1664,
+      "bytes": 642219,
+      "sha256": "be081e5e5986a14e489349178720235ebb4aad13394330038f78e92e6e5d26f6",
+      "sourceSha256": "be081e5e5986a14e489349178720235ebb4aad13394330038f78e92e6e5d26f6",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9513227513227513,
+        "bottom": 0.9819711538461539
+      },
+      "format": "png",
+      "object": "sun-hao/be081e5e5986a14e/sun-hao__wardrobe-personal__side__v2.png",
+      "preview": "/media/assets/sun-hao/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/sun-hao/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7921277218152218,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 991767,
+      "sha256": "02f011bc07fcd6567cc6f3984187d4a8be30f011ba1ec5b0b0e499af668a67f5",
+      "sourceSha256": "02f011bc07fcd6567cc6f3984187d4a8be30f011ba1ec5b0b0e499af668a67f5",
+      "bbox": {
+        "left": 0,
+        "top": 0.009575104727707959,
+        "right": 0.8172157279489904,
+        "bottom": 0.983243566726511
+      },
+      "format": "png",
+      "object": "sun-hao/02f011bc07fcd656/sun-hao__wardrobe-personal__back__v2.png",
+      "preview": "/media/assets/sun-hao/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/sun-hao/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6674533566605677,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2140689,
+      "sha256": "f5923b6436dd3e8faaa2c4b3d6684a11ab682702fbe5c9e811e56b9538188149",
+      "sourceSha256": "f5923b6436dd3e8faaa2c4b3d6684a11ab682702fbe5c9e811e56b9538188149",
+      "bbox": {
+        "left": 0,
+        "top": 0.02452153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/f5923b6436dd3e8f/sun-hao__wardrobe-personal__portrait__v2.png",
+      "preview": "/media/assets/sun-hao/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/sun-hao/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.299709791578744,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.check-message",
+      "series": "wardrobe",
+      "key": "check-message",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1011231,
+      "sha256": "07d954626c12007e9c49cf38466bcca8a90c4b1448f2f36833bdc4904d4f250e",
+      "sourceSha256": "07d954626c12007e9c49cf38466bcca8a90c4b1448f2f36833bdc4904d4f250e",
+      "bbox": {
+        "left": 0.09139213602550478,
+        "top": 0,
+        "right": 0.8820403825717322,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/07d954626c12007e/sun-hao__wardrobe-personal__check-message__v2.png",
+      "preview": "/media/assets/sun-hao/wardrobe.personal.check-message.webp",
+      "thumb": "/media/assets/sun-hao/wardrobe.personal.check-message.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6787131354334204,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.hands-in-pockets",
+      "series": "wardrobe",
+      "key": "hands-in-pockets",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 957768,
+      "sha256": "f5437e822d71ec4d3d4e898a5a20ffd52c7a97965cd4fff0bd28e30c702d0c9a",
+      "sourceSha256": "f5437e822d71ec4d3d4e898a5a20ffd52c7a97965cd4fff0bd28e30c702d0c9a",
+      "bbox": {
+        "left": 0.1647183846971307,
+        "top": 0,
+        "right": 0.971307120085016,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/f5437e822d71ec4d/sun-hao__wardrobe-personal__hands-in-pockets__v2.png",
+      "preview": "/media/assets/sun-hao/wardrobe.personal.hands-in-pockets.webp",
+      "thumb": "/media/assets/sun-hao/wardrobe.personal.hands-in-pockets.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.691503684469264,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.after-work",
+      "series": "wardrobe",
+      "key": "after-work",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1348620,
+      "sha256": "792b746f9219370fd5e7fb40e6b3215b44a28d26cf46ae8f87acb10953928580",
+      "sourceSha256": "792b746f9219370fd5e7fb40e6b3215b44a28d26cf46ae8f87acb10953928580",
+      "bbox": {
+        "left": 0,
+        "top": 0.008976660682226212,
+        "right": 0.9415515409139213,
+        "bottom": 0.9844404548174746
+      },
+      "format": "png",
+      "object": "sun-hao/792b746f9219370f/sun-hao__wardrobe-personal__after-work__v2.png",
+      "preview": "/media/assets/sun-hao/wardrobe.personal.after-work.webp",
+      "thumb": "/media/assets/sun-hao/wardrobe.personal.after-work.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5659003911827124,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 836707,
+      "sha256": "038f4773716609f51c469ff594c083b8e84959a8bff9710f6b987c8aafe01ebf",
+      "sourceSha256": "038f4773716609f51c469ff594c083b8e84959a8bff9710f6b987c8aafe01ebf",
+      "bbox": {
+        "left": 0.061636556854410204,
+        "top": 0,
+        "right": 0.8990435706695006,
+        "bottom": 0.9892280071813285
+      },
+      "format": "png",
+      "object": "sun-hao/038f4773716609f5/sun-hao__pose__walk__v2.png",
+      "preview": "/media/assets/sun-hao/pose.walk.webp",
+      "thumb": "/media/assets/sun-hao/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7208846796416458,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 846418,
+      "sha256": "1b4ef88599bc4c79d81de28acde19671dde08d507c27730e571a410c23594687",
+      "sourceSha256": "1b4ef88599bc4c79d81de28acde19671dde08d507c27730e571a410c23594687",
+      "bbox": {
+        "left": 0.06057385759829968,
+        "top": 0.007779772591262717,
+        "right": 0.8969181721572795,
+        "bottom": 0.9808497905445841
+      },
+      "format": "png",
+      "object": "sun-hao/1b4ef88599bc4c79/sun-hao__pose__run__v2.png",
+      "preview": "/media/assets/sun-hao/pose.run.webp",
+      "thumb": "/media/assets/sun-hao/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7080636042357882,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1106684,
+      "sha256": "ec66ab8176362e6dc3f2dd7f60f1b47cd670624abe76f4ba2daa29d853cc191d",
+      "sourceSha256": "ec66ab8176362e6dc3f2dd7f60f1b47cd670624abe76f4ba2daa29d853cc191d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9681190223166843,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/ec66ab8176362e6d/sun-hao__pose__sit__v2.png",
+      "preview": "/media/assets/sun-hao/pose.sit.webp",
+      "thumb": "/media/assets/sun-hao/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.612484903756079,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 800853,
+      "sha256": "792ddaae42a584bb2a1eb705c07c964ede3f19b5b6a838987f7d8f50d8e83742",
+      "sourceSha256": "792ddaae42a584bb2a1eb705c07c964ede3f19b5b6a838987f7d8f50d8e83742",
+      "bbox": {
+        "left": 0.17109458023379384,
+        "top": 0,
+        "right": 0.924548352816153,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/792ddaae42a584bb/sun-hao__pose__point__v2.png",
+      "preview": "/media/assets/sun-hao/pose.point.webp",
+      "thumb": "/media/assets/sun-hao/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7094391987845416,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 771639,
+      "sha256": "0b650b11d1536b40a54cfbc761404953c42669ec8f62a713a6336b279fc979be",
+      "sourceSha256": "0b650b11d1536b40a54cfbc761404953c42669ec8f62a713a6336b279fc979be",
+      "bbox": {
+        "left": 0.028692879914984058,
+        "top": 0.007177033492822967,
+        "right": 0.9681190223166843,
+        "bottom": 0.9892344497607656
+      },
+      "format": "png",
+      "object": "sun-hao/0b650b11d1536b40/sun-hao__pose__arms-crossed__v2.png",
+      "preview": "/media/assets/sun-hao/pose.arms-crossed.webp",
+      "thumb": "/media/assets/sun-hao/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7379454820027559,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 833760,
+      "sha256": "e67ad7e07a150e1c3f070e1ccb03767028c3384fcfc20bd07bcc13fd1a012a57",
+      "sourceSha256": "e67ad7e07a150e1c3f070e1ccb03767028c3384fcfc20bd07bcc13fd1a012a57",
+      "bbox": {
+        "left": 0.07013815090329437,
+        "top": 0.008976660682226212,
+        "right": 0.9829968119022316,
+        "bottom": 0.9844404548174746
+      },
+      "format": "png",
+      "object": "sun-hao/e67ad7e07a150e1c/sun-hao__pose__phone__v2.png",
+      "preview": "/media/assets/sun-hao/pose.phone.webp",
+      "thumb": "/media/assets/sun-hao/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6979059546136475,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1215,
+      "height": 1295,
+      "bytes": 1086327,
+      "sha256": "e5028f82d604195297d6e0485c2f96cb71c6573b4d0927aa6b9a9d9937503591",
+      "sourceSha256": "e5028f82d604195297d6e0485c2f96cb71c6573b4d0927aa6b9a9d9937503591",
+      "bbox": {
+        "left": 0.018930041152263374,
+        "top": 0.016216216216216217,
+        "right": 0.9868312757201646,
+        "bottom": 0.9845559845559846
+      },
+      "format": "png",
+      "object": "sun-hao/e5028f82d6041952/sun-hao__detail__hands__v2.png",
+      "preview": "/media/assets/sun-hao/detail.hands.webp",
+      "thumb": "/media/assets/sun-hao/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5961167516723073,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2194540,
+      "sha256": "da27ea0f6337183b29a4f9f004d7edd0ce341e74fd43e309727ea33628b33919",
+      "sourceSha256": "da27ea0f6337183b29a4f9f004d7edd0ce341e74fd43e309727ea33628b33919",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "sun-hao/da27ea0f6337183b/sun-hao__detail__hair-back__v2.png",
+      "preview": "/media/assets/sun-hao/detail.hair-back.webp",
+      "thumb": "/media/assets/sun-hao/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3295943946427754,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1205538,
+      "sha256": "b1efaeaaec6c5a5794f05f6cf460da82164595c400c364253ab3c5a23058cab7",
+      "sourceSha256": "b1efaeaaec6c5a5794f05f6cf460da82164595c400c364253ab3c5a23058cab7",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/sun-hao/sun-hao__voice__intro__v1__b1efaeaaec6c5a57.wav",
+      "preview": "/api/voice/sun-hao/intro",
+      "thumb": "/api/voice/sun-hao/intro",
+      "previewUrl": "/api/voice/sun-hao/intro",
+      "durationSec": 18.8,
+      "transcript": {
+        "text": "嗨，我叫孙浩，深圳的，二十五。看我这头灰金色，好多人以为我天天泡夜店。其实我在殡仪馆做入殓师。这行得细心，也得稳得住。染头发不是为了显眼，是给自己打打气，提醒自己，下班以后还有热闹的日子。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1128262,
+      "sha256": "18d4027fb3173dcd7955f4f1b6c7086f308683b4ec4ef103b07d634a6f34b95c",
+      "sourceSha256": "18d4027fb3173dcd7955f4f1b6c7086f308683b4ec4ef103b07d634a6f34b95c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/sun-hao/sun-hao__voice__intro-alt__v1__18d4027fb3173dcd.wav",
+      "preview": "/api/voice/sun-hao/intro-alt",
+      "thumb": "/api/voice/sun-hao/intro-alt",
+      "previewUrl": "/api/voice/sun-hao/intro-alt",
+      "durationSec": 17.6,
+      "transcript": {
+        "text": "Hi, I'm Sun Hao. I'm twenty-five, from Shenzhen. People see my ash-blond hair and think I spend every night in clubs. Actually, I work at a funeral home, preparing people for their final farewell. I dye my hair to give myself a little courage. Life after work still has plenty of colour."
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 751828,
+      "sha256": "961a4ace6ceffcb77dfedb9ed647589144177a6761044bc1e012dfa2ac8184d5",
+      "sourceSha256": "961a4ace6ceffcb77dfedb9ed647589144177a6761044bc1e012dfa2ac8184d5",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/sun-hao/sun-hao__voice__chat__v1__961a4ace6ceffcb7.wav",
+      "preview": "/api/voice/sun-hao/chat",
+      "thumb": "/api/voice/sun-hao/chat",
+      "previewUrl": "/api/voice/sun-hao/chat",
+      "durationSec": 11.7,
+      "transcript": {
+        "text": "刚下班，走，去吃点热的。你不用把话说得那么小心，我平时也开玩笑。只是上班的时候，该认真就得认真，别的事出来再聊。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 554180,
+      "sha256": "a5895f76e60a4c332461ea5ddec83d82475f10e9f585bdca7671d31f79f028c5",
+      "sourceSha256": "a5895f76e60a4c332461ea5ddec83d82475f10e9f585bdca7671d31f79f028c5",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/sun-hao/sun-hao__voice__happy__v1__a5895f76e60a4c33.wav",
+      "preview": "/api/voice/sun-hao/happy",
+      "thumb": "/api/voice/sun-hao/happy",
+      "previewUrl": "/api/voice/sun-hao/happy",
+      "durationSec": 8.6,
+      "transcript": {
+        "text": "今天难得准点下班，你居然还订到了那家店！行，我换件衣服就来。别等我挑半天，我这头发已经够显眼了。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 521486,
+      "sha256": "343587d1b6550361bbaa358772d03d9a0190eae9a97c8769319d8547575f39f1",
+      "sourceSha256": "343587d1b6550361bbaa358772d03d9a0190eae9a97c8769319d8547575f39f1",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/sun-hao/sun-hao__voice__angry__v1__343587d1b6550361.wav",
+      "preview": "/api/voice/sun-hao/angry",
+      "thumb": "/api/voice/sun-hao/angry",
+      "previewUrl": "/api/voice/sun-hao/angry",
+      "durationSec": 8.1,
+      "transcript": {
+        "text": "这不是能随便开玩笑的地方。东西先放下，听我把步骤说完。你可以不懂这份工作，但请你尊重来这里的人。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 644832,
+      "sha256": "ed06ef160f127f096bc09b5a57b639d40796302111d5d1d483ee7c1150bfacb2",
+      "sourceSha256": "ed06ef160f127f096bc09b5a57b639d40796302111d5d1d483ee7c1150bfacb2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/sun-hao/sun-hao__voice__sad__v1__ed06ef160f127f09.wav",
+      "preview": "/api/voice/sun-hao/sad",
+      "thumb": "/api/voice/sun-hao/sad",
+      "previewUrl": "/api/voice/sun-hao/sad",
+      "durationSec": 10,
+      "transcript": {
+        "text": "今天忙完，坐了好一会儿才想起来吃饭。有些话在现场说不出来，回家路上却一直想着。没事，让我安静一会儿就好。"
+      },
+      "placeholder": true
+    }
+  ]
+}

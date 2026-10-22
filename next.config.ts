@@ -1,7 +1,23 @@
 import type { NextConfig } from "next";
+import { readdirSync, readFileSync } from "node:fs";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    // The production record owns both the new identity and its historical casting URL.
+    return readdirSync("media-pack/actors")
+      .filter((file) => file.endsWith(".json"))
+      .flatMap((file) => {
+        const actor = JSON.parse(readFileSync(`media-pack/actors/${file}`, "utf8"));
+        const oldSlug = actor.castingSource?.oldSlug;
+        if (!actor.website?.published || !oldSlug || oldSlug === actor.slug) return [];
+        return ["", "/:locale(zh|en)"].map((prefix) => ({
+          source: `${prefix}/actors/${oldSlug}/:path*`,
+          destination: `${prefix}/actors/${actor.slug}/:path*`,
+          permanent: true,
+        }));
+      });
+  },
   outputFileTracingIncludes: {
     "/api/**": [
       "./src/content/actors/*/assets.json",

@@ -1311,6 +1311,14 @@ export const messages = {
     en: "Short clips for reference and editing.",
     zh: "用于参考和剪辑的短片。",
   },
+  "assets.voicePlaceholder": {
+    en: "Placeholder voice",
+    zh: "占位声音",
+  },
+  "assets.voicePlaceholderNote": {
+    en: "Temporary synthetic audio, not final voice acting. Full acoustic review is not complete.",
+    zh: "临时合成声音，非正式配音；尚未完成完整声学审听。",
+  },
   "assets.voiceReference": {
     en: "Reference",
     zh: "参考音",

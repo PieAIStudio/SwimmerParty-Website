@@ -86,6 +86,52 @@ test("fixture promotion publishes exactly one unchanged identity at 1.0.0", asyn
   assert.equal(manifest.looks[0].id, "personal");
 });
 
+test("CC-traced renames replace only their old casting card and reject conflicting claims", () => {
+  const casting = castingFixture();
+  const original = casting.actors[0];
+  casting.actors.push({ ...original, slug: "unrelated-face", source: "CC-998" });
+  const promoted = {
+    ...promotedFixture(),
+    slug: "renamed-actor",
+    name: { en: "New Name", zh: "新姓名" },
+    status: {
+      ...promotedFixture().status,
+      siteProfile: "src/content/actors/renamed-actor/profile.ts",
+    },
+    castingSource: {
+      code: original.source,
+      oldSlug: original.slug,
+      oldName: { en: original.nameEn, zh: original.nameZh },
+    },
+  };
+  const data = projectActorData([promoted], casting);
+  assert.deepEqual(
+    data.actors.map((a) => a.slug),
+    ["renamed-actor", "unrelated-face"],
+  );
+  assert.equal(data.active[0].nameCn, "新姓名");
+  assert.equal(casting.actors[0].nameZh, "测试演员", "historical casting stays unchanged");
+  assert.throws(
+    () =>
+      projectActorData(
+        [{ ...promoted, castingSource: { ...promoted.castingSource, code: "CC-998" } }],
+        casting,
+      ),
+    /conflicting casting source/,
+  );
+  assert.throws(
+    () =>
+      projectActorData(
+        [
+          promoted,
+          { ...promoted, slug: "second-claim", website: { ...promoted.website, order: 1 } },
+        ],
+        casting,
+      ),
+    /conflicting casting source/,
+  );
+});
+
 test("source and generated-file drift fail; generation preserves delivery items", async (t) => {
   const root = await rootFor(t, true);
   const file = "src/content/actors/fixture-actor/assets.json";

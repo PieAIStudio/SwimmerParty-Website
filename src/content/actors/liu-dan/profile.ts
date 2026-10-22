@@ -60,16 +60,26 @@ export const profile: Actor = {
     },
   ],
   note: {
-    en: "Small in height, strong in spirit. From weightlifting to sorting parcels.",
-    zh: "个子小，力气大。从举重队到快递站。",
+    en: "At 156 cm, with a blunt black bob, straight bangs and a beauty mark under one eye, Liu Dan is hard to miss. A former youth sports-school weightlifter, she now sorts parcels and moves boxes faster than her male colleagues.",
+    zh: "156厘米，齐刘海黑短发，眼下一颗痣。少体校举重队退役，现在在快递站分拣，搬箱子比男同事快。",
   },
   promptSeed:
     "The same original fictional East Asian (Chinese) woman as the CC-001 face reference, now named Liu Dan: 23 years old, from Anshan in Liaoning, petite and slim, 156 cm tall. Preserve her round face, wide-set dark-brown eyes, small beauty mark under the same eye as in the reference, and blunt black bob with straight-cut bangs. She is a former youth sports-school weightlifter, now a parcel-sorting worker; do not turn that history into a new face or an exaggerated bodybuilder physique. Use the attached CC-001-face-only.png for face identity and selected-body-anchor.png for the approved natural adult body proportions. Never copy the old casting body. Production target about 7.0 heads tall, range 6.8–7.2 measured from the hidden SKULL crown to the chin, not the hair. Normal adult head size, short adult stature, natural neck, torso, pelvis and legs; neither childlike nor fashion-model elongated. Keep these identity features across every angle, expression and outfit.",
-  version: "1.0.0",
-  versionDate: "2026-10-22",
+  version: "1.1.0",
+  versionDate: "2026-10-23",
   versionNote: {
-    en: "55 reference images, 6 placeholder voice clips and a sample video.",
-    zh: "55 张参考图、6 段占位声音、1 段样片。",
+    en: "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+    zh: "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。",
   },
+  versionHistory: [
+    {
+      version: "1.0.0",
+      date: "2026-10-22",
+      note: {
+        en: "55 reference images, 6 placeholder voice clips and a sample video.",
+        zh: "55 张参考图、6 段占位声音、1 段样片。",
+      },
+    },
+  ],
   voiceLanguage: "zh",
 };

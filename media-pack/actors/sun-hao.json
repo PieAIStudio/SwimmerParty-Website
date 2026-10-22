@@ -1,0 +1,1067 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "code": "sun-hao",
+  "slug": "sun-hao",
+  "kind": "actor",
+  "name": {
+    "zh": "孙浩",
+    "en": "Sun Hao"
+  },
+  "status": {
+    "delivered": 55,
+    "published": false,
+    "preparedOn": "2026-10-22",
+    "productionOnly": true,
+    "version": "1.0.0",
+    "siteProfile": "src/content/actors/sun-hao/profile.ts"
+  },
+  "demographics": {
+    "age": 25,
+    "gender": "male",
+    "origin": {
+      "zh": "广东深圳",
+      "en": "Shenzhen, Guangdong, China"
+    },
+    "voiceLanguage": "zh"
+  },
+  "facts": {
+    "zh": [
+      "25岁，广东深圳，身高170cm。",
+      "看着像夜店小开，其实是殡仪馆的入殓师，染头发是给自己打气。"
+    ],
+    "en": [
+      "25-year-old East Asian Chinese man, 170 cm tall, from Shenzhen, Guangdong, China.",
+      "An embalmer at a funeral home; his dyed hair is a small way to encourage himself."
+    ]
+  },
+  "identity": "Original fictional East Asian Chinese man Sun Hao,25,from Shenzhen,170cm. OWNER-AUTHORIZED SELECTED VERSION2. Prominent rounded outward ears, long narrow face with a round-ended blunt chin, low straight brows, horizontally long half-lidded dark eyes, long narrow nose, thin lips with a restrained off-centre half-smile. Messy ash-blond top hair. An embalmer at a funeral home; his dyed hair is a small way to encourage himself. Preserve the selected new face and the selected adult body geometry, ordinary slim adult anatomy, no de-aging or generic boy-band beautification. Original CC source is historical provenance, not a face-lock.",
+  "stylization": "Character stylization (A2, pushed): 3D feature-animation adult with realistic adult body proportions at this actor's height; normal head size, natural neck, shoulders, torso, pelvis and leg lengths. The East Asian Chinese identity must read through the facial structure rather than clothing. Preserve distinctive ordinary-person facial features, gently exaggerated from life, not a generic beauty-standard face. Slightly enlarged expressive eyes without enlarging the whole head; simplified cheek, nose and lip planes; smooth stylized skin shading with soft subsurface scattering and no pores; clean grouped hair clumps. Clothing uses realistic clean unbranded materials. Unmistakably CG at first glance, never photoreal.",
+  "proportions": {
+    "headsTall": 7.3,
+    "headsTallRange": [
+      7.1,
+      7.5
+    ],
+    "heightCm": 170,
+    "targetBasis": "Production target proposed before generation from confirmed height and age; not a measurement or a selected body. Frozen Vision review plus delegated anatomy/identity review required.",
+    "frameGuide": {
+      "occupancyMin": 0.86,
+      "occupancyMax": 0.94,
+      "topMarginMin": 0.04,
+      "topMarginMax": 0.1,
+      "bottomMarginMin": 0.04,
+      "bottomMarginMax": 0.1
+    }
+  },
+  "anchorVersion": 2,
+  "anchors": {
+    "body": "library/staging/sun-hao/references/selected-body-anchor-v2.png",
+    "face": "library/staging/sun-hao/sun-hao__face__front__v2.png"
+  },
+  "castingSource": {
+    "code": "CC-042",
+    "oldSlug": "lu-xingye",
+    "oldName": {
+      "zh": "陆星野",
+      "en": "Lu Xingye"
+    },
+    "record": "casting/new-faces-2026-10.json",
+    "image": "library/claude-casting-2026-10-07/final/CC-042.png",
+    "sha256": "16247fb56b85bdf230caec939d827af9e9916e7b161157eb4ee3651ac4d6b8e2",
+    "use": "Historical CC provenance only. Version1 facial lock superseded by Owner authorized version2 redesign on2026-10-22; use only current selected anchors for production, not this oldCCface.",
+    "identityAuthority": "HQ second-version list for name/age/height/ethnicity/biography, plus Owner2026-10-22 authorization for facial differentiation of unfinished actors.",
+    "faceCrop": {
+      "file": "references/CC-042-face-only.png",
+      "rectangleXYXY": [
+        244,
+        0,
+        705,
+        484
+      ],
+      "width": 461,
+      "height": 484,
+      "sha256": "8bc910e776ed19fc9e2c1bb634d2e96825e38a39ce99d74a1ee018c840de7032",
+      "operation": "pixel crop only; source original preserved",
+      "validity": "Historical version1 face crop, not the current version2 identity."
+    }
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "Plain clean lavender cotton crew-neck T-shirt, straight dark charcoal trousers, clean flat white low-top sneakers; no jewelry, accessories, text, logos or brands."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "zh": "日常装",
+        "en": "Everyday wear"
+      },
+      "prompt": "Clean everyday outfit: plain dark-olive overshirt worn open over an off-white T-shirt, straight black jeans, flat grey low-top sneakers. Preserve his ash-blond hair. No work uniform, logos or jewelry.",
+      "approvalBasis": "Agentselected nativepersonalfront afteridentity/CG/relativebodyQA",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": { "zh": "日常装近景", "en": "Everyday portrait" },
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
+        },
+        {
+          "key": "check-message",
+          "label": {
+            "zh": "看消息",
+            "en": "Checking a message"
+          },
+          "direction": "full body standing at a three-quarter angle, looking at a plain unbranded phone held at chest height, relaxed half-smile"
+        },
+        {
+          "key": "hands-in-pockets",
+          "label": {
+            "zh": "插兜站立",
+            "en": "Hands in pockets"
+          },
+          "direction": "full body at a three-quarter angle, standing naturally with both hands in trouser pockets and a faint half-smirk"
+        },
+        {
+          "key": "after-work",
+          "label": {
+            "zh": "下班休息",
+            "en": "After work"
+          },
+          "direction": "full body seated on a plain simple stool, shoulders relaxed, hands on knees, thoughtful expression"
+        }
+      ]
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "no-qualified-body-anchor-yet",
+    "phase": "four-samples-complete-technical-staging",
+    "appearance": "Trial3/3 submitted, finalresult unknown after3originalchat recoveryrounds. Page restoredbutconnectioninterruptedwaitingfullresponse;0/55accepted. Do not regenerateoraddtrial; lateronlyqueryoriginal andrevieworiginalresult. Earliertrialsoutsideproportiontarget.",
+    "distinctivenessAudit": {
+      "checkedAt": "2026-10-22T11:53:15.209882+08:00",
+      "comparison": "Official live21 ready-to-cast catalog; local matching native face/body assets read-only. Diagnostic sheets in next10 receipt.",
+      "authority": "Owner requested autonomous differentiation of unfinished actors and authorized facial redesign; four completed actors exempt.",
+      "decision": "redesign-v2",
+      "reason": "Long narrow face, projecting ears, narrow tired eyes; ash hair is secondary."
+    },
+    "previousIdentityV1": {
+      "identity": "The same original fictional East Asian Chinese man as CC-042-face-only.png, now named Sun Hao, 25 years old, from Shenzhen, Guangdong, China, 170 cm tall. Preserve these distinctive features: slim; narrow face, ash-blond dyed tousled hair and a faint half-smirk. An embalmer at a funeral home; his dyed hair is a small way to encourage himself. The face crop is identity only, never a body-proportion reference. Natural adult body about 7.30 skull-to-chin heads tall, target 7.1–7.5, excluding hair, afro or topknot. Natural adult neck, torso, pelvis and limbs; no big head, shortened torso, long neck or fashion-model elongation.",
+      "anchors": {
+        "face": "references/CC-042-face-only.png",
+        "body": null
+      },
+      "delivered": 0,
+      "validity": "Superseded for revised pack by Owner facial differentiation direction. Original files retained, do not mix into v2."
+    },
+    "identityV2Design": "A distinctly long narrow face with a long blunt chin, slightly projecting ears, narrow straight-lidded tired eyes and straight low-set brows; a small long nose with a rounded tip, thin lips with a restrained off-centre half-smile. Ash-blond messy hair remains. Slight under-eye hollows consistent with a25-year-old working shifts, not elderly wrinkles, never an idealized boy-band face.",
+    "latestTrial6Review": {
+      "file": "trials/trial6-face-and-body-v2-native.png",
+      "point": 7.461,
+      "range": [
+        6.961,
+        8.046
+      ],
+      "status": "measurement_review",
+      "decision": "rejected-identity-differentiation",
+      "reason": "Bodypoint nowinproposedrange, but earprojection stillweak/haircover, pointedchin andgenericidealizedyoungface persist; cannot bypasslatestOwnerdifferentiation requirement. Originaltrialbudget6/6exhausted; no newtrialusingfullscope."
+    },
+    "bodyGeometryBaseline": {
+      "file": "trials/trial6-face-and-body-v2-native.png",
+      "acceptedScope": "Anatomy and relative body scale ONLY under delegated review. Oldface rejected, not a canonicalslot or finalidentityanchor.",
+      "point": 7.461,
+      "range": [
+        6.961,
+        8.046
+      ],
+      "frozenStatus": "measurement_review",
+      "frameStatus": "frame_rejected",
+      "frameMargins": [
+        0.008,
+        0.02
+      ],
+      "authority": "Owner delegated anatomyreview; patrol2026-10-22 approval asks extra3trials tofocusface and preservealreadyimprovedbodygeometry.",
+      "next": "New headportrait thenmergeface into thissamebody; do not repeatedly redesignbody."
+    },
+    "ownerLatestMessageQuota": {
+      "trial": 9,
+      "fullCumulative": 70,
+      "includesAlreadyUsed": true,
+      "source": "Ownerdirectreply call_ab0a7aef4a3c4782b2d6326cdf2a24f5"
+    },
+    "selectedNewFaceV2": {
+      "file": "references/selected-new-face-trial8-v2.png",
+      "authority": "User-delegated agent visual choice",
+      "features": "Prominent rounded outward ears, long round-ended chin, low straight brows and horizontally long half-lidded eyes; ash-blond messy top",
+      "pending": "Joint full-body anchor trial9 required"
+    },
+    "selectedIdentityV2": {
+      "source": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/trials/trial9-joint-body-anchor-v2-native.png",
+      "sha256": "c4825914669b5f9dcedb1ab39811d89d365625e413e89a3737ebce482ce748fd",
+      "faceSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/trials/trial8-guided-head-v2-native.png",
+      "choiceAuthority": "Owner delegated aesthetic,facialdesign andproportion decisions to agent",
+      "actualSignatureFeatures": "Prominent rounded outward ears, long round-ended chin, low straight brows and half-lidded long eyes. Ear shape improved, not claiming guide silhouette achieved exactly.",
+      "proportion": {
+        "point": 7.457,
+        "range": [
+          6.960869565217391,
+          8.035532994923859
+        ],
+        "frozenStatus": "measurement_review",
+        "frame": {
+          "status": "frame_rejected",
+          "occupancy": 0.98,
+          "topMargin": 0.008,
+          "bottomMargin": 0.012,
+          "bbox": {
+            "minX": 210,
+            "minY": 14,
+            "maxX": 725,
+            "maxY": 1651
+          },
+          "target": {
+            "occupancyMin": 0.86,
+            "occupancyMax": 0.94,
+            "topMarginMin": 0.04,
+            "topMarginMax": 0.1,
+            "bottomMarginMin": 0.04,
+            "bottomMarginMax": 0.1
+          }
+        },
+        "visualDecision": "accepted-with-delegated-exceptions",
+        "basis": "7.457 point closely preserves prior body baseline7.461; natural short neck, shoulders, torso, pelvis and leg lengths, identity matches selected trial8 portrait. Interval stays measurement_review; top0.8/bottom1.2% tight but complete hair/hands/soles; delegated framing acceptance, not automatic pass."
+      }
+    },
+    "temporaryDeferredSlots": [],
+    "sideViewQA": "Fullsize native2 face close shows far iris; nearprofile rejected, not exact90. Originalbodyretained, missing3profile views deferred pendingnative occlusion/rotation correction.",
+    "imageProviderPause": {
+      "route": "chatgpt-web",
+      "status": "resolved-owner-model-change",
+      "evidence": [
+        "grace-message16-provider-limit-browser.png",
+        "peter-message10-provider-limit-browser.png"
+      ],
+      "actualMessage": "你已达到限额。请稍后重试。",
+      "observed": "2026-10-22 13:30 UTC+8",
+      "resetAt": "not displayed",
+      "scope": "Twooriginalchats bothlimited; sharedPicsAroute held toavoidunproductivecrossactorretries, no modelchange",
+      "next": "Continue separately authorized voice/sample work using selectedanchors; imagesremainincomplete, originalrunsnotreset"
+    },
+    "ownerModelOverride": {
+      "authority": "Owner本会话2026-10-22明确：后面session都用GPT6极高，不用5.6SolPro",
+      "applies": "allsubsequentChatGPTimages in originalconversation",
+      "previous": "GPT5.6SolPro5/5",
+      "verifiedCurrent": "GPT6checked,极高4/5",
+      "evidence": "sun-hao-gpt6-extra-high-selected-browser.png"
+    },
+    "approvedPersonalLook": {
+      "anchor": "sun-hao__wardrobe-personal__front__v2.png",
+      "authority": "Userdelegated agent visualchoice",
+      "basis": "Nativefront actualRGBA identity/CG/relativeadultbody accepted, usefixedlookfrontnotchainedviews",
+      "portrait": "sun-hao__wardrobe-personal__portrait__v2.png"
+    },
+    "voicePlaceholderChoice": {
+      "candidate": 1,
+      "cloudSaved": true,
+      "provisional": true,
+      "acousticReview": "not-heard; selected as temporary placeholder, not an acoustic ranking",
+      "authority": "Owner delegated all remaining temporary MiniMax voices",
+      "balanceBefore": 65567,
+      "balanceAfter": 65392,
+      "slotsRemaining": 3
+    },
+    "voicePlaceholderDelivery": {
+      "slots": 6,
+      "handoff": "voice/handoff/handoff.json",
+      "status": "accepted-temporary-placeholder-under-delegation",
+      "review": "ASR-only; no acoustic review; see original run for limitations",
+      "synthesisBeats": 845,
+      "designBeats": 175
+    },
+    "approvedProfileHeads": {
+      "left": "sun-hao__face__side__v2.png",
+      "right": "sun-hao__face__side-right__v2.png"
+    },
+    "imagePackTechnicalComplete": {
+      "canonicalSlots": 55,
+      "uniqueSha256": 55,
+      "fullBodyRelativeReviewed": 19,
+      "messages": 65,
+      "review": "delegated visual acceptance; frozen measurement_review preserved",
+      "sampleScope": "Grok1/3 plus Vids0/1"
+    },
+    "additionalVideoTasks": {
+      "action": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/action/task.json",
+      "ensemble": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/ensemble/task.json",
+      "vids": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/vids/task.json"
+    },
+    "sampleScope": {
+      "required": 4,
+      "accepted": 4,
+      "grokAccepted": 3,
+      "vidsAccepted": 1,
+      "missing": {},
+      "sourceExceptions": [],
+      "voiceNote": "existing six placeholder WAV unchanged; no acoustic review claim",
+      "reviewAuthority": "Owner delegated aesthetic and relative proportion review; staging only",
+      "reviewPage": "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/four-sample-review.html",
+      "updatedAt": "2026-10-22T16:16:05.182454+00:00",
+      "publication": false
+    }
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00-pics-a/c/6ad8fcce-494c-83ea-8efc-c3b190e1c623",
+      "project": "Pics-A",
+      "host": "Codex app IAB",
+      "modelRequested": "GPT-5.6 Sol / Pro5/5",
+      "actualModelVerified": true,
+      "actualModel": "GPT-5.6 Sol / Pro5/5 in actual chat, explicitly selected after no-image administrative setup. No images requested before verification.",
+      "model": "GPT-6",
+      "thinking": "Extra High / 极高 (4/5)"
+    }
+  },
+  "website": {
+    "published": true,
+    "order": 119,
+    "status": "active",
+    "tagline": {
+      "en": "Looks like a rich club kid. Works as a mortuary cosmetologist.",
+      "zh": "像夜店小开，其实是入殓师。"
+    },
+    "introduction": {
+      "en": "Ash-blond hair, a long narrow face, slender eyes and a restrained crooked smile give Sun Hao a mischievous look. He looks like a wealthy club kid, but works as a mortuary cosmetologist. Dyeing his hair is his way of keeping his spirits up.",
+      "zh": "灰金色头发，窄长脸、细长眼，嘴角挂着克制的坏笑。看着像夜店小开，其实是殡仪馆的入殓师，染头发是给自己打气。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-23",
+    "note": {
+      "en": "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+      "zh": "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。"
+    }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-23",
+    "ownerReviewPending": false,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/actors/sun-hao.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/sun-hao-slot-plan-v2.json",
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/voice/handoff/handoff.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/RESULT.md"
+    ],
+    "images": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__turnaround__front__v2.png",
+        "source": "sun-hao/sun-hao__turnaround__front__v2.png",
+        "sha256": "c4825914669b5f9dcedb1ab39811d89d365625e413e89a3737ebce482ce748fd",
+        "bytes": 903926,
+        "slot": "turnaround.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__turnaround__three-quarter__v2.png",
+        "source": "sun-hao/sun-hao__turnaround__three-quarter__v2.png",
+        "sha256": "06a13c8e54a273bc6dd2d810fac7bb117881d05ba479ecf280e37885cd36a335",
+        "bytes": 802714,
+        "slot": "turnaround.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__turnaround__side__v2.png",
+        "source": "sun-hao/sun-hao__turnaround__side__v2.png",
+        "sha256": "f18466b9558ed7ef4aed029203a1b891c5e9e6106487cafc3b6a926f8bc391c8",
+        "bytes": 559889,
+        "slot": "turnaround.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__turnaround__back__v2.png",
+        "source": "sun-hao/sun-hao__turnaround__back__v2.png",
+        "sha256": "a4c59b3bfc8fff7ecd8215a2afbcf0b75e662863b54a3e8affd73c0ce1437b69",
+        "bytes": 961635,
+        "slot": "turnaround.back",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__turnaround__back-three-quarter-left__v2.png",
+        "source": "sun-hao/sun-hao__turnaround__back-three-quarter-left__v2.png",
+        "sha256": "93265d4914efeae071eb28f214605e86f4bd9874ae8ccc4ae9e50a012006f123",
+        "bytes": 879693,
+        "slot": "turnaround.back-three-quarter-left",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__turnaround__back-three-quarter-right__v2.png",
+        "source": "sun-hao/sun-hao__turnaround__back-three-quarter-right__v2.png",
+        "sha256": "a13f559887f8929bb9c597ca0a0fb9a5f01dd55eab8a9f42f55b6262f63a47a2",
+        "bytes": 965342,
+        "slot": "turnaround.back-three-quarter-right",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__face__front__v2.png",
+        "source": "sun-hao/sun-hao__face__front__v2.png",
+        "sha256": "4832b1ba0eed90a359d88e6aa290747fe677d31419fa95dc442e84f019729f49",
+        "bytes": 1720620,
+        "slot": "face.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__face__three-quarter__v2.png",
+        "source": "sun-hao/sun-hao__face__three-quarter__v2.png",
+        "sha256": "23a6c6c769d023ff64fefd1026dfd0787c627449bc08b727164c1694607d9e9d",
+        "bytes": 1905521,
+        "slot": "face.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__face__side__v2.png",
+        "source": "sun-hao/sun-hao__face__side__v2.png",
+        "sha256": "05bb75de818bb040d71b00102324aa786f7e8818a766110d30653c64f3150fc4",
+        "bytes": 1866488,
+        "slot": "face.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__face__three-quarter-left__v2.png",
+        "source": "sun-hao/sun-hao__face__three-quarter-left__v2.png",
+        "sha256": "e0ffab8cd8e678f4ae3a813b564ddc05f68cba959352cc04ce7076100cc4cc3a",
+        "bytes": 1908479,
+        "slot": "face.three-quarter-left",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__face__side-right__v2.png",
+        "source": "sun-hao/sun-hao__face__side-right__v2.png",
+        "sha256": "6d34b6b6ee191e13c99f8af4694d81f7788ae41e26d308306a3a1ac89c71395c",
+        "bytes": 1758199,
+        "slot": "face.side-right",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__face__up__v2.png",
+        "source": "sun-hao/sun-hao__face__up__v2.png",
+        "sha256": "6ac91de30093d572b60d66124083714d83bb0e1b8b0365e3b1cf9d18d7761ea1",
+        "bytes": 1780459,
+        "slot": "face.up",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__face__down__v2.png",
+        "source": "sun-hao/sun-hao__face__down__v2.png",
+        "sha256": "1052fdbae1b23eda11442a47454bbbaf1a1aa9b225ada5370c9a24e288dc3ee4",
+        "bytes": 1882599,
+        "slot": "face.down",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__neutral__v2.png",
+        "source": "sun-hao/sun-hao__expression__neutral__v2.png",
+        "sha256": "7bb7334b3d68bec9b6dd94addc9b36792a761c67637b2e0923f0b3e5ead8a6b0",
+        "bytes": 1900904,
+        "slot": "expression.neutral",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__smile__v2.png",
+        "source": "sun-hao/sun-hao__expression__smile__v2.png",
+        "sha256": "8e40f41df19151c3f1687b6e2b64e83211380a44f6b4c0b64b069777975b148c",
+        "bytes": 1838279,
+        "slot": "expression.smile",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__laugh__v2.png",
+        "source": "sun-hao/sun-hao__expression__laugh__v2.png",
+        "sha256": "183eb7bca41a164b5c658e38c236506b1929e8e15302d149fed7d08062859c9b",
+        "bytes": 1850633,
+        "slot": "expression.laugh",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__sad__v2.png",
+        "source": "sun-hao/sun-hao__expression__sad__v2.png",
+        "sha256": "a7a3f2b299fca140b47eca6245eff48200059f1d553be32144460bb8c9962c72",
+        "bytes": 1787827,
+        "slot": "expression.sad",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__cry__v2.png",
+        "source": "sun-hao/sun-hao__expression__cry__v2.png",
+        "sha256": "94e8d45be2cea8079b297c2f079e7f5bc554be6711f36099548dfff792b19e54",
+        "bytes": 1867367,
+        "slot": "expression.cry",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__annoyed__v2.png",
+        "source": "sun-hao/sun-hao__expression__annoyed__v2.png",
+        "sha256": "d309a38256a58bac30be8b957f93a353d65b740a7447305aab30ca982f2c623f",
+        "bytes": 1672574,
+        "slot": "expression.annoyed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__angry__v2.png",
+        "source": "sun-hao/sun-hao__expression__angry__v2.png",
+        "sha256": "0a4001e0422be4a5f121d16c3cd2ef385e0d05dd214d3c2f9e18ca5ba2168b4e",
+        "bytes": 1907751,
+        "slot": "expression.angry",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__surprised__v2.png",
+        "source": "sun-hao/sun-hao__expression__surprised__v2.png",
+        "sha256": "5fab1e863e93f8cdd347c6cf28f871e5ba1ced8ce7719f6d6d305dd67d21f84a",
+        "bytes": 1772145,
+        "slot": "expression.surprised",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__scared__v2.png",
+        "source": "sun-hao/sun-hao__expression__scared__v2.png",
+        "sha256": "61335308c48ba96ac085f6b974259d0b8108d06d11f32c4088098e3c436f2bd9",
+        "bytes": 1844321,
+        "slot": "expression.scared",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__disgusted__v2.png",
+        "source": "sun-hao/sun-hao__expression__disgusted__v2.png",
+        "sha256": "aae67b41a92d6b804515efeae37fe239914c6c1db5e071ea2696226914ae255c",
+        "bytes": 1795567,
+        "slot": "expression.disgusted",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__embarrassed__v2.png",
+        "source": "sun-hao/sun-hao__expression__embarrassed__v2.png",
+        "sha256": "c56f151ccbd943b7d838ba3f836d9c5fde6d43ec60c267540eefb9a6d796d8b9",
+        "bytes": 1837138,
+        "slot": "expression.embarrassed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__tired__v2.png",
+        "source": "sun-hao/sun-hao__expression__tired__v2.png",
+        "sha256": "cfbb6d39e9ad8e1f91fc4522c705ed3a3c1e8559e0c2695dc5e0610fb436e1a9",
+        "bytes": 1777170,
+        "slot": "expression.tired",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__speaking__v2.png",
+        "source": "sun-hao/sun-hao__expression__speaking__v2.png",
+        "sha256": "5237969b9d11ee5756b0a8c97245d496e86d85659527865e868110767f263faa",
+        "bytes": 1782579,
+        "slot": "expression.speaking",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__eyes-closed__v2.png",
+        "source": "sun-hao/sun-hao__expression__eyes-closed__v2.png",
+        "sha256": "12de5c0f0aab41e72dfaf07003838b8f893dbcd7753b3316be5a24848398eb7b",
+        "bytes": 1660496,
+        "slot": "expression.eyes-closed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__worried__v2.png",
+        "source": "sun-hao/sun-hao__expression__worried__v2.png",
+        "sha256": "591e2e7400c5e2b50ea6d231fc91a95a837f070f39c504d3fb9bb47913fad2aa",
+        "bytes": 1903781,
+        "slot": "expression.worried",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__skeptical__v2.png",
+        "source": "sun-hao/sun-hao__expression__skeptical__v2.png",
+        "sha256": "fcba96dff7b5fd10de9247e7bfaf002f92661dafc6dc285053bfec88f6417424",
+        "bytes": 1887349,
+        "slot": "expression.skeptical",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__smug__v2.png",
+        "source": "sun-hao/sun-hao__expression__smug__v2.png",
+        "sha256": "6e64ac898bcf8f422da1ff1d424dcca71ec8a9ce83ec0794d1ef42833577c6e7",
+        "bytes": 1714697,
+        "slot": "expression.smug",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__contempt__v2.png",
+        "source": "sun-hao/sun-hao__expression__contempt__v2.png",
+        "sha256": "c376dd2fcd45997a976c1d6d4acc104420b69f4bf73cc611f281dce119fc3b6f",
+        "bytes": 1791696,
+        "slot": "expression.contempt",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__confused__v2.png",
+        "source": "sun-hao/sun-hao__expression__confused__v2.png",
+        "sha256": "807136f369881e41c87270b2768f8465506c5d3d79cd20fe5cc70f97ed009452",
+        "bytes": 1872729,
+        "slot": "expression.confused",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__thinking__v2.png",
+        "source": "sun-hao/sun-hao__expression__thinking__v2.png",
+        "sha256": "05050d672c8c4c18bc97f5bebe69076bb08ec1a0e9d069a834e0331472d12195",
+        "bytes": 1781665,
+        "slot": "expression.thinking",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__determined__v2.png",
+        "source": "sun-hao/sun-hao__expression__determined__v2.png",
+        "sha256": "475b0e39788cb583af6ff81084c602f6178c6f6a4c0a95029de54541ec52896b",
+        "bytes": 1777394,
+        "slot": "expression.determined",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__shy__v2.png",
+        "source": "sun-hao/sun-hao__expression__shy__v2.png",
+        "sha256": "2600859398d032642f59b99a3a0b0c6437af523d9e2f868041412fd88a249884",
+        "bytes": 1795301,
+        "slot": "expression.shy",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__pain__v2.png",
+        "source": "sun-hao/sun-hao__expression__pain__v2.png",
+        "sha256": "0ae23fd4c4887380054d6e486037b7c99fa5ff06f2e5bc981d64a04a470e2afb",
+        "bytes": 1941147,
+        "slot": "expression.pain",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__sleepy__v2.png",
+        "source": "sun-hao/sun-hao__expression__sleepy__v2.png",
+        "sha256": "368d69a72f3574e0fb625d21e94bf002f915856d6008ccbed7d3e0702061bb3f",
+        "bytes": 1788394,
+        "slot": "expression.sleepy",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__awkward-smile__v2.png",
+        "source": "sun-hao/sun-hao__expression__awkward-smile__v2.png",
+        "sha256": "b47065f0d41a47d2966d808cae0d0ecce504886691d65cea08ed2fe86e7ed3f7",
+        "bytes": 1793390,
+        "slot": "expression.awkward-smile",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__expression__deadpan__v2.png",
+        "source": "sun-hao/sun-hao__expression__deadpan__v2.png",
+        "sha256": "53edd67cb11c000415df87dd693ee269ea0c13a3ecaf7bcc6c4b713779c5405f",
+        "bytes": 1705694,
+        "slot": "expression.deadpan",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__wardrobe-personal__front__v2.png",
+        "source": "sun-hao/sun-hao__wardrobe-personal__front__v2.png",
+        "sha256": "ead965cd33f72f77e16f89c447bbcd02d2d2e0cc35f12640ed06a6d400dabbaa",
+        "bytes": 1017952,
+        "slot": "wardrobe.personal.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__wardrobe-personal__three-quarter__v2.png",
+        "source": "sun-hao/sun-hao__wardrobe-personal__three-quarter__v2.png",
+        "sha256": "59c2c481b94287c31e8a8159696ae28e42dcfdab077c69e8de5fe7c2ca3beca1",
+        "bytes": 837482,
+        "slot": "wardrobe.personal.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__wardrobe-personal__side__v2.png",
+        "source": "sun-hao/sun-hao__wardrobe-personal__side__v2.png",
+        "sha256": "be081e5e5986a14e489349178720235ebb4aad13394330038f78e92e6e5d26f6",
+        "bytes": 642219,
+        "slot": "wardrobe.personal.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__wardrobe-personal__back__v2.png",
+        "source": "sun-hao/sun-hao__wardrobe-personal__back__v2.png",
+        "sha256": "02f011bc07fcd6567cc6f3984187d4a8be30f011ba1ec5b0b0e499af668a67f5",
+        "bytes": 991767,
+        "slot": "wardrobe.personal.back",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__wardrobe-personal__portrait__v2.png",
+        "source": "sun-hao/sun-hao__wardrobe-personal__portrait__v2.png",
+        "sha256": "f5923b6436dd3e8faaa2c4b3d6684a11ab682702fbe5c9e811e56b9538188149",
+        "bytes": 2140689,
+        "slot": "wardrobe.personal.portrait",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__wardrobe-personal__check-message__v2.png",
+        "source": "sun-hao/sun-hao__wardrobe-personal__check-message__v2.png",
+        "sha256": "07d954626c12007e9c49cf38466bcca8a90c4b1448f2f36833bdc4904d4f250e",
+        "bytes": 1011231,
+        "slot": "wardrobe.personal.check-message",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__wardrobe-personal__hands-in-pockets__v2.png",
+        "source": "sun-hao/sun-hao__wardrobe-personal__hands-in-pockets__v2.png",
+        "sha256": "f5437e822d71ec4d3d4e898a5a20ffd52c7a97965cd4fff0bd28e30c702d0c9a",
+        "bytes": 957768,
+        "slot": "wardrobe.personal.hands-in-pockets",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__wardrobe-personal__after-work__v2.png",
+        "source": "sun-hao/sun-hao__wardrobe-personal__after-work__v2.png",
+        "sha256": "792b746f9219370fd5e7fb40e6b3215b44a28d26cf46ae8f87acb10953928580",
+        "bytes": 1348620,
+        "slot": "wardrobe.personal.after-work",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__pose__walk__v2.png",
+        "source": "sun-hao/sun-hao__pose__walk__v2.png",
+        "sha256": "038f4773716609f51c469ff594c083b8e84959a8bff9710f6b987c8aafe01ebf",
+        "bytes": 836707,
+        "slot": "pose.walk",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__pose__run__v2.png",
+        "source": "sun-hao/sun-hao__pose__run__v2.png",
+        "sha256": "1b4ef88599bc4c79d81de28acde19671dde08d507c27730e571a410c23594687",
+        "bytes": 846418,
+        "slot": "pose.run",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__pose__sit__v2.png",
+        "source": "sun-hao/sun-hao__pose__sit__v2.png",
+        "sha256": "ec66ab8176362e6dc3f2dd7f60f1b47cd670624abe76f4ba2daa29d853cc191d",
+        "bytes": 1106684,
+        "slot": "pose.sit",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__pose__point__v2.png",
+        "source": "sun-hao/sun-hao__pose__point__v2.png",
+        "sha256": "792ddaae42a584bb2a1eb705c07c964ede3f19b5b6a838987f7d8f50d8e83742",
+        "bytes": 800853,
+        "slot": "pose.point",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__pose__arms-crossed__v2.png",
+        "source": "sun-hao/sun-hao__pose__arms-crossed__v2.png",
+        "sha256": "0b650b11d1536b40a54cfbc761404953c42669ec8f62a713a6336b279fc979be",
+        "bytes": 771639,
+        "slot": "pose.arms-crossed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__pose__phone__v2.png",
+        "source": "sun-hao/sun-hao__pose__phone__v2.png",
+        "sha256": "e67ad7e07a150e1c3f070e1ccb03767028c3384fcfc20bd07bcc13fd1a012a57",
+        "bytes": 833760,
+        "slot": "pose.phone",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__detail__hands__v2.png",
+        "source": "sun-hao/sun-hao__detail__hands__v2.png",
+        "sha256": "e5028f82d604195297d6e0485c2f96cb71c6573b4d0927aa6b9a9d9937503591",
+        "bytes": 1086327,
+        "slot": "detail.hands",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/sun-hao__detail__hair-back__v2.png",
+        "source": "sun-hao/sun-hao__detail__hair-back__v2.png",
+        "sha256": "da27ea0f6337183b29a4f9f004d7edd0ce341e74fd43e309727ea33628b33919",
+        "bytes": 2194540,
+        "slot": "detail.hair-back",
+        "version": 2
+      }
+    ],
+    "voices": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/voice/handoff/sun-hao__voice__intro__v1.wav",
+        "source": "voices/sun-hao/sun-hao__voice__intro__v1.wav",
+        "sha256": "b1efaeaaec6c5a5794f05f6cf460da82164595c400c364253ab3c5a23058cab7",
+        "bytes": 1205538,
+        "slot": "intro",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "嗨，我叫孙浩，深圳的，二十五。看我这头灰金色，好多人以为我天天泡夜店。其实我在殡仪馆做入殓师。这行得细心，也得稳得住。染头发不是为了显眼，是给自己打打气，提醒自己，下班以后还有热闹的日子。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/voice/handoff/sun-hao__voice__intro-alt__v1.wav",
+        "source": "voices/sun-hao/sun-hao__voice__intro-alt__v1.wav",
+        "sha256": "18d4027fb3173dcd7955f4f1b6c7086f308683b4ec4ef103b07d634a6f34b95c",
+        "bytes": 1128262,
+        "slot": "intro-alt",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "Hi, I'm Sun Hao. I'm twenty-five, from Shenzhen. People see my ash-blond hair and think I spend every night in clubs. Actually, I work at a funeral home, preparing people for their final farewell. I dye my hair to give myself a little courage. Life after work still has plenty of colour."
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/voice/handoff/sun-hao__voice__chat__v1.wav",
+        "source": "voices/sun-hao/sun-hao__voice__chat__v1.wav",
+        "sha256": "961a4ace6ceffcb77dfedb9ed647589144177a6761044bc1e012dfa2ac8184d5",
+        "bytes": 751828,
+        "slot": "chat",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "刚下班，走，去吃点热的。你不用把话说得那么小心，我平时也开玩笑。只是上班的时候，该认真就得认真，别的事出来再聊。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/voice/handoff/sun-hao__voice__happy__v1.wav",
+        "source": "voices/sun-hao/sun-hao__voice__happy__v1.wav",
+        "sha256": "a5895f76e60a4c332461ea5ddec83d82475f10e9f585bdca7671d31f79f028c5",
+        "bytes": 554180,
+        "slot": "happy",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "今天难得准点下班，你居然还订到了那家店！行，我换件衣服就来。别等我挑半天，我这头发已经够显眼了。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/voice/handoff/sun-hao__voice__angry__v1.wav",
+        "source": "voices/sun-hao/sun-hao__voice__angry__v1.wav",
+        "sha256": "343587d1b6550361bbaa358772d03d9a0190eae9a97c8769319d8547575f39f1",
+        "bytes": 521486,
+        "slot": "angry",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "这不是能随便开玩笑的地方。东西先放下，听我把步骤说完。你可以不懂这份工作，但请你尊重来这里的人。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/voice/handoff/sun-hao__voice__sad__v1.wav",
+        "source": "voices/sun-hao/sun-hao__voice__sad__v1.wav",
+        "sha256": "ed06ef160f127f096bc09b5a57b639d40796302111d5d1d483ee7c1150bfacb2",
+        "bytes": 644832,
+        "slot": "sad",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "今天忙完，坐了好一会儿才想起来吃饭。有些话在现场说不出来，回家路上却一直想着。没事，让我安静一会儿就好。"
+      }
+    ]
+  },
+  "officialSamples": [
+    {
+      "sampleId": "sun-hao-grok-20261023",
+      "actorSlugs": [
+        "sun-hao"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/actors/sun-hao.json",
+        "evidenceSha256": "2fea75b3b174126c654eb8d82bc111cdd6938dfcd1fba23c20e4df6d89a7710d",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/sun-hao-grok-20261023/source.mp4",
+          "sourceSha256": "fc9c81b0ec260a33c7c1323e8a22ba0fcb4a56d1b39c063aff0c48b8118d9102",
+          "public": "/media/works/samples/sun-hao-grok-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/sun-hao-sample-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/sun-hao-sample-original.mp4",
+            "source": "samples/sun-hao-grok-20261023/platform-original.mp4",
+            "sha256": "bf8d50888a295b215c81af22a58640d32115596e0a007efd0549f137b3847e47",
+            "bytes": 1238442
+          }
+        }
+      ]
+    },
+    {
+      "sampleId": "sun-hao-grok-action-20261023",
+      "actorSlugs": [
+        "sun-hao"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/action/task.json",
+        "evidenceSha256": "bc7c5615190ceda023a125be4cace2a89cc702a4cff9834086c5b7ccdd1651c3",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/sun-hao-grok-action-20261023/source.mp4",
+          "sourceSha256": "a7ad3a3d558a0ec27f68ea36b82ea01a8f039237323f23b65208009a207dd94f",
+          "public": "/media/works/samples/sun-hao-grok-action-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/action/attempt-01-contained-arms/sun-hao-action-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/action/attempt-01-contained-arms/sun-hao-action-original.mp4",
+            "source": "samples/sun-hao-grok-action-20261023/platform-original.mp4",
+            "sha256": "ea82a470781101668e742a914800edb751061d21799ce77516d3d8a09d9d1a1b",
+            "bytes": 1619948
+          }
+        }
+      ],
+      "productionTask": {
+        "id": "task-ab9327bfa7b751bf",
+        "sha256": "bc7c5615190ceda023a125be4cace2a89cc702a4cff9834086c5b7ccdd1651c3",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:02:27.936Z",
+          "note": "直接查看12帧及首中尾：角色从正面转向右侧并连续两次迈腿、落脚后稳定，动作与基线招手片不同；孙浩银发长脸细眼低眉或杨帆发髻胡型与各自原锚点可辨，服装和成年身体体态保持。全程发顶双手手指鞋底留框，无融合多肢，头颈躯干骨盆腿段相对锚点自然；实际机位轻微跟随并有小幅推近，非严格固定相机，代理接受可用动作表演并保留该偏差。原生720x1280/6.041667秒全解码通过，原片与静音版已收、费用实记，技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "sun-hao-grok-ensemble-20261023",
+      "actorSlugs": [
+        "sun-hao"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/ensemble/task.json",
+        "evidenceSha256": "a1790b13e14ac2c2c62f06507ef40356460c80d45c2aeddd5e537250961bd941",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/sun-hao-grok-ensemble-20261023/source.mp4",
+          "sourceSha256": "f9c4c386e9a1ac41ec2ccdb54ada4447d169d12a8a0c312fffd4657689773888",
+          "public": "/media/works/samples/sun-hao-grok-ensemble-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/ensemble/sun-hao-ensemble-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/ensemble/sun-hao-ensemble-original.mp4",
+            "source": "samples/sun-hao-grok-ensemble-20261023/platform-original.mp4",
+            "sha256": "b8db5c59a732e28b391911f418ad0dd1d393d7a68c68d4e9bc7ce057679e4bf9",
+            "bytes": 2373333
+          }
+        }
+      ],
+      "castSlugs": [
+        "sun-hao",
+        "yang-fan"
+      ],
+      "productionTask": {
+        "id": "task-d1751cd60b9c5abf",
+        "sha256": "a1790b13e14ac2c2c62f06507ef40356460c80d45c2aeddd5e537250961bd941",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:15:07.450Z",
+          "note": "直接查看12帧和首中尾：孙浩左侧银发长脸细眼橄榄衬衫、杨帆右侧发髻胡型深蓝外套保持；孙向右迈步开掌，杨也短步相向接近后点头，右方并非全程原地，代理接受自然相遇而非精确走位并保留差异。全程头发双手鞋底留框、两人无融合，成人头颈躯干骨盆腿段相对锚点自然，CG共享光线与空间保持。原生1280x720/6.041667秒全解码、原AAC和封面保留，静音流拷贝，实际0.02421548美元入原run，技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "sun-hao-google-vids-20261023",
+      "actorSlugs": [
+        "sun-hao"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Google Vids"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/vids/task.json",
+        "evidenceSha256": "ed4405f117eefcee94b9ad135ed659caf7da9309fe271afe1a96c125334ed1ec",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/sun-hao-google-vids-20261023/source.mp4",
+          "sourceSha256": "3c7f8af095e625c902d29bb69e5cf19a61279f2f6f720679e21f7d4f3529c290",
+          "public": "/media/works/samples/sun-hao-google-vids-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/vids/sun-hao-vids-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/sun-hao/video/additional-20261022/vids/sun-hao-vids-original.mp4",
+            "source": "samples/sun-hao-google-vids-20261023/platform-original.mp4",
+            "sha256": "608cbd31443740e5d625c228a719de7185954762c554e15f364808ea5b574139",
+            "bytes": 1395741
+          }
+        }
+      ],
+      "castSlugs": [
+        "sun-hao",
+        "yang-fan"
+      ],
+      "productionTask": {
+        "id": "task-7ae304e02df77afc",
+        "sha256": "ed4405f117eefcee94b9ad135ed659caf7da9309fe271afe1a96c125334ed1ec",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T15:42:00.355Z",
+          "note": "已直接看12帧以及首中尾原生大图：孙浩左侧银发长脸低眉细眼、杨帆右侧发髻胡型均稳定，个人服装正确，孙向右迈步并摊掌，杨原地回应点头。全程两人发顶手指鞋底完整、成人头颈躯干骨盆腿段相对锚点保持，CG场景统一、没有肢体融合；原生1280x720/6秒144帧全解码通过，AAC48k与四角星标识保留，静音版流拷贝。技术staging接受，费用unknown，正式网站未改。",
+          "formalPublication": false
+        },
+        "source": "IAB publicdownloadMedia actualgeneratedvideo; not documentexport"
+      }
+    }
+  ],
+  "websitePromotion": {
+    "authorizedOn": "2026-10-23",
+    "authority": "Owner task: publish all ten under new names, second-version biographies and approved current appearance; preserve CC provenance and old URL redirects.",
+    "actorSourceSha256": "2fea75b3b174126c654eb8d82bc111cdd6938dfcd1fba23c20e4df6d89a7710d",
+    "slotPlanSha256": "385ebe66175f7c72741d793b78cc24089a1b2d8ea316e6eaf1199cd43a6d69c0",
+    "voiceReview": "Owner-accepted temporary placeholder; no complete acoustic review claimed.",
+    "proportionReview": "Owner-delegated relative visual acceptance; original absolute measurement_review and framing exceptions retained unchanged in producer evidence.",
+    "billing": "Historical Grok unknown requests and CLI model-usage USD values remain in producer records; no verified account debit or video unit price is asserted."
+  }
+}

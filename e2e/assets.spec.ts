@@ -25,14 +25,14 @@ test("actor hero uses the large source and voice preview is playable", async ({
   const voice = await request.get("/api/voice/tang-yunqiu/intro");
   expect(voice.status()).toBe(200);
   expect(voice.headers()["content-type"]).toContain("audio/wav");
-  const newFaceVoice = await request.get("/api/voice/lin-xiaoman/intro");
+  const newFaceVoice = await request.get("/api/voice/agnes-lefevre/intro");
   expect(newFaceVoice.status()).toBe(200);
   expect(newFaceVoice.headers()["content-type"]).toContain("audio/mpeg");
   const durations = await page.evaluate(async () => {
     const audio = new AudioContext();
     try {
       const decodedDurations: number[] = [];
-      for (const url of ["/api/voice/tang-yunqiu/intro", "/api/voice/lin-xiaoman/intro"]) {
+      for (const url of ["/api/voice/tang-yunqiu/intro", "/api/voice/agnes-lefevre/intro"]) {
         const response = await fetch(url);
         const decoded = await audio.decodeAudioData(await response.arrayBuffer());
         decodedDurations.push(decoded.duration);

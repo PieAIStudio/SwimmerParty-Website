@@ -1,0 +1,1007 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "code": "peter-hale",
+  "slug": "peter-hale",
+  "kind": "actor",
+  "name": {
+    "zh": "彼得·黑尔",
+    "en": "Peter Hale"
+  },
+  "status": {
+    "delivered": 55,
+    "published": false,
+    "preparedOn": "2026-10-22",
+    "productionOnly": true,
+    "version": "1.0.0",
+    "siteProfile": "src/content/actors/peter-hale/profile.ts"
+  },
+  "demographics": {
+    "age": 66,
+    "gender": "male",
+    "origin": {
+      "zh": "英国爱丁堡",
+      "en": "Edinburgh, Scotland"
+    },
+    "voiceLanguage": "en"
+  },
+  "facts": {
+    "zh": [
+      "66岁，英国爱丁堡，身高183cm。",
+      "退休的苏格兰警察，在成都开了家卖威士忌配兔头的小酒馆。"
+    ],
+    "en": [
+      "66-year-old White Scottish man, 183 cm tall, from Edinburgh, Scotland.",
+      "A retired Scottish police officer who runs a small Chengdu pub pairing whisky with rabbit heads."
+    ]
+  },
+  "identity": "The same original fictional White Scottish man as CC-019-face-only.png, now named Peter Hale, 66 years old, from Edinburgh, Scotland, 183 cm tall. Preserve these distinctive features: tall and thin; long lined face, untidy wavy white hair down to the collar and bushy grey eyebrows. A retired Scottish police officer who runs a small Chengdu pub pairing whisky with rabbit heads. The face crop is identity only, never a body-proportion reference. Natural adult body about 7.60 skull-to-chin heads tall, target 7.4–7.8, excluding hair, afro or topknot. Natural adult neck, torso, pelvis and limbs; no big head, shortened torso, long neck or fashion-model elongation.",
+  "stylization": "Character stylization (A2, pushed): 3D feature-animation adult with realistic adult body proportions at this actor's height; normal head size, natural neck, shoulders, torso, pelvis and leg lengths. The White Scottish identity must read through the facial structure rather than clothing. Preserve distinctive ordinary-person facial features, gently exaggerated from life, not a generic beauty-standard face. Slightly enlarged expressive eyes without enlarging the whole head; simplified cheek, nose and lip planes; smooth stylized skin shading with soft subsurface scattering and no pores; clean grouped hair clumps. Clothing uses realistic clean unbranded materials. Unmistakably CG at first glance, never photoreal.",
+  "proportions": {
+    "headsTall": 7.6,
+    "headsTallRange": [
+      7.4,
+      7.8
+    ],
+    "heightCm": 183,
+    "targetBasis": "Production target proposed before generation from confirmed height and age; not a measurement or a selected body. Frozen Vision review plus delegated anatomy/identity review required.",
+    "frameGuide": {
+      "occupancyMin": 0.86,
+      "occupancyMax": 0.94,
+      "topMarginMin": 0.04,
+      "topMarginMax": 0.1,
+      "bottomMarginMin": 0.04,
+      "bottomMarginMax": 0.1
+    }
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/staging/peter-hale/references/CC-019-face-only.png",
+    "body": "library/staging/peter-hale/references/selected-body-anchor.png"
+  },
+  "castingSource": {
+    "code": "CC-019",
+    "oldSlug": "ambrose-lacey",
+    "oldName": {
+      "zh": "安布罗斯·莱西",
+      "en": "Ambrose Lacey"
+    },
+    "record": "casting/new-faces-2026-10.json",
+    "image": "library/claude-casting-2026-10-07/final/CC-019.png",
+    "sha256": "5ad82312e6a3c01b916ec0e18469daf51a9ae4b960a8a747b3458c7280af4a1e",
+    "use": "face identity only; not body ratio",
+    "identityAuthority": "HQ second-version next-10-actors-20261020.md and work order 20261021",
+    "faceCrop": {
+      "file": "references/CC-019-face-only.png",
+      "rectangleXYXY": [
+        244,
+        0,
+        705,
+        484
+      ],
+      "width": 461,
+      "height": 484,
+      "sha256": "7d9f1281894ec2807fdd0230abe605b5bcfdb6cad6b2796430a702d767fb51df",
+      "operation": "pixel crop only; source original preserved"
+    }
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "Plain clean navy-blue cotton crew-neck T-shirt, straight dark charcoal trousers, clean flat white low-top sneakers; no jewelry, accessories, text, logos or brands."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "zh": "日常装",
+        "en": "Everyday wear"
+      },
+      "prompt": "Clean everyday pub-owner outfit: plain tan wool cardigan open over a muted blue button-up shirt, straight charcoal trousers, flat brown leather shoes. Preserve his long white hair and bushy brows. No apron, logos or jewelry.",
+      "approvalBasis": "Agent design under Owner delegated aesthetic decisions; not generated yet.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": { "zh": "日常装近景", "en": "Everyday portrait" },
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
+        },
+        {
+          "key": "polish-glass",
+          "label": {
+            "zh": "擦杯子",
+            "en": "Polishing a glass"
+          },
+          "direction": "full body at a three-quarter angle, polishing one plain empty tumbler with a small clean cloth, relaxed thoughtful face"
+        },
+        {
+          "key": "welcome-guest",
+          "label": {
+            "zh": "招呼来客",
+            "en": "Welcoming a guest"
+          },
+          "direction": "full body at a three-quarter angle, one open hand making a modest welcoming gesture, other arm relaxed, warm understated smile"
+        },
+        {
+          "key": "quiet-seat",
+          "label": {
+            "zh": "安静坐姿",
+            "en": "Quiet seat"
+          },
+          "direction": "full body seated naturally on a plain simple stool, hands resting loosely together over his knees, calm expression"
+        }
+      ]
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "agent-selected-under-owner-delegated-aesthetic-authority",
+    "phase": "four-samples-complete-technical-staging",
+    "appearance": "Trial3 nativeheadscale selected under delegated review. Median7.384 range6.910–7.934 remains measurement_review; frame_pass occupancy87.6%,top6.4%,bottom6.0%,noVisionwarnings. Explicit delegated visual exception for interval and point0.016belowtarget: normal adult neck/torso/pelvis/limbs, tallthin66y183cm CG identity, clean alpha composite. Not automatic ratio pass or Owner personal selection.",
+    "delivered": 1,
+    "distinctivenessAudit": {
+      "checkedAt": "2026-10-22T11:53:15.215200+08:00",
+      "comparison": "Official live21 ready-to-cast catalog; local matching native face/body assets read-only. Diagnostic sheets in next10 receipt.",
+      "authority": "Owner requested autonomous differentiation of unfinished actors and authorized facial redesign; four completed actors exempt.",
+      "decision": "retain-v1",
+      "reason": "66-year-old183cm slender Scottish man with long lined face, long nose, large ears and collar-length silver waves; distinct from cropped-haired Du Shouren and younger Misha. Existing policy refusal remains, no bypass."
+    },
+    "ownerLatestMessageQuota": {
+      "trial": 9,
+      "fullCumulative": 70,
+      "includesAlreadyUsed": true,
+      "source": "Ownerdirectreply call_ab0a7aef4a3c4782b2d6326cdf2a24f5"
+    },
+    "nameAmbiguityTest": {
+      "basis": "Original prompts all include Peter Hale; official ParamountPressExpress search snippet names IanBohen as PeterHale in TeenWolfTheMovie. Direct primarypage geographicallyblocked, not accessed beyondnotice.",
+      "source": "https://www.paramountpressexpress.com/paramount-plus/shows/teen-wolf-the-movie/photos?limit=100&page=1",
+      "inference": "An ambiguous shared displayname may trigger platformthirdpartysimilarity; unconfirmed cause. Clarify original66ScottishCGreference via own sourceID, no external likeness and no registrynamechange.",
+      "prompt": "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/peter-hale-message8-next-two-prompt.txt",
+      "status": "message8-generated-two-files-oneRGBA-oneRGB; ambiguity remains inference, not confirmedcause"
+    },
+    "imageProviderPause": {
+      "route": "chatgpt-web",
+      "status": "resolved-owner-model-change",
+      "evidence": [
+        "grace-message16-provider-limit-browser.png",
+        "peter-message10-provider-limit-browser.png"
+      ],
+      "actualMessage": "你已达到限额。请稍后重试。",
+      "observed": "2026-10-22 13:30 UTC+8",
+      "resetAt": "not displayed",
+      "scope": "Twooriginalchats bothlimited; sharedPicsAroute held toavoidunproductivecrossactorretries, no modelchange",
+      "next": "Continue separately authorized voice/sample work using selectedanchors; imagesremainincomplete, originalrunsnotreset"
+    },
+    "ownerModelOverride": {
+      "authority": "Owner本会话2026-10-22明确：后面session都用GPT6极高，不用5.6SolPro",
+      "applies": "allsubsequentChatGPTimages in originalconversation",
+      "previous": "GPT5.6SolPro5/5",
+      "verifiedCurrent": "GPT6checked,极高4/5",
+      "evidence": "peter-hale-gpt6-extra-high-selected-browser.png"
+    },
+    "voicePlaceholderChoice": {
+      "candidate": 1,
+      "cloudSaved": true,
+      "provisional": true,
+      "acousticReview": "not-heard; selected as temporary placeholder, not an acoustic ranking",
+      "authority": "Owner delegated all remaining temporary MiniMax voices",
+      "balanceBefore": 65229,
+      "balanceAfter": 64949,
+      "slotsRemaining": 1
+    },
+    "voicePlaceholderDelivery": {
+      "slots": 6,
+      "handoff": "voice/handoff/handoff.json",
+      "status": "accepted-temporary-placeholder-under-delegation",
+      "review": "ASR-only; no acoustic review; see original run for limitations",
+      "synthesisBeats": 1153,
+      "designBeats": 280
+    },
+    "approvedPersonalLook": {
+      "anchor": "peter-hale__wardrobe-personal__front__v1.png",
+      "selectionAuthority": "Owner delegated agent review",
+      "note": "Native personal front relative original body: tan cardigan/bluecollaredshirt/charcoaltrousers/brownleathershoes.",
+      "portrait": "peter-hale__wardrobe-personal__portrait__v1.png"
+    },
+    "temporaryDeferredSlots": [
+      "wardrobe-personal/welcome-guest"
+    ],
+    "imagePackTechnicalReview": {
+      "canonicalSlots": 54,
+      "uniqueSha256": 54,
+      "fullBodyRelativeReviewed": 18,
+      "messages": 65,
+      "missing": [
+        "wardrobe-personal/welcome-guest"
+      ],
+      "reason": "platform terminal third-party similarity refusal; no bypass retry",
+      "finalMissingSlotResolution": {
+        "delivered": 55,
+        "fullBodiesReviewed": 19,
+        "note": "Message66 native RGBA welcome image accepted by direct anchor-relative visual QA; prior quantitative anchor exceptions retained."
+      }
+    },
+    "additionalVideoTasks": {
+      "action": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/action/task.json",
+      "ensemble": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/ensemble/task.json",
+      "vids": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/vids/task.json"
+    },
+    "sampleScope": {
+      "required": 4,
+      "accepted": 4,
+      "grokAccepted": 3,
+      "vidsAccepted": 1,
+      "missing": {},
+      "sourceExceptions": [],
+      "voiceNote": "existing six placeholder WAV unchanged; no acoustic review claim",
+      "reviewAuthority": "Owner delegated aesthetic and relative proportion review; staging only",
+      "reviewPage": "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/four-sample-review.html",
+      "updatedAt": "2026-10-22T16:25:57.794423+00:00",
+      "publication": false
+    },
+    "resolvedProviderBlockedSlots": {
+      "prior": {
+        "wardrobe-personal/welcome-guest": "Sameoriginalrequest refusedat55 and65;0images, originalchatrefreshconfirmedterminal; no unchangedretries"
+      },
+      "resolvedAt": "2026-10-22T18:00:18.492676+00:00",
+      "byMessage": 66,
+      "slot": "wardrobe-personal/welcome-guest",
+      "file": "peter-hale__wardrobe-personal__welcome-guest__v1.png",
+      "sha256": "4f15d6dbc6c7bc15f97b9ba72f68c5deccd8b95b2dc7d25fa7fffd7bffd1cb4d",
+      "decision": "Owner requested simplified prompt; directly reviewed and accepted staging; prior refusals remain historical"
+    }
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00-pics-a/c/6ad91900-018c-83e9-b02f-589d5a0dbe2f",
+      "project": "Pics-A",
+      "modelRequested": "GPT-5.6 Sol / Pro 5/5",
+      "host": "Codex app in-app browser",
+      "actualModelVerified": false,
+      "model": "GPT-6",
+      "thinking": "Extra High / 极高 (4/5)"
+    }
+  },
+  "website": {
+    "published": true,
+    "order": 123,
+    "status": "active",
+    "tagline": {
+      "en": "A retired Scottish policeman serving whisky with rabbit heads in Chengdu.",
+      "zh": "苏格兰退休警察，在成都卖威士忌配兔头。"
+    },
+    "introduction": {
+      "en": "Tall and lean, with unruly white hair, thick brows, a long nose and large ears, Peter Hale is a retired Scottish policeman from Edinburgh. He now runs a small bar in Chengdu, pairing whisky with rabbit heads.",
+      "zh": "高瘦，乱糟糟的白发和浓眉，长鼻、大耳。爱丁堡来的退休苏格兰警察，在成都开了家卖威士忌配兔头的小酒馆。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-23",
+    "note": {
+      "en": "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+      "zh": "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。"
+    }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-23",
+    "ownerReviewPending": false,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/actors/peter-hale.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/peter-hale-slot-plan.json",
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/voice/handoff/handoff.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/RESULT.md"
+    ],
+    "images": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__turnaround__front__v1.png",
+        "source": "peter-hale/peter-hale__turnaround__front__v1.png",
+        "sha256": "3893d845867bdf43ba7c30a4042cf722cdc277516699494f0c990d2b49dc5acc",
+        "bytes": 772385,
+        "slot": "turnaround.front",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__turnaround__three-quarter__v1.png",
+        "source": "peter-hale/peter-hale__turnaround__three-quarter__v1.png",
+        "sha256": "348758f72762fedb99e9e832b602e2fa110062ff67f724dc8ce7f2c9e22fd846",
+        "bytes": 747305,
+        "slot": "turnaround.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__turnaround__side__v1.png",
+        "source": "peter-hale/peter-hale__turnaround__side__v1.png",
+        "sha256": "1bc4e9e0fc6003147598c5d3ad5ef79fc5cf76b596ed30906682d65a09c84a34",
+        "bytes": 549641,
+        "slot": "turnaround.side",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__turnaround__back__v1.png",
+        "source": "peter-hale/peter-hale__turnaround__back__v1.png",
+        "sha256": "8d5dea35c0d23afb63604fa1d497b3f61af31ff784fd0ae128acc99a5c98c314",
+        "bytes": 887353,
+        "slot": "turnaround.back",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__turnaround__back-three-quarter-left__v1.png",
+        "source": "peter-hale/peter-hale__turnaround__back-three-quarter-left__v1.png",
+        "sha256": "fcada79a22a21f6af2d5061cfd7a2b8315f8ebb1ef9d24fa54c0d44ea361ebc9",
+        "bytes": 929056,
+        "slot": "turnaround.back-three-quarter-left",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__turnaround__back-three-quarter-right__v1.png",
+        "source": "peter-hale/peter-hale__turnaround__back-three-quarter-right__v1.png",
+        "sha256": "264e9f5e217b5675bf9c47bec206913b24f739b805e89d6b7dad9d204f26b8f1",
+        "bytes": 832684,
+        "slot": "turnaround.back-three-quarter-right",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__face__front__v1.png",
+        "source": "peter-hale/peter-hale__face__front__v1.png",
+        "sha256": "dbbe4c942257a38f1f58a7cfe43ee9cb019abb19a67bc4e874071a42f7ed5c01",
+        "bytes": 2139315,
+        "slot": "face.front",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__face__three-quarter__v1.png",
+        "source": "peter-hale/peter-hale__face__three-quarter__v1.png",
+        "sha256": "ea49fb1d8b9203bb0058b90a0281f1f352b16a204746162a9ab1e1f155059412",
+        "bytes": 2133461,
+        "slot": "face.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__face__side__v1.png",
+        "source": "peter-hale/peter-hale__face__side__v1.png",
+        "sha256": "bdf0018c087927fb21148c467826c6a24eda0606ba5e35672506f14c8b0c65a4",
+        "bytes": 2012135,
+        "slot": "face.side",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__face__three-quarter-left__v1.png",
+        "source": "peter-hale/peter-hale__face__three-quarter-left__v1.png",
+        "sha256": "9947e97ec5dbfb61274e663a0518cfab66e7e60926a9e499a3b4bd64c07c194c",
+        "bytes": 1657377,
+        "slot": "face.three-quarter-left",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__face__side-right__v1.png",
+        "source": "peter-hale/peter-hale__face__side-right__v1.png",
+        "sha256": "83035c5471c2891c55246752e4c0b218adbca75546dc1f77af4885001248aeec",
+        "bytes": 2063342,
+        "slot": "face.side-right",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__face__up__v1.png",
+        "source": "peter-hale/peter-hale__face__up__v1.png",
+        "sha256": "a0d59e91eeac475d3471678722b21bd5943cf7d32ddb4115412cfeed7fd598f2",
+        "bytes": 1986780,
+        "slot": "face.up",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__face__down__v1.png",
+        "source": "peter-hale/peter-hale__face__down__v1.png",
+        "sha256": "cf60817053ab91fb63204978327f12c902e669ba64177c2e6a6df127e8f237d3",
+        "bytes": 1999014,
+        "slot": "face.down",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__neutral__v1.png",
+        "source": "peter-hale/peter-hale__expression__neutral__v1.png",
+        "sha256": "3a707aec0453abad9b0fddeb4d116d7f76dc8239a7b64b1a6d7c4914c0b7e887",
+        "bytes": 2212080,
+        "slot": "expression.neutral",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__smile__v1.png",
+        "source": "peter-hale/peter-hale__expression__smile__v1.png",
+        "sha256": "bf901c41985aa3ede33bba2e62c4f6d85d8bd71ae6b8f3d25c4724dcc75ced2b",
+        "bytes": 2191050,
+        "slot": "expression.smile",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__laugh__v1.png",
+        "source": "peter-hale/peter-hale__expression__laugh__v1.png",
+        "sha256": "9dbdb8e659342301c01948ffd481ff562d6266c3aedc8a0293d2c758a25c32d6",
+        "bytes": 2138600,
+        "slot": "expression.laugh",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__sad__v1.png",
+        "source": "peter-hale/peter-hale__expression__sad__v1.png",
+        "sha256": "ca43cad4362916513379e7aaca99c9d95ef779497685c2f3c2064b0331daaefc",
+        "bytes": 1997331,
+        "slot": "expression.sad",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__cry__v1.png",
+        "source": "peter-hale/peter-hale__expression__cry__v1.png",
+        "sha256": "c33c75d0fccedd3d86231b32cdf384f75afeb364565ef32eabdd7143b504dad9",
+        "bytes": 2065215,
+        "slot": "expression.cry",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__annoyed__v1.png",
+        "source": "peter-hale/peter-hale__expression__annoyed__v1.png",
+        "sha256": "75c40b016de2392c96d1a294b32b5b70a15dca990ff37902d73f97c7f1cea2fb",
+        "bytes": 1967088,
+        "slot": "expression.annoyed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__angry__v1.png",
+        "source": "peter-hale/peter-hale__expression__angry__v1.png",
+        "sha256": "f3b39241e5b2dbd7c55c62eff6ec7e6795c8b079794d6274e79ca432759d707a",
+        "bytes": 2263888,
+        "slot": "expression.angry",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__surprised__v1.png",
+        "source": "peter-hale/peter-hale__expression__surprised__v1.png",
+        "sha256": "34975a848634272dcac2e580d13fa8969fad845f5ce26429dd5ca6a6680b5642",
+        "bytes": 2187130,
+        "slot": "expression.surprised",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__scared__v1.png",
+        "source": "peter-hale/peter-hale__expression__scared__v1.png",
+        "sha256": "1fe50dda709afe02efd2c2c78d2bdb074d5aedaad687ab61a2eaf824422d9bc6",
+        "bytes": 2027754,
+        "slot": "expression.scared",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__disgusted__v1.png",
+        "source": "peter-hale/peter-hale__expression__disgusted__v1.png",
+        "sha256": "5c097b93493d0b4f283807598a911734b187484f2097bbfa8b5038bfb065fe8f",
+        "bytes": 2164204,
+        "slot": "expression.disgusted",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__embarrassed__v1.png",
+        "source": "peter-hale/peter-hale__expression__embarrassed__v1.png",
+        "sha256": "9524f6fe04aa8dffd711cea658f2a12454fbae38e43d3a46adfdc1a3f649299f",
+        "bytes": 2059184,
+        "slot": "expression.embarrassed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__tired__v1.png",
+        "source": "peter-hale/peter-hale__expression__tired__v1.png",
+        "sha256": "7cea379145a81caa1a1387d28171fa93f1adf7fbd09b477b927f1a6c9de4c58d",
+        "bytes": 2032920,
+        "slot": "expression.tired",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__speaking__v1.png",
+        "source": "peter-hale/peter-hale__expression__speaking__v1.png",
+        "sha256": "722a24ebb691631b8dc726669531127a7becadd01448d8adb26746d7c6347cf2",
+        "bytes": 1874523,
+        "slot": "expression.speaking",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__eyes-closed__v1.png",
+        "source": "peter-hale/peter-hale__expression__eyes-closed__v1.png",
+        "sha256": "050ac47fb786d0bce844637031270cd86f96ef5f9ce7732bf71d854af21676a3",
+        "bytes": 2197674,
+        "slot": "expression.eyes-closed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__worried__v1.png",
+        "source": "peter-hale/peter-hale__expression__worried__v1.png",
+        "sha256": "f839a3a1ed7326447507377ac4e08a6575b38764e8ef7400f9db7033ef53b9e6",
+        "bytes": 2209046,
+        "slot": "expression.worried",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__skeptical__v1.png",
+        "source": "peter-hale/peter-hale__expression__skeptical__v1.png",
+        "sha256": "64531c3093614209b9911fac9d79f71883b4d7086ed86f77e7b62f222ea3426f",
+        "bytes": 2099999,
+        "slot": "expression.skeptical",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__smug__v1.png",
+        "source": "peter-hale/peter-hale__expression__smug__v1.png",
+        "sha256": "d222f9d913f92318d7bb1672d7967880954f6e1e58f121bdb3ef4797e279ed81",
+        "bytes": 2209022,
+        "slot": "expression.smug",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__contempt__v1.png",
+        "source": "peter-hale/peter-hale__expression__contempt__v1.png",
+        "sha256": "444b59f97e74ec6314bf285b0c7dab1b86bb3502e13213a5acf32da0f8da20e0",
+        "bytes": 1822590,
+        "slot": "expression.contempt",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__confused__v1.png",
+        "source": "peter-hale/peter-hale__expression__confused__v1.png",
+        "sha256": "e07aceae6c977d49ab6a445167e90669b5ba8b60197b7248301a468d2efecb17",
+        "bytes": 1840554,
+        "slot": "expression.confused",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__thinking__v1.png",
+        "source": "peter-hale/peter-hale__expression__thinking__v1.png",
+        "sha256": "0bdbe785e943c6a4f730fc5908788690b101d5a5968fc55540958d191b3db486",
+        "bytes": 2170609,
+        "slot": "expression.thinking",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__determined__v1.png",
+        "source": "peter-hale/peter-hale__expression__determined__v1.png",
+        "sha256": "cb17610e098caca9fa97b5b7aed5963d5d81ff4056368d4e0b1ada7993713d85",
+        "bytes": 2155336,
+        "slot": "expression.determined",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__shy__v1.png",
+        "source": "peter-hale/peter-hale__expression__shy__v1.png",
+        "sha256": "b0ca95f47b04362273047e59dfa8759cd4e9b89f8579a310fc6f3a527ff91f3e",
+        "bytes": 2022653,
+        "slot": "expression.shy",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__pain__v1.png",
+        "source": "peter-hale/peter-hale__expression__pain__v1.png",
+        "sha256": "cad4ac1327e726116de5a93a8c200c8c71530940c055ba9a337333ac01dd6558",
+        "bytes": 2136938,
+        "slot": "expression.pain",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__sleepy__v1.png",
+        "source": "peter-hale/peter-hale__expression__sleepy__v1.png",
+        "sha256": "d79af72dc90c49fa55be80d3f73f8d832f2708abe3c1edb5383ea5bced055847",
+        "bytes": 1950392,
+        "slot": "expression.sleepy",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__awkward-smile__v1.png",
+        "source": "peter-hale/peter-hale__expression__awkward-smile__v1.png",
+        "sha256": "8ad862ca136bebe3c472249a04b011dd9b09ed56bd3e84503d9ccf66fdea8ff5",
+        "bytes": 2236961,
+        "slot": "expression.awkward-smile",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__expression__deadpan__v1.png",
+        "source": "peter-hale/peter-hale__expression__deadpan__v1.png",
+        "sha256": "a0d70687d3303f2fac717e1fb9c932f0998532921ff81dd04aa4b3909cab58eb",
+        "bytes": 1912069,
+        "slot": "expression.deadpan",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__wardrobe-personal__front__v1.png",
+        "source": "peter-hale/peter-hale__wardrobe-personal__front__v1.png",
+        "sha256": "d17ea05f9c4c7f31694bb83a8c186893a77362ca482daad991fd9027fe20b291",
+        "bytes": 1029791,
+        "slot": "wardrobe.personal.front",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__wardrobe-personal__three-quarter__v1.png",
+        "source": "peter-hale/peter-hale__wardrobe-personal__three-quarter__v1.png",
+        "sha256": "d99127ad306c6ca83d98f7aef902e092a9a743a162f74456c74cf4e5f14f989e",
+        "bytes": 926217,
+        "slot": "wardrobe.personal.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__wardrobe-personal__side__v1.png",
+        "source": "peter-hale/peter-hale__wardrobe-personal__side__v1.png",
+        "sha256": "87dceb969f512743b6eae7ee702a9ee0c4f72635d894098cfd17eb2b80dc1ca8",
+        "bytes": 685025,
+        "slot": "wardrobe.personal.side",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__wardrobe-personal__back__v1.png",
+        "source": "peter-hale/peter-hale__wardrobe-personal__back__v1.png",
+        "sha256": "5f9b0e0d354059bc1ff2430d9d2f34f2844ea71206c46208166ae18f8591bec1",
+        "bytes": 1093011,
+        "slot": "wardrobe.personal.back",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__wardrobe-personal__portrait__v1.png",
+        "source": "peter-hale/peter-hale__wardrobe-personal__portrait__v1.png",
+        "sha256": "5bf797a63347ec9337c00bac20cbca83769d836e06ddbc7201835afde6082c89",
+        "bytes": 2349601,
+        "slot": "wardrobe.personal.portrait",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__wardrobe-personal__polish-glass__v1.png",
+        "source": "peter-hale/peter-hale__wardrobe-personal__polish-glass__v1.png",
+        "sha256": "8af99ca4ad423ff9337e4aec88d6e0977fabd666adbfcfe9c2b4fd9f7bcb21c6",
+        "bytes": 963007,
+        "slot": "wardrobe.personal.polish-glass",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__wardrobe-personal__welcome-guest__v1.png",
+        "source": "peter-hale/peter-hale__wardrobe-personal__welcome-guest__v1.png",
+        "sha256": "4f15d6dbc6c7bc15f97b9ba72f68c5deccd8b95b2dc7d25fa7fffd7bffd1cb4d",
+        "bytes": 954447,
+        "slot": "wardrobe.personal.welcome-guest",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__wardrobe-personal__quiet-seat__v1.png",
+        "source": "peter-hale/peter-hale__wardrobe-personal__quiet-seat__v1.png",
+        "sha256": "05a089146db0606e54910ab2544eba88f3040a77c8e31faf0c19ba8a896b4ef0",
+        "bytes": 1305340,
+        "slot": "wardrobe.personal.quiet-seat",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__pose__walk__v1.png",
+        "source": "peter-hale/peter-hale__pose__walk__v1.png",
+        "sha256": "edbfd3c0f830129e7fd54c44b1fecb54444cadea643b3161f797e99235e9c63c",
+        "bytes": 819668,
+        "slot": "pose.walk",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__pose__run__v1.png",
+        "source": "peter-hale/peter-hale__pose__run__v1.png",
+        "sha256": "365e1e1f6e0a46865560965245da057641c5d61152b49fdb4524dc43591d193f",
+        "bytes": 770770,
+        "slot": "pose.run",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__pose__sit__v1.png",
+        "source": "peter-hale/peter-hale__pose__sit__v1.png",
+        "sha256": "80cb3c1475a411d23a82b0ccf3d7e0337e241598df4171f2717b76980cb8c445",
+        "bytes": 1121405,
+        "slot": "pose.sit",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__pose__point__v1.png",
+        "source": "peter-hale/peter-hale__pose__point__v1.png",
+        "sha256": "3b21aa895a0210e7020f06aa1351b06f42dbdb45282728c66c372074caa65930",
+        "bytes": 785077,
+        "slot": "pose.point",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__pose__arms-crossed__v1.png",
+        "source": "peter-hale/peter-hale__pose__arms-crossed__v1.png",
+        "sha256": "9a3e55ccb3db64b08dd61d2f42354aa4c7db572c964cdec24c7732e4139c1c76",
+        "bytes": 784731,
+        "slot": "pose.arms-crossed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__pose__phone__v1.png",
+        "source": "peter-hale/peter-hale__pose__phone__v1.png",
+        "sha256": "7752e1070e0c552f1f35baa0940e8c8278b0b770e35613989c41a2beb7d15b36",
+        "bytes": 815609,
+        "slot": "pose.phone",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__detail__hands__v1.png",
+        "source": "peter-hale/peter-hale__detail__hands__v1.png",
+        "sha256": "b5749ebb64713c09360965764e318256b0317088d59e8976b01ba03b8c0d42f8",
+        "bytes": 1355193,
+        "slot": "detail.hands",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/peter-hale__detail__hair-back__v1.png",
+        "source": "peter-hale/peter-hale__detail__hair-back__v1.png",
+        "sha256": "069321d23711103bc51547e0b606a86ae502252ad262c8b42f3f2b5305199a71",
+        "bytes": 1974585,
+        "slot": "detail.hair-back",
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/voice/handoff/peter-hale__voice__intro__v1.wav",
+        "source": "voices/peter-hale/peter-hale__voice__intro__v1.wav",
+        "sha256": "1887f4ea37db5daa33709b05e6a8920656a0016f17e2dd6407e11d54c70ec499",
+        "bytes": 1258294,
+        "slot": "intro",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "Hello, I'm Peter Hale, sixty-six, from Edinburgh. I retired from the police and opened a small pub in Chengdu. We serve whisky with rabbit heads. That pairing raises a few eyebrows, usually mine first. After a long working life, I rather enjoy a quiet bar and a good conversation."
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/voice/handoff/peter-hale__voice__intro-alt__v1.wav",
+        "source": "voices/peter-hale/peter-hale__voice__intro-alt__v1.wav",
+        "sha256": "14c57d37502e10564f3cdd82d0dd02e50dfaa5e92d5e218e40fc698ac1c7f71a",
+        "bytes": 1180274,
+        "slot": "intro-alt",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "你好，我叫彼得·黑尔，爱丁堡人，今年六十六岁。我以前在苏格兰当警察，退休以后来成都开了间小酒馆。我们卖威士忌，也卖兔头。第一次听的人都觉得奇怪，吃过以后，有人会再来一份。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/voice/handoff/peter-hale__voice__chat__v1.wav",
+        "source": "voices/peter-hale/peter-hale__voice__chat__v1.wav",
+        "sha256": "4092698468b3f6076deec0f7fb587888ab25bd31a1ccb50c9c5a9e7bde8d47a3",
+        "bytes": 578700,
+        "slot": "chat",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "Take that chair by the window. It's the quietest spot. There's no rush to order. Tell me what sort of evening you've had, and we'll find you something suitable."
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/voice/handoff/peter-hale__voice__happy__v1.wav",
+        "source": "voices/peter-hale/peter-hale__voice__happy__v1.wav",
+        "sha256": "85fb04642439f3a71e02ffe6b445e3cd1bb3b73f2529f42c6a1e5ca4b5934835",
+        "bytes": 673690,
+        "slot": "happy",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "Well, look who's come through the door! I thought you were still in Edinburgh. Give me a minute to put this glass down. It's good to see you. Really good. You're staying for supper, I hope."
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/voice/handoff/peter-hale__voice__angry__v1.wav",
+        "source": "voices/peter-hale/peter-hale__voice__angry__v1.wav",
+        "sha256": "eaa605a599dea8726339e352c3285ae6ef1b980ab99e19433800d96e0a369fe5",
+        "bytes": 735482,
+        "slot": "angry",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "Put the glass on the table. We're not settling anything by shouting across the room. Take a breath, step back, and let the other person finish. You can disagree without frightening everyone else."
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/voice/handoff/peter-hale__voice__sad__v1.wav",
+        "source": "voices/peter-hale/peter-hale__voice__sad__v1.wav",
+        "sha256": "49d5123ad6c777c2e650b5880f413ff6a5ce677bffbeb62ac3a19b0b7dbaf8cb",
+        "bytes": 674552,
+        "slot": "sad",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "I found an old photograph while clearing a drawer. Half the people in it I haven't seen for years. Funny how a small bit of paper can bring back the sound of a whole room."
+      }
+    ]
+  },
+  "officialSamples": [
+    {
+      "sampleId": "peter-hale-grok-20261023",
+      "actorSlugs": [
+        "peter-hale"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/actors/peter-hale.json",
+        "evidenceSha256": "76e808bc09d6453ca97a10d96eca3a9d22b61529e47b806f2bbe6fac869f52b2",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/peter-hale-grok-20261023/source.mp4",
+          "sourceSha256": "387fe24ed80ff74d8ba5d54da73857f00a4efff4c709e4dea8449113b4050974",
+          "public": "/media/works/samples/peter-hale-grok-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/peter-hale-sample-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/peter-hale-sample-original.mp4",
+            "source": "samples/peter-hale-grok-20261023/platform-original.mp4",
+            "sha256": "7975da59be5e738f36fc9006a843d43128a388aa9f7d692bdaddbcef432441f0",
+            "bytes": 1869216
+          }
+        }
+      ]
+    },
+    {
+      "sampleId": "peter-hale-grok-action-20261023",
+      "actorSlugs": [
+        "peter-hale"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/action/task.json",
+        "evidenceSha256": "15617964995ed193d7933a58384695589bacdb3c18152cbffdf0ad493ad8570a",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/peter-hale-grok-action-20261023/source.mp4",
+          "sourceSha256": "17bb994ad1d8bb59d342719dd1da742cfad25e512d0ddb91d8f938e9e4b4f6c0",
+          "public": "/media/works/samples/peter-hale-grok-action-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/action/attempt-01-contained-arms/peter-hale-action-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/action/attempt-01-contained-arms/peter-hale-action-original.mp4",
+            "source": "samples/peter-hale-grok-action-20261023/platform-original.mp4",
+            "sha256": "b6b5646229d40a353b94d05c900babfd2d6ab4d87d3c43639b159d1e03916e2e",
+            "bytes": 2057219
+          }
+        }
+      ],
+      "productionTask": {
+        "id": "task-1d88c747c07dc68b",
+        "sha256": "15617964995ed193d7933a58384695589bacdb3c18152cbffdf0ad493ad8570a",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:08:48.541Z",
+          "note": "直接看12帧和首中尾：Peter长白波浪发浓灰眉长鼻大耳老年脸保持，成年瘦长头颈躯干骨盆腿段相对原锚点自然。由正面转到右侧并连续两次迈步后站稳，全程完整发顶手鞋无融合；实际双手在背后交握而非腰前，侧面仍可见手部，符合老人自然体态，代理接受该动作差异并保留。原生720x1280/6.041667秒全解码通过，原AAC及封面保留，静音流拷贝，0.03464668美元实际费用已记，技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "peter-hale-grok-ensemble-20261023",
+      "actorSlugs": [
+        "peter-hale"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/ensemble/task.json",
+        "evidenceSha256": "a5555eb15a72fae0461aebe0e04bb39345396cb2ec1e60acf2d3a5ba14aa0ae7",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/peter-hale-grok-ensemble-20261023/source.mp4",
+          "sourceSha256": "4b27949705dc15cfb7407123d583ea80d65f17582cef643e8710170543e2f0ab",
+          "public": "/media/works/samples/peter-hale-grok-ensemble-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/ensemble/peter-hale-ensemble-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/ensemble/peter-hale-ensemble-original.mp4",
+            "source": "samples/peter-hale-grok-ensemble-20261023/platform-original.mp4",
+            "sha256": "3acab46bfdf7d57e6d17ff4fdc9c1026518e02d7948c2cf4a1c27ff5d7577f91",
+            "bytes": 2649372
+          }
+        }
+      ],
+      "castSlugs": [
+        "peter-hale",
+        "wang-yong"
+      ],
+      "productionTask": {
+        "id": "task-11cd7ef49fa0f9a7",
+        "sha256": "a5555eb15a72fae0461aebe0e04bb39345396cb2ec1e60acf2d3a5ba14aa0ae7",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:25:23.484Z",
+          "note": "直接查看12帧及首中尾：Peter左侧白波浪发浓灰眉长鼻大耳老年瘦长脸、王勇右侧宽厚下颌圆鼻秃顶敦实身形稳定；Peter向右迈步开掌，王勇点头并轻微挪步，尾部两人转向镜头，非右方严格不动。代理接受自然双人表演并保留走位差异。全程发顶手指鞋底完整、无融合多肢，成人头颈躯干骨盆腿段相对锚点自然，CG光线空间一致。原生1280x720/6.041667秒全解码，原AAC及封面保留，静音流拷贝，0.0292094美元实记，技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "peter-hale-google-vids-20261023",
+      "actorSlugs": [
+        "peter-hale"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Google Vids"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/vids/task.json",
+        "evidenceSha256": "bffc85327c67c0ccbb9ef4e805daebe021d2e6a0350626e2363906239aef7e83",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/peter-hale-google-vids-20261023/source.mp4",
+          "sourceSha256": "bb53cc3f2e8ef73e9d09d6add621f544ba361615de242718542af0113c910391",
+          "public": "/media/works/samples/peter-hale-google-vids-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/vids/peter-hale-vids-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/peter-hale/video/additional-20261022/vids/peter-hale-vids-original.mp4",
+            "source": "samples/peter-hale-google-vids-20261023/platform-original.mp4",
+            "sha256": "a2ff024c271f3f5901cca3eb729f077113162904259a183f244c71ef3e68e24e",
+            "bytes": 1668530
+          }
+        }
+      ],
+      "castSlugs": [
+        "peter-hale",
+        "wang-yong"
+      ],
+      "productionTask": {
+        "id": "task-d844985f8b054bb6",
+        "sha256": "bffc85327c67c0ccbb9ef4e805daebe021d2e6a0350626e2363906239aef7e83",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T15:58:36.820Z",
+          "note": "直接查看12帧及首中尾大图：Peter白波浪发浓灰眉长鼻大耳瘦长成熟脸、王勇秃顶宽厚鼻下颌敦实体态稳定，个人服装分别驼色开衫与酒红亨利衫正确。Peter从左向右迈步开掌，王勇原地回应点头，双人表演明确；发顶手鞋全程留框，成人头颈躯干骨盆腿段相对锚点自然且无融合。原生1280x720/144帧6秒全解码通过，AAC48k及四角星保留，静音流拷贝，授权技术staging接受，费用unknown。",
+          "formalPublication": false
+        },
+        "source": "IAB publicdownloadMedia actualgeneratedvideo; not documentexport"
+      }
+    }
+  ],
+  "websitePromotion": {
+    "authorizedOn": "2026-10-23",
+    "authority": "Owner task: publish all ten under new names, second-version biographies and approved current appearance; preserve CC provenance and old URL redirects.",
+    "actorSourceSha256": "76e808bc09d6453ca97a10d96eca3a9d22b61529e47b806f2bbe6fac869f52b2",
+    "slotPlanSha256": "e427472b82cc17ace0650b9f7016a0af96994966bf828a20e5a64c555599d01d",
+    "voiceReview": "Owner-accepted temporary placeholder; no complete acoustic review claimed.",
+    "proportionReview": "Owner-delegated relative visual acceptance; original absolute measurement_review and framing exceptions retained unchanged in producer evidence.",
+    "billing": "Historical Grok unknown requests and CLI model-usage USD values remain in producer records; no verified account debit or video unit price is asserted."
+  }
+}

@@ -22,9 +22,15 @@ import { profile as actor18 } from "./wei-qinghe/profile.ts";
 import { profile as actor19 } from "./qin-lie/profile.ts";
 import { profile as actor20 } from "./feng-ye/profile.ts";
 import { profile as actor21 } from "./liu-dan/profile.ts";
-import { profile as actor22 } from "./ma-hong/profile.ts";
-import { profile as actor23 } from "./yang-fan/profile.ts";
-import { profile as actor24 } from "./kate-murray/profile.ts";
+import { profile as actor22 } from "./xu-li/profile.ts";
+import { profile as actor23 } from "./shen-xiuying/profile.ts";
+import { profile as actor24 } from "./ma-hong/profile.ts";
+import { profile as actor25 } from "./sun-hao/profile.ts";
+import { profile as actor26 } from "./yang-fan/profile.ts";
+import { profile as actor27 } from "./wang-yong/profile.ts";
+import { profile as actor28 } from "./kate-murray/profile.ts";
+import { profile as actor29 } from "./peter-hale/profile.ts";
+import { profile as actor30 } from "./grace-boateng/profile.ts";
 export const ACTIVE_ACTORS: Actor[] = [
   actor0,
   actor1,
@@ -51,4 +57,10 @@ export const ACTIVE_ACTORS: Actor[] = [
   actor22,
   actor23,
   actor24,
+  actor25,
+  actor26,
+  actor27,
+  actor28,
+  actor29,
+  actor30,
 ];

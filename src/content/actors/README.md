@@ -16,7 +16,7 @@
 
 网站文案由网站维护者在 `website` 撰写，生产身份字段由生产侧维护。`website.specOrder` 只定义展示顺序，年龄和身高直接来自结构化事实；`ageDisplay` 仅保留经批准的年龄表达。未确认的身高保持空值，不猜测。`website.exportPrompt` 仅用于已经与生产提示词不同的批准导出文案，否则直接读 `identity`。
 
-晋升时保留 casting 记录，在同名生产记录设置 `website.published`、`status.version` 和 `release`。生成器只抑制这个 slug 的新面孔副本，不发布其他制作中的演员；姓名必须保持一致。合成夹具与反例见 `tools/test/actor-data.test.ts`。
+默认晋升保留 casting 记录，在同名生产记录设置 `website.published`、`status.version` 和 `release`，姓名保持一致。明确获准改名的批次则在生产记录保留 `castingSource.code`、`oldSlug`、`oldName`，生成器核对原始 CC 身份后只抑制对应旧卡；`next.config.ts` 从同一来源生成旧演员页及设定图页的永久跳转。不得将另一演员的 slug 占为新身份；其他制作中演员不会自动发布。合成夹具与冲突反例见 `tools/test/actor-data.test.ts`。
 
 旧的 `new-faces.ts` 和三份手写 `looks.ts` 已退役：它们分别逐值匹配 casting 和生产造型，消费者已转向生成档案或清单；不包含独有原件。既有版本可从 Git 恢复。
 
@@ -24,7 +24,7 @@
 
 经授权的整包来源由生产记录 `assetDelivery` 固定，不凭目录里“最新”的文件猜版本。`assets-inbox/<slug-or-code>/` 是网站入库口，制作库和 MediaFactory run 只读；`assets:ingest --source-originals` 保留 PNG 原字节，声音入口 `assets:voices` 同样核对来源，原件对象键包含内容哈希。清单的 `source-original` 不等于 v1 规格验收或 Owner 主观认可，待看状态与来源证据不能删掉。
 
-`officialSamples` 支持数组，每个 sampleId 只有一位生产所有者，可关联两位演员；页面按关联显示，媒体只存一份。只收 Root 通过且未被 Owner 拒收的非测试片；没有合格片就是0条，每位最多4条。新片源SHA、审核证据及有界转码是生成器的前置条件。退役演员从生产名册和站点生成物移除，不改写Git历史，不删除制作原件或旧Blob对象。
+`officialSamples` 支持数组，每个 sampleId 只有一位生产所有者；`actorSlugs` 指定在哪些演员页展示，默认也代表出镜者。独立交付的双人片可另写 `castSlugs` 保留完整出镜名单，而只在本次交付所有者页面计数，不能把同片充成两次独立生成。旧共享样片保持原有关联与单份媒体。只收 Root 通过且未被 Owner 拒收的非测试片；没有合格片就是0条，每位最多4条。新片源SHA、审核证据及有界转码是生成器的前置条件；来源例外可用双语 `note` 在卡片披露。`assetDelivery.voices[].placeholder` 随声音清单投影，公开标注占位声音，不代表完整声学验收。退役演员不改写Git历史、不删除制作原件或旧Blob对象。
 
 ## 生成素材的边界
 

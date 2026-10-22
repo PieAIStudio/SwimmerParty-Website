@@ -5,8 +5,8 @@ export const profile: Actor = {
   nameEn: "Kate Murray",
   nameCn: "凯特·默里",
   tagline: {
-    en: "From Glasgow to a Shanghai kindergarten, teaching English one story at a time.",
-    zh: "格拉斯哥姑娘，在上海教孩子说英语。",
+    en: "Looks fierce. Her pupils call her “the bald teacher”.",
+    zh: "看着很凶，孩子们叫她「光头老师」。",
   },
   status: "active",
   gender: "female",
@@ -60,16 +60,26 @@ export const profile: Actor = {
     },
   ],
   note: {
-    en: "From Glasgow to a Shanghai kindergarten, teaching English one story at a time.",
-    zh: "格拉斯哥姑娘，在上海教孩子说英语。",
+    en: "A buzz cut and sharp cheekbones give Kate Murray a fierce look. Originally from Glasgow, she teaches kindergarten English in Shanghai, where the children affectionately call her “the bald teacher”.",
+    zh: "寸头，颧骨锋利，看着很凶。来自格拉斯哥，在上海教幼儿园英语，孩子们叫她「光头老师」。",
   },
   promptSeed:
     "The same original fictional White Scottish woman as CC-043-face-only.png, now named Kate Murray, 29 years old, from Glasgow, Scotland, 175 cm tall. Preserve these distinctive features: lanky; sharp cheekbones, long face and very short brown buzz cut. Teaches English at a kindergarten in Shanghai; the children affectionately call her their bald teacher. The face crop is identity only, never a body-proportion reference. Natural adult body about 7.40 skull-to-chin heads tall, target 7.2–7.6, excluding hair, afro or topknot. Natural adult neck, torso, pelvis and limbs; no big head, shortened torso, long neck or fashion-model elongation.",
-  version: "1.0.0",
-  versionDate: "2026-10-22",
+  version: "1.1.0",
+  versionDate: "2026-10-23",
   versionNote: {
-    en: "55 reference images, 6 placeholder voice clips and a sample video.",
-    zh: "55 张参考图、6 段占位声音、1 段样片。",
+    en: "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+    zh: "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。",
   },
+  versionHistory: [
+    {
+      version: "1.0.0",
+      date: "2026-10-22",
+      note: {
+        en: "55 reference images, 6 placeholder voice clips and a sample video.",
+        zh: "55 张参考图、6 段占位声音、1 段样片。",
+      },
+    },
+  ],
   voiceLanguage: "en",
 };

@@ -16,7 +16,7 @@
             "en": "Everyday portrait",
             "zh": "日常装近景"
           },
-          "direction": "Head and upper chest in the actor's personal outfit, facing the camera."
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
         },
         {
           "key": "picture-book",
@@ -1669,7 +1669,8 @@
       "durationSec": 17.5,
       "transcript": {
         "text": "Hiya, I'm Kate Murray, twenty-nine, from Glasgow. The buzz cut makes me look much fiercer than I am. I teach English at a kindergarten in Shanghai. The children call me their bald teacher, which is fair enough. Five minutes into story time, they usually forget to be scared of me."
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1698,7 +1699,8 @@
       "durationSec": 16.5,
       "transcript": {
         "text": "你好，我叫Kate Murray，来自格拉斯哥，今年二十九。我在上海的幼儿园教英语。头发剃得很短，看起来有点凶，其实我每天都在讲故事。孩子们叫我光头老师，我觉得这个名字挺好记的。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1727,7 +1729,8 @@
       "durationSec": 9.5,
       "transcript": {
         "text": "All right, which animal do you think is hiding behind this page? Have a proper guess. No, it isn't me. I haven't got a tail. Come on, let's turn it over together."
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1756,7 +1759,8 @@
       "durationSec": 10.9,
       "transcript": {
         "text": "You remembered the whole song! Oh, that's brilliant. We practised it so many times, and today you just stood up and sang it. I'm really proud of you. Shall we do the funny verse again?"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1785,7 +1789,8 @@
       "durationSec": 9,
       "transcript": {
         "text": "Stop there. We don't push someone because we want the toy. Put it down for a moment and tell me what happened. We'll listen to each other, one at a time."
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1814,7 +1819,8 @@
       "durationSec": 11.2,
       "transcript": {
         "text": "One of the children left me a wee drawing before moving away. Apparently that's me with all the hair. I laughed when I saw it. Then the classroom got quiet, and I missed them more than I expected."
-      }
+      },
+      "placeholder": true
     }
   ]
 }

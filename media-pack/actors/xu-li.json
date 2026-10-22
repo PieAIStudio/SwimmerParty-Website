@@ -1,0 +1,1104 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "code": "xu-li",
+  "slug": "xu-li",
+  "kind": "actor",
+  "name": {
+    "zh": "许丽",
+    "en": "Xu Li"
+  },
+  "status": {
+    "delivered": 55,
+    "published": false,
+    "preparedOn": "2026-10-22",
+    "productionOnly": true,
+    "version": "1.0.0",
+    "siteProfile": "src/content/actors/xu-li/profile.ts"
+  },
+  "demographics": {
+    "age": 38,
+    "gender": "female",
+    "origin": {
+      "zh": "上海",
+      "en": "Shanghai, China"
+    },
+    "voiceLanguage": "zh"
+  },
+  "facts": {
+    "zh": [
+      "38岁，上海，身高166cm。",
+      "脸来源CC-026，旧定妆全身照仅用于认脸，不作比例参照。",
+      "小学数学老师，晚上在剧本杀店专演反派，学生家长不知道。"
+    ],
+    "en": [
+      "A primary-school mathematics teacher by day; at night she plays villains at a murder-mystery role-play shop, unknown to the parents of her students."
+    ]
+  },
+  "identity": "Original fictional East Asian Chinese woman Xu Li,38,from Shanghai,166cm. OWNER-AUTHORIZED SELECTED VERSION2. Long heart-shaped face with pointed chin; narrow upturned almond eyes and heavier upper eyelids; a defined thin bowed upper lip and fine lower-eye/cheek folds, copper-brown layered shoulder hair and small upper-lip mole. Slender nose remains subtle, not claimed as a pronounced hooked nose. A primary-school mathematics teacher by day; at night she plays villains at a murder-mystery role-play shop, unknown to the parents of her students. Preserve the supplied selected-v2 face and body references exactly as this fictional actor. Height,age,ethnicity fixed. OriginalCCsource historical only; previousv1andunselectedtrials are superseded. Naturaladult proportions appropriate to height; selected v2 body is the scale reference, hair is excluded from head length.",
+  "stylization": "Character stylization (A2, pushed): 3D feature-animation adult with realistic adult body proportions at this actor's height; normal head size, natural neck, shoulders, torso, pelvis and leg lengths. Her Chinese identity must read through her facial structure rather than clothing. Preserve distinctive ordinary-person facial features, gently exaggerated from life, not a generic beauty-standard face. Slightly enlarged expressive eyes without enlarging the whole head; simplified cheek, nose and lip planes; smooth stylized skin shading with soft subsurface scattering and no pores; clean grouped hair clumps. Clothing uses realistic clean unbranded materials. Unmistakably CG at first glance, never photoreal.",
+  "proportions": {
+    "headsTall": 7.2,
+    "headsTallRange": [
+      7.0,
+      7.4
+    ],
+    "heightCm": 166,
+    "targetBasis": "Production target proposed before generation from confirmed height and age; not a measurement or a selected body. Frozen Vision review plus delegated anatomy/identity review required.",
+    "frameGuide": {
+      "occupancyMin": 0.86,
+      "occupancyMax": 0.94,
+      "topMarginMin": 0.04,
+      "topMarginMax": 0.1,
+      "bottomMarginMin": 0.04,
+      "bottomMarginMax": 0.1
+    }
+  },
+  "anchorVersion": 2,
+  "anchors": {
+    "body": "library/staging/xu-li/references/selected-body-anchor-v2.png",
+    "face": "library/staging/xu-li/xu-li__face__front__v2.png"
+  },
+  "castingSource": {
+    "code": "CC-026",
+    "oldSlug": "liu-manqing",
+    "oldName": {
+      "zh": "柳曼青",
+      "en": "Liu Manqing"
+    },
+    "record": "casting/new-faces-2026-10.json",
+    "image": "library/claude-casting-2026-10-07/final/CC-026.png",
+    "sha256": "cb1bc24057ed877146ebc037416b5c084dc5e89bbcb9f92589a6cf4fb3b29076",
+    "use": "Historical CC provenance only. Version1 facial lock superseded by Owner authorized version2 redesign on2026-10-22; use only current selected anchors for production, not this oldCCface.",
+    "identityAuthority": "HQ second-version list for name/age/height/ethnicity/biography, plus Owner2026-10-22 authorization for facial differentiation of unfinished actors.",
+    "faceCrop": {
+      "file": "references/CC-026-face-only.png",
+      "rectangleXYXY": [
+        280,
+        0,
+        670,
+        370
+      ],
+      "width": 390,
+      "height": 370,
+      "sha256": "57702189174b99c3185ca7f4d7ce78d6e0277028c740af360a1e158e78da5c30",
+      "operation": "pixel crop only; no repaint or retouch; source original preserved",
+      "validity": "Historical version1 face crop, not the current version2 identity."
+    }
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "Plain clean black cotton crew-neck T-shirt, straight dark charcoal trousers, flat clean white low-top sneakers. No logos, jewelry or accessories."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "zh": "日常装",
+        "en": "Everyday wear"
+      },
+      "prompt": "Clean light-cream cardigan over a muted teal blouse, charcoal ankle-length straight trousers, flat black loafers; practical and composed everyday teacher clothing, generic unbranded fabrics, no jewelry.",
+      "approvalBasis": "Agent design under actor-chain permission and Owner delegated aesthetic decisions; no generated look accepted yet.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": { "zh": "日常装近景", "en": "Everyday portrait" },
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
+        },
+        {
+          "key": "grade-homework",
+          "label": {
+            "zh": "批作业",
+            "en": "Grading homework"
+          },
+          "direction": "full body, seated naturally on a simple plain stool, holding an unmarked notebook and pencil, focused calm expression; no readable text"
+        },
+        {
+          "key": "knowing-look",
+          "label": {
+            "zh": "藏不住的坏笑",
+            "en": "Knowing look"
+          },
+          "direction": "full body, standing at a three-quarter angle with arms loosely crossed and a small knowing asymmetrical smile; ordinary clothes, no costume or sinister effects"
+        },
+        {
+          "key": "lesson-notes",
+          "label": {
+            "zh": "备课本",
+            "en": "Lesson notes"
+          },
+          "direction": "full body, standing at a three-quarter angle and reading a small plain unmarked notebook held in both hands; complete natural limbs"
+        }
+      ]
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "owner-delegated-agent-selected-trial4",
+    "phase": "four-samples-complete-technical-staging",
+    "appearance": "Trial3/3 consumed; correcttrial2 elongated legs rejected; finaltrial two original files each a two-person contact sheet. No slicing or extra messages.0/55. Earlier provenance-unverified outputs stay quarantined.",
+    "delivered": 7,
+    "bodyReview": {
+      "authority": "Owner2026-10-22 reiterated agent chooses aesthetics/body proportions; agentselected, notOwnerpersonalchoice",
+      "source": "trials/trial4-native.png",
+      "sha256": "b51356b24ddeabcedcb5c9995458228bd29acbbce4f290b272d605d98bfd000f",
+      "headsTall": 7.357,
+      "range": [
+        6.864,
+        7.933
+      ],
+      "frozenStatus": "measurement_review",
+      "frozenFrame": {
+        "status": "frame_rejected",
+        "occupancy": 0.97,
+        "topMargin": 0.017,
+        "bottomMargin": 0.013,
+        "bbox": {
+          "minX": 207,
+          "minY": 28,
+          "maxX": 764,
+          "maxY": 1649
+        },
+        "target": {
+          "occupancyMin": 0.86,
+          "occupancyMax": 0.94,
+          "topMarginMin": 0.04,
+          "topMarginMax": 0.1,
+          "bottomMarginMin": 0.04,
+          "bottomMarginMax": 0.1
+        }
+      },
+      "decision": "delegated-visual-acceptance",
+      "basis": "Properalpha compositewhite/dark clean; linecrown/eye/chin/sole checked. Identity/CG preserved. Natural adult neck/shoulders/torso/pelvis/legs atconfirmedheight and age. Entirehair/hands/flatshoes visible; lowmargin consciously accepted as explicit framingexception. Frozenmeasurement_review/frame_rejected retained, notauto/Ownerpersonalpass."
+    },
+    "faceReferenceUpdate": "Fullsizefar-eyeinspection corrected priorprofilemisclassification: existingRGBAheadimage actuallyRIGHTthreequarterwithbothirises; canonicalrenamedface/three-quarter-left. No pixelschanged. Use nativeRGBAfaceanchoronlyforheadbatches.",
+    "distinctivenessAudit": {
+      "checkedAt": "2026-10-22T11:53:15.206831+08:00",
+      "comparison": "Official live21 ready-to-cast catalog; local matching native face/body assets read-only. Diagnostic sheets in next10 receipt.",
+      "authority": "Owner requested autonomous differentiation of unfinished actors and authorized facial redesign; four completed actors exempt.",
+      "decision": "redesign-v2",
+      "reason": "Mature narrow upturned eyes, long pointed face and fine hooked nose; retain lip mole as secondary cue."
+    },
+    "previousIdentityV1": {
+      "identity": "The same original fictional East Asian Chinese woman as the attached CC-026-face-only.png, now named Xu Li, 38 years old, from Shanghai, China, 166 cm tall. Preserve her heart-shaped face with a pointed chin, strongly upturned eyes, beauty mark above the upper lip, layered copper-brown shoulder-length hair. A primary-school mathematics teacher by day; at night she plays villains at a murder-mystery role-play shop, unknown to the parents of her students. Use the face crop for identity only; never infer body size from the original casting body. Natural adult proportions appropriate to her height and age, target about 7.2 heads tall, target range 7.0–7.4 from hidden skull crown to chin, not hair or bun. Natural neck, torso, pelvis and limbs; neither childlike nor fashion-model elongated. Preserve her age and distinctive facial features, never beautify or de-age her.",
+      "anchors": {
+        "face": "xu-li__face__three-quarter-left__v1.png",
+        "body": "references/selected-body-anchor.png"
+      },
+      "delivered": 7,
+      "validity": "Superseded for revised pack by Owner facial differentiation direction. Original files retained, do not mix into v2."
+    },
+    "identityV2Design": "A mature long heart-shaped face with a visibly pointed but natural chin; narrow strongly upturned almond eyes with substantial upper lids, not round doll eyes; a long slender nose with a slightly downturned tip; thin sharply defined upper lip over a fuller lower lip; subtle nasolabial creases and light lower-eye folds appropriate to38. Keep the small beauty mark above her upper lip and copper-brown shoulder-length layered hair. Her resting expression is composed and observant; no permanent seductive expression.",
+    "selectedIdentityV2": {
+      "candidate": 1,
+      "source": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/trials/trial6-design-v2-native-1.png",
+      "sha256": "d857f0a8d97d74defd695ddbe4df27d6289958f7c83de0af2b0c9866e242d504",
+      "choiceAuthority": "Owner delegated aesthetic,facialdesign andproportion decisions to agent",
+      "actualSignatureFeatures": "Long heart-shaped face with pointed chin; narrow upturned almond eyes and heavier upper eyelids; a defined thin bowed upper lip and fine lower-eye/cheek folds, copper-brown layered shoulder hair and small upper-lip mole. Slender nose remains subtle, not claimed as a pronounced hooked nose.",
+      "comparison": "Live21 catalog diagnostic and actual nativeimage face/body comparison; neither skin/hair nor secondarymole alone counts as differentiation.",
+      "proportion": {
+        "point": 7.165,
+        "range": [
+          6.693,
+          7.716
+        ],
+        "frozenStatus": "measurement_review",
+        "frame": {
+          "status": "frame_rejected",
+          "occupancy": 0.98,
+          "topMargin": 0.012,
+          "bottomMargin": 0.008,
+          "bbox": {
+            "minX": 206,
+            "minY": 20,
+            "maxX": 767,
+            "maxY": 1657
+          },
+          "target": {
+            "occupancyMin": 0.86,
+            "occupancyMax": 0.94,
+            "topMarginMin": 0.04,
+            "topMarginMax": 0.1,
+            "bottomMarginMin": 0.04,
+            "bottomMarginMax": 0.1
+          }
+        },
+        "visualDecision": "accepted-with-delegated-exceptions",
+        "basis": "Point7.165 within proposed7.0-7.4; broad uncertainty remains measurement_review. Fullhair/hands/shoes present despite tight1.2%/0.8%margins, framingexception under delegatedvisualchoice."
+      },
+      "faceCrop": {
+        "rectangleXYXY": [
+          275,
+          10,
+          660,
+          395
+        ],
+        "sha256": "ee20821e8f7f234884cacda0e415b4d6602ed778dcfa2634cea68f82d7af4a1f",
+        "purpose": "Identity reference only, exactpixelcrop, never counted as slot"
+      }
+    },
+    "identityV2RequestedDesign": "Original fictional East Asian Chinese woman Xu Li,38,from Shanghai,166cm. OWNER-AUTHORIZED DESIGN VERSION2. A mature long heart-shaped face with a visibly pointed but natural chin; narrow strongly upturned almond eyes with substantial upper lids, not round doll eyes; a long slender nose with a slightly downturned tip; thin sharply defined upper lip over a fuller lower lip; subtle nasolabial creases and light lower-eye folds appropriate to38. Keep the small beauty mark above her upper lip and copper-brown shoulder-length layered hair. Her resting expression is composed and observant; no permanent seductive expression. A primary-school mathematics teacher by day; at night she plays villains at a murder-mystery role-play shop, unknown to the parents of her students. Natural adult anatomy at confirmed height, about7.2 skull-to-chin heads tall; never include hair in measurement. No real person or existing character likeness. OriginalCC code is historical provenance only, not a face-lock for this revision.",
+    "temporaryDeferredSlots": [],
+    "deferReason": "Two native attempts reverse head versus torso/feet. Complete other slots first; later cameraorbit rather than posingturn test. Deferred is still required, never dropped.",
+    "profileGenerationMethod": "Required profile slots deferred only for matching reference method: native head-only rerender/zoom from approved exactRIGHT fullbodyprofile, then native oppositeview, never localmirror. Genericfrontface reference caused fariris innearprofiles. All55required slots remain inplan.",
+    "ownerLatestMessageQuota": {
+      "trial": 9,
+      "fullCumulative": 70,
+      "includesAlreadyUsed": true,
+      "source": "Ownerdirectreply call_ab0a7aef4a3c4782b2d6326cdf2a24f5"
+    },
+    "sideQACorrection": {
+      "source": "full-batchv2-message14-native-2.png",
+      "reason": "Fullsize white-composite audit shows far iris still visible, so earlier body side acceptance reversed. Message16 matched-source zoom repeated that near-profile. Neither is exact90degree. All original native bytes retained; no cost erased.",
+      "missing": "turnaround/side and face/side,face/side-right"
+    },
+    "imageProviderPause": {
+      "route": "chatgpt-web",
+      "status": "resolved-owner-model-change",
+      "evidence": [
+        "grace-message16-provider-limit-browser.png",
+        "peter-message10-provider-limit-browser.png"
+      ],
+      "actualMessage": "你已达到限额。请稍后重试。",
+      "observed": "2026-10-22 13:30 UTC+8",
+      "resetAt": "not displayed",
+      "scope": "Twooriginalchats bothlimited; sharedPicsAroute held toavoidunproductivecrossactorretries, no modelchange",
+      "next": "Continue separately authorized voice/sample work using selectedanchors; imagesremainincomplete, originalrunsnotreset"
+    },
+    "ownerModelOverride": {
+      "authority": "Owner本会话2026-10-22明确：后面session都用GPT6极高，不用5.6SolPro",
+      "applies": "allsubsequentChatGPTimages in originalconversation",
+      "previous": "GPT5.6SolPro5/5",
+      "verifiedCurrent": "GPT6checked,极高4/5",
+      "evidence": "xu-li-gpt6-extra-high-selected-browser.png"
+    },
+    "voicePlaceholderChoice": {
+      "candidate": 1,
+      "cloudSaved": true,
+      "provisional": true,
+      "acousticReview": "not-heard; Owner-authorized placeholder selection, not ranked by sound",
+      "authority": "Owner explicitly delegated placeholder voice selection for all remaining actors",
+      "balanceBefore": 65693,
+      "balanceAfter": 65567,
+      "slotsRemaining": 4
+    },
+    "voicePlaybackConstraint": {
+      "status": "Owner-confirmed-browser-manually-muted",
+      "OwnerRequest": "mute all built-in-browser tabs, no playback",
+      "actual": "all HTML media paused on inspected tabs; no global mute control exposed; app-level control explicitly denied",
+      "receivedWavs": [
+        "intro",
+        "intro-alt"
+      ],
+      "newSynthesisNotTriggered": false,
+      "confirmation": "Owner: 已手动全部静音，继续合成"
+    },
+    "profileProductionPlan": "26 expressions complete; repair approved same-identity LEFT/RIGHT head profiles before fullbody profile. Reuse accepted v2 three-quarter head as additional identity/view reference plus existing pose-only diagram. No identity redraw or new trial. Face/body identity anchors unchanged.",
+    "approvedProfileHeads": {
+      "left": "xu-li__face__side__v2.png",
+      "right": "xu-li__face__side-right__v2.png"
+    },
+    "voicePlaceholderDelivery": {
+      "slots": 6,
+      "handoff": "voice/handoff/handoff.json",
+      "status": "accepted-temporary-placeholder-under-delegation",
+      "review": "ASR-only; chat boundary resolved independently; no acoustic review",
+      "synthesisBeats": 777,
+      "designBeats": 126
+    },
+    "approvedPersonalLook": {
+      "anchor": "xu-li__wardrobe-personal__front__v2.png",
+      "selectionAuthority": "Owner delegated agent review",
+      "note": "Original native front verified relative body anchor; beige cardigan, grey-green blouse, charcoal ankle trousers, black loafers.",
+      "portrait": "xu-li__wardrobe-personal__portrait__v2.png"
+    },
+    "imagePackTechnicalComplete": {
+      "canonicalSlots": 55,
+      "uniqueSha256": 55,
+      "fullBodyRelativeReviewed": 19,
+      "messages": 67,
+      "review": "delegated visual acceptance; frozen measurement_review preserved",
+      "sampleScope": "Grok1/3 plus Vids0/1"
+    },
+    "additionalVideoTasks": {
+      "action": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/action/task.json",
+      "ensemble": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/ensemble/task.json",
+      "vids": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/vids/task.json"
+    },
+    "sampleScope": {
+      "required": 4,
+      "accepted": 4,
+      "grokAccepted": 3,
+      "vidsAccepted": 1,
+      "missing": {},
+      "sourceExceptions": [
+        "vids: platform-saved Drive rendition received; original feed bytes not received"
+      ],
+      "voiceNote": "existing six placeholder WAV unchanged; no acoustic review claim",
+      "reviewAuthority": "Owner delegated aesthetic and relative proportion review; staging only",
+      "reviewPage": "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/four-sample-review.html",
+      "updatedAt": "2026-10-22T18:00:18.550393+00:00",
+      "publication": false
+    }
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00-pics-a/c/6ad8f73a-fd64-83e9-af0c-7436e93a1f25",
+      "project": "Pics-A",
+      "modelRequested": "GPT-5.6 Sol / Pro 5/5",
+      "host": "Codex app in-app browser",
+      "actualModelVerified": "GPT-5.6Sol Pro5/5 in actualchat, beforeandaftertrial4",
+      "actualModel": "GPT-5.6 Sol / Pro5/5 explicitly selected in established chat, verified before and after trial2 submission. Earlier trial/full provenance remains unverified and quarantined.",
+      "model": "GPT-6",
+      "thinking": "Extra High / 极高 (4/5)"
+    }
+  },
+  "website": {
+    "published": true,
+    "order": 116,
+    "status": "active",
+    "tagline": {
+      "en": "Maths teacher by day, mystery-game villain by night.",
+      "zh": "白天教数学，晚上专演反派。"
+    },
+    "introduction": {
+      "en": "A pointed chin, narrow upturned eyes and a small mole near her mouth make Xu Li distinctive. She teaches primary-school mathematics by day and plays villains at a murder-mystery role-play shop at night. Her pupils’ parents have no idea.",
+      "zh": "尖下巴、细长上挑眼、嘴角一颗痣。白天是小学数学老师，晚上在剧本杀店专演反派，学生家长都不知道。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-23",
+    "note": {
+      "en": "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+      "zh": "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。"
+    }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-23",
+    "ownerReviewPending": false,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/actors/xu-li.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/xu-li-slot-plan-v2.json",
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/voice/handoff/handoff.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/RESULT.md"
+    ],
+    "images": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__turnaround__front__v2.png",
+        "source": "xu-li/xu-li__turnaround__front__v2.png",
+        "sha256": "d857f0a8d97d74defd695ddbe4df27d6289958f7c83de0af2b0c9866e242d504",
+        "bytes": 956922,
+        "slot": "turnaround.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__turnaround__three-quarter__v2.png",
+        "source": "xu-li/xu-li__turnaround__three-quarter__v2.png",
+        "sha256": "e4be034e60d53c1c1878ee5e278dd45de035356823a61326c535c0eb7a2973fe",
+        "bytes": 902931,
+        "slot": "turnaround.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__turnaround__side__v2.png",
+        "source": "xu-li/xu-li__turnaround__side__v2.png",
+        "sha256": "34d90a2e27af56ffab2382e06f976c0cdbb5be54eb6d6e7b34268f854044e9ad",
+        "bytes": 601543,
+        "slot": "turnaround.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__turnaround__back__v2.png",
+        "source": "xu-li/xu-li__turnaround__back__v2.png",
+        "sha256": "5f288b089295a01b4427317c2067f7a26579c0faaddfd4b4ef37cbd34d20d85d",
+        "bytes": 894374,
+        "slot": "turnaround.back",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__turnaround__back-three-quarter-left__v2.png",
+        "source": "xu-li/xu-li__turnaround__back-three-quarter-left__v2.png",
+        "sha256": "c5d9d2eba3d8ed9d51a74a9063e64af5022ebbce705517dfaea56146af66d6d8",
+        "bytes": 891324,
+        "slot": "turnaround.back-three-quarter-left",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__turnaround__back-three-quarter-right__v2.png",
+        "source": "xu-li/xu-li__turnaround__back-three-quarter-right__v2.png",
+        "sha256": "a43f6514eb8e0eb0a82638e2b401e28286ee426e1cfe7eef3618c90e1997e937",
+        "bytes": 896504,
+        "slot": "turnaround.back-three-quarter-right",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__face__front__v2.png",
+        "source": "xu-li/xu-li__face__front__v2.png",
+        "sha256": "45a6665fe4f0310982fbdd514d14919ffb5073f092a1a24cbf1ea1d3d4331863",
+        "bytes": 2355691,
+        "slot": "face.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__face__three-quarter__v2.png",
+        "source": "xu-li/xu-li__face__three-quarter__v2.png",
+        "sha256": "12559a7d202aed1d0985edae972a3c77033bbc6feeed2811fd57cad25f7766e2",
+        "bytes": 2168778,
+        "slot": "face.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__face__side__v2.png",
+        "source": "xu-li/xu-li__face__side__v2.png",
+        "sha256": "be37c34d1a98dcd1d3947b987bb70cb94f38a96535ae7185457433064da33a5b",
+        "bytes": 1999744,
+        "slot": "face.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__face__three-quarter-left__v2.png",
+        "source": "xu-li/xu-li__face__three-quarter-left__v2.png",
+        "sha256": "ef094990d9436e7ff0ccc8b87878420635f451de027036d6c23e9f6f5b01fc8b",
+        "bytes": 2013051,
+        "slot": "face.three-quarter-left",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__face__side-right__v2.png",
+        "source": "xu-li/xu-li__face__side-right__v2.png",
+        "sha256": "ae45abcf291d62f45f8b384e6137a6035ca6ac4300c26d9c2cca2fab391389e9",
+        "bytes": 1978820,
+        "slot": "face.side-right",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__face__up__v2.png",
+        "source": "xu-li/xu-li__face__up__v2.png",
+        "sha256": "ac98c68376ee4205587e706ea18155bfc6996c16c01810489adaa438b5658b4a",
+        "bytes": 1908029,
+        "slot": "face.up",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__face__down__v2.png",
+        "source": "xu-li/xu-li__face__down__v2.png",
+        "sha256": "9d96e64c66252ba4481713eb42f570d252d0612578ce7022a1894f812a195d02",
+        "bytes": 2208964,
+        "slot": "face.down",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__neutral__v2.png",
+        "source": "xu-li/xu-li__expression__neutral__v2.png",
+        "sha256": "6abce79880ece45597ed2164f19162f012aa97dffed32cbd9790e64b18842b0d",
+        "bytes": 2480038,
+        "slot": "expression.neutral",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__smile__v2.png",
+        "source": "xu-li/xu-li__expression__smile__v2.png",
+        "sha256": "d8bd6646bd82a439052280f5a9d5de8383d6ed4988cf5b84d401a8c52e5c7f98",
+        "bytes": 2211237,
+        "slot": "expression.smile",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__laugh__v2.png",
+        "source": "xu-li/xu-li__expression__laugh__v2.png",
+        "sha256": "e197775a3968ff9b77e2cfe43f091763602ac4a6dc042eb5f04165449257617a",
+        "bytes": 2219451,
+        "slot": "expression.laugh",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__sad__v2.png",
+        "source": "xu-li/xu-li__expression__sad__v2.png",
+        "sha256": "f12f2f2850bcbffd46d3605a7907d80b6f474e1b8b5522b1e33708e8bf5d176e",
+        "bytes": 2296651,
+        "slot": "expression.sad",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__cry__v2.png",
+        "source": "xu-li/xu-li__expression__cry__v2.png",
+        "sha256": "8c275a348fd7b8f31b0fcfe1a7b0e4d4d569758ab42587003c6bc1190b4b8161",
+        "bytes": 2420584,
+        "slot": "expression.cry",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__annoyed__v2.png",
+        "source": "xu-li/xu-li__expression__annoyed__v2.png",
+        "sha256": "ab1a323dd71941ecdfdb4e37c428a547c3dbc00f7a0a56254f990e0fef4f0aff",
+        "bytes": 2384849,
+        "slot": "expression.annoyed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__angry__v2.png",
+        "source": "xu-li/xu-li__expression__angry__v2.png",
+        "sha256": "015a3ecf265de85de360b26ee8da4dc1bf168f11c9bfd2f1df2680beebd5639e",
+        "bytes": 2181698,
+        "slot": "expression.angry",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__surprised__v2.png",
+        "source": "xu-li/xu-li__expression__surprised__v2.png",
+        "sha256": "a399f6682cf4e2bda2fdf1e217bf47c7ff5e51ed8a13b3292de28414d86a3fe2",
+        "bytes": 2199534,
+        "slot": "expression.surprised",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__scared__v2.png",
+        "source": "xu-li/xu-li__expression__scared__v2.png",
+        "sha256": "3dd212d5ac4d35618810df81a44577a05eb9f0cf97e336d0ce1457d643256825",
+        "bytes": 2267048,
+        "slot": "expression.scared",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__disgusted__v2.png",
+        "source": "xu-li/xu-li__expression__disgusted__v2.png",
+        "sha256": "b25ef683a9fe6ce5aafe3554696db7f3d498831bfdc756cb86737da1101038ef",
+        "bytes": 2661226,
+        "slot": "expression.disgusted",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__embarrassed__v2.png",
+        "source": "xu-li/xu-li__expression__embarrassed__v2.png",
+        "sha256": "b8e947a72ea3a567004346461e5765c1101a79d1db01aff40967892f55efde45",
+        "bytes": 2098755,
+        "slot": "expression.embarrassed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__tired__v2.png",
+        "source": "xu-li/xu-li__expression__tired__v2.png",
+        "sha256": "2943c501f12ddfe366949b62d7e14c13eda984fba1c9dcd3dd71de3e8fcae1f5",
+        "bytes": 2142075,
+        "slot": "expression.tired",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__speaking__v2.png",
+        "source": "xu-li/xu-li__expression__speaking__v2.png",
+        "sha256": "c768d2cd2be3c852c7ffcd1adfa0a6a88eefc27ee52c56c4a540fba58cb5e062",
+        "bytes": 2151589,
+        "slot": "expression.speaking",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__eyes-closed__v2.png",
+        "source": "xu-li/xu-li__expression__eyes-closed__v2.png",
+        "sha256": "a3308493705e54aa228283d60499bd9cb8ac4ae22454c8b2fa1c5a369cab2e7f",
+        "bytes": 2352100,
+        "slot": "expression.eyes-closed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__worried__v2.png",
+        "source": "xu-li/xu-li__expression__worried__v2.png",
+        "sha256": "9f1e760c4533dfd556c63b76c344483227529e74b96483a985ccf309b98b2873",
+        "bytes": 2185439,
+        "slot": "expression.worried",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__skeptical__v2.png",
+        "source": "xu-li/xu-li__expression__skeptical__v2.png",
+        "sha256": "230c9ec7508e2021ff2dbc3ca62c7c4f51489d3229d551e7f2b93850b1ba6115",
+        "bytes": 2402045,
+        "slot": "expression.skeptical",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__smug__v2.png",
+        "source": "xu-li/xu-li__expression__smug__v2.png",
+        "sha256": "a4b4faa3f6abdf738c2020d4bc19d375fefefdc315e07bb2b6596aa8a97ea95b",
+        "bytes": 2352075,
+        "slot": "expression.smug",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__contempt__v2.png",
+        "source": "xu-li/xu-li__expression__contempt__v2.png",
+        "sha256": "79fca443e489cebcc623965ed0587c52c38ef911990d6428f91555c16a05ab62",
+        "bytes": 2209295,
+        "slot": "expression.contempt",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__confused__v2.png",
+        "source": "xu-li/xu-li__expression__confused__v2.png",
+        "sha256": "840f70e93dc5766cee2f210a07b1afd64bd58afc24d4b8fe9d1b52ce20f76593",
+        "bytes": 2390098,
+        "slot": "expression.confused",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__thinking__v2.png",
+        "source": "xu-li/xu-li__expression__thinking__v2.png",
+        "sha256": "4875f49b06d764d037341832f951d8dac88a5123179a28907e6fd540afe30a2b",
+        "bytes": 2162353,
+        "slot": "expression.thinking",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__determined__v2.png",
+        "source": "xu-li/xu-li__expression__determined__v2.png",
+        "sha256": "ad1727c24d2f1ec9d8756aa7ab9d496f9ef529e1e92c258ccefa46544a7cf2db",
+        "bytes": 2135910,
+        "slot": "expression.determined",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__shy__v2.png",
+        "source": "xu-li/xu-li__expression__shy__v2.png",
+        "sha256": "316b0becddc4a4ba1010401b3d13151992a741230825253548fd636874a355cf",
+        "bytes": 2237018,
+        "slot": "expression.shy",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__pain__v2.png",
+        "source": "xu-li/xu-li__expression__pain__v2.png",
+        "sha256": "3b742c29c6216e28450dcce8f735673bb364e874e52d2c2fbeea1dcc08b7b589",
+        "bytes": 2294818,
+        "slot": "expression.pain",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__sleepy__v2.png",
+        "source": "xu-li/xu-li__expression__sleepy__v2.png",
+        "sha256": "221554d8bb52a54446b5b449a53affe5c95457df285e8a25a836be06b7e72eb0",
+        "bytes": 2235541,
+        "slot": "expression.sleepy",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__awkward-smile__v2.png",
+        "source": "xu-li/xu-li__expression__awkward-smile__v2.png",
+        "sha256": "f70f768389830106b0f385fa8ae6670c3b08ce90d5a6459c8d350325eb92f14a",
+        "bytes": 2258167,
+        "slot": "expression.awkward-smile",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__expression__deadpan__v2.png",
+        "source": "xu-li/xu-li__expression__deadpan__v2.png",
+        "sha256": "dc61809369eee5502e3165c8c6f0fb4c012b0f62e33e7acdafcfbeb174fe3845",
+        "bytes": 2145238,
+        "slot": "expression.deadpan",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__wardrobe-personal__front__v2.png",
+        "source": "xu-li/xu-li__wardrobe-personal__front__v2.png",
+        "sha256": "53988cf9e0891a2cd942bcf60ee96a3e7bdb2c656a31bd6429198f9b74ce6496",
+        "bytes": 990006,
+        "slot": "wardrobe.personal.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__wardrobe-personal__three-quarter__v2.png",
+        "source": "xu-li/xu-li__wardrobe-personal__three-quarter__v2.png",
+        "sha256": "59b23de5c22f22707ba9a62114076a17cbd9f80a7223ff1ac9d033fb5c226af1",
+        "bytes": 940944,
+        "slot": "wardrobe.personal.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__wardrobe-personal__side__v2.png",
+        "source": "xu-li/xu-li__wardrobe-personal__side__v2.png",
+        "sha256": "48f63806a76db1a1b2cce0adb310a1225dc19e88bdf065441c95c491afc1ca62",
+        "bytes": 673717,
+        "slot": "wardrobe.personal.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__wardrobe-personal__back__v2.png",
+        "source": "xu-li/xu-li__wardrobe-personal__back__v2.png",
+        "sha256": "15ea5565c266819f769fa443c387d13f944ba1957129ca4eb7a8506980e2885f",
+        "bytes": 1051798,
+        "slot": "wardrobe.personal.back",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__wardrobe-personal__portrait__v2.png",
+        "source": "xu-li/xu-li__wardrobe-personal__portrait__v2.png",
+        "sha256": "b348409530a667c12e1c6eed5e5b97c6484802b4ac319b5fa59552b0f44664a7",
+        "bytes": 2344947,
+        "slot": "wardrobe.personal.portrait",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__wardrobe-personal__grade-homework__v2.png",
+        "source": "xu-li/xu-li__wardrobe-personal__grade-homework__v2.png",
+        "sha256": "2de35239d29be11c357308e215ddc84abadcc50d9cbd83e681139745c06e7d0a",
+        "bytes": 1345563,
+        "slot": "wardrobe.personal.grade-homework",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__wardrobe-personal__knowing-look__v2.png",
+        "source": "xu-li/xu-li__wardrobe-personal__knowing-look__v2.png",
+        "sha256": "19ff527c1eba2b047a6df23ae34f09407bbf6424009297cbc0d8dea555c57358",
+        "bytes": 826318,
+        "slot": "wardrobe.personal.knowing-look",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__wardrobe-personal__lesson-notes__v2.png",
+        "source": "xu-li/xu-li__wardrobe-personal__lesson-notes__v2.png",
+        "sha256": "25982557e2cdd5341d83c1acfb74a5d7c82c65794c52c501bdcb8ba074f1a805",
+        "bytes": 850160,
+        "slot": "wardrobe.personal.lesson-notes",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__pose__walk__v2.png",
+        "source": "xu-li/xu-li__pose__walk__v2.png",
+        "sha256": "c07c447fb2a10473813bec91202a51c7543f8c7c536041f113bbcc0dbf914614",
+        "bytes": 857636,
+        "slot": "pose.walk",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__pose__run__v2.png",
+        "source": "xu-li/xu-li__pose__run__v2.png",
+        "sha256": "5b84408ea96f9fb9164b7f8fcd135a6ca03028f0c7d541015f4d7edc98c8a5e4",
+        "bytes": 927155,
+        "slot": "pose.run",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__pose__sit__v2.png",
+        "source": "xu-li/xu-li__pose__sit__v2.png",
+        "sha256": "83cae20188f5b58532a88bf77cc3a571b1fc9c1e7c8e7208d0a322014985b05b",
+        "bytes": 1115274,
+        "slot": "pose.sit",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__pose__point__v2.png",
+        "source": "xu-li/xu-li__pose__point__v2.png",
+        "sha256": "3ff8ee72ba65b5aec2c31eee0888498a02b5d944862bb5344f2dccfa98343828",
+        "bytes": 801616,
+        "slot": "pose.point",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__pose__arms-crossed__v2.png",
+        "source": "xu-li/xu-li__pose__arms-crossed__v2.png",
+        "sha256": "57b07e20c2b90443e996c944a6610a74504a94e2a59a89a263797a91006ffd3f",
+        "bytes": 838731,
+        "slot": "pose.arms-crossed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__pose__phone__v2.png",
+        "source": "xu-li/xu-li__pose__phone__v2.png",
+        "sha256": "6d197e322023bfc36adf0d1316b1ec3f75807d552a74a3e257bece639e608a4d",
+        "bytes": 832958,
+        "slot": "pose.phone",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__detail__hands__v2.png",
+        "source": "xu-li/xu-li__detail__hands__v2.png",
+        "sha256": "7dc0153e670ca650b5640e15ea3796c697a3286f12fe51b15380f88566dfeb5c",
+        "bytes": 1177104,
+        "slot": "detail.hands",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/xu-li__detail__hair-back__v2.png",
+        "source": "xu-li/xu-li__detail__hair-back__v2.png",
+        "sha256": "0357c8c88ed48d5cf34d9536553ad1b12c2dd7e6f5da2bda38e0fcd1ab0a32f9",
+        "bytes": 2219105,
+        "slot": "detail.hair-back",
+        "version": 2
+      }
+    ],
+    "voices": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/voice/handoff/xu-li__voice__intro__v1.wav",
+        "source": "voices/xu-li/xu-li__voice__intro__v1.wav",
+        "sha256": "2f5b5e2d95aa2f726d5e63d35874218ca87c79e243eeacce10ee5a60e374cfb4",
+        "bytes": 1067620,
+        "slot": "intro",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "大家好，我是许丽，三十八岁，上海人。白天教小学数学，晚上在剧本杀店演反派。这事学生家长可不知道。题要一道一道算，坏人嘛，也得演得有道理。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/voice/handoff/xu-li__voice__intro-alt__v1.wav",
+        "source": "voices/xu-li/xu-li__voice__intro-alt__v1.wav",
+        "sha256": "6f9a4f7bc3c611a06ae478ee9dc190455f1878595eeeeff327e82616f2c3cb3f",
+        "bytes": 919468,
+        "slot": "intro-alt",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "Hi, I'm Xu Li. I'm thirty-eight, from Shanghai. I teach maths at a primary school. In the evenings, I play villains in mystery games. The parents don't know that part. I like a good puzzle, on either side of the classroom door."
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/voice/handoff/xu-li__voice__chat__v1.wav",
+        "source": "voices/xu-li/xu-li__voice__chat__v1.wav",
+        "sha256": "3b641ddec1c37cfeb0295a662d087d4927c002293273e7741f17f42635da5b57",
+        "bytes": 719136,
+        "slot": "chat",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "这道题先别急着写答案。你看，把条件一条一条圈出来，是不是就清楚了？对，就是这个意思。等一下，你刚才那个办法也挺聪明的。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/voice/handoff/xu-li__voice__happy__v1.wav",
+        "source": "voices/xu-li/xu-li__voice__happy__v1.wav",
+        "sha256": "659930e294959ff6fb25d680fffc33ab7d8c464559558fb1948b2f5a762349ef",
+        "bytes": 682726,
+        "slot": "happy",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "你居然自己算出来了！我就说你会的嘛。来，再讲一遍给我听听。不是为了分数，我就是想听你说，你是怎么想到这一步的。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/voice/handoff/xu-li__voice__angry__v1.wav",
+        "source": "voices/xu-li/xu-li__voice__angry__v1.wav",
+        "sha256": "d71a5b987c9ec55a407e1f3f8349d499b589402a932d8d6cd46936ea5f6bc0d6",
+        "bytes": 760002,
+        "slot": "angry",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "先停一下。我问的是这一步怎么算，不是谁先把答案喊出来。别人还没说完，你就打断，这样谁听得清？一个一个来，把话讲完整。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/voice/handoff/xu-li__voice__sad__v1.wav",
+        "source": "voices/xu-li/xu-li__voice__sad__v1.wav",
+        "sha256": "cb1b1c3419a8a3b8e310149844054304b02ef5ba930eedfb7714090148f8e068",
+        "bytes": 963594,
+        "slot": "sad",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "今天把那叠本子收好了，教室一下子安静下来。平时总嫌他们吵，真没声音了，倒有点不习惯。明天再来吧，题总还有得讲。"
+      }
+    ]
+  },
+  "officialSamples": [
+    {
+      "sampleId": "xu-li-grok-20261023",
+      "actorSlugs": [
+        "xu-li"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/actors/xu-li.json",
+        "evidenceSha256": "582a34db6c6ff96409831fd8699fc53dba34df075b016583822534339f97db2b",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/xu-li-grok-20261023/source.mp4",
+          "sourceSha256": "a7cedc4ecd35e267063e06753017629e16317406e253e4d809a5f2b2becef4f9",
+          "public": "/media/works/samples/xu-li-grok-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/xu-li-sample-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/xu-li-sample-original.mp4",
+            "source": "samples/xu-li-grok-20261023/platform-original.mp4",
+            "sha256": "c456f858b0a38b0594bbd1c16cd98fa0d5592e93e697d38d837dbfa9da005e17",
+            "bytes": 1905985
+          }
+        }
+      ]
+    },
+    {
+      "sampleId": "xu-li-grok-action-20261023",
+      "actorSlugs": [
+        "xu-li"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/action/task.json",
+        "evidenceSha256": "9f563273c2bb2a74f8ed9b65f9b3f4d1588440bcbf9ce7ed041e20705928d6f8",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/xu-li-grok-action-20261023/source.mp4",
+          "sourceSha256": "5dee1118bce048f5deddba51a559b80d626687019414cab7c2d4a96a821274dc",
+          "public": "/media/works/samples/xu-li-grok-action-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/action/attempt-02-contained-arms/xu-li-action-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/action/attempt-02-contained-arms/xu-li-action-original.mp4",
+            "source": "samples/xu-li-grok-action-20261023/platform-original.mp4",
+            "sha256": "a75bc96757f2ef1cfce0327d9f8591a4f4d99a601eefd25ffb397ea77c6b39ba",
+            "bytes": 1820073
+          }
+        }
+      ],
+      "productionTask": {
+        "id": "task-6a8de753a3ca7e1a",
+        "sha256": "9f563273c2bb2a74f8ed9b65f9b3f4d1588440bcbf9ce7ed041e20705928d6f8",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T12:04:20.223Z",
+          "note": "Actual6.041667s720x1280 originalfullydecoded and12motionframes reviewed; longheartface/copperlayers/blackT identity retained, relativeadult head/neck/shoulder/torso/hip/legs stable, completehair,hands andshoes remainwithinportrait allsamples. Clear90degree pivot pluswidewalking steps, notjustheadwave. Containedarm choreography fixesprioroutstretchedhandcrop. Performanceexception:arms hang/swing closebody ratherthanbothhandsclaspedwaist, acceptednaturalaction underdelegatedaesthetic judgment. OriginalAAC/cover retained,silentstreamcopy andcliplocalAsset, linkedoriginalrunningrun actualcost.",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "xu-li-grok-ensemble-20261023",
+      "actorSlugs": [
+        "xu-li"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/ensemble/task.json",
+        "evidenceSha256": "f10f6101cbf7130275535a6c40e6d43f7021e38e7f91616a49c5fd4afff4dcfd",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/xu-li-grok-ensemble-20261023/source.mp4",
+          "sourceSha256": "f73e0726a31a5f6f06d1c98e6c464b7cb00c048851621971dd4eb18fc0362800",
+          "public": "/media/works/samples/xu-li-grok-ensemble-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/ensemble/xu-li-ensemble-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/ensemble/xu-li-ensemble-original.mp4",
+            "source": "samples/xu-li-grok-ensemble-20261023/platform-original.mp4",
+            "sha256": "cf33b033cbbc6bab821b2026e3e2515198112b1f32b0c010a088968f70a05296",
+            "bytes": 2736468
+          }
+        }
+      ],
+      "castSlugs": [
+        "xu-li",
+        "liu-dan"
+      ],
+      "productionTask": {
+        "id": "task-3fdb292c425367c8",
+        "sha256": "f10f6101cbf7130275535a6c40e6d43f7021e38e7f91616a49c5fd4afff4dcfd",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T15:54:03.899Z",
+          "note": "直接看12帧运动表及原生首中尾：许丽左侧铜色层次发长心形脸细长眼、刘丹右侧黑短波波头圆脸可辨，个人服装正确，成人头颈躯干骨盆腿段相对各自锚点自然，全程头手鞋完整无融合。许丽向右迈步后开掌，刘丹也短距离走动再转向回应；与右方全程原地的提示词存在走位差异，代理接受自然双人相遇表演而非精确走位。原生1280x720/6.041667秒全解码通过，原AAC与封面保留、静音流拷贝；实际0.03534572美元入原run，技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "xu-li-google-vids-20261023",
+      "actorSlugs": [
+        "xu-li"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Google Vids"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/vids/task.json",
+        "evidenceSha256": "b39fbf7aaddcf7d6d4f82a27563e2782f4d9410dd90837b2f50addac26eb989b",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/xu-li-google-vids-20261023/source.mp4",
+          "sourceSha256": "19112799bc7f33741387e57eec0a1c220755356ed56a2de1797e02615f840995",
+          "public": "/media/works/samples/xu-li-google-vids-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/vids/attempt-03-owner-simplified/xu-li-vids-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/xu-li/video/additional-20261022/vids/attempt-03-owner-simplified/xu-li-vids-saved-drive-rendition.mp4",
+            "source": "samples/xu-li-google-vids-20261023/platform-original.mp4",
+            "sha256": "599ac3a6ac88ba8bf257fb360cc94b45780d447704f5ef2e13d2404e70b50c1e",
+            "bytes": 815714
+          }
+        }
+      ],
+      "castSlugs": [
+        "xu-li",
+        "liu-dan"
+      ],
+      "productionTask": {
+        "id": "task-2696786a072a6599",
+        "sha256": "b39fbf7aaddcf7d6d4f82a27563e2782f4d9410dd90837b2f50addac26eb989b",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T17:59:36.959Z",
+          "note": "已直接审看12帧及原尺寸首中尾：许丽左侧铜棕层次发、长尖脸、奶油开衫蓝绿衬衫，与右侧刘丹黑短发齐刘海红外套形成明确身份差异；左侧先展开双掌再单掌轻招呼，右侧有轻微点头回应。两人全发、双手和鞋始终在画面内，颈肩躯干骨盆腿段相对冻结场景和已批准个人锚点自然，未见融合或多肢。相对原prompt单掌腰高，实际两掌较开及后段轻推近作为自然交流表演接受。原四角星披露保留。原feed两次下载超时，接收同一已保存场景的Drive平台保存版，非原feed字节也非整份文档导出；保留720p、6秒与AAC44.1k，不上采样或裁切。Owner本轮允许简化prompt，与Grok03不再同prompt比较；占位样片代理视觉接受，仅staging，音频未审听。",
+          "formalPublication": false
+        },
+        "source": "IAB publicdownloadMedia same saved generated scene VIDEO; Google Drive platform rendition, not original feed bytes or document export"
+      },
+      "note": {
+        "zh": "Google Drive平台保存版，非整份Vids文档导出；原feed字节未取回，平台标识保留。 提示词经授权简化，不与Grok作同提示词比较。",
+        "en": "Google Drive platform-saved rendition, not a full Vids document export. Original feed bytes were unavailable; platform marks are retained. The prompt was simplified with approval; this is not a same-prompt comparison with Grok."
+      }
+    }
+  ],
+  "websitePromotion": {
+    "authorizedOn": "2026-10-23",
+    "authority": "Owner task: publish all ten under new names, second-version biographies and approved current appearance; preserve CC provenance and old URL redirects.",
+    "actorSourceSha256": "582a34db6c6ff96409831fd8699fc53dba34df075b016583822534339f97db2b",
+    "slotPlanSha256": "ee40ba5e99255026afe779081577ffe221a589a8202b978cd79ba1e15a1f44cc",
+    "voiceReview": "Owner-accepted temporary placeholder; no complete acoustic review claimed.",
+    "proportionReview": "Owner-delegated relative visual acceptance; original absolute measurement_review and framing exceptions retained unchanged in producer evidence.",
+    "billing": "Historical Grok unknown requests and CLI model-usage USD values remain in producer records; no verified account debit or video unit price is asserted."
+  }
+}

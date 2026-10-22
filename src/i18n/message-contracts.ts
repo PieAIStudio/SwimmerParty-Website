@@ -180,6 +180,8 @@ export interface MessageContracts {
   readonly "assets.voice.roleCeo": {  };
   readonly "assets.voice.roleMaid": {  };
   readonly "assets.voice.sad": {  };
+  readonly "assets.voicePlaceholder": {  };
+  readonly "assets.voicePlaceholderNote": {  };
   readonly "assets.voiceReference": {  };
   readonly "assets.zoomIn": {  };
   readonly "assets.zoomOut": {  };

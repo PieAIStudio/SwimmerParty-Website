@@ -27,6 +27,7 @@ const assetItemSchema = z.looseObject({
   durationSec: z.number().nonnegative().optional(),
   transcript: z.object({ text: z.string() }).optional(),
   previewUrl: z.string().optional(),
+  placeholder: z.boolean().optional(),
 });
 export const actorAssetsSchema = z.looseObject({
   slug: slugSchema,

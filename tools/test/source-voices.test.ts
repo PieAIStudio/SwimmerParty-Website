@@ -18,6 +18,7 @@ async function fixture(t: { after: (fn: () => Promise<void>) => void }) {
     sha256: sha(bytes),
     bytes: bytes.length,
     version: 1,
+    placeholder: true,
   };
   const actor = {
     ...promotedFixture(),
@@ -56,6 +57,11 @@ test("changed voice bytes use a new immutable object and leave the old recording
   const old = JSON.parse(await readFile(f.manifest, "utf8")).items[0];
   assert.deepEqual(await readFile(path.join(f.root, ".assets-local", old.object)), f.bytes);
   assert.equal(old.sha256, f.pin.sha256);
+  assert.equal(
+    old.placeholder,
+    true,
+    "placeholder status follows the delivery, not a listening claim",
+  );
   const updated = Buffer.from(f.bytes);
   updated[44] = 1;
   f.actor.assetDelivery.voices[0] = { ...f.pin, sha256: sha(updated) };

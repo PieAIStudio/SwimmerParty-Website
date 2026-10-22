@@ -5,8 +5,8 @@ export const profile: Actor = {
   nameEn: "Ma Hong",
   nameCn: "马红",
   tagline: {
-    en: "She learnt English at fifty. Now she teaches Henan noodles in English.",
-    zh: "五十岁开始学英语，现在用英文教人做烩面。",
+    en: "Learned English at fifty. Now she teaches visitors to make noodles.",
+    zh: "五十岁学英语，教老外做烩面。",
   },
   status: "active",
   gender: "female",
@@ -60,16 +60,26 @@ export const profile: Actor = {
     },
   ],
   note: {
-    en: "She learnt English at fifty. Now she teaches Henan noodles in English.",
-    zh: "五十岁开始学英语，现在用英文教人做烩面。",
+    en: "With reddish-brown curls and deep laughter lines, Ma Hong learned English at fifty. She now teaches foreigners to make Henan huimian noodles in English, and has more followers than her daughter.",
+    zh: "红褐色卷发，笑纹很深。五十岁才学英语，现在用英文教老外做烩面，粉丝比女儿多。",
   },
   promptSeed:
     "The same original fictional East Asian Chinese woman as CC-066-face-only.png, now named Ma Hong, 58 years old, from Zhengzhou in Henan, 158 cm tall, average adult build. Preserve her short curly dark red-brown perm, deep laugh lines and the small mole beside the same eyebrow. Keep her mature ordinary-person face and age; never beautify or de-age her. She started learning English at fifty and now teaches foreigners to make Henan braised noodles in English; her videos have more followers than her daughter. The face crop is identity only, never a body-proportion reference. Natural adult body about7.0 skull-to-chin heads tall, target6.8–7.2, excluding the curly hair. Natural mature adult neck, torso, pelvis and limbs; no big head, shortened torso, long neck or elongated fashion-model legs.",
-  version: "1.0.0",
-  versionDate: "2026-10-22",
+  version: "1.1.0",
+  versionDate: "2026-10-23",
   versionNote: {
-    en: "55 reference images, 6 placeholder voice clips and a sample video.",
-    zh: "55 张参考图、6 段占位声音、1 段样片。",
+    en: "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+    zh: "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。",
   },
+  versionHistory: [
+    {
+      version: "1.0.0",
+      date: "2026-10-22",
+      note: {
+        en: "55 reference images, 6 placeholder voice clips and a sample video.",
+        zh: "55 张参考图、6 段占位声音、1 段样片。",
+      },
+    },
+  ],
   voiceLanguage: "zh",
 };

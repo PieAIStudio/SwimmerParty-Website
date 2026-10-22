@@ -1,0 +1,1066 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "code": "wang-yong",
+  "slug": "wang-yong",
+  "kind": "actor",
+  "name": {
+    "zh": "王勇",
+    "en": "Wang Yong"
+  },
+  "status": {
+    "delivered": 55,
+    "published": false,
+    "preparedOn": "2026-10-22",
+    "productionOnly": true,
+    "version": "1.0.0",
+    "siteProfile": "src/content/actors/wang-yong/profile.ts"
+  },
+  "demographics": {
+    "age": 39,
+    "gender": "male",
+    "origin": {
+      "zh": "广东佛山",
+      "en": "Foshan, Guangdong, China"
+    },
+    "voiceLanguage": "zh"
+  },
+  "facts": {
+    "zh": [
+      "39岁，广东佛山，身高163cm。",
+      "醒狮队里舞狮头的那个，高桩能连跳七根。"
+    ],
+    "en": [
+      "39-year-old East Asian Chinese man, 163 cm tall, from Foshan, Guangdong, China.",
+      "Performs the lion head in a southern lion-dance troupe and can jump seven high poles in succession."
+    ]
+  },
+  "identity": "Original fictional East Asian Chinese man Wang Yong,39,from Foshan,163cm. OWNER-AUTHORIZED SELECTED VERSION2. Bald crown with short black side hair, lower-heavy broad rounded-square jaw, wide fleshy bulb nose, visible shallow vertical cleft chin and broad closed-mouth friendly smile. Actual selected eyes are expressive and fairly large; do not claim small narrow eyes. Broad sturdy adult shoulders, forearms and thighs with modest belly, ordinary adult pelvis and leg lengths. He performs the lion head in a southern lion-dance troupe and can jump seven high poles in succession, as confirmed in the approved second-version biography. Keep selected face structure and relative body proportions. OriginalCC source historical only.",
+  "stylization": "Character stylization (A2, pushed): 3D feature-animation adult with realistic adult body proportions at this actor's height; normal head size, natural neck, shoulders, torso, pelvis and leg lengths. The East Asian Chinese identity must read through the facial structure rather than clothing. Preserve distinctive ordinary-person facial features, gently exaggerated from life, not a generic beauty-standard face. Slightly enlarged expressive eyes without enlarging the whole head; simplified cheek, nose and lip planes; smooth stylized skin shading with soft subsurface scattering and no pores; clean grouped hair clumps. Clothing uses realistic clean unbranded materials. Unmistakably CG at first glance, never photoreal.",
+  "proportions": {
+    "headsTall": 7.0,
+    "headsTallRange": [
+      6.8,
+      7.2
+    ],
+    "heightCm": 163,
+    "targetBasis": "Production target proposed before generation from confirmed height and age; not a measurement or a selected body. Frozen Vision review plus delegated anatomy/identity review required.",
+    "frameGuide": {
+      "occupancyMin": 0.86,
+      "occupancyMax": 0.94,
+      "topMarginMin": 0.04,
+      "topMarginMax": 0.1,
+      "bottomMarginMin": 0.04,
+      "bottomMarginMax": 0.1
+    }
+  },
+  "anchorVersion": 2,
+  "anchors": {
+    "body": "library/staging/wang-yong/references/selected-body-anchor-v2.png",
+    "face": "library/staging/wang-yong/references/selected-face-anchor-v2.png"
+  },
+  "castingSource": {
+    "code": "CC-027",
+    "oldSlug": "zhu-youfu",
+    "oldName": {
+      "zh": "朱有福",
+      "en": "Zhu Youfu"
+    },
+    "record": "casting/new-faces-2026-10.json",
+    "image": "library/claude-casting-2026-10-07/final/CC-027.png",
+    "sha256": "cbdec87e561283f9f651144abd99df6d4bd45600afab0d5f94146a57c1237f3b",
+    "use": "Historical CC provenance only. Version1 facial lock superseded by Owner authorized version2 redesign on2026-10-22; use only current selected anchors for production, not this oldCCface.",
+    "identityAuthority": "HQ second-version list for name/age/height/ethnicity/biography, plus Owner2026-10-22 authorization for facial differentiation of unfinished actors.",
+    "faceCrop": {
+      "file": "references/CC-027-face-only.png",
+      "rectangleXYXY": [
+        244,
+        0,
+        705,
+        484
+      ],
+      "width": 461,
+      "height": 484,
+      "sha256": "2937b1846a810cbbac1401c3f67b5e3d29b3f8c3dc83067796545c2f80af0e14",
+      "operation": "pixel crop only; source original preserved",
+      "validity": "Historical version1 face crop, not the current version2 identity."
+    }
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "Plain clean mustard-yellow cotton crew-neck T-shirt, straight dark charcoal trousers, clean flat white low-top sneakers; no jewelry, accessories, text, logos or brands."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "zh": "日常装",
+        "en": "Everyday wear"
+      },
+      "prompt": "Clean practical everyday outfit: plain muted maroon short-sleeve henley shirt, loose straight navy trousers, flat white canvas shoes. Preserve his short stocky build and bald crown. No lion costume, jewelry or logos.",
+      "approvalBasis": "Agent design under Owner delegated aesthetic decisions; not generated yet.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": { "zh": "日常装近景", "en": "Everyday portrait" },
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
+        },
+        {
+          "key": "practice-stance",
+          "label": {
+            "zh": "练习站姿",
+            "en": "Practice stance"
+          },
+          "direction": "full body in a modest stable martial-arts practice stance, knees slightly bent, both arms forward as if holding a lion head, no costume or other figure"
+        },
+        {
+          "key": "wipe-brow",
+          "label": {
+            "zh": "擦汗",
+            "en": "Wiping brow"
+          },
+          "direction": "full body at a three-quarter angle, smiling and lightly wiping his forehead with a small plain white hand towel"
+        },
+        {
+          "key": "explain-step",
+          "label": {
+            "zh": "讲解步法",
+            "en": "Explaining a step"
+          },
+          "direction": "full body at a three-quarter angle, showing a small careful step with one foot while one hand gestures downward, cheerful focused expression"
+        }
+      ]
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "owner-delegated-review-pending-candidates",
+    "phase": "four-samples-complete-technical-staging",
+    "appearance": "Second-version identity and source face preserved. Body target and personal outfit proposed by agent; no accepted body or generated look.",
+    "distinctivenessAudit": {
+      "checkedAt": "2026-10-22T11:53:15.213355+08:00",
+      "comparison": "Official live21 ready-to-cast catalog; local matching native face/body assets read-only. Diagnostic sheets in next10 receipt.",
+      "authority": "Owner requested autonomous differentiation of unfinished actors and authorized facial redesign; four completed actors exempt.",
+      "decision": "redesign-v2",
+      "reason": "Lower-heavy pear face, broad bulb nose and cleft chin; sturdy performing build distinct from Bao Man round soft face."
+    },
+    "previousIdentityV1": {
+      "identity": "The same original fictional East Asian Chinese man as CC-027-face-only.png, now named Wang Yong, 39 years old, from Foshan, Guangdong, China, 163 cm tall. Preserve these distinctive features: short and stocky; round head, bald crown with short dark hair at the sides, broad cheerful grin. Performs the lion head in a southern lion-dance troupe and can jump seven high poles in succession. The face crop is identity only, never a body-proportion reference. Natural adult body about 7.00 skull-to-chin heads tall, target 6.8–7.2, excluding hair, afro or topknot. Natural adult neck, torso, pelvis and limbs; no big head, shortened torso, long neck or fashion-model elongation.",
+      "anchors": {
+        "face": "references/CC-027-face-only.png",
+        "body": null
+      },
+      "delivered": 0,
+      "validity": "Superseded for revised pack by Owner facial differentiation direction. Original files retained, do not mix into v2."
+    },
+    "identityV2Design": "A broad lower-heavy pear-shaped face with a rounded squared jaw and a shallow cleft chin; a low nasal bridge ending in a wide round fleshy nose tip; short thick gently arched brows over small smiling eyes, a wide broad-lipped mouth and deep cheek folds when he smiles. Bald crown and short side hair remain. Short sturdy lion-dancer physique with thick forearms and powerful thighs, a modest natural belly, not an infant head on a short body.",
+    "provisionalV2FaceChoice": {
+      "candidate": "trial4-B",
+      "file": "trials/trial4-design-v2-native-2.png",
+      "reason": "Wide rounded lowerjaw, broad fleshy nose and visiblecleftchin, baldsidehair/closed broad smile differ from BaoMan. Facial concept selected, BODY NOT APPROVED; keepanchorsnull until proportion/anatomy accepted."
+    },
+    "latestTrial6Review": {
+      "file": "trials/trial6-face-only-body-v2-native.png",
+      "point": 6.358,
+      "range": [
+        6.0,
+        6.764
+      ],
+      "frozenStatus": "ratio_outside",
+      "decision": "rejected",
+      "reason": "Face-only freshbody still below6.8target; largehead/lowpelvis-shortleg allocation persists. Removingfullbodyreference didnotresolveit; do not repeat percentageheadscale oronlyface-reference premise. Next needs an accepted adult-body anatomybar with provisionalchosenface, subject toadditionaltrialquota."
+    },
+    "bodyReferenceMethod": {
+      "sourceActor": "ma-le",
+      "sourceCurrentApprovedBodyAnchor": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/actors/ma-le/evidence/fresh-2/ma-le__fresh-2__candidate-3.png",
+      "sourceSha256": "cbfaf53f7b913c6233cbdf8f2f6af4feb246a2ebb358213e45812575c7dd56f1",
+      "localExactCopy": "references/approved-ma-le-body-proportion-bar.png",
+      "use": "Anatomy and relative skeleton allocation only. Never use MaLe face/hair/age/identity for WangYong. Wang163cm/stocky/39factsfixed.",
+      "sourceStatus": "Ownerselectedfresh2candidate3 currentanchors.body, not oldunselectedtrial. Read-only referenceauditpoint7.773[7.263,8.366], rollwarning retained; notclaimed automaticratio pass.",
+      "authority": "巡查delegation approves this newbodybar method within3additionaltrials."
+    },
+    "ownerLatestMessageQuota": {
+      "trial": 9,
+      "fullCumulative": 70,
+      "includesAlreadyUsed": true,
+      "source": "Ownerdirectreply call_ab0a7aef4a3c4782b2d6326cdf2a24f5"
+    },
+    "selectedIdentityV2": {
+      "source": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/trials/trial9-annotated-head-scale-v2-native-1.png",
+      "sha256": "2d5be873564a29bc8a280701e9c42720c2a8db0698db3a5d1cd09878219aaea3",
+      "choiceAuthority": "Owner delegated aesthetic andproportion decisions to agent",
+      "actualSignatureFeatures": "Baldsidehair, lower-heavy rounded-squarejaw, broad fleshybulbnose, shallowverticalcleftchin, broadclosedsmile. Eyes stillfairlylarge, no claim exactsmall-eye proposal.",
+      "proportion": {
+        "point": 6.912,
+        "range": [
+          6.5,
+          7.38388625592417
+        ],
+        "frozenStatus": "measurement_review",
+        "frame": {
+          "status": "frame_rejected",
+          "occupancy": 0.944,
+          "topMargin": 0.037,
+          "bottomMargin": 0.019,
+          "bbox": {
+            "minX": 114,
+            "minY": 62,
+            "maxX": 825,
+            "maxY": 1639
+          },
+          "target": {
+            "occupancyMin": 0.86,
+            "occupancyMax": 0.94,
+            "topMarginMin": 0.04,
+            "topMarginMax": 0.1,
+            "bottomMarginMin": 0.04,
+            "bottomMarginMax": 0.1
+          }
+        },
+        "visualDecision": "accepted-with-delegated-exceptions",
+        "basis": "Annotated scale guide visibly reduced wholehead relativeto stable adult torso/pelvis/legs; point6.912 within6.8-7.2. Full uncertainty remains measurement_review. Natural broad adult build andshortneck, all hair/hands/soles complete. Tightmargin explicitly delegated framingexception."
+      },
+      "faceCrop": {
+        "rectangleXYXY": [
+          320,
+          45,
+          630,
+          360
+        ],
+        "purpose": "Unmodified pixel crop for identity reference only, not count as portrait slot",
+        "sha256": "77102f48761b736a2d97d088d3b241cc76ca5c14f63f1fff7cc297a243f5f6bd"
+      }
+    },
+    "imageProviderPause": {
+      "route": "chatgpt-web",
+      "status": "resolved-owner-model-change",
+      "evidence": [
+        "grace-message16-provider-limit-browser.png",
+        "peter-message10-provider-limit-browser.png"
+      ],
+      "actualMessage": "你已达到限额。请稍后重试。",
+      "observed": "2026-10-22 13:30 UTC+8",
+      "resetAt": "not displayed",
+      "scope": "Twooriginalchats bothlimited; sharedPicsAroute held toavoidunproductivecrossactorretries, no modelchange",
+      "next": "Continue separately authorized voice/sample work using selectedanchors; imagesremainincomplete, originalrunsnotreset"
+    },
+    "ownerModelOverride": {
+      "authority": "Owner本会话2026-10-22明确：后面session都用GPT6极高，不用5.6SolPro",
+      "applies": "allsubsequentChatGPTimages in originalconversation",
+      "previous": "GPT5.6SolPro5/5",
+      "verifiedCurrent": "GPT6checked,极高4/5",
+      "evidence": "wang-yong-gpt6-extra-high-selected-browser.png"
+    },
+    "biographyCorrection": {
+      "source": "next-10-actors-20261020.md second-version table row7",
+      "correction": "Restore approved Foshan lionhead performer, jumpssevenhighpoles; nationalthird/hospital story had no approvedsource and was mistakenlyintroduced byagent.",
+      "affected": "Currentidentity andunsentmessage12 corrected. Sentmessage11originalprompt retainedashistory; its two casualneutralturnarounds depict no hospital/prize/story, so no visiblefactchange. Existingvoice lines alreadycorrect."
+    },
+    "voicePlaceholderChoice": {
+      "candidate": 1,
+      "cloudSaved": true,
+      "provisional": true,
+      "acousticReview": "not-heard; selected as temporary placeholder, not an acoustic ranking",
+      "authority": "Owner delegated all remaining temporary MiniMax voices",
+      "balanceBefore": 65392,
+      "balanceAfter": 65229,
+      "slotsRemaining": 2
+    },
+    "voicePlaceholderDelivery": {
+      "slots": 6,
+      "handoff": "voice/handoff/handoff.json",
+      "status": "accepted-temporary-placeholder-under-delegation",
+      "review": "ASR-only; no acoustic review; see original run for limitations",
+      "synthesisBeats": 803,
+      "designBeats": 163
+    },
+    "approvedPersonalLook": {
+      "anchor": "wang-yong__wardrobe-personal__front__v2.png",
+      "selectionAuthority": "Owner delegated agent review",
+      "note": "Native personal front relative original v2 stoutbody: maroon henley/navyloosepants/whitecanvas.",
+      "portrait": "wang-yong__wardrobe-personal__portrait__v2.png"
+    },
+    "imagePackTechnicalComplete": {
+      "canonicalSlots": 55,
+      "uniqueSha256": 55,
+      "fullBodyRelativeReviewed": 19,
+      "messages": 63,
+      "review": "delegated visual acceptance; frozen measurement_review preserved",
+      "sampleScope": "Grok1/3 plus Vids0/1"
+    },
+    "additionalVideoTasks": {
+      "action": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/action/task.json",
+      "ensemble": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/ensemble/task.json",
+      "vids": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/vids/task.json"
+    },
+    "sampleScope": {
+      "required": 4,
+      "accepted": 4,
+      "grokAccepted": 3,
+      "vidsAccepted": 1,
+      "missing": {},
+      "sourceExceptions": [],
+      "voiceNote": "existing six placeholder WAV unchanged; no acoustic review claim",
+      "reviewAuthority": "Owner delegated aesthetic and relative proportion review; staging only",
+      "reviewPage": "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/four-sample-review.html",
+      "updatedAt": "2026-10-22T16:17:58.030208+00:00",
+      "publication": false
+    }
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00-pics-a/c/6ad901fe-73b4-83e8-9a31-98cca5650ca1",
+      "project": "Pics-A",
+      "host": "Codex app IAB",
+      "modelRequested": "GPT-5.6 Sol / Pro5/5",
+      "actualModelVerified": true,
+      "actualModel": "Actualchat GPT5.6 Sol Pro5/5 explicitly selected after no-image administrative setup. Draftexplicit5.6 reselect still driftedactualchat toGPT6 foradmin only; zeroimagesbeforeactualverification.",
+      "model": "GPT-6",
+      "thinking": "Extra High / 极高 (4/5)"
+    }
+  },
+  "website": {
+    "published": true,
+    "order": 121,
+    "status": "active",
+    "tagline": {
+      "en": "The biggest grin. Seven high poles in one lion-dance run.",
+      "zh": "笑得最开心，醒狮高桩连跳七根。"
+    },
+    "introduction": {
+      "en": "Short and sturdy, with a balding head, broad jaw, round nose and an enormous grin, Wang Yong performs the head in a Foshan lion-dance team. He can jump across seven high poles in a row.",
+      "zh": "矮壮、秃顶，宽厚下颌和圆鼻头，笑得最开心。佛山醒狮队里舞狮头的那个，高桩能连跳七根。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-23",
+    "note": {
+      "en": "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+      "zh": "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。"
+    }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-23",
+    "ownerReviewPending": false,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/actors/wang-yong.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/wang-yong-slot-plan-v2.json",
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/voice/handoff/handoff.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/RESULT.md"
+    ],
+    "images": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__turnaround__front__v2.png",
+        "source": "wang-yong/wang-yong__turnaround__front__v2.png",
+        "sha256": "2d5be873564a29bc8a280701e9c42720c2a8db0698db3a5d1cd09878219aaea3",
+        "bytes": 1168700,
+        "slot": "turnaround.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__turnaround__three-quarter__v2.png",
+        "source": "wang-yong/wang-yong__turnaround__three-quarter__v2.png",
+        "sha256": "53ae3600e143b90b2111b0caace8ad80be222a2c48c09d3a1c6be9e3129b1dab",
+        "bytes": 1089278,
+        "slot": "turnaround.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__turnaround__side__v2.png",
+        "source": "wang-yong/wang-yong__turnaround__side__v2.png",
+        "sha256": "287900bc8de9497527936c627bc346b0c8a6627feee4c50211ed005caf4a93b3",
+        "bytes": 730387,
+        "slot": "turnaround.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__turnaround__back__v2.png",
+        "source": "wang-yong/wang-yong__turnaround__back__v2.png",
+        "sha256": "2390baaa09be84c2b3210c693adff22c382053bd88de137fb0d30acce8a40611",
+        "bytes": 1222843,
+        "slot": "turnaround.back",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__turnaround__back-three-quarter-left__v2.png",
+        "source": "wang-yong/wang-yong__turnaround__back-three-quarter-left__v2.png",
+        "sha256": "5c282e760b701317d0b1e1b30e946e679bc6d3b3dd7c0b346d641028f29080b3",
+        "bytes": 1147143,
+        "slot": "turnaround.back-three-quarter-left",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__turnaround__back-three-quarter-right__v2.png",
+        "source": "wang-yong/wang-yong__turnaround__back-three-quarter-right__v2.png",
+        "sha256": "26e91410f62b04cc4179bb771a91b5f1b6a813ce47aa54f4a452e09981ffcf0b",
+        "bytes": 1171476,
+        "slot": "turnaround.back-three-quarter-right",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__face__front__v2.png",
+        "source": "wang-yong/wang-yong__face__front__v2.png",
+        "sha256": "46e2a642e82f1b8233c2c6430ea7407bdb67dd067d066bed29e902cb7a1c8aa6",
+        "bytes": 1801844,
+        "slot": "face.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__face__three-quarter__v2.png",
+        "source": "wang-yong/wang-yong__face__three-quarter__v2.png",
+        "sha256": "c90c9904ea95916d8c7f37f11ef1ba3d25cd802a00f058abd963c6628df4f021",
+        "bytes": 2075259,
+        "slot": "face.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__face__side__v2.png",
+        "source": "wang-yong/wang-yong__face__side__v2.png",
+        "sha256": "8e28613520e12b33bc2ba36d2f7292866ae67ff805848901f6f70ecf51133ea3",
+        "bytes": 1976361,
+        "slot": "face.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__face__three-quarter-left__v2.png",
+        "source": "wang-yong/wang-yong__face__three-quarter-left__v2.png",
+        "sha256": "ad0eb82dad7cac3e336692e806313a1d66607833720b589b7975f49133109325",
+        "bytes": 1962654,
+        "slot": "face.three-quarter-left",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__face__side-right__v2.png",
+        "source": "wang-yong/wang-yong__face__side-right__v2.png",
+        "sha256": "a423af3ffbffc8b3115bf82e86d8438767b66fb2cecf8067f0e9086ea20e53fa",
+        "bytes": 1606594,
+        "slot": "face.side-right",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__face__up__v2.png",
+        "source": "wang-yong/wang-yong__face__up__v2.png",
+        "sha256": "500a09e813cf2ccbaa07598e8c150dbf907dce351cd5c7c24f62b80dac65d7ae",
+        "bytes": 1834140,
+        "slot": "face.up",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__face__down__v2.png",
+        "source": "wang-yong/wang-yong__face__down__v2.png",
+        "sha256": "f3434f854e24504aa124cbb98d1f081252b65844424286f6229ae6407e4941ce",
+        "bytes": 1928916,
+        "slot": "face.down",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__neutral__v2.png",
+        "source": "wang-yong/wang-yong__expression__neutral__v2.png",
+        "sha256": "5b013c56816f87a37499490d96df44bf84e1da1c13a523d0b3ead7badec7e549",
+        "bytes": 2069474,
+        "slot": "expression.neutral",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__smile__v2.png",
+        "source": "wang-yong/wang-yong__expression__smile__v2.png",
+        "sha256": "5b045b53ea09ff3fa6ca65767868182ef4cc9181c8bf651603a52dacbeb1fc39",
+        "bytes": 2470267,
+        "slot": "expression.smile",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__laugh__v2.png",
+        "source": "wang-yong/wang-yong__expression__laugh__v2.png",
+        "sha256": "38ceb22d8fb4fad9cdd31e4f97c024310423be992ecbfa7fe237e3b32205026b",
+        "bytes": 2332371,
+        "slot": "expression.laugh",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__sad__v2.png",
+        "source": "wang-yong/wang-yong__expression__sad__v2.png",
+        "sha256": "2571d5fd7ec7c71d64ab1d1455ccf7d0523782b1457ccd440b160a4d77fb40bc",
+        "bytes": 2335655,
+        "slot": "expression.sad",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__cry__v2.png",
+        "source": "wang-yong/wang-yong__expression__cry__v2.png",
+        "sha256": "9c51103130a19e57fface967e028ab32bff84eddc59d631caba600772836ec74",
+        "bytes": 2155469,
+        "slot": "expression.cry",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__annoyed__v2.png",
+        "source": "wang-yong/wang-yong__expression__annoyed__v2.png",
+        "sha256": "81a4dec6ca5c8b8740cee13e82f51684c6cc1b8cead45efba0e01db0b7d15bf8",
+        "bytes": 2034147,
+        "slot": "expression.annoyed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__angry__v2.png",
+        "source": "wang-yong/wang-yong__expression__angry__v2.png",
+        "sha256": "35004679a5e6dfe2c5cd7ba1255c590235707dad61da6abd26a8ec9c0545a479",
+        "bytes": 2347248,
+        "slot": "expression.angry",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__surprised__v2.png",
+        "source": "wang-yong/wang-yong__expression__surprised__v2.png",
+        "sha256": "e011ad2ea1dbf38983caf55d20cb3ade5023e310ef49523d2c6e64fe9f934be1",
+        "bytes": 2353829,
+        "slot": "expression.surprised",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__scared__v2.png",
+        "source": "wang-yong/wang-yong__expression__scared__v2.png",
+        "sha256": "f14e206f04de21ed91b555fac1af29788ec7d83e0918a60f96c7cfa76b2001d4",
+        "bytes": 1841026,
+        "slot": "expression.scared",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__disgusted__v2.png",
+        "source": "wang-yong/wang-yong__expression__disgusted__v2.png",
+        "sha256": "43db5ce059353008275375f930cb8bbb9f0efef3ebdb1bd150bac754a5003804",
+        "bytes": 2221980,
+        "slot": "expression.disgusted",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__embarrassed__v2.png",
+        "source": "wang-yong/wang-yong__expression__embarrassed__v2.png",
+        "sha256": "f196740e290729972cbf0013a63a4bfc25b6a39956d2f4180e968a219c6f83d6",
+        "bytes": 2249734,
+        "slot": "expression.embarrassed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__tired__v2.png",
+        "source": "wang-yong/wang-yong__expression__tired__v2.png",
+        "sha256": "3eac2d653f033e3b6e3313f32797b515b0964c61f635b81932b5aff9bb1c9718",
+        "bytes": 2148680,
+        "slot": "expression.tired",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__speaking__v2.png",
+        "source": "wang-yong/wang-yong__expression__speaking__v2.png",
+        "sha256": "f2bc5595c2ec3fd8a6b228960a2143aeb8acc1a039daa63d9552dabfdde8d760",
+        "bytes": 2167354,
+        "slot": "expression.speaking",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__eyes-closed__v2.png",
+        "source": "wang-yong/wang-yong__expression__eyes-closed__v2.png",
+        "sha256": "f8c5ec3d6ee6aa3938bf9223f56ae53d5561e83392e5e89dda7ffe5483a4ff3a",
+        "bytes": 1656921,
+        "slot": "expression.eyes-closed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__worried__v2.png",
+        "source": "wang-yong/wang-yong__expression__worried__v2.png",
+        "sha256": "afb980a529ce3ae54c24e831c4374615e0053d85fd96395bfc5c01dbbbd23f47",
+        "bytes": 2116128,
+        "slot": "expression.worried",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__skeptical__v2.png",
+        "source": "wang-yong/wang-yong__expression__skeptical__v2.png",
+        "sha256": "ebff18da5fa0013ebff1ca10af2eeb25428586c1157e7e023e510c5b9d77e1a1",
+        "bytes": 2205272,
+        "slot": "expression.skeptical",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__smug__v2.png",
+        "source": "wang-yong/wang-yong__expression__smug__v2.png",
+        "sha256": "0b590b4443cc242990b618574aeaef1a1c882962d1a15b827f6e9af2d060eab2",
+        "bytes": 2202909,
+        "slot": "expression.smug",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__contempt__v2.png",
+        "source": "wang-yong/wang-yong__expression__contempt__v2.png",
+        "sha256": "e48c764469a0ee5604edf4806ac428e46e1e993903a3dec95a5d9403e99897eb",
+        "bytes": 2273253,
+        "slot": "expression.contempt",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__confused__v2.png",
+        "source": "wang-yong/wang-yong__expression__confused__v2.png",
+        "sha256": "0e448eb98d7cb0bcc34fada838f58136aba0ef04aa9f778f64cc02164ee9ce3d",
+        "bytes": 2065511,
+        "slot": "expression.confused",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__thinking__v2.png",
+        "source": "wang-yong/wang-yong__expression__thinking__v2.png",
+        "sha256": "43541d5e98021622240badaab521de2411af663c917b921b0477c16ce0d02940",
+        "bytes": 2100927,
+        "slot": "expression.thinking",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__determined__v2.png",
+        "source": "wang-yong/wang-yong__expression__determined__v2.png",
+        "sha256": "dc48449ad89d06c554f1ae9caaf7d5bd5f28f11c6f8cdfcd2c0e655976204d7d",
+        "bytes": 2033967,
+        "slot": "expression.determined",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__shy__v2.png",
+        "source": "wang-yong/wang-yong__expression__shy__v2.png",
+        "sha256": "975e219c28454e100f5789ea3803b8c1dd5b4e2d5cbf9d073286db1398f29d46",
+        "bytes": 1914321,
+        "slot": "expression.shy",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__pain__v2.png",
+        "source": "wang-yong/wang-yong__expression__pain__v2.png",
+        "sha256": "ef142452afc3ddec9173b712eac69a8d2917de40979ecccc967b2d1f6d220547",
+        "bytes": 2388137,
+        "slot": "expression.pain",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__sleepy__v2.png",
+        "source": "wang-yong/wang-yong__expression__sleepy__v2.png",
+        "sha256": "e847e01610b4dd20ef4958b7caed844ace862c9073cc210225ea404b16f90e19",
+        "bytes": 1984900,
+        "slot": "expression.sleepy",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__awkward-smile__v2.png",
+        "source": "wang-yong/wang-yong__expression__awkward-smile__v2.png",
+        "sha256": "39e894960510453f93e02c13e95095531e39a45bbc4ddc9129ef8d3e077d5948",
+        "bytes": 1945843,
+        "slot": "expression.awkward-smile",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__expression__deadpan__v2.png",
+        "source": "wang-yong/wang-yong__expression__deadpan__v2.png",
+        "sha256": "6c94dada7297491961090e09923a74c42bae3e5c3ad2bd513f2359ba68c36e54",
+        "bytes": 1990972,
+        "slot": "expression.deadpan",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__wardrobe-personal__front__v2.png",
+        "source": "wang-yong/wang-yong__wardrobe-personal__front__v2.png",
+        "sha256": "00aee0322b02cc5a9578c8427212018eabeff05ff8b1d92dba8847c3997f1704",
+        "bytes": 1203412,
+        "slot": "wardrobe.personal.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__wardrobe-personal__three-quarter__v2.png",
+        "source": "wang-yong/wang-yong__wardrobe-personal__three-quarter__v2.png",
+        "sha256": "e8c82d19e99041df88747a3b64bb32a614001b2f2abd5c012dc02bca744c1152",
+        "bytes": 1106285,
+        "slot": "wardrobe.personal.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__wardrobe-personal__side__v2.png",
+        "source": "wang-yong/wang-yong__wardrobe-personal__side__v2.png",
+        "sha256": "6ea8738c08789b302c05e91b2ded63878de39ffc1946f94015d16f4c30d2aec0",
+        "bytes": 793674,
+        "slot": "wardrobe.personal.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__wardrobe-personal__back__v2.png",
+        "source": "wang-yong/wang-yong__wardrobe-personal__back__v2.png",
+        "sha256": "26dfe3535d35dc6191ff3cc77e837e41dffee7b09156d335410d785471b92c38",
+        "bytes": 1318352,
+        "slot": "wardrobe.personal.back",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__wardrobe-personal__portrait__v2.png",
+        "source": "wang-yong/wang-yong__wardrobe-personal__portrait__v2.png",
+        "sha256": "cfa5e4fa24ac427e1a76e43cdc78fd5b418cc3d8cacbaddbd283bff65fbee1be",
+        "bytes": 2367869,
+        "slot": "wardrobe.personal.portrait",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__wardrobe-personal__practice-stance__v2.png",
+        "source": "wang-yong/wang-yong__wardrobe-personal__practice-stance__v2.png",
+        "sha256": "da4ae39fc6089e130a83f4cc20cf26bf758d5fce867c3068aa012dc70476d877",
+        "bytes": 1181259,
+        "slot": "wardrobe.personal.practice-stance",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__wardrobe-personal__wipe-brow__v2.png",
+        "source": "wang-yong/wang-yong__wardrobe-personal__wipe-brow__v2.png",
+        "sha256": "fa5afd4f8302b0a5ed95e116f794770de11c06856598ef53762962100407bde1",
+        "bytes": 1310541,
+        "slot": "wardrobe.personal.wipe-brow",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__wardrobe-personal__explain-step__v2.png",
+        "source": "wang-yong/wang-yong__wardrobe-personal__explain-step__v2.png",
+        "sha256": "720563c482e035fddb875bc949bed3e29b19c1f6eb9e49f7b936ecacdbf16154",
+        "bytes": 1083149,
+        "slot": "wardrobe.personal.explain-step",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__pose__walk__v2.png",
+        "source": "wang-yong/wang-yong__pose__walk__v2.png",
+        "sha256": "88bdcc6224e4a3bd29e469d3682d0fd75c7d1309be303aaf34e29460f027263e",
+        "bytes": 1217995,
+        "slot": "pose.walk",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__pose__run__v2.png",
+        "source": "wang-yong/wang-yong__pose__run__v2.png",
+        "sha256": "95464ea3a5c4237e7d5256c998f25d15dccc777c230562c000186cb271202ee8",
+        "bytes": 1082543,
+        "slot": "pose.run",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__pose__sit__v2.png",
+        "source": "wang-yong/wang-yong__pose__sit__v2.png",
+        "sha256": "595766289693146d81035666d81c99f8f60f9765d54f9ce349c8f26f89dd3703",
+        "bytes": 1391637,
+        "slot": "pose.sit",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__pose__point__v2.png",
+        "source": "wang-yong/wang-yong__pose__point__v2.png",
+        "sha256": "4f0a4c85d47754700bbbc517aa43cfbcf53c6210f7811452639252b36f078f0a",
+        "bytes": 1225723,
+        "slot": "pose.point",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__pose__arms-crossed__v2.png",
+        "source": "wang-yong/wang-yong__pose__arms-crossed__v2.png",
+        "sha256": "5d3e52945f4cab7ceb3a3c2903de7c3cedddf7d381ba07b93104b93652126f1a",
+        "bytes": 998322,
+        "slot": "pose.arms-crossed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__pose__phone__v2.png",
+        "source": "wang-yong/wang-yong__pose__phone__v2.png",
+        "sha256": "0864746a0124e6bb6dcd206c30ac5c7ed7cc84cf27be53cb1f5d89f7dd479682",
+        "bytes": 1132426,
+        "slot": "pose.phone",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__detail__hands__v2.png",
+        "source": "wang-yong/wang-yong__detail__hands__v2.png",
+        "sha256": "c86e5f1c643d12ef5fb82278a011083788e1be501d16e50aff0db2104edfc127",
+        "bytes": 894263,
+        "slot": "detail.hands",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/wang-yong__detail__hair-back__v2.png",
+        "source": "wang-yong/wang-yong__detail__hair-back__v2.png",
+        "sha256": "ca5f27f8e549daa5a94a06edc6a8256ed2b6be6f774fe047114db7a44b5ab1bb",
+        "bytes": 1984956,
+        "slot": "detail.hair-back",
+        "version": 2
+      }
+    ],
+    "voices": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/voice/handoff/wang-yong__voice__intro__v1.wav",
+        "source": "voices/wang-yong/wang-yong__voice__intro__v1.wav",
+        "sha256": "206390b2d13a7d23b4fa3d063f467ceaadd27a2c2e50e579e6447e342048bd51",
+        "bytes": 1323682,
+        "slot": "intro",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "大家好，我叫王勇，佛山人，今年三十九。人矮一点，头发少一点，笑起来可不少。我在醒狮队舞狮头，高桩能连着跳七根。看着热闹，脚下每一步都得练。最开心的是落地以后，听见台下那一声好！"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/voice/handoff/wang-yong__voice__intro-alt__v1.wav",
+        "source": "voices/wang-yong/wang-yong__voice__intro-alt__v1.wav",
+        "sha256": "62018ce4a40952bc41152803e6ffbf0d335824c3521e07a7e686f39d3ec1da1c",
+        "bytes": 1163928,
+        "slot": "intro-alt",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "Hello, I'm Wang Yong, thirty-nine, from Foshan. I'm not very tall, and I haven't much hair left, but I always have a good laugh. I perform the lion's head in our lion-dance team. I can jump seven high poles in a row. The crowd sees the excitement; we practise every step."
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/voice/handoff/wang-yong__voice__chat__v1.wav",
+        "source": "voices/wang-yong/wang-yong__voice__chat__v1.wav",
+        "sha256": "0b6824af54e05d188ec154bb5603efa5beb6d6870050a8657f2542245888681f",
+        "bytes": 759576,
+        "slot": "chat",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "来，先喝口水，不急着上桩。你看我的脚，重心放稳再动。练会了这一步，后面的才好说。摔一下不丢人，硬撑着才容易出事。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/voice/handoff/wang-yong__voice__happy__v1.wav",
+        "source": "voices/wang-yong/wang-yong__voice__happy__v1.wav",
+        "sha256": "e9af71967f2350c16500c79c2a3c4e3984f92fd40688cbdf200892b54251c339",
+        "bytes": 575422,
+        "slot": "happy",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "好！这次落得稳！我就说你能行吧。再歇两分钟，等会儿咱们把整段连起来。今天收工，我请大家吃顿好的！"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/voice/handoff/wang-yong__voice__angry__v1.wav",
+        "source": "voices/wang-yong/wang-yong__voice__angry__v1.wav",
+        "sha256": "7d470df3b9956b4034db0544f7bab185f88a876cf243b8cd6f57a749c5c9d327",
+        "bytes": 625512,
+        "slot": "angry",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "下来，先别跳了！刚才说过多少次，垫子没摆好不能上。你要逞强，我现在就收工，谁都不许拿安全开玩笑。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/voice/handoff/wang-yong__voice__sad__v1.wav",
+        "source": "voices/wang-yong/wang-yong__voice__sad__v1.wav",
+        "sha256": "08b293b77c3db2410fd049ee81b8a2ca9fc4fb4948ea0d28532ad00f9ec62808",
+        "bytes": 707990,
+        "slot": "sad",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "以前训练完，师傅总坐在门口等我们吃饭。今天练得挺好，出来一看，那个位置空着，心里一下就安静了。"
+      }
+    ]
+  },
+  "officialSamples": [
+    {
+      "sampleId": "wang-yong-grok-20261023",
+      "actorSlugs": [
+        "wang-yong"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/actors/wang-yong.json",
+        "evidenceSha256": "5da98b14f19e8ef96979e331173d73fba1a24230c64c5f8501afaf342c0d2cf4",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/wang-yong-grok-20261023/source.mp4",
+          "sourceSha256": "691384663c4a1593394f14480db66f0b6b1716b77a9b20adc821c3e8de863b15",
+          "public": "/media/works/samples/wang-yong-grok-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/wang-yong-sample-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/wang-yong-sample-original.mp4",
+            "source": "samples/wang-yong-grok-20261023/platform-original.mp4",
+            "sha256": "06c0e98d52fc4a04e96e343b1065bb1218686fb35fd194bf5d509bb95393969d",
+            "bytes": 1787608
+          }
+        }
+      ]
+    },
+    {
+      "sampleId": "wang-yong-grok-action-20261023",
+      "actorSlugs": [
+        "wang-yong"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/action/task.json",
+        "evidenceSha256": "99f9e826987a27109aff68d03c436f794485ce322495ec0695a36d7c00e1864f",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/wang-yong-grok-action-20261023/source.mp4",
+          "sourceSha256": "b61c81e66b306d4bf6409d8ab2133b5981277b21bf5519bf373868cd80a795cf",
+          "public": "/media/works/samples/wang-yong-grok-action-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/action/attempt-01-contained-arms/wang-yong-action-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/action/attempt-01-contained-arms/wang-yong-action-original.mp4",
+            "source": "samples/wang-yong-grok-action-20261023/platform-original.mp4",
+            "sha256": "5a8a182b699f87c0d82d3b1926bfe65036edcbe1b69539f8e7d95f05fd5fdcd3",
+            "bytes": 1710427
+          }
+        }
+      ],
+      "productionTask": {
+        "id": "task-db735ace81be89e7",
+        "sha256": "99f9e826987a27109aff68d03c436f794485ce322495ec0695a36d7c00e1864f",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:05:15.549Z",
+          "note": "直接看12帧与首中尾：王勇秃顶宽鼻厚下颌及敦实体态、黄色T恤保持，从正面转到右侧并两次迈步后停稳；头颈躯干骨盆腿段相对原锚点自然，完整发顶双手鞋底全程留框，无融合多肢。双手实际自然下垂轻摆而非腰前相握，机位轻跟随、最后三分之四而非精确90度，代理接受自然有位移的动作样片并保留偏差。原生720x1280/6.041667秒全解码，原片与静音版均收到，0.03562588美元实记，技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "wang-yong-grok-ensemble-20261023",
+      "actorSlugs": [
+        "wang-yong"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/ensemble/task.json",
+        "evidenceSha256": "cd35733076127c524937809e0ee46fb61860c5d104857fac7ef088699c3906f6",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/wang-yong-grok-ensemble-20261023/source.mp4",
+          "sourceSha256": "94f4a522347d6df0fe022e3c2b7cdb2dc2e66f96bf477eb315ac8fdab9bc1e3d",
+          "public": "/media/works/samples/wang-yong-grok-ensemble-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/ensemble/wang-yong-ensemble-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/ensemble/wang-yong-ensemble-original.mp4",
+            "source": "samples/wang-yong-grok-ensemble-20261023/platform-original.mp4",
+            "sha256": "ff3f2c4844881627d7378b202e5b9bc540f91abea98bb879040d2f75e0e48902",
+            "bytes": 1765785
+          }
+        }
+      ],
+      "castSlugs": [
+        "wang-yong",
+        "peter-hale"
+      ],
+      "productionTask": {
+        "id": "task-2c6db2e366d53056",
+        "sha256": "cd35733076127c524937809e0ee46fb61860c5d104857fac7ef088699c3906f6",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:17:56.758Z",
+          "note": "直接看12帧及原生首中尾：王勇左侧宽厚下颌圆鼻秃顶敦实身材、Peter右侧长白发浓眉长鼻瘦长成熟脸清晰，酒红亨利衫和驼色开衫正确。王勇向右迈一步开掌，Peter原地低头点头回应；完整发顶双手鞋底全程留框，无融合或多肢，成人头颈躯干骨盆腿段相对原锚点自然，CG统一光照和空间通过。原生1280x720/6.041667秒全解码，AAC与封面保留，静音流拷贝，0.02256104美元入原run，技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "wang-yong-google-vids-20261023",
+      "actorSlugs": [
+        "wang-yong"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Google Vids"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/vids/task.json",
+        "evidenceSha256": "45d5ef53f25c6600f45504003e61dbfb3e02e69da1e257050b22dc31727edf0a",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/wang-yong-google-vids-20261023/source.mp4",
+          "sourceSha256": "a8df7e84d1e1bf24c60858f026e8d024afd0b41e3a40e03f1ba388765bf28d5a",
+          "public": "/media/works/samples/wang-yong-google-vids-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/vids/wang-yong-vids-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/wang-yong/video/additional-20261022/vids/wang-yong-vids-original.mp4",
+            "source": "samples/wang-yong-google-vids-20261023/platform-original.mp4",
+            "sha256": "9f1baff346de054772acde42775c496ab7740f8128d31f05728ec19c2880e565",
+            "bytes": 1289625
+          }
+        }
+      ],
+      "castSlugs": [
+        "wang-yong",
+        "peter-hale"
+      ],
+      "productionTask": {
+        "id": "task-e734c1e95b79b7a3",
+        "sha256": "45d5ef53f25c6600f45504003e61dbfb3e02e69da1e257050b22dc31727edf0a",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T15:51:42.727Z",
+          "note": "已直接看12帧和首中尾：王勇左侧秃顶宽鼻厚下颌及敦实体态、Peter右侧长白发长鼻浓眉瘦长体态清楚；王勇向右迈步并开掌，Peter原地回应点头。全程发顶手鞋完整、两人无肢体融合，成人头颈肩躯干骨盆腿段相对各自锚点保持，CG统一光照和高低关系可用。原生1280x720/144帧6秒全解码，AAC48k和四角星保留，静音流拷贝。代理技术staging通过，费用unknown。",
+          "formalPublication": false
+        },
+        "source": "IAB publicdownloadMedia actualgeneratedvideo; not documentexport"
+      }
+    }
+  ],
+  "websitePromotion": {
+    "authorizedOn": "2026-10-23",
+    "authority": "Owner task: publish all ten under new names, second-version biographies and approved current appearance; preserve CC provenance and old URL redirects.",
+    "actorSourceSha256": "5da98b14f19e8ef96979e331173d73fba1a24230c64c5f8501afaf342c0d2cf4",
+    "slotPlanSha256": "286acbb5c774456e649db03e80edd786fdd0cf783aa1753359746aa321b1a751",
+    "voiceReview": "Owner-accepted temporary placeholder; no complete acoustic review claimed.",
+    "proportionReview": "Owner-delegated relative visual acceptance; original absolute measurement_review and framing exceptions retained unchanged in producer evidence.",
+    "billing": "Historical Grok unknown requests and CLI model-usage USD values remain in producer records; no verified account debit or video unit price is asserted."
+  }
+}

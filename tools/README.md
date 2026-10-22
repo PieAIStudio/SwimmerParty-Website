@@ -17,7 +17,7 @@
 
 `pnpm community:actors:sync` 调用 `release/sync-community-actors.ts`；纯计划与事务 SQL 在 `release/community-actor-catalog.ts`。唯一目录源是网站 `ACTORS` 的当前/历史版本；默认只读，`--check` 对漂移退出2，`--apply --expect-plan` 才可能写库。使用项目已有的 Supabase CLI 操作员登录，目标必须显式给 `--project-ref`，不借用网站用户会话、不向网站部署注入后台权限。正式调用与独立批准只见 [release.md](../docs/reference/release.md)。
 
-`community-actor-catalog.test.ts` 使用开发依赖 PGlite，在内存 Postgres 中执行公开消费合同的合成服务端夹具：覆盖空目录拒绝、97演员/99版本、逐事务审核计划、一致性锁、回读、重复无操作、下架禁用而不删除、整批回滚及普通成员拒绝。它不复制私有后端实现，也不代表完整草稿校验器；原生函数对照证据仅保留在忽略的本地收据中。夹具不是产品内存后端，不进入网站运行时；不读取真实库、不创建真实作品。
+`community-actor-catalog.test.ts` 使用开发依赖 PGlite，在内存 Postgres 中执行公开消费合同的合成服务端夹具：覆盖空目录拒绝、当前名册及其明确版本、逐事务审核计划、一致性锁、回读、重复无操作、下架禁用而不删除、整批回滚及普通成员拒绝。它不复制私有后端实现，也不代表完整草稿校验器；原生函数对照证据仅保留在忽略的本地收据中。夹具不是产品内存后端，不进入网站运行时；不读取真实库、不创建真实作品。
 
 ## 生成物与一致性
 

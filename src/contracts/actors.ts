@@ -64,9 +64,15 @@ const websiteSchema = z.looseObject({
   ageDisplay: localizedSchema.optional(),
   exportPrompt: z.string().optional(),
 });
+const castingSourceSchema = z.looseObject({
+  code: z.string().regex(/^CC-\d{3}$/),
+  oldSlug: slugSchema,
+  oldName: localizedSchema,
+});
 export const productionActorSchema = z.looseObject({
   slug: slugSchema,
   website: websiteSchema.optional(),
+  castingSource: castingSourceSchema.optional(),
 });
 export const publishedActorSchema = z.looseObject({
   slug: slugSchema,

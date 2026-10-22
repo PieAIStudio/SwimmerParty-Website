@@ -15,6 +15,9 @@ const sampleMediaSchema = z.looseObject({
 const sampleClipSchema = z.looseObject({
   sampleId: sampleId.optional(),
   actorSlugs: z.array(sampleId).min(1).max(2).optional(),
+  // Actual performers may include a co-star without crediting their page with another delivery.
+  castSlugs: z.array(sampleId).min(1).max(2).optional(),
+  note: z.object({ en: z.string(), zh: z.string() }).optional(),
   label: z.enum(["solo", "action", "two-actors"]).optional(),
   approvedOn: z.iso.date(),
   tools: z.array(z.string().min(1)).nonempty(),
@@ -38,6 +41,8 @@ export type OfficialSample = {
   sampleId: string;
   slug: string;
   actorSlugs: string[];
+  castSlugs?: string[];
+  note?: { en: string; zh: string };
   label: "solo" | "action" | "two-actors";
   tools: string[];
   images: string[];

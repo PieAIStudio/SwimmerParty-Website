@@ -404,6 +404,8 @@
   "assets.series.howTo": "怎么用",
   "assets.series.rules": "使用规则",
   "assets.videoNote": "用于参考和剪辑的短片。",
+  "assets.voicePlaceholder": "占位声音",
+  "assets.voicePlaceholderNote": "临时合成声音，非正式配音；尚未完成完整声学审听。",
   "assets.voiceReference": "参考音",
   "assets.showLines": "看台词",
   "assets.hideLines": "收起台词",

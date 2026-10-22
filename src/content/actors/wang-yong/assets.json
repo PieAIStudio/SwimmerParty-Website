@@ -1,0 +1,1826 @@
+{
+  "slug": "wang-yong",
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Everyday wear",
+        "zh": "日常装"
+      },
+      "prompt": "Clean practical everyday outfit: plain muted maroon short-sleeve henley shirt, loose straight navy trousers, flat white canvas shoes. Preserve his short stocky build and bald crown. No lion costume, jewelry or logos.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Everyday portrait",
+            "zh": "日常装近景"
+          },
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
+        },
+        {
+          "key": "practice-stance",
+          "label": {
+            "en": "Practice stance",
+            "zh": "练习站姿"
+          },
+          "direction": "full body in a modest stable martial-arts practice stance, knees slightly bent, both arms forward as if holding a lion head, no costume or other figure"
+        },
+        {
+          "key": "wipe-brow",
+          "label": {
+            "en": "Wiping brow",
+            "zh": "擦汗"
+          },
+          "direction": "full body at a three-quarter angle, smiling and lightly wiping his forehead with a small plain white hand towel"
+        },
+        {
+          "key": "explain-step",
+          "label": {
+            "en": "Explaining a step",
+            "zh": "讲解步法"
+          },
+          "direction": "full body at a three-quarter angle, showing a small careful step with one foot while one hand gestures downward, cheerful focused expression"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1168700,
+      "sha256": "2d5be873564a29bc8a280701e9c42720c2a8db0698db3a5d1cd09878219aaea3",
+      "sourceSha256": "2d5be873564a29bc8a280701e9c42720c2a8db0698db3a5d1cd09878219aaea3",
+      "bbox": {
+        "left": 0.11902231668437832,
+        "top": 0.031698564593301434,
+        "right": 0.8799149840595112,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "wang-yong/2d5be873564a29bc/wang-yong__turnaround__front__v2.png",
+      "preview": "/media/assets/wang-yong/turnaround.front.webp",
+      "thumb": "/media/assets/wang-yong/turnaround.front.thumb.webp",
+      "large": "/media/assets/wang-yong/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5699411193426519,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1089278,
+      "sha256": "53ae3600e143b90b2111b0caace8ad80be222a2c48c09d3a1c6be9e3129b1dab",
+      "sourceSha256": "53ae3600e143b90b2111b0caace8ad80be222a2c48c09d3a1c6be9e3129b1dab",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 0.9829968119022316,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/53ae3600e143b90b/wang-yong__turnaround__three-quarter__v2.png",
+      "preview": "/media/assets/wang-yong/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/wang-yong/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6111518592152296,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 730387,
+      "sha256": "287900bc8de9497527936c627bc346b0c8a6627feee4c50211ed005caf4a93b3",
+      "sourceSha256": "287900bc8de9497527936c627bc346b0c8a6627feee4c50211ed005caf4a93b3",
+      "bbox": {
+        "left": 0.04357066950053135,
+        "top": 0.03229665071770335,
+        "right": 0.9681190223166843,
+        "bottom": 0.9760765550239234
+      },
+      "format": "png",
+      "object": "wang-yong/287900bc8de94975/wang-yong__turnaround__side__v2.png",
+      "preview": "/media/assets/wang-yong/turnaround.side.webp",
+      "thumb": "/media/assets/wang-yong/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7484561623845141,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1222843,
+      "sha256": "2390baaa09be84c2b3210c693adff22c382053bd88de137fb0d30acce8a40611",
+      "sourceSha256": "2390baaa09be84c2b3210c693adff22c382053bd88de137fb0d30acce8a40611",
+      "bbox": {
+        "left": 0,
+        "top": 0.03588516746411483,
+        "right": 0.9851222104144527,
+        "bottom": 0.9736842105263158
+      },
+      "format": "png",
+      "object": "wang-yong/2390baaa09be84c2/wang-yong__turnaround__back__v2.png",
+      "preview": "/media/assets/wang-yong/turnaround.back.webp",
+      "thumb": "/media/assets/wang-yong/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5760986734055698,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1147143,
+      "sha256": "5c282e760b701317d0b1e1b30e946e679bc6d3b3dd7c0b346d641028f29080b3",
+      "sourceSha256": "5c282e760b701317d0b1e1b30e946e679bc6d3b3dd7c0b346d641028f29080b3",
+      "bbox": {
+        "left": 0,
+        "top": 0.025119617224880382,
+        "right": 0.9075451647183846,
+        "bottom": 0.9832535885167464
+      },
+      "format": "png",
+      "object": "wang-yong/5c282e760b701317/wang-yong__turnaround__back-three-quarter-left__v2.png",
+      "preview": "/media/assets/wang-yong/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/wang-yong/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5942579918543339,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1171476,
+      "sha256": "26e91410f62b04cc4179bb771a91b5f1b6a813ce47aa54f4a452e09981ffcf0b",
+      "sourceSha256": "26e91410f62b04cc4179bb771a91b5f1b6a813ce47aa54f4a452e09981ffcf0b",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 0.9914984059511158,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/26e91410f62b04cc/wang-yong__turnaround__back-three-quarter-right__v2.png",
+      "preview": "/media/assets/wang-yong/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/wang-yong/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5829166009894798,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1180,
+      "height": 1333,
+      "bytes": 1801844,
+      "sha256": "46e2a642e82f1b8233c2c6430ea7407bdb67dd067d066bed29e902cb7a1c8aa6",
+      "sourceSha256": "46e2a642e82f1b8233c2c6430ea7407bdb67dd067d066bed29e902cb7a1c8aa6",
+      "bbox": {
+        "left": 0,
+        "top": 0.02175543885971493,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/46e2a642e82f1b82/wang-yong__face__front__v2.png",
+      "preview": "/media/assets/wang-yong/face.front.webp",
+      "thumb": "/media/assets/wang-yong/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3562589799992371,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1180,
+      "height": 1333,
+      "bytes": 2075259,
+      "sha256": "c90c9904ea95916d8c7f37f11ef1ba3d25cd802a00f058abd963c6628df4f021",
+      "sourceSha256": "c90c9904ea95916d8c7f37f11ef1ba3d25cd802a00f058abd963c6628df4f021",
+      "bbox": {
+        "left": 0,
+        "top": 0.0172543135783946,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/c90c9904ea95916d/wang-yong__face__three-quarter__v2.png",
+      "preview": "/media/assets/wang-yong/face.three-quarter.webp",
+      "thumb": "/media/assets/wang-yong/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3265547319033148,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1976361,
+      "sha256": "8e28613520e12b33bc2ba36d2f7292866ae67ff805848901f6f70ecf51133ea3",
+      "sourceSha256": "8e28613520e12b33bc2ba36d2f7292866ae67ff805848901f6f70ecf51133ea3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/8e28613520e12b33/wang-yong__face__side__v2.png",
+      "preview": "/media/assets/wang-yong/face.side.webp",
+      "thumb": "/media/assets/wang-yong/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3837984125612069,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1171,
+      "height": 1343,
+      "bytes": 1962654,
+      "sha256": "ad0eb82dad7cac3e336692e806313a1d66607833720b589b7975f49133109325",
+      "sourceSha256": "ad0eb82dad7cac3e336692e806313a1d66607833720b589b7975f49133109325",
+      "bbox": {
+        "left": 0,
+        "top": 0.0022338049143708115,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/ad0eb82dad7cac3e/wang-yong__face__three-quarter-left__v2.png",
+      "preview": "/media/assets/wang-yong/face.three-quarter-left.webp",
+      "thumb": "/media/assets/wang-yong/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3612437072895292,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1171,
+      "height": 1343,
+      "bytes": 1606594,
+      "sha256": "a423af3ffbffc8b3115bf82e86d8438767b66fb2cecf8067f0e9086ea20e53fa",
+      "sourceSha256": "a423af3ffbffc8b3115bf82e86d8438767b66fb2cecf8067f0e9086ea20e53fa",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9880444064901793,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/a423af3ffbffc8b3/wang-yong__face__side-right__v2.png",
+      "preview": "/media/assets/wang-yong/face.side-right.webp",
+      "thumb": "/media/assets/wang-yong/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4428561163842246,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1206,
+      "height": 1305,
+      "bytes": 1834140,
+      "sha256": "500a09e813cf2ccbaa07598e8c150dbf907dce351cd5c7c24f62b80dac65d7ae",
+      "sourceSha256": "500a09e813cf2ccbaa07598e8c150dbf907dce351cd5c7c24f62b80dac65d7ae",
+      "bbox": {
+        "left": 0,
+        "top": 0.0053639846743295016,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/500a09e813cf2ccb/wang-yong__face__up__v2.png",
+      "preview": "/media/assets/wang-yong/face.up.webp",
+      "thumb": "/media/assets/wang-yong/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3724125223181665,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1205,
+      "height": 1305,
+      "bytes": 1928916,
+      "sha256": "f3434f854e24504aa124cbb98d1f081252b65844424286f6229ae6407e4941ce",
+      "sourceSha256": "f3434f854e24504aa124cbb98d1f081252b65844424286f6229ae6407e4941ce",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/f3434f854e24504a/wang-yong__face__down__v2.png",
+      "preview": "/media/assets/wang-yong/face.down.webp",
+      "thumb": "/media/assets/wang-yong/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3258943419023545,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2069474,
+      "sha256": "5b013c56816f87a37499490d96df44bf84e1da1c13a523d0b3ead7badec7e549",
+      "sourceSha256": "5b013c56816f87a37499490d96df44bf84e1da1c13a523d0b3ead7badec7e549",
+      "bbox": {
+        "left": 0,
+        "top": 0.031698564593301434,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/5b013c56816f87a3/wang-yong__expression__neutral__v2.png",
+      "preview": "/media/assets/wang-yong/expression.neutral.webp",
+      "thumb": "/media/assets/wang-yong/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3110829617275727,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2470267,
+      "sha256": "5b045b53ea09ff3fa6ca65767868182ef4cc9181c8bf651603a52dacbeb1fc39",
+      "sourceSha256": "5b045b53ea09ff3fa6ca65767868182ef4cc9181c8bf651603a52dacbeb1fc39",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/5b045b53ea09ff3f/wang-yong__expression__smile__v2.png",
+      "preview": "/media/assets/wang-yong/expression.smile.webp",
+      "thumb": "/media/assets/wang-yong/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2675120035807292,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2332371,
+      "sha256": "38ceb22d8fb4fad9cdd31e4f97c024310423be992ecbfa7fe237e3b32205026b",
+      "sourceSha256": "38ceb22d8fb4fad9cdd31e4f97c024310423be992ecbfa7fe237e3b32205026b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/38ceb22d8fb4fad9/wang-yong__expression__laugh__v2.png",
+      "preview": "/media/assets/wang-yong/expression.laugh.webp",
+      "thumb": "/media/assets/wang-yong/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2748578389485677,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2335655,
+      "sha256": "2571d5fd7ec7c71d64ab1d1455ccf7d0523782b1457ccd440b160a4d77fb40bc",
+      "sourceSha256": "2571d5fd7ec7c71d64ab1d1455ccf7d0523782b1457ccd440b160a4d77fb40bc",
+      "bbox": {
+        "left": 0,
+        "top": 0.031901041666666664,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/2571d5fd7ec7c71d/wang-yong__expression__sad__v2.png",
+      "preview": "/media/assets/wang-yong/expression.sad.webp",
+      "thumb": "/media/assets/wang-yong/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2643438975016276,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2155469,
+      "sha256": "9c51103130a19e57fface967e028ab32bff84eddc59d631caba600772836ec74",
+      "sourceSha256": "9c51103130a19e57fface967e028ab32bff84eddc59d631caba600772836ec74",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/9c51103130a19e57/wang-yong__expression__cry__v2.png",
+      "preview": "/media/assets/wang-yong/expression.cry.webp",
+      "thumb": "/media/assets/wang-yong/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.23886136096690377,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2034147,
+      "sha256": "81a4dec6ca5c8b8740cee13e82f51684c6cc1b8cead45efba0e01db0b7d15bf8",
+      "sourceSha256": "81a4dec6ca5c8b8740cee13e82f51684c6cc1b8cead45efba0e01db0b7d15bf8",
+      "bbox": {
+        "left": 0,
+        "top": 0.13875598086124402,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/81a4dec6ca5c8b87/wang-yong__expression__annoyed__v2.png",
+      "preview": "/media/assets/wang-yong/expression.annoyed.webp",
+      "thumb": "/media/assets/wang-yong/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3029500073727939,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2347248,
+      "sha256": "35004679a5e6dfe2c5cd7ba1255c590235707dad61da6abd26a8ec9c0545a479",
+      "sourceSha256": "35004679a5e6dfe2c5cd7ba1255c590235707dad61da6abd26a8ec9c0545a479",
+      "bbox": {
+        "left": 0,
+        "top": 0.02332535885167464,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/35004679a5e6dfe2/wang-yong__expression__angry__v2.png",
+      "preview": "/media/assets/wang-yong/expression.angry.webp",
+      "thumb": "/media/assets/wang-yong/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.22506533820785177,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 2353829,
+      "sha256": "e011ad2ea1dbf38983caf55d20cb3ade5023e310ef49523d2c6e64fe9f934be1",
+      "sourceSha256": "e011ad2ea1dbf38983caf55d20cb3ade5023e310ef49523d2c6e64fe9f934be1",
+      "bbox": {
+        "left": 0,
+        "top": 0.050867743865948535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/e011ad2ea1dbf389/wang-yong__expression__surprised__v2.png",
+      "preview": "/media/assets/wang-yong/expression.surprised.webp",
+      "thumb": "/media/assets/wang-yong/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2367192801373178,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1841026,
+      "sha256": "f14e206f04de21ed91b555fac1af29788ec7d83e0918a60f96c7cfa76b2001d4",
+      "sourceSha256": "f14e206f04de21ed91b555fac1af29788ec7d83e0918a60f96c7cfa76b2001d4",
+      "bbox": {
+        "left": 0,
+        "top": 0.0023923444976076554,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/f14e206f04de21ed/wang-yong__expression__scared__v2.png",
+      "preview": "/media/assets/wang-yong/expression.scared.webp",
+      "thumb": "/media/assets/wang-yong/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3327157559147603,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2221980,
+      "sha256": "43db5ce059353008275375f930cb8bbb9f0efef3ebdb1bd150bac754a5003804",
+      "sourceSha256": "43db5ce059353008275375f930cb8bbb9f0efef3ebdb1bd150bac754a5003804",
+      "bbox": {
+        "left": 0,
+        "top": 0.004784688995215311,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/43db5ce059353008/wang-yong__expression__disgusted__v2.png",
+      "preview": "/media/assets/wang-yong/expression.disgusted.webp",
+      "thumb": "/media/assets/wang-yong/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25280928870335434,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2249734,
+      "sha256": "f196740e290729972cbf0013a63a4bfc25b6a39956d2f4180e968a219c6f83d6",
+      "sourceSha256": "f196740e290729972cbf0013a63a4bfc25b6a39956d2f4180e968a219c6f83d6",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/f196740e29072997/wang-yong__expression__embarrassed__v2.png",
+      "preview": "/media/assets/wang-yong/expression.embarrassed.webp",
+      "thumb": "/media/assets/wang-yong/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.20560878938724456,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 2148680,
+      "sha256": "3eac2d653f033e3b6e3313f32797b515b0964c61f635b81932b5aff9bb1c9718",
+      "sourceSha256": "3eac2d653f033e3b6e3313f32797b515b0964c61f635b81932b5aff9bb1c9718",
+      "bbox": {
+        "left": 0,
+        "top": 0.009575104727707959,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/3eac2d653f033e3b/wang-yong__expression__tired__v2.png",
+      "preview": "/media/assets/wang-yong/expression.tired.webp",
+      "thumb": "/media/assets/wang-yong/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.23570109850414428,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1136,
+      "height": 1384,
+      "bytes": 2167354,
+      "sha256": "f2bc5595c2ec3fd8a6b228960a2143aeb8acc1a039daa63d9552dabfdde8d760",
+      "sourceSha256": "f2bc5595c2ec3fd8a6b228960a2143aeb8acc1a039daa63d9552dabfdde8d760",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/f2bc5595c2ec3fd8/wang-yong__expression__speaking__v2.png",
+      "preview": "/media/assets/wang-yong/expression.speaking.webp",
+      "thumb": "/media/assets/wang-yong/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.27709728384759424,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1656921,
+      "sha256": "f8c5ec3d6ee6aa3938bf9223f56ae53d5561e83392e5e89dda7ffe5483a4ff3a",
+      "sourceSha256": "f8c5ec3d6ee6aa3938bf9223f56ae53d5561e83392e5e89dda7ffe5483a4ff3a",
+      "bbox": {
+        "left": 0,
+        "top": 0.18660287081339713,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/f8c5ec3d6ee6aa39/wang-yong__expression__eyes-closed__v2.png",
+      "preview": "/media/assets/wang-yong/expression.eyes-closed.webp",
+      "thumb": "/media/assets/wang-yong/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3730481163782803,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1136,
+      "height": 1384,
+      "bytes": 2116128,
+      "sha256": "afb980a529ce3ae54c24e831c4374615e0053d85fd96395bfc5c01dbbbd23f47",
+      "sourceSha256": "afb980a529ce3ae54c24e831c4374615e0053d85fd96395bfc5c01dbbbd23f47",
+      "bbox": {
+        "left": 0,
+        "top": 0.001445086705202312,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/afb980a529ce3ae5/wang-yong__expression__worried__v2.png",
+      "preview": "/media/assets/wang-yong/expression.worried.webp",
+      "thumb": "/media/assets/wang-yong/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2702184930391598,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1136,
+      "height": 1384,
+      "bytes": 2205272,
+      "sha256": "ebff18da5fa0013ebff1ca10af2eeb25428586c1157e7e023e510c5b9d77e1a1",
+      "sourceSha256": "ebff18da5fa0013ebff1ca10af2eeb25428586c1157e7e023e510c5b9d77e1a1",
+      "bbox": {
+        "left": 0,
+        "top": 0.02745664739884393,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/ebff18da5fa0013e/wang-yong__expression__skeptical__v2.png",
+      "preview": "/media/assets/wang-yong/expression.skeptical.webp",
+      "thumb": "/media/assets/wang-yong/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2559679791174794,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1136,
+      "height": 1384,
+      "bytes": 2202909,
+      "sha256": "0b590b4443cc242990b618574aeaef1a1c882962d1a15b827f6e9af2d060eab2",
+      "sourceSha256": "0b590b4443cc242990b618574aeaef1a1c882962d1a15b827f6e9af2d060eab2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/0b590b4443cc2429/wang-yong__expression__smug__v2.png",
+      "preview": "/media/assets/wang-yong/expression.smug.webp",
+      "thumb": "/media/assets/wang-yong/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.26970139115037045,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2273253,
+      "sha256": "e48c764469a0ee5604edf4806ac428e46e1e993903a3dec95a5d9403e99897eb",
+      "sourceSha256": "e48c764469a0ee5604edf4806ac428e46e1e993903a3dec95a5d9403e99897eb",
+      "bbox": {
+        "left": 0,
+        "top": 0.053229665071770335,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/e48c764469a0ee56/wang-yong__expression__contempt__v2.png",
+      "preview": "/media/assets/wang-yong/expression.contempt.webp",
+      "thumb": "/media/assets/wang-yong/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2711789860120304,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1136,
+      "height": 1384,
+      "bytes": 2065511,
+      "sha256": "0e448eb98d7cb0bcc34fada838f58136aba0ef04aa9f778f64cc02164ee9ce3d",
+      "sourceSha256": "0e448eb98d7cb0bcc34fada838f58136aba0ef04aa9f778f64cc02164ee9ce3d",
+      "bbox": {
+        "left": 0,
+        "top": 0.028179190751445087,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/0e448eb98d7cb0bc/wang-yong__expression__confused__v2.png",
+      "preview": "/media/assets/wang-yong/expression.confused.webp",
+      "thumb": "/media/assets/wang-yong/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30508184584384923,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1136,
+      "height": 1384,
+      "bytes": 2100927,
+      "sha256": "43541d5e98021622240badaab521de2411af663c917b921b0477c16ce0d02940",
+      "sourceSha256": "43541d5e98021622240badaab521de2411af663c917b921b0477c16ce0d02940",
+      "bbox": {
+        "left": 0,
+        "top": 0.02745664739884393,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/43541d5e98021622/wang-yong__expression__thinking__v2.png",
+      "preview": "/media/assets/wang-yong/expression.thinking.webp",
+      "thumb": "/media/assets/wang-yong/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.28046894081250506,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2033967,
+      "sha256": "dc48449ad89d06c554f1ae9caaf7d5bd5f28f11c6f8cdfcd2c0e655976204d7d",
+      "sourceSha256": "dc48449ad89d06c554f1ae9caaf7d5bd5f28f11c6f8cdfcd2c0e655976204d7d",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/dc48449ad89d06c5/wang-yong__expression__determined__v2.png",
+      "preview": "/media/assets/wang-yong/expression.determined.webp",
+      "thumb": "/media/assets/wang-yong/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25856070351707694,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1136,
+      "height": 1384,
+      "bytes": 1914321,
+      "sha256": "975e219c28454e100f5789ea3803b8c1dd5b4e2d5cbf9d073286db1398f29d46",
+      "sourceSha256": "975e219c28454e100f5789ea3803b8c1dd5b4e2d5cbf9d073286db1398f29d46",
+      "bbox": {
+        "left": 0,
+        "top": 0.000722543352601156,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/975e219c28454e10/wang-yong__expression__shy__v2.png",
+      "preview": "/media/assets/wang-yong/expression.shy.webp",
+      "thumb": "/media/assets/wang-yong/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.28330505067980133,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2388137,
+      "sha256": "ef142452afc3ddec9173b712eac69a8d2917de40979ecccc967b2d1f6d220547",
+      "sourceSha256": "ef142452afc3ddec9173b712eac69a8d2917de40979ecccc967b2d1f6d220547",
+      "bbox": {
+        "left": 0,
+        "top": 0.011067708333333334,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/ef142452afc3ddec/wang-yong__expression__pain__v2.png",
+      "preview": "/media/assets/wang-yong/expression.pain.webp",
+      "thumb": "/media/assets/wang-yong/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2515157063802083,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1136,
+      "height": 1384,
+      "bytes": 1984900,
+      "sha256": "e847e01610b4dd20ef4958b7caed844ace862c9073cc210225ea404b16f90e19",
+      "sourceSha256": "e847e01610b4dd20ef4958b7caed844ace862c9073cc210225ea404b16f90e19",
+      "bbox": {
+        "left": 0,
+        "top": 0.028179190751445087,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/e847e01610b4dd20/wang-yong__expression__sleepy__v2.png",
+      "preview": "/media/assets/wang-yong/expression.sleepy.webp",
+      "thumb": "/media/assets/wang-yong/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2899485060652935,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1945843,
+      "sha256": "39e894960510453f93e02c13e95095531e39a45bbc4ddc9129ef8d3e077d5948",
+      "sourceSha256": "39e894960510453f93e02c13e95095531e39a45bbc4ddc9129ef8d3e077d5948",
+      "bbox": {
+        "left": 0,
+        "top": 0.02452153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/39e894960510453f/wang-yong__expression__awkward-smile__v2.png",
+      "preview": "/media/assets/wang-yong/expression.awkward-smile.webp",
+      "thumb": "/media/assets/wang-yong/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3061698844251,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1136,
+      "height": 1384,
+      "bytes": 1990972,
+      "sha256": "6c94dada7297491961090e09923a74c42bae3e5c3ad2bd513f2359ba68c36e54",
+      "sourceSha256": "6c94dada7297491961090e09923a74c42bae3e5c3ad2bd513f2359ba68c36e54",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/6c94dada72974919/wang-yong__expression__deadpan__v2.png",
+      "preview": "/media/assets/wang-yong/expression.deadpan.webp",
+      "thumb": "/media/assets/wang-yong/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2912778331840756,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1203412,
+      "sha256": "00aee0322b02cc5a9578c8427212018eabeff05ff8b1d92dba8847c3997f1704",
+      "sourceSha256": "00aee0322b02cc5a9578c8427212018eabeff05ff8b1d92dba8847c3997f1704",
+      "bbox": {
+        "left": 0.10095642933049948,
+        "top": 0.019748653500897665,
+        "right": 0.8969181721572795,
+        "bottom": 0.9916217833632556
+      },
+      "format": "png",
+      "object": "wang-yong/00aee0322b02cc5a/wang-yong__wardrobe-personal__front__v2.png",
+      "preview": "/media/assets/wang-yong/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/wang-yong/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5384431932872512,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1670,
+      "bytes": 1106285,
+      "sha256": "e8c82d19e99041df88747a3b64bb32a614001b2f2abd5c012dc02bca744c1152",
+      "sourceSha256": "e8c82d19e99041df88747a3b64bb32a614001b2f2abd5c012dc02bca744c1152",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.01976047904191617,
+        "right": 0.924548352816153,
+        "bottom": 0.9916167664670659
+      },
+      "format": "png",
+      "object": "wang-yong/e8c82d19e99041df/wang-yong__wardrobe-personal__three-quarter__v2.png",
+      "preview": "/media/assets/wang-yong/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/wang-yong/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5733440663837044,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1670,
+      "bytes": 793674,
+      "sha256": "6ea8738c08789b302c05e91b2ded63878de39ffc1946f94015d16f4c30d2aec0",
+      "sourceSha256": "6ea8738c08789b302c05e91b2ded63878de39ffc1946f94015d16f4c30d2aec0",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.010179640718562874,
+        "right": 0.9574920297555791,
+        "bottom": 0.9820359281437125
+      },
+      "format": "png",
+      "object": "wang-yong/6ea8738c08789b30/wang-yong__wardrobe-personal__side__v2.png",
+      "preview": "/media/assets/wang-yong/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/wang-yong/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7144737093294813,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1318352,
+      "sha256": "26dfe3535d35dc6191ff3cc77e837e41dffee7b09156d335410d785471b92c38",
+      "sourceSha256": "26dfe3535d35dc6191ff3cc77e837e41dffee7b09156d335410d785471b92c38",
+      "bbox": {
+        "left": 0,
+        "top": 0.01376421304608019,
+        "right": 0.9479277364505845,
+        "bottom": 0.9868342309994016
+      },
+      "format": "png",
+      "object": "wang-yong/26dfe3535d35dc61/wang-yong__wardrobe-personal__back__v2.png",
+      "preview": "/media/assets/wang-yong/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/wang-yong/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.533124609278363,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1064,
+      "height": 1478,
+      "bytes": 2367869,
+      "sha256": "cfa5e4fa24ac427e1a76e43cdc78fd5b418cc3d8cacbaddbd283bff65fbee1be",
+      "sourceSha256": "cfa5e4fa24ac427e1a76e43cdc78fd5b418cc3d8cacbaddbd283bff65fbee1be",
+      "bbox": {
+        "left": 0,
+        "top": 0.02503382949932341,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/cfa5e4fa24ac427e/wang-yong__wardrobe-personal__portrait__v2.png",
+      "preview": "/media/assets/wang-yong/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/wang-yong/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2600369326564042,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.practice-stance",
+      "series": "wardrobe",
+      "key": "practice-stance",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1181259,
+      "sha256": "da4ae39fc6089e130a83f4cc20cf26bf758d5fce867c3068aa012dc70476d877",
+      "sourceSha256": "da4ae39fc6089e130a83f4cc20cf26bf758d5fce867c3068aa012dc70476d877",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.031698564593301434,
+        "right": 0.9829968119022316,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/da4ae39fc6089e13/wang-yong__wardrobe-personal__practice-stance__v2.png",
+      "preview": "/media/assets/wang-yong/wardrobe.personal.practice-stance.webp",
+      "thumb": "/media/assets/wang-yong/wardrobe.personal.practice-stance.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5852758950317538,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.wipe-brow",
+      "series": "wardrobe",
+      "key": "wipe-brow",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1670,
+      "bytes": 1310541,
+      "sha256": "fa5afd4f8302b0a5ed95e116f794770de11c06856598ef53762962100407bde1",
+      "sourceSha256": "fa5afd4f8302b0a5ed95e116f794770de11c06856598ef53762962100407bde1",
+      "bbox": {
+        "left": 0,
+        "top": 0.014970059880239521,
+        "right": 0.9808714133900106,
+        "bottom": 0.9928143712574851
+      },
+      "format": "png",
+      "object": "wang-yong/fa5afd4f8302b0a5/wang-yong__wardrobe-personal__wipe-brow__v2.png",
+      "preview": "/media/assets/wang-yong/wardrobe.personal.wipe-brow.webp",
+      "thumb": "/media/assets/wang-yong/wardrobe.personal.wipe-brow.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5242505424856981,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.explain-step",
+      "series": "wardrobe",
+      "key": "explain-step",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1083149,
+      "sha256": "720563c482e035fddb875bc949bed3e29b19c1f6eb9e49f7b936ecacdbf16154",
+      "sourceSha256": "720563c482e035fddb875bc949bed3e29b19c1f6eb9e49f7b936ecacdbf16154",
+      "bbox": {
+        "left": 0.07863974495217853,
+        "top": 0.016148325358851676,
+        "right": 0.9117959617428267,
+        "bottom": 0.9880382775119617
+      },
+      "format": "png",
+      "object": "wang-yong/720563c482e035fd/wang-yong__wardrobe-personal__explain-step__v2.png",
+      "preview": "/media/assets/wang-yong/wardrobe.personal.explain-step.webp",
+      "thumb": "/media/assets/wang-yong/wardrobe.personal.explain-step.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6096925544951162,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1217995,
+      "sha256": "88bdcc6224e4a3bd29e469d3682d0fd75c7d1309be303aaf34e29460f027263e",
+      "sourceSha256": "88bdcc6224e4a3bd29e469d3682d0fd75c7d1309be303aaf34e29460f027263e",
+      "bbox": {
+        "left": 0,
+        "top": 0.014961101137043686,
+        "right": 0.9681190223166843,
+        "bottom": 0.9808497905445841
+      },
+      "format": "png",
+      "object": "wang-yong/88bdcc6224e4a3bd/wang-yong__pose__walk__v2.png",
+      "preview": "/media/assets/wang-yong/pose.walk.webp",
+      "thumb": "/media/assets/wang-yong/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5790680680814367,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1670,
+      "bytes": 1082543,
+      "sha256": "95464ea3a5c4237e7d5256c998f25d15dccc777c230562c000186cb271202ee8",
+      "sourceSha256": "95464ea3a5c4237e7d5256c998f25d15dccc777c230562c000186cb271202ee8",
+      "bbox": {
+        "left": 0.018065887353878853,
+        "top": 0.005389221556886228,
+        "right": 0.9787460148777896,
+        "bottom": 0.9868263473053892
+      },
+      "format": "png",
+      "object": "wang-yong/95464ea3a5c4237e/wang-yong__pose__run__v2.png",
+      "preview": "/media/assets/wang-yong/pose.run.webp",
+      "thumb": "/media/assets/wang-yong/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6271370118424151,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1391637,
+      "sha256": "595766289693146d81035666d81c99f8f60f9765d54f9ce349c8f26f89dd3703",
+      "sourceSha256": "595766289693146d81035666d81c99f8f60f9765d54f9ce349c8f26f89dd3703",
+      "bbox": {
+        "left": 0.0871413390010627,
+        "top": 0.028126870137642132,
+        "right": 0.9638682252922423,
+        "bottom": 0.983243566726511
+      },
+      "format": "png",
+      "object": "wang-yong/595766289693146d/wang-yong__pose__sit__v2.png",
+      "preview": "/media/assets/wang-yong/pose.sit.webp",
+      "thumb": "/media/assets/wang-yong/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5114209961644888,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1225723,
+      "sha256": "4f0a4c85d47754700bbbc517aa43cfbcf53c6210f7811452639252b36f078f0a",
+      "sourceSha256": "4f0a4c85d47754700bbbc517aa43cfbcf53c6210f7811452639252b36f078f0a",
+      "bbox": {
+        "left": 0.17003188097768332,
+        "top": 0.017953321364452424,
+        "right": 0.9574920297555791,
+        "bottom": 0.988031119090365
+      },
+      "format": "png",
+      "object": "wang-yong/4f0a4c85d4775470/wang-yong__pose__point__v2.png",
+      "preview": "/media/assets/wang-yong/pose.point.webp",
+      "thumb": "/media/assets/wang-yong/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5968496786145607,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 998322,
+      "sha256": "5d3e52945f4cab7ceb3a3c2903de7c3cedddf7d381ba07b93104b93652126f1a",
+      "sourceSha256": "5d3e52945f4cab7ceb3a3c2903de7c3cedddf7d381ba07b93104b93652126f1a",
+      "bbox": {
+        "left": 0.06376195536663125,
+        "top": 0.022740873728306403,
+        "right": 0.9787460148777896,
+        "bottom": 0.9916217833632556
+      },
+      "format": "png",
+      "object": "wang-yong/5d3e52945f4cab7c/wang-yong__pose__arms-crossed__v2.png",
+      "preview": "/media/assets/wang-yong/pose.arms-crossed.webp",
+      "thumb": "/media/assets/wang-yong/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6282931116610098,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 1132426,
+      "sha256": "0864746a0124e6bb6dcd206c30ac5c7ed7cc84cf27be53cb1f5d89f7dd479682",
+      "sourceSha256": "0864746a0124e6bb6dcd206c30ac5c7ed7cc84cf27be53cb1f5d89f7dd479682",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.01855176540993417,
+        "right": 0.9829968119022316,
+        "bottom": 0.9916217833632556
+      },
+      "format": "png",
+      "object": "wang-yong/0864746a0124e6bb/wang-yong__pose__phone__v2.png",
+      "preview": "/media/assets/wang-yong/pose.phone.webp",
+      "thumb": "/media/assets/wang-yong/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5690261642789322,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 894263,
+      "sha256": "c86e5f1c643d12ef5fb82278a011083788e1be501d16e50aff0db2104edfc127",
+      "sourceSha256": "c86e5f1c643d12ef5fb82278a011083788e1be501d16e50aff0db2104edfc127",
+      "bbox": {
+        "left": 0.01487778958554729,
+        "top": 0.017344497607655503,
+        "right": 1,
+        "bottom": 0.9808612440191388
+      },
+      "format": "png",
+      "object": "wang-yong/c86e5f1c643d12ef/wang-yong__detail__hands__v2.png",
+      "preview": "/media/assets/wang-yong/detail.hands.webp",
+      "thumb": "/media/assets/wang-yong/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6913576872816763,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1984956,
+      "sha256": "ca5f27f8e549daa5a94a06edc6a8256ed2b6be6f774fe047114db7a44b5ab1bb",
+      "sourceSha256": "ca5f27f8e549daa5a94a06edc6a8256ed2b6be6f774fe047114db7a44b5ab1bb",
+      "bbox": {
+        "left": 0,
+        "top": 0.031698564593301434,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "wang-yong/ca5f27f8e549daa5/wang-yong__detail__hair-back__v2.png",
+      "preview": "/media/assets/wang-yong/detail.hair-back.webp",
+      "thumb": "/media/assets/wang-yong/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.386745623357011,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1323682,
+      "sha256": "206390b2d13a7d23b4fa3d063f467ceaadd27a2c2e50e579e6447e342048bd51",
+      "sourceSha256": "206390b2d13a7d23b4fa3d063f467ceaadd27a2c2e50e579e6447e342048bd51",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/wang-yong/wang-yong__voice__intro__v1__206390b2d13a7d23.wav",
+      "preview": "/api/voice/wang-yong/intro",
+      "thumb": "/api/voice/wang-yong/intro",
+      "previewUrl": "/api/voice/wang-yong/intro",
+      "durationSec": 20.6,
+      "transcript": {
+        "text": "大家好，我叫王勇，佛山人，今年三十九。人矮一点，头发少一点，笑起来可不少。我在醒狮队舞狮头，高桩能连着跳七根。看着热闹，脚下每一步都得练。最开心的是落地以后，听见台下那一声好！"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1163928,
+      "sha256": "62018ce4a40952bc41152803e6ffbf0d335824c3521e07a7e686f39d3ec1da1c",
+      "sourceSha256": "62018ce4a40952bc41152803e6ffbf0d335824c3521e07a7e686f39d3ec1da1c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/wang-yong/wang-yong__voice__intro-alt__v1__62018ce4a40952bc.wav",
+      "preview": "/api/voice/wang-yong/intro-alt",
+      "thumb": "/api/voice/wang-yong/intro-alt",
+      "previewUrl": "/api/voice/wang-yong/intro-alt",
+      "durationSec": 18.2,
+      "transcript": {
+        "text": "Hello, I'm Wang Yong, thirty-nine, from Foshan. I'm not very tall, and I haven't much hair left, but I always have a good laugh. I perform the lion's head in our lion-dance team. I can jump seven high poles in a row. The crowd sees the excitement; we practise every step."
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 759576,
+      "sha256": "0b6824af54e05d188ec154bb5603efa5beb6d6870050a8657f2542245888681f",
+      "sourceSha256": "0b6824af54e05d188ec154bb5603efa5beb6d6870050a8657f2542245888681f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/wang-yong/wang-yong__voice__chat__v1__0b6824af54e05d18.wav",
+      "preview": "/api/voice/wang-yong/chat",
+      "thumb": "/api/voice/wang-yong/chat",
+      "previewUrl": "/api/voice/wang-yong/chat",
+      "durationSec": 11.8,
+      "transcript": {
+        "text": "来，先喝口水，不急着上桩。你看我的脚，重心放稳再动。练会了这一步，后面的才好说。摔一下不丢人，硬撑着才容易出事。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 575422,
+      "sha256": "e9af71967f2350c16500c79c2a3c4e3984f92fd40688cbdf200892b54251c339",
+      "sourceSha256": "e9af71967f2350c16500c79c2a3c4e3984f92fd40688cbdf200892b54251c339",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/wang-yong/wang-yong__voice__happy__v1__e9af71967f2350c1.wav",
+      "preview": "/api/voice/wang-yong/happy",
+      "thumb": "/api/voice/wang-yong/happy",
+      "previewUrl": "/api/voice/wang-yong/happy",
+      "durationSec": 9,
+      "transcript": {
+        "text": "好！这次落得稳！我就说你能行吧。再歇两分钟，等会儿咱们把整段连起来。今天收工，我请大家吃顿好的！"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 625512,
+      "sha256": "7d470df3b9956b4034db0544f7bab185f88a876cf243b8cd6f57a749c5c9d327",
+      "sourceSha256": "7d470df3b9956b4034db0544f7bab185f88a876cf243b8cd6f57a749c5c9d327",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/wang-yong/wang-yong__voice__angry__v1__7d470df3b9956b40.wav",
+      "preview": "/api/voice/wang-yong/angry",
+      "thumb": "/api/voice/wang-yong/angry",
+      "previewUrl": "/api/voice/wang-yong/angry",
+      "durationSec": 9.7,
+      "transcript": {
+        "text": "下来，先别跳了！刚才说过多少次，垫子没摆好不能上。你要逞强，我现在就收工，谁都不许拿安全开玩笑。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 707990,
+      "sha256": "08b293b77c3db2410fd049ee81b8a2ca9fc4fb4948ea0d28532ad00f9ec62808",
+      "sourceSha256": "08b293b77c3db2410fd049ee81b8a2ca9fc4fb4948ea0d28532ad00f9ec62808",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/wang-yong/wang-yong__voice__sad__v1__08b293b77c3db241.wav",
+      "preview": "/api/voice/wang-yong/sad",
+      "thumb": "/api/voice/wang-yong/sad",
+      "previewUrl": "/api/voice/wang-yong/sad",
+      "durationSec": 11,
+      "transcript": {
+        "text": "以前训练完，师傅总坐在门口等我们吃饭。今天练得挺好，出来一看，那个位置空着，心里一下就安静了。"
+      },
+      "placeholder": true
+    }
+  ]
+}

@@ -39,7 +39,7 @@ const manifestAt = async (root: string) => JSON.parse(await readFile(manifestPat
 
 test("new-face generation upserts only its image and preserves voice, looks and extensions", async (t) => {
   const root = await rootFor(t);
-  const voice = getActorAssets("lin-xiaoman").items.find((item) => item.kind === "voice")!;
+  const voice = getActorAssets("agnes-lefevre").items.find((item) => item.kind === "voice")!;
   const looks = promotedFixture().looks;
   await writeJson(root, "src/content/actors/fixture-actor/assets.json", {
     slug: "fixture-actor",

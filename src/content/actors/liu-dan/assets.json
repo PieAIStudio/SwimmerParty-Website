@@ -1669,7 +1669,8 @@
       "durationSec": 16.6,
       "transcript": {
         "text": "大家好，我叫刘丹，辽宁鞍山人，今年二十三。别看我才一米五六，我以前练举重的，现在在快递站分拣。搬箱子这活儿，真不一定谁比谁慢。下班一起吃口热乎的，比啥都强。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1698,7 +1699,8 @@
       "durationSec": 16.7,
       "transcript": {
         "text": "Hi, I'm Liu Dan. I'm twenty-three, from Anshan in northeast China. I used to train in weightlifting, and now I sort parcels. I'm short, sure, but let me take that box. After work, I just want something hot to eat and a good laugh."
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1727,7 +1729,8 @@
       "durationSec": 10.7,
       "transcript": {
         "text": "你先把那边的小件分好，大箱子留给我。哎，不用跟我客气，我以前练这个的。等忙完这一波，咱俩去吃碗面，我请你。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1756,7 +1759,8 @@
       "durationSec": 10.2,
       "transcript": {
         "text": "真让我赶上末班车了！我都以为今天又得走回去呢。来，你坐这儿，我站一会儿没事。哎呀，今天这运气，可算轮着我了！"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1785,7 +1789,8 @@
       "durationSec": 9.7,
       "transcript": {
         "text": "我说了多少遍，重箱子别往轻件上头摞！你图这两秒省事，东西压坏了谁负责？先停一下，跟我把这排重新分好。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1814,7 +1819,8 @@
       "durationSec": 12.6,
       "transcript": {
         "text": "刚才收拾柜子，翻出以前比赛那双鞋了。都磨成那样了，我还舍不得扔。其实现在也挺好，就是有时候，还真想再听一回开场的哨声。"
-      }
+      },
+      "placeholder": true
     }
   ]
 }

@@ -5,8 +5,8 @@ export const profile: Actor = {
   nameEn: "Yang Fan",
   nameCn: "杨帆",
   tagline: {
-    en: "He looks ready for a period drama. He is actually an airline first officer.",
-    zh: "看着像古装演员，其实是航空公司的副机长。",
+    en: "A period-drama face. An airline first officer.",
+    zh: "古装脸，驾驶舱里的副机长。",
   },
   status: "active",
   gender: "male",
@@ -60,16 +60,26 @@ export const profile: Actor = {
     },
   ],
   note: {
-    en: "He looks ready for a period drama. He is actually an airline first officer.",
-    zh: "看着像古装演员，其实是航空公司的副机长。",
+    en: "With a mole between his brows, a small topknot and a moustache, Yang Fan looks as if he stepped out of a period drama. He is actually an airline first officer from Dali, Yunnan.",
+    zh: "眉心一颗痣，小发髻，小胡子。长得像古装剧里走出来的，其实是航空公司的副机长。",
   },
   promptSeed:
     "The same original fictional East Asian Chinese man as CC-062-face-only.png, now named Yang Fan, 30 years old, from Dali, Yunnan, China, 174 cm tall. Preserve these distinctive features: average build; a mole between his eyebrows, long dark hair tied in a small topknot and a thin goatee. An airline first officer whose small topknot and thin goatee give him a period-drama appearance. The face crop is identity only, never a body-proportion reference. Natural adult body about 7.40 skull-to-chin heads tall, target 7.2–7.6, excluding hair, afro or topknot. Natural adult neck, torso, pelvis and limbs; no big head, shortened torso, long neck or fashion-model elongation.",
-  version: "1.0.0",
-  versionDate: "2026-10-22",
+  version: "1.1.0",
+  versionDate: "2026-10-23",
   versionNote: {
-    en: "55 reference images, 6 placeholder voice clips and a sample video.",
-    zh: "55 张参考图、6 段占位声音、1 段样片。",
+    en: "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+    zh: "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。",
   },
+  versionHistory: [
+    {
+      version: "1.0.0",
+      date: "2026-10-22",
+      note: {
+        en: "55 reference images, 6 placeholder voice clips and a sample video.",
+        zh: "55 张参考图、6 段占位声音、1 段样片。",
+      },
+    },
+  ],
   voiceLanguage: "zh",
 };

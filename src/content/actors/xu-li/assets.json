@@ -1,0 +1,1826 @@
+{
+  "slug": "xu-li",
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Everyday wear",
+        "zh": "日常装"
+      },
+      "prompt": "Clean light-cream cardigan over a muted teal blouse, charcoal ankle-length straight trousers, flat black loafers; practical and composed everyday teacher clothing, generic unbranded fabrics, no jewelry.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Everyday portrait",
+            "zh": "日常装近景"
+          },
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
+        },
+        {
+          "key": "grade-homework",
+          "label": {
+            "en": "Grading homework",
+            "zh": "批作业"
+          },
+          "direction": "full body, seated naturally on a simple plain stool, holding an unmarked notebook and pencil, focused calm expression; no readable text"
+        },
+        {
+          "key": "knowing-look",
+          "label": {
+            "en": "Knowing look",
+            "zh": "藏不住的坏笑"
+          },
+          "direction": "full body, standing at a three-quarter angle with arms loosely crossed and a small knowing asymmetrical smile; ordinary clothes, no costume or sinister effects"
+        },
+        {
+          "key": "lesson-notes",
+          "label": {
+            "en": "Lesson notes",
+            "zh": "备课本"
+          },
+          "direction": "full body, standing at a three-quarter angle and reading a small plain unmarked notebook held in both hands; complete natural limbs"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 956922,
+      "sha256": "d857f0a8d97d74defd695ddbe4df27d6289958f7c83de0af2b0c9866e242d504",
+      "sourceSha256": "d857f0a8d97d74defd695ddbe4df27d6289958f7c83de0af2b0c9866e242d504",
+      "bbox": {
+        "left": 0.21360255047821466,
+        "top": 0.010167464114832535,
+        "right": 0.9521785334750266,
+        "bottom": 0.992822966507177
+      },
+      "format": "png",
+      "object": "xu-li/d857f0a8d97d74de/xu-li__turnaround__front__v2.png",
+      "preview": "/media/assets/xu-li/turnaround.front.webp",
+      "thumb": "/media/assets/xu-li/turnaround.front.thumb.webp",
+      "large": "/media/assets/xu-li/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6512020196370552,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 902931,
+      "sha256": "e4be034e60d53c1c1878ee5e278dd45de035356823a61326c535c0eb7a2973fe",
+      "sourceSha256": "e4be034e60d53c1c1878ee5e278dd45de035356823a61326c535c0eb7a2973fe",
+      "bbox": {
+        "left": 0,
+        "top": 0.008971291866028708,
+        "right": 0.9458023379383634,
+        "bottom": 0.9910287081339713
+      },
+      "format": "png",
+      "object": "xu-li/e4be034e60d53c1c/xu-li__turnaround__three-quarter__v2.png",
+      "preview": "/media/assets/xu-li/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/xu-li/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6763019337058713,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1671,
+      "bytes": 601543,
+      "sha256": "34d90a2e27af56ffab2382e06f976c0cdbb5be54eb6d6e7b34268f854044e9ad",
+      "sourceSha256": "34d90a2e27af56ffab2382e06f976c0cdbb5be54eb6d6e7b34268f854044e9ad",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.010173548773189706,
+        "right": 0.7035069075451648,
+        "bottom": 0.9826451226810293
+      },
+      "format": "png",
+      "object": "xu-li/34d90a2e27af56ff/xu-li__turnaround__side__v2.png",
+      "preview": "/media/assets/xu-li/turnaround.side.webp",
+      "thumb": "/media/assets/xu-li/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7999079121171246,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 894374,
+      "sha256": "5f288b089295a01b4427317c2067f7a26579c0faaddfd4b4ef37cbd34d20d85d",
+      "sourceSha256": "5f288b089295a01b4427317c2067f7a26579c0faaddfd4b4ef37cbd34d20d85d",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 0.8405951115834219,
+        "bottom": 0.9844497607655502
+      },
+      "format": "png",
+      "object": "xu-li/5f288b089295a01b/xu-li__turnaround__back__v2.png",
+      "preview": "/media/assets/xu-li/turnaround.back.webp",
+      "thumb": "/media/assets/xu-li/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6730725228683727,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 891324,
+      "sha256": "c5d9d2eba3d8ed9d51a74a9063e64af5022ebbce705517dfaea56146af66d6d8",
+      "sourceSha256": "c5d9d2eba3d8ed9d51a74a9063e64af5022ebbce705517dfaea56146af66d6d8",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.008373205741626795,
+        "right": 0.9096705632306057,
+        "bottom": 0.9910287081339713
+      },
+      "format": "png",
+      "object": "xu-li/c5d9d2eba3d8ed9d/xu-li__turnaround__back-three-quarter-left__v2.png",
+      "preview": "/media/assets/xu-li/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/xu-li/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7001319475870625,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 896504,
+      "sha256": "a43f6514eb8e0eb0a82638e2b401e28286ee426e1cfe7eef3618c90e1997e937",
+      "sourceSha256": "a43f6514eb8e0eb0a82638e2b401e28286ee426e1cfe7eef3618c90e1997e937",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.007177033492822967,
+        "right": 0.9851222104144527,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/a43f6514eb8e0eb0/xu-li__turnaround__back-three-quarter-right__v2.png",
+      "preview": "/media/assets/xu-li/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/xu-li/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6853164453981054,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1166,
+      "height": 1349,
+      "bytes": 2355691,
+      "sha256": "45a6665fe4f0310982fbdd514d14919ffb5073f092a1a24cbf1ea1d3d4331863",
+      "sourceSha256": "45a6665fe4f0310982fbdd514d14919ffb5073f092a1a24cbf1ea1d3d4331863",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/45a6665fe4f03109/xu-li__face__front__v2.png",
+      "preview": "/media/assets/xu-li/face.front.webp",
+      "thumb": "/media/assets/xu-li/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2405358393931341,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1166,
+      "height": 1349,
+      "bytes": 2168778,
+      "sha256": "12559a7d202aed1d0985edae972a3c77033bbc6feeed2811fd57cad25f7766e2",
+      "sourceSha256": "12559a7d202aed1d0985edae972a3c77033bbc6feeed2811fd57cad25f7766e2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/12559a7d202aed1d/xu-li__face__three-quarter__v2.png",
+      "preview": "/media/assets/xu-li/face.three-quarter.webp",
+      "thumb": "/media/assets/xu-li/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.23831514863306408,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1999744,
+      "sha256": "be37c34d1a98dcd1d3947b987bb70cb94f38a96535ae7185457433064da33a5b",
+      "sourceSha256": "be37c34d1a98dcd1d3947b987bb70cb94f38a96535ae7185457433064da33a5b",
+      "bbox": {
+        "left": 0,
+        "top": 0.01854066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/be37c34d1a98dcd1/xu-li__face__side__v2.png",
+      "preview": "/media/assets/xu-li/face.side.webp",
+      "thumb": "/media/assets/xu-li/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29233445535391955,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1166,
+      "height": 1349,
+      "bytes": 2013051,
+      "sha256": "ef094990d9436e7ff0ccc8b87878420635f451de027036d6c23e9f6f5b01fc8b",
+      "sourceSha256": "ef094990d9436e7ff0ccc8b87878420635f451de027036d6c23e9f6f5b01fc8b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/ef094990d9436e7f/xu-li__face__three-quarter-left__v2.png",
+      "preview": "/media/assets/xu-li/face.three-quarter-left.webp",
+      "thumb": "/media/assets/xu-li/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.28015670078973437,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1978820,
+      "sha256": "ae45abcf291d62f45f8b384e6137a6035ca6ac4300c26d9c2cca2fab391389e9",
+      "sourceSha256": "ae45abcf291d62f45f8b384e6137a6035ca6ac4300c26d9c2cca2fab391389e9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/ae45abcf291d62f4/xu-li__face__side-right__v2.png",
+      "preview": "/media/assets/xu-li/face.side-right.webp",
+      "thumb": "/media/assets/xu-li/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2896262247736044,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1908029,
+      "sha256": "ac98c68376ee4205587e706ea18155bfc6996c16c01810489adaa438b5658b4a",
+      "sourceSha256": "ac98c68376ee4205587e706ea18155bfc6996c16c01810489adaa438b5658b4a",
+      "bbox": {
+        "left": 0,
+        "top": 0.1812200956937799,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/ac98c68376ee4205/xu-li__face__up__v2.png",
+      "preview": "/media/assets/xu-li/face.up.webp",
+      "thumb": "/media/assets/xu-li/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32397581723606667,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1166,
+      "height": 1349,
+      "bytes": 2208964,
+      "sha256": "9d96e64c66252ba4481713eb42f570d252d0612578ce7022a1894f812a195d02",
+      "sourceSha256": "9d96e64c66252ba4481713eb42f570d252d0612578ce7022a1894f812a195d02",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/9d96e64c66252ba4/xu-li__face__down__v2.png",
+      "preview": "/media/assets/xu-li/face.down.webp",
+      "thumb": "/media/assets/xu-li/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.23601753156839383,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2480038,
+      "sha256": "6abce79880ece45597ed2164f19162f012aa97dffed32cbd9790e64b18842b0d",
+      "sourceSha256": "6abce79880ece45597ed2164f19162f012aa97dffed32cbd9790e64b18842b0d",
+      "bbox": {
+        "left": 0,
+        "top": 0.0861244019138756,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/6abce79880ece455/xu-li__expression__neutral__v2.png",
+      "preview": "/media/assets/xu-li/expression.neutral.webp",
+      "thumb": "/media/assets/xu-li/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.22068615287615231,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2211237,
+      "sha256": "d8bd6646bd82a439052280f5a9d5de8383d6ed4988cf5b84d401a8c52e5c7f98",
+      "sourceSha256": "d8bd6646bd82a439052280f5a9d5de8383d6ed4988cf5b84d401a8c52e5c7f98",
+      "bbox": {
+        "left": 0,
+        "top": 0.008971291866028708,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/d8bd6646bd82a439/xu-li__expression__smile__v2.png",
+      "preview": "/media/assets/xu-li/expression.smile.webp",
+      "thumb": "/media/assets/xu-li/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2205679339397668,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2219451,
+      "sha256": "e197775a3968ff9b77e2cfe43f091763602ac4a6dc042eb5f04165449257617a",
+      "sourceSha256": "e197775a3968ff9b77e2cfe43f091763602ac4a6dc042eb5f04165449257617a",
+      "bbox": {
+        "left": 0,
+        "top": 0.06220095693779904,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/e197775a3968ff9b/xu-li__expression__laugh__v2.png",
+      "preview": "/media/assets/xu-li/expression.laugh.webp",
+      "thumb": "/media/assets/xu-li/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.20164527708993282,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2296651,
+      "sha256": "f12f2f2850bcbffd46d3605a7907d80b6f474e1b8b5522b1e33708e8bf5d176e",
+      "sourceSha256": "f12f2f2850bcbffd46d3605a7907d80b6f474e1b8b5522b1e33708e8bf5d176e",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/f12f2f2850bcbffd/xu-li__expression__sad__v2.png",
+      "preview": "/media/assets/xu-li/expression.sad.webp",
+      "thumb": "/media/assets/xu-li/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2174713605092821,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1058,
+      "height": 1487,
+      "bytes": 2420584,
+      "sha256": "8c275a348fd7b8f31b0fcfe1a7b0e4d4d569758ab42587003c6bc1190b4b8161",
+      "sourceSha256": "8c275a348fd7b8f31b0fcfe1a7b0e4d4d569758ab42587003c6bc1190b4b8161",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/8c275a348fd7b8f3/xu-li__expression__cry__v2.png",
+      "preview": "/media/assets/xu-li/expression.cry.webp",
+      "thumb": "/media/assets/xu-li/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.15246439526939842,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1058,
+      "height": 1487,
+      "bytes": 2384849,
+      "sha256": "ab1a323dd71941ecdfdb4e37c428a547c3dbc00f7a0a56254f990e0fef4f0aff",
+      "sourceSha256": "ab1a323dd71941ecdfdb4e37c428a547c3dbc00f7a0a56254f990e0fef4f0aff",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/ab1a323dd71941ec/xu-li__expression__annoyed__v2.png",
+      "preview": "/media/assets/xu-li/expression.annoyed.webp",
+      "thumb": "/media/assets/xu-li/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.15513149246843785,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1166,
+      "height": 1349,
+      "bytes": 2181698,
+      "sha256": "015a3ecf265de85de360b26ee8da4dc1bf168f11c9bfd2f1df2680beebd5639e",
+      "sourceSha256": "015a3ecf265de85de360b26ee8da4dc1bf168f11c9bfd2f1df2680beebd5639e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/015a3ecf265de85d/xu-li__expression__angry__v2.png",
+      "preview": "/media/assets/xu-li/expression.angry.webp",
+      "thumb": "/media/assets/xu-li/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2355464374220406,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2199534,
+      "sha256": "a399f6682cf4e2bda2fdf1e217bf47c7ff5e51ed8a13b3292de28414d86a3fe2",
+      "sourceSha256": "a399f6682cf4e2bda2fdf1e217bf47c7ff5e51ed8a13b3292de28414d86a3fe2",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/a399f6682cf4e2bd/xu-li__expression__surprised__v2.png",
+      "preview": "/media/assets/xu-li/expression.surprised.webp",
+      "thumb": "/media/assets/xu-li/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.18143937275320463,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2267048,
+      "sha256": "3dd212d5ac4d35618810df81a44577a05eb9f0cf97e336d0ce1457d643256825",
+      "sourceSha256": "3dd212d5ac4d35618810df81a44577a05eb9f0cf97e336d0ce1457d643256825",
+      "bbox": {
+        "left": 0,
+        "top": 0.017344497607655503,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/3dd212d5ac4d3561/xu-li__expression__scared__v2.png",
+      "preview": "/media/assets/xu-li/expression.scared.webp",
+      "thumb": "/media/assets/xu-li/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.17900063050099405,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2661226,
+      "sha256": "b25ef683a9fe6ce5aafe3554696db7f3d498831bfdc756cb86737da1101038ef",
+      "sourceSha256": "b25ef683a9fe6ce5aafe3554696db7f3d498831bfdc756cb86737da1101038ef",
+      "bbox": {
+        "left": 0,
+        "top": 0.038875598086124404,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/b25ef683a9fe6ce5/xu-li__expression__disgusted__v2.png",
+      "preview": "/media/assets/xu-li/expression.disgusted.webp",
+      "thumb": "/media/assets/xu-li/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.17646972832525715,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2098755,
+      "sha256": "b8e947a72ea3a567004346461e5765c1101a79d1db01aff40967892f55efde45",
+      "sourceSha256": "b8e947a72ea3a567004346461e5765c1101a79d1db01aff40967892f55efde45",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/b8e947a72ea3a567/xu-li__expression__embarrassed__v2.png",
+      "preview": "/media/assets/xu-li/expression.embarrassed.webp",
+      "thumb": "/media/assets/xu-li/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25601009818527576,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2142075,
+      "sha256": "2943c501f12ddfe366949b62d7e14c13eda984fba1c9dcd3dd71de3e8fcae1f5",
+      "sourceSha256": "2943c501f12ddfe366949b62d7e14c13eda984fba1c9dcd3dd71de3e8fcae1f5",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/2943c501f12ddfe3/xu-li__expression__tired__v2.png",
+      "preview": "/media/assets/xu-li/expression.tired.webp",
+      "thumb": "/media/assets/xu-li/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2370461282662748,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2151589,
+      "sha256": "c768d2cd2be3c852c7ffcd1adfa0a6a88eefc27ee52c56c4a540fba58cb5e062",
+      "sourceSha256": "c768d2cd2be3c852c7ffcd1adfa0a6a88eefc27ee52c56c4a540fba58cb5e062",
+      "bbox": {
+        "left": 0,
+        "top": 0.028110047846889953,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/c768d2cd2be3c852/xu-li__expression__speaking__v2.png",
+      "preview": "/media/assets/xu-li/expression.speaking.webp",
+      "thumb": "/media/assets/xu-li/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2072994472946931,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2352100,
+      "sha256": "a3308493705e54aa228283d60499bd9cb8ac4ae22454c8b2fa1c5a369cab2e7f",
+      "sourceSha256": "a3308493705e54aa228283d60499bd9cb8ac4ae22454c8b2fa1c5a369cab2e7f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/a3308493705e54aa/xu-li__expression__eyes-closed__v2.png",
+      "preview": "/media/assets/xu-li/expression.eyes-closed.webp",
+      "thumb": "/media/assets/xu-li/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.22586490499265263,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2185439,
+      "sha256": "9f1e760c4533dfd556c63b76c344483227529e74b96483a985ccf309b98b2873",
+      "sourceSha256": "9f1e760c4533dfd556c63b76c344483227529e74b96483a985ccf309b98b2873",
+      "bbox": {
+        "left": 0,
+        "top": 0.0005980861244019139,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/9f1e760c4533dfd5/xu-li__expression__worried__v2.png",
+      "preview": "/media/assets/xu-li/expression.worried.webp",
+      "thumb": "/media/assets/xu-li/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.21500020338741743,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2402045,
+      "sha256": "230c9ec7508e2021ff2dbc3ca62c7c4f51489d3229d551e7f2b93850b1ba6115",
+      "sourceSha256": "230c9ec7508e2021ff2dbc3ca62c7c4f51489d3229d551e7f2b93850b1ba6115",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/230c9ec7508e2021/xu-li__expression__skeptical__v2.png",
+      "preview": "/media/assets/xu-li/expression.skeptical.webp",
+      "thumb": "/media/assets/xu-li/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.15428543090820312,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2352075,
+      "sha256": "a4b4faa3f6abdf738c2020d4bc19d375fefefdc315e07bb2b6596aa8a97ea95b",
+      "sourceSha256": "a4b4faa3f6abdf738c2020d4bc19d375fefefdc315e07bb2b6596aa8a97ea95b",
+      "bbox": {
+        "left": 0,
+        "top": 0.03349282296650718,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/a4b4faa3f6abdf73/xu-li__expression__smug__v2.png",
+      "preview": "/media/assets/xu-li/expression.smug.webp",
+      "thumb": "/media/assets/xu-li/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.18578296528685254,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2209295,
+      "sha256": "79fca443e489cebcc623965ed0587c52c38ef911990d6428f91555c16a05ab62",
+      "sourceSha256": "79fca443e489cebcc623965ed0587c52c38ef911990d6428f91555c16a05ab62",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/79fca443e489cebc/xu-li__expression__contempt__v2.png",
+      "preview": "/media/assets/xu-li/expression.contempt.webp",
+      "thumb": "/media/assets/xu-li/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2106432635545002,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2390098,
+      "sha256": "840f70e93dc5766cee2f210a07b1afd64bd58afc24d4b8fe9d1b52ce20f76593",
+      "sourceSha256": "840f70e93dc5766cee2f210a07b1afd64bd58afc24d4b8fe9d1b52ce20f76593",
+      "bbox": {
+        "left": 0,
+        "top": 0.04366028708133971,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/840f70e93dc5766c/xu-li__expression__confused__v2.png",
+      "preview": "/media/assets/xu-li/expression.confused.webp",
+      "thumb": "/media/assets/xu-li/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.22722060924700893,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2162353,
+      "sha256": "4875f49b06d764d037341832f951d8dac88a5123179a28907e6fd540afe30a2b",
+      "sourceSha256": "4875f49b06d764d037341832f951d8dac88a5123179a28907e6fd540afe30a2b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/4875f49b06d764d0/xu-li__expression__thinking__v2.png",
+      "preview": "/media/assets/xu-li/expression.thinking.webp",
+      "thumb": "/media/assets/xu-li/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.23653321062292482,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1166,
+      "height": 1349,
+      "bytes": 2135910,
+      "sha256": "ad1727c24d2f1ec9d8756aa7ab9d496f9ef529e1e92c258ccefa46544a7cf2db",
+      "sourceSha256": "ad1727c24d2f1ec9d8756aa7ab9d496f9ef529e1e92c258ccefa46544a7cf2db",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/ad1727c24d2f1ec9/xu-li__expression__determined__v2.png",
+      "preview": "/media/assets/xu-li/expression.determined.webp",
+      "thumb": "/media/assets/xu-li/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.23493802028565725,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2237018,
+      "sha256": "316b0becddc4a4ba1010401b3d13151992a741230825253548fd636874a355cf",
+      "sourceSha256": "316b0becddc4a4ba1010401b3d13151992a741230825253548fd636874a355cf",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/316b0becddc4a4ba/xu-li__expression__shy__v2.png",
+      "preview": "/media/assets/xu-li/expression.shy.webp",
+      "thumb": "/media/assets/xu-li/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.1924540725787999,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2294818,
+      "sha256": "3b742c29c6216e28450dcce8f735673bb364e874e52d2c2fbeea1dcc08b7b589",
+      "sourceSha256": "3b742c29c6216e28450dcce8f735673bb364e874e52d2c2fbeea1dcc08b7b589",
+      "bbox": {
+        "left": 0,
+        "top": 0.0005980861244019139,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/3b742c29c6216e28/xu-li__expression__pain__v2.png",
+      "preview": "/media/assets/xu-li/expression.pain.webp",
+      "thumb": "/media/assets/xu-li/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.18900792702459462,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2235541,
+      "sha256": "221554d8bb52a54446b5b449a53affe5c95457df285e8a25a836be06b7e72eb0",
+      "sourceSha256": "221554d8bb52a54446b5b449a53affe5c95457df285e8a25a836be06b7e72eb0",
+      "bbox": {
+        "left": 0,
+        "top": 0.011961722488038277,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/221554d8bb52a544/xu-li__expression__sleepy__v2.png",
+      "preview": "/media/assets/xu-li/expression.sleepy.webp",
+      "thumb": "/media/assets/xu-li/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2565528883555619,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2258167,
+      "sha256": "f70f768389830106b0f385fa8ae6670c3b08ce90d5a6459c8d350325eb92f14a",
+      "sourceSha256": "f70f768389830106b0f385fa8ae6670c3b08ce90d5a6459c8d350325eb92f14a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/f70f768389830106/xu-li__expression__awkward-smile__v2.png",
+      "preview": "/media/assets/xu-li/expression.awkward-smile.webp",
+      "thumb": "/media/assets/xu-li/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.19956182723255825,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1166,
+      "height": 1349,
+      "bytes": 2145238,
+      "sha256": "dc61809369eee5502e3165c8c6f0fb4c012b0f62e33e7acdafcfbeb174fe3845",
+      "sourceSha256": "dc61809369eee5502e3165c8c6f0fb4c012b0f62e33e7acdafcfbeb174fe3845",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/dc61809369eee550/xu-li__expression__deadpan__v2.png",
+      "preview": "/media/assets/xu-li/expression.deadpan.webp",
+      "thumb": "/media/assets/xu-li/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.23659670399393745,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 990006,
+      "sha256": "53988cf9e0891a2cd942bcf60ee96a3e7bdb2c656a31bd6429198f9b74ce6496",
+      "sourceSha256": "53988cf9e0891a2cd942bcf60ee96a3e7bdb2c656a31bd6429198f9b74ce6496",
+      "bbox": {
+        "left": 0,
+        "top": 0.008971291866028708,
+        "right": 0.9574920297555791,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "xu-li/53988cf9e0891a2c/xu-li__wardrobe-personal__front__v2.png",
+      "preview": "/media/assets/xu-li/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/xu-li/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6600627195948523,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 940944,
+      "sha256": "59b23de5c22f22707ba9a62114076a17cbd9f80a7223ff1ac9d033fb5c226af1",
+      "sourceSha256": "59b23de5c22f22707ba9a62114076a17cbd9f80a7223ff1ac9d033fb5c226af1",
+      "bbox": {
+        "left": 0.26567481402763016,
+        "top": 0.009569377990430622,
+        "right": 0.9766206163655685,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "xu-li/59b23de5c22f2270/xu-li__wardrobe-personal__three-quarter__v2.png",
+      "preview": "/media/assets/xu-li/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/xu-li/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.698080912599342,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 673717,
+      "sha256": "48f63806a76db1a1b2cce0adb310a1225dc19e88bdf065441c95c491afc1ca62",
+      "sourceSha256": "48f63806a76db1a1b2cce0adb310a1225dc19e88bdf065441c95c491afc1ca62",
+      "bbox": {
+        "left": 0.08501594048884166,
+        "top": 0.005382775119617225,
+        "right": 0.7502656748140276,
+        "bottom": 0.9910287081339713
+      },
+      "format": "png",
+      "object": "xu-li/48f63806a76db1a1/xu-li__wardrobe-personal__side__v2.png",
+      "preview": "/media/assets/xu-li/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/xu-li/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7828947368421053,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1051798,
+      "sha256": "15ea5565c266819f769fa443c387d13f944ba1957129ca4eb7a8506980e2885f",
+      "sourceSha256": "15ea5565c266819f769fa443c387d13f944ba1957129ca4eb7a8506980e2885f",
+      "bbox": {
+        "left": 0,
+        "top": 0.007177033492822967,
+        "right": 0.9787460148777896,
+        "bottom": 0.9808612440191388
+      },
+      "format": "png",
+      "object": "xu-li/15ea5565c266819f/xu-li__wardrobe-personal__back__v2.png",
+      "preview": "/media/assets/xu-li/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/xu-li/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6760229115925743,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2344947,
+      "sha256": "b348409530a667c12e1c6eed5e5b97c6484802b4ac319b5fa59552b0f44664a7",
+      "sourceSha256": "b348409530a667c12e1c6eed5e5b97c6484802b4ac319b5fa59552b0f44664a7",
+      "bbox": {
+        "left": 0,
+        "top": 0.0651913875598086,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/b348409530a667c1/xu-li__wardrobe-personal__portrait__v2.png",
+      "preview": "/media/assets/xu-li/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/xu-li/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.18666579379566683,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.grade-homework",
+      "series": "wardrobe",
+      "key": "grade-homework",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1345563,
+      "sha256": "2de35239d29be11c357308e215ddc84abadcc50d9cbd83e681139745c06e7d0a",
+      "sourceSha256": "2de35239d29be11c357308e215ddc84abadcc50d9cbd83e681139745c06e7d0a",
+      "bbox": {
+        "left": 0,
+        "top": 0.006578947368421052,
+        "right": 0.9851222104144527,
+        "bottom": 0.9916267942583732
+      },
+      "format": "png",
+      "object": "xu-li/2de35239d29be11c/xu-li__wardrobe-personal__grade-homework__v2.png",
+      "preview": "/media/assets/xu-li/wardrobe.personal.grade-homework.webp",
+      "thumb": "/media/assets/xu-li/wardrobe.personal.grade-homework.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5889063604330118,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.knowing-look",
+      "series": "wardrobe",
+      "key": "knowing-look",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 826318,
+      "sha256": "19ff527c1eba2b047a6df23ae34f09407bbf6424009297cbc0d8dea555c57358",
+      "sourceSha256": "19ff527c1eba2b047a6df23ae34f09407bbf6424009297cbc0d8dea555c57358",
+      "bbox": {
+        "left": 0.07013815090329437,
+        "top": 0.009569377990430622,
+        "right": 0.9766206163655685,
+        "bottom": 0.9886363636363636
+      },
+      "format": "png",
+      "object": "xu-li/19ff527c1eba2b04/xu-li__wardrobe-personal__knowing-look__v2.png",
+      "preview": "/media/assets/xu-li/wardrobe.personal.knowing-look.webp",
+      "thumb": "/media/assets/xu-li/wardrobe.personal.knowing-look.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7224874026918324,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.lesson-notes",
+      "series": "wardrobe",
+      "key": "lesson-notes",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 850160,
+      "sha256": "25982557e2cdd5341d83c1acfb74a5d7c82c65794c52c501bdcb8ba074f1a805",
+      "sourceSha256": "25982557e2cdd5341d83c1acfb74a5d7c82c65794c52c501bdcb8ba074f1a805",
+      "bbox": {
+        "left": 0.03294367693942614,
+        "top": 0.009569377990430622,
+        "right": 0.9500531349628055,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/25982557e2cdd534/xu-li__wardrobe-personal__lesson-notes__v2.png",
+      "preview": "/media/assets/xu-li/wardrobe.personal.lesson-notes.webp",
+      "thumb": "/media/assets/xu-li/wardrobe.personal.lesson-notes.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7109165653966817,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 857636,
+      "sha256": "c07c447fb2a10473813bec91202a51c7543f8c7c536041f113bbcc0dbf914614",
+      "sourceSha256": "c07c447fb2a10473813bec91202a51c7543f8c7c536041f113bbcc0dbf914614",
+      "bbox": {
+        "left": 0.10839532412327312,
+        "top": 0.008971291866028708,
+        "right": 0.9415515409139213,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/c07c447fb2a10473/xu-li__pose__walk__v2.png",
+      "preview": "/media/assets/xu-li/pose.walk.webp",
+      "thumb": "/media/assets/xu-li/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6977313404756215,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 927155,
+      "sha256": "5b84408ea96f9fb9164b7f8fcd135a6ca03028f0c7d541015f4d7edc98c8a5e4",
+      "sourceSha256": "5b84408ea96f9fb9164b7f8fcd135a6ca03028f0c7d541015f4d7edc98c8a5e4",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9787460148777896,
+        "bottom": 0.9736842105263158
+      },
+      "format": "png",
+      "object": "xu-li/5b84408ea96f9fb9/xu-li__pose__run__v2.png",
+      "preview": "/media/assets/xu-li/pose.run.webp",
+      "thumb": "/media/assets/xu-li/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6915667949702292,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1115274,
+      "sha256": "83cae20188f5b58532a88bf77cc3a571b1fc9c1e7c8e7208d0a322014985b05b",
+      "sourceSha256": "83cae20188f5b58532a88bf77cc3a571b1fc9c1e7c8e7208d0a322014985b05b",
+      "bbox": {
+        "left": 0,
+        "top": 0.009569377990430622,
+        "right": 0.9659936238044633,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/83cae20188f5b585/xu-li__pose__sit__v2.png",
+      "preview": "/media/assets/xu-li/pose.sit.webp",
+      "thumb": "/media/assets/xu-li/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6187629977271456,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 801616,
+      "sha256": "3ff8ee72ba65b5aec2c31eee0888498a02b5d944862bb5344f2dccfa98343828",
+      "sourceSha256": "3ff8ee72ba65b5aec2c31eee0888498a02b5d944862bb5344f2dccfa98343828",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9681190223166843,
+        "bottom": 0.9892344497607656
+      },
+      "format": "png",
+      "object": "xu-li/3ff8ee72ba65b5ae/xu-li__pose__point__v2.png",
+      "preview": "/media/assets/xu-li/pose.point.webp",
+      "thumb": "/media/assets/xu-li/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7229494734808231,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 838731,
+      "sha256": "57b07e20c2b90443e996c944a6610a74504a94e2a59a89a263797a91006ffd3f",
+      "sourceSha256": "57b07e20c2b90443e996c944a6610a74504a94e2a59a89a263797a91006ffd3f",
+      "bbox": {
+        "left": 0.1647183846971307,
+        "top": 0.009569377990430622,
+        "right": 0.9808714133900106,
+        "bottom": 0.9910287081339713
+      },
+      "format": "png",
+      "object": "xu-li/57b07e20c2b90443/xu-li__pose__arms-crossed__v2.png",
+      "preview": "/media/assets/xu-li/pose.arms-crossed.webp",
+      "thumb": "/media/assets/xu-li/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7077195694288373,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 832958,
+      "sha256": "6d197e322023bfc36adf0d1316b1ec3f75807d552a74a3e257bece639e608a4d",
+      "sourceSha256": "6d197e322023bfc36adf0d1316b1ec3f75807d552a74a3e257bece639e608a4d",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.009569377990430622,
+        "right": 0.9309245483528161,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "xu-li/6d197e322023bfc3/xu-li__pose__phone__v2.png",
+      "preview": "/media/assets/xu-li/pose.phone.webp",
+      "thumb": "/media/assets/xu-li/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7115470663907377,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 1221,
+      "height": 1288,
+      "bytes": 1177104,
+      "sha256": "7dc0153e670ca650b5640e15ea3796c697a3286f12fe51b15380f88566dfeb5c",
+      "sourceSha256": "7dc0153e670ca650b5640e15ea3796c697a3286f12fe51b15380f88566dfeb5c",
+      "bbox": {
+        "left": 0.02702702702702703,
+        "top": 0.02096273291925466,
+        "right": 0.9868959868959869,
+        "bottom": 0.9860248447204969
+      },
+      "format": "png",
+      "object": "xu-li/7dc0153e670ca650/xu-li__detail__hands__v2.png",
+      "preview": "/media/assets/xu-li/detail.hands.webp",
+      "thumb": "/media/assets/xu-li/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5745627756497321,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 2,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2219105,
+      "sha256": "0357c8c88ed48d5cf34d9536553ad1b12c2dd7e6f5da2bda38e0fcd1ab0a32f9",
+      "sourceSha256": "0357c8c88ed48d5cf34d9536553ad1b12c2dd7e6f5da2bda38e0fcd1ab0a32f9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "xu-li/0357c8c88ed48d5c/xu-li__detail__hair-back__v2.png",
+      "preview": "/media/assets/xu-li/detail.hair-back.webp",
+      "thumb": "/media/assets/xu-li/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.27643845750982615,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1067620,
+      "sha256": "2f5b5e2d95aa2f726d5e63d35874218ca87c79e243eeacce10ee5a60e374cfb4",
+      "sourceSha256": "2f5b5e2d95aa2f726d5e63d35874218ca87c79e243eeacce10ee5a60e374cfb4",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/xu-li/xu-li__voice__intro__v1__2f5b5e2d95aa2f72.wav",
+      "preview": "/api/voice/xu-li/intro",
+      "thumb": "/api/voice/xu-li/intro",
+      "previewUrl": "/api/voice/xu-li/intro",
+      "durationSec": 16.6,
+      "transcript": {
+        "text": "大家好，我是许丽，三十八岁，上海人。白天教小学数学，晚上在剧本杀店演反派。这事学生家长可不知道。题要一道一道算，坏人嘛，也得演得有道理。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 919468,
+      "sha256": "6f9a4f7bc3c611a06ae478ee9dc190455f1878595eeeeff327e82616f2c3cb3f",
+      "sourceSha256": "6f9a4f7bc3c611a06ae478ee9dc190455f1878595eeeeff327e82616f2c3cb3f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/xu-li/xu-li__voice__intro-alt__v1__6f9a4f7bc3c611a0.wav",
+      "preview": "/api/voice/xu-li/intro-alt",
+      "thumb": "/api/voice/xu-li/intro-alt",
+      "previewUrl": "/api/voice/xu-li/intro-alt",
+      "durationSec": 14.3,
+      "transcript": {
+        "text": "Hi, I'm Xu Li. I'm thirty-eight, from Shanghai. I teach maths at a primary school. In the evenings, I play villains in mystery games. The parents don't know that part. I like a good puzzle, on either side of the classroom door."
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 719136,
+      "sha256": "3b641ddec1c37cfeb0295a662d087d4927c002293273e7741f17f42635da5b57",
+      "sourceSha256": "3b641ddec1c37cfeb0295a662d087d4927c002293273e7741f17f42635da5b57",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/xu-li/xu-li__voice__chat__v1__3b641ddec1c37cfe.wav",
+      "preview": "/api/voice/xu-li/chat",
+      "thumb": "/api/voice/xu-li/chat",
+      "previewUrl": "/api/voice/xu-li/chat",
+      "durationSec": 11.2,
+      "transcript": {
+        "text": "这道题先别急着写答案。你看，把条件一条一条圈出来，是不是就清楚了？对，就是这个意思。等一下，你刚才那个办法也挺聪明的。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 682726,
+      "sha256": "659930e294959ff6fb25d680fffc33ab7d8c464559558fb1948b2f5a762349ef",
+      "sourceSha256": "659930e294959ff6fb25d680fffc33ab7d8c464559558fb1948b2f5a762349ef",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/xu-li/xu-li__voice__happy__v1__659930e294959ff6.wav",
+      "preview": "/api/voice/xu-li/happy",
+      "thumb": "/api/voice/xu-li/happy",
+      "previewUrl": "/api/voice/xu-li/happy",
+      "durationSec": 10.6,
+      "transcript": {
+        "text": "你居然自己算出来了！我就说你会的嘛。来，再讲一遍给我听听。不是为了分数，我就是想听你说，你是怎么想到这一步的。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 760002,
+      "sha256": "d71a5b987c9ec55a407e1f3f8349d499b589402a932d8d6cd46936ea5f6bc0d6",
+      "sourceSha256": "d71a5b987c9ec55a407e1f3f8349d499b589402a932d8d6cd46936ea5f6bc0d6",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/xu-li/xu-li__voice__angry__v1__d71a5b987c9ec55a.wav",
+      "preview": "/api/voice/xu-li/angry",
+      "thumb": "/api/voice/xu-li/angry",
+      "previewUrl": "/api/voice/xu-li/angry",
+      "durationSec": 11.8,
+      "transcript": {
+        "text": "先停一下。我问的是这一步怎么算，不是谁先把答案喊出来。别人还没说完，你就打断，这样谁听得清？一个一个来，把话讲完整。"
+      },
+      "placeholder": true
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 963594,
+      "sha256": "cb1b1c3419a8a3b8e310149844054304b02ef5ba930eedfb7714090148f8e068",
+      "sourceSha256": "cb1b1c3419a8a3b8e310149844054304b02ef5ba930eedfb7714090148f8e068",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/xu-li/xu-li__voice__sad__v1__cb1b1c3419a8a3b8.wav",
+      "preview": "/api/voice/xu-li/sad",
+      "thumb": "/api/voice/xu-li/sad",
+      "previewUrl": "/api/voice/xu-li/sad",
+      "durationSec": 15,
+      "transcript": {
+        "text": "今天把那叠本子收好了，教室一下子安静下来。平时总嫌他们吵，真没声音了，倒有点不习惯。明天再来吧，题总还有得讲。"
+      },
+      "placeholder": true
+    }
+  ]
+}

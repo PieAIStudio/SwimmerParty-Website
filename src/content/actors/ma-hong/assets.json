@@ -16,7 +16,7 @@
             "en": "Everyday portrait",
             "zh": "日常装近景"
           },
-          "direction": "Head and upper chest in the actor's personal outfit, facing the camera."
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
         },
         {
           "key": "rolling-pin",
@@ -1669,7 +1669,8 @@
       "durationSec": 16.9,
       "transcript": {
         "text": "中！我叫马红，郑州人，五十八了。我五十岁才开始学英语，现在用英语教老外做烩面。单词不会就慢慢查，面得先和利索。没想到拍点做饭视频，粉丝比我闺女还多。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1698,7 +1699,8 @@
       "durationSec": 16.5,
       "transcript": {
         "text": "Hi, I'm Ma Hong, from Zhengzhou. I'm fifty-eight. I started learning English at fifty. Now I teach visitors how to make Henan noodles. If I forget a word, I can show you with my hands. My cooking videos have more followers than my daughter's. How about that?"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1727,7 +1729,8 @@
       "durationSec": 13.4,
       "transcript": {
         "text": "面要醒一会儿，你先别急着抻。来，跟我慢慢做，手往两边带，对，就是这样。这个词我一时想不起来，你看我的手，比我说英语还明白。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1756,7 +1759,8 @@
       "durationSec": 10.5,
       "transcript": {
         "text": "哎，我这段英文你还真听懂了！中，那咱们接着来。今天这碗面做得漂亮，拍下来发给我闺女看看，让她也学两招。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1785,7 +1789,8 @@
       "durationSec": 10.5,
       "transcript": {
         "text": "先把面团放好，别这么随手一扔。你看，桌子还没擦干净呢。做饭是给人吃的，不能光图快，咱们从这一步重新来。"
-      }
+      },
+      "placeholder": true
     },
     {
       "kind": "voice",
@@ -1814,7 +1819,8 @@
       "durationSec": 14.2,
       "transcript": {
         "text": "刚才翻到以前练单词的本子，一页一页，全是改过的红圈。那时候真怕自己学不会。现在好一点了，可有时候话到了嘴边，还是说不出来。"
-      }
+      },
+      "placeholder": true
     }
   ]
 }

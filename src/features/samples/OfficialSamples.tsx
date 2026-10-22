@@ -9,7 +9,7 @@ import { SampleVideo } from "./SampleVideo";
 async function SampleBlock({ sample }: { sample: OfficialSample }) {
   const locale = await getSiteLocale();
   const { t } = await getSiteI18n();
-  const names = sample.actorSlugs
+  const names = (sample.castSlugs ?? sample.actorSlugs)
     .map((slug) => getActor(slug))
     .filter((actor) => actor !== undefined)
     .map((actor) => (locale === "zh" ? actor.nameCn : actor.nameEn))
@@ -28,9 +28,12 @@ async function SampleBlock({ sample }: { sample: OfficialSample }) {
         className="aspect-[9/14]"
       />
       <p className="mt-3 font-semibold">{names}</p>
-      <p className="sp-small mt-1 text-muted-foreground">
+      <p data-sample-tools={sample.tools.join(",")} className="sp-small mt-1 text-muted-foreground">
         {label} · {sample.tools.join(" · ")}
       </p>
+      {sample.note ? (
+        <p className="sp-small mt-2 text-muted-foreground">{sample.note[locale]}</p>
+      ) : null}
     </article>
   );
 }

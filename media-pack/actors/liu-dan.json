@@ -12,7 +12,7 @@
     "published": false,
     "preparedOn": "2026-10-21",
     "productionOnly": true,
-    "version": "1.0.0",
+    "version": "1.1.0",
     "siteProfile": "src/content/actors/liu-dan/profile.ts"
   },
   "demographics": {
@@ -133,7 +133,35 @@
   "proposals": {
     "approval": "agent-selected-under-owner-delegated-review",
     "appearance": "Owner explicitly delegated aesthetic and proportion/body-anchor choices in current chat. Agent selected candidate G: median6.970, frozen interval6.515–7.500, measurement_review preserved. Skull/eyes/chin/soles and natural adult neck/torso/pelvis/limbs visually crosschecked. Framing has complete hair and soles with2.8%/3.8% margins; accepted by delegated visual review despite provisional4%-10% guide warning. No numeric auto-pass claimed. Saturated edge RGB alpha1–4/255: white/slate alpha composites clean; initial apparent fringe finding retracted.",
-    "phase": "technical-staging-complete"
+    "phase": "four-samples-complete-technical-staging",
+    "additionalVideoTasks": {
+      "action": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/action/task.json",
+      "ensemble": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/ensemble/task.json",
+      "vids": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/vids/task.json"
+    },
+    "sampleScope": {
+      "required": 4,
+      "accepted": 4,
+      "grokAccepted": 3,
+      "vidsAccepted": 1,
+      "missing": {},
+      "sourceExceptions": [],
+      "voiceNote": "existing six placeholder WAV unchanged; no acoustic review claim",
+      "reviewAuthority": "Owner delegated aesthetic and relative proportion review; staging only",
+      "reviewPage": "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/four-sample-review.html",
+      "updatedAt": "2026-10-22T16:45:58.675099+00:00",
+      "publication": false,
+      "historicalUnknownRequests": [
+        {
+          "kind": "action",
+          "sessionId": "01a16367-ed9a-7821-916f-16cdf20fde55",
+          "requestId": "719e1c60-7424-4b78-bded-4110b9ddb20f",
+          "totalCostUsd": 0.0485962,
+          "status": "unknown retained; may duplicate charge",
+          "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/action/attempt-02-wide-framing/generation-evidence.json"
+        }
+      ]
+    }
   },
   "routes": {
     "chatgpt-web": {
@@ -154,8 +182,8 @@
       "zh": "个子小，力气大。从举重队到快递站。"
     },
     "introduction": {
-      "en": "Small in height, strong in spirit. From weightlifting to sorting parcels.",
-      "zh": "个子小，力气大。从举重队到快递站。"
+      "en": "At 156 cm, with a blunt black bob, straight bangs and a beauty mark under one eye, Liu Dan is hard to miss. A former youth sports-school weightlifter, she now sorts parcels and moves boxes faster than her male colleagues.",
+      "zh": "156厘米，齐刘海黑短发，眼下一颗痣。少体校举重队退役，现在在快递站分拣，搬箱子比男同事快。"
     },
     "specOrder": [
       "age",
@@ -168,516 +196,533 @@
     ]
   },
   "release": {
-    "date": "2026-10-22",
+    "date": "2026-10-23",
     "note": {
-      "en": "55 reference images, 6 placeholder voice clips and a sample video.",
-      "zh": "55 张参考图、6 段占位声音、1 段样片。"
-    }
+      "en": "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+      "zh": "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。"
+    },
+    "history": [
+      {
+        "version": "1.0.0",
+        "date": "2026-10-22",
+        "note": {
+          "en": "55 reference images, 6 placeholder voice clips and a sample video.",
+          "zh": "55 张参考图、6 段占位声音、1 段样片。"
+        }
+      }
+    ]
   },
   "assetDelivery": {
     "mode": "source-originals",
-    "candidateAuthorizedOn": "2026-10-22",
+    "candidateAuthorizedOn": "2026-10-23",
     "ownerReviewPending": false,
     "sourceEvidence": [
       "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/actors/liu-dan.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/liu-dan-slot-plan.json",
       "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/voice/handoff/handoff.json",
-      "/Users/yuanfei/PieAI/HQ/conductor/projects/SwimmerParty/next-version-20261022/BRIEF.md"
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/RESULT.md"
     ],
     "images": [
       {
-        "slot": "detail.hair-back",
-        "source": "liu-dan/liu-dan__detail__hair-back__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__detail__hair-back__v1.png",
-        "sha256": "d87dd03917cf55662aa9289e79b72d1394cb38de014fdcf6ab3c4c0e7fdf5111",
-        "bytes": 1954404,
-        "version": 1
-      },
-      {
-        "slot": "detail.hands",
-        "source": "liu-dan/liu-dan__detail__hands__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__detail__hands__v1.png",
-        "sha256": "cc09344e9a80a1584871221a1a5bb0d050c1b57c17f0199de3ac20612fdc6340",
-        "bytes": 1128372,
-        "version": 1
-      },
-      {
-        "slot": "expression.angry",
-        "source": "liu-dan/liu-dan__expression__angry__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__angry__v1.png",
-        "sha256": "d96fd22d871ddf5ccc01e97094682ce308c1b955c22e7298fed788925e75dabb",
-        "bytes": 2028681,
-        "version": 1
-      },
-      {
-        "slot": "expression.annoyed",
-        "source": "liu-dan/liu-dan__expression__annoyed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__annoyed__v1.png",
-        "sha256": "6c29f32c43b637df045521604040f3d8a44474c8c10b8e7df8d22d9eb27da518",
-        "bytes": 1967342,
-        "version": 1
-      },
-      {
-        "slot": "expression.awkward-smile",
-        "source": "liu-dan/liu-dan__expression__awkward-smile__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__awkward-smile__v1.png",
-        "sha256": "c138ba58b44d24053e26ebc72fbac7f21cfae616398d5b651cd3e82421555c32",
-        "bytes": 2076097,
-        "version": 1
-      },
-      {
-        "slot": "expression.confused",
-        "source": "liu-dan/liu-dan__expression__confused__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__confused__v1.png",
-        "sha256": "e0d4b2f1cfd88e5ddde5e637dbca60b71f4f48417b7bc706edbb5672deba702a",
-        "bytes": 2022920,
-        "version": 1
-      },
-      {
-        "slot": "expression.contempt",
-        "source": "liu-dan/liu-dan__expression__contempt__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__contempt__v1.png",
-        "sha256": "1de7d801662646db23f1d33648c636502ae0a590433e1520200de82ede4867c9",
-        "bytes": 1883009,
-        "version": 1
-      },
-      {
-        "slot": "expression.cry",
-        "source": "liu-dan/liu-dan__expression__cry__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__cry__v1.png",
-        "sha256": "81053531b950d9b80ba96606bda46062a965b0ae8c989ea0221bfbdc667f526e",
-        "bytes": 2237740,
-        "version": 1
-      },
-      {
-        "slot": "expression.deadpan",
-        "source": "liu-dan/liu-dan__expression__deadpan__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__deadpan__v1.png",
-        "sha256": "f72a5ab3bd65303849b1ae83fa33f8beebc97538954a93ad37369d530f5b1870",
-        "bytes": 2099586,
-        "version": 1
-      },
-      {
-        "slot": "expression.determined",
-        "source": "liu-dan/liu-dan__expression__determined__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__determined__v1.png",
-        "sha256": "4f5bd7325e4a4e3997c53272aa1191135b6238e2448bda735eb657273b78f8cd",
-        "bytes": 2036166,
-        "version": 1
-      },
-      {
-        "slot": "expression.disgusted",
-        "source": "liu-dan/liu-dan__expression__disgusted__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__disgusted__v1.png",
-        "sha256": "1e8ce55b239335e2d9872389d16e1f2170256de72c29922d107e2c77f95bff35",
-        "bytes": 1958945,
-        "version": 1
-      },
-      {
-        "slot": "expression.embarrassed",
-        "source": "liu-dan/liu-dan__expression__embarrassed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__embarrassed__v1.png",
-        "sha256": "970258352eea18c952a58d292ccaffb97682d69375e32e205f4dd10fdd606784",
-        "bytes": 1939618,
-        "version": 1
-      },
-      {
-        "slot": "expression.eyes-closed",
-        "source": "liu-dan/liu-dan__expression__eyes-closed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__eyes-closed__v1.png",
-        "sha256": "ea503a46bb4d5c7d1e30f13e7036ee55cf6d86280caaf6f246a0e4386ef91412",
-        "bytes": 2071636,
-        "version": 1
-      },
-      {
-        "slot": "expression.laugh",
-        "source": "liu-dan/liu-dan__expression__laugh__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__laugh__v1.png",
-        "sha256": "500979098bea0bf42887b6aa8cd7ff468c48553d45733d2b9907571cd1716811",
-        "bytes": 1917772,
-        "version": 1
-      },
-      {
-        "slot": "expression.neutral",
-        "source": "liu-dan/liu-dan__expression__neutral__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__neutral__v1.png",
-        "sha256": "ab0aff718d47ba570a92ee18724d4c3ce8af59f77cf821b7a4d7123feb954ebe",
-        "bytes": 2015099,
-        "version": 1
-      },
-      {
-        "slot": "expression.pain",
-        "source": "liu-dan/liu-dan__expression__pain__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__pain__v1.png",
-        "sha256": "9019ac0c9c348b00eee2b7ea7687c95fb88d8b948d7637de79164003f83f4ea9",
-        "bytes": 2109672,
-        "version": 1
-      },
-      {
-        "slot": "expression.sad",
-        "source": "liu-dan/liu-dan__expression__sad__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__sad__v1.png",
-        "sha256": "6d8ede0e3f0506454e09097f7e0c76858d7a16a3c24e71527a02747ee75c06ad",
-        "bytes": 1917230,
-        "version": 1
-      },
-      {
-        "slot": "expression.scared",
-        "source": "liu-dan/liu-dan__expression__scared__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__scared__v1.png",
-        "sha256": "03933e743794110a1738e87a5459e3f85659d0b6097b179547faa582f6956cb2",
-        "bytes": 2072448,
-        "version": 1
-      },
-      {
-        "slot": "expression.shy",
-        "source": "liu-dan/liu-dan__expression__shy__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__shy__v1.png",
-        "sha256": "8d87565b0f70112dde75e9b1e04400f759c084c4b845f3ab3540781d640e251d",
-        "bytes": 2041031,
-        "version": 1
-      },
-      {
-        "slot": "expression.skeptical",
-        "source": "liu-dan/liu-dan__expression__skeptical__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__skeptical__v1.png",
-        "sha256": "4f89caab0ebc6dc65343ce03f7f284fca6cbcb38370c2673ec39ff54a2822fcd",
-        "bytes": 1943694,
-        "version": 1
-      },
-      {
-        "slot": "expression.sleepy",
-        "source": "liu-dan/liu-dan__expression__sleepy__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__sleepy__v1.png",
-        "sha256": "dc5d40af4d525aa3dc8a03efca1fff077d448330f136f1996758a627cfe89732",
-        "bytes": 2055890,
-        "version": 1
-      },
-      {
-        "slot": "expression.smile",
-        "source": "liu-dan/liu-dan__expression__smile__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__smile__v1.png",
-        "sha256": "d08962ed11b9a1226bb1eeb9d47918c6903053ef4adf2c1e22cba2a39497fe04",
-        "bytes": 2038959,
-        "version": 1
-      },
-      {
-        "slot": "expression.smug",
-        "source": "liu-dan/liu-dan__expression__smug__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__smug__v1.png",
-        "sha256": "b345f31c429cbbcf9cf3b0bb586b15604480e41f59fe32f1548e8fd08b527de9",
-        "bytes": 1951139,
-        "version": 1
-      },
-      {
-        "slot": "expression.speaking",
-        "source": "liu-dan/liu-dan__expression__speaking__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__speaking__v1.png",
-        "sha256": "ed9be2be4f559b3eab923a452203fcd8c9fa32065f4a0e2c8513c3a98f7d1250",
-        "bytes": 1861656,
-        "version": 1
-      },
-      {
-        "slot": "expression.surprised",
-        "source": "liu-dan/liu-dan__expression__surprised__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__surprised__v1.png",
-        "sha256": "2a0557b5c48e1418e680b236d1b74fc96ad4a0926bd3d5cdc3432a40a8ccd39a",
-        "bytes": 1955825,
-        "version": 1
-      },
-      {
-        "slot": "expression.thinking",
-        "source": "liu-dan/liu-dan__expression__thinking__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__thinking__v1.png",
-        "sha256": "5575621d43f59ed841c53d74ee960cb59d563e057c79ed7117dd7f99e4daa976",
-        "bytes": 1899914,
-        "version": 1
-      },
-      {
-        "slot": "expression.tired",
-        "source": "liu-dan/liu-dan__expression__tired__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__tired__v1.png",
-        "sha256": "f41ed0235f07fbcef0fb883fc98c03982e351825780a7014a26c5270c5501524",
-        "bytes": 1913864,
-        "version": 1
-      },
-      {
-        "slot": "expression.worried",
-        "source": "liu-dan/liu-dan__expression__worried__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__worried__v1.png",
-        "sha256": "6d2160456cdf3692adc83af89c6a04f8a7af23d9c710c74535a5246a1176824c",
-        "bytes": 1958291,
-        "version": 1
-      },
-      {
-        "slot": "face.down",
-        "source": "liu-dan/liu-dan__face__down__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__down__v1.png",
-        "sha256": "634cd8627408a72ee0810e7dada693ca633262f4006d7a769ebe19af38a2b2e5",
-        "bytes": 1935073,
-        "version": 1
-      },
-      {
-        "slot": "face.front",
-        "source": "liu-dan/liu-dan__face__front__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__front__v1.png",
-        "sha256": "271a544c8fdb387a429f5412244298d74277cfa62c70f393cddc0562c0117497",
-        "bytes": 1967409,
-        "version": 1
-      },
-      {
-        "slot": "face.side-right",
-        "source": "liu-dan/liu-dan__face__side-right__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__side-right__v1.png",
-        "sha256": "7d9cfa2afa46353b42311c110722177939f34c9fdd98f0255b073e557d732aab",
-        "bytes": 2129563,
-        "version": 1
-      },
-      {
-        "slot": "face.side",
-        "source": "liu-dan/liu-dan__face__side__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__side__v1.png",
-        "sha256": "c9cf6dd0ceb320dae50c188dbe5da7502298f58599248be79c18d54c6bfe8689",
-        "bytes": 2018190,
-        "version": 1
-      },
-      {
-        "slot": "face.three-quarter-left",
-        "source": "liu-dan/liu-dan__face__three-quarter-left__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__three-quarter-left__v1.png",
-        "sha256": "f0f1f8586ed478434bc3eca06cef8f22ef5d2d022c4ee36d7a59371c818a71f9",
-        "bytes": 2095998,
-        "version": 1
-      },
-      {
-        "slot": "face.three-quarter",
-        "source": "liu-dan/liu-dan__face__three-quarter__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__three-quarter__v1.png",
-        "sha256": "e26c5a9d42be55b7620db0d3aac8bceda1a0d9db14776ffbd6bed65263ade969",
-        "bytes": 2015353,
-        "version": 1
-      },
-      {
-        "slot": "face.up",
-        "source": "liu-dan/liu-dan__face__up__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__up__v1.png",
-        "sha256": "29130d88b7a0c0e3ef8fc19abe64fb5ce2561fcc515318d2f723be60c0620946",
-        "bytes": 1992639,
-        "version": 1
-      },
-      {
-        "slot": "pose.arms-crossed",
-        "source": "liu-dan/liu-dan__pose__arms-crossed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__arms-crossed__v1.png",
-        "sha256": "6d3dd63963840eda20812eb428930c88b300d178e2b0c8bcfecb4a62123d290b",
-        "bytes": 767572,
-        "version": 1
-      },
-      {
-        "slot": "pose.phone",
-        "source": "liu-dan/liu-dan__pose__phone__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__phone__v1.png",
-        "sha256": "964b465363d41aeb78cde2003b91438b872cd7b68aab8efdbcc62b86957712b3",
-        "bytes": 774258,
-        "version": 1
-      },
-      {
-        "slot": "pose.point",
-        "source": "liu-dan/liu-dan__pose__point__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__point__v1.png",
-        "sha256": "f8ff0c13530d7c84fb061655fb4fb2981b0fe43891981a9118b1bd81c071e1f3",
-        "bytes": 828118,
-        "version": 1
-      },
-      {
-        "slot": "pose.run",
-        "source": "liu-dan/liu-dan__pose__run__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__run__v1.png",
-        "sha256": "4586883081aad271737ecd1ef377b1d363de2a48c52ed27c5060dda2aae1f542",
-        "bytes": 903791,
-        "version": 1
-      },
-      {
-        "slot": "pose.sit",
-        "source": "liu-dan/liu-dan__pose__sit__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__sit__v1.png",
-        "sha256": "63d1d24f9c98aa42dfd2f48481d78159a0b01be829e1efc652e4c0b91b2b54ce",
-        "bytes": 1148374,
-        "version": 1
-      },
-      {
-        "slot": "pose.walk",
-        "source": "liu-dan/liu-dan__pose__walk__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__walk__v1.png",
-        "sha256": "2657915c4f73b343b227243fb160791461220e34bb5f803624b06383edff8b92",
-        "bytes": 907062,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.back-three-quarter-left",
-        "source": "liu-dan/liu-dan__turnaround__back-three-quarter-left__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__turnaround__back-three-quarter-left__v1.png",
-        "sha256": "b57a56280a2f88328f84006f7b3ac8c8b5f211fa47e8a6f5f43bc3dfb94b434c",
-        "bytes": 771280,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.back-three-quarter-right",
-        "source": "liu-dan/liu-dan__turnaround__back-three-quarter-right__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__turnaround__back-three-quarter-right__v1.png",
-        "sha256": "9114f7c3a67b4ab3decc4739a24c2cf71eff71e0ff4ad127724fecc47f152e80",
-        "bytes": 846789,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.back",
-        "source": "liu-dan/liu-dan__turnaround__back__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__turnaround__back__v1.png",
-        "sha256": "3fad48e1edbb17c024c857c5b71ad5412b25a97ab94cae4f0e984e621f4ae652",
-        "bytes": 846388,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.front",
-        "source": "liu-dan/liu-dan__turnaround__front__v1.png",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__turnaround__front__v1.png",
+        "source": "liu-dan/liu-dan__turnaround__front__v1.png",
         "sha256": "d0c85670bcbbdadb2bfeefbaf670e5ef2bcf868891d6d6adb6593573078cea11",
         "bytes": 864642,
+        "slot": "turnaround.front",
         "version": 1
       },
       {
-        "slot": "turnaround.side",
-        "source": "liu-dan/liu-dan__turnaround__side__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__turnaround__side__v1.png",
-        "sha256": "be5771384a98638485abd7600e51dfc67c7ea311e4763d30b792e43a64ceff80",
-        "bytes": 534187,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.three-quarter",
-        "source": "liu-dan/liu-dan__turnaround__three-quarter__v1.png",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__turnaround__three-quarter__v1.png",
+        "source": "liu-dan/liu-dan__turnaround__three-quarter__v1.png",
         "sha256": "c13428a5375e648f3ed30a1d7a9ee1dfb53b2791c6c3e73cb4e94d8731074b1a",
         "bytes": 771932,
+        "slot": "turnaround.three-quarter",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.after-shift",
-        "source": "liu-dan/liu-dan__wardrobe-personal__after-shift__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__after-shift__v1.png",
-        "sha256": "5b1ec300fa302ae46740229228c89b4a9eae4b1c50c6696ded35899526afc09a",
-        "bytes": 1103012,
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__turnaround__side__v1.png",
+        "source": "liu-dan/liu-dan__turnaround__side__v1.png",
+        "sha256": "be5771384a98638485abd7600e51dfc67c7ea311e4763d30b792e43a64ceff80",
+        "bytes": 534187,
+        "slot": "turnaround.side",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.back",
-        "source": "liu-dan/liu-dan__wardrobe-personal__back__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__back__v1.png",
-        "sha256": "d5b5512f0f25fce4aa4a6f1d9251bd543489a6f8ecb5512d6c91dd15d5fb8f39",
-        "bytes": 986119,
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__turnaround__back__v1.png",
+        "source": "liu-dan/liu-dan__turnaround__back__v1.png",
+        "sha256": "3fad48e1edbb17c024c857c5b71ad5412b25a97ab94cae4f0e984e621f4ae652",
+        "bytes": 846388,
+        "slot": "turnaround.back",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.carry-parcel",
-        "source": "liu-dan/liu-dan__wardrobe-personal__carry-parcel__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__carry-parcel__v1.png",
-        "sha256": "afca0c78d6a1b5f7f59bd9e09b9fa47ebc97a7dbea74a7fb9ba26290ffe04522",
-        "bytes": 928589,
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__turnaround__back-three-quarter-left__v1.png",
+        "source": "liu-dan/liu-dan__turnaround__back-three-quarter-left__v1.png",
+        "sha256": "b57a56280a2f88328f84006f7b3ac8c8b5f211fa47e8a6f5f43bc3dfb94b434c",
+        "bytes": 771280,
+        "slot": "turnaround.back-three-quarter-left",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.front",
-        "source": "liu-dan/liu-dan__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__turnaround__back-three-quarter-right__v1.png",
+        "source": "liu-dan/liu-dan__turnaround__back-three-quarter-right__v1.png",
+        "sha256": "9114f7c3a67b4ab3decc4739a24c2cf71eff71e0ff4ad127724fecc47f152e80",
+        "bytes": 846789,
+        "slot": "turnaround.back-three-quarter-right",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__front__v1.png",
+        "source": "liu-dan/liu-dan__face__front__v1.png",
+        "sha256": "271a544c8fdb387a429f5412244298d74277cfa62c70f393cddc0562c0117497",
+        "bytes": 1967409,
+        "slot": "face.front",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__three-quarter__v1.png",
+        "source": "liu-dan/liu-dan__face__three-quarter__v1.png",
+        "sha256": "e26c5a9d42be55b7620db0d3aac8bceda1a0d9db14776ffbd6bed65263ade969",
+        "bytes": 2015353,
+        "slot": "face.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__side__v1.png",
+        "source": "liu-dan/liu-dan__face__side__v1.png",
+        "sha256": "c9cf6dd0ceb320dae50c188dbe5da7502298f58599248be79c18d54c6bfe8689",
+        "bytes": 2018190,
+        "slot": "face.side",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__three-quarter-left__v1.png",
+        "source": "liu-dan/liu-dan__face__three-quarter-left__v1.png",
+        "sha256": "f0f1f8586ed478434bc3eca06cef8f22ef5d2d022c4ee36d7a59371c818a71f9",
+        "bytes": 2095998,
+        "slot": "face.three-quarter-left",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__side-right__v1.png",
+        "source": "liu-dan/liu-dan__face__side-right__v1.png",
+        "sha256": "7d9cfa2afa46353b42311c110722177939f34c9fdd98f0255b073e557d732aab",
+        "bytes": 2129563,
+        "slot": "face.side-right",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__up__v1.png",
+        "source": "liu-dan/liu-dan__face__up__v1.png",
+        "sha256": "29130d88b7a0c0e3ef8fc19abe64fb5ce2561fcc515318d2f723be60c0620946",
+        "bytes": 1992639,
+        "slot": "face.up",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__face__down__v1.png",
+        "source": "liu-dan/liu-dan__face__down__v1.png",
+        "sha256": "634cd8627408a72ee0810e7dada693ca633262f4006d7a769ebe19af38a2b2e5",
+        "bytes": 1935073,
+        "slot": "face.down",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__neutral__v1.png",
+        "source": "liu-dan/liu-dan__expression__neutral__v1.png",
+        "sha256": "ab0aff718d47ba570a92ee18724d4c3ce8af59f77cf821b7a4d7123feb954ebe",
+        "bytes": 2015099,
+        "slot": "expression.neutral",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__smile__v1.png",
+        "source": "liu-dan/liu-dan__expression__smile__v1.png",
+        "sha256": "d08962ed11b9a1226bb1eeb9d47918c6903053ef4adf2c1e22cba2a39497fe04",
+        "bytes": 2038959,
+        "slot": "expression.smile",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__laugh__v1.png",
+        "source": "liu-dan/liu-dan__expression__laugh__v1.png",
+        "sha256": "500979098bea0bf42887b6aa8cd7ff468c48553d45733d2b9907571cd1716811",
+        "bytes": 1917772,
+        "slot": "expression.laugh",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__sad__v1.png",
+        "source": "liu-dan/liu-dan__expression__sad__v1.png",
+        "sha256": "6d8ede0e3f0506454e09097f7e0c76858d7a16a3c24e71527a02747ee75c06ad",
+        "bytes": 1917230,
+        "slot": "expression.sad",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__cry__v1.png",
+        "source": "liu-dan/liu-dan__expression__cry__v1.png",
+        "sha256": "81053531b950d9b80ba96606bda46062a965b0ae8c989ea0221bfbdc667f526e",
+        "bytes": 2237740,
+        "slot": "expression.cry",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__annoyed__v1.png",
+        "source": "liu-dan/liu-dan__expression__annoyed__v1.png",
+        "sha256": "6c29f32c43b637df045521604040f3d8a44474c8c10b8e7df8d22d9eb27da518",
+        "bytes": 1967342,
+        "slot": "expression.annoyed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__angry__v1.png",
+        "source": "liu-dan/liu-dan__expression__angry__v1.png",
+        "sha256": "d96fd22d871ddf5ccc01e97094682ce308c1b955c22e7298fed788925e75dabb",
+        "bytes": 2028681,
+        "slot": "expression.angry",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__surprised__v1.png",
+        "source": "liu-dan/liu-dan__expression__surprised__v1.png",
+        "sha256": "2a0557b5c48e1418e680b236d1b74fc96ad4a0926bd3d5cdc3432a40a8ccd39a",
+        "bytes": 1955825,
+        "slot": "expression.surprised",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__scared__v1.png",
+        "source": "liu-dan/liu-dan__expression__scared__v1.png",
+        "sha256": "03933e743794110a1738e87a5459e3f85659d0b6097b179547faa582f6956cb2",
+        "bytes": 2072448,
+        "slot": "expression.scared",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__disgusted__v1.png",
+        "source": "liu-dan/liu-dan__expression__disgusted__v1.png",
+        "sha256": "1e8ce55b239335e2d9872389d16e1f2170256de72c29922d107e2c77f95bff35",
+        "bytes": 1958945,
+        "slot": "expression.disgusted",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__embarrassed__v1.png",
+        "source": "liu-dan/liu-dan__expression__embarrassed__v1.png",
+        "sha256": "970258352eea18c952a58d292ccaffb97682d69375e32e205f4dd10fdd606784",
+        "bytes": 1939618,
+        "slot": "expression.embarrassed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__tired__v1.png",
+        "source": "liu-dan/liu-dan__expression__tired__v1.png",
+        "sha256": "f41ed0235f07fbcef0fb883fc98c03982e351825780a7014a26c5270c5501524",
+        "bytes": 1913864,
+        "slot": "expression.tired",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__speaking__v1.png",
+        "source": "liu-dan/liu-dan__expression__speaking__v1.png",
+        "sha256": "ed9be2be4f559b3eab923a452203fcd8c9fa32065f4a0e2c8513c3a98f7d1250",
+        "bytes": 1861656,
+        "slot": "expression.speaking",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__eyes-closed__v1.png",
+        "source": "liu-dan/liu-dan__expression__eyes-closed__v1.png",
+        "sha256": "ea503a46bb4d5c7d1e30f13e7036ee55cf6d86280caaf6f246a0e4386ef91412",
+        "bytes": 2071636,
+        "slot": "expression.eyes-closed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__worried__v1.png",
+        "source": "liu-dan/liu-dan__expression__worried__v1.png",
+        "sha256": "6d2160456cdf3692adc83af89c6a04f8a7af23d9c710c74535a5246a1176824c",
+        "bytes": 1958291,
+        "slot": "expression.worried",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__skeptical__v1.png",
+        "source": "liu-dan/liu-dan__expression__skeptical__v1.png",
+        "sha256": "4f89caab0ebc6dc65343ce03f7f284fca6cbcb38370c2673ec39ff54a2822fcd",
+        "bytes": 1943694,
+        "slot": "expression.skeptical",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__smug__v1.png",
+        "source": "liu-dan/liu-dan__expression__smug__v1.png",
+        "sha256": "b345f31c429cbbcf9cf3b0bb586b15604480e41f59fe32f1548e8fd08b527de9",
+        "bytes": 1951139,
+        "slot": "expression.smug",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__contempt__v1.png",
+        "source": "liu-dan/liu-dan__expression__contempt__v1.png",
+        "sha256": "1de7d801662646db23f1d33648c636502ae0a590433e1520200de82ede4867c9",
+        "bytes": 1883009,
+        "slot": "expression.contempt",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__confused__v1.png",
+        "source": "liu-dan/liu-dan__expression__confused__v1.png",
+        "sha256": "e0d4b2f1cfd88e5ddde5e637dbca60b71f4f48417b7bc706edbb5672deba702a",
+        "bytes": 2022920,
+        "slot": "expression.confused",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__thinking__v1.png",
+        "source": "liu-dan/liu-dan__expression__thinking__v1.png",
+        "sha256": "5575621d43f59ed841c53d74ee960cb59d563e057c79ed7117dd7f99e4daa976",
+        "bytes": 1899914,
+        "slot": "expression.thinking",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__determined__v1.png",
+        "source": "liu-dan/liu-dan__expression__determined__v1.png",
+        "sha256": "4f5bd7325e4a4e3997c53272aa1191135b6238e2448bda735eb657273b78f8cd",
+        "bytes": 2036166,
+        "slot": "expression.determined",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__shy__v1.png",
+        "source": "liu-dan/liu-dan__expression__shy__v1.png",
+        "sha256": "8d87565b0f70112dde75e9b1e04400f759c084c4b845f3ab3540781d640e251d",
+        "bytes": 2041031,
+        "slot": "expression.shy",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__pain__v1.png",
+        "source": "liu-dan/liu-dan__expression__pain__v1.png",
+        "sha256": "9019ac0c9c348b00eee2b7ea7687c95fb88d8b948d7637de79164003f83f4ea9",
+        "bytes": 2109672,
+        "slot": "expression.pain",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__sleepy__v1.png",
+        "source": "liu-dan/liu-dan__expression__sleepy__v1.png",
+        "sha256": "dc5d40af4d525aa3dc8a03efca1fff077d448330f136f1996758a627cfe89732",
+        "bytes": 2055890,
+        "slot": "expression.sleepy",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__awkward-smile__v1.png",
+        "source": "liu-dan/liu-dan__expression__awkward-smile__v1.png",
+        "sha256": "c138ba58b44d24053e26ebc72fbac7f21cfae616398d5b651cd3e82421555c32",
+        "bytes": 2076097,
+        "slot": "expression.awkward-smile",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__expression__deadpan__v1.png",
+        "source": "liu-dan/liu-dan__expression__deadpan__v1.png",
+        "sha256": "f72a5ab3bd65303849b1ae83fa33f8beebc97538954a93ad37369d530f5b1870",
+        "bytes": 2099586,
+        "slot": "expression.deadpan",
+        "version": 1
+      },
+      {
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__front__v1.png",
+        "source": "liu-dan/liu-dan__wardrobe-personal__front__v1.png",
         "sha256": "896320d04f4f948d9c2bd79db19ef77f136534047343f971cb901efc67a9fdfc",
         "bytes": 959384,
+        "slot": "wardrobe.personal.front",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.lift-parcel",
-        "source": "liu-dan/liu-dan__wardrobe-personal__lift-parcel__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__lift-parcel__v1.png",
-        "sha256": "66fa18cecee4812645a9dd174e6fd7659314d5d35f4943212bdb3951688c6d70",
-        "bytes": 1264593,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.portrait",
-        "source": "liu-dan/liu-dan__wardrobe-personal__portrait__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__portrait__v1.png",
-        "sha256": "9ecef261eb58b9bf6878dd08a05ce496046da68d838012da429736b4a068f9df",
-        "bytes": 2223902,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.side",
-        "source": "liu-dan/liu-dan__wardrobe-personal__side__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__side__v1.png",
-        "sha256": "83f6f8358c5fef3d56dbd51870c45f2109bd7a4988105c93830f28c0c4f0c8b3",
-        "bytes": 687447,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.three-quarter",
-        "source": "liu-dan/liu-dan__wardrobe-personal__three-quarter__v1.png",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__three-quarter__v1.png",
+        "source": "liu-dan/liu-dan__wardrobe-personal__three-quarter__v1.png",
         "sha256": "41ef52d7553b5f3ef0163db0317f4c03bacd2ba2dbb43755a168a4d65040e370",
         "bytes": 998539,
+        "slot": "wardrobe.personal.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__side__v1.png",
+        "source": "liu-dan/liu-dan__wardrobe-personal__side__v1.png",
+        "sha256": "83f6f8358c5fef3d56dbd51870c45f2109bd7a4988105c93830f28c0c4f0c8b3",
+        "bytes": 687447,
+        "slot": "wardrobe.personal.side",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__back__v1.png",
+        "source": "liu-dan/liu-dan__wardrobe-personal__back__v1.png",
+        "sha256": "d5b5512f0f25fce4aa4a6f1d9251bd543489a6f8ecb5512d6c91dd15d5fb8f39",
+        "bytes": 986119,
+        "slot": "wardrobe.personal.back",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__portrait__v1.png",
+        "source": "liu-dan/liu-dan__wardrobe-personal__portrait__v1.png",
+        "sha256": "9ecef261eb58b9bf6878dd08a05ce496046da68d838012da429736b4a068f9df",
+        "bytes": 2223902,
+        "slot": "wardrobe.personal.portrait",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__carry-parcel__v1.png",
+        "source": "liu-dan/liu-dan__wardrobe-personal__carry-parcel__v1.png",
+        "sha256": "afca0c78d6a1b5f7f59bd9e09b9fa47ebc97a7dbea74a7fb9ba26290ffe04522",
+        "bytes": 928589,
+        "slot": "wardrobe.personal.carry-parcel",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__lift-parcel__v1.png",
+        "source": "liu-dan/liu-dan__wardrobe-personal__lift-parcel__v1.png",
+        "sha256": "66fa18cecee4812645a9dd174e6fd7659314d5d35f4943212bdb3951688c6d70",
+        "bytes": 1264593,
+        "slot": "wardrobe.personal.lift-parcel",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__wardrobe-personal__after-shift__v1.png",
+        "source": "liu-dan/liu-dan__wardrobe-personal__after-shift__v1.png",
+        "sha256": "5b1ec300fa302ae46740229228c89b4a9eae4b1c50c6696ded35899526afc09a",
+        "bytes": 1103012,
+        "slot": "wardrobe.personal.after-shift",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__walk__v1.png",
+        "source": "liu-dan/liu-dan__pose__walk__v1.png",
+        "sha256": "2657915c4f73b343b227243fb160791461220e34bb5f803624b06383edff8b92",
+        "bytes": 907062,
+        "slot": "pose.walk",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__run__v1.png",
+        "source": "liu-dan/liu-dan__pose__run__v1.png",
+        "sha256": "4586883081aad271737ecd1ef377b1d363de2a48c52ed27c5060dda2aae1f542",
+        "bytes": 903791,
+        "slot": "pose.run",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__sit__v1.png",
+        "source": "liu-dan/liu-dan__pose__sit__v1.png",
+        "sha256": "63d1d24f9c98aa42dfd2f48481d78159a0b01be829e1efc652e4c0b91b2b54ce",
+        "bytes": 1148374,
+        "slot": "pose.sit",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__point__v1.png",
+        "source": "liu-dan/liu-dan__pose__point__v1.png",
+        "sha256": "f8ff0c13530d7c84fb061655fb4fb2981b0fe43891981a9118b1bd81c071e1f3",
+        "bytes": 828118,
+        "slot": "pose.point",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__arms-crossed__v1.png",
+        "source": "liu-dan/liu-dan__pose__arms-crossed__v1.png",
+        "sha256": "6d3dd63963840eda20812eb428930c88b300d178e2b0c8bcfecb4a62123d290b",
+        "bytes": 767572,
+        "slot": "pose.arms-crossed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__pose__phone__v1.png",
+        "source": "liu-dan/liu-dan__pose__phone__v1.png",
+        "sha256": "964b465363d41aeb78cde2003b91438b872cd7b68aab8efdbcc62b86957712b3",
+        "bytes": 774258,
+        "slot": "pose.phone",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__detail__hands__v1.png",
+        "source": "liu-dan/liu-dan__detail__hands__v1.png",
+        "sha256": "cc09344e9a80a1584871221a1a5bb0d050c1b57c17f0199de3ac20612fdc6340",
+        "bytes": 1128372,
+        "slot": "detail.hands",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/liu-dan__detail__hair-back__v1.png",
+        "source": "liu-dan/liu-dan__detail__hair-back__v1.png",
+        "sha256": "d87dd03917cf55662aa9289e79b72d1394cb38de014fdcf6ab3c4c0e7fdf5111",
+        "bytes": 1954404,
+        "slot": "detail.hair-back",
         "version": 1
       }
     ],
     "voices": [
       {
-        "slot": "intro",
-        "source": "voices/liu-dan/liu-dan__voice__intro__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/voice/handoff/liu-dan__voice__intro__v1.wav",
+        "source": "voices/liu-dan/liu-dan__voice__intro__v1.wav",
         "sha256": "6d4dd6dfdd01276d1eac3ea6a60a786430f0c78ef3c95aecc368d9b281454c2d",
         "bytes": 1065846,
+        "slot": "intro",
         "version": 1,
+        "placeholder": true,
         "transcript": "大家好，我叫刘丹，辽宁鞍山人，今年二十三。别看我才一米五六，我以前练举重的，现在在快递站分拣。搬箱子这活儿，真不一定谁比谁慢。下班一起吃口热乎的，比啥都强。"
       },
       {
-        "slot": "intro-alt",
-        "source": "voices/liu-dan/liu-dan__voice__intro-alt__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/voice/handoff/liu-dan__voice__intro-alt__v1.wav",
+        "source": "voices/liu-dan/liu-dan__voice__intro-alt__v1.wav",
         "sha256": "b8d2086041a4c15ac78ea5e6568d6526e6cb695953e06425494cc867dc7d3236",
         "bytes": 1068918,
+        "slot": "intro-alt",
         "version": 1,
+        "placeholder": true,
         "transcript": "Hi, I'm Liu Dan. I'm twenty-three, from Anshan in northeast China. I used to train in weightlifting, and now I sort parcels. I'm short, sure, but let me take that box. After work, I just want something hot to eat and a good laugh."
       },
       {
-        "slot": "chat",
-        "source": "voices/liu-dan/liu-dan__voice__chat__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/voice/handoff/liu-dan__voice__chat__v1.wav",
+        "source": "voices/liu-dan/liu-dan__voice__chat__v1.wav",
         "sha256": "29775fa7ab3808ca91afd0df1715b09a131457b1a06f6eae2562cae6fba09da9",
         "bytes": 688670,
+        "slot": "chat",
         "version": 1,
+        "placeholder": true,
         "transcript": "你先把那边的小件分好，大箱子留给我。哎，不用跟我客气，我以前练这个的。等忙完这一波，咱俩去吃碗面，我请你。"
       },
       {
-        "slot": "happy",
-        "source": "voices/liu-dan/liu-dan__voice__happy__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/voice/handoff/liu-dan__voice__happy__v1.wav",
+        "source": "voices/liu-dan/liu-dan__voice__happy__v1.wav",
         "sha256": "3abd995085d0fe42fb8b3b9c6baf79430aef07f27fec13d05bd0b9643b89ca01",
         "bytes": 655234,
+        "slot": "happy",
         "version": 1,
+        "placeholder": true,
         "transcript": "真让我赶上末班车了！我都以为今天又得走回去呢。来，你坐这儿，我站一会儿没事。哎呀，今天这运气，可算轮着我了！"
       },
       {
-        "slot": "angry",
-        "source": "voices/liu-dan/liu-dan__voice__angry__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/voice/handoff/liu-dan__voice__angry__v1.wav",
+        "source": "voices/liu-dan/liu-dan__voice__angry__v1.wav",
         "sha256": "ee555a472f1a8db6704e040d23b30e8c0e39ccabf6f957274a93cb7e9417c99f",
         "bytes": 622540,
+        "slot": "angry",
         "version": 1,
+        "placeholder": true,
         "transcript": "我说了多少遍，重箱子别往轻件上头摞！你图这两秒省事，东西压坏了谁负责？先停一下，跟我把这排重新分好。"
       },
       {
-        "slot": "sad",
-        "source": "voices/liu-dan/liu-dan__voice__sad__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/voice/handoff/liu-dan__voice__sad__v1.wav",
+        "source": "voices/liu-dan/liu-dan__voice__sad__v1.wav",
         "sha256": "487223d0b5c862d5b23895c6bbbf2ad5988bac9d996a9c63e52ce6a0e2c267fb",
         "bytes": 806814,
+        "slot": "sad",
         "version": 1,
+        "placeholder": true,
         "transcript": "刚才收拾柜子，翻出以前比赛那双鞋了。都磨成那样了，我还舍不得扔。其实现在也挺好，就是有时候，还真想再听一回开场的哨声。"
       }
     ]
@@ -696,9 +741,9 @@
       "approval": {
         "rootStatus": "passed-technical-staging-under-owner-delegated-review",
         "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/actors/liu-dan.json",
-        "evidenceSha256": "33925a29349dc9760a77ea66e9d3dbcfe87b4d4e23165f2512f0d90cca4e999c",
+        "evidenceSha256": "485b71ad865b10e8aa42885cb4d57ce20bda6b3c068b73fd4e2f5806472816e7",
         "ownerReviewPending": false,
-        "authority": "2026-10-22 BRIEF explicitly authorizes publishing these four completed staging deliveries; producer limitations retained in proposals, not an automatic ratio/frame pass or personal Owner review."
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
       },
       "media": [
         {
@@ -707,9 +752,174 @@
           "source": "samples/liu-dan-grok-20261022/source.mp4",
           "sourceSha256": "c89b4fc7e32c98752d9e7249802b372cac14d1a626b3f7636e7cc33fa634fb20",
           "public": "/media/works/samples/liu-dan-grok-20261022/video.mp4",
-          "transcode": true
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/liu-dan__sample__grok__silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/liu-dan__sample__grok__original.mp4",
+            "source": "samples/liu-dan-grok-20261022/platform-original.mp4",
+            "sha256": "95b23355a6f58a2fc4e044acc51b058ba3f89daba325257823bbc60f6aa3319b",
+            "bytes": 1936066
+          }
         }
       ]
+    },
+    {
+      "sampleId": "liu-dan-grok-action-20261023",
+      "actorSlugs": [
+        "liu-dan"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/action/task.json",
+        "evidenceSha256": "f35b3b9480587492eb2b92c78156c0d2bd5621135ce6bbae18d228f43ea528cd",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/liu-dan-grok-action-20261023/source.mp4",
+          "sourceSha256": "fe7fa5eeba261b042f4aa267073d93dd1c51f75bd1c2508f7a20553bbb6bc80a",
+          "public": "/media/works/samples/liu-dan-grok-action-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/action/attempt-03-authorized-contained-arms/liu-dan-action-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/action/attempt-03-authorized-contained-arms/liu-dan-action-original.mp4",
+            "source": "samples/liu-dan-grok-action-20261023/platform-original.mp4",
+            "sha256": "b2e16e75c56cbb18f93fa8ba59f48c58c94d47e7a22217b35c80774594988042",
+            "bytes": 1864312
+          }
+        }
+      ],
+      "productionTask": {
+        "id": "task-dd183c461aef374f",
+        "sha256": "f35b3b9480587492eb2b92c78156c0d2bd5621135ce6bbae18d228f43ea528cd",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:45:58.508Z",
+          "note": "直接查看12帧运动表及原生首中尾：刘丹黑短波波头齐刘海圆脸及粉色T恤、娇小成年体态保持，正面转向右侧并连续迈步停稳；双手收在躯干前，发顶手指鞋底全程完整，先前张臂越框风险已消除。成人头颈躯干骨盆腿段相对已批准G身体锚点自然，无融合多肢；有轻微推近与跟随而非严格固定镜头，作为动作表演接受并保留偏差。原生720x1280/6.041667秒全解码、原片与静音已收，本次0.02292552美元。此为Owner巡查授权的一次新请求；旧会话01a16367仍结果未知、旧费用0.0485962保留且可能重复计费，不称旧请求失败或成功。技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "liu-dan-grok-ensemble-20261023",
+      "actorSlugs": [
+        "liu-dan"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/ensemble/task.json",
+        "evidenceSha256": "c1430146dbd2dd51ba09b620bdcdcdf71f529f004f69723b5b42d5f54143bff7",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/liu-dan-grok-ensemble-20261023/source.mp4",
+          "sourceSha256": "7686ec00abea47f8f597b7204ba39cae795304678f16e1a7bd6b2cbe5ece50f0",
+          "public": "/media/works/samples/liu-dan-grok-ensemble-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/ensemble/liu-dan-ensemble-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/ensemble/liu-dan-ensemble-original.mp4",
+            "source": "samples/liu-dan-grok-ensemble-20261023/platform-original.mp4",
+            "sha256": "4f8c3f39471c3c97642e46720eea4e2b623cb1ee3644e05144a396e6db35b547",
+            "bytes": 2665525
+          }
+        }
+      ],
+      "castSlugs": [
+        "liu-dan",
+        "xu-li"
+      ],
+      "productionTask": {
+        "id": "task-43d47042a719d514",
+        "sha256": "c1430146dbd2dd51ba09b620bdcdcdf71f529f004f69723b5b42d5f54143bff7",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T11:52:19.320Z",
+          "note": "Actual native6.041667s1280x720 fullydecoded,12motionframes plus start/middle/end inspected directly. Liu blackbob/roundface/rusthoodie and Xu copperlayers/longheartface/creamcardigan remain separate knownidentities, adultrelativehead/neck/torso/hip/legs stable, both fullhead/hands/shoes visible with no face swap or limbmerge. Clear walking towardeachother, palmgesture and nod. Blockingexception:both approach rather thanrightpartnerremainingstationary; accepted under delegated aesthetic authority as naturalensemble greeting, not precisionblocking. Nativeoriginal+AAC/cover preserved, silentstreamcopy localstaging.",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "liu-dan-google-vids-20261023",
+      "actorSlugs": [
+        "liu-dan"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Google Vids"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/vids/task.json",
+        "evidenceSha256": "51271a67d68e611df27fdd4f6cd419ddfc3d2e125724353f13fbe949c84c6125",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/liu-dan-google-vids-20261023/source.mp4",
+          "sourceSha256": "0c4ccf20201d7e47df816b4558a573935ee36f9d95ef3c9ce7294480c62e7014",
+          "public": "/media/works/samples/liu-dan-google-vids-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/vids/liu-dan-vids-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/liu-dan/video/additional-20261022/vids/liu-dan-vids-original.mp4",
+            "source": "samples/liu-dan-google-vids-20261023/platform-original.mp4",
+            "sha256": "45a5fea0d1891ab2b8819861f5e10771402ebfd7d0b879a62a954198417b20e8",
+            "bytes": 1497220
+          }
+        }
+      ],
+      "castSlugs": [
+        "liu-dan",
+        "xu-li"
+      ],
+      "productionTask": {
+        "id": "task-6a4ed58dd010960c",
+        "sha256": "51271a67d68e611df27fdd4f6cd419ddfc3d2e125724353f13fbe949c84c6125",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T12:00:57.590Z",
+          "note": "ActualIAB nativeMP4,6.0s video/6.016s container,1280x720,full decode and12motionframes plus start/middle/end inspected. Liu blackbob/roundface/rusthoodie and Xu copperlayers/longheartface/creamcardigan distinct, adultrelative proportions andheight relationship stable, fullhead/hands/shoes retained, natural Liu step/palmgesture andXu nod, no fusedlimbs/faceswaps. Same3frozen reference bytes andmainprompt asGrok03; Create ingredients rerender initialcomposition rather thanpinexactframe. NativeAAC48k stereo preserved andsilentstreamcopy; visiblefourpoint platformstar retained. Savedclip visible on6s timeline andSavedtoDrive, actualfee unknown. Delegatedstaging acceptance, notwebsitepublication.",
+          "formalPublication": false
+        },
+        "source": null
+      }
     }
-  ]
+  ],
+  "websitePromotion": {
+    "authorizedOn": "2026-10-23",
+    "authority": "Owner task: publish all ten under new names, second-version biographies and approved current appearance; preserve CC provenance and old URL redirects.",
+    "actorSourceSha256": "485b71ad865b10e8aa42885cb4d57ce20bda6b3c068b73fd4e2f5806472816e7",
+    "slotPlanSha256": "a76854a35b3585b6b32f7dedde734a70c86d652289dcd0902473ddafeb9ce699",
+    "voiceReview": "Owner-accepted temporary placeholder; no complete acoustic review claimed.",
+    "proportionReview": "Owner-delegated relative visual acceptance; original absolute measurement_review and framing exceptions retained unchanged in producer evidence.",
+    "billing": "Historical Grok unknown requests and CLI model-usage USD values remain in producer records; no verified account debit or video unit price is asserted."
+  }
 }

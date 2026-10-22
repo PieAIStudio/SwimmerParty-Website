@@ -12,7 +12,7 @@
     "published": false,
     "preparedOn": "2026-10-22",
     "productionOnly": true,
-    "version": "1.0.0",
+    "version": "1.1.0",
     "siteProfile": "src/content/actors/ma-hong/profile.ts"
   },
   "demographics": {
@@ -108,7 +108,7 @@
         {
           "key": "portrait",
           "label": { "zh": "日常装近景", "en": "Everyday portrait" },
-          "direction": "Head and upper chest in the actor's personal outfit, facing the camera."
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
         },
         {
           "key": "rolling-pin",
@@ -140,10 +140,30 @@
   "roles": [],
   "proposals": {
     "approval": "agent-selected-under-owner-delegated-aesthetic-authority",
-    "phase": "technical-staging-complete",
+    "phase": "four-samples-complete-technical-staging",
     "appearance": "Selected model-verified trial3-A after frozen measurement and visual anatomy/identity review. Median6.471 interval6.058–6.950, measurement_review; frame_rejected top1.7% bottom1.9% retained. Delegated visual exception: mature158cm ordinary build, natural neck/torso/pelvis/leg relationships and complete hair/soles, distinctive face, clean CG/alpha. Does not claim ratio_in_range, automatic frame pass, or Owner personal selection. Prior unverified outputs remain quarantined.",
     "delivered": 55,
-    "sampleVideoLimitation": "Grok sample includes minor angular floor mark/shadow near shoes; sample only, not production-clean claim."
+    "sampleVideoLimitation": "Grok sample includes minor angular floor mark/shadow near shoes; sample only, not production-clean claim.",
+    "additionalVideoTasks": {
+      "action": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/action/task.json",
+      "ensemble": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/ensemble/task.json",
+      "vids": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/vids/task.json"
+    },
+    "sampleScope": {
+      "required": 4,
+      "accepted": 4,
+      "grokAccepted": 3,
+      "vidsAccepted": 1,
+      "missing": {},
+      "sourceExceptions": [
+        "vids: platform-saved Drive rendition received; original feed bytes not received"
+      ],
+      "voiceNote": "existing six placeholder WAV unchanged; no acoustic review claim",
+      "reviewAuthority": "Owner delegated aesthetic and relative proportion review; staging only",
+      "reviewPage": "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/four-sample-review.html",
+      "updatedAt": "2026-10-22T16:16:05.182454+00:00",
+      "publication": false
+    }
   },
   "routes": {
     "chatgpt-web": {
@@ -157,15 +177,15 @@
   },
   "website": {
     "published": true,
-    "order": 116,
+    "order": 118,
     "status": "active",
     "tagline": {
-      "en": "She learnt English at fifty. Now she teaches Henan noodles in English.",
-      "zh": "五十岁开始学英语，现在用英文教人做烩面。"
+      "en": "Learned English at fifty. Now she teaches visitors to make noodles.",
+      "zh": "五十岁学英语，教老外做烩面。"
     },
     "introduction": {
-      "en": "She learnt English at fifty. Now she teaches Henan noodles in English.",
-      "zh": "五十岁开始学英语，现在用英文教人做烩面。"
+      "en": "With reddish-brown curls and deep laughter lines, Ma Hong learned English at fifty. She now teaches foreigners to make Henan huimian noodles in English, and has more followers than her daughter.",
+      "zh": "红褐色卷发，笑纹很深。五十岁才学英语，现在用英文教老外做烩面，粉丝比女儿多。"
     },
     "specOrder": [
       "age",
@@ -178,516 +198,533 @@
     ]
   },
   "release": {
-    "date": "2026-10-22",
+    "date": "2026-10-23",
     "note": {
-      "en": "55 reference images, 6 placeholder voice clips and a sample video.",
-      "zh": "55 张参考图、6 段占位声音、1 段样片。"
-    }
+      "en": "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+      "zh": "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。"
+    },
+    "history": [
+      {
+        "version": "1.0.0",
+        "date": "2026-10-22",
+        "note": {
+          "en": "55 reference images, 6 placeholder voice clips and a sample video.",
+          "zh": "55 张参考图、6 段占位声音、1 段样片。"
+        }
+      }
+    ]
   },
   "assetDelivery": {
     "mode": "source-originals",
-    "candidateAuthorizedOn": "2026-10-22",
+    "candidateAuthorizedOn": "2026-10-23",
     "ownerReviewPending": false,
     "sourceEvidence": [
       "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/actors/ma-hong.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/ma-hong-slot-plan.json",
       "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/voice/frozen/handoff.json",
-      "/Users/yuanfei/PieAI/HQ/conductor/projects/SwimmerParty/next-version-20261022/BRIEF.md"
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/RESULT.md"
     ],
     "images": [
       {
-        "slot": "detail.hair-back",
-        "source": "ma-hong/ma-hong__detail__hair-back__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__detail__hair-back__v1.png",
-        "sha256": "f335a30d7b3ac07fa2693d258b933f35755f6c0a792e1984ec595bf52dc31ca6",
-        "bytes": 2061432,
-        "version": 1
-      },
-      {
-        "slot": "detail.hands",
-        "source": "ma-hong/ma-hong__detail__hands__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__detail__hands__v1.png",
-        "sha256": "8122e32a0eef1f81680367bdf300ba3ab550b773650ec6247f82276842a8c23e",
-        "bytes": 1143043,
-        "version": 1
-      },
-      {
-        "slot": "expression.angry",
-        "source": "ma-hong/ma-hong__expression__angry__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__angry__v1.png",
-        "sha256": "48fb117ac652904e3a8c4e7972198ee96e890e81ff60ec4a3ca5151dbe68aee8",
-        "bytes": 2294071,
-        "version": 1
-      },
-      {
-        "slot": "expression.annoyed",
-        "source": "ma-hong/ma-hong__expression__annoyed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__annoyed__v1.png",
-        "sha256": "4a0fd0679694fab4499caace8b55ea70dc0da37d58ae2cc7dee00bacee47d81a",
-        "bytes": 2250618,
-        "version": 1
-      },
-      {
-        "slot": "expression.awkward-smile",
-        "source": "ma-hong/ma-hong__expression__awkward-smile__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__awkward-smile__v1.png",
-        "sha256": "b3f64414450d68c3a32d992cdbe57ff51a9512f50c51958afe92d6c77eacab1b",
-        "bytes": 2090163,
-        "version": 1
-      },
-      {
-        "slot": "expression.confused",
-        "source": "ma-hong/ma-hong__expression__confused__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__confused__v1.png",
-        "sha256": "7fa581e7e3ffe0738f081344139047e84cd814f13aca427aabee80104b11673d",
-        "bytes": 2290764,
-        "version": 1
-      },
-      {
-        "slot": "expression.contempt",
-        "source": "ma-hong/ma-hong__expression__contempt__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__contempt__v1.png",
-        "sha256": "ef4d93acc40f2715a6096ccb41adf231517b2543c8f130a2c2c7bcc1f5e6d587",
-        "bytes": 2185825,
-        "version": 1
-      },
-      {
-        "slot": "expression.cry",
-        "source": "ma-hong/ma-hong__expression__cry__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__cry__v1.png",
-        "sha256": "c5663522b6192756f45a68ad710e3e0950617428a0a1635e948334a036bcc739",
-        "bytes": 2241499,
-        "version": 1
-      },
-      {
-        "slot": "expression.deadpan",
-        "source": "ma-hong/ma-hong__expression__deadpan__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__deadpan__v1.png",
-        "sha256": "cea3d824c6406899f578bad72df0765ef5b26c69db13dbe540925dcbe361b440",
-        "bytes": 2080582,
-        "version": 1
-      },
-      {
-        "slot": "expression.determined",
-        "source": "ma-hong/ma-hong__expression__determined__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__determined__v1.png",
-        "sha256": "a17f47f60686ae309d5c1e650c6b91295fd665d530783fa0c2745869f35ede85",
-        "bytes": 2159132,
-        "version": 1
-      },
-      {
-        "slot": "expression.disgusted",
-        "source": "ma-hong/ma-hong__expression__disgusted__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__disgusted__v1.png",
-        "sha256": "5806d8b4529b8936dd30e97f86d6586fa6d96fa1a2d83d59aaec99feeeba0b17",
-        "bytes": 2294338,
-        "version": 1
-      },
-      {
-        "slot": "expression.embarrassed",
-        "source": "ma-hong/ma-hong__expression__embarrassed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__embarrassed__v1.png",
-        "sha256": "e47f38525d1268cae6b6dc6fae9a3fad75e87e7a20d65934b599f30db0c9ee89",
-        "bytes": 2238968,
-        "version": 1
-      },
-      {
-        "slot": "expression.eyes-closed",
-        "source": "ma-hong/ma-hong__expression__eyes-closed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__eyes-closed__v1.png",
-        "sha256": "43595adbcfcf84345491463ab89c8055385840d25e6ce98037f9e431b855d052",
-        "bytes": 2041353,
-        "version": 1
-      },
-      {
-        "slot": "expression.laugh",
-        "source": "ma-hong/ma-hong__expression__laugh__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__laugh__v1.png",
-        "sha256": "62dcc88099092a313c7f45fa5626cad5c87789b51ecdf91b809024e58054a9e0",
-        "bytes": 2120035,
-        "version": 1
-      },
-      {
-        "slot": "expression.neutral",
-        "source": "ma-hong/ma-hong__expression__neutral__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__neutral__v1.png",
-        "sha256": "09dd0a95bf99568499087242673d2c241ae6106e522dcb25749739536ca8e26c",
-        "bytes": 2114127,
-        "version": 1
-      },
-      {
-        "slot": "expression.pain",
-        "source": "ma-hong/ma-hong__expression__pain__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__pain__v1.png",
-        "sha256": "65a33099f3848d60c8cb7168762659436eca67fcccd82bf2568c8cb271d5b5df",
-        "bytes": 2293573,
-        "version": 1
-      },
-      {
-        "slot": "expression.sad",
-        "source": "ma-hong/ma-hong__expression__sad__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__sad__v1.png",
-        "sha256": "8adec014e4ff36560a378dfec9b1757197d91691c01e8a7febe434277e7f4dbd",
-        "bytes": 2208496,
-        "version": 1
-      },
-      {
-        "slot": "expression.scared",
-        "source": "ma-hong/ma-hong__expression__scared__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__scared__v1.png",
-        "sha256": "d34b39863f77c776c763b3700067d3ad0f4fe62478707a18ac2515a846c3b937",
-        "bytes": 2199904,
-        "version": 1
-      },
-      {
-        "slot": "expression.shy",
-        "source": "ma-hong/ma-hong__expression__shy__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__shy__v1.png",
-        "sha256": "da3936b891e4f1b056d183870818dfbe568a6b2b418b7b2d9d98d9af6e111cb2",
-        "bytes": 2030945,
-        "version": 1
-      },
-      {
-        "slot": "expression.skeptical",
-        "source": "ma-hong/ma-hong__expression__skeptical__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__skeptical__v1.png",
-        "sha256": "13db1d167d6e75ae63667378bd6de6d7a94ff5921abdba12bf478ae4eb1ba316",
-        "bytes": 1917577,
-        "version": 1
-      },
-      {
-        "slot": "expression.sleepy",
-        "source": "ma-hong/ma-hong__expression__sleepy__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__sleepy__v1.png",
-        "sha256": "cad7e9b47504dd7e78c1a3e8b77c38a39d45d088cfbde41456acee8fd29022d8",
-        "bytes": 2101475,
-        "version": 1
-      },
-      {
-        "slot": "expression.smile",
-        "source": "ma-hong/ma-hong__expression__smile__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__smile__v1.png",
-        "sha256": "b2fc2e22d5d7f1909ac826c5aa9b3fae7c396b50d76e430945911ffbd7750b50",
-        "bytes": 2095853,
-        "version": 1
-      },
-      {
-        "slot": "expression.smug",
-        "source": "ma-hong/ma-hong__expression__smug__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__smug__v1.png",
-        "sha256": "60e1cdfdb8119a9ba2dcdf766c2b6e06a8b2ffcb8e72a14884d99a592451a861",
-        "bytes": 2172723,
-        "version": 1
-      },
-      {
-        "slot": "expression.speaking",
-        "source": "ma-hong/ma-hong__expression__speaking__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__speaking__v1.png",
-        "sha256": "aa15af4d11f80ba9c1aaab6785880b962165d256e69a0cf6a0fb19b13c2bf493",
-        "bytes": 2195864,
-        "version": 1
-      },
-      {
-        "slot": "expression.surprised",
-        "source": "ma-hong/ma-hong__expression__surprised__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__surprised__v1.png",
-        "sha256": "9dda1a9a717cb208a390c7aea5a819d7ba37a84eab9fc4b41b56615f6eec6cbb",
-        "bytes": 2432351,
-        "version": 1
-      },
-      {
-        "slot": "expression.thinking",
-        "source": "ma-hong/ma-hong__expression__thinking__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__thinking__v1.png",
-        "sha256": "b0ea32710d71f779fd46a9ab51b495b42c4a91250af3f351f10f20d69c50e095",
-        "bytes": 2174031,
-        "version": 1
-      },
-      {
-        "slot": "expression.tired",
-        "source": "ma-hong/ma-hong__expression__tired__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__tired__v1.png",
-        "sha256": "de87ad5ff2a3747c858038dae1f74cbe18f53d6686429673872e49eda5429d6f",
-        "bytes": 2322027,
-        "version": 1
-      },
-      {
-        "slot": "expression.worried",
-        "source": "ma-hong/ma-hong__expression__worried__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__worried__v1.png",
-        "sha256": "4152c4d428dd9531c0071b1c601366e0b615ccbea02fc3e88df29a41b2358b60",
-        "bytes": 2397446,
-        "version": 1
-      },
-      {
-        "slot": "face.down",
-        "source": "ma-hong/ma-hong__face__down__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__down__v1.png",
-        "sha256": "5f4330b0905b98e5bdc8822c45c7a4e7c6949c361d034c1196526e6f75bde1f8",
-        "bytes": 2446110,
-        "version": 1
-      },
-      {
-        "slot": "face.front",
-        "source": "ma-hong/ma-hong__face__front__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__front__v1.png",
-        "sha256": "f394fa6d7136fef9caed9358b737dc5e2e34b95c570020bd0400642dc625a694",
-        "bytes": 2089792,
-        "version": 1
-      },
-      {
-        "slot": "face.side-right",
-        "source": "ma-hong/ma-hong__face__side-right__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__side-right__v1.png",
-        "sha256": "b2a254e6a1691a9fb1331d6fe397bcf86b335204d74ece6a60edb8ac98434bec",
-        "bytes": 2072278,
-        "version": 1
-      },
-      {
-        "slot": "face.side",
-        "source": "ma-hong/ma-hong__face__side__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__side__v1.png",
-        "sha256": "2def9130f14494662b854da4035fe98a534ba51f88f2b5fc5a8c9154ec6655ad",
-        "bytes": 2097412,
-        "version": 1
-      },
-      {
-        "slot": "face.three-quarter-left",
-        "source": "ma-hong/ma-hong__face__three-quarter-left__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__three-quarter-left__v1.png",
-        "sha256": "30371d9217f85fda9c57013c71131339a2d3c843f07cad4da6444636e07bb8af",
-        "bytes": 2145194,
-        "version": 1
-      },
-      {
-        "slot": "face.three-quarter",
-        "source": "ma-hong/ma-hong__face__three-quarter__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__three-quarter__v1.png",
-        "sha256": "16554617f8144405bfc1f4d8defb0f61965c667594e34eeac6de994d83ee7eea",
-        "bytes": 2228602,
-        "version": 1
-      },
-      {
-        "slot": "face.up",
-        "source": "ma-hong/ma-hong__face__up__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__up__v1.png",
-        "sha256": "baeafa0019ef9a49e89a99e1d249e3c9259a6824ddb01348ea3e6208a609f0a4",
-        "bytes": 2341214,
-        "version": 1
-      },
-      {
-        "slot": "pose.arms-crossed",
-        "source": "ma-hong/ma-hong__pose__arms-crossed__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__arms-crossed__v1.png",
-        "sha256": "58b6b38878c1f4e12bd880987e25320f9c48c8bd496999134af09b9b5d414689",
-        "bytes": 870121,
-        "version": 1
-      },
-      {
-        "slot": "pose.phone",
-        "source": "ma-hong/ma-hong__pose__phone__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__phone__v1.png",
-        "sha256": "959c29853c04d0a72a48fb7b07cb4ede2012e01d7929eb60bb030967a14c5f2d",
-        "bytes": 980685,
-        "version": 1
-      },
-      {
-        "slot": "pose.point",
-        "source": "ma-hong/ma-hong__pose__point__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__point__v1.png",
-        "sha256": "9e83e733675474523076110de849cb29132535050e55e70efae21d97cdead309",
-        "bytes": 915965,
-        "version": 1
-      },
-      {
-        "slot": "pose.run",
-        "source": "ma-hong/ma-hong__pose__run__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__run__v1.png",
-        "sha256": "be50ad1112be7cffd7dce3fe6fcac869fb082eff85a0d52f8c8731082d4bf62d",
-        "bytes": 1030460,
-        "version": 1
-      },
-      {
-        "slot": "pose.sit",
-        "source": "ma-hong/ma-hong__pose__sit__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__sit__v1.png",
-        "sha256": "506038087936ddc7634cddbef0cde368950f07a3d0289dfb155d8abdf4485e36",
-        "bytes": 1258869,
-        "version": 1
-      },
-      {
-        "slot": "pose.walk",
-        "source": "ma-hong/ma-hong__pose__walk__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__walk__v1.png",
-        "sha256": "924b0ff106e74d2d924daebc2505ac6be9de70bfc328084224538223d38cda02",
-        "bytes": 986742,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.back-three-quarter-left",
-        "source": "ma-hong/ma-hong__turnaround__back-three-quarter-left__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__turnaround__back-three-quarter-left__v1.png",
-        "sha256": "6a8cd89e79696357c4c343789885711d2441778ca4e4cf7f6d3e444d463033c7",
-        "bytes": 1007574,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.back-three-quarter-right",
-        "source": "ma-hong/ma-hong__turnaround__back-three-quarter-right__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__turnaround__back-three-quarter-right__v1.png",
-        "sha256": "680de18e8c4532ad893c8c0c437b20bcb44b797dcf8170790c8e93c97afd60a9",
-        "bytes": 1031526,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.back",
-        "source": "ma-hong/ma-hong__turnaround__back__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__turnaround__back__v1.png",
-        "sha256": "8321ecaa8c917ecefc1fc8061f38675067a50aa13e9ad18b6f58168621ce22db",
-        "bytes": 1102766,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.front",
-        "source": "ma-hong/ma-hong__turnaround__front__v1.png",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__turnaround__front__v1.png",
+        "source": "ma-hong/ma-hong__turnaround__front__v1.png",
         "sha256": "f963c82b417861897197c03e9bad80428dc597fddd1dabb789394095aaa9eab6",
         "bytes": 1096463,
+        "slot": "turnaround.front",
         "version": 1
       },
       {
-        "slot": "turnaround.side",
-        "source": "ma-hong/ma-hong__turnaround__side__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__turnaround__side__v1.png",
-        "sha256": "018c4de76ed70abb03b418f5c973008bd0b37d252e3251f9560d9041c8fa62d4",
-        "bytes": 689582,
-        "version": 1
-      },
-      {
-        "slot": "turnaround.three-quarter",
-        "source": "ma-hong/ma-hong__turnaround__three-quarter__v1.png",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__turnaround__three-quarter__v1.png",
+        "source": "ma-hong/ma-hong__turnaround__three-quarter__v1.png",
         "sha256": "b15285543db909c03f082c08c804d8d1b27325c7a0ece1baa1b14e2140ef59b7",
         "bytes": 1013047,
+        "slot": "turnaround.three-quarter",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.back",
-        "source": "ma-hong/ma-hong__wardrobe-personal__back__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__back__v1.png",
-        "sha256": "addd56d3b9b1180d2a459cef78cd441b81fc0afd9328cc5c55b34415ef1ae113",
-        "bytes": 1097766,
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__turnaround__side__v1.png",
+        "source": "ma-hong/ma-hong__turnaround__side__v1.png",
+        "sha256": "018c4de76ed70abb03b418f5c973008bd0b37d252e3251f9560d9041c8fa62d4",
+        "bytes": 689582,
+        "slot": "turnaround.side",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.front",
-        "source": "ma-hong/ma-hong__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__turnaround__back__v1.png",
+        "source": "ma-hong/ma-hong__turnaround__back__v1.png",
+        "sha256": "8321ecaa8c917ecefc1fc8061f38675067a50aa13e9ad18b6f58168621ce22db",
+        "bytes": 1102766,
+        "slot": "turnaround.back",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__turnaround__back-three-quarter-left__v1.png",
+        "source": "ma-hong/ma-hong__turnaround__back-three-quarter-left__v1.png",
+        "sha256": "6a8cd89e79696357c4c343789885711d2441778ca4e4cf7f6d3e444d463033c7",
+        "bytes": 1007574,
+        "slot": "turnaround.back-three-quarter-left",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__turnaround__back-three-quarter-right__v1.png",
+        "source": "ma-hong/ma-hong__turnaround__back-three-quarter-right__v1.png",
+        "sha256": "680de18e8c4532ad893c8c0c437b20bcb44b797dcf8170790c8e93c97afd60a9",
+        "bytes": 1031526,
+        "slot": "turnaround.back-three-quarter-right",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__front__v1.png",
+        "source": "ma-hong/ma-hong__face__front__v1.png",
+        "sha256": "f394fa6d7136fef9caed9358b737dc5e2e34b95c570020bd0400642dc625a694",
+        "bytes": 2089792,
+        "slot": "face.front",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__three-quarter__v1.png",
+        "source": "ma-hong/ma-hong__face__three-quarter__v1.png",
+        "sha256": "16554617f8144405bfc1f4d8defb0f61965c667594e34eeac6de994d83ee7eea",
+        "bytes": 2228602,
+        "slot": "face.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__side__v1.png",
+        "source": "ma-hong/ma-hong__face__side__v1.png",
+        "sha256": "2def9130f14494662b854da4035fe98a534ba51f88f2b5fc5a8c9154ec6655ad",
+        "bytes": 2097412,
+        "slot": "face.side",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__three-quarter-left__v1.png",
+        "source": "ma-hong/ma-hong__face__three-quarter-left__v1.png",
+        "sha256": "30371d9217f85fda9c57013c71131339a2d3c843f07cad4da6444636e07bb8af",
+        "bytes": 2145194,
+        "slot": "face.three-quarter-left",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__side-right__v1.png",
+        "source": "ma-hong/ma-hong__face__side-right__v1.png",
+        "sha256": "b2a254e6a1691a9fb1331d6fe397bcf86b335204d74ece6a60edb8ac98434bec",
+        "bytes": 2072278,
+        "slot": "face.side-right",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__up__v1.png",
+        "source": "ma-hong/ma-hong__face__up__v1.png",
+        "sha256": "baeafa0019ef9a49e89a99e1d249e3c9259a6824ddb01348ea3e6208a609f0a4",
+        "bytes": 2341214,
+        "slot": "face.up",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__face__down__v1.png",
+        "source": "ma-hong/ma-hong__face__down__v1.png",
+        "sha256": "5f4330b0905b98e5bdc8822c45c7a4e7c6949c361d034c1196526e6f75bde1f8",
+        "bytes": 2446110,
+        "slot": "face.down",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__neutral__v1.png",
+        "source": "ma-hong/ma-hong__expression__neutral__v1.png",
+        "sha256": "09dd0a95bf99568499087242673d2c241ae6106e522dcb25749739536ca8e26c",
+        "bytes": 2114127,
+        "slot": "expression.neutral",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__smile__v1.png",
+        "source": "ma-hong/ma-hong__expression__smile__v1.png",
+        "sha256": "b2fc2e22d5d7f1909ac826c5aa9b3fae7c396b50d76e430945911ffbd7750b50",
+        "bytes": 2095853,
+        "slot": "expression.smile",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__laugh__v1.png",
+        "source": "ma-hong/ma-hong__expression__laugh__v1.png",
+        "sha256": "62dcc88099092a313c7f45fa5626cad5c87789b51ecdf91b809024e58054a9e0",
+        "bytes": 2120035,
+        "slot": "expression.laugh",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__sad__v1.png",
+        "source": "ma-hong/ma-hong__expression__sad__v1.png",
+        "sha256": "8adec014e4ff36560a378dfec9b1757197d91691c01e8a7febe434277e7f4dbd",
+        "bytes": 2208496,
+        "slot": "expression.sad",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__cry__v1.png",
+        "source": "ma-hong/ma-hong__expression__cry__v1.png",
+        "sha256": "c5663522b6192756f45a68ad710e3e0950617428a0a1635e948334a036bcc739",
+        "bytes": 2241499,
+        "slot": "expression.cry",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__annoyed__v1.png",
+        "source": "ma-hong/ma-hong__expression__annoyed__v1.png",
+        "sha256": "4a0fd0679694fab4499caace8b55ea70dc0da37d58ae2cc7dee00bacee47d81a",
+        "bytes": 2250618,
+        "slot": "expression.annoyed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__angry__v1.png",
+        "source": "ma-hong/ma-hong__expression__angry__v1.png",
+        "sha256": "48fb117ac652904e3a8c4e7972198ee96e890e81ff60ec4a3ca5151dbe68aee8",
+        "bytes": 2294071,
+        "slot": "expression.angry",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__surprised__v1.png",
+        "source": "ma-hong/ma-hong__expression__surprised__v1.png",
+        "sha256": "9dda1a9a717cb208a390c7aea5a819d7ba37a84eab9fc4b41b56615f6eec6cbb",
+        "bytes": 2432351,
+        "slot": "expression.surprised",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__scared__v1.png",
+        "source": "ma-hong/ma-hong__expression__scared__v1.png",
+        "sha256": "d34b39863f77c776c763b3700067d3ad0f4fe62478707a18ac2515a846c3b937",
+        "bytes": 2199904,
+        "slot": "expression.scared",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__disgusted__v1.png",
+        "source": "ma-hong/ma-hong__expression__disgusted__v1.png",
+        "sha256": "5806d8b4529b8936dd30e97f86d6586fa6d96fa1a2d83d59aaec99feeeba0b17",
+        "bytes": 2294338,
+        "slot": "expression.disgusted",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__embarrassed__v1.png",
+        "source": "ma-hong/ma-hong__expression__embarrassed__v1.png",
+        "sha256": "e47f38525d1268cae6b6dc6fae9a3fad75e87e7a20d65934b599f30db0c9ee89",
+        "bytes": 2238968,
+        "slot": "expression.embarrassed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__tired__v1.png",
+        "source": "ma-hong/ma-hong__expression__tired__v1.png",
+        "sha256": "de87ad5ff2a3747c858038dae1f74cbe18f53d6686429673872e49eda5429d6f",
+        "bytes": 2322027,
+        "slot": "expression.tired",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__speaking__v1.png",
+        "source": "ma-hong/ma-hong__expression__speaking__v1.png",
+        "sha256": "aa15af4d11f80ba9c1aaab6785880b962165d256e69a0cf6a0fb19b13c2bf493",
+        "bytes": 2195864,
+        "slot": "expression.speaking",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__eyes-closed__v1.png",
+        "source": "ma-hong/ma-hong__expression__eyes-closed__v1.png",
+        "sha256": "43595adbcfcf84345491463ab89c8055385840d25e6ce98037f9e431b855d052",
+        "bytes": 2041353,
+        "slot": "expression.eyes-closed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__worried__v1.png",
+        "source": "ma-hong/ma-hong__expression__worried__v1.png",
+        "sha256": "4152c4d428dd9531c0071b1c601366e0b615ccbea02fc3e88df29a41b2358b60",
+        "bytes": 2397446,
+        "slot": "expression.worried",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__skeptical__v1.png",
+        "source": "ma-hong/ma-hong__expression__skeptical__v1.png",
+        "sha256": "13db1d167d6e75ae63667378bd6de6d7a94ff5921abdba12bf478ae4eb1ba316",
+        "bytes": 1917577,
+        "slot": "expression.skeptical",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__smug__v1.png",
+        "source": "ma-hong/ma-hong__expression__smug__v1.png",
+        "sha256": "60e1cdfdb8119a9ba2dcdf766c2b6e06a8b2ffcb8e72a14884d99a592451a861",
+        "bytes": 2172723,
+        "slot": "expression.smug",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__contempt__v1.png",
+        "source": "ma-hong/ma-hong__expression__contempt__v1.png",
+        "sha256": "ef4d93acc40f2715a6096ccb41adf231517b2543c8f130a2c2c7bcc1f5e6d587",
+        "bytes": 2185825,
+        "slot": "expression.contempt",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__confused__v1.png",
+        "source": "ma-hong/ma-hong__expression__confused__v1.png",
+        "sha256": "7fa581e7e3ffe0738f081344139047e84cd814f13aca427aabee80104b11673d",
+        "bytes": 2290764,
+        "slot": "expression.confused",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__thinking__v1.png",
+        "source": "ma-hong/ma-hong__expression__thinking__v1.png",
+        "sha256": "b0ea32710d71f779fd46a9ab51b495b42c4a91250af3f351f10f20d69c50e095",
+        "bytes": 2174031,
+        "slot": "expression.thinking",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__determined__v1.png",
+        "source": "ma-hong/ma-hong__expression__determined__v1.png",
+        "sha256": "a17f47f60686ae309d5c1e650c6b91295fd665d530783fa0c2745869f35ede85",
+        "bytes": 2159132,
+        "slot": "expression.determined",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__shy__v1.png",
+        "source": "ma-hong/ma-hong__expression__shy__v1.png",
+        "sha256": "da3936b891e4f1b056d183870818dfbe568a6b2b418b7b2d9d98d9af6e111cb2",
+        "bytes": 2030945,
+        "slot": "expression.shy",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__pain__v1.png",
+        "source": "ma-hong/ma-hong__expression__pain__v1.png",
+        "sha256": "65a33099f3848d60c8cb7168762659436eca67fcccd82bf2568c8cb271d5b5df",
+        "bytes": 2293573,
+        "slot": "expression.pain",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__sleepy__v1.png",
+        "source": "ma-hong/ma-hong__expression__sleepy__v1.png",
+        "sha256": "cad7e9b47504dd7e78c1a3e8b77c38a39d45d088cfbde41456acee8fd29022d8",
+        "bytes": 2101475,
+        "slot": "expression.sleepy",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__awkward-smile__v1.png",
+        "source": "ma-hong/ma-hong__expression__awkward-smile__v1.png",
+        "sha256": "b3f64414450d68c3a32d992cdbe57ff51a9512f50c51958afe92d6c77eacab1b",
+        "bytes": 2090163,
+        "slot": "expression.awkward-smile",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__expression__deadpan__v1.png",
+        "source": "ma-hong/ma-hong__expression__deadpan__v1.png",
+        "sha256": "cea3d824c6406899f578bad72df0765ef5b26c69db13dbe540925dcbe361b440",
+        "bytes": 2080582,
+        "slot": "expression.deadpan",
+        "version": 1
+      },
+      {
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__front__v1.png",
+        "source": "ma-hong/ma-hong__wardrobe-personal__front__v1.png",
         "sha256": "4765285fbff73046a41177eb18c8d87b0c41c9fc878a131dd68b5d89b7d091b5",
         "bytes": 1122409,
+        "slot": "wardrobe.personal.front",
         "version": 1
       },
       {
-        "slot": "wardrobe.personal.portrait",
-        "source": "ma-hong/ma-hong__wardrobe-personal__portrait__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__portrait__v1.png",
-        "sha256": "b51f8fb9007ed4a48bf5eefd36f80b9ed1ccf56c8986e334efae8e0152ba070d",
-        "bytes": 2605900,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.rolling-pin",
-        "source": "ma-hong/ma-hong__wardrobe-personal__rolling-pin__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__rolling-pin__v1.png",
-        "sha256": "1dabf59e1325c2fadff1b26dd12a12f0c2c5f5f1227b1e93ef0158678142ef9d",
-        "bytes": 1084374,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.side",
-        "source": "ma-hong/ma-hong__wardrobe-personal__side__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__side__v1.png",
-        "sha256": "da87f949196babaf147b18a13efcbed863ab72c2c9bccbb5419fa93aac0af3ff",
-        "bytes": 782643,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.stretch-dough",
-        "source": "ma-hong/ma-hong__wardrobe-personal__stretch-dough__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__stretch-dough__v1.png",
-        "sha256": "d90b11acbaadc5a05600d0258cd8f468601c819da8d6e86e9b41cf5f1e3603bf",
-        "bytes": 1225614,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.teach-cooking",
-        "source": "ma-hong/ma-hong__wardrobe-personal__teach-cooking__v1.png",
-        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__teach-cooking__v1.png",
-        "sha256": "aedebd0f5e25c86b64470c2bbff7105341e16df997d1a41e7ed944afe7bbbcb1",
-        "bytes": 1009151,
-        "version": 1
-      },
-      {
-        "slot": "wardrobe.personal.three-quarter",
-        "source": "ma-hong/ma-hong__wardrobe-personal__three-quarter__v1.png",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__three-quarter__v1.png",
+        "source": "ma-hong/ma-hong__wardrobe-personal__three-quarter__v1.png",
         "sha256": "c93cb0cca71d740bb39e789a3d00a26229aee4f110e577e6e1fed7904b4ada3e",
         "bytes": 974302,
+        "slot": "wardrobe.personal.three-quarter",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__side__v1.png",
+        "source": "ma-hong/ma-hong__wardrobe-personal__side__v1.png",
+        "sha256": "da87f949196babaf147b18a13efcbed863ab72c2c9bccbb5419fa93aac0af3ff",
+        "bytes": 782643,
+        "slot": "wardrobe.personal.side",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__back__v1.png",
+        "source": "ma-hong/ma-hong__wardrobe-personal__back__v1.png",
+        "sha256": "addd56d3b9b1180d2a459cef78cd441b81fc0afd9328cc5c55b34415ef1ae113",
+        "bytes": 1097766,
+        "slot": "wardrobe.personal.back",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__portrait__v1.png",
+        "source": "ma-hong/ma-hong__wardrobe-personal__portrait__v1.png",
+        "sha256": "b51f8fb9007ed4a48bf5eefd36f80b9ed1ccf56c8986e334efae8e0152ba070d",
+        "bytes": 2605900,
+        "slot": "wardrobe.personal.portrait",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__rolling-pin__v1.png",
+        "source": "ma-hong/ma-hong__wardrobe-personal__rolling-pin__v1.png",
+        "sha256": "1dabf59e1325c2fadff1b26dd12a12f0c2c5f5f1227b1e93ef0158678142ef9d",
+        "bytes": 1084374,
+        "slot": "wardrobe.personal.rolling-pin",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__stretch-dough__v1.png",
+        "source": "ma-hong/ma-hong__wardrobe-personal__stretch-dough__v1.png",
+        "sha256": "d90b11acbaadc5a05600d0258cd8f468601c819da8d6e86e9b41cf5f1e3603bf",
+        "bytes": 1225614,
+        "slot": "wardrobe.personal.stretch-dough",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__wardrobe-personal__teach-cooking__v1.png",
+        "source": "ma-hong/ma-hong__wardrobe-personal__teach-cooking__v1.png",
+        "sha256": "aedebd0f5e25c86b64470c2bbff7105341e16df997d1a41e7ed944afe7bbbcb1",
+        "bytes": 1009151,
+        "slot": "wardrobe.personal.teach-cooking",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__walk__v1.png",
+        "source": "ma-hong/ma-hong__pose__walk__v1.png",
+        "sha256": "924b0ff106e74d2d924daebc2505ac6be9de70bfc328084224538223d38cda02",
+        "bytes": 986742,
+        "slot": "pose.walk",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__run__v1.png",
+        "source": "ma-hong/ma-hong__pose__run__v1.png",
+        "sha256": "be50ad1112be7cffd7dce3fe6fcac869fb082eff85a0d52f8c8731082d4bf62d",
+        "bytes": 1030460,
+        "slot": "pose.run",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__sit__v1.png",
+        "source": "ma-hong/ma-hong__pose__sit__v1.png",
+        "sha256": "506038087936ddc7634cddbef0cde368950f07a3d0289dfb155d8abdf4485e36",
+        "bytes": 1258869,
+        "slot": "pose.sit",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__point__v1.png",
+        "source": "ma-hong/ma-hong__pose__point__v1.png",
+        "sha256": "9e83e733675474523076110de849cb29132535050e55e70efae21d97cdead309",
+        "bytes": 915965,
+        "slot": "pose.point",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__arms-crossed__v1.png",
+        "source": "ma-hong/ma-hong__pose__arms-crossed__v1.png",
+        "sha256": "58b6b38878c1f4e12bd880987e25320f9c48c8bd496999134af09b9b5d414689",
+        "bytes": 870121,
+        "slot": "pose.arms-crossed",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__pose__phone__v1.png",
+        "source": "ma-hong/ma-hong__pose__phone__v1.png",
+        "sha256": "959c29853c04d0a72a48fb7b07cb4ede2012e01d7929eb60bb030967a14c5f2d",
+        "bytes": 980685,
+        "slot": "pose.phone",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__detail__hands__v1.png",
+        "source": "ma-hong/ma-hong__detail__hands__v1.png",
+        "sha256": "8122e32a0eef1f81680367bdf300ba3ab550b773650ec6247f82276842a8c23e",
+        "bytes": 1143043,
+        "slot": "detail.hands",
+        "version": 1
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/ma-hong__detail__hair-back__v1.png",
+        "source": "ma-hong/ma-hong__detail__hair-back__v1.png",
+        "sha256": "f335a30d7b3ac07fa2693d258b933f35755f6c0a792e1984ec595bf52dc31ca6",
+        "bytes": 2061432,
+        "slot": "detail.hair-back",
         "version": 1
       }
     ],
     "voices": [
       {
-        "slot": "intro",
-        "source": "voices/ma-hong/ma-hong__voice__intro__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/voice/frozen/ma-hong__voice__intro__v1.wav",
+        "source": "voices/ma-hong/ma-hong__voice__intro__v1.wav",
         "sha256": "25f41097983a572070ff97cf12fa983a2cf1141deb9fcccc76cf0c483dc32243",
         "bytes": 1082194,
+        "slot": "intro",
         "version": 1,
+        "placeholder": true,
         "transcript": "中！我叫马红，郑州人，五十八了。我五十岁才开始学英语，现在用英语教老外做烩面。单词不会就慢慢查，面得先和利索。没想到拍点做饭视频，粉丝比我闺女还多。"
       },
       {
-        "slot": "intro-alt",
-        "source": "voices/ma-hong/ma-hong__voice__intro-alt__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/voice/frozen/ma-hong__voice__intro-alt__v1.wav",
+        "source": "voices/ma-hong/ma-hong__voice__intro-alt__v1.wav",
         "sha256": "1e1a4cdcecb4672d11dfdace0031c8423ee1f1b82cb0b60d5d29fade8be178d7",
         "bytes": 1059328,
+        "slot": "intro-alt",
         "version": 1,
+        "placeholder": true,
         "transcript": "Hi, I'm Ma Hong, from Zhengzhou. I'm fifty-eight. I started learning English at fifty. Now I teach visitors how to make Henan noodles. If I forget a word, I can show you with my hands. My cooking videos have more followers than my daughter's. How about that?"
       },
       {
-        "slot": "chat",
-        "source": "voices/ma-hong/ma-hong__voice__chat__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/voice/frozen/ma-hong__voice__chat__v1.wav",
+        "source": "voices/ma-hong/ma-hong__voice__chat__v1.wav",
         "sha256": "6c8ab920810f558f2b9b5aee7e563ecf1f05e56c5dede2e7737aab2f02531d8c",
         "bytes": 856598,
+        "slot": "chat",
         "version": 1,
+        "placeholder": true,
         "transcript": "面要醒一会儿，你先别急着抻。来，跟我慢慢做，手往两边带，对，就是这样。这个词我一时想不起来，你看我的手，比我说英语还明白。"
       },
       {
-        "slot": "happy",
-        "source": "voices/ma-hong/ma-hong__voice__happy__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/voice/frozen/ma-hong__voice__happy__v1.wav",
+        "source": "voices/ma-hong/ma-hong__voice__happy__v1.wav",
         "sha256": "b61c2e4f3b95c75fbac3287e1f66a5c54fffa03e9b07b1f1c42c17dd7548aa22",
         "bytes": 677098,
+        "slot": "happy",
         "version": 1,
+        "placeholder": true,
         "transcript": "哎，我这段英文你还真听懂了！中，那咱们接着来。今天这碗面做得漂亮，拍下来发给我闺女看看，让她也学两招。"
       },
       {
-        "slot": "angry",
-        "source": "voices/ma-hong/ma-hong__voice__angry__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/voice/frozen/ma-hong__voice__angry__v1.wav",
+        "source": "voices/ma-hong/ma-hong__voice__angry__v1.wav",
         "sha256": "f40d0a72c5cb431ef721b63953985904deb02465c6d167d32ce86f1404feaf64",
         "bytes": 674552,
+        "slot": "angry",
         "version": 1,
+        "placeholder": true,
         "transcript": "先把面团放好，别这么随手一扔。你看，桌子还没擦干净呢。做饭是给人吃的，不能光图快，咱们从这一步重新来。"
       },
       {
-        "slot": "sad",
-        "source": "voices/ma-hong/ma-hong__voice__sad__v1.wav",
         "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/voice/frozen/ma-hong__voice__sad__v1.wav",
+        "source": "voices/ma-hong/ma-hong__voice__sad__v1.wav",
         "sha256": "ee49f631fbef6e4aa831e03ec55e99904c59ef4e91c809e78a538f4e6ac61a6e",
         "bytes": 908610,
+        "slot": "sad",
         "version": 1,
+        "placeholder": true,
         "transcript": "刚才翻到以前练单词的本子，一页一页，全是改过的红圈。那时候真怕自己学不会。现在好一点了，可有时候话到了嘴边，还是说不出来。"
       }
     ]
@@ -706,9 +743,9 @@
       "approval": {
         "rootStatus": "passed-technical-staging-under-owner-delegated-review",
         "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/actors/ma-hong.json",
-        "evidenceSha256": "644f5afa6b57fba937ce7c6a16f42905ccbb2c529787701a8291e47b8386681d",
+        "evidenceSha256": "2f681a24a1d71c3695562a08bb5cf8e01de149760b7f5e23e5bedecaad4eabd6",
         "ownerReviewPending": false,
-        "authority": "2026-10-22 BRIEF explicitly authorizes publishing these four completed staging deliveries; producer limitations retained in proposals, not an automatic ratio/frame pass or personal Owner review."
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
       },
       "media": [
         {
@@ -717,9 +754,178 @@
           "source": "samples/ma-hong-grok-20261022/source.mp4",
           "sourceSha256": "6290e641c21435b85b924aaceda9c81ecf4d6e2d63195b637225cb0dba516a30",
           "public": "/media/works/samples/ma-hong-grok-20261022/video.mp4",
-          "transcode": true
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/ma-hong-sample-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/ma-hong-sample-original.mp4",
+            "source": "samples/ma-hong-grok-20261022/platform-original.mp4",
+            "sha256": "495648a9de1bb013ae8b94c2eee197507c6e44fb254456a5e4cfebda74b20e7e",
+            "bytes": 1558108
+          }
         }
       ]
+    },
+    {
+      "sampleId": "ma-hong-grok-action-20261023",
+      "actorSlugs": [
+        "ma-hong"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/action/task.json",
+        "evidenceSha256": "4f18f991e35153ae2cdf506ef70f8ab4bed8aec24a8f49d9e17027c972094934",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/ma-hong-grok-action-20261023/source.mp4",
+          "sourceSha256": "03fee44a9ccb84717eb5dd9615fc5c05e57009f853d7f88e4e527a7c95cb87d8",
+          "public": "/media/works/samples/ma-hong-grok-action-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/action/attempt-01-contained-arms/ma-hong-action-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/action/attempt-01-contained-arms/ma-hong-action-original.mp4",
+            "source": "samples/ma-hong-grok-action-20261023/platform-original.mp4",
+            "sha256": "cc713fb6f55fbfbab13466be7bff7269a410e8a910743fa5a6dec61840d33d1c",
+            "bytes": 1774427
+          }
+        }
+      ],
+      "productionTask": {
+        "id": "task-64c6d4615ba63de3",
+        "sha256": "4f18f991e35153ae2cdf506ef70f8ab4bed8aec24a8f49d9e17027c972094934",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T12:12:47.905Z",
+          "note": "Actualnative6.041667s720x1280 fullydecoded;12motionframes andstart/middle/end inspected. Mature roundface/burgundyshortcurls/tealT remainconsistentwithapprovedMa anchor, naturalmatureadulthead/neck/torso/hip/leg proportions retained. Clearbodypivot andtwo walkingsteps, handsnearwaist withnaturalocclusion, allhair/fingers/shoes withinframe, no fusedlimbs orfaceswap. Natural threequarterend accepted; good largeraction sample distinctfromgreeting. NativeAAC/cover andoriginalbytes preserved,silentstreamcopy registeredclip-local; actual0.02778412USD inlinkedengineTask, originalcompletedrun preserved.",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "ma-hong-grok-ensemble-20261023",
+      "actorSlugs": [
+        "ma-hong"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/ensemble/task.json",
+        "evidenceSha256": "f4fec4bfc3a9ac7ba342a2dafca3aaa7a6e75b5f83570b713a109466915f12fc",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/ma-hong-grok-ensemble-20261023/source.mp4",
+          "sourceSha256": "1fb3436ead2efc346f86b623cd9fc63b9ad912885ce51fd8e7ceafb6fb8d5a33",
+          "public": "/media/works/samples/ma-hong-grok-ensemble-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/ensemble/ma-hong-ensemble-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/ensemble/ma-hong-ensemble-original.mp4",
+            "source": "samples/ma-hong-grok-ensemble-20261023/platform-original.mp4",
+            "sha256": "4dbc5f3e91c8dc2ba70d441982d0c27fcc4cb209e1bbec968f9a9a5ebae4bd28",
+            "bytes": 2446359
+          }
+        }
+      ],
+      "castSlugs": [
+        "ma-hong",
+        "shen-xiuying"
+      ],
+      "productionTask": {
+        "id": "task-01a72daab453ac08",
+        "sha256": "f4fec4bfc3a9ac7ba342a2dafca3aaa7a6e75b5f83570b713a109466915f12fc",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T15:56:18.585Z",
+          "note": "直接查看12帧运动表及原生首中尾大图：马红左侧酒红卷发额记成熟圆脸围裙、沈秀英右侧银发旗袍皱纹均辨识稳定；马红向右跨一步并开掌，沈秀英转向并轻点头，动作可见。全程完整发顶手指鞋底、无融合与多肢，成人头颈躯干骨盆腿段相对锚点自然，CG光照空间一致。原片1280x720/6.041667秒全解码，AAC与封面保留、静音流拷贝；实际0.022695美元记追加Task关联原completed run，技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "ma-hong-google-vids-20261023",
+      "actorSlugs": [
+        "ma-hong"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Google Vids"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/vids/task.json",
+        "evidenceSha256": "b41f74fce9d5ef35e8e44012df93382d4a0d4877155afe6c425d2a394dd25a54",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/ma-hong-google-vids-20261023/source.mp4",
+          "sourceSha256": "79b7ad89e83448b3d1114229bbb7c5e9907bc08a9be73ae48f3470abde160ea4",
+          "public": "/media/works/samples/ma-hong-google-vids-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/vids/ma-hong-vids-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/ma-hong/video/additional-20261022/vids/ma-hong-vids-saved-drive-rendition.mp4",
+            "source": "samples/ma-hong-google-vids-20261023/platform-original.mp4",
+            "sha256": "d3a71482e80df1712a28b88aba941f71bb1d2bdf689c39b9ec9bcf2c7b28c421",
+            "bytes": 1365001
+          }
+        }
+      ],
+      "castSlugs": [
+        "ma-hong",
+        "shen-xiuying"
+      ],
+      "productionTask": {
+        "id": "task-f3ce2dc9f237f115",
+        "sha256": "b41f74fce9d5ef35e8e44012df93382d4a0d4877155afe6c425d2a394dd25a54",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T15:36:53.541Z",
+          "note": "已直接查看12帧与首中尾：马红左侧酒红卷发额记围裙身份稳定，向右迈步并摊掌；沈秀英右侧银发旗袍、成熟皱纹可辨并点头，全程发顶手鞋完整，成人颈躯干骨盆腿段相对锚点自然，CG空间光线一致。重要来源例外：原feed下载两次超时，已收同一Saved to Drive视频对象的平台保存版本，非原feed字节、非整文档导出，未本地转码；实际1280x720/144帧6秒，AAC44.1k及四角星保留，静音版流拷贝。代理接受此保存版本作样片staging，原feed字节缺失限制明确保留，费用unknown。",
+          "formalPublication": false
+        },
+        "source": "IAB publicdownloadMedia same saved generated scene VIDEO; Google Drive platform rendition, not original feed bytes or document export"
+      },
+      "note": {
+        "zh": "Google Drive平台保存版，非整份Vids文档导出；原feed字节未取回，平台标识保留。",
+        "en": "Google Drive platform-saved rendition, not a full Vids document export. Original feed bytes were unavailable; platform marks are retained."
+      }
     }
-  ]
+  ],
+  "websitePromotion": {
+    "authorizedOn": "2026-10-23",
+    "authority": "Owner task: publish all ten under new names, second-version biographies and approved current appearance; preserve CC provenance and old URL redirects.",
+    "actorSourceSha256": "2f681a24a1d71c3695562a08bb5cf8e01de149760b7f5e23e5bedecaad4eabd6",
+    "slotPlanSha256": "f671b67700e4c27d075a502bb8c545ab8d0dbc5b5dddf1cf64f153bba138fb2f",
+    "voiceReview": "Owner-accepted temporary placeholder; no complete acoustic review claimed.",
+    "proportionReview": "Owner-delegated relative visual acceptance; original absolute measurement_review and framing exceptions retained unchanged in producer evidence.",
+    "billing": "Historical Grok unknown requests and CLI model-usage USD values remain in producer records; no verified account debit or video unit price is asserted."
+  }
 }

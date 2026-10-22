@@ -21,6 +21,7 @@ export const assetDeliverySchema = z
         source.extend({
           slot: z.enum(["intro", "intro-alt", "chat", "happy", "angry", "sad"]),
           transcript: z.string().optional(),
+          placeholder: z.boolean().optional(),
         }),
       )
       .max(6),

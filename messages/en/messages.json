@@ -404,6 +404,8 @@
   "assets.series.howTo": "How to use",
   "assets.series.rules": "Rules of use",
   "assets.videoNote": "Short clips for reference and editing.",
+  "assets.voicePlaceholder": "Placeholder voice",
+  "assets.voicePlaceholderNote": "Temporary synthetic audio, not final voice acting. Full acoustic review is not complete.",
   "assets.voiceReference": "Reference",
   "assets.showLines": "Show lines",
   "assets.hideLines": "Hide lines",

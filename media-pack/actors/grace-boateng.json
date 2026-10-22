@@ -1,0 +1,1083 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "code": "grace-boateng",
+  "slug": "grace-boateng",
+  "kind": "actor",
+  "name": {
+    "zh": "格蕾丝·博阿滕",
+    "en": "Grace Boateng"
+  },
+  "status": {
+    "delivered": 55,
+    "published": false,
+    "preparedOn": "2026-10-22",
+    "productionOnly": true,
+    "version": "1.0.0",
+    "siteProfile": "src/content/actors/grace-boateng/profile.ts"
+  },
+  "demographics": {
+    "age": 24,
+    "gender": "female",
+    "origin": {
+      "zh": "加纳，浙江义乌长大",
+      "en": "Ghana; grew up in Yiwu, Zhejiang, China"
+    },
+    "voiceLanguage": "zh"
+  },
+  "facts": {
+    "zh": [
+      "24岁，加纳，浙江义乌长大，身高168cm。",
+      "在浙江义乌长大，普通话带义乌口音，帮家里做小商品外贸，直播砍价没人砍得过她。"
+    ],
+    "en": [
+      "24-year-old Black Ghanaian woman, 168 cm tall, from Ghana; grew up in Yiwu, Zhejiang, China.",
+      "Grew up in Yiwu, speaks Mandarin with a Yiwu accent, helps the family export small goods and excels at bargaining on livestreams."
+    ]
+  },
+  "identity": "Original fictional Black Ghanaian woman named Grace Boateng, 24 years old, from Ghana; grew up in Yiwu, Zhejiang, China, 168 cm tall. OWNER-AUTHORIZED SELECTED VERSION2. Broad rounded-square lower face, full lower cheeks and short broad chin; smaller horizontally long half-lidded almond eyes and thick straighter brows; short broad round nose, wide gap-toothed smile and fuller lower lip; deepbrownskin,afropuff and natural average fullerhips/thighs. Grew up in Yiwu, speaks Mandarin with a Yiwu accent, helps the family export small goods and excels at bargaining on livestreams. Preserve the supplied selected-v2 face and body references exactly as this fictional actor. Height,age,ethnicity fixed. OriginalCCsource historical only; previousv1andunselectedtrials are superseded. Naturaladult proportions appropriate to height; selected v2 body is the scale reference, hair is excluded from head length.",
+  "stylization": "Character stylization (A2, pushed): 3D feature-animation adult with realistic adult body proportions at this actor's height; normal head size, natural neck, shoulders, torso, pelvis and leg lengths. The Black Ghanaian identity must read through the facial structure rather than clothing. Preserve distinctive ordinary-person facial features, gently exaggerated from life, not a generic beauty-standard face. Slightly enlarged expressive eyes without enlarging the whole head; simplified cheek, nose and lip planes; smooth stylized skin shading with soft subsurface scattering and no pores; clean grouped hair clumps. Clothing uses realistic clean unbranded materials. Unmistakably CG at first glance, never photoreal.",
+  "proportions": {
+    "headsTall": 7.2,
+    "headsTallRange": [
+      7.0,
+      7.4
+    ],
+    "heightCm": 168,
+    "targetBasis": "Production target proposed before generation from confirmed height and age; not a measurement or a selected body. Frozen Vision review plus delegated anatomy/identity review required.",
+    "frameGuide": {
+      "occupancyMin": 0.86,
+      "occupancyMax": 0.94,
+      "topMarginMin": 0.04,
+      "topMarginMax": 0.1,
+      "bottomMarginMin": 0.04,
+      "bottomMarginMax": 0.1
+    }
+  },
+  "anchorVersion": 2,
+  "anchors": {
+    "body": "library/staging/grace-boateng/references/selected-body-anchor-v2.png",
+    "face": "library/staging/grace-boateng/grace-boateng__face__front__v2.png"
+  },
+  "castingSource": {
+    "code": "CC-005",
+    "oldSlug": "ama-mensah",
+    "oldName": {
+      "zh": "阿玛·门萨",
+      "en": "Ama Mensah"
+    },
+    "record": "casting/new-faces-2026-10.json",
+    "image": "library/claude-casting-2026-10-07/final/CC-005.png",
+    "sha256": "b921278a1159f1b381bb83b444babdcb5e768d8c70331d2d931ee06368a8268f",
+    "use": "Historical CC provenance only. Version1 facial lock superseded by Owner authorized version2 redesign on2026-10-22; use only current selected anchors for production, not this oldCCface.",
+    "identityAuthority": "HQ second-version list for name/age/height/ethnicity/biography, plus Owner2026-10-22 authorization for facial differentiation of unfinished actors.",
+    "faceCrop": {
+      "file": "references/CC-005-face-only.png",
+      "rectangleXYXY": [
+        244,
+        0,
+        705,
+        484
+      ],
+      "width": 461,
+      "height": 484,
+      "sha256": "284e82915f8003d74b29436b2079b643f4812bd7738cb128c5b91eea595e09d0",
+      "operation": "pixel crop only; source original preserved",
+      "validity": "Historical version1 face crop, not the current version2 identity."
+    }
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "Plain clean bright-yellow cotton crew-neck T-shirt, straight dark charcoal trousers, clean flat white low-top sneakers; no jewelry, accessories, text, logos or brands."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "zh": "日常装",
+        "en": "Everyday wear"
+      },
+      "prompt": "Clean everyday trader outfit: plain cobalt-blue overshirt open over a white crew-neck T-shirt, straight clay-orange trousers, flat cream low-top shoes. Preserve her natural afro puff, deep brown skin and tooth gap. No earrings, jewelry, branding or text.",
+      "approvalBasis": "Agent design under Owner delegated aesthetic decisions; not generated yet.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": { "zh": "日常装近景", "en": "Everyday portrait" },
+          "direction": "Framing: head and upper chest, facing the camera, easy closed-mouth smile."
+        },
+        {
+          "key": "show-sample",
+          "label": {
+            "zh": "展示样品",
+            "en": "Showing a sample"
+          },
+          "direction": "full body at a three-quarter angle, holding one small plain unlabelled fabric pouch in one hand and displaying it with the other, bright natural smile"
+        },
+        {
+          "key": "explain-price",
+          "label": {
+            "zh": "介绍报价",
+            "en": "Explaining an offer"
+          },
+          "direction": "full body at a three-quarter angle, one open palm gesturing as she speaks, the other hand holding a plain small notebook, lively convincing face"
+        },
+        {
+          "key": "livestream-phone",
+          "label": {
+            "zh": "直播说话",
+            "en": "Livestream phone"
+          },
+          "direction": "full body standing at a three-quarter angle, holding a plain unbranded phone naturally at chest height, speaking with a bright gap-toothed smile"
+        }
+      ]
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "owner-delegated-agent-selected-trial4",
+    "phase": "four-samples-complete-technical-staging",
+    "appearance": "Trial3 median 7.189 [6.707,7.755] measurement_review, frame_rejected 1%/2% margins; residual translucent dangling earring silhouettes remain visibly on white/dark alpha composites. No qualified clean casting anchor after 3 trials.",
+    "delivered": 6,
+    "bodyReview": {
+      "authority": "Owner2026-10-22 reiterated agent chooses aesthetics/body proportions; agentselected, notOwnerpersonalchoice",
+      "source": "trials/trial4-native.png",
+      "sha256": "815a8bc36490bd46958a1a64eea8defbfd6fc3de2e195c4990ea6c095b062bb7",
+      "headsTall": 6.954,
+      "range": [
+        6.502,
+        7.48
+      ],
+      "frozenStatus": "measurement_review",
+      "frozenFrame": {
+        "status": "frame_rejected",
+        "occupancy": 0.97,
+        "topMargin": 0.009,
+        "bottomMargin": 0.021,
+        "bbox": {
+          "minX": 221,
+          "minY": 15,
+          "maxX": 705,
+          "maxY": 1636
+        },
+        "target": {
+          "occupancyMin": 0.86,
+          "occupancyMax": 0.94,
+          "topMarginMin": 0.04,
+          "topMarginMax": 0.1,
+          "bottomMarginMin": 0.04,
+          "bottomMarginMax": 0.1
+        }
+      },
+      "decision": "delegated-visual-acceptance",
+      "basis": "Properalpha compositewhite/dark clean; linecrown/eye/chin/sole checked. Identity/CG preserved. Natural adult neck/shoulders/torso/pelvis/legs atconfirmedheight and age. Entirehair/hands/flatshoes visible; lowmargin consciously accepted as explicit framingexception. Frozenmeasurement_review/frame_rejected retained, notauto/Ownerpersonalpass."
+    },
+    "faceReferenceUpdate": {
+      "source": "grace-boateng__face__three-quarter__v1.png",
+      "basis": "AcceptednativeRGBAthree-quarterface, both eyes, no earrings; originalCC005source and intermediatefacecrop preserved. Use ONEheadanchorforhead-onlybatches; ONEbodyanchorforbody-onlybatches toavoidmixedsourceconfusion."
+    },
+    "distinctivenessAudit": {
+      "checkedAt": "2026-10-22T11:53:15.218948+08:00",
+      "comparison": "Official live21 ready-to-cast catalog; local matching native face/body assets read-only. Diagnostic sheets in next10 receipt.",
+      "authority": "Owner requested autonomous differentiation of unfinished actors and authorized facial redesign; four completed actors exempt.",
+      "decision": "redesign-v2",
+      "reason": "Broad face, smaller long almond eyes, short broad nose and wide gap-toothed smile; average168cm build contrasts Zawadi178cm athletic sharp jaw."
+    },
+    "previousIdentityV1": {
+      "identity": "The same original fictional Black Ghanaian woman as CC-005-face-only.png, now named Grace Boateng, 24 years old, from Ghana; grew up in Yiwu, Zhejiang, China, 168 cm tall. Preserve these distinctive features: slim; deep brown skin, voluminous natural afro puff, a gap between her front teeth and bright lively eyes. Grew up in Yiwu, speaks Mandarin with a Yiwu accent, helps the family export small goods and excels at bargaining on livestreams. The face crop is identity only, never a body-proportion reference. Natural adult body about 7.20 skull-to-chin heads tall, target 7.0–7.4, excluding hair, afro or topknot. Natural adult neck, torso, pelvis and limbs; no big head, shortened torso, long neck or fashion-model elongation.",
+      "anchors": {
+        "face": "grace-boateng__face__three-quarter__v1.png",
+        "body": "references/selected-body-anchor.png"
+      },
+      "delivered": 6,
+      "validity": "Superseded for revised pack by Owner facial differentiation direction. Original files retained, do not mix into v2."
+    },
+    "identityV2Design": "A broad softly rectangular face with full lower cheeks and a short broad rounded chin, not a narrow tapered jaw; smaller horizontally long wide-set almond eyes with heavier upper lids rather than enormous round eyes; a short broad nose with a low bridge and rounded tip; a wide expressive mouth with a visibly defined cupid bow, fuller lower lip and a clear front-tooth gap. Keep deep brown skin and voluminous natural afro puff. Ordinary168cm adult with an average practical build, a little fuller through hips and thighs and a natural waist, not tall athletic-model proportions. Face and anatomy must remain individual and attractive through specificity, without caricaturing ethnicity.",
+    "selectedIdentityV2": {
+      "candidate": 2,
+      "source": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/trials/trial6-design-v2-native-2.png",
+      "sha256": "54b5ed8bc7df987c73e40ee1f9baf327f6d0fc6595f25afd66351894000f5d12",
+      "choiceAuthority": "Owner delegated aesthetic,facialdesign andproportion decisions to agent",
+      "actualSignatureFeatures": "Broad rounded-square lower face, full lower cheeks and short broad chin; smaller horizontally long half-lidded almond eyes and thick straighter brows; short broad round nose, wide gap-toothed smile and fuller lower lip; deepbrownskin,afropuff and natural average fullerhips/thighs.",
+      "comparison": "Live21 catalog diagnostic and actual nativeimage face/body comparison; neither skin/hair nor secondarymole alone counts as differentiation.",
+      "proportion": {
+        "point": 6.903,
+        "range": [
+          6.457,
+          7.423
+        ],
+        "frozenStatus": "measurement_review",
+        "frame": {
+          "status": "frame_rejected",
+          "occupancy": 0.989,
+          "topMargin": 0.005,
+          "bottomMargin": 0.006,
+          "bbox": {
+            "minX": 203,
+            "minY": 9,
+            "maxX": 725,
+            "maxY": 1661
+          },
+          "target": {
+            "occupancyMin": 0.86,
+            "occupancyMax": 0.94,
+            "topMarginMin": 0.04,
+            "topMarginMax": 0.1,
+            "bottomMarginMin": 0.04,
+            "bottomMarginMax": 0.1
+          }
+        },
+        "visualDecision": "accepted-with-delegated-exceptions",
+        "basis": "Skull,eye,chin,sole lines reviewed; naturaladult neck/torso/pelvis/legs. Completehair/hands/shoes present. Top/bottom margins below4% remain frame_rejected, not automaticpass. Grace point6.903 is0.097below proposed7.0lowerbound but naturaladult168cm body and uncertainty reviewed; explicitly delegated exception, no numericalpass."
+      },
+      "faceCrop": {
+        "rectangleXYXY": [
+          270,
+          0,
+          665,
+          440
+        ],
+        "sha256": "bde1debf2a2b68936df68a9d3fe7e4f8bfb493f3916225860e0811b4ba013d9a",
+        "purpose": "Identity reference only, exactpixelcrop, never counted as slot"
+      }
+    },
+    "identityV2RequestedDesign": "Original fictional Black Ghanaian woman named Grace Boateng, 24 years old, from Ghana; grew up in Yiwu, Zhejiang, China, 168 cm tall. OWNER-AUTHORIZED DESIGN VERSION2. A broad softly rectangular face with full lower cheeks and a short broad rounded chin, not a narrow tapered jaw; smaller horizontally long wide-set almond eyes with heavier upper lids rather than enormous round eyes; a short broad nose with a low bridge and rounded tip; a wide expressive mouth with a visibly defined cupid bow, fuller lower lip and a clear front-tooth gap. Keep deep brown skin and voluminous natural afro puff. Ordinary168cm adult with an average practical build, a little fuller through hips and thighs and a natural waist, not tall athletic-model proportions. Face and anatomy must remain individual and attractive through specificity, without caricaturing ethnicity. Grew up in Yiwu, speaks Mandarin with a Yiwu accent, helps the family export small goods and excels at bargaining on livestreams. Natural adult anatomy at confirmed height, about7.2 skull-to-chin heads tall; never include hair in measurement. No real person or existing character likeness. OriginalCC code is historical provenance only, not a face-lock for this revision.",
+    "temporaryDeferredSlots": [],
+    "profileGenerationMethod": "Required profile slots deferred only for matching reference method: native head-only rerender/zoom from approved exactRIGHT fullbodyprofile, then native oppositeview, never localmirror. Genericfrontface reference caused fariris innearprofiles. All55required slots remain inplan.",
+    "ownerLatestMessageQuota": {
+      "trial": 9,
+      "fullCumulative": 70,
+      "includesAlreadyUsed": true,
+      "source": "Ownerdirectreply call_ab0a7aef4a3c4782b2d6326cdf2a24f5"
+    },
+    "imageProviderPause": {
+      "route": "chatgpt-web",
+      "status": "resolved-owner-model-change",
+      "evidence": [
+        "grace-message16-provider-limit-browser.png",
+        "peter-message10-provider-limit-browser.png"
+      ],
+      "actualMessage": "你已达到限额。请稍后重试。",
+      "observed": "2026-10-22 13:30 UTC+8",
+      "resetAt": "not displayed",
+      "scope": "Twooriginalchats bothlimited; sharedPicsAroute held toavoidunproductivecrossactorretries, no modelchange",
+      "next": "Continue separately authorized voice/sample work using selectedanchors; imagesremainincomplete, originalrunsnotreset"
+    },
+    "ownerModelOverride": {
+      "authority": "Owner本会话2026-10-22明确：后面session都用GPT6极高，不用5.6SolPro",
+      "applies": "allsubsequentChatGPTimages in originalconversation",
+      "previous": "GPT5.6SolPro5/5",
+      "verifiedCurrent": "GPT6checked,极高4/5",
+      "evidence": "grace-boateng-gpt6-extra-high-selected-browser.png"
+    },
+    "voicePlaceholderChoice": {
+      "candidate": 1,
+      "cloudSaved": true,
+      "provisional": true,
+      "acousticReview": "not-heard; selected as temporary placeholder, not an acoustic ranking",
+      "authority": "Owner delegated all remaining temporary MiniMax voices",
+      "balanceBefore": 64949,
+      "balanceAfter": 64779,
+      "slotsRemaining": 0
+    },
+    "profileProductionPlan": "26 expressions now complete. Repair head profiles using approved v2 three-quarter heads plus grey pose-only guide before personal fullbody, maintaining original identity anchors.",
+    "approvedPersonalLook": {
+      "anchor": "grace-boateng__wardrobe-personal__front__v2.png",
+      "selectionAuthority": "Owner delegated agent review",
+      "note": "Native original fullbody accepted relative v2: blue shirt white T terracotta trousers offwhite flats.",
+      "portrait": "grace-boateng__wardrobe-personal__portrait__v2.png"
+    },
+    "approvedProfileHeads": {
+      "left": "grace-boateng__face__side__v2.png",
+      "right": "grace-boateng__face__side-right__v2.png"
+    },
+    "voicePlaceholderDelivery": {
+      "slots": 6,
+      "handoff": "voice/handoff/handoff.json",
+      "status": "accepted-temporary-placeholder-under-delegation",
+      "review": "ASR-only; no acoustic review; see original run for limitations",
+      "synthesisBeats": 868,
+      "designBeats": 170
+    },
+    "imagePackTechnicalComplete": {
+      "canonicalSlots": 55,
+      "uniqueSha256": 55,
+      "fullBodyRelativeReviewed": 19,
+      "messages": 65,
+      "review": "delegated visual acceptance; frozen measurement_review preserved",
+      "sampleScope": "Grok1/3 plus Vids0/1"
+    },
+    "additionalVideoTasks": {
+      "action": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/action/task.json",
+      "ensemble": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/ensemble/task.json",
+      "vids": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/vids/task.json"
+    },
+    "sampleScope": {
+      "required": 4,
+      "accepted": 4,
+      "grokAccepted": 3,
+      "vidsAccepted": 1,
+      "missing": {},
+      "sourceExceptions": [],
+      "voiceNote": "existing six placeholder WAV unchanged; no acoustic review claim",
+      "reviewAuthority": "Owner delegated aesthetic and relative proportion review; staging only",
+      "reviewPage": "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/four-sample-review.html",
+      "updatedAt": "2026-10-22T16:25:57.794423+00:00",
+      "publication": false
+    }
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00-pics-a/c/6ad91c89-b4d4-83ea-a687-894ecfb77986",
+      "project": "Pics-A",
+      "modelRequested": "GPT-5.6 Sol / Pro 5/5",
+      "host": "Codex app in-app browser",
+      "actualModelVerified": "GPT-5.6Sol Pro5/5 in actualchat, beforeandaftertrial4",
+      "model": "GPT-6",
+      "thinking": "Extra High / 极高 (4/5)"
+    }
+  },
+  "website": {
+    "published": true,
+    "order": 124,
+    "status": "active",
+    "tagline": {
+      "en": "A bargaining champion with a Yiwu accent.",
+      "zh": "义乌口音的砍价高手。"
+    },
+    "introduction": {
+      "en": "A full afro, a soft broad face and a gap between her front teeth make Grace Boateng instantly recognisable. Born in Ghana and raised in Yiwu, Zhejiang, she speaks Mandarin with a Yiwu accent. She helps with her family’s small-commodities export business, and nobody outbargains her on a livestream.",
+      "zh": "蓬蓬的爆炸头，宽软方脸，门牙有缝。来自加纳，在浙江义乌长大，普通话带义乌口音；帮家里做小商品外贸，直播砍价没人砍得过她。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-23",
+    "note": {
+      "en": "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
+      "zh": "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。"
+    }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-23",
+    "ownerReviewPending": false,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/actors/grace-boateng.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/grace-boateng-slot-plan-v2.json",
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/voice/handoff/handoff.json",
+      "/Users/yuanfei/PieAI/MediaFactory/.devspace-reports/swimmerparty-next10-20261021/RESULT.md"
+    ],
+    "images": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__turnaround__front__v2.png",
+        "source": "grace-boateng/grace-boateng__turnaround__front__v2.png",
+        "sha256": "54b5ed8bc7df987c73e40ee1f9baf327f6d0fc6595f25afd66351894000f5d12",
+        "bytes": 979126,
+        "slot": "turnaround.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__turnaround__three-quarter__v2.png",
+        "source": "grace-boateng/grace-boateng__turnaround__three-quarter__v2.png",
+        "sha256": "9b085c5372c5266cc965eeb498bc29063f282027122ec91f35c21a109bf76d77",
+        "bytes": 836672,
+        "slot": "turnaround.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__turnaround__side__v2.png",
+        "source": "grace-boateng/grace-boateng__turnaround__side__v2.png",
+        "sha256": "f4f97613930ba0b54d371c084b81b2dbe28ad0b4afe612e3fec39ca4aad975bd",
+        "bytes": 589790,
+        "slot": "turnaround.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__turnaround__back__v2.png",
+        "source": "grace-boateng/grace-boateng__turnaround__back__v2.png",
+        "sha256": "54352988da6f1fe90efb607ec228c00c79eccad42cbf205e2707c6e3adf69d4f",
+        "bytes": 942210,
+        "slot": "turnaround.back",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__turnaround__back-three-quarter-left__v2.png",
+        "source": "grace-boateng/grace-boateng__turnaround__back-three-quarter-left__v2.png",
+        "sha256": "ff861afa0c67785b7969f8e2d3409555a7cd6020768da60795ef70a7a8c32f79",
+        "bytes": 953385,
+        "slot": "turnaround.back-three-quarter-left",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__turnaround__back-three-quarter-right__v2.png",
+        "source": "grace-boateng/grace-boateng__turnaround__back-three-quarter-right__v2.png",
+        "sha256": "7a18cef28fc4d41dfcfe39d8067bab87bc9ae040ccb13f9e71845b09ec045bd1",
+        "bytes": 929225,
+        "slot": "turnaround.back-three-quarter-right",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__face__front__v2.png",
+        "source": "grace-boateng/grace-boateng__face__front__v2.png",
+        "sha256": "e74345b4a242a5df674235692d397cc0f346f6d721d7519d5a3a2322319d0335",
+        "bytes": 1595551,
+        "slot": "face.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__face__three-quarter__v2.png",
+        "source": "grace-boateng/grace-boateng__face__three-quarter__v2.png",
+        "sha256": "ff322191deb9256850613b1f507a2b21cbd115a90f4b000feb0deefed190d922",
+        "bytes": 1494298,
+        "slot": "face.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__face__side__v2.png",
+        "source": "grace-boateng/grace-boateng__face__side__v2.png",
+        "sha256": "57293a5b1ce46a9ef18a675ac890b5ba3785512e3cafd69e4c56311fe3ed11bd",
+        "bytes": 1837901,
+        "slot": "face.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__face__three-quarter-left__v2.png",
+        "source": "grace-boateng/grace-boateng__face__three-quarter-left__v2.png",
+        "sha256": "51ea9cb4963327be7cf4caa94492dba35fd8932c0dd032fa84b238eb72705fbd",
+        "bytes": 1625663,
+        "slot": "face.three-quarter-left",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__face__side-right__v2.png",
+        "source": "grace-boateng/grace-boateng__face__side-right__v2.png",
+        "sha256": "dac9c49c9c775f57a94590fd86919b99c7a5420ca6ca4edc13c874e41ca17e21",
+        "bytes": 2134886,
+        "slot": "face.side-right",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__face__up__v2.png",
+        "source": "grace-boateng/grace-boateng__face__up__v2.png",
+        "sha256": "80cccc80a40eae2c3666e644318ebcf58c035ba772d756b9cb465d4dafe6dc77",
+        "bytes": 1943297,
+        "slot": "face.up",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__face__down__v2.png",
+        "source": "grace-boateng/grace-boateng__face__down__v2.png",
+        "sha256": "a6a424395fb1cdf32afe55a991965d99e62dc1266cf834ccd05349601d9be80d",
+        "bytes": 2045205,
+        "slot": "face.down",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__neutral__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__neutral__v2.png",
+        "sha256": "7184beb3ba9357a5c83478edc3b444ca899545b52d4f52aaf68471919c571e94",
+        "bytes": 1516127,
+        "slot": "expression.neutral",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__smile__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__smile__v2.png",
+        "sha256": "ec3a6f7f84fcaade78fff7ae336633e66212a832856c0f3394b5c8e9cd150a02",
+        "bytes": 1501113,
+        "slot": "expression.smile",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__laugh__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__laugh__v2.png",
+        "sha256": "541f5a3f51fc82b2a97d80249b399aff9951db5d97eb130c443cd0d306d99c22",
+        "bytes": 1598902,
+        "slot": "expression.laugh",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__sad__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__sad__v2.png",
+        "sha256": "895049ba7b3071968e87bab15b53f4b05ce57ae53f52fc8d981f4d55ef65643d",
+        "bytes": 1536875,
+        "slot": "expression.sad",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__cry__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__cry__v2.png",
+        "sha256": "9189a14a1e0416ba39671a0a692a2a905915e6aee55eaf7917247085c0ee3096",
+        "bytes": 2005934,
+        "slot": "expression.cry",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__annoyed__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__annoyed__v2.png",
+        "sha256": "e0319e9eec70b74021de7f7fcb570c7c0ca010bbcbb08056fbc45667a44a2f62",
+        "bytes": 2032736,
+        "slot": "expression.annoyed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__angry__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__angry__v2.png",
+        "sha256": "a3a5e9360f322643421c737245600f298fff9826d8c192b0062fc13340330898",
+        "bytes": 2033080,
+        "slot": "expression.angry",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__surprised__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__surprised__v2.png",
+        "sha256": "644eea75e7b4356f869ef1ed339c49c49b5d5b8d14acb5e0beade15d7649e6ea",
+        "bytes": 2247697,
+        "slot": "expression.surprised",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__scared__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__scared__v2.png",
+        "sha256": "8656dda09b0c643d19c17e4b269cd71ee8de36996b8c897ea76a2b7c59009874",
+        "bytes": 2239106,
+        "slot": "expression.scared",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__disgusted__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__disgusted__v2.png",
+        "sha256": "4ec80f04b2740512cf27a57fb35c0e3a63c09d34208633e29ab0a911c6c4e861",
+        "bytes": 1967560,
+        "slot": "expression.disgusted",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__embarrassed__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__embarrassed__v2.png",
+        "sha256": "3cb6caeb4f5d467cbd32fbf324065c6d3cad9a5cd28c738294f379bb2c5ca729",
+        "bytes": 1697694,
+        "slot": "expression.embarrassed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__tired__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__tired__v2.png",
+        "sha256": "ff5363df5bd8e316068783fb4db7c6fd0a36609e10da2cf716090c54e9e3b1ab",
+        "bytes": 1583257,
+        "slot": "expression.tired",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__speaking__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__speaking__v2.png",
+        "sha256": "b5c8a4a48fc16b557280b60c7d9b8d00b6e374da67265c19f86944672e4d447a",
+        "bytes": 1568378,
+        "slot": "expression.speaking",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__eyes-closed__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__eyes-closed__v2.png",
+        "sha256": "62b1e70cdf815f808039d5f874ad4ef37d85ee7fd02b5cfe1d916dfaab1d16b0",
+        "bytes": 1516338,
+        "slot": "expression.eyes-closed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__worried__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__worried__v2.png",
+        "sha256": "c36b7311ce9954f579687586a163500e0d91a1ab6d640f4fa1f491f78bfcc4aa",
+        "bytes": 2179493,
+        "slot": "expression.worried",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__skeptical__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__skeptical__v2.png",
+        "sha256": "3b46e5bd21a1220528119cbaaf55f3a82a4806e9d28f337a679e9ce0b2634437",
+        "bytes": 1524332,
+        "slot": "expression.skeptical",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__smug__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__smug__v2.png",
+        "sha256": "66757247fa065ab48ef3e8545daa0ca0ad406f3c85ba1a740d4b2fbedcc79fab",
+        "bytes": 2039291,
+        "slot": "expression.smug",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__contempt__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__contempt__v2.png",
+        "sha256": "e1a7732de33847f71fc5b86b1dd8d4a1426ac5f0061d23a5c5cb659349fe6cf3",
+        "bytes": 2212948,
+        "slot": "expression.contempt",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__confused__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__confused__v2.png",
+        "sha256": "a6f394d120853ab84958e824293233082f17b9b7adced17105e8c68688bcff91",
+        "bytes": 1787501,
+        "slot": "expression.confused",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__thinking__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__thinking__v2.png",
+        "sha256": "6565d48abb72a993c6e12f330b29a0470f5dc5cd780b6d43536a1691b4ffc925",
+        "bytes": 1610713,
+        "slot": "expression.thinking",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__determined__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__determined__v2.png",
+        "sha256": "c1ab874131d617263d59f95dae740e781889a01c66aa198cb6bf8ee559db0d1e",
+        "bytes": 1871430,
+        "slot": "expression.determined",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__shy__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__shy__v2.png",
+        "sha256": "b25ba19210a7ec8e2b3375cdf8ac98b8ff0717c40b161409f862b792088326bf",
+        "bytes": 2160066,
+        "slot": "expression.shy",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__pain__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__pain__v2.png",
+        "sha256": "94ca8b4f07fc6fb0586edb78518cba7bdbaa5370836e8728eed074e420aa5917",
+        "bytes": 1993869,
+        "slot": "expression.pain",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__sleepy__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__sleepy__v2.png",
+        "sha256": "2e9f80381db2690c9235328c803e2f2cfe8bb38b13532c5bc408c7830038b492",
+        "bytes": 1944907,
+        "slot": "expression.sleepy",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__awkward-smile__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__awkward-smile__v2.png",
+        "sha256": "632c99bcb6ef0cdf82f81023bbef7c1cfd98678e9b318ff7c07a7edaa95dbd50",
+        "bytes": 1959692,
+        "slot": "expression.awkward-smile",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__expression__deadpan__v2.png",
+        "source": "grace-boateng/grace-boateng__expression__deadpan__v2.png",
+        "sha256": "00d2e5858e010381f5486db5df79aa385ea6aaa696bba3724fd2fb9dc4c186f4",
+        "bytes": 2031744,
+        "slot": "expression.deadpan",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__wardrobe-personal__front__v2.png",
+        "source": "grace-boateng/grace-boateng__wardrobe-personal__front__v2.png",
+        "sha256": "c70acebac37590c17948891ac2f0fb85cdb94f41cf56563534726592d5028f5e",
+        "bytes": 1024009,
+        "slot": "wardrobe.personal.front",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__wardrobe-personal__three-quarter__v2.png",
+        "source": "grace-boateng/grace-boateng__wardrobe-personal__three-quarter__v2.png",
+        "sha256": "16faa6e7d7a5b42ce371ba74298d9f96ab202de2347e5a5af5e463c141e19ba5",
+        "bytes": 1028415,
+        "slot": "wardrobe.personal.three-quarter",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__wardrobe-personal__side__v2.png",
+        "source": "grace-boateng/grace-boateng__wardrobe-personal__side__v2.png",
+        "sha256": "d6d950551ed9629222185f42703857e5d28eaf8239f494358539d30996e7c5e1",
+        "bytes": 709961,
+        "slot": "wardrobe.personal.side",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__wardrobe-personal__back__v2.png",
+        "source": "grace-boateng/grace-boateng__wardrobe-personal__back__v2.png",
+        "sha256": "a1b2c4eeb2beb8c052a88bb9bf14a6f4e3f5412353fb5b9bd106935432a30780",
+        "bytes": 989317,
+        "slot": "wardrobe.personal.back",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__wardrobe-personal__portrait__v2.png",
+        "source": "grace-boateng/grace-boateng__wardrobe-personal__portrait__v2.png",
+        "sha256": "43e63fd59a58a57183a54e310f62cf2bef0e06a951f1bc73ce806b7f5cd349d4",
+        "bytes": 2078408,
+        "slot": "wardrobe.personal.portrait",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__wardrobe-personal__show-sample__v2.png",
+        "source": "grace-boateng/grace-boateng__wardrobe-personal__show-sample__v2.png",
+        "sha256": "5b2c45166a248eeb00a9e96f834a56ab0c49014882b7f8b296efc2db2f65b8b6",
+        "bytes": 1008481,
+        "slot": "wardrobe.personal.show-sample",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__wardrobe-personal__explain-price__v2.png",
+        "source": "grace-boateng/grace-boateng__wardrobe-personal__explain-price__v2.png",
+        "sha256": "356e9f9aa19ce656c0ee225869d01dee9a2a468e4cb66b6d90dbc3e4f28c07c2",
+        "bytes": 978485,
+        "slot": "wardrobe.personal.explain-price",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__wardrobe-personal__livestream-phone__v2.png",
+        "source": "grace-boateng/grace-boateng__wardrobe-personal__livestream-phone__v2.png",
+        "sha256": "0f0f65e538e191c46741a6fcf7ada2a1a9a36ff3cf1e2c799336dfabde0bfe90",
+        "bytes": 1018309,
+        "slot": "wardrobe.personal.livestream-phone",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__pose__walk__v2.png",
+        "source": "grace-boateng/grace-boateng__pose__walk__v2.png",
+        "sha256": "5f1a68b8207c7b8511c87867154b14d1f2c807a0d279eaa53856362e009a80ba",
+        "bytes": 882492,
+        "slot": "pose.walk",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__pose__run__v2.png",
+        "source": "grace-boateng/grace-boateng__pose__run__v2.png",
+        "sha256": "795e788fae1e919a067445dab7d0b3b491bce494c4c7196b8894fe56a78b229f",
+        "bytes": 924555,
+        "slot": "pose.run",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__pose__sit__v2.png",
+        "source": "grace-boateng/grace-boateng__pose__sit__v2.png",
+        "sha256": "bad56513bb5f4aedac7eb28fcc89516629af9285ddb0f4442f0c4bc398e814b4",
+        "bytes": 1165401,
+        "slot": "pose.sit",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__pose__point__v2.png",
+        "source": "grace-boateng/grace-boateng__pose__point__v2.png",
+        "sha256": "e98654632f492d5455a1c33e5a2939695e176146c77f92dd788db67e5e213fd8",
+        "bytes": 819280,
+        "slot": "pose.point",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__pose__arms-crossed__v2.png",
+        "source": "grace-boateng/grace-boateng__pose__arms-crossed__v2.png",
+        "sha256": "e971bd82e44157f1b1f26ff20818f5ee0ee9a4b11a74143abcabe462c5d48ff5",
+        "bytes": 814152,
+        "slot": "pose.arms-crossed",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__pose__phone__v2.png",
+        "source": "grace-boateng/grace-boateng__pose__phone__v2.png",
+        "sha256": "c17a482a69e49a735f5957402e4da7fa73fabefae12674181ad2a542393610e3",
+        "bytes": 863604,
+        "slot": "pose.phone",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__detail__hands__v2.png",
+        "source": "grace-boateng/grace-boateng__detail__hands__v2.png",
+        "sha256": "502dd5d37f05f9e2c31d816d2c6ce189221ffbc15b4bbc6d1233ea93f629ac47",
+        "bytes": 1423957,
+        "slot": "detail.hands",
+        "version": 2
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/grace-boateng__detail__hair-back__v2.png",
+        "source": "grace-boateng/grace-boateng__detail__hair-back__v2.png",
+        "sha256": "8cf1976a59bc8e5ae878edcda33c4469433366c0f69c22bd4de6fedc0fb4da3b",
+        "bytes": 1646182,
+        "slot": "detail.hair-back",
+        "version": 2
+      }
+    ],
+    "voices": [
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/voice/handoff/grace-boateng__voice__intro__v1.wav",
+        "source": "voices/grace-boateng/grace-boateng__voice__intro__v1.wav",
+        "sha256": "68d64059f7a92bd7ce1e5a0135bc5703b75cacb6d7bc54ca7308a3a4868f2123",
+        "bytes": 1263496,
+        "slot": "intro",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "大家好，我叫格蕾丝·博阿滕，今年二十四。老家在加纳，我在浙江义乌长大，平时帮家里做小商品外贸。有人听我说普通话，比看我砍价还吃惊。直播间里货要讲清楚，价也得谈明白，大家下次才肯再来。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/voice/handoff/grace-boateng__voice__intro-alt__v1.wav",
+        "source": "voices/grace-boateng/grace-boateng__voice__intro-alt__v1.wav",
+        "sha256": "e34ac795fee53d10dfc864d9769ceb8480f305489a162625355200d1518c0163",
+        "bytes": 1094826,
+        "slot": "intro-alt",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "Hi, I'm Grace Boateng. I'm twenty-four, from a Ghanaian family, and I grew up in Yiwu, China. I help with our family's small-goods export business. I like a good bargain, especially on a livestream, but I want customers to understand what they're buying and come back next time."
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/voice/handoff/grace-boateng__voice__chat__v1.wav",
+        "source": "voices/grace-boateng/grace-boateng__voice__chat__v1.wav",
+        "sha256": "956f27982e950fb5b9889923d434c883a784f3526d0079877d4a9aa6639497ee",
+        "bytes": 774120,
+        "slot": "chat",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "你先看样品，颜色和尺寸都在这里。要得多我们再谈价，不用一上来就把数字压到底。做生意嘛，这次合适，下次还可以接着做。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/voice/handoff/grace-boateng__voice__happy__v1.wav",
+        "source": "voices/grace-boateng/grace-boateng__voice__happy__v1.wav",
+        "sha256": "563be2937ec0c6d3a6bc2f50f1a7ff2de4369a72bb90d0beb07144c5ba6925f5",
+        "bytes": 647060,
+        "slot": "happy",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "成交啦！今天这单谈得真舒服，规格对清楚了，交货时间也赶得上。来，先喝口水，等我把这一条记好，咱们再高兴！"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/voice/handoff/grace-boateng__voice__angry__v1.wav",
+        "source": "voices/grace-boateng/grace-boateng__voice__angry__v1.wav",
+        "sha256": "8a2b52b9da9f8e2d6df74a0845a6bdf989a2f69d8269e5189d086c8418f6961b",
+        "bytes": 721176,
+        "slot": "angry",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "等一下，不能拿这个替原来确认的样品。颜色差这么多，你自己看得出来。先把货停住，我们说清楚再发，不能让客人收到才发现。"
+      },
+      {
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/voice/handoff/grace-boateng__voice__sad__v1.wav",
+        "source": "voices/grace-boateng/grace-boateng__voice__sad__v1.wav",
+        "sha256": "df3b0549330d5245f7332872307cd682a51a3c9261f26d642c74577486fa8e72",
+        "bytes": 820186,
+        "slot": "sad",
+        "version": 1,
+        "placeholder": true,
+        "transcript": "小时候总觉得市场好大，跟着家里人走，一转弯就找不到路。现在我每天在里面忙，有时收摊晚了，还是会想听见他们喊我回家。"
+      }
+    ]
+  },
+  "officialSamples": [
+    {
+      "sampleId": "grace-boateng-grok-20261023",
+      "actorSlugs": [
+        "grace-boateng"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/actors/grace-boateng.json",
+        "evidenceSha256": "bc08df0a1383dfd65c441447cf85986337cda4a9da5b161fe290e38aaccb7f44",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/grace-boateng-grok-20261023/source.mp4",
+          "sourceSha256": "f5c5909b880d7fdaa4a269553b7b819fbefa4e6ff0df21aae030b64b56da38c1",
+          "public": "/media/works/samples/grace-boateng-grok-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/grace-boateng-sample-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/grace-boateng-sample-original.mp4",
+            "source": "samples/grace-boateng-grok-20261023/platform-original.mp4",
+            "sha256": "1839062add63016276b6c2c2c06d7e2a18cb9593b62f659434684e3d3b0166b7",
+            "bytes": 1826703
+          }
+        }
+      ]
+    },
+    {
+      "sampleId": "grace-boateng-grok-action-20261023",
+      "actorSlugs": [
+        "grace-boateng"
+      ],
+      "label": "action",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/action/task.json",
+        "evidenceSha256": "ad4a53a5a1d3d918d2c8115bf2d9f7dc1c18fc67966e9e06ab6953dc62ed722a",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/grace-boateng-grok-action-20261023/source.mp4",
+          "sourceSha256": "a304583a1a38cf41c489d52e501c86b69d0371b3719fcc06538f24fd337de211",
+          "public": "/media/works/samples/grace-boateng-grok-action-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/action/attempt-01-contained-arms/grace-boateng-action-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/action/attempt-01-contained-arms/grace-boateng-action-original.mp4",
+            "source": "samples/grace-boateng-grok-action-20261023/platform-original.mp4",
+            "sha256": "fb068115390574d3b20113e05357017fd5fb4c76fe2d054c59b0bfe02c2407aa",
+            "bytes": 1605572
+          }
+        }
+      ],
+      "productionTask": {
+        "id": "task-56c692bbb612da7c",
+        "sha256": "ad4a53a5a1d3d918d2c8115bf2d9f7dc1c18fc67966e9e06ab6953dc62ed722a",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:11:27.783Z",
+          "note": "已直接查看12帧和首中尾：Grace新版宽软下颌丰满颊短宽鼻、横长较小眼、黄色T恤及中等胯腿体态保持；正面转向右侧并迈两步后停稳，双手在躯干前自然收拢，全程完整发顶手鞋无融合多肢。成人头颈肩躯干骨盆腿段相对原锚点自然，实际结束三分之四角且有轻微跟随推近，不是严格90度固定机位；代理接受有明显位移的自然表演并保留差异。原生720x1280/6.041667秒全解码，原片及静音收到，0.03824388美元实记，技术staging通过。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "grace-boateng-grok-ensemble-20261023",
+      "actorSlugs": [
+        "grace-boateng"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/ensemble/task.json",
+        "evidenceSha256": "495b18e80cc60a84405af50839eb8491fcb46a386b13640de91cd76bc1aca25d",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/grace-boateng-grok-ensemble-20261023/source.mp4",
+          "sourceSha256": "3c0b0702f3b4f20f26857590b34e52a7c00d470d635af88e40b253dbca3f1a32",
+          "public": "/media/works/samples/grace-boateng-grok-ensemble-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/ensemble/grace-boateng-ensemble-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/ensemble/grace-boateng-ensemble-original.mp4",
+            "source": "samples/grace-boateng-grok-ensemble-20261023/platform-original.mp4",
+            "sha256": "593223c4b2882d7de0023f50555ef5687d460714ecbd267a5b59ad073a4d51af",
+            "bytes": 2164353
+          }
+        }
+      ],
+      "castSlugs": [
+        "grace-boateng",
+        "kate-murray"
+      ],
+      "productionTask": {
+        "id": "task-85895f8fc14a8249",
+        "sha256": "495b18e80cc60a84405af50839eb8491fcb46a386b13640de91cd76bc1aca25d",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:25:56.544Z",
+          "note": "直接看12帧及首中尾：Grace左侧宽软下颌厚颊短宽鼻蓝衬衫陶土裤、Kate右侧极短发长脸绿衬衫身份保持；Grace向右小跨一步并开掌，Kate点头，尾部双方转看镜头。实际步幅比提示词broad step小，代理接受自然交谈动作并记录偏差。全程完整发顶手指鞋底、无融合多肢，成人头颈躯干骨盆腿段相对各自原锚点自然，CG光照空间一致。原生1280x720/6.041667秒全解码，AAC与封面保留，静音流拷贝；0.02361096美元入原run，技术staging接受。",
+          "formalPublication": false
+        },
+        "source": null
+      }
+    },
+    {
+      "sampleId": "grace-boateng-google-vids-20261023",
+      "actorSlugs": [
+        "grace-boateng"
+      ],
+      "label": "two-actors",
+      "tools": [
+        "Google Vids"
+      ],
+      "approvedOn": "2026-10-23",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/vids/task.json",
+        "evidenceSha256": "5147545067e4105f81fda2382ac50fda0b60789b2f621407e901877d27a895c7",
+        "ownerReviewPending": false,
+        "authority": "Owner 2026-10-23 explicitly authorized promotion and production publication of these ten deliveries. Delegated visual acceptance; not an automatic proportion pass or full acoustic acceptance."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/grace-boateng-google-vids-20261023/source.mp4",
+          "sourceSha256": "c15e216a9ee770f5970d68d230ffb5f4f6d775012b8555f2afe06c17a317a93d",
+          "public": "/media/works/samples/grace-boateng-google-vids-20261023/video.mp4",
+          "transcode": true,
+          "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/vids/grace-boateng-vids-silent.mp4",
+          "platformOriginal": {
+            "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/grace-boateng/video/additional-20261022/vids/grace-boateng-vids-original.mp4",
+            "source": "samples/grace-boateng-google-vids-20261023/platform-original.mp4",
+            "sha256": "8e544b637d7d61521b752d47e7c5320e04ed9fabd1a9f87b5f8a4b0cf4e5e064",
+            "bytes": 1545957
+          }
+        }
+      ],
+      "castSlugs": [
+        "grace-boateng",
+        "kate-murray"
+      ],
+      "productionTask": {
+        "id": "task-e70319a16f2311dc",
+        "sha256": "5147545067e4105f81fda2382ac50fda0b60789b2f621407e901877d27a895c7",
+        "selectionStatus": "delegated-visual-accepted-staging",
+        "review": {
+          "reviewer": "Codex under Owner delegated aesthetic authority",
+          "at": "2026-10-22T16:11:27.120Z",
+          "note": "直接查看12帧与原生首中尾：Grace左侧丰满颊宽软下颌短宽鼻蓝衬衫陶土裤、Kate右侧极短发长脸绿衬衫身份可辨并保持。Grace向右迈步并开掌交谈，Kate原地回应点头；全程两人发顶双手手指鞋底完整，成人头颈躯干骨盆腿段相对锚点自然，无融合或多肢，CG光照与空间一致。原生1280x720/144帧6秒全解码通过，AAC48k与四角星保留，静音流拷贝；技术staging接受，费用unknown。",
+          "formalPublication": false
+        },
+        "source": "IAB publicdownloadMedia actualgeneratedvideo; not documentexport"
+      }
+    }
+  ],
+  "websitePromotion": {
+    "authorizedOn": "2026-10-23",
+    "authority": "Owner task: publish all ten under new names, second-version biographies and approved current appearance; preserve CC provenance and old URL redirects.",
+    "actorSourceSha256": "bc08df0a1383dfd65c441447cf85986337cda4a9da5b161fe290e38aaccb7f44",
+    "slotPlanSha256": "449edc7ba2caa904f1085e0dc54f0a8a45d75841bf5f7435c3de073c0cb0d359",
+    "voiceReview": "Owner-accepted temporary placeholder; no complete acoustic review claimed.",
+    "proportionReview": "Owner-delegated relative visual acceptance; original absolute measurement_review and framing exceptions retained unchanged in producer evidence.",
+    "billing": "Historical Grok unknown requests and CLI model-usage USD values remain in producer records; no verified account debit or video unit price is asserted."
+  }
+}

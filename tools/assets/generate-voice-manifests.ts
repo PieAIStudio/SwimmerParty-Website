@@ -100,6 +100,7 @@ export async function generateVoiceManifests(
           previewUrl: url,
           durationSec: Math.round(duration * 10) / 10,
           ...(pin.transcript ? { transcript: { text: pin.transcript } } : {}),
+          ...(pin.placeholder ? { placeholder: true } : {}),
         };
         const index = manifest.items.findIndex((current) => current.slot === item.slot);
         if (index === -1) manifest.items.push(item);

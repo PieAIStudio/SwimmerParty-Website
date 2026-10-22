@@ -46,8 +46,15 @@ export function projectOfficialSamples(
     videos.add(video.public);
     if (clip.sampleId && (!video.sourceSha256 || !video.transcode))
       throw new Error(`${id}: new sample needs a pinned source and bounded transcode`);
+    const castSlugs = clip.castSlugs ?? actorSlugs;
+    if (
+      new Set(castSlugs).size !== castSlugs.length ||
+      castSlugs.some((slug) => !known.has(slug)) ||
+      actorSlugs.some((slug) => !castSlugs.includes(slug))
+    )
+      throw new Error(`${id}: invalid cast association`);
     const label = clip.label ?? "solo";
-    if ((label === "two-actors") !== (actorSlugs.length === 2))
+    if ((label === "two-actors") !== (castSlugs.length === 2))
       throw new Error(`${id}: label and actor count differ`);
     for (const slug of actorSlugs) {
       const count = (counts.get(slug) ?? 0) + 1;
@@ -58,6 +65,8 @@ export function projectOfficialSamples(
       sampleId: id,
       slug: owner,
       actorSlugs,
+      ...(clip.castSlugs ? { castSlugs } : {}),
+      ...(clip.note ? { note: clip.note } : {}),
       label,
       tools: clip.tools,
       images,

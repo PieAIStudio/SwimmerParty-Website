@@ -58,6 +58,21 @@ export function projectActorData(production: unknown[], castingInput: unknown) {
     published.map((a) => String(a.website.order)),
     "website order",
   );
+  const promotedSources = new Set<string>();
+  for (const actor of records.filter((a) => a.website?.published && a.castingSource)) {
+    const source = actor.castingSource!;
+    const entry = casting.actors.find((c) => c.source === source.code);
+    if (
+      !entry ||
+      entry.slug !== source.oldSlug ||
+      entry.nameEn !== source.oldName.en ||
+      entry.nameZh !== source.oldName.zh ||
+      promotedSources.has(source.code) ||
+      (actor.slug !== entry.slug && casting.actors.some((c) => c.slug === actor.slug))
+    )
+      throw new Error(`media-pack/actors/${actor.slug}.json: conflicting casting source migration`);
+    promotedSources.add(source.code);
+  }
   const looks: Record<string, Look[]> = {};
   const active: Actor[] = published.map((a) => {
     const context = `media-pack/actors/${a.slug}.json`;
@@ -135,8 +150,10 @@ export function projectActorData(production: unknown[], castingInput: unknown) {
     );
   });
   const promotedSlugs = new Set(published.map((a) => a.slug));
-  // Casting source order is the public new-face order. Promotion suppresses only that slug.
-  const newFaces = casting.actors.filter((a) => !promotedSlugs.has(a.slug));
+  // Preserve the casting evidence; an explicitly traced rename suppresses only its CC source.
+  const newFaces = casting.actors.filter(
+    (a) => !promotedSlugs.has(a.slug) && !promotedSources.has(a.source),
+  );
   const newcomers: Actor[] = newFaces.map((entry) =>
     parseSource(
       actorSchema,
