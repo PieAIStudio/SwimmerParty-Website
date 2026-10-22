@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: human
 created: 2026-08-20
-last_reviewed: 2026-10-13
+last_reviewed: 2026-10-22
 domain: meta
 tags:
   - current-work
@@ -17,7 +17,7 @@ related: []
 
 # Current Work
 
-当前网站改进按[创作社区实施方案](../../plans/active/2026-10-13-creator-community.md)推进；阶段状态、Owner 决定与检查证据只记在方案内。下列发布记录保留当时的版本与验收数字，不代表当前依赖或测试总数。
+当前网站改进按[创作社区实施方案](../../plans/active/2026-10-13-creator-community.md)推进；阶段状态、Owner 决定与检查证据只记在方案内。2026-10-22 已正式开放社区并发布本批四位演员、同脸首屏和实测教程；当前结果、Owner 待亲点项及后续批修见方案的正式发布读回段。下列记录保留当时的版本与验收数字，不代表当前部署、依赖或测试总数。
 
 2026-10-13 knip 基线核对：干净 `origin/main`（`d84d3dd`，隔离检出前后均 clean）用 `pnpm dlx knip` 6.41.0 检出 7 项；A1 后只剩 `src/features/account/arrival.ts` 的 `SSO_ARRIVAL_PARAM`、`products.ts` 的 `CURRENT_PRODUCT_ID` 两项。当时记为**既有、归 Avatar 的 AuthKit 升级一起清**；A1 未新增问题，不碰账号目录、不加忽略规则。Owner 已澄清 knip 不在推送门禁中，此基线不阻塞 A1；实际门禁仍须通过。原始对比收据：`.devspace-reports/next-stage/knip-baseline/receipt.json`。
 
