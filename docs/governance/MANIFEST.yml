@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-22T14:32:20.641Z
+generated_at: 2026-10-22T19:21:46.677Z
 generator_version: doc-gov@0.16.0
 docs_count: 36
 docs:
@@ -51,7 +51,7 @@ docs:
     type: plan
     status: active
     canonical: true
-    last_reviewed: 2026-10-22
+    last_reviewed: 2026-10-23
     pinned: false
   - id: PLAN-SWIMMER-FAMILY-REBUILD
     path: docs/plans/completed/2026-10-03-swimmer-family-rebuild.md
