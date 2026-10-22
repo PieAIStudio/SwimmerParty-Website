@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-22T19:21:46.677Z
+generated_at: 2026-10-22T22:57:53.708Z
 generator_version: doc-gov@0.16.0
 docs_count: 36
 docs:
@@ -219,7 +219,7 @@ docs:
     type: reference
     status: active
     canonical: true
-    last_reviewed: 2026-10-22
+    last_reviewed: 2026-10-23
     pinned: true
   - id: REF-HOW-TO
     path: docs/reference/how-to.md
