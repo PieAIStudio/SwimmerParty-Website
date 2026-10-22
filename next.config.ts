@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
         const actor = JSON.parse(readFileSync(`media-pack/actors/${file}`, "utf8"));
         const oldSlug = actor.castingSource?.oldSlug;
         if (!actor.website?.published || !oldSlug || oldSlug === actor.slug) return [];
-        return ["", "/:locale(zh|en)"].map((prefix) => ({
+        return ["", "/zh", "/en"].map((prefix) => ({
           source: `${prefix}/actors/${oldSlug}/:path*`,
           destination: `${prefix}/actors/${actor.slug}/:path*`,
           permanent: true,
