@@ -88,6 +88,22 @@ for (const locale of ["en", "zh"] as const) {
         const heroVideos = await hero.locator("video").all();
         for (const video of heroVideos) await expect(video).toBeInViewport();
         const heroVideoBounds = await Promise.all(heroVideos.map((video) => video.boundingBox()));
+        const [reference, landscape] = heroVideoBounds;
+        const playButton = hero.getByRole("button").first();
+        await expect(playButton).toHaveCSS("white-space", "nowrap");
+        expect(landscape!.width).toBeGreaterThan(reference!.width);
+        if (width === 390) {
+          const comparison = await hero.locator("[data-same-actor-comparison]").boundingBox();
+          expect(landscape!.width).toBeCloseTo(comparison!.width, 0);
+        }
+        for (const phrase of await hero.locator("h1 span").all()) {
+          const fitsOneLine = await phrase.evaluate(
+            (node) =>
+              node.getBoundingClientRect().height <=
+              parseFloat(getComputedStyle(node).lineHeight) + 1,
+          );
+          expect(fitsOneLine).toBe(true);
+        }
         await expect(cta).toHaveAttribute("href", `/${locale}/actors`);
         expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
           true,
@@ -155,6 +171,10 @@ test("A2 home plays only approved clips on demand, without duplicated hero cards
       (nodes) => new Set(nodes.map((node) => node.getAttribute("data-official-sample"))).size,
     ),
   ).toBe(1);
+  const vids = comparison.filter({ hasText: "Google Vids" });
+  await expect(vids.locator("video")).toHaveAttribute("aria-label", /Google Vids/);
+  await expect(vids.getByRole("button")).toHaveAccessibleName(/Google Vids/);
+  await expect(vids.getByRole("button")).not.toHaveAccessibleName(/Grok/);
   const hero = page.locator('[data-home-section="hero"] video').first();
   await page
     .locator('[data-home-section="hero"]')

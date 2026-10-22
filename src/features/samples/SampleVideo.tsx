@@ -8,11 +8,13 @@ export function SampleVideo({
   src,
   poster,
   label,
+  compactControl = false,
   className = "",
 }: {
   src: string;
   poster: string;
   label: string;
+  compactControl?: boolean;
   className?: string;
 }) {
   const { t } = useSiteI18n();
@@ -82,6 +84,8 @@ export function SampleVideo({
         <div className="absolute inset-0 flex items-center justify-center">
           <GameButton
             aria-label={`${t("samples.play")} · ${label}`}
+            size={compactControl ? "sm" : "md"}
+            className={compactControl ? "whitespace-nowrap" : undefined}
             onClick={() => {
               setStarted(true);
               setLoading(true);

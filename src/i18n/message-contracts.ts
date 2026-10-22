@@ -584,7 +584,7 @@ export interface MessageContracts {
   readonly "samples.play": {  };
   readonly "samples.playFailed": {  };
   readonly "samples.seeAll": {  };
-  readonly "samples.videoLabel": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
+  readonly "samples.videoLabel": { readonly "name": string | number | bigint | boolean | null | undefined | Date; readonly "tool": string | number | bigint | boolean | null | undefined | Date; };
   readonly "samples.worksTitle": {  };
   readonly "sheet.action": {  };
   readonly "sheet.count": { readonly "count": string | number | bigint | boolean | null | undefined | Date; readonly "max": string | number | bigint | boolean | null | undefined | Date; };

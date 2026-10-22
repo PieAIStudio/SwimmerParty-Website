@@ -466,7 +466,7 @@
   "samples.actorTitle": "同一个{name}，不同工具",
   "samples.official": "SWIMMER PARTY 出品",
   "samples.seeAll": "看全部样片",
-  "samples.videoLabel": "{name} · 用 Grok 做的短视频",
+  "samples.videoLabel": "{name} · {tool} 视频样片",
   "home.keywords.aiActor": "AI 演员",
   "home.keywords.animatedCharacter": "动画角色",
   "home.keywords.syntheticTalent": "虚拟演员",

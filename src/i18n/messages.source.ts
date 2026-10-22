@@ -1518,8 +1518,8 @@ export const messages = {
   "samples.official": { en: "By SWIMMER PARTY", zh: "SWIMMER PARTY 出品" },
   "samples.seeAll": { en: "See all samples", zh: "看全部样片" },
   "samples.videoLabel": {
-    en: "{name} · short video made with Grok",
-    zh: "{name} · 用 Grok 做的短视频",
+    en: "{name} · video sample · {tool}",
+    zh: "{name} · {tool} 视频样片",
   },
   "home.keywords.aiActor": { en: "AI actor", zh: "AI 演员" },
   "home.keywords.animatedCharacter": { en: "animated character", zh: "动画角色" },

@@ -20,12 +20,12 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
     <div className="sp-container">
       <section
         data-home-section="hero"
-        className="grid items-center gap-7 py-8 lg:grid-cols-12 lg:gap-10 lg:py-14"
+        className="grid items-center gap-7 py-8 lg:grid-cols-12 lg:gap-8 lg:py-10"
       >
-        <div className="lg:col-span-5">
-          <h1 className="sp-display-xl">
-            <span className="block">{t("home.heroLines.0")}</span>
-            <span className="block">{t("home.heroLines.1")}</span>
+        <div className="lg:col-span-4">
+          <h1 className="sp-display-xl sp-home-title">
+            <span className="block whitespace-nowrap">{t("home.heroLines.0")}</span>
+            <span className="block whitespace-nowrap">{t("home.heroLines.1")}</span>
           </h1>
           <p className="sp-lead mt-5 max-w-[28rem] text-muted-foreground">{t("home.heroBody")}</p>
           <p className="sp-small mt-4 flex flex-wrap gap-x-4 gap-y-1 text-muted-foreground">
@@ -40,12 +40,24 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
             {t("home.ctaAssets")}
           </GameButton>
         </div>
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-8">
           {heroSamples.length ? (
-            <div className="grid grid-cols-2 gap-3 lg:gap-5" data-same-actor-comparison>
-              {heroSamples.map((entry) => (
-                <SamplePreview key={entry.sample.sampleId} entry={entry} locale={locale} hero />
-              ))}
+            <div>
+              <div
+                className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,2.4fr)] lg:items-end lg:gap-5"
+                data-same-actor-comparison
+              >
+                {heroSamples.map((entry, index) => (
+                  <SamplePreview
+                    key={entry.sample.sampleId}
+                    entry={entry}
+                    locale={locale}
+                    hero
+                    reference={heroSamples.length === 2 && index === 0}
+                  />
+                ))}
+              </div>
+              <p className="sp-small mt-3 text-muted-foreground">{t("samples.official")}</p>
             </div>
           ) : ready[0] ? (
             <div className="mx-auto max-w-48">
@@ -126,33 +138,49 @@ async function SamplePreview({
   entry: { actor, sample },
   locale,
   hero = false,
+  reference = false,
 }: {
   entry: { actor: Actor; sample: OfficialSample };
   locale: AppLocale;
   hero?: boolean;
+  reference?: boolean;
 }) {
   const { t } = await getSiteI18n(locale);
   const name = locale === "zh" ? actor.nameCn : actor.nameEn;
   return (
-    <figure data-official-sample={sample.slug} data-sample-id={sample.sampleId} className="min-w-0">
+    <figure
+      data-official-sample={sample.slug}
+      data-sample-id={sample.sampleId}
+      className={
+        reference
+          ? "grid min-w-0 grid-cols-[7rem_minmax(0,1fr)] items-center gap-4 lg:block"
+          : "min-w-0"
+      }
+    >
       <SampleVideo
         src={sample.video}
         poster={sample.poster}
-        label={t("samples.videoLabel", { name })}
+        label={t("samples.videoLabel", { name, tool: sample.tools.at(-1) ?? "" })}
+        compactControl={reference}
         className={
           hero
-            ? "aspect-[4/5] max-h-56 w-full rounded-[var(--game-ui-radius-card)] bg-muted object-contain lg:aspect-[9/14] lg:max-h-[400px]"
+            ? `${reference ? "aspect-[3/4]" : "aspect-video"} w-full bg-muted object-contain`
             : "aspect-9/16 max-h-[420px] w-full rounded-[var(--game-ui-radius-card)] bg-muted object-contain"
         }
       />
-      <figcaption className="sp-small mt-3 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+      <figcaption
+        className={
+          hero
+            ? `sp-small grid gap-1 ${reference ? "lg:mt-3" : "mt-3"}`
+            : "sp-small mt-3 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1"
+        }
+      >
         <Link href={`/actors/${actor.slug}`} className="font-semibold hover:underline">
           {name}
         </Link>
-        <span className="text-muted-foreground">{sample.tools.join(" · ")}</span>
-        {hero ? (
-          <span className="w-full text-muted-foreground">{t("samples.official")}</span>
-        ) : null}
+        <span className="text-muted-foreground">
+          {hero ? sample.tools.at(-1) : sample.tools.join(" · ")}
+        </span>
       </figcaption>
     </figure>
   );

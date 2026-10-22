@@ -466,7 +466,7 @@
   "samples.actorTitle": "Same {name}, different tools",
   "samples.official": "By SWIMMER PARTY",
   "samples.seeAll": "See all samples",
-  "samples.videoLabel": "{name} · short video made with Grok",
+  "samples.videoLabel": "{name} · video sample · {tool}",
   "home.keywords.aiActor": "AI actor",
   "home.keywords.animatedCharacter": "animated character",
   "home.keywords.syntheticTalent": "synthetic talent",
