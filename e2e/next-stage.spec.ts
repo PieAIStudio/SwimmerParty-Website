@@ -210,7 +210,8 @@ test("A1 all five funnel steps emit locally, with no analytics network request o
     .poll(async () => (await events(page)).filter((event) => event.name === "sample_viewed").length)
     .toBe(1);
   await page.getByRole("button", { name: en["cast.add"], exact: true }).click();
-  await page.getByRole("button", { name: en["cast.added"], exact: true }).click();
+  await expect(page.locator('[data-in-cast="true"]')).toHaveText(en["cast.added"]);
+  await expect(page.getByRole("button", { name: en["cast.added"], exact: true })).toHaveCount(0);
   expect((await events(page)).filter((event) => event.name === "cast_changed")).toHaveLength(1);
   await page.getByRole("button", { name: en["actor.openLibrary"], exact: true }).click();
   await expect

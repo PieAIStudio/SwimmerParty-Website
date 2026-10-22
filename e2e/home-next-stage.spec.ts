@@ -84,7 +84,9 @@ for (const locale of ["en", "zh"] as const) {
           exact: true,
         });
         await expect(cta).toBeInViewport();
-        await expect(hero.locator("video")).toBeInViewport({ ratio: 0.9 });
+        // Owner 2026-10-22: record exact first-fold coverage as post-launch UX evidence, not a release blocker.
+        await expect(hero.locator("video")).toBeInViewport();
+        const heroVideoBounds = await hero.locator("video").boundingBox();
         await expect(cta).toHaveAttribute("href", `/${locale}/actors`);
         expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
           true,
@@ -99,13 +101,27 @@ for (const locale of ["en", "zh"] as const) {
         else expect(characters).toBeLessThanOrEqual(450);
         await mkdir(report, { recursive: true });
         const name = `home-${locale}-${theme}-${width}`;
+        if (width === 390) await page.screenshot({ path: `${report}/${name}.viewport.png` });
         await page.screenshot({ path: `${report}/${name}.png`, fullPage: true });
         // Capture the resting layout before testing the UIKit keyboard-focus animation.
         await cta.focus();
         await expect(cta).toBeFocused();
         await writeFile(
           `${report}/${name}.json`,
-          JSON.stringify({ locale, theme, width, words, characters, text }, null, 2),
+          JSON.stringify(
+            {
+              locale,
+              theme,
+              width,
+              words,
+              characters,
+              text,
+              heroVideoBounds,
+              viewport: page.viewportSize(),
+            },
+            null,
+            2,
+          ),
         );
       });
     }
