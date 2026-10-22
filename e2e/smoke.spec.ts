@@ -1,12 +1,10 @@
 import { test, expect } from "@playwright/test";
+import en from "../messages/en/messages.json";
 test("home and legal pages render", async ({ page }) => {
   await page.goto("/en");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Your next story.");
-  await expect(
-    page.getByText("Free reference assets. Make something with the tools you love.", {
-      exact: true,
-    }),
-  ).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(en["home.heroLines.0"]);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(en["home.heroLines.1"]);
+  await expect(page.getByText(en["home.heroBody"], { exact: true })).toBeVisible();
   await expect(page.locator('[data-home-section="hero"] a[href="/en/actors"]')).toHaveText(
     "Choose an actor",
   );
