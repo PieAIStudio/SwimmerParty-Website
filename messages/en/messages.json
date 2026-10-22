@@ -179,7 +179,7 @@
   "home.metaTitle": "SWIMMER PARTY — Original AI actors",
   "home.heroLines.0": "Same actor.",
   "home.heroLines.1": "Different AI tools.",
-  "home.heroBody": "Reference images, voices and prompts. Free for commercial use. Compare the same actor in these two clips.",
+  "home.heroBody": "Images, voices and prompts. Free commercial use. Compare the actor in both clips.",
   "home.ctaAssets": "Choose an actor",
   "home.readyCount": "{count} ready to cast",
   "home.newFaceCount": "{count, plural, one {# new face} other {# new faces}}",

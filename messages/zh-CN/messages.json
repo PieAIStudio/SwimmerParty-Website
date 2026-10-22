@@ -179,7 +179,7 @@
   "home.metaTitle": "SWIMMER PARTY——原创 AI 演员",
   "home.heroLines.0": "换个工具，",
   "home.heroLines.1": "还是那张脸。",
-  "home.heroBody": "参考图、声音、提示词，免费商用。对照这两段样片，认认是不是同一位演员。",
+  "home.heroBody": "图、声音、提示词，免费商用。两段片子，还是同一位演员。",
   "home.ctaAssets": "去挑演员",
   "home.readyCount": "{count} 位可用演员",
   "home.newFaceCount": "{count, plural, other {# 位新面孔}}",

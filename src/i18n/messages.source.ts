@@ -547,8 +547,8 @@ export const messages = {
   "home.heroLines.0": { en: "Same actor.", zh: "换个工具，" },
   "home.heroLines.1": { en: "Different AI tools.", zh: "还是那张脸。" },
   "home.heroBody": {
-    en: "Reference images, voices and prompts. Free for commercial use. Compare the same actor in these two clips.",
-    zh: "参考图、声音、提示词，免费商用。对照这两段样片，认认是不是同一位演员。",
+    en: "Images, voices and prompts. Free commercial use. Compare the actor in both clips.",
+    zh: "图、声音、提示词，免费商用。两段片子，还是同一位演员。",
   },
   "home.ctaAssets": { en: "Choose an actor", zh: "去挑演员" },
   "home.readyCount": { en: "{count} ready to cast", zh: "{count} 位可用演员" },
