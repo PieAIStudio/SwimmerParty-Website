@@ -350,8 +350,8 @@
   "release": {
     "date": "2026-10-23",
     "note": {
-      "en": "55 approved reference images, 6 placeholder voice clips and 4 independent samples (3 Grok + 1 Google Vids).",
-      "zh": "55张批准参考图、6段占位声音、4条独立样片（3条Grok＋1条Google Vids）。"
+      "en": "55 images, 6 placeholder voice clips, 4 samples.",
+      "zh": "55 张图、6 段占位声音、4 条样片。"
     }
   },
   "assetDelivery": {
