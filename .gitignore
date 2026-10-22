@@ -22,6 +22,8 @@ tsconfig.tsbuildinfo
 /assets-inbox/
 /.assets-local/
 /.devspace-reports/
+/.scratch/
+/.reports/
 # Deterministic synthetic pixels rebuilt by Playwright global setup.
 /e2e/fixtures/assets-store/
 

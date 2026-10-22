@@ -12,7 +12,7 @@ import { NextGraduation } from "@/features/community/client";
 
 export async function HomeView({ locale }: { locale: AppLocale }) {
   const { t } = await getSiteI18n(locale);
-  const { ready, newFaces, featuredFaces, hero, featured, updates } = selectHomeContent(
+  const { ready, newFaces, featuredFaces, heroSamples, featured, updates } = selectHomeContent(
     ACTORS,
     OFFICIAL_SAMPLES,
   );
@@ -20,9 +20,9 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
     <div className="sp-container">
       <section
         data-home-section="hero"
-        className="grid items-center gap-7 py-8 lg:grid-cols-12 lg:gap-16 lg:py-14"
+        className="grid items-center gap-7 py-8 lg:grid-cols-12 lg:gap-10 lg:py-14"
       >
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-5">
           <h1 className="sp-display-xl">
             <span className="block">{t("home.heroLines.0")}</span>
             <span className="block">{t("home.heroLines.1")}</span>
@@ -40,9 +40,13 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
             {t("home.ctaAssets")}
           </GameButton>
         </div>
-        <div className="lg:col-span-5">
-          {hero ? (
-            <SamplePreview entry={hero} locale={locale} hero />
+        <div className="lg:col-span-7">
+          {heroSamples.length ? (
+            <div className="grid grid-cols-2 gap-3 lg:gap-5" data-same-actor-comparison>
+              {heroSamples.map((entry) => (
+                <SamplePreview key={entry.sample.sampleId} entry={entry} locale={locale} hero />
+              ))}
+            </div>
           ) : ready[0] ? (
             <div className="mx-auto max-w-48">
               <ActorCard actor={ready[0]} />
@@ -137,7 +141,7 @@ async function SamplePreview({
         label={t("samples.videoLabel", { name })}
         className={
           hero
-            ? "aspect-video w-full rounded-[var(--game-ui-radius-card)] bg-muted object-contain lg:aspect-[9/14] lg:max-h-[460px]"
+            ? "aspect-[4/5] max-h-56 w-full rounded-[var(--game-ui-radius-card)] bg-muted object-contain lg:aspect-[9/14] lg:max-h-[400px]"
             : "aspect-9/16 max-h-[420px] w-full rounded-[var(--game-ui-radius-card)] bg-muted object-contain"
         }
       />

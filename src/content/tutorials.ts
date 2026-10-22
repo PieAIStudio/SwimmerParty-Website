@@ -14,6 +14,7 @@ export type ToolTutorial = {
   sourceCheckedAt: string;
   reproducedAt: string | null;
   reproductionEvidence: string | null;
+  caseStudy?: { actorSlug: string; sampleId: string; result: L };
 };
 const prepare: L = {
   en: "Choose one actor and download a front-view image. Single images need no Swimmer account; a starter pack needs a free account. Keep the supplied credit information.",
@@ -187,30 +188,52 @@ export const TOOL_TUTORIALS: readonly ToolTutorial[] = [
   },
   {
     id: "grok",
-    tool: "Grok Imagine",
+    tool: "Grok · reference_to_video",
     entry: "https://grok.com/imagine",
-    ...check,
-    goal: { en: "Animate a still with a simple wave", zh: "从静态图做一个挥手动作" },
+    sourceCheckedAt: "2026-10-13",
+    reproducedAt: "2026-10-22",
+    reproductionEvidence: "liu-dan-grok-20261022",
+    caseStudy: {
+      actorSlug: "liu-dan",
+      sampleId: "liu-dan-grok-20261022",
+      result: {
+        en: "Liu Dan raises her right hand and waves in a six-second clip. Her bob, beauty mark and pink shirt stay recognisable. The camera moves to a medium shot after about two seconds, so this is a greeting sample, not a full-body motion reference. The preview is silent.",
+        zh: "刘丹抬起右手挥手，成片约6秒。短发、眼下的痣和粉色上衣还认得出。约2秒后镜头推近，没能一直拍到全身；适合看打招呼，不当全身动作参考。这里播放无声版。",
+      },
+    },
+    goal: {
+      en: "Liu Dan waves hello: a real six-second test",
+      zh: "让刘丹挥挥手：一次真的6秒实测",
+    },
     access: {
-      en: "Requires access to Grok Imagine. Sign in and check the video controls and your current allowance first; subscriptions or extra credits may be required. Web and API access are not interchangeable.",
-      zh: "需要能使用 Grok Imagine。先登录并核对视频控件和当前额度；可能需要订阅或额外点数。网页权限与 API 权限不是一回事。",
+      en: "Think of it as a tiny film: Liu Dan is the actor and your AI helper gives Grok the directions. This test used Grok CLI's reference_to_video, not the web buttons. We reuse the saved result, with no new generation bought. Check your account and free allowance before trying again. Stop if payment is needed.",
+      zh: "就像拍一段小短剧：刘丹来演，AI 助手帮你把要求交给 Grok。这次用的是 Grok 指令工具里的 reference_to_video，不是网页按钮。本页复用已做好的片子，没有新花钱。再试前先看账号和免费额度；要付钱就先别点。",
     },
     steps: [
-      prepare,
       {
-        en: "Open Grok Imagine. Add the actor picture and choose to make a short video from it. The buttons may look different on your account.",
-        zh: "打开 Grok Imagine，上传演员图，选择用它做一段短视频。你的账号里按钮可能不一样。",
+        en: "Choose Liu Dan. The real input was a grey-background first frame, her full-body anchor and a face-only reference. The picture here shows the full-body reference, not a generated result.",
+        zh: "选刘丹。实际放入了灰底首帧、她的全身锚点和一张只看脸的参考图。这里展示的是全身参考，不是假装做好的成片。",
       },
       {
-        en: "Where a motion prompt is available, use the prompt below. Choose one short clip, confirm any charge and generate. Do not treat API options as options guaranteed in the web app.",
-        zh: "界面可填写动作提示时用下方提示词。选一个短片、确认费用再生成；不要把 API 参数当成网页必有的选项。",
+        en: "Tell an AI helper with Grok access: ‘Use these pictures to make one six-second, 9:16, 720p video. No preset voice.’ Our helper called reference_to_video once. Give it the exact English prompt below too.",
+        zh: "把图交给能用 Grok 的 AI 助手，对它说：『只做一段6秒竖屏视频，画幅9:16、清晰度720p，不选预设声音。』这次助手只调用了一次 reference_to_video。再把下面真正用过的英文原句交给它。",
       },
-      inspect,
+      {
+        en: "Save the original video. Compare the beginning, middle and end with the reference. Check the face, right hand and camera framing; do not judge only the first frame.",
+        zh: "保存原片，对着参考图看开头、中间和结尾。检查脸、右手和镜头范围，不只看第一帧。",
+      },
+      {
+        en: "Keep the limitation: the camera crops the lower body despite the prompt. Use it as a greeting sample and add the required Swim In AI credit. Our preview removes the generated sound.",
+        zh: "记下没做到的地方：虽然提示词要求保留全身，镜头还是推近了。把它当问候样片使用，按规则署名 Swim In AI。本站预览去掉了生成的声音。",
+      },
     ],
-    prompt: motion,
+    prompt: {
+      en: "The same petite adult Chinese woman in the references, with her blunt black bob, straight bangs, same beauty mark, dusty pink T-shirt, dark trousers and white shoes, stands against the warm light-grey studio background. Her right hand moves from beside her hip up to shoulder height and gives two friendly waves, with a small natural smile, as the camera gently pushes in; keep her complete adult body and consistent natural proportions visible throughout. Premium animated 3D feature-film character, visibly CG, not photoreal, soft neutral-white front lighting and clean unbranded clothing.",
+      zh: "The same petite adult Chinese woman in the references, with her blunt black bob, straight bangs, same beauty mark, dusty pink T-shirt, dark trousers and white shoes, stands against the warm light-grey studio background. Her right hand moves from beside her hip up to shoulder height and gives two friendly waves, with a small natural smile, as the camera gently pushes in; keep her complete adult body and consistent natural proportions visible throughout. Premium animated 3D feature-film character, visibly CG, not photoreal, soft neutral-white front lighting and clean unbranded clothing.",
+    },
     troubleshoot: {
-      en: "Keep one action and a fixed camera. Check the face, hands and any generated audio; a successful request alone does not mean the result is usable.",
-      zh: "只保留一个动作和固定镜头。检查脸、手及生成的声音；请求成功不等于结果可用。",
+      en: "One successful test is not a promise that every tool or every run keeps the same face. Start with one small action. If the face changes, return to the original reference; do not buy more generations just to follow this page.",
+      zh: "这一次做成了，不代表每个工具、每次生成都能保持同一张脸。先只做一个小动作。脸变了就回到原参考图；别为了跟这篇教程继续花钱。",
     },
     sources: [
       {

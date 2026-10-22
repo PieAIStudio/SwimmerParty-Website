@@ -2,6 +2,8 @@ import Image from "next/image";
 import { getActor } from "@/features/actors/queries";
 import { firstImage } from "@/features/assets/queries";
 import type { ToolTutorial } from "@/content/tutorials";
+import { OFFICIAL_SAMPLES } from "@/content/official-samples.generated";
+import { SampleVideo } from "@/features/samples/client";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n } from "@/i18n/server";
 import { Breadcrumbs } from "@/site/Breadcrumbs";
@@ -18,8 +20,11 @@ export async function ToolGuideView({
   locale: AppLocale;
 }) {
   const { t } = await getSiteI18n(locale);
-  const actor = getActor("tang-yunqiu");
+  const actor = getActor(tutorial.caseStudy?.actorSlug ?? "tang-yunqiu");
   const image = actor ? firstImage(actor.slug, ["turnaround.front"]) : null;
+  const result = OFFICIAL_SAMPLES.find(
+    (sample) => sample.sampleId === tutorial.caseStudy?.sampleId,
+  );
   return (
     <div className="sp-container pb-20" data-tool-guide={tutorial.id}>
       <Breadcrumbs items={[{ label: t("nav.learn"), href: "/guide" }, { label: tutorial.tool }]} />
@@ -59,6 +64,23 @@ export async function ToolGuideView({
       <section className="mt-10" data-tutorial-prompt>
         <CopyBlock label={t("learn.prompt")} text={tutorial.prompt[locale]} />
       </section>
+      {result && tutorial.caseStudy && tutorial.reproducedAt ? (
+        <section className="mt-8 grid gap-5 md:grid-cols-2" data-tested-tutorial>
+          <div>
+            <h2 className="sp-title">{t("learn.resultPreview")}</h2>
+            <p className="sp-small mt-3" data-reproduction-date>
+              {t("learn.testedOn", { date: tutorial.reproducedAt })}
+            </p>
+            <p className="mt-4">{tutorial.caseStudy.result[locale]}</p>
+          </div>
+          <SampleVideo
+            src={result.video}
+            poster={result.poster}
+            label={t("learn.resultPreview")}
+            className="aspect-video max-h-80 w-full rounded-[var(--game-ui-radius-card)] bg-muted object-contain"
+          />
+        </section>
+      ) : null}
       <section className="mt-8">
         <h2 className="sp-title">{t("learn.checkResult")}</h2>
         <p className="mt-4 max-w-3xl">{tutorial.troubleshoot[locale]}</p>

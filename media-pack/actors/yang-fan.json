@@ -1,0 +1,733 @@
+{
+  "schemaVersion": "media-pack-cast-1",
+  "code": "yang-fan",
+  "slug": "yang-fan",
+  "kind": "actor",
+  "name": {
+    "zh": "杨帆",
+    "en": "Yang Fan"
+  },
+  "status": {
+    "delivered": 0,
+    "published": false,
+    "preparedOn": "2026-10-22",
+    "productionOnly": true,
+    "version": "1.0.0",
+    "siteProfile": "src/content/actors/yang-fan/profile.ts"
+  },
+  "demographics": {
+    "age": 30,
+    "gender": "male",
+    "origin": {
+      "zh": "云南大理",
+      "en": "Dali, Yunnan, China"
+    },
+    "voiceLanguage": "zh"
+  },
+  "facts": {
+    "zh": [
+      "30岁，云南大理，身高174cm。",
+      "看着像古装剧里走出来的，其实是航空公司的副机长。"
+    ],
+    "en": [
+      "30-year-old East Asian Chinese man, 174 cm tall, from Dali, Yunnan, China.",
+      "An airline first officer whose small topknot and thin goatee give him a period-drama appearance."
+    ]
+  },
+  "identity": "The same original fictional East Asian Chinese man as CC-062-face-only.png, now named Yang Fan, 30 years old, from Dali, Yunnan, China, 174 cm tall. Preserve these distinctive features: average build; a mole between his eyebrows, long dark hair tied in a small topknot and a thin goatee. An airline first officer whose small topknot and thin goatee give him a period-drama appearance. The face crop is identity only, never a body-proportion reference. Natural adult body about 7.40 skull-to-chin heads tall, target 7.2–7.6, excluding hair, afro or topknot. Natural adult neck, torso, pelvis and limbs; no big head, shortened torso, long neck or fashion-model elongation.",
+  "stylization": "Character stylization (A2, pushed): 3D feature-animation adult with realistic adult body proportions at this actor's height; normal head size, natural neck, shoulders, torso, pelvis and leg lengths. The East Asian Chinese identity must read through the facial structure rather than clothing. Preserve distinctive ordinary-person facial features, gently exaggerated from life, not a generic beauty-standard face. Slightly enlarged expressive eyes without enlarging the whole head; simplified cheek, nose and lip planes; smooth stylized skin shading with soft subsurface scattering and no pores; clean grouped hair clumps. Clothing uses realistic clean unbranded materials. Unmistakably CG at first glance, never photoreal.",
+  "proportions": {
+    "headsTall": 7.4,
+    "headsTallRange": [
+      7.2,
+      7.6
+    ],
+    "heightCm": 174,
+    "targetBasis": "Production target proposed before generation from confirmed height and age; not a measurement or a selected body. Frozen Vision review plus delegated anatomy/identity review required.",
+    "frameGuide": {
+      "occupancyMin": 0.86,
+      "occupancyMax": 0.94,
+      "topMarginMin": 0.04,
+      "topMarginMax": 0.1,
+      "bottomMarginMin": 0.04,
+      "bottomMarginMax": 0.1
+    }
+  },
+  "anchorVersion": 1,
+  "anchors": {
+    "face": "library/staging/yang-fan/references/CC-062-face-only.png",
+    "body": "library/staging/yang-fan/references/selected-body-anchor.png"
+  },
+  "castingSource": {
+    "code": "CC-062",
+    "oldSlug": "bai-yunchuan",
+    "oldName": {
+      "zh": "白云川",
+      "en": "Bai Yunchuan"
+    },
+    "record": "casting/new-faces-2026-10.json",
+    "image": "library/claude-casting-2026-10-07/final/CC-062.png",
+    "sha256": "c2520f5c4ccbeeb04d5179978c66d52dad5551d513f0c314a69cbaf6c00045c2",
+    "use": "face identity only; not body ratio",
+    "identityAuthority": "HQ second-version next-10-actors-20261020.md and work order 20261021",
+    "faceCrop": {
+      "file": "references/CC-062-face-only.png",
+      "rectangleXYXY": [
+        244,
+        0,
+        705,
+        484
+      ],
+      "width": 461,
+      "height": 484,
+      "sha256": "eee8c5daa7d779261988ab0b7eb083ba3623def8370d81c43486c09dcee447f5",
+      "operation": "pixel crop only; source original preserved"
+    }
+  },
+  "looks": [
+    {
+      "id": "casting-basics",
+      "kind": "identity",
+      "label": {
+        "zh": "试镜基础装",
+        "en": "Casting basics"
+      },
+      "prompt": "Plain clean teal cotton crew-neck T-shirt, straight dark charcoal trousers, clean flat white low-top sneakers; no jewelry, accessories, text, logos or brands."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "zh": "日常装",
+        "en": "Everyday wear"
+      },
+      "prompt": "Clean casual outfit: plain navy lightweight zip jacket open over a pale cream crew-neck T-shirt, straight charcoal trousers, flat black low-top shoes. Preserve his small topknot, brow mole and thin goatee. No airline logo, insignia, wings or jewelry.",
+      "approvalBasis": "Agent design under Owner delegated aesthetic decisions; not generated yet.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": { "zh": "日常装近景", "en": "Everyday portrait" },
+          "direction": "Head and upper chest in the actor's personal outfit, facing the camera."
+        },
+        {
+          "key": "read-notebook",
+          "label": {
+            "zh": "看笔记",
+            "en": "Reading notes"
+          },
+          "direction": "full body standing at a three-quarter angle, looking down slightly at a small plain closed-cover notebook held open in both hands, natural adult posture"
+        },
+        {
+          "key": "look-at-sky",
+          "label": {
+            "zh": "抬眼看天",
+            "en": "Watching the sky"
+          },
+          "direction": "full body standing at a three-quarter angle, one hand shading the eyes lightly as he looks a little upward, natural neck and stance"
+        },
+        {
+          "key": "relaxed-seat",
+          "label": {
+            "zh": "休息坐姿",
+            "en": "Relaxed seat"
+          },
+          "direction": "full body seated naturally on a plain stool, both feet on the ground, hands resting on thighs, a calm small smile"
+        }
+      ]
+    }
+  ],
+  "roles": [],
+  "proposals": {
+    "approval": "agent-selected-under-owner-delegated-aesthetic-authority",
+    "phase": "technical-staging-complete",
+    "appearance": "Selected trial1-B under delegated review. Frozen median7.279 interval6.794–7.846 measurement_review and original frame_rejected retained. Lines, face/topknot/browmole/thin goatee, natural adult174cm neck/torso/pelvis/legs and CG/alpha reviewed. Complete hair/shoes, visually accepted spacing exception. No claim automatic ratio/frame pass. Prompt accidentally retained3candidateblock before single suffix, actual3separateoriginals preserved and costrecorded; futureprompts rebuilt through imageplan.",
+    "delivered": 55,
+    "voiceReview": "Candidate1 selected under delegated placeholder review; savedcloudyang-fan. Six native WAV received and technicallydecoded;808声贝. Two combined genericrefusals then single intro explicitly transcript-only/no acousticaccess. Remaining5 text-only parsed successfully in35f0e2fafd8f19c7. Minor parsed点→撮 and听见了→听见啦, otherwise six full beginning/ending and identities match; acceptable placeholder text variants, not verifiedphoneticerrors. No acousticpass/freeze/handoff. Independent silentGrok sample technicalaccepted; wholechainnotcompleted. Owner2026-10-22 expressly accepted existing six as placeholder; archivedsamebytes tovoice/frozen, acousticunperformed limitationretained."
+  },
+  "routes": {
+    "chatgpt-web": {
+      "chat": "https://chatgpt.com/g/g-p-6ac396efc218819190830b751d24ab00-pics-a/c/6ad8fce7-c1f4-83ea-8cd5-4a2d0b715ed4",
+      "project": "Pics-A",
+      "host": "Codex app IAB",
+      "modelRequested": "GPT-5.6 Sol / Pro5/5",
+      "actualModelVerified": true,
+      "actualModel": "GPT-5.6 Sol / Pro5/5 in actual chat, explicitly selected after no-image administrative setup. No images requested before verification."
+    },
+    "grok-cli": {
+      "sessionId": "01a16025-7e8e-7ce1-9c01-0d7bf448c4f4",
+      "requestId": "fe69af56-fec9-4584-8ec5-86454edd7c2d",
+      "model": "grok-4.6-build / xhigh",
+      "nativeOriginal": "video/yang-fan-sample-original.mp4",
+      "silentSample": "video/yang-fan-sample-silent.mp4",
+      "totalCostUsd": 0.03648744,
+      "review": "Technicalsampleaccepted after actualframes0,3,5.8s; no actor voice dependency. Voiceacousticreviewstillunperformed,notcompleteactorchain."
+    }
+  },
+  "website": {
+    "published": true,
+    "order": 117,
+    "status": "active",
+    "tagline": {
+      "en": "He looks ready for a period drama. He is actually an airline first officer.",
+      "zh": "看着像古装演员，其实是航空公司的副机长。"
+    },
+    "introduction": {
+      "en": "He looks ready for a period drama. He is actually an airline first officer.",
+      "zh": "看着像古装演员，其实是航空公司的副机长。"
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-22",
+    "note": {
+      "en": "55 reference images, 6 placeholder voice clips and a sample video.",
+      "zh": "55 张参考图、6 段占位声音、1 段样片。"
+    }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-22",
+    "ownerReviewPending": false,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/actors/yang-fan.json",
+      "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/voice/frozen/handoff.json",
+      "/Users/yuanfei/PieAI/HQ/conductor/projects/SwimmerParty/next-version-20261022/BRIEF.md"
+    ],
+    "images": [
+      {
+        "slot": "detail.hair-back",
+        "source": "yang-fan/yang-fan__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__detail__hair-back__v1.png",
+        "sha256": "1468532e584413d51204051adb30226e687dcc756bae1d29ab904559ea45a8ec",
+        "bytes": 2111758,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "yang-fan/yang-fan__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__detail__hands__v1.png",
+        "sha256": "ba76d2db44b055e9461716dd831a14ce41f767352fd68342b0ab596f52cb931f",
+        "bytes": 1155060,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "yang-fan/yang-fan__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__angry__v1.png",
+        "sha256": "6d3c35a27aa9d0f408fb545f4984327412c0c195377e6ca7c65fe87770b62a53",
+        "bytes": 1957869,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "yang-fan/yang-fan__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__annoyed__v1.png",
+        "sha256": "69d548fcf85b9a57256fa2cb74c3411c4d4219c387421ebae4e5580331c13c73",
+        "bytes": 1855327,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "yang-fan/yang-fan__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__awkward-smile__v1.png",
+        "sha256": "b78378b1e4bd084539649d952faa85a6ee93240116d2c124369ee9e7e2f2aed4",
+        "bytes": 1820551,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "yang-fan/yang-fan__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__confused__v1.png",
+        "sha256": "7c0e920633d79bf7e741598df679f09aa16890a8fabb59178ab983f34077c281",
+        "bytes": 1951645,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "yang-fan/yang-fan__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__contempt__v1.png",
+        "sha256": "06bb2dc35c46ac8af14d39b85777da77a053a0d78c2bbdd6d9dead6b20ea0b97",
+        "bytes": 2254904,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "yang-fan/yang-fan__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__cry__v1.png",
+        "sha256": "6b05d06e1ed2fde7ea47e740c98fd9de66f1353d61a1e2e1cc95f3d401f6a568",
+        "bytes": 1900534,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "yang-fan/yang-fan__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__deadpan__v1.png",
+        "sha256": "98101d7995629243739cecc26e822fd5b795fe0a6eef161ae529eadf498e7c21",
+        "bytes": 1860103,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "yang-fan/yang-fan__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__determined__v1.png",
+        "sha256": "b5260e0af8a71a9f063c1e6cd5938014768eacf423934b677f40f22484af89a4",
+        "bytes": 2078001,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "yang-fan/yang-fan__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__disgusted__v1.png",
+        "sha256": "01465d614a0280225b78d844b7c7079edb434d977fa8f3d0f46d8cffa354527b",
+        "bytes": 2001382,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "yang-fan/yang-fan__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__embarrassed__v1.png",
+        "sha256": "c6c20191f174c62d892505dc79703d96bfc63b09859ec5fe9befa3b1fd204404",
+        "bytes": 1956658,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "yang-fan/yang-fan__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__eyes-closed__v1.png",
+        "sha256": "e394dde8ec0a9a5f85c01292b01768396ec195a1978133d78795bc884040d4ba",
+        "bytes": 1862916,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "yang-fan/yang-fan__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__laugh__v1.png",
+        "sha256": "611467516f1e283347d2f3aca309888b147729dbf4c7657db9a44d4b9f142ba7",
+        "bytes": 2160842,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "yang-fan/yang-fan__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__neutral__v1.png",
+        "sha256": "9893fa074a7786b3868a3d545cc3e2bc288d5bd1ee9f9f1b9d449335b8eca884",
+        "bytes": 1912993,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "yang-fan/yang-fan__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__pain__v1.png",
+        "sha256": "241a178049bfbd40116a6a820a883849e61ecb8e3581d349699afe31c687e3ef",
+        "bytes": 1983744,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "yang-fan/yang-fan__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__sad__v1.png",
+        "sha256": "ae6a13b9e2e52154b04f1ff87c33a283049302207ea5c3747177328cba48e4ca",
+        "bytes": 2161842,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "yang-fan/yang-fan__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__scared__v1.png",
+        "sha256": "1912273c54e389d2ff98bd9248a2dff42bd3413bdab7d96d2d878cd37d8ecc80",
+        "bytes": 1999683,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "yang-fan/yang-fan__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__shy__v1.png",
+        "sha256": "f09f77c641ad217fdf13a9af6c838812a9c230a8540f8bcf2ee3238ea8313dc2",
+        "bytes": 1979181,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "yang-fan/yang-fan__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__skeptical__v1.png",
+        "sha256": "85b6c9995b971bd4a26a4e3203d5ce5bb21d4405b176eb7772a18160b753be59",
+        "bytes": 2123834,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "yang-fan/yang-fan__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__sleepy__v1.png",
+        "sha256": "37fc466ea09beae0a05742914849cdb7aa788def1e83ff0d70bc41293ac086fe",
+        "bytes": 2091848,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "yang-fan/yang-fan__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__smile__v1.png",
+        "sha256": "0897042920363a442f5ed6f2e598bce45a6d989a12dae7998a72d5ffb4446b9d",
+        "bytes": 2070468,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "yang-fan/yang-fan__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__smug__v1.png",
+        "sha256": "b7cebd705c8250a6711f86b0ce616702abb48321a784cc060511f0cf379accda",
+        "bytes": 2232261,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "yang-fan/yang-fan__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__speaking__v1.png",
+        "sha256": "38a16cda4e75e12dcd29932ee7e2e9e5fd9107e8011c32af738f20119d3ad468",
+        "bytes": 2039326,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "yang-fan/yang-fan__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__surprised__v1.png",
+        "sha256": "fa075a4232ac5b0d527cef568e6cf4e4ac0d3f89f0be2e778b31bbf32b7401a0",
+        "bytes": 1832462,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "yang-fan/yang-fan__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__thinking__v1.png",
+        "sha256": "528c26265e35bf3bf0de1226da4eb4f862084df6d4d8665d11698a8e87cc8e25",
+        "bytes": 1833526,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "yang-fan/yang-fan__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__tired__v1.png",
+        "sha256": "5a8ef540ccfb3c79c83e48cf6fdb04bbc5b3fe59074b2b441cb7bfa9fd7adb94",
+        "bytes": 1867668,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "yang-fan/yang-fan__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__expression__worried__v1.png",
+        "sha256": "44e73727a9213c7121ef488992290be5240cce3ec8fa2f18ef8089e6fc35a756",
+        "bytes": 1951618,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "yang-fan/yang-fan__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__face__down__v1.png",
+        "sha256": "e83e452b3010724264adf7f431336e1ac40c73ae1fc6473d9a24dcc984dfc645",
+        "bytes": 2045641,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "yang-fan/yang-fan__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__face__front__v1.png",
+        "sha256": "d6f52e9d132790f91a9260a7d03e8bd6a68390d9dcf0425027edc10edacf2c5e",
+        "bytes": 1767476,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "yang-fan/yang-fan__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__face__side-right__v1.png",
+        "sha256": "0d3bebe42cb2e8dc93a45e9970c735b1406e3ceb2632f4506045841541e8a7de",
+        "bytes": 1795494,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "yang-fan/yang-fan__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__face__side__v1.png",
+        "sha256": "5eb2560355b2c261192e2b5c16a10da6d05af65534e84720e3d8c767445cfe55",
+        "bytes": 2154757,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "yang-fan/yang-fan__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__face__three-quarter-left__v1.png",
+        "sha256": "a658566b36dc3122374a861eb832fb7e5c77e05a2b81e607dc6f7532c605942a",
+        "bytes": 2133858,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "yang-fan/yang-fan__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__face__three-quarter__v1.png",
+        "sha256": "7ca2ea50f80bd83dbaa76a99d2b1187cb814d7a0c4167b30a12fd2bf213e5708",
+        "bytes": 2043758,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "yang-fan/yang-fan__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__face__up__v1.png",
+        "sha256": "98316cd8b4e59dca90bb2e9734e46648d795afe413ad92ea73f74c7c8a79f7e0",
+        "bytes": 1845057,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "yang-fan/yang-fan__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__pose__arms-crossed__v1.png",
+        "sha256": "34870244fe7dc039981486aee123198c24d1c82d2e0b5e18b0119e8effc6f799",
+        "bytes": 761557,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "yang-fan/yang-fan__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__pose__phone__v1.png",
+        "sha256": "fc668c95f435c6dc426d2c7dc689d545fe7daf3ea7bae22f81251413c4fb9083",
+        "bytes": 875634,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "yang-fan/yang-fan__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__pose__point__v1.png",
+        "sha256": "da617a33be1ecae1222bd9225345be65959d2594c02b0c539c7a7ae89acd503a",
+        "bytes": 784966,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "yang-fan/yang-fan__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__pose__run__v1.png",
+        "sha256": "8668e91233e71dcd0d81c0740ee621643b1c1117aa9bd52653f813a59c87c026",
+        "bytes": 903816,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "yang-fan/yang-fan__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__pose__sit__v1.png",
+        "sha256": "833c00786b0793fd938e83359bb06390fc95426388b8328a97c5c3a1f84d71e2",
+        "bytes": 1196064,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "yang-fan/yang-fan__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__pose__walk__v1.png",
+        "sha256": "c467a0ed2560acc5462324235140fbaa2700d4ea891dfa9ddef9967f630c99f5",
+        "bytes": 834093,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "yang-fan/yang-fan__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__turnaround__back-three-quarter-left__v1.png",
+        "sha256": "c7f0e7c62d8dd8668e1429c1094b70532b72008431f445b4dd571b1a70256fce",
+        "bytes": 913059,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "yang-fan/yang-fan__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__turnaround__back-three-quarter-right__v1.png",
+        "sha256": "fe21a8c75f8a05f05e71b05efe59b7f79dc1d24ec79255b1af30cb36ce560667",
+        "bytes": 928002,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "yang-fan/yang-fan__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__turnaround__back__v1.png",
+        "sha256": "da5daa20e4bef86b2752985f7fc0e090ef3bd9d9d4814c95bef3d813d7ce467d",
+        "bytes": 887890,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.front",
+        "source": "yang-fan/yang-fan__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__turnaround__front__v1.png",
+        "sha256": "1ab38f69781e4578527a1633108bba7ea136befbea1e30d9230c4b2b2e5782d9",
+        "bytes": 918634,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "yang-fan/yang-fan__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__turnaround__side__v1.png",
+        "sha256": "d8789615d91de12105ba3de808d8c62bfa12743a912b798cf07d47ad22b43fd9",
+        "bytes": 586050,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "yang-fan/yang-fan__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__turnaround__three-quarter__v1.png",
+        "sha256": "5740265decf6a7a89e42368a8d09e02e98fd3c5710bf34545bc0adc5b9ced5f7",
+        "bytes": 856829,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "yang-fan/yang-fan__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__wardrobe-personal__back__v1.png",
+        "sha256": "31dd962e83255cc6758d981d322678b5550b87338b2d8d174ca0aa02c0706bf6",
+        "bytes": 879119,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "yang-fan/yang-fan__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__wardrobe-personal__front__v1.png",
+        "sha256": "6720aed64568d9f9d56a667f170d2c880caaf9a76a94b3235914ea361e4d55a0",
+        "bytes": 881537,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.look-at-sky",
+        "source": "yang-fan/yang-fan__wardrobe-personal__look-at-sky__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__wardrobe-personal__look-at-sky__v1.png",
+        "sha256": "d565654f637bc1d9127261d69d908e6f31a0a28bbd4ac6acd19761152f593589",
+        "bytes": 914423,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "yang-fan/yang-fan__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__wardrobe-personal__portrait__v1.png",
+        "sha256": "7e5740a3c0260127609d5676c777555e9ba2cd21b50813dee4c7cf36b9af456d",
+        "bytes": 1983779,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.read-notebook",
+        "source": "yang-fan/yang-fan__wardrobe-personal__read-notebook__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__wardrobe-personal__read-notebook__v1.png",
+        "sha256": "0ce5607b9f8fb95acac32eacc96240410fc8fce5786da4e58716b5270fc9f49b",
+        "bytes": 832521,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.relaxed-seat",
+        "source": "yang-fan/yang-fan__wardrobe-personal__relaxed-seat__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__wardrobe-personal__relaxed-seat__v1.png",
+        "sha256": "3467912ba98d875154891a0849329aea99caf31c63e8af7f4d87287ff8bbd467",
+        "bytes": 1187132,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "yang-fan/yang-fan__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__wardrobe-personal__side__v1.png",
+        "sha256": "67813ff692074295abd21c7e6b4d39f3cf59156d2144b47355d24ba82efc1d80",
+        "bytes": 654127,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "yang-fan/yang-fan__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/yang-fan__wardrobe-personal__three-quarter__v1.png",
+        "sha256": "e8def0ef06e930b2701f7339ed12984330c0c085556c0c08414d019207d89893",
+        "bytes": 796266,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "voices/yang-fan/yang-fan__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/voice/frozen/yang-fan__voice__intro__v1.wav",
+        "sha256": "231cae0305e4414bc83c97ba6b1b511ab789f6a026bbcbe73c1872b0766d9e58",
+        "bytes": 1337798,
+        "version": 1,
+        "transcript": "你好，我叫杨帆，三十岁，云南大理人。发髻和这点小胡子留习惯了，总有人问我是不是拍古装戏的。其实我是航空公司的副机长。工作时按规程来，休息时就喜欢慢慢走，看看天，不用每朵云都赶着穿过去。"
+      },
+      {
+        "slot": "intro-alt",
+        "source": "voices/yang-fan/yang-fan__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/voice/frozen/yang-fan__voice__intro-alt__v1.wav",
+        "sha256": "53de5aac23302211f2239161d0ccce31674695a2ad8997b57ac610b12375f1df",
+        "bytes": 1271094,
+        "version": 1,
+        "transcript": "Hello, I'm Yang Fan, thirty, from Dali in Yunnan. With this little bun and goatee, people often ask if I act in costume dramas. I'm actually an airline first officer. At work I follow the checklist carefully. On my days off, I enjoy a slow walk and a good view of the sky."
+      },
+      {
+        "slot": "chat",
+        "source": "voices/yang-fan/yang-fan__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/voice/frozen/yang-fan__voice__chat__v1.wav",
+        "sha256": "eb1acf282b78f216a73eaa19f49bfcaf38b581626c9ad0eab389ec9cfe82cc72",
+        "bytes": 564584,
+        "version": 1,
+        "transcript": "今天风不大，咱们沿湖走一段吧。别急着拍照，先看一会儿。等云从山后面出来，光落下来，那个时候再拍。"
+      },
+      {
+        "slot": "happy",
+        "source": "voices/yang-fan/yang-fan__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/voice/frozen/yang-fan__voice__happy__v1.wav",
+        "sha256": "ebe40413e36e9fb03bea620fe89f9bdabb4b92be72928df96888d937a4ee133b",
+        "bytes": 669352,
+        "version": 1,
+        "transcript": "听见了？今天终于把休假凑到一起了。那就不排太满，吃顿饭，走走路，能跟你们坐着聊一下午，我就很高兴。"
+      },
+      {
+        "slot": "angry",
+        "source": "voices/yang-fan/yang-fan__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/voice/frozen/yang-fan__voice__angry__v1.wav",
+        "sha256": "bb4e445de833fe7cb12b1d7a8378447cde1b7454910b0739ae5cf53b9a7b357d",
+        "bytes": 636658,
+        "version": 1,
+        "transcript": "先停一下，这一步还没核对。不能因为赶时间就跳过去。你把记录拿来，我们一项一项确认，确认完再继续。"
+      },
+      {
+        "slot": "sad",
+        "source": "voices/yang-fan/yang-fan__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/voice/frozen/yang-fan__voice__sad__v1.wav",
+        "sha256": "a3fb440360b02e3d86d01ab0e76fe6f4dbd33cddd2043c08bd933a103a727afb",
+        "bytes": 727308,
+        "version": 1,
+        "transcript": "原来常走的那条小路，现在修了新的围栏。我站在外面看了半天，才发现自己记得的样子，已经是好多年前了。"
+      }
+    ]
+  },
+  "officialSamples": [
+    {
+      "sampleId": "yang-fan-grok-20261022",
+      "actorSlugs": [
+        "yang-fan"
+      ],
+      "label": "solo",
+      "tools": [
+        "Grok"
+      ],
+      "approvedOn": "2026-10-22",
+      "approval": {
+        "rootStatus": "passed-technical-staging-under-owner-delegated-review",
+        "evidence": "/Users/yuanfei/PieAI/SwimmerParty-Website/media-pack/library/staging/yang-fan/actors/yang-fan.json",
+        "evidenceSha256": "dabfb9902953d744c9c46bf51c1225697aa1b4de02d6b968179527395705f2f3",
+        "ownerReviewPending": false,
+        "authority": "2026-10-22 BRIEF explicitly authorizes publishing these four completed staging deliveries; producer limitations retained in proposals, not an automatic ratio/frame pass or personal Owner review."
+      },
+      "media": [
+        {
+          "kind": "video",
+          "sourceRoot": "assets-inbox",
+          "source": "samples/yang-fan-grok-20261022/source.mp4",
+          "sourceSha256": "97ed7d319efdcb5c4279a1b924d3d8d6c3ed18885d8985faec0874ee4136583c",
+          "public": "/media/works/samples/yang-fan-grok-20261022/video.mp4",
+          "transcode": true
+        }
+      ]
+    }
+  ]
+}

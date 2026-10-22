@@ -493,11 +493,13 @@ export interface MessageContracts {
   readonly "learn.openTool": {  };
   readonly "learn.prompt": {  };
   readonly "learn.readSteps": {  };
+  readonly "learn.resultPreview": {  };
   readonly "learn.sources": {  };
   readonly "learn.start.cast": {  };
   readonly "learn.start.sheet": {  };
   readonly "learn.start.starter": {  };
   readonly "learn.steps": {  };
+  readonly "learn.testedOn": { readonly "date": string | number | bigint | boolean | null | undefined | Date; };
   readonly "learn.toolIntro": {  };
   readonly "learn.toolsTitle": {  };
   readonly "learn.workflowPreview": {  };

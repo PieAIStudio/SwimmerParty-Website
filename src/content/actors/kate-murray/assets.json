@@ -1,0 +1,1820 @@
+{
+  "slug": "kate-murray",
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Everyday wear",
+        "zh": "日常装"
+      },
+      "prompt": "Clean everyday teaching outfit: plain sage-green cotton overshirt open over an ivory crew-neck T-shirt, straight navy chinos, flat brown lace-up shoes. Preserve her buzz cut and sharp cheekbones. No logos or jewelry.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Everyday portrait",
+            "zh": "日常装近景"
+          },
+          "direction": "Head and upper chest in the actor's personal outfit, facing the camera."
+        },
+        {
+          "key": "picture-book",
+          "label": {
+            "en": "Picture book",
+            "zh": "讲绘本"
+          },
+          "direction": "full body standing at a three-quarter angle, holding an open plain unlettered picture book at chest height, speaking warmly to camera"
+        },
+        {
+          "key": "count-fingers",
+          "label": {
+            "en": "Counting fingers",
+            "zh": "数手指"
+          },
+          "direction": "full body at a three-quarter angle, holding one hand up to count on fingers, warm small smile, anatomically natural fingers"
+        },
+        {
+          "key": "listen-crouch",
+          "label": {
+            "en": "Crouching to listen",
+            "zh": "蹲下倾听"
+          },
+          "direction": "full body in a comfortable balanced crouch as if listening at child eye level, gentle attentive face, no child or additional figure"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 981,
+      "height": 1602,
+      "bytes": 743069,
+      "sha256": "72c73e7bd9f16e35ed69355898d5cd6a1f45412b377ff10dc4bb144c3c18df68",
+      "sourceSha256": "72c73e7bd9f16e35ed69355898d5cd6a1f45412b377ff10dc4bb144c3c18df68",
+      "bbox": {
+        "left": 0.15698267074413863,
+        "top": 0.008114856429463172,
+        "right": 0.9367991845056065,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/72c73e7bd9f16e35/kate-murray__turnaround__front__v1.png",
+      "preview": "/media/assets/kate-murray/turnaround.front.webp",
+      "thumb": "/media/assets/kate-murray/turnaround.front.thumb.webp",
+      "large": "/media/assets/kate-murray/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7547618229506695,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 982,
+      "height": 1602,
+      "bytes": 709051,
+      "sha256": "75012e88e1aeffb41587f2948b5e688bfa839df719b08379266f8a9f8f468206",
+      "sourceSha256": "75012e88e1aeffb41587f2948b5e688bfa839df719b08379266f8a9f8f468206",
+      "bbox": {
+        "left": 0.11608961303462322,
+        "top": 0.00686641697877653,
+        "right": 0.9531568228105907,
+        "bottom": 0.9893882646691635
+      },
+      "format": "png",
+      "object": "kate-murray/75012e88e1aeffb4/kate-murray__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/kate-murray/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/kate-murray/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7539150400085433,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 982,
+      "height": 1602,
+      "bytes": 474491,
+      "sha256": "607b90585f45ec22c4dd181e6aebfe2987591c88204bf832fe4b459c365bd155",
+      "sourceSha256": "607b90585f45ec22c4dd181e6aebfe2987591c88204bf832fe4b459c365bd155",
+      "bbox": {
+        "left": 0.03971486761710794,
+        "top": 0.0018726591760299626,
+        "right": 0.9470468431771895,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/607b90585f45ec22/kate-murray__turnaround__side__v1.png",
+      "preview": "/media/assets/kate-murray/turnaround.side.webp",
+      "thumb": "/media/assets/kate-murray/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8455386723825361,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 982,
+      "height": 1602,
+      "bytes": 772555,
+      "sha256": "7d563f8a634ab7cf9c5ea7cad5e8069a86aa499e8067a7fd244ceb95d446699b",
+      "sourceSha256": "7d563f8a634ab7cf9c5ea7cad5e8069a86aa499e8067a7fd244ceb95d446699b",
+      "bbox": {
+        "left": 0.08859470468431772,
+        "top": 0,
+        "right": 0.945010183299389,
+        "bottom": 0.982521847690387
+      },
+      "format": "png",
+      "object": "kate-murray/7d563f8a634ab7cf/kate-murray__turnaround__back__v1.png",
+      "preview": "/media/assets/kate-murray/turnaround.back.webp",
+      "thumb": "/media/assets/kate-murray/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7435308715429542,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 982,
+      "height": 1602,
+      "bytes": 706399,
+      "sha256": "67d97a73d2d91c80f48d3019426663f7ffad565fd02e2c20d3235154e647d01a",
+      "sourceSha256": "67d97a73d2d91c80f48d3019426663f7ffad565fd02e2c20d3235154e647d01a",
+      "bbox": {
+        "left": 0.06008146639511202,
+        "top": 0.006242197253433208,
+        "right": 0.9796334012219959,
+        "bottom": 0.9887640449438202
+      },
+      "format": "png",
+      "object": "kate-murray/67d97a73d2d91c80/kate-murray__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/kate-murray/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/kate-murray/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7609562639368813,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 981,
+      "height": 1602,
+      "bytes": 717318,
+      "sha256": "a4471547fa7c0bd2f5e17bd14162c3736dc1f47df921ba381442a44451d44422",
+      "sourceSha256": "a4471547fa7c0bd2f5e17bd14162c3736dc1f47df921ba381442a44451d44422",
+      "bbox": {
+        "left": 0.2089704383282365,
+        "top": 0,
+        "right": 0.9510703363914373,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/a4471547fa7c0bd2/kate-murray__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/kate-murray/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/kate-murray/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7556017516330886,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2202866,
+      "sha256": "8df80278ce9d24af4530201fdac64e0ca3f3e28326ffa6fc89128f40d9a5584a",
+      "sourceSha256": "8df80278ce9d24af4530201fdac64e0ca3f3e28326ffa6fc89128f40d9a5584a",
+      "bbox": {
+        "left": 0,
+        "top": 0.0026041666666666665,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/8df80278ce9d24af/kate-murray__face__front__v1.png",
+      "preview": "/media/assets/kate-murray/face.front.webp",
+      "thumb": "/media/assets/kate-murray/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4171155293782552,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 982,
+      "height": 1602,
+      "bytes": 1950167,
+      "sha256": "381629542509a0f5b78b044b488205aaa865fd7961dc7c44286215f1b60fa165",
+      "sourceSha256": "381629542509a0f5b78b044b488205aaa865fd7961dc7c44286215f1b60fa165",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/381629542509a0f5/kate-murray__face__three-quarter__v1.png",
+      "preview": "/media/assets/kate-murray/face.three-quarter.webp",
+      "thumb": "/media/assets/kate-murray/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.38529422234426924,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1214,
+      "height": 1295,
+      "bytes": 1396873,
+      "sha256": "8d35be6cb088f13cb66d4b933e9a6f3d6c35dc8eb3704bf509c1869c1f36bf6b",
+      "sourceSha256": "8d35be6cb088f13cb66d4b933e9a6f3d6c35dc8eb3704bf509c1869c1f36bf6b",
+      "bbox": {
+        "left": 0,
+        "top": 0.007722007722007722,
+        "right": 0.9884678747940692,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/8d35be6cb088f13c/kate-murray__face__side__v1.png",
+      "preview": "/media/assets/kate-murray/face.side.webp",
+      "thumb": "/media/assets/kate-murray/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5221870964869317,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1796763,
+      "sha256": "43445f6f5dc771e8ed96c9ffb308a531cffdb317e24c309a7c7a8074c75e5b5b",
+      "sourceSha256": "43445f6f5dc771e8ed96c9ffb308a531cffdb317e24c309a7c7a8074c75e5b5b",
+      "bbox": {
+        "left": 0,
+        "top": 0.02332535885167464,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/43445f6f5dc771e8/kate-murray__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/kate-murray/face.three-quarter-left.webp",
+      "thumb": "/media/assets/kate-murray/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3858094056511194,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1791049,
+      "sha256": "52c3c394a7ac11eeb5a9da29f57ff2746fc2d17a9ac52748cf3669d4abdff34a",
+      "sourceSha256": "52c3c394a7ac11eeb5a9da29f57ff2746fc2d17a9ac52748cf3669d4abdff34a",
+      "bbox": {
+        "left": 0,
+        "top": 0.005382775119617225,
+        "right": 0.9851222104144527,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/52c3c394a7ac11ee/kate-murray__face__side-right__v1.png",
+      "preview": "/media/assets/kate-murray/face.side-right.webp",
+      "thumb": "/media/assets/kate-murray/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.425575459274212,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1741786,
+      "sha256": "42a448de21c7818687a7e035c882bc5aee49b89744fa006dbc4a3196af1bc43a",
+      "sourceSha256": "42a448de21c7818687a7e035c882bc5aee49b89744fa006dbc4a3196af1bc43a",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/42a448de21c78186/kate-murray__face__up__v1.png",
+      "preview": "/media/assets/kate-murray/face.up.webp",
+      "thumb": "/media/assets/kate-murray/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4136855579679563,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1834615,
+      "sha256": "d9473da82d1c16173781ad979c8ae855ca757e2101c3726b3b25f9abcc00e31c",
+      "sourceSha256": "d9473da82d1c16173781ad979c8ae855ca757e2101c3726b3b25f9abcc00e31c",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/d9473da82d1c1617/kate-murray__face__down__v1.png",
+      "preview": "/media/assets/kate-murray/face.down.webp",
+      "thumb": "/media/assets/kate-murray/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4125446816732683,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1903951,
+      "sha256": "2821c2a09f2521c58606419b716b7dbf03b78847bdadac60f5cbaa2108040965",
+      "sourceSha256": "2821c2a09f2521c58606419b716b7dbf03b78847bdadac60f5cbaa2108040965",
+      "bbox": {
+        "left": 0,
+        "top": 0.026913875598086126,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/2821c2a09f2521c5/kate-murray__expression__neutral__v1.png",
+      "preview": "/media/assets/kate-murray/expression.neutral.webp",
+      "thumb": "/media/assets/kate-murray/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3974838434120273,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1798018,
+      "sha256": "a21b3d3268d417e8a936d51060cb1e13555266f927b10cfda31239f7444d454b",
+      "sourceSha256": "a21b3d3268d417e8a936d51060cb1e13555266f927b10cfda31239f7444d454b",
+      "bbox": {
+        "left": 0,
+        "top": 0.05083732057416268,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/a21b3d3268d417e8/kate-murray__expression__smile__v1.png",
+      "preview": "/media/assets/kate-murray/expression.smile.webp",
+      "thumb": "/media/assets/kate-murray/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3952929795748186,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1852890,
+      "sha256": "0804d1f0d7c0ad35cd0393d5fd41a09af5dd5622bb323d08432dddd03e012547",
+      "sourceSha256": "0804d1f0d7c0ad35cd0393d5fd41a09af5dd5622bb323d08432dddd03e012547",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/0804d1f0d7c0ad35/kate-murray__expression__laugh__v1.png",
+      "preview": "/media/assets/kate-murray/expression.laugh.webp",
+      "thumb": "/media/assets/kate-murray/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3316117435894828,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1708662,
+      "sha256": "5c404640221898ecbbae188b873abcc1fa407ee457b9adea65b37064bfc814a9",
+      "sourceSha256": "5c404640221898ecbbae188b873abcc1fa407ee457b9adea65b37064bfc814a9",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/5c404640221898ec/kate-murray__expression__sad__v1.png",
+      "preview": "/media/assets/kate-murray/expression.sad.webp",
+      "thumb": "/media/assets/kate-murray/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4059593784480523,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1839980,
+      "sha256": "df57eaeeb79bddc12935d7d1a49c06adb9ab5f7598a18122b0bb052e85cb57f4",
+      "sourceSha256": "df57eaeeb79bddc12935d7d1a49c06adb9ab5f7598a18122b0bb052e85cb57f4",
+      "bbox": {
+        "left": 0,
+        "top": 0.0023923444976076554,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/df57eaeeb79bddc1/kate-murray__expression__cry__v1.png",
+      "preview": "/media/assets/kate-murray/expression.cry.webp",
+      "thumb": "/media/assets/kate-murray/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.35117951990400115,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1818648,
+      "sha256": "fd77255986c6da1fad22320bbb094c657d629d2e759c916423e3925dc3eb32c6",
+      "sourceSha256": "fd77255986c6da1fad22320bbb094c657d629d2e759c916423e3925dc3eb32c6",
+      "bbox": {
+        "left": 0,
+        "top": 0.037679425837320576,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/fd77255986c6da1f/kate-murray__expression__annoyed__v1.png",
+      "preview": "/media/assets/kate-murray/expression.annoyed.webp",
+      "thumb": "/media/assets/kate-murray/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.37918914521353136,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1610399,
+      "sha256": "3eaeb60c45d131d09fcb39c59084b18282d9323ad759e371ce6241dffefad497",
+      "sourceSha256": "3eaeb60c45d131d09fcb39c59084b18282d9323ad759e371ce6241dffefad497",
+      "bbox": {
+        "left": 0,
+        "top": 0.011673151750972763,
+        "right": 0.9869281045751634,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/3eaeb60c45d131d0/kate-murray__expression__angry__v1.png",
+      "preview": "/media/assets/kate-murray/expression.angry.webp",
+      "thumb": "/media/assets/kate-murray/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5134400193280944,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1481552,
+      "sha256": "6f394fc659e91097f724902af60d5b38a80ae641ea04d1ffe0c65c8c996e6bc0",
+      "sourceSha256": "6f394fc659e91097f724902af60d5b38a80ae641ea04d1ffe0c65c8c996e6bc0",
+      "bbox": {
+        "left": 0.04656862745098039,
+        "top": 0.007782101167315175,
+        "right": 0.9689542483660131,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/6f394fc659e91097/kate-murray__expression__surprised__v1.png",
+      "preview": "/media/assets/kate-murray/expression.surprised.webp",
+      "thumb": "/media/assets/kate-murray/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5393714554563719,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1476333,
+      "sha256": "36eb9433900bae7d48e11e1681db5add090c5504c55b69a0a73ef58823190a62",
+      "sourceSha256": "36eb9433900bae7d48e11e1681db5add090c5504c55b69a0a73ef58823190a62",
+      "bbox": {
+        "left": 0.02696078431372549,
+        "top": 0.013229571984435798,
+        "right": 0.9852941176470589,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/36eb9433900bae7d/kate-murray__expression__scared__v1.png",
+      "preview": "/media/assets/kate-murray/expression.scared.webp",
+      "thumb": "/media/assets/kate-murray/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5365714249383281,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1483526,
+      "sha256": "af93d0e74b4fb60a1fb150f822b590e50671a6e02c68390e5a7ee94a5f59c4f3",
+      "sourceSha256": "af93d0e74b4fb60a1fb150f822b590e50671a6e02c68390e5a7ee94a5f59c4f3",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9607843137254902,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/af93d0e74b4fb60a/kate-murray__expression__disgusted__v1.png",
+      "preview": "/media/assets/kate-murray/expression.disgusted.webp",
+      "thumb": "/media/assets/kate-murray/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5390421149004349,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1557324,
+      "sha256": "dbd32b1951f84a85417104b0a616ad05910499e3df7d6807672bda5edf73ce89",
+      "sourceSha256": "dbd32b1951f84a85417104b0a616ad05910499e3df7d6807672bda5edf73ce89",
+      "bbox": {
+        "left": 0.07107843137254902,
+        "top": 0.021011673151750974,
+        "right": 0.934640522875817,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/dbd32b1951f84a85/kate-murray__expression__embarrassed__v1.png",
+      "preview": "/media/assets/kate-murray/expression.embarrassed.webp",
+      "thumb": "/media/assets/kate-murray/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5096042826988123,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1131,
+      "height": 1391,
+      "bytes": 1605453,
+      "sha256": "4d2c08fed99f13e4e066d66d8bcc4999a66a3daf1a59f088f5111c6281a3233d",
+      "sourceSha256": "4d2c08fed99f13e4e066d66d8bcc4999a66a3daf1a59f088f5111c6281a3233d",
+      "bbox": {
+        "left": 0,
+        "top": 0.0007189072609633358,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/4d2c08fed99f13e4/kate-murray__expression__tired__v1.png",
+      "preview": "/media/assets/kate-murray/expression.tired.webp",
+      "thumb": "/media/assets/kate-murray/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4611583496533545,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1472367,
+      "sha256": "4d962f2ef714b78db2df8b66b3be758e641c0ee895748f3180a7a30597d22851",
+      "sourceSha256": "4d962f2ef714b78db2df8b66b3be758e641c0ee895748f3180a7a30597d22851",
+      "bbox": {
+        "left": 0,
+        "top": 0.010116731517509728,
+        "right": 0.9640522875816994,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/4d962f2ef714b78d/kate-murray__expression__speaking__v1.png",
+      "preview": "/media/assets/kate-murray/expression.speaking.webp",
+      "thumb": "/media/assets/kate-murray/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5431353475242237,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1098,
+      "height": 1432,
+      "bytes": 1632692,
+      "sha256": "f2608429a1e6b5721dad25446c419d3561cf166abe0b66c08e0c501f94a9eb37",
+      "sourceSha256": "f2608429a1e6b5721dad25446c419d3561cf166abe0b66c08e0c501f94a9eb37",
+      "bbox": {
+        "left": 0,
+        "top": 0.0111731843575419,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/f2608429a1e6b572/kate-murray__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/kate-murray/expression.eyes-closed.webp",
+      "thumb": "/media/assets/kate-murray/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4574149545644188,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1144,
+      "height": 1375,
+      "bytes": 1587232,
+      "sha256": "6443baf20e7c278967be2de0bdcfcf0b02a707029d4a2ba85edff676e1465546",
+      "sourceSha256": "6443baf20e7c278967be2de0bdcfcf0b02a707029d4a2ba85edff676e1465546",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/6443baf20e7c2789/kate-murray__expression__worried__v1.png",
+      "preview": "/media/assets/kate-murray/expression.worried.webp",
+      "thumb": "/media/assets/kate-murray/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.47829497774952323,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1539602,
+      "sha256": "1cd51384d8d02bde84c871f763973471fa54d4030d29af8f451806c4ee45285f",
+      "sourceSha256": "1cd51384d8d02bde84c871f763973471fa54d4030d29af8f451806c4ee45285f",
+      "bbox": {
+        "left": 0,
+        "top": 0.014007782101167316,
+        "right": 0.9820261437908496,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/1cd51384d8d02bde/kate-murray__expression__skeptical__v1.png",
+      "preview": "/media/assets/kate-murray/expression.skeptical.webp",
+      "thumb": "/media/assets/kate-murray/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5413354187329925,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1481705,
+      "sha256": "368f238fd701b84e5db09df241d09d7611ab07528c24053e2797fcf2ff1a62ec",
+      "sourceSha256": "368f238fd701b84e5db09df241d09d7611ab07528c24053e2797fcf2ff1a62ec",
+      "bbox": {
+        "left": 0.04003267973856209,
+        "top": 0.011673151750972763,
+        "right": 0.9991830065359477,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/368f238fd701b84e/kate-murray__expression__smug__v1.png",
+      "preview": "/media/assets/kate-murray/expression.smug.webp",
+      "thumb": "/media/assets/kate-murray/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5393555606418962,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1467089,
+      "sha256": "4ad166731f527e9c2cb9207f4e7e76683771809ba57dcdfea2955cc160fe44a3",
+      "sourceSha256": "4ad166731f527e9c2cb9207f4e7e76683771809ba57dcdfea2955cc160fe44a3",
+      "bbox": {
+        "left": 0,
+        "top": 0.007782101167315175,
+        "right": 0.9665032679738562,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/4ad166731f527e9c/kate-murray__expression__contempt__v1.png",
+      "preview": "/media/assets/kate-murray/expression.contempt.webp",
+      "thumb": "/media/assets/kate-murray/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.533303451082119,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1112,
+      "height": 1415,
+      "bytes": 1685156,
+      "sha256": "2013f8ebdedd4596475a505e060dd677e40b2e7442c1c1b28274d82f88fcbd92",
+      "sourceSha256": "2013f8ebdedd4596475a505e060dd677e40b2e7442c1c1b28274d82f88fcbd92",
+      "bbox": {
+        "left": 0,
+        "top": 0.012014134275618375,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/2013f8ebdedd4596/kate-murray__expression__confused__v1.png",
+      "preview": "/media/assets/kate-murray/expression.confused.webp",
+      "thumb": "/media/assets/kate-murray/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.46278313038615043,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1462837,
+      "sha256": "a4d85249ea6bc5f01f751a2135d65deaa7b6d9a693de3f7912f2af88e3c7dd41",
+      "sourceSha256": "a4d85249ea6bc5f01f751a2135d65deaa7b6d9a693de3f7912f2af88e3c7dd41",
+      "bbox": {
+        "left": 0.041666666666666664,
+        "top": 0.022568093385214007,
+        "right": 0.9836601307189542,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/a4d85249ea6bc5f0/kate-murray__expression__thinking__v1.png",
+      "preview": "/media/assets/kate-murray/expression.thinking.webp",
+      "thumb": "/media/assets/kate-murray/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5567215991454948,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1548836,
+      "sha256": "fbe3bf5f40072941c17c8d90531619b467ecec040e688d68b0d81c0fe6074983",
+      "sourceSha256": "fbe3bf5f40072941c17c8d90531619b467ecec040e688d68b0d81c0fe6074983",
+      "bbox": {
+        "left": 0,
+        "top": 0.007003891050583658,
+        "right": 0.9771241830065359,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/fbe3bf5f40072941/kate-murray__expression__determined__v1.png",
+      "preview": "/media/assets/kate-murray/expression.determined.webp",
+      "thumb": "/media/assets/kate-murray/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5288083975483838,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1449854,
+      "sha256": "6e639e13d02396941dc850699a99638bf65e55f879b578cb58ba7334a78fd823",
+      "sourceSha256": "6e639e13d02396941dc850699a99638bf65e55f879b578cb58ba7334a78fd823",
+      "bbox": {
+        "left": 0.04656862745098039,
+        "top": 0.013229571984435798,
+        "right": 0.9158496732026143,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/6e639e13d0239694/kate-murray__expression__shy__v1.png",
+      "preview": "/media/assets/kate-murray/expression.shy.webp",
+      "thumb": "/media/assets/kate-murray/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5125263853920297,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1601500,
+      "sha256": "79f47d185f8b6bac9be6f6dba8ae1bfa87cb359cc4a1595658b75914edcfade8",
+      "sourceSha256": "79f47d185f8b6bac9be6f6dba8ae1bfa87cb359cc4a1595658b75914edcfade8",
+      "bbox": {
+        "left": 0,
+        "top": 0.01867704280155642,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/79f47d185f8b6bac/kate-murray__expression__pain__v1.png",
+      "preview": "/media/assets/kate-murray/expression.pain.webp",
+      "thumb": "/media/assets/kate-murray/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5179814857200987,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1421403,
+      "sha256": "2c34a8a635ff19fd7b0b22c6c8d07893b67b56421361a5bf09d66ce31bfed5bc",
+      "sourceSha256": "2c34a8a635ff19fd7b0b22c6c8d07893b67b56421361a5bf09d66ce31bfed5bc",
+      "bbox": {
+        "left": 0,
+        "top": 0.011673151750972763,
+        "right": 0.9771241830065359,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/2c34a8a635ff19fd/kate-murray__expression__sleepy__v1.png",
+      "preview": "/media/assets/kate-murray/expression.sleepy.webp",
+      "thumb": "/media/assets/kate-murray/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5345476971592787,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1224,
+      "height": 1285,
+      "bytes": 1467567,
+      "sha256": "90b33b4c6a9623f2894a2cc946b8d4d3f5ccabeb1efa0f18002b62468b6a20bd",
+      "sourceSha256": "90b33b4c6a9623f2894a2cc946b8d4d3f5ccabeb1efa0f18002b62468b6a20bd",
+      "bbox": {
+        "left": 0.056372549019607844,
+        "top": 0.011673151750972763,
+        "right": 0.946078431372549,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/90b33b4c6a9623f2/kate-murray__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/kate-murray/expression.awkward-smile.webp",
+      "thumb": "/media/assets/kate-murray/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5435428905673813,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1960699,
+      "sha256": "4fc31904237207e753c11e666418377c7336c7fff451bc3a1379294b6b6b59f0",
+      "sourceSha256": "4fc31904237207e753c11e666418377c7336c7fff451bc3a1379294b6b6b59f0",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/4fc31904237207e7/kate-murray__expression__deadpan__v1.png",
+      "preview": "/media/assets/kate-murray/expression.deadpan.webp",
+      "thumb": "/media/assets/kate-murray/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.38735896353772076,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 982,
+      "height": 1602,
+      "bytes": 766077,
+      "sha256": "5abe6f64c736a7202823a661878d4f9476c6a10ec3150bea81700dd320d4fc08",
+      "sourceSha256": "5abe6f64c736a7202823a661878d4f9476c6a10ec3150bea81700dd320d4fc08",
+      "bbox": {
+        "left": 0.20570264765784113,
+        "top": 0.008114856429463172,
+        "right": 0.9674134419551935,
+        "bottom": 0.9900124843945068
+      },
+      "format": "png",
+      "object": "kate-murray/5abe6f64c736a720/kate-murray__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/kate-murray/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/kate-murray/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7294846563994599,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 982,
+      "height": 1602,
+      "bytes": 692857,
+      "sha256": "25e63e40833c55e8405933a3ab5e09c40b22b20cb8ceb96e5fad59161749774e",
+      "sourceSha256": "25e63e40833c55e8405933a3ab5e09c40b22b20cb8ceb96e5fad59161749774e",
+      "bbox": {
+        "left": 0.1079429735234216,
+        "top": 0.008114856429463172,
+        "right": 0.7932790224032586,
+        "bottom": 0.9900124843945068
+      },
+      "format": "png",
+      "object": "kate-murray/25e63e40833c55e8/kate-murray__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/kate-murray/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/kate-murray/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7587848437925099,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 645919,
+      "sha256": "1ef8d9e63e76fe2e2a6957f36390553d9f5f9b16c523d812c31df8859bdf72ea",
+      "sourceSha256": "1ef8d9e63e76fe2e2a6957f36390553d9f5f9b16c523d812c31df8859bdf72ea",
+      "bbox": {
+        "left": 0.2678002125398512,
+        "top": 0.011363636363636364,
+        "right": 0.9702444208289054,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "kate-murray/1ef8d9e63e76fe2e/kate-murray__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/kate-murray/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/kate-murray/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7931880469214772,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 825725,
+      "sha256": "c1c2c720805ba5673ce50ef73eae0fa9c897e02eee3ca3e5a19e540e66bb520a",
+      "sourceSha256": "c1c2c720805ba5673ce50ef73eae0fa9c897e02eee3ca3e5a19e540e66bb520a",
+      "bbox": {
+        "left": 0.09564293304994687,
+        "top": 0.009569377990430622,
+        "right": 0.9436769394261424,
+        "bottom": 0.9832535885167464
+      },
+      "format": "png",
+      "object": "kate-murray/c1c2c720805ba567/kate-murray__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/kate-murray/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/kate-murray/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7174669114095257,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 982,
+      "height": 1602,
+      "bytes": 1844228,
+      "sha256": "3ee474688ca70e4a6c81e57f8bc41cc1cf93ef82be694287efb631e940401992",
+      "sourceSha256": "3ee474688ca70e4a6c81e57f8bc41cc1cf93ef82be694287efb631e940401992",
+      "bbox": {
+        "left": 0,
+        "top": 0.048064918851435705,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/3ee474688ca70e4a/kate-murray__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/kate-murray/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/kate-murray/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.40402907770582086,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.picture-book",
+      "series": "wardrobe",
+      "key": "picture-book",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 940,
+      "height": 1672,
+      "bytes": 808013,
+      "sha256": "ed8dac3aeb752f2639a86b02188d77b8db79cc5697341da305b9258d65eaf3fa",
+      "sourceSha256": "ed8dac3aeb752f2639a86b02188d77b8db79cc5697341da305b9258d65eaf3fa",
+      "bbox": {
+        "left": 0.10425531914893617,
+        "top": 0,
+        "right": 0.9829787234042553,
+        "bottom": 0.9910287081339713
+      },
+      "format": "png",
+      "object": "kate-murray/ed8dac3aeb752f26/kate-murray__wardrobe-personal__picture-book__v1.png",
+      "preview": "/media/assets/kate-murray/wardrobe.personal.picture-book.webp",
+      "thumb": "/media/assets/kate-murray/wardrobe.personal.picture-book.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7249860022396416,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.count-fingers",
+      "series": "wardrobe",
+      "key": "count-fingers",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 982,
+      "height": 1602,
+      "bytes": 801928,
+      "sha256": "07213f9db916633ccddc60d92244be29009d4fb15360bb80c65de9db51abca6a",
+      "sourceSha256": "07213f9db916633ccddc60d92244be29009d4fb15360bb80c65de9db51abca6a",
+      "bbox": {
+        "left": 0.06415478615071284,
+        "top": 0,
+        "right": 0.9735234215885947,
+        "bottom": 0.9737827715355806
+      },
+      "format": "png",
+      "object": "kate-murray/07213f9db916633c/kate-murray__wardrobe-personal__count-fingers__v1.png",
+      "preview": "/media/assets/kate-murray/wardrobe.personal.count-fingers.webp",
+      "thumb": "/media/assets/kate-murray/wardrobe.personal.count-fingers.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7386998431187085,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.listen-crouch",
+      "series": "wardrobe",
+      "key": "listen-crouch",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 982,
+      "height": 1602,
+      "bytes": 1256548,
+      "sha256": "9d086de854de0e4a29faf55321c3590539a03f580a589ebb1a5ab5eec2b68eff",
+      "sourceSha256": "9d086de854de0e4a29faf55321c3590539a03f580a589ebb1a5ab5eec2b68eff",
+      "bbox": {
+        "left": 0.09470468431771895,
+        "top": 0.01435705368289638,
+        "right": 0.9714867617107943,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/9d086de854de0e4a/kate-murray__wardrobe-personal__listen-crouch__v1.png",
+      "preview": "/media/assets/kate-murray/wardrobe.personal.listen-crouch.webp",
+      "thumb": "/media/assets/kate-murray/wardrobe.personal.listen-crouch.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5728595365772418,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 788923,
+      "sha256": "711dd275f25f1885468dc3d12867c84b1fce97da19b5d6897844c5b5629f794d",
+      "sourceSha256": "711dd275f25f1885468dc3d12867c84b1fce97da19b5d6897844c5b5629f794d",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.007177033492822967,
+        "right": 0.9787460148777896,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "kate-murray/711dd275f25f1885/kate-murray__pose__walk__v1.png",
+      "preview": "/media/assets/kate-murray/pose.walk.webp",
+      "thumb": "/media/assets/kate-murray/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7587482012925271,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 796264,
+      "sha256": "e645f0366fed28b54be3a87bcecc72f608dc90800ac5bcf5fabdec5c0eb13c35",
+      "sourceSha256": "e645f0366fed28b54be3a87bcecc72f608dc90800ac5bcf5fabdec5c0eb13c35",
+      "bbox": {
+        "left": 0,
+        "top": 0.008373205741626795,
+        "right": 0.9787460148777896,
+        "bottom": 0.9712918660287081
+      },
+      "format": "png",
+      "object": "kate-murray/e645f0366fed28b5/kate-murray__pose__run__v1.png",
+      "preview": "/media/assets/kate-murray/pose.run.webp",
+      "thumb": "/media/assets/kate-murray/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7683830446079454,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1023605,
+      "sha256": "444aae3cdf80818736159fa506739aec187576c39b67cfa450c2c99107a64518",
+      "sourceSha256": "444aae3cdf80818736159fa506739aec187576c39b67cfa450c2c99107a64518",
+      "bbox": {
+        "left": 0,
+        "top": 0.020933014354066987,
+        "right": 0.9851222104144527,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "kate-murray/444aae3cdf808187/kate-murray__pose__sit__v1.png",
+      "preview": "/media/assets/kate-murray/pose.sit.webp",
+      "thumb": "/media/assets/kate-murray/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6733737904804519,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 718465,
+      "sha256": "a05ce17944ba15891f9da82be6c33261ba590bf59fbde905e924af28575da0e6",
+      "sourceSha256": "a05ce17944ba15891f9da82be6c33261ba590bf59fbde905e924af28575da0e6",
+      "bbox": {
+        "left": 0.07013815090329437,
+        "top": 0.011961722488038277,
+        "right": 0.9787460148777896,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/a05ce17944ba1589/kate-murray__pose__point__v1.png",
+      "preview": "/media/assets/kate-murray/pose.point.webp",
+      "thumb": "/media/assets/kate-murray/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7685781694115493,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 720540,
+      "sha256": "461e164e365c0a08ccd24d371e87d21e923450b8f57a9f1a823215b5e4532035",
+      "sourceSha256": "461e164e365c0a08ccd24d371e87d21e923450b8f57a9f1a823215b5e4532035",
+      "bbox": {
+        "left": 0,
+        "top": 0.008971291866028708,
+        "right": 0.9787460148777896,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/461e164e365c0a08/kate-murray__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/kate-murray/pose.arms-crossed.webp",
+      "thumb": "/media/assets/kate-murray/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7661464186018132,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 768467,
+      "sha256": "60855285c4858bdb669ff2e7b1a8cf37990b94c32b44b4e419580b9ed6507386",
+      "sourceSha256": "60855285c4858bdb669ff2e7b1a8cf37990b94c32b44b4e419580b9ed6507386",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.005382775119617225,
+        "right": 0.9766206163655685,
+        "bottom": 0.979066985645933
+      },
+      "format": "png",
+      "object": "kate-murray/60855285c4858bdb/kate-murray__pose__phone__v1.png",
+      "preview": "/media/assets/kate-murray/pose.phone.webp",
+      "thumb": "/media/assets/kate-murray/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7488159038791066,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1007902,
+      "sha256": "ce354f7858ede87acc276e0f3518bcbe525bc30f2f23869187a9313e54f07210",
+      "sourceSha256": "ce354f7858ede87acc276e0f3518bcbe525bc30f2f23869187a9313e54f07210",
+      "bbox": {
+        "left": 0,
+        "top": 0.03289473684210526,
+        "right": 0.9914984059511158,
+        "bottom": 0.9940191387559809
+      },
+      "format": "png",
+      "object": "kate-murray/ce354f7858ede87a/kate-murray__detail__hands__v1.png",
+      "preview": "/media/assets/kate-murray/detail.hands.webp",
+      "thumb": "/media/assets/kate-murray/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.650314106442805,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2289901,
+      "sha256": "d016463ee8b8ea7884b88f97f0c098b0382ddd6d13eb5c72c87d76487a60fbee",
+      "sourceSha256": "d016463ee8b8ea7884b88f97f0c098b0382ddd6d13eb5c72c87d76487a60fbee",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "kate-murray/d016463ee8b8ea78/kate-murray__detail__hair-back__v1.png",
+      "preview": "/media/assets/kate-murray/detail.hair-back.webp",
+      "thumb": "/media/assets/kate-murray/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3138992418734015,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1119514,
+      "sha256": "b178e302711175e5ca18fb61ceb22e9b5149d8adab212d80d33ce4acec085ba2",
+      "sourceSha256": "b178e302711175e5ca18fb61ceb22e9b5149d8adab212d80d33ce4acec085ba2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/kate-murray/kate-murray__voice__intro__v1__b178e302711175e5.wav",
+      "preview": "/api/voice/kate-murray/intro",
+      "thumb": "/api/voice/kate-murray/intro",
+      "previewUrl": "/api/voice/kate-murray/intro",
+      "durationSec": 17.5,
+      "transcript": {
+        "text": "Hiya, I'm Kate Murray, twenty-nine, from Glasgow. The buzz cut makes me look much fiercer than I am. I teach English at a kindergarten in Shanghai. The children call me their bald teacher, which is fair enough. Five minutes into story time, they usually forget to be scared of me."
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1056928,
+      "sha256": "6c60eef959c84d33ed7f8598f6c4c9709cfa6ea5599c3d72288b18f0eeff025e",
+      "sourceSha256": "6c60eef959c84d33ed7f8598f6c4c9709cfa6ea5599c3d72288b18f0eeff025e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/kate-murray/kate-murray__voice__intro-alt__v1__6c60eef959c84d33.wav",
+      "preview": "/api/voice/kate-murray/intro-alt",
+      "thumb": "/api/voice/kate-murray/intro-alt",
+      "previewUrl": "/api/voice/kate-murray/intro-alt",
+      "durationSec": 16.5,
+      "transcript": {
+        "text": "你好，我叫Kate Murray，来自格拉斯哥，今年二十九。我在上海的幼儿园教英语。头发剃得很短，看起来有点凶，其实我每天都在讲故事。孩子们叫我光头老师，我觉得这个名字挺好记的。"
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 612138,
+      "sha256": "4e4bf671f780993a9976a10ccb5ee28194efe31450453e765cfef4bdf35dc38f",
+      "sourceSha256": "4e4bf671f780993a9976a10ccb5ee28194efe31450453e765cfef4bdf35dc38f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/kate-murray/kate-murray__voice__chat__v1__4e4bf671f780993a.wav",
+      "preview": "/api/voice/kate-murray/chat",
+      "thumb": "/api/voice/kate-murray/chat",
+      "previewUrl": "/api/voice/kate-murray/chat",
+      "durationSec": 9.5,
+      "transcript": {
+        "text": "All right, which animal do you think is hiding behind this page? Have a proper guess. No, it isn't me. I haven't got a tail. Come on, let's turn it over together."
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 702788,
+      "sha256": "3bdb11d49b0a352ba6a272071862f8456827740dde2e2a74a3b2efed0631b424",
+      "sourceSha256": "3bdb11d49b0a352ba6a272071862f8456827740dde2e2a74a3b2efed0631b424",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/kate-murray/kate-murray__voice__happy__v1__3bdb11d49b0a352b.wav",
+      "preview": "/api/voice/kate-murray/happy",
+      "thumb": "/api/voice/kate-murray/happy",
+      "previewUrl": "/api/voice/kate-murray/happy",
+      "durationSec": 10.9,
+      "transcript": {
+        "text": "You remembered the whole song! Oh, that's brilliant. We practised it so many times, and today you just stood up and sang it. I'm really proud of you. Shall we do the funny verse again?"
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 580930,
+      "sha256": "bd70d441ae934e5326bb3a9c05dcf98b1622e1b492ccaa8ef6d1c124d9ce57ec",
+      "sourceSha256": "bd70d441ae934e5326bb3a9c05dcf98b1622e1b492ccaa8ef6d1c124d9ce57ec",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/kate-murray/kate-murray__voice__angry__v1__bd70d441ae934e53.wav",
+      "preview": "/api/voice/kate-murray/angry",
+      "thumb": "/api/voice/kate-murray/angry",
+      "previewUrl": "/api/voice/kate-murray/angry",
+      "durationSec": 9,
+      "transcript": {
+        "text": "Stop there. We don't push someone because we want the toy. Put it down for a moment and tell me what happened. We'll listen to each other, one at a time."
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 716164,
+      "sha256": "cfaf82e4de52dbe0acac50b998fac624b23cf41899bdbfc967dfe4fbc0c6b8ee",
+      "sourceSha256": "cfaf82e4de52dbe0acac50b998fac624b23cf41899bdbfc967dfe4fbc0c6b8ee",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/kate-murray/kate-murray__voice__sad__v1__cfaf82e4de52dbe0.wav",
+      "preview": "/api/voice/kate-murray/sad",
+      "thumb": "/api/voice/kate-murray/sad",
+      "previewUrl": "/api/voice/kate-murray/sad",
+      "durationSec": 11.2,
+      "transcript": {
+        "text": "One of the children left me a wee drawing before moving away. Apparently that's me with all the hair. I laughed when I saw it. Then the classroom got quiet, and I missed them more than I expected."
+      }
+    }
+  ]
+}

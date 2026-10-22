@@ -1,0 +1,1820 @@
+{
+  "slug": "yang-fan",
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Everyday wear",
+        "zh": "日常装"
+      },
+      "prompt": "Clean casual outfit: plain navy lightweight zip jacket open over a pale cream crew-neck T-shirt, straight charcoal trousers, flat black low-top shoes. Preserve his small topknot, brow mole and thin goatee. No airline logo, insignia, wings or jewelry.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Everyday portrait",
+            "zh": "日常装近景"
+          },
+          "direction": "Head and upper chest in the actor's personal outfit, facing the camera."
+        },
+        {
+          "key": "read-notebook",
+          "label": {
+            "en": "Reading notes",
+            "zh": "看笔记"
+          },
+          "direction": "full body standing at a three-quarter angle, looking down slightly at a small plain closed-cover notebook held open in both hands, natural adult posture"
+        },
+        {
+          "key": "look-at-sky",
+          "label": {
+            "en": "Watching the sky",
+            "zh": "抬眼看天"
+          },
+          "direction": "full body standing at a three-quarter angle, one hand shading the eyes lightly as he looks a little upward, natural neck and stance"
+        },
+        {
+          "key": "relaxed-seat",
+          "label": {
+            "en": "Relaxed seat",
+            "zh": "休息坐姿"
+          },
+          "direction": "full body seated naturally on a plain stool, both feet on the ground, hands resting on thighs, a calm small smile"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 918634,
+      "sha256": "1ab38f69781e4578527a1633108bba7ea136befbea1e30d9230c4b2b2e5782d9",
+      "sourceSha256": "1ab38f69781e4578527a1633108bba7ea136befbea1e30d9230c4b2b2e5782d9",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 0.9957492029755579,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "yang-fan/1ab38f69781e4578/yang-fan__turnaround__front__v1.png",
+      "preview": "/media/assets/yang-fan/turnaround.front.webp",
+      "thumb": "/media/assets/yang-fan/turnaround.front.thumb.webp",
+      "large": "/media/assets/yang-fan/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6877145101668285,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 856829,
+      "sha256": "5740265decf6a7a89e42368a8d09e02e98fd3c5710bf34545bc0adc5b9ced5f7",
+      "sourceSha256": "5740265decf6a7a89e42368a8d09e02e98fd3c5710bf34545bc0adc5b9ced5f7",
+      "bbox": {
+        "left": 0,
+        "top": 0.008971291866028708,
+        "right": 0.9617428267800212,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/5740265decf6a7a8/yang-fan__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/yang-fan/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/yang-fan/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7042441869333753,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 586050,
+      "sha256": "d8789615d91de12105ba3de808d8c62bfa12743a912b798cf07d47ad22b43fd9",
+      "sourceSha256": "d8789615d91de12105ba3de808d8c62bfa12743a912b798cf07d47ad22b43fd9",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.009569377990430622,
+        "right": 0.9787460148777896,
+        "bottom": 0.9808612440191388
+      },
+      "format": "png",
+      "object": "yang-fan/d8789615d91de121/yang-fan__turnaround__side__v1.png",
+      "preview": "/media/assets/yang-fan/turnaround.side.webp",
+      "thumb": "/media/assets/yang-fan/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8034247898753744,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 887890,
+      "sha256": "da5daa20e4bef86b2752985f7fc0e090ef3bd9d9d4814c95bef3d813d7ce467d",
+      "sourceSha256": "da5daa20e4bef86b2752985f7fc0e090ef3bd9d9d4814c95bef3d813d7ce467d",
+      "bbox": {
+        "left": 0,
+        "top": 0.017344497607655503,
+        "right": 0.9394261424017003,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/da5daa20e4bef86b/yang-fan__turnaround__back__v1.png",
+      "preview": "/media/assets/yang-fan/turnaround.back.webp",
+      "thumb": "/media/assets/yang-fan/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6894636419567903,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 913059,
+      "sha256": "c7f0e7c62d8dd8668e1429c1094b70532b72008431f445b4dd571b1a70256fce",
+      "sourceSha256": "c7f0e7c62d8dd8668e1429c1094b70532b72008431f445b4dd571b1a70256fce",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9851222104144527,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/c7f0e7c62d8dd866/yang-fan__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/yang-fan/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/yang-fan/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6885598391205529,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 928002,
+      "sha256": "fe21a8c75f8a05f05e71b05efe59b7f79dc1d24ec79255b1af30cb36ce560667",
+      "sourceSha256": "fe21a8c75f8a05f05e71b05efe59b7f79dc1d24ec79255b1af30cb36ce560667",
+      "bbox": {
+        "left": 0,
+        "top": 0.007177033492822967,
+        "right": 0.9798087141339001,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/fe21a8c75f8a05f0/yang-fan__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/yang-fan/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/yang-fan/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6808845064550082,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1086,
+      "height": 1448,
+      "bytes": 1767476,
+      "sha256": "d6f52e9d132790f91a9260a7d03e8bd6a68390d9dcf0425027edc10edacf2c5e",
+      "sourceSha256": "d6f52e9d132790f91a9260a7d03e8bd6a68390d9dcf0425027edc10edacf2c5e",
+      "bbox": {
+        "left": 0,
+        "top": 0.006906077348066298,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/d6f52e9d132790f9/yang-fan__face__front__v1.png",
+      "preview": "/media/assets/yang-fan/face.front.webp",
+      "thumb": "/media/assets/yang-fan/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4043476491356593,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2043758,
+      "sha256": "7ca2ea50f80bd83dbaa76a99d2b1187cb814d7a0c4167b30a12fd2bf213e5708",
+      "sourceSha256": "7ca2ea50f80bd83dbaa76a99d2b1187cb814d7a0c4167b30a12fd2bf213e5708",
+      "bbox": {
+        "left": 0,
+        "top": 0.008373205741626795,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/7ca2ea50f80bd83d/yang-fan__face__three-quarter__v1.png",
+      "preview": "/media/assets/yang-fan/face.three-quarter.webp",
+      "thumb": "/media/assets/yang-fan/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30010957497114443,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2154757,
+      "sha256": "5eb2560355b2c261192e2b5c16a10da6d05af65534e84720e3d8c767445cfe55",
+      "sourceSha256": "5eb2560355b2c261192e2b5c16a10da6d05af65534e84720e3d8c767445cfe55",
+      "bbox": {
+        "left": 0,
+        "top": 0.004784688995215311,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/5eb2560355b2c261/yang-fan__face__side__v1.png",
+      "preview": "/media/assets/yang-fan/face.side.webp",
+      "thumb": "/media/assets/yang-fan/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30966306331958776,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2133858,
+      "sha256": "a658566b36dc3122374a861eb832fb7e5c77e05a2b81e607dc6f7532c605942a",
+      "sourceSha256": "a658566b36dc3122374a861eb832fb7e5c77e05a2b81e607dc6f7532c605942a",
+      "bbox": {
+        "left": 0,
+        "top": 0.01854066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/a658566b36dc3122/yang-fan__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/yang-fan/face.three-quarter-left.webp",
+      "thumb": "/media/assets/yang-fan/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3053124793434654,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1795494,
+      "sha256": "0d3bebe42cb2e8dc93a45e9970c735b1406e3ceb2632f4506045841541e8a7de",
+      "sourceSha256": "0d3bebe42cb2e8dc93a45e9970c735b1406e3ceb2632f4506045841541e8a7de",
+      "bbox": {
+        "left": 0,
+        "top": 0.009569377990430622,
+        "right": 0.9936238044633369,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/0d3bebe42cb2e8dc/yang-fan__face__side-right__v1.png",
+      "preview": "/media/assets/yang-fan/face.side-right.webp",
+      "thumb": "/media/assets/yang-fan/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.36439271059495904,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1845057,
+      "sha256": "98316cd8b4e59dca90bb2e9734e46648d795afe413ad92ea73f74c7c8a79f7e0",
+      "sourceSha256": "98316cd8b4e59dca90bb2e9734e46648d795afe413ad92ea73f74c7c8a79f7e0",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/98316cd8b4e59dca/yang-fan__face__up__v1.png",
+      "preview": "/media/assets/yang-fan/face.up.webp",
+      "thumb": "/media/assets/yang-fan/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.37642498309342093,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2045641,
+      "sha256": "e83e452b3010724264adf7f431336e1ac40c73ae1fc6473d9a24dcc984dfc645",
+      "sourceSha256": "e83e452b3010724264adf7f431336e1ac40c73ae1fc6473d9a24dcc984dfc645",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/e83e452b30107242/yang-fan__face__down__v1.png",
+      "preview": "/media/assets/yang-fan/face.down.webp",
+      "thumb": "/media/assets/yang-fan/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3256022809898866,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1912993,
+      "sha256": "9893fa074a7786b3868a3d545cc3e2bc288d5bd1ee9f9f1b9d449335b8eca884",
+      "sourceSha256": "9893fa074a7786b3868a3d545cc3e2bc288d5bd1ee9f9f1b9d449335b8eca884",
+      "bbox": {
+        "left": 0,
+        "top": 0.0023923444976076554,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/9893fa074a7786b3/yang-fan__expression__neutral__v1.png",
+      "preview": "/media/assets/yang-fan/expression.neutral.webp",
+      "thumb": "/media/assets/yang-fan/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3333500704228933,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2070468,
+      "sha256": "0897042920363a442f5ed6f2e598bce45a6d989a12dae7998a72d5ffb4446b9d",
+      "sourceSha256": "0897042920363a442f5ed6f2e598bce45a6d989a12dae7998a72d5ffb4446b9d",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/0897042920363a44/yang-fan__expression__smile__v1.png",
+      "preview": "/media/assets/yang-fan/expression.smile.webp",
+      "thumb": "/media/assets/yang-fan/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3167263269757816,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2160842,
+      "sha256": "611467516f1e283347d2f3aca309888b147729dbf4c7657db9a44d4b9f142ba7",
+      "sourceSha256": "611467516f1e283347d2f3aca309888b147729dbf4c7657db9a44d4b9f142ba7",
+      "bbox": {
+        "left": 0,
+        "top": 0.030502392344497607,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/611467516f1e2833/yang-fan__expression__laugh__v1.png",
+      "preview": "/media/assets/yang-fan/expression.laugh.webp",
+      "thumb": "/media/assets/yang-fan/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30719381295476156,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2161842,
+      "sha256": "ae6a13b9e2e52154b04f1ff87c33a283049302207ea5c3747177328cba48e4ca",
+      "sourceSha256": "ae6a13b9e2e52154b04f1ff87c33a283049302207ea5c3747177328cba48e4ca",
+      "bbox": {
+        "left": 0,
+        "top": 0.02033492822966507,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/ae6a13b9e2e52154/yang-fan__expression__sad__v1.png",
+      "preview": "/media/assets/yang-fan/expression.sad.webp",
+      "thumb": "/media/assets/yang-fan/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30939993084827805,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1900534,
+      "sha256": "6b05d06e1ed2fde7ea47e740c98fd9de66f1353d61a1e2e1cc95f3d401f6a568",
+      "sourceSha256": "6b05d06e1ed2fde7ea47e740c98fd9de66f1353d61a1e2e1cc95f3d401f6a568",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/6b05d06e1ed2fde7/yang-fan__expression__cry__v1.png",
+      "preview": "/media/assets/yang-fan/expression.cry.webp",
+      "thumb": "/media/assets/yang-fan/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3273749294499896,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1855327,
+      "sha256": "69d548fcf85b9a57256fa2cb74c3411c4d4219c387421ebae4e5580331c13c73",
+      "sourceSha256": "69d548fcf85b9a57256fa2cb74c3411c4d4219c387421ebae4e5580331c13c73",
+      "bbox": {
+        "left": 0,
+        "top": 0.049641148325358854,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/69d548fcf85b9a57/yang-fan__expression__annoyed__v1.png",
+      "preview": "/media/assets/yang-fan/expression.annoyed.webp",
+      "thumb": "/media/assets/yang-fan/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3518932826220706,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1957869,
+      "sha256": "6d3c35a27aa9d0f408fb545f4984327412c0c195377e6ca7c65fe87770b62a53",
+      "sourceSha256": "6d3c35a27aa9d0f408fb545f4984327412c0c195377e6ca7c65fe87770b62a53",
+      "bbox": {
+        "left": 0,
+        "top": 0.04007177033492823,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/6d3c35a27aa9d0f4/yang-fan__expression__angry__v1.png",
+      "preview": "/media/assets/yang-fan/expression.angry.webp",
+      "thumb": "/media/assets/yang-fan/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3469579598208157,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1832462,
+      "sha256": "fa075a4232ac5b0d527cef568e6cf4e4ac0d3f89f0be2e778b31bbf32b7401a0",
+      "sourceSha256": "fa075a4232ac5b0d527cef568e6cf4e4ac0d3f89f0be2e778b31bbf32b7401a0",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/fa075a4232ac5b0d/yang-fan__expression__surprised__v1.png",
+      "preview": "/media/assets/yang-fan/expression.surprised.webp",
+      "thumb": "/media/assets/yang-fan/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3497303845547595,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1999683,
+      "sha256": "1912273c54e389d2ff98bd9248a2dff42bd3413bdab7d96d2d878cd37d8ecc80",
+      "sourceSha256": "1912273c54e389d2ff98bd9248a2dff42bd3413bdab7d96d2d878cd37d8ecc80",
+      "bbox": {
+        "left": 0,
+        "top": 0.0215311004784689,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/1912273c54e389d2/yang-fan__expression__scared__v1.png",
+      "preview": "/media/assets/yang-fan/expression.scared.webp",
+      "thumb": "/media/assets/yang-fan/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.36643230504044866,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2001382,
+      "sha256": "01465d614a0280225b78d844b7c7079edb434d977fa8f3d0f46d8cffa354527b",
+      "sourceSha256": "01465d614a0280225b78d844b7c7079edb434d977fa8f3d0f46d8cffa354527b",
+      "bbox": {
+        "left": 0,
+        "top": 0.019736842105263157,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/01465d614a028022/yang-fan__expression__disgusted__v1.png",
+      "preview": "/media/assets/yang-fan/expression.disgusted.webp",
+      "thumb": "/media/assets/yang-fan/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3399938475306225,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1956658,
+      "sha256": "c6c20191f174c62d892505dc79703d96bfc63b09859ec5fe9befa3b1fd204404",
+      "sourceSha256": "c6c20191f174c62d892505dc79703d96bfc63b09859ec5fe9befa3b1fd204404",
+      "bbox": {
+        "left": 0,
+        "top": 0.09210526315789473,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/c6c20191f174c62d/yang-fan__expression__embarrassed__v1.png",
+      "preview": "/media/assets/yang-fan/expression.embarrassed.webp",
+      "thumb": "/media/assets/yang-fan/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3625170972547783,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1867668,
+      "sha256": "5a8ef540ccfb3c79c83e48cf6fdb04bbc5b3fe59074b2b441cb7bfa9fd7adb94",
+      "sourceSha256": "5a8ef540ccfb3c79c83e48cf6fdb04bbc5b3fe59074b2b441cb7bfa9fd7adb94",
+      "bbox": {
+        "left": 0,
+        "top": 0.050239234449760764,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/5a8ef540ccfb3c79/yang-fan__expression__tired__v1.png",
+      "preview": "/media/assets/yang-fan/expression.tired.webp",
+      "thumb": "/media/assets/yang-fan/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3999708901758793,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2039326,
+      "sha256": "38a16cda4e75e12dcd29932ee7e2e9e5fd9107e8011c32af738f20119d3ad468",
+      "sourceSha256": "38a16cda4e75e12dcd29932ee7e2e9e5fd9107e8011c32af738f20119d3ad468",
+      "bbox": {
+        "left": 0,
+        "top": 0.03349282296650718,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/38a16cda4e75e12d/yang-fan__expression__speaking__v1.png",
+      "preview": "/media/assets/yang-fan/expression.speaking.webp",
+      "thumb": "/media/assets/yang-fan/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.338102980134134,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1862916,
+      "sha256": "e394dde8ec0a9a5f85c01292b01768396ec195a1978133d78795bc884040d4ba",
+      "sourceSha256": "e394dde8ec0a9a5f85c01292b01768396ec195a1978133d78795bc884040d4ba",
+      "bbox": {
+        "left": 0,
+        "top": 0.04007177033492823,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/e394dde8ec0a9a5f/yang-fan__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/yang-fan/expression.eyes-closed.webp",
+      "thumb": "/media/assets/yang-fan/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3480257437623621,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1951618,
+      "sha256": "44e73727a9213c7121ef488992290be5240cce3ec8fa2f18ef8089e6fc35a756",
+      "sourceSha256": "44e73727a9213c7121ef488992290be5240cce3ec8fa2f18ef8089e6fc35a756",
+      "bbox": {
+        "left": 0,
+        "top": 0.01854066985645933,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/44e73727a9213c71/yang-fan__expression__worried__v1.png",
+      "preview": "/media/assets/yang-fan/expression.worried.webp",
+      "thumb": "/media/assets/yang-fan/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34996110215641507,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2123834,
+      "sha256": "85b6c9995b971bd4a26a4e3203d5ce5bb21d4405b176eb7772a18160b753be59",
+      "sourceSha256": "85b6c9995b971bd4a26a4e3203d5ce5bb21d4405b176eb7772a18160b753be59",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/85b6c9995b971bd4/yang-fan__expression__skeptical__v1.png",
+      "preview": "/media/assets/yang-fan/expression.skeptical.webp",
+      "thumb": "/media/assets/yang-fan/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30479129908628205,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1024,
+      "height": 1536,
+      "bytes": 2232261,
+      "sha256": "b7cebd705c8250a6711f86b0ce616702abb48321a784cc060511f0cf379accda",
+      "sourceSha256": "b7cebd705c8250a6711f86b0ce616702abb48321a784cc060511f0cf379accda",
+      "bbox": {
+        "left": 0,
+        "top": 0.0032552083333333335,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/b7cebd705c8250a6/yang-fan__expression__smug__v1.png",
+      "preview": "/media/assets/yang-fan/expression.smug.webp",
+      "thumb": "/media/assets/yang-fan/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4091682434082031,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2254904,
+      "sha256": "06bb2dc35c46ac8af14d39b85777da77a053a0d78c2bbdd6d9dead6b20ea0b97",
+      "sourceSha256": "06bb2dc35c46ac8af14d39b85777da77a053a0d78c2bbdd6d9dead6b20ea0b97",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/06bb2dc35c46ac8a/yang-fan__expression__contempt__v1.png",
+      "preview": "/media/assets/yang-fan/expression.contempt.webp",
+      "thumb": "/media/assets/yang-fan/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3057103559788274,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1951645,
+      "sha256": "7c0e920633d79bf7e741598df679f09aa16890a8fabb59178ab983f34077c281",
+      "sourceSha256": "7c0e920633d79bf7e741598df679f09aa16890a8fabb59178ab983f34077c281",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/7c0e920633d79bf7/yang-fan__expression__confused__v1.png",
+      "preview": "/media/assets/yang-fan/expression.confused.webp",
+      "thumb": "/media/assets/yang-fan/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34477154508336344,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1833526,
+      "sha256": "528c26265e35bf3bf0de1226da4eb4f862084df6d4d8665d11698a8e87cc8e25",
+      "sourceSha256": "528c26265e35bf3bf0de1226da4eb4f862084df6d4d8665d11698a8e87cc8e25",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/528c26265e35bf3b/yang-fan__expression__thinking__v1.png",
+      "preview": "/media/assets/yang-fan/expression.thinking.webp",
+      "thumb": "/media/assets/yang-fan/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.39316503871987957,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2078001,
+      "sha256": "b5260e0af8a71a9f063c1e6cd5938014768eacf423934b677f40f22484af89a4",
+      "sourceSha256": "b5260e0af8a71a9f063c1e6cd5938014768eacf423934b677f40f22484af89a4",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/b5260e0af8a71a9f/yang-fan__expression__determined__v1.png",
+      "preview": "/media/assets/yang-fan/expression.determined.webp",
+      "thumb": "/media/assets/yang-fan/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.37947070966954627,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 992,
+      "height": 1586,
+      "bytes": 1979181,
+      "sha256": "f09f77c641ad217fdf13a9af6c838812a9c230a8540f8bcf2ee3238ea8313dc2",
+      "sourceSha256": "f09f77c641ad217fdf13a9af6c838812a9c230a8540f8bcf2ee3238ea8313dc2",
+      "bbox": {
+        "left": 0,
+        "top": 0.02711223203026482,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/f09f77c641ad217f/yang-fan__expression__shy__v1.png",
+      "preview": "/media/assets/yang-fan/expression.shy.webp",
+      "thumb": "/media/assets/yang-fan/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3463229162429321,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1983744,
+      "sha256": "241a178049bfbd40116a6a820a883849e61ecb8e3581d349699afe31c687e3ef",
+      "sourceSha256": "241a178049bfbd40116a6a820a883849e61ecb8e3581d349699afe31c687e3ef",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/241a178049bfbd40/yang-fan__expression__pain__v1.png",
+      "preview": "/media/assets/yang-fan/expression.pain.webp",
+      "thumb": "/media/assets/yang-fan/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.34707363641448324,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2091848,
+      "sha256": "37fc466ea09beae0a05742914849cdb7aa788def1e83ff0d70bc41293ac086fe",
+      "sourceSha256": "37fc466ea09beae0a05742914849cdb7aa788def1e83ff0d70bc41293ac086fe",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/37fc466ea09beae0/yang-fan__expression__sleepy__v1.png",
+      "preview": "/media/assets/yang-fan/expression.sleepy.webp",
+      "thumb": "/media/assets/yang-fan/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3834285016957426,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1820551,
+      "sha256": "b78378b1e4bd084539649d952faa85a6ee93240116d2c124369ee9e7e2f2aed4",
+      "sourceSha256": "b78378b1e4bd084539649d952faa85a6ee93240116d2c124369ee9e7e2f2aed4",
+      "bbox": {
+        "left": 0,
+        "top": 0.019736842105263157,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/b78378b1e4bd0845/yang-fan__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/yang-fan/expression.awkward-smile.webp",
+      "thumb": "/media/assets/yang-fan/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31838266325653763,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1860103,
+      "sha256": "98101d7995629243739cecc26e822fd5b795fe0a6eef161ae529eadf498e7c21",
+      "sourceSha256": "98101d7995629243739cecc26e822fd5b795fe0a6eef161ae529eadf498e7c21",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/98101d7995629243/yang-fan__expression__deadpan__v1.png",
+      "preview": "/media/assets/yang-fan/expression.deadpan.webp",
+      "thumb": "/media/assets/yang-fan/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.4239973000320335,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 881537,
+      "sha256": "6720aed64568d9f9d56a667f170d2c880caaf9a76a94b3235914ea361e4d55a0",
+      "sourceSha256": "6720aed64568d9f9d56a667f170d2c880caaf9a76a94b3235914ea361e4d55a0",
+      "bbox": {
+        "left": 0.07013815090329437,
+        "top": 0.01375598086124402,
+        "right": 0.9989373007438895,
+        "bottom": 0.9802631578947368
+      },
+      "format": "png",
+      "object": "yang-fan/6720aed64568d9f9/yang-fan__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/yang-fan/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/yang-fan/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6718528339494277,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 796266,
+      "sha256": "e8def0ef06e930b2701f7339ed12984330c0c085556c0c08414d019207d89893",
+      "sourceSha256": "e8def0ef06e930b2701f7339ed12984330c0c085556c0c08414d019207d89893",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9744952178533475,
+        "bottom": 0.9820574162679426
+      },
+      "format": "png",
+      "object": "yang-fan/e8def0ef06e930b2/yang-fan__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/yang-fan/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/yang-fan/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6960940717652503,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 654127,
+      "sha256": "67813ff692074295abd21c7e6b4d39f3cf59156d2144b47355d24ba82efc1d80",
+      "sourceSha256": "67813ff692074295abd21c7e6b4d39f3cf59156d2144b47355d24ba82efc1d80",
+      "bbox": {
+        "left": 0.31137088204038255,
+        "top": 0,
+        "right": 0.7863974495217854,
+        "bottom": 0.9736842105263158
+      },
+      "format": "png",
+      "object": "yang-fan/67813ff692074295/yang-fan__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/yang-fan/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/yang-fan/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7780388622507869,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 879119,
+      "sha256": "31dd962e83255cc6758d981d322678b5550b87338b2d8d174ca0aa02c0706bf6",
+      "sourceSha256": "31dd962e83255cc6758d981d322678b5550b87338b2d8d174ca0aa02c0706bf6",
+      "bbox": {
+        "left": 0,
+        "top": 0.009569377990430622,
+        "right": 0.9659936238044633,
+        "bottom": 0.9736842105263158
+      },
+      "format": "png",
+      "object": "yang-fan/31dd962e83255cc6/yang-fan__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/yang-fan/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/yang-fan/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6687696078182124,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1983779,
+      "sha256": "7e5740a3c0260127609d5676c777555e9ba2cd21b50813dee4c7cf36b9af456d",
+      "sourceSha256": "7e5740a3c0260127609d5676c777555e9ba2cd21b50813dee4c7cf36b9af456d",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/7e5740a3c0260127/yang-fan__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/yang-fan/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/yang-fan/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3359330906243485,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.read-notebook",
+      "series": "wardrobe",
+      "key": "read-notebook",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 832521,
+      "sha256": "0ce5607b9f8fb95acac32eacc96240410fc8fce5786da4e58716b5270fc9f49b",
+      "sourceSha256": "0ce5607b9f8fb95acac32eacc96240410fc8fce5786da4e58716b5270fc9f49b",
+      "bbox": {
+        "left": 0.2252922422954304,
+        "top": 0.008971291866028708,
+        "right": 0.9330499468650372,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "yang-fan/0ce5607b9f8fb95a/yang-fan__wardrobe-personal__read-notebook__v1.png",
+      "preview": "/media/assets/yang-fan/wardrobe.personal.read-notebook.webp",
+      "thumb": "/media/assets/yang-fan/wardrobe.personal.read-notebook.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7005952895474121,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.look-at-sky",
+      "series": "wardrobe",
+      "key": "look-at-sky",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 914423,
+      "sha256": "d565654f637bc1d9127261d69d908e6f31a0a28bbd4ac6acd19761152f593589",
+      "sourceSha256": "d565654f637bc1d9127261d69d908e6f31a0a28bbd4ac6acd19761152f593589",
+      "bbox": {
+        "left": 0.061636556854410204,
+        "top": 0.01375598086124402,
+        "right": 0.9851222104144527,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "yang-fan/d565654f637bc1d9/yang-fan__wardrobe-personal__look-at-sky__v1.png",
+      "preview": "/media/assets/yang-fan/wardrobe.personal.look-at-sky.webp",
+      "thumb": "/media/assets/yang-fan/wardrobe.personal.look-at-sky.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.670171074241492,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.relaxed-seat",
+      "series": "wardrobe",
+      "key": "relaxed-seat",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1187132,
+      "sha256": "3467912ba98d875154891a0849329aea99caf31c63e8af7f4d87287ff8bbd467",
+      "sourceSha256": "3467912ba98d875154891a0849329aea99caf31c63e8af7f4d87287ff8bbd467",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 0.9160467587672688,
+        "bottom": 0.9808612440191388
+      },
+      "format": "png",
+      "object": "yang-fan/3467912ba98d8751/yang-fan__wardrobe-personal__relaxed-seat__v1.png",
+      "preview": "/media/assets/yang-fan/wardrobe.personal.relaxed-seat.webp",
+      "thumb": "/media/assets/yang-fan/wardrobe.personal.relaxed-seat.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5872538376663328,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 834093,
+      "sha256": "c467a0ed2560acc5462324235140fbaa2700d4ea891dfa9ddef9967f630c99f5",
+      "sourceSha256": "c467a0ed2560acc5462324235140fbaa2700d4ea891dfa9ddef9967f630c99f5",
+      "bbox": {
+        "left": 0,
+        "top": 0.01076555023923445,
+        "right": 0.9829968119022316,
+        "bottom": 0.9856459330143541
+      },
+      "format": "png",
+      "object": "yang-fan/c467a0ed2560acc5/yang-fan__pose__walk__v1.png",
+      "preview": "/media/assets/yang-fan/pose.walk.webp",
+      "thumb": "/media/assets/yang-fan/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7254555878150598,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 903816,
+      "sha256": "8668e91233e71dcd0d81c0740ee621643b1c1117aa9bd52653f813a59c87c026",
+      "sourceSha256": "8668e91233e71dcd0d81c0740ee621643b1c1117aa9bd52653f813a59c87c026",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.012559808612440191,
+        "right": 0.9766206163655685,
+        "bottom": 0.9611244019138756
+      },
+      "format": "png",
+      "object": "yang-fan/8668e91233e71dcd/yang-fan__pose__run__v1.png",
+      "preview": "/media/assets/yang-fan/pose.run.webp",
+      "thumb": "/media/assets/yang-fan/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7081968942741357,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1196064,
+      "sha256": "833c00786b0793fd938e83359bb06390fc95426388b8328a97c5c3a1f84d71e2",
+      "sourceSha256": "833c00786b0793fd938e83359bb06390fc95426388b8328a97c5c3a1f84d71e2",
+      "bbox": {
+        "left": 0,
+        "top": 0.01375598086124402,
+        "right": 0.9766206163655685,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/833c00786b0793fd/yang-fan__pose__sit__v1.png",
+      "preview": "/media/assets/yang-fan/pose.sit.webp",
+      "thumb": "/media/assets/yang-fan/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.601860232166737,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 784966,
+      "sha256": "da617a33be1ecae1222bd9225345be65959d2594c02b0c539c7a7ae89acd503a",
+      "sourceSha256": "da617a33be1ecae1222bd9225345be65959d2594c02b0c539c7a7ae89acd503a",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 0.9659936238044633,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "yang-fan/da617a33be1ecae1/yang-fan__pose__point__v1.png",
+      "preview": "/media/assets/yang-fan/pose.point.webp",
+      "thumb": "/media/assets/yang-fan/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7373098963232639,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 761557,
+      "sha256": "34870244fe7dc039981486aee123198c24d1c82d2e0b5e18b0119e8effc6f799",
+      "sourceSha256": "34870244fe7dc039981486aee123198c24d1c82d2e0b5e18b0119e8effc6f799",
+      "bbox": {
+        "left": 0.04357066950053135,
+        "top": 0.01375598086124402,
+        "right": 0.8682252922422954,
+        "bottom": 0.9772727272727273
+      },
+      "format": "png",
+      "object": "yang-fan/34870244fe7dc039/yang-fan__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/yang-fan/pose.arms-crossed.webp",
+      "thumb": "/media/assets/yang-fan/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7431649116027437,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 875634,
+      "sha256": "fc668c95f435c6dc426d2c7dc689d545fe7daf3ea7bae22f81251413c4fb9083",
+      "sourceSha256": "fc668c95f435c6dc426d2c7dc689d545fe7daf3ea7bae22f81251413c4fb9083",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 0.997874601487779,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/fc668c95f435c6dc/yang-fan__pose__phone__v1.png",
+      "preview": "/media/assets/yang-fan/pose.phone.webp",
+      "thumb": "/media/assets/yang-fan/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6997575876218418,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 1207,
+      "height": 1303,
+      "bytes": 1155060,
+      "sha256": "ba76d2db44b055e9461716dd831a14ce41f767352fd68342b0ab596f52cb931f",
+      "sourceSha256": "ba76d2db44b055e9461716dd831a14ce41f767352fd68342b0ab596f52cb931f",
+      "bbox": {
+        "left": 0.007456503728251864,
+        "top": 0.09823484267075978,
+        "right": 0.971830985915493,
+        "bottom": 0.9823484267075978
+      },
+      "format": "png",
+      "object": "yang-fan/ba76d2db44b055e9/yang-fan__detail__hands__v1.png",
+      "preview": "/media/assets/yang-fan/detail.hands.webp",
+      "thumb": "/media/assets/yang-fan/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6132327348588847,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2111758,
+      "sha256": "1468532e584413d51204051adb30226e687dcc756bae1d29ab904559ea45a8ec",
+      "sourceSha256": "1468532e584413d51204051adb30226e687dcc756bae1d29ab904559ea45a8ec",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "yang-fan/1468532e584413d5/yang-fan__detail__hair-back__v1.png",
+      "preview": "/media/assets/yang-fan/detail.hair-back.webp",
+      "thumb": "/media/assets/yang-fan/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3322829220670263,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1337798,
+      "sha256": "231cae0305e4414bc83c97ba6b1b511ab789f6a026bbcbe73c1872b0766d9e58",
+      "sourceSha256": "231cae0305e4414bc83c97ba6b1b511ab789f6a026bbcbe73c1872b0766d9e58",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/yang-fan/yang-fan__voice__intro__v1__231cae0305e4414b.wav",
+      "preview": "/api/voice/yang-fan/intro",
+      "thumb": "/api/voice/yang-fan/intro",
+      "previewUrl": "/api/voice/yang-fan/intro",
+      "durationSec": 20.9,
+      "transcript": {
+        "text": "你好，我叫杨帆，三十岁，云南大理人。发髻和这点小胡子留习惯了，总有人问我是不是拍古装戏的。其实我是航空公司的副机长。工作时按规程来，休息时就喜欢慢慢走，看看天，不用每朵云都赶着穿过去。"
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1271094,
+      "sha256": "53de5aac23302211f2239161d0ccce31674695a2ad8997b57ac610b12375f1df",
+      "sourceSha256": "53de5aac23302211f2239161d0ccce31674695a2ad8997b57ac610b12375f1df",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/yang-fan/yang-fan__voice__intro-alt__v1__53de5aac23302211.wav",
+      "preview": "/api/voice/yang-fan/intro-alt",
+      "thumb": "/api/voice/yang-fan/intro-alt",
+      "previewUrl": "/api/voice/yang-fan/intro-alt",
+      "durationSec": 19.8,
+      "transcript": {
+        "text": "Hello, I'm Yang Fan, thirty, from Dali in Yunnan. With this little bun and goatee, people often ask if I act in costume dramas. I'm actually an airline first officer. At work I follow the checklist carefully. On my days off, I enjoy a slow walk and a good view of the sky."
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 564584,
+      "sha256": "eb1acf282b78f216a73eaa19f49bfcaf38b581626c9ad0eab389ec9cfe82cc72",
+      "sourceSha256": "eb1acf282b78f216a73eaa19f49bfcaf38b581626c9ad0eab389ec9cfe82cc72",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/yang-fan/yang-fan__voice__chat__v1__eb1acf282b78f216.wav",
+      "preview": "/api/voice/yang-fan/chat",
+      "thumb": "/api/voice/yang-fan/chat",
+      "previewUrl": "/api/voice/yang-fan/chat",
+      "durationSec": 8.8,
+      "transcript": {
+        "text": "今天风不大，咱们沿湖走一段吧。别急着拍照，先看一会儿。等云从山后面出来，光落下来，那个时候再拍。"
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 669352,
+      "sha256": "ebe40413e36e9fb03bea620fe89f9bdabb4b92be72928df96888d937a4ee133b",
+      "sourceSha256": "ebe40413e36e9fb03bea620fe89f9bdabb4b92be72928df96888d937a4ee133b",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/yang-fan/yang-fan__voice__happy__v1__ebe40413e36e9fb0.wav",
+      "preview": "/api/voice/yang-fan/happy",
+      "thumb": "/api/voice/yang-fan/happy",
+      "previewUrl": "/api/voice/yang-fan/happy",
+      "durationSec": 10.4,
+      "transcript": {
+        "text": "听见了？今天终于把休假凑到一起了。那就不排太满，吃顿饭，走走路，能跟你们坐着聊一下午，我就很高兴。"
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 636658,
+      "sha256": "bb4e445de833fe7cb12b1d7a8378447cde1b7454910b0739ae5cf53b9a7b357d",
+      "sourceSha256": "bb4e445de833fe7cb12b1d7a8378447cde1b7454910b0739ae5cf53b9a7b357d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/yang-fan/yang-fan__voice__angry__v1__bb4e445de833fe7c.wav",
+      "preview": "/api/voice/yang-fan/angry",
+      "thumb": "/api/voice/yang-fan/angry",
+      "previewUrl": "/api/voice/yang-fan/angry",
+      "durationSec": 9.9,
+      "transcript": {
+        "text": "先停一下，这一步还没核对。不能因为赶时间就跳过去。你把记录拿来，我们一项一项确认，确认完再继续。"
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 727308,
+      "sha256": "a3fb440360b02e3d86d01ab0e76fe6f4dbd33cddd2043c08bd933a103a727afb",
+      "sourceSha256": "a3fb440360b02e3d86d01ab0e76fe6f4dbd33cddd2043c08bd933a103a727afb",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/yang-fan/yang-fan__voice__sad__v1__a3fb440360b02e3d.wav",
+      "preview": "/api/voice/yang-fan/sad",
+      "thumb": "/api/voice/yang-fan/sad",
+      "previewUrl": "/api/voice/yang-fan/sad",
+      "durationSec": 11.3,
+      "transcript": {
+        "text": "原来常走的那条小路，现在修了新的围栏。我站在外面看了半天，才发现自己记得的样子，已经是好多年前了。"
+      }
+    }
+  ]
+}

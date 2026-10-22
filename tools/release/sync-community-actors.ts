@@ -130,6 +130,8 @@ async function main() {
           [
             "db",
             "query",
+            "--agent",
+            "no",
             "--linked",
             "--project-ref",
             options.projectRef,

@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${tutorial.tool} — ${tutorial.goal[locale]}`,
     description: tutorial.goal[locale],
-    robots: { index: false, follow: true },
+    robots: { index: tutorial.reproducedAt !== null, follow: true },
     alternates: localizedAlternates(locale, `/guide/tools/${tool}`),
   };
 }

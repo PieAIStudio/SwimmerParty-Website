@@ -81,11 +81,28 @@ test("homepage shows one approved clip per actor and does not require posters", 
   const actors = [ready, { ...ready, slug: "second" }, { ...ready, slug: "third" }];
   const result = selectHomeContent(actors, clips);
   assert.equal(result.hero?.sample, clips[0]);
-  assert.deepEqual(result.featured.map((entry) => entry.sample), clips.slice(2));
-  assert.deepEqual([result.hero, ...result.featured].map((entry) => entry?.actor.slug), [
-    "ready", "second", "third",
-  ]);
+  assert.deepEqual(
+    result.featured.map((entry) => entry.sample),
+    clips.slice(2),
+  );
+  assert.deepEqual(
+    [result.hero, ...result.featured].map((entry) => entry?.actor.slug),
+    ["ready", "second", "third"],
+  );
   assert.equal(result.hero?.sample.poster, "");
+});
+test("hero compares the same actor in two actual tools, without inventing a second clip", () => {
+  const clips = [
+    { ...sample("ready", "/grok.mp4"), tools: ["ChatGPT", "Grok"] },
+    { ...sample("ready", "/grok-other.mp4"), tools: ["Grok"] },
+    { ...sample("ready", "/vids.mp4"), tools: ["Google Vids"] },
+  ];
+  assert.deepEqual(
+    selectHomeContent([ready], clips).heroSamples.map((entry) => entry.sample),
+    [clips[0], clips[2]],
+  );
+  assert.equal(selectHomeContent([ready], clips.slice(0, 2)).heroSamples.length, 1);
+  assert.deepEqual(selectHomeContent([ready], []).heroSamples, []);
 });
 test("updates use dated production notes, not generated release claims", () => {
   const actors = [

@@ -32,10 +32,10 @@ test("catalog sync is a manual release gate, never a browser operation or automa
 });
 
 test("catalog derives all picker actors plus explicit history, never retired identities or default versions", () => {
-  assert.equal(desired.length, 97);
+  assert.equal(desired.length, 101);
   assert.equal(
     desired.reduce((n, r) => n + r.assetVersions.length, 0),
-    99,
+    103,
   );
   assert.deepEqual(
     desired.map((r) => r.slug).sort(),
@@ -103,12 +103,12 @@ test("plan is deterministic, target-bound, preserves disabled rows and forecasts
     planActorCatalog("bcdefghijklmnopqrstu", desired, EMPTY).planSha256,
   );
   assert.deepEqual(a.counts, {
-    insertActors: 97,
-    insertVersions: 99,
+    insertActors: 101,
+    insertVersions: 103,
     disableActors: 0,
     disableVersions: 0,
-    changedActors: 97,
-    expectedAuditRows: 97,
+    changedActors: 101,
+    expectedAuditRows: 101,
     deletedRows: 0,
   });
   assert.equal(planActorCatalog(REF, desired, a.after).changes.length, 0);
@@ -158,7 +158,7 @@ test("Postgres contract fixture: empty catalog reproduces rejection, sync is ato
       },
     });
     assert.equal(r.applied, false);
-    assert.equal(r.plan.changes.length, 97);
+    assert.equal(r.plan.changes.length, 101);
     assert(calls.every((sql) => sql.startsWith("BEGIN READ ONLY;")));
     assert.deepEqual(await snapshot(), EMPTY);
   });
@@ -176,7 +176,7 @@ test("Postgres contract fixture: empty catalog reproduces rejection, sync is ato
     assert.deepEqual(await snapshot(), EMPTY);
   });
   await t.test(
-    "reviewed plan applies 97 actors and 99 versions with 97 audit events, then reads back",
+    "reviewed plan applies 101 actors and 103 versions with 101 audit events, then reads back",
     async () => {
       const plan = planActorCatalog(REF, desired, EMPTY);
       const r = await syncActorCatalog({
@@ -191,7 +191,7 @@ test("Postgres contract fixture: empty catalog reproduces rejection, sync is ato
       assert.equal(
         (await db.query<{ n: number }>("select count(*)::int n from swimmer_party.audit_events"))
           .rows[0].n,
-        97,
+        101,
       );
       for (const actor of ACTORS)
         for (const kind of ["image", "audio"])
@@ -221,7 +221,7 @@ test("Postgres contract fixture: empty catalog reproduces rejection, sync is ato
       assert.equal(
         (await db.query<{ n: number }>("select count(*)::int n from swimmer_party.audit_events"))
           .rows[0].n,
-        97,
+        101,
       );
     },
   );

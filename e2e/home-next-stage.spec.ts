@@ -84,9 +84,10 @@ for (const locale of ["en", "zh"] as const) {
           exact: true,
         });
         await expect(cta).toBeInViewport();
-        // Owner 2026-10-22: record exact first-fold coverage as post-launch UX evidence, not a release blocker.
-        await expect(hero.locator("video")).toBeInViewport();
-        const heroVideoBounds = await hero.locator("video").boundingBox();
+        // Owner 2026-10-22: exact first-fold coverage is post-launch UX evidence, not a release blocker.
+        const heroVideos = await hero.locator("video").all();
+        for (const video of heroVideos) await expect(video).toBeInViewport();
+        const heroVideoBounds = await Promise.all(heroVideos.map((video) => video.boundingBox()));
         await expect(cta).toHaveAttribute("href", `/${locale}/actors`);
         expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
           true,
@@ -136,7 +137,7 @@ test("A2 home plays only approved clips on demand, without duplicated hero cards
   const sources = await page
     .locator("main [data-sample-id]")
     .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-sample-id")));
-  expect(sources.length).toBe(3);
+  expect(sources.length).toBe(4);
   expect(new Set(sources).size).toBe(sources.length);
   for (const src of sources)
     expect(OFFICIAL_SAMPLES.some((sample) => sample.sampleId === src)).toBe(true);
@@ -147,10 +148,18 @@ test("A2 home plays only approved clips on demand, without duplicated hero cards
       await video.evaluate((node: HTMLVideoElement) => node.paused && !node.autoplay && !node.loop),
     ).toBe(true);
   }
-  const hero = page.locator('[data-home-section="hero"] video');
+  const comparison = page.locator("[data-same-actor-comparison] [data-official-sample]");
+  await expect(comparison).toHaveCount(2);
+  expect(
+    await comparison.evaluateAll(
+      (nodes) => new Set(nodes.map((node) => node.getAttribute("data-official-sample"))).size,
+    ),
+  ).toBe(1);
+  const hero = page.locator('[data-home-section="hero"] video').first();
   await page
     .locator('[data-home-section="hero"]')
     .getByRole("button", { name: /Play sample/ })
+    .first()
     .click();
   await expect
     .poll(() => hero.evaluate((video: HTMLVideoElement) => video.currentTime))

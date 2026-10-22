@@ -52,7 +52,11 @@
     "actors/qi-changfeng.json",
     "actors/feng-ye.json",
     "actors/miriam-adler.json",
-    "actors/zawadi-mwangi.json"
+    "actors/zawadi-mwangi.json",
+    "actors/liu-dan.json",
+    "actors/ma-hong.json",
+    "actors/yang-fan.json",
+    "actors/kate-murray.json"
   ],
   "works": [
     "works/journey-to-the-east.json"

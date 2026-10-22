@@ -19,7 +19,7 @@ test("works use actor slugs", () => {
 test("published roster counts and Ma Le delivery stay current", () => {
   const active = ACTORS.filter((actor) => actor.status === "active");
   const newFaces = ACTORS.filter((actor) => actor.status === "new-face");
-  assert.equal(active.length, 21);
+  assert.equal(active.length, 25);
   assert.equal(newFaces.length, 76);
   assert.ok(!ACTORS.some((actor) => ["lei-le", "chang-shulan"].includes(actor.slug)));
   assert.deepEqual(
@@ -44,6 +44,10 @@ test("published roster counts and Ma Le delivery stay current", () => {
       "wei-qinghe",
       "qin-lie",
       "feng-ye",
+      "liu-dan",
+      "ma-hong",
+      "yang-fan",
+      "kate-murray",
     ],
   );
 

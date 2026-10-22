@@ -1,0 +1,1820 @@
+{
+  "slug": "liu-dan",
+  "looks": [
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "en": "Practical everyday wear",
+        "zh": "轻便日常装"
+      },
+      "prompt": "Personal look designed for this production: clean washed brick-red cotton zip hoodie worn open over a plain off-white crew-neck T-shirt, sturdy straight dark-navy work trousers, clean flat grey low-top sneakers. Practical everyday clothes, not a branded courier uniform. Her own blunt black bob and straight-cut bangs. No logos or jewelry.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "en": "Everyday portrait",
+            "zh": "日常装近景"
+          },
+          "direction": "head and upper chest, facing the camera, easy closed-mouth smile"
+        },
+        {
+          "key": "carry-parcel",
+          "label": {
+            "en": "Brisk walk with a parcel",
+            "zh": "抱包裹快步走"
+          },
+          "direction": "full body at a three-quarter angle, brisk natural walk, carrying one small plain unlabelled cardboard parcel at waist level, face visible; no cropped limbs"
+        },
+        {
+          "key": "lift-parcel",
+          "label": {
+            "en": "Lifting a box",
+            "zh": "稳稳搬箱子"
+          },
+          "direction": "full body at a three-quarter angle, safely lifting one plain unlabelled cardboard box with bent knees, natural balanced weight and visible face; do not lengthen limbs to fit the pose"
+        },
+        {
+          "key": "after-shift",
+          "label": {
+            "en": "After-shift break",
+            "zh": "下班歇会儿"
+          },
+          "direction": "full body at a three-quarter angle, sitting naturally on a simple plain stool, hands resting on knees, tired but lively small smile; no environment or ground shadow"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "kind": "image",
+      "slot": "turnaround.front",
+      "series": "turnaround",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 864642,
+      "sha256": "d0c85670bcbbdadb2bfeefbaf670e5ef2bcf868891d6d6adb6593573078cea11",
+      "sourceSha256": "d0c85670bcbbdadb2bfeefbaf670e5ef2bcf868891d6d6adb6593573078cea11",
+      "bbox": {
+        "left": 0.020191285866099893,
+        "top": 0.02631578947368421,
+        "right": 0.9574920297555791,
+        "bottom": 0.9844497607655502
+      },
+      "format": "png",
+      "object": "liu-dan/d0c85670bcbbdadb/liu-dan__turnaround__front__v1.png",
+      "preview": "/media/assets/liu-dan/turnaround.front.webp",
+      "thumb": "/media/assets/liu-dan/turnaround.front.thumb.webp",
+      "large": "/media/assets/liu-dan/turnaround.front.large.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7031242849661106,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.three-quarter",
+      "series": "turnaround",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 771932,
+      "sha256": "c13428a5375e648f3ed30a1d7a9ee1dfb53b2791c6c3e73cb4e94d8731074b1a",
+      "sourceSha256": "c13428a5375e648f3ed30a1d7a9ee1dfb53b2791c6c3e73cb4e94d8731074b1a",
+      "bbox": {
+        "left": 0.07863974495217853,
+        "top": 0.02930622009569378,
+        "right": 0.9436769394261424,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/c13428a5375e648f/liu-dan__turnaround__three-quarter__v1.png",
+      "preview": "/media/assets/liu-dan/turnaround.three-quarter.webp",
+      "thumb": "/media/assets/liu-dan/turnaround.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7221854994940738,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.side",
+      "series": "turnaround",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 534187,
+      "sha256": "be5771384a98638485abd7600e51dfc67c7ea311e4763d30b792e43a64ceff80",
+      "sourceSha256": "be5771384a98638485abd7600e51dfc67c7ea311e4763d30b792e43a64ceff80",
+      "bbox": {
+        "left": 0,
+        "top": 0.022727272727272728,
+        "right": 0.8947927736450585,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "liu-dan/be5771384a986384/liu-dan__turnaround__side__v1.png",
+      "preview": "/media/assets/liu-dan/turnaround.side.webp",
+      "thumb": "/media/assets/liu-dan/turnaround.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.8209504294016851,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back",
+      "series": "turnaround",
+      "key": "back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 846388,
+      "sha256": "3fad48e1edbb17c024c857c5b71ad5412b25a97ab94cae4f0e984e621f4ae652",
+      "sourceSha256": "3fad48e1edbb17c024c857c5b71ad5412b25a97ab94cae4f0e984e621f4ae652",
+      "bbox": {
+        "left": 0,
+        "top": 0.025717703349282296,
+        "right": 0.9415515409139213,
+        "bottom": 0.9748803827751196
+      },
+      "format": "png",
+      "object": "liu-dan/3fad48e1edbb17c0/liu-dan__turnaround__back__v1.png",
+      "preview": "/media/assets/liu-dan/turnaround.back.webp",
+      "thumb": "/media/assets/liu-dan/turnaround.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7038507593977699,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-left",
+      "series": "turnaround",
+      "key": "back-three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 771280,
+      "sha256": "b57a56280a2f88328f84006f7b3ac8c8b5f211fa47e8a6f5f43bc3dfb94b434c",
+      "sourceSha256": "b57a56280a2f88328f84006f7b3ac8c8b5f211fa47e8a6f5f43bc3dfb94b434c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9787460148777896,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/b57a56280a2f8832/liu-dan__turnaround__back-three-quarter-left__v1.png",
+      "preview": "/media/assets/liu-dan/turnaround.back-three-quarter-left.webp",
+      "thumb": "/media/assets/liu-dan/turnaround.back-three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7250805922641596,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "turnaround.back-three-quarter-right",
+      "series": "turnaround",
+      "key": "back-three-quarter-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 846789,
+      "sha256": "9114f7c3a67b4ab3decc4739a24c2cf71eff71e0ff4ad127724fecc47f152e80",
+      "sourceSha256": "9114f7c3a67b4ab3decc4739a24c2cf71eff71e0ff4ad127724fecc47f152e80",
+      "bbox": {
+        "left": 0.04357066950053135,
+        "top": 0.022727272727272728,
+        "right": 0.9787460148777896,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "liu-dan/9114f7c3a67b4ab3/liu-dan__turnaround__back-three-quarter-right__v1.png",
+      "preview": "/media/assets/liu-dan/turnaround.back-three-quarter-right.webp",
+      "thumb": "/media/assets/liu-dan/turnaround.back-three-quarter-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7062659849798392,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.front",
+      "series": "face",
+      "key": "front",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1967409,
+      "sha256": "271a544c8fdb387a429f5412244298d74277cfa62c70f393cddc0562c0117497",
+      "sourceSha256": "271a544c8fdb387a429f5412244298d74277cfa62c70f393cddc0562c0117497",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/271a544c8fdb387a/liu-dan__face__front__v1.png",
+      "preview": "/media/assets/liu-dan/face.front.webp",
+      "thumb": "/media/assets/liu-dan/face.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29965068211055124,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter",
+      "series": "face",
+      "key": "three-quarter",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2015353,
+      "sha256": "e26c5a9d42be55b7620db0d3aac8bceda1a0d9db14776ffbd6bed65263ade969",
+      "sourceSha256": "e26c5a9d42be55b7620db0d3aac8bceda1a0d9db14776ffbd6bed65263ade969",
+      "bbox": {
+        "left": 0,
+        "top": 0.014952153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/e26c5a9d42be55b7/liu-dan__face__three-quarter__v1.png",
+      "preview": "/media/assets/liu-dan/face.three-quarter.webp",
+      "thumb": "/media/assets/liu-dan/face.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.27879393803802327,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side",
+      "series": "face",
+      "key": "side",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2018190,
+      "sha256": "c9cf6dd0ceb320dae50c188dbe5da7502298f58599248be79c18d54c6bfe8689",
+      "sourceSha256": "c9cf6dd0ceb320dae50c188dbe5da7502298f58599248be79c18d54c6bfe8689",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/c9cf6dd0ceb320da/liu-dan__face__side__v1.png",
+      "preview": "/media/assets/liu-dan/face.side.webp",
+      "thumb": "/media/assets/liu-dan/face.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31016708276342486,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.three-quarter-left",
+      "series": "face",
+      "key": "three-quarter-left",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2095998,
+      "sha256": "f0f1f8586ed478434bc3eca06cef8f22ef5d2d022c4ee36d7a59371c818a71f9",
+      "sourceSha256": "f0f1f8586ed478434bc3eca06cef8f22ef5d2d022c4ee36d7a59371c818a71f9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/f0f1f8586ed47843/liu-dan__face__three-quarter-left__v1.png",
+      "preview": "/media/assets/liu-dan/face.three-quarter-left.webp",
+      "thumb": "/media/assets/liu-dan/face.three-quarter-left.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.25511328679151263,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.side-right",
+      "series": "face",
+      "key": "side-right",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2129563,
+      "sha256": "7d9cfa2afa46353b42311c110722177939f34c9fdd98f0255b073e557d732aab",
+      "sourceSha256": "7d9cfa2afa46353b42311c110722177939f34c9fdd98f0255b073e557d732aab",
+      "bbox": {
+        "left": 0,
+        "top": 0.01674641148325359,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/7d9cfa2afa46353b/liu-dan__face__side-right__v1.png",
+      "preview": "/media/assets/liu-dan/face.side-right.webp",
+      "thumb": "/media/assets/liu-dan/face.side-right.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.28359833018930286,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.up",
+      "series": "face",
+      "key": "up",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1992639,
+      "sha256": "29130d88b7a0c0e3ef8fc19abe64fb5ce2561fcc515318d2f723be60c0620946",
+      "sourceSha256": "29130d88b7a0c0e3ef8fc19abe64fb5ce2561fcc515318d2f723be60c0620946",
+      "bbox": {
+        "left": 0,
+        "top": 0.11483253588516747,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/29130d88b7a0c0e3/liu-dan__face__up__v1.png",
+      "preview": "/media/assets/liu-dan/face.up.webp",
+      "thumb": "/media/assets/liu-dan/face.up.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29386875918421307,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "face.down",
+      "series": "face",
+      "key": "down",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1935073,
+      "sha256": "634cd8627408a72ee0810e7dada693ca633262f4006d7a769ebe19af38a2b2e5",
+      "sourceSha256": "634cd8627408a72ee0810e7dada693ca633262f4006d7a769ebe19af38a2b2e5",
+      "bbox": {
+        "left": 0,
+        "top": 0.019138755980861243,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/634cd8627408a72e/liu-dan__face__down__v1.png",
+      "preview": "/media/assets/liu-dan/face.down.webp",
+      "thumb": "/media/assets/liu-dan/face.down.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3327418149276195,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.neutral",
+      "series": "expression",
+      "key": "neutral",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2015099,
+      "sha256": "ab0aff718d47ba570a92ee18724d4c3ce8af59f77cf821b7a4d7123feb954ebe",
+      "sourceSha256": "ab0aff718d47ba570a92ee18724d4c3ce8af59f77cf821b7a4d7123feb954ebe",
+      "bbox": {
+        "left": 0,
+        "top": 0.07236842105263158,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/ab0aff718d47ba57/liu-dan__expression__neutral__v1.png",
+      "preview": "/media/assets/liu-dan/expression.neutral.webp",
+      "thumb": "/media/assets/liu-dan/expression.neutral.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.27952931066919545,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smile",
+      "series": "expression",
+      "key": "smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2038959,
+      "sha256": "d08962ed11b9a1226bb1eeb9d47918c6903053ef4adf2c1e22cba2a39497fe04",
+      "sourceSha256": "d08962ed11b9a1226bb1eeb9d47918c6903053ef4adf2c1e22cba2a39497fe04",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/d08962ed11b9a122/liu-dan__expression__smile__v1.png",
+      "preview": "/media/assets/liu-dan/expression.smile.webp",
+      "thumb": "/media/assets/liu-dan/expression.smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.27892995337343457,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.laugh",
+      "series": "expression",
+      "key": "laugh",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1917772,
+      "sha256": "500979098bea0bf42887b6aa8cd7ff468c48553d45733d2b9907571cd1716811",
+      "sourceSha256": "500979098bea0bf42887b6aa8cd7ff468c48553d45733d2b9907571cd1716811",
+      "bbox": {
+        "left": 0,
+        "top": 0.03648325358851675,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/500979098bea0bf4/liu-dan__expression__laugh__v1.png",
+      "preview": "/media/assets/liu-dan/expression.laugh.webp",
+      "thumb": "/media/assets/liu-dan/expression.laugh.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29422977185016447,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sad",
+      "series": "expression",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1917230,
+      "sha256": "6d8ede0e3f0506454e09097f7e0c76858d7a16a3c24e71527a02747ee75c06ad",
+      "sourceSha256": "6d8ede0e3f0506454e09097f7e0c76858d7a16a3c24e71527a02747ee75c06ad",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/6d8ede0e3f050645/liu-dan__expression__sad__v1.png",
+      "preview": "/media/assets/liu-dan/expression.sad.webp",
+      "thumb": "/media/assets/liu-dan/expression.sad.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2889289872832017,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.cry",
+      "series": "expression",
+      "key": "cry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2237740,
+      "sha256": "81053531b950d9b80ba96606bda46062a965b0ae8c989ea0221bfbdc667f526e",
+      "sourceSha256": "81053531b950d9b80ba96606bda46062a965b0ae8c989ea0221bfbdc667f526e",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/81053531b950d9b8/liu-dan__expression__cry__v1.png",
+      "preview": "/media/assets/liu-dan/expression.cry.webp",
+      "thumb": "/media/assets/liu-dan/expression.cry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.21358983876462484,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.annoyed",
+      "series": "expression",
+      "key": "annoyed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1967342,
+      "sha256": "6c29f32c43b637df045521604040f3d8a44474c8c10b8e7df8d22d9eb27da518",
+      "sourceSha256": "6c29f32c43b637df045521604040f3d8a44474c8c10b8e7df8d22d9eb27da518",
+      "bbox": {
+        "left": 0,
+        "top": 0.02332535885167464,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/6c29f32c43b637df/liu-dan__expression__annoyed__v1.png",
+      "preview": "/media/assets/liu-dan/expression.annoyed.webp",
+      "thumb": "/media/assets/liu-dan/expression.annoyed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2983553584957467,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.angry",
+      "series": "expression",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2028681,
+      "sha256": "d96fd22d871ddf5ccc01e97094682ce308c1b955c22e7298fed788925e75dabb",
+      "sourceSha256": "d96fd22d871ddf5ccc01e97094682ce308c1b955c22e7298fed788925e75dabb",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/d96fd22d871ddf5c/liu-dan__expression__angry__v1.png",
+      "preview": "/media/assets/liu-dan/expression.angry.webp",
+      "thumb": "/media/assets/liu-dan/expression.angry.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2787583452399717,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.surprised",
+      "series": "expression",
+      "key": "surprised",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1955825,
+      "sha256": "2a0557b5c48e1418e680b236d1b74fc96ad4a0926bd3d5cdc3432a40a8ccd39a",
+      "sourceSha256": "2a0557b5c48e1418e680b236d1b74fc96ad4a0926bd3d5cdc3432a40a8ccd39a",
+      "bbox": {
+        "left": 0,
+        "top": 0.02930622009569378,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/2a0557b5c48e1418/liu-dan__expression__surprised__v1.png",
+      "preview": "/media/assets/liu-dan/expression.surprised.webp",
+      "thumb": "/media/assets/liu-dan/expression.surprised.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.30034982635799234,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.scared",
+      "series": "expression",
+      "key": "scared",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2072448,
+      "sha256": "03933e743794110a1738e87a5459e3f85659d0b6097b179547faa582f6956cb2",
+      "sourceSha256": "03933e743794110a1738e87a5459e3f85659d0b6097b179547faa582f6956cb2",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/03933e743794110a/liu-dan__expression__scared__v1.png",
+      "preview": "/media/assets/liu-dan/expression.scared.webp",
+      "thumb": "/media/assets/liu-dan/expression.scared.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2703158606592803,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.disgusted",
+      "series": "expression",
+      "key": "disgusted",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1958945,
+      "sha256": "1e8ce55b239335e2d9872389d16e1f2170256de72c29922d107e2c77f95bff35",
+      "sourceSha256": "1e8ce55b239335e2d9872389d16e1f2170256de72c29922d107e2c77f95bff35",
+      "bbox": {
+        "left": 0,
+        "top": 0.037679425837320576,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/1e8ce55b239335e2/liu-dan__expression__disgusted__v1.png",
+      "preview": "/media/assets/liu-dan/expression.disgusted.webp",
+      "thumb": "/media/assets/liu-dan/expression.disgusted.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2755556290010118,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.embarrassed",
+      "series": "expression",
+      "key": "embarrassed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1939618,
+      "sha256": "970258352eea18c952a58d292ccaffb97682d69375e32e205f4dd10fdd606784",
+      "sourceSha256": "970258352eea18c952a58d292ccaffb97682d69375e32e205f4dd10fdd606784",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/970258352eea18c9/liu-dan__expression__embarrassed__v1.png",
+      "preview": "/media/assets/liu-dan/expression.embarrassed.webp",
+      "thumb": "/media/assets/liu-dan/expression.embarrassed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29755197819686885,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.tired",
+      "series": "expression",
+      "key": "tired",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1913864,
+      "sha256": "f41ed0235f07fbcef0fb883fc98c03982e351825780a7014a26c5270c5501524",
+      "sourceSha256": "f41ed0235f07fbcef0fb883fc98c03982e351825780a7014a26c5270c5501524",
+      "bbox": {
+        "left": 0,
+        "top": 0.0023923444976076554,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/f41ed0235f07fbce/liu-dan__expression__tired__v1.png",
+      "preview": "/media/assets/liu-dan/expression.tired.webp",
+      "thumb": "/media/assets/liu-dan/expression.tired.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3311795453274283,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.speaking",
+      "series": "expression",
+      "key": "speaking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1861656,
+      "sha256": "ed9be2be4f559b3eab923a452203fcd8c9fa32065f4a0e2c8513c3a98f7d1250",
+      "sourceSha256": "ed9be2be4f559b3eab923a452203fcd8c9fa32065f4a0e2c8513c3a98f7d1250",
+      "bbox": {
+        "left": 0,
+        "top": 0.07894736842105263,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/ed9be2be4f559b3e/liu-dan__expression__speaking__v1.png",
+      "preview": "/media/assets/liu-dan/expression.speaking.webp",
+      "thumb": "/media/assets/liu-dan/expression.speaking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.32628934910941737,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.eyes-closed",
+      "series": "expression",
+      "key": "eyes-closed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2071636,
+      "sha256": "ea503a46bb4d5c7d1e30f13e7036ee55cf6d86280caaf6f246a0e4386ef91412",
+      "sourceSha256": "ea503a46bb4d5c7d1e30f13e7036ee55cf6d86280caaf6f246a0e4386ef91412",
+      "bbox": {
+        "left": 0,
+        "top": 0.020933014354066987,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/ea503a46bb4d5c7d/liu-dan__expression__eyes-closed__v1.png",
+      "preview": "/media/assets/liu-dan/expression.eyes-closed.webp",
+      "thumb": "/media/assets/liu-dan/expression.eyes-closed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29561217070305945,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.worried",
+      "series": "expression",
+      "key": "worried",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1958291,
+      "sha256": "6d2160456cdf3692adc83af89c6a04f8a7af23d9c710c74535a5246a1176824c",
+      "sourceSha256": "6d2160456cdf3692adc83af89c6a04f8a7af23d9c710c74535a5246a1176824c",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/6d2160456cdf3692/liu-dan__expression__worried__v1.png",
+      "preview": "/media/assets/liu-dan/expression.worried.webp",
+      "thumb": "/media/assets/liu-dan/expression.worried.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29981402763018067,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.skeptical",
+      "series": "expression",
+      "key": "skeptical",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1943694,
+      "sha256": "4f89caab0ebc6dc65343ce03f7f284fca6cbcb38370c2673ec39ff54a2822fcd",
+      "sourceSha256": "4f89caab0ebc6dc65343ce03f7f284fca6cbcb38370c2673ec39ff54a2822fcd",
+      "bbox": {
+        "left": 0,
+        "top": 0.011363636363636364,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/4f89caab0ebc6dc6/liu-dan__expression__skeptical__v1.png",
+      "preview": "/media/assets/liu-dan/expression.skeptical.webp",
+      "thumb": "/media/assets/liu-dan/expression.skeptical.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.31491045868947315,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.smug",
+      "series": "expression",
+      "key": "smug",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1951139,
+      "sha256": "b345f31c429cbbcf9cf3b0bb586b15604480e41f59fe32f1548e8fd08b527de9",
+      "sourceSha256": "b345f31c429cbbcf9cf3b0bb586b15604480e41f59fe32f1548e8fd08b527de9",
+      "bbox": {
+        "left": 0,
+        "top": 0.01076555023923445,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/b345f31c429cbbcf/liu-dan__expression__smug__v1.png",
+      "preview": "/media/assets/liu-dan/expression.smug.webp",
+      "thumb": "/media/assets/liu-dan/expression.smug.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3040603755548663,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.contempt",
+      "series": "expression",
+      "key": "contempt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1883009,
+      "sha256": "1de7d801662646db23f1d33648c636502ae0a590433e1520200de82ede4867c9",
+      "sourceSha256": "1de7d801662646db23f1d33648c636502ae0a590433e1520200de82ede4867c9",
+      "bbox": {
+        "left": 0,
+        "top": 0.02452153110047847,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/1de7d801662646db/liu-dan__expression__contempt__v1.png",
+      "preview": "/media/assets/liu-dan/expression.contempt.webp",
+      "thumb": "/media/assets/liu-dan/expression.contempt.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3444728198140022,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.confused",
+      "series": "expression",
+      "key": "confused",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2022920,
+      "sha256": "e0d4b2f1cfd88e5ddde5e637dbca60b71f4f48417b7bc706edbb5672deba702a",
+      "sourceSha256": "e0d4b2f1cfd88e5ddde5e637dbca60b71f4f48417b7bc706edbb5672deba702a",
+      "bbox": {
+        "left": 0,
+        "top": 0.07954545454545454,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/e0d4b2f1cfd88e5d/liu-dan__expression__confused__v1.png",
+      "preview": "/media/assets/liu-dan/expression.confused.webp",
+      "thumb": "/media/assets/liu-dan/expression.confused.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.269870950683636,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.thinking",
+      "series": "expression",
+      "key": "thinking",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1899914,
+      "sha256": "5575621d43f59ed841c53d74ee960cb59d563e057c79ed7117dd7f99e4daa976",
+      "sourceSha256": "5575621d43f59ed841c53d74ee960cb59d563e057c79ed7117dd7f99e4daa976",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/5575621d43f59ed8/liu-dan__expression__thinking__v1.png",
+      "preview": "/media/assets/liu-dan/expression.thinking.webp",
+      "thumb": "/media/assets/liu-dan/expression.thinking.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3213171623387519,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.determined",
+      "series": "expression",
+      "key": "determined",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2036166,
+      "sha256": "4f5bd7325e4a4e3997c53272aa1191135b6238e2448bda735eb657273b78f8cd",
+      "sourceSha256": "4f5bd7325e4a4e3997c53272aa1191135b6238e2448bda735eb657273b78f8cd",
+      "bbox": {
+        "left": 0,
+        "top": 0.012559808612440191,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/4f5bd7325e4a4e39/liu-dan__expression__determined__v1.png",
+      "preview": "/media/assets/liu-dan/expression.determined.webp",
+      "thumb": "/media/assets/liu-dan/expression.determined.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.29636788207597536,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.shy",
+      "series": "expression",
+      "key": "shy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2041031,
+      "sha256": "8d87565b0f70112dde75e9b1e04400f759c084c4b845f3ab3540781d640e251d",
+      "sourceSha256": "8d87565b0f70112dde75e9b1e04400f759c084c4b845f3ab3540781d640e251d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/8d87565b0f70112d/liu-dan__expression__shy__v1.png",
+      "preview": "/media/assets/liu-dan/expression.shy.webp",
+      "thumb": "/media/assets/liu-dan/expression.shy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.27050018050633295,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.pain",
+      "series": "expression",
+      "key": "pain",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2109672,
+      "sha256": "9019ac0c9c348b00eee2b7ea7687c95fb88d8b948d7637de79164003f83f4ea9",
+      "sourceSha256": "9019ac0c9c348b00eee2b7ea7687c95fb88d8b948d7637de79164003f83f4ea9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/9019ac0c9c348b00/liu-dan__expression__pain__v1.png",
+      "preview": "/media/assets/liu-dan/expression.pain.webp",
+      "thumb": "/media/assets/liu-dan/expression.pain.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2665258632524699,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.sleepy",
+      "series": "expression",
+      "key": "sleepy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2055890,
+      "sha256": "dc5d40af4d525aa3dc8a03efca1fff077d448330f136f1996758a627cfe89732",
+      "sourceSha256": "dc5d40af4d525aa3dc8a03efca1fff077d448330f136f1996758a627cfe89732",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/dc5d40af4d525aa3/liu-dan__expression__sleepy__v1.png",
+      "preview": "/media/assets/liu-dan/expression.sleepy.webp",
+      "thumb": "/media/assets/liu-dan/expression.sleepy.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.26860168608169055,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.awkward-smile",
+      "series": "expression",
+      "key": "awkward-smile",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2076097,
+      "sha256": "c138ba58b44d24053e26ebc72fbac7f21cfae616398d5b651cd3e82421555c32",
+      "sourceSha256": "c138ba58b44d24053e26ebc72fbac7f21cfae616398d5b651cd3e82421555c32",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/c138ba58b44d2405/liu-dan__expression__awkward-smile__v1.png",
+      "preview": "/media/assets/liu-dan/expression.awkward-smile.webp",
+      "thumb": "/media/assets/liu-dan/expression.awkward-smile.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.23861157579486345,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "expression.deadpan",
+      "series": "expression",
+      "key": "deadpan",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2099586,
+      "sha256": "f72a5ab3bd65303849b1ae83fa33f8beebc97538954a93ad37369d530f5b1870",
+      "sourceSha256": "f72a5ab3bd65303849b1ae83fa33f8beebc97538954a93ad37369d530f5b1870",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/f72a5ab3bd653038/liu-dan__expression__deadpan__v1.png",
+      "preview": "/media/assets/liu-dan/expression.deadpan.webp",
+      "thumb": "/media/assets/liu-dan/expression.deadpan.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.27168554779858545,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.front",
+      "series": "wardrobe",
+      "key": "front",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 959384,
+      "sha256": "896320d04f4f948d9c2bd79db19ef77f136534047343f971cb901efc67a9fdfc",
+      "sourceSha256": "896320d04f4f948d9c2bd79db19ef77f136534047343f971cb901efc67a9fdfc",
+      "bbox": {
+        "left": 0,
+        "top": 0.03349282296650718,
+        "right": 0.9330499468650372,
+        "bottom": 0.9659090909090909
+      },
+      "format": "png",
+      "object": "liu-dan/896320d04f4f948d/liu-dan__wardrobe-personal__front__v1.png",
+      "preview": "/media/assets/liu-dan/wardrobe.personal.front.webp",
+      "thumb": "/media/assets/liu-dan/wardrobe.personal.front.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6737373454891213,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.three-quarter",
+      "series": "wardrobe",
+      "key": "three-quarter",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 998539,
+      "sha256": "41ef52d7553b5f3ef0163db0317f4c03bacd2ba2dbb43755a168a4d65040e370",
+      "sourceSha256": "41ef52d7553b5f3ef0163db0317f4c03bacd2ba2dbb43755a168a4d65040e370",
+      "bbox": {
+        "left": 0,
+        "top": 0.019138755980861243,
+        "right": 0.9373007438894793,
+        "bottom": 0.9904306220095693
+      },
+      "format": "png",
+      "object": "liu-dan/41ef52d7553b5f3e/liu-dan__wardrobe-personal__three-quarter__v1.png",
+      "preview": "/media/assets/liu-dan/wardrobe.personal.three-quarter.webp",
+      "thumb": "/media/assets/liu-dan/wardrobe.personal.three-quarter.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6751235578560932,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.side",
+      "series": "wardrobe",
+      "key": "side",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 687447,
+      "sha256": "83f6f8358c5fef3d56dbd51870c45f2109bd7a4988105c93830f28c0c4f0c8b3",
+      "sourceSha256": "83f6f8358c5fef3d56dbd51870c45f2109bd7a4988105c93830f28c0c4f0c8b3",
+      "bbox": {
+        "left": 0.1126461211477152,
+        "top": 0.026913875598086126,
+        "right": 0.9521785334750266,
+        "bottom": 0.9808612440191388
+      },
+      "format": "png",
+      "object": "liu-dan/83f6f8358c5fef3d/liu-dan__wardrobe-personal__side__v1.png",
+      "preview": "/media/assets/liu-dan/wardrobe.personal.side.webp",
+      "thumb": "/media/assets/liu-dan/wardrobe.personal.side.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7815275920455181,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.back",
+      "series": "wardrobe",
+      "key": "back",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 986119,
+      "sha256": "d5b5512f0f25fce4aa4a6f1d9251bd543489a6f8ecb5512d6c91dd15d5fb8f39",
+      "sourceSha256": "d5b5512f0f25fce4aa4a6f1d9251bd543489a6f8ecb5512d6c91dd15d5fb8f39",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0.9096705632306057,
+        "bottom": 0.9736842105263158
+      },
+      "format": "png",
+      "object": "liu-dan/d5b5512f0f25fce4/liu-dan__wardrobe-personal__back__v1.png",
+      "preview": "/media/assets/liu-dan/wardrobe.personal.back.webp",
+      "thumb": "/media/assets/liu-dan/wardrobe.personal.back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6624251915655238,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.portrait",
+      "series": "wardrobe",
+      "key": "portrait",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 2223902,
+      "sha256": "9ecef261eb58b9bf6878dd08a05ce496046da68d838012da429736b4a068f9df",
+      "sourceSha256": "9ecef261eb58b9bf6878dd08a05ce496046da68d838012da429736b4a068f9df",
+      "bbox": {
+        "left": 0,
+        "top": 0.03827751196172249,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/9ecef261eb58b9bf/liu-dan__wardrobe-personal__portrait__v1.png",
+      "preview": "/media/assets/liu-dan/wardrobe.personal.portrait.webp",
+      "thumb": "/media/assets/liu-dan/wardrobe.personal.portrait.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.2570397469860527,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.carry-parcel",
+      "series": "wardrobe",
+      "key": "carry-parcel",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 928589,
+      "sha256": "afca0c78d6a1b5f7f59bd9e09b9fa47ebc97a7dbea74a7fb9ba26290ffe04522",
+      "sourceSha256": "afca0c78d6a1b5f7f59bd9e09b9fa47ebc97a7dbea74a7fb9ba26290ffe04522",
+      "bbox": {
+        "left": 0.053134962805526036,
+        "top": 0.022129186602870814,
+        "right": 0.9851222104144527,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/afca0c78d6a1b5f7/liu-dan__wardrobe-personal__carry-parcel__v1.png",
+      "preview": "/media/assets/liu-dan/wardrobe.personal.carry-parcel.webp",
+      "thumb": "/media/assets/liu-dan/wardrobe.personal.carry-parcel.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6954540369860018,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.lift-parcel",
+      "series": "wardrobe",
+      "key": "lift-parcel",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1264593,
+      "sha256": "66fa18cecee4812645a9dd174e6fd7659314d5d35f4943212bdb3951688c6d70",
+      "sourceSha256": "66fa18cecee4812645a9dd174e6fd7659314d5d35f4943212bdb3951688c6d70",
+      "bbox": {
+        "left": 0,
+        "top": 0.02930622009569378,
+        "right": 0.9851222104144527,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/66fa18cecee48126/liu-dan__wardrobe-personal__lift-parcel__v1.png",
+      "preview": "/media/assets/liu-dan/wardrobe.personal.lift-parcel.webp",
+      "thumb": "/media/assets/liu-dan/wardrobe.personal.lift-parcel.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5855930522858204,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "wardrobe.personal.after-shift",
+      "series": "wardrobe",
+      "key": "after-shift",
+      "look": "personal",
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1103012,
+      "sha256": "5b1ec300fa302ae46740229228c89b4a9eae4b1c50c6696ded35899526afc09a",
+      "sourceSha256": "5b1ec300fa302ae46740229228c89b4a9eae4b1c50c6696ded35899526afc09a",
+      "bbox": {
+        "left": 0,
+        "top": 0.030502392344497607,
+        "right": 0.9309245483528161,
+        "bottom": 0.9425837320574163
+      },
+      "format": "png",
+      "object": "liu-dan/5b1ec300fa302ae4/liu-dan__wardrobe-personal__after-shift__v1.png",
+      "preview": "/media/assets/liu-dan/wardrobe.personal.after-shift.webp",
+      "thumb": "/media/assets/liu-dan/wardrobe.personal.after-shift.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6376545108786845,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.walk",
+      "series": "pose",
+      "key": "walk",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 907062,
+      "sha256": "2657915c4f73b343b227243fb160791461220e34bb5f803624b06383edff8b92",
+      "sourceSha256": "2657915c4f73b343b227243fb160791461220e34bb5f803624b06383edff8b92",
+      "bbox": {
+        "left": 0.026567481402763018,
+        "top": 0.013157894736842105,
+        "right": 0.9893730074388948,
+        "bottom": 0.9832535885167464
+      },
+      "format": "png",
+      "object": "liu-dan/2657915c4f73b343/liu-dan__pose__walk__v1.png",
+      "preview": "/media/assets/liu-dan/pose.walk.webp",
+      "thumb": "/media/assets/liu-dan/pose.walk.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7042187635061957,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.run",
+      "series": "pose",
+      "key": "run",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 903791,
+      "sha256": "4586883081aad271737ecd1ef377b1d363de2a48c52ed27c5060dda2aae1f542",
+      "sourceSha256": "4586883081aad271737ecd1ef377b1d363de2a48c52ed27c5060dda2aae1f542",
+      "bbox": {
+        "left": 0,
+        "top": 0.016148325358851676,
+        "right": 0.9851222104144527,
+        "bottom": 0.9844497607655502
+      },
+      "format": "png",
+      "object": "liu-dan/4586883081aad271/liu-dan__pose__run__v1.png",
+      "preview": "/media/assets/liu-dan/pose.run.webp",
+      "thumb": "/media/assets/liu-dan/pose.run.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.709551327357133,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.sit",
+      "series": "pose",
+      "key": "sit",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1148374,
+      "sha256": "63d1d24f9c98aa42dfd2f48481d78159a0b01be829e1efc652e4c0b91b2b54ce",
+      "sourceSha256": "63d1d24f9c98aa42dfd2f48481d78159a0b01be829e1efc652e4c0b91b2b54ce",
+      "bbox": {
+        "left": 0,
+        "top": 0.0215311004784689,
+        "right": 0.9808714133900106,
+        "bottom": 0.9886363636363636
+      },
+      "format": "png",
+      "object": "liu-dan/63d1d24f9c98aa42/liu-dan__pose__sit__v1.png",
+      "preview": "/media/assets/liu-dan/pose.sit.webp",
+      "thumb": "/media/assets/liu-dan/pose.sit.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.6187369387142865,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.point",
+      "series": "pose",
+      "key": "point",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 828118,
+      "sha256": "f8ff0c13530d7c84fb061655fb4fb2981b0fe43891981a9118b1bd81c071e1f3",
+      "sourceSha256": "f8ff0c13530d7c84fb061655fb4fb2981b0fe43891981a9118b1bd81c071e1f3",
+      "bbox": {
+        "left": 0.05951115834218916,
+        "top": 0.017942583732057416,
+        "right": 0.8820403825717322,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/f8ff0c13530d7c84/liu-dan__pose__point__v1.png",
+      "preview": "/media/assets/liu-dan/pose.point.webp",
+      "thumb": "/media/assets/liu-dan/pose.point.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7247755111380034,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.arms-crossed",
+      "series": "pose",
+      "key": "arms-crossed",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 767572,
+      "sha256": "6d3dd63963840eda20812eb428930c88b300d178e2b0c8bcfecb4a62123d290b",
+      "sourceSha256": "6d3dd63963840eda20812eb428930c88b300d178e2b0c8bcfecb4a62123d290b",
+      "bbox": {
+        "left": 0.03506907545164718,
+        "top": 0.022727272727272728,
+        "right": 0.9744952178533475,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/6d3dd63963840eda/liu-dan__pose__arms-crossed__v1.png",
+      "preview": "/media/assets/liu-dan/pose.arms-crossed.webp",
+      "thumb": "/media/assets/liu-dan/pose.arms-crossed.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7406123995139041,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "pose.phone",
+      "series": "pose",
+      "key": "phone",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 774258,
+      "sha256": "964b465363d41aeb78cde2003b91438b872cd7b68aab8efdbcc62b86957712b3",
+      "sourceSha256": "964b465363d41aeb78cde2003b91438b872cd7b68aab8efdbcc62b86957712b3",
+      "bbox": {
+        "left": 0,
+        "top": 0.026913875598086126,
+        "right": 0.9872476089266737,
+        "bottom": 0.9850478468899522
+      },
+      "format": "png",
+      "object": "liu-dan/964b465363d41aeb/liu-dan__pose__phone__v1.png",
+      "preview": "/media/assets/liu-dan/pose.phone.webp",
+      "thumb": "/media/assets/liu-dan/pose.phone.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.7340754008003295,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hands",
+      "series": "detail",
+      "key": "hands",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1128372,
+      "sha256": "cc09344e9a80a1584871221a1a5bb0d050c1b57c17f0199de3ac20612fdc6340",
+      "sourceSha256": "cc09344e9a80a1584871221a1a5bb0d050c1b57c17f0199de3ac20612fdc6340",
+      "bbox": {
+        "left": 0,
+        "top": 0.030502392344497607,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/cc09344e9a80a158/liu-dan__detail__hands__v1.png",
+      "preview": "/media/assets/liu-dan/detail.hands.webp",
+      "thumb": "/media/assets/liu-dan/detail.hands.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.5461339865459224,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "image",
+      "slot": "detail.hair-back",
+      "series": "detail",
+      "key": "hair-back",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 941,
+      "height": 1672,
+      "bytes": 1954404,
+      "sha256": "d87dd03917cf55662aa9289e79b72d1394cb38de014fdcf6ab3c4c0e7fdf5111",
+      "sourceSha256": "d87dd03917cf55662aa9289e79b72d1394cb38de014fdcf6ab3c4c0e7fdf5111",
+      "bbox": {
+        "left": 0,
+        "top": 0.010167464114832535,
+        "right": 1,
+        "bottom": 1
+      },
+      "format": "png",
+      "object": "liu-dan/d87dd03917cf5566/liu-dan__detail__hair-back__v1.png",
+      "preview": "/media/assets/liu-dan/detail.hair-back.webp",
+      "thumb": "/media/assets/liu-dan/detail.hair-back.thumb.webp",
+      "sourceInspection": {
+        "transparentFraction": 0.3263459162348921,
+        "hasAlpha": true,
+        "ownerReviewPending": true
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro",
+      "series": "voice",
+      "key": "intro",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1065846,
+      "sha256": "6d4dd6dfdd01276d1eac3ea6a60a786430f0c78ef3c95aecc368d9b281454c2d",
+      "sourceSha256": "6d4dd6dfdd01276d1eac3ea6a60a786430f0c78ef3c95aecc368d9b281454c2d",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/liu-dan/liu-dan__voice__intro__v1__6d4dd6dfdd01276d.wav",
+      "preview": "/api/voice/liu-dan/intro",
+      "thumb": "/api/voice/liu-dan/intro",
+      "previewUrl": "/api/voice/liu-dan/intro",
+      "durationSec": 16.6,
+      "transcript": {
+        "text": "大家好，我叫刘丹，辽宁鞍山人，今年二十三。别看我才一米五六，我以前练举重的，现在在快递站分拣。搬箱子这活儿，真不一定谁比谁慢。下班一起吃口热乎的，比啥都强。"
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.intro-alt",
+      "series": "voice",
+      "key": "intro-alt",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 1068918,
+      "sha256": "b8d2086041a4c15ac78ea5e6568d6526e6cb695953e06425494cc867dc7d3236",
+      "sourceSha256": "b8d2086041a4c15ac78ea5e6568d6526e6cb695953e06425494cc867dc7d3236",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/liu-dan/liu-dan__voice__intro-alt__v1__b8d2086041a4c15a.wav",
+      "preview": "/api/voice/liu-dan/intro-alt",
+      "thumb": "/api/voice/liu-dan/intro-alt",
+      "previewUrl": "/api/voice/liu-dan/intro-alt",
+      "durationSec": 16.7,
+      "transcript": {
+        "text": "Hi, I'm Liu Dan. I'm twenty-three, from Anshan in northeast China. I used to train in weightlifting, and now I sort parcels. I'm short, sure, but let me take that box. After work, I just want something hot to eat and a good laugh."
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.chat",
+      "series": "voice",
+      "key": "chat",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 688670,
+      "sha256": "29775fa7ab3808ca91afd0df1715b09a131457b1a06f6eae2562cae6fba09da9",
+      "sourceSha256": "29775fa7ab3808ca91afd0df1715b09a131457b1a06f6eae2562cae6fba09da9",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/liu-dan/liu-dan__voice__chat__v1__29775fa7ab3808ca.wav",
+      "preview": "/api/voice/liu-dan/chat",
+      "thumb": "/api/voice/liu-dan/chat",
+      "previewUrl": "/api/voice/liu-dan/chat",
+      "durationSec": 10.7,
+      "transcript": {
+        "text": "你先把那边的小件分好，大箱子留给我。哎，不用跟我客气，我以前练这个的。等忙完这一波，咱俩去吃碗面，我请你。"
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.happy",
+      "series": "voice",
+      "key": "happy",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 655234,
+      "sha256": "3abd995085d0fe42fb8b3b9c6baf79430aef07f27fec13d05bd0b9643b89ca01",
+      "sourceSha256": "3abd995085d0fe42fb8b3b9c6baf79430aef07f27fec13d05bd0b9643b89ca01",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/liu-dan/liu-dan__voice__happy__v1__3abd995085d0fe42.wav",
+      "preview": "/api/voice/liu-dan/happy",
+      "thumb": "/api/voice/liu-dan/happy",
+      "previewUrl": "/api/voice/liu-dan/happy",
+      "durationSec": 10.2,
+      "transcript": {
+        "text": "真让我赶上末班车了！我都以为今天又得走回去呢。来，你坐这儿，我站一会儿没事。哎呀，今天这运气，可算轮着我了！"
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.angry",
+      "series": "voice",
+      "key": "angry",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 622540,
+      "sha256": "ee555a472f1a8db6704e040d23b30e8c0e39ccabf6f957274a93cb7e9417c99f",
+      "sourceSha256": "ee555a472f1a8db6704e040d23b30e8c0e39ccabf6f957274a93cb7e9417c99f",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/liu-dan/liu-dan__voice__angry__v1__ee555a472f1a8db6.wav",
+      "preview": "/api/voice/liu-dan/angry",
+      "thumb": "/api/voice/liu-dan/angry",
+      "previewUrl": "/api/voice/liu-dan/angry",
+      "durationSec": 9.7,
+      "transcript": {
+        "text": "我说了多少遍，重箱子别往轻件上头摞！你图这两秒省事，东西压坏了谁负责？先停一下，跟我把这排重新分好。"
+      }
+    },
+    {
+      "kind": "voice",
+      "slot": "voice.sad",
+      "series": "voice",
+      "key": "sad",
+      "look": null,
+      "conformance": "source-original",
+      "version": 1,
+      "width": 0,
+      "height": 0,
+      "bytes": 806814,
+      "sha256": "487223d0b5c862d5b23895c6bbbf2ad5988bac9d996a9c63e52ce6a0e2c267fb",
+      "sourceSha256": "487223d0b5c862d5b23895c6bbbf2ad5988bac9d996a9c63e52ce6a0e2c267fb",
+      "bbox": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "format": "wav",
+      "object": "voice/liu-dan/liu-dan__voice__sad__v1__487223d0b5c862d5.wav",
+      "preview": "/api/voice/liu-dan/sad",
+      "thumb": "/api/voice/liu-dan/sad",
+      "previewUrl": "/api/voice/liu-dan/sad",
+      "durationSec": 12.6,
+      "transcript": {
+        "text": "刚才收拾柜子，翻出以前比赛那双鞋了。都磨成那样了，我还舍不得扔。其实现在也挺好，就是有时候，还真想再听一回开场的哨声。"
+      }
+    }
+  ]
+}

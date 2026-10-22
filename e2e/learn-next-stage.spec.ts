@@ -21,12 +21,25 @@ for (const locale of ["en", "zh"] as const) {
       await expect(page.locator("[data-reproduction-status]")).toHaveCount(0);
       await expect(page.locator("main")).not.toContainText("Draft · not reproduced");
       await expect(page.locator("main")).not.toContainText("草稿 · 尚未实测复现");
-      await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+        "content",
+        tutorial.reproducedAt ? /^index,/ : /noindex/,
+      );
       await expect(page.getByRole("link", { name: m["learn.openTool"] })).toHaveAttribute(
         "href",
         tutorial.entry,
       );
-      expect(await page.locator("main video").count()).toBe(0);
+      await expect(page.locator("main video")).toHaveCount(tutorial.caseStudy ? 1 : 0);
+      if (tutorial.caseStudy) {
+        await expect(page.locator("[data-reproduction-date]")).toContainText(
+          tutorial.reproducedAt!,
+        );
+        await expect(page.locator("[data-tested-tutorial]")).toContainText(
+          tutorial.caseStudy.result[locale],
+        );
+        const sitemap = await page.request.get("/sitemap.xml");
+        expect(await sitemap.text()).toContain(`/${locale}/guide/tools/${tutorial.id}`);
+      }
     });
   }
   for (const width of [390, 1440]) {
