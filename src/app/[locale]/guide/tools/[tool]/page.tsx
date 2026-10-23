@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TOOL_TUTORIALS } from "@/content/tutorials";
 import { ToolGuideView } from "@/features/guide";
-import { localizedMetadata } from "@/i18n/metadata";
+import { localizedAlternates } from "@/i18n/metadata";
 import type { AppLocale } from "@/i18n/routing";
 import { setSiteLocale } from "@/i18n/server";
 
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${tutorial.tool} — ${tutorial.goal[locale]}`,
     description: tutorial.goal[locale],
     robots: { index: tutorial.reproducedAt !== null, follow: true },
-    ...localizedMetadata(locale, `/guide/tools/${tool}`),
+    alternates: localizedAlternates(locale, `/guide/tools/${tool}`),
   };
 }
 export default async function ToolGuidePage({ params }: Props) {

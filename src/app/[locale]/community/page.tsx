@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { COMMUNITY_MODE } from "@/content/features";
 import { CommunityFeed } from "@/features/community";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
-import { localizedMetadata } from "@/i18n/metadata";
+import { localizedAlternates } from "@/i18n/metadata";
 import type { AppLocale } from "@/i18n/routing";
 type Props = { params: Promise<{ locale: AppLocale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { t } = await getSiteI18n(locale);
   return {
     title: t("c.title"),
-    ...localizedMetadata(locale, "/community"),
+    alternates: localizedAlternates(locale, "/community"),
     robots: { index: COMMUNITY_MODE === "on", follow: COMMUNITY_MODE === "on" },
   };
 }

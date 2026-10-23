@@ -11,10 +11,10 @@ import { notFound } from "next/navigation";
 import { SiteFooter } from "@/site/SiteFooter";
 import { AccountProvider, AccountMenu } from "@/features/account";
 import { SITE_UI_STYLE, THEME_INIT_SCRIPT } from "@/site/theme";
-import { LOCALE_HTML_LANG, routing, type AppLocale } from "@/i18n/routing";
+import { LOCALE_HTML_LANG, LOCALE_OG, routing, type AppLocale } from "@/i18n/routing";
 import { SITE } from "@/content/site";
 import { STANCE_LINE } from "@/content/doctrine";
-import { localizedMetadata } from "@/i18n/metadata";
+import { localizedAlternates } from "@/i18n/metadata";
 import { PostHog } from "@/features/analytics";
 import { FirstUseGuidance } from "@/features/guidance";
 // oxlint-disable-next-line no-unassigned-import -- Root stylesheet initialization.
@@ -53,7 +53,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       t("home.keywords.virtualTalent"),
       t("home.keywords.brand"),
     ],
-    ...localizedMetadata(loc, "/"),
+    alternates: localizedAlternates(loc, "/"),
+    openGraph: {
+      type: "website",
+      locale: LOCALE_OG[loc],
+      url: "./",
+      siteName: SITE.name,
+      title: `${SITE.name} — ${SITE.claim[loc]}`,
+      description: `${STANCE_LINE[loc]} · ${SITE.description[loc]}`,
+    },
     twitter: {
       card: "summary_large_image",
       title: `${SITE.name} — ${SITE.claim[loc]}`,

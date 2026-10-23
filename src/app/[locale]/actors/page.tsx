@@ -6,7 +6,7 @@ import { ActorFilters, makeActorFacets } from "@/features/actors";
 import { getActorAssets } from "@/features/assets/queries";
 import { OFFICIAL_SAMPLES } from "@/content/official-samples.generated";
 import { WORKS } from "@/content/works";
-import { localizedMetadata } from "@/i18n/metadata";
+import { localizedAlternates } from "@/i18n/metadata";
 export async function generateMetadata({
   params,
 }: {
@@ -18,7 +18,7 @@ export async function generateMetadata({
   return {
     title: t("roster.metaTitle"),
     description: t("roster.metaDescription"),
-    ...localizedMetadata(locale, "/actors"),
+    alternates: localizedAlternates(locale, "/actors"),
   };
 }
 export default async function ActorsPage({

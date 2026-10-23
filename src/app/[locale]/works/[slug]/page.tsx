@@ -1,6 +1,6 @@
 import { WORKS } from "@/content/works";
 import { WorkView } from "@/features/works";
-import { localizedMetadata } from "@/i18n/metadata";
+import { localizedAlternates } from "@/i18n/metadata";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { setSiteLocale } from "@/i18n/server";
 import type { Metadata } from "next";
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: work.title[locale],
     description: (work.logline ?? work.format)[locale],
-    ...localizedMetadata(locale, `/works/${slug}`),
+    alternates: localizedAlternates(locale, `/works/${slug}`),
   };
 }
 export default async function WorkPage({ params }: Props) {

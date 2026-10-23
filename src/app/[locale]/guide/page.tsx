@@ -1,5 +1,5 @@
 import { GuideView } from "@/features/guide";
-import { localizedMetadata } from "@/i18n/metadata";
+import { localizedAlternates } from "@/i18n/metadata";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import type { Metadata } from "next";
@@ -14,7 +14,7 @@ export async function generateMetadata({
   return {
     title: t("guide.metaTitle"),
     description: t("guide.lead"),
-    ...localizedMetadata(locale, "/guide"),
+    alternates: localizedAlternates(locale, "/guide"),
   };
 }
 

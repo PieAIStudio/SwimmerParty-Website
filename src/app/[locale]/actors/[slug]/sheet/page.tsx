@@ -2,7 +2,7 @@ import { ACTORS } from "@/content/actors";
 import { getActor } from "@/features/actors/queries";
 import { getActorAssets } from "@/features/assets/queries";
 import { SheetView } from "@/features/sheet";
-import { localizedMetadata } from "@/i18n/metadata";
+import { localizedAlternates } from "@/i18n/metadata";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import type { Metadata } from "next";
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("sheet.metaTitle", { name }),
     description: t("sheet.lead", { name }),
-    ...localizedMetadata(locale, `/actors/${slug}/sheet`),
+    alternates: localizedAlternates(locale, `/actors/${slug}/sheet`),
   };
 }
 

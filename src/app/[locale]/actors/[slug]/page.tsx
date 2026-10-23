@@ -1,7 +1,7 @@
 import { ACTORS } from "@/content/actors";
 import { getActor } from "@/features/actors/queries";
 import { ActorDossier } from "@/features/actors";
-import { localizedMetadata } from "@/i18n/metadata";
+import { localizedAlternates } from "@/i18n/metadata";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { setSiteLocale } from "@/i18n/server";
 import type { Metadata } from "next";
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: locale === "zh" ? actor.nameCn : actor.nameEn,
     description: actor.tagline[locale],
-    ...localizedMetadata(locale, `/actors/${slug}`),
+    alternates: localizedAlternates(locale, `/actors/${slug}`),
   };
 }
 export default async function ActorPage({ params }: Props) {
