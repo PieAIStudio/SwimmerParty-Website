@@ -20,6 +20,24 @@ for (const locale of ["zh", "en"]) {
   });
 }
 
+test("subpage Open Graph URLs match canonical in both authored locales", async ({ page }) => {
+  for (const locale of ["zh", "en"]) {
+    for (const suffix of ["/actors", "/actors/liu-dan"]) {
+      await page.goto(`/${locale}${suffix}`);
+      const canonical = page.locator('link[rel="canonical"]');
+      await expect(canonical).toHaveCount(1);
+      await expect(canonical).toHaveAttribute(
+        "href",
+        `https://swimmerparty.swiminai.com/${locale}${suffix}`,
+      );
+      await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+        "content",
+        (await canonical.getAttribute("href"))!,
+      );
+    }
+  }
+});
+
 for (const width of [1280, 390]) {
   test(`language menu preserves authored locale ${width}`, async ({ page, context }) => {
     const errors: string[] = [];

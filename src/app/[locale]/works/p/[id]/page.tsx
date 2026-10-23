@@ -3,7 +3,7 @@ import { COMMUNITY_MODE } from "@/content/features";
 import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
-import { localizedAlternates } from "@/i18n/metadata";
+import { localizedMetadata } from "@/i18n/metadata";
 import { Breadcrumbs } from "@/site/Breadcrumbs";
 import { PostDetail } from "@/features/community";
 
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("community.postTitle"),
     robots: { index: false, follow: false },
-    alternates: localizedAlternates(locale, "/works"),
+    ...localizedMetadata(locale, "/works"),
   };
 }
 export default async function CommunityPostPage({ params }: Props) {

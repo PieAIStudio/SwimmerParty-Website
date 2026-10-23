@@ -1,6 +1,6 @@
 import { LICENSE } from "@/content/license";
 import { LicenseView } from "@/features/license";
-import { localizedAlternates } from "@/i18n/metadata";
+import { localizedMetadata } from "@/i18n/metadata";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import type { Metadata } from "next";
@@ -15,7 +15,7 @@ export async function generateMetadata({
   return {
     title: l(LICENSE.title, locale),
     description: t("license.metaDescription"),
-    alternates: localizedAlternates(locale, "/license"),
+    ...localizedMetadata(locale, "/license"),
   };
 }
 export default async function LicensePage({ params }: { params: Promise<{ locale: AppLocale }> }) {

@@ -1,5 +1,5 @@
 import { StudioView } from "@/features/studio";
-import { localizedAlternates } from "@/i18n/metadata";
+import { localizedMetadata } from "@/i18n/metadata";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n, setSiteLocale } from "@/i18n/server";
 import type { Metadata } from "next";
@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("studio.metaTitle"),
     description: t("studio.metaDescription"),
-    alternates: localizedAlternates(locale, "/studio"),
+    ...localizedMetadata(locale, "/studio"),
   };
 }
 export default async function StudioPage({ params }: Props) {
