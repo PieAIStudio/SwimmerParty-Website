@@ -1,14 +1,32 @@
-- 做法：无`--scope`验收现成候选；本次又因我额外加的过严断言停下，未上线。
-- 故意不做：不写库、不重建、不上传，不修B类遗留，不改账号/权限/配置。
-- 预计仅3份收尾文档约30行；本轮产品／测试／仓库门禁各0行。
-- 冒烟：脚本退出1；`/zh`、`/zh/actors`均HTTP 200、curl退出0，原stdout/stderr/退出码/HTML已保留。
-- 判断：我误要求OG URL等于当前页面；实际OG与canonical都在正式域名，不能据此判候选坏。
-- 上线：未promote `dpl_BisdYjf4tVkydoTH9a6yEjHsAeKk`；正式站仍未切本批。
-- 读回截图路径：无；未抽3人下载，未拿旧截图充数。
-- 收尾：相关文档检查已通过；按路径保存的提交号与远端读回见本轮`closeout.json`，不启动部署。
-- B类遗留仅列清单，见下文；需要总指挥决定是否再次续接，非要求修产品或重建候选。
+- 做法：按15:5x裁定撤掉额外OG断言，验现成候选→只读目录→promote→正式读回，已上线。
+- 故意不做：不写库、不重建、不上传，不修B类，不改账号/权限/配置。
+- 预计3份收尾文档约40行；本轮产品／测试／仓库门禁各改0行，文档实数见收尾证据。
+- 冒烟：候选20项通过；正式10人中英20页、97张卡通过；原第三下载429经诊断、冷却后仅补该份成功。
+- 上线：正式域名已读回`dpl_BisdYjf4tVkydoTH9a6yEjHsAeKk`，源码`318def0`，社区on。
+- 下载：刘丹、许丽、Grace三份原PNG均200、文件名保留、SHA与生产源一致。
+- 截图：`.reports/2026-10-23-next10-launch/continuation-155x/home-zh-{390,1440}.png`，均已查看。
+- 收尾：3份文档的相关检查、保存提交及远端读回见本轮`closeout.json`；无新增Actions或部署。
+- B类：分享回执、素材摘要、零结果戏路、Samples顺序、品牌邮箱、24页OG路径差异等；详见清单，本轮未修。
 
-## 15:3x 接续①：原始结果与判断
+## 15:5x 接续②：上线与正式验收
+
+- 约束读回：Owner的本批发布授权见HQ `BRIEF.md`；本次续接见`CONTINUE-1.md`及15:5x裁定，操作按`docs/reference/release.md`。第一步只读核实干净隔离检出`318def0`、原候选READY和既定项目/团队；未创建新产物。起步未知的是完整冒烟、目录及正式读回，现已按序完成下列范围；只在必须Owner本人动作时等待。
+- 候选：20项HTTP检查通过，含中英首页/名册/抽3人详情、游客社区公开读取与私有拒绝、已知候选Auth Host 403隔离、生产域名metadata/sitemap/robots、许丽真实PNG及第二次429。原stdout/stderr/退出码在`candidate-raw/`与`candidate-smoke.*`；签名能力仅驻内存，不写日志。
+- 上线前：从同一干净候选对正式项目`lgoknzuxefecikfyvpzk`执行目录`--check`，零差异、`databaseWriteAttempted=false`；原生工具限定的收据留在隔离检出`.devspace-reports/next10-launch-20261023-continuation-155x-before-promote.json`，副本在本轮报告目录，未改工具换路径。
+- 上线：15:47按手册promote原URL一次、exit0；独立GET正式域名部署元数据确认`dpl_BisdYjf4tVkydoTH9a6yEjHsAeKk`和`gitCommitSha=318def02e423b837b184d778d6b410c577316aa8`。回滚参考仍保留此前已验收的`dpl_Hdgyh411W5GxSMEPk9GZzjg8jtuw`，没有执行回滚。
+- 正式：十人中英20个详情页均200，逐人55图/6占位WAV/4片（3 Grok＋1 Google Vids）；首页31正式＋66新面孔，97张唯一卡含10新身份、旧别名无重复。匿名社区`on/allowed=true/owner=false`、公开流200（当前0帖），作者/审核列表401，正式匿名session200且user=null，sitemap/robots通过。
+- 下载真实失败保留：原正式包装器36项中35过、Grace签名API为429而退出1；不是一次全套绿灯。读回平台规则仍为1次/30秒/IP fixed_window，网站将SDK限流映射为`retryAfter=30`；原脚本误按Unix整点推算窗口，未保证距上一请求结束满30秒。15:52:56距末次请求173秒后**只补Grace一次**，API/原件均200且SHA吻合，不伪造IP、不改规则、不重跑其他35项；见`grace-cooldown-diagnosis.json`、`grace-download-resume.json`及合并覆盖的`formal-acceptance.json`。原Grace失败未留HTTP头/正文，此缺口不补造。
+- 三份正式原图：`liu-dan__turnaround__front.png` 864642字节；`xu-li__turnaround__front.png` 956922字节；`grace-boateng__turnaround__front.png` 979126字节。均实际取回、PNG签名及来源SHA通过，文件在`formal-downloads/`，不是HEAD大小核对。
+- 正式首页390×844及1440×900两张浅色截图已保存并逐张查看：`home-zh-390.png`、`home-zh-1440.png`；标题、31/66计数、主按钮和两条真实样片海报可见，无截取视口内的重叠或横向溢出。截图走既有run-locked等位，不放宽负载；借用浏览器只开本任务匿名隔离页，已关闭，未动其他会话。无其他候选、写库、构建或上传。
+- 本轮证据根：`.reports/2026-10-23-next10-launch/continuation-155x/`。两轮旧停点保留。Owner真实退回/隐藏、撤信、暂停恢复及登录后会员ZIP等尚无本轮本人验收，不冒充通过，也不撤销既有后置决定；声音仍为占位交付，三图下载不代表声学全审。
+
+### 接续②收尾检查与保存
+
+完整待推送范围以`origin/main=e9b9023`为基准，仅`PI-RESULT.md`、实施方案、`current-work.md`三份Markdown。按实际差异及既有lefthook文档glob，选择定向oxfmt、`pnpm docs:check`、`git diff --check`和正常pre-commit/commit-msg；不重跑源`318def0`已验收的工程/浏览器/timing全套，不启动Actions或部署。文档收敛只更新本次上线状态和入口，原批准、两次错误停点及429原始结果保留；整份社区方案仍active，不扩成全库整理。实际退出码、变更行数、提交、推送与远端读回在本轮`closeout.json`，日志不进Git。
+
+Learning skipped -> 新增的是已验证发布状态和临时执行器纠错；遵守平台冷却与手册原有检查口径属通用操作，不另建学习文档。可删的：已删临时冒烟器额外OG相等断言；没有产品代码或仓库门禁可删。
+
+## 15:3x 接续①：历史停点（已获15:5x裁定续接）
 
 - 根目录`BRIEF.md`不存在（也未在本检出发现），按总指挥本条任务书和上一轮收据执行。原收据保存在`.reports/2026-10-23-next10-launch/continuation-154x/PI-RESULT.before-continuation.md`。
 - 冒烟前只读核实：隔离检出仍干净`318def0`；候选READY/production、项目`prj_sRNUQz0h4WOO9YS1rX6gj59AxfDp`、原生`gitCommitSha`及`sourceCommit`均为该提交；项目accountId与绑定的`team_C63r8BVtFCpiOK1k2h7xytT9`一致。正式域名读回仍为旧部署`dpl_Hdgyh411W5GxSMEPk9GZzjg8jtuw`。
@@ -30,7 +48,7 @@
 - 13:58只读正式别名仍指向旧部署；`--skip-domain`确实未自动切域名。未发生新站上线回归，无需执行网站回滚；也没有擅自逆向回写已经成功的目录。
 - **中间态影响：目录已经先行更新，旧正式站仍可能展示/选择那10个已停用的旧别名，关联这些别名的投稿会被后台目录校验拒绝。** 既有作品引用保留，其余87演员不变。应尽快在确认续接后完成现成候选验收，而不是把“目录零差异”当成旧站全功能正常。
 
-## 目录同步与本批范围
+## 13:xx既有目录同步与本批范围（历史，非本次写库）
 
 新check→dry-run计划与06:53预检完全一致，SHA：
 `c5a7f23338299cdf7c32c3eda598c64d7d9089a33220cbaea6c5171b6dfc22ad`。
@@ -48,7 +66,7 @@
 
 网站生产源逐人仍为55图/6占位WAV/4独立样片（3 Grok＋1 Google Vids），31正式＋66新面孔共97张卡；本轮未重做媒体、移动/删除staging或上传母版。上一轮610份私有PNG/WAV原件回读证据沿用，不冒充本次网页下载验收。声音占位/声学未全审、四位v2、许丽/马红Vids平台保存版及比例measurement_review例外都保留；详情见原收据`git show 318def0:PI-RESULT.md`和`.reports/2026-10-23-next10-release/`。
 
-## 检查、构建与证据
+## 13:xx检查、构建与证据（历史，非本次重跑）
 
 全部本机工程门禁针对干净`318def0`，不是把旧`91fd2ee`日志当新候选验收：
 
@@ -92,8 +110,19 @@
 
 P1=安全/核心功能验收风险，P2=关键体验，P3=优化/路线图；这是本轮归类。未验收≠已证故障，取舍≠必须修，已有Owner后置决定不被重新改成门禁。
 
+### 本次新增B类：子页OG URL沿用语言首页
+
+- 未修，按15:5x裁定不挡本次发布：canonical与OG均在生产域名，只有路径不同；已撤掉临时冒烟器的逐页相等断言，未改产品或仓库门禁，原失败证据保留。
+- 本次已核实24页：`/zh/actors`、`/en/actors`，候选`/zh/community`、`/en/community`，以及下列10人各自的`/zh/actors/<slug>`和`/en/actors/<slug>`（20页）。
+- 10个slug：`liu-dan`、`xu-li`、`shen-xiuying`、`ma-hong`、`sun-hao`、`yang-fan`、`wang-yong`、`kate-murray`、`peter-hale`、`grace-boateng`。
+- 这些页的canonical保留当前路径，`og:url`分别是`https://swimmerparty.swiminai.com/zh`或`https://swimmerparty.swiminai.com/en`。中英首页本身无差异；其他未采页面不作穷尽性承诺。
+- 逐页证据见本轮`formal-http-smoke.json`的`B_ogCanonicalDifferences`，社区沿用已保存候选HTML的`community-metadata-readback.json`，未为记遗留扩大爬站。
+
+### 既有遗留与已关闭项
+
 | 问题                                                                                                                   | 状态（已修提交或未修）                                                                                                                                | 严重度                     |
 | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| 子页OG URL沿用语言首页，与canonical路径不同（上列24页）                                                                | **未修，本次新增B类**；生产域名检查通过，不作为本次候选故障                                                                                           | P3                         |
 | 分享选角单无成功/失败/可见链接回执；本地保存范围不就地明确                                                             | **未修**，CastBoard.copy只写剪贴板；不是名单丢失                                                                                                      | P2                         |
 | 名册卡缺交付数量/新面孔状态徽章，需进详情才知道有什么                                                                  | **部分修**：胸像/样片入口8c8a9f3；ActorCardClient仍缺上述摘要                                                                                         | P2                         |
 | 戏路筛选Villain仍给零结果选项                                                                                          | **未修**；当前只读计数comedy=4、boss=1、villain=0、crew=2，不能编造标签凑数                                                                           | P2                         |
@@ -128,7 +157,7 @@ P1=安全/核心功能验收风险，P2=关键体验，P3=优化/路线图；这
 
 13:xx轮应用源码、依赖、测试和仓库门禁未改；当时只在工作区更新本收据、实施方案及current-work，未新增提交/推送。该轮新文字因紧急负载门槛未完成相关验证；14:14核对没有遗留本任务重活/浏览器/等待进程，隔离检出与现成产物保持干净318def0。15:3x轮继续只改同三份文档；不把候选旧文档绿灯挪用过来。Learning skipped：发布和正式验收仍未完成，不另建学习文档。
 
-## 接续①收尾检查与保存
+## 接续①收尾检查与保存（历史，提交e9b9023）
 
 完整待推送范围以`origin/main=318def0`为基准，只有`PI-RESULT.md`、本方案和`current-work.md`三份Markdown；由路径和既有lefthook文档glob选择检查，没有应用、依赖或测试改动，不运行工程/浏览器/timing整套，也不重新发Actions或部署。
 
