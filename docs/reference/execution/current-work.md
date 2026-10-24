@@ -17,7 +17,7 @@ related: []
 
 # Current Work
 
-当前网站改进按[创作社区实施方案](../../plans/active/2026-10-13-creator-community.md)推进；阶段状态、Owner 决定与检查证据只记在方案内。2026-10-23 本批十人已将同一候选promote至正式域名，社区保持on，目录与网站已一致；中英20个详情页、三人真实原图SHA及390/1440首页截图均已读回，截图已查看。15:5x裁定后的原始失败、限流诊断、部署号及B类遗留（含已核实24页的OG路径差异）见方案的十人段和根目录执行收据；本轮未写库、重建或上传。下列记录保留当时的版本与验收数字，不代表当前部署、依赖或测试总数。
+当前网站改进按[创作社区实施方案](../../plans/active/2026-10-13-creator-community.md)推进；阶段状态、Owner 决定与检查证据只记在方案内。2026-10-23 十人已正式上线，社区保持on，目录与网站一致；此前20个详情页、三人原图SHA及390/1440首页截图证据保留。接续③又完成一处OG URL修复并发布，原列24页中英URL正式读回全部一致；未写库、上传素材或改演员数据。源码、部署、检查与原始失败见方案十人段和根目录`PI-RESULT.md`，其余B类未扩修。下列记录保留当时的版本与验收数字，不代表当前部署、依赖或测试总数。
 
 2026-10-13 knip 基线核对：干净 `origin/main`（`d84d3dd`，隔离检出前后均 clean）用 `pnpm dlx knip` 6.41.0 检出 7 项；A1 后只剩 `src/features/account/arrival.ts` 的 `SSO_ARRIVAL_PARAM`、`products.ts` 的 `CURRENT_PRODUCT_ID` 两项。当时记为**既有、归 Avatar 的 AuthKit 升级一起清**；A1 未新增问题，不碰账号目录、不加忽略规则。Owner 已澄清 knip 不在推送门禁中，此基线不阻塞 A1；实际门禁仍须通过。原始对比收据：`.devspace-reports/next-stage/knip-baseline/receipt.json`。
 

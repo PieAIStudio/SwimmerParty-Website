@@ -1,12 +1,24 @@
-- 做法：只改语言布局的 `openGraph.url` 为 `"./"`，由 Next 按当前页面路径与正式 metadataBase 解析。
-- 故意不做：不写库、不上传图片、不改演员数据、账号、权限或平台配置；旧失败证据保留。
-- 预计：原估产品约70行／测试约15行；现已简化为产品1行替换／测试18行，仓库检查脚本／门禁0行。
-- 测试：待运行中英各2个子页的渲染后相等断言及现有发布门禁。
-- 正式站：待部署、promote 后逐页读回既有24页；未完成前不宣称上线。
+- 做法：只改 `src/app/[locale]/layout.tsx` 的 OG URL 为 `"./"`，统一按当前路径解析。
+- 故意不做：不写库、不传素材、不改演员数据、账号、权限或平台配置；其他B类不动。
+- 规模：原估产品约70行；最终净改产品1行替换、测试+18行，仓库检查脚本／门禁0行。
+- 测试：中英各2页新断言、311工具／222主站／72社区on／7 Owner、docs/UI及精确Actions均通过。
+- 正式：题列24页全部200，`og:url == canonical` 为24/24；18:29完成正式域名读回。
+- 已上线：源码`0f44f7e`，部署`dpl_CczvCMaQoozG3PsfxLu8Hd45nuqE`；收尾保存见下节证据。
 
-## 17:3x 接续③：修复 OG URL（进行中）
+## 接续③：OG URL 已修复并发布
 
-目标是关闭已列24页的 `og:url != canonical` 并按本次授权直接上线；不写库／不上传图片／不改演员数据来自本轮任务书。发布门禁与顺序来自 `docs/reference/release.md`、`AGENTS.md`，负载遵守HQ `conductor-slots.md`。初版公共helper（`6e0d49c`）虽完整verify通过，但补查发现普通子页继承的OG图丢失，已停止后续门禁并弃用该方案；原结果与图片诊断保留。改用框架原生路径解析，一处替换，不改 canonical、分享图及其余OG字段；新源码须独立完成门禁。门禁失败、目录漂移或需要Owner本人身份时停在相应步骤，不绕过。
+本轮任务书直接授权修复后按常规门禁上线；约束和操作分别遵守 `AGENTS.md`、`docs/reference/release.md` 及HQ负载规则。最终产品差异相对起点`4e0c750`只有布局一行：用Next原生当前pathname解析，保留正式`metadataBase`、canonical、语言替代链接、分享图及其余OG字段；不逐页加URL。`e2e/i18n.spec.ts`只新增一条测试，实际访问中英各一个名册页和刘丹详情页，断言唯一且正确的canonical及相等的OG URL。
+
+- **精确源码门禁：** 干净`0f44f7e`的完整`pnpm verify`通过311工具、222主站浏览器；社区on 72、Owner隔离7及docs/UI通过。选择全套的依据是本次明确发布授权及既有发布手册，不是普通推送扩大验证；既有源码到浏览器选择映射缺口、无独立timing命令的范围说明在`final-candidate/selection.json`。原生提交钩子正常运行；推送后远端main读回同一源码。手工Actions [39937233079](https://github.com/PieAIStudio/SwimmerParty-Website/actions/runs/39937233079) 为该精确SHA且success，仅启动这一份。
+- **同产物发布：** 已核实`pie-0f420159/swimmerparty`和既定项目/团队ID、production社区on、真实账号/Blob/游客限速模式及用量。干净隔离检出本地prebuilt为8841文件、457193337字节，摘要`b61f9935a5ea89d1b393749f85883bd194fdcc9d7b12d19fa1ccfed417928b96`；冻结依赖未变。`--prebuilt --prod --skip-domain`只上传这一候选，native `gitCommitSha`和`sourceCommit`均为`0f44f7e`；候选20项HTTP通过后promote同一URL，正式域名独立GET确认新部署及源码。回滚参考保留旧正式`dpl_BisdYjf4tVkydoTH9a6yEjHsAeKk`，未执行回滚。
+- **未写库／未上传素材：** 构建前及promote前，两次正式目录`--check`均零差异、`databaseWriteAttempted=false`；没有apply、素材上传、演员源/清单修改或权限/配置变更。工具强制的原生目录收据留在隔离检出`.devspace-reports/og-canonical-20261023-before-{build,promote}.json`，副本归本轮`.reports/`，未改工具来换路径。
+- **正式读回：** 34项HTTP检查通过；题列24页为中英各一名册、一社区、十位演员详情，逐页状态200，两个URL各出现一次、均为该页正式绝对URL且完全一致。完整24行原值在`formal-24-metadata.json`；另验两首页。游客社区on、匿名私有拒绝、session、sitemap/robots正常；候选许丽和正式刘丹的真实PNG均200、文件名及来源SHA一致，第二次均429，正式`Retry-After=30`。没有保存签名URL。
+- **原始结果保留：** 初版helper提交`6e0d49c`虽verify通过，补查却发现普通子页继承的OG图丢失，因此撤回helper及所有页面切换，未发布；原verify、图片诊断与取消待跑门禁记录保留。新方案已补查继承图片仍在，全部工程结果来自新源码。Actions成功后首次元数据GET遇EOF，原exit1保留，只重读同一run成功，未重跑Actions。第二次目录check首次前台等待因紧急负载约190而在40秒工具时限取消，原生命令未启动；确认无遗留进程/原生收据后只排一个脱离会话的续接，未改阈值。
+- **估时复盘与范围：** 超过原30分钟估时两倍时已复盘：实现已是一行，主要耗时为共享锁/负载等位和既有门禁，不再加检查或另造产物求绿。正式逐页关闭结论限于题列24页及两首页，不扩称全站穷尽；既有noindex/归并canonical路由（如`/works/p/[id]`）的策略未改。真实Owner操作、会员ZIP等沿用原后置边界，不冒充本轮真人验收。
+
+证据根：`.reports/2026-10-23-og-canonical/`。`publication.json`、`production-after-promote.json`、`formal-24-metadata.json`和`formal-http-smoke.json`给出本轮正式结果；`final-candidate/gates.json`、`actions-readback.json`和`candidate-build.json`给出来源与门禁。收尾只更新本收据、实施方案和current-work；相关文档检查、净行数、最终提交/远端及清洁状态见`closeout.json`，不重跑工程全套、不再触发Actions或部署。
+
+Learning skipped -> Next文档已说明metadata浅合并，本次原生路径解析是一行修复，不另建学习文档。可以删的：已撤回初版helper及逐页接线，最终不新增产品抽象或门禁。
 
 ## 接续②原始收据（历史，保留）
 
@@ -122,9 +134,9 @@ Learning skipped -> 新增的是已验证发布状态和临时执行器纠错；
 
 P1=安全/核心功能验收风险，P2=关键体验，P3=优化/路线图；这是本轮归类。未验收≠已证故障，取舍≠必须修，已有Owner后置决定不被重新改成门禁。
 
-### 本次新增B类：子页OG URL沿用语言首页
+### 接续②新增B类：子页OG URL沿用语言首页（接续③已关闭所列24页）
 
-- 未修，按15:5x裁定不挡本次发布：canonical与OG均在生产域名，只有路径不同；已撤掉临时冒烟器的逐页相等断言，未改产品或仓库门禁，原失败证据保留。
+- 接续②当时未修，按15:5x裁定不挡十人发布；当时撤掉额外冒烟断言的决定和失败证据保留。接续③已按本轮明确授权修复并上线，所列24页正式读回全部相等，证据见本文开头；不改写当时的批准或结果。
 - 本次已核实24页：`/zh/actors`、`/en/actors`，候选`/zh/community`、`/en/community`，以及下列10人各自的`/zh/actors/<slug>`和`/en/actors/<slug>`（20页）。
 - 10个slug：`liu-dan`、`xu-li`、`shen-xiuying`、`ma-hong`、`sun-hao`、`yang-fan`、`wang-yong`、`kate-murray`、`peter-hale`、`grace-boateng`。
 - 这些页的canonical保留当前路径，`og:url`分别是`https://swimmerparty.swiminai.com/zh`或`https://swimmerparty.swiminai.com/en`。中英首页本身无差异；其他未采页面不作穷尽性承诺。
@@ -134,7 +146,7 @@ P1=安全/核心功能验收风险，P2=关键体验，P3=优化/路线图；这
 
 | 问题                                                                                                                   | 状态（已修提交或未修）                                                                                                                                | 严重度                     |
 | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
-| 子页OG URL沿用语言首页，与canonical路径不同（上列24页）                                                                | **未修，本次新增B类**；生产域名检查通过，不作为本次候选故障                                                                                           | P3                         |
+| 子页OG URL沿用语言首页，与canonical路径不同（上列24页）                                                                | **接续③已修`0f44f7e`**；所列24页正式读回全部相等，原接续②不挡发布的决定保留                                                                           | P3                         |
 | 分享选角单无成功/失败/可见链接回执；本地保存范围不就地明确                                                             | **未修**，CastBoard.copy只写剪贴板；不是名单丢失                                                                                                      | P2                         |
 | 名册卡缺交付数量/新面孔状态徽章，需进详情才知道有什么                                                                  | **部分修**：胸像/样片入口8c8a9f3；ActorCardClient仍缺上述摘要                                                                                         | P2                         |
 | 戏路筛选Villain仍给零结果选项                                                                                          | **未修**；当前只读计数comedy=4、boss=1、villain=0、crew=2，不能编造标签凑数                                                                           | P2                         |
