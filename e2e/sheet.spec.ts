@@ -99,7 +99,7 @@ test("ticking voice and prompt adds a ZIP with the clips under voice/ and the pr
       "README.txt",
     ]),
   );
-  expect(strFromU8(files["README.txt"])).toContain("Credit: Tang Yunqiu · Swim In AI");
+  expect(strFromU8(files["README.txt"])).toContain("Credit: Tang Yunqiu · SwimInAI");
 });
 
 test("the sheet page keeps its controls reachable on a phone without sideways scrolling", async ({

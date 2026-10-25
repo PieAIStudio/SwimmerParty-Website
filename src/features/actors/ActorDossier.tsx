@@ -267,7 +267,7 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
           <h2 className="sp-title">{t("assets.rulesTitle")}</h2>
           <p className="mt-6 max-w-3xl text-lg">{t("assets.rulesBody", { name })}</p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
-            <CopyBlock label={t("assets.copyCredit", { name })} text={`${name} · Swim In AI`} />
+            <CopyBlock label={t("assets.copyCredit", { name })} text={`${name} · SwimInAI`} />
             <TextLink href="/license">{t("assets.rulesPact")}</TextLink>
           </div>
         </section>

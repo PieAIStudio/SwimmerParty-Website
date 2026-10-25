@@ -21,8 +21,8 @@ const prepare: L = {
   zh: "选一位演员并下载正面参考图。单张不用登录，懒人包需要免费泳者账号；保留附带的署名说明。",
 };
 const inspect: L = {
-  en: "Compare the result with the reference: face, hair, clothing and hands. Save the original output only when it fits your scene, and add the required Swim In AI credit. A prompt cannot guarantee identity consistency.",
-  zh: "对照参考图检查脸、发型、服装和手部。符合场景需要再保存原始结果，并按规则署名 Swim In AI；提示词不保证每次保持同一形象。",
+  en: "Compare the result with the reference: face, hair, clothing and hands. Save the original output only when it fits your scene, and add the required SwimInAI credit. A prompt cannot guarantee identity consistency.",
+  zh: "对照参考图检查脸、发型、服装和手部。符合场景需要再保存原始结果，并按规则署名 SwimInAI；提示词不保证每次保持同一形象。",
 };
 const motion: L = {
   en: "The animated character gives one small friendly wave, then lowers the hand. Gentle breathing. The camera is locked off. Keep the original framing, face, hairstyle, clothing and animation style. One continuous shot.",
@@ -223,8 +223,8 @@ export const TOOL_TUTORIALS: readonly ToolTutorial[] = [
         zh: "保存原片，对着参考图看开头、中间和结尾。检查脸、右手和镜头范围，不只看第一帧。",
       },
       {
-        en: "Keep the limitation: the camera crops the lower body despite the prompt. Use it as a greeting sample and add the required Swim In AI credit. Our preview removes the generated sound.",
-        zh: "记下没做到的地方：虽然提示词要求保留全身，镜头还是推近了。把它当问候样片使用，按规则署名 Swim In AI。本站预览去掉了生成的声音。",
+        en: "Keep the limitation: the camera crops the lower body despite the prompt. Use it as a greeting sample and add the required SwimInAI credit. Our preview removes the generated sound.",
+        zh: "记下没做到的地方：虽然提示词要求保留全身，镜头还是推近了。把它当问候样片使用，按规则署名 SwimInAI。本站预览去掉了生成的声音。",
       },
     ],
     prompt: {

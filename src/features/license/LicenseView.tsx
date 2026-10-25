@@ -92,7 +92,7 @@ export async function LicenseView({ locale }: { locale: AppLocale }) {
             <div className="flex aspect-[3/1] items-center justify-center rounded-[var(--game-ui-radius-card)] bg-[#1f2326] p-5">
               <Image
                 src="/downloads/swim-in-ai-white.png"
-                alt="Swim In AI"
+                alt="SwimInAI"
                 width={2000}
                 height={500}
                 className="h-auto w-full"
@@ -106,7 +106,7 @@ export async function LicenseView({ locale }: { locale: AppLocale }) {
             <div className="flex aspect-[3/1] items-center justify-center rounded-[var(--game-ui-radius-card)] bg-[#fffdf8] p-5">
               <Image
                 src="/downloads/swim-in-ai-black.png"
-                alt="Swim In AI"
+                alt="SwimInAI"
                 width={2000}
                 height={500}
                 className="h-auto w-full"

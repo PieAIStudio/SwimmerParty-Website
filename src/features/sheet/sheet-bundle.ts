@@ -10,12 +10,12 @@ export function sheetReadme({ slug, nameEn, nameCn }: SheetNames): string {
     `SWIMMER PARTY · ${nameEn}`,
     `1. Upload ${slug}_sheet.png to your image or video tool as the character reference.`,
     "2. Voice and video files are references for voice and motion tools.",
-    `3. Credit: ${nameEn} · Swim In AI`,
+    `3. Credit: ${nameEn} · SwimInAI`,
     "",
     `SWIMMER PARTY · ${nameCn}`,
     `1. 把 ${slug}_sheet.png 作为角色参考图上传到你的图像或视频工具。`,
     "2. 声音和视频文件给配音、动作类工具做参考。",
-    `3. 署名：${nameCn} · Swim In AI`,
+    `3. 署名：${nameCn} · SwimInAI`,
     "",
   ].join("\n");
 }

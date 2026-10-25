@@ -10,8 +10,8 @@ export const SITE = {
     zh: "原创 AI 演员，免费商用",
   } satisfies L,
   description: {
-    en: "Original animated AI actors with free image and voice packs. Free for commercial use; just credit Swim In AI.",
-    zh: "原创 AI 动画演员，免费图片和声音素材包。商用免费，署名 Swim In AI 即可。",
+    en: "Original animated AI actors with free image and voice packs. Free for commercial use; just credit SwimInAI.",
+    zh: "原创 AI 动画演员，免费图片和声音素材包。商用免费，署名 SwimInAI 即可。",
   } satisfies L,
   /** Canonical production origin. The translate proxy is derived from it. */
   url: "https://swimmerparty.swiminai.com",

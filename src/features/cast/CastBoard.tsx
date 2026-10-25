@@ -136,7 +136,7 @@ export function CastBoard({
         </GameButton>
         <GameButton
           variant="secondary"
-          onClick={() => void copy(`${t("cast.creditPrefix")}${names} · Swim In AI`)}
+          onClick={() => void copy(`${t("cast.creditPrefix")}${names} · SwimInAI`)}
         >
           {t("cast.copyCredit")}
         </GameButton>

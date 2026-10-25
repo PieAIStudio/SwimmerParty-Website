@@ -568,8 +568,8 @@ export const messages = {
     zh: "演员",
   },
   "roster.metaDescription": {
-    en: "Every SWIMMER PARTY AI actor, ready to cast or new. Free to use, even commercially. Just credit Swim In AI.",
-    zh: "SWIMMER PARTY 的全部 AI 演员，可出演的和新面孔。商用也免费，署上 Swim In AI 就好。",
+    en: "Every SWIMMER PARTY AI actor, ready to cast or new. Free to use, even commercially. Just credit SwimInAI.",
+    zh: "SWIMMER PARTY 的全部 AI 演员，可出演的和新面孔。商用也免费，署上 SwimInAI 就好。",
   },
   "roster.appearance": { en: "Appearance keywords", zh: "外貌关键词" },
   "roster.origin": { en: "From", zh: "地区" },
@@ -663,8 +663,8 @@ export const messages = {
     zh: "默认开放",
   },
   "studio.beliefs.2.body": {
-    en: "Free for personal and commercial projects. Credit Swim In AI and follow the license.",
-    zh: "个人创作和商用都免费；请署名 Swim In AI 并遵守授权规则。",
+    en: "Free for personal and commercial projects. Credit SwimInAI and follow the license.",
+    zh: "个人创作和商用都免费；请署名 SwimInAI 并遵守授权规则。",
   },
   "studio.beliefs.3.n": {
     en: "04",
@@ -733,12 +733,12 @@ export const messages = {
     zh: "定制演员和联合出品",
   },
   "footer.rights": {
-    en: "© {year} Pie AI Studio",
-    zh: "© {year} Pie AI Studio",
+    en: "© {year} SwimInAI",
+    zh: "© {year} SwimInAI",
   },
   "footer.project": {
-    en: "A Swim In AI project, made by Pie AI Studio.",
-    zh: "Swim In AI 旗下项目，由 Pie AI Studio 制作。",
+    en: "A SwimInAI project, made by PieAI.",
+    zh: "SwimInAI 旗下项目，由 PieAI 制作。",
   },
   "assets.series.turnaround": {
     en: "Turnarounds",
@@ -1400,16 +1400,16 @@ export const messages = {
     zh: "原样粘贴即可。",
   },
   "assets.rulesTitle": {
-    en: "One rule: credit Swim In AI.",
-    zh: "只有一条：署上 Swim In AI。",
+    en: "One rule: credit SwimInAI.",
+    zh: "只有一条：署上 SwimInAI。",
   },
   "assets.rulesBody": {
-    en: "Use {name} in anything, even paid work. Put a small “Swim In AI” at the start and in the credits of a video, or in a corner of an image.",
-    zh: "{name}可以用在任何地方，赚钱的也行。视频开头和片尾字幕放一行小字“Swim In AI”，图片放在角落。",
+    en: "Use {name} in anything, even paid work. Put a small “SwimInAI” at the start and in the credits of a video, or in a corner of an image.",
+    zh: "{name}可以用在任何地方，赚钱的也行。视频开头和片尾字幕放一行小字“SwimInAI”，图片放在角落。",
   },
   "assets.copyCredit": {
-    en: "Copy credit: {name} · Swim In AI",
-    zh: "复制署名：{name} · Swim In AI",
+    en: "Copy credit: {name} · SwimInAI",
+    zh: "复制署名：{name} · SwimInAI",
   },
   "assets.castingPhoto": {
     en: "Casting photo",
@@ -1539,8 +1539,8 @@ export const messages = {
   "home.ogTitle": { en: "Original AI actors", zh: "原创 AI 演员" },
   "home.ogSubtitle": { en: "Made, delivered, licensed", zh: "制作、交付、授权" },
   "home.licenseBadge": {
-    en: "Free for commercial use · Credit Swim In AI",
-    zh: "商用免费 · 署名 Swim In AI",
+    en: "Free for commercial use · Credit SwimInAI",
+    zh: "商用免费 · 署名 SwimInAI",
   },
   "home.licenseCta": { en: "See how to credit", zh: "看怎么署名" },
   "cast.title": { en: "Your cast", zh: "我的选角单" },
@@ -1549,8 +1549,8 @@ export const messages = {
   "license.badge": { en: "Free License · v1.0", zh: "免费商用 · v1.0" },
   "license.creditTitle": { en: "How to credit", zh: "怎么署名" },
   "license.creditNote": {
-    en: "Any one of these counts. “Swim In AI” always stays in English; the words around it can be in any language.",
-    zh: "下面任选一种都算。“Swim In AI”这几个字始终写英文，前后的话用什么语言都行。",
+    en: "Any one of these counts. “SwimInAI” always stays in English; the words around it can be in any language.",
+    zh: "下面任选一种都算。“SwimInAI”这几个字始终写英文，前后的话用什么语言都行。",
   },
   "license.creditFavourite": {
     en: "Our favourite is the third: name the actor. It helps them get famous, and if they take off because of you, you get first call.",
@@ -1622,8 +1622,8 @@ export const messages = {
     zh: "用什么做的？（可选）",
   },
   "community.creditConfirmation": {
-    en: "My work credits Swim In AI.",
-    zh: "我的作品里署了 Swim In AI。",
+    en: "My work credits SwimInAI.",
+    zh: "我的作品里署了 SwimInAI。",
   },
   "community.rightsConfirmation": {
     en: "I made this, and it follows the Free License rules.",
@@ -1640,14 +1640,14 @@ export const messages = {
     zh: "个人创作、商用都免费。",
   },
   "license.metaDescription": {
-    en: "Use SWIMMER PARTY’s animated actors in personal and commercial projects for free. Credit Swim In AI and follow the usage rules below.",
-    zh: "SWIMMER PARTY 的动画演员可免费用于个人创作和商业项目。署名 Swim In AI，并遵守下列使用规则。",
+    en: "Use SWIMMER PARTY’s animated actors in personal and commercial projects for free. Credit SwimInAI and follow the usage rules below.",
+    zh: "SWIMMER PARTY 的动画演员可免费用于个人创作和商业项目。署名 SwimInAI，并遵守下列使用规则。",
   },
   "license.intro": {
-    en: "Use our animated actors in films, ads, games, comics, music or merch under the rules below. No license fee or permission request. Credit Swim In AI where people can read it. Downloading packs requires a free Swimmer account.",
-    zh: "动画演员可用于电影、广告、游戏、漫画、音乐和周边，具体规则见下方。无需支付许可费或申请许可；请在清晰可见处署名 Swim In AI。下载整包需要免费泳者账号。",
+    en: "Use our animated actors in films, ads, games, comics, music or merch under the rules below. No license fee or permission request. Credit SwimInAI where people can read it. Downloading packs requires a free Swimmer account.",
+    zh: "动画演员可用于电影、广告、游戏、漫画、音乐和周边，具体规则见下方。无需支付许可费或申请许可；请在清晰可见处署名 SwimInAI。下载整包需要免费泳者账号。",
   },
-  "license.heroLines.1": { en: "Credit Swim In AI.", zh: "署上 Swim In AI。" },
+  "license.heroLines.1": { en: "Credit SwimInAI.", zh: "署上 SwimInAI。" },
   "common.languageName.zh": { en: "中文", zh: "中文" },
   "common.languageName.en": { en: "English", zh: "English" },
   "community.kind.image": { en: "Image", zh: "图片" },
@@ -1966,8 +1966,8 @@ export const messages = {
     zh: "能商用吗",
   },
   "guide.license.body": {
-    en: 'Free for commercial use under the usage rules. Credit "Actor name · Swim In AI" and read the full license before publishing.',
-    zh: "遵守使用规则即可免费商用。请署名「演员名 · Swim In AI」，发布前阅读完整授权。",
+    en: 'Free for commercial use under the usage rules. Credit "Actor name · SwimInAI" and read the full license before publishing.',
+    zh: "遵守使用规则即可免费商用。请署名「演员名 · SwimInAI」，发布前阅读完整授权。",
   },
   "guide.browse": {
     en: "Browse actors",

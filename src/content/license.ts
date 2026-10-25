@@ -9,15 +9,15 @@ export const LICENSE = {
   effective: "8 October 2026",
   title: { en: "Free License", zh: "免费商用" },
   description: {
-    en: "Use SWIMMER PARTY actors in anything, including paid work, for free. Just credit Swim In AI. Here’s how.",
-    zh: "SWIMMER PARTY 的演员可以免费用在任何地方，包括赚钱的项目，署上 Swim In AI 就好。下面是具体做法。",
+    en: "Use SWIMMER PARTY actors in anything, including paid work, for free. Just credit SwimInAI. Here’s how.",
+    zh: "SWIMMER PARTY 的演员可以免费用在任何地方，包括赚钱的项目，署上 SwimInAI 就好。下面是具体做法。",
   },
   intro: {
     en: "Films, ads, YouTube, games, comics, music, merch. Paid or unpaid, big or small. You don’t pay us, you don’t fill in a form, you don’t ask. You put three small words where people can see them.",
     zh: "电影、广告、YouTube、游戏、漫画、音乐、周边。赚不赚钱、项目大小都一样：不用给钱，不用填表，不用问。只要在别人看得到的地方，放上一行小字。",
   },
-  credit: { en: "Swim In AI", zh: "Swim In AI" },
-  creditLines: ["Swim In AI", "Actors: Swim In AI", "Tang Yunqiu · Swim In AI", "swiminai.com"],
+  credit: { en: "SwimInAI", zh: "SwimInAI" },
+  creditLines: ["SwimInAI", "Actors: SwimInAI", "Tang Yunqiu · SwimInAI", "swiminai.com"],
   promises: [
     {
       en: "Free stays free",
@@ -222,9 +222,9 @@ export const LICENSE_EXAMPLES = [
 export const LICENSE_FAQ = [
   [
     "My YouTube channel makes money. Is that OK?",
-    "Yes. Credit Swim In AI in the video and you’re set.",
+    "Yes. Credit SwimInAI in the video and you’re set.",
     "我的 YouTube 频道有收入，可以用吗？",
-    "可以。视频里署上 Swim In AI 就行。",
+    "可以。视频里署上 SwimInAI 就行。",
   ],
   [
     "A brand is paying me to make an ad with one of your actors.",
@@ -258,9 +258,9 @@ export const LICENSE_FAQ = [
   ],
   [
     "Can I use only the voice?",
-    "Yes. Same rule: credit Swim In AI in the description or credits.",
+    "Yes. Same rule: credit SwimInAI in the description or credits.",
     "只用声音可以吗？",
-    "可以，规则一样：在简介或致谢里署上 Swim In AI。",
+    "可以，规则一样：在简介或致谢里署上 SwimInAI。",
   ],
   [
     "Who owns what I make?",
@@ -281,9 +281,9 @@ export const LICENSE_FAQ = [
     "你已经做好的东西，按做的时候的版本算。本页是 v1.0，2026 年 10 月 8 日生效。",
   ],
   [
-    "Why credit Swim In AI and not SWIMMER PARTY?",
-    "Swim In AI is our home. SWIMMER PARTY is one of its projects, and the credit helps people find all of them.",
-    "为什么署 Swim In AI，不署 SWIMMER PARTY？",
-    "Swim In AI 是我们的总站，SWIMMER PARTY 是其中一个项目。署 Swim In AI，大家能找到我们所有的项目。",
+    "Why credit SwimInAI and not SWIMMER PARTY?",
+    "SwimInAI is our home. SWIMMER PARTY is one of its projects, and the credit helps people find all of them.",
+    "为什么署 SwimInAI，不署 SWIMMER PARTY？",
+    "SwimInAI 是我们的总站，SWIMMER PARTY 是其中一个项目。署 SwimInAI，大家能找到我们所有的项目。",
   ],
 ] as const;

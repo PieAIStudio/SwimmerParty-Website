@@ -14,7 +14,7 @@ test("A7 starter workflow produces an actual local-fixture ZIP", async ({ page, 
   const result = await downloadFrom(page, button);
   const files = unzipSync(result.bytes);
   expect(files["prompt.txt"]).toBeTruthy();
-  expect(strFromU8(files["README.txt"])).toContain("Swim In AI");
+  expect(strFromU8(files["README.txt"])).toContain("SwimInAI");
 });
 test("A7 sheet workflow produces an actual local-fixture PNG", async ({ page, context }) => {
   await localMember(context);

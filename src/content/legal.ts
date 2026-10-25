@@ -11,9 +11,9 @@ export const PRIVACY = {
   rows: [
     [
       "Who runs this",
-      "SWIMMER PARTY is run by Pie AI Studio. Questions about your data: pieai@hotmail.com.",
+      "SWIMMER PARTY is run by SwimInAI. Questions about your data: pieai@hotmail.com.",
       "谁在运营",
-      "SWIMMER PARTY 由 Pie AI Studio 运营。关于你的数据，写信到 pieai@hotmail.com。",
+      "SWIMMER PARTY 由 SwimInAI 运营。关于你的数据，写信到 pieai@hotmail.com。",
     ],
     [
       "Browsing",
@@ -78,9 +78,9 @@ export const TERMS = {
     ],
     [
       "The actors",
-      "Our actors and their files are made by Pie AI Studio with AI tools and human review. You can use them under the Free License: free for any use, as long as you credit Swim In AI and follow its rules.",
+      "Our actors and their files are made by PieAI with AI tools and human review. You can use them under the Free License: free for any use, as long as you credit SwimInAI and follow its rules.",
       "演员",
-      "我们的演员和相关文件由 Pie AI Studio 借助 AI 工具制作、经人工审看。你可以按《免费商用》授权使用：用在哪都免费，只要署上 Swim In AI 并遵守其中的规则。",
+      "我们的演员和相关文件由 PieAI 借助 AI 工具制作、经人工审看。你可以按《免费商用》授权使用：用在哪都免费，只要署上 SwimInAI 并遵守其中的规则。",
     ],
     [
       "Your account",

@@ -11,7 +11,7 @@ test("home and legal pages render", async ({ page }) => {
   await expect(page.locator("main")).not.toContainText(
     "each with images, a voice and a character prompt",
   );
-  await expect(page.locator("body")).not.toContainText("Free. Just credit Swim In AI.");
+  await expect(page.locator("body")).not.toContainText("Free. Just credit SwimInAI.");
   await page.goto("/en/license");
   await expect(
     page.getByRole("heading", { level: 1, name: /Free for personal and commercial projects\./ }),

@@ -46,7 +46,7 @@ test("starter and shared cast ZIPs contain the selected actors", async ({ page, 
       "tang-yunqiu__turnaround__front.png",
     ].sort(),
   );
-  expect(strFromU8(files["README.txt"])).toContain("Swim In AI");
+  expect(strFromU8(files["README.txt"])).toContain("SwimInAI");
   await page.goto("/en/cast?a=tang-yunqiu,misha-luo");
   const cast = await downloadFrom(page, page.getByRole("button", { name: "Download cast pack" }));
   expect(cast.name).toBe("swimmer-party-cast.zip");
