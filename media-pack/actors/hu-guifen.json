@@ -10,7 +10,7 @@
     "siteProfile": "src/content/actors/hu-guifen/profile.ts",
     "delivered": 0,
     "published": false,
-    "version": "0.1.0",
+    "version": "1.0.0",
     "preparedOn": "2026-10-09"
   },
   "demographics": {
@@ -63,17 +63,601 @@
         "en": "Casting basics"
       },
       "prompt": "mustard-yellow plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers, no jewelry, no watch, no accessories, no logos."
+    },
+    {
+      "id": "personal",
+      "kind": "personal",
+      "label": {
+        "zh": "日常造型",
+        "en": "Personal look"
+      },
+      "prompt": "Mustard-yellow plain fitted crew-neck T-shirt, dark straight-leg trousers, clean white low-top sneakers; preserve Hu Guifen’s mature adult proportions, round cheeks, deep dimples and short permed curly hair.",
+      "approvalBasis": "MediaFactory full-pack handoff and Owner formal listing authorization on 2026-10-26.",
+      "extras": [
+        {
+          "key": "portrait",
+          "label": {
+            "zh": "日常近景",
+            "en": "Portrait"
+          },
+          "direction": "Use the approved wardrobe portrait source from the full-pack handoff."
+        },
+        {
+          "key": "apron",
+          "label": {
+            "zh": "围裙",
+            "en": "Apron"
+          },
+          "direction": "Use the approved wardrobe apron source from the full-pack handoff."
+        },
+        {
+          "key": "shopping-bag",
+          "label": {
+            "zh": "购物袋",
+            "en": "Shopping bag"
+          },
+          "direction": "Use the approved wardrobe shopping-bag source from the full-pack handoff."
+        },
+        {
+          "key": "tea-cup",
+          "label": {
+            "zh": "茶杯",
+            "en": "Tea cup"
+          },
+          "direction": "Use the approved wardrobe tea-cup source from the full-pack handoff."
+        }
+      ]
     }
   ],
   "roles": [],
   "proposals": {
-    "approval": "owner-confirmed-facts-provisional-identity",
-    "appearance": "Provisional until Owner selects a proportion-corrected audition image",
-    "phase": "audition-pending-owner"
+    "approval": "owner-authorized-formal-listing-2026-10-26",
+    "appearance": "Owner accepted the existing measurement_review exception; no threshold change or image regeneration.",
+    "phase": "formal-website-listing"
   },
   "routes": {
     "chatgpt-web": {
       "chat": null
     }
+  },
+  "website": {
+    "published": true,
+    "order": 125,
+    "status": "active",
+    "tagline": {
+      "zh": "酒窝很深，笑声比人先到。",
+      "en": "Deep dimples. Her laugh arrives before she does."
+    },
+    "introduction": {
+      "zh": "湖北武汉，45 岁；圆脸、深酒窝、短卷烫发，矮而丰润，保持成熟成人体态。",
+      "en": "East Asian (Chinese) woman, about 45, plump and short, about 155 cm; full round cheeks with deep dimples, monolid eyes, small button nose and short permed curly black hair; mustard-yellow top."
+    },
+    "specOrder": [
+      "age",
+      "height",
+      "origin",
+      "language"
+    ],
+    "visibleLooks": [
+      "personal"
+    ]
+  },
+  "release": {
+    "date": "2026-10-26",
+    "note": {
+      "zh": "正式演员：55 张原始图、6 段冻结声音；比例 measurement_review 例外已披露。",
+      "en": "Formal actor: 55 source-original images and 6 frozen voice clips; the measurement_review proportion exception is disclosed."
+    }
+  },
+  "assetDelivery": {
+    "mode": "source-originals",
+    "candidateAuthorizedOn": "2026-10-26",
+    "ownerReviewPending": false,
+    "sourceEvidence": [
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/pack-manifest.json",
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/handoff.md",
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-actors-hu-tommy-finish-20261024/hu-guifen/voice/final/manifest.json",
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-actors-hu-tommy-finish-20261024/hu-guifen/voice/final/handoff.md",
+      "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-actors-hu-tommy-finish-20261024/hu-guifen/proportion-final/FINAL-REVIEW.md",
+      "/Users/yuanfei/PieAI/MediaFactory/.reports/2026-10-26-hu-guifen-voice-freeze/RESULT.md"
+    ],
+    "images": [
+      {
+        "slot": "turnaround.front",
+        "source": "hu-guifen/hu-guifen__turnaround__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/turnaround-front-cg-frame-fix.png",
+        "sha256": "d98acc8ceaf4c32af087004154018312ab7e1b35809901de46294759e22dac7a",
+        "bytes": 921650,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.three-quarter",
+        "source": "hu-guifen/hu-guifen__turnaround__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/turnaround-three-quarter-right.png",
+        "sha256": "88ba80638a3d2ea4c25f949d715554bf7f4a6de032ecd23a98c4951d1ec6cddb",
+        "bytes": 838031,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.side",
+        "source": "hu-guifen/hu-guifen__turnaround__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/turnaround-side-right.png",
+        "sha256": "84958d3e33c0aa40d8c1cb8e2f4b289c8ec5dd408c4d1a6f8d692a103543fe9e",
+        "bytes": 685273,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back",
+        "source": "hu-guifen/hu-guifen__turnaround__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/turnaround-back.png",
+        "sha256": "7547d4290c51a40aa4c28d5aae580749fca04a9069a2ba1fc3e751072ed8eaff",
+        "bytes": 987106,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-left",
+        "source": "hu-guifen/hu-guifen__turnaround__back-three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/turnaround-back-three-quarter-left.png",
+        "sha256": "679ddd0891bb61b092c546146c4c2471d7bc5fd085dafc44476e93934f2a5df8",
+        "bytes": 847396,
+        "version": 1
+      },
+      {
+        "slot": "turnaround.back-three-quarter-right",
+        "source": "hu-guifen/hu-guifen__turnaround__back-three-quarter-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/turnaround-back-three-quarter-right.png",
+        "sha256": "6ae57361117a7d539b64dd2387e0732c45e6e4ebceb25e6d22962e7ed1147fec",
+        "bytes": 880087,
+        "version": 1
+      },
+      {
+        "slot": "face.front",
+        "source": "hu-guifen/hu-guifen__face__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/face-front-cg.png",
+        "sha256": "93b6a24b9c3be4d388aeac33a467b7c3f1683b7868c4fe387abce44c970c6468",
+        "bytes": 1853417,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter",
+        "source": "hu-guifen/hu-guifen__face__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/face-three-quarter-cg.png",
+        "sha256": "765264699e6dc01e52193d56c35db689d4ffd78fe1935e43e3a67f57c4e9d7a0",
+        "bytes": 1839548,
+        "version": 1
+      },
+      {
+        "slot": "face.side",
+        "source": "hu-guifen/hu-guifen__face__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/face-side-cg.png",
+        "sha256": "29fa20d1c6605c19c3593b275998f8a01965f89a15d69fde77f47eb3a312ddbb",
+        "bytes": 2194055,
+        "version": 1
+      },
+      {
+        "slot": "face.three-quarter-left",
+        "source": "hu-guifen/hu-guifen__face__three-quarter-left__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/face-three-quarter-left-cg.png",
+        "sha256": "c1987d436484d73a90367f0fbcb78d9e173a5b29d53c055c784c067731fbea2c",
+        "bytes": 2041226,
+        "version": 1
+      },
+      {
+        "slot": "face.side-right",
+        "source": "hu-guifen/hu-guifen__face__side-right__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/face-side-right-cg.png",
+        "sha256": "c895dd562503d152c4d0ec064b19f82cc0798a68b6b751a43aa7dec930028314",
+        "bytes": 1943319,
+        "version": 1
+      },
+      {
+        "slot": "face.up",
+        "source": "hu-guifen/hu-guifen__face__up__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/face-up-cg.png",
+        "sha256": "5084517b4919d58d733e6e10306202267c7767376a97cbb08d6fb1e9edb68a89",
+        "bytes": 2091791,
+        "version": 1
+      },
+      {
+        "slot": "face.down",
+        "source": "hu-guifen/hu-guifen__face__down__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/face-down-cg.png",
+        "sha256": "b8882ab492bc1dcb5bc3d6d413ee3c8c6c7ef774711ffb58ad0a6f9e6ea7a362",
+        "bytes": 1887245,
+        "version": 1
+      },
+      {
+        "slot": "expression.neutral",
+        "source": "hu-guifen/hu-guifen__expression__neutral__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-neutral-cg.png",
+        "sha256": "2389e9af0fb62d7567d8702a61094739a60d28247e0b56901de3031d62103bb5",
+        "bytes": 1956641,
+        "version": 1
+      },
+      {
+        "slot": "expression.smile",
+        "source": "hu-guifen/hu-guifen__expression__smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-happy-cg.png",
+        "sha256": "0e225aab4fc91213c796015e5837a0dec5ba5128ae4e1ba431693ffb16663bc4",
+        "bytes": 2065673,
+        "version": 1
+      },
+      {
+        "slot": "expression.laugh",
+        "source": "hu-guifen/hu-guifen__expression__laugh__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-laughing-cg.png",
+        "sha256": "fb89c01b5e3edee95f18e2860061d66f6c747ff0c6c29b188d7403a36bf8fa69",
+        "bytes": 2223342,
+        "version": 1
+      },
+      {
+        "slot": "expression.sad",
+        "source": "hu-guifen/hu-guifen__expression__sad__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-sad-cg.png",
+        "sha256": "92eacb034295f2cd5bc3f836610239337de1155e868467815772d8be6876d534",
+        "bytes": 1947105,
+        "version": 1
+      },
+      {
+        "slot": "expression.cry",
+        "source": "hu-guifen/hu-guifen__expression__cry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-crying-cg.png",
+        "sha256": "716aa8a775773aadd6e773ec822e0751d8e0ea5b0f9da8f18012269efb27add6",
+        "bytes": 2132204,
+        "version": 1
+      },
+      {
+        "slot": "expression.annoyed",
+        "source": "hu-guifen/hu-guifen__expression__annoyed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-relieved-cg.png",
+        "sha256": "b7e4b09d8ead9f3edbb83b6abf8767792ec514e91f68ad19cfeee8d1359c1983",
+        "bytes": 1945871,
+        "version": 1
+      },
+      {
+        "slot": "expression.angry",
+        "source": "hu-guifen/hu-guifen__expression__angry__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-angry-cg.png",
+        "sha256": "ad3a696a4d3b32b1b3d28c5bf48e3f20bea79d6556de2817e32a49220690c777",
+        "bytes": 2052799,
+        "version": 1
+      },
+      {
+        "slot": "expression.surprised",
+        "source": "hu-guifen/hu-guifen__expression__surprised__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-astonished-cg.png",
+        "sha256": "020dc673ab026b96753d1b86504d016ad712553a165f6cddd6cfbef5ae76ea77",
+        "bytes": 2000314,
+        "version": 1
+      },
+      {
+        "slot": "expression.scared",
+        "source": "hu-guifen/hu-guifen__expression__scared__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-fearful-cg.png",
+        "sha256": "f6b05a00ef064ec73f16feafa4d933278b58622a72dd8d79e238f11eae8aa729",
+        "bytes": 2004249,
+        "version": 1
+      },
+      {
+        "slot": "expression.disgusted",
+        "source": "hu-guifen/hu-guifen__expression__disgusted__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-disgusted-cg.png",
+        "sha256": "967b29df578825baaa71cfcef7827f31fbeabfb23130d98d633c9e9f3aa1c6b4",
+        "bytes": 1982707,
+        "version": 1
+      },
+      {
+        "slot": "expression.embarrassed",
+        "source": "hu-guifen/hu-guifen__expression__embarrassed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-embarrassed-cg.png",
+        "sha256": "8cdce3d360cc4b3fa51ecb8740a3cb1d0b3694cdd1c88032bf254cf473a3060f",
+        "bytes": 2006818,
+        "version": 1
+      },
+      {
+        "slot": "expression.tired",
+        "source": "hu-guifen/hu-guifen__expression__tired__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-tired-cg.png",
+        "sha256": "bf7b9434151f236cf6d40e1cf6d21dbcea4c23f8fc1e07265e6b11c370c802e9",
+        "bytes": 1954067,
+        "version": 1
+      },
+      {
+        "slot": "expression.speaking",
+        "source": "hu-guifen/hu-guifen__expression__speaking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-speaking-cg.png",
+        "sha256": "c069794cdd9e595aba9ec1bfd19b34846d2a4cb4e42d4df6374d5d657da2761d",
+        "bytes": 2170389,
+        "version": 1
+      },
+      {
+        "slot": "expression.eyes-closed",
+        "source": "hu-guifen/hu-guifen__expression__eyes-closed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-eyes-closed-cg.png",
+        "sha256": "cf232199e99dc9d7fd641aa932c0f5819efb9dc3a245585bae33ba810a21d5d6",
+        "bytes": 2105840,
+        "version": 1
+      },
+      {
+        "slot": "expression.worried",
+        "source": "hu-guifen/hu-guifen__expression__worried__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-worried-cg.png",
+        "sha256": "d35dea319cc3800e4f8f46248d9d8f398b6b1c309f70eb130a0b694d33bc2b1b",
+        "bytes": 1999397,
+        "version": 1
+      },
+      {
+        "slot": "expression.skeptical",
+        "source": "hu-guifen/hu-guifen__expression__skeptical__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-skeptical-cg.png",
+        "sha256": "737bf6eef0b190dfe464983f612b90adcdeee9b8a36b7514909cc766b021a956",
+        "bytes": 2090331,
+        "version": 1
+      },
+      {
+        "slot": "expression.smug",
+        "source": "hu-guifen/hu-guifen__expression__smug__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-proud-cg.png",
+        "sha256": "5d48c3981368e9e4de9aa75ff4efc7b56eacb8809d07da90e46fcd8465f34215",
+        "bytes": 1884789,
+        "version": 1
+      },
+      {
+        "slot": "expression.contempt",
+        "source": "hu-guifen/hu-guifen__expression__contempt__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-contempt-cg.png",
+        "sha256": "59e29fc0d45b15095976eb1fb21e451705681d3fcc57ef17d7b41aedaa80a1da",
+        "bytes": 2124113,
+        "version": 1
+      },
+      {
+        "slot": "expression.confused",
+        "source": "hu-guifen/hu-guifen__expression__confused__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-confused-cg.png",
+        "sha256": "fa3914d15ac72cfb72e2dffdf5f908a287297d7490a62b16cec5e2e3366bd959",
+        "bytes": 1836943,
+        "version": 1
+      },
+      {
+        "slot": "expression.thinking",
+        "source": "hu-guifen/hu-guifen__expression__thinking__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-thoughtful-cg.png",
+        "sha256": "1f597343af25864efae0ca3d6eac0db77752fe661cf08cbb6f9cc79ca19cda91",
+        "bytes": 1999854,
+        "version": 1
+      },
+      {
+        "slot": "expression.determined",
+        "source": "hu-guifen/hu-guifen__expression__determined__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-determined-cg.png",
+        "sha256": "7a343675115b97a61360c04694afee7ca9dee5201e98f9564b44107275e07aa8",
+        "bytes": 1968170,
+        "version": 1
+      },
+      {
+        "slot": "expression.shy",
+        "source": "hu-guifen/hu-guifen__expression__shy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-shy-cg.png",
+        "sha256": "14d6f565813bf2faac09018b75a6e67546b6c7a18614acede47d55fc5a1865b2",
+        "bytes": 2211029,
+        "version": 1
+      },
+      {
+        "slot": "expression.pain",
+        "source": "hu-guifen/hu-guifen__expression__pain__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-pain-cg.png",
+        "sha256": "375b1b65942959ef8d4e2a511acf6cbafc68ec30d5a44735d6999adde8c98da6",
+        "bytes": 2066057,
+        "version": 1
+      },
+      {
+        "slot": "expression.sleepy",
+        "source": "hu-guifen/hu-guifen__expression__sleepy__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-sleepy-cg.png",
+        "sha256": "225c99e0d0f49ae70462fdc9734cfc25b9a8d550f3c9dc8b50db595e3a3ed091",
+        "bytes": 2028568,
+        "version": 1
+      },
+      {
+        "slot": "expression.awkward-smile",
+        "source": "hu-guifen/hu-guifen__expression__awkward-smile__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-pleased-cg.png",
+        "sha256": "42df4f473c5cb1923c17254eeb2ba05812adbdac4fa28d5531f4b3287c493d24",
+        "bytes": 1914748,
+        "version": 1
+      },
+      {
+        "slot": "expression.deadpan",
+        "source": "hu-guifen/hu-guifen__expression__deadpan__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/expression-calm-cg.png",
+        "sha256": "eafa29c11ecc1577e5e1657a1755f165b2bc4231b51fc301b6aeb1bb0eb47e79",
+        "bytes": 1921296,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.front",
+        "source": "hu-guifen/hu-guifen__wardrobe-personal__front__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/wardrobe-front-cg.png",
+        "sha256": "f37e9bd00ca854ead6ac5d93018aa697035765ef6eb71b37267e7b70739cdeaf",
+        "bytes": 975971,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.three-quarter",
+        "source": "hu-guifen/hu-guifen__wardrobe-personal__three-quarter__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/wardrobe-three-quarter-cg.png",
+        "sha256": "b3f519f0723ef3f9aff8c33739b1f76fde9616af52414c1fb902547a322bcefa",
+        "bytes": 755489,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.side",
+        "source": "hu-guifen/hu-guifen__wardrobe-personal__side__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/wardrobe-side-cg.png",
+        "sha256": "8d3838c771014af5e1a499f0ea1131de1f761e6eb88bca68d018a2317f5e06f2",
+        "bytes": 607162,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.back",
+        "source": "hu-guifen/hu-guifen__wardrobe-personal__back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/wardrobe-back-cg.png",
+        "sha256": "aaed4df75333c7df2e5d85dd4904768f472db7e47ddd6fd8c03aa9e722b30bd7",
+        "bytes": 864090,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.portrait",
+        "source": "hu-guifen/hu-guifen__wardrobe-personal__portrait__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/wardrobe-portrait-cg.png",
+        "sha256": "000f86df3696d8db06bcad49ebaf704a22960a1acee2f2280da3da4956fec20a",
+        "bytes": 1970467,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.apron",
+        "source": "hu-guifen/hu-guifen__wardrobe-personal__apron__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/wardrobe-apron-cg.png",
+        "sha256": "d5b0daeeb5ebac1c5ac92ec8df6a859b3ca78f6c7691f2f8df5cafc7f2121a50",
+        "bytes": 916859,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.shopping-bag",
+        "source": "hu-guifen/hu-guifen__wardrobe-personal__shopping-bag__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/wardrobe-shopping-bag-cg.png",
+        "sha256": "a2214999d971b317d7491bc92b56d1c4f677b96e65a0012a9f08308e12ec1fe4",
+        "bytes": 1031999,
+        "version": 1
+      },
+      {
+        "slot": "wardrobe.personal.tea-cup",
+        "source": "hu-guifen/hu-guifen__wardrobe-personal__tea-cup__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/wardrobe-tea-cup-cg.png",
+        "sha256": "d024c5386aeebaa011a3865fe6a74e285132ec57162f5e1731e05c8692740dad",
+        "bytes": 874176,
+        "version": 1
+      },
+      {
+        "slot": "pose.walk",
+        "source": "hu-guifen/hu-guifen__pose__walk__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/pose-walk.png",
+        "sha256": "d9eef3158dd37cdea6437da786e63f716622436661dddfd646cc5ef99eab1ad2",
+        "bytes": 916425,
+        "version": 1
+      },
+      {
+        "slot": "pose.run",
+        "source": "hu-guifen/hu-guifen__pose__run__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/pose-run.png",
+        "sha256": "ba1913ffe5fcb3536b91364df536a1f3e41eed7aaea28651c33165d061372f27",
+        "bytes": 946389,
+        "version": 1
+      },
+      {
+        "slot": "pose.sit",
+        "source": "hu-guifen/hu-guifen__pose__sit__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/pose-sit.png",
+        "sha256": "a45e81345b285318fe682e14c9a3db493cbf56b1f1f390d3dc6f3c9a8d36c1c2",
+        "bytes": 1032261,
+        "version": 1
+      },
+      {
+        "slot": "pose.point",
+        "source": "hu-guifen/hu-guifen__pose__point__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/pose-point.png",
+        "sha256": "f1118e434c1f82f0e34ef12bfa78ab8650c570ee52e32b78633fcf245e669662",
+        "bytes": 918012,
+        "version": 1
+      },
+      {
+        "slot": "pose.arms-crossed",
+        "source": "hu-guifen/hu-guifen__pose__arms-crossed__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/pose-arms-crossed.png",
+        "sha256": "e6aca59236b44aad8f9fc2bc650c02c6ef5a4f5caf633783443d065743f91a58",
+        "bytes": 842341,
+        "version": 1
+      },
+      {
+        "slot": "pose.phone",
+        "source": "hu-guifen/hu-guifen__pose__phone__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/pose-phone-cg.png",
+        "sha256": "b5893b088c91f2f334a6c1f4b6e1df10397fe082a84578c344163968b9c63f18",
+        "bytes": 936822,
+        "version": 1
+      },
+      {
+        "slot": "detail.hands",
+        "source": "hu-guifen/hu-guifen__detail__hands__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/detail-hands-cg.png",
+        "sha256": "49d27e2ef054f9ab918d5a9dc58069a1a072611839d4f3939674ac4a6bd2412e",
+        "bytes": 1132791,
+        "version": 1
+      },
+      {
+        "slot": "detail.hair-back",
+        "source": "hu-guifen/hu-guifen__detail__hair-back__v1.png",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-mv14evii-abb5ed09/hu-guifen/full-pack/staging/detail-hair-back-cg.png",
+        "sha256": "ca7f8ea127776f5710c7e789dc195fc970b104089c04a2adb54693374a7e566f",
+        "bytes": 2022760,
+        "version": 1
+      }
+    ],
+    "voices": [
+      {
+        "slot": "intro",
+        "source": "hu-guifen-voice/hu-guifen__voice__intro__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-actors-hu-tommy-finish-20261024/hu-guifen/voice/final/audio/intro.wav",
+        "sha256": "668334f8085589fc480942586e0ef7bcee96978e6f5a08326553951f92e0ce10",
+        "bytes": 1382444,
+        "version": 1,
+        "transcript": "哎哟，我是胡桂芬，武汉的，今年四十五咯。我这个人啊，就是爱笑，一笑脸上两个酒窝。以前在街口帮我姐守过早点摊，什么人都见过。你要我演个热心肠的大姐、厉害的老板娘，那是手到擒来！"
+      },
+      {
+        "slot": "intro-alt",
+        "source": "hu-guifen-voice/hu-guifen__voice__intro-alt__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-actors-hu-tommy-finish-20261024/hu-guifen/voice/final/audio/intro-alt.wav",
+        "sha256": "2195154c35da0d4e5ddaff5815926656ac8e9e5f513249abe115e758755f2e7c",
+        "bytes": 1689644,
+        "version": 1,
+        "transcript": "Hi, everyone. I'm Hu Guifen, forty-five, from Wuhan. I love a good laugh, and people say my dimples show up before I do. I used to help my sister at her breakfast stall, so I've seen every kind of customer. Cast me as the warm big sister or the tough boss lady; I can handle it."
+      },
+      {
+        "slot": "chat",
+        "source": "hu-guifen-voice/hu-guifen__voice__chat__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-actors-hu-tommy-finish-20261024/hu-guifen/voice/final/audio/chat.wav",
+        "sha256": "a317d2b7f3051e6a57bc446f95ee68ffa61988cf7f2e86eefae3351235179769",
+        "bytes": 952364,
+        "version": 1,
+        "transcript": "武汉过早可有讲究了，热干面得拌匀，豆皮要趁热吃。你要是只喝杯咖啡就出门，我看着都替你饿得慌。"
+      },
+      {
+        "slot": "happy",
+        "source": "hu-guifen-voice/hu-guifen__voice__happy__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-actors-hu-tommy-finish-20261024/hu-guifen/voice/final/audio/happy.wav",
+        "sha256": "34339fdfeba0ecdf2ad3146faa1de1299a45bff271fdaeefed896ad143b300ae",
+        "bytes": 721964,
+        "version": 1,
+        "transcript": "哎呀，真选上啦？我就说嘛，咱们有劲儿的人走到哪儿都不怕！今天我请客，热干面、豆皮，大家敞开吃！"
+      },
+      {
+        "slot": "angry",
+        "source": "hu-guifen-voice/hu-guifen__voice__angry__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-actors-hu-tommy-finish-20261024/hu-guifen/voice/final/audio/angry.wav",
+        "sha256": "44f630ab808252a344d4357ba49b082bc615d777c2f9b4a32e557f8f33848694",
+        "bytes": 691244,
+        "version": 1,
+        "transcript": "你说话归说话，别拿小姑娘小姑娘地叫我！我四十五了，做事比你还利索。该说明白的现在说明白，别磨磨蹭蹭的！"
+      },
+      {
+        "slot": "sad",
+        "source": "hu-guifen-voice/hu-guifen__voice__sad__v1.wav",
+        "nativeSource": "/Users/yuanfei/PieAI/MediaFactory/factory-workspace/runs/run-actors-hu-tommy-finish-20261024/hu-guifen/voice/final/audio/sad.wav",
+        "sha256": "6ea35e9dfe84f9b6978dc0ee7b579b997673ddeb2da54f14d7bcc5da2655396a",
+        "bytes": 1105964,
+        "version": 1,
+        "transcript": "我姐那早点摊关门那天，锅还热着呢。她说歇几天就回来，可这一歇，就再也没开起来。我到现在路过那条街，还是会闻见油锅的香味。"
+      }
+    ]
   }
 }

@@ -31,6 +31,7 @@ import { profile as actor27 } from "./wang-yong/profile.ts";
 import { profile as actor28 } from "./kate-murray/profile.ts";
 import { profile as actor29 } from "./peter-hale/profile.ts";
 import { profile as actor30 } from "./grace-boateng/profile.ts";
+import { profile as actor31 } from "./hu-guifen/profile.ts";
 export const ACTIVE_ACTORS: Actor[] = [
   actor0,
   actor1,
@@ -63,4 +64,5 @@ export const ACTIVE_ACTORS: Actor[] = [
   actor28,
   actor29,
   actor30,
+  actor31,
 ];
