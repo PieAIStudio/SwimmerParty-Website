@@ -68,8 +68,8 @@ export const profile: Actor = {
   version: "1.0.0",
   versionDate: "2026-10-26",
   versionNote: {
-    zh: "正式演员：55 张原始图、6 段冻结声音；比例 measurement_review 例外已披露。",
-    en: "Formal actor: 55 source-original images and 6 frozen voice clips; the measurement_review proportion exception is disclosed.",
+    zh: "55 张原始图、6 段冻结声音；比例例外见交接。",
+    en: "55 source-original images and 6 frozen voice clips; proportion exception in handoff.",
   },
   voiceLanguage: "zh",
 };
