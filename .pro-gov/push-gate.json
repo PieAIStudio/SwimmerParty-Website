@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "paths": [
+        ".pro-gov/push-gate*",
+        ".githooks/pre-push",
+        "lefthook.yml"
+      ],
+      "commands": [
+        "git diff --check \"$PUSH_GATE_BASE\" \"$PUSH_GATE_HEAD\"",
+        "node --check .pro-gov/push-gate.mjs && sh -n .githooks/pre-push",
+        "pnpm docs:check"
+      ]
+    },
+    {
+      "paths": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "README.md",
+        "docs/**"
+      ],
+      "commands": [
+        "git diff --check \"$PUSH_GATE_BASE\" \"$PUSH_GATE_HEAD\"",
+        "pnpm docs:check"
+      ]
+    },
+    {
+      "paths": [
+        "src/**",
+        "e2e/**"
+      ],
+      "commands": [
+        "node --input-type=module -e 'import{execFileSync,spawnSync}from\"node:child_process\";const f=execFileSync(\"git\",[\"diff\",\"--name-only\",\"--no-renames\",\"--diff-filter=ACMR\",\"-z\",process.env.PUSH_GATE_BASE,process.env.PUSH_GATE_HEAD,\"--\",...[\"src\", \"e2e\"]],{encoding:\"utf8\"}).split(\"\\0\").filter(p=>p&&new RegExp(\"\\\\.(?:[cm]?[jt]sx?|json|css|html)$\").test(p));if(f.length){const r=spawnSync(\"pnpm\",[\"exec\", \"oxfmt\", \"--check\"].concat(f,[\"--ignore-path\", \"./.oxfmtignore\"]),{stdio:\"inherit\"});process.exit(r.status??1)}'",
+        "node --input-type=module -e 'import{execFileSync,spawnSync}from\"node:child_process\";const f=execFileSync(\"git\",[\"diff\",\"--name-only\",\"--no-renames\",\"--diff-filter=ACMR\",\"-z\",process.env.PUSH_GATE_BASE,process.env.PUSH_GATE_HEAD,\"--\",...[\"src\", \"e2e\"]],{encoding:\"utf8\"}).split(\"\\0\").filter(p=>p&&new RegExp(\"\\\\.[cm]?[jt]sx?$\").test(p));if(f.length){const r=spawnSync(\"pnpm\",[\"exec\", \"oxlint\"].concat(f,[\"-c\", \"./.oxlintrc.json\"]),{stdio:\"inherit\"});process.exit(r.status??1)}'",
+        "pnpm typecheck"
+      ]
+    },
+    {
+      "paths": [
+        "package.json",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "tsconfig*.json",
+        "vite.config.*",
+        "vitest.config.*",
+        "next.config.*",
+        ".oxlintrc.json"
+      ],
+      "commands": [
+        "pnpm typecheck"
+      ]
+    },
+    {
+      "paths": [
+        ".oxfmtrc.json",
+        ".oxfmtignore"
+      ],
+      "commands": [
+        "git diff --check \"$PUSH_GATE_BASE\" \"$PUSH_GATE_HEAD\""
+      ]
+    },
+    {
+      "paths": [
+        "tools/**"
+      ],
+      "commands": [
+        "node --test tools/test/*.test.ts"
+      ]
+    },
+    {
+      "paths": [
+        ".pro-gov/assets*",
+        ".agents/skills/**",
+        ".claude/skills"
+      ],
+      "commands": [
+        "pnpm pro-gov assets check",
+        "pnpm docs:check"
+      ]
+    },
+    {
+      "paths": [
+        ".gitignore",
+        ".gitattributes",
+        "LICENSE",
+        "CHANGELOG.md",
+        "vercel.json"
+      ],
+      "commands": [
+        "git diff --check \"$PUSH_GATE_BASE\" \"$PUSH_GATE_HEAD\""
+      ]
+    }
+  ],
+  "blindSpots": [
+    "Exact shared PGS Node 24 selector; repo-owned mapping only. Unknown paths stop; there is no full-suite fallback.",
+    "Vitest related follows static imports from changed source/test paths, not global package/config force-rerun triggers. A selected unit command with zero tests fails for investigation. Deletions and dynamic seams need maintained mappings.",
+    "As in the passing pilots, no new automatic browser/build/timing suite is added. HTTP UI journeys, dynamic assets, layout, real auth/network and paid-provider behavior are not proved by this hook; existing acceptance/release checks stay unchanged.",
+    "Only existing local check CLIs are invoked. Config/lockfile changes get affected types/lint or a named bounded smoke, not all tests. Release, deployment, account and publication paths require separate scope.",
+    "Site test/test:e2e are the whole Playwright suite and never run here. Tool changes select only the existing tools/test unit contracts. Source UI acceptance remains a separate bounded browser task."
+  ]
+}
