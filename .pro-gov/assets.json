@@ -58,14 +58,6 @@
       "id": "pie-rules/donors"
     },
     {
-      "id": "pie-skills/experience-capture",
-      "placement": "auto"
-    },
-    {
-      "id": "pie-skills/screenwalk",
-      "placement": "auto"
-    },
-    {
       "id": "third-party-skills/brandkit",
       "placement": "manual"
     },

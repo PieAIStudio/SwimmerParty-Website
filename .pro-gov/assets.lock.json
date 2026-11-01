@@ -5,8 +5,8 @@
   "registryProvenance": {
     "schema": "agent-assets-registry",
     "version": 1,
-    "hash": "sha256:9c22f8a862cf938825fe7db28ebda9526f8002fc7eff07ed805175af2190037a",
-    "assetCount": 58
+    "hash": "sha256:1d60798deafbb9138a74af9f23de0a8d2d7d75e5a0d628deabb6b6845f8c892c",
+    "assetCount": 56
   },
   "assets": [
     {
@@ -29,7 +29,7 @@
       "id": "npx-skills/img2threejs",
       "sourcePath": "skills/npx-skills/.agents/skills/img2threejs",
       "delivery": "symlink",
-      "contentHash": "sha256:4be87bc42dc12fc726e4b409689d30ece0dd4ecb96636ecc8b7d084ca23c7833",
+      "contentHash": "sha256:ae9fff221cafdcc1d5a0072bfd4b6f1d4e12a9cdbf8dea3b3487ca349e11965b",
       "placement": "manual",
       "targetPath": ".agents/manual-skills/img2threejs"
     },
@@ -69,7 +69,7 @@
       "id": "npx-skills/ui-ux-pro-max",
       "sourcePath": "skills/npx-skills/.agents/skills/ui-ux-pro-max",
       "delivery": "symlink",
-      "contentHash": "sha256:f66b17600aed03da23e2f038c5ffe4bf96c8227522339439dd5720b48d3a5824",
+      "contentHash": "sha256:9ea895a165b0c8c80f33d1de5ff3cfdaf9cecdcb80ac60f6ace23f4acdd91ad4",
       "placement": "auto",
       "targetPath": ".agents/skills/ui-ux-pro-max"
     },
@@ -92,7 +92,7 @@
       "id": "pie-rules/brand-kit-first",
       "sourcePath": "rules/pie-rules/brand-kit-first.md",
       "delivery": "symlink",
-      "contentHash": "sha256:734154e98947bc7743e930a8fe018a6dc2b3f058b14a85af798b0c52352b07fe",
+      "contentHash": "sha256:fd3cb970084a98b2773f83b6917196da40f91718400f82cae004e0f2b779dadc",
       "targetPath": "docs/policy/shared-rules/brand-kit-first.md"
     },
     {
@@ -113,7 +113,7 @@
       "id": "pie-rules/document-convergence",
       "sourcePath": "rules/pie-rules/document-convergence.md",
       "delivery": "symlink",
-      "contentHash": "sha256:5eaa98718bfa92fadf3a972fd43434e07b7baf5a47e0b9f22f397a3d2e6037e6",
+      "contentHash": "sha256:b4e439ffe24d3031bd61de1b759fe7ec07e66e5ebdbca4d58b2331bfc2b7981b",
       "targetPath": "docs/policy/shared-rules/document-convergence.md"
     },
     {
@@ -122,22 +122,6 @@
       "delivery": "symlink",
       "contentHash": "sha256:c3f709f66b2966f7bafde2cacac0c89f5cc3efc059eb53cb3b015c8ac5aab7a8",
       "targetPath": "docs/policy/shared-rules/donors.md"
-    },
-    {
-      "id": "pie-skills/experience-capture",
-      "sourcePath": "skills/pie-skills/experience-capture",
-      "delivery": "symlink",
-      "contentHash": "sha256:7e721266aa5bb311c9e66b887046270cd29cb6125a4fa3c103471d775aa40d65",
-      "placement": "auto",
-      "targetPath": ".agents/skills/experience-capture"
-    },
-    {
-      "id": "pie-skills/screenwalk",
-      "sourcePath": "skills/pie-skills/screenwalk",
-      "delivery": "symlink",
-      "contentHash": "sha256:4d2ccbffdba26191cfc1b64d4f070c351f34a729e9ffb28c7dca00759a4837f7",
-      "placement": "auto",
-      "targetPath": ".agents/skills/screenwalk"
     },
     {
       "id": "third-party-skills/brandkit",
@@ -271,7 +255,7 @@
       "id": "third-party-skills/threejs-awesome-graphics-agent-skills/threejs-procedural-fields",
       "sourcePath": "skills/third-party-without-npx-skills/threejs-awesome-graphics-agent-skills/threejs-procedural-fields",
       "delivery": "symlink",
-      "contentHash": "sha256:fa90c7748d76723f2dbf4a0c2e0e2758b4e257f152fd1a3708e60b2c1c2231fa",
+      "contentHash": "sha256:390d4cf0fee5da853d9bb0aef87ed5e800c1b2eeac444d3bcdc365a34d851e5c",
       "placement": "manual",
       "targetPath": ".agents/manual-skills/threejs-procedural-fields"
     },
@@ -287,7 +271,7 @@
       "id": "third-party-skills/threejs-awesome-graphics-agent-skills/threejs-procedural-materials",
       "sourcePath": "skills/third-party-without-npx-skills/threejs-awesome-graphics-agent-skills/threejs-procedural-materials",
       "delivery": "symlink",
-      "contentHash": "sha256:3c7783e0a7f0d0ddf6234f4dadb4cf87c5ba41aa82352b96b92586d2eb31e302",
+      "contentHash": "sha256:0f1d4e82f3ed6f5678989c3607f9670e039bc14e8a564580ce34a17cfef25962",
       "placement": "manual",
       "targetPath": ".agents/manual-skills/threejs-procedural-materials"
     },
@@ -343,7 +327,7 @@
       "id": "third-party-skills/threejs-awesome-graphics-agent-skills/threejs-skill-router",
       "sourcePath": "skills/third-party-without-npx-skills/threejs-awesome-graphics-agent-skills/threejs-skill-router",
       "delivery": "symlink",
-      "contentHash": "sha256:f00e251f85ca6c41492fdab4a8432896c632bce60db4fe8ecbc47db3cfe6b90f",
+      "contentHash": "sha256:cfae5926b8acaf00e6771fb9cc1c97e9ff1bd742b27b5728d36040caba1ac345",
       "placement": "manual",
       "targetPath": ".agents/manual-skills/threejs-skill-router"
     },
@@ -351,7 +335,7 @@
       "id": "third-party-skills/threejs-awesome-graphics-agent-skills/threejs-spectral-ocean",
       "sourcePath": "skills/third-party-without-npx-skills/threejs-awesome-graphics-agent-skills/threejs-spectral-ocean",
       "delivery": "symlink",
-      "contentHash": "sha256:cb00e0f7f1d93759f711fb8dcbdc5e95157654a3e8d76c9ec84c42f7b5d490d9",
+      "contentHash": "sha256:8909689c615abbeed0eaeacf27858d2c849dbeee1ee770a5d5c01088326c2c39",
       "placement": "manual",
       "targetPath": ".agents/manual-skills/threejs-spectral-ocean"
     },
@@ -383,7 +367,7 @@
       "id": "third-party-skills/threejs-awesome-graphics-agent-skills/threejs-water-optics",
       "sourcePath": "skills/third-party-without-npx-skills/threejs-awesome-graphics-agent-skills/threejs-water-optics",
       "delivery": "symlink",
-      "contentHash": "sha256:19ba1d643c83ee449f5c824e186def38c987d060b319c116fd9449336475b08b",
+      "contentHash": "sha256:755d9f2118e293bd42fd9fa068c112dc0bf2047fa5496e0c41953503b2a9d15e",
       "placement": "manual",
       "targetPath": ".agents/manual-skills/threejs-water-optics"
     },
