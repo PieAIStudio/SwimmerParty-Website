@@ -34,3 +34,7 @@ tsconfig.tsbuildinfo
 /media-pack/library/
 
 /public/media/og/
+result.txt
+*.pid
+*.exit
+*.exitcode

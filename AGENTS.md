@@ -12,8 +12,9 @@
 - `.agents/skills/` is the canonical project skill root; `.claude/skills`
   must be the exact relative symlink `../.agents/skills`.
 - Product artifacts outside `docs/**` are not governed docs unless this project explicitly opts them in.
-- `README.md` is the human-facing introduction; read it only for positioning,
-  public explanation, or README work.
+- Read the human-facing `README.md` for relevant setup, verification,
+  positioning, public explanation or README work. Do not duplicate it as an
+  AI-only README.
 - `docs/reference/execution/current-work.md` is the active-work index; read it
   when the task depends on current priorities or in-flight work.
 - This project's adopted profile is `engineering-runtime`.
@@ -37,18 +38,24 @@ fresh clone; their absence must not hide or replace the portable policy rules.
 
 ## Documentation Tasks
 
-When the task creates, edits, moves, deletes, or governs documentation, read
-`docs/governance/boundary.md`, `docs/governance/ssot-v1.1.md`,
-`docs/governance/doc-agent-rules.md`, `docs/governance/doc-types.md`, the
-selected agents routing file, and the policy files that govern the changed
-surface. Keep project AI development policy in `docs/policy/`.
+For ordinary content edits, read `docs/governance/doc-agent-rules.md` and the
+policy for the changed subject. Expand `docs/governance/boundary.md` and
+`docs/governance/ssot-v1.1.md` for scope, ownership or host aliases;
+`docs/governance/doc-types.md` for metadata/lifecycle; and the selected routing
+file for workflow changes. Keep project AI development policy in `docs/policy/`.
+Small tasks do not require a new Spec, Plan, ADR or proof document. Apply
+convergence to affected facts and references, preserving rationale and original
+evidence. Use relevant checks and required delivery gates, not every expensive
+test or a reinstall for an ordinary edit. Expand or repeat checks only for
+related changes, failures or unresolved questions; stop when acceptance is met.
 
 ## Credentials And Local Environment
 
 For credentials, login or local environment files, first read
 `<portfolio-root>/.secrets/README.md`, then
 `docs/policy/shared-rules/cloud-platform-access.md`. Use the project's existing
-adapter and recorded central location; do not assume secrets belong in this repository.
+adapter and recorded central location; do not infer local secret storage from a
+missing `.env`. Read only task-required configuration.
 
 <!-- PGS-ROUTER:END -->
 
