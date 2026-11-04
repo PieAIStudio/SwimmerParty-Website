@@ -24,6 +24,14 @@
       "placement": "auto"
     },
     {
+      "id": "npx-skills/mobilewright",
+      "placement": "auto"
+    },
+    {
+      "id": "npx-skills/playwright-cli",
+      "placement": "auto"
+    },
+    {
       "id": "npx-skills/threejs",
       "placement": "manual"
     },
@@ -56,6 +64,10 @@
     },
     {
       "id": "pie-rules/donors"
+    },
+    {
+      "id": "pie-skills/promote-new-face",
+      "placement": "auto"
     },
     {
       "id": "third-party-skills/brandkit",

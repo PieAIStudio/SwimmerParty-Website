@@ -5,8 +5,8 @@
   "registryProvenance": {
     "schema": "agent-assets-registry",
     "version": 1,
-    "hash": "sha256:1d60798deafbb9138a74af9f23de0a8d2d7d75e5a0d628deabb6b6845f8c892c",
-    "assetCount": 56
+    "hash": "sha256:1e32355da93cdeac2f8cbaf1a986eb7278076e989b9185c7f892d80ac73b1b0b",
+    "assetCount": 59
   },
   "assets": [
     {
@@ -48,6 +48,22 @@
       "contentHash": "sha256:97d07c19a3244b452ca8a37984f4403346c4744a2efcefb0fbc85afe86c3839e",
       "placement": "auto",
       "targetPath": ".agents/skills/make-interfaces-feel-better"
+    },
+    {
+      "id": "npx-skills/mobilewright",
+      "sourcePath": "skills/npx-skills/.agents/skills/mobilewright",
+      "delivery": "symlink",
+      "contentHash": "sha256:fd972a18db8b88ed7029d222476534e9bdacd10b6035de90c5c5c1932478a53f",
+      "placement": "auto",
+      "targetPath": ".agents/skills/mobilewright"
+    },
+    {
+      "id": "npx-skills/playwright-cli",
+      "sourcePath": "skills/npx-skills/.agents/skills/playwright-cli",
+      "delivery": "symlink",
+      "contentHash": "sha256:6be12bb66dbfa6d2459e1747058a386b499d4e1db57e802e86aa7395686d58dd",
+      "placement": "auto",
+      "targetPath": ".agents/skills/playwright-cli"
     },
     {
       "id": "npx-skills/threejs",
@@ -122,6 +138,14 @@
       "delivery": "symlink",
       "contentHash": "sha256:c3f709f66b2966f7bafde2cacac0c89f5cc3efc059eb53cb3b015c8ac5aab7a8",
       "targetPath": "docs/policy/shared-rules/donors.md"
+    },
+    {
+      "id": "pie-skills/promote-new-face",
+      "sourcePath": "skills/pie-skills/promote-new-face",
+      "delivery": "symlink",
+      "contentHash": "sha256:5e63aa160b5edbd87a5db3fce7b7507b9a26dd264365809d9ceca289cfa0987f",
+      "placement": "auto",
+      "targetPath": ".agents/skills/promote-new-face"
     },
     {
       "id": "third-party-skills/brandkit",

@@ -57,6 +57,11 @@ For credentials, login or local environment files, first read
 adapter and recorded central location; do not infer local secret storage from a
 missing `.env`. Read only task-required configuration.
 
+## Test Tools
+Web: use Playwright tests; explore with `playwright-cli`.
+Phone: explore with the `mobile-mcp` server; keep Mobilewright tests in tests/mobile/; run `npx mobilewright test`.
+Log each phone-tool use in <HQ-control-plane-on-Mac>/conductor/projects/HQ/mobile-mcp-install-20261104/USAGE.md.
+
 <!-- PGS-ROUTER:END -->
 
 ## Three-Stage Delivery
