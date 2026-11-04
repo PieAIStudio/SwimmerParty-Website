@@ -14,6 +14,7 @@ import en from "../messages/en/messages.json";
 import zh from "../messages/zh-CN/messages.json";
 
 const evidencePrefix = process.env.SCENE_EVIDENCE_PREFIX ?? "C";
+const evidenceRoot = process.env.PLAYWRIGHT_EVIDENCE_DIR ?? "run-1";
 const five = ACTORS.slice(0, 5)
   .map((actor) => actor.slug)
   .join(",");
@@ -30,20 +31,24 @@ for (const locale of ["en", "zh"] as const)
       const m = locale === "en" ? en : zh;
       const errors: string[] = [];
       page.on("pageerror", (error) => errors.push(error.message));
-      await mkdir("run-1/shots", { recursive: true });
+      await mkdir(`${evidenceRoot}/shots`, { recursive: true });
       await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
       await page.goto(`/${locale}/cast?a=${five}`);
       await page.locator("[data-scene-entry]").click();
       await ready(page);
       await page.evaluate(() => document.fonts.ready);
-      await page.screenshot({ path: `run-1/shots/${evidencePrefix}-entry-${locale}-${width}.png` });
+      await page.screenshot({
+        path: `${evidenceRoot}/shots/${evidencePrefix}-entry-${locale}-${width}.png`,
+      });
       await expect(page.locator("[data-scene-figures] button")).toHaveCount(5);
       await expect(page.getByRole("button", { name: m["scene.add"], exact: true })).toBeDisabled();
       // All six poses and three independent model variants remain usable.
       for (const pose of POSES) {
         await page.getByLabel(m["scene.pose"], { exact: true }).selectOption(pose);
         if (locale === "en" && width === 1440) {
-          await page.screenshot({ path: `run-1/shots/${evidencePrefix}-pose-${pose}.png` });
+          await page.screenshot({
+            path: `${evidenceRoot}/shots/${evidencePrefix}-pose-${pose}.png`,
+          });
         }
       }
       for (const build of BUILDS) {
@@ -65,10 +70,12 @@ for (const locale of ["en", "zh"] as const)
         await page.getByLabel(m["scene.camera"], { exact: true }).selectOption(view);
       await page.getByRole("button", { name: m["scene.fit"], exact: true }).click();
       await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
-      await page.screenshot({ path: `run-1/shots/${evidencePrefix}-stage-${locale}-${width}.png` });
+      await page.screenshot({
+        path: `${evidenceRoot}/shots/${evidencePrefix}-stage-${locale}-${width}.png`,
+      });
       await page.locator("aside[aria-label]").last().scrollIntoViewIfNeeded();
       await page.screenshot({
-        path: `run-1/shots/${evidencePrefix}-controls-${locale}-${width}.png`,
+        path: `${evidenceRoot}/shots/${evidencePrefix}-controls-${locale}-${width}.png`,
       });
       for (const [frame, dimensions] of Object.entries(FRAMES)) {
         await page.getByLabel(m["scene.frame"], { exact: true }).selectOption(frame);
@@ -78,7 +85,7 @@ for (const locale of ["en", "zh"] as const)
         const downloadPromise = page.waitForEvent("download");
         await page.getByRole("button", { name: m["scene.savePng"], exact: true }).click();
         const download = await downloadPromise;
-        const path = `run-1/shots/${evidencePrefix}-export-${frame}-${locale}-${width}.png`;
+        const path = `${evidenceRoot}/shots/${evidencePrefix}-export-${frame}-${locale}-${width}.png`;
         await download.saveAs(path);
         const bytes = await readFile(path);
         expect(bytes.readUInt32BE(16)).toBe(dimensions[0]);
@@ -89,7 +96,7 @@ for (const locale of ["en", "zh"] as const)
         expect(after!.width).toBeCloseTo(frameBox!.width);
         await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
         await page.screenshot({
-          path: `run-1/shots/${evidencePrefix}-frame-${frame}-${locale}-${width}.png`,
+          path: `${evidenceRoot}/shots/${evidencePrefix}-frame-${frame}-${locale}-${width}.png`,
         });
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
@@ -157,7 +164,11 @@ test("figure GLBs and local draft obey the static asset contract", async () => {
     expect(gltf.animations.map((clip: { name: string }) => clip.name)).toEqual([...POSES]);
     results.push({ build, bytes: bytes.length, triangles, poses: [...POSES] });
   }
-  await writeFile(`run-1/${evidencePrefix}-assets.json`, JSON.stringify(results, null, 2));
+  await mkdir(evidenceRoot, { recursive: true });
+  await writeFile(
+    `${evidenceRoot}/${evidencePrefix}-assets.json`,
+    JSON.stringify(results, null, 2),
+  );
 });
 
 test("3D JavaScript is isolated from main pages and within its incremental budget", async ({
@@ -226,7 +237,7 @@ test("3D JavaScript is isolated from main pages and within its incremental budge
     await context.close();
   }
   await writeFile(
-    `run-1/${evidencePrefix}-bundle.json`,
+    `${evidenceRoot}/${evidencePrefix}-bundle.json`,
     JSON.stringify(
       {
         definition:
@@ -320,7 +331,7 @@ test("phone-size Chrome performance under 4x CPU throttling", async ({ page, bro
     );
   }
   await writeFile(
-    `run-1/${evidencePrefix}-perf.json`,
+    `${evidenceRoot}/${evidencePrefix}-perf.json`,
     JSON.stringify(
       {
         browser: browser.version(),

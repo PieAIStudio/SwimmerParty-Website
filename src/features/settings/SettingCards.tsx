@@ -80,6 +80,7 @@ export function SettingCards({
                   alt={name}
                   width={reference.width}
                   height={reference.height}
+                  sizes="(max-width: 639px) 50vw, (max-width: 1279px) 33vw, 400px"
                   className="aspect-video w-full rounded-[var(--game-ui-radius-card)] object-cover"
                 />
               ) : (

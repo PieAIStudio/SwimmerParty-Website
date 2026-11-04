@@ -71,6 +71,14 @@
     },
     {
       "paths": [
+        "public/media/settings/*.png",
+        "public/media/settings/*.webp"
+      ],
+      "commands": [],
+      "reason": "Owner-authorized MediaFactory setting originals and derived previews. Existing bounded e2e/settings.spec.ts checks real preview decoding and PNG saves/filename/dimensions/SHA; the manual browser mapping remains in features/settings/README.md. No automatic browser/build suite is added to push."
+    },
+    {
+      "paths": [
         ".oxfmtrc.json",
         ".oxfmtignore"
       ],

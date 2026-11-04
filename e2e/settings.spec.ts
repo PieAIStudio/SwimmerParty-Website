@@ -1,9 +1,12 @@
 import { test, expect, type BrowserContext } from "@playwright/test";
 import { mkdir, readFile, readdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { SETTING_IDS, SETTING_MANIFEST } from "../src/content/settings";
 import { LICENSE } from "../src/content/license";
 import en from "../messages/en/messages.json";
 import zh from "../messages/zh-CN/messages.json";
+
+const evidenceRoot = process.env.PLAYWRIGHT_EVIDENCE_DIR ?? "run-1";
 
 // Keep the Owner's OS pasteboard untouched and isolate parallel contexts.
 async function isolateClipboard(context: BrowserContext) {
@@ -34,20 +37,38 @@ for (const locale of ["en", "zh"] as const)
           if (/\/api\/generate|\/v1\/images|\/generations/.test(request.url()))
             generationRequests.push(request.url());
         });
-        await mkdir("run-1/shots", { recursive: true });
+        await mkdir(`${evidenceRoot}/shots`, { recursive: true });
         await isolateClipboard(context);
         await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
         await page.goto(`/${locale}/${route}`, { waitUntil: "domcontentloaded" });
         const picker = page.locator("[data-setting-picker]");
         await expect(picker.locator("[data-setting-card]")).toHaveCount(6);
-        await expect(picker.locator("[data-setting-placeholder]")).toHaveCount(6);
-        await expect(picker.locator("img")).toHaveCount(0);
-        expect(SETTING_IDS.every((id) => SETTING_MANIFEST[id].image === null)).toBe(true);
+        await expect(picker.locator("[data-setting-placeholder]")).toHaveCount(0);
+        await expect(picker.locator("img")).toHaveCount(6);
+        for (const id of SETTING_IDS) {
+          const image = picker.locator(`[data-setting-card=${id}] img`);
+          const reference = SETTING_MANIFEST[id].image!;
+          await expect(image).toHaveAttribute("alt", m[`settings.name.${id}`]);
+          await expect(image).toHaveAttribute("loading", "lazy");
+          await expect(image).toHaveAttribute("width", String(reference.width));
+          await expect(image).toHaveAttribute("height", String(reference.height));
+          await image.scrollIntoViewIfNeeded();
+          await image.evaluate((node: HTMLImageElement) => node.decode());
+          expect(
+            await image.evaluate((node: HTMLImageElement) => node.naturalWidth),
+          ).toBeGreaterThan(0);
+        }
         await page.evaluate(() => document.fonts.ready);
-        await picker
-          .getByRole("heading", { level: 2 })
-          .evaluate((node) => node.scrollIntoView({ block: "start", behavior: "instant" }));
-        await page.screenshot({ path: `run-1/shots/B-picker-${route}-${locale}-${width}.png` });
+        await picker.getByRole("heading", { level: 2 }).evaluate((node) =>
+          window.scrollTo({
+            top: scrollY + node.getBoundingClientRect().top - 88,
+            behavior: "instant",
+          }),
+        );
+        await expect(picker.locator("[data-setting-card]").last()).toBeInViewport({ ratio: 1 });
+        await page.screenshot({
+          path: `${evidenceRoot}/shots/B-picker-${route}-${locale}-${width}.png`,
+        });
         const sentence = picker.getByLabel(m["settings.sentence"], { exact: true });
         const edits = new Map<string, string>();
         for (const id of SETTING_IDS) {
@@ -64,13 +85,33 @@ for (const locale of ["en", "zh"] as const)
             picker.getByRole("button", { name: m["settings.promptCopied"], exact: true }),
           ).toBeVisible();
           expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(edited);
-          await expect(
-            picker.getByRole("button", { name: m["settings.saveImage"], exact: true }),
-          ).toBeDisabled();
-          await expect(picker.getByText(m["settings.notSupplied"], { exact: true })).toBeVisible();
+          const save = picker.getByRole("button", { name: m["settings.saveImage"], exact: true });
+          await expect(save).toBeEnabled();
+          await expect(picker.getByText(m["settings.notSupplied"], { exact: true })).toHaveCount(0);
+          // Check all six originals once, plus a real save in each route/locale/viewport.
+          if ((route === "guide" && locale === "en" && width === 1440) || id === "studio") {
+            const reference = SETTING_MANIFEST[id].image!;
+            const downloadEvent = page.waitForEvent("download");
+            await save.click();
+            const download = await downloadEvent;
+            expect(download.suggestedFilename()).toBe(reference.filename);
+            const savedPath = test.info().outputPath(reference.filename);
+            await download.saveAs(savedPath);
+            const bytes = await readFile(savedPath);
+            const original = await readFile(`public${reference.download}`);
+            expect(createHash("sha256").update(bytes).digest("hex")).toBe(
+              createHash("sha256").update(original).digest("hex"),
+            );
+            expect(bytes.subarray(0, 8).toString("hex")).toBe("89504e470d0a1a0a");
+            expect(bytes.readUInt32BE(16)).toBe(reference.width);
+            expect(bytes.readUInt32BE(20)).toBe(reference.height);
+            await expect(picker.getByRole("status")).toHaveText(m["settings.imageSaved"]);
+          }
         }
         await picker.locator("[data-setting-editor]").scrollIntoViewIfNeeded();
-        await page.screenshot({ path: `run-1/shots/B-editor-${route}-${locale}-${width}.png` });
+        await page.screenshot({
+          path: `${evidenceRoot}/shots/B-editor-${route}-${locale}-${width}.png`,
+        });
         await picker.getByRole("button", { name: m["settings.name.studio"], exact: true }).click();
         await expect(sentence).toHaveValue(edits.get("studio")!);
         if (route === "scene") {
@@ -135,7 +176,7 @@ test("setting cards wait for hydration before accepting sentence edits", async (
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(
     "A quiet studio in soft daylight.",
   );
-  await page.screenshot({ path: "run-1/shots/B-hydration-en-390.png" });
+  await page.screenshot({ path: `${evidenceRoot}/shots/B-hydration-en-390.png` });
 });
 
 test("setting cards shared CopyButton retains its existing success label", async ({
@@ -143,13 +184,13 @@ test("setting cards shared CopyButton retains its existing success label", async
   context,
 }) => {
   await isolateClipboard(context);
-  await mkdir("run-1/shots", { recursive: true });
+  await mkdir(`${evidenceRoot}/shots`, { recursive: true });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/en/license", { waitUntil: "domcontentloaded" });
   await page.getByRole("button", { name: en["license.copyCredit"], exact: true }).click();
   await expect(page.getByRole("button", { name: en["common.copied"], exact: true })).toBeVisible();
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(LICENSE.credit.en);
-  await page.screenshot({ path: "run-1/shots/B-copy-default-en-390.png" });
+  await page.screenshot({ path: `${evidenceRoot}/shots/B-copy-default-en-390.png` });
 });
 
 test("setting cards retain selectable prompt when clipboard permission is denied", async ({
@@ -191,5 +232,5 @@ test("setting cards retain selectable prompt when clipboard permission is denied
         node.selectionStart === 0 && node.selectionEnd === node.value.length,
     ),
   ).toBe(true);
-  await page.screenshot({ path: "run-1/shots/B-copy-denied-en-390.png" });
+  await page.screenshot({ path: `${evidenceRoot}/shots/B-copy-denied-en-390.png` });
 });
