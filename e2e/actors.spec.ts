@@ -11,7 +11,7 @@ test("Yan Lin's mobile dossier opens at the hero with the full pack and sample",
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto("/zh/actors/yan-lin");
   await expect(page.getByRole("heading", { level: 1, name: /严琳/ })).toBeVisible();
-  await expect(page.getByRole("button", { name: "领取懒人包" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "下载起步包" })).toBeVisible();
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
   await expect(page.locator('[data-asset-slot][data-delivered="true"]')).toHaveCount(55);
   await expect(page.locator("[data-voice-slot]")).toHaveCount(6);
@@ -52,7 +52,7 @@ test("the actor page offers the character sheet and a help link beside the start
   // Web fonts reflow the row; measure and click only once the layout has settled.
   await page.evaluate(() => document.fonts.ready);
   const starter = page.getByRole("button", { name: /starter pack/i });
-  const sheet = page.getByRole("link", { name: "Character sheet", exact: true });
+  const sheet = page.getByRole("link", { name: "Make character sheet", exact: true });
   const cast = page.getByRole("button", { name: "Add to cast", exact: true });
   const help = page.getByRole("link", { name: "How it works", exact: true }).first();
   await expect(sheet).toHaveAttribute("href", "/en/actors/tang-yunqiu/sheet");
@@ -73,6 +73,8 @@ test("the actor page offers the character sheet and a help link beside the start
 test("an actor with a single casting photo has no character sheet button", async ({ page }) => {
   await page.goto("/en/actors/agnes-lefevre");
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Character sheet", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Make character sheet", exact: true })).toHaveCount(
+    0,
+  );
   await expect(page.getByRole("link", { name: "How it works", exact: true }).first()).toBeVisible();
 });

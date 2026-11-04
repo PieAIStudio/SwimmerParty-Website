@@ -23,7 +23,7 @@ export async function GuideView({ locale }: { locale: AppLocale }) {
     cast: "/cast",
   };
   return (
-    <div className="sp-container">
+    <div className="sp-container sp-guide">
       <PageIntro eyebrow={t("guide.helpLabel")} lines={[t("guide.title")]}>
         {t("guide.lead")}
       </PageIntro>

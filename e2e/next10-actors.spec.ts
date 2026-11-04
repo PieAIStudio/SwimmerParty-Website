@@ -38,7 +38,7 @@ for (const [locale, width] of [
       await expect(page.locator('[data-asset-slot][data-delivered="true"]')).toHaveCount(55);
       await expect(page.locator("[data-voice-slot]")).toHaveCount(6);
       await expect(
-        page.getByText(locale === "zh" ? "占位声音" : "Placeholder voice", { exact: true }),
+        page.getByText(locale === "zh" ? "临时试音" : "Test voice", { exact: true }),
       ).toHaveCount(6);
       const clips = page.locator("[data-actor-sample] [data-sample-id]");
       await expect(clips).toHaveCount(4);

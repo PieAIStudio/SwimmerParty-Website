@@ -61,8 +61,8 @@ export const messages = {
   "settings.imageSaved": { en: "Image saved.", zh: "图片已保存。" },
   "scene.title": { en: "Build a scene", zh: "摆个场面" },
   "scene.intro": {
-    en: "Place up to five stand-ins. Save a layout picture, then use separate actor references in your image tool. No AI generation here.",
-    zh: "最多摆五个人偶，保存站位图，再把演员参考图一起交给你的图像工具。本站不生成图片。",
+    en: "Arrange up to 5 stand-in figures and save a layout image to upload alongside your actor references in an AI tool (no AI generation here).",
+    zh: "最多摆 5 个人偶定好站位，保存站位图后，再和演员参考图一起传给你的 AI 绘图工具（本页不直接生图）。",
   },
   "scene.open": { en: "Build a scene", zh: "摆个场面" },
   "scene.loading": { en: "Loading the stage…", zh: "正在打开舞台…" },
@@ -117,8 +117,8 @@ export const messages = {
   "scene.axis.z": { en: "Front / back (m)", zh: "前后（米）" },
   "scene.actorReferences": { en: "Actor references", zh: "演员参考图" },
   "scene.approximate": {
-    en: "Generic placeholders, not actor models. Builds are examples; missing heights start at 175 cm. Edits only affect this draft.",
-    zh: "这是通用占位人偶，不是演员模型。体型仅作示意，未知身高先用 175 厘米。调整只影响这份草稿。",
+    en: "Figures are generic stand-ins, not 3D actor models. Builds are approximate (unlisted heights start at 175 cm), and edits only affect this draft.",
+    zh: "舞台上使用的是通用占位人偶（非演员 3D 模型）。体型仅作示意，未标注身高的演员默认按 175 cm 显示；修改只影响当前草稿。",
   },
   "nav.community": {
     en: "Community",
@@ -141,20 +141,20 @@ export const messages = {
     zh: "当前票数供制作排序参考。领先或并列不等于已确定转正，也不承诺交付日期。",
   },
   "c3.votes": {
-    en: "Votes: {count}",
-    zh: "得票：{count}",
+    en: "{count} votes",
+    zh: "{count} 票",
   },
   "c3.tied": {
     en: "Tied for the lead",
     zh: "并列领先",
   },
   "c3.noVotes": {
-    en: "No votes yet. No next actor has been selected by this tally.",
-    zh: "还没有投票，暂不按票数推荐人选。",
+    en: "No votes yet. Cast the first vote!",
+    zh: "还没有人投票，来投第一票吧。",
   },
   "c3.voteRoster": {
-    en: "Meet and vote for new faces",
-    zh: "看新面孔并投票",
+    en: "Meet the new faces and vote",
+    zh: "去认识新面孔并投票",
   },
   "c3.official": {
     en: "Official example",
@@ -165,16 +165,16 @@ export const messages = {
     zh: "用户作品",
   },
   "c3.officialExamples": {
-    en: "Official samples — separate from community works",
-    zh: "官方样片（与用户作品分开展示）",
+    en: "See official samples",
+    zh: "看官方样片",
   },
   "c3.separation": {
-    en: "Works are labeled by their actual source. Official samples are not user submissions.",
-    zh: "按实际来源分别标注，官方样片不充当用户投稿。",
+    en: "Works are labeled by source—official samples and creator posts are marked separately.",
+    zh: "每件作品都会标明来源，官方样片与用户投稿分开标注。",
   },
   "c3.sort": {
-    en: "Show works",
-    zh: "作品排序",
+    en: "Sort by",
+    zh: "排序方式",
   },
   "c3.latest": {
     en: "Latest",
@@ -209,16 +209,16 @@ export const messages = {
     zh: "查看作品：{title}",
   },
   "c3.restartUpload": {
-    en: "Check the expired upload and request a new one",
-    zh: "核对过期上传并重新申请",
+    en: "Upload the expired file again",
+    zh: "重新上传已过期的文件",
   },
   "c2.ownerOnly": {
     en: "Private review desk. Every action is authorized by the backend for the current Owner.",
     zh: "私有审核台，每次操作均由后端核验当前 Owner 权限。",
   },
   "c2.saved": {
-    en: "The backend confirmed this action. The current record is reloaded below.",
-    zh: "后端已确认操作，正在重读当前记录。",
+    en: "Action saved. Reloading the current record below.",
+    zh: "操作已保存，正在刷新当前记录。",
   },
   "c2.submissionControl": {
     en: "Submission safety switch",
@@ -273,8 +273,8 @@ export const messages = {
     zh: "查看媒体和历史",
   },
   "c2.revision": {
-    en: "Revision {revision}",
-    zh: "第 {revision} 修订",
+    en: "Version {revision}",
+    zh: "第 {revision} 版",
   },
   "c2.reports": {
     en: "Report reasons",
@@ -301,8 +301,8 @@ export const messages = {
     zh: "审核决定",
   },
   "c2.action": {
-    en: "Action for this revision",
-    zh: "对本修订的操作",
+    en: "Action for this version",
+    zh: "审核操作",
   },
   "c2.reason": {
     en: "Reason shown to the author",
@@ -361,14 +361,14 @@ export const messages = {
     zh: "未确认",
   },
   "c.resumePendingDraft": {
-    en: "Return to the draft with the pending request",
-    zh: "回到有待核对请求的草稿",
+    en: "Back to unfinished draft",
+    zh: "回到未完成的草稿",
   },
   "c.pendingDraftHint": {
-    en: "Another draft has an unanswered request in this tab. Reconcile that same request before changing a different work.",
-    zh: "这个标签页的另一份草稿还有未确认的请求。请先核对原请求，再修改其他作品。",
+    en: "Another draft in this tab is still saving. Finish that draft before editing a different work.",
+    zh: "这个标签页还有一份草稿正在保存。请先回那份草稿处理完，再编辑其他作品。",
   },
-  "c.resumeUpload": { en: "Check and resume the selected uploads", zh: "核对并继续所选上传" },
+  "c.resumeUpload": { en: "Resume upload", zh: "继续上传所选文件" },
   "c.transcript": {
     en: "Audio transcript (optional, creator-provided)",
     zh: "声音文字稿（可选，由创作者提供）",
@@ -377,25 +377,25 @@ export const messages = {
     en: "The creator has not provided a transcript.",
     zh: "创作者尚未提供文字稿。",
   },
-  "c.loading": { en: "Loading…", zh: "正在读取…" },
+  "c.loading": { en: "Loading…", zh: "加载中…" },
   "c.title": { en: "Community", zh: "泳者作品" },
   "c.new": { en: "Share a work", zh: "投稿作品" },
   "c.mine": { en: "My works", zh: "我的作品" },
-  "c.noPosts": { en: "No works in this view yet.", zh: "这里还没有作品。" },
+  "c.noPosts": { en: "No works here yet.", zh: "这里还没有作品。" },
   "c.loadMore": { en: "Load more", zh: "加载更多" },
-  "c.retry": { en: "Read again", zh: "重新读取" },
-  "c.retryWrite": { en: "Check and retry the same request", zh: "核对并重试原请求" },
+  "c.retry": { en: "Try again", zh: "刷新重试" },
+  "c.retryWrite": { en: "Retry last action", zh: "重试刚才的操作" },
   "c.draftInvalidHint": {
     en: "We could not save this yet. Check the title and actor version. If both look right, send us the request number below. Your files are still here.",
     zh: "还没保存好。先看看标题和演员版本对不对。都没问题，就把下方请求编号发给我们。你选的文件还在。",
   },
   "c.requestReference": { en: "Request reference: {id}", zh: "请求编号：{id}" },
   "c.uncertain": {
-    en: "The reply was lost. Your original request ID is kept; do not create another copy.",
-    zh: "没有收到完整回包。已保留原请求编号，请勿重复新建。",
+    en: "Connection interrupted. Your submission request was saved—please don’t create a duplicate.",
+    zh: "网络响应中断。系统已保留这次提交记录，请先别重复新建。",
   },
   "c.type": { en: "1 · Choose a type", zh: "1 · 选类型" },
-  "c.media": { en: "2 · Add media", zh: "2 · 放媒体" },
+  "c.media": { en: "2 · Add files", zh: "2 · 传文件" },
   "c.preview": { en: "3 · Preview and submit", zh: "3 · 预览并发布" },
   "c.next": { en: "Continue", zh: "下一步" },
   "c.back": { en: "Back", zh: "上一步" },
@@ -413,24 +413,24 @@ export const messages = {
     en: "Only links from the listed platforms. No video file uploads.",
     zh: "只收下列平台链接，不上传视频文件。",
   },
-  "c.files": { en: "Choose media files", zh: "选择媒体文件" },
+  "c.files": { en: "Choose files", zh: "选择文件" },
   "c.fileLimits": {
     en: "Up to {count} files · {mib} MiB each",
     zh: "最多 {count} 个文件，每个 {mib} MiB",
   },
   "c.audioLimit": {
-    en: "Up to {seconds} seconds; the server verifies the duration.",
-    zh: "最长 {seconds} 秒，最终时长由服务端核验。",
+    en: "Up to {seconds} seconds (duration is checked on upload).",
+    zh: "最长 {seconds} 秒（上传后会检查时长）。",
   },
   "c.dailyLimits": {
-    en: "Current daily limits: {posts} submissions · {mib} MiB uploaded (UTC day).",
-    zh: "当前每日额度：{posts} 次投稿、{mib} MiB 上传，按 UTC 自然日计算。",
+    en: "Daily limit: {posts} posts · {mib} MiB total (resets daily at 00:00 UTC).",
+    zh: "每日上传额度：{posts} 次投稿、共 {mib} MiB（按 UTC 时间每天重置）。",
   },
   "c.metadata": {
-    en: "Images are re-encoded before upload to remove metadata. The original size must also fit the limit.",
-    zh: "图片会先重新编码、去掉元数据；原文件大小也必须符合上限。",
+    en: "Images are automatically re-saved before upload to strip metadata (original files must also fit the size limit).",
+    zh: "上传前会自动重压图片并清除隐私信息（原图大小也需在上限内）。",
   },
-  "c.preparing": { en: "Preparing media…", zh: "正在准备媒体…" },
+  "c.preparing": { en: "Preparing files…", zh: "正在处理文件…" },
   "c.upload": { en: "Upload selected files", zh: "上传所选文件" },
   "c.cancel": { en: "Cancel", zh: "取消" },
   "c.checkStatus": { en: "Check processing status", zh: "查看处理状态" },
@@ -438,16 +438,16 @@ export const messages = {
     en: "{loaded} / {total} bytes transferred",
     zh: "已传输 {loaded} / {total} 字节",
   },
-  "c.reserving": { en: "Reserving an upload…", zh: "正在申请上传…" },
+  "c.reserving": { en: "Preparing upload…", zh: "正在准备上传…" },
   "c.uploading": { en: "Uploading", zh: "上传中" },
   "c.validating": {
-    en: "Uploaded; awaiting server validation. This is not publication.",
-    zh: "传输完成，等待服务端核验；还没有发布。",
+    en: "Uploaded. Checking files now (not published yet).",
+    zh: "上传完成，正在检查文件（尚未发布）。",
   },
-  "c.ready": { en: "Media validated", zh: "媒体核验通过" },
+  "c.ready": { en: "Files ready", zh: "文件检查通过" },
   "c.mediaLocked": {
-    en: "Uploaded files stay with this draft. Read its status before retrying; use a new draft for different files.",
-    zh: "已上传文件保留在本草稿中。重试前先读状态；换文件请使用新草稿。",
+    en: "Uploaded files are locked to this draft. Check the status before retrying, or start a new draft to use different files.",
+    zh: "已上传的文件已绑定在这份草稿里。重试前请先查看状态；如果要换文件，请新建一份草稿。",
   },
   "c.publish": { en: "Submit for publication", zh: "提交发布" },
   "c.submitHelp": {
@@ -455,12 +455,12 @@ export const messages = {
     zh: "首次投稿需要审核。是否公开以服务端返回状态为准，不以点击按钮为准。",
   },
   "c.submitted": {
-    en: "Submission received. See the current status below.",
-    zh: "已收到投稿，请以下方当前状态为准。",
+    en: "Submitted! Check the current status below.",
+    zh: "已提交！你可以在下方查看最新状态。",
   },
-  "c.returnReason": { en: "Review reason", zh: "审核原因" },
-  "c.openMedia": { en: "Load media preview", zh: "加载媒体预览" },
-  "c.openVideo": { en: "Load external player", zh: "加载外部播放器" },
+  "c.returnReason": { en: "Reason for return", zh: "退回原因" },
+  "c.openMedia": { en: "Show preview", zh: "显示媒体预览" },
+  "c.openVideo": { en: "Load video player", zh: "加载视频播放器" },
   "c.externalFallback": {
     en: "Cannot play here? Open the original. Private, removed or region-restricted videos may not embed.",
     zh: "这里无法播放？请打开原站。私密、已删除或地区受限的视频可能不能嵌入。",
@@ -475,12 +475,12 @@ export const messages = {
   "c.reportReason": { en: "Reason for reporting", zh: "举报原因" },
   "c.reportNote": { en: "Details (optional)", zh: "补充说明（可选）" },
   "c.confirmDelete": {
-    en: "Remove this work from public view? Physical file cleanup continues separately.",
-    zh: "确定移除这份作品？文件清理会另行继续。",
+    en: "Remove this work from public view? File cleanup will continue in the background.",
+    zh: "确定删除这份作品吗？删除后将不再公开显示，后台会继续清理文件。",
   },
   "c.deleted": {
-    en: "Removed from public view. File cleanup is still pending.",
-    zh: "已撤下公开内容，文件仍待清理。",
+    en: "Removed from public view; files are being cleaned up.",
+    zh: "作品已撤下，后台正在清理文件。",
   },
   "c.state.draft": { en: "Draft", zh: "草稿" },
   "c.state.processing": { en: "Processing", zh: "处理中" },
@@ -497,8 +497,8 @@ export const messages = {
   "c.reason.other": { en: "Another reason", zh: "其他原因" },
   "c.error.INVALID_INPUT": { en: "Check the fields and try again.", zh: "请检查所填内容。" },
   "c.error.INVALID_CURSOR": {
-    en: "This page link expired. Explicitly reload the list to start again.",
-    zh: "列表游标已失效，请重新读取列表。",
+    en: "This list expired. Refresh the page to load it again.",
+    zh: "列表已过期，请刷新页面重新加载。",
   },
   "c.error.AUTH_REQUIRED": {
     en: "Sign in with your Swimmer account to continue.",
@@ -509,8 +509,8 @@ export const messages = {
     zh: "只有 Owner 能使用审核台。",
   },
   "c.error.ORIGIN_NOT_ALLOWED": {
-    en: "This website is not enabled for community requests.",
-    zh: "此网站尚未获准调用社区服务。",
+    en: "Community features aren’t enabled for this address.",
+    zh: "当前网址无法使用社区功能。",
   },
   "c.error.METHOD_NOT_ALLOWED": {
     en: "This request method is not supported. Reload before trying again.",
@@ -526,24 +526,24 @@ export const messages = {
     zh: "这份媒体暂不可访问。",
   },
   "c.error.OPERATION_UNAVAILABLE": {
-    en: "The original request cannot be read yet. Keep its ID when retrying.",
-    zh: "暂时查不到原操作，重试时仍保留原编号。",
+    en: "Could not check the original request yet. Your request ID is kept when you retry.",
+    zh: "暂时查不到刚才的提交记录，重试时会自动保留原请求编号。",
   },
   "c.error.REVISION_CONFLICT": {
-    en: "This work changed. Read the latest revision before editing again.",
-    zh: "作品已变更，请重读最新版本后再编辑。",
+    en: "This work was updated elsewhere. Reload the latest version before editing.",
+    zh: "作品内容已有更新，请先刷新获取最新版本后再编辑。",
   },
   "c.error.IDEMPOTENCY_CONFLICT": {
-    en: "This request ID belongs to different content. Read the saved work before continuing.",
-    zh: "此请求编号对应不同内容，请先核对已保存作品。",
+    en: "This request doesn’t match the saved draft. Reload the saved work first.",
+    zh: "这次请求与已保存内容不一致，请先刷新查看已保存版本。",
   },
   "c.error.INVALID_STATE": {
     en: "This action is not available in the current state. Refresh its status.",
     zh: "当前状态不能执行此操作，请刷新状态。",
   },
   "c.error.UPLOAD_EXPIRED": {
-    en: "The upload expired. Read its status before starting a new upload.",
-    zh: "上传已过期，请先核对状态再申请新上传。",
+    en: "The upload link expired. Refresh the status before uploading again.",
+    zh: "上传链接已过期，请先刷新状态再重新上传。",
   },
   "c.error.FILE_TOO_LARGE": {
     en: "The file exceeds the current size limit.",
@@ -558,8 +558,8 @@ export const messages = {
     zh: "不支持这个媒体格式。",
   },
   "c.error.MEDIA_INVALID": {
-    en: "The file could not be validated. Try a supported, intact file.",
-    zh: "文件核验未通过，请使用受支持且完整的文件。",
+    en: "This file couldn’t be verified. Please try an intact file in a supported format.",
+    zh: "文件检查未通过，请换一个格式受支持且未损坏的文件。",
   },
   "c.error.AUDIO_TOO_LONG": {
     en: "The audio exceeds the current duration limit.",
@@ -606,8 +606,8 @@ export const messages = {
     zh: "深色",
   },
   "common.themeToggle": {
-    en: "Switch light and dark",
-    zh: "切换明暗",
+    en: "Switch theme",
+    zh: "切换深浅色",
   },
   "common.skipToContent": {
     en: "Skip to content",
@@ -639,70 +639,73 @@ export const messages = {
     zh: "复制",
   },
   "common.copied": {
-    en: "Link copied",
-    zh: "链接已复制",
+    en: "Copied",
+    zh: "已复制",
   },
   "common.next": {
     en: "Next: {name}",
     zh: "下一位：{name}",
   },
   "nav.samples": { en: "Samples", zh: "样片" },
-  "nav.learn": { en: "Learn", zh: "学着做" },
-  "nav.cast": { en: "Your cast", zh: "我的选角单" },
+  "nav.learn": { en: "How to use", zh: "怎么用" },
+  "nav.cast": { en: "My cast", zh: "选角单" },
   "nav.works": {
-    en: "Works",
-    zh: "作品",
+    en: "Samples & projects",
+    zh: "样片与项目",
   },
   "nav.studio": {
     en: "Studio",
     zh: "工作室",
   },
-  "home.metaTitle": { en: "SWIMMER PARTY — Original AI actors", zh: "SWIMMER PARTY——原创 AI 演员" },
-  "home.heroLines.0": { en: "Same actor.", zh: "换个工具，" },
-  "home.heroLines.1": { en: "Different AI tools.", zh: "还是那张脸。" },
-  "home.heroBody": {
-    en: "Images, voices and prompts. Free commercial use. Compare the actor in both clips.",
-    zh: "图、声音、提示词，免费商用。两段片子，还是同一位演员。",
+  "home.metaTitle": {
+    en: "SWIMMER PARTY — Original AI Animated Actors",
+    zh: "SWIMMER PARTY · 原创 AI 动画演员",
   },
-  "home.ctaAssets": { en: "Choose an actor", zh: "去挑演员" },
-  "home.readyCount": { en: "{count} ready to cast", zh: "{count} 位可用演员" },
+  "home.heroLines.0": { en: "Original AI animated actors.", zh: "原创 AI 动画演员" },
+  "home.heroLines.1": { en: "Same look in any tool.", zh: "换工具也不走样" },
+  "home.heroBody": {
+    en: "Images, voices and prompts, free for commercial use. Watch both clips: same actor, two AI tools.",
+    zh: "参考图、声音和提示词，免费商用。看两段样片：换了工具，还是同一个人。",
+  },
+  "home.ctaAssets": { en: "Browse actors", zh: "去挑演员" },
+  "home.readyCount": { en: "{count} ready to use", zh: "{count} 位可直接用" },
   "home.newFaceCount": {
     en: "{count, plural, one {# new face} other {# new faces}}",
     zh: "{count, plural, other {# 位新面孔}}",
   },
   "home.samplesTitle": { en: "Official samples", zh: "官方样片" },
-  "home.rosterTitle": { en: "Ready to cast", zh: "可用演员" },
+  "home.rosterTitle": { en: "Ready to use", zh: "可直接用的演员" },
   "home.rosterMore": { en: "See all actors", zh: "看全部演员" },
   "home.newFacesNote": {
-    en: "A first look, not a full starter pack.",
-    zh: "先认识一下，素材尚未齐全。",
+    en: "First look. Vote for who gets a full pack next.",
+    zh: "先放试镜照和声音，投票决定先补齐谁。",
   },
   "roster.metaTitle": {
     en: "Actors",
     zh: "演员",
   },
   "roster.metaDescription": {
-    en: "Every SWIMMER PARTY AI actor, ready to cast or new. Free to use, even commercially. Just credit SwimInAI.",
-    zh: "SWIMMER PARTY 的全部 AI 演员，可出演的和新面孔。商用也免费，署上 SwimInAI 就好。",
+    en: "Browse all SWIMMER PARTY animated AI actors—ready-to-use actors and new faces. Free for personal and commercial use; just credit SwimInAI.",
+    zh: "浏览 SWIMMER PARTY 全部原创 AI 动画演员，包含可直接用的演员与待投票新面孔。个人与商用均免费，署名 SwimInAI 即可。",
   },
-  "roster.appearance": { en: "Appearance keywords", zh: "外貌关键词" },
+  "roster.appearance": { en: "Look or features", zh: "外貌特征" },
   "roster.origin": { en: "From", zh: "地区" },
-  "roster.role": { en: "Role cues", zh: "戏路线索" },
+  "roster.role": { en: "Role type", zh: "适合演什么" },
   "roster.role.comedy": { en: "Comedy", zh: "喜剧" },
   "roster.role.boss": { en: "Boss", zh: "老板 / 总裁" },
   "roster.role.villain": { en: "Villain", zh: "反派" },
   "roster.role.crew": { en: "Film crew", zh: "剧组" },
   "roster.height": { en: "Height", zh: "身高" },
-  "roster.hasVoice": { en: "Has voice files", zh: "已有声音" },
-  "roster.hasVideo": { en: "Has video", zh: "已有视频" },
+  "roster.hasVoice": { en: "With voice", zh: "有声音" },
+  "roster.hasVideo": { en: "With video", zh: "有视频" },
   "roster.resultCount": { en: "Matches: {count}", zh: "找到 {count} 位" },
   "roster.intro": {
-    en: "{castable} ready to cast. {newFaces} new faces with a first look.",
-    zh: "{castable} 位可用演员，{newFaces} 位新面孔。",
+    en: "{castable} actors ready to use, plus {newFaces} new faces you can vote for.",
+    zh: "{castable} 位可直接用，{newFaces} 位新面孔等你投票。",
   },
   "roster.castableTitle": {
-    en: "Ready to cast",
-    zh: "现在就能开工",
+    en: "Ready to use",
+    zh: "可直接用的演员",
   },
   "roster.buildingTitle": {
     en: "In development",
@@ -714,11 +717,11 @@ export const messages = {
     zh: "看 AI 演员的真实样片，以及工作室开发中的项目。",
   },
   "works.eyebrow": { en: "Samples", zh: "样片" },
-  "works.heroLines.0": { en: "See the actors", zh: "看看演员" },
-  "works.heroLines.1": { en: "in a story.", zh: "怎么演。" },
+  "works.heroLines.0": { en: "Watch the actors", zh: "先看样片，" },
+  "works.heroLines.1": { en: "in action.", zh: "看看他们怎么演。" },
   "works.intro": {
-    en: "Watch a sample, then open its actor’s reference pack.",
-    zh: "看一段样片，再打开演员的参考素材。",
+    en: "Watch real clips made across AI tools, then open any actor to download their reference pack.",
+    zh: "先看不同 AI 工具做出的真实样片，点开喜欢的演员就能免费下载参考素材。",
   },
   "studio.projectsTitle": { en: "Studio projects", zh: "工作室项目" },
   "studio.metaTitle": {
@@ -726,20 +729,20 @@ export const messages = {
     zh: "工作室",
   },
   "studio.metaDescription": {
-    en: "How SWIMMER PARTY designs AI actors, keeps them consistent and decides who joins the roster.",
-    zh: "SWIMMER PARTY 怎么设计 AI 演员、怎么让他们始终如一、谁能留在名单上。",
+    en: "How SWIMMER PARTY designs original animated AI actors, keeps them consistent across tools, and shares their reference packs.",
+    zh: "了解 SWIMMER PARTY 如何设计原创 AI 动画演员、保持多角度一致，并向所有人免费开放参考素材。",
   },
   "studio.eyebrow": {
     en: "Studio",
     zh: "工作室",
   },
   "studio.heroLines.0": {
-    en: "A small studio",
-    zh: "一间小工作室，",
+    en: "Original animated actors.",
+    zh: "专注原创动画演员，",
   },
   "studio.heroLines.1": {
-    en: "making new faces.",
-    zh: "专门造新面孔。",
+    en: "Open to every creator.",
+    zh: "向每位创作者开放。",
   },
   "studio.intro": {
     en: "We make original animated actors and share their reference packs.",
@@ -751,7 +754,7 @@ export const messages = {
     en: "01",
     zh: "01",
   },
-  "studio.beliefs.0.title": { en: "More than a portrait", zh: "不止一张肖像" },
+  "studio.beliefs.0.title": { en: "More than one photo", zh: "不止一张正脸照" },
   "studio.beliefs.0.body": {
     en: "Reference views, expressions and actor notes give you a starting point.",
     zh: "转面、表情和演员设定，帮你开始创作。",
@@ -761,8 +764,8 @@ export const messages = {
     zh: "02",
   },
   "studio.beliefs.1.title": {
-    en: "Animated, never photoreal",
-    zh: "做动画，不做写实",
+    en: "Animated, never real people",
+    zh: "只做动画角色，不用真人",
   },
   "studio.beliefs.1.body": {
     en: "Original animated designs, not copies of real people.",
@@ -773,8 +776,8 @@ export const messages = {
     zh: "03",
   },
   "studio.beliefs.2.title": {
-    en: "Open by default",
-    zh: "默认开放",
+    en: "Free and open to use",
+    zh: "免费开放使用",
   },
   "studio.beliefs.2.body": {
     en: "Free for personal and commercial projects. Credit SwimInAI and follow the license.",
@@ -785,12 +788,12 @@ export const messages = {
     zh: "04",
   },
   "studio.beliefs.3.title": {
-    en: "Comedy is the test",
-    zh: "喜剧是最难的考试",
+    en: "Tested in real comedy scenes",
+    zh: "能演喜剧，才算真演员",
   },
   "studio.beliefs.3.body": {
-    en: "See their timing and personality in the published samples.",
-    zh: "从已发布的样片里看节奏和性格。",
+    en: "Watch our sample clips to see their timing, expressions and personality.",
+    zh: "去样片里看看他们的表情、节奏和性格。",
   },
   "studio.missionLabel": {
     en: "Why we do this",
@@ -822,21 +825,21 @@ export const messages = {
     zh: "联合出品",
   },
   "casting.routes.2.body": {
-    en: "We bring the actors and the production, you bring the subject, the channel or the money. The film belongs to both of us; the character stays on the roster and keeps working.",
-    zh: "我们出演员和制作，你出题材、渠道或资金。片子归双方，角色留在名册上继续演。",
+    en: "We bring the actors and production; you bring the story, channel or funding. We co-own the film, and the actor stays in our library for future stories.",
+    zh: "我们负责演员和制作，你出点子、渠道或资金。成片归双方共有，演员则会留在演员库里继续参演其他作品。",
   },
-  "notFound.eyebrow": { en: "404 — Actor not found", zh: "404 — 没有这位演员" },
+  "notFound.eyebrow": { en: "404 · Page not found", zh: "404 · 找不到页面" },
   "notFound.lines.0": {
-    en: "Not on",
-    zh: "不在",
+    en: "Page not found.",
+    zh: "没找到这一页，",
   },
   "notFound.lines.1": {
-    en: "the roster.",
-    zh: "名册上",
+    en: "Meet the actors instead.",
+    zh: "去看看演员吧。",
   },
   "notFound.cta": {
-    en: "Back to roster",
-    zh: "回名册",
+    en: "See all actors",
+    zh: "去看全部演员",
   },
   "footer.contact": {
     en: "Contact",
@@ -891,28 +894,28 @@ export const messages = {
     zh: "更多表情",
   },
   "assets.pending": {
-    en: "Not available yet",
-    zh: "暂未提供",
+    en: "Coming soon",
+    zh: "制作中",
   },
   "assets.legacy": {
     en: "Legacy",
     zh: "旧版",
   },
-  "assets.slot.face.threeQuarterLeft": { en: "Other three-quarter", zh: "另一侧 3/4" },
-  "assets.slot.face.sideRight": { en: "Other profile", zh: "另一侧正侧" },
-  "assets.slot.face.up": { en: "Looking up", zh: "仰头" },
-  "assets.slot.face.down": { en: "Looking down", zh: "低头" },
+  "assets.slot.face.threeQuarterLeft": { en: "Other 3/4", zh: "另一半侧" },
+  "assets.slot.face.sideRight": { en: "Other side", zh: "另一正侧" },
+  "assets.slot.face.up": { en: "Look up", zh: "仰头" },
+  "assets.slot.face.down": { en: "Look down", zh: "低头" },
   "assets.slot.turnaround.backThreeQuarterLeft": {
-    en: "Back three-quarter left",
-    zh: "背后 3/4（左）",
+    en: "Back 3/4 L",
+    zh: "左后侧",
   },
   "assets.slot.turnaround.backThreeQuarterRight": {
-    en: "Back three-quarter right",
-    zh: "背后 3/4（右）",
+    en: "Back 3/4 R",
+    zh: "右后侧",
   },
   "assets.selectSeries": {
-    en: "Select all in this series",
-    zh: "选中这一组",
+    en: "Select this group",
+    zh: "全选这一组",
   },
   "assets.clear": {
     en: "Clear",
@@ -931,30 +934,30 @@ export const messages = {
     zh: "下载所选",
   },
   "assets.download": { en: "Download all", zh: "下载全部" },
-  "assets.audioState.idle": { en: "Press play to listen.", zh: "点播放，听听声音。" },
+  "assets.audioState.idle": { en: "Press play to listen", zh: "点播放试听" },
   "assets.audioState.loading": { en: "Loading sound…", zh: "正在加载声音…" },
   "assets.audioState.ready": { en: "Ready to play", zh: "可以播放了" },
   "assets.audioState.failed": {
-    en: "Sound did not load. Try again.",
-    zh: "声音没加载出来，再试一次。",
+    en: "Audio failed to load. Try again.",
+    zh: "声音加载失败，请重试。",
   },
-  "assets.imageLoading": { en: "Loading picture…", zh: "正在加载图片…" },
-  "assets.imageFailed": { en: "Picture did not load.", zh: "图片没加载出来。" },
+  "assets.imageLoading": { en: "Loading image…", zh: "正在加载图片…" },
+  "assets.imageFailed": { en: "Image failed to load.", zh: "图片加载失败。" },
   "assets.selectFirst": {
-    en: "Select the images you want first.",
-    zh: "先勾选要下载的图。",
+    en: "Select at least one image first.",
+    zh: "请先勾选要下载的图片。",
   },
   "assets.downloadJson": {
     en: "Download profile (JSON)",
     zh: "下载角色资料（JSON）",
   },
   "assets.noSeed": {
-    en: "Not released yet.",
-    zh: "尚未发布。",
+    en: "Prompt coming soon.",
+    zh: "提示词即将上线。",
   },
   "assets.guestCooldown": {
-    en: "Wait {seconds}s, or sign in",
-    zh: "再等 {seconds} 秒，或者登录",
+    en: "Wait {seconds}s, or sign in free to skip the wait",
+    zh: "请等 {seconds} 秒后再下，或免费登录跳过等待",
   },
   "assets.signIn": {
     en: "Sign in with Swimmer",
@@ -962,17 +965,23 @@ export const messages = {
   },
   "assets.signingIn": { en: "Opening…", zh: "正在前往…" },
   "assets.signInBenefits.0": {
-    en: "Get all an actor's pictures and voice clips at once",
-    zh: "一次拿全演员的图片和声音",
+    en: "Download all of an actor’s photos and voices at once",
+    zh: "一键打包下载演员的全部图片和声音",
   },
   "assets.signInBenefits.1": { en: "Post your work, like and vote", zh: "发作品、点赞、投票" },
-  "assets.signInBenefits.2": { en: "4K character sheets", zh: "4K 角色设定图" },
-  "assets.signInBenefits.3": { en: "No waiting between downloads", zh: "下载不用等待" },
+  "assets.signInBenefits.2": {
+    en: "Build custom 4K character sheets",
+    zh: "自由拼合 4K 角色设定图",
+  },
+  "assets.signInBenefits.3": {
+    en: "No 30-second wait between downloads",
+    zh: "连续下载不用等 30 秒",
+  },
   "assets.signInConsent": {
     en: "By signing in you agree to our Terms of Use and Privacy Policy.",
     zh: "登录即表示同意《使用条款》和《隐私政策》。",
   },
-  "assets.signInTitle": { en: "Sign in to download packs", zh: "登录后下载整包" },
+  "assets.signInTitle": { en: "Sign in free to download packs", zh: "免费登录，一键打包下载" },
   "assets.signInBody": {
     en: "Packs and character sheets need a free Swimmer account. Single images do not.",
     zh: "整包和设定图需要免费泳者账号，单张图片不用登录。",
@@ -1002,20 +1011,20 @@ export const messages = {
     zh: "当前",
   },
   "account.manage": {
-    en: "Account and security",
-    zh: "管理账号与安全",
+    en: "Account settings",
+    zh: "账号与安全设置",
   },
   "account.signOut": {
     en: "Sign out",
     zh: "退出登录",
   },
   "account.cast": {
-    en: "Your cast",
-    zh: "我的选角单",
+    en: "My cast",
+    zh: "选角单",
   },
   "account.castCount": {
-    en: "Actors: {count}",
-    zh: "{count} 位演员",
+    en: "Actors in cast: {count}",
+    zh: "已选 {count} 位演员",
   },
   "assets.dialogTitle": {
     en: "Download selected",
@@ -1023,19 +1032,19 @@ export const messages = {
   },
   "assets.format.zip": {
     en: "Originals",
-    zh: "原图打包",
+    zh: "原图",
   },
   "assets.format.zipNote": {
     en: "One transparent PNG per image, with the profile and terms of use.",
     zh: "每张一个透明背景 PNG，附角色资料和使用说明。",
   },
   "assets.format.model": {
-    en: "For a model",
-    zh: "按模型打包",
+    en: "By model",
+    zh: "按模型",
   },
   "assets.format.modelNote": {
     en: "Picks and combines images to fit the model's reference limit, with an English note.",
-    zh: "按模型的参考图上限自动挑选和拼合，附一段英文说明。",
+    zh: "按所选模型的参考图上限自动挑图、拼图，并附上英文说明。",
   },
   "assets.labels": {
     en: "Labels on the sheet",
@@ -1066,8 +1075,8 @@ export const messages = {
     zh: "模型",
   },
   "assets.overLimit": {
-    en: "{count} selected. This model takes {limit}, so the {limit} most important will be kept.",
-    zh: "已选 {count} 张，这个模型最多收 {limit} 张，将保留最重要的 {limit} 张。",
+    en: "{count} selected. This model takes up to {limit}, so we’ll keep the {limit} most useful.",
+    zh: "已选 {count} 张；该模型最多收 {limit} 张，将自动保留最核心的 {limit} 张。",
   },
   "assets.start": {
     en: "Start download",
@@ -1110,8 +1119,8 @@ export const messages = {
     zh: "保留原始文件，包括旧规格 WebP，附角色资料和使用说明。",
   },
   "assets.veoMissing": {
-    en: "This pack needs a front view, turnaround views and at least one expression. The expression set is not delivered yet.",
-    zh: "此包需要正面、转面和至少一张表情。目前表情尚未交付。",
+    en: "This pack needs a front view, turnaround views and at least one expression—expressions for this actor are still in the works.",
+    zh: "这个格式需要正面、转面和至少一张表情图。这位演员的表情图还在制作中。",
   },
   "assets.seedanceUnverified": {
     en: "The nine-image limit follows the production plan; official confirmation is pending.",
@@ -1122,8 +1131,8 @@ export const messages = {
     zh: "正面",
   },
   "assets.slot.turnaround.threeQuarter": {
-    en: "Three-quarter",
-    zh: "四分之三侧",
+    en: "3/4 view",
+    zh: "半侧",
   },
   "assets.slot.turnaround.side": {
     en: "Side",
@@ -1138,15 +1147,15 @@ export const messages = {
     zh: "正面",
   },
   "assets.slot.face.threeQuarter": {
-    en: "Three-quarter",
-    zh: "四分之三侧",
+    en: "3/4 view",
+    zh: "半侧",
   },
   "assets.slot.face.side": {
     en: "Side",
     zh: "正侧",
   },
   "assets.slot.expression.neutral": {
-    en: "Neutral",
+    en: "Calm",
     zh: "平静",
   },
   "assets.slot.expression.smile": {
@@ -1162,11 +1171,11 @@ export const messages = {
     zh: "难过",
   },
   "assets.slot.expression.cry": {
-    en: "Crying",
-    zh: "哭",
+    en: "Cry",
+    zh: "哭泣",
   },
   "assets.slot.expression.annoyed": {
-    en: "Annoyed",
+    en: "Upset",
     zh: "烦躁",
   },
   "assets.slot.expression.angry": {
@@ -1174,7 +1183,7 @@ export const messages = {
     zh: "发怒",
   },
   "assets.slot.expression.surprised": {
-    en: "Surprised",
+    en: "Shock",
     zh: "惊讶",
   },
   "assets.slot.expression.scared": {
@@ -1182,31 +1191,31 @@ export const messages = {
     zh: "害怕",
   },
   "assets.slot.expression.disgusted": {
-    en: "Disgusted",
+    en: "Grossed out",
     zh: "嫌弃",
   },
   "assets.slot.expression.embarrassed": {
     en: "Embarrassed",
-    zh: "窘迫",
+    zh: "尴尬",
   },
   "assets.slot.expression.tired": {
     en: "Tired",
     zh: "疲惫",
   },
   "assets.slot.expression.speaking": {
-    en: "Speaking",
-    zh: "说话中",
+    en: "Talk",
+    zh: "说话",
   },
   "assets.slot.expression.eyesClosed": {
     en: "Eyes closed",
     zh: "闭眼",
   },
   "assets.slot.expression.worried": {
-    en: "Worried",
+    en: "Worry",
     zh: "发愁",
   },
   "assets.slot.expression.skeptical": {
-    en: "Skeptical",
+    en: "Doubt",
     zh: "怀疑",
   },
   "assets.slot.expression.smug": {
@@ -1214,19 +1223,19 @@ export const messages = {
     zh: "得意",
   },
   "assets.slot.expression.contempt": {
-    en: "Contempt",
+    en: "Scorn",
     zh: "不屑",
   },
   "assets.slot.expression.confused": {
-    en: "Confused",
+    en: "Puzzled",
     zh: "困惑",
   },
   "assets.slot.expression.thinking": {
-    en: "Thinking",
+    en: "Think",
     zh: "思考",
   },
   "assets.slot.expression.determined": {
-    en: "Determined",
+    en: "Firm",
     zh: "坚定",
   },
   "assets.slot.expression.shy": {
@@ -1242,20 +1251,20 @@ export const messages = {
     zh: "犯困",
   },
   "assets.slot.expression.awkwardSmile": {
-    en: "Awkward smile",
-    zh: "尴尬笑",
+    en: "Wry smile",
+    zh: "干笑",
   },
   "assets.slot.expression.deadpan": {
-    en: "Deadpan",
-    zh: "面无表情",
+    en: "Blank",
+    zh: "冷脸",
   },
   "assets.slot.wardrobe.front": {
     en: "Front",
     zh: "正面",
   },
   "assets.slot.wardrobe.threeQuarter": {
-    en: "Three-quarter",
-    zh: "四分之三侧",
+    en: "3/4 view",
+    zh: "半侧",
   },
   "assets.slot.wardrobe.side": {
     en: "Side",
@@ -1266,19 +1275,19 @@ export const messages = {
     zh: "背面",
   },
   "assets.slot.pose.walk": {
-    en: "Walking",
+    en: "Walk",
     zh: "走路",
   },
   "assets.slot.pose.run": {
-    en: "Running",
+    en: "Run",
     zh: "跑步",
   },
   "assets.slot.pose.sit": {
-    en: "Sitting",
+    en: "Sit",
     zh: "坐着",
   },
   "assets.slot.pose.point": {
-    en: "Pointing",
+    en: "Point",
     zh: "指向",
   },
   "assets.slot.pose.armsCrossed": {
@@ -1340,8 +1349,8 @@ export const messages = {
   "roster.moreFilters": { en: "More filters", zh: "更多筛选" },
   "roster.lessFilters": { en: "Fewer filters", zh: "收起筛选" },
   "roster.filtersApplied": {
-    en: "{count} more filters in use",
-    zh: "另有 {count} 个筛选条件",
+    en: "{count} more active",
+    zh: "已选另外 {count} 项",
   },
   "roster.gender": {
     en: "Gender",
@@ -1360,26 +1369,26 @@ export const messages = {
     zh: "清除筛选",
   },
   "roster.noResults": {
-    en: "No actors match. Try fewer filters.",
-    zh: "没有符合条件的演员，少选几个条件试试。",
+    en: "No matching actors. Try clearing a few filters.",
+    zh: "没找到符合条件的演员，减少几个筛选试试。",
   },
   "actor.openLibrary": {
-    en: "Get the starter pack",
-    zh: "领取懒人包",
+    en: "Download starter pack",
+    zh: "下载起步包",
   },
-  "actor.freeFrontDownload": { en: "Download this picture free", zh: "免费下载这张图" },
-  "actor.fullPack": { en: "Get every file", zh: "一键领取全部文件" },
+  "actor.freeFrontDownload": { en: "Download front photo (free)", zh: "免费下这张正面图" },
+  "actor.fullPack": { en: "Download all files", zh: "下载全部文件" },
   "actor.starterFacts": {
-    en: "{count} pictures and a character prompt · about {size} MB of pictures. Free account needed.",
-    zh: "{count} 张图和角色提示词。图片约 {size} MB，需要免费账号。",
+    en: "Starter pack (~{size} MB): reference images ({count}) and character prompt.",
+    zh: "起步包：含 {count} 张核心参考图和角色提示词（约 {size} MB）。",
   },
   "actor.fullPackFacts": {
-    en: "{images} pictures, {voices} voice clips · about {size} MB of original files. A free account lets you get them together.",
-    zh: "{images} 张图、{voices} 段声音，原件约 {size} MB。免费登录后可一次拿全。",
+    en: "All files (~{size} MB): original images ({images}) and voice clips ({voices}).",
+    zh: "全部文件：含 {images} 张原图、{voices} 段声音（约 {size} MB）。",
   },
   "actor.guestNote": {
-    en: "One picture is free without an account. Wait 30 seconds before getting another. After signing in, you come back to this actor.",
-    zh: "单张图不用登录就能下。每下完一张，等 30 秒再下。登录后会回到这位演员。",
+    en: "Single photos download without signing in (one every 30s). Sign in free to skip the wait and return right here.",
+    zh: "单张图片免登录直接下（每张间隔 30 秒）；免费登录后不用等，还会直接回到本页。",
   },
   "actor.workWithUs": {
     en: "How to credit",
@@ -1390,8 +1399,8 @@ export const messages = {
     zh: "角色待定",
   },
   "actor.noCredits": {
-    en: "Not in a production yet. Use {name} in yours. It’s free.",
-    zh: "还没有出演作品。把{name}用进你的作品吧，免费。",
+    en: "{name} hasn’t been in a show yet—cast them in yours for free!",
+    zh: "{name}还没有参演过作品。免费带去你的故事里当主演吧！",
   },
   "actor.voiceTitle": {
     en: "Hear {name}",
@@ -1402,8 +1411,8 @@ export const messages = {
     zh: "版本记录",
   },
   "actor.versionNote": {
-    en: "First number: a new look. Second: more material. Third: fixes.",
-    zh: "第一位是换了形象，第二位是加了内容，第三位是修正。",
+    en: "1st digit: new look · 2nd: new assets · 3rd: fixes",
+    zh: "第 1 位：大改形象 · 第 2 位：新增素材 · 第 3 位：细节修正",
   },
   "assets.series.voice": {
     en: "Voice",
@@ -1426,8 +1435,8 @@ export const messages = {
     zh: "用于参考和剪辑的短片。",
   },
   "assets.voicePlaceholder": {
-    en: "Placeholder voice",
-    zh: "占位声音",
+    en: "Test voice",
+    zh: "临时试音",
   },
   "assets.voicePlaceholderNote": {
     en: "Temporary synthetic audio, not final voice acting. Full acoustic review is not complete.",
@@ -1494,16 +1503,16 @@ export const messages = {
     zh: "复制下面的角色提示词。",
   },
   "assets.howTo.3": {
-    en: "In your image or video model, upload both images, paste the prompt and describe your scene.",
-    zh: "在你常用的图像或视频模型里上传这两张图，粘贴提示词，再写你想要的场景。",
+    en: "In your image or video tool, upload both images, paste the prompt and describe your scene.",
+    zh: "打开你常用的图像或视频工具，上传这两张图，粘贴提示词，再写上你想要的场景。",
   },
   "assets.howTo.newFace1": {
     en: "Download the full-body casting photo.",
     zh: "下载这张全身试镜照。",
   },
   "assets.howTo.newFace3": {
-    en: "In your image or video model, upload the photo, paste the prompt and describe your scene.",
-    zh: "在你常用的图像或视频模型里上传这张图，粘贴提示词，再写你想要的场景。",
+    en: "In your image or video tool, upload the photo, paste the prompt and describe your scene.",
+    zh: "打开你常用的图像或视频工具，上传这张图，粘贴提示词，再写上你想要的场景。",
   },
   "assets.characterPrompt": {
     en: "{name} · Character prompt",
@@ -1514,8 +1523,8 @@ export const messages = {
     zh: "原样粘贴即可。",
   },
   "assets.rulesTitle": {
-    en: "One rule: credit SwimInAI.",
-    zh: "只有一条：署上 SwimInAI。",
+    en: "Just one rule: credit SwimInAI.",
+    zh: "只有一个要求：署上 SwimInAI。",
   },
   "assets.rulesBody": {
     en: "Use {name} in anything, even paid work. Put a small “SwimInAI” at the start and in the credits of a video, or in a corner of an image.",
@@ -1558,24 +1567,24 @@ export const messages = {
     zh: "难过",
   },
   "assets.video.turntable": {
-    en: "Turntable",
-    zh: "转台",
+    en: "360° turn",
+    zh: "一圈转身",
   },
   "assets.video.intro": {
     en: "Self-introduction",
     zh: "自我介绍",
   },
   "assets.video.walk": {
-    en: "Walk cycle",
-    zh: "走路循环",
+    en: "Walking clip",
+    zh: "走路片段",
   },
   "assets.video.expressions": {
-    en: "Expression reel",
-    zh: "表情串",
+    en: "Expressions clip",
+    zh: "表情合集",
   },
   "works.ourProductions": {
-    en: "Our productions",
-    zh: "我们做的",
+    en: "Studio projects in progress",
+    zh: "工作室在拍项目",
   },
   "works.starring": {
     en: "Starring",
@@ -1598,8 +1607,8 @@ export const messages = {
     zh: "分集",
   },
   "footer.claim": {
-    en: "An open roster of animated AI actors.",
-    zh: "一份开放的 AI 动画演员名单。",
+    en: "Original animated AI actors, free for everyone to use.",
+    zh: "谁都能免费用的原创 AI 动画演员库。",
   },
   "common.breadcrumb": {
     en: "Breadcrumb",
@@ -1645,21 +1654,27 @@ export const messages = {
   },
   "home.keywords.aiActor": { en: "AI actor", zh: "AI 演员" },
   "home.keywords.animatedCharacter": { en: "animated character", zh: "动画角色" },
-  "home.keywords.syntheticTalent": { en: "synthetic talent", zh: "虚拟演员" },
+  "home.keywords.syntheticTalent": { en: "animated AI actor", zh: "AI 动画演员" },
   "home.keywords.cgCharacter": { en: "CG character", zh: "CG 角色" },
   "home.keywords.characterLicensing": { en: "character licensing", zh: "角色授权" },
-  "home.keywords.virtualTalent": { en: "virtual talent", zh: "合成演员" },
+  "home.keywords.virtualTalent": { en: "virtual character", zh: "虚拟角色" },
   "home.keywords.brand": { en: "SWIMMER PARTY", zh: "SWIMMER PARTY" },
-  "home.ogTitle": { en: "Original AI actors", zh: "原创 AI 演员" },
-  "home.ogSubtitle": { en: "Made, delivered, licensed", zh: "制作、交付、授权" },
+  "home.ogTitle": { en: "Original AI animated actors", zh: "原创 AI 动画演员" },
+  "home.ogSubtitle": {
+    en: "Consistent across tools · Free commercial use",
+    zh: "换工具也不走样 · 免费商用",
+  },
   "home.licenseBadge": {
     en: "Free for commercial use · Credit SwimInAI",
-    zh: "商用免费 · 署名 SwimInAI",
+    zh: "免费商用 · 署名 SwimInAI",
   },
-  "home.licenseCta": { en: "See how to credit", zh: "看怎么署名" },
-  "cast.title": { en: "Your cast", zh: "我的选角单" },
+  "home.licenseCta": { en: "How to credit", zh: "怎么署名" },
+  "cast.title": { en: "My cast", zh: "选角单" },
   "cast.eyebrow": { en: "Cast", zh: "选角单" },
-  "cast.intro": { en: "Choose actors and download them together.", zh: "选好演员，一次下载。" },
+  "cast.intro": {
+    en: "Group actors for your project and download their starter packs in one ZIP.",
+    zh: "把同一部作品要用的演员加进来，一次打包下载。",
+  },
   "license.badge": { en: "Free License · v1.0", zh: "免费商用 · v1.0" },
   "license.creditTitle": { en: "How to credit", zh: "怎么署名" },
   "license.creditNote": {
@@ -1671,10 +1686,10 @@ export const messages = {
     zh: "我们最喜欢第三种：写上演员名字。他因为你火了，后面的项目你优先。",
   },
   "license.copyCredit": { en: "Copy credit line", zh: "复制署名" },
-  "license.whereTitle": { en: "Where it goes", zh: "放在哪" },
-  "license.whereMade": { en: "What you made", zh: "你做的" },
-  "license.wherePlacement": { en: "Where", zh: "放在哪" },
-  "license.whereSize": { en: "How big", zh: "多大" },
+  "license.whereTitle": { en: "Where to put the credit", zh: "署名放哪里" },
+  "license.whereMade": { en: "Project type", zh: "作品形式" },
+  "license.wherePlacement": { en: "Where to credit", zh: "署名位置" },
+  "license.whereSize": { en: "Minimum size", zh: "字号要求" },
   "license.markTitle": { en: "Credit mark", zh: "署名标" },
   "license.markNote": {
     en: "Pure white or pure black, on a transparent background. Drop it into any editor.",
@@ -1694,13 +1709,13 @@ export const messages = {
   "studio.workWithUs": { en: "Work with us", zh: "找我们合作" },
   "studio.cooperationTitle": { en: "Two ways to work together", zh: "两种合作方式" },
   "studio.cooperationNote": {
-    en: "The roster is free for everyone. If you need more than that:",
-    zh: "名单上的演员谁都能免费用。如果你需要更多：",
+    en: "Every actor on the site is free to use. If you need custom work or co-production:",
+    zh: "站内现有演员都可以免费使用。如果你有专属定制或联合出品需求：",
   },
   "works.rolePrefix": { en: "as", zh: "饰" },
   "actor.newFaceDescription": {
-    en: "One photo and one voice so far.",
-    zh: "目前只有一张照片和一段声音。",
+    en: "Just one photo and one voice clip for now—vote if you want the full pack.",
+    zh: "目前先放一张试镜照和一段声音，喜欢TA就投上一票。",
   },
   "community.postTitle": { en: "Works", zh: "作品" },
   "roster.filters.all": { en: "All", zh: "全部" },
@@ -1710,11 +1725,14 @@ export const messages = {
   "roster.filters.over45": { en: "Over 45", zh: "45 岁以上" },
   "roster.filters.english": { en: "English", zh: "英语" },
   "roster.filters.chinese": { en: "Chinese", zh: "中文" },
-  "cast.empty": { en: "Your cast is empty.", zh: "选角单是空的。" },
+  "cast.empty": {
+    en: "Your cast is empty. Click “Add to cast” on any actor page to download them together.",
+    zh: "选角单还是空的。去演员页点「加入选角单」，就能在这里一次打包带走。",
+  },
   "cast.pickActors": { en: "Pick actors", zh: "去挑演员" },
-  "cast.count": { en: "{count} in your cast · up to 12", zh: "{count} 位演员 · 最多 12 位" },
+  "cast.count": { en: "{count} selected (up to 12)", zh: "已选 {count} 位（最多 12 位）" },
   "cast.downloading": { en: "Downloading…", zh: "下载中…" },
-  "cast.downloadPack": { en: "Download cast pack", zh: "下载选角包" },
+  "cast.downloadPack": { en: "Download all in cast", zh: "打包下载全组" },
   "cast.share": { en: "Share cast", zh: "分享选角单" },
   "cast.creditPrefix": { en: "Credit: ", zh: "署名：" },
   "cast.copyCredit": { en: "Copy credit", zh: "复制署名" },
@@ -1723,7 +1741,10 @@ export const messages = {
   "cast.remove": { en: "Remove", zh: "移出" },
   "cast.added": { en: "In your cast", zh: "已在选角单" },
   "cast.add": { en: "Add to cast", zh: "加入选角单" },
-  "community.intro": { en: "Made with our actors.", zh: "用本站演员做的作品。" },
+  "community.intro": {
+    en: "Works made by creators using our actors.",
+    zh: "大家用本站演员做出的作品。",
+  },
   "community.openForm": { en: "Post your work", zh: "发布作品" },
   "community.titleLabel": { en: "Title", zh: "标题" },
   "community.descriptionPlaceholder": { en: "Description (optional)", zh: "简介（可选）" },
@@ -1740,15 +1761,15 @@ export const messages = {
     zh: "我的作品里署了 SwimInAI。",
   },
   "community.rightsConfirmation": {
-    en: "I made this, and it follows the Free License rules.",
-    zh: "这是我做的，并且遵守免费商用的规则。",
+    en: "I made this myself and followed the Free License rules.",
+    zh: "这是我自己做的作品，并遵守免费商用规则。",
   },
   "community.author": { en: "by {author}", zh: "作者：{author}" },
   "community.reported": { en: "Thanks. We’ll take a look.", zh: "谢谢，我们会看一下。" },
   "community.report": { en: "Report this post", zh: "举报这个作品" },
   "community.starring": { en: "Starring {actors}", zh: "出演：{actors}" },
   "community.delete": { en: "Delete", zh: "删除" },
-  "community.voteLabel": { en: "Want more of {name}", zh: "想看更多{name}" },
+  "community.voteLabel": { en: "Vote for {name}", zh: "投给{name}" },
   "license.heroLines.0": {
     en: "Free for personal and commercial projects.",
     zh: "个人创作、商用都免费。",
@@ -1761,7 +1782,7 @@ export const messages = {
     en: "Use our animated actors in films, ads, games, comics, music or merch under the rules below. No license fee or permission request. Credit SwimInAI where people can read it. Downloading packs requires a free Swimmer account.",
     zh: "动画演员可用于电影、广告、游戏、漫画、音乐和周边，具体规则见下方。无需支付许可费或申请许可；请在清晰可见处署名 SwimInAI。下载整包需要免费泳者账号。",
   },
-  "license.heroLines.1": { en: "Credit SwimInAI.", zh: "署上 SwimInAI。" },
+  "license.heroLines.1": { en: "Just credit SwimInAI.", zh: "只需署名 SwimInAI。" },
   "common.languageName.zh": { en: "中文", zh: "中文" },
   "common.languageName.en": { en: "English", zh: "English" },
   "community.kind.image": { en: "Image", zh: "图片" },
@@ -1769,8 +1790,8 @@ export const messages = {
   "community.kind.audio": { en: "Audio", zh: "声音" },
   "common.breadcrumbFallback": { en: "Breadcrumb", zh: "当前位置" },
   "sheet.action": {
-    en: "Character sheet",
-    zh: "做设定图",
+    en: "Make character sheet",
+    zh: "拼设定图",
   },
   "sheet.crumb": {
     en: "Character sheet",
@@ -1785,8 +1806,8 @@ export const messages = {
     zh: "{name}的角色设定图",
   },
   "sheet.lead": {
-    en: "Choose reference images of {name} and combine them into one sheet.",
-    zh: "挑选{name}的参考图，拼成一张设定图。",
+    en: "Pick angles and expressions of {name} to combine into one 4K reference sheet.",
+    zh: "挑几张 {name} 的不同角度和表情，拼成一张 4K 参考设定图。",
   },
   "sheet.pick": {
     en: "Images",
@@ -1817,8 +1838,8 @@ export const messages = {
     zh: "已选 {count} 张，最多 {max} 张",
   },
   "sheet.limit": {
-    en: "One sheet holds up to 16 images, at most 8 of them full-body.",
-    zh: "一张图最多放 16 张，其中全身最多 8 张。",
+    en: "Up to 16 images per sheet (max 8 full-body).",
+    zh: "每张设定图最多拼 16 张，其中全身图最多 8 张。",
   },
   "sheet.style": {
     en: "Style",
@@ -1845,8 +1866,8 @@ export const messages = {
     zh: "下载设定图",
   },
   "sheet.downloadZip": {
-    en: "Download sheet and files",
-    zh: "下载设定图和附件",
+    en: "Download sheet + extras (ZIP)",
+    zh: "下载设定图与附件（ZIP）",
   },
   "assets.makeSheet": {
     en: "Make a character sheet from these",
@@ -1862,7 +1883,7 @@ export const messages = {
   },
   "help.starter.label": {
     en: "Starter pack",
-    zh: "懒人包",
+    zh: "起步包",
   },
   "help.starter.title": {
     en: "Two images and a prompt, ready to shoot",
@@ -1873,8 +1894,8 @@ export const messages = {
     zh: "全身正面、脸部正面和角色提示词。\n下载后上传到你的 AI 工具就能用。",
   },
   "help.starter.alt": {
-    en: "Clicking Get the starter pack starts the download",
-    zh: "点「领取懒人包」，开始下载",
+    en: "Clicking Download starter pack starts the download",
+    zh: "点击「下载起步包」即可开始下载",
   },
   "help.sheet.label": {
     en: "Sheet",
@@ -1901,12 +1922,12 @@ export const messages = {
     zh: "几位演员，一次带走",
   },
   "help.cast.body": {
-    en: "Add actors to your cast,\nthen download them all at once.",
-    zh: "把演员加进选角单，\n再到「我的选角单」一次下载全组。",
+    en: "Add actors to your cast,\nthen download them all at once from My cast.",
+    zh: "把演员加进选角单，\n再到「选角单」一次打包下载全组。",
   },
   "help.cast.alt": {
-    en: "After Add to cast, the actor appears in Your cast",
-    zh: "加入选角单后，在我的选角单里看到演员",
+    en: "After clicking Add to cast, the actor appears in My cast",
+    zh: "加入选角单后，可在「选角单」里查看和下载",
   },
   "guide.metaTitle": {
     en: "How it works",
@@ -1916,8 +1937,8 @@ export const messages = {
     en: "How it works",
     zh: "怎么用",
   },
-  "firstUse.label": { en: "Optional first-use help", zh: "可选的首次操作说明" },
-  "firstUse.dismiss": { en: "Dismiss tips", zh: "不再提示" },
+  "firstUse.label": { en: "Quick tip", zh: "新手提示" },
+  "firstUse.dismiss": { en: "Got it", zh: "知道了" },
   "firstUse.download.title": { en: "First download tips", zh: "第一次下载，接下来怎么用" },
   "firstUse.download.body": {
     en: "Keep your reference images and prompt together.\nThe guide shows three ways to prepare assets for your next scene.",
@@ -1925,37 +1946,37 @@ export const messages = {
   },
   "firstUse.cast.title": { en: "First cast tips", zh: "第一次组队，看看选角单" },
   "firstUse.cast.body": {
-    en: "Your cast stays in this browser.\nOpen Your cast to check the group, share it or download a cast pack.",
-    zh: "选角单保存在当前浏览器。\n打开我的选角单，可核对、分享或下载整组素材。",
+    en: "Your cast is saved in this browser.\nOpen My cast to review, share, or download the group pack.",
+    zh: "选角单保存在当前浏览器。\n打开「选角单」即可查看、分享或一次打包下载。",
   },
-  "firstUse.post.title": { en: "First submission tips", zh: "第一次投稿，先核对这些" },
+  "firstUse.post.title": { en: "Before you submit", zh: "投稿前的小提示" },
   "firstUse.post.body": {
     en: "Select only actors used in your work and confirm your rights.\nSubmission status, media checks and review are different steps.",
     zh: "只选择作品实际使用的演员，并核对权利。\n提交、媒体检查和审核是不同的步骤。",
   },
   "firstUse.vote.title": { en: "First vote tips", zh: "第一次投票，看看规则" },
   "firstUse.vote.body": {
-    en: "A vote asks for more assets for an actor.\nIt does not unlock unmade files or promise a release date.",
-    zh: "投票表达你希望演员补齐素材。\n不会解锁未制作文件，也不代表承诺上线日期。",
+    en: "Vote to tell us which actor should get a full asset pack next.\nVotes help us prioritize production, without unlocking unmade files or promising a release date.",
+    zh: "投一票，告诉我们你想先看哪位演员出全套素材。\n投票帮我们决定制作先后，但不会马上解锁新文件，也不设固定上线日期。",
   },
   "firstUse.vote.condition": {
     en: "A free Swimmer account is required to vote.",
     zh: "投票需要免费泳者账号。",
   },
-  "downloads.authorizing": { en: "Checking download access…", zh: "正在核对下载权限……" },
-  "downloads.fetching": { en: "Reference files fetched", zh: "已取回的参考文件" },
+  "downloads.authorizing": { en: "Preparing download…", zh: "正在准备下载…" },
+  "downloads.fetching": { en: "Loading reference files", zh: "正在读取素材文件" },
   "downloads.filesProgress": {
     en: "{completed} / {total} files",
     zh: "{completed} / {total} 个文件",
   },
   "downloads.assembling": {
-    en: "Files fetched. Preparing the final download…",
-    zh: "文件已取回，正在准备最终下载……",
+    en: "Almost ready—packing your files…",
+    zh: "素材已就绪，正在打包…",
   },
-  "learn.workflowPreview": { en: "Site workflow preview", zh: "本站操作预览" },
+  "learn.workflowPreview": { en: "How it works on the site", zh: "操作示意" },
   "learn.start.starter": { en: "Start with one actor", zh: "从一位演员开始" },
   "learn.start.sheet": { en: "Make a character sheet", zh: "做一张设定图" },
-  "learn.start.cast": { en: "Open your cast", zh: "打开选角单" },
+  "learn.start.cast": { en: "Open My cast", zh: "打开选角单" },
   "learn.toolsTitle": { en: "Next: choose your tool", zh: "下一步，选你的工具" },
   "learn.toolIntro": {
     en: "Pick a tool. Upload your actor picture. Follow the steps and check what you get.",
@@ -1963,10 +1984,10 @@ export const messages = {
   },
   "learn.readSteps": { en: "See the steps", zh: "看看怎么做" },
   "learn.before": { en: "Before you start", zh: "开始前要知道" },
-  "learn.steps": { en: "The workflow", zh: "操作流程" },
+  "learn.steps": { en: "Step-by-step", zh: "具体步骤" },
   "learn.inputPreview": {
-    en: "Reference image to upload — not an output from this tool.",
-    zh: "要上传的参考图，不是该工具的生成结果。",
+    en: "Upload this reference image (this is the input, not the tool’s output).",
+    zh: "这是要上传的演员参考图（不是工具生成的成片）。",
   },
   "learn.getReference": { en: "Get the reference image", zh: "领取参考图" },
   "learn.prompt": { en: "Prompt to try", zh: "可尝试的提示词" },
@@ -1985,15 +2006,15 @@ export const messages = {
   "learn.sources": { en: "Official references", zh: "官方参考资料" },
   "guide.title": {
     en: "Three ways to get an actor",
-    zh: "三种拿法，挑一种就行",
+    zh: "三种下载方式，按需挑选",
   },
   "guide.lead": {
-    en: "Start with one actor, one picture sheet, or a group of actors. Then try them in your favorite AI tool.",
-    zh: "先领一位演员、一张设定图，或者一组选角。再放进喜欢的 AI 工具里试试。",
+    en: "Grab one actor’s starter pack, combine angles into one 4K sheet, or bundle a full cast—then drop them into your AI tool.",
+    zh: "可以单领一位演员的起步包、拼一张 4K 设定图，或者把多位演员一起打包，再放进常用的 AI 工具里开拍。",
   },
   "guide.starter.title": {
     en: "Starter pack · fastest start",
-    zh: "懒人包 · 最快开拍",
+    zh: "起步包 · 最快开拍",
   },
   "guide.starter.for": {
     en: "For: your first try, when you want a result now.",
@@ -2004,8 +2025,8 @@ export const messages = {
     zh: "里面有：全身正面、脸部正面、角色提示词和使用说明。",
   },
   "guide.starter.where": {
-    en: 'Where: "Get starter pack" on any actor page.',
-    zh: "在哪：演员页的「领取懒人包」。",
+    en: 'Where: "Download starter pack" on any actor page.',
+    zh: "入口：演员页点「下载起步包」。",
   },
   "guide.sheet.title": {
     en: "Character sheet · one image says it all",
@@ -2020,8 +2041,8 @@ export const messages = {
     zh: "里面有：把你选的图片拼成一张大的 4K 图。",
   },
   "guide.sheet.where": {
-    en: 'Where: "Character sheet" on any actor page.',
-    zh: "在哪：演员页的「做设定图」。",
+    en: 'Where: "Make character sheet" on any actor page.',
+    zh: "入口：演员页点「拼设定图」。",
   },
   "guide.cast.title": {
     en: "Cast · several actors, one story",
@@ -2032,12 +2053,12 @@ export const messages = {
     zh: "适合：一个故事里要用好几位演员。",
   },
   "guide.cast.has": {
-    en: "Inside: every actor's starter pack in one file, with the credit line.",
-    zh: "里面有：每位演员的懒人包，合成一个文件，附署名。",
+    en: "Inside: every chosen actor’s starter pack in one ZIP, plus the credit line.",
+    zh: "里面有：所选每位演员的起步包，合在一个压缩包里，附署名文本。",
   },
   "guide.cast.where": {
-    en: 'Where: "Add to cast" on actor pages, then download from "Your cast".',
-    zh: "在哪：演员页点「加入选角单」，再到「我的选角单」一次下载。",
+    en: 'Where: "Add to cast" on actor pages, then download from "My cast".',
+    zh: "入口：演员页点「加入选角单」，再到「选角单」一键下载。",
   },
   "guide.more.title": {
     en: "Need something else",

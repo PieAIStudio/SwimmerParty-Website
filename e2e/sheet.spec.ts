@@ -38,9 +38,7 @@ test("ticking a thumb switches to custom, updates the address and stops at the l
   // At the limit the tick is refused: the box stays unticked and the count does not move.
   await page.locator('[data-asset-slot="face.up"] input').first().click({ force: true });
   await expect(page.getByText("16 selected, up to 16")).toBeVisible();
-  await expect(
-    page.getByText("One sheet holds up to 16 images, at most 8 of them full-body."),
-  ).toBeVisible();
+  await expect(page.getByText("Up to 16 images per sheet (max 8 full-body).")).toBeVisible();
   await expect(page.locator('[data-asset-slot="face.up"] input').first()).not.toBeChecked();
 });
 
@@ -83,7 +81,7 @@ test("ticking voice and prompt adds a ZIP with the clips under voice/ and the pr
   await localMember(context);
   await page.goto(`${sheet}?preset=custom&slots=turnaround.front,face.front&voice=1&prompt=1`);
   await expect(page.locator(ready)).toHaveCount(1, { timeout: 15_000 });
-  const download = page.getByRole("button", { name: "Download sheet and files", exact: true });
+  const download = page.getByRole("button", { name: "Download sheet + extras (ZIP)", exact: true });
   await expect(download).not.toHaveAttribute("aria-busy", "true", { timeout: 15_000 });
   const result = await downloadFrom(page, download);
   expect(result.name).toBe("tang-yunqiu_sheet.zip");

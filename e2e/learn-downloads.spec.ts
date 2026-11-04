@@ -9,7 +9,7 @@ test("A7 starter workflow produces an actual local-fixture ZIP", async ({ page, 
     .locator('[data-learn-outcome="starter"]')
     .getByRole("link", { name: "Start with one actor" })
     .click();
-  const button = page.getByRole("button", { name: "Get the starter pack", exact: true });
+  const button = page.getByRole("button", { name: "Download starter pack", exact: true });
   await expect(button).not.toHaveAttribute("aria-busy", "true");
   const result = await downloadFrom(page, button);
   const files = unzipSync(result.bytes);
@@ -42,9 +42,9 @@ test("A7 cast workflow preserves two chosen actors in the actual local-fixture Z
   await page.goto("/en/guide");
   await page
     .locator('[data-learn-outcome="cast"]')
-    .getByRole("link", { name: "Open your cast" })
+    .getByRole("link", { name: "Open My cast" })
     .click();
-  const button = page.getByRole("button", { name: "Download cast pack", exact: true });
+  const button = page.getByRole("button", { name: "Download all in cast", exact: true });
   await expect(button).not.toHaveAttribute("aria-busy", "true");
   const result = await downloadFrom(page, button);
   expect(

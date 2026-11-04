@@ -6,7 +6,7 @@ test("home and legal pages render", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText(en["home.heroLines.1"]);
   await expect(page.getByText(en["home.heroBody"], { exact: true })).toBeVisible();
   await expect(page.locator('[data-home-section="hero"] a[href="/en/actors"]')).toHaveText(
-    "Choose an actor",
+    "Browse actors",
   );
   await expect(page.locator("main")).not.toContainText(
     "each with images, a voice and a character prompt",

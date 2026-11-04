@@ -34,7 +34,7 @@ test("starter and shared cast ZIPs contain the selected actors", async ({ page, 
   await expect(page.locator("[data-account-menu]").first()).toBeVisible({ timeout: 15_000 });
   const starter = await downloadFrom(
     page,
-    page.getByRole("button", { name: "Get the starter pack", exact: true }),
+    page.getByRole("button", { name: "Download starter pack", exact: true }),
   );
   expect(starter.name).toBe("tang-yunqiu_starter.zip");
   const files = unzipSync(starter.bytes);
@@ -48,7 +48,7 @@ test("starter and shared cast ZIPs contain the selected actors", async ({ page, 
   );
   expect(strFromU8(files["README.txt"])).toContain("SwimInAI");
   await page.goto("/en/cast?a=tang-yunqiu,misha-luo");
-  const cast = await downloadFrom(page, page.getByRole("button", { name: "Download cast pack" }));
+  const cast = await downloadFrom(page, page.getByRole("button", { name: "Download all in cast" }));
   expect(cast.name).toBe("swimmer-party-cast.zip");
   const packed = unzipSync(cast.bytes);
   expect(
@@ -65,7 +65,10 @@ test("the starter pack confirms the download in a fixed notice that clears", asy
   await localMember(context);
   await page.goto("/en/actors/tang-yunqiu");
   await expect(page.locator("[data-account-menu]").first()).toBeVisible({ timeout: 15_000 });
-  await downloadFrom(page, page.getByRole("button", { name: "Get the starter pack", exact: true }));
+  await downloadFrom(
+    page,
+    page.getByRole("button", { name: "Download starter pack", exact: true }),
+  );
   const notice = page.getByText("Download started.", { exact: true });
   await expect(notice).toBeVisible();
   // The notice sits in the same fixed layer as the other download notices, never inside the CTA row.
@@ -87,7 +90,7 @@ test("a failed starter pack shows the failure in the same fixed notice", async (
   await page.goto("/en/actors/tang-yunqiu");
   // The session must be known before the click, as in the other starter test.
   await expect(page.locator("[data-account-menu]").first()).toBeVisible({ timeout: 15_000 });
-  await page.getByRole("button", { name: "Get the starter pack", exact: true }).click();
+  await page.getByRole("button", { name: "Download starter pack", exact: true }).click();
   const notice = page.getByText("Something went wrong. Try again.", { exact: true });
   await expect(notice).toBeVisible();
   await expect(notice.locator("xpath=ancestor::div[contains(@class,'fixed')][1]")).toHaveCSS(

@@ -31,7 +31,9 @@ test("the footer links to the guide from every page", async ({ page }) => {
 test("the guide fits a phone without sideways scrolling", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/zh/guide");
-  await expect(page.getByRole("heading", { level: 1, name: "三种拿法，挑一种就行" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { level: 1, name: "三种下载方式，按需挑选" }),
+  ).toBeVisible();
   await expect
     .poll(() => page.evaluate(() => document.documentElement.scrollWidth))
     .toBeLessThanOrEqual(390);

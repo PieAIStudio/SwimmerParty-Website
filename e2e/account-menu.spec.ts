@@ -176,7 +176,7 @@ test("the account tab links to the account center and signs out", async ({ page,
   await page.getByRole("button", ACCOUNT_TRIGGER).click();
   await page.getByRole("tab", { name: "Account" }).click();
   const panel = page.locator(".game-ui-account-menu-panel");
-  await expect(panel.getByRole("link", { name: "Account and security" })).toHaveAttribute(
+  await expect(panel.getByRole("link", { name: "Account settings" })).toHaveAttribute(
     "href",
     "https://accounts.swiminai.com/account?ui_locales=en",
   );
@@ -190,8 +190,8 @@ test("the site tab lists the cast with its count, and the guide", async ({ page,
   await page.goto("/en/guide");
   await page.getByRole("button", ACCOUNT_TRIGGER).click();
   const panel = page.locator(".game-ui-account-menu-panel");
-  await expect(panel.getByRole("link", { name: "Your cast" })).toHaveAttribute("href", "/en/cast");
-  await expect(panel.getByText("Actors: 0", { exact: true })).toBeVisible();
+  await expect(panel.getByRole("link", { name: "My cast" })).toHaveAttribute("href", "/en/cast");
+  await expect(panel.getByText("Actors in cast: 0", { exact: true })).toBeVisible();
   await expect(panel.getByRole("link", { name: "How it works" })).toHaveAttribute(
     "href",
     "/en/guide",

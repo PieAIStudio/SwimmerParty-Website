@@ -4,7 +4,7 @@ import { downloadFrom, localMember } from "./fixtures/download";
 test("navigation leads to the license and its credit mark downloads", async ({ page, context }) => {
   await localMember(context);
   await page.goto("/en");
-  for (const name of ["Actors", "Samples", "Learn", "Your cast", "Free License", "Studio"])
+  for (const name of ["Actors", "Samples", "How to use", "My cast", "Free License", "Studio"])
     await expect(page.getByRole("link", { name, exact: true }).first()).toBeVisible();
   await page.locator("footer").getByRole("link", { name: "Free License", exact: true }).click();
   await expect(page).toHaveURL(/\/en\/license$/);
