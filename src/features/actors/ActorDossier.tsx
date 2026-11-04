@@ -159,6 +159,7 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
             <div className="mt-3">
               <AssetHeroActions front={front} />
             </div>
+            <DownloadTerms className="mt-3" />
             {voice ? (
               <div className="mt-5" data-actor-voice>
                 <h2 className="sp-subtitle">{t("actor.voiceTitle", { name })}</h2>
@@ -167,7 +168,6 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
                 </div>
               </div>
             ) : null}
-            <DownloadTerms className="mt-3" />
             <p className="sp-small mt-2 text-muted-foreground" data-starter-facts>
               {t("actor.starterFacts", { count: starter.length, size: approxMb(starterBytes) })}
             </p>
@@ -206,12 +206,9 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
         </section>
         <div
           id="assets"
-          className="sp-library-toolbar sticky top-16 z-20 mt-10 flex min-h-16 scroll-mt-52 items-center gap-4 border-b border-border py-2"
+          className="sp-library-toolbar sticky top-16 z-20 mt-10 flex min-h-16 scroll-mt-52 flex-col items-stretch gap-2 border-b border-border py-3"
         >
-          <nav
-            className="flex min-w-0 flex-1 gap-2 overflow-x-auto py-2"
-            aria-label={t("assets.navigation")}
-          >
+          <nav className="flex min-w-0 flex-wrap gap-2 py-2" aria-label={t("assets.navigation")}>
             {imageSeries.map((s) => (
               <SeriesJumpButton key={s.id} id={`series-${s.id}`}>
                 {t(seriesLabelKey(s.id))}

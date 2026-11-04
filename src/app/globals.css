@@ -235,6 +235,11 @@
     text-decoration: underline;
   }
 
+  /* Header clearance also applies when a heading is focused/scrolled directly. */
+  main h2 {
+    scroll-margin-top: 5rem;
+  }
+
   .sp-library-toolbar {
     background: var(--game-ui-bg);
   }

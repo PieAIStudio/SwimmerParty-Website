@@ -67,7 +67,9 @@ function HeaderContent({
     return pathname === path || pathname.startsWith(`${path}/`);
   };
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-[var(--sp-header)] backdrop-blur-[12px]">
+    <header
+      className={`${pathname === "/" || pathname === "/actors" ? "static" : "sticky top-0"} z-40 border-b border-border bg-[var(--sp-header)] backdrop-blur-[12px]`}
+    >
       <div className="sp-container flex h-16 items-center gap-6">
         <Link
           href="/"
