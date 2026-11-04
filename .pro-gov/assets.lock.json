@@ -5,7 +5,7 @@
   "registryProvenance": {
     "schema": "agent-assets-registry",
     "version": 1,
-    "hash": "sha256:1e32355da93cdeac2f8cbaf1a986eb7278076e989b9185c7f892d80ac73b1b0b",
+    "hash": "sha256:40666c197f4b11159dc2f4ab69032c0645796f715c766534f0ba346629bfbda5",
     "assetCount": 59
   },
   "assets": [
@@ -29,7 +29,7 @@
       "id": "npx-skills/img2threejs",
       "sourcePath": "skills/npx-skills/.agents/skills/img2threejs",
       "delivery": "symlink",
-      "contentHash": "sha256:ae9fff221cafdcc1d5a0072bfd4b6f1d4e12a9cdbf8dea3b3487ca349e11965b",
+      "contentHash": "sha256:daf2237fc15277d2605f94ff514e498522495f03f4258a473df926e059a8fdce",
       "placement": "manual",
       "targetPath": ".agents/manual-skills/img2threejs"
     },
@@ -37,7 +37,7 @@
       "id": "npx-skills/impeccable",
       "sourcePath": "skills/npx-skills/.agents/skills/impeccable",
       "delivery": "symlink",
-      "contentHash": "sha256:2c68070631f0c376794820c90f0a9e71b069f67905c76c2e72d472d51b4c146a",
+      "contentHash": "sha256:674c515566c3c233a91cfb13e4d6ecfc4c44d6af3538634331c3968715b53bf4",
       "placement": "auto",
       "targetPath": ".agents/skills/impeccable"
     },
@@ -77,7 +77,7 @@
       "id": "npx-skills/threejs-skills",
       "sourcePath": "skills/npx-skills/.agents/skills/threejs-skills",
       "delivery": "symlink",
-      "contentHash": "sha256:85cbdcfcd332f99b9932e5ff5e83b14d1d5927c1cee60ad02bc683108539fb42",
+      "contentHash": "sha256:0e08c3d70df8256b37185b8be5011783704e1cd3ae7e317f050636262d709d0c",
       "placement": "manual",
       "targetPath": ".agents/manual-skills/threejs-skills"
     },
@@ -85,7 +85,7 @@
       "id": "npx-skills/ui-ux-pro-max",
       "sourcePath": "skills/npx-skills/.agents/skills/ui-ux-pro-max",
       "delivery": "symlink",
-      "contentHash": "sha256:9ea895a165b0c8c80f33d1de5ff3cfdaf9cecdcb80ac60f6ace23f4acdd91ad4",
+      "contentHash": "sha256:c50cdf3c1e2941640e66853496a24dd82d34c873cedae49648ea623366f776d2",
       "placement": "auto",
       "targetPath": ".agents/skills/ui-ux-pro-max"
     },
