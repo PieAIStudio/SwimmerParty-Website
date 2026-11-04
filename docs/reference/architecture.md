@@ -6,7 +6,7 @@ status: active
 canonical: true
 owner: ai-assisted
 created: 2026-10-04
-last_reviewed: 2026-10-13
+last_reviewed: 2026-11-05
 domain: engineering
 tags:
   - architecture
@@ -32,6 +32,7 @@ related:
 | src/features/sheet                               | 角色设定图页；预设、挑图和网址状态是纯函数，拼图与签名下载复用 assets 的 client 入口，上限在 assets/contracts |
 | src/features/cast、samples、analytics            | 选角单与选角包、官方样片、允许的产品事件                                                                      |
 | src/features/scene                               | 独立延迟加载的本地 3D 排位、版本化草稿和干净 PNG；资产接口与覆盖映射见该功能 README，不由共享布局导入         |
+| src/features/settings                            | Guide 与 scene 共用的场景参考卡和纯草稿合同；图片清单在 content/settings.ts，不反向依赖 3D                     |
 | src/site                                         | 全站布局和视觉原语；通过 props 组合业务，不反向导入 feature                                                   |
 | src/content                                      | 纯产品数据；演员和样片来自生产资料投影，不含查询函数                                                          |
 | src/contracts                                    | Zod 边界及其推导类型；不依赖产品实现                                                                          |

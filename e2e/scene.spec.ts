@@ -13,6 +13,7 @@ import {
 import en from "../messages/en/messages.json";
 import zh from "../messages/zh-CN/messages.json";
 
+const evidencePrefix = process.env.SCENE_EVIDENCE_PREFIX ?? "C";
 const five = ACTORS.slice(0, 5)
   .map((actor) => actor.slug)
   .join(",");
@@ -35,14 +36,14 @@ for (const locale of ["en", "zh"] as const)
       await page.locator("[data-scene-entry]").click();
       await ready(page);
       await page.evaluate(() => document.fonts.ready);
-      await page.screenshot({ path: `run-1/shots/C-entry-${locale}-${width}.png` });
+      await page.screenshot({ path: `run-1/shots/${evidencePrefix}-entry-${locale}-${width}.png` });
       await expect(page.locator("[data-scene-figures] button")).toHaveCount(5);
       await expect(page.getByRole("button", { name: m["scene.add"], exact: true })).toBeDisabled();
       // All six poses and three independent model variants remain usable.
       for (const pose of POSES) {
         await page.getByLabel(m["scene.pose"], { exact: true }).selectOption(pose);
         if (locale === "en" && width === 1440) {
-          await page.screenshot({ path: `run-1/shots/C-pose-${pose}.png` });
+          await page.screenshot({ path: `run-1/shots/${evidencePrefix}-pose-${pose}.png` });
         }
       }
       for (const build of BUILDS) {
@@ -64,9 +65,11 @@ for (const locale of ["en", "zh"] as const)
         await page.getByLabel(m["scene.camera"], { exact: true }).selectOption(view);
       await page.getByRole("button", { name: m["scene.fit"], exact: true }).click();
       await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
-      await page.screenshot({ path: `run-1/shots/C-stage-${locale}-${width}.png` });
+      await page.screenshot({ path: `run-1/shots/${evidencePrefix}-stage-${locale}-${width}.png` });
       await page.locator("aside[aria-label]").last().scrollIntoViewIfNeeded();
-      await page.screenshot({ path: `run-1/shots/C-controls-${locale}-${width}.png` });
+      await page.screenshot({
+        path: `run-1/shots/${evidencePrefix}-controls-${locale}-${width}.png`,
+      });
       for (const [frame, dimensions] of Object.entries(FRAMES)) {
         await page.getByLabel(m["scene.frame"], { exact: true }).selectOption(frame);
         await page.getByRole("button", { name: m["scene.fit"], exact: true }).click();
@@ -75,7 +78,7 @@ for (const locale of ["en", "zh"] as const)
         const downloadPromise = page.waitForEvent("download");
         await page.getByRole("button", { name: m["scene.savePng"], exact: true }).click();
         const download = await downloadPromise;
-        const path = `run-1/shots/C-export-${frame}-${locale}-${width}.png`;
+        const path = `run-1/shots/${evidencePrefix}-export-${frame}-${locale}-${width}.png`;
         await download.saveAs(path);
         const bytes = await readFile(path);
         expect(bytes.readUInt32BE(16)).toBe(dimensions[0]);
@@ -85,7 +88,9 @@ for (const locale of ["en", "zh"] as const)
         const after = await page.locator("[data-scene-frame]").boundingBox();
         expect(after!.width).toBeCloseTo(frameBox!.width);
         await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
-        await page.screenshot({ path: `run-1/shots/C-frame-${frame}-${locale}-${width}.png` });
+        await page.screenshot({
+          path: `run-1/shots/${evidencePrefix}-frame-${frame}-${locale}-${width}.png`,
+        });
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
         true,
@@ -120,6 +125,19 @@ test("more than five actors asks explicitly and does not edit the saved cast", a
 test("figure GLBs and local draft obey the static asset contract", async () => {
   expect(readDraft("broken JSON")).toBeNull();
   const state = initialScene();
+  const { setting, ...oldDraft } = state;
+  expect(readDraft(JSON.stringify(oldDraft))?.setting).toEqual(setting);
+  expect(
+    readDraft(JSON.stringify({ ...state, setting: { selected: "unknown", sentences: {} } })),
+  ).toBeNull();
+  expect(
+    readDraft(
+      JSON.stringify({
+        ...state,
+        setting: { selected: "studio", sentences: { studio: "x".repeat(301) } },
+      }),
+    ),
+  ).toBeNull();
   expect(
     readDraft(JSON.stringify({ ...state, figures: Array(6).fill(state.figures[0]) })),
   ).toBeNull();
@@ -139,7 +157,7 @@ test("figure GLBs and local draft obey the static asset contract", async () => {
     expect(gltf.animations.map((clip: { name: string }) => clip.name)).toEqual([...POSES]);
     results.push({ build, bytes: bytes.length, triangles, poses: [...POSES] });
   }
-  await writeFile("run-1/C-assets.json", JSON.stringify(results, null, 2));
+  await writeFile(`run-1/${evidencePrefix}-assets.json`, JSON.stringify(results, null, 2));
 });
 
 test("3D JavaScript is isolated from main pages and within its incremental budget", async ({
@@ -157,7 +175,14 @@ test("3D JavaScript is isolated from main pages and within its incremental budge
       runtime.add(file);
   }
   expect(runtime.size).toBeGreaterThan(0);
-  const routes = ["/en", "/en/actors", "/en/actors/tang-yunqiu", "/en/cast", "/en/scene"];
+  const routes = [
+    "/en",
+    "/en/actors",
+    "/en/actors/tang-yunqiu",
+    "/en/cast",
+    "/en/guide",
+    "/en/scene",
+  ];
   const allMain = new Set<string>();
   const report: {
     path: string;
@@ -201,11 +226,11 @@ test("3D JavaScript is isolated from main pages and within its incremental budge
     await context.close();
   }
   await writeFile(
-    "run-1/C-bundle.json",
+    `run-1/${evidencePrefix}-bundle.json`,
     JSON.stringify(
       {
         definition:
-          "Additional scene JS vs union of the four main routes, each actual production response gzipped separately",
+          "Additional scene JS vs union of the five main routes (including Guide), each actual production response gzipped separately",
         limitBytes: 600_000,
         incrementalGzipBytes: incremental,
         runtimeChunks: [...runtime],
@@ -295,7 +320,7 @@ test("phone-size Chrome performance under 4x CPU throttling", async ({ page, bro
     );
   }
   await writeFile(
-    "run-1/C-perf.json",
+    `run-1/${evidencePrefix}-perf.json`,
     JSON.stringify(
       {
         browser: browser.version(),

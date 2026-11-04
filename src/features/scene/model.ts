@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { settingDraftSchema } from "@/features/settings/contracts";
 
 export const MAX_FIGURES = 5;
 export const DRAFT_KEY = "sp-scene-v1";
@@ -30,6 +31,7 @@ export const sceneSchema = z
     figures: z.array(figureSchema).min(1).max(MAX_FIGURES),
     frame: z.enum(["landscape", "portrait", "square"]),
     camera: z.object({ view: z.enum(VIEWS), position: point, target: point }),
+    setting: settingDraftSchema,
   })
   .refine(
     (scene) => new Set(scene.figures.map((figure) => figure.id)).size === scene.figures.length,
@@ -109,6 +111,7 @@ export function initialScene(actors: SceneActor[] = [], castKey = ""): SceneStat
     figures,
     frame: "landscape",
     camera: fitCamera(figures, "landscape", "eye"),
+    setting: settingDraftSchema.parse(undefined),
   };
 }
 export function readDraft(raw: string | null): SceneState | null {

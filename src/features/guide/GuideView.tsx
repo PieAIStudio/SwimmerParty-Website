@@ -9,6 +9,7 @@ import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n } from "@/i18n/server";
 import { PageIntro } from "@/site/PageIntro";
 import { TextLink } from "@/site/TextLink";
+import { SettingCards } from "@/features/settings";
 
 const WAYS = ["starter", "sheet", "cast"] as const;
 const AFTER = ["guide.after.1", "guide.after.2", "guide.after.3"] as const;
@@ -59,6 +60,7 @@ export async function GuideView({ locale }: { locale: AppLocale }) {
           ))}
         </div>
       </section>
+      <SettingCards />
       <section id="tools" className="sp-section" data-learn-tools>
         <h2 className="sp-title">{t("learn.toolsTitle")}</h2>
         <p className="sp-small mt-4 max-w-3xl text-muted-foreground">{t("learn.toolIntro")}</p>

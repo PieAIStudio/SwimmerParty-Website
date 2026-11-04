@@ -6,6 +6,59 @@
  * copy is outside this UI catalog; do not change its legal wording in this block.
  */
 export const messages = {
+  "settings.title": { en: "Setting references", zh: "场景参考" },
+  "settings.intro": {
+    en: "Pick a setting, edit its sentence, then copy it into your image tool.",
+    zh: "选个场景，改一句描述，再复制到你的出图工具。",
+  },
+  "settings.separate": {
+    en: "References, not 3D backgrounds. Use them with your layout PNG and actor references. No image generation here.",
+    zh: "这是参考，不是三维布景。请搭配站位 PNG 和演员参考图使用。本站不生成图片。",
+  },
+  "settings.name.studio": { en: "Studio", zh: "摄影棚" },
+  "settings.name.cafe": { en: "Café", zh: "咖啡馆" },
+  "settings.name.street": { en: "Street", zh: "街道" },
+  "settings.name.garden": { en: "Garden", zh: "花园" },
+  "settings.name.livingRoom": { en: "Living room", zh: "客厅" },
+  "settings.name.gym": { en: "Gym", zh: "健身房" },
+  "settings.sentence.studio": {
+    en: "A quiet photo studio with a pale backdrop and soft light.",
+    zh: "安静的摄影棚，浅色背景，光线柔和。",
+  },
+  "settings.sentence.cafe": {
+    en: "A small café with wooden tables and warm window light.",
+    zh: "小咖啡馆里摆着木桌，暖光从窗边照进来。",
+  },
+  "settings.sentence.street": {
+    en: "A calm city street in daylight, with shops in the background.",
+    zh: "白天安静的城市街道，背景是沿街商店。",
+  },
+  "settings.sentence.garden": {
+    en: "A green garden with a stone path in soft morning light.",
+    zh: "绿意盎然的花园，石板路上洒着柔和晨光。",
+  },
+  "settings.sentence.livingRoom": {
+    en: "A simple living room with a sofa and soft daylight.",
+    zh: "简洁的客厅里放着沙发，自然光柔和。",
+  },
+  "settings.sentence.gym": {
+    en: "A bright gym with exercise equipment and clear floor space.",
+    zh: "明亮的健身房，器械旁留有空地。",
+  },
+  "settings.sentence": { en: "One sentence", zh: "一句描述" },
+  "settings.copyPrompt": { en: "Copy prompt", zh: "复制提示词" },
+  "settings.promptCopied": { en: "Prompt copied", zh: "提示词已复制" },
+  "settings.saveImage": { en: "Save image", zh: "保存图片" },
+  "settings.imagePending": { en: "Image pending", zh: "参考图待交付" },
+  "settings.notSupplied": {
+    en: "Image not supplied yet; saving is unavailable.",
+    zh: "参考图尚未交付，暂不能保存。",
+  },
+  "settings.downloadFailed": {
+    en: "Could not save the image. Try again.",
+    zh: "图片没保存成功，请重试。",
+  },
+  "settings.imageSaved": { en: "Image saved.", zh: "图片已保存。" },
   "scene.title": { en: "Build a scene", zh: "摆个场面" },
   "scene.intro": {
     en: "Place up to five stand-ins. Save a layout picture, then use separate actor references in your image tool. No AI generation here.",

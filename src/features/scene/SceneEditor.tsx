@@ -13,6 +13,7 @@ import {
 import { useSiteI18n } from "@/i18n/client";
 import { Link } from "@/i18n/navigation";
 import { saveBlob } from "@/lib/browser-files";
+import { SettingCards } from "@/features/settings";
 import {
   BUILDS,
   DRAFT_KEY,
@@ -406,6 +407,10 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
           <p className="sp-small mt-5 text-muted-foreground">{t("scene.approximate")}</p>
         </aside>
       </div>
+      <SettingCards
+        draft={scene.setting}
+        onChange={(setting) => change((value) => ({ ...value, setting }))}
+      />
     </div>
   );
 }

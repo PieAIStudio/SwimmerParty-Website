@@ -9,10 +9,13 @@ import { GameIcon } from "@pieai/swimmer-ui-kit";
 export function CopyButton({
   text,
   label,
+  copiedLabel,
   primary = false,
 }: {
   text: string;
   label?: string;
+  /** New contexts can name what was copied without changing existing link copy. */
+  copiedLabel?: string;
   /** The page's main action uses the liquid CTA. */
   primary?: boolean;
 }) {
@@ -33,7 +36,9 @@ export function CopyButton({
   return (
     <GameButton variant={primary ? "primary" : undefined} onClick={copy}>
       <GameIcon icon={done ? "check" : "copy"} />
-      <span aria-live="polite">{done ? t("common.copied") : (label ?? t("common.copy"))}</span>
+      <span aria-live="polite">
+        {done ? (copiedLabel ?? t("common.copied")) : (label ?? t("common.copy"))}
+      </span>
     </GameButton>
   );
 }
