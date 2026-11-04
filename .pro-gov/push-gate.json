@@ -67,7 +67,7 @@
         "public/scene/**"
       ],
       "commands": [],
-      "reason": "MediaFactory mannequin GLBs with unchanged delivery licence/manifest. The existing selector does not run browsers. Delivery hashes, static build/pose/triangle contracts, lazy bytes and labelled exports are covered by bounded e2e/scene.spec.ts acceptance, mapped in features/scene/README.md."
+      "reason": "MediaFactory mannequin GLBs with the delivery licence and producer manifest (JSON values unchanged; CRLF normalized to LF). The existing selector does not run browsers. Delivery hashes, static build/pose/triangle contracts, lazy bytes and labelled exports are covered by bounded e2e/scene.spec.ts acceptance, mapped in features/scene/README.md."
     },
     {
       "paths": [
