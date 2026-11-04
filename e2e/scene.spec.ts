@@ -124,6 +124,7 @@ for (const locale of ["en", "zh"] as const)
         await page.getByLabel(m["scene.pose"], { exact: true }).selectOption(pose);
         await ready(page);
         if (locale === "en" && width === 1440) {
+          await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
           await page.screenshot({
             path: `${evidenceRoot}/shots/${evidencePrefix}-pose-${pose}.png`,
           });
