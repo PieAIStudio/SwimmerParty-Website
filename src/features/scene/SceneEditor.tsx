@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Component, useCallback, useEffect, useState, type ReactNode } from "react";
+import { Component, useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   GameButton,
   GameCheckbox,
@@ -9,8 +9,11 @@ import {
   GameInput,
   GameSelect,
   GameSlider,
+  GameTextArea,
 } from "@pieai/swimmer-ui-kit";
-import { useSiteI18n } from "@/i18n/client";
+import { SITE } from "@/content/site";
+import { CopyButton } from "@/site/CopyButton";
+import { useSiteI18n, useSiteLocale } from "@/i18n/client";
 import { Link } from "@/i18n/navigation";
 import { saveBlob } from "@/lib/browser-files";
 import { SettingCards } from "@/features/settings";
@@ -18,6 +21,7 @@ import {
   BUILDS,
   DRAFT_KEY,
   FRAMES,
+  FIGURE_BANDS,
   MAX_FIGURES,
   POSES,
   VIEWS,
@@ -51,6 +55,7 @@ type History = { value: SceneState; past: SceneState[]; future: SceneState[] };
 
 export function SceneEditor({ actors }: { actors: SceneActor[] }) {
   const { t } = useSiteI18n();
+  const locale = useSiteLocale();
   const [history, setHistory] = useState<History | null>(null);
   const [choose, setChoose] = useState<SceneActor[] | null>(null);
   const [chosen, setChosen] = useState<string[]>([]);
@@ -140,6 +145,18 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
       setBusy(false);
     }
   }
+  const figures = history?.value.figures;
+  const identities = useMemo(
+    () =>
+      (figures ?? []).map((item, index) => {
+        const name =
+          actors.find((actor) => actor.slug === item.actorSlug)?.name ??
+          item.name ??
+          t("scene.figure", { count: index + 1 });
+        return { label: `${index + 1} · ${name}`, colour: FIGURE_BANDS[index].hex };
+      }),
+    [figures, actors, t],
+  );
   if (choose)
     return (
       <section className="sp-card my-8 bg-card" data-scene-choose>
@@ -195,10 +212,21 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
       return { ...value, figures, camera: fitCamera(figures, value.frame, value.camera.view) };
     });
   }
-  const nameOf = (item: FigureState, index: number) =>
-    actors.find((actor) => actor.slug === item.actorSlug)?.name ??
-    item.name ??
-    t("scene.figure", { count: index + 1 });
+  const prompt = [
+    t("scene.promptIntro"),
+    ...scene.figures.map((item, index) => {
+      const identity = {
+        label: identities[index].label,
+        colour: t(`scene.colour.${FIGURE_BANDS[index].colour}`),
+      };
+      return item.actorSlug
+        ? t("scene.promptActor", {
+            ...identity,
+            url: `${SITE.url}/${locale}/actors/${item.actorSlug}/sheet`,
+          })
+        : t("scene.promptUnassigned", identity);
+    }),
+  ].join("\n");
   return (
     <div className="pb-16" data-scene-editor>
       <div className="mb-5 flex flex-wrap items-center gap-3">
@@ -277,6 +305,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
             >
               <SceneCanvas
                 scene={scene}
+                identities={identities}
                 selected={figure.id}
                 onSelect={setSelected}
                 onMove={move}
@@ -285,6 +314,13 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
               />
             </CanvasBoundary>
           </div>
+          <p className="sp-small mt-3 flex flex-wrap gap-x-4 gap-y-1" data-scene-key>
+            {identities.map((identity, index) => (
+              <span key={identity.label}>
+                {identity.label} ({t(`scene.colour.${FIGURE_BANDS[index].colour}`)})
+              </span>
+            ))}
+          </p>
           <div className="mt-3 flex flex-wrap gap-3">
             <GameButton onClick={() => fit()}>{t("scene.fit")}</GameButton>
             <GameButton onClick={() => layout("line")}>{t("scene.line")}</GameButton>
@@ -305,7 +341,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
                 variant={item.id === figure.id ? "secondary" : "ghost"}
                 onClick={() => setSelected(item.id)}
               >
-                {nameOf(item, index)}
+                {identities[index].label}
               </GameButton>
             ))}
           </div>
@@ -400,13 +436,26 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
             </div>
           </div>
           {figure.actorSlug ? (
-            <Link href={`/actors/${figure.actorSlug}`} className="sp-link mt-5">
+            <Link href={`/actors/${figure.actorSlug}/sheet`} className="sp-link mt-5">
               {t("scene.actorReferences")}
             </Link>
           ) : null}
           <p className="sp-small mt-5 text-muted-foreground">{t("scene.approximate")}</p>
         </aside>
       </div>
+      <section className="sp-card mt-6 bg-card" data-scene-prompt>
+        <GameField label={t("scene.prompt")}>
+          <GameTextArea aria-label={t("scene.prompt")} rows={5} readOnly value={prompt} />
+        </GameField>
+        <div className="mt-4">
+          <CopyButton
+            key={prompt}
+            text={prompt}
+            label={t("scene.copyPrompt")}
+            copiedLabel={t("scene.promptCopied")}
+          />
+        </div>
+      </section>
       <SettingCards
         draft={scene.setting}
         onChange={(setting) => change((value) => ({ ...value, setting }))}

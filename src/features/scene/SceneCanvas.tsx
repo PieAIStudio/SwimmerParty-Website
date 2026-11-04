@@ -12,42 +12,72 @@ import {
 import { Canvas, useFrame, useLoader, useThree, type ThreeEvent } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei/core/OrbitControls";
 import {
-  AnimationMixer,
+  Box3,
+  CanvasTexture,
   Group,
   Mesh,
   PerspectiveCamera,
   Plane,
+  SRGBColorSpace,
   Vector2,
   Vector3,
   type Object3D,
 } from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { clone } from "three/addons/utils/SkeletonUtils.js";
 import { useSiteI18n } from "@/i18n/client";
-import { loadFigure } from "./figure-assets";
-import type { FigureState } from "./model";
+import { figureScale, loadFigure } from "./figure-assets";
+import type { FigureIdentity, FigureState } from "./model";
 import type { ExportPicture, SceneCanvasProps } from "./canvas-contract";
 
 type OrbitApi = ComponentRef<typeof OrbitControls>;
 const floor = new Plane(new Vector3(0, 1, 0), 0);
 const clamp = (value: number) => Math.max(-5, Math.min(5, value));
 
+function FigureLabel({ identity, y }: { identity: FigureIdentity; y: number }) {
+  const texture = useMemo(() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 128;
+    canvas.height = 128;
+    const context = canvas.getContext("2d")!;
+    context.fillStyle = "#ffffff";
+    context.fillRect(0, 0, 128, 128);
+    context.fillStyle = "#202124";
+    context.font = "600 88px system-ui, sans-serif";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillText(identity.label.split(" · ")[0], 64, 56);
+    context.fillStyle = identity.colour;
+    context.fillRect(0, 108, 128, 20);
+    const result = new CanvasTexture(canvas);
+    result.colorSpace = SRGBColorSpace;
+    return result;
+  }, [identity.label, identity.colour]);
+  useEffect(() => () => texture.dispose(), [texture]);
+  return (
+    <sprite position={[0, y, 0]} scale={[0.14, 0.14, 1]} renderOrder={10}>
+      <spriteMaterial map={texture} depthTest={false} depthWrite={false} toneMapped={false} />
+    </sprite>
+  );
+}
+
 function Figure({
   figure,
+  identity,
   selected,
   onDragging,
   onSelect,
   onMove,
 }: {
   figure: FigureState;
+  identity: FigureIdentity;
   selected: boolean;
   onDragging: (dragging: boolean) => void;
   onSelect: (id: string) => void;
   onMove: SceneCanvasProps["onMove"];
 }) {
-  const source = useLoader(GLTFLoader, loadFigure(figure.build));
+  const source = useLoader(GLTFLoader, loadFigure(figure.build, figure.pose));
   const model = useMemo(() => {
-    const object = clone(source.scene);
+    const object = source.scene.clone(true);
     object.traverse((node) => {
       if (node instanceof Mesh) {
         node.castShadow = true;
@@ -56,21 +86,11 @@ function Figure({
     });
     return object;
   }, [source]);
-  const mixer = useMemo(() => new AnimationMixer(model), [model]);
+  const scale = figureScale(figure.build, figure.heightCm);
+  const top = useMemo(() => new Box3().setFromObject(model).max.y, [model]);
   const root = useRef<Group>(null);
   const drag = useRef<{ pointer: number; offset: Vector3 } | null>(null);
   const { invalidate, gl } = useThree();
-  useEffect(() => {
-    const clip = source.animations.find((candidate) => candidate.name === figure.pose);
-    if (!clip) throw new Error(`Figure asset is missing pose ${figure.pose}`);
-    mixer.stopAllAction();
-    mixer.clipAction(clip).play();
-    mixer.setTime(0);
-    invalidate();
-    return () => {
-      mixer.stopAllAction();
-    };
-  }, [figure.pose, source, mixer, invalidate]);
   useEffect(() => {
     const cancel = () => {
       if (!drag.current) return;
@@ -124,7 +144,12 @@ function Figure({
       onPointerMove={move}
       onPointerUp={up}
     >
-      <primitive object={model} scale={figure.heightCm / 175} dispose={null} />
+      <primitive object={model} scale={scale} dispose={null} />
+      <FigureLabel identity={identity} y={top * scale + 0.2} />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.008, 0]}>
+        <ringGeometry args={[0.27, 0.34, 40]} />
+        <meshBasicMaterial color={identity.colour} toneMapped={false} />
+      </mesh>
       {selected ? (
         <mesh
           rotation={[-Math.PI / 2, 0, 0]}
@@ -141,6 +166,7 @@ function Figure({
 
 function Runtime({
   scene: document,
+  identities,
   selected,
   onSelect,
   onMove,
@@ -176,8 +202,29 @@ function Runtime({
         lens.updateProjectionMatrix();
         // Copy the freshly rendered framebuffer, never a stale demand-mode frame.
         gl.render(scene, camera);
+        const picture = window.document.createElement("canvas");
+        picture.width = width;
+        picture.height = height;
+        const context = picture.getContext("2d")!;
+        context.drawImage(gl.domElement, 0, 0);
+        // A fixed name key stays readable even when the camera puts figures behind one another.
+        // The matching number and band remain attached to each figure in the 3D view.
+        const column = width / identities.length;
+        const fontSize = Math.min(28, width / (identities.length * 9));
+        context.font = `600 ${fontSize}px system-ui, sans-serif`;
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        identities.forEach((identity, index) => {
+          const left = index * column + 12;
+          context.fillStyle = "#ffffff";
+          context.fillRect(left, height - 72, column - 24, 56);
+          context.fillStyle = "#202124";
+          context.fillText(identity.label, (index + 0.5) * column, height - 48, column - 40);
+          context.fillStyle = identity.colour;
+          context.fillRect(left, height - 24, column - 24, 8);
+        });
         return await new Promise<Blob>((resolve, reject) =>
-          gl.domElement.toBlob(
+          picture.toBlob(
             (blob) => (blob ? resolve(blob) : reject(new Error("PNG capture failed"))),
             "image/png",
           ),
@@ -193,13 +240,16 @@ function Runtime({
         invalidate();
       }
     },
-    [camera, gl, invalidate, scene],
+    [camera, gl, invalidate, scene, identities],
   );
   useFrame(() => {
     if (notified.current) return;
     notified.current = true;
     queueMicrotask(() => {
       gl.domElement.dataset.sceneReady = "true";
+      gl.domElement.dataset.sceneAssets = document.figures
+        .map((figure) => loadFigure(figure.build, figure.pose))
+        .join(",");
       onReady(exportPicture);
     });
   });
@@ -213,6 +263,8 @@ function Runtime({
   }, [camera, document.camera, invalidate]);
   useEffect(() => {
     const canvas = gl.domElement;
+    notified.current = false;
+    invalidate();
     const lost = (event: Event) => {
       event.preventDefault();
       onReady(null);
@@ -228,6 +280,8 @@ function Runtime({
     return () => {
       canvas.removeEventListener("webglcontextlost", lost);
       canvas.removeEventListener("webglcontextrestored", restored);
+      delete canvas.dataset.sceneReady;
+      delete canvas.dataset.sceneAssets;
       onReady(null);
     };
   }, [exportPicture, gl, invalidate, onLost, onReady]);
@@ -256,10 +310,11 @@ function Runtime({
         position={[0, 0.003, 0]}
         userData={{ editorOnly: true }}
       />
-      {document.figures.map((figure) => (
+      {document.figures.map((figure, index) => (
         <Figure
           key={figure.id}
           figure={figure}
+          identity={identities[index]}
           selected={figure.id === selected}
           onDragging={dragging}
           onSelect={onSelect}
@@ -303,7 +358,10 @@ export default function SceneCanvas(props: SceneCanvasProps) {
           </p>
         }
       >
-        <Suspense fallback={null}>
+        <Suspense
+          key={props.scene.figures.map((figure) => loadFigure(figure.build, figure.pose)).join(",")}
+          fallback={null}
+        >
           <Runtime {...props} onLost={setLost} />
         </Suspense>
       </Canvas>

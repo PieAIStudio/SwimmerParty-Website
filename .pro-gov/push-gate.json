@@ -64,10 +64,10 @@
     },
     {
       "paths": [
-        "public/scene/figures/*.glb"
+        "public/scene/**"
       ],
       "commands": [],
-      "reason": "Original placeholder GLBs; the existing selector does not run browsers. Asset/pose/triangle contracts and exports are covered by bounded e2e/scene.spec.ts acceptance, mapped in features/scene/README.md."
+      "reason": "MediaFactory mannequin GLBs with unchanged delivery licence/manifest. The existing selector does not run browsers. Delivery hashes, static build/pose/triangle contracts, lazy bytes and labelled exports are covered by bounded e2e/scene.spec.ts acceptance, mapped in features/scene/README.md."
     },
     {
       "paths": [

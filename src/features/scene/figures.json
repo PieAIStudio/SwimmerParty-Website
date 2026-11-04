@@ -1,5 +1,5 @@
 {
-  "slim": "/scene/figures/slim.glb",
-  "regular": "/scene/figures/regular.glb",
-  "broad": "/scene/figures/broad.glb"
+  "slim": { "base": "/scene/figures", "standingHeightM": 1.7225 },
+  "average": { "base": "/scene/figures", "standingHeightM": 1.752 },
+  "broad": { "base": "/scene/figures", "standingHeightM": 1.7916 }
 }

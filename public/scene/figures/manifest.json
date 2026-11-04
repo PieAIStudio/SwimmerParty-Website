@@ -1,0 +1,1093 @@
+{
+  "builds": {
+    "average": {
+      "anthropometry": {
+        "chestDepthCm": 23.29,
+        "chestWidthCm": 43.84,
+        "fittedHeadScale": 0.25464,
+        "headsTall": 7.6,
+        "heightCm": 175.0,
+        "hipWidthCm": 34.19,
+        "shoulderToWaistRatio": 1.871,
+        "shoulderWidthCm": 51.07,
+        "waistDepthCm": 18.21,
+        "waistWidthCm": 27.3
+      },
+      "default": "deliver/average.glb",
+      "defaultStats": {
+        "baseColorFactor": [
+          0.22,
+          0.23,
+          0.25,
+          1.0
+        ],
+        "boundsGltfYUpM": {
+          "max": [
+            0.2829,
+            1.752,
+            0.1878
+          ],
+          "min": [
+            -0.2829,
+            0.0,
+            -0.0954
+          ],
+          "size": [
+            0.5658,
+            1.752,
+            0.2832
+          ]
+        },
+        "bytes": 173596,
+        "cleanBlenderReimportVerified": true,
+        "extensionsUsed": [],
+        "finiteGeometryAndNormals": true,
+        "materialCount": 1,
+        "materialName": "MannequinGrey",
+        "meshCount": 1,
+        "metallicFactor": 0.0,
+        "nodeCount": 1,
+        "path": "deliver/average.glb",
+        "roughnessFactor": 0.8,
+        "sha256": "bb323efc00d029a3ddb1c99ee0551ac41e260ed7c78262c37ea99ca6a27167ae",
+        "triangles": 7478,
+        "vertices": 3984
+      },
+      "description": "Balanced athletic-neutral adult stage mannequin with medium shoulders and tapered waist",
+      "poses": {
+        "arms-crossed": "deliver/poses/average-arms-crossed.glb",
+        "point": "deliver/poses/average-point.glb",
+        "sit": "deliver/poses/average-sit.glb",
+        "stand": "deliver/poses/average-stand.glb",
+        "walk": "deliver/poses/average-walk.glb",
+        "wave": "deliver/poses/average-wave.glb"
+      }
+    },
+    "broad": {
+      "anthropometry": {
+        "chestDepthCm": 26.25,
+        "chestWidthCm": 43.96,
+        "fittedHeadScale": 0.27612,
+        "headsTall": 7.65,
+        "heightCm": 179.0,
+        "hipWidthCm": 38.01,
+        "shoulderToWaistRatio": 1.871,
+        "shoulderWidthCm": 59.61,
+        "waistDepthCm": 22.43,
+        "waistWidthCm": 31.86
+      },
+      "default": "deliver/broad.glb",
+      "defaultStats": {
+        "baseColorFactor": [
+          0.22,
+          0.23,
+          0.25,
+          1.0
+        ],
+        "boundsGltfYUpM": {
+          "max": [
+            0.3252,
+            1.7916,
+            0.1929
+          ],
+          "min": [
+            -0.3252,
+            0.0,
+            -0.1042
+          ],
+          "size": [
+            0.6504,
+            1.7916,
+            0.2971
+          ]
+        },
+        "bytes": 173596,
+        "cleanBlenderReimportVerified": true,
+        "extensionsUsed": [],
+        "finiteGeometryAndNormals": true,
+        "materialCount": 1,
+        "materialName": "MannequinGrey",
+        "meshCount": 1,
+        "metallicFactor": 0.0,
+        "nodeCount": 1,
+        "path": "deliver/broad.glb",
+        "roughnessFactor": 0.8,
+        "sha256": "ff4a3642872f29e761879e3f08d86b0cee5c174412d67bf7090fcec2b0830ace",
+        "triangles": 7478,
+        "vertices": 3984
+      },
+      "description": "Broad-shouldered strong-frame adult stage mannequin with wide deltoids, deep chest, and sturdy waist",
+      "poses": {
+        "arms-crossed": "deliver/poses/broad-arms-crossed.glb",
+        "point": "deliver/poses/broad-point.glb",
+        "sit": "deliver/poses/broad-sit.glb",
+        "stand": "deliver/poses/broad-stand.glb",
+        "walk": "deliver/poses/broad-walk.glb",
+        "wave": "deliver/poses/broad-wave.glb"
+      }
+    },
+    "slim": {
+      "anthropometry": {
+        "chestDepthCm": 21.12,
+        "chestWidthCm": 43.46,
+        "fittedHeadScale": 0.29272,
+        "headsTall": 7.55,
+        "heightCm": 172.0,
+        "hipWidthCm": 29.9,
+        "shoulderToWaistRatio": 1.941,
+        "shoulderWidthCm": 44.27,
+        "waistDepthCm": 16.44,
+        "waistWidthCm": 22.81
+      },
+      "default": "deliver/slim.glb",
+      "defaultStats": {
+        "baseColorFactor": [
+          0.22,
+          0.23,
+          0.25,
+          1.0
+        ],
+        "boundsGltfYUpM": {
+          "max": [
+            0.2449,
+            1.7225,
+            0.1846
+          ],
+          "min": [
+            -0.2449,
+            0.0,
+            -0.0811
+          ],
+          "size": [
+            0.4898,
+            1.7225,
+            0.2657
+          ]
+        },
+        "bytes": 173592,
+        "cleanBlenderReimportVerified": true,
+        "extensionsUsed": [],
+        "finiteGeometryAndNormals": true,
+        "materialCount": 1,
+        "materialName": "MannequinGrey",
+        "meshCount": 1,
+        "metallicFactor": 0.0,
+        "nodeCount": 1,
+        "path": "deliver/slim.glb",
+        "roughnessFactor": 0.8,
+        "sha256": "f4759528b9bf4d64d58210f8f6e3c510424e1339448b39703eb6a21edcc3f91d",
+        "triangles": 7478,
+        "vertices": 3984
+      },
+      "description": "Slender adult stage mannequin with narrow shoulders, lean waist, and light limb volume",
+      "poses": {
+        "arms-crossed": "deliver/poses/slim-arms-crossed.glb",
+        "point": "deliver/poses/slim-point.glb",
+        "sit": "deliver/poses/slim-sit.glb",
+        "stand": "deliver/poses/slim-stand.glb",
+        "walk": "deliver/poses/slim-walk.glb",
+        "wave": "deliver/poses/slim-wave.glb"
+      }
+    }
+  },
+  "consumerMappingSuggestion": {
+    "byBuildRelativeToManifest": {
+      "average": {
+        "default": "average.glb",
+        "poses": {
+          "arms-crossed": "poses/average-arms-crossed.glb",
+          "point": "poses/average-point.glb",
+          "sit": "poses/average-sit.glb",
+          "stand": "poses/average-stand.glb",
+          "walk": "poses/average-walk.glb",
+          "wave": "poses/average-wave.glb"
+        }
+      },
+      "broad": {
+        "default": "broad.glb",
+        "poses": {
+          "arms-crossed": "poses/broad-arms-crossed.glb",
+          "point": "poses/broad-point.glb",
+          "sit": "poses/broad-sit.glb",
+          "stand": "poses/broad-stand.glb",
+          "walk": "poses/broad-walk.glb",
+          "wave": "poses/broad-wave.glb"
+        }
+      },
+      "slim": {
+        "default": "slim.glb",
+        "poses": {
+          "arms-crossed": "poses/slim-arms-crossed.glb",
+          "point": "poses/slim-point.glb",
+          "sit": "poses/slim-sit.glb",
+          "stand": "poses/slim-stand.glb",
+          "walk": "poses/slim-walk.glb",
+          "wave": "poses/slim-wave.glb"
+        }
+      }
+    },
+    "defaultPose": "stand",
+    "loadFigureExampleJs": "export function resolveFigurePath(build = 'average', pose = null, baseUrl = '/assets/mannequins/') {\n  const validBuilds = new Set(['slim', 'average', 'broad']);\n  const b = validBuilds.has(build) ? build : 'average';\n  if (!pose || pose === 'default') return `${baseUrl}${b}.glb`;\n  return `${baseUrl}poses/${b}-${pose}.glb`;\n}",
+    "note": "Suggested loadFigure(build, pose) path resolution relative to repository/worktree or manifest directory (no consumer code edited)."
+  },
+  "coordinateSystem": {
+    "format": "glTF 2.0 binary (.glb)",
+    "forwardAxis": "+Z",
+    "origin": "floor-center (y_min = 0.0)",
+    "units": "metres",
+    "upAxis": "+Y"
+  },
+  "donor": {
+    "baseMesh": "data/3dobjs/base.obj (MakeHuman basemesh hm08, CC0 1.0)",
+    "commit": "d0a32e57a7f915cb2f2b95410e2117648c7bbb7e",
+    "downloadUrl": "https://extensions.blender.org/download/sha256:c075b3e9b94b8e5556a5f03f4653602d02ea306de08126e8f55ed6dee28a2dad/add-on-mpfb-v2.0.18.zip",
+    "id": "mpfb",
+    "repository": "https://github.com/makehumancommunity/mpfb2.git",
+    "rig": "data/rigs/standard/rig.default.json (CC0 1.0)",
+    "version": "2.0.18",
+    "zipBytes": 45956992,
+    "zipSha256": "c075b3e9b94b8e5556a5f03f4653602d02ea306de08126e8f55ed6dee28a2dad"
+  },
+  "family": "mpfb-cc0-neutral-grey-stage-mannequins",
+  "files": {
+    "deliver/average.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2829,
+          1.752,
+          0.1878
+        ],
+        "min": [
+          -0.2829,
+          0.0,
+          -0.0954
+        ],
+        "size": [
+          0.5658,
+          1.752,
+          0.2832
+        ]
+      },
+      "bytes": 173596,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/average.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "bb323efc00d029a3ddb1c99ee0551ac41e260ed7c78262c37ea99ca6a27167ae",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/broad.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.3252,
+          1.7916,
+          0.1929
+        ],
+        "min": [
+          -0.3252,
+          0.0,
+          -0.1042
+        ],
+        "size": [
+          0.6504,
+          1.7916,
+          0.2971
+        ]
+      },
+      "bytes": 173596,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/broad.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "ff4a3642872f29e761879e3f08d86b0cee5c174412d67bf7090fcec2b0830ace",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/average-arms-crossed.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2614,
+          1.7538,
+          0.3186
+        ],
+        "min": [
+          -0.2606,
+          0.0,
+          -0.0954
+        ],
+        "size": [
+          0.522,
+          1.7538,
+          0.414
+        ]
+      },
+      "bytes": 173612,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/average-arms-crossed.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "b2494317d6313068ab8936df6ff749c62054d3d4d543678b23fc7598824fa96e",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/average-point.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.3881,
+          1.7514,
+          0.7048
+        ],
+        "min": [
+          -0.2797,
+          0.0,
+          -0.0954
+        ],
+        "size": [
+          0.6678,
+          1.7514,
+          0.8002
+        ]
+      },
+      "bytes": 173600,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/average-point.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "173b88b7828001a5db3e8a15f6f8afe8186c19b0dd80ebe62c06c310914cc824",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/average-sit.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2759,
+          1.3474,
+          0.6259
+        ],
+        "min": [
+          -0.2759,
+          0.0,
+          -0.086
+        ],
+        "size": [
+          0.5518,
+          1.3474,
+          0.7119
+        ]
+      },
+      "bytes": 173596,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/average-sit.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "bdf9fae1f7a129241690931bc49478d8975a76554ebef8e9dba93e59431ade86",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/average-stand.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2829,
+          1.752,
+          0.1878
+        ],
+        "min": [
+          -0.2829,
+          0.0,
+          -0.0954
+        ],
+        "size": [
+          0.5658,
+          1.752,
+          0.2832
+        ]
+      },
+      "bytes": 173596,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/average-stand.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "bb323efc00d029a3ddb1c99ee0551ac41e260ed7c78262c37ea99ca6a27167ae",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/average-walk.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2917,
+          1.7283,
+          0.3941
+        ],
+        "min": [
+          -0.2949,
+          0.0,
+          -0.3579
+        ],
+        "size": [
+          0.5866,
+          1.7283,
+          0.752
+        ]
+      },
+      "bytes": 173596,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/average-walk.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "2192e5b0c2722fc03690062c25fdfc7ba0170e94d4a93f8c20adcfb0cd7e8282",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/average-wave.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2872,
+          1.8586,
+          0.2744
+        ],
+        "min": [
+          -0.5598,
+          0.0,
+          -0.0954
+        ],
+        "size": [
+          0.847,
+          1.8586,
+          0.3698
+        ]
+      },
+      "bytes": 173596,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/average-wave.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "7c8c5da8c97a435b041f670c5ab4883e928cdf5bb085f6f898fe62b8be42ccea",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/broad-arms-crossed.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2981,
+          1.7934,
+          0.3465
+        ],
+        "min": [
+          -0.2975,
+          0.0,
+          -0.1115
+        ],
+        "size": [
+          0.5956,
+          1.7934,
+          0.458
+        ]
+      },
+      "bytes": 173608,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/broad-arms-crossed.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "0646237c9d6d2e5308d23f023549849ea112fa95ba79795fdd3cb2ba0a0c5ba3",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/broad-point.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.4286,
+          1.7909,
+          0.7466
+        ],
+        "min": [
+          -0.3216,
+          0.0,
+          -0.1077
+        ],
+        "size": [
+          0.7502,
+          1.7909,
+          0.8543
+        ]
+      },
+      "bytes": 173592,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/broad-point.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "f9b6465cb3e2e03fe79bc5fd8f6317810ca4c55f0d4310702446cceef3c280c2",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/broad-sit.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.3216,
+          1.369,
+          0.6498
+        ],
+        "min": [
+          -0.3216,
+          0.0,
+          -0.097
+        ],
+        "size": [
+          0.6432,
+          1.369,
+          0.7468
+        ]
+      },
+      "bytes": 173592,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/broad-sit.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "2dd74591dfb25044b16bcac8070bfd19b555163d12ea22c9b55deb7725a0c566",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/broad-stand.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.3252,
+          1.7916,
+          0.1929
+        ],
+        "min": [
+          -0.3252,
+          0.0,
+          -0.1042
+        ],
+        "size": [
+          0.6504,
+          1.7916,
+          0.2971
+        ]
+      },
+      "bytes": 173596,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/broad-stand.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "ff4a3642872f29e761879e3f08d86b0cee5c174412d67bf7090fcec2b0830ace",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/broad-walk.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.3345,
+          1.767,
+          0.4118
+        ],
+        "min": [
+          -0.338,
+          0.0,
+          -0.3677
+        ],
+        "size": [
+          0.6725,
+          1.767,
+          0.7795
+        ]
+      },
+      "bytes": 173592,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/broad-walk.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "a0682574979f876451f109da0203c69e4e9b0b8d9eb0462de8cfe2f2b8ca50ce",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/broad-wave.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.3294,
+          1.9149,
+          0.2875
+        ],
+        "min": [
+          -0.6151,
+          0.0,
+          -0.1072
+        ],
+        "size": [
+          0.9445,
+          1.9149,
+          0.3947
+        ]
+      },
+      "bytes": 173592,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/broad-wave.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "006fb7470b6c6fd269e6c742be467013b8a519676f2137565e5157c5aac097bd",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/slim-arms-crossed.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2282,
+          1.7242,
+          0.2968
+        ],
+        "min": [
+          -0.2275,
+          0.0,
+          -0.0836
+        ],
+        "size": [
+          0.4557,
+          1.7242,
+          0.3804
+        ]
+      },
+      "bytes": 173608,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/slim-arms-crossed.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "6bd3e88e463222ace41f11e8c9cddf08b102612d49eb81e6a4fe71b5ebc4f0c9",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/slim-point.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.3527,
+          1.7219,
+          0.6736
+        ],
+        "min": [
+          -0.2415,
+          0.0,
+          -0.0811
+        ],
+        "size": [
+          0.5942,
+          1.7219,
+          0.7547
+        ]
+      },
+      "bytes": 173592,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/slim-point.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "44cd50962e4110dfde84892455aa3083f442f585c5bee38cb7c8e6648626f0a7",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/slim-sit.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2359,
+          1.3239,
+          0.6159
+        ],
+        "min": [
+          -0.2359,
+          0.0,
+          -0.0759
+        ],
+        "size": [
+          0.4718,
+          1.3239,
+          0.6918
+        ]
+      },
+      "bytes": 173588,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/slim-sit.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "1461c4db0d3f15dbc438a2aaba6617158066642af47c46953c21281c789c95a4",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/slim-stand.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2449,
+          1.7225,
+          0.1846
+        ],
+        "min": [
+          -0.2449,
+          0.0,
+          -0.0811
+        ],
+        "size": [
+          0.4898,
+          1.7225,
+          0.2657
+        ]
+      },
+      "bytes": 173592,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/slim-stand.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "f4759528b9bf4d64d58210f8f6e3c510424e1339448b39703eb6a21edcc3f91d",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/slim-walk.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2554,
+          1.6994,
+          0.3794
+        ],
+        "min": [
+          -0.2573,
+          0.0,
+          -0.3505
+        ],
+        "size": [
+          0.5127,
+          1.6994,
+          0.7299
+        ]
+      },
+      "bytes": 173588,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/slim-walk.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "a98922d1f414496d4de9ccd0bb9389ccee6f592c70ac68ad7e2a78ac163904ec",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/poses/slim-wave.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2489,
+          1.8152,
+          0.2639
+        ],
+        "min": [
+          -0.5165,
+          0.0,
+          -0.0811
+        ],
+        "size": [
+          0.7654,
+          1.8152,
+          0.345
+        ]
+      },
+      "bytes": 173588,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/poses/slim-wave.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "7d3d4293430c837211a8398071782f9fef0a04ddcff93303b1193ef0179b50d1",
+      "triangles": 7478,
+      "vertices": 3984
+    },
+    "deliver/slim.glb": {
+      "baseColorFactor": [
+        0.22,
+        0.23,
+        0.25,
+        1.0
+      ],
+      "boundsGltfYUpM": {
+        "max": [
+          0.2449,
+          1.7225,
+          0.1846
+        ],
+        "min": [
+          -0.2449,
+          0.0,
+          -0.0811
+        ],
+        "size": [
+          0.4898,
+          1.7225,
+          0.2657
+        ]
+      },
+      "bytes": 173592,
+      "cleanBlenderReimportVerified": true,
+      "extensionsUsed": [],
+      "finiteGeometryAndNormals": true,
+      "materialCount": 1,
+      "materialName": "MannequinGrey",
+      "meshCount": 1,
+      "metallicFactor": 0.0,
+      "nodeCount": 1,
+      "path": "deliver/slim.glb",
+      "roughnessFactor": 0.8,
+      "sha256": "f4759528b9bf4d64d58210f8f6e3c510424e1339448b39703eb6a21edcc3f91d",
+      "triangles": 7478,
+      "vertices": 3984
+    }
+  },
+  "licence": "CC0-1.0",
+  "licenceDocument": "deliver/LICENSE.md",
+  "licenceSha256": "992866afeb761d55c66c336db2ba7445c3acf257ff96f09bed7399e6a7d33faf",
+  "reviewEvidence": {
+    "round1CleanReimport": "review/round-1/clean_reimport_evidence.json",
+    "round1Dir": "review/round-1",
+    "round1WaveCaptureFixDir": "review/round-1-capture-fix",
+    "round1WaveCaptureFixPngs": [
+      "review/round-1-capture-fix/pose-slim-wave-three-quarter.png",
+      "review/round-1-capture-fix/pose-average-wave-three-quarter.png",
+      "review/round-1-capture-fix/pose-broad-wave-three-quarter.png"
+    ]
+  },
+  "schemaVersion": "swimmerparty-stage-mannequin-manifest-1",
+  "scoringStatus": {
+    "note": "Formal shared scorer has no standalone-GLB/image import and no SwimmerParty browser harness is available in this worktree; independent GPT reviewer inspects original PNGs and GLB metrics directly.",
+    "status": "independent_review_received_formal_score_unavailable"
+  },
+  "triangleCeiling": 10000,
+  "upstreamLicenceAssetsUrl": "https://raw.githubusercontent.com/makehumancommunity/mpfb2/d0a32e57a7f915cb2f2b95410e2117648c7bbb7e/LICENSE.ASSETS.md"
+}

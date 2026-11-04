@@ -3,8 +3,17 @@ import { settingDraftSchema } from "@/features/settings/contracts";
 
 export const MAX_FIGURES = 5;
 export const DRAFT_KEY = "sp-scene-v1";
-export const POSES = ["neutral", "walk", "guard", "lunge", "crouch", "point"] as const;
-export const BUILDS = ["slim", "regular", "broad"] as const;
+export const POSES = ["stand", "walk", "point", "wave", "sit", "arms-crossed"] as const;
+export const BUILDS = ["slim", "average", "broad"] as const;
+// Slot colours identify a figure in this layout, not an actor's brand colour.
+export const FIGURE_BANDS = [
+  { colour: "blue", hex: "#235ea8" },
+  { colour: "amber", hex: "#986400" },
+  { colour: "magenta", hex: "#983f78" },
+  { colour: "teal", hex: "#08776e" },
+  { colour: "purple", hex: "#7044ae" },
+] as const;
+export type FigureIdentity = { label: string; colour: string };
 export const VIEWS = ["eye", "low", "high"] as const;
 export const FRAMES = {
   landscape: [1920, 1080],
@@ -47,8 +56,8 @@ export function makeFigure(id: string, actor?: SceneActor): FigureState {
     id,
     ...(actor ? { actorSlug: actor.slug, name: actor.name } : {}),
     heightCm: actor?.heightCm ?? 175,
-    build: "regular",
-    pose: "neutral",
+    build: "average",
+    pose: "stand",
     x: 0,
     z: 0,
     turn: 0,
@@ -116,7 +125,22 @@ export function initialScene(actors: SceneActor[] = [], castKey = ""): SceneStat
 }
 export function readDraft(raw: string | null): SceneState | null {
   try {
-    const result = sceneSchema.safeParse(JSON.parse(raw ?? "null"));
+    const saved = JSON.parse(raw ?? "null");
+    // Keep v1 drafts made with the old placeholder pose/build IDs usable.
+    const oldPoses: Record<string, string> = {
+      neutral: "stand",
+      guard: "arms-crossed",
+      lunge: "walk",
+      crouch: "sit",
+    };
+    const oldBuilds: Record<string, string> = { regular: "average" };
+    if (Array.isArray(saved?.figures))
+      saved.figures = saved.figures.map((figure: FigureState) => ({
+        ...figure,
+        build: oldBuilds[figure.build] ?? figure.build,
+        pose: oldPoses[figure.pose] ?? figure.pose,
+      }));
+    const result = sceneSchema.safeParse(saved);
     return result.success ? result.data : null;
   } catch {
     return null;
