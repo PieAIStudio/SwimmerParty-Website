@@ -32,7 +32,7 @@ UIKit 3.0 的 `grey` 风格是唯一控件风格，明暗为 `light` / `dark`。
 容器、间距、圆角与断点以 src/app/globals.css 的布局类为准。卡片安静，状态标签统一使用 UIKit GameBadge，不用颜色单独传递含义。
 `SectionHead` 按眉标、标题、说明排列，不加编号和装饰线。
 
-主导航在手机、平板、桌面共用 `src/content/site.ts`：Actors / Samples / Learn / Your cast；Samples 直达既有 `/works#samples`，Learn 目前直达 `/guide`。License / Studio / Privacy / Terms 在页脚，社区未验收前不进入导航。下载动作旁始终显示可点开的署名摘要，不依赖气泡。
+主导航在手机、平板、桌面共用 `src/content/site.ts`：Actors / Samples / Learn / Your cast；Samples 直达既有 `/works#samples`，Learn 目前直达 `/guide`。License / Studio / Privacy / Terms 在页脚，社区未验收前不进入导航。下载动作旁始终显示可点开的署名摘要，不依赖气泡。首页和名册页的页头随页面滚走，避免自然滚动时覆盖分组标题；工具和详情页保留粘性页头及锚点留白。资产页签完整换行，批量操作另起一行。
 
 控件直接从 `@pieai/swimmer-ui-kit` 具名导入，不复制或改造 UIKit 的轮廓、阴影、按压形变。
 普通操作用 secondary `GameButton`；单张下载、主题、菜单、关闭用带 label 的
@@ -72,7 +72,7 @@ UIKit 3.0 的 `grey` 风格是唯一控件风格，明暗为 `light` / `dark`。
 
 保留 UIKit 控件反馈与图片轻微悬停缩放；减少动态时不位移、不缩放。实际值在 globals.css。没有滚动劫持、名册墙、自定义光标、跑马灯或闪烁。
 
-当前页面没有 WebGL 舞台或 Reveal；无图占位使用 SVG。历史 3D 方案留在原 ADR/计划，不是现行要求。
+首页、名册和演员页不加载 3D，普通无图占位仍使用 SVG。新增的 `/[locale]/scene` 是从选角单进入的独立、延迟加载的静态排位工具：最多五个通用人偶，不代表演员模型；UIKit 控件之外的画布保持中性白膜与地面，导出不含网格和选中环，不随 UI 明暗改变。无动画、在线生成或真实 3D 布景。实现及资产接口见 `src/features/scene/README.md`。旧首页舞台和 Reveal 实验仍不恢复，历史 ADR/计划不是现行要求。
 
 ## 多语言与验收
 

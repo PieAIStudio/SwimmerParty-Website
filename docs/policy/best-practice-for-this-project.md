@@ -6,7 +6,7 @@ status: stable
 canonical: true
 owner: project
 created: 2026-05-08
-last_reviewed: 2026-10-09
+last_reviewed: 2026-11-05
 domain: project-policy
 tags:
   - project-policy
@@ -58,7 +58,7 @@ SWIMMER PARTY 官网。它的真相只有一条：**名册上的人是产品，�
 
 ## 展示边界
 
-当前网站不挂载 3D 舞台。退役实验不因旧文档提及而自动重新启用；现行视觉只读 DESIGN.md。
+首页、名册、演员浏览与下载不加载 3D。Owner 2026-11-05 批准从选角单进入独立 `/[locale]/scene` 排位工具：通用占位人偶、静态姿势、本地草稿和 PNG，不恢复退役首页舞台，不在线生成图片。现行视觉只读 DESIGN.md；渲染及后续 CC0 模型的接口在 `src/features/scene/README.md`。
 
 ## 验证
 

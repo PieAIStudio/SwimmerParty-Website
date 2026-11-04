@@ -115,6 +115,9 @@ export function CastBoard({
         <GameButton variant="primary" href="/actors" linkComponent={Link} className="mt-6">
           {t("cast.pickActors")}
         </GameButton>
+        <Link href="/scene" prefetch={false} className="sp-link mt-6 ml-4">
+          {t("scene.open")}
+        </Link>
       </div>
     );
   return (
@@ -144,6 +147,14 @@ export function CastBoard({
           {t("cast.clear")}
         </GameButton>
       </div>
+      <Link
+        href={`/scene?a=${cast.map((actor) => actor.slug).join(",")}`}
+        prefetch={false}
+        className="sp-link mt-5"
+        data-scene-entry
+      >
+        {t("scene.open")}
+      </Link>
       <DownloadTerms className="mt-3" />
       {downloading ? (
         <div className="mt-4 space-y-3">

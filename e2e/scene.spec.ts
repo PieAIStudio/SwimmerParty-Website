@@ -1,0 +1,317 @@
+import { test, expect, type Page } from "@playwright/test";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { gzipSync } from "node:zlib";
+import { ACTORS } from "../src/content/actors";
+import {
+  BUILDS,
+  DRAFT_KEY,
+  FRAMES,
+  POSES,
+  initialScene,
+  readDraft,
+} from "../src/features/scene/model";
+import en from "../messages/en/messages.json";
+import zh from "../messages/zh-CN/messages.json";
+
+const five = ACTORS.slice(0, 5)
+  .map((actor) => actor.slug)
+  .join(",");
+const ready = (page: Page) =>
+  expect(page.locator("canvas[data-scene-ready=true]")).toBeVisible({ timeout: 30_000 });
+const draft = (page: Page) =>
+  page.evaluate((key) => JSON.parse(localStorage.getItem(key)!), DRAFT_KEY);
+test.use({ channel: "chrome" });
+
+for (const locale of ["en", "zh"] as const)
+  for (const width of [1440, 390]) {
+    test(`scene controls and clean PNGs ${locale} ${width}`, async ({ page }) => {
+      test.setTimeout(120_000);
+      const m = locale === "en" ? en : zh;
+      const errors: string[] = [];
+      page.on("pageerror", (error) => errors.push(error.message));
+      await mkdir("run-1/shots", { recursive: true });
+      await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
+      await page.goto(`/${locale}/cast?a=${five}`);
+      await page.locator("[data-scene-entry]").click();
+      await ready(page);
+      await page.evaluate(() => document.fonts.ready);
+      await page.screenshot({ path: `run-1/shots/C-entry-${locale}-${width}.png` });
+      await expect(page.locator("[data-scene-figures] button")).toHaveCount(5);
+      await expect(page.getByRole("button", { name: m["scene.add"], exact: true })).toBeDisabled();
+      // All six poses and three independent model variants remain usable.
+      for (const pose of POSES) {
+        await page.getByLabel(m["scene.pose"], { exact: true }).selectOption(pose);
+        if (locale === "en" && width === 1440) {
+          await page.screenshot({ path: `run-1/shots/C-pose-${pose}.png` });
+        }
+      }
+      for (const build of BUILDS) {
+        await page.getByLabel(m["scene.build"], { exact: true }).selectOption(build);
+        await ready(page);
+      }
+      await page.getByRole("slider", { name: new RegExp(m["scene.height"]) }).press("End");
+      await page.getByLabel(m["scene.axis.x"], { exact: true }).fill("-2.5");
+      await page.getByRole("button", { name: m["scene.undo"], exact: true }).click();
+      await page.getByRole("button", { name: m["scene.redo"], exact: true }).click();
+      await expect.poll(async () => (await draft(page)).figures[0].x).toBe(-2.5);
+      await page.reload();
+      await ready(page);
+      await expect(page.getByLabel(m["scene.build"], { exact: true })).toHaveValue("broad");
+      await expect(page.getByLabel(m["scene.pose"], { exact: true })).toHaveValue("point");
+      await expect(page.getByLabel(m["scene.axis.x"], { exact: true })).toHaveValue("-2.5");
+      await page.getByRole("button", { name: m["scene.faceOff"], exact: true }).click();
+      for (const view of ["low", "high", "eye"])
+        await page.getByLabel(m["scene.camera"], { exact: true }).selectOption(view);
+      await page.getByRole("button", { name: m["scene.fit"], exact: true }).click();
+      await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
+      await page.screenshot({ path: `run-1/shots/C-stage-${locale}-${width}.png` });
+      await page.locator("aside[aria-label]").last().scrollIntoViewIfNeeded();
+      await page.screenshot({ path: `run-1/shots/C-controls-${locale}-${width}.png` });
+      for (const [frame, dimensions] of Object.entries(FRAMES)) {
+        await page.getByLabel(m["scene.frame"], { exact: true }).selectOption(frame);
+        await page.getByRole("button", { name: m["scene.fit"], exact: true }).click();
+        const frameBox = await page.locator("[data-scene-frame]").boundingBox();
+        expect(frameBox!.width / frameBox!.height).toBeCloseTo(dimensions[0] / dimensions[1], 1);
+        const downloadPromise = page.waitForEvent("download");
+        await page.getByRole("button", { name: m["scene.savePng"], exact: true }).click();
+        const download = await downloadPromise;
+        const path = `run-1/shots/C-export-${frame}-${locale}-${width}.png`;
+        await download.saveAs(path);
+        const bytes = await readFile(path);
+        expect(bytes.readUInt32BE(16)).toBe(dimensions[0]);
+        expect(bytes.readUInt32BE(20)).toBe(dimensions[1]);
+        expect(bytes.length).toBeGreaterThan(15_000);
+        // Export leaves the canvas at its preview dimensions and keeps the same aspect.
+        const after = await page.locator("[data-scene-frame]").boundingBox();
+        expect(after!.width).toBeCloseTo(frameBox!.width);
+        await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
+        await page.screenshot({ path: `run-1/shots/C-frame-${frame}-${locale}-${width}.png` });
+      }
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+        true,
+      );
+      expect(errors).toEqual([]);
+    });
+  }
+
+test("more than five actors asks explicitly and does not edit the saved cast", async ({ page }) => {
+  const all = ACTORS.slice(0, 7)
+    .map((actor) => actor.slug)
+    .join(",");
+  await page.addInitScript((cast) => localStorage.setItem("sp-cast", cast), all);
+  await page.goto(`/en/scene?a=${all}`);
+  const chooser = page.locator("[data-scene-choose]");
+  await expect(chooser).toBeVisible();
+  await expect(page.locator("canvas")).toHaveCount(0);
+  const choices = chooser.getByRole("checkbox");
+  for (let index = 0; index < 5; index++) {
+    // UIKit's painted label is the pointer target; the native input remains keyboard-operable.
+    await choices.nth(index).focus();
+    await choices.nth(index).press("Space");
+    await expect(choices.nth(index)).toBeChecked();
+  }
+  await expect(choices.nth(5)).toBeDisabled();
+  await chooser.getByRole("button", { name: en["scene.start"] }).click();
+  await ready(page);
+  expect(await page.evaluate(() => localStorage.getItem("sp-cast"))).toBe(all);
+  await expect(page.locator("[data-scene-figures] button")).toHaveCount(5);
+});
+
+test("figure GLBs and local draft obey the static asset contract", async () => {
+  expect(readDraft("broken JSON")).toBeNull();
+  const state = initialScene();
+  expect(
+    readDraft(JSON.stringify({ ...state, figures: Array(6).fill(state.figures[0]) })),
+  ).toBeNull();
+  const results = [];
+  for (const build of BUILDS) {
+    const bytes = await readFile(`public/scene/figures/${build}.glb`);
+    const gltf = JSON.parse(bytes.subarray(20, 20 + bytes.readUInt32LE(12)).toString());
+    const triangles = gltf.nodes
+      .filter((node: { mesh?: number }) => node.mesh !== undefined)
+      .flatMap((node: { mesh: number }) => gltf.meshes[node.mesh].primitives)
+      .reduce(
+        (total: number, primitive: { indices: number }) =>
+          total + gltf.accessors[primitive.indices].count / 3,
+        0,
+      );
+    expect(triangles).toBeLessThanOrEqual(10_000);
+    expect(gltf.animations.map((clip: { name: string }) => clip.name)).toEqual([...POSES]);
+    results.push({ build, bytes: bytes.length, triangles, poses: [...POSES] });
+  }
+  await writeFile("run-1/C-assets.json", JSON.stringify(results, null, 2));
+});
+
+test("3D JavaScript is isolated from main pages and within its incremental budget", async ({
+  browser,
+}) => {
+  test.setTimeout(120_000);
+  const chunks = await readdir(".next/static/chunks");
+  const runtime = new Set<string>();
+  for (const file of chunks.filter((name) => name.endsWith(".js"))) {
+    if (
+      /THREE\.WebGLRenderer|R3F:|@react-three\/fiber/.test(
+        await readFile(`.next/static/chunks/${file}`, "utf8"),
+      )
+    )
+      runtime.add(file);
+  }
+  expect(runtime.size).toBeGreaterThan(0);
+  const routes = ["/en", "/en/actors", "/en/actors/tang-yunqiu", "/en/cast", "/en/scene"];
+  const allMain = new Set<string>();
+  const report: {
+    path: string;
+    gzipBytes: number;
+    runtime: string[];
+    files: { name: string; gzip: number }[];
+  }[] = [];
+  let incremental = 0;
+  for (const path of routes) {
+    const context = await browser.newContext({ baseURL: test.info().project.use.baseURL });
+    const page = await context.newPage();
+    const bodies = new Map<string, Buffer>();
+    const reads: Promise<void>[] = [];
+    page.on("response", (response) => {
+      const name = new URL(response.url()).pathname.split("/").pop()!;
+      if (name.endsWith(".js"))
+        reads.push(
+          response.body().then((body) => {
+            bodies.set(name, body);
+          }),
+        );
+    });
+    await page.goto(path, { waitUntil: "networkidle" });
+    if (path.endsWith("/scene")) await ready(page);
+    await Promise.all(reads);
+    const loadedRuntime = [...bodies.keys()].filter((name) => runtime.has(name));
+    if (!path.endsWith("/scene")) {
+      expect(loadedRuntime, path).toEqual([]);
+      for (const name of bodies.keys()) allMain.add(name);
+    } else {
+      expect(loadedRuntime.length).toBeGreaterThan(0);
+      for (const [name, body] of bodies)
+        if (!allMain.has(name)) incremental += gzipSync(body).length;
+    }
+    report.push({
+      path,
+      gzipBytes: [...bodies.values()].reduce((sum, body) => sum + gzipSync(body).length, 0),
+      runtime: loadedRuntime,
+      files: [...bodies].map(([name, body]) => ({ name, gzip: gzipSync(body).length })),
+    });
+    await context.close();
+  }
+  await writeFile(
+    "run-1/C-bundle.json",
+    JSON.stringify(
+      {
+        definition:
+          "Additional scene JS vs union of the four main routes, each actual production response gzipped separately",
+        limitBytes: 600_000,
+        incrementalGzipBytes: incremental,
+        runtimeChunks: [...runtime],
+        routes: report,
+      },
+      null,
+      2,
+    ),
+  );
+  expect(incremental).toBeLessThanOrEqual(600_000);
+});
+
+test("phone-size Chrome performance under 4x CPU throttling", async ({ page, browser }) => {
+  test.setTimeout(120_000);
+  await page.setViewportSize({ width: 390, height: 844 });
+  const cdp = await page.context().newCDPSession(page);
+  await cdp.send("Emulation.setCPUThrottlingRate", { rate: 4 });
+  const started = Date.now();
+  await page.goto(`/en/scene?a=${five}`);
+  await ready(page);
+  const firstReadyMs = Date.now() - started;
+  const samples = [];
+  for (let run = 0; run < 3; run++) {
+    await page.getByRole("button", { name: en["scene.line"], exact: true }).click();
+    await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
+    const canvas = (await page.locator("canvas").boundingBox())!;
+    await page.evaluate(() => {
+      const sample = {
+        start: performance.now(),
+        frames: [] as { ms: number; drew: boolean }[],
+        draws: 0,
+        active: true,
+      };
+      (window as unknown as { scenePerf: typeof sample }).scenePerf = sample;
+      const prototype = WebGL2RenderingContext.prototype;
+      const original = prototype.drawElements;
+      prototype.drawElements = function (...args) {
+        sample.draws++;
+        return original.apply(this, args);
+      };
+      let last = performance.now();
+      function tick(now: number) {
+        sample.frames.push({ ms: now - last, drew: sample.draws > 0 });
+        sample.draws = 0;
+        last = now;
+        if (sample.active) requestAnimationFrame(tick);
+        else prototype.drawElements = original;
+      }
+      requestAnimationFrame(tick);
+    });
+    // The middle figure starts at the frame centre. This is a real pointer drag.
+    await page.mouse.move(canvas.x + canvas.width / 2, canvas.y + canvas.height * 0.48);
+    await page.mouse.down();
+    for (let index = 0; index < 300; index++) {
+      await page.mouse.move(
+        canvas.x + canvas.width / 2 + Math.sin(index / 10) * 35,
+        canvas.y + canvas.height * 0.48 + Math.cos(index / 10) * 10,
+      );
+    }
+    await page.mouse.up();
+    samples.push(
+      await page.evaluate(() => {
+        const sample = (
+          window as unknown as {
+            scenePerf: { start: number; frames: { ms: number; drew: boolean }[]; active: boolean };
+          }
+        ).scenePerf;
+        sample.active = false;
+        const elapsed = performance.now() - sample.start;
+        const times = sample.frames.map((frame) => frame.ms).sort((a, b) => a - b);
+        return {
+          elapsedMs: elapsed,
+          inputMoves: 300,
+          displayFps: (sample.frames.length * 1000) / elapsed,
+          renderedFps: (sample.frames.filter((frame) => frame.drew).length * 1000) / elapsed,
+          frameP95Ms: times[Math.floor(times.length * 0.95)],
+          raw: sample.frames,
+        };
+      }),
+    );
+    // Let the previous sample restore drawElements before the next one wraps it.
+    await page.evaluate(
+      () =>
+        new Promise<void>((resolve) =>
+          requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
+        ),
+    );
+  }
+  await writeFile(
+    "run-1/C-perf.json",
+    JSON.stringify(
+      {
+        browser: browser.version(),
+        viewport: "390x844",
+        dpr: await page.evaluate(() => devicePixelRatio),
+        cpuThrottling: 4,
+        network: "local production server, no network throttle",
+        figures: 5,
+        firstReadyMs,
+        measurement:
+          "Three paced pointer drags; rAF cadence and frames containing real WebGL drawElements calls. Emulation is not physical-phone thermal/GPU evidence.",
+        samples,
+      },
+      null,
+      2,
+    ),
+  );
+  expect(samples.every((sample) => sample.renderedFps > 0)).toBe(true);
+});

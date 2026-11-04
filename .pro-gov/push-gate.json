@@ -18,6 +18,7 @@
         "AGENTS.md",
         "CLAUDE.md",
         "README.md",
+        "DESIGN.md",
         "docs/**"
       ],
       "commands": [
@@ -50,6 +51,23 @@
       "commands": [
         "pnpm typecheck"
       ]
+    },
+    {
+      "paths": [
+        "messages/**",
+        "src/i18n/messages.source.ts",
+        "src/i18n/message-contracts.ts"
+      ],
+      "commands": [
+        "pnpm check:i18n"
+      ]
+    },
+    {
+      "paths": [
+        "public/scene/figures/*.glb"
+      ],
+      "commands": [],
+      "reason": "Original placeholder GLBs; the existing selector does not run browsers. Asset/pose/triangle contracts and exports are covered by bounded e2e/scene.spec.ts acceptance, mapped in features/scene/README.md."
     },
     {
       "paths": [

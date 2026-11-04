@@ -244,6 +244,26 @@
     background: var(--game-ui-bg);
   }
 
+  /* A neutral export surface, independent of the surrounding UI theme. */
+  .sp-scene-frame {
+    width: 100%;
+    max-height: 70vh;
+    margin-inline: auto;
+    overflow: hidden;
+    outline: 1px solid var(--game-ui-border-subtle);
+    outline-offset: -1px;
+    border-radius: var(--game-ui-radius-panel);
+    touch-action: none;
+  }
+
+  .sp-scene-frame[data-scene-frame="portrait"] {
+    max-width: min(100%, 36vh);
+  }
+
+  .sp-scene-frame[data-scene-frame="square"] {
+    max-width: min(100%, 64vh);
+  }
+
   /* Never hide an asset name, even on 390px three-column face grids. */
   [data-asset-slot] .game-ui-checkbox {
     min-width: 0;

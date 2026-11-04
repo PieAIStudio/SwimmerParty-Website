@@ -1,6 +1,6 @@
 # docs/governance/MANIFEST.yml — auto-generated, DO NOT EDIT MANUALLY
 # Regenerate: pnpm doc-gov scan
-generated_at: 2026-10-22T22:57:53.708Z
+generated_at: 2026-11-04T19:39:21.847Z
 generator_version: doc-gov@0.16.0
 docs_count: 36
 docs:
@@ -149,7 +149,7 @@ docs:
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-10-09
+    last_reviewed: 2026-11-05
     pinned: true
   - id: POLICY-SHARED-AI-IN-THE-LOOP
     path: docs/policy/shared-rules/ai-in-the-loop.md
@@ -163,7 +163,7 @@ docs:
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-09-08
+    last_reviewed: 2026-11-04
     pinned: true
   - id: POLICY-SHARED-CLEAN-IMAGE-GENERATION
     path: docs/policy/shared-rules/clean-image-generation-rules.md
@@ -184,7 +184,7 @@ docs:
     type: policy
     status: stable
     canonical: true
-    last_reviewed: 2026-10-16
+    last_reviewed: 2026-11-04
     pinned: false
   - id: POLICY-SHARED-DONORS
     path: docs/policy/shared-rules/donors.md

@@ -17,6 +17,8 @@ related: []
 
 # Current Work
 
+2026-11-05：按 Owner 授权先修资产页签、分组标题遮挡与演员页授权行，再加入从选角单进入的独立[本地排位工具](../../../src/features/scene/README.md)，接续制作六种场景参考卡。仅保存代码，不部署、不调用付费生成；真实模型和场景图仍由 MediaFactory 交付，占位不冒充素材。旧发布记录和验收数字继续保留在下方，不代表本增量已上线。
+
 当前网站改进按[创作社区实施方案](../../plans/active/2026-10-13-creator-community.md)推进；阶段状态、Owner 决定与检查证据只记在方案内。2026-10-23 十人已正式上线，社区保持on，目录与网站一致；此前20个详情页、三人原图SHA及390/1440首页截图证据保留。接续③又完成一处OG URL修复并发布，原列24页中英URL正式读回全部一致；未写库、上传素材或改演员数据。源码、部署、检查与原始失败见方案十人段和根目录`PI-RESULT.md`，其余B类未扩修。下列记录保留当时的版本与验收数字，不代表当前部署、依赖或测试总数。
 
 2026-10-13 knip 基线核对：干净 `origin/main`（`d84d3dd`，隔离检出前后均 clean）用 `pnpm dlx knip` 6.41.0 检出 7 项；A1 后只剩 `src/features/account/arrival.ts` 的 `SSO_ARRIVAL_PARAM`、`products.ts` 的 `CURRENT_PRODUCT_ID` 两项。当时记为**既有、归 Avatar 的 AuthKit 升级一起清**；A1 未新增问题，不碰账号目录、不加忽略规则。Owner 已澄清 knip 不在推送门禁中，此基线不阻塞 A1；实际门禁仍须通过。原始对比收据：`.devspace-reports/next-stage/knip-baseline/receipt.json`。
