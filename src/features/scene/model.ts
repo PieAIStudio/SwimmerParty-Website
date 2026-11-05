@@ -2,8 +2,21 @@ import { z } from "zod";
 import { settingDraftSchema } from "@/features/settings/contracts";
 
 export const DRAFT_KEY = "sp-scene-v1";
-export const POSES = ["stand", "walk", "point", "wave", "sit", "arms-crossed"] as const;
-export const BUILDS = ["slim", "average", "broad"] as const;
+export const POSES = [
+  "stand",
+  "walk",
+  "point",
+  "wave",
+  "sit",
+  "arms-crossed",
+  "lean-in",
+  "hand-on-hip",
+  "hands-on-table",
+  "look-over-shoulder",
+  "hug-ready",
+  "kneel",
+] as const;
+export const BUILDS = ["slim", "average", "broad", "slim-f", "average-f", "broad-f"] as const;
 // Slot colours identify a figure in this layout, not an actor's brand colour.
 export const FIGURE_BANDS = [
   { colour: "blue", hex: "#235ea8" },
@@ -63,7 +76,18 @@ export const sceneSchema = z
   );
 export type FigureState = z.infer<typeof figureSchema>;
 export type SceneState = z.infer<typeof sceneSchema>;
-export type SceneActor = { slug: string; name: string; heightCm?: number };
+export type SceneActor = {
+  slug: string;
+  name: string;
+  heightCm?: number;
+  gender?: "female" | "male";
+  build?: "slim" | "average" | "broad";
+};
+
+export function defaultBuild(actor?: SceneActor): FigureState["build"] {
+  const build = actor?.build ?? "average";
+  return actor?.gender === "female" ? `${build}-f` : build;
+}
 export type CameraState = SceneState["camera"];
 export type Frame = SceneState["frame"];
 
@@ -72,7 +96,7 @@ export function makeFigure(id: string, actor?: SceneActor): FigureState {
     id,
     ...(actor ? { actorSlug: actor.slug, name: actor.name } : {}),
     heightCm: actor?.heightCm ?? 175,
-    build: "average",
+    build: defaultBuild(actor),
     pose: "stand",
     x: 0,
     z: 0,
@@ -101,7 +125,7 @@ export function applyLayout(figures: FigureState[], layout: Layout): FigureState
         x: index === 0 ? -0.85 : 0.85,
         z: 0,
         turn: index === 0 ? 65 : -65,
-        pose: index === 0 ? "point" : "arms-crossed",
+        pose: index === 0 ? "lean-in" : "hand-on-hip",
       };
     if (layout === "triangle")
       return {

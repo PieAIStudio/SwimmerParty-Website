@@ -3,7 +3,9 @@ import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { gzipSync } from "node:zlib";
 import { createHash } from "node:crypto";
 import sharp from "sharp";
-import { PerspectiveCamera, Vector3 } from "three";
+import { Box3, PerspectiveCamera, Raycaster, SkinnedMesh, Vector3, type Intersection } from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { poseFigure, type FigurePose } from "../src/features/scene/rigged-figure";
 import { ACTORS } from "../src/content/actors";
 import {
   BUILDS,
@@ -13,9 +15,10 @@ import {
   POSES,
   initialScene,
   readDraft,
+  defaultBuild,
 } from "../src/features/scene/model";
-import { figureScale, loadFigure } from "../src/features/scene/figure-assets";
-import manifest from "../public/scene/figures/manifest.json";
+import { figureScale, loadFigure, loadPose } from "../src/features/scene/figure-assets";
+import manifest from "../public/scene/rigged/manifest.json";
 import en from "../messages/en/messages.json";
 import zh from "../messages/zh-CN/messages.json";
 
@@ -31,6 +34,7 @@ type CameraEvidence = {
   fov: number;
   aspect: number;
   bodies: { id: string; min: number[]; max: number[] }[];
+  seats: string[];
 };
 const cameraEvidence = async (page: Page): Promise<CameraEvidence> =>
   JSON.parse((await page.locator("canvas").getAttribute("data-scene-camera"))!);
@@ -57,7 +61,9 @@ const ready = async (page: Page) => {
       return (
         !state.camera.fit &&
         (await page.locator("canvas").getAttribute("data-scene-assets")) ===
-          state.figures.map((figure) => loadFigure(figure.build, figure.pose)).join(",")
+          state.figures.map((figure) => loadFigure(figure.build)).join(",") &&
+        (await page.locator("canvas").getAttribute("data-scene-poses")) ===
+          state.figures.map((figure) => figure.pose).join(",")
       );
     })
     .toBe(true);
@@ -92,7 +98,7 @@ for (const locale of ["en", "zh"] as const)
 
       await expect(page.locator("[data-scene-figures] button")).toHaveCount(5);
       await expect(page.getByRole("button", { name: m["scene.add"], exact: true })).toBeEnabled();
-      // Five standing figures reuse one GLB; there is no family preload.
+      // Only the bodies actually requested are loaded; poses share those GLBs.
       const initialGlbs = await page.evaluate(() =>
         performance
           .getEntriesByType("resource")
@@ -102,7 +108,17 @@ for (const locale of ["en", "zh"] as const)
             bytes: (entry as PerformanceResourceTiming).encodedBodySize,
           })),
       );
-      expect(initialGlbs.map((entry) => entry.path)).toEqual([loadFigure("average", "stand")]);
+      expect(initialGlbs.map((entry) => entry.path).sort()).toEqual(
+        [
+          ...new Set(
+            ACTORS.slice(0, 5).map((actor) =>
+              loadFigure(
+                defaultBuild({ slug: actor.slug, name: actor.nameEn, gender: actor.gender }),
+              ),
+            ),
+          ),
+        ].sort(),
+      );
       await writeFile(
         `${evidenceRoot}/${evidencePrefix}-five-load-${locale}-${width}.json`,
         JSON.stringify(initialGlbs, null, 2),
@@ -136,7 +152,7 @@ for (const locale of ["en", "zh"] as const)
       );
       await page.locator("[data-scene-prompt]").scrollIntoViewIfNeeded();
 
-      // All six static poses and three independent model variants remain usable.
+      // Twelve shared poses and six independently cloned body variants.
       for (const pose of POSES) {
         await page.getByLabel(m["scene.pose"], { exact: true }).selectOption(pose);
         await ready(page);
@@ -144,6 +160,7 @@ for (const locale of ["en", "zh"] as const)
       for (const build of BUILDS) {
         await page.getByLabel(m["scene.build"], { exact: true }).selectOption(build);
         await ready(page);
+        expect((await draft(page)).figures[0].pose).toBe("kneel");
       }
       await page.getByRole("slider", { name: new RegExp(m["scene.height"]) }).press("End");
       await page.getByLabel(m["scene.axis.x"], { exact: true }).fill("-2.5");
@@ -152,8 +169,8 @@ for (const locale of ["en", "zh"] as const)
       await expect.poll(async () => (await draft(page)).figures[0].x).toBe(-2.5);
       await page.reload();
       await ready(page);
-      await expect(page.getByLabel(m["scene.build"], { exact: true })).toHaveValue("broad");
-      await expect(page.getByLabel(m["scene.pose"], { exact: true })).toHaveValue("arms-crossed");
+      await expect(page.getByLabel(m["scene.build"], { exact: true })).toHaveValue("broad-f");
+      await expect(page.getByLabel(m["scene.pose"], { exact: true })).toHaveValue("kneel");
       await expect(page.getByLabel(m["scene.axis.x"], { exact: true })).toHaveValue("-2.5");
       await page.getByRole("button", { name: m["scene.faceOff"], exact: true }).click();
       for (const view of ["low", "high", "eye", "shoulder"] as const) {
@@ -211,6 +228,7 @@ for (const locale of ["en", "zh"] as const)
         true,
       );
       // The two main framing tasks, through the real controls in every locale/size.
+      await page.getByRole("button", { name: m["scene.reset"], exact: true }).click();
       await page.getByLabel(m["scene.frame"], { exact: true }).selectOption("landscape");
       await page.getByRole("button", { name: m["scene.layout.talk"], exact: true }).click();
       await page.locator("[data-scene-figures] button").last().click();
@@ -221,7 +239,9 @@ for (const locale of ["en", "zh"] as const)
       const posed = await cameraEvidence(page);
       const seated = posed.bodies.find((body) => body.id === posed.subject)!;
       expect(posed.target[1]).toBeCloseTo((seated.min[1] + seated.max[1] + 0.28) / 2, 3);
-      await page.getByLabel(m["scene.pose"], { exact: true }).selectOption("arms-crossed");
+      expect(posed.seats).toEqual([posed.subject]);
+      await page.getByLabel(m["scene.pose"], { exact: true }).selectOption("hand-on-hip");
+      await page.getByLabel(m["scene.subject"], { exact: true }).selectOption("everyone");
       await page.getByRole("button", { name: m["scene.shot.close"], exact: true }).click();
       const lensDistances: number[] = [];
       for (const lens of [24, 50, 85]) {
@@ -246,6 +266,11 @@ for (const locale of ["en", "zh"] as const)
         await readFile((await (await sceneDownload).path())!, "utf8"),
       );
       expect(exportedScene.camera).toEqual(closeCamera);
+      expect(exportedScene.figures).toEqual((await draft(page)).figures);
+      expect(exportedScene.figures.map((figure: { pose: string }) => figure.pose)).toEqual([
+        "lean-in",
+        "hand-on-hip",
+      ]);
       await writeFile(
         `${evidenceRoot}/two-close-${locale}-${width}.json`,
         JSON.stringify({ scene: exportedScene, camera: await cameraEvidence(page) }, null, 2),
@@ -259,8 +284,24 @@ for (const locale of ["en", "zh"] as const)
       if (locale === "en" && width === 1440) {
         const png = page.waitForEvent("download");
         await page.getByRole("button", { name: m["scene.savePng"], exact: true }).click();
-        await (await png).saveAs(`${evidenceRoot}/shots/two-close-export.png`);
+        expect((await readFile((await (await png).path())!)).length).toBeGreaterThan(15_000);
         expect((await draft(page)).camera).toEqual(closeCamera);
+      }
+      await page.getByRole("button", { name: m["scene.layout.group"], exact: true }).click();
+      await page.locator("[data-scene-figures] button").nth(3).click();
+      await page.getByLabel(m["scene.pose"], { exact: true }).selectOption("sit");
+      await ready(page);
+      expectFullFit(await cameraEvidence(page));
+      expect((await cameraEvidence(page)).seats).toHaveLength(1);
+      await writeFile(
+        `${evidenceRoot}/five-sit-${locale}-${width}.json`,
+        JSON.stringify({ scene: await draft(page), camera: await cameraEvidence(page) }, null, 2),
+      );
+      if ((locale === "zh" && width === 1440) || (locale === "en" && width === 390)) {
+        await page
+          .locator("[data-scene-workspace]")
+          .evaluate((el) => window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 128));
+        await page.screenshot({ path: `${evidenceRoot}/shots/five-sit-${locale}-${width}.png` });
       }
       await page.getByRole("button", { name: m["scene.layout.lineup"], exact: true }).click();
       await ready(page);
@@ -280,7 +321,7 @@ for (const locale of ["en", "zh"] as const)
       if (locale === "zh" && width === 1440) {
         const png = page.waitForEvent("download");
         await page.getByRole("button", { name: m["scene.savePng"], exact: true }).click();
-        await (await png).saveAs(`${evidenceRoot}/shots/eight-wide-export.png`);
+        expect((await readFile((await (await png).path())!)).length).toBeGreaterThan(15_000);
       }
       expect(errors).toEqual([]);
     });
@@ -342,7 +383,7 @@ test("layouts and an uncapped cast keep numbered identities and undo", async ({ 
   expect((await draft(page)).camera).toEqual(zoomed);
 });
 
-test("figure GLBs and local draft obey the static asset contract", async () => {
+test("rigged bodies, shared poses and local drafts keep the delivery contract", async () => {
   expect(readDraft("broken JSON")).toBeNull();
   const state = initialScene();
   const { setting, ...oldDraft } = state;
@@ -375,37 +416,116 @@ test("figure GLBs and local draft obey the static asset contract", async () => {
     build: "average",
     pose: "arms-crossed",
   });
+  expect(defaultBuild()).toBe("average");
+  expect(defaultBuild({ slug: "known", name: "Known", gender: "female" })).toBe("average-f");
+  expect(defaultBuild({ slug: "known", name: "Known", gender: "female", build: "broad" })).toBe(
+    "broad-f",
+  );
+  expect(defaultBuild({ slug: "known", name: "Known", build: "slim" })).toBe("slim");
+  const hash = (bytes: Buffer) => createHash("sha256").update(bytes).digest("hex");
+  expect(hash(await readFile("public/scene/rigged/manifest.json"))).toBe(
+    "e73a4b7469ba992fdd1dcc887079c2651e0db55be56005a35d15a50e3f9cdc02",
+  );
+  expect(hash(await readFile("public/scene/rigged/LICENSE.md"))).toBe(
+    "28825bce62bf4aa0f2836b8338bc5ef69d9e2cfd936fe148f534f01b1405fa05",
+  );
+  expect(Object.keys(manifest.bodies)).toEqual([...BUILDS]);
+  expect(Object.keys(manifest.poses)).toEqual([...POSES]);
+  const poses = new Map<string, FigurePose>();
   const results = [];
-  for (const [producerPath, record] of Object.entries(manifest.files)) {
-    const path = producerPath.replace(/^deliver\//, "public/scene/figures/");
-    const bytes = await readFile(path);
+  for (const pose of POSES) {
+    const record = manifest.poses[pose];
+    const bytes = await readFile(`public${loadPose(pose)}`);
     expect(bytes.length).toBe(record.bytes);
-    expect(createHash("sha256").update(bytes).digest("hex")).toBe(record.sha256);
+    expect(hash(bytes)).toBe(record.sha256);
+    const data = JSON.parse(bytes.toString()) as FigurePose;
+    expect(Object.keys(data.bones).sort()).toEqual([...manifest.sharedSkeleton.boneList].sort());
+    for (const quaternion of Object.values(data.bones)) {
+      expect(quaternion).toHaveLength(4);
+      expect(quaternion.every(Number.isFinite)).toBe(true);
+      expect(Math.hypot(...quaternion)).toBeCloseTo(1, 4);
+    }
+    poses.set(pose, data);
+    results.push({ path: loadPose(pose), bytes: bytes.length, sha256: record.sha256 });
+  }
+  const loader = new GLTFLoader();
+  for (const build of BUILDS) {
+    const record = manifest.bodies[build];
+    const bytes = await readFile(`public${loadFigure(build)}`);
+    expect(bytes.length).toBe(record.bytes);
+    expect(hash(bytes)).toBe(record.sha256);
     const gltf = JSON.parse(bytes.subarray(20, 20 + bytes.readUInt32LE(12)).toString());
     const triangles = gltf.meshes
       .flatMap((mesh: { primitives: { indices: number }[] }) => mesh.primitives)
       .reduce(
-        (total: number, primitive: { indices: number }) =>
-          total + gltf.accessors[primitive.indices].count / 3,
+        (sum: number, primitive: { indices: number }) =>
+          sum + gltf.accessors[primitive.indices].count / 3,
         0,
       );
-    expect(triangles).toBe(7478);
+    expect(triangles).toBe(record.triangles);
     expect(triangles).toBeLessThanOrEqual(10_000);
+    expect(gltf.skins).toHaveLength(1);
+    expect(gltf.skins[0].joints).toHaveLength(53);
     expect(gltf.animations ?? []).toEqual([]);
-    expect(gltf.skins ?? []).toEqual([]);
     expect(gltf.images ?? []).toEqual([]);
-    results.push({ path, bytes: bytes.length, triangles, sha256: record.sha256 });
-  }
-  expect(
-    createHash("sha256")
-      .update(await readFile("public/scene/figures/LICENSE.md"))
-      .digest("hex"),
-  ).toBe(manifest.licenceSha256);
-  for (const build of BUILDS) {
-    const height = manifest.builds[build].defaultStats.boundsGltfYUpM.size[1];
-    expect(height * figureScale(build, 185)).toBeCloseTo(1.85, 6);
-    for (const pose of POSES)
-      expect(await readFile(`public${loadFigure(build, pose)}`)).toBeTruthy();
+    const source = (
+      await loader.parseAsync(
+        bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength),
+        "",
+      )
+    ).scene;
+    const originalBones = source.getObjectByName("head")!.quaternion.toArray();
+    const first = poseFigure(source, poses.get("stand")!, figureScale(build, 185), false);
+    expect(new Box3().setFromObject(first.object, true).max.y).toBeCloseTo(1.85, 6);
+    for (const pose of POSES) {
+      const figure = poseFigure(source, poses.get(pose)!, figureScale(build, 185), pose === "sit");
+      expect(figure.object.getObjectByName("head")).not.toBe(first.object.getObjectByName("head"));
+      expect(source.getObjectByName("head")!.quaternion.toArray()).toEqual(originalBones);
+      const box = new Box3().setFromObject(figure.object, true);
+      expect(box.min.y).toBeCloseTo(0, 6);
+      expect(box.max.y).toBeGreaterThan(1);
+      expect(first.object.getObjectByName("head")!.quaternion.toArray()).toEqual(
+        poses.get("stand")!.bones.head,
+      );
+      figure.object.position.x = 0.4;
+      figure.object.rotation.y = 0.5;
+      figure.object.updateMatrixWorld(true);
+      figure.object.traverse((node) => {
+        if (!(node instanceof SkinnedMesh)) return;
+        node.skeleton.update();
+        const ray = new Raycaster(new Vector3(0.4, box.max.y * 0.7, 4), new Vector3(0, 0, -1));
+        const expected: Intersection[] = [];
+        const actual: Intersection[] = [];
+        SkinnedMesh.prototype.raycast.call(node, ray, expected);
+        node.raycast(ray, actual);
+        expect(actual.length).toBe(expected.length);
+        expect(actual.length).toBeGreaterThan(0);
+        actual.forEach((hit, index) => {
+          expect(hit.object).toBe(node);
+          expect(hit.distance).toBeCloseTo(expected[index].distance, 5);
+          expect(hit.point.distanceTo(expected[index].point)).toBeLessThan(0.00001);
+        });
+      });
+      expect(Boolean(figure.seat)).toBe(pose === "sit");
+      if (figure.seat) {
+        expect(figure.seat.position[1] - figure.seat.size[1] / 2).toBeCloseTo(0, 6);
+        expect(figure.seat.size[1]).toBeGreaterThan(0.3);
+        expect(figure.seat.size[1]).toBeLessThan(0.7);
+      }
+      expect(
+        readDraft(JSON.stringify({ ...state, figures: [{ ...state.figures[0], build, pose }] }))
+          ?.figures[0],
+      ).toMatchObject({ build, pose });
+      figure.dispose();
+    }
+    expect(new Box3().setFromObject(first.object, true).max.y).toBeCloseTo(1.85, 6);
+    first.dispose();
+    results.push({
+      path: loadFigure(build),
+      bytes: bytes.length,
+      triangles,
+      sha256: record.sha256,
+    });
   }
   await mkdir(evidenceRoot, { recursive: true });
   await writeFile(
@@ -539,13 +659,13 @@ test("phone-size Chrome performance under 4x CPU throttling", async ({ page, bro
       })),
   );
   expect(glbs.map((entry) => entry.path).sort()).toEqual(
-    mixed.figures.map((figure) => loadFigure(figure.build, figure.pose)).sort(),
+    [...new Set(mixed.figures.map((figure) => loadFigure(figure.build)))].sort(),
   );
   expect(glbs.reduce((sum, entry) => sum + entry.decodedBytes, 0)).toBe(
-    mixed.figures.reduce((sum, figure) => {
-      const path = loadFigure(figure.build, figure.pose).replace("/scene/figures/", "deliver/");
-      return sum + manifest.files[path as keyof typeof manifest.files].bytes;
-    }, 0),
+    [...new Set(mixed.figures.map((figure) => figure.build))].reduce(
+      (sum, build) => sum + manifest.bodies[build].bytes,
+      0,
+    ),
   );
   const firstReadyMs = Date.now() - started;
   const samples = [];

@@ -1,5 +1,8 @@
 {
-  "slim": { "base": "/scene/figures", "standingHeightM": 1.7225 },
-  "average": { "base": "/scene/figures", "standingHeightM": 1.752 },
-  "broad": { "base": "/scene/figures", "standingHeightM": 1.7916 }
+  "slim": { "base": "/scene/rigged", "standingHeightM": 1.7225413295195262 },
+  "average": { "base": "/scene/rigged", "standingHeightM": 1.7525479714198013 },
+  "broad": { "base": "/scene/rigged", "standingHeightM": 1.7925854105134487 },
+  "slim-f": { "base": "/scene/rigged", "standingHeightM": 1.6461147541270416 },
+  "average-f": { "base": "/scene/rigged", "standingHeightM": 1.6860333690405251 },
+  "broad-f": { "base": "/scene/rigged", "standingHeightM": 1.7160906905669362 }
 }

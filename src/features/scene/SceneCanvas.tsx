@@ -14,8 +14,8 @@ import { CameraControls } from "@react-three/drei/core/CameraControls";
 import {
   Box3,
   CanvasTexture,
+  FileLoader,
   Group,
-  Mesh,
   PerspectiveCamera,
   Plane,
   SRGBColorSpace,
@@ -26,7 +26,8 @@ import {
 } from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { useSiteI18n } from "@/i18n/client";
-import { figureScale, loadFigure } from "./figure-assets";
+import { figureScale, loadFigure, loadPose } from "./figure-assets";
+import { poseFigure, updateSkinBounds, type FigurePose } from "./rigged-figure";
 import { frameFigures, setLens } from "./framing";
 import type { FigureIdentity, FigureState } from "./model";
 import type { ExportPicture, SceneCanvasProps } from "./canvas-contract";
@@ -90,19 +91,16 @@ function Figure({
   onSelect: (id: string) => void;
   onMove: SceneCanvasProps["onMove"];
 }) {
-  const source = useLoader(GLTFLoader, loadFigure(figure.build, figure.pose));
-  const model = useMemo(() => {
-    const object = source.scene.clone(true);
-    object.traverse((node) => {
-      if (node instanceof Mesh) {
-        node.castShadow = true;
-        node.receiveShadow = true;
-      }
-    });
-    return object;
-  }, [source]);
+  const source = useLoader(GLTFLoader, loadFigure(figure.build));
+  const pose = useLoader(FileLoader, loadPose(figure.pose), (loader) =>
+    loader.setResponseType("json"),
+  ) as unknown as FigurePose;
   const scale = figureScale(figure.build, figure.heightCm);
-  const top = useMemo(() => new Box3().setFromObject(model).max.y, [model]);
+  const model = useMemo(
+    () => poseFigure(source.scene, pose, scale, figure.pose === "sit"),
+    [source, pose, scale, figure.pose],
+  );
+  useEffect(() => () => model.dispose(), [model]);
   const root = useRef<Group>(null);
   const drag = useRef<{ pointer: number; offset: Vector3 } | null>(null);
   const { invalidate, gl } = useThree();
@@ -159,8 +157,21 @@ function Figure({
       onPointerMove={move}
       onPointerUp={up}
     >
-      <primitive object={model} scale={scale} dispose={null} userData={{ figureBody: figure.id }} />
-      <FigureLabel identity={identity} y={top * scale + 0.2} />
+      <group userData={{ figureBody: figure.id }}>
+        <primitive object={model.object} dispose={null} />
+        {model.seat ? (
+          <mesh
+            position={model.seat.position}
+            castShadow
+            receiveShadow
+            userData={{ figureSeat: figure.id }}
+          >
+            <boxGeometry args={model.seat.size} />
+            <meshStandardMaterial color="#8c8c8c" roughness={1} />
+          </mesh>
+        ) : null}
+      </group>
+      <FigureLabel identity={identity} y={model.top + 0.2} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.008, 0]}>
         <ringGeometry args={[0.27, 0.34, 40]} />
         <meshBasicMaterial color={identity.colour} toneMapped={false} />
@@ -284,8 +295,9 @@ function Runtime({
     queueMicrotask(() => {
       gl.domElement.dataset.sceneReady = "true";
       gl.domElement.dataset.sceneAssets = document.figures
-        .map((figure) => loadFigure(figure.build, figure.pose))
+        .map((figure) => loadFigure(figure.build))
         .join(",");
+      gl.domElement.dataset.scenePoses = document.figures.map((figure) => figure.pose).join(",");
       onReady(exportPicture);
     });
   });
@@ -294,10 +306,12 @@ function Runtime({
     setLens(camera, document.camera);
     const api = controls.current;
     const bodies = new Map<string, Box3>();
-    scene.updateMatrixWorld(true);
+    const seats: string[] = [];
+    updateSkinBounds(scene);
     scene.traverse((node) => {
       if (node.userData.figureBody)
         bodies.set(node.userData.figureBody, new Box3().setFromObject(node, true));
+      if (node.userData.figureSeat) seats.push(node.userData.figureSeat);
     });
     if (document.camera.fit) {
       frameFigures(api, document.camera, document.figures, bodies);
@@ -313,18 +327,22 @@ function Runtime({
       api.update(0);
     }
     // Evidence is the real rendered camera and loaded geometry, not standing-height estimates.
-    gl.domElement.dataset.sceneCamera = JSON.stringify({
-      ...document.camera,
-      position: api.getPosition(new Vector3()).toArray(),
-      target: api.getTarget(new Vector3()).toArray(),
-      fov: camera.fov,
-      aspect: camera.aspect,
-      bodies: [...bodies].map(([id, box]) => ({
-        id,
-        min: box.min.toArray(),
-        max: box.max.toArray(),
-      })),
-    });
+    gl.domElement.setAttribute(
+      "data-scene-camera",
+      JSON.stringify({
+        ...document.camera,
+        position: api.getPosition(new Vector3()).toArray(),
+        target: api.getTarget(new Vector3()).toArray(),
+        fov: camera.fov,
+        aspect: camera.aspect,
+        seats,
+        bodies: [...bodies].map(([id, box]) => ({
+          id,
+          min: box.min.toArray(),
+          max: box.max.toArray(),
+        })),
+      }),
+    );
     invalidate();
   }, [
     camera,
@@ -371,6 +389,7 @@ function Runtime({
       canvas.removeEventListener("webglcontextrestored", restored);
       delete canvas.dataset.sceneReady;
       delete canvas.dataset.sceneAssets;
+      delete canvas.dataset.scenePoses;
       onReady(null);
     };
   }, [exportPicture, gl, invalidate, onLost, onReady]);
@@ -458,7 +477,7 @@ export default function SceneCanvas(props: SceneCanvasProps) {
         }
       >
         <Suspense
-          key={props.scene.figures.map((figure) => loadFigure(figure.build, figure.pose)).join(",")}
+          key={props.scene.figures.map((figure) => `${figure.build}:${figure.pose}`).join(",")}
           fallback={null}
         >
           <Runtime {...props} onLost={setLost} />

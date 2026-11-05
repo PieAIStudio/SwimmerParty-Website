@@ -17,6 +17,7 @@ export async function SceneView({ locale }: { locale: AppLocale }) {
         actors={ACTORS.map((actor) => ({
           slug: actor.slug,
           name: locale === "zh" ? actor.nameCn : actor.nameEn,
+          gender: actor.gender,
           ...(actor.heightCm ? { heightCm: actor.heightCm } : {}),
         }))}
       />

@@ -1,13 +1,17 @@
 import figures from "./figures.json";
 import type { FigureState } from "./model";
 
-/** Static MediaFactory meshes: fetch only the build/pose actually in use. */
-export function loadFigure(build: FigureState["build"], pose: FigureState["pose"]): string {
-  const base = figures[build].base;
-  return pose === "stand" ? `${base}/${build}.glb` : `${base}/poses/${build}-${pose}.glb`;
+/** One rest-pose GLB per body; changing pose never downloads another body. */
+export function loadFigure(build: FigureState["build"]): string {
+  return `${figures[build].base}/${build}.glb`;
 }
 
-/** Use standing stature even for a seated mesh; never stretch body width. */
+/** Shared quaternion data is fetched only by the lazy stage. */
+export function loadPose(pose: FigureState["pose"]): string {
+  return `/scene/rigged/poses/${pose}.json`;
+}
+
+/** Standing skinned bounds, even for sitting/kneeling; no width stretching. */
 export function figureScale(build: FigureState["build"], heightCm: number): number {
   return heightCm / 100 / figures[build].standingHeightM;
 }

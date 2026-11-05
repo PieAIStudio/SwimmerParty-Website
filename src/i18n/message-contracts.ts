@@ -600,8 +600,11 @@ export interface MessageContracts {
   readonly "scene.axis.z": {  };
   readonly "scene.build": {  };
   readonly "scene.build.average": {  };
+  readonly "scene.build.average-f": {  };
   readonly "scene.build.broad": {  };
+  readonly "scene.build.broad-f": {  };
   readonly "scene.build.slim": {  };
+  readonly "scene.build.slim-f": {  };
   readonly "scene.camera": {  };
   readonly "scene.colour.amber": {  };
   readonly "scene.colour.blue": {  };
@@ -635,6 +638,12 @@ export interface MessageContracts {
   readonly "scene.performance": {  };
   readonly "scene.pose": {  };
   readonly "scene.pose.arms-crossed": {  };
+  readonly "scene.pose.hand-on-hip": {  };
+  readonly "scene.pose.hands-on-table": {  };
+  readonly "scene.pose.hug-ready": {  };
+  readonly "scene.pose.kneel": {  };
+  readonly "scene.pose.lean-in": {  };
+  readonly "scene.pose.look-over-shoulder": {  };
   readonly "scene.pose.point": {  };
   readonly "scene.pose.sit": {  };
   readonly "scene.pose.stand": {  };
