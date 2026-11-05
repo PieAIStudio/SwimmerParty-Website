@@ -10,7 +10,7 @@ import {
   type ComponentRef,
 } from "react";
 import { Canvas, useFrame, useLoader, useThree, type ThreeEvent } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei/core/OrbitControls";
+import { CameraControls } from "@react-three/drei/core/CameraControls";
 import {
   Box3,
   CanvasTexture,
@@ -19,6 +19,7 @@ import {
   PerspectiveCamera,
   Plane,
   SRGBColorSpace,
+  Sprite,
   Vector2,
   Vector3,
   type Object3D,
@@ -26,13 +27,21 @@ import {
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { useSiteI18n } from "@/i18n/client";
 import { figureScale, loadFigure } from "./figure-assets";
+import { frameFigures, setLens } from "./framing";
 import type { FigureIdentity, FigureState } from "./model";
 import type { ExportPicture, SceneCanvasProps } from "./canvas-contract";
 
-type OrbitApi = ComponentRef<typeof OrbitControls>;
+type CameraApi = ComponentRef<typeof CameraControls>;
 const floor = new Plane(new Vector3(0, 1, 0), 0);
 
 function FigureLabel({ identity, y }: { identity: FigureIdentity; y: number }) {
+  const sprite = useRef<Sprite>(null);
+  useFrame(({ camera, size }) => {
+    if (sprite.current && camera instanceof PerspectiveCamera) {
+      const scale = (40 * Math.tan((camera.fov * Math.PI) / 360)) / size.height;
+      sprite.current.scale.set(scale, scale, 1);
+    }
+  });
   const texture = useMemo(() => {
     const canvas = document.createElement("canvas");
     canvas.width = 128;
@@ -41,10 +50,11 @@ function FigureLabel({ identity, y }: { identity: FigureIdentity; y: number }) {
     context.fillStyle = "#ffffff";
     context.fillRect(0, 0, 128, 128);
     context.fillStyle = "#202124";
-    context.font = "600 88px system-ui, sans-serif";
+    const number = identity.label.split(" · ")[0];
+    context.font = `600 ${Math.min(88, 168 / number.length)}px system-ui, sans-serif`;
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.fillText(identity.label.split(" · ")[0], 64, 56);
+    context.fillText(number, 64, 56);
     context.fillStyle = identity.colour;
     context.fillRect(0, 108, 128, 20);
     const result = new CanvasTexture(canvas);
@@ -53,8 +63,14 @@ function FigureLabel({ identity, y }: { identity: FigureIdentity; y: number }) {
   }, [identity.label, identity.colour]);
   useEffect(() => () => texture.dispose(), [texture]);
   return (
-    <sprite position={[0, y, 0]} scale={[0.14, 0.14, 1]} renderOrder={10}>
-      <spriteMaterial map={texture} depthTest={false} depthWrite={false} toneMapped={false} />
+    <sprite ref={sprite} position={[0, y, 0]} renderOrder={10}>
+      <spriteMaterial
+        map={texture}
+        sizeAttenuation={false}
+        depthTest={false}
+        depthWrite={false}
+        toneMapped={false}
+      />
     </sprite>
   );
 }
@@ -143,7 +159,7 @@ function Figure({
       onPointerMove={move}
       onPointerUp={up}
     >
-      <primitive object={model} scale={scale} dispose={null} />
+      <primitive object={model} scale={scale} dispose={null} userData={{ figureBody: figure.id }} />
       <FigureLabel identity={identity} y={top * scale + 0.2} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.008, 0]}>
         <ringGeometry args={[0.27, 0.34, 40]} />
@@ -173,8 +189,11 @@ function Runtime({
   onReady,
   onLost,
 }: SceneCanvasProps & { onLost: (lost: boolean) => void }) {
-  const { scene, camera, gl, invalidate } = useThree();
-  const controls = useRef<OrbitApi>(null);
+  const { scene, camera, gl, invalidate, size: viewport } = useThree();
+  const { t } = useSiteI18n();
+  const controls = useRef<CameraApi>(null);
+  const pointerActive = useRef(false);
+  const wheelActive = useRef(false);
   const dragging = useCallback((active: boolean) => {
     if (controls.current) controls.current.enabled = !active;
   }, []);
@@ -205,14 +224,14 @@ function Runtime({
         picture.width = width;
         const columns = Math.max(1, Math.floor(width / 280));
         const rows = Math.ceil(identities.length / columns);
-        picture.height = height + rows * 64;
+        picture.height = height + rows * 64 + 48;
         const context = picture.getContext("2d")!;
         context.drawImage(gl.domElement, 0, 0);
         // A fixed name key stays readable even when the camera puts figures behind one another.
         // The matching number and band remain attached to each figure in the 3D view.
         const column = width / columns;
         context.fillStyle = "#eeebe5";
-        context.fillRect(0, height, width, rows * 64);
+        context.fillRect(0, height, width, rows * 64 + 48);
         context.font = "600 24px system-ui, sans-serif";
         context.textAlign = "center";
         context.textBaseline = "middle";
@@ -229,6 +248,17 @@ function Runtime({
           context.fillStyle = identity.colour;
           context.fillRect(left, top + 48, column - 24, 8);
         });
+        context.fillStyle = "#202124";
+        context.font = "24px system-ui, sans-serif";
+        const subjectIndex = document.figures.findIndex(
+          (figure) => figure.id === document.camera.subject,
+        );
+        const subject = subjectIndex < 0 ? t("scene.everyone") : identities[subjectIndex].label;
+        context.fillText(
+          `${document.camera.lens} mm · ${t(`scene.shot.${document.camera.shot}`)} · ${t(`scene.view.${document.camera.view}`)} · ${subject}`,
+          width / 2,
+          height + rows * 64 + 24,
+        );
         return await new Promise<Blob>((resolve, reject) =>
           picture.toBlob(
             (blob) => (blob ? resolve(blob) : reject(new Error("PNG capture failed"))),
@@ -246,7 +276,7 @@ function Runtime({
         invalidate();
       }
     },
-    [camera, gl, invalidate, scene, identities],
+    [camera, gl, invalidate, scene, identities, document.camera, document.figures, t],
   );
   useFrame(() => {
     if (notified.current) return;
@@ -260,13 +290,66 @@ function Runtime({
     });
   });
   useEffect(() => {
-    camera.position.set(...document.camera.position);
-    if (controls.current) {
-      controls.current.target.set(...document.camera.target);
-      controls.current.update();
+    if (!(camera instanceof PerspectiveCamera) || !controls.current) return;
+    setLens(camera, document.camera);
+    const api = controls.current;
+    const bodies = new Map<string, Box3>();
+    scene.updateMatrixWorld(true);
+    scene.traverse((node) => {
+      if (node.userData.figureBody)
+        bodies.set(node.userData.figureBody, new Box3().setFromObject(node, true));
+    });
+    if (document.camera.fit) {
+      frameFigures(api, document.camera, document.figures, bodies);
+      const resolved = {
+        ...document.camera,
+        fit: false,
+        position: api.getPosition(new Vector3()).toArray() as [number, number, number],
+        target: api.getTarget(new Vector3()).toArray() as [number, number, number],
+      };
+      queueMicrotask(() => onCameraChange(resolved, false));
+    } else {
+      void api.setLookAt(...document.camera.position, ...document.camera.target, false);
+      api.update(0);
     }
+    // Evidence is the real rendered camera and loaded geometry, not standing-height estimates.
+    gl.domElement.dataset.sceneCamera = JSON.stringify({
+      ...document.camera,
+      position: api.getPosition(new Vector3()).toArray(),
+      target: api.getTarget(new Vector3()).toArray(),
+      fov: camera.fov,
+      aspect: camera.aspect,
+      bodies: [...bodies].map(([id, box]) => ({
+        id,
+        min: box.min.toArray(),
+        max: box.max.toArray(),
+      })),
+    });
     invalidate();
-  }, [camera, document.camera, invalidate]);
+  }, [
+    camera,
+    document.camera,
+    document.figures,
+    gl,
+    invalidate,
+    onCameraChange,
+    scene,
+    viewport.width,
+    viewport.height,
+  ]);
+  function saveCamera() {
+    if (!controls.current) return;
+    onCameraChange({
+      ...document.camera,
+      fit: false,
+      position: controls.current.getPosition(new Vector3(), true).toArray() as [
+        number,
+        number,
+        number,
+      ],
+      target: controls.current.getTarget(new Vector3(), true).toArray() as [number, number, number],
+    });
+  }
   useEffect(() => {
     const canvas = gl.domElement;
     notified.current = false;
@@ -327,20 +410,30 @@ function Runtime({
           onMove={onMove}
         />
       ))}
-      <OrbitControls
+      <CameraControls
         ref={controls}
         makeDefault
-        enableDamping={false}
-        minDistance={1.5}
-        maxDistance={1000}
+        smoothTime={0}
+        draggingSmoothTime={0}
+        minDistance={0.2}
+        maxDistance={Infinity}
         maxPolarAngle={Math.PI * 0.55}
-        onEnd={() => {
-          if (controls.current)
-            onCameraChange({
-              view: document.camera.view,
-              position: camera.position.toArray() as [number, number, number],
-              target: controls.current.target.toArray() as [number, number, number],
-            });
+        onControlStart={() => {
+          pointerActive.current = true;
+        }}
+        onControl={() => {
+          if (!pointerActive.current) wheelActive.current = true;
+        }}
+        onControlEnd={() => {
+          pointerActive.current = false;
+          wheelActive.current = false;
+          saveCamera();
+        }}
+        onRest={() => {
+          if (wheelActive.current) {
+            wheelActive.current = false;
+            saveCamera();
+          }
         }}
       />
     </>
@@ -356,7 +449,7 @@ export default function SceneCanvas(props: SceneCanvasProps) {
         frameloop="demand"
         dpr={[1, 1.5]}
         shadows
-        camera={{ fov: 40, near: 0.1, far: 250, position: props.scene.camera.position }}
+        camera={{ fov: 40, near: 0.05, far: 10000, position: props.scene.camera.position }}
         gl={{ antialias: true, alpha: false }}
         fallback={
           <p className="p-6" role="alert">

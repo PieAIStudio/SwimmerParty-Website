@@ -7,6 +7,6 @@ export type SceneCanvasProps = {
   selected: string;
   onSelect: (id: string) => void;
   onMove: (id: string, x: number, z: number) => void;
-  onCameraChange: (camera: CameraState) => void;
+  onCameraChange: (camera: CameraState, record?: boolean) => void;
   onReady: (exporter: ExportPicture | null) => void;
 };

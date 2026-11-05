@@ -19,7 +19,9 @@ export const figureBand = (index: number) => FIGURE_BANDS[index % FIGURE_BANDS.l
 export const LAYOUTS = { talk: 2, triangle: 3, group: 5, lineup: 8 } as const;
 export type Layout = keyof typeof LAYOUTS;
 export type FigureIdentity = { label: string; colour: string };
-export const VIEWS = ["eye", "low", "high"] as const;
+export const VIEWS = ["eye", "low", "high", "shoulder"] as const;
+export const SHOTS = ["full", "medium", "close"] as const;
+export const LENSES = [24, 50, 85] as const;
 export const FRAMES = {
   landscape: [1920, 1080],
   portrait: [1080, 1920],
@@ -44,7 +46,16 @@ export const sceneSchema = z
     castKey: z.string(),
     figures: z.array(figureSchema).min(1),
     frame: z.enum(["landscape", "portrait", "square"]),
-    camera: z.object({ view: z.enum(VIEWS), position: point, target: point }),
+    camera: z.object({
+      view: z.enum(VIEWS),
+      position: point,
+      target: point,
+      shot: z.enum(SHOTS).default("full"),
+      lens: z.union([z.literal(24), z.literal(50), z.literal(85)]).default(50),
+      sensorWidth: z.literal(36).default(36),
+      subject: z.string().default("everyone"),
+      fit: z.boolean().default(false),
+    }),
     setting: settingDraftSchema,
   })
   .refine(
@@ -111,35 +122,19 @@ export function applyLayout(figures: FigureState[], layout: Layout): FigureState
     return { ...figure, x: (index - 3.5) * 1.1, z: 0, turn: 0, pose: "stand" };
   });
 }
-export function fitCamera(
-  figures: FigureState[],
-  frame: Frame,
-  view: CameraState["view"],
-): CameraState {
-  const xs = figures.map((figure) => figure.x);
-  const zs = figures.map((figure) => figure.z);
-  const height = Math.max(...figures.map((figure) => figure.heightCm / 100));
-  const width = Math.max(...xs) - Math.min(...xs) + 1.2;
-  const depth = Math.max(...zs) - Math.min(...zs) + 1.2;
-  const [w, h] = FRAMES[frame];
-  const distance =
-    Math.max(width / (w / h), height + 0.5) / (2 * Math.tan(Math.PI / 9)) + depth / 2;
-  const target: [number, number, number] = [
-    (Math.max(...xs) + Math.min(...xs)) / 2,
-    height / 2,
-    (Math.max(...zs) + Math.min(...zs)) / 2,
-  ];
+// Request a fit after the lazy canvas has loaded the actual posed geometry.
+// Resolved transforms replace this request in the same undo entry.
+export function fitCamera(camera: Partial<CameraState> = {}): CameraState {
   return {
-    view,
-    target,
-    position: [
-      target[0],
-      Math.max(
-        0.25,
-        target[1] + distance * (view === "high" ? 0.65 : view === "low" ? -0.12 : 0.08),
-      ),
-      target[2] + distance,
-    ],
+    view: "eye",
+    shot: "full",
+    lens: 50,
+    sensorWidth: 36,
+    subject: "everyone",
+    position: [0, 1, 7],
+    target: [0, 1, 0],
+    ...camera,
+    fit: true,
   };
 }
 export function initialScene(actors: SceneActor[] = [], castKey = ""): SceneState {
@@ -154,7 +149,7 @@ export function initialScene(actors: SceneActor[] = [], castKey = ""): SceneStat
     castKey,
     figures,
     frame: "landscape",
-    camera: fitCamera(figures, "landscape", "eye"),
+    camera: fitCamera(),
     setting: settingDraftSchema.parse(undefined),
   };
 }

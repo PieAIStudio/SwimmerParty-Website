@@ -612,6 +612,7 @@ export interface MessageContracts {
   readonly "scene.colour.slate": {  };
   readonly "scene.colour.teal": {  };
   readonly "scene.copyPrompt": {  };
+  readonly "scene.everyone": {  };
   readonly "scene.exported": {  };
   readonly "scene.faceOff": {  };
   readonly "scene.failed": {  };
@@ -627,6 +628,7 @@ export interface MessageContracts {
   readonly "scene.layout.talk": {  };
   readonly "scene.layout.triangle": {  };
   readonly "scene.layouts": {  };
+  readonly "scene.lens": {  };
   readonly "scene.line": {  };
   readonly "scene.loading": {  };
   readonly "scene.open": {  };
@@ -647,8 +649,15 @@ export interface MessageContracts {
   readonly "scene.remove": {  };
   readonly "scene.reset": {  };
   readonly "scene.savePng": {  };
+  readonly "scene.saveScene": {  };
   readonly "scene.saved": {  };
+  readonly "scene.selected": {  };
+  readonly "scene.shot": {  };
+  readonly "scene.shot.close": {  };
+  readonly "scene.shot.full": {  };
+  readonly "scene.shot.medium": {  };
   readonly "scene.storageUnavailable": {  };
+  readonly "scene.subject": {  };
   readonly "scene.title": {  };
   readonly "scene.turn": {  };
   readonly "scene.unavailable": {  };
@@ -656,6 +665,7 @@ export interface MessageContracts {
   readonly "scene.view.eye": {  };
   readonly "scene.view.high": {  };
   readonly "scene.view.low": {  };
+  readonly "scene.view.shoulder": {  };
   readonly "settings.copyPrompt": {  };
   readonly "settings.downloadFailed": {  };
   readonly "settings.group": {  };

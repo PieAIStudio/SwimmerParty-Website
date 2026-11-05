@@ -21,6 +21,8 @@ import {
   DRAFT_KEY,
   FRAMES,
   LAYOUTS,
+  LENSES,
+  SHOTS,
   figureBand,
   applyLayout,
   type Layout,
@@ -65,7 +67,9 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
   const [notice, setNotice] = useState<"exported" | "failed" | null>(null);
   const start = useCallback((value: SceneState) => {
     setHistory({ value, past: [], future: [] });
-    setSelected(value.figures[0].id);
+    setSelected(
+      value.figures.find((item) => item.id === value.camera.subject)?.id ?? value.figures[0].id,
+    );
   }, []);
   useEffect(() => {
     const requested = new URLSearchParams(location.search).get("a") ?? "";
@@ -109,7 +113,13 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
     [change],
   );
   const cameraChange = useCallback(
-    (camera: CameraState) => change((value) => ({ ...value, camera })),
+    (camera: CameraState, record = true) => {
+      if (record) change((value) => ({ ...value, camera }));
+      else
+        setHistory((current) =>
+          current ? { ...current, value: { ...current.value, camera } } : current,
+        );
+    },
     [change],
   );
   function undo(redo = false) {
@@ -140,17 +150,17 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
       setBusy(false);
     }
   }
-  const figures = history?.value.figures;
+  const currentFigures = history?.value.figures;
   const identities = useMemo(
     () =>
-      (figures ?? []).map((item, index) => {
+      (currentFigures ?? []).map((item, index) => {
         const name =
           actors.find((actor) => actor.slug === item.actorSlug)?.name ??
           item.name ??
           t("scene.figure", { count: index + 1 });
         return { label: `${index + 1} · ${name}`, colour: figureBand(index).hex };
       }),
-    [figures, actors, t],
+    [currentFigures, actors, t],
   );
   if (!history) return <output className="block py-12">{t("scene.loading")}</output>;
   const scene = history.value;
@@ -159,15 +169,27 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
     change((value) => ({
       ...value,
       figures: value.figures.map((item) => (item.id === figure.id ? { ...item, ...values } : item)),
+      camera: fitCamera(value.camera),
     }));
   }
-  function fit(view = scene.camera.view, frame = scene.frame) {
-    change((value) => ({ ...value, frame, camera: fitCamera(value.figures, frame, view) }));
+  function fit(values: Partial<CameraState> = {}, frame = scene.frame) {
+    change((value) => ({ ...value, frame, camera: fitCamera({ ...value.camera, ...values }) }));
   }
-  function layout(arrangement: "line" | "faceOff") {
+  function select(id: string) {
+    setSelected(id);
+    if (scene.camera.subject !== "everyone")
+      fit({
+        subject: id,
+        view:
+          scene.camera.view === "shoulder" && id !== scene.figures[1]?.id
+            ? "eye"
+            : scene.camera.view,
+      });
+  }
+  function arrangeCurrent(arrangement: "line" | "faceOff") {
     change((value) => {
       const figures = arrange(value.figures, arrangement);
-      return { ...value, figures, camera: fitCamera(figures, value.frame, value.camera.view) };
+      return { ...value, figures, camera: fitCamera(value.camera) };
     });
   }
   const prompt = [
@@ -199,7 +221,12 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
                   return {
                     ...value,
                     figures,
-                    camera: fitCamera(figures, value.frame, value.camera.view),
+                    camera: fitCamera({
+                      ...value.camera,
+                      subject: "everyone",
+                      view: "eye",
+                      shot: "full",
+                    }),
                   };
                 })
               }
@@ -212,11 +239,22 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
       <div className="mb-5 flex flex-wrap items-center gap-3">
         <GameButton
           variant="primary"
-          disabled={!exporter}
+          disabled={!exporter || scene.camera.fit}
           pending={busy}
           onClick={() => void exportPicture()}
         >
           {t("scene.savePng")}
+        </GameButton>
+        <GameButton
+          disabled={scene.camera.fit}
+          onClick={() =>
+            saveBlob(
+              new Blob([JSON.stringify(scene, null, 2)], { type: "application/json" }),
+              "swimmer-party-scene.json",
+            )
+          }
+        >
+          {t("scene.saveScene")}
         </GameButton>
         <GameButton disabled={!history.past.length} onClick={() => undo()}>
           {t("scene.undo")}
@@ -244,32 +282,85 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
         {notice ? t(`scene.${notice}`) : storage ? t(`scene.${storage}`) : t("scene.loading")}
       </output>
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-        <div className="min-w-0 lg:sticky lg:top-20">
-          <div className="mb-3 grid gap-3 sm:grid-cols-2">
+        <div className="min-w-0 lg:sticky lg:top-20" data-scene-workspace>
+          <div className="mb-3 grid grid-cols-2 gap-3">
             <GameField label={t("scene.frame")}>
               <GameSelect
                 aria-label={t("scene.frame")}
                 value={scene.frame}
-                onChange={(event) => fit(scene.camera.view, event.target.value as Frame)}
+                onChange={(event) => fit({}, event.target.value as Frame)}
               >
                 <option value="landscape">16:9</option>
                 <option value="portrait">9:16</option>
                 <option value="square">1:1</option>
               </GameSelect>
             </GameField>
-            <GameField label={t("scene.camera")}>
+            <GameField label={t("scene.subject")}>
               <GameSelect
-                aria-label={t("scene.camera")}
-                value={scene.camera.view}
-                onChange={(event) => fit(event.target.value as CameraState["view"])}
+                aria-label={t("scene.subject")}
+                value={scene.camera.subject === "everyone" ? "everyone" : "selected"}
+                onChange={(event) =>
+                  fit({
+                    subject: event.target.value === "everyone" ? "everyone" : figure.id,
+                    view: scene.camera.view === "shoulder" ? "eye" : scene.camera.view,
+                  })
+                }
               >
-                {VIEWS.map((view) => (
-                  <option key={view} value={view}>
-                    {t(`scene.view.${view}`)}
-                  </option>
-                ))}
+                <option value="everyone">{t("scene.everyone")}</option>
+                <option value="selected">{t("scene.selected")}</option>
               </GameSelect>
             </GameField>
+          </div>
+          <div className="mb-3 space-y-2" data-scene-camera>
+            <fieldset className="flex flex-wrap items-center gap-2" aria-label={t("scene.shot")}>
+              <span className="sp-small mr-1">{t("scene.shot")}</span>
+              {SHOTS.map((shot) => (
+                <GameButton
+                  key={shot}
+                  size="sm"
+                  aria-pressed={scene.camera.shot === shot}
+                  variant={scene.camera.shot === shot ? "secondary" : "ghost"}
+                  onClick={() => fit({ shot })}
+                >
+                  {t(`scene.shot.${shot}`)}
+                </GameButton>
+              ))}
+            </fieldset>
+            <fieldset className="flex flex-wrap items-center gap-2" aria-label={t("scene.camera")}>
+              <span className="sp-small mr-1">{t("scene.camera")}</span>
+              {VIEWS.map((view) => (
+                <GameButton
+                  key={view}
+                  size="sm"
+                  disabled={view === "shoulder" && scene.figures.length < 2}
+                  aria-pressed={scene.camera.view === view}
+                  variant={scene.camera.view === view ? "secondary" : "ghost"}
+                  onClick={() => {
+                    if (view === "shoulder") setSelected(scene.figures[1].id);
+                    fit({ view, ...(view === "shoulder" ? { subject: scene.figures[1].id } : {}) });
+                  }}
+                >
+                  {t(`scene.view.${view}`)}
+                </GameButton>
+              ))}
+            </fieldset>
+            <fieldset className="flex flex-wrap items-center gap-2" aria-label={t("scene.lens")}>
+              <span className="sp-small mr-1">{t("scene.lens")}</span>
+              {LENSES.map((lens) => (
+                <GameButton
+                  key={lens}
+                  size="sm"
+                  aria-pressed={scene.camera.lens === lens}
+                  variant={scene.camera.lens === lens ? "secondary" : "ghost"}
+                  onClick={() => fit({ lens })}
+                >
+                  {lens} mm
+                </GameButton>
+              ))}
+              <GameButton size="sm" onClick={() => fit()}>
+                {t("scene.fit")}
+              </GameButton>
+            </fieldset>
           </div>
           <div
             className="sp-scene-frame"
@@ -287,7 +378,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
                 scene={scene}
                 identities={identities}
                 selected={figure.id}
-                onSelect={setSelected}
+                onSelect={select}
                 onMove={move}
                 onCameraChange={cameraChange}
                 onReady={ready}
@@ -296,15 +387,19 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
           </div>
           <p className="sp-small mt-3 flex flex-wrap gap-x-4 gap-y-1" data-scene-key>
             {identities.map((identity, index) => (
-              <span key={identity.label}>
+              <span
+                key={identity.label}
+                className={
+                  scene.camera.subject === scene.figures[index].id ? "font-bold" : undefined
+                }
+              >
                 {identity.label} ({t(`scene.colour.${figureBand(index).colour}`)})
               </span>
             ))}
           </p>
           <div className="mt-3 flex flex-wrap gap-3">
-            <GameButton onClick={() => fit()}>{t("scene.fit")}</GameButton>
-            <GameButton onClick={() => layout("line")}>{t("scene.line")}</GameButton>
-            <GameButton onClick={() => layout("faceOff")}>{t("scene.faceOff")}</GameButton>
+            <GameButton onClick={() => arrangeCurrent("line")}>{t("scene.line")}</GameButton>
+            <GameButton onClick={() => arrangeCurrent("faceOff")}>{t("scene.faceOff")}</GameButton>
           </div>
           <p className="sp-small mt-4 text-muted-foreground">{t("scene.gestures")}</p>
         </div>
@@ -319,7 +414,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
                 size="sm"
                 aria-pressed={item.id === figure.id}
                 variant={item.id === figure.id ? "secondary" : "ghost"}
-                onClick={() => setSelected(item.id)}
+                onClick={() => select(item.id)}
               >
                 {identities[index].label}
               </GameButton>
@@ -331,7 +426,11 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
               onClick={() => {
                 const next = makeFigure(crypto.randomUUID());
                 next.x = Math.max(...scene.figures.map((item) => item.x)) + 1.1;
-                change((value) => ({ ...value, figures: [...value.figures, next] }));
+                change((value) => ({
+                  ...value,
+                  figures: [...value.figures, next],
+                  camera: fitCamera({ ...value.camera, subject: "everyone" }),
+                }));
                 setSelected(next.id);
               }}
             >
@@ -344,6 +443,11 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
                 change((value) => ({
                   ...value,
                   figures: value.figures.filter((item) => item.id !== figure.id),
+                  camera: fitCamera({
+                    ...value.camera,
+                    subject: "everyone",
+                    view: value.camera.view === "shoulder" ? "eye" : value.camera.view,
+                  }),
                 }));
                 setSelected(scene.figures.find((item) => item.id !== figure.id)!.id);
               }}

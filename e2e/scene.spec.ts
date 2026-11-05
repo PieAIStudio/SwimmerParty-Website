@@ -3,6 +3,7 @@ import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { gzipSync } from "node:zlib";
 import { createHash } from "node:crypto";
 import sharp from "sharp";
+import { PerspectiveCamera, Vector3 } from "three";
 import { ACTORS } from "../src/content/actors";
 import {
   BUILDS,
@@ -23,14 +24,40 @@ const evidenceRoot = process.env.PLAYWRIGHT_EVIDENCE_DIR ?? "run-1";
 const five = ACTORS.slice(0, 5)
   .map((actor) => actor.slug)
   .join(",");
+type CameraEvidence = {
+  subject: string;
+  position: [number, number, number];
+  target: [number, number, number];
+  fov: number;
+  aspect: number;
+  bodies: { id: string; min: number[]; max: number[] }[];
+};
+const cameraEvidence = async (page: Page): Promise<CameraEvidence> =>
+  JSON.parse((await page.locator("canvas").getAttribute("data-scene-camera"))!);
+function expectFullFit(state: CameraEvidence) {
+  const camera = new PerspectiveCamera(state.fov, state.aspect, 0.05, 10000);
+  camera.position.set(...state.position);
+  camera.lookAt(new Vector3(...state.target));
+  camera.updateMatrixWorld(true);
+  for (const body of state.bodies) {
+    for (const x of [body.min[0], body.max[0]])
+      for (const y of [body.min[1], body.max[1] + 0.28])
+        for (const z of [body.min[2], body.max[2]]) {
+          const projected = new Vector3(x, y, z).project(camera);
+          expect(Math.abs(projected.x)).toBeLessThanOrEqual(1.01);
+          expect(Math.abs(projected.y)).toBeLessThanOrEqual(1.01);
+        }
+  }
+}
 const ready = async (page: Page) => {
   await expect(page.locator("canvas[data-scene-ready=true]")).toBeVisible({ timeout: 30_000 });
   await expect
     .poll(async () => {
       const state = readDraft(JSON.stringify(await draft(page)))!;
       return (
+        !state.camera.fit &&
         (await page.locator("canvas").getAttribute("data-scene-assets")) ===
-        state.figures.map((figure) => loadFigure(figure.build, figure.pose)).join(",")
+          state.figures.map((figure) => loadFigure(figure.build, figure.pose)).join(",")
       );
     })
     .toBe(true);
@@ -129,8 +156,14 @@ for (const locale of ["en", "zh"] as const)
       await expect(page.getByLabel(m["scene.pose"], { exact: true })).toHaveValue("arms-crossed");
       await expect(page.getByLabel(m["scene.axis.x"], { exact: true })).toHaveValue("-2.5");
       await page.getByRole("button", { name: m["scene.faceOff"], exact: true }).click();
-      for (const view of ["low", "high", "eye"])
-        await page.getByLabel(m["scene.camera"], { exact: true }).selectOption(view);
+      for (const view of ["low", "high", "eye", "shoulder"] as const) {
+        await page.getByRole("button", { name: m[`scene.view.${view}`], exact: true }).click();
+        await ready(page);
+        expect((await draft(page)).camera.view).toBe(view);
+        if (view !== "shoulder") expectFullFit(await cameraEvidence(page));
+      }
+      await page.getByRole("button", { name: m["scene.view.eye"], exact: true }).click();
+      await page.getByLabel(m["scene.subject"], { exact: true }).selectOption("everyone");
       await page.getByRole("button", { name: m["scene.fit"], exact: true }).click();
       await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
 
@@ -147,7 +180,7 @@ for (const locale of ["en", "zh"] as const)
         const bytes = await readFile((await download.path())!);
         expect(bytes.readUInt32BE(16)).toBe(dimensions[0]);
         const keyRows = Math.ceil(5 / Math.floor(dimensions[0] / 280));
-        expect(bytes.readUInt32BE(20)).toBe(dimensions[1] + keyRows * 64);
+        expect(bytes.readUInt32BE(20)).toBe(dimensions[1] + keyRows * 64 + 48);
         expect(bytes.length).toBeGreaterThan(15_000);
         // Figure bands remain above the separate, non-overlapping name key.
         const { data, info } = await sharp(bytes)
@@ -177,6 +210,78 @@ for (const locale of ["en", "zh"] as const)
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
         true,
       );
+      // The two main framing tasks, through the real controls in every locale/size.
+      await page.getByLabel(m["scene.frame"], { exact: true }).selectOption("landscape");
+      await page.getByRole("button", { name: m["scene.layout.talk"], exact: true }).click();
+      await page.locator("[data-scene-figures] button").last().click();
+      await page.getByLabel(m["scene.subject"], { exact: true }).selectOption("selected");
+      await page.getByLabel(m["scene.pose"], { exact: true }).selectOption("sit");
+      await page.getByRole("button", { name: m["scene.shot.full"], exact: true }).click();
+      await ready(page);
+      const posed = await cameraEvidence(page);
+      const seated = posed.bodies.find((body) => body.id === posed.subject)!;
+      expect(posed.target[1]).toBeCloseTo((seated.min[1] + seated.max[1] + 0.28) / 2, 3);
+      await page.getByLabel(m["scene.pose"], { exact: true }).selectOption("arms-crossed");
+      await page.getByRole("button", { name: m["scene.shot.close"], exact: true }).click();
+      const lensDistances: number[] = [];
+      for (const lens of [24, 50, 85]) {
+        await page.getByRole("button", { name: `${lens} mm`, exact: true }).click();
+        await ready(page);
+        const state = (await draft(page)).camera;
+        expect(state.lens).toBe(lens);
+        lensDistances.push(
+          Math.hypot(
+            ...state.position.map((value: number, index: number) => value - state.target[index]),
+          ),
+        );
+      }
+      expect(lensDistances[2]).toBeGreaterThan(lensDistances[0] * 2);
+      const closeCamera = (await draft(page)).camera;
+      await page.reload();
+      await ready(page);
+      expect((await draft(page)).camera).toEqual(closeCamera);
+      const sceneDownload = page.waitForEvent("download");
+      await page.getByRole("button", { name: m["scene.saveScene"], exact: true }).click();
+      const exportedScene = JSON.parse(
+        await readFile((await (await sceneDownload).path())!, "utf8"),
+      );
+      expect(exportedScene.camera).toEqual(closeCamera);
+      await writeFile(
+        `${evidenceRoot}/two-close-${locale}-${width}.json`,
+        JSON.stringify({ scene: exportedScene, camera: await cameraEvidence(page) }, null, 2),
+      );
+      if ((locale === "en" && width === 1440) || (locale === "zh" && width === 390)) {
+        await page
+          .locator("[data-scene-workspace]")
+          .evaluate((el) => window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 128));
+        await page.screenshot({ path: `${evidenceRoot}/shots/two-close-${locale}-${width}.png` });
+      }
+      if (locale === "en" && width === 1440) {
+        const png = page.waitForEvent("download");
+        await page.getByRole("button", { name: m["scene.savePng"], exact: true }).click();
+        await (await png).saveAs(`${evidenceRoot}/shots/two-close-export.png`);
+        expect((await draft(page)).camera).toEqual(closeCamera);
+      }
+      await page.getByRole("button", { name: m["scene.layout.lineup"], exact: true }).click();
+      await ready(page);
+      await expect(page.locator("[data-scene-figures] button")).toHaveCount(8);
+      expect((await draft(page)).camera).toMatchObject({ shot: "full", subject: "everyone" });
+      expectFullFit(await cameraEvidence(page));
+      await writeFile(
+        `${evidenceRoot}/eight-wide-${locale}-${width}.json`,
+        JSON.stringify({ scene: await draft(page), camera: await cameraEvidence(page) }, null, 2),
+      );
+      if ((locale === "zh" && width === 1440) || (locale === "en" && width === 390)) {
+        await page
+          .locator("[data-scene-workspace]")
+          .evaluate((el) => window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 128));
+        await page.screenshot({ path: `${evidenceRoot}/shots/eight-wide-${locale}-${width}.png` });
+      }
+      if (locale === "zh" && width === 1440) {
+        const png = page.waitForEvent("download");
+        await page.getByRole("button", { name: m["scene.savePng"], exact: true }).click();
+        await (await png).saveAs(`${evidenceRoot}/shots/eight-wide-export.png`);
+      }
       expect(errors).toEqual([]);
     });
   }
@@ -190,6 +295,11 @@ test("layouts and an uncapped cast keep numbered identities and undo", async ({ 
   await ready(page);
   await expect(page.locator("[data-scene-figures] button")).toHaveCount(20);
   expect(await page.evaluate(() => localStorage.getItem("sp-cast"))).toBe(all);
+  await expect(page.locator("[data-scene-key]")).toContainText("20 ·");
+  const largePng = page.waitForEvent("download");
+  await page.getByRole("button", { name: en["scene.savePng"], exact: true }).click();
+  const largeBytes = await readFile((await (await largePng).path())!);
+  expect(largeBytes.readUInt32BE(20)).toBe(1080 + Math.ceil(20 / 6) * 64 + 48);
   for (const [layout, count] of [
     ["talk", 2],
     ["triangle", 3],
@@ -209,12 +319,42 @@ test("layouts and an uncapped cast keep numbered identities and undo", async ({ 
   await page.reload();
   await ready(page);
   await expect(page.locator("[data-scene-figures] button")).toHaveCount(8);
+  const before = (await draft(page)).camera;
+  await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
+  const canvas = (await page.locator("canvas").boundingBox())!;
+  await page.mouse.move(canvas.x + 20, canvas.y + 20);
+  await page.mouse.down();
+  await page.mouse.move(canvas.x + 100, canvas.y + 35, { steps: 8 });
+  await page.mouse.up();
+  await expect.poll(async () => (await draft(page)).camera.position).not.toEqual(before.position);
+  const orbited = (await draft(page)).camera;
+  await page.getByRole("button", { name: en["scene.undo"], exact: true }).click();
+  await expect.poll(async () => (await draft(page)).camera.position).toEqual(before.position);
+  await page.getByRole("button", { name: en["scene.redo"], exact: true }).click();
+  await expect.poll(async () => (await draft(page)).camera.position).toEqual(orbited.position);
+  await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
+  await page.mouse.move(canvas.x + 20, canvas.y + 20);
+  await page.mouse.wheel(0, 200);
+  await expect.poll(async () => (await draft(page)).camera.position).not.toEqual(orbited.position);
+  const zoomed = (await draft(page)).camera;
+  await page.reload();
+  await ready(page);
+  expect((await draft(page)).camera).toEqual(zoomed);
 });
 
 test("figure GLBs and local draft obey the static asset contract", async () => {
   expect(readDraft("broken JSON")).toBeNull();
   const state = initialScene();
   const { setting, ...oldDraft } = state;
+  const oldCamera = { view: "eye", position: [0, 2, 7], target: [0, 1, 0] };
+  expect(readDraft(JSON.stringify({ ...state, camera: oldCamera }))?.camera).toMatchObject({
+    ...oldCamera,
+    lens: 50,
+    shot: "full",
+    sensorWidth: 36,
+    subject: "everyone",
+    fit: false,
+  });
   expect(readDraft(JSON.stringify(oldDraft))?.setting).toEqual(setting);
   expect(
     readDraft(JSON.stringify({ ...state, setting: { selected: "unknown", sentences: {} } })),
