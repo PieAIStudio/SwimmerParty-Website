@@ -162,12 +162,14 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
                   {t("sheet.action")}
                 </GameButton>
               ) : null}
-              <CastAddButton slug={actor.slug} locale={locale} name={name} />
-              <ActorHelpCard
-                label={t("guide.helpLabel")}
-                topics={helpTopics}
-                link={{ href: `/${locale}/guide`, label: t("help.fullGuide") }}
-              />
+              <div className="inline-flex shrink-0 items-center gap-3" data-actor-cast-help>
+                <CastAddButton slug={actor.slug} locale={locale} name={name} />
+                <ActorHelpCard
+                  label={t("guide.helpLabel")}
+                  topics={helpTopics}
+                  link={{ href: `/${locale}/guide`, label: t("help.fullGuide") }}
+                />
+              </div>
             </div>
             <div className="mt-3">
               <AssetHeroActions front={front} />

@@ -35,6 +35,15 @@ for (const locale of ["en", "zh"] as const) {
       await page.evaluate(() => document.fonts.ready);
       const terms = page.locator("[data-download-terms]").first();
       await page.screenshot({ path: `${report}/A-after-actor-${locale}-${width}.png` });
+      const pair = page.locator("[data-actor-cast-help]");
+      const cast = await pair.getByRole("button").first().boundingBox();
+      const help = await pair.locator("[data-actor-help-trigger]").boundingBox();
+      // Sharing a parent is not enough: the help icon must never wrap onto a row by itself.
+      expect(cast).not.toBeNull();
+      expect(help).not.toBeNull();
+      expect(
+        Math.abs(cast!.y + cast!.height / 2 - (help!.y + help!.height / 2)),
+      ).toBeLessThanOrEqual(1);
       const starter = page.locator("[data-starter-action]");
       await expect(starter.locator("[data-starter-facts]")).toBeVisible();
       await expect(starter.locator("[data-download-terms]")).toContainText(
