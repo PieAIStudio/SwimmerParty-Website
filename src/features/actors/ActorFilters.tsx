@@ -120,12 +120,12 @@ export function ActorFilters({
     <>
       <section
         data-actor-filters
-        className="rounded-[var(--game-ui-radius-card)] bg-card p-4 sm:p-6"
+        className="rounded-[var(--game-ui-radius-card)] bg-card p-3 sm:p-6"
         aria-label={t("roster.filters")}
       >
         <fieldset disabled={!interactive} aria-busy={!interactive} className="min-w-0 border-0 p-0">
           <div
-            className="grid grid-cols-2 items-end gap-3 md:grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)_minmax(0,1fr)_auto_auto]"
+            className="grid grid-cols-2 items-end gap-2 sm:gap-3 md:grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)_minmax(0,1fr)_auto_auto]"
             data-primary-filters
           >
             <label className="col-span-2 grid min-w-0 gap-1 md:col-span-1" htmlFor="actor-search">

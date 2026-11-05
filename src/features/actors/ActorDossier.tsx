@@ -119,27 +119,29 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
               <div className="sp-sweep sp-panel aspect-4/5" />
             )}
           </div>
-          <div className="min-w-0 lg:col-span-5">
-            <div className="flex flex-wrap items-center gap-3">
-              <GameBadge tone={actor.status === "active" ? "success" : "neutral"}>
-                {STATUS_LABEL[actor.status][locale]}
-              </GameBadge>
-              <VersionBadge
-                version={actor.version}
-                date={actor.versionDate}
-                note={actor.versionNote?.[locale]}
-                history={actor.versionHistory?.map((entry) => ({
-                  ...entry,
-                  note: entry.note[locale],
-                }))}
-              />
+          <div className="min-w-0 max-lg:grid lg:col-span-5">
+            <div>
+              <div className="flex flex-wrap items-center gap-3">
+                <GameBadge tone={actor.status === "active" ? "success" : "neutral"}>
+                  {STATUS_LABEL[actor.status][locale]}
+                </GameBadge>
+                <VersionBadge
+                  version={actor.version}
+                  date={actor.versionDate}
+                  note={actor.versionNote?.[locale]}
+                  history={actor.versionHistory?.map((entry) => ({
+                    ...entry,
+                    note: entry.note[locale],
+                  }))}
+                />
+              </div>
+              <h1 className="sp-display-lg mt-5">
+                {name}
+                <span className="sp-small mt-3 block font-sans text-muted-foreground">
+                  {alternate}
+                </span>
+              </h1>
             </div>
-            <h1 className="sp-display-lg mt-5">
-              {name}
-              <span className="sp-small mt-3 block font-sans text-muted-foreground">
-                {alternate}
-              </span>
-            </h1>
             <p className="sp-lead mt-6">{actor.tagline[locale]}</p>
             <div className="mt-6" data-starter-action>
               <StarterPackButton
@@ -183,7 +185,7 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
             </p>
             <p className="sp-small mt-1 text-muted-foreground">{t("actor.guestNote")}</p>
             {voice ? (
-              <div className="mt-5" data-actor-voice>
+              <div className="mt-5 max-lg:row-start-2" data-actor-voice>
                 <h2 className="sp-subtitle">{t("actor.voiceTitle", { name })}</h2>
                 <div className="mt-2">
                   <VoiceTile item={voice} label={t("assets.voice.intro")} reference />

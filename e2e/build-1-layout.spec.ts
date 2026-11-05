@@ -47,7 +47,7 @@ for (const locale of ["en", "zh"] as const) {
       const starter = page.locator("[data-starter-action]");
       await expect(starter.locator("[data-starter-facts]")).toBeVisible();
       await expect(starter.locator("[data-download-terms]")).toContainText(
-        locale === "en" ? "free Swimmer account" : "免费泳者账号",
+        locale === "en" ? "Sign in free with Swimmer" : "免费泳者账号",
       );
       if (width === 390) {
         const portrait = page.locator("[data-actor-portrait]");

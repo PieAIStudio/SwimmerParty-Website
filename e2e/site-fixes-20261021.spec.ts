@@ -4,13 +4,15 @@ import { OFFICIAL_SAMPLES } from "../src/content/official-samples.generated";
 import en from "../messages/en/messages.json";
 import zh from "../messages/zh-CN/messages.json";
 
-const OUT = ".devspace-reports/next-stage/site-fixes-20261021/after";
+const OUT = process.env.PLAYWRIGHT_REPORT_DIR
+  ? `${process.env.PLAYWRIGHT_REPORT_DIR}/site-fixes`
+  : ".devspace-reports/next-stage/site-fixes-20261021/after";
 const HEIGHT = 844;
 
 for (const locale of ["en", "zh"] as const) {
   const m = locale === "en" ? en : zh;
   for (const width of [390, 1440]) {
-    test("site fix first looks " + locale + " " + width, async ({ page }) => {
+    test("site fix first looks " + locale + " " + width, async ({ page }, testInfo) => {
       await mkdir(OUT, { recursive: true });
       await page.setViewportSize({ width, height: HEIGHT });
       await page.goto("/" + locale);
@@ -26,6 +28,10 @@ for (const locale of ["en", "zh"] as const) {
       await expect(first).toBeVisible();
       if (width === 390) {
         await expect(filters.locator("#actor-role")).toBeHidden();
+        const voiceFilter = filters.locator("#actor-voice label");
+        await expect(voiceFilter).toBeInViewport({ ratio: 1 });
+        const voiceFilterBox = await voiceFilter.boundingBox();
+        expect(voiceFilterBox!.y + voiceFilterBox!.height).toBeLessThanOrEqual(HEIGHT);
         const box = await first.boundingBox();
         expect(box).not.toBeNull();
         expect(box!.y).toBeLessThan(HEIGHT);
@@ -40,7 +46,20 @@ for (const locale of ["en", "zh"] as const) {
           animations: "disabled",
         });
       } else {
-        await expect(filters.locator("#actor-role")).toBeVisible();
+        const cards = page.locator("[data-actor-card]");
+        const originalCount = await cards.count();
+        await filters.getByRole("button", { name: m["roster.moreFilters"] }).click();
+        const role = filters.locator("#actor-role");
+        await expect(role).toBeVisible();
+        await expect(role).toBeEnabled();
+        await role.selectOption("boss");
+        await expect(role).toHaveValue("boss");
+        await expect(page).toHaveURL(/role=boss/);
+        await expect.poll(() => cards.count()).toBeGreaterThan(0);
+        await expect.poll(() => cards.count()).toBeLessThan(originalCount);
+        await role.selectOption("all");
+        await expect(cards).toHaveCount(originalCount);
+        expect(new URL(page.url()).searchParams.get("role")).toBeNull();
         await page.screenshot({
           path: OUT + "/roster-" + locale + "-1440.png",
           animations: "disabled",
@@ -62,6 +81,10 @@ for (const locale of ["en", "zh"] as const) {
       const voiceBox = await page.locator("[data-actor-voice] audio").boundingBox();
       expect(titleBox!.y).toBeLessThan(HEIGHT);
       if (width === 390) expect(voiceBox!.y).toBeLessThan(HEIGHT);
+      await testInfo.attach("actor-first-fold", {
+        body: JSON.stringify({ locale, width, title: titleBox, voice: voiceBox }),
+        contentType: "application/json",
+      });
       await page.screenshot({
         path: OUT + "/actor-" + locale + "-" + width + ".png",
         animations: "disabled",
