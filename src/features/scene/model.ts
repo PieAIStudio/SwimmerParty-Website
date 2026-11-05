@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { settingDraftSchema } from "@/features/settings/contracts";
 
-export const MAX_FIGURES = 5;
 export const DRAFT_KEY = "sp-scene-v1";
 export const POSES = ["stand", "walk", "point", "wave", "sit", "arms-crossed"] as const;
 export const BUILDS = ["slim", "average", "broad"] as const;
@@ -12,7 +11,13 @@ export const FIGURE_BANDS = [
   { colour: "magenta", hex: "#983f78" },
   { colour: "teal", hex: "#08776e" },
   { colour: "purple", hex: "#7044ae" },
+  { colour: "red", hex: "#aa4039" },
+  { colour: "green", hex: "#49702d" },
+  { colour: "slate", hex: "#506478" },
 ] as const;
+export const figureBand = (index: number) => FIGURE_BANDS[index % FIGURE_BANDS.length];
+export const LAYOUTS = { talk: 2, triangle: 3, group: 5, lineup: 8 } as const;
+export type Layout = keyof typeof LAYOUTS;
 export type FigureIdentity = { label: string; colour: string };
 export const VIEWS = ["eye", "low", "high"] as const;
 export const FRAMES = {
@@ -29,15 +34,15 @@ const figureSchema = z.object({
   heightCm: finite.min(80).max(240),
   build: z.enum(BUILDS),
   pose: z.enum(POSES),
-  x: finite.min(-5).max(5),
-  z: finite.min(-5).max(5),
+  x: finite,
+  z: finite,
   turn: finite.min(-180).max(180),
 });
 export const sceneSchema = z
   .object({
     version: z.literal(1),
     castKey: z.string(),
-    figures: z.array(figureSchema).min(1).max(MAX_FIGURES),
+    figures: z.array(figureSchema).min(1),
     frame: z.enum(["landscape", "portrait", "square"]),
     camera: z.object({ view: z.enum(VIEWS), position: point, target: point }),
     setting: settingDraftSchema,
@@ -75,6 +80,37 @@ export function arrange(figures: FigureState[], arrangement: "line" | "faceOff")
         },
   );
 }
+// Presets reuse assigned actors in order; one undo restores the previous cast/layout.
+export function applyLayout(figures: FigureState[], layout: Layout): FigureState[] {
+  return Array.from({ length: LAYOUTS[layout] }, (_, index) => {
+    const figure = figures[index] ?? makeFigure(crypto.randomUUID());
+    if (layout === "talk")
+      return {
+        ...figure,
+        x: index === 0 ? -0.85 : 0.85,
+        z: 0,
+        turn: index === 0 ? 65 : -65,
+        pose: index === 0 ? "point" : "arms-crossed",
+      };
+    if (layout === "triangle")
+      return {
+        ...figure,
+        x: (index - 1) * 1.25,
+        z: index === 1 ? -0.8 : 0.35,
+        turn: (1 - index) * 25,
+        pose: "stand",
+      };
+    if (layout === "group")
+      return {
+        ...figure,
+        x: index < 3 ? (index - 1) * 1.25 : (index - 3.5) * 1.35,
+        z: index < 3 ? -0.65 : 0.65,
+        turn: 0,
+        pose: "stand",
+      };
+    return { ...figure, x: (index - 3.5) * 1.1, z: 0, turn: 0, pose: "stand" };
+  });
+}
 export function fitCamera(
   figures: FigureState[],
   frame: Frame,
@@ -107,11 +143,10 @@ export function fitCamera(
   };
 }
 export function initialScene(actors: SceneActor[] = [], castKey = ""): SceneState {
-  if (actors.length > MAX_FIGURES) throw new Error("Choose at most five actors");
   const figures = arrange(
     actors.length
       ? actors.map((actor, index) => makeFigure(`figure-${index + 1}`, actor))
-      : [makeFigure("figure-1")],
+      : [makeFigure("figure-1"), makeFigure("figure-2")],
     "line",
   );
   return {

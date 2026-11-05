@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import { Component, useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   GameButton,
-  GameCheckbox,
   GameField,
   GameInput,
   GameSelect,
@@ -21,8 +20,10 @@ import {
   BUILDS,
   DRAFT_KEY,
   FRAMES,
-  FIGURE_BANDS,
-  MAX_FIGURES,
+  LAYOUTS,
+  figureBand,
+  applyLayout,
+  type Layout,
   POSES,
   VIEWS,
   arrange,
@@ -57,9 +58,6 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
   const { t } = useSiteI18n();
   const locale = useSiteLocale();
   const [history, setHistory] = useState<History | null>(null);
-  const [choose, setChoose] = useState<SceneActor[] | null>(null);
-  const [chosen, setChosen] = useState<string[]>([]);
-  const [castKey, setCastKey] = useState("");
   const [selected, setSelected] = useState("");
   const [storage, setStorage] = useState<"saved" | "storageUnavailable" | null>(null);
   const [exporter, setExporter] = useState<ExportPicture | null>(null);
@@ -68,7 +66,6 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
   const start = useCallback((value: SceneState) => {
     setHistory({ value, past: [], future: [] });
     setSelected(value.figures[0].id);
-    setChoose(null);
   }, []);
   useEffect(() => {
     const requested = new URLSearchParams(location.search).get("a") ?? "";
@@ -80,9 +77,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
     }
     const cast = actors.filter((actor) => requested.split(",").includes(actor.slug));
     queueMicrotask(() => {
-      setCastKey(requested);
       if (saved && (!requested || saved.castKey === requested)) start(saved);
-      else if (cast.length > MAX_FIGURES) setChoose(cast);
       else start(initialScene(cast, requested));
     });
   }, [actors, start]);
@@ -153,47 +148,10 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
           actors.find((actor) => actor.slug === item.actorSlug)?.name ??
           item.name ??
           t("scene.figure", { count: index + 1 });
-        return { label: `${index + 1} · ${name}`, colour: FIGURE_BANDS[index].hex };
+        return { label: `${index + 1} · ${name}`, colour: figureBand(index).hex };
       }),
     [figures, actors, t],
   );
-  if (choose)
-    return (
-      <section className="sp-card my-8 bg-card" data-scene-choose>
-        <h2 className="sp-title">{t("scene.chooseFive")}</h2>
-        <p className="mt-3">{t("scene.castUnchanged")}</p>
-        <div className="my-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {choose.map((actor) => (
-            <GameCheckbox
-              key={actor.slug}
-              label={actor.name}
-              checked={chosen.includes(actor.slug)}
-              disabled={chosen.length === MAX_FIGURES && !chosen.includes(actor.slug)}
-              onChange={(checked) =>
-                setChosen((previous) =>
-                  checked
-                    ? [...previous, actor.slug]
-                    : previous.filter((slug) => slug !== actor.slug),
-                )
-              }
-            />
-          ))}
-        </div>
-        <GameButton
-          disabled={!chosen.length}
-          onClick={() =>
-            start(
-              initialScene(
-                choose.filter((actor) => chosen.includes(actor.slug)),
-                castKey,
-              ),
-            )
-          }
-        >
-          {t("scene.start")}
-        </GameButton>
-      </section>
-    );
   if (!history) return <output className="block py-12">{t("scene.loading")}</output>;
   const scene = history.value;
   const figure = scene.figures.find((item) => item.id === selected) ?? scene.figures[0];
@@ -217,7 +175,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
     ...scene.figures.map((item, index) => {
       const identity = {
         label: identities[index].label,
-        colour: t(`scene.colour.${FIGURE_BANDS[index].colour}`),
+        colour: t(`scene.colour.${figureBand(index).colour}`),
       };
       return item.actorSlug
         ? t("scene.promptActor", {
@@ -229,6 +187,28 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
   ].join("\n");
   return (
     <div className="pb-16" data-scene-editor>
+      <section className="mb-5" aria-label={t("scene.layouts")}>
+        <h2 className="sp-small mb-2">{t("scene.layouts")}</h2>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4" data-scene-layouts>
+          {(Object.keys(LAYOUTS) as Layout[]).map((layout) => (
+            <GameButton
+              key={layout}
+              onClick={() =>
+                change((value) => {
+                  const figures = applyLayout(value.figures, layout);
+                  return {
+                    ...value,
+                    figures,
+                    camera: fitCamera(figures, value.frame, value.camera.view),
+                  };
+                })
+              }
+            >
+              {t(`scene.layout.${layout}`)}
+            </GameButton>
+          ))}
+        </div>
+      </section>
       <div className="mb-5 flex flex-wrap items-center gap-3">
         <GameButton
           variant="primary"
@@ -317,7 +297,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
           <p className="sp-small mt-3 flex flex-wrap gap-x-4 gap-y-1" data-scene-key>
             {identities.map((identity, index) => (
               <span key={identity.label}>
-                {identity.label} ({t(`scene.colour.${FIGURE_BANDS[index].colour}`)})
+                {identity.label} ({t(`scene.colour.${figureBand(index).colour}`)})
               </span>
             ))}
           </p>
@@ -330,7 +310,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
         </div>
         <aside className="sp-card min-w-0 bg-card" aria-label={t("scene.figures")}>
           <h2 className="sp-subtitle">
-            {t("scene.figures")} · {scene.figures.length}/{MAX_FIGURES}
+            {t("scene.figures")} · {scene.figures.length}
           </h2>
           <div className="my-4 flex flex-wrap gap-2" data-scene-figures>
             {scene.figures.map((item, index) => (
@@ -348,10 +328,9 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
           <div className="mb-5 flex flex-wrap gap-2">
             <GameButton
               size="sm"
-              disabled={scene.figures.length >= MAX_FIGURES}
               onClick={() => {
                 const next = makeFigure(crypto.randomUUID());
-                next.x = Math.min(5, Math.max(...scene.figures.map((item) => item.x)) + 1);
+                next.x = Math.max(...scene.figures.map((item) => item.x)) + 1.1;
                 change((value) => ({ ...value, figures: [...value.figures, next] }));
                 setSelected(next.id);
               }}
@@ -372,6 +351,9 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
               {t("scene.remove")}
             </GameButton>
           </div>
+          {scene.figures.length > 8 ? (
+            <p className="sp-small mb-5 text-muted-foreground">{t("scene.performance")}</p>
+          ) : null}
           <div className="space-y-5">
             <GameField label={t("scene.pose")}>
               <GameSelect
@@ -421,14 +403,11 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
                   <GameInput
                     type="number"
                     aria-label={t(`scene.axis.${axis}`)}
-                    min={-5}
-                    max={5}
                     step={0.1}
                     value={Number(figure[axis].toFixed(2))}
                     onChange={(event) => {
                       const number = event.target.valueAsNumber;
-                      if (Number.isFinite(number))
-                        patch({ [axis]: Math.max(-5, Math.min(5, number)) });
+                      if (Number.isFinite(number)) patch({ [axis]: number });
                     }}
                   />
                 </GameField>

@@ -57,19 +57,14 @@ for (const locale of ["en", "zh"] as const)
         await page.getByLabel(m["scene.build"], { exact: true }).selectOption(build);
         await ready(page);
         await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
-        await page.screenshot({
-          path: `${evidenceRoot}/shots/${evidencePrefix}-one-${build}-${locale}-${width}.png`,
-        });
       }
       await page.goto(`/${locale}/cast?a=${five}`);
       await page.locator("[data-scene-entry]").click();
       await ready(page);
       await page.evaluate(() => document.fonts.ready);
-      await page.screenshot({
-        path: `${evidenceRoot}/shots/${evidencePrefix}-entry-${locale}-${width}.png`,
-      });
+
       await expect(page.locator("[data-scene-figures] button")).toHaveCount(5);
-      await expect(page.getByRole("button", { name: m["scene.add"], exact: true })).toBeDisabled();
+      await expect(page.getByRole("button", { name: m["scene.add"], exact: true })).toBeEnabled();
       // Five standing figures reuse one GLB; there is no family preload.
       const initialGlbs = await page.evaluate(() =>
         performance
@@ -92,9 +87,6 @@ for (const locale of ["en", "zh"] as const)
           await ready(page);
         }
         await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
-        await page.screenshot({
-          path: `${evidenceRoot}/shots/${evidencePrefix}-five-${build}-${locale}-${width}.png`,
-        });
       }
       await page.locator("[data-scene-figures] button").first().click();
       const prompt = page.locator("[data-scene-prompt] textarea");
@@ -116,19 +108,11 @@ for (const locale of ["en", "zh"] as const)
         await prompt.inputValue(),
       );
       await page.locator("[data-scene-prompt]").scrollIntoViewIfNeeded();
-      await page.screenshot({
-        path: `${evidenceRoot}/shots/${evidencePrefix}-prompt-${locale}-${width}.png`,
-      });
+
       // All six static poses and three independent model variants remain usable.
       for (const pose of POSES) {
         await page.getByLabel(m["scene.pose"], { exact: true }).selectOption(pose);
         await ready(page);
-        if (locale === "en" && width === 1440) {
-          await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
-          await page.screenshot({
-            path: `${evidenceRoot}/shots/${evidencePrefix}-pose-${pose}.png`,
-          });
-        }
       }
       for (const build of BUILDS) {
         await page.getByLabel(m["scene.build"], { exact: true }).selectOption(build);
@@ -149,13 +133,9 @@ for (const locale of ["en", "zh"] as const)
         await page.getByLabel(m["scene.camera"], { exact: true }).selectOption(view);
       await page.getByRole("button", { name: m["scene.fit"], exact: true }).click();
       await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
-      await page.screenshot({
-        path: `${evidenceRoot}/shots/${evidencePrefix}-stage-${locale}-${width}.png`,
-      });
+
       await page.locator("aside[aria-label]").last().scrollIntoViewIfNeeded();
-      await page.screenshot({
-        path: `${evidenceRoot}/shots/${evidencePrefix}-controls-${locale}-${width}.png`,
-      });
+
       for (const [frame, dimensions] of Object.entries(FRAMES)) {
         await page.getByLabel(m["scene.frame"], { exact: true }).selectOption(frame);
         await page.getByRole("button", { name: m["scene.fit"], exact: true }).click();
@@ -164,18 +144,17 @@ for (const locale of ["en", "zh"] as const)
         const downloadPromise = page.waitForEvent("download");
         await page.getByRole("button", { name: m["scene.savePng"], exact: true }).click();
         const download = await downloadPromise;
-        const path = `${evidenceRoot}/shots/${evidencePrefix}-export-${frame}-${locale}-${width}.png`;
-        await download.saveAs(path);
-        const bytes = await readFile(path);
+        const bytes = await readFile((await download.path())!);
         expect(bytes.readUInt32BE(16)).toBe(dimensions[0]);
-        expect(bytes.readUInt32BE(20)).toBe(dimensions[1]);
+        const keyRows = Math.ceil(5 / Math.floor(dimensions[0] / 280));
+        expect(bytes.readUInt32BE(20)).toBe(dimensions[1] + keyRows * 64);
         expect(bytes.length).toBeGreaterThan(15_000);
         // Figure bands remain above the separate, non-overlapping name key.
         const { data, info } = await sharp(bytes)
           .removeAlpha()
           .raw()
           .toBuffer({ resolveWithObject: true });
-        for (const band of FIGURE_BANDS) {
+        for (const band of FIGURE_BANDS.slice(0, 5)) {
           const rgb = band.hex
             .slice(1)
             .match(/../g)!
@@ -183,7 +162,7 @@ for (const locale of ["en", "zh"] as const)
           let pixels = 0;
           for (
             let offset = 0;
-            offset < info.width * (info.height - 80) * info.channels;
+            offset < info.width * dimensions[1] * info.channels;
             offset += info.channels
           )
             if (rgb.every((value, channel) => Math.abs(data[offset + channel] - value) <= 2))
@@ -194,9 +173,6 @@ for (const locale of ["en", "zh"] as const)
         const after = await page.locator("[data-scene-frame]").boundingBox();
         expect(after!.width).toBeCloseTo(frameBox!.width);
         await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
-        await page.screenshot({
-          path: `${evidenceRoot}/shots/${evidencePrefix}-frame-${frame}-${locale}-${width}.png`,
-        });
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
         true,
@@ -205,27 +181,34 @@ for (const locale of ["en", "zh"] as const)
     });
   }
 
-test("more than five actors asks explicitly and does not edit the saved cast", async ({ page }) => {
-  const all = ACTORS.slice(0, 7)
+test("layouts and an uncapped cast keep numbered identities and undo", async ({ page }) => {
+  const all = ACTORS.slice(0, 20)
     .map((actor) => actor.slug)
     .join(",");
   await page.addInitScript((cast) => localStorage.setItem("sp-cast", cast), all);
   await page.goto(`/en/scene?a=${all}`);
-  const chooser = page.locator("[data-scene-choose]");
-  await expect(chooser).toBeVisible();
-  await expect(page.locator("canvas")).toHaveCount(0);
-  const choices = chooser.getByRole("checkbox");
-  for (let index = 0; index < 5; index++) {
-    // UIKit's painted label is the pointer target; the native input remains keyboard-operable.
-    await choices.nth(index).focus();
-    await choices.nth(index).press("Space");
-    await expect(choices.nth(index)).toBeChecked();
-  }
-  await expect(choices.nth(5)).toBeDisabled();
-  await chooser.getByRole("button", { name: en["scene.start"] }).click();
   await ready(page);
+  await expect(page.locator("[data-scene-figures] button")).toHaveCount(20);
   expect(await page.evaluate(() => localStorage.getItem("sp-cast"))).toBe(all);
-  await expect(page.locator("[data-scene-figures] button")).toHaveCount(5);
+  for (const [layout, count] of [
+    ["talk", 2],
+    ["triangle", 3],
+    ["group", 5],
+    ["lineup", 8],
+  ] as const) {
+    await page.getByRole("button", { name: en[`scene.layout.${layout}`], exact: true }).click();
+    await ready(page);
+    await expect(page.locator("[data-scene-figures] button")).toHaveCount(count);
+    expect(readDraft(JSON.stringify(await draft(page)))?.figures).toHaveLength(count);
+  }
+  await page.getByRole("button", { name: en["scene.add"], exact: true }).click();
+  await expect(page.locator("[data-scene-figures] button")).toHaveCount(9);
+  await expect(page.locator("[data-scene-key]")).toContainText("9 ·");
+  await page.getByRole("button", { name: en["scene.undo"], exact: true }).click();
+  await expect(page.locator("[data-scene-figures] button")).toHaveCount(8);
+  await page.reload();
+  await ready(page);
+  await expect(page.locator("[data-scene-figures] button")).toHaveCount(8);
 });
 
 test("figure GLBs and local draft obey the static asset contract", async () => {

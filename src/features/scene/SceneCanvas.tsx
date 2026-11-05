@@ -31,7 +31,6 @@ import type { ExportPicture, SceneCanvasProps } from "./canvas-contract";
 
 type OrbitApi = ComponentRef<typeof OrbitControls>;
 const floor = new Plane(new Vector3(0, 1, 0), 0);
-const clamp = (value: number) => Math.max(-5, Math.min(5, value));
 
 function FigureLabel({ identity, y }: { identity: FigureIdentity; y: number }) {
   const texture = useMemo(() => {
@@ -124,7 +123,7 @@ function Figure({
     const point = event.ray.intersectPlane(floor, new Vector3());
     if (!point) return;
     point.sub(drag.current.offset);
-    root.current.position.set(clamp(point.x), 0, clamp(point.z));
+    root.current.position.set(point.x, 0, point.z);
     invalidate();
   }
   function up(event: ThreeEvent<PointerEvent>) {
@@ -204,24 +203,31 @@ function Runtime({
         gl.render(scene, camera);
         const picture = window.document.createElement("canvas");
         picture.width = width;
-        picture.height = height;
+        const columns = Math.max(1, Math.floor(width / 280));
+        const rows = Math.ceil(identities.length / columns);
+        picture.height = height + rows * 64;
         const context = picture.getContext("2d")!;
         context.drawImage(gl.domElement, 0, 0);
         // A fixed name key stays readable even when the camera puts figures behind one another.
         // The matching number and band remain attached to each figure in the 3D view.
-        const column = width / identities.length;
-        const fontSize = Math.min(28, width / (identities.length * 9));
-        context.font = `600 ${fontSize}px system-ui, sans-serif`;
+        const column = width / columns;
+        context.fillStyle = "#eeebe5";
+        context.fillRect(0, height, width, rows * 64);
+        context.font = "600 24px system-ui, sans-serif";
         context.textAlign = "center";
         context.textBaseline = "middle";
         identities.forEach((identity, index) => {
-          const left = index * column + 12;
+          const left = (index % columns) * column + 12;
+          const top = height + Math.floor(index / columns) * 64;
           context.fillStyle = "#ffffff";
-          context.fillRect(left, height - 72, column - 24, 56);
+          context.fillRect(left, top + 4, column - 24, 56);
           context.fillStyle = "#202124";
-          context.fillText(identity.label, (index + 0.5) * column, height - 48, column - 40);
+          let label = identity.label;
+          while (context.measureText(label).width > column - 40 && label.length > 1)
+            label = label.slice(0, -2) + "…";
+          context.fillText(label, left + (column - 24) / 2, top + 27);
           context.fillStyle = identity.colour;
-          context.fillRect(left, height - 24, column - 24, 8);
+          context.fillRect(left, top + 48, column - 24, 8);
         });
         return await new Promise<Blob>((resolve, reject) =>
           picture.toBlob(
@@ -326,7 +332,7 @@ function Runtime({
         makeDefault
         enableDamping={false}
         minDistance={1.5}
-        maxDistance={35}
+        maxDistance={1000}
         maxPolarAngle={Math.PI * 0.55}
         onEnd={() => {
           if (controls.current)
