@@ -1,7 +1,12 @@
 import { test, expect, type BrowserContext } from "@playwright/test";
 import { mkdir, readFile, readdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { SETTING_IDS, SETTING_MANIFEST } from "../src/content/settings";
+import {
+  SETTING_GROUPS,
+  SETTING_IDS,
+  SETTING_MANIFEST,
+  type SettingId,
+} from "../src/content/settings";
 import { LICENSE } from "../src/content/license";
 import en from "../messages/en/messages.json";
 import zh from "../messages/zh-CN/messages.json";
@@ -42,41 +47,71 @@ for (const locale of ["en", "zh"] as const)
         await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
         await page.goto(`/${locale}/${route}`, { waitUntil: "domcontentloaded" });
         const picker = page.locator("[data-setting-picker]");
-        await expect(picker.locator("[data-setting-card]")).toHaveCount(6);
-        await expect(picker.locator("[data-setting-placeholder]")).toHaveCount(0);
-        await expect(picker.locator("img")).toHaveCount(6);
-        for (const id of SETTING_IDS) {
-          const image = picker.locator(`[data-setting-card=${id}] img`);
-          const reference = SETTING_MANIFEST[id].image!;
-          await expect(image).toHaveAttribute("alt", m[`settings.name.${id}`]);
-          await expect(image).toHaveAttribute("loading", "lazy");
-          await expect(image).toHaveAttribute("width", String(reference.width));
-          await expect(image).toHaveAttribute("height", String(reference.height));
-          await image.scrollIntoViewIfNeeded();
-          await image.evaluate((node: HTMLImageElement) => node.decode());
-          expect(
-            await image.evaluate((node: HTMLImageElement) => node.naturalWidth),
-          ).toBeGreaterThan(0);
+        expect(SETTING_IDS).toHaveLength(26);
+        const counts = { indoor: 9, outdoor: 10, night: 7 };
+        const groupIds = (group: (typeof SETTING_GROUPS)[number]) =>
+          SETTING_IDS.filter((id) => SETTING_MANIFEST[id].group === group);
+        const selectGroup = async (group: (typeof SETTING_GROUPS)[number]) => {
+          const control = picker.getByRole("button", {
+            name: `${m[`settings.group.${group}`]} (${counts[group]})`,
+            exact: true,
+          });
+          if ((await control.getAttribute("aria-pressed")) !== "true") await control.click();
+          await expect(control).toHaveAttribute("aria-pressed", "true");
+        };
+        const selectSetting = async (id: SettingId) => {
+          await selectGroup(SETTING_MANIFEST[id].group);
+          await picker.getByRole("button", { name: m[`settings.name.${id}`], exact: true }).click();
+        };
+        await expect(picker.locator("[data-setting-groups] button")).toHaveCount(3);
+        for (const group of SETTING_GROUPS) {
+          await selectGroup(group);
+          await expect(picker.locator("[data-setting-card]")).toHaveCount(counts[group]);
+          await expect(picker.locator("[data-setting-placeholder]")).toHaveCount(0);
+          await expect(picker.locator("img")).toHaveCount(counts[group]);
+          for (const id of groupIds(group)) {
+            const image = picker.locator(`[data-setting-card=${id}] img`);
+            const reference = SETTING_MANIFEST[id].image!;
+            await expect(image).toHaveAttribute("alt", m[`settings.name.${id}`]);
+            await expect(image).toHaveAttribute("loading", "lazy");
+            await expect(image).toHaveAttribute("width", String(reference.width));
+            await expect(image).toHaveAttribute("height", String(reference.height));
+            await image.scrollIntoViewIfNeeded();
+            await image.evaluate((node: HTMLImageElement) => node.decode());
+            expect(
+              await image.evaluate((node: HTMLImageElement) => node.naturalWidth),
+            ).toBeGreaterThan(0);
+          }
+          await page.evaluate(() => document.fonts.ready);
+          // Chromium's if-needed scroll can leave a fractional edge clipped after group changes.
+          await picker
+            .locator("[data-setting-card]")
+            .last()
+            .evaluate((node) => node.scrollIntoView({ block: "center", behavior: "instant" }));
+          await expect(picker.locator("[data-setting-card]").last()).toBeInViewport({ ratio: 1 });
+          await page.screenshot({
+            path: `${evidenceRoot}/shots/B-picker-${route}-${locale}-${width}-${group}-bottom.png`,
+          });
+          await picker.getByRole("heading", { level: 2 }).evaluate((node) =>
+            window.scrollTo({
+              top: scrollY + node.getBoundingClientRect().top - 88,
+              behavior: "instant",
+            }),
+          );
+          await page.screenshot({
+            path: `${evidenceRoot}/shots/B-picker-${route}-${locale}-${width}-${group}.png`,
+          });
         }
-        await page.evaluate(() => document.fonts.ready);
-        await picker.getByRole("heading", { level: 2 }).evaluate((node) =>
-          window.scrollTo({
-            top: scrollY + node.getBoundingClientRect().top - 88,
-            behavior: "instant",
-          }),
-        );
-        await expect(picker.locator("[data-setting-card]").last()).toBeInViewport({ ratio: 1 });
-        await page.screenshot({
-          path: `${evidenceRoot}/shots/B-picker-${route}-${locale}-${width}.png`,
-        });
         const sentence = picker.getByLabel(m["settings.sentence"], { exact: true });
         const edits = new Map<string, string>();
-        for (const id of SETTING_IDS) {
+        for (const id of SETTING_GROUPS.flatMap(groupIds)) {
+          await selectGroup(SETTING_MANIFEST[id].group);
           const card = picker.locator(`[data-setting-card=${id}]`);
           const button = card.getByRole("button", { name: m[`settings.name.${id}`], exact: true });
           await button.click();
           await expect(button).toHaveAttribute("aria-pressed", "true");
           await expect(sentence).toHaveValue(m[`settings.sentence.${id}`]);
+          expect(m[`settings.sentence.${id}`].length).toBeLessThanOrEqual(300);
           const edited = `${m[`settings.sentence.${id}`]} ${locale === "en" ? "Test note." : "测试备注。"}`;
           edits.set(id, edited);
           await sentence.fill(edited);
@@ -88,7 +123,7 @@ for (const locale of ["en", "zh"] as const)
           const save = picker.getByRole("button", { name: m["settings.saveImage"], exact: true });
           await expect(save).toBeEnabled();
           await expect(picker.getByText(m["settings.notSupplied"], { exact: true })).toHaveCount(0);
-          // Check all six originals once, plus a real save in each route/locale/viewport.
+          // Check all 26 originals once, plus a real save in each route/locale/viewport.
           if ((route === "guide" && locale === "en" && width === 1440) || id === "studio") {
             const reference = SETTING_MANIFEST[id].image!;
             const downloadEvent = page.waitForEvent("download");
@@ -112,14 +147,12 @@ for (const locale of ["en", "zh"] as const)
         await page.screenshot({
           path: `${evidenceRoot}/shots/B-editor-${route}-${locale}-${width}.png`,
         });
-        await picker.getByRole("button", { name: m["settings.name.studio"], exact: true }).click();
+        await selectSetting("studio");
         await expect(sentence).toHaveValue(edits.get("studio")!);
         if (route === "scene") {
           await page.reload({ waitUntil: "domcontentloaded" });
-          for (const id of SETTING_IDS) {
-            await picker
-              .getByRole("button", { name: m[`settings.name.${id}`], exact: true })
-              .click();
+          for (const id of SETTING_GROUPS.flatMap(groupIds)) {
+            await selectSetting(id);
             await expect(sentence).toHaveValue(edits.get(id)!);
           }
         }

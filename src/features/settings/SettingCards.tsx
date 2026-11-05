@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
-import { GameButton, GameField, GameTextArea } from "@pieai/swimmer-ui-kit";
-import { SETTING_IDS, SETTING_MANIFEST } from "@/content/settings";
+import { GameButton, GameField, GameSegmentedControl, GameTextArea } from "@pieai/swimmer-ui-kit";
+import { SETTING_GROUPS, SETTING_IDS, SETTING_MANIFEST } from "@/content/settings";
 import { useSiteI18n } from "@/i18n/client";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { CopyButton } from "@/site/CopyButton";
@@ -28,6 +28,8 @@ export function SettingCards({
   const interactive = useSyncExternalStore(subscribeHydration, clientSnapshot, serverSnapshot);
   const value = draft ?? local;
   const selected = value.selected;
+  const group = SETTING_MANIFEST[selected].group;
+  const visibleIds = SETTING_IDS.filter((id) => SETTING_MANIFEST[id].group === group);
   const image = SETTING_MANIFEST[selected].image;
   const sentence = value.sentences[selected] ?? t(`settings.sentence.${selected}`);
   const [downloading, setDownloading] = useState(false);
@@ -68,8 +70,23 @@ export function SettingCards({
       </h2>
       <p className="sp-small mt-4 max-w-3xl text-muted-foreground">{t("settings.intro")}</p>
       <p className="sp-small mt-2 max-w-3xl text-muted-foreground">{t("settings.separate")}</p>
-      <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
-        {SETTING_IDS.map((id) => {
+      <div className="mt-6" data-setting-groups>
+        <GameSegmentedControl
+          label={t("settings.group")}
+          activeId={group}
+          disabled={downloading || !interactive}
+          options={SETTING_GROUPS.map((id) => ({
+            id,
+            label: `${t(`settings.group.${id}`)} (${SETTING_IDS.filter((setting) => SETTING_MANIFEST[setting].group === id).length})`,
+          }))}
+          onSelect={(next) => {
+            const first = SETTING_IDS.find((id) => SETTING_MANIFEST[id].group === next);
+            if (first) change({ ...value, selected: first });
+          }}
+        />
+      </div>
+      <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
+        {visibleIds.map((id) => {
           const reference = SETTING_MANIFEST[id].image;
           const name = t(`settings.name.${id}`);
           return (

@@ -150,7 +150,14 @@ for (const locale of ["en", "zh"] as const)
       if (width === 1440) {
         const row = await page.locator("[data-primary-filters]").boundingBox();
         expect(row!.height).toBeLessThan(90);
+        const voice = await page.locator("#actor-voice label").boundingBox();
+        const gender = await page.locator("#actor-gender").boundingBox();
+        expect(
+          Math.abs(voice!.y + voice!.height / 2 - gender!.y - gender!.height / 2),
+        ).toBeLessThanOrEqual(1);
       }
+      await mkdir(report, { recursive: true });
+      await page.screenshot({ path: `${report}/filters-${locale}-${width}-default.png` });
       await expect(page.locator("[data-tool-legend]")).toBeVisible();
       await page.getByRole("button", { name: m["roster.moreFilters"], exact: true }).click();
       await page.locator("#actor-origin").focus();

@@ -163,7 +163,7 @@ export function ActorFilters({
                 <option value="male">{t("roster.filters.men")}</option>
               </GameSelect>
             </label>
-            <div id="actor-voice">
+            <div id="actor-voice" className="flex h-11 items-center">
               <GameCheckbox
                 label={t("roster.hasVoice")}
                 checked={filters.voice}
