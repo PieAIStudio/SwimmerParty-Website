@@ -259,6 +259,13 @@
     background: var(--game-ui-bg);
   }
 
+  /* Show the complete actor before phone download choices, without a tall first fold. */
+  @media (width < 64rem) {
+    .sp-actor-portrait [data-lightbox-item] {
+      height: 20rem;
+    }
+  }
+
   /* A neutral export surface, independent of the surrounding UI theme. */
   .sp-scene-frame {
     width: 100%;

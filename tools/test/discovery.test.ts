@@ -51,7 +51,7 @@ const facets = makeActorFacets(
 );
 
 test("URL filters round trip and preserve foreign query state", () => {
-  const f = { ...DEFAULT_ACTOR_FILTERS, q: "One", origin: "Town", voice: true, role: "boss" };
+  const f = { ...DEFAULT_ACTOR_FILTERS, q: "One", origin: "Town", voice: true, role: "boss", readiness: "active" };
   const search = actorFilterSearch(f, "ref=shared&age=over45");
   assert.equal(new URLSearchParams(search).get("ref"), "shared");
   assert.deepEqual(readActorFilters(search, ["Town"]), f);
@@ -59,11 +59,12 @@ test("URL filters round trip and preserve foreign query state", () => {
 });
 test("invalid, repeated and overlong inputs have bounded deterministic defaults", () => {
   const f = readActorFilters(
-    `q=${"a".repeat(150)}&role=unknown&origin=unknown&voice=true&gender=male&gender=female`,
+    `q=${"a".repeat(150)}&role=unknown&readiness=unknown&origin=unknown&voice=true&gender=male&gender=female`,
     ["Town"],
   );
   assert.equal(f.q.length, 120);
   assert.equal(f.role, "all");
+  assert.equal(f.readiness, "all");
   assert.equal(f.origin, "all");
   assert.equal(f.voice, false);
   assert.equal(f.gender, "male");
@@ -90,6 +91,20 @@ test("name, origin and appearance search use authored text in both locales", () 
       look: "short glasses",
     }).map((x) => x.slug),
     ["one"],
+  );
+});
+test("readiness selects the real tier and intersects other filters", () => {
+  assert.deepEqual(
+    filterActors([a, b], facets, { ...DEFAULT_ACTOR_FILTERS, readiness: "active" }).map(x => x.slug),
+    ["one"],
+  );
+  assert.deepEqual(
+    filterActors([a, b], facets, { ...DEFAULT_ACTOR_FILTERS, readiness: "new-face" }).map(x => x.slug),
+    ["two"],
+  );
+  assert.deepEqual(
+    filterActors([a, b], facets, { ...DEFAULT_ACTOR_FILTERS, readiness: "new-face", voice: true }),
+    [],
   );
 });
 test("filters intersect rather than broadening a zero-result query", () => {

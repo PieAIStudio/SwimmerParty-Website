@@ -3,13 +3,18 @@ import { mkdir } from "node:fs/promises";
 import en from "../messages/en/messages.json";
 import zh from "../messages/zh-CN/messages.json";
 
+const report = process.env.PLAYWRIGHT_REPORT_DIR
+  ? `${process.env.PLAYWRIGHT_REPORT_DIR}/navigation`
+  : ".reports/next-stage/a3";
 for (const locale of ["en", "zh"] as const) {
-  for (const width of [390, 768, 1440]) {
-    test(`A3 four tasks and footer routes ${locale} ${width}`, async ({ page }) => {
+  for (const width of [390, 768, 1024, 1440]) {
+    test(`A3 creator tasks, license, studio and footer routes ${locale} ${width}`, async ({
+      page,
+    }) => {
       const m = locale === "en" ? en : zh;
       await page.setViewportSize({ width, height: 900 });
       await page.goto(`/${locale}/cast`);
-      if (width < 1024)
+      if (width < 1280)
         await page.getByRole("button", { name: m["common.menu"], exact: true }).click();
       const nav = page
         .getByRole("navigation", { name: m["common.mainNav"], exact: true })
@@ -17,10 +22,13 @@ for (const locale of ["en", "zh"] as const) {
       const links = nav.getByRole("link");
       await expect(links).toHaveText(
         locale === "en"
-          ? ["Actors", "Samples", "How to use", "My cast"]
-          : ["演员", "样片", "怎么用", "选角单"],
+          ? ["Actors", "Samples", "How to use", "My cast", "Free License", "Studio"]
+          : ["演员", "样片", "怎么用", "选角单", "免费商用", "工作室"],
       );
-      await expect(links.last()).toHaveAttribute("aria-current", "page");
+      await expect(nav.locator(`a[href="/${locale}/cast"]`)).toHaveAttribute(
+        "aria-current",
+        "page",
+      );
       expect(
         await links.evaluateAll((nodes) => nodes.map((node) => node.getAttribute("href"))),
       ).toEqual([
@@ -28,8 +36,10 @@ for (const locale of ["en", "zh"] as const) {
         `/${locale}/works#samples`,
         `/${locale}/guide`,
         `/${locale}/cast`,
+        `/${locale}/license`,
+        `/${locale}/studio`,
       ]);
-      if (width < 1024) {
+      if (width < 1280) {
         const signIn = page
           .getByRole("dialog")
           .getByRole("button", { name: m["assets.signIn"], exact: true });
@@ -38,9 +48,9 @@ for (const locale of ["en", "zh"] as const) {
         expect(box!.x).toBeGreaterThanOrEqual(0);
         expect(box!.x + box!.width).toBeLessThanOrEqual(width);
       }
-      await mkdir(".devspace-reports/next-stage/a3", { recursive: true });
-      await page.screenshot({ path: `.devspace-reports/next-stage/a3/nav-${locale}-${width}.png` });
-      if (width < 1024) {
+      await mkdir(report, { recursive: true });
+      await page.screenshot({ path: `${report}/nav-${locale}-${width}.png` });
+      if (width < 1280) {
         await page.keyboard.press("Escape");
         await expect(
           page.getByRole("button", { name: m["common.menu"], exact: true }),
@@ -80,5 +90,6 @@ test("A3 the starter action has a visible linked credit summary", async ({ page 
     "/en/license#credit",
   );
   await page.locator("[data-download-terms]").first().scrollIntoViewIfNeeded();
-  await page.screenshot({ path: ".devspace-reports/next-stage/a3/download-terms-en-390.png" });
+  await mkdir(report, { recursive: true });
+  await page.screenshot({ path: `${report}/download-terms-en-390.png` });
 });

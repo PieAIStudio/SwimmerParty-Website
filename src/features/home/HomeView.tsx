@@ -28,6 +28,13 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
             <span className="block whitespace-nowrap">{t("home.heroLines.1")}</span>
           </h1>
           <p className="sp-lead mt-5 max-w-[28rem] text-muted-foreground">{t("home.heroBody")}</p>
+          <Link
+            href="/license"
+            data-home-license
+            className="sp-small mt-3 inline-block underline underline-offset-4"
+          >
+            {t("home.licenseBadge")}
+          </Link>
           <p className="sp-small mt-4 flex flex-wrap gap-x-4 gap-y-1 text-muted-foreground">
             <span data-ready-count={ready.length}>
               {t("home.readyCount", { count: ready.length })}
@@ -106,7 +113,6 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
         data-home-section="credit"
         className="flex flex-wrap items-center justify-between gap-4 border-y border-border py-6"
       >
-        <p className="sp-small">{t("home.licenseBadge")}</p>
         <TextLink href="/license#credit">{t("home.licenseCta")}</TextLink>
       </section>
       {updates.length ? (
@@ -154,7 +160,9 @@ async function SamplePreview({
       className={
         reference
           ? "grid min-w-0 grid-cols-[7rem_minmax(0,1fr)] items-center gap-4 lg:block"
-          : "min-w-0"
+          : hero
+            ? "flex min-w-0 flex-col"
+            : "min-w-0"
       }
     >
       <SampleVideo
@@ -171,7 +179,7 @@ async function SamplePreview({
       <figcaption
         className={
           hero
-            ? `sp-small grid gap-1 ${reference ? "lg:mt-3" : "mt-3"}`
+            ? `sp-small grid gap-1 ${reference ? "lg:mt-3" : "order-first mb-3 lg:order-none lg:mb-0 lg:mt-3"}`
             : "sp-small mt-3 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1"
         }
       >

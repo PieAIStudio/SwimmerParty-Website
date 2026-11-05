@@ -112,7 +112,14 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
           items={[{ label: t("nav.actors"), href: "/actors" }, { label: name }]}
         />
         <section className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="min-w-0 lg:order-2 lg:col-span-5">
+          <div className="sp-actor-portrait max-w-[560px] lg:col-span-7" data-actor-portrait>
+            {front ? (
+              <ImageLightbox item={front} name={`${name} · ${frontLabel}`} displayLarge />
+            ) : (
+              <div className="sp-sweep sp-panel aspect-4/5" />
+            )}
+          </div>
+          <div className="min-w-0 lg:col-span-5">
             <div className="flex flex-wrap items-center gap-3">
               <GameBadge tone={actor.status === "active" ? "success" : "neutral"}>
                 {STATUS_LABEL[actor.status][locale]}
@@ -134,7 +141,7 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
               </span>
             </h1>
             <p className="sp-lead mt-6">{actor.tagline[locale]}</p>
-            <div className="mt-6 flex flex-wrap items-center gap-4">
+            <div className="mt-6" data-starter-action>
               <StarterPackButton
                 actor={{
                   slug: actor.slug,
@@ -144,6 +151,12 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
                   slots: starter,
                 }}
               />
+              <p className="sp-small mt-3 text-muted-foreground" data-starter-facts>
+                {t("actor.starterFacts", { count: starter.length, size: approxMb(starterBytes) })}
+              </p>
+              <DownloadTerms className="mt-2" />
+            </div>
+            <div className="mt-5 flex flex-wrap items-center gap-3" data-actor-actions>
               {canMakeSheet(assets.items) ? (
                 <GameButton variant="secondary" href={`/actors/${slug}/sheet`} linkComponent={Link}>
                   {t("sheet.action")}
@@ -159,18 +172,6 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
             <div className="mt-3">
               <AssetHeroActions front={front} />
             </div>
-            <DownloadTerms className="mt-3" />
-            {voice ? (
-              <div className="mt-5" data-actor-voice>
-                <h2 className="sp-subtitle">{t("actor.voiceTitle", { name })}</h2>
-                <div className="mt-2">
-                  <VoiceTile item={voice} label={t("assets.voice.intro")} reference />
-                </div>
-              </div>
-            ) : null}
-            <p className="sp-small mt-2 text-muted-foreground" data-starter-facts>
-              {t("actor.starterFacts", { count: starter.length, size: approxMb(starterBytes) })}
-            </p>
             <p className="sp-small mt-2 text-muted-foreground" data-full-pack-facts>
               {t("actor.fullPackFacts", {
                 images: images.length,
@@ -179,6 +180,14 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
               })}
             </p>
             <p className="sp-small mt-1 text-muted-foreground">{t("actor.guestNote")}</p>
+            {voice ? (
+              <div className="mt-5" data-actor-voice>
+                <h2 className="sp-subtitle">{t("actor.voiceTitle", { name })}</h2>
+                <div className="mt-2">
+                  <VoiceTile item={voice} label={t("assets.voice.intro")} reference />
+                </div>
+              </div>
+            ) : null}
             <dl className="mt-4 divide-y divide-border">
               {actor.spec.map((row) => (
                 <div
@@ -195,13 +204,6 @@ export async function ActorDossier({ actor, locale }: { actor: Actor; locale: Ap
               <TextLink href="/license#credit">{t("actor.workWithUs")}</TextLink>
               <ShareButton />
             </div>
-          </div>
-          <div className="max-w-[560px] lg:order-1 lg:col-span-7">
-            {front ? (
-              <ImageLightbox item={front} name={`${name} · ${frontLabel}`} displayLarge />
-            ) : (
-              <div className="sp-sweep sp-panel aspect-4/5" />
-            )}
           </div>
         </section>
         <div

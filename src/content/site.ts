@@ -27,6 +27,8 @@ export const NAV = [
   { href: "/works#samples", key: "samples" },
   { href: "/guide", key: "learn" },
   { href: "/cast", key: "cast" },
+  { href: "/license", key: "license" },
+  { href: "/studio", key: "studio" },
 ] as const;
 
 export const SECONDARY_NAV = [

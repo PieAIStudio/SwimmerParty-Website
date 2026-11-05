@@ -49,7 +49,7 @@ function HeaderContent({
     if (!open || !panel) return;
     const overflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const desktop = window.matchMedia("(min-width: 1024px)");
+    const desktop = window.matchMedia("(min-width: 1280px)");
     const closeOnDesktop = () => {
       if (desktop.matches) setOpen(false);
     };
@@ -78,7 +78,7 @@ function HeaderContent({
         >
           {SITE.name}
         </Link>
-        <nav className="hidden items-center gap-5 lg:flex" aria-label={t("common.mainNav")}>
+        <nav className="hidden items-center gap-4 xl:flex" aria-label={t("common.mainNav")}>
           {navigation.map((item) => (
             <Link
               key={item.href}
@@ -98,11 +98,11 @@ function HeaderContent({
         </nav>
         <div className="ml-auto flex items-center gap-2">
           <ThemeToggle />
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <LanguageMenu />
           </div>
-          <div className="hidden lg:block">{accountMenu}</div>
-          <div className="lg:hidden" ref={trigger}>
+          <div className="hidden xl:block">{accountMenu}</div>
+          <div className="xl:hidden" ref={trigger}>
             <GameIconButton
               label={t("common.menu")}
               aria-expanded={open}

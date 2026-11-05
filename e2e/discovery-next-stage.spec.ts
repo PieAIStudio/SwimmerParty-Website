@@ -4,6 +4,9 @@ import en from "../messages/en/messages.json";
 import zh from "../messages/zh-CN/messages.json";
 
 const cards = "[data-actor-card]";
+const report = process.env.PLAYWRIGHT_REPORT_DIR
+  ? `${process.env.PLAYWRIGHT_REPORT_DIR}/discovery`
+  : ".reports/next-stage/a5";
 test("A5 a shared filter URL is applied on first render", async ({ page, request }) => {
   const path = "/en/actors?q=tang-yunqiu&voice=1&ref=shared";
   const response = await request.get(path);
@@ -20,6 +23,7 @@ test("A5 a shared filter URL is applied on first render", async ({ page, request
 });
 test("A5 filters survive clear, back, reload and a shared Chinese URL", async ({ page }) => {
   await page.goto("/en/actors?ref=shared");
+  await page.getByRole("button", { name: en["roster.moreFilters"], exact: true }).click();
   await page.locator("#actor-role").selectOption("boss");
   await page.locator("#actor-voice label").click();
   await expect(page.locator("#actor-voice input")).toBeChecked();
@@ -64,28 +68,37 @@ for (const locale of ["en", "zh"] as const)
     });
     try {
       await page.goto(`/${locale}/actors?ref=hydration`, { waitUntil: "commit" });
-      const role = page.locator("#actor-role");
-      await expect(role).toBeVisible();
-      const enabledBeforeHydration = await role.isEnabled();
+      const readiness = page.locator("#actor-readiness");
+      await expect(readiness).toBeVisible();
+      const enabledBeforeHydration = await readiness.isEnabled();
       if (enabledBeforeHydration) {
         // Diagnostic only on the broken version: a native change can be accepted before its handler exists.
-        await role.selectOption("boss");
+        await readiness.selectOption("active");
         await testInfo.attach("lost-pre-hydration-choice", {
           body: JSON.stringify({
             enabledBeforeHydration,
-            selectedValue: await role.inputValue(),
+            selectedValue: await readiness.inputValue(),
             url: page.url(),
           }),
           contentType: "application/json",
         });
       }
-      await expect(role).toBeDisabled();
+      await expect(readiness).toBeDisabled();
       const controls = page.locator(
         "[data-actor-filters] input, [data-actor-filters] select, [data-actor-filters] button",
       );
       for (const control of await controls.all()) await expect(control).toBeDisabled();
       release();
-      await expect(role).toBeEnabled();
+      await expect(readiness).toBeEnabled();
+      await readiness.selectOption("active");
+      await expect(page).toHaveURL(/readiness=active/);
+      await page
+        .getByRole("button", {
+          name: (locale === "en" ? en : zh)["roster.moreFilters"],
+          exact: true,
+        })
+        .click();
+      const role = page.locator("#actor-role");
       await role.selectOption("boss");
       await page.locator("#actor-voice label").click();
       await expect(page).toHaveURL(/role=boss/);
@@ -105,6 +118,10 @@ test("A5 availability and zero results do not invent files", async ({ page }) =>
   expect(await page.locator(cards).count()).toBeGreaterThan(0);
   for (const card of await page.locator("[data-discovery-card]").all())
     await expect(card).toHaveAttribute("data-has-video", "true");
+  // The shared URL already applies one advanced filter, so the label includes its count.
+  const more = page.locator('button[aria-controls="actor-more-filters"]');
+  await expect(more).toHaveText(`${en["roster.moreFilters"]} (1)`);
+  await more.click();
   await page
     .locator("#actor-look")
     .fill("this appearance is not in any authored description 903840");
@@ -130,16 +147,32 @@ for (const locale of ["en", "zh"] as const)
         "data-discovery-group",
         "active",
       );
-      if (width === 390) await page.getByRole("button", { name: m["roster.moreFilters"] }).click();
+      if (width === 1440) {
+        const row = await page.locator("[data-primary-filters]").boundingBox();
+        expect(row!.height).toBeLessThan(90);
+      }
+      await expect(page.locator("[data-tool-legend]")).toBeVisible();
+      await page.getByRole("button", { name: m["roster.moreFilters"], exact: true }).click();
       await page.locator("#actor-origin").focus();
       await expect(page.locator("#actor-origin")).toBeFocused();
       await page.keyboard.press("Tab");
-      await mkdir(".devspace-reports/next-stage/a5", { recursive: true });
+      await mkdir(report, { recursive: true });
       await page.screenshot({
-        path: `.devspace-reports/next-stage/a5/filters-${locale}-${width}.png`,
+        path: `${report}/filters-${locale}-${width}.png`,
       });
       await expect(
         page.getByRole("heading", { name: m["roster.metaTitle"], exact: true }),
       ).toBeVisible();
+      for (const [readiness, tier] of [
+        ["new-face", "new-face"],
+        ["active", "active"],
+      ]) {
+        await page.locator("#actor-readiness").selectOption(readiness);
+        await expect(page).toHaveURL(new RegExp(`readiness=${readiness}`));
+        await expect(page.locator("[data-discovery-group]")).toHaveCount(1);
+        const group = page.locator(`[data-discovery-group="${tier}"]`);
+        await expect(group.locator("h2")).toBeInViewport({ ratio: 1 });
+        expect(await page.evaluate(() => scrollY)).toBeGreaterThan(0);
+      }
     });
   }

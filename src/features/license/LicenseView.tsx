@@ -9,6 +9,7 @@ import { CreditMarkDownload } from "@/features/assets";
 import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n } from "@/i18n/server";
 import { CopyButton } from "@/site/CopyButton";
+import { TextLink } from "@/site/TextLink";
 import { GameBadge } from "@pieai/swimmer-ui-kit";
 import Image from "next/image";
 const l = (x: { en: string; zh: string }, locale: AppLocale) => x[locale];
@@ -25,6 +26,9 @@ export async function LicenseView({ locale }: { locale: AppLocale }) {
         </>
       </h1>
       <p className="sp-lead mt-6 max-w-3xl">{t("license.intro")}</p>
+      <TextLink href="/actors" className="mt-6" data-license-browse>
+        {t("license.browseActors")}
+      </TextLink>
       <section id="credit" className="mt-16 scroll-mt-24">
         <h2 className="sp-title">{t("license.creditTitle")}</h2>
         <p className="mt-3 max-w-2xl">{t("license.creditNote")}</p>

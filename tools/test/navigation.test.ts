@@ -3,10 +3,10 @@ import test from "node:test";
 import { readFile } from "node:fs/promises";
 import { NAV, SECONDARY_NAV } from "../../src/content/site.ts";
 
-test("primary navigation follows the four creator tasks without unopened community", () => {
+test("primary navigation exposes creator tasks, license and studio without unopened community", () => {
   assert.deepEqual(
     NAV.map(({ key }) => key),
-    ["actors", "samples", "learn", "cast"],
+    ["actors", "samples", "learn", "cast", "license", "studio"],
   );
   assert.equal(NAV.find(({ key }) => String(key) === "cast")?.href, "/cast");
 });

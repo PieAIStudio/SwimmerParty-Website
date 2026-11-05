@@ -4,6 +4,7 @@ import type { AppLocale } from "@/i18n/routing";
 import { getSiteI18n } from "@/i18n/server";
 import { PageIntro } from "@/site/PageIntro";
 import { SectionHead } from "@/site/SectionHead";
+import { TextLink } from "@/site/TextLink";
 import { GameBadge, GameButton, GameIcon } from "@pieai/swimmer-ui-kit";
 export async function StudioView({ locale }: { locale: AppLocale }) {
   const { t } = await getSiteI18n(locale);
@@ -13,7 +14,10 @@ export async function StudioView({ locale }: { locale: AppLocale }) {
         eyebrow={t("studio.eyebrow")}
         lines={[t("studio.heroLines.0"), t("studio.heroLines.1")]}
       >
-        {t("studio.intro")}
+        <p>{t("studio.intro")}</p>
+        <TextLink href="#work-with-us" className="mt-4">
+          {t("studio.workWithUs")}
+        </TextLink>
       </PageIntro>
       <section className="sp-section" id="projects" data-studio-projects>
         <h2 className="sp-title">{t("studio.projectsTitle")}</h2>
@@ -29,6 +33,10 @@ export async function StudioView({ locale }: { locale: AppLocale }) {
               <h3 className="sp-subtitle mt-4">{work.title[locale]}</h3>
               <p className="sp-small mt-2 text-muted-foreground">{work.format[locale]}</p>
               {work.logline ? <p className="mt-4">{work.logline[locale]}</p> : null}
+              <span className="sp-link mt-5 underline">
+                {t("studio.viewProject")}
+                <GameIcon icon="arrow-right" />
+              </span>
             </Link>
           ))}
         </div>

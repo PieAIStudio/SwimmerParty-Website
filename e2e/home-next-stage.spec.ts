@@ -6,7 +6,9 @@ import { WORKS, WORK_STATUS_LABEL } from "../src/content/works";
 import en from "../messages/en/messages.json";
 import zh from "../messages/zh-CN/messages.json";
 
-const report = ".devspace-reports/next-stage/a2";
+const report = process.env.PLAYWRIGHT_REPORT_DIR
+  ? `${process.env.PLAYWRIGHT_REPORT_DIR}/home`
+  : ".reports/next-stage/a2";
 for (const locale of ["en", "zh"] as const) {
   test(`A2 home order and honest counts: ${locale}`, async ({ page }) => {
     await page.goto(`/${locale}`);
@@ -60,8 +62,12 @@ for (const locale of ["en", "zh"] as const) {
       const card = projects.locator(`[data-project="${work.slug}"]`);
       await expect(card).toContainText(work.title[locale]);
       await expect(card).toContainText(WORK_STATUS_LABEL[work.status][locale]);
+      await expect(card.locator(".sp-link")).toHaveText(
+        (locale === "en" ? en : zh)["studio.viewProject"],
+      );
       expect((await request.get(`/${locale}/works/${work.slug}`)).status()).toBe(200);
     }
+    await expect(page.locator('main header a[href$="#work-with-us"]')).toBeInViewport();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
       true,
     );
@@ -85,6 +91,15 @@ for (const locale of ["en", "zh"] as const) {
         });
         await expect(cta).toBeInViewport();
         // Owner 2026-10-22: exact first-fold coverage is post-launch UX evidence, not a release blocker.
+        await expect(hero.locator("[data-home-license]")).toHaveAttribute(
+          "href",
+          `/${locale}/license`,
+        );
+        await expect(hero.locator("[data-home-license]")).toBeInViewport({ ratio: 1 });
+        if (width === 390) {
+          for (const caption of await hero.locator("figcaption").all())
+            await expect(caption).toBeInViewport({ ratio: 1 });
+        }
         const heroVideos = await hero.locator("video").all();
         for (const video of heroVideos) await expect(video).toBeInViewport();
         const heroVideoBounds = await Promise.all(heroVideos.map((video) => video.boundingBox()));

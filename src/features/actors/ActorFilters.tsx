@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { useSiteI18n, useSiteLocale } from "@/i18n/client";
 import type { Actor } from "@/content/actors";
 import type { OfficialSample } from "@/content/official-samples.generated";
@@ -92,6 +92,12 @@ export function ActorFilters({
       key === "q" || key === "look",
     );
   }
+  useEffect(() => {
+    if (filters.readiness === "all") return;
+    document
+      .querySelector(`[data-discovery-group="${filters.readiness}"] h2`)
+      ?.scrollIntoView({ block: "start" });
+  }, [filters.readiness]);
   const clear = () => save(DEFAULT_ACTOR_FILTERS);
   const active = Object.keys(DEFAULT_ACTOR_FILTERS).some(
     (key) =>
@@ -118,8 +124,11 @@ export function ActorFilters({
         aria-label={t("roster.filters")}
       >
         <fieldset disabled={!interactive} aria-busy={!interactive} className="min-w-0 border-0 p-0">
-          <div className="grid gap-3 sm:grid-cols-2">
-            <label className="grid gap-1" htmlFor="actor-search">
+          <div
+            className="grid grid-cols-2 items-end gap-3 md:grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)_minmax(0,1fr)_auto_auto]"
+            data-primary-filters
+          >
+            <label className="col-span-2 grid min-w-0 gap-1 md:col-span-1" htmlFor="actor-search">
               <span className="sp-label">{t("roster.search")}</span>
               <GameInput
                 id="actor-search"
@@ -130,25 +139,18 @@ export function ActorFilters({
                 onChange={(e) => change("q", e.target.value)}
               />
             </label>
-            <label
-              className={expanded ? "grid gap-1" : "hidden gap-1 md:grid"}
-              htmlFor="actor-look"
-            >
-              <span className="sp-label">{t("roster.appearance")}</span>
-              <GameInput
-                id="actor-look"
-                type="search"
-                className="min-w-0 w-full"
-                value={filters.look}
-                maxLength={120}
-                onChange={(e) => change("look", e.target.value)}
-              />
+            <label className="grid min-w-0 gap-1" htmlFor="actor-readiness">
+              <span className="sp-label">{t("roster.readiness")}</span>
+              <GameSelect
+                id="actor-readiness"
+                value={filters.readiness}
+                onChange={(e) => change("readiness", e.target.value)}
+              >
+                <option value="all">{t("roster.filters.all")}</option>
+                <option value="active">{t("roster.filters.ready")}</option>
+                <option value="new-face">{t("roster.filters.newFaces")}</option>
+              </GameSelect>
             </label>
-          </div>
-          <div
-            id="actor-more-filters"
-            className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3"
-          >
             <label className="grid min-w-0 gap-1" htmlFor="actor-gender">
               <span className="sp-label">{t("roster.gender")}</span>
               <GameSelect
@@ -161,10 +163,45 @@ export function ActorFilters({
                 <option value="male">{t("roster.filters.men")}</option>
               </GameSelect>
             </label>
-            <label
-              className={expanded ? "grid min-w-0 gap-1" : "hidden min-w-0 gap-1 md:grid"}
-              htmlFor="actor-age"
+            <div id="actor-voice">
+              <GameCheckbox
+                label={t("roster.hasVoice")}
+                checked={filters.voice}
+                onChange={(e) => change("voice", e.target.checked)}
+              />
+            </div>
+            <GameButton
+              size="sm"
+              variant="secondary"
+              aria-expanded={expanded}
+              aria-controls="actor-more-filters"
+              aria-description={
+                advancedCount ? t("roster.filtersApplied", { count: advancedCount }) : undefined
+              }
+              onClick={() => setExpanded((value) => !value)}
             >
+              {t(expanded ? "roster.lessFilters" : "roster.moreFilters")}
+              {advancedCount ? ` (${advancedCount})` : ""}
+            </GameButton>
+          </div>
+          <div
+            id="actor-more-filters"
+            className={
+              expanded ? "mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3" : "hidden"
+            }
+          >
+            <label className="grid min-w-0 gap-1" htmlFor="actor-look">
+              <span className="sp-label">{t("roster.appearance")}</span>
+              <GameInput
+                id="actor-look"
+                type="search"
+                className="min-w-0 w-full"
+                value={filters.look}
+                maxLength={120}
+                onChange={(e) => change("look", e.target.value)}
+              />
+            </label>
+            <label className="grid min-w-0 gap-1" htmlFor="actor-age">
               <span className="sp-label">{t("roster.age")}</span>
               <GameSelect
                 id="actor-age"
@@ -177,10 +214,7 @@ export function ActorFilters({
                 <option value="over45">{t("roster.filters.over45")}</option>
               </GameSelect>
             </label>
-            <label
-              className={expanded ? "grid min-w-0 gap-1" : "hidden min-w-0 gap-1 md:grid"}
-              htmlFor="actor-language"
-            >
+            <label className="grid min-w-0 gap-1" htmlFor="actor-language">
               <span className="sp-label">{t("roster.language")}</span>
               <GameSelect
                 id="actor-language"
@@ -192,10 +226,7 @@ export function ActorFilters({
                 <option value="zh">{t("roster.filters.chinese")}</option>
               </GameSelect>
             </label>
-            <label
-              className={expanded ? "grid min-w-0 gap-1" : "hidden min-w-0 gap-1 md:grid"}
-              htmlFor="actor-origin"
-            >
+            <label className="grid min-w-0 gap-1" htmlFor="actor-origin">
               <span className="sp-label">{t("roster.origin")}</span>
               <GameSelect
                 id="actor-origin"
@@ -210,10 +241,7 @@ export function ActorFilters({
                 ))}
               </GameSelect>
             </label>
-            <label
-              className={expanded ? "grid min-w-0 gap-1" : "hidden min-w-0 gap-1 md:grid"}
-              htmlFor="actor-role"
-            >
+            <label className="grid min-w-0 gap-1" htmlFor="actor-role">
               <span className="sp-label">{t("roster.role")}</span>
               <GameSelect
                 id="actor-role"
@@ -228,10 +256,7 @@ export function ActorFilters({
                 ))}
               </GameSelect>
             </label>
-            <label
-              className={expanded ? "grid min-w-0 gap-1" : "hidden min-w-0 gap-1 md:grid"}
-              htmlFor="actor-height"
-            >
+            <label className="grid min-w-0 gap-1" htmlFor="actor-height">
               <span className="sp-label">{t("roster.height")}</span>
               <GameSelect
                 id="actor-height"
@@ -244,37 +269,13 @@ export function ActorFilters({
                 <option value="180plus">≥180 cm</option>
               </GameSelect>
             </label>
-          </div>
-          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
-            <div id="actor-voice">
-              <GameCheckbox
-                label={t("roster.hasVoice")}
-                checked={filters.voice}
-                onChange={(e) => change("voice", e.target.checked)}
-              />
-            </div>
-            <div id="actor-video" className={expanded ? undefined : "hidden md:block"}>
+            <div id="actor-video">
               <GameCheckbox
                 label={t("roster.hasVideo")}
                 checked={filters.video}
                 onChange={(e) => change("video", e.target.checked)}
               />
-            </div>{" "}
-          </div>
-          <div className="mt-3 flex flex-wrap items-center gap-3 md:hidden">
-            <GameButton
-              size="sm"
-              variant="secondary"
-              aria-expanded={expanded}
-              onClick={() => setExpanded((value) => !value)}
-            >
-              {t(expanded ? "roster.lessFilters" : "roster.moreFilters")}
-            </GameButton>
-            {advancedCount ? (
-              <span className="sp-small">
-                {t("roster.filtersApplied", { count: advancedCount })}
-              </span>
-            ) : null}
+            </div>
           </div>
           <div className="mt-3 flex items-center justify-between gap-3">
             <output className="sp-small">
@@ -284,13 +285,16 @@ export function ActorFilters({
           </div>
         </fieldset>
       </section>
+      <p className="sp-small mt-3 text-muted-foreground" data-tool-legend>
+        {t("roster.toolsLegend")}
+      </p>
       {filtered.length ? (
         groups.map(([status, title, group]) =>
           group.length ? (
             <section
               className="sp-section"
               data-discovery-group={status}
-              id={status === "new-face" ? "new-faces" : undefined}
+              id={status === "new-face" ? "new-faces" : status === "active" ? "ready" : undefined}
               key={status}
             >
               <h2 className="sp-title">{title}</h2>

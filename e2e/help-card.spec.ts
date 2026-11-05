@@ -47,7 +47,7 @@ test("the Chinese card shows the Chinese topics and links to the Chinese guide",
   await page.goto("/zh/actors/tang-yunqiu");
   await hoverInto(page, helpTrigger(page));
   const card = page.getByRole("dialog", { name: "怎么用" });
-  await expect(card.getByRole("tab", { name: /^懒人包/ })).toBeVisible();
+  await expect(card.getByRole("tab", { name: /^起步包/ })).toBeVisible();
   await expect(card.getByText("两张图加提示词，马上开拍")).toBeVisible();
   await expect(card.getByRole("link", { name: "看完整说明" })).toHaveAttribute("href", "/zh/guide");
 });

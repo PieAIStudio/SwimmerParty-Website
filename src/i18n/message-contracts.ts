@@ -507,6 +507,7 @@ export interface MessageContracts {
   readonly "learn.workflowPreview": {  };
   readonly "legal.lastUpdated": {  };
   readonly "license.badge": {  };
+  readonly "license.browseActors": {  };
   readonly "license.canTitle": {  };
   readonly "license.cannotTitle": {  };
   readonly "license.copyCredit": {  };
@@ -552,7 +553,9 @@ export interface MessageContracts {
   readonly "roster.filters.chinese": {  };
   readonly "roster.filters.english": {  };
   readonly "roster.filters.men": {  };
+  readonly "roster.filters.newFaces": {  };
   readonly "roster.filters.over45": {  };
+  readonly "roster.filters.ready": {  };
   readonly "roster.filters.under30": {  };
   readonly "roster.filters.women": {  };
   readonly "roster.filtersApplied": { readonly "count": string | number | bigint | boolean | null | undefined | Date; };
@@ -569,6 +572,7 @@ export interface MessageContracts {
   readonly "roster.newFacesTitle": {  };
   readonly "roster.noResults": {  };
   readonly "roster.origin": {  };
+  readonly "roster.readiness": {  };
   readonly "roster.resultCount": { readonly "count": string | number | bigint | boolean | null | undefined | Date; };
   readonly "roster.role": {  };
   readonly "roster.role.boss": {  };
@@ -576,6 +580,7 @@ export interface MessageContracts {
   readonly "roster.role.crew": {  };
   readonly "roster.role.villain": {  };
   readonly "roster.search": {  };
+  readonly "roster.toolsLegend": {  };
   readonly "samples.actorTitle": { readonly "name": string | number | bigint | boolean | null | undefined | Date; };
   readonly "samples.closePreview": {  };
   readonly "samples.label.action": {  };
@@ -716,6 +721,7 @@ export interface MessageContracts {
   readonly "studio.missionLink": {  };
   readonly "studio.missionTitle": {  };
   readonly "studio.projectsTitle": {  };
+  readonly "studio.viewProject": {  };
   readonly "studio.workWithUs": {  };
   readonly "works.castTitle": {  };
   readonly "works.episodes": {  };

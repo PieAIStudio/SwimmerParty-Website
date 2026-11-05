@@ -6,6 +6,7 @@ export type ActorFilterState = {
   q: string;
   look: string;
   gender: string;
+  readiness: string;
   age: string;
   language: string;
   origin: string;
@@ -18,6 +19,7 @@ export const DEFAULT_ACTOR_FILTERS: ActorFilterState = {
   q: "",
   look: "",
   gender: "all",
+  readiness: "all",
   age: "all",
   language: "all",
   origin: "all",
@@ -28,6 +30,7 @@ export const DEFAULT_ACTOR_FILTERS: ActorFilterState = {
 };
 const CHOICES = {
   gender: ["all", "female", "male"],
+  readiness: ["all", "active", "new-face"],
   age: ["all", "under30", "30to45", "over45"],
   language: ["all", "en", "zh"],
   role: ["all", "comedy", "boss", "villain", "crew"],
@@ -37,7 +40,7 @@ export function readActorFilters(search: string, origins: readonly string[]): Ac
   const params = new URLSearchParams(search);
   const filters = { ...DEFAULT_ACTOR_FILTERS };
   for (const key of ["q", "look"] as const) filters[key] = (params.get(key) ?? "").slice(0, 120);
-  for (const key of ["gender", "age", "language", "role", "height"] as const) {
+  for (const key of ["gender", "readiness", "age", "language", "role", "height"] as const) {
     const value = params.get(key) ?? "all";
     filters[key] = CHOICES[key].includes(value) ? value : "all";
   }
@@ -123,6 +126,7 @@ export function filterActors(
       matches(searchable, f.q) &&
       matches(appearance, f.look) &&
       (f.gender === "all" || actor.gender === f.gender) &&
+      (f.readiness === "all" || actor.status === f.readiness) &&
       (f.age === "all" ||
         (f.age === "under30"
           ? actor.age < 30

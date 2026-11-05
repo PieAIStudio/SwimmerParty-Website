@@ -744,6 +744,15 @@ export const messages = {
     zh: "先看不同 AI 工具做出的真实样片，点开喜欢的演员就能免费下载参考素材。",
   },
   "studio.projectsTitle": { en: "Studio projects", zh: "工作室项目" },
+  "studio.viewProject": { en: "View project", zh: "查看项目" },
+  "roster.readiness": { en: "Readiness", zh: "素材状态" },
+  "roster.filters.ready": { en: "Ready", zh: "可直接用" },
+  "roster.filters.newFaces": { en: "New faces", zh: "新面孔" },
+  "roster.toolsLegend": {
+    en: "Tool names on cards show how each sample was made.",
+    zh: "卡片中的工具名表示该样片使用的制作工具。",
+  },
+  "license.browseActors": { en: "Browse actors", zh: "去挑演员" },
   "studio.metaTitle": {
     en: "Studio",
     zh: "工作室",

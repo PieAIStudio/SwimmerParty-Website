@@ -1,11 +1,14 @@
 import { expect, test } from "@playwright/test";
 import { mkdir } from "node:fs/promises";
 
+const report = process.env.PLAYWRIGHT_REPORT_DIR
+  ? `${process.env.PLAYWRIGHT_REPORT_DIR}/layout`
+  : ".reports/build-1/shots";
 for (const locale of ["en", "zh"] as const) {
   for (const width of [1440, 390]) {
     test(`build-1 layout ${locale} ${width}`, async ({ page }) => {
       test.setTimeout(60_000); // Three cold navigations, including the actor's media library.
-      await mkdir("run-1/shots", { recursive: true });
+      await mkdir(report, { recursive: true });
       await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
       await page.emulateMedia({ reducedMotion: "reduce" });
       for (const [path, name, selector] of [
@@ -26,12 +29,26 @@ for (const locale of ["en", "zh"] as const) {
             .evaluate((el) => getComputedStyle(el).position),
         ).toBe("static");
         await expect(heading).toBeInViewport();
-        await page.screenshot({ path: `run-1/shots/A-after-${name}-${locale}-${width}.png` });
+        await page.screenshot({ path: `${report}/A-after-${name}-${locale}-${width}.png` });
       }
       await page.goto(`/${locale}/actors/tang-yunqiu`, { waitUntil: "domcontentloaded" });
       await page.evaluate(() => document.fonts.ready);
       const terms = page.locator("[data-download-terms]").first();
-      await page.screenshot({ path: `run-1/shots/A-after-actor-${locale}-${width}.png` });
+      await page.screenshot({ path: `${report}/A-after-actor-${locale}-${width}.png` });
+      const starter = page.locator("[data-starter-action]");
+      await expect(starter.locator("[data-starter-facts]")).toBeVisible();
+      await expect(starter.locator("[data-download-terms]")).toContainText(
+        locale === "en" ? "free Swimmer account" : "免费泳者账号",
+      );
+      if (width === 390) {
+        const portrait = page.locator("[data-actor-portrait]");
+        await expect(portrait).toBeInViewport({ ratio: 1 });
+        expect(
+          (await portrait.boundingBox())!.y + (await portrait.boundingBox())!.height,
+        ).toBeLessThan((await starter.boundingBox())!.y);
+        // Picture-first phones reach the terms with the download choices, not before the portrait.
+        await terms.scrollIntoViewIfNeeded();
+      }
       await expect(terms).toBeInViewport({ ratio: 1 });
       const toolbar = page.locator("#assets");
       await toolbar.scrollIntoViewIfNeeded();
@@ -43,7 +60,7 @@ for (const locale of ["en", "zh"] as const) {
         expect(bounds!.x).toBeGreaterThanOrEqual(0);
         expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(width);
       }
-      await page.screenshot({ path: `run-1/shots/A-after-tabs-${locale}-${width}.png` });
+      await page.screenshot({ path: `${report}/A-after-tabs-${locale}-${width}.png` });
       await nav.getByRole("button").first().click();
       const heading = page.locator("#series-turnaround h2");
       const headingBox = await heading.boundingBox();

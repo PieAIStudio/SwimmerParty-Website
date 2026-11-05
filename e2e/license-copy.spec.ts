@@ -12,7 +12,9 @@ import {
 import en from "../messages/en/messages.json";
 import zh from "../messages/zh-CN/messages.json";
 
-const report = ".devspace-reports/next-stage/a4-license-approved";
+const report = process.env.PLAYWRIGHT_REPORT_DIR
+  ? `${process.env.PLAYWRIGHT_REPORT_DIR}/license`
+  : ".reports/next-stage/a4-license-approved";
 for (const locale of ["en", "zh"] as const) {
   for (const width of [390, 1440]) {
     test(`approved license copy and unchanged terms: ${locale} ${width}`, async ({
@@ -39,6 +41,11 @@ for (const locale of ["en", "zh"] as const) {
         new RegExp(`/${locale}/license$`),
       );
       await expect(main.getByText(m["license.badge"], { exact: true })).toBeVisible();
+      await expect(main.locator("[data-license-browse]")).toHaveText(m["license.browseActors"]);
+      await expect(main.locator("[data-license-browse]")).toHaveAttribute(
+        "href",
+        `/${locale}/actors`,
+      );
 
       // All retained legal sections, including collapsed FAQ bodies, must still
       // render their complete canonical text. The source bytes have a unit guard.
@@ -131,6 +138,9 @@ for (const locale of ["en", "zh"] as const) {
         .poll(() => page.evaluate(() => navigator.clipboard.readText()))
         .toBe(LICENSE.credit[locale]);
       expect(errors).toEqual([]);
+      await main.locator("[data-license-browse]").click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/actors$`));
+      await expect(page.locator("[data-actor-filters]")).toBeVisible();
     });
   }
 }
