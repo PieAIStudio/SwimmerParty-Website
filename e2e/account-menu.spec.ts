@@ -3,7 +3,7 @@ import AxeBuilder from "@axe-core/playwright";
 import { localMember } from "./fixtures/download";
 
 const PRODUCTS_URL = "https://accounts.swiminai.com/products.json";
-const SIGN_IN = { name: "Sign in with Swimmer" };
+const SIGN_IN = { name: "Sign in (free)" };
 const ACCOUNT_TRIGGER = { name: "Account: Local member" };
 
 // A fixture catalog in the published shape. The live account center is never reached from tests.
@@ -110,7 +110,7 @@ for (const { locale, width, nickname, menu } of [
     await page.reload();
     if (menu) await page.getByRole("button", { name: menu, exact: true }).click();
     await expect(page.locator(".game-ui-account-menu-trigger")).toHaveCount(0);
-    const label = locale === "en" ? "Sign in with Swimmer" : "用泳者账号登录";
+    const label = locale === "en" ? "Sign in (free)" : "免费登录";
     await expect(page.getByRole("button", { name: label, exact: true }).first()).toBeVisible();
   });
 }

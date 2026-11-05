@@ -10,7 +10,7 @@ test("selection survives local sign-in and downloads a member ZIP", async ({ pag
   // aria-busy clears once the page is interactive and the session is known.
   await expect(downloadSelected).not.toHaveAttribute("aria-busy", "true", { timeout: 15_000 });
   await downloadSelected.click();
-  await page.getByRole("dialog").getByRole("button", { name: "Sign in with Swimmer" }).click();
+  await page.getByRole("dialog").getByRole("button", { name: "Sign in (free)" }).click();
   await expect(page.locator("[data-account-menu]").first()).toBeVisible();
   await expect(checkbox).toBeChecked();
   await expect(downloadSelected).not.toHaveAttribute("aria-busy", "true", { timeout: 15_000 });

@@ -18,8 +18,8 @@ test("license presentation matches the six approved strings exactly", () => {
     zh: "SWIMMER PARTY 的动画演员可免费用于个人创作和商业项目。署名 SwimInAI，并遵守下列使用规则。",
   });
   assert.deepEqual(messages["license.intro"], {
-    en: "Use our animated actors in films, ads, games, comics, music or merch under the rules below. No license fee or permission request. Credit SwimInAI where people can read it. Downloading packs requires a free Swimmer account.",
-    zh: "动画演员可用于电影、广告、游戏、漫画、音乐和周边，具体规则见下方。无需支付许可费或申请许可；请在清晰可见处署名 SwimInAI。下载整包需要免费泳者账号。",
+    en: "Use our actors free in films, ads, games, comics, music and merch. No need to ask. Just credit SwimInAI.",
+    zh: "电影、广告、游戏、漫画、音乐、周边，都能免费用，不用申请。记得署名 SwimInAI。",
   });
 });
 

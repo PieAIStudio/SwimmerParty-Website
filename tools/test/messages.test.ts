@@ -11,7 +11,7 @@ test("thumbnail image counts keep both authored catalogs eligible without locale
   const en = Object.fromEntries(Object.entries(messages).map(([key, value]) => [key, value.en]));
   const i18n = createI18n({ sourceLocale: "zh-CN", source, catalogs: { "zh-CN": source, en } });
   assert.equal(i18n.resolve("en"), "en");
-  assert.equal(i18n.translator("en").t("c.title"), "Community");
+  assert.equal(i18n.translator("en").t("c.title"), "Swimmers' works");
   assert.equal(i18n.translator("en").t("c3.imageCount", { count: 1 }), "1 image");
   assert.equal(i18n.translator("en").t("c3.imageCount", { count: 4 }), "4 images");
   assert.equal(i18n.translator("zh-CN").t("c3.imageCount", { count: 4 }), "4 张图片");

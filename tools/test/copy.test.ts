@@ -16,7 +16,7 @@ test("community media labels use only the active language", () => {
 });
 test("pack sign-in condition is explicit before a visitor continues", () => {
   assert.match(messages["assets.signInBody"].en, /free Swimmer account/);
-  assert.match(messages["assets.signInBody"].zh, /单张图片不用登录/);
+  assert.match(messages["assets.signInBody"].zh, /单张随便下/);
 });
 test("the composer uses a catalog-backed actor selector with asset versions", async () => {
   const source = await readFile(
