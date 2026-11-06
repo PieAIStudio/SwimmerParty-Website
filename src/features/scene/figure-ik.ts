@@ -44,11 +44,19 @@ export function shoulderContact(object: Object3D, bone: Object3D, from: Vector3)
   return { point: hit.point, normal, wrist: hit.point.clone().addScaledVector(normal, 0.025) };
 }
 
-function orientHand(hand: Bone, point: Vector3, baseline: Quaternion, surfaceNormal?: Vector3) {
+function orientHand(
+  hand: Bone,
+  point: Vector3,
+  baseline: Quaternion,
+  surfaceNormal?: Vector3,
+  tangent?: Vector3,
+) {
   const side = hand.name.endsWith("_l") ? "l" : "r";
   const finger = hand.getObjectByName(`middle_01_${side}`)!.position.clone().normalize();
   const world = baseline.clone();
-  const direction = point.clone().sub(hand.parent!.getWorldPosition(new Vector3())).normalize();
+  const direction = (
+    tangent?.clone() ?? point.clone().sub(hand.parent!.getWorldPosition(new Vector3()))
+  ).normalize();
   if (!surfaceNormal) {
     world.premultiply(
       new Quaternion().setFromUnitVectors(finger.clone().applyQuaternion(world), direction),
@@ -77,6 +85,27 @@ function orientHand(hand: Bone, point: Vector3, baseline: Quaternion, surfaceNor
   hand.quaternion
     .copy(hand.parent!.getWorldQuaternion(new Quaternion()).invert().multiply(world))
     .normalize();
+}
+
+/** Shelf-pose correction only; saved manual joint edits are applied afterwards. */
+export function pinHipHand(object: Object3D, scale: number) {
+  const pelvis = object.getObjectByName("pelvis")!.getWorldPosition(new Vector3());
+  const origin = pelvis.clone().add(new Vector3(0.6, 0.045, 0).multiplyScalar(scale));
+  const hit = new Raycaster(origin, new Vector3(-1, 0, 0), 0, scale)
+    .intersectObject(object, true)
+    .find((item) => item.object instanceof SkinnedMesh && item.face);
+  if (!hit?.face) return;
+  const normal = hit.face.normal
+    .clone()
+    .applyMatrix3(new Matrix3().getNormalMatrix(hit.object.matrixWorld))
+    .normalize();
+  const wrist = hit.point.clone().addScaledVector(normal, 0.018 * scale);
+  const ik = createFigureIK(object);
+  ik.begin("leftWrist");
+  ik.solve("leftWrist", wrist, normal);
+  orientHand(ik.effector("leftWrist"), wrist, new Quaternion(), normal, new Vector3(0, -1, 0.45));
+  object.updateWorldMatrix(true, true);
+  ik.dispose();
 }
 
 export function createFigureIK(object: Object3D) {

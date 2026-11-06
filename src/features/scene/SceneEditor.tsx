@@ -177,8 +177,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
   }
   function select(id: string) {
     setSelected(id);
-    if (limbs && window.matchMedia("(max-width: 640px)").matches)
-      fit({ subject: id, shot: "medium", view: "eye" });
+    if (limbs) fit({ subject: id, shot: "medium", view: "eye" });
     else if (scene.camera.subject !== "everyone")
       fit({
         subject: id,
@@ -448,8 +447,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
               size="sm"
               aria-pressed={limbs}
               onClick={() => {
-                if (!limbs && window.matchMedia("(max-width: 640px)").matches)
-                  fit({ subject: figure.id, shot: "medium", view: "eye" });
+                if (!limbs) fit({ subject: figure.id, shot: "medium", view: "eye" });
                 setLimbs(!limbs);
               }}
             >

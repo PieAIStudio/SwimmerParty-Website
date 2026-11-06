@@ -12,6 +12,7 @@ import {
 import { Canvas, useFrame, useLoader, useThree, type ThreeEvent } from "@react-three/fiber";
 import { CameraControls } from "@react-three/drei/core/CameraControls";
 import { Grid } from "@react-three/drei/core/Grid";
+import { RoundedBox } from "@react-three/drei/core/RoundedBox";
 import { LimbHandles } from "./LimbHandles";
 import {
   Box3,
@@ -196,15 +197,17 @@ function Figure({
       <group userData={{ figureBody: figure.id }}>
         <primitive object={model.object} dispose={null} />
         {model.seat ? (
-          <mesh
+          <RoundedBox
+            args={model.seat.size}
+            radius={0.025 * scale}
+            smoothness={2}
             position={model.seat.position}
             castShadow
             receiveShadow
             userData={{ figureSeat: figure.id }}
           >
-            <boxGeometry args={model.seat.size} />
-            <meshStandardMaterial color="#4a4e54" roughness={0.95} />
-          </mesh>
+            <meshStandardMaterial color="#bdb6ac" roughness={0.9} />
+          </RoundedBox>
         ) : null}
       </group>
       {model.contacts.map((foot, index) => (

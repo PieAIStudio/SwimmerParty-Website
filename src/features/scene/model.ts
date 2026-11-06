@@ -139,15 +139,9 @@ export function applyLayout(figures: FigureState[], layout: Layout): FigureState
         turn: (1 - index) * 25,
         pose: "stand",
       };
-    if (layout === "group")
-      return {
-        ...figure,
-        x: index < 3 ? (index - 1) * 1.25 : (index - 3.5) * 1.35,
-        z: index < 3 ? -0.65 : 0.65,
-        turn: 0,
-        pose: "stand",
-      };
-    const offset = (index - 3.5) / 3.5;
+    const five = layout === "group";
+    const half = (LAYOUTS[layout] - 1) / 2;
+    const offset = (index - half) / half;
     const builds: FigureState["build"][] = [
       "broad",
       "slim-f",
@@ -173,10 +167,14 @@ export function applyLayout(figures: FigureState[], layout: Layout): FigureState
     return {
       ...figure,
       build: figure.actorSlug ? figure.build : builds[index],
-      x: (index - 3.5) * 0.62,
+      x: (index - half) * (five ? 0.78 : 0.62),
       z: -0.45 + 0.9 * offset * offset,
-      turn: -Math.sign(offset) * (15 + (20 * (Math.abs(index - 3.5) - 0.5)) / 3),
-      pose: poses[index],
+      turn: five
+        ? -(Math.sign(offset) || 1) * (15 + 15 * Math.abs(offset))
+        : -Math.sign(offset) * (15 + (20 * (Math.abs(index - half) - 0.5)) / 3),
+      pose: five
+        ? (["sit", "hand-on-hip", "arms-crossed", "lean-in", "stand"] as const)[index]
+        : poses[index],
     };
   });
 }

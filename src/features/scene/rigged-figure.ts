@@ -11,9 +11,30 @@ import {
   type Object3D,
 } from "three";
 import { clone } from "three/addons/utils/SkeletonUtils.js";
+import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
+import { pinHipHand } from "./figure-ik";
+import { refineHead } from "./head-geometry";
 import type { JointRotations } from "./model";
 
-export type FigurePose = { bones: Record<string, [number, number, number, number]> };
+export type FigurePose = { name?: string; bones: Record<string, [number, number, number, number]> };
+
+// Share a smoothed runtime copy just like the loader shares the original geometry.
+// Weld normals and refine only long head edges, without altering the GLB/cache.
+const smoothGeometry = new WeakMap<BufferGeometry, BufferGeometry>();
+function smoothSkin(source: BufferGeometry, head: number) {
+  let geometry = smoothGeometry.get(source);
+  if (!geometry) {
+    const copy = source.clone();
+    copy.deleteAttribute("normal");
+    const welded = mergeVertices(copy);
+    welded.computeVertexNormals();
+    geometry = refineHead(welded, head);
+    copy.dispose();
+    welded.dispose();
+    smoothGeometry.set(source, geometry);
+  }
+  return geometry;
+}
 
 /** Refresh deformed bounds for framing, frustum culling and pointer picking. */
 export function updateSkinBounds(root: Object3D) {
@@ -73,6 +94,10 @@ export function poseFigure(
       node.castShadow = true;
       node.receiveShadow = true;
       node.material = material;
+      node.geometry = smoothSkin(
+        node.geometry,
+        node.skeleton.bones.findIndex((bone) => bone.name === "head"),
+      );
     }
   });
   for (const [name, quaternion] of Object.entries(pose.bones)) {
@@ -82,6 +107,10 @@ export function poseFigure(
   }
   object.scale.setScalar(scale);
   updateSkinBounds(object);
+  if (pose.name === "hand-on-hip") {
+    pinHipHand(object, scale);
+    updateSkinBounds(object);
+  }
   const bounds = new Box3().setFromObject(object, true);
   // Measure the actual deformed skin, so every body/pose/height touches y=0.
   object.position.y -= bounds.min.y;
