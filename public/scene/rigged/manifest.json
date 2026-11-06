@@ -168,34 +168,34 @@
         0.999932
       ],
       "clavicle_l": [
-        0.00738,
-        0.045018,
-        -0.763234,
-        0.644509
+        0.006862,
+        0.044797,
+        -0.763573,
+        0.644129
       ],
       "upperarm_l": [
-        -0.012899,
-        0.021603,
-        -0.333426,
-        0.942441
+        -0.012949,
+        0.022135,
+        -0.33292,
+        0.942606
       ],
       "lowerarm_l": [
-        0.394692,
-        0.030571,
-        0.025546,
+        0.394693,
+        0.030577,
+        0.025548,
         0.917949
       ],
       "hand_l": [
-        0.105117,
-        0.396313,
-        -0.018569,
+        0.105116,
+        0.396314,
+        -0.018568,
         0.911889
       ],
       "index_01_l": [
         0.106762,
-        0.470497,
+        0.470496,
         -2.1e-05,
-        0.875919
+        0.87592
       ],
       "index_02_l": [
         0.106249,
@@ -210,10 +210,10 @@
         0.998017
       ],
       "middle_01_l": [
-        0.098153,
-        0.405813,
-        -0.149454,
-        0.896295
+        0.098154,
+        0.405811,
+        -0.149453,
+        0.896296
       ],
       "middle_02_l": [
         0.045784,
@@ -228,16 +228,16 @@
         0.997672
       ],
       "pinky_01_l": [
-        0.051291,
-        0.281814,
-        -0.298134,
-        0.910531
+        0.051293,
+        0.281811,
+        -0.298133,
+        0.910532
       ],
       "pinky_02_l": [
-        0.082325,
-        -0.005572,
-        0.022214,
-        0.996342
+        0.082323,
+        -0.00557,
+        0.022213,
+        0.996343
       ],
       "pinky_03_l": [
         -0.006282,
@@ -246,15 +246,15 @@
         0.999927
       ],
       "ring_01_l": [
-        0.055122,
-        0.381694,
+        0.055123,
+        0.381693,
         -0.229112,
         0.893745
       ],
       "ring_02_l": [
         0.055358,
         -0.001451,
-        0.047235,
+        0.047236,
         0.997348
       ],
       "ring_03_l": [
@@ -264,52 +264,52 @@
         0.997389
       ],
       "thumb_01_l": [
-        0.278305,
+        0.278304,
         0.704418,
-        0.429494,
-        0.491809
+        0.429495,
+        0.49181
       ],
       "thumb_02_l": [
         0.051921,
         -0.024366,
-        -0.186874,
+        -0.186875,
         0.980708
       ],
       "thumb_03_l": [
         0.141612,
-        0.023663,
+        0.023662,
         -0.040257,
         0.98882
       ],
       "clavicle_r": [
-        0.00738,
-        -0.045018,
-        0.763234,
-        0.644509
+        0.006862,
+        -0.044797,
+        0.763573,
+        0.644129
       ],
       "upperarm_r": [
-        -0.012899,
-        -0.021603,
-        0.333426,
-        0.942441
+        -0.012949,
+        -0.022135,
+        0.33292,
+        0.942606
       ],
       "lowerarm_r": [
-        0.394692,
-        -0.030571,
-        -0.025546,
+        0.394693,
+        -0.030577,
+        -0.025548,
         0.917949
       ],
       "hand_r": [
-        0.105117,
-        -0.396313,
-        0.018569,
+        0.105116,
+        -0.396314,
+        0.018568,
         0.911889
       ],
       "index_01_r": [
         0.106762,
-        -0.470497,
+        -0.470496,
         2.1e-05,
-        0.875919
+        0.87592
       ],
       "index_02_r": [
         0.106249,
@@ -324,10 +324,10 @@
         0.998017
       ],
       "middle_01_r": [
-        0.098153,
-        -0.405813,
-        0.149454,
-        0.896295
+        0.098154,
+        -0.405811,
+        0.149453,
+        0.896296
       ],
       "middle_02_r": [
         0.045784,
@@ -342,16 +342,16 @@
         0.997672
       ],
       "pinky_01_r": [
-        0.051291,
-        -0.281814,
-        0.298134,
-        0.910531
+        0.051293,
+        -0.281811,
+        0.298133,
+        0.910532
       ],
       "pinky_02_r": [
-        0.082325,
-        0.005572,
-        -0.022214,
-        0.996342
+        0.082323,
+        0.00557,
+        -0.022213,
+        0.996343
       ],
       "pinky_03_r": [
         -0.006282,
@@ -360,15 +360,15 @@
         0.999927
       ],
       "ring_01_r": [
-        0.055122,
-        -0.381694,
+        0.055123,
+        -0.381693,
         0.229112,
         0.893745
       ],
       "ring_02_r": [
         0.055358,
         0.001451,
-        -0.047235,
+        -0.047236,
         0.997348
       ],
       "ring_03_r": [
@@ -378,20 +378,20 @@
         0.997389
       ],
       "thumb_01_r": [
-        0.278305,
+        0.278304,
         -0.704418,
-        -0.429494,
-        0.491809
+        -0.429495,
+        0.49181
       ],
       "thumb_02_r": [
         0.051921,
         0.024366,
-        0.186874,
+        0.186875,
         0.980708
       ],
       "thumb_03_r": [
         0.141612,
-        -0.023663,
+        -0.023662,
         0.040257,
         0.98882
       ],
@@ -408,10 +408,10 @@
         0.98241
       ],
       "thigh_l": [
-        -0.965116,
+        -0.965115,
         -0.080176,
         0.219191,
-        0.118656
+        0.118657
       ],
       "calf_l": [
         0.052984,
@@ -420,7 +420,7 @@
         0.9693
       ],
       "foot_l": [
-        -0.535467,
+        -0.535468,
         -0.028093,
         0.021359,
         0.843818
@@ -432,10 +432,10 @@
         0.929116
       ],
       "thigh_r": [
-        -0.965116,
+        -0.965115,
         0.080176,
         -0.219191,
-        0.118656
+        0.118657
       ],
       "calf_r": [
         0.052984,
@@ -444,7 +444,7 @@
         0.9693
       ],
       "foot_r": [
-        -0.535467,
+        -0.535468,
         0.028093,
         -0.021359,
         0.843818
@@ -460,8 +460,8 @@
   "bodies": {
     "slim": {
       "path": "handoff-rigged/slim.glb",
-      "bytes": 227080,
-      "sha256": "d9ae481b432f61be1b65190893b3d89436fa256fde58a2fd01c1695094e96aa5",
+      "bytes": 227696,
+      "sha256": "74679187b280cd6535fd6f73b37e3c076a8728f6c1d87efba2a620299b7e7e34",
       "vertices": 3741,
       "triangles": 7478,
       "meshes": 1,
@@ -471,40 +471,40 @@
       "animations": 0,
       "hasSculpturalHair": false,
       "boundsMinM": [
-        -0.5294,
+        -0.5313,
         0.0,
-        -0.0814
+        -0.0788
       ],
       "boundsMaxM": [
-        0.5294,
+        0.5313,
         1.7187,
-        0.3627
+        0.3612
       ],
       "sizeM": [
-        1.0588,
+        1.0626,
         1.7187,
-        0.4441
+        0.44
       ],
       "targetHeightCm": 172.0,
       "targetHeadsTall": 7.55,
       "standingAnthropometry": {
         "heightCm": 172.0,
         "headsTall": 7.55,
-        "shoulderWidthCm": 44.27,
-        "chestWidthCm": 43.46,
-        "chestDepthCm": 21.35,
-        "waistWidthCm": 22.81,
-        "waistDepthCm": 16.44,
-        "hipWidthCm": 29.9,
-        "shoulderToWaistRatio": 1.941,
+        "shoulderWidthCm": 43.32,
+        "chestWidthCm": 27.28,
+        "chestDepthCm": 21.12,
+        "waistWidthCm": 23.88,
+        "waistDepthCm": 16.76,
+        "hipWidthCm": 31.3,
+        "shoulderToWaistRatio": 1.814,
         "hipToWaistRatio": 1.311,
-        "shoulderToHipRatio": 1.481
+        "shoulderToHipRatio": 1.384
       }
     },
     "average": {
       "path": "handoff-rigged/average.glb",
-      "bytes": 227212,
-      "sha256": "d3935d87f8c9c6adc73cf1b21ddcf31036c5cdbbae82460b2b395596958a0d53",
+      "bytes": 226864,
+      "sha256": "276667f121ebbf53dfb3f4eddff347f365246b7b985352dd84492cc1972bbef7",
       "vertices": 3741,
       "triangles": 7478,
       "meshes": 1,
@@ -514,40 +514,40 @@
       "animations": 0,
       "hasSculpturalHair": false,
       "boundsMinM": [
-        -0.5734,
+        -0.5723,
         0.0,
-        -0.0945
+        -0.0969
       ],
       "boundsMaxM": [
-        0.5734,
+        0.5723,
         1.7487,
-        0.3784
+        0.3761
       ],
       "sizeM": [
-        1.1468,
+        1.1446,
         1.7487,
-        0.4729
+        0.473
       ],
       "targetHeightCm": 175.0,
       "targetHeadsTall": 7.6,
       "standingAnthropometry": {
         "heightCm": 175.0,
         "headsTall": 7.6,
-        "shoulderWidthCm": 51.07,
-        "chestWidthCm": 43.84,
-        "chestDepthCm": 23.51,
-        "waistWidthCm": 27.3,
-        "waistDepthCm": 18.21,
-        "hipWidthCm": 34.19,
-        "shoulderToWaistRatio": 1.871,
-        "hipToWaistRatio": 1.252,
-        "shoulderToHipRatio": 1.494
+        "shoulderWidthCm": 49.78,
+        "chestWidthCm": 24.59,
+        "chestDepthCm": 22.91,
+        "waistWidthCm": 27.65,
+        "waistDepthCm": 18.6,
+        "hipWidthCm": 34.75,
+        "shoulderToWaistRatio": 1.8,
+        "hipToWaistRatio": 1.257,
+        "shoulderToHipRatio": 1.433
       }
     },
     "broad": {
       "path": "handoff-rigged/broad.glb",
-      "bytes": 227320,
-      "sha256": "5e775f89d8cddf2e7040c83ec0fd9599acdf8ac0a9893b1383c7eae42ce33681",
+      "bytes": 227312,
+      "sha256": "f5eff796d5eff09cc54c8d73033036005b860e5d34152c1856e995e93b8c5724",
       "vertices": 3741,
       "triangles": 7478,
       "meshes": 1,
@@ -559,38 +559,38 @@
       "boundsMinM": [
         -0.6268,
         0.0,
-        -0.1043
+        -0.1028
       ],
       "boundsMaxM": [
         0.6268,
         1.7886,
-        0.3961
+        0.3937
       ],
       "sizeM": [
         1.2536,
         1.7886,
-        0.5004
+        0.4965
       ],
       "targetHeightCm": 179.0,
       "targetHeadsTall": 7.65,
       "standingAnthropometry": {
         "heightCm": 179.0,
         "headsTall": 7.65,
-        "shoulderWidthCm": 55.96,
-        "chestWidthCm": 43.96,
-        "chestDepthCm": 26.35,
+        "shoulderWidthCm": 55.29,
+        "chestWidthCm": 32.29,
+        "chestDepthCm": 25.82,
         "waistWidthCm": 31.86,
-        "waistDepthCm": 22.43,
+        "waistDepthCm": 22.21,
         "hipWidthCm": 38.01,
-        "shoulderToWaistRatio": 1.756,
+        "shoulderToWaistRatio": 1.735,
         "hipToWaistRatio": 1.193,
-        "shoulderToHipRatio": 1.472
+        "shoulderToHipRatio": 1.455
       }
     },
     "slim-f": {
       "path": "handoff-rigged/slim-f.glb",
-      "bytes": 242532,
-      "sha256": "458de81a41b30bd7150df1f870f6d1c7fd83f09efc476f9a95da1ee217ca07c1",
+      "bytes": 242744,
+      "sha256": "b6cb85ba9efcfd7b93f12df82dc6301a3d9ae05cf042f1c463ea4de1afb38de0",
       "vertices": 4017,
       "triangles": 8022,
       "meshes": 1,
@@ -600,40 +600,40 @@
       "animations": 0,
       "hasSculpturalHair": true,
       "boundsMinM": [
-        -0.4704,
+        -0.4747,
         0.0,
-        -0.1029
+        -0.103
       ],
       "boundsMaxM": [
-        0.4704,
+        0.4747,
         1.6433,
-        0.2895
+        0.2905
       ],
       "sizeM": [
-        0.9408,
+        0.9494,
         1.6433,
-        0.3924
+        0.3935
       ],
       "targetHeightCm": 164.0,
       "targetHeadsTall": 7.45,
       "standingAnthropometry": {
         "heightCm": 164.0,
         "headsTall": 7.45,
-        "shoulderWidthCm": 39.22,
-        "chestWidthCm": 43.75,
-        "chestDepthCm": 24.04,
-        "waistWidthCm": 25.32,
-        "waistDepthCm": 14.28,
-        "hipWidthCm": 36.49,
-        "shoulderToWaistRatio": 1.549,
-        "hipToWaistRatio": 1.441,
-        "shoulderToHipRatio": 1.075
+        "shoulderWidthCm": 39.06,
+        "chestWidthCm": 25.19,
+        "chestDepthCm": 21.16,
+        "waistWidthCm": 25.24,
+        "waistDepthCm": 14.64,
+        "hipWidthCm": 35.98,
+        "shoulderToWaistRatio": 1.548,
+        "hipToWaistRatio": 1.426,
+        "shoulderToHipRatio": 1.086
       }
     },
     "average-f": {
       "path": "handoff-rigged/average-f.glb",
-      "bytes": 242552,
-      "sha256": "d32b28e038f3cf52d93164478381253c5d07497e0eb39ec03332429bd7c500f8",
+      "bytes": 242620,
+      "sha256": "1bdaccb7dbb49095a5655d6743fb641ef9d8f3d716b1a077fd93e407ab8908f5",
       "vertices": 4017,
       "triangles": 8022,
       "meshes": 1,
@@ -643,40 +643,40 @@
       "animations": 0,
       "hasSculpturalHair": true,
       "boundsMinM": [
-        -0.4926,
+        -0.4946,
         0.0,
-        -0.1078
+        -0.1051
       ],
       "boundsMaxM": [
-        0.4926,
+        0.4946,
         1.6833,
-        0.3004
+        0.3008
       ],
       "sizeM": [
-        0.9852,
+        0.9892,
         1.6833,
-        0.4082
+        0.4059
       ],
       "targetHeightCm": 168.0,
       "targetHeadsTall": 7.5,
       "standingAnthropometry": {
         "heightCm": 168.0,
         "headsTall": 7.5,
-        "shoulderWidthCm": 42.48,
-        "chestWidthCm": 43.51,
-        "chestDepthCm": 25.88,
-        "waistWidthCm": 29.43,
-        "waistDepthCm": 17.49,
-        "hipWidthCm": 42.58,
-        "shoulderToWaistRatio": 1.443,
-        "hipToWaistRatio": 1.447,
-        "shoulderToHipRatio": 0.998
+        "shoulderWidthCm": 41.88,
+        "chestWidthCm": 27.25,
+        "chestDepthCm": 22.2,
+        "waistWidthCm": 29.17,
+        "waistDepthCm": 17.58,
+        "hipWidthCm": 40.11,
+        "shoulderToWaistRatio": 1.436,
+        "hipToWaistRatio": 1.375,
+        "shoulderToHipRatio": 1.044
       }
     },
     "broad-f": {
       "path": "handoff-rigged/broad-f.glb",
-      "bytes": 242988,
-      "sha256": "b164953ca8f1774ffea07e8f11748cae666fce88e44fecc05b1152273ba0f610",
+      "bytes": 242672,
+      "sha256": "cdc50f673aa04c84cb364102080c4c943efce9c56d63d9b4fac55fcf427d8b84",
       "vertices": 4017,
       "triangles": 8022,
       "meshes": 1,
@@ -686,34 +686,34 @@
       "animations": 0,
       "hasSculpturalHair": true,
       "boundsMinM": [
-        -0.514,
+        -0.5146,
         0.0,
-        -0.1254
+        -0.109
       ],
       "boundsMaxM": [
-        0.514,
+        0.5146,
         1.7133,
-        0.3115
+        0.3121
       ],
       "sizeM": [
-        1.028,
+        1.0292,
         1.7133,
-        0.4369
+        0.4211
       ],
       "targetHeightCm": 171.0,
       "targetHeadsTall": 7.55,
       "standingAnthropometry": {
         "heightCm": 171.0,
         "headsTall": 7.55,
-        "shoulderWidthCm": 44.84,
-        "chestWidthCm": 43.76,
-        "chestDepthCm": 29.44,
-        "waistWidthCm": 35.05,
-        "waistDepthCm": 20.94,
-        "hipWidthCm": 48.68,
-        "shoulderToWaistRatio": 1.279,
-        "hipToWaistRatio": 1.389,
-        "shoulderToHipRatio": 0.921
+        "shoulderWidthCm": 43.97,
+        "chestWidthCm": 28.97,
+        "chestDepthCm": 24.69,
+        "waistWidthCm": 33.24,
+        "waistDepthCm": 20.16,
+        "hipWidthCm": 42.61,
+        "shoulderToWaistRatio": 1.323,
+        "hipToWaistRatio": 1.282,
+        "shoulderToHipRatio": 1.032
       }
     }
   },
@@ -722,18 +722,18 @@
       "path": "handoff-rigged/poses/stand.json",
       "name": "stand",
       "category": "core",
-      "description": "Neutral upright standing posture with natural hip-width feet and relaxed arms at sides",
-      "bytes": 9562,
-      "sha256": "59a162fe9962f5b4a362a219d38e2cb674b8627650a24ced170f4a829d3e718e",
+      "description": "Relaxed upright standing posture with natural contrapposto weight shift, dropped shoulders, unlocked soft knees, and arms draped naturally at sides",
+      "bytes": 9877,
+      "sha256": "b43ba33894da6b39e553b329bfefb2900b07e55d7f7805e2f77f0e9cf1c6983a",
       "boneCount": 53,
-      "groundOffsetY": 0.00386,
+      "groundOffsetY": 0.00649,
       "groundOffsetByBuild": {
-        "slim": 0.00384,
-        "average": 0.00386,
-        "broad": 0.00395,
-        "slim-f": 0.00286,
-        "average-f": 0.00275,
-        "broad-f": 0.00277
+        "slim": 0.00649,
+        "average": 0.00649,
+        "broad": 0.00638,
+        "slim-f": 0.00451,
+        "average-f": 0.00434,
+        "broad-f": 0.00451
       }
     },
     "walk": {
@@ -742,16 +742,16 @@
       "category": "core",
       "description": "Natural mid-stride walk with left leg leading and right arm swinging forward",
       "bytes": 9607,
-      "sha256": "4af3c7308b19c9ab4acced58a06e6c729e66b6494c35e0da1bccc44374a02d81",
+      "sha256": "61053875764bf1c567b50a1c1e58dc93f27f08068f9c6da21840d8152d00a338",
       "boneCount": 53,
-      "groundOffsetY": -0.01755,
+      "groundOffsetY": -0.01777,
       "groundOffsetByBuild": {
-        "slim": -0.01677,
-        "average": -0.01755,
+        "slim": -0.01702,
+        "average": -0.01777,
         "broad": -0.01797,
         "slim-f": -0.0138,
-        "average-f": -0.01442,
-        "broad-f": -0.01472
+        "average-f": -0.01437,
+        "broad-f": -0.01457
       }
     },
     "point": {
@@ -759,17 +759,17 @@
       "name": "point",
       "category": "core",
       "description": "Standing gesture with left arm extended forward-outward pointing with index finger in clean silhouette",
-      "bytes": 9693,
-      "sha256": "c527c8da888a640c67febfe93cdbb88d12af42d208c52f4ee67b0818b30cb6dd",
+      "bytes": 9692,
+      "sha256": "177ed7d93abc84ca44e7edc5f22cdea0a4b642024068a7251bcad1c7278804aa",
       "boneCount": 53,
       "groundOffsetY": 0.00386,
       "groundOffsetByBuild": {
-        "slim": 0.00384,
+        "slim": 0.00382,
         "average": 0.00386,
-        "broad": 0.00395,
+        "broad": 0.00394,
         "slim-f": 0.00286,
-        "average-f": 0.00275,
-        "broad-f": 0.00277
+        "average-f": 0.00279,
+        "broad-f": 0.00285
       }
     },
     "wave": {
@@ -777,17 +777,17 @@
       "name": "wave",
       "category": "core",
       "description": "Friendly standing greeting with right arm raised in an open-palm wave",
-      "bytes": 9712,
-      "sha256": "11a43f8fecaa15e06da48c288fc446f5e249372b59928f4209c58ab1c27fb6ee",
+      "bytes": 9723,
+      "sha256": "e40771f88b96898e45a9c6dadb9358236170a7eec01f29a919f2c39a1880e645",
       "boneCount": 53,
       "groundOffsetY": 0.00386,
       "groundOffsetByBuild": {
-        "slim": 0.00384,
+        "slim": 0.00382,
         "average": 0.00386,
-        "broad": 0.00395,
+        "broad": 0.00394,
         "slim-f": 0.00286,
-        "average-f": 0.00275,
-        "broad-f": 0.00277
+        "average-f": 0.00279,
+        "broad-f": 0.00285
       }
     },
     "sit": {
@@ -795,17 +795,17 @@
       "name": "sit",
       "category": "core",
       "description": "Upright seated posture with thighs horizontal, shins vertical, soles flat, hands resting on thighs",
-      "bytes": 9587,
-      "sha256": "9d9a91a635e0b22a2abf11118ed7434cb946a1ae9ede791aef4fdbab3c164098",
+      "bytes": 9607,
+      "sha256": "32c32b53759add350b5d2669e346e754d8217080847b3b8c57ad0bcb9286996d",
       "boneCount": 53,
       "groundOffsetY": -0.39863,
       "groundOffsetByBuild": {
-        "slim": -0.39289,
+        "slim": -0.39249,
         "average": -0.39863,
         "broad": -0.4147,
-        "slim-f": -0.348,
-        "average-f": -0.36549,
-        "broad-f": -0.37308
+        "slim-f": -0.34818,
+        "average-f": -0.36644,
+        "broad-f": -0.37553
       }
     },
     "arms-crossed": {
@@ -813,35 +813,35 @@
       "name": "arms-crossed",
       "category": "core",
       "description": "Confident standing posture with both forearms folded cleanly across the front of the torso",
-      "bytes": 9596,
-      "sha256": "2ffcbc0c84d9a0bcc0e6cb5d47652507aa82e5873cb1cdc8ba2cd74555ebdb48",
+      "bytes": 9595,
+      "sha256": "0b832be65b9e4d621b1edda9a42798787a53565ee5dbfdb38fc7563ae695ddd5",
       "boneCount": 53,
       "groundOffsetY": 0.00386,
       "groundOffsetByBuild": {
-        "slim": 0.00384,
+        "slim": 0.00382,
         "average": 0.00386,
-        "broad": 0.00395,
+        "broad": 0.00394,
         "slim-f": 0.00286,
-        "average-f": 0.00275,
-        "broad-f": 0.00277
+        "average-f": 0.00279,
+        "broad-f": 0.00285
       }
     },
     "lean-in": {
       "path": "handoff-rigged/poses/lean-in.json",
       "name": "lean-in",
       "category": "dialogue",
-      "description": "Attentive two-person dialogue posture leaning forward from the torso with open conversational forearms",
-      "bytes": 9630,
-      "sha256": "281e52eb75781638973943d4f37aa2f82a4e136805d2195ce963774c5013707d",
+      "description": "Relaxed attentive two-person dialogue posture with forward weight shift, dropped shoulders, unlocked soft knees, and natural 20-25 deg bent elbows",
+      "bytes": 9867,
+      "sha256": "68b2c8bbd2749b0002f9498109c70b6c6b2d2890beff8b3572afd80c568547fa",
       "boneCount": 53,
-      "groundOffsetY": 0.00386,
+      "groundOffsetY": 0.00518,
       "groundOffsetByBuild": {
-        "slim": 0.00384,
-        "average": 0.00386,
-        "broad": 0.00395,
-        "slim-f": 0.00286,
-        "average-f": 0.00275,
-        "broad-f": 0.00277
+        "slim": 0.0052,
+        "average": 0.00518,
+        "broad": 0.00504,
+        "slim-f": 0.00333,
+        "average-f": 0.00317,
+        "broad-f": 0.00332
       }
     },
     "hand-on-hip": {
@@ -849,17 +849,17 @@
       "name": "hand-on-hip",
       "category": "dialogue",
       "description": "Conversational standing posture with left hand resting on hip and right arm relaxed",
-      "bytes": 9634,
-      "sha256": "8d98e20c4675793bb34f5e5a3b58c8ba1541c33955e47c118bb97795baa73abb",
+      "bytes": 9640,
+      "sha256": "b259285736ee60538d2afb7ec1d16b42612b0aa466cb1c4294ed8b5c8ba0cf4f",
       "boneCount": 53,
       "groundOffsetY": 0.00386,
       "groundOffsetByBuild": {
-        "slim": 0.00384,
+        "slim": 0.00382,
         "average": 0.00386,
-        "broad": 0.00395,
+        "broad": 0.00394,
         "slim-f": 0.00286,
-        "average-f": 0.00275,
-        "broad-f": 0.00277
+        "average-f": 0.00279,
+        "broad-f": 0.00285
       }
     },
     "hands-on-table": {
@@ -868,16 +868,16 @@
       "category": "dialogue",
       "description": "Two-person table staging posture leaning slightly forward with both palms pitched flat onto a table surface",
       "bytes": 9810,
-      "sha256": "92678183c11b733d847ee5ab2af17abcf82227510d9a03f274e142d374187e0a",
+      "sha256": "0d9e3e8e699011d6444a93032162eebefa06fd3e05d5fc4d1ed461e1fe28bc5d",
       "boneCount": 53,
       "groundOffsetY": 0.00386,
       "groundOffsetByBuild": {
-        "slim": 0.00384,
+        "slim": 0.00382,
         "average": 0.00386,
-        "broad": 0.00395,
+        "broad": 0.00394,
         "slim-f": 0.00286,
-        "average-f": 0.00275,
-        "broad-f": 0.00277
+        "average-f": 0.00279,
+        "broad-f": 0.00285
       }
     },
     "look-over-shoulder": {
@@ -885,17 +885,17 @@
       "name": "look-over-shoulder",
       "category": "dialogue",
       "description": "Dynamic staging posture with spine, neck, and head turned smoothly to look back over the left shoulder",
-      "bytes": 9746,
-      "sha256": "467b4e660207a3d62a8083413de6f7b12b7cb7e3b7fabc269a957ea11bf8f5ad",
+      "bytes": 9740,
+      "sha256": "b62cc72b414da9556cb3a3e6bcc5ffefebfa8eb90bebe9217f1b0993cbb42018",
       "boneCount": 53,
       "groundOffsetY": 0.00386,
       "groundOffsetByBuild": {
-        "slim": 0.00384,
+        "slim": 0.00382,
         "average": 0.00386,
-        "broad": 0.00395,
+        "broad": 0.00394,
         "slim-f": 0.00286,
-        "average-f": 0.00275,
-        "broad-f": 0.00277
+        "average-f": 0.00279,
+        "broad-f": 0.00285
       }
     },
     "hug-ready": {
@@ -904,16 +904,16 @@
       "category": "dialogue",
       "description": "Warm welcoming two-person staging posture with both arms raised and opened wide forward-outward",
       "bytes": 9776,
-      "sha256": "9eeabcdaa59cef042219bcede503343cd67a6f54e793eb2fa0429f8c867ee6e0",
+      "sha256": "e76ee7ba8813379ed9d46f68ab63dff6efe7a993932a244e4248e576a737cac7",
       "boneCount": 53,
       "groundOffsetY": 0.00386,
       "groundOffsetByBuild": {
-        "slim": 0.00384,
+        "slim": 0.00382,
         "average": 0.00386,
-        "broad": 0.00395,
+        "broad": 0.00394,
         "slim-f": 0.00286,
-        "average-f": 0.00275,
-        "broad-f": 0.00277
+        "average-f": 0.00279,
+        "broad-f": 0.00285
       }
     },
     "kneel": {
@@ -921,17 +921,17 @@
       "name": "kneel",
       "category": "dialogue",
       "description": "Grounded one-knee staging kneel with left foot planted flat in front and right knee resting on floor",
-      "bytes": 9611,
-      "sha256": "62bdf83e95ad9d4be665d91a0ad2975d6dd6c74af06ba8f6fca6f2cdfd08d360",
+      "bytes": 9619,
+      "sha256": "344c8a8545d5542dba7fb70ef3c0718ed4feeec00c17cf686cd61f84894c54e0",
       "boneCount": 53,
-      "groundOffsetY": -0.41204,
+      "groundOffsetY": -0.41202,
       "groundOffsetByBuild": {
-        "slim": -0.40051,
-        "average": -0.41204,
-        "broad": -0.42194,
-        "slim-f": -0.3596,
-        "average-f": -0.3776,
-        "broad-f": -0.38544
+        "slim": -0.40059,
+        "average": -0.41202,
+        "broad": -0.42192,
+        "slim-f": -0.35978,
+        "average-f": -0.37862,
+        "broad-f": -0.38809
       }
     }
   },
@@ -940,7 +940,7 @@
       "actors": [
         {
           "build": "slim",
-          "deformedMaxY": 1.72191,
+          "deformedMaxY": 1.72189,
           "deformedMinY": 0.0,
           "label": "slim-point",
           "pose": "point",
@@ -950,7 +950,7 @@
         {
           "build": "slim-f",
           "deformedMaxY": 1.64711,
-          "deformedMinY": 0.0,
+          "deformedMinY": -0.0,
           "label": "slim-f-arms-crossed",
           "pose": "arms-crossed",
           "triangles": 8022,
@@ -958,7 +958,7 @@
         },
         {
           "build": "average",
-          "deformedMaxY": 1.72806,
+          "deformedMaxY": 1.72783,
           "deformedMinY": 0.0,
           "label": "average-walk",
           "pose": "walk",
@@ -967,7 +967,7 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.3158,
+          "deformedMaxY": 1.31486,
           "deformedMinY": 0.0,
           "label": "average-f-sit",
           "pose": "sit",
@@ -976,8 +976,8 @@
         },
         {
           "build": "broad",
-          "deformedMaxY": 1.91299,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.9114,
+          "deformedMinY": -0.0,
           "label": "broad-wave",
           "pose": "wave",
           "triangles": 7478,
@@ -985,7 +985,7 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.32584,
+          "deformedMaxY": 1.32321,
           "deformedMinY": -0.0,
           "label": "broad-f-kneel",
           "pose": "kneel",
@@ -993,21 +993,21 @@
           "xPositionM": 1.6
         }
       ],
-      "bytes": 855658,
+      "bytes": 858488,
       "cameraDistanceM": 6.35,
       "path": "review/rigged-round-2/lineup-all6-action-poses-1920x1080.png",
       "resolution": [
         1920,
         1080
       ],
-      "sha256": "638c5a69101ec62e3cd20584cce4f5faebc3ff2130d1277e30666836f92d9521",
+      "sha256": "e9233c636bf503da0366740d69dc9c6c072032cba13d5ab701402496290b72e3",
       "yawDeg": -12.0
     },
     "review/rigged-round-2/lineup-all6-action-poses-390x844.png": {
       "actors": [
         {
           "build": "slim",
-          "deformedMaxY": 1.72191,
+          "deformedMaxY": 1.72189,
           "deformedMinY": 0.0,
           "label": "slim-point",
           "pose": "point",
@@ -1017,7 +1017,7 @@
         {
           "build": "slim-f",
           "deformedMaxY": 1.64711,
-          "deformedMinY": 0.0,
+          "deformedMinY": -0.0,
           "label": "slim-f-arms-crossed",
           "pose": "arms-crossed",
           "triangles": 8022,
@@ -1025,7 +1025,7 @@
         },
         {
           "build": "average",
-          "deformedMaxY": 1.72806,
+          "deformedMaxY": 1.72783,
           "deformedMinY": 0.0,
           "label": "average-walk",
           "pose": "walk",
@@ -1034,7 +1034,7 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.3158,
+          "deformedMaxY": 1.31486,
           "deformedMinY": 0.0,
           "label": "average-f-sit",
           "pose": "sit",
@@ -1043,8 +1043,8 @@
         },
         {
           "build": "broad",
-          "deformedMaxY": 1.91299,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.9114,
+          "deformedMinY": -0.0,
           "label": "broad-wave",
           "pose": "wave",
           "triangles": 7478,
@@ -1052,7 +1052,7 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.32584,
+          "deformedMaxY": 1.32321,
           "deformedMinY": -0.0,
           "label": "broad-f-kneel",
           "pose": "kneel",
@@ -1060,21 +1060,21 @@
           "xPositionM": 1.6
         }
       ],
-      "bytes": 104498,
+      "bytes": 105379,
       "cameraDistanceM": 6.35,
       "path": "review/rigged-round-2/lineup-all6-action-poses-390x844.png",
       "resolution": [
         390,
         844
       ],
-      "sha256": "000b398b7b032a663b74a24565780faebcac8ebfe8079fca99f16e92a8edee7b",
+      "sha256": "f145de58e1660dd8bdfbe5bafbe129b0397bc3c9244e163dbc7476bb74ef21bf",
       "yawDeg": -12.0
     },
     "review/rigged-round-2/lineup-all6-dialogue-poses-1920x1080.png": {
       "actors": [
         {
           "build": "slim",
-          "deformedMaxY": 1.69142,
+          "deformedMaxY": 1.69514,
           "deformedMinY": 0.0,
           "label": "slim-lean-in",
           "pose": "lean-in",
@@ -1083,8 +1083,8 @@
         },
         {
           "build": "slim-f",
-          "deformedMaxY": 1.64691,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.6469,
+          "deformedMinY": -0.0,
           "label": "slim-f-hand-on-hip",
           "pose": "hand-on-hip",
           "triangles": 8022,
@@ -1101,7 +1101,7 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.68753,
+          "deformedMaxY": 1.68757,
           "deformedMinY": -0.0,
           "label": "average-f-look-over-shoulder",
           "pose": "look-over-shoulder",
@@ -1110,8 +1110,8 @@
         },
         {
           "build": "broad",
-          "deformedMaxY": 1.79688,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.79687,
+          "deformedMinY": -0.0,
           "label": "broad-hug-ready",
           "pose": "hug-ready",
           "triangles": 7478,
@@ -1119,7 +1119,7 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.32584,
+          "deformedMaxY": 1.32321,
           "deformedMinY": -0.0,
           "label": "broad-f-kneel",
           "pose": "kneel",
@@ -1127,21 +1127,21 @@
           "xPositionM": 1.6
         }
       ],
-      "bytes": 870010,
+      "bytes": 869436,
       "cameraDistanceM": 6.35,
       "path": "review/rigged-round-2/lineup-all6-dialogue-poses-1920x1080.png",
       "resolution": [
         1920,
         1080
       ],
-      "sha256": "bf4791b1efbb0c0630e09b97a71224120a106f0c2a225510b05db42dfabe8568",
+      "sha256": "a602be67aa4fd5c3993a6000067d5691cde218d486b18fcd1c23398f615dc195",
       "yawDeg": -12.0
     },
     "review/rigged-round-2/lineup-all6-dialogue-poses-390x844.png": {
       "actors": [
         {
           "build": "slim",
-          "deformedMaxY": 1.69142,
+          "deformedMaxY": 1.69514,
           "deformedMinY": 0.0,
           "label": "slim-lean-in",
           "pose": "lean-in",
@@ -1150,8 +1150,8 @@
         },
         {
           "build": "slim-f",
-          "deformedMaxY": 1.64691,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.6469,
+          "deformedMinY": -0.0,
           "label": "slim-f-hand-on-hip",
           "pose": "hand-on-hip",
           "triangles": 8022,
@@ -1168,7 +1168,7 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.68753,
+          "deformedMaxY": 1.68757,
           "deformedMinY": -0.0,
           "label": "average-f-look-over-shoulder",
           "pose": "look-over-shoulder",
@@ -1177,8 +1177,8 @@
         },
         {
           "build": "broad",
-          "deformedMaxY": 1.79688,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.79687,
+          "deformedMinY": -0.0,
           "label": "broad-hug-ready",
           "pose": "hug-ready",
           "triangles": 7478,
@@ -1186,7 +1186,7 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.32584,
+          "deformedMaxY": 1.32321,
           "deformedMinY": -0.0,
           "label": "broad-f-kneel",
           "pose": "kneel",
@@ -1194,21 +1194,21 @@
           "xPositionM": 1.6
         }
       ],
-      "bytes": 105590,
+      "bytes": 106650,
       "cameraDistanceM": 6.35,
       "path": "review/rigged-round-2/lineup-all6-dialogue-poses-390x844.png",
       "resolution": [
         390,
         844
       ],
-      "sha256": "e9ed73a65bbcd5b720dd75284f9e528f3faf5ca09f9b8813f7fdee80f66c49be",
+      "sha256": "980765174f6c250bb48e541f2fa08245b6472dfba0d438747480f94492ac1564",
       "yawDeg": -12.0
     },
     "review/rigged-round-2/lineup-all6-stand-1920x1080.png": {
       "actors": [
         {
           "build": "slim",
-          "deformedMaxY": 1.72254,
+          "deformedMaxY": 1.72486,
           "deformedMinY": 0.0,
           "label": "slim",
           "pose": "stand",
@@ -1217,8 +1217,8 @@
         },
         {
           "build": "slim-f",
-          "deformedMaxY": 1.64612,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.64784,
+          "deformedMinY": -0.0,
           "label": "slim-f",
           "pose": "stand",
           "triangles": 8022,
@@ -1226,7 +1226,7 @@
         },
         {
           "build": "average",
-          "deformedMaxY": 1.75255,
+          "deformedMaxY": 1.75481,
           "deformedMinY": -0.0,
           "label": "average",
           "pose": "stand",
@@ -1235,7 +1235,7 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.68603,
+          "deformedMaxY": 1.68773,
           "deformedMinY": -0.0,
           "label": "average-f",
           "pose": "stand",
@@ -1244,7 +1244,7 @@
         },
         {
           "build": "broad",
-          "deformedMaxY": 1.79259,
+          "deformedMaxY": 1.79465,
           "deformedMinY": 0.0,
           "label": "broad",
           "pose": "stand",
@@ -1253,29 +1253,29 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.71609,
-          "deformedMinY": -1e-05,
+          "deformedMaxY": 1.71792,
+          "deformedMinY": 0.0,
           "label": "broad-f",
           "pose": "stand",
           "triangles": 8022,
           "xPositionM": 1.6
         }
       ],
-      "bytes": 887593,
+      "bytes": 862128,
       "cameraDistanceM": 6.35,
       "path": "review/rigged-round-2/lineup-all6-stand-1920x1080.png",
       "resolution": [
         1920,
         1080
       ],
-      "sha256": "1d60b5fc6b24c2f78dd3f902b19677126c635a00b050a334c778396c8d35c26b",
+      "sha256": "b1a142e796a9d13c94adf9e5af3e3c87827868adf11d0d9f04dc52a7afd4390f",
       "yawDeg": -12.0
     },
     "review/rigged-round-2/lineup-all6-stand-390x844.png": {
       "actors": [
         {
           "build": "slim",
-          "deformedMaxY": 1.72254,
+          "deformedMaxY": 1.72486,
           "deformedMinY": 0.0,
           "label": "slim",
           "pose": "stand",
@@ -1284,8 +1284,8 @@
         },
         {
           "build": "slim-f",
-          "deformedMaxY": 1.64612,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.64784,
+          "deformedMinY": -0.0,
           "label": "slim-f",
           "pose": "stand",
           "triangles": 8022,
@@ -1293,7 +1293,7 @@
         },
         {
           "build": "average",
-          "deformedMaxY": 1.75255,
+          "deformedMaxY": 1.75481,
           "deformedMinY": -0.0,
           "label": "average",
           "pose": "stand",
@@ -1302,7 +1302,7 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.68603,
+          "deformedMaxY": 1.68773,
           "deformedMinY": -0.0,
           "label": "average-f",
           "pose": "stand",
@@ -1311,7 +1311,7 @@
         },
         {
           "build": "broad",
-          "deformedMaxY": 1.79259,
+          "deformedMaxY": 1.79465,
           "deformedMinY": 0.0,
           "label": "broad",
           "pose": "stand",
@@ -1320,29 +1320,29 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.71609,
-          "deformedMinY": -1e-05,
+          "deformedMaxY": 1.71792,
+          "deformedMinY": 0.0,
           "label": "broad-f",
           "pose": "stand",
           "triangles": 8022,
           "xPositionM": 1.6
         }
       ],
-      "bytes": 106472,
+      "bytes": 105490,
       "cameraDistanceM": 6.35,
       "path": "review/rigged-round-2/lineup-all6-stand-390x844.png",
       "resolution": [
         390,
         844
       ],
-      "sha256": "889671f4e9fee6afbeeedbab6d1c0c8523a4f1ba478c6f348cb820e9cbc7daff",
+      "sha256": "313004211d5b09e5f1d1a93d3db8b49207abbdd3a7c505f5f1252392e8f0d58d",
       "yawDeg": -12.0
     },
     "review/rigged-round-2/lineup-body-average-4poses-1920x1080.png": {
       "actors": [
         {
           "build": "average",
-          "deformedMaxY": 1.75255,
+          "deformedMaxY": 1.75481,
           "deformedMinY": -0.0,
           "label": "average-stand",
           "pose": "stand",
@@ -1351,7 +1351,7 @@
         },
         {
           "build": "average",
-          "deformedMaxY": 1.72806,
+          "deformedMaxY": 1.72783,
           "deformedMinY": 0.0,
           "label": "average-walk",
           "pose": "walk",
@@ -1369,7 +1369,7 @@
         },
         {
           "build": "average",
-          "deformedMaxY": 1.85571,
+          "deformedMaxY": 1.8542,
           "deformedMinY": -0.0,
           "label": "average-wave",
           "pose": "wave",
@@ -1377,21 +1377,21 @@
           "xPositionM": 1.2
         }
       ],
-      "bytes": 797197,
+      "bytes": 790688,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-average-4poses-1920x1080.png",
       "resolution": [
         1920,
         1080
       ],
-      "sha256": "f27f87aa087ce48ed9ba4a05fad9e7c4ce4e05386ff479b4dec8d7ed3dedc42f",
+      "sha256": "eaca91be45fdc40380f63576b7dbffdd55c333ead5827bbb9f673db9fcbdd9da",
       "yawDeg": -10.0
     },
     "review/rigged-round-2/lineup-body-average-4poses-390x844.png": {
       "actors": [
         {
           "build": "average",
-          "deformedMaxY": 1.75255,
+          "deformedMaxY": 1.75481,
           "deformedMinY": -0.0,
           "label": "average-stand",
           "pose": "stand",
@@ -1400,7 +1400,7 @@
         },
         {
           "build": "average",
-          "deformedMaxY": 1.72806,
+          "deformedMaxY": 1.72783,
           "deformedMinY": 0.0,
           "label": "average-walk",
           "pose": "walk",
@@ -1418,7 +1418,7 @@
         },
         {
           "build": "average",
-          "deformedMaxY": 1.85571,
+          "deformedMaxY": 1.8542,
           "deformedMinY": -0.0,
           "label": "average-wave",
           "pose": "wave",
@@ -1426,21 +1426,21 @@
           "xPositionM": 1.2
         }
       ],
-      "bytes": 105222,
+      "bytes": 108582,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-average-4poses-390x844.png",
       "resolution": [
         390,
         844
       ],
-      "sha256": "cea4c306a8bd3cfda11be9385357a8fc4702c16e274bd77935df210e138b4b65",
+      "sha256": "adfe00feed496cca94beda84a375da239be95caad0d52622e282ad287d3a6b54",
       "yawDeg": -10.0
     },
     "review/rigged-round-2/lineup-body-average-f-4poses-1920x1080.png": {
       "actors": [
         {
           "build": "average-f",
-          "deformedMaxY": 1.68603,
+          "deformedMaxY": 1.68773,
           "deformedMinY": -0.0,
           "label": "average-f-stand",
           "pose": "stand",
@@ -1449,8 +1449,8 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.66631,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.66637,
+          "deformedMinY": -0.0,
           "label": "average-f-walk",
           "pose": "walk",
           "triangles": 8022,
@@ -1458,7 +1458,7 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.3158,
+          "deformedMaxY": 1.31486,
           "deformedMinY": 0.0,
           "label": "average-f-sit",
           "pose": "sit",
@@ -1467,7 +1467,7 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.71442,
+          "deformedMaxY": 1.71529,
           "deformedMinY": -0.0,
           "label": "average-f-wave",
           "pose": "wave",
@@ -1475,21 +1475,21 @@
           "xPositionM": 1.2
         }
       ],
-      "bytes": 761983,
+      "bytes": 737342,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-average-f-4poses-1920x1080.png",
       "resolution": [
         1920,
         1080
       ],
-      "sha256": "9027c52a7ef31083b34d1efe8c81afeb2fbc4bc20a5c771a3500b730b7642595",
+      "sha256": "4e72fbe1ba2e3199eddd6f017c3f45c05beb60d401da1d9e275d1a2077577fbb",
       "yawDeg": -10.0
     },
     "review/rigged-round-2/lineup-body-average-f-4poses-390x844.png": {
       "actors": [
         {
           "build": "average-f",
-          "deformedMaxY": 1.68603,
+          "deformedMaxY": 1.68773,
           "deformedMinY": -0.0,
           "label": "average-f-stand",
           "pose": "stand",
@@ -1498,8 +1498,8 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.66631,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.66637,
+          "deformedMinY": -0.0,
           "label": "average-f-walk",
           "pose": "walk",
           "triangles": 8022,
@@ -1507,7 +1507,7 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.3158,
+          "deformedMaxY": 1.31486,
           "deformedMinY": 0.0,
           "label": "average-f-sit",
           "pose": "sit",
@@ -1516,7 +1516,7 @@
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.71442,
+          "deformedMaxY": 1.71529,
           "deformedMinY": -0.0,
           "label": "average-f-wave",
           "pose": "wave",
@@ -1524,21 +1524,21 @@
           "xPositionM": 1.2
         }
       ],
-      "bytes": 101463,
+      "bytes": 103854,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-average-f-4poses-390x844.png",
       "resolution": [
         390,
         844
       ],
-      "sha256": "9401839048ff10188258a1f551b40f8902c2099e78fd11634ef5312236423d9b",
+      "sha256": "b8e904a14b7ac25e97332dc02829bd06cf782ecbcdcbf70688157243bd885f50",
       "yawDeg": -10.0
     },
     "review/rigged-round-2/lineup-body-broad-4poses-1920x1080.png": {
       "actors": [
         {
           "build": "broad",
-          "deformedMaxY": 1.79259,
+          "deformedMaxY": 1.79465,
           "deformedMinY": 0.0,
           "label": "broad-stand",
           "pose": "stand",
@@ -1557,7 +1557,7 @@
         {
           "build": "broad",
           "deformedMaxY": 1.3716,
-          "deformedMinY": -0.0,
+          "deformedMinY": 0.0,
           "label": "broad-sit",
           "pose": "sit",
           "triangles": 7478,
@@ -1565,29 +1565,29 @@
         },
         {
           "build": "broad",
-          "deformedMaxY": 1.91299,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.9114,
+          "deformedMinY": -0.0,
           "label": "broad-wave",
           "pose": "wave",
           "triangles": 7478,
           "xPositionM": 1.2
         }
       ],
-      "bytes": 848423,
+      "bytes": 842530,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-broad-4poses-1920x1080.png",
       "resolution": [
         1920,
         1080
       ],
-      "sha256": "1611605289b7b5fc439941a0032e2359ccd5997725ba4aaa9b4f03df8d72f391",
+      "sha256": "464e0e00b14ec7d4e9c001643ee424ecd8ef0b94f71e8d0200caa050212fd308",
       "yawDeg": -10.0
     },
     "review/rigged-round-2/lineup-body-broad-4poses-390x844.png": {
       "actors": [
         {
           "build": "broad",
-          "deformedMaxY": 1.79259,
+          "deformedMaxY": 1.79465,
           "deformedMinY": 0.0,
           "label": "broad-stand",
           "pose": "stand",
@@ -1606,7 +1606,7 @@
         {
           "build": "broad",
           "deformedMaxY": 1.3716,
-          "deformedMinY": -0.0,
+          "deformedMinY": 0.0,
           "label": "broad-sit",
           "pose": "sit",
           "triangles": 7478,
@@ -1614,30 +1614,30 @@
         },
         {
           "build": "broad",
-          "deformedMaxY": 1.91299,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.9114,
+          "deformedMinY": -0.0,
           "label": "broad-wave",
           "pose": "wave",
           "triangles": 7478,
           "xPositionM": 1.2
         }
       ],
-      "bytes": 109271,
+      "bytes": 112901,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-broad-4poses-390x844.png",
       "resolution": [
         390,
         844
       ],
-      "sha256": "3788e79bb79ba0e14ca5445104d5d487b63741be0863da42bf3d996c4aa1f685",
+      "sha256": "72a9aec428ea8273ad0e8b575df99b7290ae8ff9952a4bc7f5c08e16542f8fda",
       "yawDeg": -10.0
     },
     "review/rigged-round-2/lineup-body-broad-f-4poses-1920x1080.png": {
       "actors": [
         {
           "build": "broad-f",
-          "deformedMaxY": 1.71609,
-          "deformedMinY": -1e-05,
+          "deformedMaxY": 1.71792,
+          "deformedMinY": 0.0,
           "label": "broad-f-stand",
           "pose": "stand",
           "triangles": 8022,
@@ -1645,8 +1645,8 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.69598,
-          "deformedMinY": -0.0,
+          "deformedMaxY": 1.69616,
+          "deformedMinY": 0.0,
           "label": "broad-f-walk",
           "pose": "walk",
           "triangles": 8022,
@@ -1654,7 +1654,7 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.3382,
+          "deformedMaxY": 1.33577,
           "deformedMinY": 0.0,
           "label": "broad-f-sit",
           "pose": "sit",
@@ -1663,30 +1663,30 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.75301,
-          "deformedMinY": -1e-05,
+          "deformedMaxY": 1.75461,
+          "deformedMinY": 0.0,
           "label": "broad-f-wave",
           "pose": "wave",
           "triangles": 8022,
           "xPositionM": 1.2
         }
       ],
-      "bytes": 794181,
+      "bytes": 763015,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-broad-f-4poses-1920x1080.png",
       "resolution": [
         1920,
         1080
       ],
-      "sha256": "2a29d744b72bbd2e702dd9ccd03423bf07216d7897bfa81df5f4f0dd7356550a",
+      "sha256": "ae302df5d5928f9d25c0297067dbfd0549fa96d8b2b1ab9bc48542d798c26047",
       "yawDeg": -10.0
     },
     "review/rigged-round-2/lineup-body-broad-f-4poses-390x844.png": {
       "actors": [
         {
           "build": "broad-f",
-          "deformedMaxY": 1.71609,
-          "deformedMinY": -1e-05,
+          "deformedMaxY": 1.71792,
+          "deformedMinY": 0.0,
           "label": "broad-f-stand",
           "pose": "stand",
           "triangles": 8022,
@@ -1694,8 +1694,8 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.69598,
-          "deformedMinY": -0.0,
+          "deformedMaxY": 1.69616,
+          "deformedMinY": 0.0,
           "label": "broad-f-walk",
           "pose": "walk",
           "triangles": 8022,
@@ -1703,7 +1703,7 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.3382,
+          "deformedMaxY": 1.33577,
           "deformedMinY": 0.0,
           "label": "broad-f-sit",
           "pose": "sit",
@@ -1712,29 +1712,29 @@
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.75301,
-          "deformedMinY": -1e-05,
+          "deformedMaxY": 1.75461,
+          "deformedMinY": 0.0,
           "label": "broad-f-wave",
           "pose": "wave",
           "triangles": 8022,
           "xPositionM": 1.2
         }
       ],
-      "bytes": 103185,
+      "bytes": 105387,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-broad-f-4poses-390x844.png",
       "resolution": [
         390,
         844
       ],
-      "sha256": "c2f1b724ddbd8e954c5d46b84af1f786f6a0ba3fbda1e53ce1f014c568597f48",
+      "sha256": "f53111307467f5e6437e975e625da19bf95f5fdb72f334f6c7d55fa3e0a76fc0",
       "yawDeg": -10.0
     },
     "review/rigged-round-2/lineup-body-slim-4poses-1920x1080.png": {
       "actors": [
         {
           "build": "slim",
-          "deformedMaxY": 1.72254,
+          "deformedMaxY": 1.72486,
           "deformedMinY": 0.0,
           "label": "slim-stand",
           "pose": "stand",
@@ -1743,7 +1743,7 @@
         },
         {
           "build": "slim",
-          "deformedMaxY": 1.69892,
+          "deformedMaxY": 1.69867,
           "deformedMinY": 0.0,
           "label": "slim-walk",
           "pose": "walk",
@@ -1752,8 +1752,8 @@
         },
         {
           "build": "slim",
-          "deformedMaxY": 1.32351,
-          "deformedMinY": -0.0,
+          "deformedMaxY": 1.32391,
+          "deformedMinY": 0.0,
           "label": "slim-sit",
           "pose": "sit",
           "triangles": 7478,
@@ -1761,7 +1761,7 @@
         },
         {
           "build": "slim",
-          "deformedMaxY": 1.81276,
+          "deformedMaxY": 1.81219,
           "deformedMinY": 0.0,
           "label": "slim-wave",
           "pose": "wave",
@@ -1769,21 +1769,21 @@
           "xPositionM": 1.2
         }
       ],
-      "bytes": 746947,
+      "bytes": 743567,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-slim-4poses-1920x1080.png",
       "resolution": [
         1920,
         1080
       ],
-      "sha256": "f929ac45ace5ebfacd4f0e0793d39da7853ee6c30859535fad9f19fd21660b2d",
+      "sha256": "3212751ac77b2d96e22fbb5b10136b61c87d993b681592d6a4c81190414e8cde",
       "yawDeg": -10.0
     },
     "review/rigged-round-2/lineup-body-slim-4poses-390x844.png": {
       "actors": [
         {
           "build": "slim",
-          "deformedMaxY": 1.72254,
+          "deformedMaxY": 1.72486,
           "deformedMinY": 0.0,
           "label": "slim-stand",
           "pose": "stand",
@@ -1792,7 +1792,7 @@
         },
         {
           "build": "slim",
-          "deformedMaxY": 1.69892,
+          "deformedMaxY": 1.69867,
           "deformedMinY": 0.0,
           "label": "slim-walk",
           "pose": "walk",
@@ -1801,8 +1801,8 @@
         },
         {
           "build": "slim",
-          "deformedMaxY": 1.32351,
-          "deformedMinY": -0.0,
+          "deformedMaxY": 1.32391,
+          "deformedMinY": 0.0,
           "label": "slim-sit",
           "pose": "sit",
           "triangles": 7478,
@@ -1810,7 +1810,7 @@
         },
         {
           "build": "slim",
-          "deformedMaxY": 1.81276,
+          "deformedMaxY": 1.81219,
           "deformedMinY": 0.0,
           "label": "slim-wave",
           "pose": "wave",
@@ -1818,22 +1818,22 @@
           "xPositionM": 1.2
         }
       ],
-      "bytes": 101695,
+      "bytes": 105026,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-slim-4poses-390x844.png",
       "resolution": [
         390,
         844
       ],
-      "sha256": "b6b7dcc1c0ddae34c36d000d79284c8ad71c0f71700316d34a5490e1dc8292ac",
+      "sha256": "d205cc1e08050a33fe38708b1d3c5cf07900135378bc14da0f71e33e983b4510",
       "yawDeg": -10.0
     },
     "review/rigged-round-2/lineup-body-slim-f-4poses-1920x1080.png": {
       "actors": [
         {
           "build": "slim-f",
-          "deformedMaxY": 1.64612,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.64784,
+          "deformedMinY": -0.0,
           "label": "slim-f-stand",
           "pose": "stand",
           "triangles": 8022,
@@ -1850,8 +1850,8 @@
         },
         {
           "build": "slim-f",
-          "deformedMaxY": 1.29328,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.2931,
+          "deformedMinY": -0.0,
           "label": "slim-f-sit",
           "pose": "sit",
           "triangles": 8022,
@@ -1859,30 +1859,30 @@
         },
         {
           "build": "slim-f",
-          "deformedMaxY": 1.66666,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.6678,
+          "deformedMinY": -0.0,
           "label": "slim-f-wave",
           "pose": "wave",
           "triangles": 8022,
           "xPositionM": 1.2
         }
       ],
-      "bytes": 721156,
+      "bytes": 704286,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-slim-f-4poses-1920x1080.png",
       "resolution": [
         1920,
         1080
       ],
-      "sha256": "5ac1cc8fa1a7665f3b7d6daa58fbe01456601fadec33f7bb4850474c2d111a1d",
+      "sha256": "82e87c7d62896c2db80b54586b030d3d5fc4c09fa481a74b5f7da0cee2520b24",
       "yawDeg": -10.0
     },
     "review/rigged-round-2/lineup-body-slim-f-4poses-390x844.png": {
       "actors": [
         {
           "build": "slim-f",
-          "deformedMaxY": 1.64612,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.64784,
+          "deformedMinY": -0.0,
           "label": "slim-f-stand",
           "pose": "stand",
           "triangles": 8022,
@@ -1899,8 +1899,8 @@
         },
         {
           "build": "slim-f",
-          "deformedMaxY": 1.29328,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.2931,
+          "deformedMinY": -0.0,
           "label": "slim-f-sit",
           "pose": "sit",
           "triangles": 8022,
@@ -1908,22 +1908,22 @@
         },
         {
           "build": "slim-f",
-          "deformedMaxY": 1.66666,
-          "deformedMinY": 0.0,
+          "deformedMaxY": 1.6678,
+          "deformedMinY": -0.0,
           "label": "slim-f-wave",
           "pose": "wave",
           "triangles": 8022,
           "xPositionM": 1.2
         }
       ],
-      "bytes": 97992,
+      "bytes": 100456,
       "cameraDistanceM": 5.55,
       "path": "review/rigged-round-2/lineup-body-slim-f-4poses-390x844.png",
       "resolution": [
         390,
         844
       ],
-      "sha256": "35d93a5cee22b545bafb0f1c34662dd21c7f116f9fea0fcec6035b5396a7677b",
+      "sha256": "a9f8149c657dc7fbbe97f5c9a8a39c758ca586dfee2a2bf32f7662d7e961f4da",
       "yawDeg": -10.0
     }
   }

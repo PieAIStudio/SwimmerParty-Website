@@ -369,6 +369,12 @@ function Runtime({
           [
             "hand_l",
             "hand_r",
+            "middle_01_l",
+            "index_01_l",
+            "pinky_01_l",
+            "middle_01_r",
+            "index_01_r",
+            "pinky_01_r",
             "upperarm_l",
             "upperarm_r",
             "lowerarm_l",

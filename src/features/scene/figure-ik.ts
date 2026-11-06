@@ -1,10 +1,83 @@
 // Runtime-only adapter: the delivered skeleton/mesh and loader cache stay untouched.
-import { Bone, SkinnedMesh, Vector3, type Object3D } from "three";
+import {
+  Bone,
+  Matrix3,
+  Matrix4,
+  Quaternion,
+  Raycaster,
+  SkinnedMesh,
+  Vector3,
+  type Object3D,
+} from "three";
 import { CCDIKSolver, type IK } from "three/addons/animation/CCDIKSolver.js";
 import type { JointRotations } from "./model";
 
 export const HANDLES = ["leftWrist", "rightWrist", "leftAnkle", "rightAnkle", "head"] as const;
 export type Handle = (typeof HANDLES)[number];
+
+/** Sample the visible skin near a shoulder, using the posed picking mesh. */
+export function shoulderContact(object: Object3D, bone: Object3D, from: Vector3) {
+  const pivot = bone.getWorldPosition(new Vector3());
+  const elbow = object.getObjectByName(bone.name.replace("upperarm", "lowerarm"));
+  if (!elbow) return null;
+  // Scale the shoulder search to the delivered arm, including turned/broader bodies.
+  const radius = pivot.distanceTo(elbow.getWorldPosition(new Vector3()));
+  const outward = from.clone().sub(pivot).normalize();
+  const ray = new Raycaster(
+    pivot.clone().addScaledVector(outward, 0.5),
+    outward.clone().negate(),
+    0,
+    1,
+  );
+  const hit = ray
+    .intersectObject(object, true)
+    .find(
+      (item) =>
+        item.object instanceof SkinnedMesh && item.face && item.point.distanceTo(pivot) < radius,
+    );
+  if (!hit?.face) return null;
+  const normal = hit.face.normal
+    .clone()
+    .applyMatrix3(new Matrix3().getNormalMatrix(hit.object.matrixWorld))
+    .normalize();
+  if (normal.dot(outward) < 0) normal.negate();
+  return { point: hit.point, normal, wrist: hit.point.clone().addScaledVector(normal, 0.025) };
+}
+
+function orientHand(hand: Bone, point: Vector3, baseline: Quaternion, surfaceNormal?: Vector3) {
+  const side = hand.name.endsWith("_l") ? "l" : "r";
+  const finger = hand.getObjectByName(`middle_01_${side}`)!.position.clone().normalize();
+  const world = baseline.clone();
+  const direction = point.clone().sub(hand.parent!.getWorldPosition(new Vector3())).normalize();
+  if (!surfaceNormal) {
+    world.premultiply(
+      new Quaternion().setFromUnitVectors(finger.clone().applyQuaternion(world), direction),
+    );
+  } else {
+    const index = hand.getObjectByName(`index_01_${side}`)!.position;
+    const pinky = hand.getObjectByName(`pinky_01_${side}`)!.position;
+    const palm = new Vector3()
+      .crossVectors(index, pinky)
+      .multiplyScalar(side === "l" ? -1 : 1)
+      .projectOnPlane(finger)
+      .normalize();
+    const normal = surfaceNormal.clone().negate();
+    direction.projectOnPlane(normal);
+    if (direction.lengthSq() < 0.001) direction.set(0, 1, 0).projectOnPlane(normal);
+    if (direction.lengthSq() < 0.001) direction.set(0, 0, 1).projectOnPlane(normal);
+    direction.normalize();
+    const local = new Matrix4().makeBasis(finger, palm.clone().cross(finger).normalize(), palm);
+    const aimed = new Matrix4().makeBasis(
+      direction,
+      normal.clone().cross(direction).normalize(),
+      normal,
+    );
+    world.setFromRotationMatrix(aimed.multiply(local.invert()));
+  }
+  hand.quaternion
+    .copy(hand.parent!.getWorldQuaternion(new Quaternion()).invert().multiply(world))
+    .normalize();
+}
 
 export function createFigureIK(object: Object3D) {
   let skin!: SkinnedMesh;
@@ -67,13 +140,56 @@ export function createFigureIK(object: Object3D) {
     { skeleton: { bones: all } } as SkinnedMesh,
     Object.values(chains),
   );
+  object.updateWorldMatrix(true, true);
+  const arms = (["l", "r"] as const).map((side) => {
+    const clavicle = bones[index(`clavicle_${side}`)];
+    const hand = bones[index(`hand_${side}`)];
+    const parent = clavicle.parent!;
+    const direction = hand
+      .getWorldPosition(new Vector3())
+      .sub(clavicle.getWorldPosition(new Vector3()))
+      .transformDirection(parent.matrixWorld.clone().invert());
+    return {
+      clavicle,
+      hand,
+      direction,
+      rotation: clavicle.quaternion.clone(),
+      world: hand.getWorldQuaternion(new Quaternion()),
+    };
+  });
   return {
+    begin(handle: Handle) {
+      object.updateWorldMatrix(true, true);
+      const arm = handle === "leftWrist" ? arms[0] : handle === "rightWrist" ? arms[1] : null;
+      if (!arm) return;
+      arm.rotation.copy(arm.clavicle.quaternion);
+      arm.direction
+        .copy(arm.hand.getWorldPosition(new Vector3()))
+        .sub(arm.clavicle.getWorldPosition(new Vector3()))
+        .transformDirection(arm.clavicle.parent!.matrixWorld.clone().invert());
+      arm.hand.getWorldQuaternion(arm.world);
+    },
     effector: (handle: Handle) => all[chains[handle].effector],
     position: (handle: Handle) => all[chains[handle].effector].getWorldPosition(new Vector3()),
-    solve(handle: Handle, point: Vector3) {
+    solve(handle: Handle, point: Vector3, surfaceNormal?: Vector3) {
       object.updateWorldMatrix(true, true);
+      const arm = handle === "leftWrist" ? arms[0] : handle === "rightWrist" ? arms[1] : null;
+      if (arm) {
+        // Absolute follow from the gesture base, never compounded on pointer moves.
+        const direction = point
+          .clone()
+          .sub(arm.clavicle.getWorldPosition(new Vector3()))
+          .transformDirection(arm.clavicle.parent!.matrixWorld.clone().invert());
+        const swing = new Quaternion().setFromUnitVectors(arm.direction, direction);
+        arm.clavicle.quaternion
+          .copy(new Quaternion().slerp(swing, 0.2).multiply(arm.rotation))
+          .normalize();
+        arm.clavicle.updateWorldMatrix(true, true);
+      }
       target.matrixWorld.makeTranslation(point.x, point.y, point.z);
       solver.updateOne(chains[handle]);
+      if (arm) orientHand(arm.hand, point, arm.world, surfaceNormal);
+      object.updateWorldMatrix(true, true);
       skin.skeleton.update();
     },
     rotations(): JointRotations {

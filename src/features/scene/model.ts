@@ -147,7 +147,37 @@ export function applyLayout(figures: FigureState[], layout: Layout): FigureState
         turn: 0,
         pose: "stand",
       };
-    return { ...figure, x: (index - 3.5) * 1.1, z: 0, turn: 0, pose: "stand" };
+    const offset = (index - 3.5) / 3.5;
+    const builds: FigureState["build"][] = [
+      "broad",
+      "slim-f",
+      "average",
+      "broad-f",
+      "slim",
+      "average-f",
+      "average",
+      "slim-f",
+    ];
+    const poses: FigureState["pose"][] = [
+      "stand",
+      "hand-on-hip",
+      "arms-crossed",
+      "stand",
+      "lean-in",
+      "arms-crossed",
+      "hand-on-hip",
+      "stand",
+    ];
+    // A shallow arc gives everyone space while keeping the camera close.
+    // Assigned actors retain their known build; generic stand-ins vary naturally.
+    return {
+      ...figure,
+      build: figure.actorSlug ? figure.build : builds[index],
+      x: (index - 3.5) * 0.62,
+      z: -0.45 + 0.9 * offset * offset,
+      turn: -Math.sign(offset) * (15 + (20 * (Math.abs(index - 3.5) - 0.5)) / 3),
+      pose: poses[index],
+    };
   });
 }
 export function applyBlocking(

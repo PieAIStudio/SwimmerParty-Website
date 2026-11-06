@@ -22,7 +22,8 @@ function shotBounds(body: Box3, figure: FigureState, shot: CameraState["shot"]) 
     );
     box.min.x = Math.max(box.min.x, figure.x - halfWidth);
     box.max.x = Math.min(box.max.x, figure.x + halfWidth);
-    box.max.y += height * 0.04;
+    // Medium is also the phone editing shot: retain the attached number/head handle.
+    box.max.y += shot === "medium" ? 0.28 : height * 0.04;
   }
   return box;
 }

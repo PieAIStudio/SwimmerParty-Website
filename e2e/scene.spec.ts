@@ -15,7 +15,7 @@ import {
 } from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { poseFigure, type FigurePose } from "../src/features/scene/rigged-figure";
-import { createFigureIK } from "../src/features/scene/figure-ik";
+import { createFigureIK, shoulderContact } from "../src/features/scene/figure-ik";
 import { ACTORS } from "../src/content/actors";
 import {
   BUILDS,
@@ -442,7 +442,7 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
   expect(defaultBuild({ slug: "known", name: "Known", build: "slim" })).toBe("slim");
   const hash = (bytes: Buffer) => createHash("sha256").update(bytes).digest("hex");
   expect(hash(await readFile("public/scene/rigged/manifest.json"))).toBe(
-    "e73a4b7469ba992fdd1dcc887079c2651e0db55be56005a35d15a50e3f9cdc02",
+    "e7575edb5f09e030362b2d0a310f7bc2a03a35fa09abe4e83ef35e3098545231",
   );
   expect(hash(await readFile("public/scene/rigged/LICENSE.md"))).toBe(
     "28825bce62bf4aa0f2836b8338bc5ef69d9e2cfd936fe148f534f01b1405fa05",
@@ -493,8 +493,37 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
       )
     ).scene;
     const originalBones = source.getObjectByName("head")!.quaternion.toArray();
+    const contactBody = poseFigure(
+      source,
+      poses.get("hand-on-hip")!,
+      figureScale(build, 175),
+      false,
+    );
+    contactBody.object.position.x = 0.325;
+    contactBody.object.rotation.y = (-65 * Math.PI) / 180;
+    contactBody.object.updateWorldMatrix(true, true);
+    for (const from of [
+      [0.001807, 1.015, 5.813251],
+      [-0.30653, 1.2775, 3.236629],
+    ]) {
+      const contact = shoulderContact(
+        contactBody.object,
+        contactBody.object.getObjectByName("upperarm_r")!,
+        new Vector3(...from),
+      );
+      expect(contact, `${build}: visible shoulder from ${from}`).not.toBeNull();
+      expect(contact!.wrist.distanceTo(contact!.point)).toBeCloseTo(0.025, 8);
+      expect(contact!.normal.length()).toBeCloseTo(1, 8);
+    }
+    contactBody.dispose();
     const manual = poseFigure(source, poses.get("stand")!, figureScale(build, 185), false);
+    manual.object.position.x = 0.6;
+    manual.object.rotation.y = 0.65;
+    manual.object.updateWorldMatrix(true, true);
     const ik = createFigureIK(manual.object);
+    ik.begin("leftWrist");
+    const clavicle = manual.object.getObjectByName("clavicle_l")!;
+    const clavicleBase = clavicle.quaternion.clone();
     const start = ik.position("leftWrist");
     const shoulder = manual.object.getObjectByName("upperarm_l")!;
     const destination = shoulder.getWorldPosition(new Vector3()).add(new Vector3(0.25, 0.1, 0.32));
@@ -508,6 +537,20 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
       previous.copy(shoulder.quaternion);
     }
     expect(ik.position("leftWrist").distanceTo(destination)).toBeLessThan(0.02);
+    expect(clavicleBase.angleTo(clavicle.quaternion)).toBeGreaterThan(0.01);
+    expect(clavicleBase.angleTo(clavicle.quaternion)).toBeLessThan(Math.PI * 0.201);
+    const followed = clavicle.quaternion.clone();
+    for (let repeat = 0; repeat < 12; repeat++) ik.solve("leftWrist", destination);
+    expect(followed.angleTo(clavicle.quaternion)).toBeLessThan(0.000001);
+    const rightStart = ik.position("rightWrist");
+    const rightTarget = manual.object
+      .getObjectByName("upperarm_r")!
+      .getWorldPosition(new Vector3())
+      .add(new Vector3(-0.25, 0.1, 0.32));
+    ik.begin("rightWrist");
+    for (let step = 1; step <= 30; step++)
+      ik.solve("rightWrist", rightStart.clone().lerp(rightTarget, step / 30));
+    expect(ik.position("rightWrist").distanceTo(rightTarget)).toBeLessThan(0.02);
     ik.dispose();
     manual.dispose();
     const first = poseFigure(source, poses.get("stand")!, figureScale(build, 185), false);
@@ -797,7 +840,7 @@ test("phone-size Chrome performance under 4x CPU throttling", async ({ page, bro
 });
 
 for (const width of [1440, 390]) {
-  test(`build 3 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
+  test(`build 4 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
     test.setTimeout(120_000);
     const locale = width === 1440 ? "en" : "zh";
     const m = locale === "en" ? en : zh;
@@ -805,7 +848,7 @@ for (const width of [1440, 390]) {
     const context = await browser.newContext({
       baseURL: test.info().project.use.baseURL,
       viewport: { width, height },
-      deviceScaleFactor: 1,
+      deviceScaleFactor: 2,
       recordVideo: { dir: `${evidenceRoot}/walks`, size: { width, height } },
     });
     const page = await context.newPage();
@@ -900,13 +943,30 @@ for (const width of [1440, 390]) {
     expect((await cameraEvidence(page)).seats).toHaveLength(1);
     expectFullFit(await cameraEvidence(page));
     await assertFold();
-    if (process.env.SCENE_CAPTURE_SHOTS !== "0")
-      await page.screenshot({ path: `${evidenceRoot}/shots/wide-group-${width}.png` });
+    if (width === 1440 && process.env.SCENE_CAPTURE_SHOTS !== "0")
+      await page.screenshot({ path: `${evidenceRoot}/shots/five-sit-1440.png` });
     await page.getByRole("button", { name: m["scene.layout.lineup"], exact: true }).click();
     await ready(page, false);
-    expect((await draft(page)).figures).toHaveLength(8);
-    expectFullFit(await cameraEvidence(page));
+    const group = (await draft(page)).figures;
+    expect(group).toHaveLength(8);
+    expect(new Set(group.map((item: { pose: string }) => item.pose)).size).toBeGreaterThanOrEqual(
+      3,
+    );
+    expect(new Set(group.map((item: { build: string }) => item.build)).size).toBe(6);
+    for (const item of group) {
+      expect(item.z).toBeGreaterThanOrEqual(-0.45);
+      expect(item.z).toBeLessThanOrEqual(0.45);
+      expect(Math.abs(item.turn)).toBeGreaterThanOrEqual(15);
+      expect(Math.abs(item.turn)).toBeLessThanOrEqual(35);
+      expect(item.x * item.turn).toBeLessThan(0);
+    }
+    const wide = await cameraEvidence(page);
+    expectFullFit(wide);
+    expect(wide.position[2]).toBeGreaterThanOrEqual(7.5);
+    expect(wide.position[2]).toBeLessThanOrEqual(8.5);
     await assertFold();
+    if (process.env.SCENE_CAPTURE_SHOTS !== "0")
+      await page.screenshot({ path: `${evidenceRoot}/shots/wide-group-${width}.png` });
 
     await page.getByRole("button", { name: m["scene.layout.talk"], exact: true }).click();
     await panel.locator("summary").click();
@@ -915,6 +975,26 @@ for (const width of [1440, 390]) {
     await panel.locator("summary").click();
     await page.getByRole("button", { name: m["scene.limbs"], exact: true }).click();
     await expect(page.locator("[data-scene-handle]")).toHaveCount(5);
+    await ready(page, false);
+    if (width === 390)
+      expect((await draft(page)).camera).toMatchObject({
+        shot: "medium",
+        view: "eye",
+        subject: (await draft(page)).figures[0].id,
+      });
+    const dot = page.locator('[data-scene-handle="leftWrist"]');
+    const hitBox = (await dot.boundingBox())!;
+    expect(hitBox.width).toBeGreaterThanOrEqual(32);
+    expect(hitBox.height).toBeGreaterThanOrEqual(32);
+    const visibleDot = (await dot.locator("svg circle").boundingBox())!;
+    expect(visibleDot.width).toBeGreaterThanOrEqual(14);
+    expect(visibleDot.width).toBeLessThanOrEqual(18);
+    const paint = dot.locator(".game-ui-droplet path").first();
+    await expect(paint).toHaveCSS("fill", "rgba(0, 0, 0, 0)");
+    const viewport = (await page.locator("canvas").boundingBox())!;
+    const headDot = (await page.locator('[data-scene-handle="head"]').boundingBox())!;
+    expect(headDot.y).toBeGreaterThanOrEqual(viewport.y);
+    expect(headDot.y + headDot.height).toBeLessThanOrEqual(viewport.y + viewport.height);
     const before = await cameraEvidence(page);
     const figures = (await draft(page)).figures;
     const target = new Vector3(...before.joints[figures[1].id].upperarm_r);
@@ -943,9 +1023,25 @@ for (const width of [1440, 390]) {
         2,
       ),
     );
-    expect(new Vector3(...after.joints[figures[0].id].hand_l).distanceTo(target)).toBeLessThan(
-      0.035,
-    );
+    const contact = JSON.parse((await page.locator("canvas").getAttribute("data-scene-contact"))!);
+    expect(contact).not.toBeNull();
+    const wrist = new Vector3(...after.joints[figures[0].id].hand_l);
+    // Same accuracy, now against the visible skin target instead of an interior bone.
+    expect(wrist.distanceTo(new Vector3(...contact.wrist))).toBeLessThan(0.035);
+    expect(
+      wrist
+        .clone()
+        .sub(new Vector3(...contact.point))
+        .dot(new Vector3(...contact.normal)),
+    ).toBeGreaterThan(0.015);
+    const points = after.joints[figures[0].id];
+    const along = new Vector3(...points.middle_01_l).sub(wrist).normalize();
+    const across = new Vector3(...points.index_01_l)
+      .sub(new Vector3(...points.pinky_01_l))
+      .normalize();
+    const palm = along.clone().cross(across).normalize();
+    expect(Math.abs(along.dot(new Vector3(...contact.normal)))).toBeLessThan(0.01);
+    expect(palm.dot(new Vector3(...contact.normal))).toBeLessThan(-0.95);
     const custom = (await draft(page)).figures[0].joints;
     const elbow = new Euler().setFromQuaternion(new Quaternion(...custom.lowerarm_l));
     expect(elbow.x).toBeGreaterThanOrEqual(0.039);
@@ -957,7 +1053,15 @@ for (const width of [1440, 390]) {
     await writeFile(
       `${evidenceRoot}/limb-drag-${width}.json`,
       JSON.stringify(
-        { before, after, target: target.toArray(), elbow: elbow.toArray(), joints: custom },
+        {
+          before,
+          after,
+          contact,
+          palm: palm.toArray(),
+          target: target.toArray(),
+          elbow: elbow.toArray(),
+          joints: custom,
+        },
         null,
         2,
       ),

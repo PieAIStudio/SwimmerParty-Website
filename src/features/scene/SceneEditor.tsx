@@ -177,7 +177,9 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
   }
   function select(id: string) {
     setSelected(id);
-    if (scene.camera.subject !== "everyone")
+    if (limbs && window.matchMedia("(max-width: 640px)").matches)
+      fit({ subject: id, shot: "medium", view: "eye" });
+    else if (scene.camera.subject !== "everyone")
       fit({
         subject: id,
         view:
@@ -442,7 +444,15 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
             </GameField>
           </div>
           <div className="mt-2 flex items-center gap-2">
-            <GameButton size="sm" aria-pressed={limbs} onClick={() => setLimbs(!limbs)}>
+            <GameButton
+              size="sm"
+              aria-pressed={limbs}
+              onClick={() => {
+                if (!limbs && window.matchMedia("(max-width: 640px)").matches)
+                  fit({ subject: figure.id, shot: "medium", view: "eye" });
+                setLimbs(!limbs);
+              }}
+            >
               {t("scene.limbs")}
             </GameButton>
             <span className="sp-small text-muted-foreground">{t("scene.limbHint")}</span>

@@ -3,6 +3,18 @@
 @import "@pieai/swimmer-ui-kit/fonts.css";
 @import "@pieai/swimmer-ui-kit/liquid-presence.css";
 
+/* Match the kit's unlayered paint scope: a 14px dot inside a 32px target. */
+.sp-scene-handle[data-game-ui-paint] {
+  --game-ui-paint-fill: transparent;
+  --game-ui-paint-edge: transparent;
+  --game-ui-paint-text: var(--game-ui-paper-ink-light);
+}
+
+.sp-scene-handle:focus-visible {
+  outline: 2px solid var(--game-ui-border-subtle);
+  outline-offset: -3px;
+}
+
 /* Site surfaces are derived from the kit. Controls keep their own geometry. */
 :root,
 [data-game-ui-theme="light"] {

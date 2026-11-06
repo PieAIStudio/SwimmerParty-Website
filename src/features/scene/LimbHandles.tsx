@@ -4,7 +4,7 @@ import { Html } from "@react-three/drei/web/Html";
 import { GameIconButton } from "@pieai/swimmer-ui-kit";
 import { Plane, Raycaster, Vector2, Vector3, type Object3D } from "three";
 import { useSiteI18n } from "@/i18n/client";
-import { createFigureIK, HANDLES, type Handle } from "./figure-ik";
+import { createFigureIK, shoulderContact, HANDLES, type Handle } from "./figure-ik";
 import type { JointRotations } from "./model";
 
 export function LimbHandles({
@@ -62,11 +62,22 @@ function HandleDot({
           size="sm"
           label={t(`scene.handle.${handle}`)}
           data-scene-handle={handle}
-          style={{ touchAction: "none" }}
+          className="sp-scene-handle"
+          style={{
+            touchAction: "none",
+            width: 32,
+            height: 32,
+            minWidth: 32,
+            padding: 8,
+            border: 0,
+            background: "transparent",
+            boxShadow: "none",
+          }}
           onPointerDown={(event) => {
             if (event.button !== 0) return;
             event.stopPropagation();
             event.currentTarget.setPointerCapture(event.pointerId);
+            ik.begin(handle);
             drag.current = new Plane().setFromNormalAndCoplanarPoint(
               camera.getWorldDirection(new Vector3()),
               ik.position(handle),
@@ -87,6 +98,7 @@ function HandleDot({
             );
             const point = ray.ray.intersectPlane(drag.current, new Vector3());
             if (!point) return;
+            const snap = { contact: null as ReturnType<typeof shoulderContact> };
             if (handle.endsWith("Wrist")) {
               // A small screen-space shoulder snap supplies the missing drag depth.
               // It lets a front/OTS view reach the actual shoulder, not its projection.
@@ -103,14 +115,34 @@ function HandleDot({
                     ((1 - screen.y) * box.height) / 2 + box.top - event.clientY,
                   );
                   if (distance < nearest) {
+                    const surface = shoulderContact(
+                      node,
+                      bone,
+                      camera.getWorldPosition(new Vector3()),
+                    );
+                    if (!surface) continue;
                     nearest = distance;
-                    point.copy(shoulder);
+                    snap.contact = surface;
+                    point.copy(surface.wrist);
                   }
                 }
               });
             }
             point.y = Math.max(0.06, point.y);
-            ik.solve(handle, point);
+            const { contact } = snap;
+            ik.solve(handle, point, contact?.normal);
+            gl.domElement.setAttribute(
+              "data-scene-contact",
+              JSON.stringify(
+                contact
+                  ? {
+                      point: contact.point.toArray(),
+                      normal: contact.normal.toArray(),
+                      wrist: point.toArray(),
+                    }
+                  : null,
+              ),
+            );
             invalidate();
           }}
           onPointerUp={(event) => finish(event)}
@@ -125,13 +157,14 @@ function HandleDot({
             const step = directions[event.key];
             if (!step) return;
             event.preventDefault();
+            ik.begin(handle);
             ik.solve(handle, ik.position(handle).add(step));
             onPose(id, ik.rotations());
             invalidate();
           }}
         >
-          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-            <circle cx="6" cy="6" r="4" fill="currentColor" />
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="8" cy="8" r="7" fill="currentColor" />
           </svg>
         </GameIconButton>
       </Html>
