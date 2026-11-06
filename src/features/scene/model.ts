@@ -42,6 +42,8 @@ export const FRAMES = {
 } as const;
 const finite = z.number().finite();
 const point = z.tuple([finite, finite, finite]);
+const jointRotations = z.record(z.string(), z.tuple([finite, finite, finite, finite]));
+export type JointRotations = z.infer<typeof jointRotations>;
 const figureSchema = z.object({
   id: z.string().min(1),
   actorSlug: z.string().optional(),
@@ -49,6 +51,7 @@ const figureSchema = z.object({
   heightCm: finite.min(80).max(240),
   build: z.enum(BUILDS),
   pose: z.enum(POSES),
+  joints: jointRotations.default({}),
   x: finite,
   z: finite,
   turn: finite.min(-180).max(180),
@@ -98,6 +101,7 @@ export function makeFigure(id: string, actor?: SceneActor): FigureState {
     heightCm: actor?.heightCm ?? 175,
     build: defaultBuild(actor),
     pose: "stand",
+    joints: {},
     x: 0,
     z: 0,
     turn: 0,
@@ -118,11 +122,11 @@ export function arrange(figures: FigureState[], arrangement: "line" | "faceOff")
 // Presets reuse assigned actors in order; one undo restores the previous cast/layout.
 export function applyLayout(figures: FigureState[], layout: Layout): FigureState[] {
   return Array.from({ length: LAYOUTS[layout] }, (_, index) => {
-    const figure = figures[index] ?? makeFigure(crypto.randomUUID());
+    const figure = { ...(figures[index] ?? makeFigure(crypto.randomUUID())), joints: {} };
     if (layout === "talk")
       return {
         ...figure,
-        x: index === 0 ? -0.85 : 0.85,
+        x: index === 0 ? -0.325 : 0.325,
         z: 0,
         turn: index === 0 ? 65 : -65,
         pose: index === 0 ? "lean-in" : "hand-on-hip",
@@ -146,6 +150,26 @@ export function applyLayout(figures: FigureState[], layout: Layout): FigureState
     return { ...figure, x: (index - 3.5) * 1.1, z: 0, turn: 0, pose: "stand" };
   });
 }
+export function applyBlocking(
+  scene: SceneState,
+  preset: "talk" | "shoulder" | "group" | "lineup",
+): SceneState {
+  const dialogue = preset === "talk" || preset === "shoulder";
+  const figures = applyLayout(scene.figures, preset === "shoulder" ? "talk" : preset);
+  if (dialogue) figures[0].pose = "stand";
+  return {
+    ...scene,
+    figures,
+    frame: "landscape",
+    camera: fitCamera({
+      shot: dialogue ? "medium" : "full",
+      lens: 50,
+      view: preset === "shoulder" ? "shoulder" : "eye",
+      subject: preset === "shoulder" ? figures[1].id : "everyone",
+    }),
+  };
+}
+
 // Request a fit after the lazy canvas has loaded the actual posed geometry.
 // Resolved transforms replace this request in the same undo entry.
 export function fitCamera(camera: Partial<CameraState> = {}): CameraState {

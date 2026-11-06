@@ -3,9 +3,19 @@ import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { gzipSync } from "node:zlib";
 import { createHash } from "node:crypto";
 import sharp from "sharp";
-import { Box3, PerspectiveCamera, Raycaster, SkinnedMesh, Vector3, type Intersection } from "three";
+import {
+  Box3,
+  Euler,
+  PerspectiveCamera,
+  Quaternion,
+  Raycaster,
+  SkinnedMesh,
+  Vector3,
+  type Intersection,
+} from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { poseFigure, type FigurePose } from "../src/features/scene/rigged-figure";
+import { createFigureIK } from "../src/features/scene/figure-ik";
 import { ACTORS } from "../src/content/actors";
 import {
   BUILDS,
@@ -35,6 +45,7 @@ type CameraEvidence = {
   aspect: number;
   bodies: { id: string; min: number[]; max: number[] }[];
   seats: string[];
+  joints: Record<string, Record<string, [number, number, number]>>;
 };
 const cameraEvidence = async (page: Page): Promise<CameraEvidence> =>
   JSON.parse((await page.locator("canvas").getAttribute("data-scene-camera"))!);
@@ -53,7 +64,7 @@ function expectFullFit(state: CameraEvidence) {
         }
   }
 }
-const ready = async (page: Page) => {
+const ready = async (page: Page, expanded = true) => {
   await expect(page.locator("canvas[data-scene-ready=true]")).toBeVisible({ timeout: 30_000 });
   await expect
     .poll(async () => {
@@ -63,10 +74,20 @@ const ready = async (page: Page) => {
         (await page.locator("canvas").getAttribute("data-scene-assets")) ===
           state.figures.map((figure) => loadFigure(figure.build)).join(",") &&
         (await page.locator("canvas").getAttribute("data-scene-poses")) ===
-          state.figures.map((figure) => figure.pose).join(",")
+          state.figures.map((figure) => figure.pose).join(",") &&
+        (await page.locator("canvas").getAttribute("data-scene-joints")) ===
+          JSON.stringify(state.figures.map((figure) => figure.joints))
       );
     })
     .toBe(true);
+  // Legacy detailed coverage deliberately opens the new progressive controls.
+  // The build-3 first-fold walks below use the real collapsed defaults.
+  if (expanded)
+    await page.locator("details").evaluateAll((items) =>
+      items.forEach((item) => {
+        (item as HTMLDetailsElement).open = true;
+      }),
+    );
 };
 const draft = (page: Page) =>
   page.evaluate((key) => JSON.parse(localStorage.getItem(key)!), DRAFT_KEY);
@@ -268,7 +289,7 @@ for (const locale of ["en", "zh"] as const)
       expect(exportedScene.camera).toEqual(closeCamera);
       expect(exportedScene.figures).toEqual((await draft(page)).figures);
       expect(exportedScene.figures.map((figure: { pose: string }) => figure.pose)).toEqual([
-        "lean-in",
+        "stand",
         "hand-on-hip",
       ]);
       await writeFile(
@@ -279,7 +300,6 @@ for (const locale of ["en", "zh"] as const)
         await page
           .locator("[data-scene-workspace]")
           .evaluate((el) => window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 128));
-        await page.screenshot({ path: `${evidenceRoot}/shots/two-close-${locale}-${width}.png` });
       }
       if (locale === "en" && width === 1440) {
         const png = page.waitForEvent("download");
@@ -301,7 +321,6 @@ for (const locale of ["en", "zh"] as const)
         await page
           .locator("[data-scene-workspace]")
           .evaluate((el) => window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 128));
-        await page.screenshot({ path: `${evidenceRoot}/shots/five-sit-${locale}-${width}.png` });
       }
       await page.getByRole("button", { name: m["scene.layout.lineup"], exact: true }).click();
       await ready(page);
@@ -316,7 +335,6 @@ for (const locale of ["en", "zh"] as const)
         await page
           .locator("[data-scene-workspace]")
           .evaluate((el) => window.scrollTo(0, el.getBoundingClientRect().top + scrollY - 128));
-        await page.screenshot({ path: `${evidenceRoot}/shots/eight-wide-${locale}-${width}.png` });
       }
       if (locale === "zh" && width === 1440) {
         const png = page.waitForEvent("download");
@@ -475,6 +493,23 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
       )
     ).scene;
     const originalBones = source.getObjectByName("head")!.quaternion.toArray();
+    const manual = poseFigure(source, poses.get("stand")!, figureScale(build, 185), false);
+    const ik = createFigureIK(manual.object);
+    const start = ik.position("leftWrist");
+    const shoulder = manual.object.getObjectByName("upperarm_l")!;
+    const destination = shoulder.getWorldPosition(new Vector3()).add(new Vector3(0.25, 0.1, 0.32));
+    const elbow = manual.object.getObjectByName("lowerarm_l")!;
+    const previous = shoulder.quaternion.clone();
+    for (let step = 1; step <= 30; step++) {
+      ik.solve("leftWrist", start.clone().lerp(destination, step / 30));
+      expect(elbow.rotation.x).toBeGreaterThanOrEqual(0.039);
+      expect(elbow.rotation.x).toBeLessThanOrEqual(2.651);
+      expect(previous.angleTo(shoulder.quaternion)).toBeLessThan(Math.PI / 2);
+      previous.copy(shoulder.quaternion);
+    }
+    expect(ik.position("leftWrist").distanceTo(destination)).toBeLessThan(0.02);
+    ik.dispose();
+    manual.dispose();
     const first = poseFigure(source, poses.get("stand")!, figureScale(build, 185), false);
     expect(new Box3().setFromObject(first.object, true).max.y).toBeCloseTo(1.85, 6);
     for (const pose of POSES) {
@@ -760,3 +795,182 @@ test("phone-size Chrome performance under 4x CPU throttling", async ({ page, bro
   );
   expect(samples.every((sample) => sample.renderedFps > 0)).toBe(true);
 });
+
+for (const width of [1440, 390]) {
+  test(`build 3 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
+    test.setTimeout(120_000);
+    const locale = width === 1440 ? "en" : "zh";
+    const m = locale === "en" ? en : zh;
+    const height = width === 1440 ? 900 : 844;
+    const context = await browser.newContext({
+      baseURL: test.info().project.use.baseURL,
+      viewport: { width, height },
+      deviceScaleFactor: 1,
+      recordVideo: { dir: `${evidenceRoot}/walks`, size: { width, height } },
+    });
+    const page = await context.newPage();
+    const errors: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    const steps: { action: string; elapsedMs: number }[] = [];
+    const started = Date.now();
+    const step = (action: string) => steps.push({ action, elapsedMs: Date.now() - started });
+    await page.goto(`/${locale}/scene`);
+    await ready(page, false);
+    step("Fresh page ready; no saved draft");
+    await page.getByRole("button", { name: m["scene.layout.talk"], exact: true }).click();
+    await ready(page, false);
+    step("One-tap two-person conversation");
+    const panel = page.locator("[data-scene-camera-panel]");
+    await panel.locator("summary").click();
+    await page.getByRole("button", { name: m["scene.shot.close"], exact: true }).click();
+    await ready(page, false);
+    await panel.locator("summary").click();
+    step("Choose Close-up and fold camera controls");
+    const download = page.waitForEvent("download");
+    await page.getByRole("button", { name: m["scene.savePng"], exact: true }).click();
+    const bytes = await readFile((await (await download).path())!);
+    expect(bytes.readUInt32BE(16)).toBe(1920);
+    expect(bytes.readUInt32BE(20)).toBe(1080 + 64 + 48);
+    step("Dialogue PNG downloaded");
+    const elapsedMs = Date.now() - started;
+    expect(elapsedMs).toBeLessThan(30_000);
+    expect(await page.evaluate(() => scrollY)).toBe(0);
+    const assertFold = async () => {
+      for (const selector of [
+        "[data-scene-layouts]",
+        "[data-scene-actions]",
+        "[data-scene-quick]",
+        "[data-scene-bottom]",
+      ]) {
+        const box = (await page.locator(selector).boundingBox())!;
+        expect(box.y, selector).toBeGreaterThanOrEqual(72);
+        expect(box.y + box.height, selector).toBeLessThanOrEqual(height);
+      }
+      const frame = (await page.locator("[data-scene-frame]").boundingBox())!;
+      expect(frame.width / frame.height).toBeCloseTo(16 / 9, 2);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+        true,
+      );
+    };
+    await assertFold();
+    const close = await cameraEvidence(page);
+    const camera = new PerspectiveCamera(close.fov, close.aspect, 0.05, 10000);
+    camera.position.set(...close.position);
+    camera.lookAt(new Vector3(...close.target));
+    camera.updateMatrixWorld(true);
+    // The real head bones, not standing-height estimates, sit in the upper half.
+    for (const figure of (await draft(page)).figures) {
+      const head = new Vector3(...close.joints[figure.id].head).project(camera);
+      expect(head.y).toBeGreaterThan(0.1);
+      expect(head.y).toBeLessThan(0.85);
+      const body = close.bodies.find((body) => body.id === figure.id)!;
+      const number = new Vector3(figure.x, body.max[1] + 0.08, figure.z).project(camera);
+      expect(number.y).toBeLessThan(0.85); // Whole badge, not a clipped band at the frame edge.
+    }
+    await mkdir(`${evidenceRoot}/shots`, { recursive: true });
+    if (process.env.SCENE_CAPTURE_SHOTS !== "0")
+      await page.screenshot({ path: `${evidenceRoot}/shots/dialogue-${width}.png` });
+    await writeFile(
+      `${evidenceRoot}/timed-walk-${width}.json`,
+      JSON.stringify(
+        {
+          kind: "automated fresh-user pointer walk, not Owner timing",
+          locale,
+          width,
+          height,
+          elapsedMs,
+          limitMs: 30_000,
+          steps,
+          scene: await draft(page),
+          camera: close,
+        },
+        null,
+        2,
+      ),
+    );
+
+    await page.getByRole("button", { name: m["scene.layout.shoulder"], exact: true }).click();
+    await ready(page, false);
+    expect((await draft(page)).camera).toMatchObject({ view: "shoulder", shot: "medium" });
+    await page.getByRole("button", { name: m["scene.layout.group"], exact: true }).click();
+    await ready(page, false);
+    expect((await draft(page)).figures).toHaveLength(5);
+    await page.getByLabel(m["scene.pose"], { exact: true }).selectOption("sit");
+    await ready(page, false);
+    expect((await cameraEvidence(page)).seats).toHaveLength(1);
+    expectFullFit(await cameraEvidence(page));
+    await assertFold();
+    if (process.env.SCENE_CAPTURE_SHOTS !== "0")
+      await page.screenshot({ path: `${evidenceRoot}/shots/wide-group-${width}.png` });
+    await page.getByRole("button", { name: m["scene.layout.lineup"], exact: true }).click();
+    await ready(page, false);
+    expect((await draft(page)).figures).toHaveLength(8);
+    expectFullFit(await cameraEvidence(page));
+    await assertFold();
+
+    await page.getByRole("button", { name: m["scene.layout.talk"], exact: true }).click();
+    await panel.locator("summary").click();
+    await page.getByRole("button", { name: m["scene.shot.full"], exact: true }).click();
+    await ready(page, false);
+    await panel.locator("summary").click();
+    await page.getByRole("button", { name: m["scene.limbs"], exact: true }).click();
+    await expect(page.locator("[data-scene-handle]")).toHaveCount(5);
+    const before = await cameraEvidence(page);
+    const figures = (await draft(page)).figures;
+    const target = new Vector3(...before.joints[figures[1].id].upperarm_r);
+    const lens = new PerspectiveCamera(before.fov, before.aspect, 0.05, 10000);
+    lens.position.set(...before.position);
+    lens.lookAt(new Vector3(...before.target));
+    lens.updateMatrixWorld(true);
+    const projected = target.clone().project(lens);
+    const frame = (await page.locator("canvas").boundingBox())!;
+    const hand = (await page.locator('[data-scene-handle="leftWrist"]').boundingBox())!;
+    await page.mouse.move(hand.x + hand.width / 2, hand.y + hand.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(
+      frame.x + ((projected.x + 1) * frame.width) / 2,
+      frame.y + ((1 - projected.y) * frame.height) / 2,
+      { steps: 30 },
+    );
+    await page.mouse.up();
+    await ready(page, false);
+    const after = await cameraEvidence(page);
+    await writeFile(
+      `${evidenceRoot}/drag-attempt-${width}.json`,
+      JSON.stringify(
+        { before, after, scene: await draft(page), hand, frame, target: target.toArray() },
+        null,
+        2,
+      ),
+    );
+    expect(new Vector3(...after.joints[figures[0].id].hand_l).distanceTo(target)).toBeLessThan(
+      0.035,
+    );
+    const custom = (await draft(page)).figures[0].joints;
+    const elbow = new Euler().setFromQuaternion(new Quaternion(...custom.lowerarm_l));
+    expect(elbow.x).toBeGreaterThanOrEqual(0.039);
+    expect(elbow.x).toBeLessThanOrEqual(2.651);
+    expect((await draft(page)).camera.position).toEqual(before.position);
+    await assertFold();
+    if (process.env.SCENE_CAPTURE_SHOTS !== "0")
+      await page.screenshot({ path: `${evidenceRoot}/shots/limb-drag-${width}.png` });
+    await writeFile(
+      `${evidenceRoot}/limb-drag-${width}.json`,
+      JSON.stringify(
+        { before, after, target: target.toArray(), elbow: elbow.toArray(), joints: custom },
+        null,
+        2,
+      ),
+    );
+    await page.getByRole("button", { name: m["scene.undo"], exact: true }).click();
+    expect((await draft(page)).figures[0].joints).toEqual({});
+    await page.getByRole("button", { name: m["scene.redo"], exact: true }).click();
+    await page.reload();
+    await ready(page, false);
+    expect((await draft(page)).figures[0].joints).toEqual(custom);
+    expect(errors).toEqual([]);
+    const video = page.video()!;
+    await context.close();
+    await video.saveAs(`${evidenceRoot}/walks/fresh-dialogue-and-drag-${width}.webm`);
+  });
+}

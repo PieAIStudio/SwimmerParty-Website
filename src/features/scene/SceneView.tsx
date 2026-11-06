@@ -7,12 +7,13 @@ import { SceneEditor } from "./SceneEditor";
 export async function SceneView({ locale }: { locale: AppLocale }) {
   const { t } = await getSiteI18n(locale);
   return (
-    <div className="sp-container pt-8">
-      <Link href="/cast" className="sp-link">
-        {t("nav.cast")}
-      </Link>
-      <h1 className="sp-display-lg mt-5">{t("scene.title")}</h1>
-      <p className="sp-small my-5 max-w-3xl text-muted-foreground">{t("scene.intro")}</p>
+    <div className="sp-container sp-scene-page">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h1 className="sp-subtitle">{t("scene.title")}</h1>
+        <Link href="/cast" className="sp-link sp-small">
+          {t("nav.cast")}
+        </Link>
+      </div>
       <SceneEditor
         actors={ACTORS.map((actor) => ({
           slug: actor.slug,

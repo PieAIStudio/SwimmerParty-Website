@@ -15,14 +15,14 @@ function shotBounds(body: Box3, figure: FigureState, shot: CameraState["shot"]) 
   const height = body.max.y - body.min.y;
   if (shot === "full") box.max.y += 0.28; // The attached number is part of the full shot.
   else {
-    box.min.y += height * (shot === "medium" ? 0.42 : 0.82);
+    box.min.y += height * (shot === "medium" ? 0.42 : 0.64);
     const halfWidth = Math.min(
       (box.max.x - box.min.x) / 2,
       height * (shot === "medium" ? 0.36 : 0.13),
     );
     box.min.x = Math.max(box.min.x, figure.x - halfWidth);
     box.max.x = Math.min(box.max.x, figure.x + halfWidth);
-    box.max.y += 0.05;
+    box.max.y += height * 0.04;
   }
   return box;
 }

@@ -5,11 +5,13 @@ import {
   BufferGeometry,
   Float32BufferAttribute,
   Mesh,
+  MeshStandardMaterial,
   SkinnedMesh,
   Vector3,
   type Object3D,
 } from "three";
 import { clone } from "three/addons/utils/SkeletonUtils.js";
+import type { JointRotations } from "./model";
 
 export type FigurePose = { bones: Record<string, [number, number, number, number]> };
 
@@ -54,15 +56,23 @@ function preparePicking(mesh: SkinnedMesh) {
   return () => geometry.dispose();
 }
 
-export function poseFigure(source: Object3D, pose: FigurePose, scale: number, sitting: boolean) {
+export function poseFigure(
+  source: Object3D,
+  pose: FigurePose,
+  scale: number,
+  sitting: boolean,
+  joints: JointRotations = {},
+) {
   // Object3D.clone leaves skinned meshes pointing at the source skeleton.
   const object = clone(source);
   const bones = new Map<string, Bone>();
+  const material = new MeshStandardMaterial({ color: "#b8b4ac", roughness: 0.88 });
   object.traverse((node) => {
     if (node instanceof Bone) bones.set(node.name, node);
     if (node instanceof SkinnedMesh) {
       node.castShadow = true;
       node.receiveShadow = true;
+      node.material = material;
     }
   });
   for (const [name, quaternion] of Object.entries(pose.bones)) {
@@ -86,7 +96,12 @@ export function poseFigure(source: Object3D, pose: FigurePose, scale: number, si
         size: [0.44 * scale, height, 0.38 * scale] as [number, number, number],
       }
     : null;
-  const cleanup: (() => void)[] = [];
+  // Overrides are relative to the grounded shelf pose: lifting a foot must not
+  // re-ground the whole person or move their seat.
+  for (const [name, quaternion] of Object.entries(joints))
+    bones.get(name)?.quaternion.fromArray(quaternion).normalize();
+  updateSkinBounds(object);
+  const cleanup: (() => void)[] = [() => material.dispose()];
   object.traverse((node) => {
     if (node instanceof SkinnedMesh) {
       cleanup.push(preparePicking(node), () => node.skeleton.dispose());
@@ -95,6 +110,9 @@ export function poseFigure(source: Object3D, pose: FigurePose, scale: number, si
   return {
     object,
     top: bounds.max.y,
+    contacts: ["foot_l", "foot_r"].map((name) =>
+      bones.get(name)!.getWorldPosition(new Vector3()).toArray(),
+    ),
     seat,
     dispose: () => cleanup.forEach((dispose) => dispose()),
   };

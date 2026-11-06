@@ -269,7 +269,6 @@
   /* A neutral export surface, independent of the surrounding UI theme. */
   .sp-scene-frame {
     width: 100%;
-    max-height: 70vh;
     margin-inline: auto;
     overflow: hidden;
     outline: 1px solid var(--game-ui-border-subtle);
@@ -278,12 +277,48 @@
     touch-action: none;
   }
 
+  .sp-scene-frame[data-scene-frame="landscape"] {
+    max-width: min(100%, 86vh);
+  }
+
   .sp-scene-frame[data-scene-frame="portrait"] {
-    max-width: min(100%, 36vh);
+    max-width: min(100%, 27vh);
   }
 
   .sp-scene-frame[data-scene-frame="square"] {
-    max-width: min(100%, 64vh);
+    max-width: min(100%, 48vh);
+  }
+
+  .sp-scene-page {
+    padding-top: 1rem;
+  }
+
+  .sp-scene-page summary {
+    cursor: pointer;
+    scroll-margin-top: 5rem;
+  }
+
+  .sp-scene-page [data-scene-workspace] {
+    scroll-margin-top: 5rem;
+  }
+
+  .sp-scene-quick {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .sp-scene-quick > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  @media (width >= 64rem) {
+    .sp-scene-quick {
+      grid-template-columns: 1.2fr 1fr 1fr;
+    }
+    .sp-scene-quick > :first-child {
+      grid-column: auto;
+    }
   }
 
   /* Never hide an asset name, even on 390px three-column face grids. */

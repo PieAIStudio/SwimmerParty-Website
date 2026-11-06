@@ -11,6 +11,8 @@ import {
 } from "react";
 import { Canvas, useFrame, useLoader, useThree, type ThreeEvent } from "@react-three/fiber";
 import { CameraControls } from "@react-three/drei/core/CameraControls";
+import { Grid } from "@react-three/drei/core/Grid";
+import { LimbHandles } from "./LimbHandles";
 import {
   Box3,
   CanvasTexture,
@@ -76,10 +78,41 @@ function FigureLabel({ identity, y }: { identity: FigureIdentity; y: number }) {
   );
 }
 
+function ContactPatch({
+  position,
+  size = 0.55,
+}: {
+  position: [number, number, number];
+  size?: number;
+}) {
+  const texture = useMemo(() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = canvas.height = 64;
+    const context = canvas.getContext("2d")!;
+    const gradient = context.createRadialGradient(32, 32, 0, 32, 32, 32);
+    gradient.addColorStop(0, "rgba(53,45,36,0.28)");
+    gradient.addColorStop(0.35, "rgba(53,45,36,0.16)");
+    gradient.addColorStop(1, "rgba(53,45,36,0)");
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, 64, 64);
+    return new CanvasTexture(canvas);
+  }, []);
+  useEffect(() => () => texture.dispose(), [texture]);
+  return (
+    <mesh rotation={[-Math.PI / 2, 0, 0]} position={position} raycast={() => {}}>
+      <planeGeometry args={[size, size]} />
+      <meshBasicMaterial map={texture} transparent depthWrite={false} toneMapped={false} />
+    </mesh>
+  );
+}
+
 function Figure({
   figure,
   identity,
   selected,
+  limbs,
+  shot,
+  onPose,
   onDragging,
   onSelect,
   onMove,
@@ -87,6 +120,9 @@ function Figure({
   figure: FigureState;
   identity: FigureIdentity;
   selected: boolean;
+  limbs: boolean;
+  shot: SceneCanvasProps["scene"]["camera"]["shot"];
+  onPose: SceneCanvasProps["onPose"];
   onDragging: (dragging: boolean) => void;
   onSelect: (id: string) => void;
   onMove: SceneCanvasProps["onMove"];
@@ -97,8 +133,8 @@ function Figure({
   ) as unknown as FigurePose;
   const scale = figureScale(figure.build, figure.heightCm);
   const model = useMemo(
-    () => poseFigure(source.scene, pose, scale, figure.pose === "sit"),
-    [source, pose, scale, figure.pose],
+    () => poseFigure(source.scene, pose, scale, figure.pose === "sit", figure.joints),
+    [source, pose, scale, figure.pose, figure.joints],
   );
   useEffect(() => () => model.dispose(), [model]);
   const root = useRef<Group>(null);
@@ -167,11 +203,23 @@ function Figure({
             userData={{ figureSeat: figure.id }}
           >
             <boxGeometry args={model.seat.size} />
-            <meshStandardMaterial color="#8c8c8c" roughness={1} />
+            <meshStandardMaterial color="#4a4e54" roughness={0.95} />
           </mesh>
         ) : null}
       </group>
-      <FigureLabel identity={identity} y={model.top + 0.2} />
+      {model.contacts.map((foot, index) => (
+        <ContactPatch key={index} position={[foot[0], 0.005, foot[2]]} />
+      ))}
+      {model.seat ? (
+        <ContactPatch
+          position={[model.seat.position[0], 0.006, model.seat.position[2]]}
+          size={0.9}
+        />
+      ) : null}
+      {selected && limbs ? (
+        <LimbHandles object={model.object} id={figure.id} onDragging={onDragging} onPose={onPose} />
+      ) : null}
+      <FigureLabel identity={identity} y={model.top + (shot === "close" ? 0.08 : 0.2)} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.008, 0]}>
         <ringGeometry args={[0.27, 0.34, 40]} />
         <meshBasicMaterial color={identity.colour} toneMapped={false} />
@@ -194,6 +242,8 @@ function Runtime({
   scene: document,
   identities,
   selected,
+  limbs,
+  onPose,
   onSelect,
   onMove,
   onCameraChange,
@@ -298,6 +348,9 @@ function Runtime({
         .map((figure) => loadFigure(figure.build))
         .join(",");
       gl.domElement.dataset.scenePoses = document.figures.map((figure) => figure.pose).join(",");
+      gl.domElement.dataset.sceneJoints = JSON.stringify(
+        document.figures.map((figure) => figure.joints),
+      );
       onReady(exportPicture);
     });
   });
@@ -307,10 +360,28 @@ function Runtime({
     const api = controls.current;
     const bodies = new Map<string, Box3>();
     const seats: string[] = [];
+    const joints: Record<string, Record<string, number[]>> = {};
     updateSkinBounds(scene);
     scene.traverse((node) => {
-      if (node.userData.figureBody)
+      if (node.userData.figureBody) {
         bodies.set(node.userData.figureBody, new Box3().setFromObject(node, true));
+        joints[node.userData.figureBody] = Object.fromEntries(
+          [
+            "hand_l",
+            "hand_r",
+            "upperarm_l",
+            "upperarm_r",
+            "lowerarm_l",
+            "lowerarm_r",
+            "foot_l",
+            "foot_r",
+            "head",
+          ].map((name) => [
+            name,
+            node.getObjectByName(name)!.getWorldPosition(new Vector3()).toArray(),
+          ]),
+        );
+      }
       if (node.userData.figureSeat) seats.push(node.userData.figureSeat);
     });
     if (document.camera.fit) {
@@ -336,6 +407,7 @@ function Runtime({
         fov: camera.fov,
         aspect: camera.aspect,
         seats,
+        joints,
         bodies: [...bodies].map(([id, box]) => ({
           id,
           min: box.min.toArray(),
@@ -390,16 +462,18 @@ function Runtime({
       delete canvas.dataset.sceneReady;
       delete canvas.dataset.sceneAssets;
       delete canvas.dataset.scenePoses;
+      delete canvas.dataset.sceneJoints;
       onReady(null);
     };
   }, [exportPicture, gl, invalidate, onLost, onReady]);
   return (
     <>
       <color attach="background" args={["#eeebe5"]} />
-      <ambientLight intensity={1.1} />
+      <fog attach="fog" args={["#eeebe5", 8, 24]} />
+      <hemisphereLight args={["#fff9ef", "#d4cfcb", 2.2]} />
       <directionalLight
         position={[3, 7, 5]}
-        intensity={2.8}
+        intensity={2}
         castShadow
         shadow-mapSize={[1024, 1024]}
         shadow-camera-left={-7}
@@ -408,13 +482,21 @@ function Runtime({
         shadow-camera-bottom={-7}
         shadow-normalBias={0.03}
       />
-      <directionalLight position={[-4, 3, -2]} intensity={1.3} />
+      <directionalLight position={[-4, 3, -2]} intensity={2} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
         <planeGeometry args={[200, 200]} />
-        <meshStandardMaterial color="#e3dfd7" roughness={1} />
+        <meshStandardMaterial color="#eeebe5" roughness={1} />
       </mesh>
-      <gridHelper
-        args={[12, 24, "#b8b3aa", "#d0cbc2"]}
+      <Grid
+        args={[40, 40]}
+        cellSize={0.5}
+        sectionSize={2}
+        cellColor="#d0cbc2"
+        sectionColor="#b8b3aa"
+        cellThickness={0.5}
+        sectionThickness={0.6}
+        fadeDistance={12}
+        fadeStrength={2}
         position={[0, 0.003, 0]}
         userData={{ editorOnly: true }}
       />
@@ -424,6 +506,9 @@ function Runtime({
           figure={figure}
           identity={identities[index]}
           selected={figure.id === selected}
+          limbs={limbs}
+          shot={document.camera.shot}
+          onPose={onPose}
           onDragging={dragging}
           onSelect={onSelect}
           onMove={onMove}

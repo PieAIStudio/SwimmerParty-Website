@@ -20,12 +20,11 @@ import {
   BUILDS,
   DRAFT_KEY,
   FRAMES,
-  LAYOUTS,
   LENSES,
   SHOTS,
   figureBand,
   applyLayout,
-  type Layout,
+  applyBlocking,
   POSES,
   VIEWS,
   arrange,
@@ -64,6 +63,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
   const [storage, setStorage] = useState<"saved" | "storageUnavailable" | null>(null);
   const [exporter, setExporter] = useState<ExportPicture | null>(null);
   const [busy, setBusy] = useState(false);
+  const [limbs, setLimbs] = useState(false);
   const [notice, setNotice] = useState<"exported" | "failed" | null>(null);
   const start = useCallback((value: SceneState) => {
     setHistory({ value, past: [], future: [] });
@@ -208,37 +208,28 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
     }),
   ].join("\n");
   return (
-    <div className="pb-16" data-scene-editor>
-      <section className="mb-5" aria-label={t("scene.layouts")}>
+    <div className="pb-8" data-scene-editor>
+      <section className="mb-3" aria-label={t("scene.layouts")}>
         <h2 className="sp-small mb-2">{t("scene.layouts")}</h2>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4" data-scene-layouts>
-          {(Object.keys(LAYOUTS) as Layout[]).map((layout) => (
+          {(["talk", "shoulder", "group", "lineup"] as const).map((layout) => (
             <GameButton
               key={layout}
-              onClick={() =>
-                change((value) => {
-                  const figures = applyLayout(value.figures, layout);
-                  return {
-                    ...value,
-                    figures,
-                    camera: fitCamera({
-                      ...value.camera,
-                      subject: "everyone",
-                      view: "eye",
-                      shot: "full",
-                    }),
-                  };
-                })
-              }
+              size="sm"
+              onClick={() => {
+                change((value) => applyBlocking(value, layout));
+                setSelected("");
+              }}
             >
               {t(`scene.layout.${layout}`)}
             </GameButton>
           ))}
         </div>
       </section>
-      <div className="mb-5 flex flex-wrap items-center gap-3">
+      <div className="mb-2 flex flex-wrap items-center gap-2" data-scene-actions>
         <GameButton
           variant="primary"
+          size="sm"
           disabled={!exporter || scene.camera.fit}
           pending={busy}
           onClick={() => void exportPicture()}
@@ -246,6 +237,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
           {t("scene.savePng")}
         </GameButton>
         <GameButton
+          size="sm"
           disabled={scene.camera.fit}
           onClick={() =>
             saveBlob(
@@ -256,13 +248,14 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
         >
           {t("scene.saveScene")}
         </GameButton>
-        <GameButton disabled={!history.past.length} onClick={() => undo()}>
+        <GameButton size="sm" disabled={!history.past.length} onClick={() => undo()}>
           {t("scene.undo")}
         </GameButton>
-        <GameButton disabled={!history.future.length} onClick={() => undo(true)}>
+        <GameButton size="sm" disabled={!history.future.length} onClick={() => undo(true)}>
           {t("scene.redo")}
         </GameButton>
         <GameButton
+          size="sm"
           onClick={() =>
             start(
               initialScene(
@@ -278,90 +271,101 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
           {t("scene.reset")}
         </GameButton>
       </div>
-      <output className="sp-small mb-4 block text-muted-foreground">
+      <output className="sp-small mb-2 block text-muted-foreground" aria-live="polite">
         {notice ? t(`scene.${notice}`) : storage ? t(`scene.${storage}`) : t("scene.loading")}
       </output>
-      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-        <div className="min-w-0 lg:sticky lg:top-20" data-scene-workspace>
-          <div className="mb-3 grid grid-cols-2 gap-3">
-            <GameField label={t("scene.frame")}>
-              <GameSelect
-                aria-label={t("scene.frame")}
-                value={scene.frame}
-                onChange={(event) => fit({}, event.target.value as Frame)}
+      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <div className="min-w-0" data-scene-workspace>
+          <details className="mb-2" data-scene-camera-panel>
+            <summary className="sp-small py-1">
+              {t("scene.camera")} · {t(`scene.shot.${scene.camera.shot}`)} · {scene.camera.lens} mm
+            </summary>
+            <div className="my-2 grid grid-cols-2 gap-3">
+              <GameField label={t("scene.frame")}>
+                <GameSelect
+                  aria-label={t("scene.frame")}
+                  value={scene.frame}
+                  onChange={(event) => fit({}, event.target.value as Frame)}
+                >
+                  <option value="landscape">16:9</option>
+                  <option value="portrait">9:16</option>
+                  <option value="square">1:1</option>
+                </GameSelect>
+              </GameField>
+              <GameField label={t("scene.subject")}>
+                <GameSelect
+                  aria-label={t("scene.subject")}
+                  value={scene.camera.subject === "everyone" ? "everyone" : "selected"}
+                  onChange={(event) =>
+                    fit({
+                      subject: event.target.value === "everyone" ? "everyone" : figure.id,
+                      view: scene.camera.view === "shoulder" ? "eye" : scene.camera.view,
+                    })
+                  }
+                >
+                  <option value="everyone">{t("scene.everyone")}</option>
+                  <option value="selected">{t("scene.selected")}</option>
+                </GameSelect>
+              </GameField>
+            </div>
+            <div className="mb-3 space-y-2" data-scene-camera>
+              <fieldset className="flex flex-wrap items-center gap-2" aria-label={t("scene.shot")}>
+                <span className="sp-small mr-1">{t("scene.shot")}</span>
+                {SHOTS.map((shot) => (
+                  <GameButton
+                    key={shot}
+                    size="sm"
+                    aria-pressed={scene.camera.shot === shot}
+                    variant={scene.camera.shot === shot ? "secondary" : "ghost"}
+                    onClick={() => fit({ shot })}
+                  >
+                    {t(`scene.shot.${shot}`)}
+                  </GameButton>
+                ))}
+              </fieldset>
+              <fieldset
+                className="flex flex-wrap items-center gap-2"
+                aria-label={t("scene.camera")}
               >
-                <option value="landscape">16:9</option>
-                <option value="portrait">9:16</option>
-                <option value="square">1:1</option>
-              </GameSelect>
-            </GameField>
-            <GameField label={t("scene.subject")}>
-              <GameSelect
-                aria-label={t("scene.subject")}
-                value={scene.camera.subject === "everyone" ? "everyone" : "selected"}
-                onChange={(event) =>
-                  fit({
-                    subject: event.target.value === "everyone" ? "everyone" : figure.id,
-                    view: scene.camera.view === "shoulder" ? "eye" : scene.camera.view,
-                  })
-                }
-              >
-                <option value="everyone">{t("scene.everyone")}</option>
-                <option value="selected">{t("scene.selected")}</option>
-              </GameSelect>
-            </GameField>
-          </div>
-          <div className="mb-3 space-y-2" data-scene-camera>
-            <fieldset className="flex flex-wrap items-center gap-2" aria-label={t("scene.shot")}>
-              <span className="sp-small mr-1">{t("scene.shot")}</span>
-              {SHOTS.map((shot) => (
-                <GameButton
-                  key={shot}
-                  size="sm"
-                  aria-pressed={scene.camera.shot === shot}
-                  variant={scene.camera.shot === shot ? "secondary" : "ghost"}
-                  onClick={() => fit({ shot })}
-                >
-                  {t(`scene.shot.${shot}`)}
+                <span className="sp-small mr-1">{t("scene.camera")}</span>
+                {VIEWS.map((view) => (
+                  <GameButton
+                    key={view}
+                    size="sm"
+                    disabled={view === "shoulder" && scene.figures.length < 2}
+                    aria-pressed={scene.camera.view === view}
+                    variant={scene.camera.view === view ? "secondary" : "ghost"}
+                    onClick={() => {
+                      if (view === "shoulder") setSelected(scene.figures[1].id);
+                      fit({
+                        view,
+                        ...(view === "shoulder" ? { subject: scene.figures[1].id } : {}),
+                      });
+                    }}
+                  >
+                    {t(`scene.view.${view}`)}
+                  </GameButton>
+                ))}
+              </fieldset>
+              <fieldset className="flex flex-wrap items-center gap-2" aria-label={t("scene.lens")}>
+                <span className="sp-small mr-1">{t("scene.lens")}</span>
+                {LENSES.map((lens) => (
+                  <GameButton
+                    key={lens}
+                    size="sm"
+                    aria-pressed={scene.camera.lens === lens}
+                    variant={scene.camera.lens === lens ? "secondary" : "ghost"}
+                    onClick={() => fit({ lens })}
+                  >
+                    {lens} mm
+                  </GameButton>
+                ))}
+                <GameButton size="sm" onClick={() => fit()}>
+                  {t("scene.fit")}
                 </GameButton>
-              ))}
-            </fieldset>
-            <fieldset className="flex flex-wrap items-center gap-2" aria-label={t("scene.camera")}>
-              <span className="sp-small mr-1">{t("scene.camera")}</span>
-              {VIEWS.map((view) => (
-                <GameButton
-                  key={view}
-                  size="sm"
-                  disabled={view === "shoulder" && scene.figures.length < 2}
-                  aria-pressed={scene.camera.view === view}
-                  variant={scene.camera.view === view ? "secondary" : "ghost"}
-                  onClick={() => {
-                    if (view === "shoulder") setSelected(scene.figures[1].id);
-                    fit({ view, ...(view === "shoulder" ? { subject: scene.figures[1].id } : {}) });
-                  }}
-                >
-                  {t(`scene.view.${view}`)}
-                </GameButton>
-              ))}
-            </fieldset>
-            <fieldset className="flex flex-wrap items-center gap-2" aria-label={t("scene.lens")}>
-              <span className="sp-small mr-1">{t("scene.lens")}</span>
-              {LENSES.map((lens) => (
-                <GameButton
-                  key={lens}
-                  size="sm"
-                  aria-pressed={scene.camera.lens === lens}
-                  variant={scene.camera.lens === lens ? "secondary" : "ghost"}
-                  onClick={() => fit({ lens })}
-                >
-                  {lens} mm
-                </GameButton>
-              ))}
-              <GameButton size="sm" onClick={() => fit()}>
-                {t("scene.fit")}
-              </GameButton>
-            </fieldset>
-          </div>
+              </fieldset>
+            </div>
+          </details>
           <div
             className="sp-scene-frame"
             data-scene-frame={scene.frame}
@@ -378,6 +382,15 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
                 scene={scene}
                 identities={identities}
                 selected={figure.id}
+                limbs={limbs}
+                onPose={(id, joints) =>
+                  change((value) => ({
+                    ...value,
+                    figures: value.figures.map((item) =>
+                      item.id === id ? { ...item, joints } : item,
+                    ),
+                  }))
+                }
                 onSelect={select}
                 onMove={move}
                 onCameraChange={cameraChange}
@@ -385,85 +398,27 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
               />
             </CanvasBoundary>
           </div>
-          <p className="sp-small mt-3 flex flex-wrap gap-x-4 gap-y-1" data-scene-key>
-            {identities.map((identity, index) => (
-              <span
-                key={identity.label}
-                className={
-                  scene.camera.subject === scene.figures[index].id ? "font-bold" : undefined
-                }
+          <div className="sp-scene-quick mt-3" data-scene-quick>
+            <GameField label={t("scene.figures")}>
+              <GameSelect
+                aria-label={t("scene.figures")}
+                value={figure.id}
+                onChange={(event) => select(event.target.value)}
               >
-                {identity.label} ({t(`scene.colour.${figureBand(index).colour}`)})
-              </span>
-            ))}
-          </p>
-          <div className="mt-3 flex flex-wrap gap-3">
-            <GameButton onClick={() => arrangeCurrent("line")}>{t("scene.line")}</GameButton>
-            <GameButton onClick={() => arrangeCurrent("faceOff")}>{t("scene.faceOff")}</GameButton>
-          </div>
-          <p className="sp-small mt-4 text-muted-foreground">{t("scene.gestures")}</p>
-        </div>
-        <aside className="sp-card min-w-0 bg-card" aria-label={t("scene.figures")}>
-          <h2 className="sp-subtitle">
-            {t("scene.figures")} · {scene.figures.length}
-          </h2>
-          <div className="my-4 flex flex-wrap gap-2" data-scene-figures>
-            {scene.figures.map((item, index) => (
-              <GameButton
-                key={item.id}
-                size="sm"
-                aria-pressed={item.id === figure.id}
-                variant={item.id === figure.id ? "secondary" : "ghost"}
-                onClick={() => select(item.id)}
-              >
-                {identities[index].label}
-              </GameButton>
-            ))}
-          </div>
-          <div className="mb-5 flex flex-wrap gap-2">
-            <GameButton
-              size="sm"
-              onClick={() => {
-                const next = makeFigure(crypto.randomUUID());
-                next.x = Math.max(...scene.figures.map((item) => item.x)) + 1.1;
-                change((value) => ({
-                  ...value,
-                  figures: [...value.figures, next],
-                  camera: fitCamera({ ...value.camera, subject: "everyone" }),
-                }));
-                setSelected(next.id);
-              }}
-            >
-              {t("scene.add")}
-            </GameButton>
-            <GameButton
-              size="sm"
-              disabled={scene.figures.length <= 1}
-              onClick={() => {
-                change((value) => ({
-                  ...value,
-                  figures: value.figures.filter((item) => item.id !== figure.id),
-                  camera: fitCamera({
-                    ...value.camera,
-                    subject: "everyone",
-                    view: value.camera.view === "shoulder" ? "eye" : value.camera.view,
-                  }),
-                }));
-                setSelected(scene.figures.find((item) => item.id !== figure.id)!.id);
-              }}
-            >
-              {t("scene.remove")}
-            </GameButton>
-          </div>
-          {scene.figures.length > 8 ? (
-            <p className="sp-small mb-5 text-muted-foreground">{t("scene.performance")}</p>
-          ) : null}
-          <div className="space-y-5">
+                {scene.figures.map((item, index) => (
+                  <option key={item.id} value={item.id}>
+                    {identities[index].label}
+                  </option>
+                ))}
+              </GameSelect>
+            </GameField>
             <GameField label={t("scene.pose")}>
               <GameSelect
                 aria-label={t("scene.pose")}
                 value={figure.pose}
-                onChange={(event) => patch({ pose: event.target.value as FigureState["pose"] })}
+                onChange={(event) =>
+                  patch({ pose: event.target.value as FigureState["pose"], joints: {} })
+                }
               >
                 {POSES.map((pose) => (
                   <option key={pose} value={pose}>
@@ -485,60 +440,169 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
                 ))}
               </GameSelect>
             </GameField>
-            <GameSlider
-              label={`${t("scene.height")} · ${figure.heightCm} cm`}
-              min={80}
-              max={240}
-              step={1}
-              value={figure.heightCm}
-              onChange={(heightCm) => patch({ heightCm })}
-            />
-            <GameSlider
-              label={`${t("scene.turn")} · ${figure.turn}°`}
-              min={-180}
-              max={180}
-              step={5}
-              value={figure.turn}
-              onChange={(turn) => patch({ turn })}
-            />
-            <div className="grid grid-cols-2 gap-3">
-              {(["x", "z"] as const).map((axis) => (
-                <GameField key={axis} label={t(`scene.axis.${axis}`)}>
-                  <GameInput
-                    type="number"
-                    aria-label={t(`scene.axis.${axis}`)}
-                    step={0.1}
-                    value={Number(figure[axis].toFixed(2))}
-                    onChange={(event) => {
-                      const number = event.target.valueAsNumber;
-                      if (Number.isFinite(number)) patch({ [axis]: number });
-                    }}
-                  />
-                </GameField>
+          </div>
+          <div className="mt-2 flex items-center gap-2">
+            <GameButton size="sm" aria-pressed={limbs} onClick={() => setLimbs(!limbs)}>
+              {t("scene.limbs")}
+            </GameButton>
+            <span className="sp-small text-muted-foreground">{t("scene.limbHint")}</span>
+          </div>
+          <p className="sp-small mt-2 text-muted-foreground" data-scene-bottom>
+            {t("scene.approximate")}
+          </p>
+          <details className="mt-3">
+            <summary className="sp-small">{t("scene.gesturesTitle")}</summary>
+            <p className="sp-small mt-3 flex flex-wrap gap-x-4 gap-y-1" data-scene-key>
+              {identities.map((identity, index) => (
+                <span
+                  key={identity.label}
+                  className={
+                    scene.camera.subject === scene.figures[index].id ? "font-bold" : undefined
+                  }
+                >
+                  {identity.label} ({t(`scene.colour.${figureBand(index).colour}`)})
+                </span>
+              ))}
+            </p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              <GameButton onClick={() => arrangeCurrent("line")}>{t("scene.line")}</GameButton>
+              <GameButton onClick={() => arrangeCurrent("faceOff")}>
+                {t("scene.faceOff")}
+              </GameButton>
+            </div>
+            <p className="sp-small mt-4 text-muted-foreground">{t("scene.gestures")}</p>
+          </details>
+        </div>
+        <aside className="min-w-0" aria-label={t("scene.figures")}>
+          <details className="sp-card bg-card" data-scene-inspector>
+            <summary className="sp-small">{t("scene.fineTune")}</summary>
+            <h2 className="sp-subtitle">
+              {t("scene.figures")} · {scene.figures.length}
+            </h2>
+            <div className="my-4 flex flex-wrap gap-2" data-scene-figures>
+              {scene.figures.map((item, index) => (
+                <GameButton
+                  key={item.id}
+                  size="sm"
+                  aria-pressed={item.id === figure.id}
+                  variant={item.id === figure.id ? "secondary" : "ghost"}
+                  onClick={() => select(item.id)}
+                >
+                  {identities[index].label}
+                </GameButton>
               ))}
             </div>
-          </div>
-          {figure.actorSlug ? (
-            <Link href={`/actors/${figure.actorSlug}/sheet`} className="sp-link mt-5">
-              {t("scene.actorReferences")}
-            </Link>
-          ) : null}
-          <p className="sp-small mt-5 text-muted-foreground">{t("scene.approximate")}</p>
+            <div className="mb-5 flex flex-wrap gap-2">
+              <GameButton
+                size="sm"
+                onClick={() => {
+                  const next = makeFigure(crypto.randomUUID());
+                  next.x = Math.max(...scene.figures.map((item) => item.x)) + 1.1;
+                  change((value) => ({
+                    ...value,
+                    figures: [...value.figures, next],
+                    camera: fitCamera({ ...value.camera, subject: "everyone" }),
+                  }));
+                  setSelected(next.id);
+                }}
+              >
+                {t("scene.add")}
+              </GameButton>
+              <GameButton
+                size="sm"
+                disabled={scene.figures.length <= 1}
+                onClick={() => {
+                  change((value) => ({
+                    ...value,
+                    figures: value.figures.filter((item) => item.id !== figure.id),
+                    camera: fitCamera({
+                      ...value.camera,
+                      subject: "everyone",
+                      view: value.camera.view === "shoulder" ? "eye" : value.camera.view,
+                    }),
+                  }));
+                  setSelected(scene.figures.find((item) => item.id !== figure.id)!.id);
+                }}
+              >
+                {t("scene.remove")}
+              </GameButton>
+            </div>
+            {scene.figures.length > 8 ? (
+              <p className="sp-small mb-5 text-muted-foreground">{t("scene.performance")}</p>
+            ) : null}
+            <div className="mb-4">
+              <GameButton
+                size="sm"
+                onClick={() =>
+                  change((value) => ({
+                    ...value,
+                    figures: applyLayout(value.figures, "triangle"),
+                    camera: fitCamera(),
+                  }))
+                }
+              >
+                {t("scene.layout.triangle")}
+              </GameButton>
+            </div>
+            <div className="space-y-5">
+              <GameSlider
+                label={`${t("scene.height")} · ${figure.heightCm} cm`}
+                min={80}
+                max={240}
+                step={1}
+                value={figure.heightCm}
+                onChange={(heightCm) => patch({ heightCm })}
+              />
+              <GameSlider
+                label={`${t("scene.turn")} · ${figure.turn}°`}
+                min={-180}
+                max={180}
+                step={5}
+                value={figure.turn}
+                onChange={(turn) => patch({ turn })}
+              />
+              <div className="grid grid-cols-2 gap-3">
+                {(["x", "z"] as const).map((axis) => (
+                  <GameField key={axis} label={t(`scene.axis.${axis}`)}>
+                    <GameInput
+                      type="number"
+                      aria-label={t(`scene.axis.${axis}`)}
+                      step={0.1}
+                      value={Number(figure[axis].toFixed(2))}
+                      onChange={(event) => {
+                        const number = event.target.valueAsNumber;
+                        if (Number.isFinite(number)) patch({ [axis]: number });
+                      }}
+                    />
+                  </GameField>
+                ))}
+              </div>
+            </div>
+            {figure.actorSlug ? (
+              <Link href={`/actors/${figure.actorSlug}/sheet`} className="sp-link mt-5">
+                {t("scene.actorReferences")}
+              </Link>
+            ) : null}
+          </details>
         </aside>
       </div>
-      <section className="sp-card mt-6 bg-card" data-scene-prompt>
-        <GameField label={t("scene.prompt")}>
-          <GameTextArea aria-label={t("scene.prompt")} rows={5} readOnly value={prompt} />
-        </GameField>
-        <div className="mt-4">
-          <CopyButton
-            key={prompt}
-            text={prompt}
-            label={t("scene.copyPrompt")}
-            copiedLabel={t("scene.promptCopied")}
-          />
-        </div>
-      </section>
+      <details className="mt-4">
+        <summary className="sp-small">{t("scene.actorReferences")}</summary>
+        <p className="sp-small mt-3 text-muted-foreground">{t("scene.intro")}</p>
+        <section className="sp-card mt-3 bg-card" data-scene-prompt>
+          <GameField label={t("scene.prompt")}>
+            <GameTextArea aria-label={t("scene.prompt")} rows={5} readOnly value={prompt} />
+          </GameField>
+          <div className="mt-4">
+            <CopyButton
+              key={prompt}
+              text={prompt}
+              label={t("scene.copyPrompt")}
+              copiedLabel={t("scene.promptCopied")}
+            />
+          </div>
+        </section>
+      </details>
       <SettingCards
         draft={scene.setting}
         onChange={(setting) => change((value) => ({ ...value, setting }))}
