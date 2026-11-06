@@ -8,6 +8,10 @@
       "placement": "manual"
     },
     {
+      "id": "npx-skills/finding-replay-for-issue",
+      "placement": "auto"
+    },
+    {
       "id": "npx-skills/frontend-design",
       "placement": "auto"
     },
@@ -17,6 +21,14 @@
     },
     {
       "id": "npx-skills/impeccable",
+      "placement": "auto"
+    },
+    {
+      "id": "npx-skills/instrument-error-tracking",
+      "placement": "auto"
+    },
+    {
+      "id": "npx-skills/investigating-error-issue",
       "placement": "auto"
     },
     {
@@ -38,6 +50,10 @@
     {
       "id": "npx-skills/threejs-skills",
       "placement": "manual"
+    },
+    {
+      "id": "npx-skills/triaging-error-issues",
+      "placement": "auto"
     },
     {
       "id": "npx-skills/ui-ux-pro-max",
@@ -64,6 +80,14 @@
     },
     {
       "id": "pie-rules/donors"
+    },
+    {
+      "id": "pie-skills/design-before-build",
+      "placement": "auto"
+    },
+    {
+      "id": "pie-skills/goalcascade",
+      "placement": "auto"
     },
     {
       "id": "pie-skills/promote-new-face",
