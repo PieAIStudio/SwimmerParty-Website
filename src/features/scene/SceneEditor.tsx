@@ -225,7 +225,9 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
               size="sm"
               className="whitespace-nowrap"
               onClick={() => {
-                change((value) => applyBlocking(value, layout));
+                change((value) =>
+                  applyBlocking(value, layout, window.matchMedia("(max-width: 639px)").matches),
+                );
                 setSelected("");
               }}
             >

@@ -175,6 +175,7 @@ function Figure({
   selected,
   limbs,
   editingPair,
+  standingClearance,
   shot,
   onPose,
   onDragging,
@@ -187,6 +188,7 @@ function Figure({
   selected: boolean;
   limbs: boolean;
   editingPair: boolean;
+  standingClearance: number;
   shot: SceneCanvasProps["scene"]["camera"]["shot"];
   onPose: SceneCanvasProps["onPose"];
   onDragging: (dragging: boolean) => void;
@@ -241,8 +243,19 @@ function Figure({
       figure.joints,
       contact,
       editingPair,
+      standingClearance,
     );
-  }, [source, supportSource, pose, supportPose, scale, figure, support, editingPair]);
+  }, [
+    source,
+    supportSource,
+    pose,
+    supportPose,
+    scale,
+    figure,
+    support,
+    editingPair,
+    standingClearance,
+  ]);
   useEffect(() => () => model.dispose(), [model]);
   const root = useRef<Group>(null);
   const drag = useRef<{ pointer: number; offset: Vector3 } | null>(null);
@@ -656,6 +669,11 @@ function Runtime({
           selected={figure.id === selected}
           limbs={limbs}
           editingPair={limbs && document.figures.length === 2}
+          standingClearance={
+            index === 4 && document.figures.length === 5 && document.figures[0].pose === "sit"
+              ? 7
+              : 0
+          }
           shot={document.camera.shot}
           onPose={onPose}
           onDragging={dragging}

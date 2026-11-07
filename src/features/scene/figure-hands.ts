@@ -2,21 +2,35 @@
 import { Bone, Quaternion, Raycaster, SkinnedMesh, Vector3, type Object3D } from "three";
 import { createFigureIK } from "./figure-ik";
 
-export function refineShelfPose(object: Object3D, pose: string | undefined, scale: number) {
+export function refineShelfPose(
+  object: Object3D,
+  pose: string | undefined,
+  scale: number,
+  standingClearance = 0,
+) {
   const point = (name: string) => object.getObjectByName(name)!.getWorldPosition(new Vector3());
   for (const side of ["l", "r"] as const) {
     const contact = pose === "sit" || (pose === "hand-on-hip" && side === "l");
     const curl =
       pose === "arms-crossed" ? [0.08, 0.6, 0.4] : contact ? [0, 0.08, 0.06] : [0.12, 0.2, 0.12];
+    const free = !contact && pose !== "arms-crossed";
     for (const finger of ["index", "middle", "ring", "pinky"])
-      for (let joint = 1; joint <= 3; joint++)
-        (object.getObjectByName(`${finger}_0${joint}_${side}`) as Bone).rotateX(curl[joint - 1]);
-    (object.getObjectByName(`thumb_02_${side}`) as Bone).rotateX(
-      pose === "arms-crossed" ? 0.35 : contact ? 0 : 0.12,
-    );
-    (object.getObjectByName(`thumb_03_${side}`) as Bone).rotateX(
-      pose === "arms-crossed" ? 0.3 : contact ? 0 : 0.16,
-    );
+      for (let joint = 1; joint <= 3; joint++) {
+        const bone = object.getObjectByName(`${finger}_0${joint}_${side}`) as Bone;
+        // One half-curl in both lineup and drag mode, not another curl on top
+        // of the delivered pose's already bent fingers. Keep their natural splay.
+        if (free) bone.rotation.x = curl[joint - 1];
+        else bone.rotateX(curl[joint - 1]);
+      }
+    const thumb2 = object.getObjectByName(`thumb_02_${side}`) as Bone;
+    const thumb3 = object.getObjectByName(`thumb_03_${side}`) as Bone;
+    if (free) {
+      thumb2.rotation.x = 0.12;
+      thumb3.rotation.x = 0.16;
+    } else {
+      thumb2.rotateX(pose === "arms-crossed" ? 0.35 : 0);
+      thumb3.rotateX(pose === "arms-crossed" ? 0.3 : 0);
+    }
   }
   object.updateWorldMatrix(true, true);
   for (const side of ["l", "r"] as const) {
@@ -38,9 +52,13 @@ export function refineShelfPose(object: Object3D, pose: string | undefined, scal
   if (pose === "lean-in") {
     (object.getObjectByName("spine_01") as Bone).rotateX(0.1);
     (object.getObjectByName("spine_02") as Bone).rotateX(0.08);
-    // Open both shoulders by 10°: the broad female arm must clear the ribcage.
-    (object.getObjectByName("upperarm_l") as Bone).rotateZ(Math.PI / 18);
-    (object.getObjectByName("upperarm_r") as Bone).rotateZ(-Math.PI / 18);
+  }
+  if (pose === "lean-in" || (pose === "stand" && standingClearance)) {
+    // The same clearance that fixed the lean keeps turned stand #5's arms
+    // off his back, without changing the other standing figures.
+    const opening = ((pose === "lean-in" ? 10 : standingClearance) * Math.PI) / 180;
+    (object.getObjectByName("upperarm_l") as Bone).rotateZ(opening);
+    (object.getObjectByName("upperarm_r") as Bone).rotateZ(-opening);
   }
   object.updateWorldMatrix(true, true);
   object.traverse((node) => {

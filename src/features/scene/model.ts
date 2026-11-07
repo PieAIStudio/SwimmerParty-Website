@@ -120,7 +120,11 @@ export function arrange(figures: FigureState[], arrangement: "line" | "faceOff")
   );
 }
 // Presets reuse assigned actors in order; one undo restores the previous cast/layout.
-export function applyLayout(figures: FigureState[], layout: Layout): FigureState[] {
+export function applyLayout(
+  figures: FigureState[],
+  layout: Layout,
+  compact = false,
+): FigureState[] {
   return Array.from({ length: LAYOUTS[layout] }, (_, index) => {
     const figure = { ...(figures[index] ?? makeFigure(crypto.randomUUID())), joints: {} };
     if (layout === "talk")
@@ -172,15 +176,21 @@ export function applyLayout(figures: FigureState[], layout: Layout): FigureState
       { x: 0.74, z: -0.55, turn: -30 },
       { x: 1.4, z: 0.05, turn: -60 },
     ];
+    // Phone's eight-person preset uses two shallow staggered rows. Desktop
+    // keeps the original arc; the resulting positions remain ordinary saved edits.
+    const rows = compact && layout === "lineup";
+    const rowX = ((index % 4) - 1.5) * 0.78 + (index < 4 ? -0.14 : 0.14);
     // Assigned actors retain their known build; generic stand-ins vary naturally.
     return {
       ...figure,
       build: figure.actorSlug ? figure.build : builds[index],
-      x: five ? group[index].x : (index - half) * 0.62,
-      z: five ? group[index].z : -0.45 + 0.9 * offset * offset,
+      x: five ? group[index].x : rows ? rowX : (index - half) * 0.62,
+      z: five ? group[index].z : rows ? (index < 4 ? -0.26 : 0.26) : -0.45 + 0.9 * offset * offset,
       turn: five
         ? group[index].turn
-        : -Math.sign(offset) * (15 + (20 * (Math.abs(index - half) - 0.5)) / 3),
+        : rows
+          ? -Math.sign(rowX) * 20
+          : -Math.sign(offset) * (15 + (20 * (Math.abs(index - half) - 0.5)) / 3),
       pose: five
         ? (["sit", "lean-in", "arms-crossed", "stand", "stand"] as const)[index]
         : poses[index],
@@ -190,16 +200,17 @@ export function applyLayout(figures: FigureState[], layout: Layout): FigureState
 export function applyBlocking(
   scene: SceneState,
   preset: "talk" | "shoulder" | "group" | "lineup",
+  compact = false,
 ): SceneState {
   const dialogue = preset === "talk" || preset === "shoulder";
-  const figures = applyLayout(scene.figures, preset === "shoulder" ? "talk" : preset);
+  const figures = applyLayout(scene.figures, preset === "shoulder" ? "talk" : preset, compact);
   if (dialogue) figures[0].pose = "stand";
   return {
     ...scene,
     figures,
     frame: "landscape",
     camera: fitCamera({
-      shot: dialogue ? "medium" : "full",
+      shot: dialogue || (compact && preset === "lineup") ? "medium" : "full",
       lens: 50,
       view: preset === "shoulder" ? "shoulder" : "eye",
       subject: preset === "shoulder" ? figures[1].id : "everyone",

@@ -65,6 +65,16 @@ function expectFullFit(state: CameraEvidence) {
         }
   }
 }
+function expectShinFit(state: CameraEvidence) {
+  // Phone's default eight-person crop may omit ankles, never knees or crowns.
+  expectFullFit({
+    ...state,
+    bodies: state.bodies.map((body) => ({
+      ...body,
+      min: [body.min[0], body.min[1] + (body.max[1] - body.min[1]) * 0.25, body.min[2]],
+    })),
+  });
+}
 const ready = async (page: Page, expanded = true) => {
   await expect(page.locator("canvas[data-scene-ready=true]")).toBeVisible({ timeout: 30_000 });
   await expect
@@ -329,7 +339,16 @@ for (const locale of ["en", "zh"] as const)
       await page.getByRole("button", { name: m["scene.layout.lineup"], exact: true }).click();
       await ready(page);
       await expect(page.locator("[data-scene-figures] button")).toHaveCount(8);
-      expect((await draft(page)).camera).toMatchObject({ shot: "full", subject: "everyone" });
+      expect((await draft(page)).camera).toMatchObject({
+        shot: width === 390 ? "medium" : "full",
+        subject: "everyone",
+      });
+      if (width === 390) {
+        expectShinFit(await cameraEvidence(page));
+        // Full remains available and keeps the original uncropped-fit guarantee.
+        await page.getByRole("button", { name: m["scene.shot.full"], exact: true }).click();
+        await ready(page);
+      }
       expectFullFit(await cameraEvidence(page));
       await writeFile(
         `${evidenceRoot}/eight-wide-${locale}-${width}.json`,
@@ -664,21 +683,38 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
         });
       });
       expect(Boolean(figure.seat)).toBe(pose === "sit");
-      if (pose === "lean-in")
+      if (pose === "lean-in" || pose === "stand") {
+        // Keep build 7's shoulder-clearance check and add build 11's turned #5.
+        const cleared =
+          pose === "stand"
+            ? poseFigure(
+                source,
+                poses.get(pose)!,
+                figureScale(build, 185),
+                false,
+                {},
+                undefined,
+                false,
+                7,
+              )
+            : figure;
         for (const side of ["l", "r"])
           expect(
-            figure.object
+            cleared.object
               .getObjectByName(`upperarm_${side}`)!
               .quaternion.clone()
               .normalize()
               .angleTo(new Quaternion(...poses.get(pose)!.bones[`upperarm_${side}`]).normalize()),
-          ).toBeCloseTo(Math.PI / 18, 5);
+          ).toBeCloseTo(((pose === "stand" ? 7 : 10) * Math.PI) / 180, 5);
+        if (cleared !== figure) cleared.dispose();
+      }
       if (pose === "stand") {
-        expect(
-          figure.object
-            .getObjectByName("middle_02_l")!
-            .quaternion.angleTo(new Quaternion(...poses.get(pose)!.bones.middle_02_l)),
-        ).toBeCloseTo(0.2, 5);
+        for (const side of ["l", "r"])
+          for (const finger of ["index", "middle", "ring", "pinky"])
+            for (let joint = 1; joint <= 3; joint++)
+              expect(
+                figure.object.getObjectByName(`${finger}_0${joint}_${side}`)!.rotation.x,
+              ).toBeCloseTo([0.12, 0.2, 0.12][joint - 1], 6);
         const editing = poseFigure(
           source,
           poses.get(pose)!,
@@ -1159,7 +1195,7 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
 });
 
 for (const width of [1440, 390]) {
-  test(`build 10 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
+  test(`build 11 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
     test.setTimeout(120_000);
     const locale = width === 1440 ? "en" : "zh";
     const m = locale === "en" ? en : zh;
@@ -1213,9 +1249,9 @@ for (const width of [1440, 390]) {
     expect(toastBox.y).toBeGreaterThan(castLink.y + castLink.height);
     const elapsedMs = Date.now() - started;
     expect(elapsedMs).toBeLessThan(30_000);
-    if (width === 390 && process.env.SCENE_CAPTURE_SHOTS !== "0") {
+    if (process.env.SCENE_CAPTURE_SHOTS !== "0") {
       await mkdir(`${evidenceRoot}/shots`, { recursive: true });
-      await page.screenshot({ path: `${evidenceRoot}/shots/png-toast-390.png` });
+      await page.screenshot({ path: `${evidenceRoot}/shots/png-toast-${width}.png` });
     }
     await expect(toast).toHaveCount(0, { timeout: 2500 });
     expect(await page.evaluate(() => scrollY)).toBe(0);
@@ -1387,6 +1423,16 @@ for (const width of [1440, 390]) {
     );
     await assertFold();
     await capture("five-sit");
+    let desktopLineup: CameraEvidence | undefined;
+    if (width === 390) {
+      await page.setViewportSize({ width: 1440, height: 900 });
+      await page.getByRole("button", { name: m["scene.layout.lineup"], exact: true }).click();
+      await ready(page, false);
+      desktopLineup = await cameraEvidence(page);
+      expectFullFit(desktopLineup);
+      await page.setViewportSize({ width, height });
+      await ready(page, false);
+    }
     await page.getByRole("button", { name: m["scene.layout.lineup"], exact: true }).click();
     await ready(page, false);
     const group = (await draft(page)).figures;
@@ -1403,9 +1449,41 @@ for (const width of [1440, 390]) {
       expect(item.x * item.turn).toBeLessThan(0);
     }
     const wide = await cameraEvidence(page);
-    expectFullFit(wide);
-    expect(wide.position[2]).toBeGreaterThanOrEqual(7.5);
-    expect(wide.position[2]).toBeLessThanOrEqual(8.5);
+    if (width === 1440) {
+      expectFullFit(wide);
+      expect(wide.position[2]).toBeGreaterThanOrEqual(7.5);
+      expect(wide.position[2]).toBeLessThanOrEqual(8.5);
+    } else {
+      expect(group.slice(0, 4).map((item: { z: number }) => item.z)).toEqual(Array(4).fill(-0.26));
+      expect(group.slice(4).map((item: { z: number }) => item.z)).toEqual(Array(4).fill(0.26));
+      expect((await draft(page)).camera).toMatchObject({ view: "eye", shot: "medium" });
+      expectShinFit(wide);
+      const shoulderWidths = (state: CameraEvidence) => {
+        const lens = new PerspectiveCamera(state.fov, state.aspect, 0.05, 10000);
+        lens.position.set(...state.position);
+        lens.lookAt(new Vector3(...state.target));
+        lens.updateMatrixWorld(true);
+        return group.map((item: { id: string }) =>
+          Math.abs(
+            new Vector3(...state.joints[item.id].upperarm_l).project(lens).x -
+              new Vector3(...state.joints[item.id].upperarm_r).project(lens).x,
+          ),
+        );
+      };
+      const original = shoulderWidths(desktopLineup!);
+      const scales = shoulderWidths(wide).map(
+        (value: number, index: number) => value / original[index],
+      );
+      const meanScale =
+        scales.reduce((sum: number, value: number) => sum + value, 0) / scales.length;
+      await writeFile(
+        `${evidenceRoot}/phone-lineup-scale.json`,
+        JSON.stringify({ desktopLineup, wide, scales, meanScale }, null, 2),
+      );
+      expect(meanScale).toBeGreaterThanOrEqual(1.4);
+      expect(meanScale).toBeLessThanOrEqual(1.7);
+      expect(Math.min(...scales)).toBeGreaterThanOrEqual(1.3);
+    }
     await assertFold();
     if (process.env.SCENE_CAPTURE_SHOTS !== "0") {
       await capture("wide-group");

@@ -88,6 +88,7 @@ export function poseFigure(
   joints: JointRotations = {},
   shoulder?: { wrist: Vector3; normal: Vector3; tangent: Vector3 },
   editingPair = false,
+  standingClearance = 0,
 ) {
   // Object3D.clone leaves skinned meshes pointing at the source skeleton.
   const object = clone(source);
@@ -113,7 +114,12 @@ export function poseFigure(
   }
   object.scale.setScalar(scale);
   updateSkinBounds(object);
-  refineShelfPose(object, editingPair && pose.name === "hand-on-hip" ? "stand" : pose.name, scale);
+  refineShelfPose(
+    object,
+    editingPair && pose.name === "hand-on-hip" ? "stand" : pose.name,
+    scale,
+    standingClearance,
+  );
   updateSkinBounds(object);
   if (pose.name === "hand-on-hip" && !editingPair) {
     pinHipHand(object, scale);
