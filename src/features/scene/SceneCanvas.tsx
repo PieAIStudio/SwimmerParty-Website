@@ -341,7 +341,11 @@ function Figure({
             : [0, 0]
         }
       />
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.008, 0]}>
+      <mesh
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, 0.008, 0]}
+        userData={{ figureRing: true }}
+      >
         <ringGeometry args={[0.27, 0.34, 40]} />
         <meshBasicMaterial color={identity.colour} toneMapped={false} />
       </mesh>

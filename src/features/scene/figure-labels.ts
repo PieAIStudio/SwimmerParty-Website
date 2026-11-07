@@ -16,6 +16,19 @@ export function placeFigureLabels(
     leader: boolean;
   }[] = [];
   root.updateMatrixWorld(true);
+  const rings: { left: number; right: number; top: number; bottom: number }[] = [];
+  root.traverse((node) => {
+    if (!node.userData.figureRing) return;
+    const corners = [-0.34, 0.34].flatMap((x) =>
+      [-0.34, 0.34].map((y) => node.localToWorld(new Vector3(x, y, 0)).project(camera)),
+    );
+    rings.push({
+      left: ((Math.min(...corners.map((p) => p.x)) + 1) * width) / 2,
+      right: ((Math.max(...corners.map((p) => p.x)) + 1) * width) / 2,
+      top: ((1 - Math.max(...corners.map((p) => p.y))) * height) / 2,
+      bottom: ((1 - Math.min(...corners.map((p) => p.y))) * height) / 2,
+    });
+  });
   root.traverse((node) => {
     if (!(node instanceof Sprite) || !node.userData.figureLabel) return;
     const anchor = node.userData.labelAnchor as Vector3;
@@ -37,8 +50,15 @@ export function placeFigureLabels(
       cx <= width - 12 &&
       cy >= 12 &&
       cy <= height - 12 &&
-      placed.every((box) => Math.abs(cx - box.x) >= 24 || Math.abs(cy - box.y) >= 24);
-    for (let step = 0; step <= placed.length; step++) {
+      placed.every((box) => Math.abs(cx - box.x) >= 24 || Math.abs(cy - box.y) >= 24) &&
+      rings.every(
+        (ring) =>
+          cx + 12 < ring.left ||
+          cx - 12 > ring.right ||
+          cy + 12 < ring.top ||
+          cy - 12 > ring.bottom,
+      );
+    for (let step = 0; step <= placed.length + rings.length; step++) {
       const candidates = step
         ? [
             [x, y - step * 24],

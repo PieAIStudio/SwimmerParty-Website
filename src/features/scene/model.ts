@@ -163,13 +163,14 @@ export function applyLayout(figures: FigureState[], layout: Layout): FigureState
       "stand",
     ];
     // #2 stands just behind the sitter, within a real arm's reach of his shoulder.
-    // All standing bodies turn toward the conversation in front of the sitter.
+    // #4 uses the shelf's soft-kneed contrapposto, with both hands free.
+    // #5 turns a further 30° toward the sitter instead of reading as front-facing.
     const group = [
       { x: -1.3, z: 0.65, turn: -25 },
       { x: -0.68, z: 0.35, turn: -25 },
       { x: 0.05, z: 0.05, turn: -25 },
       { x: 0.74, z: -0.55, turn: -30 },
-      { x: 1.4, z: 0.05, turn: -30 },
+      { x: 1.4, z: 0.05, turn: -60 },
     ];
     // Assigned actors retain their known build; generic stand-ins vary naturally.
     return {
@@ -181,7 +182,7 @@ export function applyLayout(figures: FigureState[], layout: Layout): FigureState
         ? group[index].turn
         : -Math.sign(offset) * (15 + (20 * (Math.abs(index - half) - 0.5)) / 3),
       pose: five
-        ? (["sit", "lean-in", "arms-crossed", "hand-on-hip", "stand"] as const)[index]
+        ? (["sit", "lean-in", "arms-crossed", "stand", "stand"] as const)[index]
         : poses[index],
     };
   });

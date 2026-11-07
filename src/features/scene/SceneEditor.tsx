@@ -68,7 +68,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
   const [notice, setNotice] = useState<"exported" | "failed" | null>(null);
   useEffect(() => {
     if (notice !== "exported") return;
-    const timer = setTimeout(() => setNotice(null), 3500);
+    const timer = setTimeout(() => setNotice(null), 2000);
     return () => clearTimeout(timer);
   }, [notice]);
   const start = useCallback((value: SceneState) => {
@@ -286,22 +286,10 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
       <output className="sr-only" aria-live="polite">
         {storage ? t(`scene.${storage}`) : t("scene.loading")}
       </output>
-      {notice || storage === "storageUnavailable" ? (
-        <div
-          className="pointer-events-none fixed top-20 right-4 z-50 max-w-[calc(100vw-2rem)]"
-          data-scene-toast
-        >
-          <GameToast
-            tone={notice === "failed" || storage === "storageUnavailable" ? "danger" : "success"}
-          >
-            {t(`scene.${notice ?? "storageUnavailable"}`)}
-          </GameToast>
-        </div>
-      ) : null}
       <div className="sp-scene-workbench grid items-start gap-4">
         <div className="min-w-0" data-scene-workspace>
           <details className="mb-2" data-scene-camera-panel>
-            <summary className="sp-small py-1">
+            <summary className="sp-small py-1 lg:py-0">
               {t("scene.camera")} · {t(`scene.shot.${scene.camera.shot}`)} · {scene.camera.lens} mm
             </summary>
             <div className="my-2 grid grid-cols-2 gap-3">
@@ -421,6 +409,20 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
                 onReady={ready}
               />
             </CanvasBoundary>
+            {notice || storage === "storageUnavailable" ? (
+              <div
+                className="pointer-events-none absolute bottom-3 left-1/2 z-10 max-w-[calc(100%-1.5rem)] -translate-x-1/2 whitespace-nowrap"
+                data-scene-toast
+              >
+                <GameToast
+                  tone={
+                    notice === "failed" || storage === "storageUnavailable" ? "danger" : "success"
+                  }
+                >
+                  {t(`scene.${notice ?? "storageUnavailable"}`)}
+                </GameToast>
+              </div>
+            ) : null}
           </div>
           <div className="sp-scene-quick mt-3" data-scene-quick>
             <GameField label={t("scene.figures")}>

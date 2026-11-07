@@ -1124,6 +1124,31 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
           Math.abs(a.y - b.y) >= (a.height + b.height) / 2 + 3,
         `${a.id} / ${b.id}`,
       ).toBe(true);
+  const frame = (await page.locator("canvas").boundingBox())!;
+  const camera = await cameraEvidence(page);
+  const lens = new PerspectiveCamera(camera.fov, camera.aspect, 0.05, 10000);
+  lens.position.set(...camera.position);
+  lens.lookAt(new Vector3(...camera.target));
+  lens.updateMatrixWorld(true);
+  const third = boxes[2];
+  for (const figure of scene.figures.slice(0, 2)) {
+    const ring = [-0.34, 0.34].flatMap((x) =>
+      [-0.34, 0.34].map((z) =>
+        new Vector3(x, 0.008, z)
+          .applyAxisAngle(new Vector3(0, 1, 0), (figure.turn * Math.PI) / 180)
+          .add(new Vector3(figure.x, 0, figure.z))
+          .project(lens),
+      ),
+    );
+    const left = ((Math.min(...ring.map((p) => p.x)) + 1) * frame.width) / 2;
+    const right = ((Math.max(...ring.map((p) => p.x)) + 1) * frame.width) / 2;
+    const top = ((1 - Math.max(...ring.map((p) => p.y))) * frame.height) / 2;
+    const bottom = ((1 - Math.min(...ring.map((p) => p.y))) * frame.height) / 2;
+    expect(
+      third.x + 10 < left || third.x - 10 > right || third.y + 10 < top || third.y - 10 > bottom,
+      `Label 3 clears ${figure.id}'s floor ring`,
+    ).toBe(true);
+  }
   await mkdir(`${evidenceRoot}/shots`, { recursive: true });
   await page.screenshot({ path: `${evidenceRoot}/shots/crowd-12-1440.png` });
   await writeFile(
@@ -1134,7 +1159,7 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
 });
 
 for (const width of [1440, 390]) {
-  test(`build 9 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
+  test(`build 10 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
     test.setTimeout(120_000);
     const locale = width === 1440 ? "en" : "zh";
     const m = locale === "en" ? en : zh;
@@ -1175,10 +1200,24 @@ for (const width of [1440, 390]) {
     expect(bytes.readUInt32BE(16)).toBe(1920);
     expect(bytes.readUInt32BE(20)).toBe(1080 + 64 + 48);
     step("Dialogue PNG downloaded");
-    await expect(page.locator("[data-scene-toast]")).toHaveText(m["scene.exported"]);
-    await expect(page.locator("[data-scene-toast]")).toHaveCSS("position", "fixed");
+    const toast = page.locator("[data-scene-toast]");
+    await expect(toast).toHaveText(m["scene.exported"]);
+    await expect(toast).toHaveCSS("position", "absolute");
+    const toastBox = (await toast.boundingBox())!;
+    const toastFrame = (await page.locator("[data-scene-frame]").boundingBox())!;
+    expect(toastBox.x).toBeGreaterThanOrEqual(toastFrame.x);
+    expect(toastBox.x + toastBox.width).toBeLessThanOrEqual(toastFrame.x + toastFrame.width);
+    expect(toastBox.x + toastBox.width / 2).toBeCloseTo(toastFrame.x + toastFrame.width / 2, 0);
+    expect(toastFrame.y + toastFrame.height - toastBox.y - toastBox.height).toBeCloseTo(12, 0);
+    const castLink = (await page.locator(".sp-scene-page > div a").first().boundingBox())!;
+    expect(toastBox.y).toBeGreaterThan(castLink.y + castLink.height);
     const elapsedMs = Date.now() - started;
     expect(elapsedMs).toBeLessThan(30_000);
+    if (width === 390 && process.env.SCENE_CAPTURE_SHOTS !== "0") {
+      await mkdir(`${evidenceRoot}/shots`, { recursive: true });
+      await page.screenshot({ path: `${evidenceRoot}/shots/png-toast-390.png` });
+    }
+    await expect(toast).toHaveCount(0, { timeout: 2500 });
     expect(await page.evaluate(() => scrollY)).toBe(0);
     const assertFold = async () => {
       for (const selector of [
@@ -1197,10 +1236,30 @@ for (const width of [1440, 390]) {
         const workspace = (await page.locator("[data-scene-workspace]").boundingBox())!;
         // The compact band must fit a full-width, undistorted first-view stage.
         expect(frame.width).toBeCloseTo(workspace.width, 0);
+        const selects = (await page.locator("[data-scene-quick]").boundingBox())!;
+        const gap = frame.y - selects.y - selects.height;
         const pose = (await page
           .getByRole("button", { name: m["scene.limbs"], exact: true })
           .boundingBox())!;
         const note = (await page.locator("[data-scene-bottom]").boundingBox())!;
+        await writeFile(
+          `${evidenceRoot}/layout-${width}.json`,
+          JSON.stringify(
+            {
+              frame,
+              workspace,
+              selects,
+              pose,
+              note,
+              gap,
+              scrollY: await page.evaluate(() => scrollY),
+            },
+            null,
+            2,
+          ),
+        );
+        expect(gap).toBeGreaterThanOrEqual(12);
+        expect(gap).toBeLessThanOrEqual(16);
         expect(Math.abs(pose.y + pose.height / 2 - note.y - note.height / 2)).toBeLessThan(1);
         expect(frame.x + frame.width / 2).toBeCloseTo(workspace.x + workspace.width / 2, 0);
         expect(frame.y + frame.height).toBeLessThanOrEqual(height - 8);
@@ -1287,12 +1346,14 @@ for (const width of [1440, 390]) {
       expect(five[index].x).toBeLessThan(five[index + 1].x);
     }
     expect(five[1].pose).toBe("lean-in");
-    expect(five[3].pose).toBe("hand-on-hip");
-    expect(new Set(five.map((item: { pose: string }) => item.pose)).size).toBe(5);
-    for (const item of five) {
-      expect(Math.abs(item.turn)).toBeGreaterThanOrEqual(20);
-      expect(Math.abs(item.turn)).toBeLessThanOrEqual(30);
-    }
+    expect(five.map((item: { pose: string }) => item.pose)).toEqual([
+      "sit",
+      "lean-in",
+      "arms-crossed",
+      "stand",
+      "stand",
+    ]);
+    expect(five.map((item: { turn: number }) => item.turn)).toEqual([-25, -25, -25, -30, -60]);
     for (const item of five.slice(1)) expect(item.turn).toBeLessThan(0);
     const seated = await cameraEvidence(page);
     expect(
@@ -1354,6 +1415,18 @@ for (const width of [1440, 390]) {
         expect(await page.evaluate(() => scrollY)).toBe(0);
         const largeFrame = (await page.locator("[data-scene-frame]").boundingBox())!;
         expect(largeFrame.y + largeFrame.height).toBeLessThanOrEqual(1080);
+        const selects = (await page.locator("[data-scene-quick]").boundingBox())!;
+        const gap = largeFrame.y - selects.y - selects.height;
+        expect(gap).toBeGreaterThanOrEqual(12);
+        expect(gap).toBeLessThanOrEqual(16);
+        await writeFile(
+          `${evidenceRoot}/layout-1920.json`,
+          JSON.stringify(
+            { frame: largeFrame, selects, gap, scrollY: await page.evaluate(() => scrollY) },
+            null,
+            2,
+          ),
+        );
         const shoulder = page.getByRole("button", {
           name: m["scene.layout.shoulder"],
           exact: true,
