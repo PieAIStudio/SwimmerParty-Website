@@ -351,25 +351,26 @@
     }
     .sp-scene-quick {
       grid-column: 2;
-      grid-row: 1 / span 3;
+      grid-row: 1 / span 2;
+      margin-top: 0;
       align-self: start;
     }
-    .sp-scene-quick + div,
-    [data-scene-bottom] {
+    [data-scene-pose-tools] {
       grid-column: 1;
+      margin-top: 0.25rem;
     }
     .sp-scene-frame,
     [data-scene-workspace] > details:last-child {
       grid-column: 1 / -1;
     }
     .sp-scene-frame {
-      grid-row: 4;
-      margin-top: 0.5rem;
+      grid-row: 3;
+      margin-top: 0;
       max-width: 100%;
     }
     .sp-scene-frame[data-scene-frame="landscape"] {
-      /* Reserve the sticky header, title and compact control band; preserve 16:9. */
-      max-width: min(100%, calc((100svh - 22.5rem) * 16 / 9));
+      /* The compact band leaves room for a full-width 16:9 stage at 1440×900. */
+      max-width: min(100%, calc((100svh - 17rem) * 16 / 9));
     }
     .sp-scene-workbench:has([data-scene-inspector][open]) {
       grid-template-columns: minmax(0, 1fr) 300px;

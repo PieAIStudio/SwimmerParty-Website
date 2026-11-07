@@ -678,7 +678,7 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
           figure.object
             .getObjectByName("middle_02_l")!
             .quaternion.angleTo(new Quaternion(...poses.get(pose)!.bones.middle_02_l)),
-        ).toBeCloseTo(0.5, 5);
+        ).toBeCloseTo(0.2, 5);
         const editing = poseFigure(
           source,
           poses.get(pose)!,
@@ -697,7 +697,42 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
         expect(
           editing.object.getObjectByName("middle_03_r")!.getWorldPosition(new Vector3()).y,
         ).toBeLessThan(free.y - 0.06);
+        for (const finger of ["middle_02_r", "thumb_01_r", "thumb_02_r", "thumb_03_r"])
+          expect(editing.object.getObjectByName(finger)!.quaternion.toArray()).toEqual(
+            figure.object.getObjectByName(finger)!.quaternion.toArray(),
+          );
         editing.dispose();
+        const freeHip = poseFigure(
+          source,
+          poses.get("hand-on-hip")!,
+          figureScale(build, 185),
+          false,
+          {},
+          undefined,
+          true,
+        );
+        for (const side of ["l", "r"]) {
+          const wrist = freeHip.object
+            .getObjectByName(`hand_${side}`)!
+            .getWorldPosition(new Vector3());
+          expect(
+            freeHip.object.getObjectByName(`middle_03_${side}`)!.getWorldPosition(new Vector3()).y,
+          ).toBeLessThan(wrist.y - 0.06);
+          for (const finger of ["middle_02", "thumb_01", "thumb_02", "thumb_03"])
+            expect(
+              freeHip.object
+                .getObjectByName(`${finger}_${side}`)!
+                .quaternion.clone()
+                .normalize()
+                .angleTo(
+                  figure.object
+                    .getObjectByName(`${finger}_${side}`)!
+                    .quaternion.clone()
+                    .normalize(),
+                ),
+            ).toBeLessThan(0.00001);
+        }
+        freeHip.dispose();
       }
       if (pose === "arms-crossed")
         for (const side of ["l", "r"]) {
@@ -1099,7 +1134,7 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
 });
 
 for (const width of [1440, 390]) {
-  test(`build 8 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
+  test(`build 9 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
     test.setTimeout(120_000);
     const locale = width === 1440 ? "en" : "zh";
     const m = locale === "en" ? en : zh;
@@ -1140,6 +1175,8 @@ for (const width of [1440, 390]) {
     expect(bytes.readUInt32BE(16)).toBe(1920);
     expect(bytes.readUInt32BE(20)).toBe(1080 + 64 + 48);
     step("Dialogue PNG downloaded");
+    await expect(page.locator("[data-scene-toast]")).toHaveText(m["scene.exported"]);
+    await expect(page.locator("[data-scene-toast]")).toHaveCSS("position", "fixed");
     const elapsedMs = Date.now() - started;
     expect(elapsedMs).toBeLessThan(30_000);
     expect(await page.evaluate(() => scrollY)).toBe(0);
@@ -1158,8 +1195,13 @@ for (const width of [1440, 390]) {
       expect(frame.width / frame.height).toBeCloseTo(16 / 9, 2);
       if (width === 1440) {
         const workspace = (await page.locator("[data-scene-workspace]").boundingBox())!;
-        // Build 8 trades unused side width for the complete, undistorted first-view stage.
-        expect(frame.width).toBeCloseTo(Math.min(workspace.width, ((height - 360) * 16) / 9), 0);
+        // The compact band must fit a full-width, undistorted first-view stage.
+        expect(frame.width).toBeCloseTo(workspace.width, 0);
+        const pose = (await page
+          .getByRole("button", { name: m["scene.limbs"], exact: true })
+          .boundingBox())!;
+        const note = (await page.locator("[data-scene-bottom]").boundingBox())!;
+        expect(Math.abs(pose.y + pose.height / 2 - note.y - note.height / 2)).toBeLessThan(1);
         expect(frame.x + frame.width / 2).toBeCloseTo(workspace.x + workspace.width / 2, 0);
         expect(frame.y + frame.height).toBeLessThanOrEqual(height - 8);
         const heading = (await page

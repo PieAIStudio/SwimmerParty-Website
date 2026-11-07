@@ -15,6 +15,7 @@ import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
 import { createFigureIK, pinHipHand } from "./figure-ik";
 import { refineShelfPose } from "./figure-hands";
 import { refineHead } from "./head-geometry";
+import { softenHairCap } from "./hair-cap";
 import type { JointRotations } from "./model";
 
 export type FigurePose = { name?: string; bones: Record<string, [number, number, number, number]> };
@@ -29,7 +30,8 @@ function smoothSkin(source: BufferGeometry, head: number, female: boolean) {
     copy.deleteAttribute("normal");
     const welded = mergeVertices(copy);
     welded.computeVertexNormals();
-    geometry = refineHead(welded, head, female);
+    geometry = refineHead(welded, head);
+    if (female) softenHairCap(geometry);
     copy.dispose();
     welded.dispose();
     smoothGeometry.set(source, geometry);
@@ -111,9 +113,9 @@ export function poseFigure(
   }
   object.scale.setScalar(scale);
   updateSkinBounds(object);
-  refineShelfPose(object, pose.name, scale);
+  refineShelfPose(object, editingPair && pose.name === "hand-on-hip" ? "stand" : pose.name, scale);
   updateSkinBounds(object);
-  if (pose.name === "hand-on-hip") {
+  if (pose.name === "hand-on-hip" && !editingPair) {
     pinHipHand(object, scale);
     updateSkinBounds(object);
   }
@@ -135,14 +137,21 @@ export function poseFigure(
     // A small elbow bend retains both wrist handles in Medium. The free hand
     // stays beside the hip, fingers down, rather than turning onto the belly.
     const ik = createFigureIK(object);
+    const right = ik.position("rightWrist");
     for (const handle of ["leftWrist", "rightWrist"] as const) {
       const wrist = ik.position(handle);
-      wrist.y = Math.max(wrist.y, bounds.max.y - 0.78 * scale);
-      if (handle === "leftWrist") wrist.z += 0.06 * scale;
+      const left = handle === "leftWrist";
+      // In drag mode the unedited hip hand is free too, not a shelf contact.
+      if (left && pose.name === "hand-on-hip") {
+        wrist.x = 2 * hips.x - right.x;
+        wrist.z = right.z;
+      }
+      wrist.y = bounds.max.y - 0.78 * scale;
+      if (left) wrist.z += 0.06 * scale;
+      wrist.x += (left ? 1 : -1) * 0.015 * scale;
       ik.begin(handle);
       ik.solve(handle, wrist);
-      if (handle === "rightWrist")
-        ik.orient(handle, wrist, new Vector3(-1, 0, 0), new Vector3(0, -1, 0));
+      ik.orient(handle, wrist, new Vector3(left ? 1 : -1, 0, -0.35), new Vector3(0, -1, 0));
     }
     ik.dispose();
   }

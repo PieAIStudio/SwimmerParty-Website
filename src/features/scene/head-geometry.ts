@@ -7,8 +7,8 @@ import {
   Vector3,
 } from "three";
 
-/** Smooth the entire lower face with its boundary held, then refine long skull edges. */
-export function refineHead(geometry: BufferGeometry, head: number, female: boolean) {
+/** Neutral mannequin lips/nose, then one curved split on long rigid-head edges. */
+export function refineHead(geometry: BufferGeometry, head: number) {
   const { position, normal, skinIndex, skinWeight } = geometry.attributes;
   const positions = Array.from(position.array);
   const indices = Array.from(skinIndex.array);
@@ -24,7 +24,6 @@ export function refineHead(geometry: BufferGeometry, head: number, female: boole
   const height = bounds.max.y - bounds.min.y;
   const unit = height / 0.22;
   const faceWeights = Array<number>(position.count).fill(0);
-  const cheekWeights = Array<number>(position.count).fill(0);
   const neighbours = Array.from({ length: position.count }, () => new Set<number>());
   const source = geometry.index!;
   for (let i = 0; i < source.count; i += 3) {
@@ -43,42 +42,28 @@ export function refineHead(geometry: BufferGeometry, head: number, female: boole
     const y = (position.getY(i) - bounds.min.y) / height;
     const z = position.getZ(i);
     const front = MathUtils.smoothstep(z, bounds.max.z - 0.1 * unit, bounds.max.z - 0.055 * unit);
-    const side = 1 - MathUtils.smoothstep(Math.abs(x), 0.038 * unit, 0.07 * unit);
-    const lowerFace = MathUtils.smoothstep(y, 0, 0.035) * (1 - MathUtils.smoothstep(y, 0.24, 0.4));
+    const side = 1 - MathUtils.smoothstep(Math.abs(x), 0.018 * unit, 0.05 * unit);
+    const mouth = MathUtils.smoothstep(y, 0.035, 0.075) * (1 - MathUtils.smoothstep(y, 0.2, 0.255));
     const nose =
       Math.exp(-Math.pow((y - 0.31) / 0.085, 2)) *
       MathUtils.smoothstep(y, 0.2, 0.25) *
       (1 - MathUtils.smoothstep(y, 0.45, 0.5));
+    const average =
+      [...neighbours[i]].reduce((sum, n) => sum + position.getZ(n), 0) / neighbours[i].size;
     const cheek =
       MathUtils.smoothstep(Math.abs(x), 0.012 * unit, 0.028 * unit) *
       (1 - MathUtils.smoothstep(Math.abs(x), 0.05 * unit, 0.07 * unit)) *
       MathUtils.smoothstep(y, 0.12, 0.2) *
       (1 - MathUtils.smoothstep(y, 0.4, 0.5)) *
       front;
-    faceWeights[i] = lowerFace * side * front;
-    positions[i * 3 + 2] = z - 0.009 * unit * nose * side * front;
-    cheekWeights[i] = female ? cheek : 0;
+    const smoothed = z + Math.max(0, average - z) * 0.6 * cheek;
+    // Restrict the flat, closed lip surface to the mouth; preserve nose bridge and eyes.
+    const lipSurface = bounds.max.z - 0.0225 * unit - (0.8 * x * x) / unit;
+    faceWeights[i] = mouth * side * front;
+    positions[i * 3 + 2] =
+      MathUtils.lerp(smoothed, lipSurface, faceWeights[i]) - 0.009 * unit * nose * side * front;
   }
-  // Diffuse the full nose-base-to-chin patch, not just the dense lip rings.
-  // The mask is fixed in source space, so its rim, eyes and crown cannot drift.
-  for (let pass = 0; pass < 80; pass++) {
-    const previous = positions.slice();
-    for (let i = 0; i < position.count; i++) {
-      if (!faceWeights[i] || !neighbours[i].size) continue;
-      const average =
-        [...neighbours[i]].reduce((sum, n) => sum + previous[n * 3 + 2], 0) / neighbours[i].size;
-      positions[i * 3 + 2] = MathUtils.lerp(previous[i * 3 + 2], average, 0.6 * faceWeights[i]);
-    }
-  }
-  for (let i = 0; i < position.count; i++) {
-    const outward = new Vector3()
-      .fromBufferAttribute(normal, i)
-      .multiplyScalar(0.0025 * unit * cheekWeights[i]);
-    positions[i * 3] += outward.x;
-    positions[i * 3 + 1] += outward.y;
-    positions[i * 3 + 2] += outward.z;
-    position.setXYZ(i, positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2]);
-  }
+  for (let i = 0; i < position.count; i++) position.setZ(i, positions[i * 3 + 2]);
   geometry.computeVertexNormals();
   const midpoint = (a: number, b: number) => {
     const key = a < b ? `${a}:${b}` : `${b}:${a}`;
@@ -131,7 +116,7 @@ export function refineHead(geometry: BufferGeometry, head: number, female: boole
   for (let i = 0; i < faceWeights.length; i++) {
     if (!faceWeights[i]) continue;
     const x = positions[i * 3];
-    // The former folds share one plain lower-face tangent, not a dark mouth crease.
+    // Folded lip triangles share the closed lip surface's tangent, not a dark crease.
     const tangent = new Vector3((1.6 * x) / unit, 0, 1).normalize();
     smoothedNormal.fromBufferAttribute(normals, i).lerp(tangent, faceWeights[i]).normalize();
     normals.setXYZ(i, smoothedNormal.x, smoothedNormal.y, smoothedNormal.z);

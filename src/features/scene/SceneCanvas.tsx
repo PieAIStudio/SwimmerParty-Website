@@ -18,6 +18,7 @@ import {
   Box3,
   BufferGeometry,
   CanvasTexture,
+  DoubleSide,
   Float32BufferAttribute,
   FileLoader,
   Group,
@@ -56,7 +57,7 @@ function FigureLabel({
     () =>
       new BufferGeometry().setAttribute(
         "position",
-        new Float32BufferAttribute(new Float32Array(6), 3),
+        new Float32BufferAttribute(new Float32Array(30 * 3), 3),
       ),
     [],
   );
@@ -100,20 +101,21 @@ function FigureLabel({
           toneMapped={false}
         />
       </sprite>
-      <lineSegments
+      <mesh
         name="label-leader"
         geometry={leader}
         visible={false}
         frustumCulled={false}
         renderOrder={9}
       >
-        <lineBasicMaterial
-          color="#70706b"
+        <meshBasicMaterial
+          color={identity.colour}
+          side={DoubleSide}
           depthTest={false}
           depthWrite={false}
           toneMapped={false}
         />
-      </lineSegments>
+      </mesh>
     </group>
   );
 }

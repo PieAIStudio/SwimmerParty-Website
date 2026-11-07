@@ -1,5 +1,5 @@
 // SP shelf-pose polish only. Delivered assets and persisted manual edits stay intact.
-import { Bone, Raycaster, SkinnedMesh, Vector3, type Object3D } from "three";
+import { Bone, Quaternion, Raycaster, SkinnedMesh, Vector3, type Object3D } from "three";
 import { createFigureIK } from "./figure-ik";
 
 export function refineShelfPose(object: Object3D, pose: string | undefined, scale: number) {
@@ -7,7 +7,7 @@ export function refineShelfPose(object: Object3D, pose: string | undefined, scal
   for (const side of ["l", "r"] as const) {
     const contact = pose === "sit" || (pose === "hand-on-hip" && side === "l");
     const curl =
-      pose === "arms-crossed" ? [0.08, 0.6, 0.4] : contact ? [0, 0.08, 0.06] : [0.12, 0.5, 0.35];
+      pose === "arms-crossed" ? [0.08, 0.6, 0.4] : contact ? [0, 0.08, 0.06] : [0.12, 0.2, 0.12];
     for (const finger of ["index", "middle", "ring", "pinky"])
       for (let joint = 1; joint <= 3; joint++)
         (object.getObjectByName(`${finger}_0${joint}_${side}`) as Bone).rotateX(curl[joint - 1]);
@@ -17,6 +17,23 @@ export function refineShelfPose(object: Object3D, pose: string | undefined, scal
     (object.getObjectByName(`thumb_03_${side}`) as Bone).rotateX(
       pose === "arms-crossed" ? 0.3 : contact ? 0 : 0.16,
     );
+  }
+  object.updateWorldMatrix(true, true);
+  for (const side of ["l", "r"] as const) {
+    if (pose === "sit" || pose === "arms-crossed" || (pose === "hand-on-hip" && side === "l"))
+      continue;
+    // Share the lineup's relaxed hand in drag mode too: thumb alongside the index.
+    const thumb = object.getObjectByName(`thumb_01_${side}`) as Bone;
+    const from = thumb
+      .parent!.worldToLocal(point(`thumb_03_${side}`))
+      .sub(thumb.position)
+      .normalize();
+    const toward = thumb
+      .parent!.worldToLocal(point(`index_03_${side}`))
+      .sub(thumb.position)
+      .normalize();
+    thumb.quaternion.premultiply(new Quaternion().setFromUnitVectors(from, toward));
+    thumb.updateWorldMatrix(true, true);
   }
   if (pose === "lean-in") {
     (object.getObjectByName("spine_01") as Bone).rotateX(0.1);

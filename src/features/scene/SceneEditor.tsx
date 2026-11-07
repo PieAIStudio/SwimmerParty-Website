@@ -9,6 +9,7 @@ import {
   GameSelect,
   GameSlider,
   GameTextArea,
+  GameToast,
 } from "@pieai/swimmer-ui-kit";
 import { SITE } from "@/content/site";
 import { CopyButton } from "@/site/CopyButton";
@@ -65,6 +66,11 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
   const [busy, setBusy] = useState(false);
   const [limbs, setLimbs] = useState(false);
   const [notice, setNotice] = useState<"exported" | "failed" | null>(null);
+  useEffect(() => {
+    if (notice !== "exported") return;
+    const timer = setTimeout(() => setNotice(null), 3500);
+    return () => clearTimeout(timer);
+  }, [notice]);
   const start = useCallback((value: SceneState) => {
     setHistory({ value, past: [], future: [] });
     setSelected(
@@ -210,7 +216,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
   ].join("\n");
   return (
     <div className="pb-8" data-scene-editor>
-      <section className="mb-3" aria-label={t("scene.layouts")}>
+      <section className="mb-2" aria-label={t("scene.layouts")}>
         <h2 className="sp-small mb-2">{t("scene.layouts")}</h2>
         <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap" data-scene-layouts>
           {(["talk", "shoulder", "group", "lineup"] as const).map((layout) => (
@@ -277,9 +283,21 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
           </GameButton>
         </div>
       </div>
-      <output className="sp-small mb-2 block text-muted-foreground" aria-live="polite">
-        {notice ? t(`scene.${notice}`) : storage ? t(`scene.${storage}`) : t("scene.loading")}
+      <output className="sr-only" aria-live="polite">
+        {storage ? t(`scene.${storage}`) : t("scene.loading")}
       </output>
+      {notice || storage === "storageUnavailable" ? (
+        <div
+          className="pointer-events-none fixed top-20 right-4 z-50 max-w-[calc(100vw-2rem)]"
+          data-scene-toast
+        >
+          <GameToast
+            tone={notice === "failed" || storage === "storageUnavailable" ? "danger" : "success"}
+          >
+            {t(`scene.${notice ?? "storageUnavailable"}`)}
+          </GameToast>
+        </div>
+      ) : null}
       <div className="sp-scene-workbench grid items-start gap-4">
         <div className="min-w-0" data-scene-workspace>
           <details className="mb-2" data-scene-camera-panel>
@@ -447,7 +465,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
               </GameSelect>
             </GameField>
           </div>
-          <div className="mt-2 flex items-center gap-2">
+          <div className="mt-2 flex flex-wrap items-center gap-2" data-scene-pose-tools>
             <GameButton
               size="sm"
               aria-pressed={limbs}
@@ -458,11 +476,14 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
             >
               {t("scene.limbs")}
             </GameButton>
-            <span className="sp-small text-muted-foreground">{t("scene.limbHint")}</span>
+            <span className="sp-small text-muted-foreground lg:sr-only">{t("scene.limbHint")}</span>
+            <p
+              className="sp-small basis-full text-muted-foreground lg:basis-auto"
+              data-scene-bottom
+            >
+              {t("scene.approximate")}
+            </p>
           </div>
-          <p className="sp-small mt-2 text-muted-foreground" data-scene-bottom>
-            {t("scene.approximate")}
-          </p>
           <details className="mt-3">
             <summary className="sp-small">{t("scene.gesturesTitle")}</summary>
             <p className="sp-small mt-3 flex flex-wrap gap-x-4 gap-y-1" data-scene-key>
