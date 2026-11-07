@@ -75,9 +75,12 @@ export function frameFigures(
     targets.length === 8 &&
     targets.every((figure) => figure.z === targets[0].z);
   if (phoneLineup) {
-    // Keep all eight in one row; the bottom of the crop starts at mid-thigh.
-    const visibleHeight = (size.x * 1.1) / (controls.camera as PerspectiveCamera).aspect;
-    center.y = box.min.y + visibleHeight / 2;
+    // Keep the same one-row width, but put the number row 12% from the top.
+    // Medium bounds include 28 cm above the crown; number anchors use 20 cm.
+    const camera = controls.camera as PerspectiveCamera;
+    const rowDistance = distance + center.z - targets[0].z;
+    const visibleHeight = 2 * rowDistance * Math.tan((camera.fov * Math.PI) / 360);
+    center.y = box.max.y - 0.08 - visibleHeight * 0.38;
   }
   if (editingPair) {
     // A medium editing crop may lose the legs, not half the stage to empty space.

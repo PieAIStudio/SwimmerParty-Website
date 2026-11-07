@@ -23,6 +23,7 @@ export function refineShelfPose(
   pose: string | undefined,
   scale: number,
   standingClearance = 0,
+  relaxedLineup = false,
 ) {
   const point = (name: string) => object.getObjectByName(name)!.getWorldPosition(new Vector3());
   for (const side of ["l", "r"] as const) {
@@ -103,6 +104,16 @@ export function refineShelfPose(
     const opening = ((pose === "lean-in" ? 10 : standingClearance) * Math.PI) / 180;
     (object.getObjectByName("upperarm_l") as Bone).rotateZ(opening);
     (object.getObjectByName("upperarm_r") as Bone).rotateZ(-opening);
+  }
+  if (relaxedLineup && pose === "lean-in") {
+    // Only lineup #5: lower the shoulders 5°, close the arms 6°, lift the chin 8°.
+    const radians = Math.PI / 180;
+    for (const side of ["l", "r"] as const) {
+      const sign = side === "l" ? -1 : 1;
+      (object.getObjectByName(`clavicle_${side}`) as Bone).rotateZ(sign * 5 * radians);
+      (object.getObjectByName(`upperarm_${side}`) as Bone).rotateZ(sign * 6 * radians);
+    }
+    (object.getObjectByName("head") as Bone).rotateX(-8 * radians);
   }
   object.updateWorldMatrix(true, true);
   object.traverse((node) => {

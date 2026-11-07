@@ -176,6 +176,7 @@ function Figure({
   limbs,
   editingPair,
   standingClearance,
+  relaxedLineup,
   shot,
   onPose,
   onDragging,
@@ -189,6 +190,7 @@ function Figure({
   limbs: boolean;
   editingPair: boolean;
   standingClearance: number;
+  relaxedLineup: boolean;
   shot: SceneCanvasProps["scene"]["camera"]["shot"];
   onPose: SceneCanvasProps["onPose"];
   onDragging: (dragging: boolean) => void;
@@ -244,6 +246,7 @@ function Figure({
       contact,
       editingPair,
       standingClearance,
+      relaxedLineup,
     );
   }, [
     source,
@@ -255,6 +258,7 @@ function Figure({
     support,
     editingPair,
     standingClearance,
+    relaxedLineup,
   ]);
   useEffect(() => () => model.dispose(), [model]);
   const root = useRef<Group>(null);
@@ -674,6 +678,7 @@ function Runtime({
               ? 11
               : 0
           }
+          relaxedLineup={index === 4 && document.figures.length === 8 && figure.pose === "lean-in"}
           shot={document.camera.shot}
           onPose={onPose}
           onDragging={dragging}

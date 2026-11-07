@@ -755,6 +755,44 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
           ).toBeCloseTo(((pose === "stand" ? 11 : 10) * Math.PI) / 180, 5);
         if (cleared !== figure) cleared.dispose();
       }
+      if (pose === "lean-in") {
+        const relaxed = poseFigure(
+          source,
+          poses.get(pose)!,
+          figureScale(build, 185),
+          false,
+          {},
+          undefined,
+          false,
+          0,
+          true,
+        );
+        for (const [name, axis, degrees] of [
+          ["clavicle_l", "z", -5],
+          ["clavicle_r", "z", 5],
+          ["upperarm_l", "z", -6],
+          ["upperarm_r", "z", 6],
+          ["head", "x", -8],
+        ] as const) {
+          const expected = figure.object
+            .getObjectByName(name)!
+            .quaternion.clone()
+            .multiply(
+              new Quaternion().setFromAxisAngle(
+                axis === "x" ? new Vector3(1, 0, 0) : new Vector3(0, 0, 1),
+                (degrees * Math.PI) / 180,
+              ),
+            );
+          expect(
+            relaxed.object
+              .getObjectByName(name)!
+              .quaternion.clone()
+              .normalize()
+              .angleTo(expected.normalize()),
+          ).toBeLessThan(0.000001);
+        }
+        relaxed.dispose();
+      }
       if (pose === "stand") {
         for (const side of ["l", "r"])
           for (const finger of ["index", "middle", "ring", "pinky"])
@@ -1156,10 +1194,10 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
   });
   const page = await context.newPage();
   const scene = initialScene();
-  // Reproduce A-S17's 12-person positions, heights and 24 mm High camera.
+  // A-S17's crowd and 24 mm High camera; move #2 back 30 cm from #1.
   const placements = [
     [0.22, -2.2, -85, 163, "stand", "average-f"],
-    [-0.22, -2.2, 85, 175, "lean-in", "average"],
+    [-0.52, -2.2, 85, 175, "lean-in", "average"],
     [0.35, 0.9, -165, 176, "stand", "average"],
     [-0.45, 1.1, 165, 173, "sit", "average"],
     [2, -0.9, -35, 165, "arms-crossed", "average-f"],
@@ -1209,6 +1247,7 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
       ).toBe(true);
   const frame = (await page.locator("canvas").boundingBox())!;
   const camera = await cameraEvidence(page);
+  const pairIntervals = expectOverlapFit({ ...camera, bodies: camera.bodies.slice(0, 2) });
   const lens = new PerspectiveCamera(camera.fov, camera.aspect, 0.05, 10000);
   lens.position.set(...camera.position);
   lens.lookAt(new Vector3(...camera.target));
@@ -1236,13 +1275,13 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
   await page.screenshot({ path: `${evidenceRoot}/shots/crowd-12-1440.png` });
   await writeFile(
     `${evidenceRoot}/crowd-12.json`,
-    JSON.stringify({ scene, labels: boxes, camera: await cameraEvidence(page) }, null, 2),
+    JSON.stringify({ scene, labels: boxes, camera, pairIntervals }, null, 2),
   );
   await context.close();
 });
 
 for (const width of [1440, 390]) {
-  test(`build 12 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
+  test(`build 13 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
     test.setTimeout(120_000);
     const locale = width === 1440 ? "en" : "zh";
     const m = locale === "en" ? en : zh;
@@ -1500,14 +1539,19 @@ for (const width of [1440, 390]) {
       const intervals = expectOverlapFit(wide);
       const labels = JSON.parse(
         (await page.locator("canvas").getAttribute("data-scene-labels"))!,
-      ) as { id: string; x: number }[];
+      ) as { id: string; x: number; y: number }[];
       expect(labels).toHaveLength(8);
+      const frame = (await page.locator("canvas").boundingBox())!;
+      for (const label of labels) {
+        expect(label.y / frame.height).toBeGreaterThanOrEqual(0.1);
+        expect(label.y / frame.height).toBeLessThanOrEqual(0.15);
+      }
       expect(
         [...labels].sort((a, b) => a.x - b.x).map((label) => Number(label.id.split(" · ")[0])),
       ).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
       await writeFile(
         `${evidenceRoot}/phone-lineup.json`,
-        JSON.stringify({ group, wide, intervals, labels }, null, 2),
+        JSON.stringify({ group, wide, intervals, labels, frame }, null, 2),
       );
       const shoulderWidths = (state: CameraEvidence) => {
         const lens = new PerspectiveCamera(state.fov, state.aspect, 0.05, 10000);
