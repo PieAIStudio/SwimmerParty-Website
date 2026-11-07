@@ -17,6 +17,9 @@ export function refineShelfPose(object: Object3D, pose: string | undefined, scal
   if (pose === "lean-in") {
     (object.getObjectByName("spine_01") as Bone).rotateX(0.1);
     (object.getObjectByName("spine_02") as Bone).rotateX(0.08);
+    // Open both shoulders by 10°: the broad female arm must clear the ribcage.
+    (object.getObjectByName("upperarm_l") as Bone).rotateZ(Math.PI / 18);
+    (object.getObjectByName("upperarm_r") as Bone).rotateZ(-Math.PI / 18);
   }
   object.updateWorldMatrix(true, true);
   object.traverse((node) => {

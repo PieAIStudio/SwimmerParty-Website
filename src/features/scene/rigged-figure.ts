@@ -12,7 +12,7 @@ import {
 } from "three";
 import { clone } from "three/addons/utils/SkeletonUtils.js";
 import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
-import { pinHipHand } from "./figure-ik";
+import { createFigureIK, pinHipHand } from "./figure-ik";
 import { refineShelfPose } from "./figure-hands";
 import { refineHead } from "./head-geometry";
 import type { JointRotations } from "./model";
@@ -84,6 +84,8 @@ export function poseFigure(
   scale: number,
   sitting: boolean,
   joints: JointRotations = {},
+  shoulder?: { wrist: Vector3; normal: Vector3; tangent: Vector3 },
+  editingPair = false,
 ) {
   // Object3D.clone leaves skinned meshes pointing at the source skeleton.
   const object = clone(source);
@@ -128,6 +130,30 @@ export function poseFigure(
         size: [0.44 * scale, height, 0.38 * scale] as [number, number, number],
       }
     : null;
+  if (editingPair) {
+    // A soft elbow bend keeps resting wrists inside the Medium editing crop.
+    const ik = createFigureIK(object);
+    for (const handle of ["leftWrist", "rightWrist"] as const) {
+      const wrist = ik.position(handle);
+      if (wrist.y >= bounds.max.y - 0.78 * scale) continue;
+      wrist.y = bounds.max.y - 0.78 * scale;
+      wrist.z += 0.06 * scale;
+      ik.begin(handle);
+      ik.solve(handle, wrist);
+    }
+    ik.dispose();
+  }
+  if (shoulder) {
+    // The neighbour is already grounded; solve this contact before manual overrides/picking.
+    for (const finger of ["index", "middle", "ring", "pinky"])
+      for (let joint = 1; joint <= 3; joint++)
+        bones.get(`${finger}_0${joint}_r`)!.rotation.set(joint === 1 ? 0.08 : 0.12, 0, 0);
+    const ik = createFigureIK(object);
+    ik.begin("rightWrist");
+    ik.solve("rightWrist", shoulder.wrist, shoulder.normal);
+    ik.orient("rightWrist", shoulder.wrist, shoulder.normal, shoulder.tangent);
+    ik.dispose();
+  }
   // Overrides are relative to the grounded shelf pose: lifting a foot must not
   // re-ground the whole person or move their seat.
   for (const [name, quaternion] of Object.entries(joints))

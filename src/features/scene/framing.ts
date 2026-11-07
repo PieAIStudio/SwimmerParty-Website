@@ -71,10 +71,10 @@ export function frameFigures(
   let distance = controls.getDistanceToFitBox(size.x * 1.1, size.y * 1.1, size.z);
   if (editingPair) {
     // A medium editing crop may lose the legs, not half the stage to empty space.
-    // About 60% wide, with enough vertical room to reach both resting wrists.
+    // Keep the 56% width; put the tallest crown 10% below the image top.
     distance = controls.getDistanceToFitBox(size.x / 0.56, 0, size.z);
     const visibleHeight = size.x / 0.56 / (controls.camera as PerspectiveCamera).aspect;
-    center.y = box.max.y - 0.28 - visibleHeight * 0.51;
+    center.y = box.max.y - 0.28 - visibleHeight * 0.445;
   }
   if (state.view === "shoulder" && b)
     distance = Math.max(distance, Math.hypot(a.x - b.x, a.z - b.z) + 0.75);

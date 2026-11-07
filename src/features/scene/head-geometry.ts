@@ -23,30 +23,45 @@ export function refineHead(geometry: BufferGeometry, head: number) {
     if (rigid(i)) bounds.expandByPoint(new Vector3().fromBufferAttribute(position, i));
   const height = bounds.max.y - bounds.min.y;
   const unit = height / 0.22;
+  const faceWeights = Array<number>(position.count).fill(0);
   const neighbours = Array.from({ length: position.count }, () => new Set<number>());
   const source = geometry.index!;
   for (let i = 0; i < source.count; i += 3) {
     const triangle = [source.getX(i), source.getX(i + 1), source.getX(i + 2)];
-    for (const a of triangle)
-      if (rigid(a)) for (const b of triangle) if (a !== b) neighbours[a].add(b);
+    for (const a of triangle) for (const b of triangle) if (a !== b) neighbours[a].add(b);
   }
   for (let i = 0; i < position.count; i++) {
-    if (!rigid(i)) continue;
+    // Lip rims have tiny neck weights (about 0.1%); do not leave them as spikes.
+    if (
+      ![0, 1, 2, 3].some(
+        (j) => skinIndex.array[i * 4 + j] === head && skinWeight.array[i * 4 + j] > 0.95,
+      )
+    )
+      continue;
     const x = position.getX(i);
     const y = (position.getY(i) - bounds.min.y) / height;
     const z = position.getZ(i);
-    const front = MathUtils.smoothstep(z, bounds.max.z - 0.06 * unit, bounds.max.z - 0.03 * unit);
+    const front = MathUtils.smoothstep(z, bounds.max.z - 0.1 * unit, bounds.max.z - 0.055 * unit);
     const side = 1 - MathUtils.smoothstep(Math.abs(x), 0.018 * unit, 0.05 * unit);
-    const mouth = MathUtils.smoothstep(y, 0.06, 0.12) * (1 - MathUtils.smoothstep(y, 0.23, 0.29));
-    const nose = Math.exp(-Math.pow((y - 0.31) / 0.085, 2));
+    const mouth = MathUtils.smoothstep(y, 0.035, 0.075) * (1 - MathUtils.smoothstep(y, 0.2, 0.255));
+    const nose =
+      Math.exp(-Math.pow((y - 0.31) / 0.085, 2)) *
+      MathUtils.smoothstep(y, 0.2, 0.25) *
+      (1 - MathUtils.smoothstep(y, 0.45, 0.5));
     const average =
       [...neighbours[i]].reduce((sum, n) => sum + position.getZ(n), 0) / neighbours[i].size;
-    const smoothed = MathUtils.lerp(z, average, 0.45 * mouth * side * front);
-    // Flatten the projecting lip roll but retain its fine neutral seam; soften the nose tip.
-    const lipPlane = bounds.max.z - 0.023 * unit;
+    const cheek =
+      MathUtils.smoothstep(Math.abs(x), 0.012 * unit, 0.028 * unit) *
+      (1 - MathUtils.smoothstep(Math.abs(x), 0.05 * unit, 0.07 * unit)) *
+      MathUtils.smoothstep(y, 0.12, 0.2) *
+      (1 - MathUtils.smoothstep(y, 0.4, 0.5)) *
+      front;
+    const smoothed = z + Math.max(0, average - z) * 0.6 * cheek;
+    // Restrict the flat, closed lip surface to the mouth; preserve nose bridge and eyes.
+    const lipSurface = bounds.max.z - 0.0225 * unit - (0.8 * x * x) / unit;
+    faceWeights[i] = mouth * side * front;
     positions[i * 3 + 2] =
-      smoothed -
-      front * side * (Math.max(0, smoothed - lipPlane) * mouth * 0.9 + 0.009 * unit * nose);
+      MathUtils.lerp(smoothed, lipSurface, faceWeights[i]) - 0.009 * unit * nose * side * front;
   }
   for (let i = 0; i < position.count; i++) position.setZ(i, positions[i * 3 + 2]);
   geometry.computeVertexNormals();
@@ -67,6 +82,7 @@ export function refineHead(geometry: BufferGeometry, head: number) {
       .addScaledVector(na, -delta.dot(na) / 8);
     const index = positions.length / 3;
     positions.push(...point.toArray());
+    faceWeights.push((faceWeights[a] + faceWeights[b]) / 2);
     indices.push(head, 0, 0, 0);
     weights.push(1, 0, 0, 0);
     edges.set(key, index);
@@ -95,5 +111,15 @@ export function refineHead(geometry: BufferGeometry, head: number) {
   refined.setAttribute("skinWeight", new Float32BufferAttribute(weights, 4));
   refined.setIndex(triangles);
   refined.computeVertexNormals();
+  const normals = refined.attributes.normal;
+  const smoothedNormal = new Vector3();
+  for (let i = 0; i < faceWeights.length; i++) {
+    if (!faceWeights[i]) continue;
+    const x = positions[i * 3];
+    // Folded lip triangles share the closed lip surface's tangent, not a dark crease.
+    const tangent = new Vector3((1.6 * x) / unit, 0, 1).normalize();
+    smoothedNormal.fromBufferAttribute(normals, i).lerp(tangent, faceWeights[i]).normalize();
+    normals.setXYZ(i, smoothedNormal.x, smoothedNormal.y, smoothedNormal.z);
+  }
   return refined;
 }

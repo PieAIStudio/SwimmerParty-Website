@@ -32,6 +32,7 @@ import { useSiteI18n } from "@/i18n/client";
 import { figureScale, loadFigure, loadPose } from "./figure-assets";
 import { poseFigure, updateSkinBounds, type FigurePose } from "./rigged-figure";
 import { frameFigures, setLens } from "./framing";
+import { shoulderContact } from "./figure-ik";
 import type { FigureIdentity, FigureState } from "./model";
 import type { ExportPicture, SceneCanvasProps } from "./canvas-contract";
 
@@ -137,6 +138,7 @@ function StudioBackdrop() {
 
 function Figure({
   figure,
+  support,
   identity,
   selected,
   limbs,
@@ -148,6 +150,7 @@ function Figure({
   onMove,
 }: {
   figure: FigureState;
+  support?: FigureState;
   identity: FigureIdentity;
   selected: boolean;
   limbs: boolean;
@@ -158,15 +161,56 @@ function Figure({
   onSelect: (id: string) => void;
   onMove: SceneCanvasProps["onMove"];
 }) {
-  const source = useLoader(GLTFLoader, loadFigure(figure.build));
-  const pose = useLoader(FileLoader, loadPose(figure.pose), (loader) =>
-    loader.setResponseType("json"),
-  ) as unknown as FigurePose;
+  const [source, supportSource] = useLoader(GLTFLoader, [
+    loadFigure(figure.build),
+    loadFigure((support ?? figure).build),
+  ]);
+  const [pose, supportPose] = useLoader(
+    FileLoader,
+    [loadPose(figure.pose), loadPose((support ?? figure).pose)],
+    (loader) => loader.setResponseType("json"),
+  ) as unknown as [FigurePose, FigurePose];
   const scale = figureScale(figure.build, figure.heightCm);
-  const model = useMemo(
-    () => poseFigure(source.scene, pose, scale, figure.pose === "sit", figure.joints),
-    [source, pose, scale, figure.pose, figure.joints],
-  );
+  const model = useMemo(() => {
+    let contact;
+    if (support) {
+      const neighbour = poseFigure(
+        supportSource.scene,
+        supportPose,
+        figureScale(support.build, support.heightCm),
+        support.pose === "sit",
+        support.joints,
+      );
+      neighbour.object.position.add(new Vector3(support.x, 0, support.z));
+      neighbour.object.rotation.y = (support.turn * Math.PI) / 180;
+      neighbour.object.updateWorldMatrix(true, true);
+      const surface = shoulderContact(
+        neighbour.object,
+        neighbour.object.getObjectByName("upperarm_l")!,
+        new Vector3(figure.x, (figure.heightCm / 100) * 0.78, figure.z),
+      );
+      if (surface) {
+        const yaw = -(figure.turn * Math.PI) / 180;
+        contact = {
+          wrist: surface.wrist
+            .sub(new Vector3(figure.x, 0, figure.z))
+            .applyAxisAngle(new Vector3(0, 1, 0), yaw),
+          normal: surface.normal.applyAxisAngle(new Vector3(0, 1, 0), yaw),
+          tangent: new Vector3(1, -0.3, 0).applyAxisAngle(new Vector3(0, 1, 0), yaw),
+        };
+      }
+      neighbour.dispose();
+    }
+    return poseFigure(
+      source.scene,
+      pose,
+      scale,
+      figure.pose === "sit",
+      figure.joints,
+      contact,
+      editingPair,
+    );
+  }, [source, supportSource, pose, supportPose, scale, figure, support, editingPair]);
   useEffect(() => () => model.dispose(), [model]);
   const root = useRef<Group>(null);
   const drag = useRef<{ pointer: number; offset: Vector3 } | null>(null);
@@ -561,6 +605,14 @@ function Runtime({
         <Figure
           key={figure.id}
           figure={figure}
+          support={
+            index === 1 &&
+            document.figures.length === 5 &&
+            figure.pose === "lean-in" &&
+            document.figures[0].pose === "sit"
+              ? document.figures[0]
+              : undefined
+          }
           identity={identities[index]}
           selected={figure.id === selected}
           limbs={limbs}
