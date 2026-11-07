@@ -671,7 +671,7 @@ function Runtime({
           editingPair={limbs && document.figures.length === 2}
           standingClearance={
             index === 4 && document.figures.length === 5 && document.figures[0].pose === "sit"
-              ? 7
+              ? 11
               : 0
           }
           shot={document.camera.shot}

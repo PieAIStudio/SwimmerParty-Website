@@ -65,15 +65,38 @@ function expectFullFit(state: CameraEvidence) {
         }
   }
 }
-function expectShinFit(state: CameraEvidence) {
-  // Phone's default eight-person crop may omit ankles, never knees or crowns.
+function expectThighFit(state: CameraEvidence) {
+  // Build 12 intentionally crops the single phone row from mid-thigh, not shins.
   expectFullFit({
     ...state,
     bodies: state.bodies.map((body) => ({
       ...body,
-      min: [body.min[0], body.min[1] + (body.max[1] - body.min[1]) * 0.25, body.min[2]],
+      min: [body.min[0], body.min[1] + (body.max[1] - body.min[1]) * 0.42, body.min[2]],
     })),
   });
+}
+function expectOverlapFit(state: CameraEvidence) {
+  const lens = new PerspectiveCamera(state.fov, state.aspect, 0.05, 10000);
+  lens.position.set(...state.position);
+  lens.lookAt(new Vector3(...state.target));
+  lens.updateMatrixWorld(true);
+  const intervals = state.bodies.map((body) => {
+    const xs = [];
+    for (const x of [body.min[0], body.max[0]])
+      for (const y of [body.min[1], body.max[1]])
+        for (const z of [body.min[2], body.max[2]]) xs.push(new Vector3(x, y, z).project(lens).x);
+    return { id: body.id, min: Math.min(...xs), max: Math.max(...xs) };
+  });
+  for (const a of intervals)
+    for (const b of intervals) {
+      if (a.id === b.id) continue;
+      const overlap = Math.max(0, Math.min(a.max, b.max) - Math.max(a.min, b.min));
+      expect(
+        overlap / Math.min(a.max - a.min, b.max - b.min),
+        `${a.id} / ${b.id}`,
+      ).toBeLessThanOrEqual(0.15);
+    }
+  return intervals;
 }
 const ready = async (page: Page, expanded = true) => {
   await expect(page.locator("canvas[data-scene-ready=true]")).toBeVisible({ timeout: 30_000 });
@@ -344,7 +367,7 @@ for (const locale of ["en", "zh"] as const)
         subject: "everyone",
       });
       if (width === 390) {
-        expectShinFit(await cameraEvidence(page));
+        expectThighFit(await cameraEvidence(page));
         // Full remains available and keeps the original uncropped-fit guarantee.
         await page.getByRole("button", { name: m["scene.shot.full"], exact: true }).click();
         await ready(page);
@@ -608,6 +631,30 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
     for (let step = 1; step <= 30; step++)
       ik.solve("rightWrist", rightStart.clone().lerp(rightTarget, step / 30));
     expect(ik.position("rightWrist").distanceTo(rightTarget)).toBeLessThan(0.02);
+    ik.begin("leftWrist");
+    ik.solve("leftWrist", destination, new Vector3(0, 0, 1));
+    for (const finger of ["index", "middle", "ring", "pinky"])
+      for (let joint = 1; joint <= 3; joint++) {
+        const name = `${finger}_0${joint}_l`;
+        const contactCurl = new Quaternion(...poses.get("stand")!.bones[name]).multiply(
+          new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), [0.12, 0.2, 0.12][joint - 1]),
+        );
+        expect(
+          manual.object
+            .getObjectByName(name)!
+            .quaternion.clone()
+            .normalize()
+            .angleTo(contactCurl.normalize()),
+        ).toBeLessThan(0.000001);
+      }
+    ik.solve("leftWrist", destination);
+    for (const finger of ["index", "middle", "ring", "pinky"])
+      for (let joint = 1; joint <= 3; joint++) {
+        const rotation = manual.object.getObjectByName(`${finger}_0${joint}_l`)!.rotation;
+        expect(rotation.x).toBeCloseTo([0.12, 0.2, 0.12][joint - 1], 6);
+        expect(rotation.y).toBeCloseTo(0, 6);
+        expect(rotation.z).toBeCloseTo(0, 6);
+      }
     ik.dispose();
     manual.dispose();
     const first = poseFigure(source, poses.get("stand")!, figureScale(build, 185), false);
@@ -684,7 +731,7 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
       });
       expect(Boolean(figure.seat)).toBe(pose === "sit");
       if (pose === "lean-in" || pose === "stand") {
-        // Keep build 7's shoulder-clearance check and add build 11's turned #5.
+        // Keep the lean-in clearance and open turned #5 another 4 degrees.
         const cleared =
           pose === "stand"
             ? poseFigure(
@@ -695,7 +742,7 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
                 {},
                 undefined,
                 false,
-                7,
+                11,
               )
             : figure;
         for (const side of ["l", "r"])
@@ -705,7 +752,7 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
               .quaternion.clone()
               .normalize()
               .angleTo(new Quaternion(...poses.get(pose)!.bones[`upperarm_${side}`]).normalize()),
-          ).toBeCloseTo(((pose === "stand" ? 7 : 10) * Math.PI) / 180, 5);
+          ).toBeCloseTo(((pose === "stand" ? 11 : 10) * Math.PI) / 180, 5);
         if (cleared !== figure) cleared.dispose();
       }
       if (pose === "stand") {
@@ -1195,7 +1242,7 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
 });
 
 for (const width of [1440, 390]) {
-  test(`build 11 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
+  test(`build 12 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
     test.setTimeout(120_000);
     const locale = width === 1440 ? "en" : "zh";
     const m = locale === "en" ? en : zh;
@@ -1399,24 +1446,7 @@ for (const width of [1440, 390]) {
     ).toBeLessThan(0.12);
     expect(seated.seats).toHaveLength(1);
     expectFullFit(seated);
-    const groupLens = new PerspectiveCamera(seated.fov, seated.aspect, 0.05, 10000);
-    groupLens.position.set(...seated.position);
-    groupLens.lookAt(new Vector3(...seated.target));
-    groupLens.updateMatrixWorld(true);
-    const intervals = seated.bodies.map((body) => {
-      const xs = [];
-      for (const x of [body.min[0], body.max[0]])
-        for (const y of [body.min[1], body.max[1]])
-          for (const z of [body.min[2], body.max[2]])
-            xs.push(new Vector3(x, y, z).project(groupLens).x);
-      return { id: body.id, min: Math.min(...xs), max: Math.max(...xs) };
-    });
-    for (const a of intervals)
-      for (const b of intervals) {
-        if (a.id === b.id) continue;
-        const overlap = Math.max(0, Math.min(a.max, b.max) - Math.max(a.min, b.min));
-        expect(overlap / Math.min(a.max - a.min, b.max - b.min)).toBeLessThanOrEqual(0.15);
-      }
+    const intervals = expectOverlapFit(seated);
     await writeFile(
       `${evidenceRoot}/five-sit-${width}.json`,
       JSON.stringify({ figures: five, camera: seated, intervals }, null, 2),
@@ -1454,10 +1484,31 @@ for (const width of [1440, 390]) {
       expect(wide.position[2]).toBeGreaterThanOrEqual(7.5);
       expect(wide.position[2]).toBeLessThanOrEqual(8.5);
     } else {
-      expect(group.slice(0, 4).map((item: { z: number }) => item.z)).toEqual(Array(4).fill(-0.26));
-      expect(group.slice(4).map((item: { z: number }) => item.z)).toEqual(Array(4).fill(0.26));
+      expect(group.map((item: { z: number }) => item.z)).toEqual(Array(8).fill(0));
+      const gaps = group
+        .slice(1)
+        .map((item: { x: number }, index: number) => item.x - group[index].x);
+      expect(gaps).toEqual(
+        [0.56, 0.53, 0.53, 0.55, 0.53, 0.53, 0.58].map((gap) => expect.closeTo(gap, 6)),
+      );
+      // About 15% closer overall, with elbow clearance rather than equal tight gaps.
+      const meanGap = gaps.reduce((sum: number, gap: number) => sum + gap, 0) / gaps.length;
+      expect(meanGap / 0.62).toBeGreaterThanOrEqual(0.85);
+      expect(meanGap / 0.62).toBeLessThanOrEqual(0.88);
       expect((await draft(page)).camera).toMatchObject({ view: "eye", shot: "medium" });
-      expectShinFit(wide);
+      expectThighFit(wide);
+      const intervals = expectOverlapFit(wide);
+      const labels = JSON.parse(
+        (await page.locator("canvas").getAttribute("data-scene-labels"))!,
+      ) as { id: string; x: number }[];
+      expect(labels).toHaveLength(8);
+      expect(
+        [...labels].sort((a, b) => a.x - b.x).map((label) => Number(label.id.split(" · ")[0])),
+      ).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
+      await writeFile(
+        `${evidenceRoot}/phone-lineup.json`,
+        JSON.stringify({ group, wide, intervals, labels }, null, 2),
+      );
       const shoulderWidths = (state: CameraEvidence) => {
         const lens = new PerspectiveCamera(state.fov, state.aspect, 0.05, 10000);
         lens.position.set(...state.position);
@@ -1480,9 +1531,11 @@ for (const width of [1440, 390]) {
         `${evidenceRoot}/phone-lineup-scale.json`,
         JSON.stringify({ desktopLineup, wide, scales, meanScale }, null, 2),
       );
-      expect(meanScale).toBeGreaterThanOrEqual(1.4);
+      // The two-row 1.4–1.7× contract is replaced by the single-row brief above.
+      // Keep a direct enlargement check; the raw ratios remain review evidence.
+      expect(meanScale).toBeGreaterThan(1);
       expect(meanScale).toBeLessThanOrEqual(1.7);
-      expect(Math.min(...scales)).toBeGreaterThanOrEqual(1.3);
+      expect(Math.min(...scales)).toBeGreaterThan(1);
     }
     await assertFold();
     if (process.env.SCENE_CAPTURE_SHOTS !== "0") {
@@ -1617,6 +1670,25 @@ for (const width of [1440, 390]) {
     await expect(dot.locator("svg circle")).toHaveAttribute("fill", "none");
     await expect(dot.locator("svg circle")).toHaveAttribute("stroke-width", "2");
     const custom = (await draft(page)).figures[0].joints;
+    const standPose = JSON.parse(
+      await readFile(`public${loadPose("stand")}`, "utf8"),
+    ) as FigurePose;
+    for (const finger of ["index", "middle", "ring", "pinky"])
+      for (let joint = 1; joint <= 3; joint++) {
+        const contactName = `${finger}_0${joint}_l`;
+        const expected = new Quaternion(...standPose.bones[contactName]).multiply(
+          new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), [0.12, 0.2, 0.12][joint - 1]),
+        );
+        expect(
+          new Quaternion(...custom[contactName]).normalize().angleTo(expected.normalize()),
+        ).toBeLessThan(0.000001);
+        const free = new Euler().setFromQuaternion(
+          new Quaternion(...custom[`${finger}_0${joint}_r`]),
+        );
+        expect(free.x).toBeCloseTo([0.12, 0.2, 0.12][joint - 1], 6);
+        expect(free.y).toBeCloseTo(0, 6);
+        expect(free.z).toBeCloseTo(0, 6);
+      }
     const elbow = new Euler().setFromQuaternion(new Quaternion(...custom.lowerarm_l));
     expect(elbow.x).toBeGreaterThanOrEqual(0.039);
     expect(elbow.x).toBeLessThanOrEqual(2.651);

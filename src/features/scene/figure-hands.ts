@@ -2,6 +2,22 @@
 import { Bone, Quaternion, Raycaster, SkinnedMesh, Vector3, type Object3D } from "three";
 import { createFigureIK } from "./figure-ik";
 
+function alignThumb(object: Object3D, side: string) {
+  const thumb = object.getObjectByName(`thumb_01_${side}`) as Bone;
+  const direction = (name: string) =>
+    thumb
+      .parent!.worldToLocal(object.getObjectByName(name)!.getWorldPosition(new Vector3()))
+      .sub(thumb.position)
+      .normalize();
+  thumb.quaternion.premultiply(
+    new Quaternion().setFromUnitVectors(
+      direction(`thumb_03_${side}`),
+      direction(`index_03_${side}`),
+    ),
+  );
+  thumb.updateWorldMatrix(true, true);
+}
+
 export function refineShelfPose(
   object: Object3D,
   pose: string | undefined,
@@ -14,19 +30,38 @@ export function refineShelfPose(
     const curl =
       pose === "arms-crossed" ? [0.08, 0.6, 0.4] : contact ? [0, 0.08, 0.06] : [0.12, 0.2, 0.12];
     const free = !contact && pose !== "arms-crossed";
+    const hand = object.getObjectByName(`hand_${side}`)!;
+    const contactCurl: Record<string, number[]> = {};
+    if (free) hand.userData.contactCurl = contactCurl;
     for (const finger of ["index", "middle", "ring", "pinky"])
       for (let joint = 1; joint <= 3; joint++) {
         const bone = object.getObjectByName(`${finger}_0${joint}_${side}`) as Bone;
-        // One half-curl in both lineup and drag mode, not another curl on top
-        // of the delivered pose's already bent fingers. Keep their natural splay.
-        if (free) bone.rotation.x = curl[joint - 1];
-        else bone.rotateX(curl[joint - 1]);
+        if (free) {
+          // Keep build 10's delivered + additive curl for an eventual body contact.
+          contactCurl[bone.name] = bone.quaternion
+            .clone()
+            .multiply(new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), curl[joint - 1]))
+            .toArray();
+          // Free fingers share one closed half-curl, including their knuckle splay.
+          bone.rotation.set(curl[joint - 1], 0, 0);
+        } else bone.rotateX(curl[joint - 1]);
       }
     const thumb2 = object.getObjectByName(`thumb_02_${side}`) as Bone;
     const thumb3 = object.getObjectByName(`thumb_03_${side}`) as Bone;
     if (free) {
-      thumb2.rotation.x = 0.12;
-      thumb3.rotation.x = 0.16;
+      contactCurl[`thumb_01_${side}`] = object
+        .getObjectByName(`thumb_01_${side}`)!
+        .quaternion.toArray();
+      for (const [bone, bend] of [
+        [thumb2, 0.12],
+        [thumb3, 0.16],
+      ] as const) {
+        contactCurl[bone.name] = bone.quaternion
+          .clone()
+          .multiply(new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), bend))
+          .toArray();
+        bone.rotation.set(bend, 0, 0);
+      }
     } else {
       thumb2.rotateX(pose === "arms-crossed" ? 0.35 : 0);
       thumb3.rotateX(pose === "arms-crossed" ? 0.3 : 0);
@@ -36,18 +71,27 @@ export function refineShelfPose(
   for (const side of ["l", "r"] as const) {
     if (pose === "sit" || pose === "arms-crossed" || (pose === "hand-on-hip" && side === "l"))
       continue;
-    // Share the lineup's relaxed hand in drag mode too: thumb alongside the index.
-    const thumb = object.getObjectByName(`thumb_01_${side}`) as Bone;
-    const from = thumb
-      .parent!.worldToLocal(point(`thumb_03_${side}`))
-      .sub(thumb.position)
-      .normalize();
-    const toward = thumb
-      .parent!.worldToLocal(point(`index_03_${side}`))
-      .sub(thumb.position)
-      .normalize();
-    thumb.quaternion.premultiply(new Quaternion().setFromUnitVectors(from, toward));
-    thumb.updateWorldMatrix(true, true);
+    const hand = object.getObjectByName(`hand_${side}`)!;
+    const contactCurl = hand.userData.contactCurl as Record<string, number[]>;
+    const freeCurl = Object.fromEntries(
+      Object.keys(contactCurl).map((name) => [
+        name,
+        object.getObjectByName(name)!.quaternion.toArray(),
+      ]),
+    );
+    for (const [name, quaternion] of Object.entries(contactCurl))
+      object.getObjectByName(name)!.quaternion.fromArray(quaternion);
+    object.updateWorldMatrix(true, true);
+    alignThumb(object, side);
+    contactCurl[`thumb_01_${side}`] = object
+      .getObjectByName(`thumb_01_${side}`)!
+      .quaternion.toArray();
+    for (const [name, quaternion] of Object.entries(freeCurl))
+      object.getObjectByName(name)!.quaternion.fromArray(quaternion);
+    object.updateWorldMatrix(true, true);
+    alignThumb(object, side);
+    freeCurl[`thumb_01_${side}`] = object.getObjectByName(`thumb_01_${side}`)!.quaternion.toArray();
+    hand.userData.freeCurl = freeCurl;
   }
   if (pose === "lean-in") {
     (object.getObjectByName("spine_01") as Bone).rotateX(0.1);

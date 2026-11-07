@@ -223,7 +223,16 @@ export function createFigureIK(object: Object3D) {
       }
       target.matrixWorld.makeTranslation(point.x, point.y, point.z);
       solver.updateOne(chains[handle]);
-      if (arm) orientHand(arm.hand, point, arm.world, surfaceNormal);
+      if (arm) {
+        // A snapped wrist uses build 10's contact curl, never the free-hand override.
+        // Switching back off the body restores the shared closed half-curl.
+        const curl = (
+          surfaceNormal ? arm.hand.userData.contactCurl : arm.hand.userData.freeCurl
+        ) as Record<string, number[]> | undefined;
+        for (const [name, quaternion] of Object.entries(curl ?? {}))
+          object.getObjectByName(name)!.quaternion.fromArray(quaternion);
+        orientHand(arm.hand, point, arm.world, surfaceNormal);
+      }
       object.updateWorldMatrix(true, true);
       skin.skeleton.update();
     },

@@ -176,21 +176,20 @@ export function applyLayout(
       { x: 0.74, z: -0.55, turn: -30 },
       { x: 1.4, z: 0.05, turn: -60 },
     ];
-    // Phone's eight-person preset uses two shallow staggered rows. Desktop
-    // keeps the original arc; the resulting positions remain ordinary saved edits.
-    const rows = compact && layout === "lineup";
-    const rowX = ((index % 4) - 1.5) * 0.78 + (index < 4 ? -0.14 : 0.14);
+    // One row on phone too: close the spacing by about 15%, not a second row.
+    // Desktop keeps its original arc; both remain ordinary saved edits.
+    const phoneLineup = compact && layout === "lineup";
+    // Leave slightly more room at the broad body and flared hip/lean elbows.
+    const phoneX = [-1.91, -1.35, -0.82, -0.29, 0.26, 0.79, 1.32, 1.9];
     // Assigned actors retain their known build; generic stand-ins vary naturally.
     return {
       ...figure,
       build: figure.actorSlug ? figure.build : builds[index],
-      x: five ? group[index].x : rows ? rowX : (index - half) * 0.62,
-      z: five ? group[index].z : rows ? (index < 4 ? -0.26 : 0.26) : -0.45 + 0.9 * offset * offset,
+      x: five ? group[index].x : phoneLineup ? phoneX[index] : (index - half) * 0.62,
+      z: five ? group[index].z : phoneLineup ? 0 : -0.45 + 0.9 * offset * offset,
       turn: five
         ? group[index].turn
-        : rows
-          ? -Math.sign(rowX) * 20
-          : -Math.sign(offset) * (15 + (20 * (Math.abs(index - half) - 0.5)) / 3),
+        : -Math.sign(offset) * (15 + (20 * (Math.abs(index - half) - 0.5)) / 3),
       pose: five
         ? (["sit", "lean-in", "arms-crossed", "stand", "stand"] as const)[index]
         : poses[index],
