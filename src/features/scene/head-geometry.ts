@@ -1,6 +1,13 @@
-import { BufferGeometry, Float32BufferAttribute, Uint16BufferAttribute, Vector3 } from "three";
+import {
+  Box3,
+  BufferGeometry,
+  Float32BufferAttribute,
+  MathUtils,
+  Uint16BufferAttribute,
+  Vector3,
+} from "three";
 
-/** One curved edge split on the rigid head only; keep face detail and the body intact. */
+/** Neutral mannequin lips/nose, then one curved split on long rigid-head edges. */
 export function refineHead(geometry: BufferGeometry, head: number) {
   const { position, normal, skinIndex, skinWeight } = geometry.attributes;
   const positions = Array.from(position.array);
@@ -11,6 +18,38 @@ export function refineHead(geometry: BufferGeometry, head: number) {
     [0, 1, 2, 3].some(
       (j) => skinIndex.array[i * 4 + j] === head && skinWeight.array[i * 4 + j] > 0.999,
     );
+  const bounds = new Box3();
+  for (let i = 0; i < position.count; i++)
+    if (rigid(i)) bounds.expandByPoint(new Vector3().fromBufferAttribute(position, i));
+  const height = bounds.max.y - bounds.min.y;
+  const unit = height / 0.22;
+  const neighbours = Array.from({ length: position.count }, () => new Set<number>());
+  const source = geometry.index!;
+  for (let i = 0; i < source.count; i += 3) {
+    const triangle = [source.getX(i), source.getX(i + 1), source.getX(i + 2)];
+    for (const a of triangle)
+      if (rigid(a)) for (const b of triangle) if (a !== b) neighbours[a].add(b);
+  }
+  for (let i = 0; i < position.count; i++) {
+    if (!rigid(i)) continue;
+    const x = position.getX(i);
+    const y = (position.getY(i) - bounds.min.y) / height;
+    const z = position.getZ(i);
+    const front = MathUtils.smoothstep(z, bounds.max.z - 0.06 * unit, bounds.max.z - 0.03 * unit);
+    const side = 1 - MathUtils.smoothstep(Math.abs(x), 0.018 * unit, 0.05 * unit);
+    const mouth = MathUtils.smoothstep(y, 0.06, 0.12) * (1 - MathUtils.smoothstep(y, 0.23, 0.29));
+    const nose = Math.exp(-Math.pow((y - 0.31) / 0.085, 2));
+    const average =
+      [...neighbours[i]].reduce((sum, n) => sum + position.getZ(n), 0) / neighbours[i].size;
+    const smoothed = MathUtils.lerp(z, average, 0.45 * mouth * side * front);
+    // Flatten the projecting lip roll but retain its fine neutral seam; soften the nose tip.
+    const lipPlane = bounds.max.z - 0.023 * unit;
+    positions[i * 3 + 2] =
+      smoothed -
+      front * side * (Math.max(0, smoothed - lipPlane) * mouth * 0.9 + 0.009 * unit * nose);
+  }
+  for (let i = 0; i < position.count; i++) position.setZ(i, positions[i * 3 + 2]);
+  geometry.computeVertexNormals();
   const midpoint = (a: number, b: number) => {
     const key = a < b ? `${a}:${b}` : `${b}:${a}`;
     if (edges.has(key)) return edges.get(key)!;
@@ -34,7 +73,6 @@ export function refineHead(geometry: BufferGeometry, head: number) {
     return index;
   };
   const triangles: number[] = [];
-  const source = geometry.index!;
   for (let i = 0; i < source.count; i += 3) {
     const v = [source.getX(i), source.getX(i + 1), source.getX(i + 2)];
     const m = v.map((a, j) => midpoint(a, v[(j + 1) % 3]));

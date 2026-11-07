@@ -33,9 +33,10 @@ export function frameFigures(
   state: CameraState,
   figures: FigureState[],
   bodies: Map<string, Box3>,
+  editingPair = false,
 ) {
   const subjects = figures.filter(
-    (figure) => state.subject === "everyone" || figure.id === state.subject,
+    (figure) => editingPair || state.subject === "everyone" || figure.id === state.subject,
   );
   const targets = subjects.length ? subjects : figures;
   const box = new Box3();
@@ -68,6 +69,13 @@ export function frameFigures(
     .applyMatrix4(rotation)
     .getSize(new Vector3());
   let distance = controls.getDistanceToFitBox(size.x * 1.1, size.y * 1.1, size.z);
+  if (editingPair) {
+    // A medium editing crop may lose the legs, not half the stage to empty space.
+    // About 60% wide, with enough vertical room to reach both resting wrists.
+    distance = controls.getDistanceToFitBox(size.x / 0.56, 0, size.z);
+    const visibleHeight = size.x / 0.56 / (controls.camera as PerspectiveCamera).aspect;
+    center.y = box.max.y - 0.28 - visibleHeight * 0.51;
+  }
   if (state.view === "shoulder" && b)
     distance = Math.max(distance, Math.hypot(a.x - b.x, a.z - b.z) + 0.75);
   const position = center.clone().addScaledVector(direction, distance);

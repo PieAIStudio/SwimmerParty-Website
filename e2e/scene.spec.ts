@@ -596,9 +596,21 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
       if (!(node instanceof SkinnedMesh)) return;
       runtimeTriangles += node.geometry.index!.count / 3;
       expect(node.geometry).not.toBe((source.getObjectByName(node.name) as SkinnedMesh).geometry);
-      expect(node.geometry.attributes.position.count).toBeGreaterThan(
-        (source.getObjectByName(node.name) as SkinnedMesh).geometry.attributes.position.count,
-      );
+      const original = (source.getObjectByName(node.name) as SkinnedMesh).geometry.attributes
+        .position;
+      expect(node.geometry.attributes.position.count).toBeGreaterThan(original.count);
+      // The projecting nose tip is pulled back in SP; no GLB or crown-height edit.
+      let tip = -1;
+      for (let i = 0; i < original.count; i++)
+        if (original.getY(i) > 1.4 && (tip < 0 || original.getZ(i) > original.getZ(tip))) tip = i;
+      const refined = node.geometry.attributes.position;
+      const matching = Array.from({ length: refined.count }, (_, i) => i).find(
+        (i) =>
+          Math.abs(refined.getX(i) - original.getX(tip)) < 1e-7 &&
+          Math.abs(refined.getY(i) - original.getY(tip)) < 1e-7,
+      )!;
+      expect(original.getZ(tip) - refined.getZ(matching)).toBeGreaterThan(0.004);
+      expect(original.getZ(tip) - refined.getZ(matching)).toBeLessThan(0.02);
     });
     expect(runtimeTriangles).toBeGreaterThan(triangles);
     expect(runtimeTriangles).toBeLessThanOrEqual(10_000);
@@ -633,7 +645,29 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
         });
       });
       expect(Boolean(figure.seat)).toBe(pose === "sit");
+      if (pose === "stand")
+        expect(
+          figure.object
+            .getObjectByName("middle_02_l")!
+            .quaternion.angleTo(new Quaternion(...poses.get(pose)!.bones.middle_02_l)),
+        ).toBeCloseTo(0.5, 5);
       if (figure.seat) {
+        for (const side of ["l", "r"]) {
+          const wrist = figure.object
+            .getObjectByName(`hand_${side}`)!
+            .getWorldPosition(new Vector3());
+          const thigh = figure.object
+            .getObjectByName(`thigh_${side}`)!
+            .getWorldPosition(new Vector3());
+          const knee = figure.object
+            .getObjectByName(`calf_${side}`)!
+            .getWorldPosition(new Vector3());
+          const centre = thigh.lerp(knee, 0.42);
+          expect(Math.abs(wrist.x - centre.x)).toBeLessThan(0.015);
+          expect(Math.abs(wrist.z - centre.z)).toBeLessThan(0.015);
+          expect(wrist.y - centre.y).toBeGreaterThan(0.05);
+          expect(wrist.y - centre.y).toBeLessThan(0.17);
+        }
         expect(figure.seat.position[1] - figure.seat.size[1] / 2).toBeCloseTo(0, 6);
         expect(figure.seat.size[1]).toBeGreaterThan(0.3);
         expect(figure.seat.size[1]).toBeLessThan(0.7);
@@ -889,7 +923,7 @@ test("phone-size Chrome performance under 4x CPU throttling", async ({ page, bro
 });
 
 for (const width of [1440, 390]) {
-  test(`build 5 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
+  test(`build 6 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
     test.setTimeout(120_000);
     const locale = width === 1440 ? "en" : "zh";
     const m = locale === "en" ? en : zh;
@@ -943,6 +977,15 @@ for (const width of [1440, 390]) {
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
         true,
       );
+      if (width === 390) {
+        const undo = (await page
+          .getByRole("button", { name: m["scene.undo"], exact: true })
+          .boundingBox())!;
+        const reset = (await page
+          .getByRole("button", { name: m["scene.reset"], exact: true })
+          .boundingBox())!;
+        expect(Math.abs(undo.y - reset.y)).toBeLessThan(1);
+      }
     };
     await assertFold();
     const close = await cameraEvidence(page);
@@ -991,9 +1034,16 @@ for (const width of [1440, 390]) {
     expect(five[0].pose).toBe("sit");
     expect(five[0].x).toBe(Math.min(...five.map((item: { x: number }) => item.x)));
     expect(five[0].z).toBe(Math.max(...five.map((item: { z: number }) => item.z)));
+    expect(five[0].z - five[2].z).toBeCloseTo(0.6, 6);
+    for (const index of [1, 3]) {
+      expect(five[index].z).toBeLessThan(five[2].z - 0.5);
+      expect(five[index].x).toBeGreaterThan(five[index - 1].x);
+      expect(five[index].x).toBeLessThan(five[index + 1].x);
+    }
+    expect(five[3].pose).toBe("lean-in");
     expect(new Set(five.map((item: { pose: string }) => item.pose)).size).toBe(5);
     for (const item of five) {
-      expect(Math.abs(item.turn)).toBeGreaterThanOrEqual(15);
+      expect(Math.abs(item.turn)).toBeGreaterThanOrEqual(20);
       expect(Math.abs(item.turn)).toBeLessThanOrEqual(30);
     }
     const seated = await cameraEvidence(page);
@@ -1081,6 +1131,11 @@ for (const width of [1440, 390]) {
     const headDot = (await page.locator('[data-scene-handle="head"]').boundingBox())!;
     expect(headDot.y).toBeGreaterThanOrEqual(viewport.y);
     expect(headDot.y + headDot.height).toBeLessThanOrEqual(viewport.y + viewport.height);
+    for (const wrist of ["leftWrist", "rightWrist"]) {
+      const handle = (await page.locator(`[data-scene-handle="${wrist}"]`).boundingBox())!;
+      expect(handle.y + handle.height / 2 - 8).toBeGreaterThanOrEqual(viewport.y);
+      expect(handle.y + handle.height / 2 + 8).toBeLessThanOrEqual(viewport.y + viewport.height);
+    }
     const before = await cameraEvidence(page);
     const figures = (await draft(page)).figures;
     const target = new Vector3(...before.joints[figures[1].id].upperarm_r);
@@ -1088,6 +1143,16 @@ for (const width of [1440, 390]) {
     lens.position.set(...before.position);
     lens.lookAt(new Vector3(...before.target));
     lens.updateMatrixWorld(true);
+    const edges = before.bodies.flatMap((body) =>
+      [body.min[0], body.max[0]].flatMap((x) =>
+        [body.min[2], body.max[2]].map((z) => new Vector3(x, 1, z).project(lens).x),
+      ),
+    );
+    const left = Math.min(...edges);
+    const right = Math.max(...edges);
+    expect((right - left) / 2).toBeGreaterThanOrEqual(0.55);
+    expect((right - left) / 2).toBeLessThanOrEqual(0.65);
+    expect(Math.abs((left + right) / 2)).toBeLessThan(0.06);
     const projected = target.clone().project(lens);
     const frame = (await page.locator("canvas").boundingBox())!;
     const hand = (await page.locator('[data-scene-handle="leftWrist"]').boundingBox())!;

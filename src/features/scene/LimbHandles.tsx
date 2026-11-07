@@ -164,14 +164,7 @@ function HandleDot({
           }}
         >
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-            <circle
-              cx="8"
-              cy="8"
-              r="7"
-              fill={handle.endsWith("Wrist") ? "none" : "currentColor"}
-              stroke="currentColor"
-              strokeWidth={handle.endsWith("Wrist") ? 2 : 0}
-            />
+            <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" strokeWidth={2} />
           </svg>
         </GameIconButton>
       </Html>

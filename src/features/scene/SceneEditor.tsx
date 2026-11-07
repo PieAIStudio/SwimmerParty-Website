@@ -228,54 +228,58 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
         </div>
       </section>
       <div className="mb-2 flex flex-wrap items-center gap-2" data-scene-actions>
-        <GameButton
-          variant="primary"
-          size="sm"
-          disabled={!exporter || scene.camera.fit}
-          pending={busy}
-          onClick={() => void exportPicture()}
-        >
-          {t("scene.savePng")}
-        </GameButton>
-        <GameButton
-          size="sm"
-          disabled={scene.camera.fit}
-          onClick={() =>
-            saveBlob(
-              new Blob([JSON.stringify(scene, null, 2)], { type: "application/json" }),
-              "swimmer-party-scene.json",
-            )
-          }
-        >
-          {t("scene.saveScene")}
-        </GameButton>
-        <GameButton size="sm" disabled={!history.past.length} onClick={() => undo()}>
-          {t("scene.undo")}
-        </GameButton>
-        <GameButton size="sm" disabled={!history.future.length} onClick={() => undo(true)}>
-          {t("scene.redo")}
-        </GameButton>
-        <GameButton
-          size="sm"
-          onClick={() =>
-            start(
-              initialScene(
-                scene.figures.flatMap((item) => {
-                  const actor = actors.find((candidate) => candidate.slug === item.actorSlug);
-                  return actor ? [actor] : [];
-                }),
-                scene.castKey,
-              ),
-            )
-          }
-        >
-          {t("scene.reset")}
-        </GameButton>
+        <div className="flex items-center gap-2">
+          <GameButton
+            variant="primary"
+            size="sm"
+            disabled={!exporter || scene.camera.fit}
+            pending={busy}
+            onClick={() => void exportPicture()}
+          >
+            {t("scene.savePng")}
+          </GameButton>
+          <GameButton
+            size="sm"
+            disabled={scene.camera.fit}
+            onClick={() =>
+              saveBlob(
+                new Blob([JSON.stringify(scene, null, 2)], { type: "application/json" }),
+                "swimmer-party-scene.json",
+              )
+            }
+          >
+            {t("scene.saveScene")}
+          </GameButton>
+        </div>
+        <div className="flex items-center gap-2">
+          <GameButton size="sm" disabled={!history.past.length} onClick={() => undo()}>
+            {t("scene.undo")}
+          </GameButton>
+          <GameButton size="sm" disabled={!history.future.length} onClick={() => undo(true)}>
+            {t("scene.redo")}
+          </GameButton>
+          <GameButton
+            size="sm"
+            onClick={() =>
+              start(
+                initialScene(
+                  scene.figures.flatMap((item) => {
+                    const actor = actors.find((candidate) => candidate.slug === item.actorSlug);
+                    return actor ? [actor] : [];
+                  }),
+                  scene.castKey,
+                ),
+              )
+            }
+          >
+            {t("scene.reset")}
+          </GameButton>
+        </div>
       </div>
       <output className="sp-small mb-2 block text-muted-foreground" aria-live="polite">
         {notice ? t(`scene.${notice}`) : storage ? t(`scene.${storage}`) : t("scene.loading")}
       </output>
-      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_300px]">
+      <div className="sp-scene-workbench grid items-start gap-4">
         <div className="min-w-0" data-scene-workspace>
           <details className="mb-2" data-scene-camera-panel>
             <summary className="sp-small py-1">

@@ -38,7 +38,15 @@ import type { ExportPicture, SceneCanvasProps } from "./canvas-contract";
 type CameraApi = ComponentRef<typeof CameraControls>;
 const floor = new Plane(new Vector3(0, 1, 0), 0);
 
-function FigureLabel({ identity, y }: { identity: FigureIdentity; y: number }) {
+function FigureLabel({
+  identity,
+  y,
+  offset = [0, 0],
+}: {
+  identity: FigureIdentity;
+  y: number;
+  offset?: [number, number];
+}) {
   const sprite = useRef<Sprite>(null);
   useFrame(({ camera, size }) => {
     if (sprite.current && camera instanceof PerspectiveCamera) {
@@ -67,7 +75,7 @@ function FigureLabel({ identity, y }: { identity: FigureIdentity; y: number }) {
   }, [identity.label, identity.colour]);
   useEffect(() => () => texture.dispose(), [texture]);
   return (
-    <sprite ref={sprite} position={[0, y, 0]} renderOrder={10}>
+    <sprite ref={sprite} position={[offset[0], y, offset[1]]} renderOrder={10}>
       <spriteMaterial
         map={texture}
         sizeAttenuation={false}
@@ -107,11 +115,32 @@ function ContactPatch({
   );
 }
 
+function StudioBackdrop() {
+  const texture = useMemo(() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 2;
+    canvas.height = 128;
+    const context = canvas.getContext("2d")!;
+    const gradient = context.createLinearGradient(0, 0, 0, 128);
+    gradient.addColorStop(0, "#d9d6d0");
+    gradient.addColorStop(0.5, "#eeebe5");
+    gradient.addColorStop(1, "#eeebe5");
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, 2, 128);
+    const result = new CanvasTexture(canvas);
+    result.colorSpace = SRGBColorSpace;
+    return result;
+  }, []);
+  useEffect(() => () => texture.dispose(), [texture]);
+  return <primitive object={texture} attach="background" />;
+}
+
 function Figure({
   figure,
   identity,
   selected,
   limbs,
+  editingPair,
   shot,
   onPose,
   onDragging,
@@ -122,6 +151,7 @@ function Figure({
   identity: FigureIdentity;
   selected: boolean;
   limbs: boolean;
+  editingPair: boolean;
   shot: SceneCanvasProps["scene"]["camera"]["shot"];
   onPose: SceneCanvasProps["onPose"];
   onDragging: (dragging: boolean) => void;
@@ -222,7 +252,18 @@ function Figure({
       {selected && limbs ? (
         <LimbHandles object={model.object} id={figure.id} onDragging={onDragging} onPose={onPose} />
       ) : null}
-      <FigureLabel identity={identity} y={model.top + (shot === "close" ? 0.08 : 0.2)} />
+      <FigureLabel
+        identity={identity}
+        y={model.top + (editingPair ? -0.06 : shot === "close" ? 0.08 : 0.2)}
+        offset={
+          editingPair
+            ? [
+                Math.sign(figure.x || 1) * 0.22 * Math.cos((figure.turn * Math.PI) / 180),
+                Math.sign(figure.x || 1) * 0.22 * Math.sin((figure.turn * Math.PI) / 180),
+              ]
+            : [0, 0]
+        }
+      />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.008, 0]}>
         <ringGeometry args={[0.27, 0.34, 40]} />
         <meshBasicMaterial color={identity.colour} toneMapped={false} />
@@ -394,7 +435,13 @@ function Runtime({
       if (node.userData.figureSeat) seats.push(node.userData.figureSeat);
     });
     if (document.camera.fit) {
-      frameFigures(api, document.camera, document.figures, bodies);
+      frameFigures(
+        api,
+        document.camera,
+        document.figures,
+        bodies,
+        limbs && document.figures.length === 2,
+      );
       const resolved = {
         ...document.camera,
         fit: false,
@@ -433,6 +480,7 @@ function Runtime({
     invalidate,
     onCameraChange,
     scene,
+    limbs,
     viewport.width,
     viewport.height,
   ]);
@@ -477,7 +525,7 @@ function Runtime({
   }, [exportPicture, gl, invalidate, onLost, onReady]);
   return (
     <>
-      <color attach="background" args={["#eeebe5"]} />
+      <StudioBackdrop />
       <fog attach="fog" args={["#eeebe5", 8, 24]} />
       <hemisphereLight args={["#fff9ef", "#d4cfcb", 2.2]} />
       <directionalLight
@@ -516,6 +564,7 @@ function Runtime({
           identity={identities[index]}
           selected={figure.id === selected}
           limbs={limbs}
+          editingPair={limbs && document.figures.length === 2}
           shot={document.camera.shot}
           onPose={onPose}
           onDragging={dragging}

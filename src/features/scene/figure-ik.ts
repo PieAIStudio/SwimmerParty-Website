@@ -117,7 +117,8 @@ export function createFigureIK(object: Object3D) {
   const index = (name: string) => bones.findIndex((bone) => bone.name === name);
   const target = new Bone();
   const tip = new Bone();
-  tip.position.set(0, 0.16, 0);
+  // Forehead rather than crown: the full 32px target stays inside a phone crop.
+  tip.position.set(0, 0.1, 0);
   bones[index("head")].add(tip);
   const all = [...bones, target, tip];
   const chain = (end: string, middle: string, upper: string): IK => {
@@ -197,6 +198,11 @@ export function createFigureIK(object: Object3D) {
         .sub(arm.clavicle.getWorldPosition(new Vector3()))
         .transformDirection(arm.clavicle.parent!.matrixWorld.clone().invert());
       arm.hand.getWorldQuaternion(arm.world);
+    },
+    orient(handle: Handle, point: Vector3, normal: Vector3, tangent: Vector3) {
+      orientHand(all[chains[handle].effector], point, new Quaternion(), normal, tangent);
+      object.updateWorldMatrix(true, true);
+      skin.skeleton.update();
     },
     effector: (handle: Handle) => all[chains[handle].effector],
     position: (handle: Handle) => all[chains[handle].effector].getWorldPosition(new Vector3()),

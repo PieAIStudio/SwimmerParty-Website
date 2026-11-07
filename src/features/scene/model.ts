@@ -162,15 +162,23 @@ export function applyLayout(figures: FigureState[], layout: Layout): FigureState
       "hand-on-hip",
       "stand",
     ];
-    // A shallow arc gives everyone space while keeping the camera close.
+    // Two back-row figures stand in the gaps; the sitter is 0.6 m in front.
+    // Inward turns share the conversation, rather than making another camera-facing row.
+    const group = [
+      { x: -1.3, z: 0.65, turn: 30 },
+      { x: -0.68, z: -0.55, turn: 20 },
+      { x: 0.05, z: 0.05, turn: -20 },
+      { x: 0.74, z: -0.55, turn: -25 },
+      { x: 1.4, z: 0.05, turn: -30 },
+    ];
     // Assigned actors retain their known build; generic stand-ins vary naturally.
     return {
       ...figure,
       build: figure.actorSlug ? figure.build : builds[index],
-      x: (index - half) * (five ? 0.78 : 0.62),
-      z: -0.45 + 0.9 * offset * offset,
+      x: five ? group[index].x : (index - half) * 0.62,
+      z: five ? group[index].z : -0.45 + 0.9 * offset * offset,
       turn: five
-        ? -(Math.sign(offset) || 1) * (15 + 15 * Math.abs(offset))
+        ? group[index].turn
         : -Math.sign(offset) * (15 + (20 * (Math.abs(index - half) - 0.5)) / 3),
       pose: five
         ? (["sit", "hand-on-hip", "arms-crossed", "lean-in", "stand"] as const)[index]

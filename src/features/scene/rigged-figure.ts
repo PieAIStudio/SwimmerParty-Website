@@ -13,6 +13,7 @@ import {
 import { clone } from "three/addons/utils/SkeletonUtils.js";
 import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
 import { pinHipHand } from "./figure-ik";
+import { refineShelfPose } from "./figure-hands";
 import { refineHead } from "./head-geometry";
 import type { JointRotations } from "./model";
 
@@ -106,6 +107,8 @@ export function poseFigure(
     bone.quaternion.fromArray(quaternion);
   }
   object.scale.setScalar(scale);
+  updateSkinBounds(object);
+  refineShelfPose(object, pose.name, scale);
   updateSkinBounds(object);
   if (pose.name === "hand-on-hip") {
     pinHipHand(object, scale);
