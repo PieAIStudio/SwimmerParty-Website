@@ -22,14 +22,14 @@ export type FigurePose = { name?: string; bones: Record<string, [number, number,
 // Share a smoothed runtime copy just like the loader shares the original geometry.
 // Weld normals and refine only long head edges, without altering the GLB/cache.
 const smoothGeometry = new WeakMap<BufferGeometry, BufferGeometry>();
-function smoothSkin(source: BufferGeometry, head: number) {
+function smoothSkin(source: BufferGeometry, head: number, female: boolean) {
   let geometry = smoothGeometry.get(source);
   if (!geometry) {
     const copy = source.clone();
     copy.deleteAttribute("normal");
     const welded = mergeVertices(copy);
     welded.computeVertexNormals();
-    geometry = refineHead(welded, head);
+    geometry = refineHead(welded, head, female);
     copy.dispose();
     welded.dispose();
     smoothGeometry.set(source, geometry);
@@ -100,6 +100,7 @@ export function poseFigure(
       node.geometry = smoothSkin(
         node.geometry,
         node.skeleton.bones.findIndex((bone) => bone.name === "head"),
+        node.name.endsWith("-f"),
       );
     }
   });
@@ -131,15 +132,17 @@ export function poseFigure(
       }
     : null;
   if (editingPair) {
-    // A soft elbow bend keeps resting wrists inside the Medium editing crop.
+    // A small elbow bend retains both wrist handles in Medium. The free hand
+    // stays beside the hip, fingers down, rather than turning onto the belly.
     const ik = createFigureIK(object);
     for (const handle of ["leftWrist", "rightWrist"] as const) {
       const wrist = ik.position(handle);
-      if (wrist.y >= bounds.max.y - 0.78 * scale) continue;
-      wrist.y = bounds.max.y - 0.78 * scale;
-      wrist.z += 0.06 * scale;
+      wrist.y = Math.max(wrist.y, bounds.max.y - 0.78 * scale);
+      if (handle === "leftWrist") wrist.z += 0.06 * scale;
       ik.begin(handle);
       ik.solve(handle, wrist);
+      if (handle === "rightWrist")
+        ik.orient(handle, wrist, new Vector3(-1, 0, 0), new Vector3(0, -1, 0));
     }
     ik.dispose();
   }

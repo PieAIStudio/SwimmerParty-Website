@@ -11,8 +11,12 @@ export function refineShelfPose(object: Object3D, pose: string | undefined, scal
     for (const finger of ["index", "middle", "ring", "pinky"])
       for (let joint = 1; joint <= 3; joint++)
         (object.getObjectByName(`${finger}_0${joint}_${side}`) as Bone).rotateX(curl[joint - 1]);
-    (object.getObjectByName(`thumb_02_${side}`) as Bone).rotateX(contact ? 0 : 0.12);
-    (object.getObjectByName(`thumb_03_${side}`) as Bone).rotateX(contact ? 0 : 0.16);
+    (object.getObjectByName(`thumb_02_${side}`) as Bone).rotateX(
+      pose === "arms-crossed" ? 0.35 : contact ? 0 : 0.12,
+    );
+    (object.getObjectByName(`thumb_03_${side}`) as Bone).rotateX(
+      pose === "arms-crossed" ? 0.3 : contact ? 0 : 0.16,
+    );
   }
   if (pose === "lean-in") {
     (object.getObjectByName("spine_01") as Bone).rotateX(0.1);
@@ -27,9 +31,9 @@ export function refineShelfPose(object: Object3D, pose: string | undefined, scal
   });
   if (pose !== "sit" && pose !== "arms-crossed") return;
   const ik = createFigureIK(object);
-  // Snapshot both forearms before solving either hand.
+  // Snapshot both upper arms before solving either hand.
   const elbows = { l: point("lowerarm_l"), r: point("lowerarm_r") };
-  const wrists = { l: point("hand_l"), r: point("hand_r") };
+  const shoulders = { l: point("upperarm_l"), r: point("upperarm_r") };
   for (const side of ["l", "r"] as const) {
     const handle = side === "l" ? "leftWrist" : "rightWrist";
     let target: Vector3;
@@ -56,11 +60,14 @@ export function refineShelfPose(object: Object3D, pose: string | undefined, scal
       tangent = knee.sub(thigh);
     } else {
       const other = side === "l" ? "r" : "l";
-      target = wrists[side].clone();
-      target.y -= 0.015 * scale;
-      target.z -= 0.06 * scale;
-      normal = new Vector3(0, 0, 1);
-      tangent = elbows[other].clone().sub(target);
+      // Wrist at the inner biceps; curled fingers continue behind the other arm.
+      target = shoulders[other].clone().lerp(elbows[other], 0.68);
+      target.x += (side === "l" ? 1 : -1) * 0.075 * scale;
+      target.y -= 0.02 * scale;
+      target.z -= 0.005 * scale;
+      // Palm faces up under the biceps; fingers point back, not over its front.
+      normal = new Vector3(0, -1, 0);
+      tangent = shoulders[other].clone().sub(target);
     }
     ik.begin(handle);
     ik.solve(handle, target, normal);

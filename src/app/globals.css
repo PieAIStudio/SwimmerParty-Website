@@ -368,7 +368,8 @@
       max-width: 100%;
     }
     .sp-scene-frame[data-scene-frame="landscape"] {
-      max-width: 100%;
+      /* Reserve the sticky header, title and compact control band; preserve 16:9. */
+      max-width: min(100%, calc((100svh - 22.5rem) * 16 / 9));
     }
     .sp-scene-workbench:has([data-scene-inspector][open]) {
       grid-template-columns: minmax(0, 1fr) 300px;

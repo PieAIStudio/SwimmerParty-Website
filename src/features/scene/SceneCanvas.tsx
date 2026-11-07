@@ -16,13 +16,14 @@ import { RoundedBox } from "@react-three/drei/core/RoundedBox";
 import { LimbHandles } from "./LimbHandles";
 import {
   Box3,
+  BufferGeometry,
   CanvasTexture,
+  Float32BufferAttribute,
   FileLoader,
   Group,
   PerspectiveCamera,
   Plane,
   SRGBColorSpace,
-  Sprite,
   Vector2,
   Vector3,
   type Object3D,
@@ -33,6 +34,7 @@ import { figureScale, loadFigure, loadPose } from "./figure-assets";
 import { poseFigure, updateSkinBounds, type FigurePose } from "./rigged-figure";
 import { frameFigures, setLens } from "./framing";
 import { shoulderContact } from "./figure-ik";
+import { placeFigureLabels } from "./figure-labels";
 import type { FigureIdentity, FigureState } from "./model";
 import type { ExportPicture, SceneCanvasProps } from "./canvas-contract";
 
@@ -42,19 +44,23 @@ const floor = new Plane(new Vector3(0, 1, 0), 0);
 function FigureLabel({
   identity,
   y,
+  personY,
   offset = [0, 0],
 }: {
   identity: FigureIdentity;
   y: number;
+  personY: number;
   offset?: [number, number];
 }) {
-  const sprite = useRef<Sprite>(null);
-  useFrame(({ camera, size }) => {
-    if (sprite.current && camera instanceof PerspectiveCamera) {
-      const scale = (40 * Math.tan((camera.fov * Math.PI) / 360)) / size.height;
-      sprite.current.scale.set(scale, scale, 1);
-    }
-  });
+  const leader = useMemo(
+    () =>
+      new BufferGeometry().setAttribute(
+        "position",
+        new Float32BufferAttribute(new Float32Array(6), 3),
+      ),
+    [],
+  );
+  useEffect(() => () => leader.dispose(), [leader]);
   const texture = useMemo(() => {
     const canvas = document.createElement("canvas");
     canvas.width = 128;
@@ -76,15 +82,39 @@ function FigureLabel({
   }, [identity.label, identity.colour]);
   useEffect(() => () => texture.dispose(), [texture]);
   return (
-    <sprite ref={sprite} position={[offset[0], y, offset[1]]} renderOrder={10}>
-      <spriteMaterial
-        map={texture}
-        sizeAttenuation={false}
-        depthTest={false}
-        depthWrite={false}
-        toneMapped={false}
-      />
-    </sprite>
+    <group>
+      <sprite
+        position={[offset[0], y, offset[1]]}
+        renderOrder={10}
+        userData={{
+          figureLabel: identity.label,
+          labelAnchor: new Vector3(offset[0], y, offset[1]),
+          labelPerson: new Vector3(0, personY - 0.04, 0),
+        }}
+      >
+        <spriteMaterial
+          map={texture}
+          sizeAttenuation={false}
+          depthTest={false}
+          depthWrite={false}
+          toneMapped={false}
+        />
+      </sprite>
+      <lineSegments
+        name="label-leader"
+        geometry={leader}
+        visible={false}
+        frustumCulled={false}
+        renderOrder={9}
+      >
+        <lineBasicMaterial
+          color="#70706b"
+          depthTest={false}
+          depthWrite={false}
+          toneMapped={false}
+        />
+      </lineSegments>
+    </group>
   );
 }
 
@@ -298,6 +328,7 @@ function Figure({
       ) : null}
       <FigureLabel
         identity={identity}
+        personY={model.top}
         y={model.top + (editingPair ? -0.06 : shot === "close" ? 0.08 : 0.2)}
         offset={
           editingPair
@@ -367,6 +398,8 @@ function Runtime({
         gl.setSize(width, height, false);
         lens.aspect = width / height;
         lens.updateProjectionMatrix();
+        // Resolve badge collisions at the actual output size, too.
+        placeFigureLabels(scene, lens, width, height);
         // Copy the freshly rendered framebuffer, never a stale demand-mode frame.
         gl.render(scene, camera);
         const picture = window.document.createElement("canvas");
@@ -624,6 +657,7 @@ function Runtime({
           onMove={onMove}
         />
       ))}
+      <LabelLayout />
       <CameraControls
         ref={controls}
         makeDefault
@@ -652,6 +686,16 @@ function Runtime({
       />
     </>
   );
+}
+
+function LabelLayout() {
+  useFrame(({ scene, camera, gl, size }) => {
+    if (camera instanceof PerspectiveCamera)
+      gl.domElement.dataset.sceneLabels = JSON.stringify(
+        placeFigureLabels(scene, camera, size.width, size.height),
+      );
+  });
+  return null;
 }
 
 export default function SceneCanvas(props: SceneCanvasProps) {

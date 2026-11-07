@@ -212,11 +212,12 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
     <div className="pb-8" data-scene-editor>
       <section className="mb-3" aria-label={t("scene.layouts")}>
         <h2 className="sp-small mb-2">{t("scene.layouts")}</h2>
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4" data-scene-layouts>
+        <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap" data-scene-layouts>
           {(["talk", "shoulder", "group", "lineup"] as const).map((layout) => (
             <GameButton
               key={layout}
               size="sm"
+              className="whitespace-nowrap"
               onClick={() => {
                 change((value) => applyBlocking(value, layout));
                 setSelected("");

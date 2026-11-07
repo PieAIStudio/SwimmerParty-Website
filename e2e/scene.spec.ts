@@ -24,6 +24,7 @@ import {
   FIGURE_BANDS,
   POSES,
   initialScene,
+  makeFigure,
   readDraft,
   defaultBuild,
 } from "../src/features/scene/model";
@@ -672,12 +673,47 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
               .normalize()
               .angleTo(new Quaternion(...poses.get(pose)!.bones[`upperarm_${side}`]).normalize()),
           ).toBeCloseTo(Math.PI / 18, 5);
-      if (pose === "stand")
+      if (pose === "stand") {
         expect(
           figure.object
             .getObjectByName("middle_02_l")!
             .quaternion.angleTo(new Quaternion(...poses.get(pose)!.bones.middle_02_l)),
         ).toBeCloseTo(0.5, 5);
+        const editing = poseFigure(
+          source,
+          poses.get(pose)!,
+          figureScale(build, 185),
+          false,
+          {},
+          undefined,
+          true,
+        );
+        editing.object.position.copy(figure.object.position);
+        editing.object.rotation.copy(figure.object.rotation);
+        editing.object.updateWorldMatrix(true, true);
+        const free = editing.object.getObjectByName("hand_r")!.getWorldPosition(new Vector3());
+        const resting = figure.object.getObjectByName("hand_r")!.getWorldPosition(new Vector3());
+        expect(Math.hypot(free.x - resting.x, free.z - resting.z)).toBeLessThan(0.02);
+        expect(
+          editing.object.getObjectByName("middle_03_r")!.getWorldPosition(new Vector3()).y,
+        ).toBeLessThan(free.y - 0.06);
+        editing.dispose();
+      }
+      if (pose === "arms-crossed")
+        for (const side of ["l", "r"]) {
+          const other = side === "l" ? "r" : "l";
+          const fingers = figure.object
+            .getObjectByName(`middle_03_${side}`)!
+            .getWorldPosition(new Vector3());
+          const biceps = figure.object
+            .getObjectByName(`upperarm_${other}`)!
+            .getWorldPosition(new Vector3());
+          const elbow = figure.object
+            .getObjectByName(`lowerarm_${other}`)!
+            .getWorldPosition(new Vector3());
+          expect(Math.abs(fingers.x - biceps.x)).toBeLessThan(0.1);
+          expect(fingers.z).toBeLessThan(elbow.z);
+        }
       if (figure.seat) {
         for (const side of ["l", "r"]) {
           const wrist = figure.object
@@ -949,8 +985,121 @@ test("phone-size Chrome performance under 4x CPU throttling", async ({ page, bro
   expect(samples.every((sample) => sample.renderedFps > 0)).toBe(true);
 });
 
+test("straight-on neutral faces at 1440", async ({ browser }) => {
+  const context = await browser.newContext({
+    baseURL: test.info().project.use.baseURL,
+    viewport: { width: 1440, height: 900 },
+    deviceScaleFactor: 2,
+  });
+  const page = await context.newPage();
+  const scene = initialScene([], "");
+  scene.figures = ["average", "average-f"].map((build, index) => ({
+    ...scene.figures[0],
+    id: `face-${index}`,
+    build: build as (typeof BUILDS)[number],
+    pose: "stand",
+    heightCm: 175,
+    x: index ? 0.16 : -0.16,
+    z: 0,
+    turn: 0,
+    joints: {},
+  }));
+  scene.camera = {
+    ...scene.camera,
+    lens: 85,
+    shot: "close",
+    view: "eye",
+    subject: "everyone",
+    fit: false,
+    position: [0, 1.64, 1.5],
+    target: [0, 1.64, 0],
+  };
+  await page.addInitScript(({ key, scene }) => localStorage.setItem(key, JSON.stringify(scene)), {
+    key: DRAFT_KEY,
+    scene,
+  });
+  await page.goto("/en/scene");
+  await ready(page, false);
+  await page.evaluate(() => document.fonts.ready);
+  await mkdir(`${evidenceRoot}/shots`, { recursive: true });
+  await page.screenshot({ path: `${evidenceRoot}/shots/face-front-1440.png` });
+  await writeFile(
+    `${evidenceRoot}/face-front.json`,
+    JSON.stringify(await cameraEvidence(page), null, 2),
+  );
+  await context.close();
+});
+
+test("crowded High shot separates twelve labels with leaders", async ({ browser }) => {
+  const context = await browser.newContext({
+    baseURL: test.info().project.use.baseURL,
+    viewport: { width: 1440, height: 900 },
+    deviceScaleFactor: 2,
+  });
+  const page = await context.newPage();
+  const scene = initialScene();
+  // Reproduce A-S17's 12-person positions, heights and 24 mm High camera.
+  const placements = [
+    [0.22, -2.2, -85, 163, "stand", "average-f"],
+    [-0.22, -2.2, 85, 175, "lean-in", "average"],
+    [0.35, 0.9, -165, 176, "stand", "average"],
+    [-0.45, 1.1, 165, 173, "sit", "average"],
+    [2, -0.9, -35, 165, "arms-crossed", "average-f"],
+    [-1.65, 0.8, 140, 175, "stand", "average"],
+    [-1.15, -0.35, 65, 172, "arms-crossed", "average"],
+    [-1.35, -1.1, 75, 162, "sit", "average"],
+    [-0.85, -1.5, 45, 166, "sit", "average-f"],
+    [1.15, -1.1, -75, 170, "sit", "average"],
+    [1.35, -0.35, -65, 174, "hands-on-table", "average"],
+    [1.75, 0.7, -140, 163, "stand", "average"],
+  ] as const;
+  scene.figures = placements.map(([x, z, turn, heightCm, pose, build], index) => ({
+    ...makeFigure(`crowd-${index + 1}`),
+    x,
+    z,
+    turn,
+    heightCm,
+    pose,
+    build,
+  }));
+  scene.camera = {
+    ...scene.camera,
+    view: "high",
+    lens: 24,
+    fit: false,
+    position: [0.16420425205939637, 4.847423196471918, 5.307862210445461],
+    target: [0.16420425205939637, 1.0199974981967965, -0.5804850176701095],
+  };
+  await page.addInitScript(({ key, scene }) => localStorage.setItem(key, JSON.stringify(scene)), {
+    key: DRAFT_KEY,
+    scene,
+  });
+  await page.goto("/en/scene");
+  await ready(page, false);
+  type Label = { id: string; x: number; y: number; width: number; height: number; leader: boolean };
+  const labels = async (): Promise<Label[]> =>
+    JSON.parse((await page.locator("canvas").getAttribute("data-scene-labels"))!);
+  await expect.poll(async () => (await labels()).length).toBe(12);
+  const boxes = await labels();
+  expect(boxes.some((box) => box.leader)).toBe(true);
+  for (const [index, a] of boxes.entries())
+    for (const b of boxes.slice(index + 1))
+      expect(
+        Math.abs(a.x - b.x) >= (a.width + b.width) / 2 + 3 ||
+          Math.abs(a.y - b.y) >= (a.height + b.height) / 2 + 3,
+        `${a.id} / ${b.id}`,
+      ).toBe(true);
+  await mkdir(`${evidenceRoot}/shots`, { recursive: true });
+  await page.screenshot({ path: `${evidenceRoot}/shots/crowd-12-1440.png` });
+  await writeFile(
+    `${evidenceRoot}/crowd-12.json`,
+    JSON.stringify({ scene, labels: boxes, camera: await cameraEvidence(page) }, null, 2),
+  );
+  await context.close();
+});
+
 for (const width of [1440, 390]) {
-  test(`build 7 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
+  test(`build 8 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
     test.setTimeout(120_000);
     const locale = width === 1440 ? "en" : "zh";
     const m = locale === "en" ? en : zh;
@@ -969,10 +1118,9 @@ for (const width of [1440, 390]) {
     const step = (action: string) => steps.push({ action, elapsedMs: Date.now() - started });
     const capture = async (name: string) => {
       if (process.env.SCENE_CAPTURE_SHOTS === "0") return;
-      // The new full-width desktop stage is taller; capture the whole frame, not cut feet.
-      if (width === 1440) await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
+      // Capture the actual first view: no scroll that can hide the layout heading.
+      expect(await page.evaluate(() => scrollY)).toBe(0);
       await page.screenshot({ path: `${evidenceRoot}/shots/${name}-${width}.png` });
-      if (width === 1440) await page.evaluate(() => scrollTo(0, 0));
     };
     await page.goto(`/${locale}/scene`);
     await ready(page, false);
@@ -1010,8 +1158,20 @@ for (const width of [1440, 390]) {
       expect(frame.width / frame.height).toBeCloseTo(16 / 9, 2);
       if (width === 1440) {
         const workspace = (await page.locator("[data-scene-workspace]").boundingBox())!;
-        expect(frame.x).toBeCloseTo(workspace.x, 0);
-        expect(frame.width).toBeCloseTo(workspace.width, 0);
+        // Build 8 trades unused side width for the complete, undistorted first-view stage.
+        expect(frame.width).toBeCloseTo(Math.min(workspace.width, ((height - 360) * 16) / 9), 0);
+        expect(frame.x + frame.width / 2).toBeCloseTo(workspace.x + workspace.width / 2, 0);
+        expect(frame.y + frame.height).toBeLessThanOrEqual(height - 8);
+        const heading = (await page
+          .getByRole("heading", { name: m["scene.layouts"], exact: true })
+          .boundingBox())!;
+        expect(heading.y).toBeGreaterThanOrEqual(72);
+        const buttons = await page.locator("[data-scene-layouts] button").all();
+        const top = (await buttons[0].boundingBox())!.y;
+        for (const button of buttons) {
+          await expect(button).toHaveCSS("white-space", "nowrap");
+          expect((await button.boundingBox())!.y).toBeCloseTo(top, 0);
+        }
         const settings = (await page.locator("[data-setting-picker]").boundingBox())!;
         expect(settings.width).toBeCloseTo(workspace.width, 0);
       }
@@ -1149,9 +1309,19 @@ for (const width of [1440, 390]) {
       if (width === 1440) {
         await page.setViewportSize({ width: 1920, height: 1080 });
         await ready(page, false);
-        await page.locator("[data-scene-frame]").scrollIntoViewIfNeeded();
+        expect(await page.evaluate(() => scrollY)).toBe(0);
+        const largeFrame = (await page.locator("[data-scene-frame]").boundingBox())!;
+        expect(largeFrame.y + largeFrame.height).toBeLessThanOrEqual(1080);
+        const shoulder = page.getByRole("button", {
+          name: m["scene.layout.shoulder"],
+          exact: true,
+        });
+        await expect(shoulder).toHaveCSS("white-space", "nowrap");
+        expect((await shoulder.boundingBox())!.height).toBeCloseTo(
+          (await page.locator("[data-scene-layouts] button").first().boundingBox())!.height,
+          0,
+        );
         await page.screenshot({ path: `${evidenceRoot}/shots/wide-group-1920.png` });
-        await page.evaluate(() => scrollTo(0, 0));
         await page.setViewportSize({ width, height });
         await ready(page, false);
       }
