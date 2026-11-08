@@ -24,6 +24,7 @@ import {
   FIGURE_BANDS,
   POSES,
   initialScene,
+  applyBlocking,
   makeFigure,
   readDraft,
   defaultBuild,
@@ -488,10 +489,10 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
   expect(defaultBuild({ slug: "known", name: "Known", build: "slim" })).toBe("slim");
   const hash = (bytes: Buffer) => createHash("sha256").update(bytes).digest("hex");
   expect(hash(await readFile("public/scene/rigged/manifest.json"))).toBe(
-    "e7575edb5f09e030362b2d0a310f7bc2a03a35fa09abe4e83ef35e3098545231",
+    "e0050a7e065543a1c0f91fc10685a0abc6216d66327f8059500295ca848052e1",
   );
   expect(hash(await readFile("public/scene/rigged/LICENSE.md"))).toBe(
-    "28825bce62bf4aa0f2836b8338bc5ef69d9e2cfd936fe148f534f01b1405fa05",
+    "7bf8c0973b65910364e48e4a6d2606f31610d9969884b0fe9ed4f366b2ae749b",
   );
   expect(Object.keys(manifest.bodies)).toEqual([...BUILDS]);
   expect(Object.keys(manifest.poses)).toEqual([...POSES]);
@@ -666,36 +667,19 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
       const original = (source.getObjectByName(node.name) as SkinnedMesh).geometry.attributes
         .position;
       expect(node.geometry.attributes.position.count).toBeGreaterThan(original.count);
-      // The projecting nose tip is pulled back in SP; no GLB or crown-height edit.
-      let tip = -1;
-      for (let i = 0; i < original.count; i++)
-        if (original.getY(i) > 1.4 && (tip < 0 || original.getZ(i) > original.getZ(tip))) tip = i;
+      // The accepted producer face/hair must not receive another SP deformation.
       const refined = node.geometry.attributes.position;
-      const matching = Array.from({ length: refined.count }, (_, i) => i).find(
-        (i) =>
-          Math.abs(refined.getX(i) - original.getX(tip)) < 1e-7 &&
-          Math.abs(refined.getY(i) - original.getY(tip)) < 1e-7,
-      )!;
-      expect(original.getZ(tip) - refined.getZ(matching)).toBeGreaterThan(0.004);
-      expect(original.getZ(tip) - refined.getZ(matching)).toBeLessThan(0.02);
-      expect(Array.from(refined.array).every(Number.isFinite)).toBe(true);
-      // Lip polish must not flatten the forehead/eyes along with the mouth.
-      let brow = -1;
-      for (let i = 0; i < original.count; i++)
-        if (
-          original.getY(i) > original.getY(tip) + 0.06 &&
-          Math.abs(original.getX(i)) < 0.03 &&
-          (brow < 0 || original.getZ(i) > original.getZ(brow))
-        )
-          brow = i;
-      expect(
-        Array.from({ length: refined.count }, (_, i) => i).some(
-          (i) =>
-            Math.abs(refined.getX(i) - original.getX(brow)) < 1e-7 &&
-            Math.abs(refined.getY(i) - original.getY(brow)) < 1e-7 &&
-            Math.abs(refined.getZ(i) - original.getZ(brow)) < 1e-7,
+      const retained = new Set(
+        Array.from({ length: refined.count }, (_, i) =>
+          [refined.getX(i), refined.getY(i), refined.getZ(i)].join(","),
         ),
-      ).toBe(true);
+      );
+      for (let i = 0; i < original.count; i++)
+        expect(
+          retained.has([original.getX(i), original.getY(i), original.getZ(i)].join(",")),
+          `${build} delivered vertex ${i} is unchanged`,
+        ).toBe(true);
+      expect(Array.from(refined.array).every(Number.isFinite)).toBe(true);
     });
     expect(runtimeTriangles).toBeGreaterThan(triangles);
     expect(runtimeTriangles).toBeLessThanOrEqual(10_000);
@@ -773,6 +757,8 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
           ["upperarm_l", "z", -6],
           ["upperarm_r", "z", 6],
           ["head", "x", -8],
+          ["spine_03", "x", -5],
+          ["neck_01", "x", -5],
         ] as const) {
           const expected = figure.object
             .getObjectByName(name)!
@@ -1186,6 +1172,49 @@ test("straight-on neutral faces at 1440", async ({ browser }) => {
   await context.close();
 });
 
+test("closed-mouth Conversation profiles at 1440", async ({ browser }) => {
+  const context = await browser.newContext({
+    baseURL: test.info().project.use.baseURL,
+    viewport: { width: 1440, height: 900 },
+    deviceScaleFactor: 2,
+  });
+  const page = await context.newPage();
+  const scene = applyBlocking(initialScene(), "talk");
+  scene.figures[1].build = "average-f";
+  // Ordinary saved turn edits bring both Conversation faces into true profile.
+  scene.figures[0].turn = 90;
+  scene.figures[1].turn = -90;
+  scene.camera = {
+    ...scene.camera,
+    lens: 85,
+    shot: "close",
+    view: "eye",
+    subject: "everyone",
+    fit: false,
+    position: [0, 1.64, 2.5],
+    target: [0, 1.64, 0],
+  };
+  await page.addInitScript(({ key, scene }) => localStorage.setItem(key, JSON.stringify(scene)), {
+    key: DRAFT_KEY,
+    scene,
+  });
+  await page.goto("/en/scene");
+  await ready(page, false);
+  await page.evaluate(() => document.fonts.ready);
+  const camera = await cameraEvidence(page);
+  expect(camera.bodies).toHaveLength(2);
+  expect((await draft(page)).figures.map((figure: { turn: number }) => figure.turn)).toEqual([
+    90, -90,
+  ]);
+  await mkdir(`${evidenceRoot}/shots`, { recursive: true });
+  await page.screenshot({ path: `${evidenceRoot}/shots/face-profile-1440.png` });
+  await writeFile(
+    `${evidenceRoot}/face-profile.json`,
+    JSON.stringify({ scene, camera, layout: "Conversation with saved profile turns" }, null, 2),
+  );
+  await context.close();
+});
+
 test("crowded High shot separates twelve labels with leaders", async ({ browser }) => {
   const context = await browser.newContext({
     baseURL: test.info().project.use.baseURL,
@@ -1218,6 +1247,25 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
     pose,
     build,
   }));
+  // Only this saved crowd layout: halve #2's torso/head lean toward #1.
+  const upright = JSON.parse(await readFile(`public${loadPose("stand")}`, "utf8")) as FigurePose;
+  const leaning = JSON.parse(await readFile(`public${loadPose("lean-in")}`, "utf8")) as FigurePose;
+  for (const [name, extra] of [
+    ["pelvis", 0],
+    ["spine_01", 0.1],
+    ["spine_02", 0.08],
+    ["spine_03", 0],
+    ["neck_01", 0],
+    ["head", 0],
+  ] as const) {
+    const fullLean = new Quaternion(...leaning.bones[name])
+      .normalize()
+      .multiply(new Quaternion().setFromAxisAngle(new Vector3(1, 0, 0), extra));
+    scene.figures[1].joints[name] = new Quaternion(...upright.bones[name])
+      .normalize()
+      .slerp(fullLean, 0.5)
+      .toArray();
+  }
   scene.camera = {
     ...scene.camera,
     view: "high",
@@ -1281,7 +1329,7 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
 });
 
 for (const width of [1440, 390]) {
-  test(`build 13 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
+  test(`build 14 fresh dialogue, first fold and shoulder drag ${width}`, async ({ browser }) => {
     test.setTimeout(120_000);
     const locale = width === 1440 ? "en" : "zh";
     const m = locale === "en" ? en : zh;

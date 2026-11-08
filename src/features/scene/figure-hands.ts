@@ -114,6 +114,9 @@ export function refineShelfPose(
       (object.getObjectByName(`upperarm_${side}`) as Bone).rotateZ(sign * 6 * radians);
     }
     (object.getObjectByName("head") as Bone).rotateX(-8 * radians);
+    // Extend the upper back and retract the neck, keeping the delivered head intact.
+    (object.getObjectByName("spine_03") as Bone).rotateX(-5 * radians);
+    (object.getObjectByName("neck_01") as Bone).rotateX(-5 * radians);
   }
   object.updateWorldMatrix(true, true);
   object.traverse((node) => {

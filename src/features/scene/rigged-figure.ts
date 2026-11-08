@@ -15,7 +15,6 @@ import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
 import { createFigureIK, pinHipHand } from "./figure-ik";
 import { refineShelfPose } from "./figure-hands";
 import { refineHead } from "./head-geometry";
-import { softenHairCap } from "./hair-cap";
 import type { JointRotations } from "./model";
 
 export type FigurePose = { name?: string; bones: Record<string, [number, number, number, number]> };
@@ -23,7 +22,7 @@ export type FigurePose = { name?: string; bones: Record<string, [number, number,
 // Share a smoothed runtime copy just like the loader shares the original geometry.
 // Weld normals and refine only long head edges, without altering the GLB/cache.
 const smoothGeometry = new WeakMap<BufferGeometry, BufferGeometry>();
-function smoothSkin(source: BufferGeometry, head: number, female: boolean) {
+function smoothSkin(source: BufferGeometry, head: number) {
   let geometry = smoothGeometry.get(source);
   if (!geometry) {
     const copy = source.clone();
@@ -31,7 +30,6 @@ function smoothSkin(source: BufferGeometry, head: number, female: boolean) {
     const welded = mergeVertices(copy);
     welded.computeVertexNormals();
     geometry = refineHead(welded, head);
-    if (female) softenHairCap(geometry);
     copy.dispose();
     welded.dispose();
     smoothGeometry.set(source, geometry);
@@ -104,7 +102,6 @@ export function poseFigure(
       node.geometry = smoothSkin(
         node.geometry,
         node.skeleton.bones.findIndex((bone) => bone.name === "head"),
-        node.name.endsWith("-f"),
       );
     }
   });

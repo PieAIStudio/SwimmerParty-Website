@@ -1,8 +1,26 @@
 {
-  "slim": { "base": "/scene/rigged", "standingHeightM": 1.7264598187829991 },
-  "average": { "base": "/scene/rigged", "standingHeightM": 1.756429070963144 },
-  "broad": { "base": "/scene/rigged", "standingHeightM": 1.7963081161321326 },
-  "slim-f": { "base": "/scene/rigged", "standingHeightM": 1.6478455920815296 },
-  "average-f": { "base": "/scene/rigged", "standingHeightM": 1.6877291505730392 },
-  "broad-f": { "base": "/scene/rigged", "standingHeightM": 1.7179253433392636 }
+  "slim": {
+    "base": "/scene/rigged",
+    "standingHeightM": 1.7264267151236918
+  },
+  "average": {
+    "base": "/scene/rigged",
+    "standingHeightM": 1.7563972754457757
+  },
+  "broad": {
+    "base": "/scene/rigged",
+    "standingHeightM": 1.7962675683664038
+  },
+  "slim-f": {
+    "base": "/scene/rigged",
+    "standingHeightM": 1.6478455920815296
+  },
+  "average-f": {
+    "base": "/scene/rigged",
+    "standingHeightM": 1.6877291570842532
+  },
+  "broad-f": {
+    "base": "/scene/rigged",
+    "standingHeightM": 1.7179253788400712
+  }
 }

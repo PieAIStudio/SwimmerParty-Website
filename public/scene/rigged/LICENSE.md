@@ -43,7 +43,7 @@ type = "add-on"
 license = ["SPDX:GPL-3.0-or-later"]
 ```
 
-   - The Python add-on was executed locally inside Blender 5.2.1 LTS during the build phase only. Zero lines of MPFB Python code are bundled in `handoff-rigged/`.
+   - The Python add-on was executed locally during the build phase only: Blender 5.2.1 LTS for the original delivery, Blender 5.2.0 LTS for the 2026-11-08 head revision. Zero lines of MPFB Python code are bundled in `handoff-rigged/`.
 
 2. **Bundled 3D Base Mesh, Morph Targets, and Game Engine Rig (`CC0-1.0`, Source of Delivered GLBs & Poses)**
    - Exact verbatim first 16 lines from installed `.local-store/blender/extensions/blender_org/mpfb/data/3dobjs/base.obj` (lines 1–16):
@@ -68,4 +68,4 @@ license = ["SPDX:GPL-3.0-or-later"]
 ```
 
    - Upstream repository asset licence (`https://raw.githubusercontent.com/makehumancommunity/mpfb2/d0a32e57a7f915cb2f2b95410e2117648c7bbb7e/LICENSE.ASSETS.md`) confirms the bundled MakeHuman mesh, target, rig (`rig.game_engine.json`), and skinning weight (`weights.game_engine.json`) assets are released under **CC0 1.0 Universal**.
-   - The one-piece sculptural hair bob + occipital bun geometry (`append_sculptural_hair_to_bmesh` in `source/build_mannequins.py`, weighted `1.0` to the `head` bone on `slim-f`, `average-f`, `broad-f`), the procedural grey rough PBR material (`MannequinGrey`), and the 12 bone-local quaternion poses (`poses/{stand,walk,point,wave,sit,arms-crossed,lean-in,hand-on-hip,hands-on-table,look-over-shoulder,hug-ready,kneel}.json`) were authored cleanly as original procedural geometry/parameters in `source/rigged_config.json` and `source/build_rigged_bodies.py` without third-party meshes, textures, or external non-CC0 assets, and are dedicated to the public domain under **CC0 1.0 Universal (CC0-1.0)**.
+   - The original procedural bob/bun (`append_sculptural_hair_to_bmesh` in `source/build_mannequins.py`), original-topology lip closure, female cheek/jaw shaping and front-cap taper (`close_original_lips`, `fill_female_cheeks`, `round_female_jaw`, `append_tapered_hair` in `source/build_rigged_bodies.py`; no replacement face patch or stretched skull), the procedural grey rough PBR material (`MannequinGrey`), and the 12 bone-local quaternion poses (`poses/{stand,walk,point,wave,sit,arms-crossed,lean-in,hand-on-hip,hands-on-table,look-over-shoulder,hug-ready,kneel}.json`) were authored cleanly as original procedural geometry/parameters in `source/rigged_config.json` and `source/build_rigged_bodies.py` without third-party meshes, textures, or external non-CC0 assets, and are dedicated to the public domain under **CC0 1.0 Universal (CC0-1.0)**.

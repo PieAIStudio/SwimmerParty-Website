@@ -13,6 +13,61 @@
     "baseMesh": "data/3dobjs/base.obj (MakeHuman basemesh hm08, CC0 1.0)",
     "rig": "data/rigs/standard/rig.game_engine.json (CC0 1.0)"
   },
+  "headTreatment": {
+    "mouth": "Original hm08 lip rolls pulled together and coincident contacts welded; no replacement facial patch",
+    "eyelids": "Original closed eyelids retained; no harmonic face replacement",
+    "femaleCheekFullness": 0.022,
+    "application": "After rig construction; skeleton, body scale and shared poses unchanged",
+    "lipContactRings": {
+      "upper": [
+        474,
+        7229,
+        7228,
+        7227,
+        7226,
+        11964,
+        7225,
+        7179,
+        7178,
+        7193,
+        10400,
+        7191,
+        7188,
+        7249,
+        7185,
+        7182,
+        7162,
+        7129
+      ],
+      "lower": [
+        493,
+        7242,
+        7236,
+        7230,
+        7197,
+        7204,
+        10375,
+        7192,
+        7189,
+        7250,
+        7186,
+        7183,
+        7163,
+        7122,
+        7129
+      ]
+    }
+  },
+  "hair": {
+    "style": "original-sculptural-bob-and-bun-with-tapered-front-rim",
+    "license": "CC0-1.0",
+    "provenance": "Original bob/bun from source/build_mannequins.py; only forehead-facing cap intersection tapered in source/build_rigged_bodies.py",
+    "capRings": 17,
+    "capSegments": 32,
+    "bunRings": 6,
+    "bunSegments": 16,
+    "frontRimTaperM": 0.015
+  },
   "conventions": {
     "units": "metres",
     "upAxis": "+Y",
@@ -194,7 +249,7 @@
       "index_01_l": [
         0.106762,
         0.470496,
-        -2.1e-05,
+        -2e-05,
         0.87592
       ],
       "index_02_l": [
@@ -211,14 +266,14 @@
       ],
       "middle_01_l": [
         0.098154,
-        0.405811,
+        0.405812,
         -0.149453,
         0.896296
       ],
       "middle_02_l": [
         0.045784,
         -0.004975,
-        0.03809,
+        0.038089,
         0.998213
       ],
       "middle_03_l": [
@@ -228,7 +283,7 @@
         0.997672
       ],
       "pinky_01_l": [
-        0.051293,
+        0.051292,
         0.281811,
         -0.298133,
         0.910532
@@ -308,7 +363,7 @@
       "index_01_r": [
         0.106762,
         -0.470496,
-        2.1e-05,
+        2e-05,
         0.87592
       ],
       "index_02_r": [
@@ -325,14 +380,14 @@
       ],
       "middle_01_r": [
         0.098154,
-        -0.405811,
+        -0.405812,
         0.149453,
         0.896296
       ],
       "middle_02_r": [
         0.045784,
         0.004975,
-        -0.03809,
+        -0.038089,
         0.998213
       ],
       "middle_03_r": [
@@ -342,7 +397,7 @@
         0.997672
       ],
       "pinky_01_r": [
-        0.051293,
+        0.051292,
         -0.281811,
         0.298133,
         0.910532
@@ -460,8 +515,8 @@
   "bodies": {
     "slim": {
       "path": "handoff-rigged/slim.glb",
-      "bytes": 227696,
-      "sha256": "74679187b280cd6535fd6f73b37e3c076a8728f6c1d87efba2a620299b7e7e34",
+      "bytes": 227308,
+      "sha256": "cf4e6f667cfcbbc986dca2d3d818c4b612c05c19e2a9a96d8c8b4abaf47e8ed9",
       "vertices": 3741,
       "triangles": 7478,
       "meshes": 1,
@@ -503,8 +558,8 @@
     },
     "average": {
       "path": "handoff-rigged/average.glb",
-      "bytes": 226864,
-      "sha256": "276667f121ebbf53dfb3f4eddff347f365246b7b985352dd84492cc1972bbef7",
+      "bytes": 226960,
+      "sha256": "079f3ec808010bc8546e0ff8ad1db6a34dbb0417b7545768b4aee28442e78e55",
       "vertices": 3741,
       "triangles": 7478,
       "meshes": 1,
@@ -546,8 +601,8 @@
     },
     "broad": {
       "path": "handoff-rigged/broad.glb",
-      "bytes": 227312,
-      "sha256": "f5eff796d5eff09cc54c8d73033036005b860e5d34152c1856e995e93b8c5724",
+      "bytes": 227288,
+      "sha256": "b834e10552dacac68be3e7481c6b83cd062bf519daf1ca0c9dae490f0a8607a3",
       "vertices": 3741,
       "triangles": 7478,
       "meshes": 1,
@@ -589,10 +644,10 @@
     },
     "slim-f": {
       "path": "handoff-rigged/slim-f.glb",
-      "bytes": 242744,
-      "sha256": "b6cb85ba9efcfd7b93f12df82dc6301a3d9ae05cf042f1c463ea4de1afb38de0",
-      "vertices": 4017,
-      "triangles": 8022,
+      "bytes": 260512,
+      "sha256": "effae4eb213ece7a0eed4383263404c3cc91900b7e5f8b32d57ef79798418276",
+      "vertices": 4337,
+      "triangles": 8662,
       "meshes": 1,
       "skins": 1,
       "jointCount": 53,
@@ -632,10 +687,10 @@
     },
     "average-f": {
       "path": "handoff-rigged/average-f.glb",
-      "bytes": 242620,
-      "sha256": "1bdaccb7dbb49095a5655d6743fb641ef9d8f3d716b1a077fd93e407ab8908f5",
-      "vertices": 4017,
-      "triangles": 8022,
+      "bytes": 260516,
+      "sha256": "4984a7d4d621a6aca60bae4d92e6fb9443158b5eaacb2a167c24226dd1d1e27b",
+      "vertices": 4337,
+      "triangles": 8662,
       "meshes": 1,
       "skins": 1,
       "jointCount": 53,
@@ -675,10 +730,10 @@
     },
     "broad-f": {
       "path": "handoff-rigged/broad-f.glb",
-      "bytes": 242672,
-      "sha256": "cdc50f673aa04c84cb364102080c4c943efce9c56d63d9b4fac55fcf427d8b84",
-      "vertices": 4017,
-      "triangles": 8022,
+      "bytes": 260684,
+      "sha256": "bbf7cd1bdb0bb1bab2bfd71ebf8546e1dcaa6c42cf6e8a142fe1d669a5f323a8",
+      "vertices": 4337,
+      "triangles": 8662,
       "meshes": 1,
       "skins": 1,
       "jointCount": 53,
@@ -936,995 +991,653 @@
     }
   },
   "proofRenders": {
-    "review/rigged-round-2/lineup-all6-action-poses-1920x1080.png": {
-      "actors": [
-        {
-          "build": "slim",
-          "deformedMaxY": 1.72189,
-          "deformedMinY": 0.0,
-          "label": "slim-point",
-          "pose": "point",
-          "triangles": 7478,
-          "xPositionM": -1.6
-        },
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.64711,
-          "deformedMinY": -0.0,
-          "label": "slim-f-arms-crossed",
-          "pose": "arms-crossed",
-          "triangles": 8022,
-          "xPositionM": -0.96
-        },
-        {
-          "build": "average",
-          "deformedMaxY": 1.72783,
-          "deformedMinY": 0.0,
-          "label": "average-walk",
-          "pose": "walk",
-          "triangles": 7478,
-          "xPositionM": -0.32
-        },
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.31486,
-          "deformedMinY": 0.0,
-          "label": "average-f-sit",
-          "pose": "sit",
-          "triangles": 8022,
-          "xPositionM": 0.32
-        },
-        {
-          "build": "broad",
-          "deformedMaxY": 1.9114,
-          "deformedMinY": -0.0,
-          "label": "broad-wave",
-          "pose": "wave",
-          "triangles": 7478,
-          "xPositionM": 0.96
-        },
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.32321,
-          "deformedMinY": -0.0,
-          "label": "broad-f-kneel",
-          "pose": "kneel",
-          "triangles": 8022,
-          "xPositionM": 1.6
-        }
-      ],
-      "bytes": 858488,
-      "cameraDistanceM": 6.35,
-      "path": "review/rigged-round-2/lineup-all6-action-poses-1920x1080.png",
+    "slim-front.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/slim-front.png",
       "resolution": [
-        1920,
+        1440,
         1080
       ],
-      "sha256": "e9233c636bf503da0366740d69dc9c6c072032cba13d5ab701402496290b72e3",
-      "yawDeg": -12.0
-    },
-    "review/rigged-round-2/lineup-all6-action-poses-390x844.png": {
+      "sha256": "17befa93aa2aee1f18bfca5b4a88ebf40f1f4758639b68c99ea04fd0e3e1257b",
+      "bytes": 284977,
       "actors": [
         {
           "build": "slim",
-          "deformedMaxY": 1.72189,
-          "deformedMinY": 0.0,
-          "label": "slim-point",
-          "pose": "point",
-          "triangles": 7478,
-          "xPositionM": -1.6
-        },
+          "pose": "rest"
+        }
+      ],
+      "view": "front",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        0.0,
+        -1.0,
+        1.6106489896774292
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -0.0,
+        0.0
+      ],
+      "orthoScaleM": 0.4100662171840668
+    },
+    "slim-profile.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/slim-profile.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "119c89348dda693c0ac1f0be4ab3cf738ce61549e43c81a488ea984e64f782ad",
+      "bytes": 289208,
+      "actors": [
+        {
+          "build": "slim",
+          "pose": "rest"
+        }
+      ],
+      "view": "profile",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -1.0,
+        -6.123234262925839e-17,
+        1.6106489896774292
+      ],
+      "cameraRotationRad": [
+        1.5707963705062866,
+        -0.0,
+        -1.5707963705062866
+      ],
+      "orthoScaleM": 0.4100662171840668
+    },
+    "slim-three-quarter.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/slim-three-quarter.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "60132ddbb2821695387c16011c54e3d15f46c27e5db73d7f5df1ad9b4c055bd5",
+      "bytes": 289206,
+      "actors": [
+        {
+          "build": "slim",
+          "pose": "rest"
+        }
+      ],
+      "view": "three-quarter",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -0.5735764503479004,
+        -0.8191520571708679,
+        1.6106489896774292
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -2.0098083197694905e-08,
+        -0.6108654737472534
+      ],
+      "orthoScaleM": 0.4100662171840668
+    },
+    "average-front.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/average-front.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "e20fa5b991b5b4cc3e2e436ed741f55e75a73c633dba5ac1e1cad06a9ff9fdd2",
+      "bytes": 290228,
+      "actors": [
+        {
+          "build": "average",
+          "pose": "rest"
+        }
+      ],
+      "view": "front",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        0.0,
+        -1.0,
+        1.6394736766815186
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -0.0,
+        0.0
+      ],
+      "orthoScaleM": 0.41447368264198303
+    },
+    "average-profile.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/average-profile.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "659a1528053c65140f9e0064ba50f54038d043d4182b0e9cf56bf65b671d9971",
+      "bytes": 293290,
+      "actors": [
+        {
+          "build": "average",
+          "pose": "rest"
+        }
+      ],
+      "view": "profile",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -1.0,
+        -6.123234262925839e-17,
+        1.6394736766815186
+      ],
+      "cameraRotationRad": [
+        1.5707963705062866,
+        -0.0,
+        -1.5707963705062866
+      ],
+      "orthoScaleM": 0.41447368264198303
+    },
+    "average-three-quarter.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/average-three-quarter.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "c60598204dbc03f1b5380fe26f73459c2e6a8ea871d45c3c6b584ac6738caa0d",
+      "bytes": 293402,
+      "actors": [
+        {
+          "build": "average",
+          "pose": "rest"
+        }
+      ],
+      "view": "three-quarter",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -0.5735764503479004,
+        -0.8191520571708679,
+        1.6394736766815186
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -2.0098083197694905e-08,
+        -0.6108654737472534
+      ],
+      "orthoScaleM": 0.41447368264198303
+    },
+    "broad-front.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/broad-front.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "97b57f9d90faa35e49f9787cb3621e3cf2485f826fd07805f9cde42c4ecc8e2f",
+      "bytes": 300194,
+      "actors": [
+        {
+          "build": "broad",
+          "pose": "rest"
+        }
+      ],
+      "view": "front",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        0.0,
+        -1.0,
+        1.677686333656311
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -0.0,
+        0.0
+      ],
+      "orthoScaleM": 0.4211764633655548
+    },
+    "broad-profile.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/broad-profile.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "d1ecff62254cff653894c62a677d01fdafb58b71565964d8078272c5367e048c",
+      "bytes": 294107,
+      "actors": [
+        {
+          "build": "broad",
+          "pose": "rest"
+        }
+      ],
+      "view": "profile",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -1.0,
+        -6.123234262925839e-17,
+        1.677686333656311
+      ],
+      "cameraRotationRad": [
+        1.5707963705062866,
+        -0.0,
+        -1.5707963705062866
+      ],
+      "orthoScaleM": 0.4211764633655548
+    },
+    "broad-three-quarter.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/broad-three-quarter.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "9940e3ffdd5cf048c1c07b0d0a0a897b6df78466332ef508b7f66cdd83e05a47",
+      "bytes": 301562,
+      "actors": [
+        {
+          "build": "broad",
+          "pose": "rest"
+        }
+      ],
+      "view": "three-quarter",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -0.5735764503479004,
+        -0.8191520571708679,
+        1.677686333656311
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -2.0098083197694905e-08,
+        -0.6108654737472534
+      ],
+      "orthoScaleM": 0.4211764633655548
+    },
+    "slim-f-front.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/slim-f-front.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "4a87edc2ec834d708b71f931f1a235948da5c4d3fd90d34fca681b5e732c7aa4",
+      "bytes": 326053,
+      "actors": [
         {
           "build": "slim-f",
-          "deformedMaxY": 1.64711,
-          "deformedMinY": -0.0,
-          "label": "slim-f-arms-crossed",
-          "pose": "arms-crossed",
-          "triangles": 8022,
-          "xPositionM": -0.96
+          "pose": "rest"
+        }
+      ],
+      "view": "front",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        0.0,
+        -1.0,
+        1.5343356132507324
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -0.0,
+        0.0
+      ],
+      "orthoScaleM": 0.39624160528182983
+    },
+    "slim-f-profile.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/slim-f-profile.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "59fba2e0ea3b3d3afff4bbc47984e12253a1a6f5510da00231cfa167ea535d7a",
+      "bytes": 319774,
+      "actors": [
+        {
+          "build": "slim-f",
+          "pose": "rest"
+        }
+      ],
+      "view": "profile",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -1.0,
+        -6.123234262925839e-17,
+        1.5343356132507324
+      ],
+      "cameraRotationRad": [
+        1.5707963705062866,
+        -0.0,
+        -1.5707963705062866
+      ],
+      "orthoScaleM": 0.39624160528182983
+    },
+    "slim-f-three-quarter.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/slim-f-three-quarter.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "6ddea347849f28c07047d590b1c1655f258793affa270bb95e3d2e9e085d0482",
+      "bytes": 323794,
+      "actors": [
+        {
+          "build": "slim-f",
+          "pose": "rest"
+        }
+      ],
+      "view": "three-quarter",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -0.5735764503479004,
+        -0.8191520571708679,
+        1.5343356132507324
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -2.0098083197694905e-08,
+        -0.6108654737472534
+      ],
+      "orthoScaleM": 0.39624160528182983
+    },
+    "average-f-front.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/average-f-front.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "a0985d84232144d9da29947bafc977ab2e7d3b164d0b03a611d35f64c3537bb0",
+      "bytes": 331258,
+      "actors": [
+        {
+          "build": "average-f",
+          "pose": "rest"
+        }
+      ],
+      "view": "front",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        0.0,
+        -1.0,
+        1.5724799633026123
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -0.0,
+        0.0
+      ],
+      "orthoScaleM": 0.4032000005245209
+    },
+    "average-f-profile.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/average-f-profile.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "8491d5b3194b42e3225cc7b90ea582f3ac9f4870359ddf58665d062d811a39c0",
+      "bytes": 320571,
+      "actors": [
+        {
+          "build": "average-f",
+          "pose": "rest"
+        }
+      ],
+      "view": "profile",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -1.0,
+        -6.123234262925839e-17,
+        1.5724799633026123
+      ],
+      "cameraRotationRad": [
+        1.5707963705062866,
+        -0.0,
+        -1.5707963705062866
+      ],
+      "orthoScaleM": 0.4032000005245209
+    },
+    "average-f-three-quarter.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/average-f-three-quarter.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "b8d763d65a0ee1647f6d050126daea9100d080677a9168c7baa0d4d33700d379",
+      "bytes": 327597,
+      "actors": [
+        {
+          "build": "average-f",
+          "pose": "rest"
+        }
+      ],
+      "view": "three-quarter",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -0.5735764503479004,
+        -0.8191520571708679,
+        1.5724799633026123
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -2.0098083197694905e-08,
+        -0.6108654737472534
+      ],
+      "orthoScaleM": 0.4032000005245209
+    },
+    "broad-f-front.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/broad-f-front.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "528acbf05999290f4160e78e9c1bb252a2bee1e483a4735f8c5a7cee1971f538",
+      "bytes": 334425,
+      "actors": [
+        {
+          "build": "broad-f",
+          "pose": "rest"
+        }
+      ],
+      "view": "front",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        0.0,
+        -1.0,
+        1.6012847423553467
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -0.0,
+        0.0
+      ],
+      "orthoScaleM": 0.4076821208000183
+    },
+    "broad-f-profile.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/broad-f-profile.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "f17d7a6b9d2a3ba9d755308a1bbaee9a85037e9ebb8df51dbcd12f0a6db2c07c",
+      "bytes": 322685,
+      "actors": [
+        {
+          "build": "broad-f",
+          "pose": "rest"
+        }
+      ],
+      "view": "profile",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -1.0,
+        -6.123234262925839e-17,
+        1.6012847423553467
+      ],
+      "cameraRotationRad": [
+        1.5707963705062866,
+        -0.0,
+        -1.5707963705062866
+      ],
+      "orthoScaleM": 0.4076821208000183
+    },
+    "broad-f-three-quarter.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/broad-f-three-quarter.png",
+      "resolution": [
+        1440,
+        1080
+      ],
+      "sha256": "1f7934c678f0756a036ec4f101f9c575699e62b36850f4e25a61c35d0438c458",
+      "bytes": 330972,
+      "actors": [
+        {
+          "build": "broad-f",
+          "pose": "rest"
+        }
+      ],
+      "view": "three-quarter",
+      "cameraType": "ORTHO",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        -0.5735764503479004,
+        -0.8191520571708679,
+        1.6012847423553467
+      ],
+      "cameraRotationRad": [
+        1.5707964897155762,
+        -2.0098083197694905e-08,
+        -0.6108654737472534
+      ],
+      "orthoScaleM": 0.4076821208000183
+    },
+    "conversation-profile.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/conversation-profile.png",
+      "resolution": [
+        1440,
+        810
+      ],
+      "sha256": "59d8cf0458bb033cdc1aa5919a11300ce6bb680bb83a5c865ce417ad53bef199",
+      "bytes": 242342,
+      "actors": [
+        {
+          "build": "average-f",
+          "pose": "stand",
+          "heightCm": 163,
+          "referenceHeightM": 1.6832844018936157,
+          "x": -0.325,
+          "z": 0,
+          "turn": 65,
+          "scale": 0.9683449797112874
         },
         {
           "build": "average",
-          "deformedMaxY": 1.72783,
-          "deformedMinY": 0.0,
-          "label": "average-walk",
-          "pose": "walk",
-          "triangles": 7478,
-          "xPositionM": -0.32
-        },
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.31486,
-          "deformedMinY": 0.0,
-          "label": "average-f-sit",
-          "pose": "sit",
-          "triangles": 8022,
-          "xPositionM": 0.32
-        },
-        {
-          "build": "broad",
-          "deformedMaxY": 1.9114,
-          "deformedMinY": -0.0,
-          "label": "broad-wave",
-          "pose": "wave",
-          "triangles": 7478,
-          "xPositionM": 0.96
-        },
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.32321,
-          "deformedMinY": -0.0,
-          "label": "broad-f-kneel",
-          "pose": "kneel",
-          "triangles": 8022,
-          "xPositionM": 1.6
-        }
-      ],
-      "bytes": 105379,
-      "cameraDistanceM": 6.35,
-      "path": "review/rigged-round-2/lineup-all6-action-poses-390x844.png",
-      "resolution": [
-        390,
-        844
-      ],
-      "sha256": "f145de58e1660dd8bdfbe5bafbe129b0397bc3c9244e163dbc7476bb74ef21bf",
-      "yawDeg": -12.0
-    },
-    "review/rigged-round-2/lineup-all6-dialogue-poses-1920x1080.png": {
-      "actors": [
-        {
-          "build": "slim",
-          "deformedMaxY": 1.69514,
-          "deformedMinY": 0.0,
-          "label": "slim-lean-in",
-          "pose": "lean-in",
-          "triangles": 7478,
-          "xPositionM": -1.6
-        },
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.6469,
-          "deformedMinY": -0.0,
-          "label": "slim-f-hand-on-hip",
           "pose": "hand-on-hip",
-          "triangles": 8022,
-          "xPositionM": -0.96
-        },
-        {
-          "build": "average",
-          "deformedMaxY": 1.72956,
-          "deformedMinY": -0.0,
-          "label": "average-hands-on-table",
-          "pose": "hands-on-table",
-          "triangles": 7478,
-          "xPositionM": -0.32
-        },
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.68757,
-          "deformedMinY": -0.0,
-          "label": "average-f-look-over-shoulder",
-          "pose": "look-over-shoulder",
-          "triangles": 8022,
-          "xPositionM": 0.32
-        },
-        {
-          "build": "broad",
-          "deformedMaxY": 1.79687,
-          "deformedMinY": -0.0,
-          "label": "broad-hug-ready",
-          "pose": "hug-ready",
-          "triangles": 7478,
-          "xPositionM": 0.96
-        },
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.32321,
-          "deformedMinY": -0.0,
-          "label": "broad-f-kneel",
-          "pose": "kneel",
-          "triangles": 8022,
-          "xPositionM": 1.6
+          "heightCm": 175,
+          "referenceHeightM": 1.74868643283844,
+          "x": 0.325,
+          "z": 0,
+          "turn": -65,
+          "scale": 1.0007511736449102
         }
       ],
-      "bytes": 869436,
-      "cameraDistanceM": 6.35,
-      "path": "review/rigged-round-2/lineup-all6-dialogue-poses-1920x1080.png",
+      "view": "SwimmerParty-Conversation-close",
+      "cameraType": "PERSP",
+      "lensMm": 85.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        0.04199562966823578,
+        -3.869753360748291,
+        1.4310212135314941
+      ],
+      "cameraRotationRad": [
+        1.570796251296997,
+        -0.0,
+        0.0
+      ],
+      "orthoScaleM": 0.4076821208000183
+    },
+    "all6-full.png": {
+      "path": "HQ/conductor/projects/MediaFactory/closed-mouth-heads-20261108/final/after/all6-full.png",
       "resolution": [
-        1920,
+        1440,
         1080
       ],
-      "sha256": "a602be67aa4fd5c3993a6000067d5691cde218d486b18fcd1c23398f615dc195",
-      "yawDeg": -12.0
-    },
-    "review/rigged-round-2/lineup-all6-dialogue-poses-390x844.png": {
+      "sha256": "53485f7fc0394dd31963709d065b48a43aa29bf1878dae95d7df7d779ee3c573",
+      "bytes": 594381,
       "actors": [
         {
           "build": "slim",
-          "deformedMaxY": 1.69514,
+          "pose": "stand",
           "deformedMinY": 0.0,
-          "label": "slim-lean-in",
-          "pose": "lean-in",
-          "triangles": 7478,
-          "xPositionM": -1.6
+          "deformedMaxY": 1.72486
         },
         {
           "build": "slim-f",
-          "deformedMaxY": 1.6469,
+          "pose": "stand",
           "deformedMinY": -0.0,
-          "label": "slim-f-hand-on-hip",
-          "pose": "hand-on-hip",
-          "triangles": 8022,
-          "xPositionM": -0.96
+          "deformedMaxY": 1.64784
         },
         {
           "build": "average",
-          "deformedMaxY": 1.72956,
+          "pose": "stand",
           "deformedMinY": -0.0,
-          "label": "average-hands-on-table",
-          "pose": "hands-on-table",
-          "triangles": 7478,
-          "xPositionM": -0.32
+          "deformedMaxY": 1.75481
         },
         {
           "build": "average-f",
-          "deformedMaxY": 1.68757,
+          "pose": "stand",
           "deformedMinY": -0.0,
-          "label": "average-f-look-over-shoulder",
-          "pose": "look-over-shoulder",
-          "triangles": 8022,
-          "xPositionM": 0.32
+          "deformedMaxY": 1.68773
         },
         {
           "build": "broad",
-          "deformedMaxY": 1.79687,
-          "deformedMinY": -0.0,
-          "label": "broad-hug-ready",
-          "pose": "hug-ready",
-          "triangles": 7478,
-          "xPositionM": 0.96
+          "pose": "stand",
+          "deformedMinY": 0.0,
+          "deformedMaxY": 1.79465
         },
         {
           "build": "broad-f",
-          "deformedMaxY": 1.32321,
-          "deformedMinY": -0.0,
-          "label": "broad-f-kneel",
-          "pose": "kneel",
-          "triangles": 8022,
-          "xPositionM": 1.6
+          "pose": "stand",
+          "deformedMinY": 0.0,
+          "deformedMaxY": 1.71792
         }
       ],
-      "bytes": 106650,
-      "cameraDistanceM": 6.35,
-      "path": "review/rigged-round-2/lineup-all6-dialogue-poses-390x844.png",
-      "resolution": [
-        390,
-        844
+      "view": "full-front",
+      "cameraType": "PERSP",
+      "lensMm": 52.0,
+      "sensorWidthMm": 36.0,
+      "cameraLocationM": [
+        0.0,
+        -6.349999904632568,
+        1.0
       ],
-      "sha256": "980765174f6c250bb48e541f2fa08245b6472dfba0d438747480f94492ac1564",
-      "yawDeg": -12.0
-    },
-    "review/rigged-round-2/lineup-all6-stand-1920x1080.png": {
-      "actors": [
-        {
-          "build": "slim",
-          "deformedMaxY": 1.72486,
-          "deformedMinY": 0.0,
-          "label": "slim",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": -1.6
-        },
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.64784,
-          "deformedMinY": -0.0,
-          "label": "slim-f",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": -0.96
-        },
-        {
-          "build": "average",
-          "deformedMaxY": 1.75481,
-          "deformedMinY": -0.0,
-          "label": "average",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": -0.32
-        },
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.68773,
-          "deformedMinY": -0.0,
-          "label": "average-f",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": 0.32
-        },
-        {
-          "build": "broad",
-          "deformedMaxY": 1.79465,
-          "deformedMinY": 0.0,
-          "label": "broad",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": 0.96
-        },
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.71792,
-          "deformedMinY": 0.0,
-          "label": "broad-f",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": 1.6
-        }
+      "cameraRotationRad": [
+        1.55190110206604,
+        -0.0,
+        0.0
       ],
-      "bytes": 862128,
-      "cameraDistanceM": 6.35,
-      "path": "review/rigged-round-2/lineup-all6-stand-1920x1080.png",
-      "resolution": [
-        1920,
-        1080
-      ],
-      "sha256": "b1a142e796a9d13c94adf9e5af3e3c87827868adf11d0d9f04dc52a7afd4390f",
-      "yawDeg": -12.0
-    },
-    "review/rigged-round-2/lineup-all6-stand-390x844.png": {
-      "actors": [
-        {
-          "build": "slim",
-          "deformedMaxY": 1.72486,
-          "deformedMinY": 0.0,
-          "label": "slim",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": -1.6
-        },
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.64784,
-          "deformedMinY": -0.0,
-          "label": "slim-f",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": -0.96
-        },
-        {
-          "build": "average",
-          "deformedMaxY": 1.75481,
-          "deformedMinY": -0.0,
-          "label": "average",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": -0.32
-        },
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.68773,
-          "deformedMinY": -0.0,
-          "label": "average-f",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": 0.32
-        },
-        {
-          "build": "broad",
-          "deformedMaxY": 1.79465,
-          "deformedMinY": 0.0,
-          "label": "broad",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": 0.96
-        },
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.71792,
-          "deformedMinY": 0.0,
-          "label": "broad-f",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": 1.6
-        }
-      ],
-      "bytes": 105490,
-      "cameraDistanceM": 6.35,
-      "path": "review/rigged-round-2/lineup-all6-stand-390x844.png",
-      "resolution": [
-        390,
-        844
-      ],
-      "sha256": "313004211d5b09e5f1d1a93d3db8b49207abbdd3a7c505f5f1252392e8f0d58d",
-      "yawDeg": -12.0
-    },
-    "review/rigged-round-2/lineup-body-average-4poses-1920x1080.png": {
-      "actors": [
-        {
-          "build": "average",
-          "deformedMaxY": 1.75481,
-          "deformedMinY": -0.0,
-          "label": "average-stand",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "average",
-          "deformedMaxY": 1.72783,
-          "deformedMinY": 0.0,
-          "label": "average-walk",
-          "pose": "walk",
-          "triangles": 7478,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "average",
-          "deformedMaxY": 1.3477,
-          "deformedMinY": 0.0,
-          "label": "average-sit",
-          "pose": "sit",
-          "triangles": 7478,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "average",
-          "deformedMaxY": 1.8542,
-          "deformedMinY": -0.0,
-          "label": "average-wave",
-          "pose": "wave",
-          "triangles": 7478,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 790688,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-average-4poses-1920x1080.png",
-      "resolution": [
-        1920,
-        1080
-      ],
-      "sha256": "eaca91be45fdc40380f63576b7dbffdd55c333ead5827bbb9f673db9fcbdd9da",
-      "yawDeg": -10.0
-    },
-    "review/rigged-round-2/lineup-body-average-4poses-390x844.png": {
-      "actors": [
-        {
-          "build": "average",
-          "deformedMaxY": 1.75481,
-          "deformedMinY": -0.0,
-          "label": "average-stand",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "average",
-          "deformedMaxY": 1.72783,
-          "deformedMinY": 0.0,
-          "label": "average-walk",
-          "pose": "walk",
-          "triangles": 7478,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "average",
-          "deformedMaxY": 1.3477,
-          "deformedMinY": 0.0,
-          "label": "average-sit",
-          "pose": "sit",
-          "triangles": 7478,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "average",
-          "deformedMaxY": 1.8542,
-          "deformedMinY": -0.0,
-          "label": "average-wave",
-          "pose": "wave",
-          "triangles": 7478,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 108582,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-average-4poses-390x844.png",
-      "resolution": [
-        390,
-        844
-      ],
-      "sha256": "adfe00feed496cca94beda84a375da239be95caad0d52622e282ad287d3a6b54",
-      "yawDeg": -10.0
-    },
-    "review/rigged-round-2/lineup-body-average-f-4poses-1920x1080.png": {
-      "actors": [
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.68773,
-          "deformedMinY": -0.0,
-          "label": "average-f-stand",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.66637,
-          "deformedMinY": -0.0,
-          "label": "average-f-walk",
-          "pose": "walk",
-          "triangles": 8022,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.31486,
-          "deformedMinY": 0.0,
-          "label": "average-f-sit",
-          "pose": "sit",
-          "triangles": 8022,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.71529,
-          "deformedMinY": -0.0,
-          "label": "average-f-wave",
-          "pose": "wave",
-          "triangles": 8022,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 737342,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-average-f-4poses-1920x1080.png",
-      "resolution": [
-        1920,
-        1080
-      ],
-      "sha256": "4e72fbe1ba2e3199eddd6f017c3f45c05beb60d401da1d9e275d1a2077577fbb",
-      "yawDeg": -10.0
-    },
-    "review/rigged-round-2/lineup-body-average-f-4poses-390x844.png": {
-      "actors": [
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.68773,
-          "deformedMinY": -0.0,
-          "label": "average-f-stand",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.66637,
-          "deformedMinY": -0.0,
-          "label": "average-f-walk",
-          "pose": "walk",
-          "triangles": 8022,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.31486,
-          "deformedMinY": 0.0,
-          "label": "average-f-sit",
-          "pose": "sit",
-          "triangles": 8022,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "average-f",
-          "deformedMaxY": 1.71529,
-          "deformedMinY": -0.0,
-          "label": "average-f-wave",
-          "pose": "wave",
-          "triangles": 8022,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 103854,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-average-f-4poses-390x844.png",
-      "resolution": [
-        390,
-        844
-      ],
-      "sha256": "b8e904a14b7ac25e97332dc02829bd06cf782ecbcdcbf70688157243bd885f50",
-      "yawDeg": -10.0
-    },
-    "review/rigged-round-2/lineup-body-broad-4poses-1920x1080.png": {
-      "actors": [
-        {
-          "build": "broad",
-          "deformedMaxY": 1.79465,
-          "deformedMinY": 0.0,
-          "label": "broad-stand",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "broad",
-          "deformedMaxY": 1.7676,
-          "deformedMinY": -0.0,
-          "label": "broad-walk",
-          "pose": "walk",
-          "triangles": 7478,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "broad",
-          "deformedMaxY": 1.3716,
-          "deformedMinY": 0.0,
-          "label": "broad-sit",
-          "pose": "sit",
-          "triangles": 7478,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "broad",
-          "deformedMaxY": 1.9114,
-          "deformedMinY": -0.0,
-          "label": "broad-wave",
-          "pose": "wave",
-          "triangles": 7478,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 842530,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-broad-4poses-1920x1080.png",
-      "resolution": [
-        1920,
-        1080
-      ],
-      "sha256": "464e0e00b14ec7d4e9c001643ee424ecd8ef0b94f71e8d0200caa050212fd308",
-      "yawDeg": -10.0
-    },
-    "review/rigged-round-2/lineup-body-broad-4poses-390x844.png": {
-      "actors": [
-        {
-          "build": "broad",
-          "deformedMaxY": 1.79465,
-          "deformedMinY": 0.0,
-          "label": "broad-stand",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "broad",
-          "deformedMaxY": 1.7676,
-          "deformedMinY": -0.0,
-          "label": "broad-walk",
-          "pose": "walk",
-          "triangles": 7478,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "broad",
-          "deformedMaxY": 1.3716,
-          "deformedMinY": 0.0,
-          "label": "broad-sit",
-          "pose": "sit",
-          "triangles": 7478,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "broad",
-          "deformedMaxY": 1.9114,
-          "deformedMinY": -0.0,
-          "label": "broad-wave",
-          "pose": "wave",
-          "triangles": 7478,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 112901,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-broad-4poses-390x844.png",
-      "resolution": [
-        390,
-        844
-      ],
-      "sha256": "72a9aec428ea8273ad0e8b575df99b7290ae8ff9952a4bc7f5c08e16542f8fda",
-      "yawDeg": -10.0
-    },
-    "review/rigged-round-2/lineup-body-broad-f-4poses-1920x1080.png": {
-      "actors": [
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.71792,
-          "deformedMinY": 0.0,
-          "label": "broad-f-stand",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.69616,
-          "deformedMinY": 0.0,
-          "label": "broad-f-walk",
-          "pose": "walk",
-          "triangles": 8022,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.33577,
-          "deformedMinY": 0.0,
-          "label": "broad-f-sit",
-          "pose": "sit",
-          "triangles": 8022,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.75461,
-          "deformedMinY": 0.0,
-          "label": "broad-f-wave",
-          "pose": "wave",
-          "triangles": 8022,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 763015,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-broad-f-4poses-1920x1080.png",
-      "resolution": [
-        1920,
-        1080
-      ],
-      "sha256": "ae302df5d5928f9d25c0297067dbfd0549fa96d8b2b1ab9bc48542d798c26047",
-      "yawDeg": -10.0
-    },
-    "review/rigged-round-2/lineup-body-broad-f-4poses-390x844.png": {
-      "actors": [
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.71792,
-          "deformedMinY": 0.0,
-          "label": "broad-f-stand",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.69616,
-          "deformedMinY": 0.0,
-          "label": "broad-f-walk",
-          "pose": "walk",
-          "triangles": 8022,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.33577,
-          "deformedMinY": 0.0,
-          "label": "broad-f-sit",
-          "pose": "sit",
-          "triangles": 8022,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "broad-f",
-          "deformedMaxY": 1.75461,
-          "deformedMinY": 0.0,
-          "label": "broad-f-wave",
-          "pose": "wave",
-          "triangles": 8022,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 105387,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-broad-f-4poses-390x844.png",
-      "resolution": [
-        390,
-        844
-      ],
-      "sha256": "f53111307467f5e6437e975e625da19bf95f5fdb72f334f6c7d55fa3e0a76fc0",
-      "yawDeg": -10.0
-    },
-    "review/rigged-round-2/lineup-body-slim-4poses-1920x1080.png": {
-      "actors": [
-        {
-          "build": "slim",
-          "deformedMaxY": 1.72486,
-          "deformedMinY": 0.0,
-          "label": "slim-stand",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "slim",
-          "deformedMaxY": 1.69867,
-          "deformedMinY": 0.0,
-          "label": "slim-walk",
-          "pose": "walk",
-          "triangles": 7478,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "slim",
-          "deformedMaxY": 1.32391,
-          "deformedMinY": 0.0,
-          "label": "slim-sit",
-          "pose": "sit",
-          "triangles": 7478,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "slim",
-          "deformedMaxY": 1.81219,
-          "deformedMinY": 0.0,
-          "label": "slim-wave",
-          "pose": "wave",
-          "triangles": 7478,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 743567,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-slim-4poses-1920x1080.png",
-      "resolution": [
-        1920,
-        1080
-      ],
-      "sha256": "3212751ac77b2d96e22fbb5b10136b61c87d993b681592d6a4c81190414e8cde",
-      "yawDeg": -10.0
-    },
-    "review/rigged-round-2/lineup-body-slim-4poses-390x844.png": {
-      "actors": [
-        {
-          "build": "slim",
-          "deformedMaxY": 1.72486,
-          "deformedMinY": 0.0,
-          "label": "slim-stand",
-          "pose": "stand",
-          "triangles": 7478,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "slim",
-          "deformedMaxY": 1.69867,
-          "deformedMinY": 0.0,
-          "label": "slim-walk",
-          "pose": "walk",
-          "triangles": 7478,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "slim",
-          "deformedMaxY": 1.32391,
-          "deformedMinY": 0.0,
-          "label": "slim-sit",
-          "pose": "sit",
-          "triangles": 7478,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "slim",
-          "deformedMaxY": 1.81219,
-          "deformedMinY": 0.0,
-          "label": "slim-wave",
-          "pose": "wave",
-          "triangles": 7478,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 105026,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-slim-4poses-390x844.png",
-      "resolution": [
-        390,
-        844
-      ],
-      "sha256": "d205cc1e08050a33fe38708b1d3c5cf07900135378bc14da0f71e33e983b4510",
-      "yawDeg": -10.0
-    },
-    "review/rigged-round-2/lineup-body-slim-f-4poses-1920x1080.png": {
-      "actors": [
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.64784,
-          "deformedMinY": -0.0,
-          "label": "slim-f-stand",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.62691,
-          "deformedMinY": -0.0,
-          "label": "slim-f-walk",
-          "pose": "walk",
-          "triangles": 8022,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.2931,
-          "deformedMinY": -0.0,
-          "label": "slim-f-sit",
-          "pose": "sit",
-          "triangles": 8022,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.6678,
-          "deformedMinY": -0.0,
-          "label": "slim-f-wave",
-          "pose": "wave",
-          "triangles": 8022,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 704286,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-slim-f-4poses-1920x1080.png",
-      "resolution": [
-        1920,
-        1080
-      ],
-      "sha256": "82e87c7d62896c2db80b54586b030d3d5fc4c09fa481a74b5f7da0cee2520b24",
-      "yawDeg": -10.0
-    },
-    "review/rigged-round-2/lineup-body-slim-f-4poses-390x844.png": {
-      "actors": [
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.64784,
-          "deformedMinY": -0.0,
-          "label": "slim-f-stand",
-          "pose": "stand",
-          "triangles": 8022,
-          "xPositionM": -1.2
-        },
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.62691,
-          "deformedMinY": -0.0,
-          "label": "slim-f-walk",
-          "pose": "walk",
-          "triangles": 8022,
-          "xPositionM": -0.4
-        },
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.2931,
-          "deformedMinY": -0.0,
-          "label": "slim-f-sit",
-          "pose": "sit",
-          "triangles": 8022,
-          "xPositionM": 0.4
-        },
-        {
-          "build": "slim-f",
-          "deformedMaxY": 1.6678,
-          "deformedMinY": -0.0,
-          "label": "slim-f-wave",
-          "pose": "wave",
-          "triangles": 8022,
-          "xPositionM": 1.2
-        }
-      ],
-      "bytes": 100456,
-      "cameraDistanceM": 5.55,
-      "path": "review/rigged-round-2/lineup-body-slim-f-4poses-390x844.png",
-      "resolution": [
-        390,
-        844
-      ],
-      "sha256": "a9f8149c657dc7fbbe97f5c9a8a39c758ca586dfee2a2bf32f7662d7e961f4da",
-      "yawDeg": -10.0
+      "orthoScaleM": 0.4076821208000183
     }
   }
 }
