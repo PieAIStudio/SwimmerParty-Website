@@ -75,12 +75,13 @@ export function frameFigures(
     targets.length === 8 &&
     targets.every((figure) => figure.z === targets[0].z);
   if (phoneLineup) {
-    // Keep the same one-row width, but put the number row 12% from the top.
+    // Enlarge the row while keeping the number row inside its existing safe area.
     // Medium bounds include 28 cm above the crown; number anchors use 20 cm.
+    distance /= 1.05;
     const camera = controls.camera as PerspectiveCamera;
     const rowDistance = distance + center.z - targets[0].z;
     const visibleHeight = 2 * rowDistance * Math.tan((camera.fov * Math.PI) / 360);
-    center.y = box.max.y - 0.08 - visibleHeight * 0.38;
+    center.y = box.max.y - 0.08 - visibleHeight * 0.37;
   }
   if (editingPair) {
     // A medium editing crop may lose the legs, not half the stage to empty space.

@@ -1,15 +1,15 @@
 {
   "slim": {
     "base": "/scene/rigged",
-    "standingHeightM": 1.7264267151236918
+    "standingHeightM": 1.7248573564474174
   },
   "average": {
     "base": "/scene/rigged",
-    "standingHeightM": 1.7563972754457757
+    "standingHeightM": 1.7548166861392682
   },
   "broad": {
     "base": "/scene/rigged",
-    "standingHeightM": 1.7962675683664038
+    "standingHeightM": 1.7946520179060015
   },
   "slim-f": {
     "base": "/scene/rigged",
