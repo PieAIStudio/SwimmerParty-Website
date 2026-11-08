@@ -1251,7 +1251,6 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
   const upright = JSON.parse(await readFile(`public${loadPose("stand")}`, "utf8")) as FigurePose;
   const leaning = JSON.parse(await readFile(`public${loadPose("lean-in")}`, "utf8")) as FigurePose;
   for (const [name, extra] of [
-    ["pelvis", 0],
     ["spine_01", 0.1],
     ["spine_02", 0.08],
     ["spine_03", 0],
@@ -1295,6 +1294,7 @@ test("crowded High shot separates twelve labels with leaders", async ({ browser 
       ).toBe(true);
   const frame = (await page.locator("canvas").boundingBox())!;
   const camera = await cameraEvidence(page);
+  expect(camera.bodies[1].min[1]).toBeCloseTo(0, 6);
   const pairIntervals = expectOverlapFit({ ...camera, bodies: camera.bodies.slice(0, 2) });
   const lens = new PerspectiveCamera(camera.fov, camera.aspect, 0.05, 10000);
   lens.position.set(...camera.position);

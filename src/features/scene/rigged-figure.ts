@@ -27,7 +27,8 @@ function smoothSkin(source: BufferGeometry, head: number) {
   if (!geometry) {
     const copy = source.clone();
     copy.deleteAttribute("normal");
-    const welded = mergeVertices(copy);
+    // The default 0.1 mm weld collapses fine vertices in the accepted head.
+    const welded = mergeVertices(copy, 1e-7);
     welded.computeVertexNormals();
     geometry = refineHead(welded, head);
     copy.dispose();
