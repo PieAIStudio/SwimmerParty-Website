@@ -5,7 +5,7 @@
   "registryProvenance": {
     "schema": "agent-assets-registry",
     "version": 1,
-    "hash": "sha256:f7803183309b7dbc45924eaaea56d005a8a24b1ea78d9f9556d10e4919dc45ac",
+    "hash": "sha256:a3ecee76ee5d25dc6c0a6a4c9466ac7d1d72ce507a48482a379b5769f99ac5be",
     "assetCount": 65
   },
   "assets": [
@@ -188,12 +188,12 @@
       "targetPath": ".agents/skills/goalcascade"
     },
     {
-      "id": "pie-skills/promote-new-face",
-      "sourcePath": "skills/pie-skills/promote-new-face",
+      "id": "pie-skills/phone-test",
+      "sourcePath": "skills/pie-skills/phone-test",
       "delivery": "symlink",
-      "contentHash": "sha256:5e63aa160b5edbd87a5db3fce7b7507b9a26dd264365809d9ceca289cfa0987f",
+      "contentHash": "sha256:55dfb49a4e3d7a38759567bad89d2eae50e1c17502413b40feb6f1b1f86b5ff5",
       "placement": "auto",
-      "targetPath": ".agents/skills/promote-new-face"
+      "targetPath": ".agents/skills/phone-test"
     },
     {
       "id": "third-party-skills/brandkit",
