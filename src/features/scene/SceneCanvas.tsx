@@ -32,7 +32,7 @@ import {
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { useSiteI18n } from "@/i18n/client";
 import { figureScale, loadFigure, loadPose } from "./figure-assets";
-import { StagePrimitives, updateStageWallVisibility } from "./StagePrimitives";
+
 import { poseFigure, updateSkinBounds, type FigurePose } from "./rigged-figure";
 import { frameFigures, setLens } from "./framing";
 import { shoulderContact } from "./figure-ik";
@@ -399,6 +399,8 @@ function Runtime({
   onReady,
   onLost,
   cleanExport,
+  stageLayer,
+  beforeExport,
 }: SceneCanvasProps & { onLost: (lost: boolean) => void }) {
   const { scene, camera, gl, invalidate, size: viewport } = useThree();
   const { t } = useSiteI18n();
@@ -432,7 +434,7 @@ function Runtime({
         // Resolve badge collisions at the actual output size, too.
         placeFigureLabels(scene, lens, width, height);
         // Copy the freshly rendered framebuffer, never a stale demand-mode frame.
-        updateStageWallVisibility(scene, camera);
+        beforeExport?.(scene, camera);
         gl.render(scene, camera);
         const picture = window.document.createElement("canvas");
         picture.width = width;
@@ -499,7 +501,7 @@ function Runtime({
         invalidate();
       }
     },
-    [camera, cleanExport, gl, invalidate, scene, identities, document.camera, document.figures, t],
+    [beforeExport, camera, cleanExport, gl, invalidate, scene, identities, document.camera, document.figures, t],
   );
   useFrame(() => {
     if (notified.current) return;
@@ -680,9 +682,7 @@ function Runtime({
         position={[0, 0.003, 0]}
         userData={{ editorOnly: true }}
       />
-      <StagePrimitives stage={document.stage} />
-      \n{" "}
-      {document.figures.map((figure, index) => (
+      {stageLayer ?? null}      {document.figures.map((figure, index) => (
         <Figure
           key={figure.id}
           figure={figure}

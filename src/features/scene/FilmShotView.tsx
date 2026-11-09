@@ -3,23 +3,22 @@
 import dynamic from "next/dynamic";
 import { useEffect, useMemo } from "react";
 import { directingToSceneState, type DirectingShot } from "./film-adapter";
+import { StagePrimitives, updateStageWallVisibility } from "./StagePrimitives";
+import type { FilmStageState } from "./stage-contract";
 import type { ExportPicture } from "./canvas-contract";
 
 const SceneCanvas = dynamic(() => import("./SceneCanvas"), { ssr: false });
+
 declare global {
   interface Window {
     __filmStageExport?: () => Promise<string>;
   }
 }
-function decodePayload(encoded: string): DirectingShot {
-  const text = atob(
-    encoded.replaceAll("-", "+").replaceAll("_", "/") + "=".repeat((4 - (encoded.length % 4)) % 4),
-  );
-  return JSON.parse(text);
-}
-export function FilmShotView({ encodedShot }: { encodedShot: string }) {
-  const mapping = useMemo(() => directingToSceneState(decodePayload(encodedShot)), [encodedShot]);
+
+export function FilmShotView({ payload }: { payload: DirectingShot }) {
+  const mapping = useMemo(() => directingToSceneState(payload), [payload]);
   const { scene } = mapping;
+  const stage = scene.stage as FilmStageState | undefined;
   const identities = useMemo(
     () =>
       scene.figures.map((figure, index) => ({
@@ -58,6 +57,10 @@ export function FilmShotView({ encodedShot }: { encodedShot: string }) {
         selected=""
         limbs={false}
         cleanExport
+        stageLayer={<StagePrimitives stage={stage} target={scene.camera.target} />}
+        beforeExport={(root, camera) =>
+          updateStageWallVisibility(root, camera, scene.camera.target)
+        }
         onPose={() => {}}
         onSelect={() => {}}
         onMove={() => {}}

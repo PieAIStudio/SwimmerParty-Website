@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { SETTING_IDS } from "@/content/settings";
+import { SETTING_IDS } from "../../content/settings.ts";
 
 export const settingDraftSchema = z
   .object({
