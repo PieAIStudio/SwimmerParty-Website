@@ -44,18 +44,32 @@
         "src/i18n/message-contracts.ts",
         "messages/**/*.json",
         "src/features/assets/VoiceTile.tsx",
+        "src/features/assets/AssetHeroActions.tsx",
+        "src/features/assets/queries.ts",
+        "src/features/assets/contracts.ts",
+        "src/features/assets/assets.ts",
+        "src/features/assets/starter-pack.ts",
+        "src/features/assets/asset-series.ts",
+        "src/contracts/assets.ts",
+        "src/content/asset-series.json",
+        "src/content/actors/**",
+        "src/features/home/**",
+        "src/features/actors/**",
+        "src/app/*/page.tsx",
+        "src/app/*/actors/**",
         "src/features/scene/**/*.ts",
         "src/features/scene/**/*.tsx",
         "src/features/scene/**/*.css",
         "src/app/globals.css",
         "e2e/next10-actors.spec.ts",
+        "e2e/site-fixes-20261021.spec.ts",
         "e2e/scene.spec.ts",
         "playwright.config.ts",
         "e2e/global-setup.ts"
       ],
       "commands": [
         "pnpm check:i18n",
-        "node --input-type=module -e 'import{mkdirSync}from\"node:fs\";import{spawnSync}from\"node:child_process\";const out=process.env.PLAYWRIGHT_REPORT_DIR??\".devspace-reports/push-copy-scene-\"+Date.now();mkdirSync(out,{recursive:true});const r=spawnSync(\"pnpm\",[\"exec\",\"playwright\",\"test\",\"e2e/next10-actors.spec.ts\",\"e2e/scene.spec.ts\",\"--workers=2\",\"--retries=0\",\"--reporter=list,json\",\"--grep\",\"(next ten approved deliveries, placeholder disclosure and CC redirects: (zh|en)|layouts and an uncapped cast keep numbered identities and undo|build 14 fresh dialogue, first fold and shoulder drag (1440|390))$\"].concat([\"--output\",out+\"/test-results\"]),{stdio:\"inherit\",env:{...process.env,PLAYWRIGHT_COMMUNITY:\"0\",PLAYWRIGHT_REPORT_DIR:out,PLAYWRIGHT_EVIDENCE_DIR:process.env.PLAYWRIGHT_EVIDENCE_DIR??out+\"/scene\",PLAYWRIGHT_JSON_OUTPUT_FILE:out+\"/playwright.json\"}});process.exit(r.status??1)'"
+        "node --input-type=module -e 'import{mkdirSync}from\"node:fs\";import{spawnSync}from\"node:child_process\";const out=process.env.PLAYWRIGHT_REPORT_DIR??\".reports/\"+new Date().toISOString().slice(0,10)+\"-push-ui-\"+Date.now();mkdirSync(out,{recursive:true});const r=spawnSync(\"pnpm\",[\"exec\",\"playwright\",\"test\",\"e2e/next10-actors.spec.ts\",\"e2e/scene.spec.ts\",\"e2e/site-fixes-20261021.spec.ts\",\"--workers=2\",\"--retries=0\",\"--reporter=list,json\",\"--grep\",\"(next ten approved deliveries, placeholder disclosure and CC redirects: (zh|en)|layouts and an uncapped cast keep numbered identities and undo|build 14 fresh dialogue, first fold and shoulder drag (1440|390)|site fix first looks (en|zh) (390|1440))$\"].concat([\"--output\",out+\"/test-results\"]),{stdio:\"inherit\",env:{...process.env,PLAYWRIGHT_COMMUNITY:\"0\",PLAYWRIGHT_REPORT_DIR:out,PLAYWRIGHT_EVIDENCE_DIR:process.env.PLAYWRIGHT_EVIDENCE_DIR??out+\"/scene\",PLAYWRIGHT_JSON_OUTPUT_FILE:out+\"/playwright.json\"}});process.exit(r.status??1)'"
       ]
     },
     {
@@ -88,8 +102,8 @@
   "blindSpots": [
     "Exact shared PGS Node 24 selector; repo-owned mapping only. Unknown paths stop; there is no full-suite fallback.",
     "Vitest related follows static imports from changed source/test paths, not global package/config force-rerun triggers. A selected unit command with zero tests fails for investigation. Deletions and dynamic seams need maintained mappings.",
-    "The bounded copy/scene smoke runs five named browser cases for mapped UI/message inputs. Other HTTP journeys, dynamic assets, performance/timing, real auth/network and paid-provider behavior remain outside this hook; existing full release checks stay unchanged.",
+    "The bounded UI smoke runs nine named browser cases for mapped home/actor/scene/message inputs. Other HTTP journeys, dynamic assets, performance/timing, real auth/network and paid-provider behavior remain outside this hook; existing full release checks stay unchanged.",
     "Only existing local check CLIs are invoked. Config/lockfile changes get affected types/lint or a named bounded smoke, not all tests. Release, deployment, account and publication paths require separate scope.",
-    "Site test/test:e2e are the whole Playwright suite and never run here. The bounded copy/scene smoke does not replace full release verification or production acceptance; tool changes retain the existing tools/test unit contracts."
+    "Site test/test:e2e are the whole Playwright suite and never run here. The bounded UI smoke does not replace full release verification or production acceptance; tool changes retain the existing tools/test unit contracts."
   ]
 }

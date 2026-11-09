@@ -9,6 +9,9 @@ const OUT = process.env.PLAYWRIGHT_REPORT_DIR
   : ".devspace-reports/next-stage/site-fixes-20261021/after";
 const HEIGHT = 844;
 
+// Keep the original deadlines and assertions, with evidence for a first-run failure.
+test.use({ trace: "retain-on-failure" });
+
 for (const locale of ["en", "zh"] as const) {
   const m = locale === "en" ? en : zh;
   for (const width of [390, 1440]) {
