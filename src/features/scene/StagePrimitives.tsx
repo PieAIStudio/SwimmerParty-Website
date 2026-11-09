@@ -22,12 +22,8 @@ function StageProp({ prop }: { prop: PrimitiveProps }) {
           ? "#b7b0a3"
           : "#aaa39a";
   const position =
-    prop.kind === "door" && Math.abs(prop.rotation) < 0.01
-      ? ([prop.position[0] - 0.5, prop.position[1], prop.position[2] + 0.5] as [
-          number,
-          number,
-          number,
-        ])
+    prop.kind === "door" && Math.abs(prop.rotation - Math.PI / 2) < 0.01
+      ? ([prop.position[0] - 0.5, prop.position[1], prop.position[2]] as [number, number, number])
       : prop.position;
   if (prop.kind === "toilet" || prop.kind === "cylinder") {
     return (
