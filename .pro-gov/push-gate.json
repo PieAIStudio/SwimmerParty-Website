@@ -73,6 +73,26 @@
       ]
     },
     {
+      "paths": [
+        "src/i18n/messages.source.ts",
+        "src/i18n/message-contracts.ts",
+        "messages/**/*.json",
+        "src/features/community/**",
+        "src/contracts/community*.ts",
+        "src/features/account/**",
+        "src/content/features.ts",
+        "src/app/*/admin/review/**",
+        "e2e/community-v3-review.spec.ts",
+        "e2e/fixtures/community-v3.ts",
+        "tools/test/fixtures/community-v3.ts",
+        "playwright.config.ts",
+        "e2e/global-setup.ts"
+      ],
+      "commands": [
+        "node --input-type=module -e 'import{mkdirSync}from\"node:fs\";import{spawnSync}from\"node:child_process\";const out=(process.env.PLAYWRIGHT_REPORT_DIR??\".reports/\"+new Date().toISOString().slice(0,10)+\"-push-community-\"+Date.now())+\"/community-review\";mkdirSync(out,{recursive:true});const r=spawnSync(\"pnpm\",[\"exec\",\"playwright\",\"test\",\"e2e/community-v3-review.spec.ts\",\"--workers=2\",\"--retries=0\",\"--trace=retain-on-failure\",\"--reporter=list,json\",\"--grep\",\"C2 stale revision requires explicit refresh, never silent overwrite$\",\"--output\",out+\"/test-results\"],{stdio:\"inherit\",env:{...process.env,PLAYWRIGHT_COMMUNITY:\"1\",PLAYWRIGHT_COMMUNITY_MODE:\"on\",PLAYWRIGHT_REPORT_DIR:out,PLAYWRIGHT_EVIDENCE_DIR:out+\"/evidence\",PLAYWRIGHT_JSON_OUTPUT_FILE:out+\"/playwright.json\"}});process.exit(r.status??1)'"
+      ]
+    },
+    {
       "paths": ["public/scene/**"],
       "commands": [],
       "reason": "MediaFactory mannequin GLBs with the delivery licence and producer manifest (JSON values unchanged; CRLF normalized to LF). The existing selector does not run browsers. Delivery hashes, static build/pose/triangle contracts, lazy bytes and labelled exports are covered by bounded e2e/scene.spec.ts acceptance, mapped in features/scene/README.md."
@@ -102,7 +122,7 @@
   "blindSpots": [
     "Exact shared PGS Node 24 selector; repo-owned mapping only. Unknown paths stop; there is no full-suite fallback.",
     "Vitest related follows static imports from changed source/test paths, not global package/config force-rerun triggers. A selected unit command with zero tests fails for investigation. Deletions and dynamic seams need maintained mappings.",
-    "The bounded UI smoke runs nine named browser cases for mapped home/actor/scene/message inputs. Other HTTP journeys, dynamic assets, performance/timing, real auth/network and paid-provider behavior remain outside this hook; existing full release checks stay unchanged.",
+    "The bounded UI smoke runs nine named browser cases for mapped home/actor/scene/message inputs. A separate community-on build runs the stale-review-revision case for mapped community/message inputs. Other HTTP journeys, dynamic assets, performance/timing, real auth/network and paid-provider behavior remain outside this hook; existing full release checks stay unchanged.",
     "Only existing local check CLIs are invoked. Config/lockfile changes get affected types/lint or a named bounded smoke, not all tests. Release, deployment, account and publication paths require separate scope.",
     "Site test/test:e2e are the whole Playwright suite and never run here. The bounded UI smoke does not replace full release verification or production acceptance; tool changes retain the existing tools/test unit contracts."
   ]

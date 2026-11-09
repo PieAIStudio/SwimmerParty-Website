@@ -5,7 +5,9 @@ import { messages } from "../src/i18n/messages.source";
 import { installCommunityFixture } from "./fixtures/community-v3";
 import { ownerFixture, USER_ID } from "../tools/test/fixtures/community-v3";
 const text = (key: keyof typeof messages, locale: "en" | "zh" = "en") => messages[key][locale];
-const root = ".devspace-reports/next-stage/c2";
+const root = process.env.PLAYWRIGHT_REPORT_DIR
+  ? `${process.env.PLAYWRIGHT_REPORT_DIR}/c2`
+  : `.reports/${new Date().toISOString().slice(0, 10)}-community-review`;
 async function shot(page: Page, file: string) {
   await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
   await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
@@ -215,7 +217,12 @@ test("C2 stale revision requires explicit refresh, never silent overwrite", asyn
   expect(state.calls.filter((call) => call.operation === "review_post")).toHaveLength(1);
   expect(state.posts[0].status).toBe("pending");
   await page.getByRole("button", { name: text("c.retry"), exact: true }).click();
-  await expect(page.getByText("Revision 2", { exact: false })).toBeVisible();
+  const revision = text("c2.revision").replace("{revision}", "2");
+  await expect(
+    page
+      .locator("[data-review-detail]")
+      .getByText(`${revision} · ${text("c.state.pending")}`, { exact: true }),
+  ).toBeVisible();
 });
 
 test("C2 a failed later action cannot keep showing an earlier success notice", async ({ page }) => {

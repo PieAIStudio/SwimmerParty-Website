@@ -29,6 +29,8 @@ Playwright 默认最多 2 个 worker；并行 worktree 可用 `PLAYWRIGHT_PORT` 
 
 推送前，`.pro-gov/push-gate.json` 对文案、首页/名册/演员页、声音卡、场景源、全局样式及其相关测试/配置的变化自动选择 9 项浏览器回归：`next10-actors.spec.ts` 的中英交付/占位披露，`scene.spec.ts` 的布局/撤销/滚轮持久化和 1440/390 首屏拖动，以及 `site-fixes-20261021.spec.ts` 的中英 390/1440 首页、筛选及演员首屏。该窄组沿用本地 mock、独立构建、最多 2 个 worker 和零重试；首屏测试保留原断言及 30 秒总时限，失败时保留 trace。按普通 SLOTS 执行，证据写入指定报告目录或忽略的 `.reports/<日期>-push-ui-<时间戳>/`。它不运行整个浏览器/性能套件，不替代获准发布时的完整验证及真实线上验收；未映射的其他 UI 路径仍须单独选择相关检查。
 
+文案、社区审核源及其合同/夹具/测试配置还选择 `community-v3-review.spec.ts` 的版本冲突与显式刷新用例：另行构建 `community=on`，使用本地 Owner 夹具、最多 2 个 worker、零重试并保留失败 trace；预期版本标签取批准文案键，仍精确核对版本 2 和待审状态。该单项检查不替代完整社区套件、Owner 档隔离或真实后台权限验收。报告写入指定目录的 `community-review/`，默认使用 `.reports/<日期>-push-community-<时间戳>/`。
+
 ## 全新检出
 
 1. 按 package.json 准备 Node 与 pnpm；GitHub Packages 的只读安装权限由用户级配置提供，不写进仓库。
