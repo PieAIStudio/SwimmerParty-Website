@@ -29,7 +29,7 @@ export const FIGURE_BANDS = [
   { colour: "slate", hex: "#506478" },
 ] as const;
 export const figureBand = (index: number) => FIGURE_BANDS[index % FIGURE_BANDS.length];
-export const LAYOUTS = { talk: 2, triangle: 3, group: 5, lineup: 8 } as const;
+const LAYOUTS = { talk: 2, triangle: 3, group: 5, lineup: 8 } as const;
 export type Layout = keyof typeof LAYOUTS;
 export type FigureIdentity = { label: string; colour: string };
 export const VIEWS = ["eye", "low", "high", "shoulder"] as const;
@@ -56,7 +56,7 @@ const figureSchema = z.object({
   z: finite,
   turn: finite.min(-180).max(180),
 });
-export const sceneSchema = z
+const sceneSchema = z
   .object({
     version: z.literal(1),
     castKey: z.string(),
