@@ -364,7 +364,7 @@
     }
     /* Keep the framing note beside the pose control when the inspector is closed. */
     .sp-scene-workbench:not(:has([data-scene-inspector][open])) > [data-scene-workspace] {
-      grid-template-columns: 1.1fr 1fr;
+      grid-template-columns: 1fr 1fr;
     }
     [data-scene-camera-panel] {
       grid-column: 1;
