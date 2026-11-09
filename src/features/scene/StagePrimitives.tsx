@@ -83,8 +83,12 @@ export function StagePrimitives({ stage }: { stage?: FilmStageState }) {
   if (!stage) return null;
   return (
     <>
-      {stage.walls.map((wall) => <StageWall key={wall.id} wall={wall} />)}
-      {stage.props.map((prop) => <StageProp key={prop.id} prop={prop} />)}
+      {stage.walls.map((wall) => (
+        <StageWall key={wall.id} wall={wall} />
+      ))}
+      {stage.props.map((prop) => (
+        <StageProp key={prop.id} prop={prop} />
+      ))}
       {stage.axis ? <StageAxis from={stage.axis.from} to={stage.axis.to} /> : null}
     </>
   );
