@@ -26,10 +26,10 @@ test("hovering the ? opens three topics, tabs change the title, and the link goe
   await expect(helpTrigger(page)).toHaveAttribute("aria-expanded", "true");
   for (const name of ["Starter pack", "Sheet", "Cast"])
     await expect(card.getByRole("tab", { name: new RegExp(`^${name}`) })).toBeVisible();
-  await expect(card.getByText("Two images and a prompt, ready to shoot")).toBeVisible();
+  await expect(card.getByText("Two pictures and a prompt, ready to use")).toBeVisible();
 
   await card.getByRole("tab", { name: /^Sheet/ }).click();
-  await expect(card.getByText("Pick a few, combine them into one reference")).toBeVisible();
+  await expect(card.getByText("Pick a few pictures to make one reference sheet")).toBeVisible();
   await card.getByRole("tab", { name: /^Cast/ }).click();
   await expect(card.getByText("Several actors, one download")).toBeVisible();
 
@@ -48,7 +48,7 @@ test("the Chinese card shows the Chinese topics and links to the Chinese guide",
   await hoverInto(page, helpTrigger(page));
   const card = page.getByRole("dialog", { name: "怎么用" });
   await expect(card.getByRole("tab", { name: /^起步包/ })).toBeVisible();
-  await expect(card.getByText("两张图加提示词，马上开拍")).toBeVisible();
+  await expect(card.getByText("两张图加提示词，马上就能用")).toBeVisible();
   await expect(card.getByRole("link", { name: "看完整说明" })).toHaveAttribute("href", "/zh/guide");
 });
 

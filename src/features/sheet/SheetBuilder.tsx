@@ -345,7 +345,7 @@ export function SheetBuilder({
             {groups.map((group) => (
               <div key={group.series.id}>
                 <h3 className="sp-label">{t(seriesLabelKey(group.series.id))}</h3>
-                <ul className="mt-4 grid grid-cols-3 gap-3 xl:grid-cols-4">
+                <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-2">
                   {group.items.map((item) => {
                     const checked = selected.has(item.slot);
                     return (
@@ -364,7 +364,7 @@ export function SheetBuilder({
                             alt=""
                             width={item.width}
                             height={item.height}
-                            sizes="(min-width: 1280px) 9rem, 30vw"
+                            sizes="(min-width: 1024px) 15rem, (min-width: 640px) 30vw, 45vw"
                             className="h-auto w-full"
                           />
                         </button>

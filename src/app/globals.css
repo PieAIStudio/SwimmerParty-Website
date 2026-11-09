@@ -126,14 +126,17 @@
     letter-spacing: -0.01em;
   }
 
-  /* Keep each short homepage phrase intact while the comparison owns more width. */
-  .sp-home-title {
-    font-size: 2.75rem;
+  .sp-home-copy {
+    container-type: inline-size;
   }
 
-  /* Fit the longer English copy without splitting the two hero phrases. */
+  /* Keep both approved phrases intact and within their actual text column. */
+  .sp-home-title {
+    font-size: min(2.75rem, 7.8cqw);
+  }
+
   .sp-home-title:lang(en) {
-    font-size: 1.7rem;
+    font-size: min(1.7rem, 6.2cqw);
   }
 
   .sp-display-lg {
@@ -398,7 +401,7 @@
     }
   }
 
-  /* Never hide an asset name, even on 390px three-column face grids. */
+  /* Keep complete asset names visible within responsive thumbnail grids. */
   [data-asset-slot] .game-ui-checkbox {
     min-width: 0;
     flex: 1 1 auto;

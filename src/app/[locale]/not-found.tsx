@@ -11,9 +11,11 @@ export default async function NotFound() {
         <h1 className="sp-display-lg mt-4">
           {t("notFound.lines.0")} {t("notFound.lines.1")}
         </h1>
-        <GameButton variant="primary" href="/actors" linkComponent={Link} className="mt-8">
-          {t("notFound.cta")}
-        </GameButton>
+        <div className="mt-8">
+          <GameButton variant="primary" href="/actors" linkComponent={Link}>
+            {t("notFound.cta")}
+          </GameButton>
+        </div>
       </div>
     </div>
   );

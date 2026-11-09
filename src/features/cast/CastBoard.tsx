@@ -112,12 +112,14 @@ export function CastBoard({
     return (
       <div className="mt-8">
         <p className="sp-lead">{t("cast.empty")}</p>
-        <GameButton variant="primary" href="/actors" linkComponent={Link} className="mt-6">
-          {t("cast.pickActors")}
-        </GameButton>
-        <Link href="/scene" prefetch={false} className="sp-link mt-6 ml-4">
-          {t("scene.open")}
-        </Link>
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <GameButton variant="primary" href="/actors" linkComponent={Link}>
+            {t("cast.pickActors")}
+          </GameButton>
+          <Link href="/scene" prefetch={false} className="sp-link">
+            {t("scene.open")}
+          </Link>
+        </div>
       </div>
     );
   return (

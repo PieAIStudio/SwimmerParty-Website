@@ -118,6 +118,9 @@ for (const locale of ["en", "zh"] as const) {
               parseFloat(getComputedStyle(node).lineHeight) + 1,
           );
           expect(fitsOneLine).toBe(true);
+          expect(await phrase.evaluate((node) => node.scrollWidth <= node.clientWidth + 1)).toBe(
+            true,
+          );
         }
         await expect(cta).toHaveAttribute("href", `/${locale}/actors`);
         expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
@@ -193,7 +196,7 @@ test("A2 home plays only approved clips on demand, without duplicated hero cards
   const hero = page.locator('[data-home-section="hero"] video').first();
   await page
     .locator('[data-home-section="hero"]')
-    .getByRole("button", { name: /Play sample/ })
+    .getByRole("button", { name: /Play clip/ })
     .first()
     .click();
   await expect

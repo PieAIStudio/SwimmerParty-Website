@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import { messages } from "../../src/i18n/messages.source.ts";
 
 test("English fallback breadcrumbs do not contain Chinese text", () => {
-  assert.equal(messages["common.breadcrumbFallback"].en, "Breadcrumb");
+  assert.equal(messages["common.breadcrumbFallback"].en, "Page path");
   assert.equal(messages["common.breadcrumbFallback"].zh, "当前位置");
 });
 

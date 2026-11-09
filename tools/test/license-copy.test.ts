@@ -10,12 +10,12 @@ const sha256 = (value: string | Uint8Array) => createHash("sha256").update(value
 // Owner approved these presentation-only changes on 2026-10-14.
 test("license presentation matches the six approved strings exactly", () => {
   assert.deepEqual(messages["license.heroLines.0"], {
-    en: "Free for personal and commercial projects.",
-    zh: "个人创作、商用都免费。",
+    en: "Free for personal and paid work.",
+    zh: "自己用、赚钱用都免费。",
   });
   assert.deepEqual(messages["license.metaDescription"], {
-    en: "Use SWIMMER PARTY’s animated actors in personal and commercial projects for free. Credit SwimInAI and follow the usage rules below.",
-    zh: "SWIMMER PARTY 的动画演员可免费用于个人创作和商业项目。署名 SwimInAI，并遵守下列使用规则。",
+    en: "Use SWIMMER PARTY’s animated actors for free in personal and paid work. Credit SwimInAI and follow the rules below.",
+    zh: "SWIMMER PARTY 的动画演员可免费用于个人和赚钱项目。写上 SwimInAI，并遵守下面的简单规则。",
   });
   assert.deepEqual(messages["license.intro"], {
     en: "Use our actors free in films, ads, games, comics, music and merch. No need to ask. Just credit SwimInAI.",

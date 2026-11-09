@@ -38,7 +38,7 @@ test("ticking a thumb switches to custom, updates the address and stops at the l
   // At the limit the tick is refused: the box stays unticked and the count does not move.
   await page.locator('[data-asset-slot="face.up"] input').first().click({ force: true });
   await expect(page.getByText("16 selected, up to 16")).toBeVisible();
-  await expect(page.getByText("Up to 16 images per sheet (max 8 full-body).")).toBeVisible();
+  await expect(page.getByText("Up to 16 images, 8 full-body.")).toBeVisible();
   await expect(page.locator('[data-asset-slot="face.up"] input').first()).not.toBeChecked();
 });
 

@@ -37,7 +37,7 @@ export async function AssetLibrarySections({
   );
   const grid = (slots: ResolvedSlot[], fullBody: boolean) => (
     <div
-      className={`mt-8 grid gap-3 sm:gap-4 ${fullBody ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" : "grid-cols-3 sm:grid-cols-4 lg:grid-cols-6"}`}
+      className={`mt-8 grid gap-3 sm:gap-4 ${fullBody ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" : "grid-cols-2 sm:grid-cols-4 lg:grid-cols-6"}`}
     >
       {slots.map((slot) => {
         const item = delivered.get(slot.slot);

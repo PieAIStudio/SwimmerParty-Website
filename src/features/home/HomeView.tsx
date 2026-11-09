@@ -22,7 +22,7 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
         data-home-section="hero"
         className="grid items-center gap-7 py-8 lg:grid-cols-12 lg:gap-8 lg:py-10"
       >
-        <div className="lg:col-span-4">
+        <div className="sp-home-copy min-w-0 lg:col-span-4">
           <h1 className="sp-display-xl sp-home-title">
             <span className="block whitespace-nowrap">{t("home.heroLines.0")}</span>
             <span className="block whitespace-nowrap">{t("home.heroLines.1")}</span>
@@ -43,11 +43,13 @@ export async function HomeView({ locale }: { locale: AppLocale }) {
               {t("home.newFaceCount", { count: newFaces.length })}
             </span>
           </p>
-          <GameButton className="mt-6" variant="primary" href="/actors" linkComponent={Link}>
-            {t("home.ctaAssets")}
-          </GameButton>
+          <div className="mt-6">
+            <GameButton variant="primary" href="/actors" linkComponent={Link}>
+              {t("home.ctaAssets")}
+            </GameButton>
+          </div>
         </div>
-        <div className="lg:col-span-8">
+        <div className="min-w-0 lg:col-span-8">
           {heroSamples.length ? (
             <div>
               <div

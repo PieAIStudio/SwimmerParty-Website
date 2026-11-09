@@ -22,8 +22,8 @@ for (const locale of ["en", "zh"] as const) {
       const links = nav.getByRole("link");
       await expect(links).toHaveText(
         locale === "en"
-          ? ["Actors", "Samples", "How to use", "My cast", "Free License", "Studio"]
-          : ["演员", "样片", "怎么用", "选角单", "免费商用", "工作室"],
+          ? ["Actors", "Clips", "How to use", "My cast", "Free to use", "Studio"]
+          : ["演员", "短片", "怎么用", "选角单", "免费使用", "工作室"],
       );
       await expect(nav.locator(`a[href="/${locale}/cast"]`)).toHaveAttribute(
         "aria-current",
@@ -71,7 +71,7 @@ test("A3 samples link reaches samples and cast is reachable without an account",
   const nav = page
     .getByRole("navigation", { name: en["common.mainNav"], exact: true })
     .filter({ visible: true });
-  await nav.getByRole("link", { name: "Samples", exact: true }).click();
+  await nav.getByRole("link", { name: "Clips", exact: true }).click();
   await expect(page).toHaveURL(/\/en\/works#samples$/);
   await expect(page.locator("[data-official-samples]")).toBeInViewport();
   await page

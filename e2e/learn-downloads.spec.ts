@@ -21,7 +21,7 @@ test("A7 sheet workflow produces an actual local-fixture PNG", async ({ page, co
   await page.goto("/en/guide");
   await page
     .locator('[data-learn-outcome="sheet"]')
-    .getByRole("link", { name: "Make a character sheet" })
+    .getByRole("link", { name: "Make a reference sheet" })
     .click();
   const button = page.getByRole("button", { name: "Download sheet", exact: true });
   await expect(button).not.toHaveAttribute("aria-busy", "true", { timeout: 15000 });

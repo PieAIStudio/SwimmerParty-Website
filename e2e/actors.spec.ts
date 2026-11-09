@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 test("roster uses slug actors and exposes the free license", async ({ page }) => {
   await page.goto("/en/actors");
   await expect(page.locator('[data-actor-card="tang-yunqiu"]')).toBeVisible();
-  await expect(page.getByText("Free License").first()).toBeVisible();
+  await expect(page.getByText("Free to use").first()).toBeVisible();
 });
 
 test("Yan Lin's mobile dossier opens at the hero with the full pack and sample", async ({
@@ -52,7 +52,7 @@ test("the actor page offers the character sheet and a help link beside the start
   // Web fonts reflow the row; measure and click only once the layout has settled.
   await page.evaluate(() => document.fonts.ready);
   const starter = page.getByRole("button", { name: /starter pack/i });
-  const sheet = page.getByRole("link", { name: "Make character sheet", exact: true });
+  const sheet = page.getByRole("link", { name: "Make reference sheet", exact: true });
   const cast = page.getByRole("button", { name: "Add to cast", exact: true });
   const help = page.getByRole("link", { name: "How it works", exact: true }).first();
   await expect(sheet).toHaveAttribute("href", "/en/actors/tang-yunqiu/sheet");
@@ -66,7 +66,7 @@ test("the actor page offers the character sheet and a help link beside the start
   // the link's own target with a plain load instead of depending on the router's timing.
   await page.goto((await help.getAttribute("href")) ?? "/en/guide");
   await expect(
-    page.getByRole("heading", { level: 1, name: "Three ways to get an actor" }),
+    page.getByRole("heading", { level: 1, name: "Three ways to download" }),
   ).toBeVisible();
 });
 

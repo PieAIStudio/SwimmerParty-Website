@@ -160,7 +160,7 @@ for (const [locale, width] of [
 test("A1 English breadcrumb is English", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/en/works/journey-to-the-east");
-  await expect(page.getByRole("navigation", { name: "Breadcrumb", exact: true })).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "Page path", exact: true })).toBeVisible();
   await expect(page.getByRole("navigation", { name: "当前位置" })).toHaveCount(0);
   await screenshot(page, "a1-breadcrumb-en-1440");
 });
@@ -197,7 +197,7 @@ test("A1 all five funnel steps emit locally, with no analytics network request o
     .toBe(1);
   const sample = page.locator("[data-actor-sample] [data-sample-id]").first();
   const video = sample.locator("video");
-  await sample.getByRole("button", { name: /Play sample/ }).click();
+  await sample.getByRole("button", { name: /Play clip/ }).click();
   await expect(video).toHaveAttribute("src", /\.mp4$/);
   await video.evaluate(async (element: HTMLVideoElement) => {
     element.muted = true;

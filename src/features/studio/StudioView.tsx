@@ -85,9 +85,11 @@ export async function StudioView({ locale }: { locale: AppLocale }) {
             </article>
           ))}
         </div>
-        <GameButton variant="primary" href="mailto:pieai@hotmail.com" className="mt-6">
-          {t("studio.workWithUs")}
-        </GameButton>
+        <div className="mt-6">
+          <GameButton variant="primary" href="mailto:pieai@hotmail.com">
+            {t("studio.workWithUs")}
+          </GameButton>
+        </div>
       </section>
     </div>
   );

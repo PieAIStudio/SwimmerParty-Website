@@ -12,11 +12,11 @@ test("community media labels use only the active language", () => {
     assert.doesNotMatch(messages[`community.kind.${kind}`].en, /[\u4e00-\u9fff]/);
     assert.doesNotMatch(messages[`community.kind.${kind}`].zh, /Image|Video|Audio|Game/);
   }
-  assert.equal(messages["c.actors"].en, "Actors and asset versions used");
+  assert.equal(messages["c.actors"].en, "Actors and versions used");
 });
 test("pack sign-in condition is explicit before a visitor continues", () => {
-  assert.match(messages["assets.signInBody"].en, /free Swimmer account/);
-  assert.match(messages["assets.signInBody"].zh, /单张随便下/);
+  assert.equal(messages["assets.signInBody"].en, "Download single pictures anytime. Sign in free for full packs and reference sheets.");
+  assert.equal(messages["assets.signInBody"].zh, "单张图片随便下；要下整包或拼参考图，免费登录就行。");
 });
 test("the composer uses a catalog-backed actor selector with asset versions", async () => {
   const source = await readFile(
