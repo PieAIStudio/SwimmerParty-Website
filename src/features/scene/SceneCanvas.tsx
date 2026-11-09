@@ -32,7 +32,7 @@ import {
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { useSiteI18n } from "@/i18n/client";
 import { figureScale, loadFigure, loadPose } from "./figure-assets";
-import { StagePrimitives } from "./StagePrimitives";
+import { StagePrimitives, updateStageWallVisibility } from "./StagePrimitives";
 import { poseFigure, updateSkinBounds, type FigurePose } from "./rigged-figure";
 import { frameFigures, setLens } from "./framing";
 import { shoulderContact } from "./figure-ik";
@@ -432,6 +432,7 @@ function Runtime({
         // Resolve badge collisions at the actual output size, too.
         placeFigureLabels(scene, lens, width, height);
         // Copy the freshly rendered framebuffer, never a stale demand-mode frame.
+        updateStageWallVisibility(scene, camera);
         gl.render(scene, camera);
         const picture = window.document.createElement("canvas");
         picture.width = width;

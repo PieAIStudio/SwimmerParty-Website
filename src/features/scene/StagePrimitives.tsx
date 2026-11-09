@@ -2,7 +2,7 @@
 
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import type { Mesh } from "three";
+import type { Camera, Mesh, Object3D } from "three";
 import type { FilmStageState } from "./model";
 
 type PrimitiveProps = FilmStageState["props"][number];
@@ -59,24 +59,42 @@ function roomCenter(walls: WallProps[]): [number, number] {
   return [total[0] / walls.length, total[1] / walls.length];
 }
 
-function wallNormal(wall: WallProps, center: [number, number]): [number, number] {
-  const alongX = Math.abs(Math.sin(wall.rotation)) < 0.5;
-  if (alongX) return [0, wall.position[2] < center[1] ? -1 : 1];
-  return [wall.position[0] < center[0] ? -1 : 1, 0];
+function wallNormal(
+  position: [number, number],
+  alongX: boolean,
+  center: [number, number],
+): [number, number] {
+  if (alongX) return [0, position[1] < center[1] ? -1 : 1];
+  return [position[0] < center[0] ? -1 : 1, 0];
+}
+
+function wallIsVisible(
+  position: [number, number],
+  alongX: boolean,
+  center: [number, number],
+  camera: Pick<Camera, "position">,
+) {
+  const [nx, nz] = wallNormal(position, alongX, center);
+  const cameraSide =
+    (camera.position.x - position[0]) * nx + (camera.position.z - position[1]) * nz;
+  const roomSide = (center[0] - position[0]) * nx + (center[1] - position[1]) * nz;
+  // A perimeter wall between the camera and the room is the cutaway wall.
+  return cameraSide * roomSide > 0.001;
+}
+
+export function updateStageWallVisibility(root: Object3D, camera: Pick<Camera, "position">) {
+  root.traverse((node) => {
+    const center = node.userData.stageWallCenter as [number, number] | undefined;
+    const alongX = node.userData.stageWallAlongX as boolean | undefined;
+    if (!center || alongX === undefined || !node.userData.stageWall) return;
+    node.visible = wallIsVisible([node.position.x, node.position.z], alongX, center, camera);
+  });
 }
 
 function StageWall({ wall, center }: { wall: WallProps; center: [number, number] }) {
   const meshRef = useRef<Mesh>(null);
   useFrame(({ camera }) => {
-    const [nx, nz] = wallNormal(wall, center);
-    const cameraSide =
-      (camera.position.x - wall.position[0]) * nx + (camera.position.z - wall.position[2]) * nz;
-    const roomSide = (center[0] - wall.position[0]) * nx + (center[1] - wall.position[2]) * nz;
-    if (meshRef.current) {
-      // Cut away only an enclosing wall between the actual render camera and the room.
-      // This keeps Directing's camera spots unchanged and also works for the posing page.
-      meshRef.current.visible = cameraSide * roomSide < -0.001;
-    }
+    if (meshRef.current) updateStageWallVisibility(meshRef.current, camera);
   });
   return (
     <mesh
@@ -85,7 +103,11 @@ function StageWall({ wall, center }: { wall: WallProps; center: [number, number]
       rotation={[0, wall.rotation, 0]}
       castShadow
       receiveShadow
-      userData={{ stageWall: wall.id }}
+      userData={{
+        stageWall: wall.id,
+        stageWallCenter: center,
+        stageWallAlongX: wall.size[0] >= wall.size[2],
+      }}
     >
       <boxGeometry args={wall.size} />
       <meshStandardMaterial color="#c8c4bc" roughness={0.95} />
