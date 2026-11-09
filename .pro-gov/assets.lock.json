@@ -191,7 +191,7 @@
       "id": "pie-skills/phone-test",
       "sourcePath": "skills/pie-skills/phone-test",
       "delivery": "symlink",
-      "contentHash": "sha256:55dfb49a4e3d7a38759567bad89d2eae50e1c17502413b40feb6f1b1f86b5ff5",
+      "contentHash": "sha256:fa04f1f1292b44b9c987d074bbd947c1591201148436fe8df439fa4e0953629e",
       "placement": "auto",
       "targetPath": ".agents/skills/phone-test"
     },
