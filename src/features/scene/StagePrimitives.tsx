@@ -1,5 +1,8 @@
 "use client";
 
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
+import type { Mesh } from "three";
 import type { FilmStageState } from "./model";
 
 type PrimitiveProps = FilmStageState["props"][number];
@@ -47,9 +50,37 @@ function StageProp({ prop }: { prop: PrimitiveProps }) {
   );
 }
 
-function StageWall({ wall }: { wall: WallProps }) {
+function roomCenter(walls: WallProps[]): [number, number] {
+  if (walls.length === 0) return [0, 0];
+  const total = walls.reduce(
+    (sum, wall) => [sum[0] + wall.position[0], sum[1] + wall.position[2]] as [number, number],
+    [0, 0] as [number, number],
+  );
+  return [total[0] / walls.length, total[1] / walls.length];
+}
+
+function wallNormal(wall: WallProps, center: [number, number]): [number, number] {
+  const alongX = Math.abs(Math.sin(wall.rotation)) < 0.5;
+  if (alongX) return [0, wall.position[2] < center[1] ? -1 : 1];
+  return [wall.position[0] < center[0] ? -1 : 1, 0];
+}
+
+function StageWall({ wall, center }: { wall: WallProps; center: [number, number] }) {
+  const meshRef = useRef<Mesh>(null);
+  useFrame(({ camera }) => {
+    const [nx, nz] = wallNormal(wall, center);
+    const cameraSide =
+      (camera.position.x - wall.position[0]) * nx + (camera.position.z - wall.position[2]) * nz;
+    const roomSide = (center[0] - wall.position[0]) * nx + (center[1] - wall.position[2]) * nz;
+    if (meshRef.current) {
+      // Cut away only an enclosing wall between the actual render camera and the room.
+      // This keeps Directing's camera spots unchanged and also works for the posing page.
+      meshRef.current.visible = cameraSide * roomSide < -0.001;
+    }
+  });
   return (
     <mesh
+      ref={meshRef}
       position={wall.position}
       rotation={[0, wall.rotation, 0]}
       castShadow
@@ -80,11 +111,12 @@ function StageAxis({ from, to }: { from: [number, number]; to: [number, number] 
 }
 
 export function StagePrimitives({ stage }: { stage?: FilmStageState }) {
+  const center = roomCenter(stage?.walls ?? []);
   if (!stage) return null;
   return (
     <>
       {stage.walls.map((wall) => (
-        <StageWall key={wall.id} wall={wall} />
+        <StageWall key={wall.id} wall={wall} center={center} />
       ))}
       {stage.props.map((prop) => (
         <StageProp key={prop.id} prop={prop} />
