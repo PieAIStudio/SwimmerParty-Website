@@ -19,6 +19,7 @@
     "assets:samples": "node tools/assets/generate-official-samples.ts",
     "assets:voices": "node tools/assets/generate-voice-manifests.ts",
     "test:tools": "node --test tools/test/*.test.ts",
+    "film:shot": "node tools/film/render-shot.ts",
     "doc-gov": "doc-gov",
     "pro-gov": "pro-gov",
     "docs:check": "pnpm pro-gov doctor && pnpm doc-gov router-check && pnpm doc-gov check && pnpm doc-gov scan --check && pnpm doc-gov links && pnpm doc-gov audit && pnpm doc-gov doctor",

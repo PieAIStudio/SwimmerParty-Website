@@ -6,6 +6,7 @@ export type SceneCanvasProps = {
   identities: FigureIdentity[];
   selected: string;
   limbs: boolean;
+  cleanExport?: boolean;
   onPose: (id: string, joints: JointRotations) => void;
   onSelect: (id: string) => void;
   onMove: (id: string, x: number, z: number) => void;

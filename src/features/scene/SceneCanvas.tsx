@@ -182,6 +182,7 @@ function Figure({
   onDragging,
   onSelect,
   onMove,
+  cleanExport,
 }: {
   figure: FigureState;
   support?: FigureState;
@@ -196,6 +197,7 @@ function Figure({
   onDragging: (dragging: boolean) => void;
   onSelect: (id: string) => void;
   onMove: SceneCanvasProps["onMove"];
+  cleanExport: boolean;
 }) {
   const [source, supportSource] = useLoader(GLTFLoader, [
     loadFigure(figure.build),
@@ -342,31 +344,35 @@ function Figure({
           size={0.9}
         />
       ) : null}
-      {selected && limbs ? (
+      {!cleanExport && selected && limbs ? (
         <LimbHandles object={model.object} id={figure.id} onDragging={onDragging} onPose={onPose} />
       ) : null}
-      <FigureLabel
-        identity={identity}
-        personY={model.top}
-        y={model.top + (editingPair ? -0.06 : shot === "close" ? 0.08 : 0.2)}
-        offset={
-          editingPair
-            ? [
-                Math.sign(figure.x || 1) * 0.22 * Math.cos((figure.turn * Math.PI) / 180),
-                Math.sign(figure.x || 1) * 0.22 * Math.sin((figure.turn * Math.PI) / 180),
-              ]
-            : [0, 0]
-        }
-      />
-      <mesh
-        rotation={[-Math.PI / 2, 0, 0]}
-        position={[0, 0.008, 0]}
-        userData={{ figureRing: true }}
-      >
-        <ringGeometry args={[0.27, 0.34, 40]} />
-        <meshBasicMaterial color={identity.colour} toneMapped={false} />
-      </mesh>
-      {selected ? (
+      {!cleanExport ? (
+        <FigureLabel
+          identity={identity}
+          personY={model.top}
+          y={model.top + (editingPair ? -0.06 : shot === "close" ? 0.08 : 0.2)}
+          offset={
+            editingPair
+              ? [
+                  Math.sign(figure.x || 1) * 0.22 * Math.cos((figure.turn * Math.PI) / 180),
+                  Math.sign(figure.x || 1) * 0.22 * Math.sin((figure.turn * Math.PI) / 180),
+                ]
+              : [0, 0]
+          }
+        />
+      ) : null}
+      {!cleanExport ? (
+        <mesh
+          rotation={[-Math.PI / 2, 0, 0]}
+          position={[0, 0.008, 0]}
+          userData={{ figureRing: true }}
+        >
+          <ringGeometry args={[0.27, 0.34, 40]} />
+          <meshBasicMaterial color={identity.colour} toneMapped={false} />
+        </mesh>
+      ) : null}
+      {!cleanExport && selected ? (
         <mesh
           rotation={[-Math.PI / 2, 0, 0]}
           position={[0, 0.012, 0]}
@@ -391,6 +397,7 @@ function Runtime({
   onCameraChange,
   onReady,
   onLost,
+  cleanExport,
 }: SceneCanvasProps & { onLost: (lost: boolean) => void }) {
   const { scene, camera, gl, invalidate, size: viewport } = useThree();
   const { t } = useSiteI18n();
@@ -427,11 +434,20 @@ function Runtime({
         gl.render(scene, camera);
         const picture = window.document.createElement("canvas");
         picture.width = width;
-        const columns = Math.max(1, Math.floor(width / 280));
-        const rows = Math.ceil(identities.length / columns);
-        picture.height = height + rows * 64 + 48;
+        picture.height = cleanExport
+          ? height
+          : height + Math.ceil(identities.length / Math.max(1, Math.floor(width / 280))) * 64 + 48;
         const context = picture.getContext("2d")!;
         context.drawImage(gl.domElement, 0, 0);
+        if (cleanExport)
+          return await new Promise<Blob>((resolve, reject) =>
+            picture.toBlob(
+              (blob) => (blob ? resolve(blob) : reject(new Error("PNG capture failed"))),
+              "image/png",
+            ),
+          );
+        const columns = Math.max(1, Math.floor(width / 280));
+        const rows = Math.ceil(identities.length / columns);
         // A fixed name key stays readable even when the camera puts figures behind one another.
         // The matching number and band remain attached to each figure in the 3D view.
         const column = width / columns;
@@ -481,7 +497,7 @@ function Runtime({
         invalidate();
       }
     },
-    [camera, gl, invalidate, scene, identities, document.camera, document.figures, t],
+    [camera, cleanExport, gl, invalidate, scene, identities, document.camera, document.figures, t],
   );
   useFrame(() => {
     if (notified.current) return;
@@ -685,6 +701,7 @@ function Runtime({
           }
           relaxedLineup={index === 4 && document.figures.length === 8 && figure.pose === "lean-in"}
           shot={document.camera.shot}
+          cleanExport={cleanExport ?? false}
           onPose={onPose}
           onDragging={dragging}
           onSelect={onSelect}
