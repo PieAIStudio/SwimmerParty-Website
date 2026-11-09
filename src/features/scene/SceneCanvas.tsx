@@ -31,7 +31,7 @@ import {
 } from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { useSiteI18n } from "@/i18n/client";
-import { figureScale, loadFigure, loadPose } from "./figure-assets";
+import { figureScale, loadFigure, loadPose } from "./figure-assets";import { StagePrimitives } from "./StagePrimitives";
 import { poseFigure, updateSkinBounds, type FigurePose } from "./rigged-figure";
 import { frameFigures, setLens } from "./framing";
 import { shoulderContact } from "./figure-ik";
@@ -678,7 +678,7 @@ function Runtime({
         position={[0, 0.003, 0]}
         userData={{ editorOnly: true }}
       />
-      {document.figures.map((figure, index) => (
+      <StagePrimitives stage={document.stage} />\n      {document.figures.map((figure, index) => (
         <Figure
           key={figure.id}
           figure={figure}

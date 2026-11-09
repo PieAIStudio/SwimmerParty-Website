@@ -42,6 +42,44 @@ export const FRAMES = {
 } as const;
 const finite = z.number().finite();
 const point = z.tuple([finite, finite, finite]);
+const stagePoint = z.tuple([finite, finite, finite]);
+const stagePropSchema = z
+  .object({
+    id: z.string().min(1),
+    kind: z.string().min(1),
+    position: stagePoint,
+    size: stagePoint,
+    rotation: finite.default(0),
+  })
+  .passthrough();
+const stageWallSchema = z.object({
+  id: z.string().min(1),
+  position: stagePoint,
+  size: stagePoint,
+  rotation: finite.default(0),
+});
+const stageAxisSchema = z
+  .object({
+    from: z.tuple([finite, finite]),
+    to: z.tuple([finite, finite]),
+    cameraSide: z.enum(["left", "right"]).optional(),
+  })
+  .passthrough();
+const stageSchema = z.object({
+  props: z.array(stagePropSchema).default([]),
+  walls: z.array(stageWallSchema).default([]),
+  axis: stageAxisSchema.optional(),
+  frame: z
+    .object({
+      left: z.array(z.string()).default([]),
+      right: z.array(z.string()).default([]),
+      center: z.array(z.string()).default([]),
+    })
+    .optional(),
+  eyeTargets: z
+    .array(z.object({ roleId: z.string(), targetId: z.string() }).passthrough())
+    .default([]),
+});
 const jointRotations = z.record(z.string(), z.tuple([finite, finite, finite, finite]));
 export type JointRotations = z.infer<typeof jointRotations>;
 const figureSchema = z.object({
@@ -73,12 +111,14 @@ const sceneSchema = z
       fit: z.boolean().default(false),
     }),
     setting: settingDraftSchema,
+    stage: stageSchema.optional(),
   })
   .refine(
     (scene) => new Set(scene.figures.map((figure) => figure.id)).size === scene.figures.length,
   );
 export type FigureState = z.infer<typeof figureSchema>;
 export type SceneState = z.infer<typeof sceneSchema>;
+export type FilmStageState = z.infer<typeof stageSchema>;
 export type SceneActor = {
   slug: string;
   name: string;
