@@ -23,7 +23,11 @@ function StageProp({ prop }: { prop: PrimitiveProps }) {
           : "#aaa39a";
   const position =
     prop.kind === "door" && Math.abs(prop.rotation) < 0.01
-      ? ([prop.position[0] - 0.5, prop.position[1], prop.position[2] + 0.5] as [number, number, number])
+      ? ([prop.position[0] - 0.5, prop.position[1], prop.position[2] + 0.5] as [
+          number,
+          number,
+          number,
+        ])
       : prop.position;
   if (prop.kind === "toilet" || prop.kind === "cylinder") {
     return (
@@ -52,12 +56,12 @@ function StageProp({ prop }: { prop: PrimitiveProps }) {
       castShadow
       receiveShadow
       userData={{
-          stagePrimitive: prop.id,
-          stagePrimitiveKind: prop.kind,
-          stagePrimitiveSize: prop.size,
-          stagePrimitiveRotation: prop.rotation,
-          stageOwnerId: prop.ownerId,
-        }}
+        stagePrimitive: prop.id,
+        stagePrimitiveKind: prop.kind,
+        stagePrimitiveSize: prop.size,
+        stagePrimitiveRotation: prop.rotation,
+        stageOwnerId: prop.ownerId,
+      }}
     >
       <boxGeometry args={[width, height, depth]} />
       <StageMaterial colour={colour} />
@@ -80,19 +84,21 @@ function rotate(point: [number, number], radians: number): [number, number] {
   return [point[0] * c - point[1] * s, point[0] * s + point[1] * c];
 }
 
-function wallBasis(wall: {
-  position: [number, number, number];
-  size: [number, number, number];
-  rotation: number;
-}, center: [number, number]) {
+function wallBasis(
+  wall: {
+    position: [number, number, number];
+    size: [number, number, number];
+    rotation: number;
+  },
+  center: [number, number],
+) {
   const alongX = wall.size[0] >= wall.size[2];
   const localNormal = alongX ? ([0, 1] as [number, number]) : ([1, 0] as [number, number]);
   const localTangent = alongX ? ([1, 0] as [number, number]) : ([0, 1] as [number, number]);
   let normal = rotate(localNormal, wall.rotation);
   const tangent = rotate(localTangent, wall.rotation);
   const outward: [number, number] = [wall.position[0] - center[0], wall.position[2] - center[1]];
-  if (normal[0] * outward[0] + normal[1] * outward[1] < 0)
-    normal = [-normal[0], -normal[1]];
+  if (normal[0] * outward[0] + normal[1] * outward[1] < 0) normal = [-normal[0], -normal[1]];
   return { normal, tangent, halfLength: (alongX ? wall.size[0] : wall.size[2]) / 2 };
 }
 
@@ -107,7 +113,11 @@ export function wallIsVisible(
   target: [number, number, number] = [center[0], 1.1, center[1]],
 ) {
   const { normal, tangent, halfLength } = wallBasis(
-    { position: [wall.position[0], 1.4, wall.position[1]], size: wall.size, rotation: wall.rotation },
+    {
+      position: [wall.position[0], 1.4, wall.position[1]],
+      size: wall.size,
+      rotation: wall.rotation,
+    },
     center,
   );
   const plane = [wall.position[0], wall.position[1]] as [number, number];
@@ -203,8 +213,7 @@ export function updateStageWallVisibility(
       (camera.position.x - node.position.x) * normal[0] +
       (camera.position.z - node.position.z) * normal[1];
     const centerDistance =
-      (center[0] - node.position.x) * normal[0] +
-      (center[1] - node.position.z) * normal[1];
+      (center[0] - node.position.x) * normal[0] + (center[1] - node.position.z) * normal[1];
     // Outside cameras get the near perimeter wall cut away. Inside cameras
     // use the exact rotation-aware camera-to-target segment test above.
     const nearOutside = cameraDistance > 0.02 && centerDistance < -0.02;

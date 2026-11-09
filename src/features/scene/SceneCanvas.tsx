@@ -501,7 +501,18 @@ function Runtime({
         invalidate();
       }
     },
-    [beforeExport, camera, cleanExport, gl, invalidate, scene, identities, document.camera, document.figures, t],
+    [
+      beforeExport,
+      camera,
+      cleanExport,
+      gl,
+      invalidate,
+      scene,
+      identities,
+      document.camera,
+      document.figures,
+      t,
+    ],
   );
   useFrame(() => {
     if (notified.current) return;
@@ -682,7 +693,8 @@ function Runtime({
         position={[0, 0.003, 0]}
         userData={{ editorOnly: true }}
       />
-      {stageLayer ?? null}      {document.figures.map((figure, index) => (
+      {stageLayer ?? null}{" "}
+      {document.figures.map((figure, index) => (
         <Figure
           key={figure.id}
           figure={figure}

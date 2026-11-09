@@ -64,7 +64,9 @@ const refs = (value: unknown): string[] =>
     ? value
         .map((item) => {
           const object = asObject(item);
-          return string(object.id) ?? string(object.roleId) ?? string(object.personId) ?? string(item);
+          return (
+            string(object.id) ?? string(object.roleId) ?? string(object.personId) ?? string(item)
+          );
         })
         .filter((item): item is string => Boolean(item))
     : string(value)
@@ -155,8 +157,7 @@ function poseFor(
     narrative.includes("掏") ||
     narrative.includes("指向") ||
     narrative.includes("递烟") ||
-    (ownedPropNames.length > 0 &&
-      /(递|伸|掏|指向|举|递烟|offer|reach|point|hand)/i.test(shotText));
+    (ownedPropNames.length > 0 && /(递|伸|掏|指向|举|递烟|offer|reach|point|hand)/i.test(shotText));
   if (
     narrative.includes("移开视线") ||
     narrative.includes("看一眼") ||
@@ -191,8 +192,7 @@ function buildFor(person: Record<string, unknown>): FigureState["build"] {
   const blocking = blockingFor(person);
   const build = string(blocking.build) ?? string(person.build);
   const gender = string(blocking.gender) ?? string(person.gender);
-  const base =
-    build === "slim" || build === "average" || build === "broad" ? build : "average";
+  const base = build === "slim" || build === "average" || build === "broad" ? build : "average";
   return gender === "female" ? ((base + "-f") as FigureState["build"]) : base;
 }
 
@@ -379,8 +379,7 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       string(blocking.positionId) ??
       string(blocking.at) ??
       string(person.spotId);
-    const located =
-      point(blocking) ??
+    const located = point(blocking) ??
       point(person) ??
       (namedSpot ? spots.get(namedSpot) : undefined) ?? [
         index * 0.8 - (people.length - 1) * 0.4,
@@ -434,7 +433,13 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
     point(shot.cameraSpot) ??
     (cameraKey ? cameraSpots.get(cameraKey) : undefined) ??
     (() => {
-      const target = resolveTarget(shot, spots, people, personPositions, firstRef(shot.frameCenter)).value;
+      const target = resolveTarget(
+        shot,
+        spots,
+        people,
+        personPositions,
+        firstRef(shot.frameCenter),
+      ).value;
       return [target[0], target[1] - 6] as [number, number];
     })();
 
@@ -453,10 +458,8 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
     const kind = propKind(id, name);
     const at = string(item.at);
     const ownerId = string(item.ownerId) ?? (at && personPositions.has(at) ? at : undefined);
-    const base =
-      point(item) ??
-      (at ? spots.get(at) ?? personPositions.get(at) : undefined) ??
-      [0, 0];
+    const base = point(item) ??
+      (at ? (spots.get(at) ?? personPositions.get(at)) : undefined) ?? [0, 0];
     const ownerIndex = ownerId ? safeFigures.findIndex((figure) => figure.id === ownerId) : -1;
     const owner = ownerIndex >= 0 ? safeFigures[ownerIndex] : undefined;
     const turn = owner ? (owner.turn * Math.PI) / 180 : 0;
@@ -534,15 +537,7 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
   };
   const unknownFloorPlan = Object.keys(floorPlan).filter(
     (key) =>
-      ![
-        "spots",
-        "people",
-        "props",
-        "cameraSpots",
-        "axis",
-        "walls",
-        "roomBounds",
-      ].includes(key),
+      !["spots", "people", "props", "cameraSpots", "axis", "walls", "roomBounds"].includes(key),
   );
   return {
     scene,

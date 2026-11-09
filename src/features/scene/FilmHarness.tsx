@@ -12,7 +12,8 @@ declare global {
 }
 
 export function FilmHarness() {
-  const [payload, setPayload] = useState<DirectingShot | null>(null);  const acceptShot = (value: unknown) => {
+  const [payload, setPayload] = useState<DirectingShot | null>(null);
+  const acceptShot = (value: unknown) => {
     const shot = value as DirectingShot;
     document.body.dataset.mfShotId = String(shot.id ?? shot.shotId ?? "");
     document.querySelector("canvas")?.removeAttribute("data-film-ready");
