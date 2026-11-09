@@ -36,10 +36,19 @@ for (const [locale, width] of [
         locale === "zh" ? actor.nameCn : actor.nameEn,
       );
       await expect(page.locator('[data-asset-slot][data-delivered="true"]')).toHaveCount(55);
-      await expect(page.locator("[data-voice-slot]")).toHaveCount(6);
-      await expect(
-        page.getByText(locale === "zh" ? "临时试音" : "Test voice", { exact: true }),
-      ).toHaveCount(6);
+      const voiceTiles = page.locator("[data-voice-slot]");
+      await expect(voiceTiles).toHaveCount(6);
+      for (let index = 0; index < 6; index += 1) {
+        const tile = voiceTiles.nth(index);
+        await expect(
+          tile
+            .locator(":scope > div")
+            .getByText(locale === "zh" ? "临时试音" : "Test voice", { exact: true }),
+        ).toHaveCount(1);
+        await expect(tile.locator(":scope > p")).toHaveText(
+          locale === "zh" ? "临时试音" : "Temporary test voice",
+        );
+      }
       const clips = page.locator("[data-actor-sample] [data-sample-id]");
       await expect(clips).toHaveCount(4);
       await expect(clips.locator('[data-sample-tools="Grok"]')).toHaveCount(3);

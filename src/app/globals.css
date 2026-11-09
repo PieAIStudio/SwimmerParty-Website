@@ -362,6 +362,10 @@
       grid-template-columns: 1fr 1.3fr;
       column-gap: 1rem;
     }
+    /* Keep the framing note beside the pose control when the inspector is closed. */
+    .sp-scene-workbench:not(:has([data-scene-inspector][open])) > [data-scene-workspace] {
+      grid-template-columns: 1.1fr 1fr;
+    }
     [data-scene-camera-panel] {
       grid-column: 1;
       grid-row: 1;

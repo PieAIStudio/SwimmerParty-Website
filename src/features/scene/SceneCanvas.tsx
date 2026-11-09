@@ -597,6 +597,11 @@ function Runtime({
       target: controls.current.getTarget(new Vector3(), true).toArray() as [number, number, number],
     });
   }
+  function flushWheelCamera() {
+    if (!wheelActive.current) return;
+    wheelActive.current = false;
+    saveCamera();
+  }
   useEffect(() => {
     const canvas = gl.domElement;
     notified.current = false;
@@ -706,12 +711,9 @@ function Runtime({
           wheelActive.current = false;
           saveCamera();
         }}
-        onRest={() => {
-          if (wheelActive.current) {
-            wheelActive.current = false;
-            saveCamera();
-          }
-        }}
+        // Zero-smoothing wheel updates can sleep without emitting rest.
+        onRest={flushWheelCamera}
+        onSleep={flushWheelCamera}
       />
     </>
   );

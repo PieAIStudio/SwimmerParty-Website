@@ -2,11 +2,7 @@
   "version": 1,
   "rules": [
     {
-      "paths": [
-        ".pro-gov/push-gate*",
-        ".githooks/pre-push",
-        "lefthook.yml"
-      ],
+      "paths": [".pro-gov/push-gate*", ".githooks/pre-push", "lefthook.yml"],
       "commands": [
         "git diff --check \"$PUSH_GATE_BASE\" \"$PUSH_GATE_HEAD\"",
         "node --check .pro-gov/push-gate.mjs && sh -n .githooks/pre-push",
@@ -14,23 +10,11 @@
       ]
     },
     {
-      "paths": [
-        "AGENTS.md",
-        "CLAUDE.md",
-        "README.md",
-        "DESIGN.md",
-        "docs/**"
-      ],
-      "commands": [
-        "git diff --check \"$PUSH_GATE_BASE\" \"$PUSH_GATE_HEAD\"",
-        "pnpm docs:check"
-      ]
+      "paths": ["AGENTS.md", "CLAUDE.md", "README.md", "DESIGN.md", "docs/**"],
+      "commands": ["git diff --check \"$PUSH_GATE_BASE\" \"$PUSH_GATE_HEAD\"", "pnpm docs:check"]
     },
     {
-      "paths": [
-        "src/**",
-        "e2e/**"
-      ],
+      "paths": ["src/**", "e2e/**"],
       "commands": [
         "node --input-type=module -e 'import{execFileSync,spawnSync}from\"node:child_process\";const f=execFileSync(\"git\",[\"diff\",\"--name-only\",\"--no-renames\",\"--diff-filter=ACMR\",\"-z\",process.env.PUSH_GATE_BASE,process.env.PUSH_GATE_HEAD,\"--\",...[\"src\", \"e2e\"]],{encoding:\"utf8\"}).split(\"\\0\").filter(p=>p&&new RegExp(\"\\\\.(?:[cm]?[jt]sx?|json|css|html)$\").test(p));if(f.length){const r=spawnSync(\"pnpm\",[\"exec\", \"oxfmt\", \"--check\"].concat(f,[\"--ignore-path\", \"./.oxfmtignore\"]),{stdio:\"inherit\"});process.exit(r.status??1)}'",
         "node --input-type=module -e 'import{execFileSync,spawnSync}from\"node:child_process\";const f=execFileSync(\"git\",[\"diff\",\"--name-only\",\"--no-renames\",\"--diff-filter=ACMR\",\"-z\",process.env.PUSH_GATE_BASE,process.env.PUSH_GATE_HEAD,\"--\",...[\"src\", \"e2e\"]],{encoding:\"utf8\"}).split(\"\\0\").filter(p=>p&&new RegExp(\"\\\\.[cm]?[jt]sx?$\").test(p));if(f.length){const r=spawnSync(\"pnpm\",[\"exec\", \"oxlint\"].concat(f,[\"-c\", \"./.oxlintrc.json\"]),{stdio:\"inherit\"});process.exit(r.status??1)}'",
@@ -48,81 +32,64 @@
         "next.config.*",
         ".oxlintrc.json"
       ],
-      "commands": [
-        "pnpm typecheck"
-      ]
+      "commands": ["pnpm typecheck"]
+    },
+    {
+      "paths": ["messages/**", "src/i18n/messages.source.ts", "src/i18n/message-contracts.ts"],
+      "commands": ["pnpm check:i18n"]
     },
     {
       "paths": [
-        "messages/**",
         "src/i18n/messages.source.ts",
-        "src/i18n/message-contracts.ts"
+        "src/i18n/message-contracts.ts",
+        "messages/**/*.json",
+        "src/features/assets/VoiceTile.tsx",
+        "src/features/scene/**/*.ts",
+        "src/features/scene/**/*.tsx",
+        "src/features/scene/**/*.css",
+        "src/app/globals.css",
+        "e2e/next10-actors.spec.ts",
+        "e2e/scene.spec.ts",
+        "playwright.config.ts",
+        "e2e/global-setup.ts"
       ],
       "commands": [
-        "pnpm check:i18n"
+        "pnpm check:i18n",
+        "node --input-type=module -e 'import{mkdirSync}from\"node:fs\";import{spawnSync}from\"node:child_process\";const out=process.env.PLAYWRIGHT_REPORT_DIR??\".devspace-reports/push-copy-scene-\"+Date.now();mkdirSync(out,{recursive:true});const r=spawnSync(\"pnpm\",[\"exec\",\"playwright\",\"test\",\"e2e/next10-actors.spec.ts\",\"e2e/scene.spec.ts\",\"--workers=2\",\"--retries=0\",\"--reporter=list,json\",\"--grep\",\"(next ten approved deliveries, placeholder disclosure and CC redirects: (zh|en)|layouts and an uncapped cast keep numbered identities and undo|build 14 fresh dialogue, first fold and shoulder drag (1440|390))$\"].concat([\"--output\",out+\"/test-results\"]),{stdio:\"inherit\",env:{...process.env,PLAYWRIGHT_COMMUNITY:\"0\",PLAYWRIGHT_REPORT_DIR:out,PLAYWRIGHT_EVIDENCE_DIR:process.env.PLAYWRIGHT_EVIDENCE_DIR??out+\"/scene\",PLAYWRIGHT_JSON_OUTPUT_FILE:out+\"/playwright.json\"}});process.exit(r.status??1)'"
       ]
     },
     {
-      "paths": [
-        "public/scene/**"
-      ],
+      "paths": ["public/scene/**"],
       "commands": [],
       "reason": "MediaFactory mannequin GLBs with the delivery licence and producer manifest (JSON values unchanged; CRLF normalized to LF). The existing selector does not run browsers. Delivery hashes, static build/pose/triangle contracts, lazy bytes and labelled exports are covered by bounded e2e/scene.spec.ts acceptance, mapped in features/scene/README.md."
     },
     {
-      "paths": [
-        "public/media/settings/*.png",
-        "public/media/settings/*.webp"
-      ],
+      "paths": ["public/media/settings/*.png", "public/media/settings/*.webp"],
       "commands": [],
       "reason": "Owner-authorized MediaFactory setting originals and derived previews. Existing bounded e2e/settings.spec.ts checks real preview decoding and PNG saves/filename/dimensions/SHA; the manual browser mapping remains in features/settings/README.md. No automatic browser/build suite is added to push."
     },
     {
-      "paths": [
-        ".oxfmtrc.json",
-        ".oxfmtignore"
-      ],
-      "commands": [
-        "git diff --check \"$PUSH_GATE_BASE\" \"$PUSH_GATE_HEAD\""
-      ]
+      "paths": [".oxfmtrc.json", ".oxfmtignore"],
+      "commands": ["git diff --check \"$PUSH_GATE_BASE\" \"$PUSH_GATE_HEAD\""]
     },
     {
-      "paths": [
-        "tools/**"
-      ],
-      "commands": [
-        "node --test tools/test/*.test.ts"
-      ]
+      "paths": ["tools/**"],
+      "commands": ["node --test tools/test/*.test.ts"]
     },
     {
-      "paths": [
-        ".pro-gov/assets*",
-        ".agents/skills/**",
-        ".claude/skills"
-      ],
-      "commands": [
-        "pnpm pro-gov assets check",
-        "pnpm docs:check"
-      ]
+      "paths": [".pro-gov/assets*", ".agents/skills/**", ".claude/skills"],
+      "commands": ["pnpm pro-gov assets check", "pnpm docs:check"]
     },
     {
-      "paths": [
-        ".gitignore",
-        ".gitattributes",
-        "LICENSE",
-        "CHANGELOG.md",
-        "vercel.json"
-      ],
-      "commands": [
-        "git diff --check \"$PUSH_GATE_BASE\" \"$PUSH_GATE_HEAD\""
-      ]
+      "paths": [".gitignore", ".gitattributes", "LICENSE", "CHANGELOG.md", "vercel.json"],
+      "commands": ["git diff --check \"$PUSH_GATE_BASE\" \"$PUSH_GATE_HEAD\""]
     }
   ],
   "blindSpots": [
     "Exact shared PGS Node 24 selector; repo-owned mapping only. Unknown paths stop; there is no full-suite fallback.",
     "Vitest related follows static imports from changed source/test paths, not global package/config force-rerun triggers. A selected unit command with zero tests fails for investigation. Deletions and dynamic seams need maintained mappings.",
-    "As in the passing pilots, no new automatic browser/build/timing suite is added. HTTP UI journeys, dynamic assets, layout, real auth/network and paid-provider behavior are not proved by this hook; existing acceptance/release checks stay unchanged.",
+    "The bounded copy/scene smoke runs five named browser cases for mapped UI/message inputs. Other HTTP journeys, dynamic assets, performance/timing, real auth/network and paid-provider behavior remain outside this hook; existing full release checks stay unchanged.",
     "Only existing local check CLIs are invoked. Config/lockfile changes get affected types/lint or a named bounded smoke, not all tests. Release, deployment, account and publication paths require separate scope.",
-    "Site test/test:e2e are the whole Playwright suite and never run here. Tool changes select only the existing tools/test unit contracts. Source UI acceptance remains a separate bounded browser task."
+    "Site test/test:e2e are the whole Playwright suite and never run here. The bounded copy/scene smoke does not replace full release verification or production acceptance; tool changes retain the existing tools/test unit contracts."
   ]
 }
