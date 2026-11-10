@@ -11,17 +11,23 @@ const input = arg("--input");
 const output = arg("--out");
 const base = arg("--base-url", process.env.SWIMMERPARTY_BASE_URL ?? "http://127.0.0.1:3000");
 const batch = process.argv.includes("--batch");
-if (!input || !output) throw new Error("Usage: pnpm film:shot -- --input shot.json --out shot.png [--batch] [--base-url URL]");
+if (!input || !output)
+  throw new Error(
+    "Usage: pnpm film:shot -- --input shot.json --out shot.png [--batch] [--base-url URL]",
+  );
 
 const document = JSON.parse(await readFile(input, "utf8"));
 const shots = batch ? (Array.isArray(document) ? document : document.shots) : [document];
-if (!Array.isArray(shots) || shots.length === 0) throw new Error("film:shot input must contain one shot or a nonempty shots array");
+if (!Array.isArray(shots) || shots.length === 0)
+  throw new Error("film:shot input must contain one shot or a nonempty shots array");
 if (batch) await mkdir(output, { recursive: true });
-const cameraRecords: Array<{ id: string; camera: unknown }> = [];
-
+const cameraRecords: Array<{ id: string; camera: unknown; stage: unknown }> = [];
 const browser = await chromium.launch({ headless: true });
 try {
-  const page = await browser.newPage({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1 });
+  const page = await browser.newPage({
+    viewport: { width: 1280, height: 720 },
+    deviceScaleFactor: 1,
+  });
   await page.goto(new URL("/en/scene/film-harness", base).toString(), {
     waitUntil: "networkidle",
     timeout: 120_000,
@@ -48,11 +54,29 @@ try {
       const raw = document.querySelector("canvas")?.dataset.sceneCamera;
       return raw ? JSON.parse(raw) : null;
     });
-    cameraRecords.push({ id: shot.id, camera });
+    const stage = await page.evaluate(() => {
+      const canvas = document.querySelector("canvas");
+      const parse = (raw?: string) => {
+        try {
+          return raw ? JSON.parse(raw) : null;
+        } catch {
+          return null;
+        }
+      };
+      return {
+        hiddenObjects: parse(canvas?.dataset.sceneHiddenObjects) ?? [],
+        personInsideProps: parse(canvas?.dataset.scenePropCheck) ?? [],
+      };
+    });
+    cameraRecords.push({ id: shot.id, camera, stage });
     await mkdir(dirname(target), { recursive: true });
     await writeFile(target, Buffer.from(result, "base64"));
   }
-  if (batch) await writeFile(join(output, "camera-data.json"), JSON.stringify(cameraRecords, null, 2) + "\n");
+  if (batch)
+    await writeFile(
+      join(output, "camera-data.json"),
+      JSON.stringify(cameraRecords, null, 2) + "\n",
+    );
 } finally {
   await browser.close();
 }

@@ -693,7 +693,7 @@ function Runtime({
         position={[0, 0.003, 0]}
         userData={{ editorOnly: true }}
       />
-      {stageLayer ?? null}{" "}
+      {stageLayer ?? null}
       {document.figures.map((figure, index) => (
         <Figure
           key={figure.id}

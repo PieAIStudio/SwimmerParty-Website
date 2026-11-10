@@ -346,13 +346,25 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
   const spots = indexSpots(floorPlan.spots);
   const cameraSpots = indexSpots(floorPlan.cameraSpots);
   const shotText = String(shot.staging ?? shot.startFrame ?? "");
-  const doorOpen = /打开|敞开|open|opened/i.test(shotText);
   const requested = new Set(refs(shot.onScreenIds ?? shot.onScreen));
   const allPeople = Array.isArray(floorPlan.people)
     ? floorPlan.people.map((item) => asObject(item))
     : Array.isArray(shot.people)
       ? shot.people.map((item) => asObject(item))
       : [];
+  const doorOpen =
+    !/关闭|关着|closed/i.test(shotText) &&
+    (/打开|敞开|推开|open|opened/i.test(shotText) ||
+      allPeople.some((person) => {
+        const blocking = blockingFor(person);
+        const spot =
+          string(blocking.spot) ??
+          string(blocking.spotId) ??
+          string(blocking.positionId) ??
+          string(blocking.at) ??
+          string(person.spotId);
+        return spot?.toLowerCase().includes("doorway") ?? false;
+      }));
   const people = requested.size
     ? allPeople.filter((person) =>
         requested.has(String(person.id ?? person.personId ?? person.roleId ?? person.role)),
@@ -445,9 +457,30 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
 
   const centerKey = firstRef(shot.frameCenter);
   const targetResult = resolveTarget(shot, spots, people, personPositions, centerKey);
-  const target = targetResult.value;
+  let target = targetResult.value;
   const left = refs(shot.frameLeft);
   const right = refs(shot.frameRight);
+  // Framing references adjust the aim point; they never rewrite figure positions.
+  // Bias toward the left reference along the authored axis so camera-side ordering
+  // remains stable when a two-shot has no explicit target.
+  if (!targetResult.explicit && left.length && right.length && axis && axisFrom && axisTo) {
+    const leftPoint = spots.get(left[0]) ?? personPositions.get(left[0]);
+    const rightPoint = spots.get(right[0]) ?? personPositions.get(right[0]);
+    const axisDx = axisTo[0] - axisFrom[0];
+    const axisDz = axisTo[1] - axisFrom[1];
+    const axisLength = Math.hypot(axisDx, axisDz);
+    if (leftPoint && rightPoint && axisLength > 0.01) {
+      const midpoint: [number, number] = [
+        (leftPoint[0] + rightPoint[0]) / 2,
+        (leftPoint[1] + rightPoint[1]) / 2,
+      ];
+      const bias = axis.cameraSide === "right" ? -0.2 : 0.2;
+      target = [
+        midpoint[0] + (axisDx / axisLength) * bias,
+        midpoint[1] + (axisDz / axisLength) * bias,
+      ];
+    }
+  }
   const targets = new Map<string, [number, number]>();
   spots.forEach((value, key) => targets.set(key, value));
   personPositions.forEach((value, key) => targets.set(key, value));
@@ -470,7 +503,7 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
     const position =
       ownerId && owner
         ? [base[0] + handOffset[0], kind === "handProp" ? 0.82 : 0.9, base[1] + handOffset[1]]
-        : [base[0], kind === "toilet" ? 0.35 : kind === "door" ? 1.2 : 0.9, base[1]];
+        : [base[0], kind === "toilet" ? 0.225 : kind === "door" ? 1.2 : 0.9];
     return {
       id,
       kind,
@@ -479,7 +512,7 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
         kind === "door"
           ? [0.12, 2.4, 1.0]
           : kind === "toilet"
-            ? [0.72, 0.7, 0.72]
+            ? [0.72, 0.45, 0.72]
             : kind === "handProp"
               ? [0.12, 0.06, 0.38]
               : [0.35, 0.35, 0.35],
@@ -488,7 +521,6 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       ownerId,
     };
   });
-
   props.forEach((prop) => targets.set(prop.id, [prop.position[0], prop.position[2]]));
   const eyeTargets = Array.isArray(shot.eyeLine)
     ? shot.eyeLine.flatMap((raw) => {

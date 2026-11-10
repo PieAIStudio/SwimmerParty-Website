@@ -130,7 +130,15 @@ export function poseFigure(
   object.position.y -= bounds.min.y;
   updateSkinBounds(object);
   bounds.setFromObject(object, true);
-  const hips = bones.get("pelvis")!.getWorldPosition(new Vector3());
+  let hips = bones.get("pelvis")!.getWorldPosition(new Vector3());
+  // Film blocking uses a real 0.45 m seat datum for every sitting figure.
+  if (sitting) {
+    const currentSeat = hips.y - 0.085 * scale;
+    object.position.y += 0.45 - currentSeat;
+    updateSkinBounds(object);
+    bounds.setFromObject(object, true);
+    hips = bones.get("pelvis")!.getWorldPosition(new Vector3());
+  }
   // A plain stool follows the hips, sized in metres and scaled with the person.
   const height = Math.max(0.05, hips.y - 0.085 * scale);
   const seat = sitting

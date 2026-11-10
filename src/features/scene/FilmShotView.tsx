@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useMemo } from "react";
 import { directingToSceneState, type DirectingShot } from "./film-adapter";
-import { StagePrimitives, updateStageWallVisibility } from "./StagePrimitives";
+import { StagePrimitives, updateStageVisibility } from "./StagePrimitives";
 import type { FilmStageState } from "./stage-contract";
 import type { ExportPicture } from "./canvas-contract";
 
@@ -57,10 +57,10 @@ export function FilmShotView({ payload }: { payload: DirectingShot }) {
         selected=""
         limbs={false}
         cleanExport
-        stageLayer={<StagePrimitives stage={stage} target={scene.camera.target} />}
-        beforeExport={(root, camera) =>
-          updateStageWallVisibility(root, camera, scene.camera.target)
-        }
+        stageLayer={<StagePrimitives stage={stage} />}
+        beforeExport={(root, camera) => {
+          updateStageVisibility(root, camera);
+        }}
         onPose={() => {}}
         onSelect={() => {}}
         onMove={() => {}}

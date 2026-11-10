@@ -2,17 +2,39 @@
 
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import type { Camera, Mesh, Object3D } from "three";
+import { Group, Raycaster, Vector3, type Camera, type Object3D } from "three";
 import type { FilmStageState, StageWall } from "./stage-contract";
 
 type PrimitiveProps = FilmStageState["props"][number];
+type StageNode = Object3D & { userData: Record<string, unknown> };
+type PrimitiveMeta = {
+  id: string;
+  kind: string;
+  node: StageNode;
+  size: [number, number, number];
+  rotation: number;
+  center: Vector3;
+  ownerId?: string;
+};
 
 function StageMaterial({ colour }: { colour: string }) {
   return <meshStandardMaterial color={colour} roughness={0.82} metalness={0.02} />;
 }
 
+function primitiveData(prop: PrimitiveProps) {
+  return {
+    stagePrimitiveId: prop.id,
+    stagePrimitiveKind: prop.kind,
+    stagePrimitiveSize: prop.size,
+    stagePrimitiveRotation: prop.rotation,
+    stagePrimitiveOwnerId: prop.ownerId,
+    stagePrimitiveRoot: true,
+  };
+}
+
 function StageProp({ prop }: { prop: PrimitiveProps }) {
   const [width, height, depth] = prop.size;
+  const data = primitiveData(prop);
   const colour =
     prop.kind === "door"
       ? "#7b5b42"
@@ -21,43 +43,76 @@ function StageProp({ prop }: { prop: PrimitiveProps }) {
         : prop.kind === "handProp"
           ? "#b7b0a3"
           : "#aaa39a";
-  const position =
-    prop.kind === "door" && Math.abs(prop.rotation - Math.PI / 2) < 0.01
-      ? ([prop.position[0] - 0.5, prop.position[1], prop.position[2]] as [number, number, number])
-      : prop.position;
+
   if (prop.kind === "toilet" || prop.kind === "cylinder") {
+    const bowlHeight = Math.max(0.3, height * 0.9);
     return (
-      <mesh
-        position={position}
-        rotation={[0, prop.rotation, 0]}
-        castShadow
-        receiveShadow
-        userData={{
-          stagePrimitive: prop.id,
-          stagePrimitiveKind: prop.kind,
-          stagePrimitiveSize: prop.size,
-          stagePrimitiveRotation: prop.rotation,
-          stageOwnerId: prop.ownerId,
-        }}
-      >
-        <cylinderGeometry args={[width / 2, width / 2, height, 20]} />
-        <StageMaterial colour={colour} />
-      </mesh>
+      <group position={prop.position} rotation={[0, prop.rotation, 0]} userData={data}>
+        <mesh position={[0, -0.01, depth * 0.08]} castShadow receiveShadow userData={data}>
+          <cylinderGeometry args={[width * 0.44, width * 0.5, bowlHeight, 20]} />
+          <StageMaterial colour={colour} />
+        </mesh>
+        {prop.kind === "toilet" ? (
+          <mesh
+            position={[0, height * 0.68, -depth * 0.24]}
+            castShadow
+            receiveShadow
+            userData={data}
+          >
+            <boxGeometry args={[width * 0.72, 0.68, depth * 0.42]} />
+            <StageMaterial colour={colour} />
+          </mesh>
+        ) : null}
+      </group>
     );
   }
+
+  if (prop.kind === "door") {
+    const open = Math.abs(Math.sin(prop.rotation)) > 0.9;
+    const frameData = { ...data, stagePrimitivePart: true };
+    return (
+      <group position={prop.position} userData={data}>
+        <mesh position={[0, height / 2, -depth / 2]} castShadow receiveShadow userData={frameData}>
+          <boxGeometry args={[width, height, 0.1]} />
+          <StageMaterial colour={colour} />
+        </mesh>
+        <mesh position={[0, height / 2, depth / 2]} castShadow receiveShadow userData={frameData}>
+          <boxGeometry args={[width, height, 0.1]} />
+          <StageMaterial colour={colour} />
+        </mesh>
+        <mesh position={[0, height - 0.05, 0]} castShadow receiveShadow userData={frameData}>
+          <boxGeometry args={[width, 0.1, depth + 0.1]} />
+          <StageMaterial colour={colour} />
+        </mesh>
+        {open ? (
+          <group position={[0, 0, -depth / 2]} rotation={[0, Math.PI / 2, 0]}>
+            <mesh
+              position={[0, height / 2, depth / 2]}
+              castShadow
+              receiveShadow
+              userData={frameData}
+            >
+              <boxGeometry args={[width, height, Math.max(0.1, depth - 0.1)]} />
+              <StageMaterial colour={colour} />
+            </mesh>
+          </group>
+        ) : (
+          <mesh position={[0, height / 2, 0]} castShadow receiveShadow userData={frameData}>
+            <boxGeometry args={[width, height, Math.max(0.1, depth - 0.1)]} />
+            <StageMaterial colour={colour} />
+          </mesh>
+        )}
+      </group>
+    );
+  }
+
   return (
     <mesh
-      position={position}
+      position={prop.position}
       rotation={[0, prop.rotation, 0]}
       castShadow
       receiveShadow
-      userData={{
-        stagePrimitive: prop.id,
-        stagePrimitiveKind: prop.kind,
-        stagePrimitiveSize: prop.size,
-        stagePrimitiveRotation: prop.rotation,
-        stageOwnerId: prop.ownerId,
-      }}
+      userData={data}
     >
       <boxGeometry args={[width, height, depth]} />
       <StageMaterial colour={colour} />
@@ -74,165 +129,166 @@ function roomCenter(walls: StageWall[]): [number, number] {
   return [total[0] / walls.length, total[1] / walls.length];
 }
 
-function rotate(point: [number, number], radians: number): [number, number] {
-  const c = Math.cos(radians);
-  const s = Math.sin(radians);
-  return [point[0] * c - point[1] * s, point[0] * s + point[1] * c];
+function primitiveId(node: Object3D) {
+  return typeof node.userData.stagePrimitiveId === "string"
+    ? node.userData.stagePrimitiveId
+    : undefined;
 }
 
-function wallBasis(
-  wall: {
-    position: [number, number, number];
-    size: [number, number, number];
-    rotation: number;
-  },
-  center: [number, number],
-) {
-  const alongX = wall.size[0] >= wall.size[2];
-  const localNormal = alongX ? ([0, 1] as [number, number]) : ([1, 0] as [number, number]);
-  const localTangent = alongX ? ([1, 0] as [number, number]) : ([0, 1] as [number, number]);
-  let normal = rotate(localNormal, wall.rotation);
-  const tangent = rotate(localTangent, wall.rotation);
-  const outward: [number, number] = [wall.position[0] - center[0], wall.position[2] - center[1]];
-  if (normal[0] * outward[0] + normal[1] * outward[1] < 0) normal = [-normal[0], -normal[1]];
-  return { normal, tangent, halfLength: (alongX ? wall.size[0] : wall.size[2]) / 2 };
-}
-
-export function wallIsVisible(
-  wall: {
-    position: [number, number];
-    size: [number, number, number];
-    rotation: number;
-  },
-  center: [number, number],
-  camera: Pick<Camera, "position">,
-  target: [number, number, number] = [center[0], 1.1, center[1]],
-) {
-  const { normal, tangent, halfLength } = wallBasis(
-    {
-      position: [wall.position[0], 1.4, wall.position[1]],
-      size: wall.size,
-      rotation: wall.rotation,
-    },
-    center,
-  );
-  const plane = [wall.position[0], wall.position[1]] as [number, number];
-  const cameraPoint: [number, number] = [camera.position.x, camera.position.z];
-  const targetPoint: [number, number] = [target[0], target[2]];
-  const cameraDistance =
-    (cameraPoint[0] - plane[0]) * normal[0] + (cameraPoint[1] - plane[1]) * normal[1];
-  const targetDistance =
-    (targetPoint[0] - plane[0]) * normal[0] + (targetPoint[1] - plane[1]) * normal[1];
-  if (cameraDistance * targetDistance >= -0.0001) return true;
-  const fraction = cameraDistance / (cameraDistance - targetDistance);
-  const hit: [number, number] = [
-    cameraPoint[0] + (targetPoint[0] - cameraPoint[0]) * fraction,
-    cameraPoint[1] + (targetPoint[1] - cameraPoint[1]) * fraction,
-  ];
-  const along = (hit[0] - plane[0]) * tangent[0] + (hit[1] - plane[1]) * tangent[1];
-  return Math.abs(along) > halfLength + 0.08;
-}
-
-function segmentHitsProp(
-  position: [number, number, number],
-  size: [number, number, number],
-  rotation: number,
-  camera: Pick<Camera, "position">,
-  target: [number, number, number],
-) {
-  const toLocal = (point: [number, number]) => {
-    const dx = point[0] - position[0];
-    const dz = point[1] - position[2];
-    return rotate([dx, dz], -rotation);
-  };
-  const a = toLocal([camera.position.x, camera.position.z]);
-  const b = toLocal([target[0], target[2]]);
-  const halfX = size[0] / 2 + 0.04;
-  const halfZ = size[2] / 2 + 0.04;
-  let t0 = 0;
-  let t1 = 1;
-  for (const [start, delta, half] of [
-    [a[0], b[0] - a[0], halfX],
-    [a[1], b[1] - a[1], halfZ],
-  ] as Array<[number, number, number]>) {
-    if (Math.abs(delta) < 1e-6) {
-      if (Math.abs(start) > half) return false;
-      continue;
-    }
-    const near = (-half - start) / delta;
-    const far = (half - start) / delta;
-    const low = Math.min(near, far);
-    const high = Math.max(near, far);
-    t0 = Math.max(t0, low);
-    t1 = Math.min(t1, high);
-    if (t0 > t1) return false;
-  }
-  return t1 >= 0 && t0 <= 1;
-}
-
-export function updateStageWallVisibility(
-  root: Object3D,
-  camera: Pick<Camera, "position">,
-  target?: [number, number, number],
-) {
-  const resolvedTarget = target ?? [0, 1.1, 0];
+function stageNodes(root: Object3D) {
+  const nodes: StageNode[] = [];
   root.traverse((node) => {
-    const primitiveKind = node.userData.stagePrimitiveKind as string | undefined;
-    if (primitiveKind === "door") {
-      const size = node.userData.stagePrimitiveSize as [number, number, number] | undefined;
-      const rotation = node.userData.stagePrimitiveRotation as number | undefined;
-      if (size && rotation !== undefined)
-        node.visible = !segmentHitsProp(
-          [node.position.x, node.position.y, node.position.z],
-          size,
-          rotation,
-          camera,
-          resolvedTarget,
-        );
-      return;
-    }
-    const center = node.userData.stageWallCenter as [number, number] | undefined;
-    const size = node.userData.stageWallSize as [number, number, number] | undefined;
-    const rotation = node.userData.stageWallRotation as number | undefined;
-    if (!center || !size || rotation === undefined || !node.userData.stageWall) return;
-    const wall = {
-      position: [node.position.x, node.position.z] as [number, number],
-      size,
-      rotation,
-    };
-    const visibleOnRay = wallIsVisible(wall, center, camera, target);
-    const { normal } = wallBasis(
-      { position: [node.position.x, 1.4, node.position.z], size, rotation },
-      center,
-    );
-    const cameraDistance =
-      (camera.position.x - node.position.x) * normal[0] +
-      (camera.position.z - node.position.z) * normal[1];
-    const centerDistance =
-      (center[0] - node.position.x) * normal[0] + (center[1] - node.position.z) * normal[1];
-    // Outside cameras get the near perimeter wall cut away. Inside cameras
-    // use the exact rotation-aware camera-to-target segment test above.
-    const nearOutside = cameraDistance > 0.02 && centerDistance < -0.02;
-    node.visible = visibleOnRay && !nearOutside;
+    if (node.userData.stageWall || primitiveId(node)) nodes.push(node as StageNode);
   });
+  return nodes;
 }
 
-function StageWall({
-  wall,
-  center,
-  target,
-}: {
-  wall: StageWall;
-  center: [number, number];
-  target?: [number, number, number];
-}) {
-  const meshRef = useRef<Mesh>(null);
-  useFrame(({ camera }) => {
-    if (meshRef.current) updateStageWallVisibility(meshRef.current, camera, target);
+function primitiveMeta(node: StageNode): PrimitiveMeta | undefined {
+  const id = primitiveId(node);
+  if (!id) return undefined;
+  const size = node.userData.stagePrimitiveSize;
+  if (!Array.isArray(size) || size.length !== 3) return undefined;
+  const center = new Vector3();
+  node.getWorldPosition(center);
+  return {
+    id,
+    kind: String(node.userData.stagePrimitiveKind ?? "prop"),
+    node,
+    size: size as [number, number, number],
+    rotation:
+      typeof node.userData.stagePrimitiveRotation === "number"
+        ? node.userData.stagePrimitiveRotation
+        : 0,
+    center,
+    ownerId:
+      typeof node.userData.stagePrimitiveOwnerId === "string"
+        ? node.userData.stagePrimitiveOwnerId
+        : undefined,
+  };
+}
+
+function pointInsideBox(point: Vector3, meta: PrimitiveMeta) {
+  if (meta.kind === "door") return false;
+  const local = point.clone().sub(meta.center);
+  local.applyAxisAngle(new Vector3(0, 1, 0), -meta.rotation);
+  const [width, height, depth] = meta.size;
+  return (
+    Math.abs(local.x) < width / 2 + 0.03 &&
+    Math.abs(local.z) < depth / 2 + 0.03 &&
+    Math.abs(local.y) < Math.max(0.02, height / 2 - 0.025)
+  );
+}
+
+function targetPoints(root: Object3D) {
+  const points: Array<{ point: Vector3; ownerId?: string }> = [];
+  const sceneRoot = root.parent ?? root;
+  sceneRoot.traverse((node) => {
+    const figureId =
+      typeof node.userData.figureBody === "string" ? node.userData.figureBody : undefined;
+    if (!figureId) return;
+    for (const name of ["head", "spine_03", "hand_l", "hand_r"]) {
+      const joint = node.getObjectByName(name);
+      if (joint) {
+        const point = new Vector3();
+        joint.getWorldPosition(point);
+        points.push({ point });
+      }
+    }
+    if (!["head", "spine_03", "hand_l", "hand_r"].some((name) => node.getObjectByName(name))) {
+      const point = new Vector3();
+      node.getWorldPosition(point);
+      points.push({ point: point.add(new Vector3(0, 1.1, 0)) });
+    }
   });
+  root.traverse((node) => {
+    const meta = primitiveMeta(node as StageNode);
+    if (meta?.ownerId) points.push({ point: meta.center, ownerId: meta.id });
+  });
+  return points;
+}
+
+function stageEvidence(root: Object3D, camera: Camera) {
+  const nodes = stageNodes(root);
+  const grouped = new Map<string, StageNode[]>();
+  const metas = new Map<string, PrimitiveMeta>();
+  for (const node of nodes) {
+    const id =
+      primitiveId(node) ??
+      (typeof node.userData.stageWall === "string" ? node.userData.stageWall : undefined);
+    if (!id) continue;
+    const group = grouped.get(id) ?? [];
+    group.push(node);
+    grouped.set(id, group);
+    const meta = primitiveMeta(node);
+    if (meta && !metas.has(id)) metas.set(id, meta);
+    node.visible = true;
+  }
+
+  const hidden = new Set<string>();
+  const raycaster = new Raycaster();
+  const origin = camera.position.clone();
+  for (const endpoint of targetPoints(root)) {
+    const delta = endpoint.point.clone().sub(origin);
+    const distance = delta.length();
+    if (distance < 0.05) continue;
+    raycaster.set(origin, delta.normalize());
+    for (const [id, parts] of grouped) {
+      if (metas.get(id)?.ownerId) continue;
+      let blocked = false;
+      for (const part of parts) {
+        if (!part.visible || !(part as StageNode & { isMesh?: boolean }).isMesh) continue;
+        const hit = raycaster.intersectObject(part, false)[0];
+        if (hit && hit.distance < distance - 0.035) {
+          blocked = true;
+          break;
+        }
+      }
+      if (blocked) hidden.add(id);
+    }
+  }
+  for (const [id, parts] of grouped) {
+    const visible = !hidden.has(id);
+    for (const part of parts) part.visible = visible;
+  }
+
+  const inside: Array<{ personId: string; propId: string; joint: string }> = [];
+  const sceneRoot = root.parent ?? root;
+  sceneRoot.traverse((node) => {
+    const personId =
+      typeof node.userData.figureBody === "string" ? node.userData.figureBody : undefined;
+    if (!personId) return;
+    for (const jointName of ["pelvis", "spine_01", "spine_02", "spine_03"]) {
+      const joint = node.getObjectByName(jointName);
+      if (!joint) continue;
+      const point = new Vector3();
+      joint.getWorldPosition(point);
+      for (const [propId, meta] of metas) {
+        if (pointInsideBox(point, meta)) inside.push({ personId, propId, joint: jointName });
+      }
+    }
+  });
+
+  const evidence = {
+    hiddenObjects: [...hidden].sort(),
+    personInsideProps: inside,
+  };
+  if (typeof document !== "undefined") {
+    const canvas = document.querySelector("canvas");
+    if (canvas) {
+      canvas.dataset.sceneHiddenObjects = JSON.stringify(evidence.hiddenObjects);
+      canvas.dataset.scenePropCheck = JSON.stringify(evidence.personInsideProps);
+    }
+  }
+  return evidence;
+}
+
+export function updateStageVisibility(root: Object3D, camera: Camera) {
+  return stageEvidence(root, camera);
+}
+
+function StageWall({ wall, center }: { wall: StageWall; center: [number, number] }) {
   return (
     <mesh
-      ref={meshRef}
       position={wall.position}
       rotation={[0, wall.rotation, 0]}
       castShadow
@@ -267,24 +323,22 @@ function StageAxis({ from, to }: { from: [number, number]; to: [number, number] 
   );
 }
 
-export function StagePrimitives({
-  stage,
-  target,
-}: {
-  stage?: FilmStageState;
-  target?: [number, number, number];
-}) {
+export function StagePrimitives({ stage }: { stage?: FilmStageState }) {
+  const stageRoot = useRef<Group>(null);
   const center = roomCenter(stage?.walls ?? []);
+  useFrame(({ camera }) => {
+    if (stageRoot.current) updateStageVisibility(stageRoot.current, camera);
+  });
   if (!stage) return null;
   return (
-    <>
+    <group ref={stageRoot}>
       {stage.walls.map((wall) => (
-        <StageWall key={wall.id} wall={wall} center={center} target={target} />
+        <StageWall key={wall.id} wall={wall} center={center} />
       ))}
       {stage.props.map((prop) => (
         <StageProp key={prop.id} prop={prop} />
       ))}
       {stage.axis ? <StageAxis from={stage.axis.from} to={stage.axis.to} /> : null}
-    </>
+    </group>
   );
 }
