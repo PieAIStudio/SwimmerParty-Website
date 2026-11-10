@@ -583,7 +583,16 @@ function Runtime({
       };
       queueMicrotask(() => onCameraChange(resolved, false));
     } else {
-      void api.setLookAt(...document.camera.position, ...document.camera.target, false);
+      const target: [number, number, number] = [...document.camera.target];
+      if (cleanExport && document.camera.shot === "close" && document.figures.length === 1) {
+        // Film dialogue aims between the loaded shoulders and crown, not a fixed
+        // 1.1m torso point. Authored camera position and horizontal aim stay put.
+        const id = document.figures[0].id;
+        const body = bodies.get(id);
+        const shoulder = joints[id]?.upperarm_l;
+        if (body && shoulder) target[1] = (body.max.y + shoulder[1]) / 2;
+      }
+      void api.setLookAt(...document.camera.position, ...target, false);
       api.update(0);
     }
     // Evidence is the real rendered camera and loaded geometry, not standing-height estimates.
@@ -597,6 +606,14 @@ function Runtime({
         aspect: camera.aspect,
         seats,
         joints,
+        figures: document.figures.map(({ id, actorSlug, x, z, turn, pose }) => ({
+          id,
+          actorSlug,
+          x,
+          z,
+          turn,
+          pose,
+        })),
         bodies: [...bodies].map(([id, box]) => ({
           id,
           min: box.min.toArray(),
@@ -615,8 +632,10 @@ function Runtime({
     scene,
     limbs,
     viewport.width,
+    cleanExport,
     viewport.height,
   ]);
+
   function saveCamera() {
     if (!controls.current) return;
     onCameraChange({

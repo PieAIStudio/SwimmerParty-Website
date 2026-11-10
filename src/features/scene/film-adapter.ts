@@ -396,7 +396,9 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
     names.push(string(item.name) ?? string(item.id) ?? "prop");
     propsByOwner.set(owner, names);
   });
-  const figures = people.map((person, index) => {
+  // Resolve the entire authored cast before selecting visible meshes: eyelines and
+  // owned props can target a person who is deliberately outside this shot.
+  const allFigures = allPeople.map((person, index) => {
     const id = personId(person, index);
     const blocking = blockingFor(person);
     const namedSpot =
@@ -408,10 +410,11 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
     const located = point(blocking) ??
       point(person) ??
       (namedSpot ? spots.get(namedSpot) : undefined) ?? [
-        index * 0.8 - (people.length - 1) * 0.4,
+        index * 0.8 - (allPeople.length - 1) * 0.4,
         0,
       ];
     personPositions.set(id, located);
+    const castRole = asObject(asObject(shot.cast)[id]);
     const pose = poseFor(person, shotText, namedSpot, propsByOwner.get(id) ?? []);
     const seatedReach =
       pose === "sit" &&
@@ -420,8 +423,8 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       );
     return {
       id,
-      actorSlug: string(person.actorSlug) ?? string(person.actor) ?? undefined,
-      name: string(person.name) ?? id,
+      actorSlug: string(person.actorSlug) ?? string(person.actor) ?? string(castRole.actorSlug),
+      name: string(person.name) ?? string(castRole.name) ?? id,
       heightCm: heightFor(person),
       build: buildFor(person),
       pose,
@@ -431,6 +434,9 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       turn: number(blocking.turn ?? blocking.rotation ?? blocking.facing ?? person.turn, 0),
     };
   });
+  const figures = requested.size
+    ? allFigures.filter((figure) => requested.has(figure.id))
+    : allFigures;
   const safeFigures: FigureState[] = figures.length
     ? figures
     : [
@@ -513,8 +519,8 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
     const ownerId = string(item.ownerId) ?? (at && personPositions.has(at) ? at : undefined);
     const base = point(item) ??
       (at ? (spots.get(at) ?? personPositions.get(at)) : undefined) ?? [0, 0];
-    const ownerIndex = ownerId ? safeFigures.findIndex((figure) => figure.id === ownerId) : -1;
-    const owner = ownerIndex >= 0 ? safeFigures[ownerIndex] : undefined;
+    const ownerIndex = ownerId ? allFigures.findIndex((figure) => figure.id === ownerId) : -1;
+    const owner = ownerIndex >= 0 ? allFigures[ownerIndex] : undefined;
     const turn = owner ? (owner.turn * Math.PI) / 180 : 0;
     const handOffset: [number, number] = [
       Math.sin(turn) * 0.28 + (ownerIndex % 2 ? -0.08 : 0.08),
@@ -588,7 +594,9 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
     },
     setting: settingDraftSchema.parse(undefined),
     stage: {
-      props,
+      props: props.filter(
+        (prop) => !prop.ownerId || safeFigures.some((figure) => figure.id === prop.ownerId),
+      ),
       walls: makeWalls(spots, floorPlan.walls),
       axis,
       frame: { left, right, center: refs(shot.frameCenter) },

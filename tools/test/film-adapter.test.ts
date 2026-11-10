@@ -111,6 +111,45 @@ test("door eyeline resolves a finite third coordinate, never an invisible actor"
   const props = (result.scene.stage as { props: Array<{ position: number[] }> }).props;
   assert.deepEqual(props[0].position, [0, 1.2, 0]);
 });
+
+test("single dialogue shots resolve the offscreen partner without drawing that partner", async () => {
+  const { directingToSceneState } = await import("../../src/features/scene/film-adapter.ts");
+  for (const [visible, partner, yaw] of [
+    ["crew_brother", "dale", 180],
+    ["dale", "crew_brother", 0],
+  ] as const) {
+    const { scene } = directingToSceneState({
+      id: `dialogue-${visible}`,
+      cast: {
+        dale: { name: "Role A", actorSlug: "actor-a" },
+        crew_brother: { name: "Role B", actorSlug: "actor-b" },
+      },
+      shotSize: "close",
+      cameraSpot: "close",
+      frameCenter: [visible],
+      onScreenIds: [visible],
+      eyeLine: [{ roleId: visible, targetId: partner }],
+      floorPlan,
+    });
+    assert.deepEqual(
+      scene.figures.map((figure) => figure.id),
+      [visible],
+    );
+    assert.equal(scene.figures[0].turn, yaw);
+    assert.equal(scene.figures[0].actorSlug, visible === "dale" ? "actor-a" : "actor-b");
+    assert.deepEqual(
+      [scene.figures[0].x, scene.figures[0].z],
+      visible === "dale" ? [0, 0] : [0, 2],
+    );
+    const stage = scene.stage as {
+      eyeTargets: Array<{ roleId: string; targetId: string }>;
+      props: Array<{ id: string; ownerId?: string }>;
+    };
+    assert.deepEqual(stage.eyeTargets, [{ roleId: visible, targetId: partner }]);
+    assert.ok(stage.props.every((prop) => !prop.ownerId || prop.ownerId === visible));
+  }
+});
+
 test("directing adapter preserves a close single camera and data-driven pose", async () => {
   const { directingToSceneState } = await import("../../src/features/scene/film-adapter.ts");
   const result = directingToSceneState({

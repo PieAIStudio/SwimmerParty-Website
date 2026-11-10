@@ -71,7 +71,10 @@ function StageProp({ prop }: { prop: PrimitiveProps }) {
     const open = Math.abs(Math.sin(prop.rotation)) > 0.9;
     const frameData = { ...data, stagePrimitivePart: true };
     return (
-      <group position={prop.position} userData={data}>
+      <group
+        position={[prop.position[0], prop.position[1] - height / 2, prop.position[2]]}
+        userData={data}
+      >
         <mesh position={[0, height / 2, -depth / 2]} castShadow receiveShadow userData={frameData}>
           <boxGeometry args={[width, height, 0.1]} />
           <StageMaterial colour={colour} />
@@ -192,6 +195,17 @@ function targetPoints(root: Object3D) {
         const point = new Vector3();
         joint.getWorldPosition(point);
         points.push({ point });
+        if (name === "head") {
+          // Protect the face silhouette as well as the joint's center from jambs.
+          for (const offset of [
+            [0.14, 0, 0],
+            [-0.14, 0, 0],
+            [0, 0.14, 0],
+            [0, 0, 0.14],
+            [0, 0, -0.14],
+          ])
+            points.push({ point: point.clone().add(new Vector3(offset[0], offset[1], offset[2])) });
+        }
       }
     }
     if (!["head", "spine_03", "hand_l", "hand_r"].some((name) => node.getObjectByName(name))) {
