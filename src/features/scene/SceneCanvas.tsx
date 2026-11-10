@@ -250,6 +250,7 @@ function Figure({
       editingPair,
       standingClearance,
       relaxedLineup,
+      cleanExport ? 0.45 : undefined,
     );
   }, [
     source,
@@ -262,6 +263,7 @@ function Figure({
     editingPair,
     standingClearance,
     relaxedLineup,
+    cleanExport,
   ]);
   useEffect(() => () => model.dispose(), [model]);
   const root = useRef<Group>(null);

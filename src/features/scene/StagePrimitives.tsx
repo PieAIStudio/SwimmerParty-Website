@@ -268,15 +268,60 @@ function stageEvidence(root: Object3D, camera: Camera) {
     }
   });
 
+  // Project actual loaded head/pelvis/foot joints; knees sit midway between hips and feet.
+  const frameMargins: Record<
+    string,
+    { left: number; right: number; top: number; bottom: number; min: number }
+  > = {};
+  camera.updateMatrixWorld(true);
+  sceneRoot.traverse((node) => {
+    const personId =
+      typeof node.userData.figureBody === "string" ? node.userData.figureBody : undefined;
+    if (!personId) return;
+    const head = node.getObjectByName("head");
+    const pelvis = node.getObjectByName("pelvis");
+    const leftFoot = node.getObjectByName("foot_l");
+    const rightFoot = node.getObjectByName("foot_r");
+    if (!head || !pelvis || !leftFoot || !rightFoot) return;
+    const headAt = head.getWorldPosition(new Vector3());
+    const hipsAt = pelvis.getWorldPosition(new Vector3());
+    const footL = leftFoot.getWorldPosition(new Vector3());
+    const footR = rightFoot.getWorldPosition(new Vector3());
+    const bottom = (hipsAt.y + Math.min(footL.y, footR.y)) / 2 - 0.07;
+    const upper = headAt.y + 0.15;
+    const xs = [headAt.x, hipsAt.x, (footL.x + footR.x) / 2];
+    const zs = [headAt.z, hipsAt.z, (footL.z + footR.z) / 2];
+    const extremes = [Math.min(...xs) - 0.26, Math.max(...xs) + 0.26].flatMap((x) =>
+      [bottom, upper].flatMap((y) =>
+        [Math.min(...zs) - 0.26, Math.max(...zs) + 0.26].map((z) =>
+          new Vector3(x, y, z).project(camera),
+        ),
+      ),
+    );
+    if (extremes.some((point) => ![point.x, point.y, point.z].every(Number.isFinite))) return;
+    const left = (Math.min(...extremes.map((point) => point.x)) + 1) / 2;
+    const right = (1 - Math.max(...extremes.map((point) => point.x))) / 2;
+    const top = (1 - Math.max(...extremes.map((point) => point.y))) / 2;
+    const bottomMargin = (Math.min(...extremes.map((point) => point.y)) + 1) / 2;
+    frameMargins[personId] = {
+      left,
+      right,
+      top,
+      bottom: bottomMargin,
+      min: Math.min(left, right, top, bottomMargin),
+    };
+  });
   const evidence = {
     hiddenObjects: [...hidden].sort(),
     personInsideProps: inside,
+    frameMargins,
   };
   if (typeof document !== "undefined") {
     const canvas = document.querySelector("canvas");
     if (canvas) {
       canvas.dataset.sceneHiddenObjects = JSON.stringify(evidence.hiddenObjects);
       canvas.dataset.scenePropCheck = JSON.stringify(evidence.personInsideProps);
+      canvas.dataset.sceneFrameMargins = JSON.stringify(evidence.frameMargins);
     }
   }
   return evidence;

@@ -1,6 +1,6 @@
 import { settingDraftSchema } from "../settings/contracts.ts";
+import { fitFilmPeople } from "./film-framing.ts";
 import { fitCamera, type FigureState, type FilmStageState, type SceneState } from "./model.ts";
-
 export type DirectingPoint = {
   x?: number;
   z?: number;
@@ -158,6 +158,13 @@ function poseFor(
     narrative.includes("指向") ||
     narrative.includes("递烟") ||
     (ownedPropNames.length > 0 && /(递|伸|掏|指向|举|递烟|offer|reach|point|hand)/i.test(shotText));
+  // Seat blocking wins over gestures: extending an arm does not stand a person up.
+  if (
+    raw.includes("sit") ||
+    namedSpot?.toLowerCase().includes("seat") ||
+    namedSpot?.toLowerCase().includes("toilet")
+  )
+    return "sit";
   if (
     narrative.includes("移开视线") ||
     narrative.includes("看一眼") ||
@@ -169,7 +176,7 @@ function poseFor(
     return "lean-in";
   if (raw.includes("kneel") || narrative.includes("跪")) return "kneel";
   if (raw.includes("walk") || descriptor.includes("走") || descriptor.includes("跑")) return "walk";
-  // Reaching wins over sitting so a seated person can offer a prop.
+  // Other gestures keep their authored stance if no seat is specified.
   if (reach) return "point";
   if (
     raw.includes("sit") ||
@@ -187,6 +194,13 @@ function poseFor(
   if (raw.includes("shoulder")) return "look-over-shoulder";
   return "stand";
 }
+
+// Keep the seated pelvis/legs while lifting the anatomical right arm for a reach.
+const seatedReachJoints: FigureState["joints"] = {
+  upperarm_r: [0.618159, 0.203427, 0.1773, 0.738283],
+  lowerarm_r: [0.037142, -0.03644, 0.004982, 0.998633],
+  hand_r: [0.010445, -0.398664, 0.00284, 0.917033],
+};
 
 function buildFor(person: Record<string, unknown>): FigureState["build"] {
   const blocking = blockingFor(person);
@@ -398,14 +412,20 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
         0,
       ];
     personPositions.set(id, located);
+    const pose = poseFor(person, shotText, namedSpot, propsByOwner.get(id) ?? []);
+    const seatedReach =
+      pose === "sit" &&
+      /(递|伸|指向|掏|offer|reach|point|hand)/i.test(
+        shotText + " " + String(blocking.description ?? blocking.staging ?? ""),
+      );
     return {
       id,
       actorSlug: string(person.actorSlug) ?? string(person.actor) ?? undefined,
       name: string(person.name) ?? id,
       heightCm: heightFor(person),
       build: buildFor(person),
-      pose: poseFor(person, shotText, namedSpot, propsByOwner.get(id) ?? []),
-      joints: {},
+      pose,
+      joints: seatedReach ? seatedReachJoints : {},
       x: located[0],
       z: located[1],
       turn: number(blocking.turn ?? blocking.rotation ?? blocking.facing ?? person.turn, 0),
@@ -500,14 +520,14 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       Math.sin(turn) * 0.28 + (ownerIndex % 2 ? -0.08 : 0.08),
       Math.cos(turn) * 0.28,
     ];
-    const position =
+    const position: [number, number, number] =
       ownerId && owner
         ? [base[0] + handOffset[0], kind === "handProp" ? 0.82 : 0.9, base[1] + handOffset[1]]
-        : [base[0], kind === "toilet" ? 0.225 : kind === "door" ? 1.2 : 0.9];
+        : [base[0], kind === "toilet" ? 0.225 : kind === "door" ? 1.2 : 0.9, base[1]];
     return {
       id,
       kind,
-      position: position as [number, number, number],
+      position,
       size:
         kind === "door"
           ? [0.12, 2.4, 1.0]
@@ -540,24 +560,32 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
     };
   });
   const shotSize = shotName(shot.shotSize);
+  const filmCamera = fitFilmPeople(
+    turnedFigures,
+    [cameraPoint[0], 1.55, cameraPoint[1]],
+    [target[0], 1.1, target[1]],
+    shotSize === "close" ? 50 : 24,
+  );
   const scene: SceneState = {
     version: 1,
     castKey: "directing",
     figures: turnedFigures,
     frame: "landscape",
-    camera: fitCamera({
+    camera: {
+      ...fitCamera({
+        fit: false,
+        shot: shotSize,
+        view: cameraView(shot.eyeLine),
+        lens: filmCamera.lens as SceneState["camera"]["lens"],
+        position: filmCamera.position,
+        target: filmCamera.target,
+        subject:
+          centerKey && turnedFigures.some((figure) => figure.id === centerKey)
+            ? centerKey
+            : "everyone",
+      }),
       fit: false,
-      shot: shotSize,
-      view: cameraView(shot.eyeLine),
-      // Keep Directing's camera spot/target fixed; a close two-shot needs a wider lens at the supplied spot.
-      lens: shotSize === "close" ? 50 : shotSize === "medium" ? 24 : 24,
-      position: [cameraPoint[0], 1.55, cameraPoint[1]],
-      target: [target[0], 1.1, target[1]],
-      subject:
-        centerKey && turnedFigures.some((figure) => figure.id === centerKey)
-          ? centerKey
-          : "everyone",
-    }),
+    },
     setting: settingDraftSchema.parse(undefined),
     stage: {
       props,

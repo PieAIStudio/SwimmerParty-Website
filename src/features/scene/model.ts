@@ -69,7 +69,16 @@ const sceneSchema = z
       position: point,
       target: point,
       shot: z.enum(SHOTS).default("full"),
-      lens: z.union([z.literal(24), z.literal(50), z.literal(85)]).default(50),
+      lens: z
+        .union([
+          z.literal(18),
+          z.literal(20),
+          z.literal(22),
+          z.literal(24),
+          z.literal(50),
+          z.literal(85),
+        ])
+        .default(50),
       sensorWidth: z.literal(36).default(36),
       subject: z.string().default("everyone"),
       fit: z.boolean().default(false),
@@ -233,7 +242,7 @@ export function fitCamera(camera: Partial<CameraState> = {}): CameraState {
     position: [0, 1, 7],
     target: [0, 1, 0],
     ...camera,
-    fit: camera.fit ?? true,
+    fit: true,
   };
 }
 export function initialScene(actors: SceneActor[] = [], castKey = ""): SceneState {

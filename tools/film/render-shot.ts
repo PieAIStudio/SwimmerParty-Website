@@ -32,23 +32,50 @@ try {
     waitUntil: "networkidle",
     timeout: 120_000,
   });
-  await page.waitForFunction(() => typeof window.__MF_SET_FILM_SHOT__ === "function", null, {
-    timeout: 120_000,
-  });
+  await page.waitForFunction(
+    () =>
+      document.body.dataset.mfHarnessReady === "true" &&
+      typeof window.__MF_SET_FILM_SHOT__ === "function",
+    null,
+    { timeout: 120_000 },
+  );
   for (const shot of shots) {
-    await page.evaluate((payload) => window.__MF_SET_FILM_SHOT__?.(payload), shot);
-    await page.waitForFunction(
-      (id) =>
-        document.body.dataset.mfShotId === id &&
-        typeof window.__filmStageExport === "function" &&
-        Boolean(document.querySelector("canvas")?.dataset.sceneCamera),
-      shot.id,
-      { timeout: 120_000 },
-    );
-    const result = await page.evaluate(async () => {
-      if (!window.__filmStageExport) throw new Error("film stage exporter unavailable");
-      return window.__filmStageExport();
-    });
+    await page.evaluate((payload) => {
+      document.querySelector("canvas")?.removeAttribute("data-scene-frame-margins");
+      window.__MF_SET_FILM_SHOT__?.(payload);
+    }, shot);
+    let result: string | null = null; // The React scene exporter is cleared and reattached on each shot remount.
+    // Never accept a readiness observation from the previous shot.
+    for (let attempt = 0; attempt < 6 && !result; attempt++) {
+      await page.waitForFunction(
+        ({ id, people }) => {
+          const canvas = document.querySelector("canvas");
+          if (
+            document.body.dataset.mfShotId !== id ||
+            canvas?.dataset.sceneReady !== "true" ||
+            typeof window.__filmStageExport !== "function"
+          )
+            return false;
+          try {
+            const margins = JSON.parse(canvas.dataset.sceneFrameMargins ?? "{}");
+            return people.every(
+              (personId: string) =>
+                typeof margins[personId]?.min === "number" &&
+                Number.isFinite(margins[personId].min),
+            );
+          } catch {
+            return false;
+          }
+        },
+        { id: shot.id, people: Array.isArray(shot.onScreenIds) ? shot.onScreenIds : [] },
+        { timeout: 120_000 },
+      );
+      result = await page.evaluate(async () => {
+        const exporter = window.__filmStageExport;
+        return exporter ? exporter() : null;
+      });
+    }
+    if (!result) throw new Error(`${shot.id}: film stage exporter did not settle`);
     const target = batch ? join(output, `${shot.id}.png`) : output;
     const camera = await page.evaluate(() => {
       const raw = document.querySelector("canvas")?.dataset.sceneCamera;
@@ -66,6 +93,7 @@ try {
       return {
         hiddenObjects: parse(canvas?.dataset.sceneHiddenObjects) ?? [],
         personInsideProps: parse(canvas?.dataset.scenePropCheck) ?? [],
+        frameMargins: parse(canvas?.dataset.sceneFrameMargins) ?? {},
       };
     });
     cameraRecords.push({ id: shot.id, camera, stage });

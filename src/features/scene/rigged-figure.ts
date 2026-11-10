@@ -89,6 +89,7 @@ export function poseFigure(
   editingPair = false,
   standingClearance = 0,
   relaxedLineup = false,
+  filmSeatHeight?: number,
 ) {
   // Object3D.clone leaves skinned meshes pointing at the source skeleton.
   const object = clone(source);
@@ -131,15 +132,13 @@ export function poseFigure(
   updateSkinBounds(object);
   bounds.setFromObject(object, true);
   let hips = bones.get("pelvis")!.getWorldPosition(new Vector3());
-  // Film blocking uses a real 0.45 m seat datum for every sitting figure.
-  if (sitting) {
-    const currentSeat = hips.y - 0.085 * scale;
-    object.position.y += 0.45 - currentSeat;
+  // The film harness uses a 0.45m seat, without altering editor layout presets.
+  if (sitting && filmSeatHeight !== undefined) {
+    object.position.y += filmSeatHeight - (hips.y - 0.085 * scale);
     updateSkinBounds(object);
     bounds.setFromObject(object, true);
     hips = bones.get("pelvis")!.getWorldPosition(new Vector3());
   }
-  // A plain stool follows the hips, sized in metres and scaled with the person.
   const height = Math.max(0.05, hips.y - 0.085 * scale);
   const seat = sitting
     ? {

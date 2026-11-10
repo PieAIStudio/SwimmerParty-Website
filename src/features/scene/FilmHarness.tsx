@@ -20,22 +20,16 @@ export function FilmHarness() {
     delete window.__filmStageExport;
     setPayload(shot);
   };
-  // The MF Playwright injector may run as soon as the local harness hydrates.
-  // Install during the client render as well as in the effect so a static page
-  // that delays passive effects cannot lose the first shot payload.
-  if (typeof window !== "undefined") window.__MF_SET_FILM_SHOT__ = acceptShot;
+  // The injector waits for the mounted effect; a render-time handler can be
+  // replaced by StrictMode cleanup before the first payload is committed.
   useEffect(() => {
-    window.__MF_SET_FILM_SHOT__ = (value) => {
-      const shot = value as DirectingShot;
-      document.body.dataset.mfShotId = String(shot.id ?? shot.shotId ?? "");
-      document.querySelector("canvas")?.removeAttribute("data-film-ready");
-      delete window.__filmStageExport;
-      setPayload(shot);
-    };
+    window.__MF_SET_FILM_SHOT__ = acceptShot;
+    document.body.dataset.mfHarnessReady = "true";
     return () => {
       delete window.__MF_SET_FILM_SHOT__;
       delete window.__filmStageExport;
       delete document.body.dataset.mfShotId;
+      delete document.body.dataset.mfHarnessReady;
     };
   }, []);
   if (!payload)
