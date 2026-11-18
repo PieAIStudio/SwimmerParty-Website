@@ -85,7 +85,8 @@ for (const { locale, width, nickname, menu } of [
         ),
       }),
     );
-    await page.goto(`/${locale}/guide`);
+    // Use a text-only page so Guide media and settings hydration do not compete with the account reload.
+    await page.goto(`/${locale}/privacy`);
     if (menu) await page.getByRole("button", { name: menu, exact: true }).click();
     const trigger = page.locator(".game-ui-account-menu-trigger:visible");
     await expect(trigger).toHaveAttribute("aria-label", new RegExp(nickname));
