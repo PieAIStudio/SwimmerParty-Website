@@ -28,6 +28,10 @@ export const SETTING_IDS = [
   "stageConcertNight",
 ] as const;
 export type SettingId = (typeof SETTING_IDS)[number];
+export const DEFAULT_SETTING_DRAFT = {
+  selected: "studio",
+  sentences: {},
+} satisfies { selected: SettingId; sentences: Partial<Record<SettingId, string>> };
 export const SETTING_GROUPS = ["indoor", "outdoor", "night"] as const;
 type SettingGroup = (typeof SETTING_GROUPS)[number];
 export type SettingImage = {

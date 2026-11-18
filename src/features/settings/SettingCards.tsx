@@ -3,11 +3,16 @@
 import Image from "next/image";
 import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
 import { GameButton, GameField, GameSegmentedControl, GameTextArea } from "@pieai/swimmer-ui-kit";
-import { SETTING_GROUPS, SETTING_IDS, SETTING_MANIFEST } from "@/content/settings";
+import {
+  DEFAULT_SETTING_DRAFT,
+  SETTING_GROUPS,
+  SETTING_IDS,
+  SETTING_MANIFEST,
+} from "@/content/settings";
 import { useSiteI18n } from "@/i18n/client";
 import { fetchImageBlob, saveBlob } from "@/lib/browser-files";
 import { CopyButton } from "@/site/CopyButton";
-import { settingDraftSchema, type SettingDraft } from "./contracts";
+import type { SettingDraft } from "./contracts";
 
 // React switches from the server snapshot only after hydration; do not accept edits earlier.
 const subscribeHydration = () => () => {};
@@ -24,7 +29,7 @@ export function SettingCards({
 }) {
   const { t } = useSiteI18n();
   const headingId = useId();
-  const [local, setLocal] = useState(() => settingDraftSchema.parse(undefined));
+  const [local, setLocal] = useState<SettingDraft>(DEFAULT_SETTING_DRAFT);
   const interactive = useSyncExternalStore(subscribeHydration, clientSnapshot, serverSnapshot);
   const value = draft ?? local;
   const selected = value.selected;
