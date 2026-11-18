@@ -1,4 +1,4 @@
-export type StageProp = {
+type StageProp = {
   id: string;
   kind: string;
   position: [number, number, number];
@@ -14,7 +14,7 @@ export type StageWall = {
   rotation: number;
 };
 
-export type StageAxis = {
+type StageAxis = {
   from: [number, number];
   to: [number, number];
   cameraSide?: "left" | "right";

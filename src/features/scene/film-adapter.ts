@@ -1,7 +1,7 @@
 import { settingDraftSchema } from "../settings/contracts.ts";
 import { fitFilmPeople } from "./film-framing.ts";
 import { fitCamera, type FigureState, type FilmStageState, type SceneState } from "./model.ts";
-export type DirectingPoint = {
+type DirectingPoint = {
   x?: number;
   z?: number;
   y?: number;
