@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FilmHarness } from "@/features/scene/FilmHarness";
+import { FilmHarness } from "@/features/scene";
 
 // Test-only render target for tools/film/render-shot.ts; never indexed or linked.
 export const metadata: Metadata = { robots: { index: false, follow: false } };
