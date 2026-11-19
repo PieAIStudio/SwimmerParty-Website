@@ -10,6 +10,9 @@ pre-push:
 pre-commit:
   parallel: false
   commands:
+    00-secret-scan:
+      # Staged changes only; secrets are redacted in the output.
+      run: gitleaks git --pre-commit --staged --redact --no-banner -v
     01-doc-gov-router-check:
       glob: "{AGENTS.md,CLAUDE.md,README.md,docs/**/*.{md,yml,yaml}}"
       run: pnpm doc-gov router-check
