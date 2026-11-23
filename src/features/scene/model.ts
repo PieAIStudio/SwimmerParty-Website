@@ -15,6 +15,8 @@ export const POSES = [
   "look-over-shoulder",
   "hug-ready",
   "kneel",
+  "kneel-and-reach",
+  "slumped-on-table",
 ] as const;
 export const BUILDS = ["slim", "average", "broad", "slim-f", "average-f", "broad-f"] as const;
 // Slot colours identify a figure in this layout, not an actor's brand colour.

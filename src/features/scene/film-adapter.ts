@@ -180,6 +180,14 @@ const seatedReachJoints: FigureState["joints"] = {
   hand_r: [0.010445, -0.398664, 0.00284, 0.917033],
 };
 
+// Compound film poses keep the delivered kneel/table assets and add only the
+// authored contact. Missing bones are ignored by poseFigure for older rigs.
+const slumpedJoints: FigureState["joints"] = {
+  spine_03: [0.33, 0, 0, 0.944],
+  neck_01: [0.38, 0, 0, 0.925],
+  head: [0.46, 0, 0, 0.888],
+};
+
 function buildFor(person: Record<string, unknown>): FigureState["build"] {
   const blocking = blockingFor(person);
   const build = string(blocking.build) ?? string(person.build);
@@ -397,7 +405,7 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
     const seatedReach =
       pose === "sit" &&
       /(递|伸|指向|掏|offer|reach|point|hand)/i.test(
-        shotText + " " + String(blocking.description ?? blocking.staging ?? ""),
+        String(blocking.description ?? blocking.staging ?? ""),
       );
     return {
       id,
@@ -406,7 +414,14 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       heightCm: heightFor(person),
       build: buildFor(person),
       pose,
-      joints: seatedReach ? seatedReachJoints : {},
+      joints:
+        pose === "kneel-and-reach"
+          ? seatedReachJoints
+          : pose === "slumped-on-table"
+            ? slumpedJoints
+            : seatedReach
+              ? seatedReachJoints
+              : {},
       x: located[0],
       z: located[1],
       turn: number(blocking.turn ?? blocking.rotation ?? blocking.facing ?? person.turn, 0),

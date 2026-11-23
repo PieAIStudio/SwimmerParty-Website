@@ -8,7 +8,11 @@ export function loadFigure(build: FigureState["build"]): string {
 
 /** Shared quaternion data is fetched only by the lazy stage. */
 export function loadPose(pose: FigureState["pose"]): string {
-  return `/scene/rigged/poses/${pose}.json`;
+  // Film-only compound poses reuse the nearest authored shelf pose and add their
+  // reach/head contact through FigureState.joints, keeping the asset channel small.
+  const sourcePose =
+    pose === "kneel-and-reach" ? "kneel" : pose === "slumped-on-table" ? "hands-on-table" : pose;
+  return `/scene/rigged/poses/${sourcePose}.json`;
 }
 
 /** Standing skinned bounds, even for sitting/kneeling; no width stretching. */
