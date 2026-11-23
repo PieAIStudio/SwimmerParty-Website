@@ -27,6 +27,8 @@ function primitiveData(prop: PrimitiveProps) {
     stagePrimitiveKind: prop.kind,
     stagePrimitiveSize: prop.size,
     stagePrimitiveRotation: prop.rotation,
+    stagePrimitiveOrientation: prop.orientation,
+    stagePrimitiveSurfaceHeight: prop.surfaceHeight,
     stagePrimitiveOwnerId: prop.ownerId,
     stagePrimitiveRoot: true,
   };
@@ -47,7 +49,11 @@ function StageProp({ prop }: { prop: PrimitiveProps }) {
   if (prop.kind === "toilet" || prop.kind === "cylinder") {
     const bowlHeight = Math.max(0.3, height * 0.9);
     return (
-      <group position={prop.position} rotation={[0, prop.rotation, 0]} userData={data}>
+      <group
+        position={prop.position}
+        rotation={prop.orientation ?? [0, prop.rotation, 0]}
+        userData={data}
+      >
         <mesh position={[0, -0.01, depth * 0.08]} castShadow receiveShadow userData={data}>
           <cylinderGeometry args={[width * 0.44, width * 0.5, bowlHeight, 20]} />
           <StageMaterial colour={colour} />
@@ -112,7 +118,7 @@ function StageProp({ prop }: { prop: PrimitiveProps }) {
   return (
     <mesh
       position={prop.position}
-      rotation={[0, prop.rotation, 0]}
+      rotation={prop.orientation ?? [0, prop.rotation, 0]}
       castShadow
       receiveShadow
       userData={data}

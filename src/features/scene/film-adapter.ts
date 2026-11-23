@@ -101,13 +101,23 @@ function indexSpots(value: unknown): Map<string, [number, number]> {
   return map;
 }
 
-function propKind(id: string, name: string): "door" | "toilet" | "cylinder" | "handProp" | "box" {
+function propKind(
+  id: string,
+  name: string,
+): "door" | "toilet" | "cylinder" | "handProp" | "table" | "box" {
   const value = (id + " " + name).toLowerCase();
   if (value.includes("door") || value.includes("门")) return "door";
   if (value.includes("toilet") || value.includes("马桶")) return "toilet";
+  if (value.includes("table") || value.includes("desk") || value.includes("茶几") || value.includes("桌"))
+    return "table";
   if (
     value.includes("cigarette") ||
     value.includes("paper") ||
+    value.includes("medicine") ||
+    value.includes("drug") ||
+    value.includes("box") ||
+    value.includes("药") ||
+    value.includes("盒") ||
     value.includes("烟") ||
     value.includes("纸")
   )
@@ -514,29 +524,51 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       (at ? (spots.get(at) ?? personPositions.get(at)) : undefined) ?? [0, 0];
     const ownerIndex = ownerId ? allFigures.findIndex((figure) => figure.id === ownerId) : -1;
     const owner = ownerIndex >= 0 ? allFigures[ownerIndex] : undefined;
-    const turn = owner ? (owner.turn * Math.PI) / 180 : 0;
+    const explicitTarget = string(item.targetId) ?? string(item.toward) ?? string(item.lookAt);
+    const targetPoint = explicitTarget
+      ? targets.get(explicitTarget)
+      : ownerId
+        ? [...personPositions.entries()]
+            .filter(([person]) => person !== ownerId)
+            .sort(([, left], [, right]) => Math.hypot(left[0] - base[0], left[1] - base[1]) - Math.hypot(right[0] - base[0], right[1] - base[1]))[0]?.[1]
+        : undefined;
+    const ownerTurn = owner ? (owner.turn * Math.PI) / 180 : 0;
+    const handTurn = targetPoint ? Math.atan2(targetPoint[0] - base[0], targetPoint[1] - base[1]) : ownerTurn;
     const handOffset: [number, number] = [
-      Math.sin(turn) * 0.28 + (ownerIndex % 2 ? -0.08 : 0.08),
-      Math.cos(turn) * 0.28,
+      Math.sin(handTurn) * 0.31 + (ownerIndex % 2 ? -0.08 : 0.08),
+      Math.cos(handTurn) * 0.31,
     ];
-    const position: [number, number, number] =
-      ownerId && owner
-        ? [base[0] + handOffset[0], kind === "handProp" ? 0.82 : 0.9, base[1] + handOffset[1]]
-        : [base[0], kind === "toilet" ? 0.225 : kind === "door" ? 1.2 : 0.9, base[1]];
-    return {
-      id,
-      kind,
-      position,
-      size:
-        kind === "door"
+    const size = Array.isArray(item.size) && item.size.length === 3
+      ? item.size.map((value) => number(value, 0.1)) as [number, number, number]
+      : kind === "table"
+        ? [1.8, 0.45, 1.0]
+        : kind === "door"
           ? [0.12, 2.4, 1.0]
           : kind === "toilet"
             ? [0.72, 0.45, 0.72]
             : kind === "handProp"
-              ? [0.12, 0.06, 0.38]
-              : [0.35, 0.35, 0.35],
-      // Closed door spans the doorway; once open it rotates from the west hinge into the room.
-      rotation: number(item.rotation, kind === "door" ? (doorOpen ? Math.PI / 2 : 0) : 0),
+              ? [0.28, 0.12, 0.18]
+              : [0.5, 0.35, 0.5];
+    const surfaceHeight = number(
+      item.surfaceHeight,
+      kind === "table" ? size[1] / 2 : kind === "toilet" ? 0.225 : kind === "door" ? 1.2 : kind === "handProp" ? (owner?.pose.includes("kneel") ? 0.76 : 0.95) : size[1] / 2,
+    );
+    const position: [number, number, number] = ownerId && owner
+      ? [base[0] + handOffset[0], surfaceHeight, base[1] + handOffset[1]]
+      : [base[0], surfaceHeight, base[1]];
+    const rotation = number(item.yaw, kind === "handProp" && targetPoint ? handTurn : kind === "door" ? (doorOpen ? Math.PI / 2 : 0) : number(item.rotation, 0));
+    const orientation: [number, number, number] = kind === "handProp"
+      ? [number(item.pitch, targetPoint ? 0.12 : 0), rotation, number(item.roll, targetPoint ? -0.08 : 0)]
+      : [0, rotation, 0];
+    return {
+      id,
+      kind,
+      position,
+      size,
+      surfaceHeight,
+      orientation,
+      // Keep yaw as a compatibility field for evidence and old readers.
+      rotation,
       ownerId,
     };
   });

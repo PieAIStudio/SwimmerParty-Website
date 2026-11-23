@@ -219,4 +219,36 @@ test("pose keywords stay on the person's blocking instead of bleeding from shot 
     { id: "dale", pose: "stand" },
     { id: "producer", pose: "kneel-and-reach" },
   ]);
+
+});
+
+test("props use authored dimensions and point hand props from the owner's socket toward a target", async () => {
+  const { directingToSceneState } = await import("../../src/features/scene/film-adapter.ts");
+  const result = directingToSceneState({
+    id: "prop-continuity",
+    shotSize: "medium",
+    onScreenIds: ["dale", "producer"],
+    floorPlan: {
+      spots: { dale: { x: -0.8, z: 0 }, producer: { x: 0.8, z: 0.5 }, table: { x: 0, z: 0.25 } },
+      people: [
+        { id: "dale", spotId: "dale", blocking: { pose: "slumped-on-table", description: "头趴在桌面" } },
+        { id: "producer", spotId: "producer", blocking: { pose: "kneel", description: "右手递药盒" } },
+      ],
+      props: [
+        { id: "coffee", name: "coffee table", at: "table" },
+        { id: "medicine", name: "medicine box", at: "producer", ownerId: "producer", targetId: "dale" },
+      ],
+    },
+  });
+  const props = (result.scene.stage as { props: Array<{ id: string; kind: string; size: number[]; position: number[]; orientation?: number[]; ownerId?: string }> }).props;
+  const table = props.find((prop) => prop.id === "coffee");
+  const hand = props.find((prop) => prop.id === "medicine");
+  assert.deepEqual(table?.size, [1.8, 0.45, 1]);
+  assert.equal(table?.position[1], 0.225);
+  assert.equal(hand?.kind, "handProp");
+  assert.equal(hand?.ownerId, "producer");
+  assert.equal(hand?.position[1], 0.76);
+  assert.equal(hand?.orientation?.length, 3);
+  assert.ok(Math.abs(hand?.orientation?.[1] ?? 0) > 0.5, "hand prop yaw should face Dale");
+  assert.notDeepEqual(hand?.orientation, [0, 0, 0]);
 });

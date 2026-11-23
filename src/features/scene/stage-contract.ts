@@ -4,6 +4,8 @@ type StageProp = {
   position: [number, number, number];
   size: [number, number, number];
   rotation: number;
+  orientation?: [number, number, number];
+  surfaceHeight?: number;
   ownerId?: string;
 };
 
