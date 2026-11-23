@@ -132,59 +132,37 @@ function blockingFor(person: Record<string, unknown>) {
 
 function poseFor(
   person: Record<string, unknown>,
-  shotText: string,
+  _shotText: string,
   namedSpot: string | undefined,
   ownedPropNames: string[],
 ): FigureState["pose"] {
   const blocking = blockingFor(person);
   const raw = String(blocking.pose ?? blocking.action ?? blocking.stance ?? "").toLowerCase();
+  // A pose belongs to this person's authored blocking. Shot staging is deliberately
+  // excluded: a kneel in one person's action must never kneel the whole room.
   const descriptor = (
     raw +
     " " +
     String(blocking.description ?? blocking.staging ?? "") +
     " " +
-    (namedSpot ?? "")
+    (namedSpot ?? "") +
+    " " +
+    ownedPropNames.join(" ")
   ).toLowerCase();
-  const narrative = (descriptor + " " + shotText).toLowerCase();
-  const reach =
-    raw.includes("hand") ||
-    raw.includes("point") ||
-    raw.includes("reach") ||
-    raw.includes("offer") ||
-    raw.includes("gesture") ||
-    narrative.includes("递") ||
-    narrative.includes("伸") ||
-    narrative.includes("掏") ||
-    narrative.includes("指向") ||
-    narrative.includes("递烟") ||
-    (ownedPropNames.length > 0 && /(递|伸|掏|指向|举|递烟|offer|reach|point|hand)/i.test(shotText));
-  // Seat blocking wins over gestures: extending an arm does not stand a person up.
-  if (
-    raw.includes("sit") ||
-    namedSpot?.toLowerCase().includes("seat") ||
-    namedSpot?.toLowerCase().includes("toilet")
-  )
+  const reach = /(递|伸|掏|指向|举|递烟|offer|reach|point|hand)/i.test(descriptor);
+  if (descriptor.includes("趴") || descriptor.includes("伏") || descriptor.includes("slump") || descriptor.includes("head on table"))
+    return "slumped-on-table";
+  if (raw.includes("kneel") || descriptor.includes("跪"))
+    return reach ? "kneel-and-reach" : "kneel";
+  if (raw.includes("sit") || namedSpot?.toLowerCase().includes("seat") || namedSpot?.toLowerCase().includes("toilet"))
     return "sit";
-  if (
-    narrative.includes("移开视线") ||
-    narrative.includes("看一眼") ||
-    narrative.includes("look away") ||
-    narrative.includes("look down")
-  )
+  if (descriptor.includes("移开视线") || descriptor.includes("看一眼") || descriptor.includes("look away") || descriptor.includes("look down"))
     return "look-over-shoulder";
-  if (narrative.includes("回应") || narrative.includes("答") || narrative.includes("answer"))
+  if (descriptor.includes("回应") || descriptor.includes("答") || descriptor.includes("answer"))
     return "lean-in";
-  if (raw.includes("kneel") || narrative.includes("跪")) return "kneel";
   if (raw.includes("walk") || descriptor.includes("走") || descriptor.includes("跑")) return "walk";
-  // Other gestures keep their authored stance if no seat is specified.
   if (reach) return "point";
-  if (
-    raw.includes("sit") ||
-    descriptor.includes("坐") ||
-    descriptor.includes("toilet") ||
-    namedSpot?.toLowerCase().includes("seat") ||
-    namedSpot?.toLowerCase().includes("toilet")
-  )
+  if (raw.includes("sit") || descriptor.includes("坐") || descriptor.includes("toilet") || namedSpot?.toLowerCase().includes("seat") || namedSpot?.toLowerCase().includes("toilet"))
     return "sit";
   if (raw.includes("wave")) return "wave";
   if (raw.includes("cross")) return "arms-crossed";

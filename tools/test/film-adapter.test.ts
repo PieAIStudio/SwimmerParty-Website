@@ -198,4 +198,25 @@ test("directing adapter merges the MF envelope without losing per-shot camera da
     result.scene.figures.map(({ id }) => id),
     ["dale", "crew_brother"],
   );
+
+});
+
+test("pose keywords stay on the person's blocking instead of bleeding from shot staging", async () => {
+  const { directingToSceneState } = await import("../../src/features/scene/film-adapter.ts");
+  const result = directingToSceneState({
+    id: "pose-isolation",
+    staging: "制片单膝跪地递药，戴尔仍站在桌边",
+    floorPlan: {
+      spots: { dale: { x: -1, z: 0 }, producer: { x: 1, z: 0 } },
+      people: [
+        { id: "dale", spotId: "dale", blocking: { pose: "stand" } },
+        { id: "producer", spotId: "producer", blocking: { pose: "kneel", description: "右手递药盒" } },
+      ],
+    },
+    onScreenIds: ["dale", "producer"],
+  });
+  assert.deepEqual(result.scene.figures.map(({ id, pose }) => ({ id, pose })), [
+    { id: "dale", pose: "stand" },
+    { id: "producer", pose: "kneel-and-reach" },
+  ]);
 });
