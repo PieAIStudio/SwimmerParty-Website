@@ -30,7 +30,17 @@ export function fitFilmPeople(
     return {
       x: person.x,
       z: person.z,
-      lower: close ? (slumped ? 0.55 : kneeling ? 0.48 : sitting ? 0.55 : 0.65) : sitting ? 0.32 : 0.4,
+      lower: close
+        ? slumped
+          ? 0.55
+          : kneeling
+            ? 0.48
+            : sitting
+              ? 0.55
+              : 0.65
+        : sitting
+          ? 0.32
+          : 0.4,
       upper: close
         ? slumped
           ? Math.max(1.05, height * 0.78)
@@ -78,7 +88,8 @@ export function fitFilmPeople(
     initialDistance,
     ...Array.from({ length: 26 }, (_, i) => initialDistance * Math.pow(1.13, i + 1)),
   ]) {
-    const candidateLenses = distance === initialDistance ? (close ? [lens] : [lens, 22, 20, 18]) : (close ? [lens] : [18]);
+    const candidateLenses =
+      distance === initialDistance ? (close ? [lens] : [lens, 22, 20, 18]) : close ? [lens] : [18];
     for (const candidateLens of candidateLenses) {
       const candidate = close ? candidateLens : Math.max(18, Math.min(lens, candidateLens));
       const camera = new PerspectiveCamera(

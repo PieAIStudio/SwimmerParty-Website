@@ -497,9 +497,7 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
     "7bf8c0973b65910364e48e4a6d2606f31610d9969884b0fe9ed4f366b2ae749b",
   );
   expect(Object.keys(manifest.bodies)).toEqual([...BUILDS]);
-  expect(Object.keys(manifest.poses)).toEqual(
-    [...new Set(POSES.map(sourcePoseForManifest))],
-  );
+  expect(Object.keys(manifest.poses)).toEqual([...new Set(POSES.map(sourcePoseForManifest))]);
   const poses = new Map<string, FigurePose>();
   const results = [];
   for (const pose of POSES) {

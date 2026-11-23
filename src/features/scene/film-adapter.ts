@@ -112,7 +112,12 @@ function propKind(
   const value = (id + " " + name).toLowerCase();
   if (value.includes("door") || value.includes("门")) return "door";
   if (value.includes("toilet") || value.includes("马桶")) return "toilet";
-  if (value.includes("table") || value.includes("desk") || value.includes("茶几") || value.includes("桌"))
+  if (
+    value.includes("table") ||
+    value.includes("desk") ||
+    value.includes("茶几") ||
+    value.includes("桌")
+  )
     return "table";
   if (
     value.includes("cigarette") ||
@@ -164,19 +169,39 @@ function poseFor(
     ownedPropNames.join(" ")
   ).toLowerCase();
   const reach = /(递|伸|掏|指向|举|递烟|offer|reach|point|hand)/i.test(descriptor);
-  if (descriptor.includes("趴") || descriptor.includes("伏") || descriptor.includes("slump") || descriptor.includes("head on table"))
+  if (
+    descriptor.includes("趴") ||
+    descriptor.includes("伏") ||
+    descriptor.includes("slump") ||
+    descriptor.includes("head on table")
+  )
     return "slumped-on-table";
   if (raw.includes("kneel") || descriptor.includes("跪"))
     return reach ? "kneel-and-reach" : "kneel";
-  if (raw.includes("sit") || namedSpot?.toLowerCase().includes("seat") || namedSpot?.toLowerCase().includes("toilet"))
+  if (
+    raw.includes("sit") ||
+    namedSpot?.toLowerCase().includes("seat") ||
+    namedSpot?.toLowerCase().includes("toilet")
+  )
     return "sit";
-  if (descriptor.includes("移开视线") || descriptor.includes("看一眼") || descriptor.includes("look away") || descriptor.includes("look down"))
+  if (
+    descriptor.includes("移开视线") ||
+    descriptor.includes("看一眼") ||
+    descriptor.includes("look away") ||
+    descriptor.includes("look down")
+  )
     return "look-over-shoulder";
   if (descriptor.includes("回应") || descriptor.includes("答") || descriptor.includes("answer"))
     return "lean-in";
   if (raw.includes("walk") || descriptor.includes("走") || descriptor.includes("跑")) return "walk";
   if (reach) return "point";
-  if (raw.includes("sit") || descriptor.includes("坐") || descriptor.includes("toilet") || namedSpot?.toLowerCase().includes("seat") || namedSpot?.toLowerCase().includes("toilet"))
+  if (
+    raw.includes("sit") ||
+    descriptor.includes("坐") ||
+    descriptor.includes("toilet") ||
+    namedSpot?.toLowerCase().includes("seat") ||
+    namedSpot?.toLowerCase().includes("toilet")
+  )
     return "sit";
   if (raw.includes("wave")) return "wave";
   if (raw.includes("cross")) return "arms-crossed";
@@ -534,36 +559,69 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       : ownerId
         ? [...personPositions.entries()]
             .filter(([person]) => person !== ownerId)
-            .sort(([, left], [, right]) => Math.hypot(left[0] - base[0], left[1] - base[1]) - Math.hypot(right[0] - base[0], right[1] - base[1]))[0]?.[1]
+            .sort(
+              ([, left], [, right]) =>
+                Math.hypot(left[0] - base[0], left[1] - base[1]) -
+                Math.hypot(right[0] - base[0], right[1] - base[1]),
+            )[0]?.[1]
         : undefined;
     const ownerTurn = owner ? (owner.turn * Math.PI) / 180 : 0;
-    const handTurn = targetPoint ? Math.atan2(targetPoint[0] - base[0], targetPoint[1] - base[1]) : ownerTurn;
+    const handTurn = targetPoint
+      ? Math.atan2(targetPoint[0] - base[0], targetPoint[1] - base[1])
+      : ownerTurn;
     const handOffset: [number, number] = [
       Math.sin(handTurn) * 0.31 + (ownerIndex % 2 ? -0.08 : 0.08),
       Math.cos(handTurn) * 0.31,
     ];
-    const size: [number, number, number] = (Array.isArray(item.size) && item.size.length === 3
-      ? item.size.map((value) => number(value, 0.1))
-      : kind === "table"
-        ? [1.8, 0.45, 1.0]
-        : kind === "door"
-          ? [0.12, 2.4, 1.0]
-          : kind === "toilet"
-            ? [0.72, 0.45, 0.72]
-            : kind === "handProp"
-              ? [0.28, 0.12, 0.18]
-              : [0.5, 0.35, 0.5]) as [number, number, number];
+    const size: [number, number, number] = (
+      Array.isArray(item.size) && item.size.length === 3
+        ? item.size.map((value) => number(value, 0.1))
+        : kind === "table"
+          ? [1.8, 0.45, 1.0]
+          : kind === "door"
+            ? [0.12, 2.4, 1.0]
+            : kind === "toilet"
+              ? [0.72, 0.45, 0.72]
+              : kind === "handProp"
+                ? [0.28, 0.12, 0.18]
+                : [0.5, 0.35, 0.5]
+    ) as [number, number, number];
     const surfaceHeight = number(
       item.surfaceHeight,
-      kind === "table" ? size[1] / 2 : kind === "toilet" ? 0.225 : kind === "door" ? 1.2 : kind === "handProp" ? (owner?.pose.includes("kneel") ? 0.76 : 0.95) : size[1] / 2,
+      kind === "table"
+        ? size[1] / 2
+        : kind === "toilet"
+          ? 0.225
+          : kind === "door"
+            ? 1.2
+            : kind === "handProp"
+              ? owner?.pose.includes("kneel")
+                ? 0.76
+                : 0.95
+              : size[1] / 2,
     );
-    const position: [number, number, number] = ownerId && owner
-      ? [base[0] + handOffset[0], surfaceHeight, base[1] + handOffset[1]]
-      : [base[0], surfaceHeight, base[1]];
-    const rotation = number(item.yaw, kind === "handProp" && targetPoint ? handTurn : kind === "door" ? (doorOpen ? Math.PI / 2 : 0) : number(item.rotation, 0));
-    const orientation: [number, number, number] = kind === "handProp"
-      ? [number(item.pitch, targetPoint ? 0.12 : 0), rotation, number(item.roll, targetPoint ? -0.08 : 0)]
-      : [0, rotation, 0];
+    const position: [number, number, number] =
+      ownerId && owner
+        ? [base[0] + handOffset[0], surfaceHeight, base[1] + handOffset[1]]
+        : [base[0], surfaceHeight, base[1]];
+    const rotation = number(
+      item.yaw,
+      kind === "handProp" && targetPoint
+        ? handTurn
+        : kind === "door"
+          ? doorOpen
+            ? Math.PI / 2
+            : 0
+          : number(item.rotation, 0),
+    );
+    const orientation: [number, number, number] =
+      kind === "handProp"
+        ? [
+            number(item.pitch, targetPoint ? 0.12 : 0),
+            rotation,
+            number(item.roll, targetPoint ? -0.08 : 0),
+          ]
+        : [0, rotation, 0];
     return {
       id,
       kind,
