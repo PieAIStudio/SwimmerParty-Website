@@ -1,22 +1,45 @@
 import { PerspectiveCamera, Vector3 } from "three";
 import type { FigureState } from "./model";
 
+export type FilmFitOptions = {
+  shot?: string;
+  cameraHeight?: number;
+  targetHeight?: number;
+};
+
 /** A film composition is fitted without changing actor blocking or the authored camera side. */
 export function fitFilmPeople(
   people: FigureState[],
   originalPosition: [number, number, number],
   originalTarget: [number, number, number],
   lens: number,
+  options: FilmFitOptions = {},
 ) {
-  if (people.length < 2) return { position: originalPosition, target: originalTarget, lens };
+  const close = options.shot?.toLowerCase() === "close";
+  const target: [number, number, number] = [
+    originalTarget[0],
+    options.targetHeight ?? originalTarget[1],
+    originalTarget[2],
+  ];
+  if (people.length < 2) return { position: originalPosition, target, lens };
   const bounds = people.map((person) => {
     const sitting = person.pose === "sit";
+    const kneeling = person.pose.includes("kneel");
+    const slumped = person.pose.includes("slumped");
     const height = person.heightCm / 100;
     return {
       x: person.x,
       z: person.z,
-      lower: sitting ? 0.32 : 0.4,
-      upper: sitting ? Math.max(1.1, height * 0.78) : height + 0.08,
+      lower: close ? (slumped ? 0.55 : kneeling ? 0.48 : sitting ? 0.55 : 0.65) : sitting ? 0.32 : 0.4,
+      upper: close
+        ? slumped
+          ? Math.max(1.05, height * 0.78)
+          : sitting
+            ? Math.max(1.15, height * 0.84)
+            : height + 0.04
+        : sitting
+          ? Math.max(1.1, height * 0.78)
+          : height + 0.08,
       radius: 0.38,
     };
   });
@@ -28,9 +51,13 @@ export function fitFilmPeople(
     (Math.min(...bounds.map((b) => b.z - b.radius)) +
       Math.max(...bounds.map((b) => b.z + b.radius))) /
     2;
-  const low = Math.min(...bounds.map((b) => b.lower));
-  const high = Math.max(...bounds.map((b) => b.upper));
-  const target: [number, number, number] = [midX, (low + high) / 2, midZ];
+  target[0] = midX;
+  target[2] = midZ;
+  if (options.targetHeight === undefined) {
+    const low = Math.min(...bounds.map((b) => b.lower));
+    const high = Math.max(...bounds.map((b) => b.upper));
+    target[1] = (low + high) / 2;
+  }
   const start = new Vector3(...originalPosition);
   const aim = new Vector3(...target);
   const ray = start
@@ -46,20 +73,23 @@ export function fitFilmPeople(
       ),
     ),
   );
-  // First widen to 18 mm; only then move the camera outward beyond occluding walls.
+  // Close shots keep their authored long lens and move back only as needed.
   for (const distance of [
     initialDistance,
     ...Array.from({ length: 26 }, (_, i) => initialDistance * Math.pow(1.13, i + 1)),
   ]) {
-    for (const candidateLens of distance === initialDistance ? [lens, 22, 20, 18] : [18]) {
-      const candidate = Math.max(18, Math.min(lens, candidateLens));
+    const candidateLenses = distance === initialDistance ? (close ? [lens] : [lens, 22, 20, 18]) : (close ? [lens] : [18]);
+    for (const candidateLens of candidateLenses) {
+      const candidate = close ? candidateLens : Math.max(18, Math.min(lens, candidateLens));
       const camera = new PerspectiveCamera(
         (2 * Math.atan(36 / (2 * candidate * (16 / 9))) * 180) / Math.PI,
         16 / 9,
         0.05,
         1000,
       );
-      camera.position.copy(aim).addScaledVector(ray, distance);
+      const cameraPosition = aim.clone().addScaledVector(ray, distance);
+      if (options.cameraHeight !== undefined) cameraPosition.y = options.cameraHeight;
+      camera.position.copy(cameraPosition);
       camera.lookAt(aim);
       camera.updateMatrixWorld(true);
       const fits = boxCorners.every((corner) => {

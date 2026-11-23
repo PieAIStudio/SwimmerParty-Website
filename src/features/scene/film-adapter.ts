@@ -14,6 +14,10 @@ export type DirectingShot = {
   shotId?: string;
   sceneId?: string;
   shotSize?: string;
+  cameraHeight?: number;
+  cameraY?: number;
+  targetHeight?: number;
+  cameraTargetHeight?: number;
   staging?: string;
   frameLeft?: unknown;
   frameRight?: unknown;
@@ -591,11 +595,24 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
     };
   });
   const shotSize = shotName(shot.shotSize);
+  const cameraSpotObject = asObject(shot.cameraSpot);
+  const cameraSpotPosition = asObject(cameraSpotObject.position);
+  const cameraTargetObject = asObject(shot.cameraTarget ?? shot.lookAt);
+  const cameraTargetPosition = asObject(cameraTargetObject.position);
+  const cameraHeight = number(
+    shot.cameraHeight ?? shot.cameraY ?? cameraSpotObject.y ?? cameraSpotPosition.y,
+    shotSize === "close" ? 0.72 : 1.55,
+  );
+  const targetHeight = number(
+    shot.targetHeight ?? shot.cameraTargetHeight ?? cameraTargetObject.y ?? cameraTargetPosition.y,
+    shotSize === "close" ? 0.85 : 1.1,
+  );
   const filmCamera = fitFilmPeople(
     turnedFigures,
-    [cameraPoint[0], 1.55, cameraPoint[1]],
-    [target[0], 1.1, target[1]],
+    [cameraPoint[0], cameraHeight, cameraPoint[1]],
+    [target[0], targetHeight, target[1]],
     shotSize === "close" ? 50 : 24,
+    { shot: shotSize, cameraHeight, targetHeight },
   );
   const scene: SceneState = {
     version: 1,

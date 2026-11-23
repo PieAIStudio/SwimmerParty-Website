@@ -161,8 +161,8 @@ test("directing adapter preserves a close single camera and data-driven pose", a
     eyeLine: { view: "shoulder" },
     floorPlan,
   });
-  assert.deepEqual(result.scene.camera.position, [-1, 1.55, 1]);
-  assert.deepEqual(result.scene.camera.target, [0, 1.1, 2]);
+  assert.deepEqual(result.scene.camera.position, [-1, 0.72, 1]);
+  assert.deepEqual(result.scene.camera.target, [0, 0.85, 2]);
   assert.equal(result.scene.camera.shot, "close");
   assert.equal(result.scene.camera.view, "shoulder");
   assert.equal(result.scene.figures.length, 1);
