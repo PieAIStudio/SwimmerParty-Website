@@ -131,6 +131,8 @@
   "scene.pose.look-over-shoulder": "回头看看",
   "scene.pose.hug-ready": "张开双臂",
   "scene.pose.kneel": "单膝跪地",
+  "scene.pose.kneel-and-reach": "单膝跪地递出",
+  "scene.pose.slumped-on-table": "趴在桌上",
   "scene.build": "体型",
   "scene.build.slim": "男 · 偏瘦",
   "scene.build.average": "男 · 中等",

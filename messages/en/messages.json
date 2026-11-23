@@ -131,6 +131,8 @@
   "scene.pose.look-over-shoulder": "Look back",
   "scene.pose.hug-ready": "Open arms",
   "scene.pose.kneel": "Kneel",
+  "scene.pose.kneel-and-reach": "Kneel and reach",
+  "scene.pose.slumped-on-table": "Slumped on table",
   "scene.build": "Body",
   "scene.build.slim": "Male · slim",
   "scene.build.average": "Male · average",

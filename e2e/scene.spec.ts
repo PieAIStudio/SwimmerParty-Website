@@ -487,6 +487,8 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
     "broad-f",
   );
   expect(defaultBuild({ slug: "known", name: "Known", build: "slim" })).toBe("slim");
+  const sourcePoseForManifest = (pose: (typeof POSES)[number]) =>
+    pose === "kneel-and-reach" ? "kneel" : pose === "slumped-on-table" ? "hands-on-table" : pose;
   const hash = (bytes: Buffer) => createHash("sha256").update(bytes).digest("hex");
   expect(hash(await readFile("public/scene/rigged/manifest.json"))).toBe(
     "e0050a7e065543a1c0f91fc10685a0abc6216d66327f8059500295ca848052e1",
@@ -495,11 +497,14 @@ test("rigged bodies, shared poses and local drafts keep the delivery contract", 
     "7bf8c0973b65910364e48e4a6d2606f31610d9969884b0fe9ed4f366b2ae749b",
   );
   expect(Object.keys(manifest.bodies)).toEqual([...BUILDS]);
-  expect(Object.keys(manifest.poses)).toEqual([...POSES]);
+  expect(Object.keys(manifest.poses)).toEqual(
+    [...new Set(POSES.map(sourcePoseForManifest))],
+  );
   const poses = new Map<string, FigurePose>();
   const results = [];
   for (const pose of POSES) {
-    const record = manifest.poses[pose];
+    const sourcePose = sourcePoseForManifest(pose) as keyof typeof manifest.poses;
+    const record = manifest.poses[sourcePose];
     const bytes = await readFile(`public${loadPose(pose)}`);
     expect(bytes.length).toBe(record.bytes);
     expect(hash(bytes)).toBe(record.sha256);

@@ -450,7 +450,7 @@ export function SceneEditor({ actors }: { actors: SceneActor[] }) {
               >
                 {POSES.map((pose) => (
                   <option key={pose} value={pose}>
-                    {t(`scene.pose.${pose}`)}
+                    {t(`scene.pose.${pose}`, {})}
                   </option>
                 ))}
               </GameSelect>

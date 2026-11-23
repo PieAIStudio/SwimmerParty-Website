@@ -652,10 +652,12 @@ export interface MessageContracts {
   readonly "scene.pose.hands-on-table": {  };
   readonly "scene.pose.hug-ready": {  };
   readonly "scene.pose.kneel": {  };
+  readonly "scene.pose.kneel-and-reach": {  };
   readonly "scene.pose.lean-in": {  };
   readonly "scene.pose.look-over-shoulder": {  };
   readonly "scene.pose.point": {  };
   readonly "scene.pose.sit": {  };
+  readonly "scene.pose.slumped-on-table": {  };
   readonly "scene.pose.stand": {  };
   readonly "scene.pose.walk": {  };
   readonly "scene.pose.wave": {  };

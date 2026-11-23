@@ -542,8 +542,8 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       Math.sin(handTurn) * 0.31 + (ownerIndex % 2 ? -0.08 : 0.08),
       Math.cos(handTurn) * 0.31,
     ];
-    const size = Array.isArray(item.size) && item.size.length === 3
-      ? item.size.map((value) => number(value, 0.1)) as [number, number, number]
+    const size: [number, number, number] = (Array.isArray(item.size) && item.size.length === 3
+      ? item.size.map((value) => number(value, 0.1))
       : kind === "table"
         ? [1.8, 0.45, 1.0]
         : kind === "door"
@@ -552,7 +552,7 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
             ? [0.72, 0.45, 0.72]
             : kind === "handProp"
               ? [0.28, 0.12, 0.18]
-              : [0.5, 0.35, 0.5];
+              : [0.5, 0.35, 0.5]) as [number, number, number];
     const surfaceHeight = number(
       item.surfaceHeight,
       kind === "table" ? size[1] / 2 : kind === "toilet" ? 0.225 : kind === "door" ? 1.2 : kind === "handProp" ? (owner?.pose.includes("kneel") ? 0.76 : 0.95) : size[1] / 2,

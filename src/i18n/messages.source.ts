@@ -246,6 +246,8 @@ export const messages = {
   "scene.pose.look-over-shoulder": { en: "Look back", zh: "回头看看" },
   "scene.pose.hug-ready": { en: "Open arms", zh: "张开双臂" },
   "scene.pose.kneel": { en: "Kneel", zh: "单膝跪地" },
+  "scene.pose.kneel-and-reach": { en: "Kneel and reach", zh: "单膝跪地递出" },
+  "scene.pose.slumped-on-table": { en: "Slumped on table", zh: "趴在桌上" },
   "scene.build": { en: "Body", zh: "体型" },
   "scene.build.slim": { en: "Male · slim", zh: "男 · 偏瘦" },
   "scene.build.average": { en: "Male · average", zh: "男 · 中等" },
