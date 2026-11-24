@@ -253,7 +253,9 @@ function stageEvidence(root: Object3D, camera: Camera) {
     if (distance < 0.05) continue;
     raycaster.set(origin, delta.normalize());
     for (const [id, parts] of grouped) {
-      if (metas.get(id)?.ownerId) continue;
+      // Keep the authored coffee table visible as the continuity anchor; hiding it
+      // behind a seated body makes the blocking read as a floating slump.
+      if (metas.get(id)?.ownerId || metas.get(id)?.kind === "table") continue;
       let blocked = false;
       for (const part of parts) {
         if (!part.visible || !(part as StageNode & { isMesh?: boolean }).isMesh) continue;
