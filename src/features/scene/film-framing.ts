@@ -5,6 +5,10 @@ export type FilmFitOptions = {
   shot?: string;
   cameraHeight?: number;
   targetHeight?: number;
+  /** Focus only the named actors while leaving every other actor in place. */
+  focusIds?: string[];
+  /** Close framing is deliberately bounded so the room cannot swallow the shot. */
+  maxDistance?: number;
 };
 
 /** A film composition is fitted without changing actor blocking or the authored camera side. */
@@ -22,7 +26,12 @@ export function fitFilmPeople(
     originalTarget[2],
   ];
   if (people.length < 2) return { position: originalPosition, target, lens };
-  const bounds = people.map((person) => {
+  const focused =
+    close && options.focusIds?.length
+      ? people.filter((person) => options.focusIds!.includes(person.id))
+      : people;
+  const framingPeople = focused.length >= 1 ? focused : people;
+  const bounds = framingPeople.map((person) => {
     const sitting = person.pose === "sit";
     const kneeling = person.pose.includes("kneel");
     const slumped = person.pose.includes("slumped");
@@ -50,7 +59,9 @@ export function fitFilmPeople(
         : sitting
           ? Math.max(1.1, height * 0.78)
           : height + 0.08,
-      radius: 0.38,
+      // Close coverage is upper-body continuity; keep the crop tight while
+      // the full-body wide fit retains the larger stage radius.
+      radius: close && options.focusIds?.length ? 0.24 : 0.38,
     };
   });
   const midX =
@@ -75,7 +86,10 @@ export function fitFilmPeople(
     .sub(new Vector3(...originalTarget))
     .normalize();
   if (ray.lengthSq() < 0.1) ray.set(1, 0.1, 0);
-  const initialDistance = Math.max(1.2, start.distanceTo(aim));
+  const maxDistance = close ? (options.maxDistance ?? 2) : undefined;
+  const initialDistance = close
+    ? Math.min(maxDistance ?? 2, Math.max(1.2, start.distanceTo(aim)))
+    : Math.max(1.2, start.distanceTo(aim));
   const boxCorners = bounds.flatMap((b) =>
     [b.x - b.radius, b.x + b.radius].flatMap((x) =>
       [b.lower, b.upper].flatMap((y) =>
@@ -83,13 +97,23 @@ export function fitFilmPeople(
       ),
     ),
   );
-  // Close shots keep their authored long lens and move back only as needed.
-  for (const distance of [
-    initialDistance,
-    ...Array.from({ length: 26 }, (_, i) => initialDistance * Math.pow(1.13, i + 1)),
-  ]) {
-    const candidateLenses =
-      distance === initialDistance ? (close ? [lens] : [lens, 22, 20, 18]) : close ? [lens] : [18];
+  // Close shots stay inside the authored 1.2–2m envelope, opening the lens only
+  // as much as needed for the two focal actors. Wide shots retain their old search.
+  const distances = close
+    ? [initialDistance, 1.8, 1.6, 1.4, 1.2].filter(
+        (distance, index, values) =>
+          distance <= (maxDistance ?? 2) && values.indexOf(distance) === index,
+      )
+    : [
+        initialDistance,
+        ...Array.from({ length: 26 }, (_, i) => initialDistance * Math.pow(1.13, i + 1)),
+      ];
+  for (const distance of distances) {
+    const candidateLenses = close
+      ? [lens, 24, 22, 20, 18]
+      : distance === initialDistance
+        ? [lens, 22, 20, 18]
+        : [18];
     for (const candidateLens of candidateLenses) {
       const candidate = close ? candidateLens : Math.max(18, Math.min(lens, candidateLens));
       const camera = new PerspectiveCamera(

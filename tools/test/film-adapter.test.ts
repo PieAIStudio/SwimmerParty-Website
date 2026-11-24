@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { PerspectiveCamera, Vector3 } from "three";
+import { Euler, PerspectiveCamera, Vector3 } from "three";
 import type { SceneState } from "../../src/features/scene/model.ts";
 
 function assertFivePercentPairMargin(scene: SceneState) {
@@ -198,7 +198,6 @@ test("directing adapter merges the MF envelope without losing per-shot camera da
     result.scene.figures.map(({ id }) => id),
     ["dale", "crew_brother"],
   );
-
 });
 
 test("pose keywords stay on the person's blocking instead of bleeding from shot staging", async () => {
@@ -210,19 +209,25 @@ test("pose keywords stay on the person's blocking instead of bleeding from shot 
       spots: { dale: { x: -1, z: 0 }, producer: { x: 1, z: 0 } },
       people: [
         { id: "dale", spotId: "dale", blocking: { pose: "stand" } },
-        { id: "producer", spotId: "producer", blocking: { pose: "kneel", description: "右手递药盒" } },
+        {
+          id: "producer",
+          spotId: "producer",
+          blocking: { pose: "kneel", description: "右手递药盒" },
+        },
       ],
     },
     onScreenIds: ["dale", "producer"],
   });
-  assert.deepEqual(result.scene.figures.map(({ id, pose }) => ({ id, pose })), [
-    { id: "dale", pose: "stand" },
-    { id: "producer", pose: "kneel-and-reach" },
-  ]);
-
+  assert.deepEqual(
+    result.scene.figures.map(({ id, pose }) => ({ id, pose })),
+    [
+      { id: "dale", pose: "stand" },
+      { id: "producer", pose: "kneel-and-reach" },
+    ],
+  );
 });
 
-test("props use authored dimensions and point hand props from the owner's socket toward a target", async () => {
+test("props use authored dimensions and keep the hand prop in the reaching hand", async () => {
   const { directingToSceneState } = await import("../../src/features/scene/film-adapter.ts");
   const result = directingToSceneState({
     id: "prop-continuity",
@@ -231,24 +236,106 @@ test("props use authored dimensions and point hand props from the owner's socket
     floorPlan: {
       spots: { dale: { x: -0.8, z: 0 }, producer: { x: 0.8, z: 0.5 }, table: { x: 0, z: 0.25 } },
       people: [
-        { id: "dale", spotId: "dale", blocking: { pose: "slumped-on-table", description: "头趴在桌面" } },
-        { id: "producer", spotId: "producer", blocking: { pose: "kneel", description: "右手递药盒" } },
+        {
+          id: "dale",
+          spotId: "dale",
+          blocking: { pose: "slumped-on-table", description: "头趴在桌面" },
+        },
+        {
+          id: "producer",
+          spotId: "producer",
+          blocking: { pose: "kneel", description: "右手递药盒" },
+        },
       ],
       props: [
         { id: "coffee", name: "coffee table", at: "table" },
-        { id: "medicine", name: "medicine box", at: "producer", ownerId: "producer", targetId: "dale" },
+        {
+          id: "medicine",
+          name: "medicine box",
+          at: "producer",
+          ownerId: "producer",
+          targetId: "dale",
+        },
       ],
     },
   });
-  const props = (result.scene.stage as { props: Array<{ id: string; kind: string; size: number[]; position: number[]; orientation?: number[]; ownerId?: string }> }).props;
-  const table = props.find((prop) => prop.id === "coffee");
-  const hand = props.find((prop) => prop.id === "medicine");
-  assert.deepEqual(table?.size, [1.8, 0.45, 1]);
+  const stage = result.scene.stage as {
+    props: Array<{
+      id: string;
+      kind: string;
+      size: [number, number, number];
+      position: [number, number, number];
+      orientation?: [number, number, number];
+      ownerId?: string;
+      handJoint?: [number, number, number];
+      frontTarget?: [number, number, number];
+    }>;
+    contacts?: Array<{
+      roleId: string;
+      tableTop: number;
+      footprint: [number, number, number, number];
+      head: [number, number, number];
+      forearms: Array<[number, number, number]>;
+    }>;
+  };
+  const table = stage.props.find((prop) => prop.id === "coffee");
+  const hand = stage.props.find((prop) => prop.id === "medicine");
+  assert.deepEqual(table?.size, [1.2, 0.45, 0.6]);
   assert.equal(table?.position[1], 0.225);
   assert.equal(hand?.kind, "handProp");
   assert.equal(hand?.ownerId, "producer");
-  assert.equal(hand?.position[1], 0.76);
-  assert.equal(hand?.orientation?.length, 3);
-  assert.ok(Math.abs(hand?.orientation?.[1] ?? 0) > 0.5, "hand prop yaw should face Dale");
-  assert.notDeepEqual(hand?.orientation, [0, 0, 0]);
+  assert.ok(hand?.handJoint && hand.position);
+  const handDistance = new Vector3(...hand!.position).distanceTo(new Vector3(...hand!.handJoint!));
+  assert.ok(
+    handDistance <= 0.08,
+    `box must stay within 8cm of the reaching hand (got ${handDistance.toFixed(3)}m)`,
+  );
+  const front = new Vector3(0, 0, 1).applyEuler(new Euler(...hand!.orientation!));
+  const target = new Vector3(...hand!.frontTarget!).sub(new Vector3(...hand!.position)).normalize();
+  assert.ok(front.angleTo(target) < Math.PI / 6, "box front must point at Dale within 30°");
+  const contact = stage.contacts?.find((item) => item.roleId === "dale");
+  assert.ok(contact, "slumped Dale must expose table contact evidence");
+  const [minX, maxX, minZ, maxZ] = contact!.footprint;
+  for (const joint of [contact!.head, ...contact!.forearms]) {
+    const inside = joint[0] >= minX && joint[0] <= maxX && joint[2] >= minZ && joint[2] <= maxZ;
+    if (inside) assert.ok(joint[1] >= contact!.tableTop, "no joint may pass below the table top");
+  }
+  assert.ok(contact!.head[1] > contact!.tableTop);
+  assert.ok(contact!.head[1] - contact!.tableTop <= 0.1);
+});
+
+test("close framing stays between 1.2m and 2m around the focal actors", async () => {
+  const { directingToSceneState } = await import("../../src/features/scene/film-adapter.ts");
+  const result = directingToSceneState({
+    id: "close-continuity",
+    shotSize: "close",
+    cameraSpot: { x: 0, z: -6 },
+    frameCenter: ["producer"],
+    eyeLine: [{ roleId: "producer", targetId: "dale" }],
+    onScreenIds: ["dale", "producer", "security"],
+    floorPlan: {
+      spots: { dale: { x: -0.7, z: 0 }, producer: { x: 1, z: 0 }, security: { x: -2, z: 0.4 } },
+      people: [
+        {
+          id: "dale",
+          spotId: "dale",
+          blocking: { pose: "slumped-on-table", description: "头趴在桌面" },
+        },
+        {
+          id: "producer",
+          spotId: "producer",
+          blocking: { pose: "kneel", description: "右手递药盒" },
+        },
+        { id: "security", spotId: "security", blocking: { pose: "stand" } },
+      ],
+      props: [{ id: "coffee", name: "coffee table", at: "dale" }],
+    },
+  });
+  const distance = new Vector3(...result.scene.camera.position).distanceTo(
+    new Vector3(...result.scene.camera.target),
+  );
+  assert.ok(
+    distance >= 1.2 && distance <= 2.001,
+    `close camera must be 1.2-2m from target (got ${distance.toFixed(3)}m)`,
+  );
 });

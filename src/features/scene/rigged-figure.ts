@@ -90,6 +90,8 @@ export function poseFigure(
   standingClearance = 0,
   relaxedLineup = false,
   filmSeatHeight?: number,
+  slumped = false,
+  slumpTable?: { center: [number, number]; top: number },
 ) {
   // Object3D.clone leaves skinned meshes pointing at the source skeleton.
   const object = clone(source);
@@ -183,6 +185,37 @@ export function poseFigure(
   // re-ground the whole person or move their seat.
   for (const [name, quaternion] of Object.entries(joints))
     bones.get(name)?.quaternion.fromArray(quaternion).normalize();
+  if (slumped) {
+    // A seated Dale folds from the hips toward the authored coffee-table surface.
+    // The table contact is solved after manual joints so it cannot regress to a bent stand.
+    for (const [name, bend] of [
+      ["spine_01", 0.42],
+      ["spine_02", 0.62],
+      ["spine_03", 0.72],
+      ["neck_01", 0.42],
+      ["head", 0.18],
+    ] as const)
+      bones.get(name)?.rotateX(bend);
+    updateSkinBounds(object);
+    if (slumpTable) {
+      const ik = createFigureIK(object);
+      const [tableX, tableZ] = slumpTable.center;
+      const head = new Vector3(tableX - 0.08, slumpTable.top + 0.07, tableZ);
+      ik.solve("head", head);
+      for (const [handle, x] of [
+        ["leftWrist", tableX - 0.18],
+        ["rightWrist", tableX + 0.18],
+      ] as const) {
+        const wrist = new Vector3(x, slumpTable.top + 0.025, tableZ + 0.08);
+        ik.begin(handle);
+        ik.solve(handle, wrist, new Vector3(0, 1, 0));
+        ik.orient(handle, wrist, new Vector3(0, 1, 0), new Vector3(0, 0, 1));
+      }
+      ik.dispose();
+    }
+    updateSkinBounds(object);
+    bounds.setFromObject(object, true);
+  }
   updateSkinBounds(object);
   const cleanup: (() => void)[] = [() => material.dispose()];
   object.traverse((node) => {

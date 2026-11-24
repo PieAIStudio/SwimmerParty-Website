@@ -227,6 +227,19 @@ const slumpedJoints: FigureState["joints"] = {
   head: [0.46, 0, 0, 0.888],
 };
 
+// Anatomical right-hand socket in the producer's local frame. The renderer uses
+// this same point for the box centre, so the prop cannot float beside the hand.
+const reachingHandLocal = [-0.286, 0.99, 0.539] as const;
+function handSocketForFigure(
+  figure: FigureState,
+  facingTurn = figure.turn,
+): [number, number, number] {
+  const turn = (facingTurn * Math.PI) / 180;
+  const x = Math.cos(turn) * reachingHandLocal[0] + Math.sin(turn) * reachingHandLocal[2];
+  const z = -Math.sin(turn) * reachingHandLocal[0] + Math.cos(turn) * reachingHandLocal[2];
+  return [figure.x + x, reachingHandLocal[1], figure.z + z];
+}
+
 function buildFor(person: Record<string, unknown>): FigureState["build"] {
   const blocking = blockingFor(person);
   const build = string(blocking.build) ?? string(person.build);
@@ -567,17 +580,17 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
         : undefined;
     const ownerTurn = owner ? (owner.turn * Math.PI) / 180 : 0;
     const handTurn = targetPoint
-      ? Math.atan2(targetPoint[0] - base[0], targetPoint[1] - base[1])
+      ? Math.atan2(targetPoint[0] - (owner?.x ?? base[0]), targetPoint[1] - (owner?.z ?? base[1]))
       : ownerTurn;
-    const handOffset: [number, number] = [
-      Math.sin(handTurn) * 0.31 + (ownerIndex % 2 ? -0.08 : 0.08),
-      Math.cos(handTurn) * 0.31,
-    ];
+    const handJoint =
+      kind === "handProp" && owner
+        ? handSocketForFigure(owner, (handTurn * 180) / Math.PI)
+        : undefined;
     const size: [number, number, number] = (
       Array.isArray(item.size) && item.size.length === 3
         ? item.size.map((value) => number(value, 0.1))
         : kind === "table"
-          ? [1.8, 0.45, 1.0]
+          ? [1.2, 0.45, 0.6]
           : kind === "door"
             ? [0.12, 2.4, 1.0]
             : kind === "toilet"
@@ -595,15 +608,10 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
           : kind === "door"
             ? 1.2
             : kind === "handProp"
-              ? owner?.pose.includes("kneel")
-                ? 0.76
-                : 0.95
+              ? (handJoint?.[1] ?? (owner?.pose.includes("kneel") ? 0.99 : 1.05))
               : size[1] / 2,
     );
-    const position: [number, number, number] =
-      ownerId && owner
-        ? [base[0] + handOffset[0], surfaceHeight, base[1] + handOffset[1]]
-        : [base[0], surfaceHeight, base[1]];
+    const position: [number, number, number] = handJoint ?? [base[0], surfaceHeight, base[1]];
     const rotation = number(
       item.yaw,
       kind === "handProp" && targetPoint
@@ -632,6 +640,12 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       // Keep yaw as a compatibility field for evidence and old readers.
       rotation,
       ownerId,
+      ...(handJoint
+        ? {
+            handJoint,
+            frontTarget: targetPoint ? [targetPoint[0], handJoint[1], targetPoint[1]] : undefined,
+          }
+        : {}),
     };
   });
   props.forEach((prop) => targets.set(prop.id, [prop.position[0], prop.position[2]]));
@@ -665,12 +679,16 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
     shot.targetHeight ?? shot.cameraTargetHeight ?? cameraTargetObject.y ?? cameraTargetPosition.y,
     shotSize === "close" ? 0.85 : 1.1,
   );
+  const closeFocusIds = [
+    ...(centerKey ? [centerKey] : []),
+    ...eyeTargets.flatMap((item) => [item.roleId, item.targetId]),
+  ].filter((id, index, values) => values.indexOf(id) === index);
   const filmCamera = fitFilmPeople(
     turnedFigures,
     [cameraPoint[0], cameraHeight, cameraPoint[1]],
     [target[0], targetHeight, target[1]],
     shotSize === "close" ? 50 : 24,
-    { shot: shotSize, cameraHeight, targetHeight },
+    { shot: shotSize, cameraHeight, targetHeight, focusIds: closeFocusIds, maxDistance: 1.95 },
   );
   const scene: SceneState = {
     version: 1,
@@ -701,6 +719,32 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       axis,
       frame: { left, right, center: refs(shot.frameCenter) },
       eyeTargets,
+      contacts: (() => {
+        const table = props.find((prop) => prop.kind === "table");
+        if (!table) return [];
+        const tableTop = table.position[1] + table.size[1] / 2;
+        const [cx, , cz] = table.position;
+        const halfW = table.size[0] / 2;
+        const halfD = table.size[2] / 2;
+        return turnedFigures
+          .filter((figure) => figure.pose === "slumped-on-table")
+          .map((figure) => ({
+            roleId: figure.id,
+            tableId: table.id,
+            tableTop,
+            footprint: [cx - halfW, cx + halfW, cz - halfD, cz + halfD] as [
+              number,
+              number,
+              number,
+              number,
+            ],
+            head: [cx, tableTop + 0.07, cz] as [number, number, number],
+            forearms: [
+              [cx - 0.2, tableTop + 0.02, cz + 0.06] as [number, number, number],
+              [cx + 0.2, tableTop + 0.02, cz + 0.06] as [number, number, number],
+            ],
+          }));
+      })(),
     },
   };
   const unknownFloorPlan = Object.keys(floorPlan).filter(

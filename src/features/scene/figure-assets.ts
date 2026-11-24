@@ -11,7 +11,7 @@ export function loadPose(pose: FigureState["pose"]): string {
   // Film-only compound poses reuse the nearest authored shelf pose and add their
   // reach/head contact through FigureState.joints, keeping the asset channel small.
   const sourcePose =
-    pose === "kneel-and-reach" ? "kneel" : pose === "slumped-on-table" ? "hands-on-table" : pose;
+    pose === "kneel-and-reach" ? "kneel" : pose === "slumped-on-table" ? "sit" : pose;
   return `/scene/rigged/poses/${sourcePose}.json`;
 }
 

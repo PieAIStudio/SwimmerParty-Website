@@ -184,6 +184,7 @@ function Figure({
   onSelect,
   onMove,
   cleanExport,
+  table,
 }: {
   figure: FigureState;
   support?: FigureState;
@@ -199,6 +200,7 @@ function Figure({
   onSelect: (id: string) => void;
   onMove: SceneCanvasProps["onMove"];
   cleanExport: boolean;
+  table?: { position: [number, number, number]; size: [number, number, number] };
 }) {
   const [source, supportSource] = useLoader(GLTFLoader, [
     loadFigure(figure.build),
@@ -210,6 +212,19 @@ function Figure({
     (loader) => loader.setResponseType("json"),
   ) as unknown as [FigurePose, FigurePose];
   const scale = figureScale(figure.build, figure.heightCm);
+  const slumpTable = useMemo(() => {
+    if (!table || figure.pose !== "slumped-on-table") return undefined;
+    const angle = (figure.turn * Math.PI) / 180;
+    const dx = table.position[0] - figure.x;
+    const dz = table.position[2] - figure.z;
+    return {
+      center: [
+        Math.cos(angle) * dx - Math.sin(angle) * dz,
+        Math.sin(angle) * dx + Math.cos(angle) * dz,
+      ] as [number, number],
+      top: table.position[1] + table.size[1] / 2,
+    };
+  }, [figure.pose, figure.turn, figure.x, figure.z, table]);
   const model = useMemo(() => {
     let contact;
     if (support) {
@@ -217,7 +232,7 @@ function Figure({
         supportSource.scene,
         supportPose,
         figureScale(support.build, support.heightCm),
-        support.pose === "sit",
+        support.pose === "sit" || support.pose === "slumped-on-table",
         support.joints,
       );
       neighbour.object.position.add(new Vector3(support.x, 0, support.z));
@@ -244,13 +259,15 @@ function Figure({
       source.scene,
       pose,
       scale,
-      figure.pose === "sit",
+      figure.pose === "sit" || figure.pose === "slumped-on-table",
       figure.joints,
       contact,
       editingPair,
       standingClearance,
       relaxedLineup,
       cleanExport ? 0.45 : undefined,
+      figure.pose === "slumped-on-table",
+      slumpTable,
     );
   }, [
     source,
@@ -264,6 +281,7 @@ function Figure({
     standingClearance,
     relaxedLineup,
     cleanExport,
+    slumpTable,
   ]);
   useEffect(() => () => model.dispose(), [model]);
   const root = useRef<Group>(null);
@@ -680,6 +698,19 @@ function Runtime({
       onReady(null);
     };
   }, [exportPicture, gl, invalidate, onLost, onReady]);
+  const stageProps =
+    (
+      document.stage as
+        | {
+            props?: Array<{
+              kind: string;
+              position: [number, number, number];
+              size: [number, number, number];
+            }>;
+          }
+        | undefined
+    )?.props ?? [];
+  const tableProp = stageProps.find((prop) => prop.kind === "table");
   return (
     <>
       <StudioBackdrop />
@@ -719,11 +750,12 @@ function Runtime({
         <Figure
           key={figure.id}
           figure={figure}
+          table={tableProp}
           support={
             index === 1 &&
             document.figures.length === 5 &&
             figure.pose === "lean-in" &&
-            document.figures[0].pose === "sit"
+            (document.figures[0].pose === "sit" || document.figures[0].pose === "slumped-on-table")
               ? document.figures[0]
               : undefined
           }
@@ -732,7 +764,9 @@ function Runtime({
           limbs={limbs}
           editingPair={limbs && document.figures.length === 2}
           standingClearance={
-            index === 4 && document.figures.length === 5 && document.figures[0].pose === "sit"
+            index === 4 &&
+            document.figures.length === 5 &&
+            (document.figures[0].pose === "sit" || document.figures[0].pose === "slumped-on-table")
               ? 11
               : 0
           }
