@@ -73,6 +73,42 @@ function StageProp({ prop }: { prop: PrimitiveProps }) {
     );
   }
 
+  if (prop.kind === "table") {
+    // The authored table is a knee-high coffee table, not a solid waist-high box.
+    // Keep the declared [width, height, depth] envelope while exposing the floor
+    // and the four short supports so a slumped figure reads against a real surface.
+    const topThickness = Math.min(0.08, height * 0.22);
+    const legHeight = Math.max(0.02, height - topThickness);
+    const legThickness = Math.min(0.1, width * 0.1, depth * 0.16);
+    const topY = height / 2 - topThickness / 2;
+    const legY = -height / 2 + legHeight / 2;
+    const legX = Math.max(0, width / 2 - legThickness);
+    const legZ = Math.max(0, depth / 2 - legThickness);
+    return (
+      <group
+        position={prop.position}
+        rotation={prop.orientation ?? [0, prop.rotation, 0]}
+        userData={data}
+      >
+        <mesh position={[0, topY, 0]} castShadow receiveShadow userData={data}>
+          <boxGeometry args={[width, topThickness, depth]} />
+          <StageMaterial colour={colour} />
+        </mesh>
+        {[
+          [-legX, legY, -legZ],
+          [-legX, legY, legZ],
+          [legX, legY, -legZ],
+          [legX, legY, legZ],
+        ].map(([x, y, z], index) => (
+          <mesh key={index} position={[x, y, z]} castShadow receiveShadow userData={data}>
+            <boxGeometry args={[legThickness, legHeight, legThickness]} />
+            <StageMaterial colour={colour} />
+          </mesh>
+        ))}
+      </group>
+    );
+  }
+
   if (prop.kind === "door") {
     const open = Math.abs(Math.sin(prop.rotation)) > 0.9;
     const frameData = { ...data, stagePrimitivePart: true };

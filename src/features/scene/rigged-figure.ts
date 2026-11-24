@@ -203,7 +203,10 @@ export function poseFigure(
     if (slumpTable) {
       const ik = createFigureIK(object);
       const [tableX, tableZ] = slumpTable.center;
-      const head = new Vector3(tableX - 0.08, slumpTable.top + 0.07, tableZ);
+      // CCD's constrained neck chain settles the anatomical head below the target.
+      // Aim above the tabletop so the visible head clears the surface while the
+      // forearms remain pinned to the tabletop below.
+      const head = new Vector3(tableX - 0.08, slumpTable.top + 0.18, tableZ);
       ik.solve("head", head);
       for (const [handle, x] of [
         ["leftWrist", tableX - 0.18],
