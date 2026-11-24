@@ -566,7 +566,22 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
       (at ? (spots.get(at) ?? personPositions.get(at)) : undefined) ?? [0, 0];
     const ownerIndex = ownerId ? allFigures.findIndex((figure) => figure.id === ownerId) : -1;
     const owner = ownerIndex >= 0 ? allFigures[ownerIndex] : undefined;
-    const explicitTarget = string(item.targetId) ?? string(item.toward) ?? string(item.lookAt);
+    const eyeTargetId =
+      ownerId && Array.isArray(shot.eyeLine)
+        ? shot.eyeLine
+            .map((raw) => asObject(raw))
+            .find((entry) => string(entry.roleId) === ownerId || string(entry.personId) === ownerId)
+          ? string(
+              shot.eyeLine
+                .map((raw) => asObject(raw))
+                .find(
+                  (entry) => string(entry.roleId) === ownerId || string(entry.personId) === ownerId,
+                )?.targetId,
+            )
+          : undefined
+        : undefined;
+    const explicitTarget =
+      string(item.targetId) ?? string(item.toward) ?? string(item.lookAt) ?? eyeTargetId;
     const targetPoint = explicitTarget
       ? targets.get(explicitTarget)
       : ownerId
