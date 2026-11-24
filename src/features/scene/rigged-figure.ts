@@ -142,12 +142,15 @@ export function poseFigure(
     hips = bones.get("pelvis")!.getWorldPosition(new Vector3());
   }
   const height = Math.max(0.05, hips.y - 0.085 * scale);
-  const seat = sitting
-    ? {
-        position: [hips.x, height / 2, hips.z + 0.035 * scale] as [number, number, number],
-        size: [0.44 * scale, height, 0.38 * scale] as [number, number, number],
-      }
-    : null;
+  // Slumped-on-table uses the authored coffee table as its only support. The
+  // generic seated block would read as a waist-high stool and hide the real table.
+  const seat =
+    sitting && !slumped
+      ? {
+          position: [hips.x, height / 2, hips.z + 0.035 * scale] as [number, number, number],
+          size: [0.44 * scale, height, 0.38 * scale] as [number, number, number],
+        }
+      : null;
   if (editingPair) {
     // A small elbow bend retains both wrist handles in Medium. The free hand
     // stays beside the hip, fingers down, rather than turning onto the belly.

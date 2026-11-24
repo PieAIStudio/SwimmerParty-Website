@@ -388,11 +388,37 @@ function StageAxis({ from, to }: { from: [number, number]; to: [number, number] 
   );
 }
 
+function syncHandProps(stageRoot: Group, scene: Object3D) {
+  const hands = new Map<string, Vector3>();
+  scene.traverse((node) => {
+    const figureId =
+      typeof node.userData.figureBody === "string" ? node.userData.figureBody : undefined;
+    if (!figureId) return;
+    const hand = node.getObjectByName("hand_r") ?? node.getObjectByName("hand_l");
+    if (!hand) return;
+    hands.set(figureId, hand.getWorldPosition(new Vector3()));
+  });
+  if (hands.size === 0) return;
+  stageRoot.updateMatrixWorld(true);
+  stageRoot.traverse((node) => {
+    if (node.userData.stagePrimitiveKind !== "handProp") return;
+    const ownerId =
+      typeof node.userData.stagePrimitiveOwnerId === "string"
+        ? node.userData.stagePrimitiveOwnerId
+        : undefined;
+    const hand = ownerId ? hands.get(ownerId) : undefined;
+    if (!hand) return;
+    node.position.copy(stageRoot.worldToLocal(hand.clone()));
+  });
+}
+
 export function StagePrimitives({ stage }: { stage?: FilmStageState }) {
   const stageRoot = useRef<Group>(null);
   const center = roomCenter(stage?.walls ?? []);
-  useFrame(({ camera }) => {
-    if (stageRoot.current) updateStageVisibility(stageRoot.current, camera);
+  useFrame(({ camera, scene }) => {
+    if (!stageRoot.current) return;
+    updateStageVisibility(stageRoot.current, camera);
+    syncHandProps(stageRoot.current, scene);
   });
   if (!stage) return null;
   return (
