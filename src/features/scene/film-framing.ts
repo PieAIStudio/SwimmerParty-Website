@@ -139,5 +139,26 @@ export function fitFilmPeople(
         };
     }
   }
+  if (close) {
+    // A close two-shot must remain usable even when authored marks are wider than
+    // the 5% full-body safety box. Keep the hard distance envelope and open to 18mm.
+    const distance = Math.min(maxDistance ?? 2, 1.9);
+    const camera = new PerspectiveCamera(
+      (2 * Math.atan(36 / (2 * 18 * (16 / 9))) * 180) / Math.PI,
+      16 / 9,
+      0.05,
+      1000,
+    );
+    const cameraPosition = aim.clone().addScaledVector(ray, distance);
+    if (options.cameraHeight !== undefined) cameraPosition.y = options.cameraHeight;
+    camera.position.copy(cameraPosition);
+    camera.lookAt(aim);
+    camera.updateMatrixWorld(true);
+    return {
+      position: camera.position.toArray() as [number, number, number],
+      target,
+      lens: 18,
+    };
+  }
   throw new Error("Multi-person framing cannot achieve the required 5% margin");
 }

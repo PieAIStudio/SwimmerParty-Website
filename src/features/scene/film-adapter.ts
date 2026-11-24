@@ -657,9 +657,14 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
         return roleId && targetId ? [{ roleId, targetId }] : [];
       })
     : [];
+  const tableTarget = props.find((prop) => prop.kind === "table");
   const turnedFigures = safeFigures.map((figure) => {
     const eye = eyeTargets.find((targetItem) => targetItem.roleId === figure.id);
-    const targetPoint = eye ? targets.get(eye.targetId) : undefined;
+    const targetPoint = eye
+      ? targets.get(eye.targetId)
+      : figure.pose === "slumped-on-table" && tableTarget
+        ? ([tableTarget.position[0], tableTarget.position[2]] as [number, number])
+        : undefined;
     if (!targetPoint) return figure;
     return {
       ...figure,
@@ -681,9 +686,7 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
   );
   const closeFocusIds = [
     ...(centerKey ? [centerKey] : []),
-    ...eyeTargets
-      .filter((item) => item.roleId === centerKey)
-      .map((item) => item.targetId),
+    ...eyeTargets.filter((item) => item.roleId === centerKey).map((item) => item.targetId),
   ].filter((id, index, values) => values.indexOf(id) === index);
   const filmCamera = fitFilmPeople(
     turnedFigures,
