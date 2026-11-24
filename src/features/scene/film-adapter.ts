@@ -681,7 +681,9 @@ export function directingToSceneState(input: DirectingShot): FilmStageMapping {
   );
   const closeFocusIds = [
     ...(centerKey ? [centerKey] : []),
-    ...eyeTargets.flatMap((item) => [item.roleId, item.targetId]),
+    ...eyeTargets
+      .filter((item) => item.roleId === centerKey)
+      .map((item) => item.targetId),
   ].filter((id, index, values) => values.indexOf(id) === index);
   const filmCamera = fitFilmPeople(
     turnedFigures,
