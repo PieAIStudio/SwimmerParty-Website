@@ -6,6 +6,7 @@ import {
   Float32BufferAttribute,
   Mesh,
   MeshStandardMaterial,
+  Quaternion,
   SkinnedMesh,
   Vector3,
   type Object3D,
@@ -208,6 +209,27 @@ export function poseFigure(
       // forearms remain pinned to the tabletop below.
       const head = new Vector3(tableX - 0.08, slumpTable.top + 0.45, tableZ);
       ik.solve("head", head);
+      // The CCD head chain is intentionally conservative. If it still leaves
+      // the anatomical joint below the tabletop, translate the head bone in
+      // its parent's frame so the exported joint clears the surface without
+      // moving the grounded hips, feet, or forearm contacts.
+      updateSkinBounds(object);
+      const headBone = bones.get("head");
+      if (headBone) {
+        const current = headBone.getWorldPosition(new Vector3());
+        const lift = Math.max(0, slumpTable.top + 0.02 - current.y);
+        if (lift > 0.001 && headBone.parent) {
+          const parent = headBone.parent;
+          const inverseParentRotation = parent.getWorldQuaternion(new Quaternion()).invert();
+          const parentScale = parent.getWorldScale(new Vector3());
+          const localLift = new Vector3(0, lift, 0).applyQuaternion(inverseParentRotation);
+          localLift.x /= Math.max(0.001, parentScale.x);
+          localLift.y /= Math.max(0.001, parentScale.y);
+          localLift.z /= Math.max(0.001, parentScale.z);
+          headBone.position.add(localLift);
+          updateSkinBounds(object);
+        }
+      }
       for (const [handle, x] of [
         ["leftWrist", tableX - 0.18],
         ["rightWrist", tableX + 0.18],
